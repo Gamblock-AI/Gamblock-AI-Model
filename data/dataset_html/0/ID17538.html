@@ -1,0 +1,853 @@
+<html lang="en" class="scroll-smooth"><head>
+    <script>
+        (function() {
+            var theme = localStorage.getItem('theme');
+            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (theme === 'dark' || (!theme && prefersDark)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        })();
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="imb7CFRd0hts8YvNJEar6kM6kWCMTXHrDf0vSjRC">
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+    <title>Rajanime — Nonton Anime Sub Indo</title>
+        <meta name="description" content="Nonton anime subtitle Indonesia. Top 10 anime terpopuler dan episode terbaru. Streaming anime berkualitas dengan subtitle Indonesia.">
+    <link rel="canonical" href="https://notionime.com">
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=outfit:400,500,600,700" rel="stylesheet">
+        <link rel="preload" as="style" href="https://notionime.com/build/assets/app-BJNLane3.css"><link rel="modulepreload" as="script" href="https://notionime.com/build/assets/app-BuG9aa18.js"><link rel="stylesheet" href="https://notionime.com/build/assets/app-BJNLane3.css"><script type="module" src="https://notionime.com/build/assets/app-BuG9aa18.js"></script>    <link rel="sitemap" type="application/xml" href="https://notionime.com/sitemap.xml">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Notionime">
+    <meta property="og:title" content="Rajanime — Nonton Anime Sub Indo">
+    <meta property="og:description" content="Nonton anime subtitle Indonesia. Top 10 anime terpopuler dan episode terbaru. Streaming anime berkualitas dengan subtitle Indonesia.">
+    <meta property="og:url" content="https://notionime.com">
+    <meta property="og:image" content="https://rajanime.my.id/images/og-default.png">
+    <meta property="og:locale" content="id_ID">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rajanime — Nonton Anime Sub Indo">
+    <meta name="twitter:description" content="Nonton anime subtitle Indonesia. Top 10 anime terpopuler dan episode terbaru. Streaming anime berkualitas dengan subtitle Indonesia.">
+    <meta name="twitter:image" content="https://rajanime.my.id/images/og-default.png">
+            <script type="text/javascript" async="" src="//s10.histats.com/js15_as.js"></script></head><body class="relative min-h-screen bg-slate-50 text-slate-800 font-sans antialiased dark:bg-slate-900 dark:text-slate-200"><div itemscope="" itemtype="https://schema.org/WebSite" hidden="">
+        <meta itemprop="name" content="Notionime">
+        <meta itemprop="url" content="https://notionime.com">
+        <meta itemprop="description" content="Nonton anime subtitle Indonesia di Notionime. Update episode terbaru setiap hari. Streaming anime berkualitas.">
+        <form itemprop="potentialAction" itemscope="" itemtype="https://schema.org/SearchAction" action="https://notionime.com/search" method="get" hidden="">
+            <meta itemprop="target" content="https://notionime.com/search?q={search_term_string}">
+            <input itemprop="query-input" name="q" type="search" required="">
+        </form>
+    </div>
+    <div itemscope="" itemtype="https://schema.org/WebPage" hidden="">
+    <meta itemprop="name" content="Rajanime">
+    <meta itemprop="url" content="https://notionime.com">
+    <meta itemprop="description" content="Nonton anime subtitle Indonesia. Top 10 anime dan episode terbaru.">
+</div>
+<script id="browser-logger-active">
+(function() {
+    const ENDPOINT = 'https://notionime.com/_boost/browser-logs';
+    const logQueue = [];
+    let flushTimeout = null;
+
+    console.log('🔍 Browser logger active (MCP server detected). Posting to: ' + ENDPOINT);
+
+    // Store original console methods
+    const originalConsole = {
+        log: console.log,
+        info: console.info,
+        error: console.error,
+        warn: console.warn,
+        table: console.table
+    };
+
+    // Helper to safely stringify values
+    function safeStringify(obj) {
+        const seen = new WeakSet();
+        return JSON.stringify(obj, (key, value) => {
+            if (typeof value === 'object' && value !== null) {
+                if (seen.has(value)) return '[Circular]';
+                seen.add(value);
+            }
+            if (value instanceof Error) {
+                return {
+                    name: value.name,
+                    message: value.message,
+                    stack: value.stack
+                };
+            }
+            return value;
+        });
+    }
+
+    // Batch and send logs
+    function flushLogs() {
+        if (logQueue.length === 0) return;
+
+        const batch = logQueue.splice(0, logQueue.length);
+
+        fetch(ENDPOINT, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest'
+            },
+            body: JSON.stringify({ logs: batch })
+        }).catch(err => {
+            // Silently fail to avoid infinite loops
+            originalConsole.error('Failed to send logs:', err);
+        });
+    }
+
+    // Debounced flush (100ms)
+    function scheduleFlush() {
+        if (flushTimeout) clearTimeout(flushTimeout);
+        flushTimeout = setTimeout(flushLogs, 100);
+    }
+
+    // Intercept console methods
+    ['log', 'info', 'error', 'warn', 'table'].forEach(method => {
+        console[method] = function(...args) {
+            // Call original method
+            originalConsole[method].apply(console, args);
+
+            // Capture log data
+            try {
+                logQueue.push({
+                    type: method,
+                    timestamp: new Date().toISOString(),
+                    data: args.map(arg => {
+                        try {
+                            return typeof arg === 'object' ? JSON.parse(safeStringify(arg)) : arg;
+                        } catch (e) {
+                            return String(arg);
+                        }
+                    }),
+                    url: window.location.href,
+                    userAgent: navigator.userAgent
+                });
+
+                scheduleFlush();
+            } catch (e) {
+                // Fail silently
+            }
+        };
+    });
+
+    // Global error handlers for uncaught errors
+    const originalOnError = window.onerror;
+    window.onerror = function boostErrorHandler(errorMsg, url, lineNumber, colNumber, error) {
+        try {
+            logQueue.push({
+                type: 'uncaught_error',
+                timestamp: new Date().toISOString(),
+                data: [{
+                    message: errorMsg,
+                    filename: url,
+                    lineno: lineNumber,
+                    colno: colNumber,
+                    error: error ? {
+                        name: error.name,
+                        message: error.message,
+                        stack: error.stack
+                    } : null
+                }],
+                url: window.location.href,
+                userAgent: navigator.userAgent
+            });
+
+            scheduleFlush();
+        } catch (e) {
+            // Fail silently
+        }
+
+        // Call original handler if it exists
+        if (originalOnError && typeof originalOnError === 'function') {
+            return originalOnError(errorMsg, url, lineNumber, colNumber, error);
+        }
+
+        // Let the error continue to propagate
+        return false;
+    }
+    window.addEventListener('error', (event) => {
+        try {
+            logQueue.push({
+                type: 'window_error',
+                timestamp: new Date().toISOString(),
+                data: [{
+                    message: event.message,
+                    filename: event.filename,
+                    lineno: event.lineno,
+                    colno: event.colno,
+                    error: event.error ? {
+                        name: event.error.name,
+                        message: event.error.message,
+                        stack: event.error.stack
+                    } : null
+                }],
+                url: window.location.href,
+                userAgent: navigator.userAgent
+            });
+
+            scheduleFlush();
+        } catch (e) {
+            // Fail silently
+        }
+
+        // Let the error continue to propagate
+        return false;
+    });
+    window.addEventListener('unhandledrejection', (event) => {
+        try {
+            logQueue.push({
+                type: 'error',
+                timestamp: new Date().toISOString(),
+                data: [{
+                    message: 'Unhandled Promise Rejection',
+                    reason: event.reason instanceof Error ? {
+                        name: event.reason.name,
+                        message: event.reason.message,
+                        stack: event.reason.stack
+                    } : event.reason
+                }],
+                url: window.location.href,
+                userAgent: navigator.userAgent
+            });
+
+            scheduleFlush();
+        } catch (e) {
+            // Fail silently
+        }
+
+        // Let the rejection continue to propagate
+        return false;
+    });
+
+    // Flush on page unload
+    window.addEventListener('beforeunload', () => {
+        if (logQueue.length > 0) {
+            navigator.sendBeacon(ENDPOINT, JSON.stringify({ logs: logQueue }));
+        }
+    });
+})();
+</script>
+
+
+
+    
+    <div class="pointer-events-none fixed inset-0 z-0 bg-[linear-gradient(rgba(148,163,184,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.08)_1px,transparent_1px)] bg-[size:48px_48px] dark:bg-[linear-gradient(rgba(71,85,105,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(71,85,105,0.15)_1px,transparent_1px)]">
+    </div>
+
+    
+    <div class="pointer-events-none fixed -left-32 top-1/4 z-0 h-64 w-64 rounded-full bg-rose-200/40 blur-3xl dark:bg-rose-900/20">
+    </div>
+    <div class="pointer-events-none fixed -right-32 top-1/2 z-0 h-80 w-80 rounded-full bg-amber-200/30 blur-3xl dark:bg-amber-900/15">
+    </div>
+    <div class="pointer-events-none fixed bottom-0 left-1/2 z-0 h-48 w-96 -translate-x-1/2 rounded-full bg-sky-200/20 blur-3xl dark:bg-sky-900/10">
+    </div>
+
+    
+    <header class="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/80 backdrop-blur-md dark:border-slate-700/80 dark:bg-slate-900/80">
+        <nav class="relative z-10 mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+            <a href="https://notionime.com" class="flex shrink-0 items-center gap-2">
+                <span class="text-xl font-bold tracking-tight text-rose-500">Notionime</span>
+            </a>
+
+            <div class="hidden items-center gap-6 md:flex lg:gap-8">
+                                <a href="https://notionime.com" class="border-b-2 border-transparent pb-0.5 text-sm font-medium text-slate-600 transition hover:text-rose-500 dark:text-slate-300 dark:hover:text-rose-400 border-rose-500 text-rose-500 dark:border-rose-400 dark:text-rose-400">
+                    Beranda
+                </a>
+                <a href="https://notionime.com/anime-list" class="border-b-2 border-transparent pb-0.5 text-sm font-medium text-slate-600 transition hover:text-rose-500 dark:text-slate-300 dark:hover:text-rose-400 ">
+                    Anime List
+                </a>
+                <a href="https://notionime.com/animelist" class="border-b-2 border-transparent pb-0.5 text-sm font-medium text-slate-600 transition hover:text-rose-500 dark:text-slate-300 dark:hover:text-rose-400 ">
+                    Animelist
+                </a>
+                <a href="https://notionime.com/batchs" class="border-b-2 border-transparent pb-0.5 text-sm font-medium text-slate-600 transition hover:text-rose-500 dark:text-slate-300 dark:hover:text-rose-400 ">
+                    Batchs
+                </a>
+                            </div>
+
+            <div class="flex flex-1 items-center justify-end gap-3 md:flex-initial">
+                <button type="button" id="dark-mode-toggle" aria-label="Toggle dark mode" class="shrink-0 rounded-full p-2.5 text-slate-500 transition hover:bg-slate-100 hover:text-slate-700 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-200">
+                    <svg class="h-5 w-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    </svg>
+                    <svg class="hidden h-5 w-5 dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                </button>
+                <form action="https://notionime.com/search" method="get" class="w-full max-w-[200px] sm:max-w-none">
+                    <div class="relative">
+                        <input type="search" name="q" placeholder="Cari anime..." value="" class="w-full min-w-[140px] rounded-full border border-slate-200 bg-white/80 py-2 pl-4 pr-10 text-sm text-slate-800 placeholder-slate-400 outline-none transition focus:border-rose-300 focus:ring-2 focus:ring-rose-500/20 backdrop-blur-sm dark:border-slate-600 dark:bg-slate-800/80 dark:text-slate-200 dark:placeholder-slate-500 lg:w-52">
+                        <button type="submit" class="absolute right-2 top-1/2 -translate-y-1/2 rounded-full p-1.5 text-slate-400 transition hover:bg-rose-50 hover:text-rose-500 dark:hover:bg-slate-700 dark:hover:text-rose-400">
+                            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+                <a href="https://notionime.com/anime-list" class="hidden shrink-0 rounded-full bg-rose-500 px-4 py-2 text-sm font-medium text-white transition hover:bg-rose-600 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900 sm:inline-flex">
+                    Jelajahi
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="relative z-10 mx-auto max-w-7xl px-4 py-8 pb-24 sm:px-6 sm:pb-8 lg:px-8">
+        <div class="grid gap-8 lg:grid-cols-[1fr_280px]">
+    <div class="min-w-0">
+        
+                <section id="top10" class="mb-12 scroll-mt-8">
+            <h2 class="mb-6 text-2xl font-bold text-slate-800 dark:text-slate-100">Top 10 Anime</h2>
+            <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5">
+                                <a href="https://notionime.com/anime/one-piece" class="group relative overflow-hidden rounded-2xl bg-white/80 shadow-sm ring-1 ring-slate-200/60 backdrop-blur-sm transition hover:shadow-md hover:ring-rose-200 dark:bg-slate-800/80 dark:ring-slate-600/60 dark:hover:ring-rose-500/50">
+                    <div class="relative aspect-[3/4] overflow-hidden rounded-t-2xl">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2020/04/E5RxYkWX0AAwdGH.png.jpg" alt="One Piece" class="h-full w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy">
+                        <div class="absolute inset-0 flex flex-col justify-between rounded-t-2xl bg-gradient-to-t from-black/70 via-transparent to-transparent p-2.5 transition-opacity duration-300 group-hover:opacity-0">
+                            <div class="flex items-start justify-between">
+                                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-rose-500 text-sm font-bold text-white shadow">
+                                    1
+                                </span>
+                                                                <span class="rounded-md bg-black/50 px-1.5 py-0.5 text-xs text-amber-300">
+                                    ★ 8.7
+                                </span>
+                                                            </div>
+                            <span class="text-xs font-medium text-white drop-shadow-lg">
+                                One Piece
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                                <a href="https://notionime.com/anime/kanteishi" class="group relative overflow-hidden rounded-2xl bg-white/80 shadow-sm ring-1 ring-slate-200/60 backdrop-blur-sm transition hover:shadow-md hover:ring-rose-200 dark:bg-slate-800/80 dark:ring-slate-600/60 dark:hover:ring-rose-500/50">
+                    <div class="relative aspect-[3/4] overflow-hidden rounded-t-2xl">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2026/04/bx200769-8WkFkoFxc2fw.jpg" alt="Kanteishi" class="h-full w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy">
+                        <div class="absolute inset-0 flex flex-col justify-between rounded-t-2xl bg-gradient-to-t from-black/70 via-transparent to-transparent p-2.5 transition-opacity duration-300 group-hover:opacity-0">
+                            <div class="flex items-start justify-between">
+                                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-rose-500 text-sm font-bold text-white shadow">
+                                    2
+                                </span>
+                                                                <span class="rounded-md bg-black/50 px-1.5 py-0.5 text-xs text-amber-300">
+                                    ★ 6.3
+                                </span>
+                                                            </div>
+                            <span class="text-xs font-medium text-white drop-shadow-lg">
+                                Kanteishi
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                                <a href="https://notionime.com/anime/diamond-no-ace-act-ii-season-2" class="group relative overflow-hidden rounded-2xl bg-white/80 shadow-sm ring-1 ring-slate-200/60 backdrop-blur-sm transition hover:shadow-md hover:ring-rose-200 dark:bg-slate-800/80 dark:ring-slate-600/60 dark:hover:ring-rose-500/50">
+                    <div class="relative aspect-[3/4] overflow-hidden rounded-t-2xl">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2026/04/Diamond-no-Ace-Act-II-Season-2.jpg" alt="Diamond no Ace Act II Season 2" class="h-full w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy">
+                        <div class="absolute inset-0 flex flex-col justify-between rounded-t-2xl bg-gradient-to-t from-black/70 via-transparent to-transparent p-2.5 transition-opacity duration-300 group-hover:opacity-0">
+                            <div class="flex items-start justify-between">
+                                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-rose-500 text-sm font-bold text-white shadow">
+                                    3
+                                </span>
+                                                                <span class="rounded-md bg-black/50 px-1.5 py-0.5 text-xs text-amber-300">
+                                    ★ 8.0
+                                </span>
+                                                            </div>
+                            <span class="text-xs font-medium text-white drop-shadow-lg">
+                                Diamond no Ace Act II Season...
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                                <a href="https://notionime.com/anime/kami-no-niwatsuki-kusunoki-tei" class="group relative overflow-hidden rounded-2xl bg-white/80 shadow-sm ring-1 ring-slate-200/60 backdrop-blur-sm transition hover:shadow-md hover:ring-rose-200 dark:bg-slate-800/80 dark:ring-slate-600/60 dark:hover:ring-rose-500/50">
+                    <div class="relative aspect-[3/4] overflow-hidden rounded-t-2xl">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2026/04/156105.jpg" alt="Kami no Niwatsuki Kusunoki-tei" class="h-full w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy">
+                        <div class="absolute inset-0 flex flex-col justify-between rounded-t-2xl bg-gradient-to-t from-black/70 via-transparent to-transparent p-2.5 transition-opacity duration-300 group-hover:opacity-0">
+                            <div class="flex items-start justify-between">
+                                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-rose-500 text-sm font-bold text-white shadow">
+                                    4
+                                </span>
+                                                                <span class="rounded-md bg-black/50 px-1.5 py-0.5 text-xs text-amber-300">
+                                    ★ 7.4
+                                </span>
+                                                            </div>
+                            <span class="text-xs font-medium text-white drop-shadow-lg">
+                                Kami no Niwatsuki Kusunoki-t...
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                                <a href="https://notionime.com/anime/yomi-no-tsugai" class="group relative overflow-hidden rounded-2xl bg-white/80 shadow-sm ring-1 ring-slate-200/60 backdrop-blur-sm transition hover:shadow-md hover:ring-rose-200 dark:bg-slate-800/80 dark:ring-slate-600/60 dark:hover:ring-rose-500/50">
+                    <div class="relative aspect-[3/4] overflow-hidden rounded-t-2xl">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2026/04/156397.jpg" alt="Yomi no Tsugai" class="h-full w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy">
+                        <div class="absolute inset-0 flex flex-col justify-between rounded-t-2xl bg-gradient-to-t from-black/70 via-transparent to-transparent p-2.5 transition-opacity duration-300 group-hover:opacity-0">
+                            <div class="flex items-start justify-between">
+                                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-rose-500 text-sm font-bold text-white shadow">
+                                    5
+                                </span>
+                                                                <span class="rounded-md bg-black/50 px-1.5 py-0.5 text-xs text-amber-300">
+                                    ★ 8.0
+                                </span>
+                                                            </div>
+                            <span class="text-xs font-medium text-white drop-shadow-lg">
+                                Yomi no Tsugai
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                                <a href="https://notionime.com/anime/tensei-shitara-slime-datta-ken-season-4" class="group relative overflow-hidden rounded-2xl bg-white/80 shadow-sm ring-1 ring-slate-200/60 backdrop-blur-sm transition hover:shadow-md hover:ring-rose-200 dark:bg-slate-800/80 dark:ring-slate-600/60 dark:hover:ring-rose-500/50">
+                    <div class="relative aspect-[3/4] overflow-hidden rounded-t-2xl">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2026/04/Tensei-shitara-Slime-Datta-Ken-Season-4.jpg" alt="Tensei shitara Slime Datta Ken Season 4" class="h-full w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy">
+                        <div class="absolute inset-0 flex flex-col justify-between rounded-t-2xl bg-gradient-to-t from-black/70 via-transparent to-transparent p-2.5 transition-opacity duration-300 group-hover:opacity-0">
+                            <div class="flex items-start justify-between">
+                                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-rose-500 text-sm font-bold text-white shadow">
+                                    6
+                                </span>
+                                                                <span class="rounded-md bg-black/50 px-1.5 py-0.5 text-xs text-amber-300">
+                                    ★ 8.2
+                                </span>
+                                                            </div>
+                            <span class="text-xs font-medium text-white drop-shadow-lg">
+                                Tensei shitara Slime Datta K...
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                                <a href="https://notionime.com/anime/nippon-sangoku" class="group relative overflow-hidden rounded-2xl bg-white/80 shadow-sm ring-1 ring-slate-200/60 backdrop-blur-sm transition hover:shadow-md hover:ring-rose-200 dark:bg-slate-800/80 dark:ring-slate-600/60 dark:hover:ring-rose-500/50">
+                    <div class="relative aspect-[3/4] overflow-hidden rounded-t-2xl">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2026/04/156387.jpg" alt="Nippon Sangoku" class="h-full w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy">
+                        <div class="absolute inset-0 flex flex-col justify-between rounded-t-2xl bg-gradient-to-t from-black/70 via-transparent to-transparent p-2.5 transition-opacity duration-300 group-hover:opacity-0">
+                            <div class="flex items-start justify-between">
+                                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-rose-500 text-sm font-bold text-white shadow">
+                                    7
+                                </span>
+                                                                <span class="rounded-md bg-black/50 px-1.5 py-0.5 text-xs text-amber-300">
+                                    ★ 8.3
+                                </span>
+                                                            </div>
+                            <span class="text-xs font-medium text-white drop-shadow-lg">
+                                Nippon Sangoku
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                                <a href="https://notionime.com/anime/isekai-nonbiri-nouka-season-2" class="group relative overflow-hidden rounded-2xl bg-white/80 shadow-sm ring-1 ring-slate-200/60 backdrop-blur-sm transition hover:shadow-md hover:ring-rose-200 dark:bg-slate-800/80 dark:ring-slate-600/60 dark:hover:ring-rose-500/50">
+                    <div class="relative aspect-[3/4] overflow-hidden rounded-t-2xl">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2026/04/bx197824-k9Uyef8g49hB.png" alt="Isekai Nonbiri Nouka Season 2" class="h-full w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy">
+                        <div class="absolute inset-0 flex flex-col justify-between rounded-t-2xl bg-gradient-to-t from-black/70 via-transparent to-transparent p-2.5 transition-opacity duration-300 group-hover:opacity-0">
+                            <div class="flex items-start justify-between">
+                                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-rose-500 text-sm font-bold text-white shadow">
+                                    8
+                                </span>
+                                                            </div>
+                            <span class="text-xs font-medium text-white drop-shadow-lg">
+                                Isekai Nonbiri Nouka Season...
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                                <a href="https://notionime.com/anime/classroom-of-the-elite-season-4" class="group relative overflow-hidden rounded-2xl bg-white/80 shadow-sm ring-1 ring-slate-200/60 backdrop-blur-sm transition hover:shadow-md hover:ring-rose-200 dark:bg-slate-800/80 dark:ring-slate-600/60 dark:hover:ring-rose-500/50">
+                    <div class="relative aspect-[3/4] overflow-hidden rounded-t-2xl">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2026/04/Classroom-of-the-Elite-S4.jpg" alt="Classroom of the Elite Season 4" class="h-full w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy">
+                        <div class="absolute inset-0 flex flex-col justify-between rounded-t-2xl bg-gradient-to-t from-black/70 via-transparent to-transparent p-2.5 transition-opacity duration-300 group-hover:opacity-0">
+                            <div class="flex items-start justify-between">
+                                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-rose-500 text-sm font-bold text-white shadow">
+                                    9
+                                </span>
+                                                                <span class="rounded-md bg-black/50 px-1.5 py-0.5 text-xs text-amber-300">
+                                    ★ 8.3
+                                </span>
+                                                            </div>
+                            <span class="text-xs font-medium text-white drop-shadow-lg">
+                                Classroom of the Elite Seaso...
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                                <a href="https://notionime.com/anime/tongari-boushi-no-atelier" class="group relative overflow-hidden rounded-2xl bg-white/80 shadow-sm ring-1 ring-slate-200/60 backdrop-blur-sm transition hover:shadow-md hover:ring-rose-200 dark:bg-slate-800/80 dark:ring-slate-600/60 dark:hover:ring-rose-500/50">
+                    <div class="relative aspect-[3/4] overflow-hidden rounded-t-2xl">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2026/04/bx147105-rwOX8qyUy8gV.jpg" alt="Tongari Boushi no Atelier" class="h-full w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy">
+                        <div class="absolute inset-0 flex flex-col justify-between rounded-t-2xl bg-gradient-to-t from-black/70 via-transparent to-transparent p-2.5 transition-opacity duration-300 group-hover:opacity-0">
+                            <div class="flex items-start justify-between">
+                                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-rose-500 text-sm font-bold text-white shadow">
+                                    10
+                                </span>
+                                                            </div>
+                            <span class="text-xs font-medium text-white drop-shadow-lg">
+                                Tongari Boushi no Atelier
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                            </div>
+        </section>
+        
+        
+                <section id="episode-terbaru" class="scroll-mt-8">
+            <h2 class="mb-6 text-2xl font-bold text-slate-800 dark:text-slate-100">Episode Terbaru</h2>
+            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                                                <a href="https://notionime.com/episode/ghost-concert-missing-songs-episode-2" class="group flex gap-4 rounded-2xl bg-white/80 p-3 shadow-sm ring-1 ring-slate-200/60 backdrop-blur-sm transition hover:shadow-md hover:ring-rose-200 dark:bg-slate-800/80 dark:ring-slate-600/60 dark:hover:ring-rose-500/50">
+                    <div class="h-24 w-32 shrink-0 overflow-hidden rounded-xl">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2026/04/GHOST-CONCERT-missing-Songs-Episode-2.jpg" alt="Ghost Concert missing Songs - Episode 2" class="h-full w-full object-cover transition group-hover:scale-105" loading="lazy">
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <p class="line-clamp-2 text-sm font-medium text-slate-800 group-hover:text-rose-500 dark:text-slate-200 dark:group-hover:text-rose-400">
+                            Ghost Concert missing Songs
+                        </p>
+                        <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Ep 2 · 7 hours yang lalu</p>
+                    </div>
+                </a>
+                                                <a href="https://notionime.com/episode/kuroneko-to-majo-no-kyoushitsu-episode-1" class="group flex gap-4 rounded-2xl bg-white/80 p-3 shadow-sm ring-1 ring-slate-200/60 backdrop-blur-sm transition hover:shadow-md hover:ring-rose-200 dark:bg-slate-800/80 dark:ring-slate-600/60 dark:hover:ring-rose-500/50">
+                    <div class="h-24 w-32 shrink-0 overflow-hidden rounded-xl">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2026/04/Kuroneko-to-Majo-no-Kyoushitsu-01.jpg" alt="Kuroneko to Majo no Kyoushitsu - Episode 1" class="h-full w-full object-cover transition group-hover:scale-105" loading="lazy">
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <p class="line-clamp-2 text-sm font-medium text-slate-800 group-hover:text-rose-500 dark:text-slate-200 dark:group-hover:text-rose-400">
+                            Kuroneko to Majo no Kyoushitsu
+                        </p>
+                        <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Ep 1 · 8 hours yang lalu</p>
+                    </div>
+                </a>
+                                                <a href="https://notionime.com/episode/one-piece-episode-1157" class="group flex gap-4 rounded-2xl bg-white/80 p-3 shadow-sm ring-1 ring-slate-200/60 backdrop-blur-sm transition hover:shadow-md hover:ring-rose-200 dark:bg-slate-800/80 dark:ring-slate-600/60 dark:hover:ring-rose-500/50">
+                    <div class="h-24 w-32 shrink-0 overflow-hidden rounded-xl">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2026/04/image-8-1.jpg" alt="One Piece - Episode 1157" class="h-full w-full object-cover transition group-hover:scale-105" loading="lazy">
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <p class="line-clamp-2 text-sm font-medium text-slate-800 group-hover:text-rose-500 dark:text-slate-200 dark:group-hover:text-rose-400">
+                            One Piece
+                        </p>
+                        <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Ep 1157 · 8 hours yang lalu</p>
+                    </div>
+                </a>
+                                                <a href="https://notionime.com/episode/nippon-sangoku-episode-2" class="group flex gap-4 rounded-2xl bg-white/80 p-3 shadow-sm ring-1 ring-slate-200/60 backdrop-blur-sm transition hover:shadow-md hover:ring-rose-200 dark:bg-slate-800/80 dark:ring-slate-600/60 dark:hover:ring-rose-500/50">
+                    <div class="h-24 w-32 shrink-0 overflow-hidden rounded-xl">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2026/04/NIPPON.SANGOKUa.jpg" alt="Nippon Sangoku - Episode 2" class="h-full w-full object-cover transition group-hover:scale-105" loading="lazy">
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <p class="line-clamp-2 text-sm font-medium text-slate-800 group-hover:text-rose-500 dark:text-slate-200 dark:group-hover:text-rose-400">
+                            Nippon Sangoku
+                        </p>
+                        <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Ep 2 · 11 hours yang lalu</p>
+                    </div>
+                </a>
+                                                <a href="https://notionime.com/episode/diamond-no-ace-act-ii-season-2-episode-2" class="group flex gap-4 rounded-2xl bg-white/80 p-3 shadow-sm ring-1 ring-slate-200/60 backdrop-blur-sm transition hover:shadow-md hover:ring-rose-200 dark:bg-slate-800/80 dark:ring-slate-600/60 dark:hover:ring-rose-500/50">
+                    <div class="h-24 w-32 shrink-0 overflow-hidden rounded-xl">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2026/04/image-6-1.jpg" alt="Diamond no Ace Act II Season 2 - Episode 2" class="h-full w-full object-cover transition group-hover:scale-105" loading="lazy">
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <p class="line-clamp-2 text-sm font-medium text-slate-800 group-hover:text-rose-500 dark:text-slate-200 dark:group-hover:text-rose-400">
+                            Diamond no Ace Act II Season 2
+                        </p>
+                        <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Ep 2 · 12 hours yang lalu</p>
+                    </div>
+                </a>
+                                                <a href="https://notionime.com/episode/mission-yozakura-family-season-2-episode-1" class="group flex gap-4 rounded-2xl bg-white/80 p-3 shadow-sm ring-1 ring-slate-200/60 backdrop-blur-sm transition hover:shadow-md hover:ring-rose-200 dark:bg-slate-800/80 dark:ring-slate-600/60 dark:hover:ring-rose-500/50">
+                    <div class="h-24 w-32 shrink-0 overflow-hidden rounded-xl">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2026/04/Mission-Yozakura-Family-Season-2-Episode-1.jpg" alt="Mission Yozakura Family Season 2 - Episode 1" class="h-full w-full object-cover transition group-hover:scale-105" loading="lazy">
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <p class="line-clamp-2 text-sm font-medium text-slate-800 group-hover:text-rose-500 dark:text-slate-200 dark:group-hover:text-rose-400">
+                            Mission Yozakura Family Season 2
+                        </p>
+                        <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Ep 1 · 14 hours yang lalu</p>
+                    </div>
+                </a>
+                                                <a href="https://notionime.com/episode/tsue-to-tsurugi-no-wistoria-season-2-episode-1" class="group flex gap-4 rounded-2xl bg-white/80 p-3 shadow-sm ring-1 ring-slate-200/60 backdrop-blur-sm transition hover:shadow-md hover:ring-rose-200 dark:bg-slate-800/80 dark:ring-slate-600/60 dark:hover:ring-rose-500/50">
+                    <div class="h-24 w-32 shrink-0 overflow-hidden rounded-xl">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2026/04/Tsue-to-Tsurugi-no-Wistoria-Season-2-Episode-1.jpg" alt="Tsue to Tsurugi no Wistoria Season 2 - Episode 1" class="h-full w-full object-cover transition group-hover:scale-105" loading="lazy">
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <p class="line-clamp-2 text-sm font-medium text-slate-800 group-hover:text-rose-500 dark:text-slate-200 dark:group-hover:text-rose-400">
+                            Tsue to Tsurugi no Wistoria Season 2
+                        </p>
+                        <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Ep 1 · 15 hours yang lalu</p>
+                    </div>
+                </a>
+                                                <a href="https://notionime.com/episode/kanteishi-episode-3" class="group flex gap-4 rounded-2xl bg-white/80 p-3 shadow-sm ring-1 ring-slate-200/60 backdrop-blur-sm transition hover:shadow-md hover:ring-rose-200 dark:bg-slate-800/80 dark:ring-slate-600/60 dark:hover:ring-rose-500/50">
+                    <div class="h-24 w-32 shrink-0 overflow-hidden rounded-xl">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2026/04/image-2-1.jpg" alt="Kanteishi - Episode 3" class="h-full w-full object-cover transition group-hover:scale-105" loading="lazy">
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <p class="line-clamp-2 text-sm font-medium text-slate-800 group-hover:text-rose-500 dark:text-slate-200 dark:group-hover:text-rose-400">
+                            Kanteishi
+                        </p>
+                        <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Ep 3 · 21 hours yang lalu</p>
+                    </div>
+                </a>
+                                                <a href="https://notionime.com/episode/kami-no-niwatsuki-kusunoki-tei-episode-2" class="group flex gap-4 rounded-2xl bg-white/80 p-3 shadow-sm ring-1 ring-slate-200/60 backdrop-blur-sm transition hover:shadow-md hover:ring-rose-200 dark:bg-slate-800/80 dark:ring-slate-600/60 dark:hover:ring-rose-500/50">
+                    <div class="h-24 w-32 shrink-0 overflow-hidden rounded-xl">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2026/04/Kami-no-Niwatsuki-Kusunoki-tei-02.jpg" alt="Kami no Niwatsuki Kusunoki-tei - Episode 2" class="h-full w-full object-cover transition group-hover:scale-105" loading="lazy">
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <p class="line-clamp-2 text-sm font-medium text-slate-800 group-hover:text-rose-500 dark:text-slate-200 dark:group-hover:text-rose-400">
+                            Kami no Niwatsuki Kusunoki-tei
+                        </p>
+                        <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Ep 2 · 1 day yang lalu</p>
+                    </div>
+                </a>
+                                                <a href="https://notionime.com/episode/yuusha-no-kuzu-episode-13" class="group flex gap-4 rounded-2xl bg-white/80 p-3 shadow-sm ring-1 ring-slate-200/60 backdrop-blur-sm transition hover:shadow-md hover:ring-rose-200 dark:bg-slate-800/80 dark:ring-slate-600/60 dark:hover:ring-rose-500/50">
+                    <div class="h-24 w-32 shrink-0 overflow-hidden rounded-xl">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2026/04/Yuusha-no-Kuzu-13.jpg" alt="Yuusha no Kuzu - Episode 13" class="h-full w-full object-cover transition group-hover:scale-105" loading="lazy">
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <p class="line-clamp-2 text-sm font-medium text-slate-800 group-hover:text-rose-500 dark:text-slate-200 dark:group-hover:text-rose-400">
+                            Yuusha no Kuzu
+                        </p>
+                        <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Ep 13 · 1 day yang lalu</p>
+                    </div>
+                </a>
+                                                <a href="https://notionime.com/episode/kanan-sama-wa-akumade-choroi-episode-2" class="group flex gap-4 rounded-2xl bg-white/80 p-3 shadow-sm ring-1 ring-slate-200/60 backdrop-blur-sm transition hover:shadow-md hover:ring-rose-200 dark:bg-slate-800/80 dark:ring-slate-600/60 dark:hover:ring-rose-500/50">
+                    <div class="h-24 w-32 shrink-0 overflow-hidden rounded-xl">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2026/04/Kanan-sama-wa-Akumade-Choroi-02.jpg" alt="Kanan-sama wa Akumade Choroi - Episode 2" class="h-full w-full object-cover transition group-hover:scale-105" loading="lazy">
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <p class="line-clamp-2 text-sm font-medium text-slate-800 group-hover:text-rose-500 dark:text-slate-200 dark:group-hover:text-rose-400">
+                            Kanan-sama wa Akumade Choroi
+                        </p>
+                        <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Ep 2 · 1 day yang lalu</p>
+                    </div>
+                </a>
+                                                <a href="https://notionime.com/episode/kill-ao-episode-1" class="group flex gap-4 rounded-2xl bg-white/80 p-3 shadow-sm ring-1 ring-slate-200/60 backdrop-blur-sm transition hover:shadow-md hover:ring-rose-200 dark:bg-slate-800/80 dark:ring-slate-600/60 dark:hover:ring-rose-500/50">
+                    <div class="h-24 w-32 shrink-0 overflow-hidden rounded-xl">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2026/04/image-4-1.jpg" alt="Kill Ao - Episode 1" class="h-full w-full object-cover transition group-hover:scale-105" loading="lazy">
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <p class="line-clamp-2 text-sm font-medium text-slate-800 group-hover:text-rose-500 dark:text-slate-200 dark:group-hover:text-rose-400">
+                            Kill Ao
+                        </p>
+                        <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Ep 1 · 1 day yang lalu</p>
+                    </div>
+                </a>
+                                                <a href="https://notionime.com/episode/mao-episode-2" class="group flex gap-4 rounded-2xl bg-white/80 p-3 shadow-sm ring-1 ring-slate-200/60 backdrop-blur-sm transition hover:shadow-md hover:ring-rose-200 dark:bg-slate-800/80 dark:ring-slate-600/60 dark:hover:ring-rose-500/50">
+                    <div class="h-24 w-32 shrink-0 overflow-hidden rounded-xl">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2026/04/MAO.S01E02.jpg" alt="Mao - Episode 2" class="h-full w-full object-cover transition group-hover:scale-105" loading="lazy">
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <p class="line-clamp-2 text-sm font-medium text-slate-800 group-hover:text-rose-500 dark:text-slate-200 dark:group-hover:text-rose-400">
+                            Mao
+                        </p>
+                        <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Ep 2 · 1 day yang lalu</p>
+                    </div>
+                </a>
+                                                <a href="https://notionime.com/episode/yomi-no-tsugai-episode-2" class="group flex gap-4 rounded-2xl bg-white/80 p-3 shadow-sm ring-1 ring-slate-200/60 backdrop-blur-sm transition hover:shadow-md hover:ring-rose-200 dark:bg-slate-800/80 dark:ring-slate-600/60 dark:hover:ring-rose-500/50">
+                    <div class="h-24 w-32 shrink-0 overflow-hidden rounded-xl">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2026/04/Daemons.of_.the_.Shadow.Realm_.S01E02.jpg" alt="Yomi no Tsugai - Episode 2" class="h-full w-full object-cover transition group-hover:scale-105" loading="lazy">
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <p class="line-clamp-2 text-sm font-medium text-slate-800 group-hover:text-rose-500 dark:text-slate-200 dark:group-hover:text-rose-400">
+                            Yomi no Tsugai
+                        </p>
+                        <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Ep 2 · 1 day yang lalu</p>
+                    </div>
+                </a>
+                                                <a href="https://notionime.com/episode/mairimashita-iruma-kun-season-4-episode-2" class="group flex gap-4 rounded-2xl bg-white/80 p-3 shadow-sm ring-1 ring-slate-200/60 backdrop-blur-sm transition hover:shadow-md hover:ring-rose-200 dark:bg-slate-800/80 dark:ring-slate-600/60 dark:hover:ring-rose-500/50">
+                    <div class="h-24 w-32 shrink-0 overflow-hidden rounded-xl">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2026/04/image-1.jpg" alt="Mairimashita Iruma kun Season 4 - Episode 2" class="h-full w-full object-cover transition group-hover:scale-105" loading="lazy">
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <p class="line-clamp-2 text-sm font-medium text-slate-800 group-hover:text-rose-500 dark:text-slate-200 dark:group-hover:text-rose-400">
+                            Mairimashita Iruma kun Season 4
+                        </p>
+                        <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Ep 2 · 1 day yang lalu</p>
+                    </div>
+                </a>
+                                                <a href="https://notionime.com/episode/honzuki-no-gekokujou-season-4-episode-2" class="group flex gap-4 rounded-2xl bg-white/80 p-3 shadow-sm ring-1 ring-slate-200/60 backdrop-blur-sm transition hover:shadow-md hover:ring-rose-200 dark:bg-slate-800/80 dark:ring-slate-600/60 dark:hover:ring-rose-500/50">
+                    <div class="h-24 w-32 shrink-0 overflow-hidden rounded-xl">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2026/04/Honzuki-no-Gekokujou-Season-4-Episode-2.jpg" alt="Honzuki no Gekokujou Season 4 - Episode 2" class="h-full w-full object-cover transition group-hover:scale-105" loading="lazy">
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <p class="line-clamp-2 text-sm font-medium text-slate-800 group-hover:text-rose-500 dark:text-slate-200 dark:group-hover:text-rose-400">
+                            Honzuki no Gekokujou Season 4
+                        </p>
+                        <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Ep 2 · 2 days yang lalu</p>
+                    </div>
+                </a>
+                                <a href="https://notionime.com/new?page=2" class="group flex items-center justify-center gap-4 rounded-2xl bg-rose-50 p-3 shadow-sm ring-1 ring-rose-200/60 backdrop-blur-sm transition hover:bg-rose-100 hover:ring-rose-300 dark:bg-rose-900/30 dark:ring-rose-700/60 dark:hover:bg-rose-900/50 dark:hover:ring-rose-600">
+                    <span class="text-sm font-semibold text-rose-600 dark:text-rose-400">Anime Lainnya&gt;&gt;</span>
+                </a>
+            </div>
+        </section>
+            </div>
+
+    
+        <aside class="hidden lg:block">
+        <div class="sticky top-24 rounded-2xl bg-white/80 p-5 shadow-sm ring-1 ring-slate-200/60 backdrop-blur-sm dark:bg-slate-800/80 dark:ring-slate-600/60">
+            <h3 class="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Film Anime</h3>
+            <ul class="space-y-3">
+                                <li>
+                    <a href="https://notionime.com/anime/kimetsu-no-yaiba-the-movie-infinity-castle-part-1-akaza-returns" class="flex gap-3 rounded-xl p-2 transition hover:bg-slate-50 dark:hover:bg-slate-700/50">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2026/01/148216.jpg" alt="Kimetsu no Yaiba – The Movie: Infinity Castle – Part 1: Akaza Returns" class="h-16 w-12 shrink-0 rounded-lg object-cover" loading="lazy">
+                        <div class="min-w-0 flex-1">
+                            <p class="truncate text-sm font-medium text-slate-800 dark:text-slate-200">Kimetsu no Yaiba – The Movie: Infinity Castle – Part 1: Akaza Returns</p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Jul 18, 2025</p>
+                        </div>
+                    </a>
+                </li>
+                                <li>
+                    <a href="https://notionime.com/anime/chainsaw-man-reze-hen-index" class="flex gap-3 rounded-xl p-2 transition hover:bg-slate-50 dark:hover:bg-slate-700/50">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2025/12/bx171627-ZN9D7P46yHnw.png" alt="Chainsaw Man Reze-hen" class="h-16 w-12 shrink-0 rounded-lg object-cover" loading="lazy">
+                        <div class="min-w-0 flex-1">
+                            <p class="truncate text-sm font-medium text-slate-800 dark:text-slate-200">Chainsaw Man Reze-hen</p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Sep 19, 2025</p>
+                        </div>
+                    </a>
+                </li>
+                                <li>
+                    <a href="https://notionime.com/anime/sidonia-no-kishi-ai-tsumugu-hoshi" class="flex gap-3 rounded-xl p-2 transition hover:bg-slate-50 dark:hover:bg-slate-700/50">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2025/07/108354.jpg" alt="Sidonia no Kishi Ai Tsumugu Hoshi" class="h-16 w-12 shrink-0 rounded-lg object-cover" loading="lazy">
+                        <div class="min-w-0 flex-1">
+                            <p class="truncate text-sm font-medium text-slate-800 dark:text-slate-200">Sidonia no Kishi Ai Tsumugu Hoshi</p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Jun 4, 2021</p>
+                        </div>
+                    </a>
+                </li>
+                                <li>
+                    <a href="https://notionime.com/anime/overlord-movie-3-sei-oukoku-hen" class="flex gap-3 rounded-xl p-2 transition hover:bg-slate-50 dark:hover:bg-slate-700/50">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2025/04/144101.jpg" alt="Overlord Movie 3 Sei Oukoku hen" class="h-16 w-12 shrink-0 rounded-lg object-cover" loading="lazy">
+                        <div class="min-w-0 flex-1">
+                            <p class="truncate text-sm font-medium text-slate-800 dark:text-slate-200">Overlord Movie 3 Sei Oukoku hen</p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Sep 20, 2024</p>
+                        </div>
+                    </a>
+                </li>
+                                <li>
+                    <a href="https://notionime.com/anime/boku-no-hero-academia-the-movie-4" class="flex gap-3 rounded-xl p-2 transition hover:bg-slate-50 dark:hover:bg-slate-700/50">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2025/02/143549.jpg" alt="Boku no Hero Academia the Movie 4" class="h-16 w-12 shrink-0 rounded-lg object-cover" loading="lazy">
+                        <div class="min-w-0 flex-1">
+                            <p class="truncate text-sm font-medium text-slate-800 dark:text-slate-200">Boku no Hero Academia the Movie 4</p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Aug 2, 2024</p>
+                        </div>
+                    </a>
+                </li>
+                                <li>
+                    <a href="https://notionime.com/anime/haikyuu-movie-gomisuteba-no-kessen" class="flex gap-3 rounded-xl p-2 transition hover:bg-slate-50 dark:hover:bg-slate-700/50">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2024/10/140360.jpg" alt="Haikyuu!! Movie: Gomisuteba no Kessen" class="h-16 w-12 shrink-0 rounded-lg object-cover" loading="lazy">
+                        <div class="min-w-0 flex-1">
+                            <p class="truncate text-sm font-medium text-slate-800 dark:text-slate-200">Haikyuu!! Movie: Gomisuteba no Kessen</p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Feb 16, 2024</p>
+                        </div>
+                    </a>
+                </li>
+                                <li>
+                    <a href="https://notionime.com/anime/blue-lock-episode-nagi" class="flex gap-3 rounded-xl p-2 transition hover:bg-slate-50 dark:hover:bg-slate-700/50">
+                        <img src="https://v2.samehadaku.how/wp-content/uploads/2024/09/139928.jpg" alt="Blue Lock: Episode Nagi" class="h-16 w-12 shrink-0 rounded-lg object-cover" loading="lazy">
+                        <div class="min-w-0 flex-1">
+                            <p class="truncate text-sm font-medium text-slate-800 dark:text-slate-200">Blue Lock: Episode Nagi</p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Apr 19, 2024</p>
+                        </div>
+                    </a>
+                </li>
+                            </ul>
+        </div>
+    </aside>
+    </div>
+    </main>
+
+    
+    <footer class="relative z-10 border-t border-slate-200/80 bg-white/80 backdrop-blur-md dark:border-slate-700/80 dark:bg-slate-900/80">
+        <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+            <div class="grid gap-8 md:grid-cols-3">
+                <div>
+                    <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                        Halaman</h3>
+                    <ul class="mt-4 space-y-2">
+                                                <li><a href="https://notionime.com" class="text-slate-600 transition hover:text-rose-500 dark:text-slate-400 dark:hover:text-rose-400">Beranda</a>
+                        </li>
+                        <li><a href="https://notionime.com/anime-list" class="text-slate-600 transition hover:text-rose-500 dark:text-slate-400 dark:hover:text-rose-400">Anime List</a></li>
+                        <li><a href="https://notionime.com/animelist" class="text-slate-600 transition hover:text-rose-500 dark:text-slate-400 dark:hover:text-rose-400">Animelist</a>
+                        </li>
+                        <li><a href="https://notionime.com/batchs" class="text-slate-600 transition hover:text-rose-500 dark:text-slate-400 dark:hover:text-rose-400">Batchs</a>
+                        </li>
+                                            </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                        Notionime</h3>
+                    <p class="mt-4 text-sm text-slate-600 dark:text-slate-400">
+                        Nonton anime subtitle Indonesia. Update episode terbaru setiap hari.
+                        Samehadaku, Anoboy, Alqanime, Zoronime, awsubs, wardhanime, anisubs, animetv, 
+                        sukaanime, bakaanime, meownime, anibatch, animexsubs, animebatch, manhwaindo,
+                        mangaku, kiryuu, animekumalabs, nihonanimetv.
+                        
+                        jadwalanime, movies, tokusatsu, live-action, ghibli, one-piece
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Link
+                    </h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="https://notionime.com/search" class="text-slate-600 transition hover:text-rose-500 dark:text-slate-400 dark:hover:text-rose-400">Pencarian</a>
+                        </li>
+                        <li><a href="https://notionime.com/anime-list" class="text-slate-600 transition hover:text-rose-500 dark:text-slate-400 dark:hover:text-rose-400">Daftar Anime</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-10 border-t border-slate-200 pt-8 text-center text-sm text-slate-500 dark:border-slate-700 dark:text-slate-400">
+                © 2026 Notionime — Nonton Anime Subtitle Indonesia
+            </div>
+                        <p class="mt-4 text-center text-xs text-slate-400 dark:text-slate-500">kotakanime, anikyojin, anime sub indo, anime sub indonesia, anime indo sub, nonton anime sub indo, download anime, anime download, anime sub, gintama sub indo, samehadaku, animeindo, nonton anime subtitle indonesia, anime indonesia, wibudesu, rajanime</p>
+                    </div>
+    </footer>
+
+    
+    <nav class="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-around border-t border-slate-200/80 bg-white/90 py-2 backdrop-blur-md md:hidden dark:border-slate-700/80 dark:bg-slate-900/90">
+        <a href="https://notionime.com" class="flex flex-col items-center gap-0.5 px-3 py-1 text-xs transition text-rose-500 dark:text-rose-400">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+            </svg>
+            <span>Beranda</span>
+        </a>
+        <a href="https://notionime.com/anime-list" class="flex flex-col items-center gap-0.5 px-3 py-1 text-xs transition text-slate-500 hover:text-rose-500 dark:text-slate-400 dark:hover:text-rose-400">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+            </svg>
+            <span>Anime List</span>
+        </a>
+        <a href="https://notionime.com/animelist" class="flex flex-col items-center gap-0.5 px-3 py-1 text-xs transition text-slate-500 hover:text-rose-500 dark:text-slate-400 dark:hover:text-rose-400">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
+            </svg>
+            <span>Animelist</span>
+        </a>
+        <a href="https://notionime.com/batchs" class="flex flex-col items-center gap-0.5 px-3 py-1 text-xs transition text-slate-500 hover:text-rose-500 dark:text-slate-400 dark:hover:text-rose-400">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+            </svg>
+            <span>Batchs</span>
+        </a>
+        <a href="https://notionime.com/search" class="flex flex-col items-center gap-0.5 px-3 py-1 text-xs transition text-slate-500 hover:text-rose-500 dark:text-slate-400 dark:hover:text-rose-400">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+            <span>Cari</span>
+        </a>
+    </nav>
+
+    <script>
+        document.getElementById('dark-mode-toggle')?.addEventListener('click', function() {
+            var html = document.documentElement;
+            var isDark = html.classList.toggle('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+    </script>
+            <!-- Histats.com  START  (async)-->
+    <script type="text/javascript">
+        var _Hasync = _Hasync || [];
+        _Hasync.push(['Histats.start', '1,4918727,4,0,0,0,00010000']);
+        _Hasync.push(['Histats.fasi', '1']);
+        _Hasync.push(['Histats.track_hits', '']);
+        (function() {
+            var hs = document.createElement('script');
+            hs.type = 'text/javascript';
+            hs.async = true;
+            hs.src = ('//s10.histats.com/js15_as.js');
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+        })();
+    </script>
+    <noscript><a href="/" target="_blank"><img src="//sstatic1.histats.com/0.gif?4918727&101" alt=""
+                border="0"></a></noscript>
+    <!-- Histats.com  END  -->
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;9323c3fa2735437c8a7f9fa5fea2843c&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+
+</body></html>

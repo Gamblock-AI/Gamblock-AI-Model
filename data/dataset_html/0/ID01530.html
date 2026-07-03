@@ -1,0 +1,129 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title>Emoji Combos</title>
+    <meta name="description" content="A database of emoji combinations!">
+    <link id="favicon" rel="icon" href="/heavy-plus-sign_2795.png" type="image/png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark light">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="google-site-verification" content="fjuFeuO7m57BWASe6a-YYfWjT_fMBez1GUhQ4vk4ulI">
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3263838347296949" crossorigin="anonymous"></script> -->
+  </head>
+  <body>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --default-box-shadow:0 1px 1px rgba(0, 0, 0, 0.11);
+        --default-border-radius:2px;
+      }
+      html {
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+        color: #222;
+      }
+      *, *:before, *:after {
+        box-sizing: inherit;
+        font-family: inherit;
+      }
+      body {
+        background: #efefef;
+      }
+      .related-topics-list {
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .related-topics-list::after {
+        content: "";
+        flex: auto;
+      }
+      .related-topics-list > div {
+        margin: 0.25rem;
+        background: white;
+        box-shadow: var(--default-box-shadow);
+        border-radius: var(--default-border-radius);
+        padding: 0.25rem;
+      }
+      .related-topics-area {
+        max-width:800px;
+        margin:0 auto;
+        margin-bottom:1rem;
+      }
+      .related-topics-area a {
+        color: black;
+        text-decoration: none;
+      }
+
+      .box-module {
+        box-shadow: 0px 1px 1px #b4b4b4;
+        background: white;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        html {
+          color: #d8d8d8;
+        }
+        body {
+          background:#000000;
+        }
+        .box-module {
+          box-shadow: 0px 1px 1px #4c4c4c;
+          background: #353535;
+        }
+      }
+      @media all and (display-mode: standalone) {
+        #titleEl { display:none; }
+        #introEl { display:none; }
+      }
+    </style>
+    
+    <h1 id="titleEl" style="text-align: center;">Emoji Combos<sup style="font-weight: normal; opacity: 0.5;">beta</sup></h1>
+    
+    <p id="introEl" style="max-width: 400px; margin: 0 auto; text-align: justify;">Welcome to Emoji Combos! The database and this site are still being constructed, but in the mean time you can use the search box below. You might also like to check out our <a href="/dot-art-generator">image to dot art generator</a>, our <a href="/dot-art-editor">dot art maker</a>, our <a href="/emoji-art-editor">emoji art maker</a>, and this <a href="https://perchance.org/ai-chat">AI Chat</a>.</p>
+    
+    <!-- <div style="display: flex; margin: 1rem; justify-content: center;">
+      <input id="searchInputEl" placeholder="fruits and vegetables" onkeyup="if(event.which === 13) searchButtonEl.click()"/><button id="searchButtonEl" onclick="if(searchInputEl.value.trim()) window.location.href=`/${searchInputEl.value.toLowerCase().replace(/\s+/g,'-')}-emojis`">search</button>
+    </div> -->
+
+    <div class="box-module" style="max-width: 700px;margin: 1rem auto;padding:0.25rem;border-radius: 3px;box-sizing: border-box;   font-size: 130%;">
+      <div style="display:flex;">
+        <div style="display:flex; flex-direction:column; flex-grow:1;">
+        <div style="height:100%;"><input id="emojiSearchEl" autocapitalize="off" autocorrect="off" placeholder="Search for emojis..." style="width: 100%; font-size: 120%; height: 100%; box-sizing: border-box;" onkeydown="if(event.which === 13) {searchForEmojis(emojiSearchEl.value)}"></div>
+        </div>
+        <button style="min-width:5rem; margin-left:0.25rem;" onclick="searchForEmojis(emojiSearchEl.value)" id="emojiSearchButton">🔍 search</button>
+      </div>
+    </div>
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=UA-175504318-2&amp;cx=c&amp;gtm=4e6481"></script><script>
+    async function searchForEmojis(keyphrase) {
+      if(keyphrase) {
+        emojiSearchButton.textContent = "⌛ loading…";
+        fetch(`https://emojicombos.com/api/search?keyphrase=${encodeURIComponent(keyphrase)}`).then(r => r.text()).then(url => window.location.href=url);
+      }
+    }
+    </script>
+    
+    
+    <!-- <div class="related-topics-area" style="margin-top: 1rem;">
+      <div class="related-topics-list"></div>
+    </div> -->
+
+    <div style="margin: 0 auto;width:400px; max-width:90vw; margin-top: 3rem;color: grey;font-size: 80%;">If you'd like to report a bug or suggest a feature, you can <a style="color:inherit;" href="https://docs.google.com/forms/d/e/1FAIpQLSfdBn1bZTEhodqtWWdtu75GJkmmjNMtJ2_2hX2UajPMPMmnzQ/viewform?usp=sf_link" target="_blank">provide feedback here</a>. You can also read our <a style="color:inherit;" href="/privacy.html" rel="nofollow" target="_blank">privacy policy</a>.</div>
+      
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-WF5V0J3NPY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-WF5V0J3NPY');
+    </script>
+
+
+
+  <script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;b2a24a8737c948ef83556434bedb6c30&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+</body></html>

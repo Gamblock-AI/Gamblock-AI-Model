@@ -1,0 +1,374 @@
+<html lang="en_US"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>TheTVDB Support Center</title>
+    <meta name="description" content="customer support platform">
+    <meta name="keywords" content="osTicket, Customer support system, support ticket system">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/css/osticket.css?cba6035" media="screen">
+    <link rel="stylesheet" href="/assets/default/css/theme.css?cba6035" media="screen">
+    <link rel="stylesheet" href="/assets/default/css/print.css?cba6035" media="print">
+    <link rel="stylesheet" href="/scp/css/typeahead.css?cba6035" media="screen">
+    <link type="text/css" href="/css/ui-lightness/jquery-ui-1.10.3.custom.min.css?cba6035" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="/css/jquery-ui-timepicker-addon.css?cba6035" media="all">
+    <link rel="stylesheet" href="/css/thread.css?cba6035" media="screen">
+    <link rel="stylesheet" href="/css/redactor.css?cba6035" media="screen">
+    <link type="text/css" rel="stylesheet" href="/css/font-awesome.min.css?cba6035">
+    <link type="text/css" rel="stylesheet" href="/css/flags.css?cba6035">
+    <link type="text/css" rel="stylesheet" href="/css/rtl.css?cba6035">
+    <link type="text/css" rel="stylesheet" href="/css/select2.min.css?cba6035">
+	<!--osta-->
+    <script type="text/javascript" src="/js/jquery-3.4.0.min.js?cba6035"></script>
+    <script type="text/javascript" src="/js/jquery-ui-1.12.1.custom.min.js?cba6035"></script>
+    <script type="text/javascript" src="/js/jquery-ui-timepicker-addon.js?cba6035"></script>
+    <script src="/js/osticket.js?cba6035"></script>
+    <script type="text/javascript" src="/js/filedrop.field.js?cba6035"></script>
+    <script src="/scp/js/bootstrap-typeahead.js?cba6035"></script>
+    <script type="text/javascript" src="/js/redactor.min.js?cba6035"></script>
+    <script type="text/javascript" src="/js/redactor-plugins.js?cba6035"></script>
+    <script type="text/javascript" src="/js/redactor-osticket.js?cba6035"></script>
+    <script type="text/javascript" src="/js/select2.min.js?cba6035"></script>
+    
+	<meta name="csrf_token" content="9d9a95cf0761e4020a674523acedb7c19113bb71">
+<!--osta-->
+		<script src="//storage.googleapis.com/code.getmdl.io/1.0.1/material.min.js"></script>
+		<script src="/osta/js/jquery.columnizer.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Poppins:300,400,500,600|Open+Sans:400,400i,600,600i,700|Product+Sans:400" rel="stylesheet" type="text/css">		
+		<script src="//cdn.jsdelivr.net/jquery.sidr/2.2.1/jquery.sidr.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="/osta/css/staff-desktop.css">			
+		<link type="text/css" rel="stylesheet" href="/osta/css/svg.css">	    
+	    <link type="text/css" rel="stylesheet" href="/osta/css/sidr.css">
+	    <link type="text/css" rel="stylesheet" href="/osta/css/hamburger.css">    	
+	    <link type="text/css" rel="stylesheet" href="/osta/css/client-desktop.css?19292ad">	
+	    <link type="text/css" rel="stylesheet" href="/osta/css/client-mobile.css">	
+
+			<style type="text/css">
+		#header,
+	#loginBody #brickwall,
+	#background-solid-image .image	{
+        background-image: url("/osta/img/backdrops/01");
+	}
+			#header {
+		   background-image: initial !important;
+		}
+					#loginBody #brickwall {
+			background-image: initial;
+		}
+			
+	</style>
+
+	<link type="text/css" rel="stylesheet" href="/osta/opt/logo/logo-options-text.css">
+	<link rel="shortcut icon" href="/osta/css/themes/cool/favicon.ico">
+	<link rel="shortcut icon" href="/osta/css/themes/cool/favicon.png">
+	
+
+	<link type="text/css" rel="stylesheet" id="jssDefault" href="/osta/css/themes/cool.css">		
+		
+	<script type="text/javascript" src="/osta/js/osta-client.js"></script>		
+	<link type="text/css" rel="stylesheet" href="/osta/user-styles.css">    
+</head>
+<!--osta-->
+<body class="client-side index-page">
+    <div id="container">
+                <div id="header">
+                <!--osta-->
+        	<div id="header-inner">
+
+				<div class="pull-right flush-right">
+				<p>
+				 						Sign In,						Guest User 						<a href="/login.php">Sign In</a>
+					</p>
+
+				</div>
+       
+		<a id="header-logo" href="/">
+        <div id="left-logo">
+		
+				
+		
+            <div id="header-text">
+				<div id="header-title">
+					TheTVDB   
+				</div>
+				<div id="header-subtitle">
+					Support Ticket Center      
+				</div>
+            </div>		
+			
+            <div id="header-image">
+				<img src="/osta/uploads/helpcenter.png?1721959232" alt="osTicket — Customer Support System"> 
+            </div>	
+
+            <div id="header-default">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 141.74 29.99"><title>osTicket Awesome Logo 2017</title><path d="M53.6,20.55V30.62L57,25.94H60.3l-3.93,4.47,4.5,6.46H57.55l-3.05-4.75-.94,1v3.74H50.83V20.55Z" transform="translate(-8.55 -20.55)"></path><path d="M150.3,37h-6.53V24.06H150v2.06h-3.4v2.95h3.24v2.11h-3.24v3.65h3.75Z" transform="translate(-8.55 -20.55)"></path><path d="M100.23,24H103l-2.56,12.87h-3l-1.52-8-1.75,8H91.34L88.87,24h2.95l1.23,9.43L94.94,24h2.33L98.89,33,99,33Z" transform="translate(-8.55 -20.55)"></path><path d="M136,32.93l2.1-8.91h3L142,36.89h-2.52L139,28.56l-2.15,8.12h-2.07l-2-7.94h-.09l-.48,8.15h-2.42l1-12.82h3Z" transform="translate(-8.55 -20.55)"></path><path d="M128.78,30.08a11,11,0,0,1-.74,4.45A4.19,4.19,0,0,1,122.79,37a3.74,3.74,0,0,1-2.45-2.21,10.14,10.14,0,0,1,0-8.36,4.22,4.22,0,0,1,5.18-2.45,3.93,3.93,0,0,1,2.6,2.47A9.25,9.25,0,0,1,128.78,30.08Zm-4.58-4.14a1.49,1.49,0,0,0-1.31,1.15,11.2,11.2,0,0,0,0,6.7A1.5,1.5,0,0,0,124.21,35a1.57,1.57,0,0,0,1.28-1.39,13.21,13.21,0,0,0,0-6.22A1.64,1.64,0,0,0,124.2,25.94Z" transform="translate(-8.55 -20.55)"></path><path d="M79.55,36.89,82.69,24h3.42l2.82,12.85H86.22L85.54,34H83l-.69,2.89ZM85.28,32l-.88-5.19-.16,0-1,5.21Z" transform="translate(-8.55 -20.55)"></path><path d="M70.31,32.09h-7a2.35,2.35,0,0,0,1.75,2.7,12.13,12.13,0,0,0,2.93.13,7.68,7.68,0,0,0,1.42-.3l.4,1.87c-2.29.79-4.51,1.09-6.72,0a4.23,4.23,0,0,1-2-2.36,6.89,6.89,0,0,1,.25-5.67,4.94,4.94,0,0,1,5.22-2.68,4.08,4.08,0,0,1,3.33,2.5A6.62,6.62,0,0,1,70.31,32.09Zm-2.48-2c-.07-1.65-.85-2.53-2.16-2.53a2.37,2.37,0,0,0-2.35,2.53Z" transform="translate(-8.55 -20.55)"></path><path d="M110.17,31.19h-3.23v3.56h3.67v2.13h-6.44V24h6.2V26.1h-3.42V29h3.22Z" transform="translate(-8.55 -20.55)"></path><path d="M111.38,36.63l.39-2.05c.63.12,1.21.28,1.79.34a4.5,4.5,0,0,0,1.47-.08,1.42,1.42,0,0,0,.73-2.46,9.68,9.68,0,0,0-1.35-1A13.45,13.45,0,0,1,112.57,30a3.49,3.49,0,0,1,1.27-5.76,5.78,5.78,0,0,1,4.6.11l-.39,2a7.4,7.4,0,0,0-1.27-.27,4.38,4.38,0,0,0-1.56.14,1.25,1.25,0,0,0-.47,2.14,9.66,9.66,0,0,0,1.38,1,13.45,13.45,0,0,1,1.64,1.16,3.71,3.71,0,0,1-1.16,6.27A7,7,0,0,1,111.38,36.63Z" transform="translate(-8.55 -20.55)"></path><path d="M32.25,37.08V23.65H27.93V21.28h8.58v2.27l-1.77.1V37.08Z" transform="translate(-8.55 -20.55)"></path><path d="M14.09,24.15A5,5,0,0,1,19,27.37a8.17,8.17,0,0,1,0,6.71,5,5,0,0,1-4.89,3.28,5,5,0,0,1-4.89-3.27,8.32,8.32,0,0,1,.06-6.81A5.06,5.06,0,0,1,14.09,24.15Zm4.17,6.63a6,6,0,0,0-.84-3.24,3.73,3.73,0,0,0-6.55,0,6.14,6.14,0,0,0,0,6.38,3.73,3.73,0,0,0,6.6,0A6,6,0,0,0,18.26,30.79Z" transform="translate(-8.55 -20.55)"></path><path d="M75.22,22.69v3.22h2.56V28H75.31c0,2,0,3.91,0,5.81,0,.73.49,1,1.22,1.07.32,0,.64,0,1,0v2a4.35,4.35,0,0,1-2.45.24,2.61,2.61,0,0,1-2.39-2.22A11.34,11.34,0,0,1,72.57,33c0-1.62,0-3.25,0-5L71.09,28V26l1.42-.12V23.38Z" transform="translate(-8.55 -20.55)"></path><path d="M49.61,26.24l-.42,2c-1.91-.52-3.77-.73-4.91,1.25a3.7,3.7,0,0,0,.16,4.13c1.21,1.74,3,1.44,4.83,1l.33,1.94c-2.2,1.09-5.73.86-7.41-1.26a6.47,6.47,0,0,1-.1-7.28C43.73,25.66,47.23,25.16,49.61,26.24Z" transform="translate(-8.55 -20.55)"></path><path d="M20.48,33h1.33c0,.13.07.26.09.39.48,2.93,3.69,3.25,5.42,2.29a2.11,2.11,0,0,0,1.2-2.09,1.87,1.87,0,0,0-1.33-1.75c-.86-.32-1.76-.52-2.64-.79a18.55,18.55,0,0,1-1.91-.65,3.19,3.19,0,0,1-.35-5.57,5.35,5.35,0,0,1,5.19-.32A3.46,3.46,0,0,1,29.44,28c-.2,0-.4,0-.61,0s-.41,0-.59,0c-.68-2.33-2.19-3.2-4.33-2.54a2,2,0,0,0-1.61,1.77,1.79,1.79,0,0,0,1.28,2,26,26,0,0,0,2.53.78,13.83,13.83,0,0,1,1.92.59,3.42,3.42,0,0,1,.62,5.81,6,6,0,0,1-6.43.19A4.34,4.34,0,0,1,20.48,33Z" transform="translate(-8.55 -20.55)"></path><path d="M37.24,25.81h2.63V37.05H37.33A91,91,0,0,1,37.24,25.81Z" transform="translate(-8.55 -20.55)"></path><path d="M133.54,42.79h.9v7.52h-.87V44.88l-.16-.07-1.35,2.32c-.23.4-.43.82-.7,1.19a3.87,3.87,0,0,1-.67.58l-2.36-4.05-.15,0v5.45h-.89V42.83l.87-.07,2.7,4.67Z" transform="translate(-8.55 -20.55)"></path><path d="M51.93,42.63a3.8,3.8,0,0,1,3.94,4A3.91,3.91,0,1,1,48,46.52,3.8,3.8,0,0,1,51.93,42.63Zm2.95,4a2.94,2.94,0,1,0-5.88-.1,3,3,0,0,0,3,3.12A2.94,2.94,0,0,0,54.88,46.61Z" transform="translate(-8.55 -20.55)"></path><path d="M64.21,48.35v-5.5l.86-.07v7.53h-1l-3.72-5.93-.15,0v5.86l-.9,0V42.81c.23,0,.4-.05.57-.05s.35,0,.56,0L64,48.45Z" transform="translate(-8.55 -20.55)"></path><path d="M19.4,47.27l2.07,3-1.1.07-2-3H17.23v3l-.91,0V42.78c1,0,2-.07,2.91,0A2.21,2.21,0,0,1,20,47C19.86,47.06,19.66,47.14,19.4,47.27Zm-2.15-.92c.65,0,1.21,0,1.76,0a1.27,1.27,0,0,0,1.2-1.25,1.21,1.21,0,0,0-1.06-1.35,12.88,12.88,0,0,0-1.89,0Z" transform="translate(-8.55 -20.55)"></path><path d="M115.68,50.31h-1V47h-3.79v3.34H110V42.84l.83-.07v3.18h3.86V42.82h.94Z" transform="translate(-8.55 -20.55)"></path><path d="M31.94,48.5l.82-.31c.22.31.39.58.6.82a1.66,1.66,0,0,0,1.83.51,1.19,1.19,0,0,0,.92-.94,1.07,1.07,0,0,0-.51-1.19,13.08,13.08,0,0,0-1.34-.63,7.46,7.46,0,0,1-1.24-.6,1.86,1.86,0,0,1,0-3.08,2.54,2.54,0,0,1,3.78,1l-.76.39a1.61,1.61,0,0,0-1.79-.92,1.15,1.15,0,0,0-1,.93c-.1.54.23.86.69,1.06s1.06.41,1.57.64c1.39.62,1.93,1.65,1.53,2.86a2.56,2.56,0,0,1-3.09,1.41A2.7,2.7,0,0,1,31.94,48.5Z" transform="translate(-8.55 -20.55)"></path><path d="M68.41,48.5l.75-.32c.24.33.44.62.67.88a1.65,1.65,0,0,0,1.85.44,1,1,0,0,0,.84-1A1.7,1.7,0,0,0,72,47.43a5.33,5.33,0,0,0-1.32-.66,8,8,0,0,1-1.24-.59,1.89,1.89,0,0,1,.1-3.21,2.59,2.59,0,0,1,3.65,1.08l-.74.41a1.69,1.69,0,0,0-1.67-.94,1.21,1.21,0,0,0-1.17.91c-.14.6.26.92.74,1.13s1.19.46,1.76.74a2.16,2.16,0,0,1,1.39,2.28,2.22,2.22,0,0,1-2,1.91A2.69,2.69,0,0,1,68.41,48.5Z" transform="translate(-8.55 -20.55)"></path><path d="M24.55,42.81h4.32l.08.79H25.59v2.5h3V47h-3v2.43h3.31v.88H24.61C24.48,47.85,24.58,45.39,24.55,42.81Z" transform="translate(-8.55 -20.55)"></path><path d="M91.16,43.65v2.44h3l0,.89H91.19V49.4h3.28l.06.9H90.22V42.82h4.24l.06.83Z" transform="translate(-8.55 -20.55)"></path><path d="M123.67,49.41v.91h-4.25V42.83h4.19l.14.78h-3.39v2.46h3V47h-3v2.4Z" transform="translate(-8.55 -20.55)"></path><path d="M138.35,50.29V42.82h4.24l.08.81h-3.37v2.43h3l.09.89h-3.07v2.43h3.25l.11.9Z" transform="translate(-8.55 -20.55)"></path><path d="M41.48,47.25v3l-.89.06V42.8a25.25,25.25,0,0,1,3,0,2.21,2.21,0,0,1,1.93,2.4,2.26,2.26,0,0,1-2.21,2C42.72,47.28,42.16,47.25,41.48,47.25Zm.08-3.55v2.63c.58,0,1.07,0,1.57,0a1.27,1.27,0,0,0,1.35-1.21,1.26,1.26,0,0,0-1.15-1.4A12.79,12.79,0,0,0,41.57,43.7Z" transform="translate(-8.55 -20.55)"></path><path d="M84.27,50.33h-1L80.6,42.82l1-.05L83.75,49,86,42.82h1Z" transform="translate(-8.55 -20.55)"></path><path d="M106.74,42.83v.75l-2,.1V50.3h-1V43.7l-2-.11-.08-.76Z" transform="translate(-8.55 -20.55)"></path><path d="M76.8,42.8h.82v7.49l-.82,0Z" transform="translate(-8.55 -20.55)"></path><path d="M39.85,23.53H37.24V21.28h2.61Z" transform="translate(-8.55 -20.55)"></path></svg>            </div>			
+			
+        </div>
+		</a>		
+				
+				
+				<div id="right-menu" href="#right-menu">
+					<button href="#right-menu" class="c-hamburger c-hamburger--htx" style="">
+						<span>toggle menu</span>
+					</button>
+					<script>
+					$(document).ready(function() {
+
+					  "use strict";
+
+						var toggles = document.querySelectorAll(".c-hamburger");
+
+						for (var i = toggles.length - 1; i >= 0; i--) {
+						  var toggle = toggles[i];
+						  toggleHandler(toggle);
+						};
+
+						function toggleHandler(toggle) {
+						  toggle.addEventListener( "click", function(e) {
+							e.preventDefault();
+							(this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
+						  });
+						  toggle.addEventListener( "touchstart", function(e) {
+							e.preventDefault();
+							(this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
+						  });	  
+						}
+
+					   $('.c-hamburger').sidr({
+							name: 'sidr-right',
+							side: 'right',
+							body: '#content',
+							displace: false
+						});
+					})();
+					</script>
+				</div>
+			</div>		
+			<div id="sidr-right" class="sidr right" style="transition: right 0.2s;">
+				<div class="sidr-inner">
+
+					<ul id="nav-mobile" class="flush-left">
+						<li><a href="/">Support Center Home</a></li>
+				 						<li><a class="active kb" href="/kb/index.php">Knowledgebase</a></li>
+				 						<li><a href="/open.php">Open a New Ticket</a></li>
+						<li class="border"><a href="/view.php">Check Ticket Status</a></li>	
+				 						<div id="welcome"><svg style="width:18px;height:18px" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path></svg>&nbsp;Guest User</div>  						<li><a href="/login.php">Sign In</a></li>
+						
+						
+				<div id="flags-mobile">
+									</div>					
+							
+						
+										<li id="contact-id">
+							<a href="
+								https://thetvdb.com 	
+							">
+								TheTVDB   
+							</a>
+						</li>
+					</ul>
+
+				</div>
+			</div>				
+				
+
+			</div>    
+        </div>
+        <div class="clear"></div>
+               <div id="nav-wrapper">
+			<div id="nav-inner">
+
+				<ul id="nav" class="flush-left">
+					<li><a class=" home" href="/index.php"><svg style="width:18px;height:18px" viewBox="0 0 24 24"><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"></path></svg></a></li>
+<li><a class="active kb" href="/kb/index.php">Knowledgebase</a></li>
+<li><a class=" new" href="/open.php">Open a New Ticket</a></li>
+<li class="border"><a class=" status" href="/view.php">Check Ticket Status</a></li>
+				</ul>
+		
+<div id="lang-wrapper">			
+<div class="button-container">
+    <div class="button-text-container shrink" style="width:?">
+				<div id="flags">
+									</div> 
+    </div>
+    <div class="button-icon-container" id="myButton">
+        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+            <path fill="#ffffff" d="M5.59,7.41L7,6L13,12L7,18L5.59,16.59L10.17,12L5.59,7.41M11.59,7.41L13,6L19,12L13,18L11.59,16.59L16.17,12L11.59,7.41Z"></path>
+        </svg>
+    </div>
+</div>
+</div>	
+				
+				
+				<div id="language-select">
+				</div>
+			</div>
+		</div>
+                <div id="content">
+         
+         <div><h1>Click on the category to browse FAQs.</h1></div>
+<div class="row">
+<div class="span8">
+        
+        <ul id="kb">
+            <li><i></i>
+            <div style="margin-left:45px">
+            <h4><a href="faq.php?cid=2">TheTVDB Bible (139)</a></h4>
+            <div class="faded" style="margin:10px 0">
+                 <p>Welcome to TheTVDB.com! We are the world’s largest metadata solution for TV and Films. All of our information comes from fans like you and is shared with many other sites, mobile apps, and devices. We are an open-source community and are always thrilled to see the site grow. In turn, we’d love to invite you to <a href="https://www.thetvdb.com/auth/register">create a free account</a> and help your favorite shows and movies thrive!<br><br>As a general rule (and to keep the database in order) we do request that you read the following rules and guidelines first before you start contributing to the site. They’ll enlighten you on how to navigate the site, address FAQs, and ensure that TheTVDB is always populated with the most accurate, up-to-date information available.<br><br>Our rules aim to be very comprehensive, you will find sections&nbsp;on use cases, artwork examples, and more specific questions. Taking the time to read over the knowledge base will make your time as a part of our community more worthwhile!<br><br><strong>**FYI —&nbsp;</strong>TheTVDB is not a streaming service or platform. It is simply a metadata database used to populate other applications and websites with information about TV series and movies with the help of community crowdsourcing and contributions. <strong>You are not able to watch shows or movies on TheTVDB.<br><br></strong>A subscription to TheTVDB will provide you with a unique user ID, which you can use in conjunction with certain media center softwares or applications. Again, subscribing to TheTVDB will not allow you to watch series and movies on our site. We simply store information about series and movies. <br><br>Please do not subscribe to TheTVDB if you are not interested in accessing our metadata via the API.</p> <p><br><br></p> <h1>TheTVDB Bible</h1> <p>The numbers here represent how many FAQs are listed under each category.</p>             </div>
+<p></p><div style="padding-bottom:15px;"><div><i class="icon-folder-open"></i>
+                            <a href="faq.php?cid=3">01. Community Ground Rules (4)</a></div><div><i class="icon-folder-open"></i>
+                            <a href="faq.php?cid=4">02. Television Series (29)</a></div><div><i class="icon-folder-open"></i>
+                            <a href="faq.php?cid=7">03. Movies (9)</a></div><div><i class="icon-folder-open"></i>
+                            <a href="faq.php?cid=9">04. Translations (3)</a></div><div><i class="icon-folder-open"></i>
+                            <a href="faq.php?cid=1">05. Artwork (3)</a></div><div><i class="icon-folder-open"></i>
+                            <a href="faq.php?cid=13">06. Site-wide Features (2)</a></div><div><i class="icon-folder-open"></i>
+                            <a href="faq.php?cid=10">07. Navigating TheTVDB.com (2)</a></div><div><i class="icon-folder-open"></i>
+                            <a href="faq.php?cid=12">08. Developers + API (7)</a></div><div><i class="icon-folder-open"></i>
+                            <a href="faq.php?cid=6">09. Anime (2)</a></div><div><i class="icon-folder-open"></i>
+                            <a href="faq.php?cid=16">10. Sports (3)</a></div><div><i class="icon-folder-open"></i>
+                            <a href="faq.php?cid=18">11. People (4)</a></div></div>                <div class="popular-faq"><i class="icon-file-alt"></i>
+                <a href="faq.php?id=86">
+                Want to become a mod?                </a></div>
+            </div>
+            </li>
+            <li><i></i>
+            <div style="margin-left:45px">
+            <h4><a href="faq.php?cid=5">TheTVDB Known Issues Log &amp; Site Updates (3)</a></h4>
+            <div class="faded" style="margin:10px 0">
+                <p>This section is where you can find all of the most recent policy updates and feature releases on TheTVDB.</p>            </div>
+<p></p><div style="padding-bottom:15px;"></div>                <div class="popular-faq"><i class="icon-file-alt"></i>
+                <a href="faq.php?id=74">
+                API —&nbsp;Known Issues &amp; Bug Log                </a></div>
+                <div class="popular-faq"><i class="icon-file-alt"></i>
+                <a href="faq.php?id=75">
+                Front-end Site —&nbsp;Releases for Bug Fixes, New Features &amp; Changes                </a></div>
+                <div class="popular-faq"><i class="icon-file-alt"></i>
+                <a href="faq.php?id=13">
+                Policy Updates                </a></div>
+            </div>
+            </li>
+            <li><i></i>
+            <div style="margin-left:45px">
+            <h4><a href="faq.php?cid=8">Using osTicket (4)</a></h4>
+            <div class="faded" style="margin:10px 0">
+                <p>Helpful hints &amp;&nbsp;how-to guides to ensure you're submitting tickets correctly, and&nbsp;getting the most out&nbsp;of osTicket.</p>            </div>
+<p></p><div style="padding-bottom:15px;"></div>                <div class="popular-faq"><i class="icon-file-alt"></i>
+                <a href="faq.php?id=44">
+                Checking the Status of Your Ticket                </a></div>
+                <div class="popular-faq"><i class="icon-file-alt"></i>
+                <a href="faq.php?id=35">
+                Creating an osTicket Account                </a></div>
+                <div class="popular-faq"><i class="icon-file-alt"></i>
+                <a href="faq.php?id=55">
+                Help! I can't log in to osTicket!                </a></div>
+                <div class="popular-faq"><i class="icon-file-alt"></i>
+                <a href="faq.php?id=34">
+                Opening a New Ticket                </a></div>
+            </div>
+            </li>
+       </ul>
+</div>
+<div class="span4">
+    <div class="sidebar">
+    <div class="content">
+        <section>
+            <div class="header">Other Resources</div>
+        </section>
+    </div>
+    <div class="searchbar">
+        <form method="get" action="faq.php">
+        <input type="hidden" name="a" value="search">
+        <select name="topicId" style="width:100%;max-width:100%" onchange="javascript:this.form.submit();">
+            <option value="">—Browse by Topic—</option>
+        <option value="17">TV Series / Anime Issues</option>
+        <option value="13">Artwork</option>
+        <option value="18">Business Inquiries</option>
+        <option value="19">Developers</option>
+        <option value="16">TV Series / Locked/Certified Series Updates</option>
+        <option value="15">Movies</option>
+        <option value="20">People/Characters</option>
+        <option value="12">Policies/Policy Questions</option>
+        <option value="10">Report an Issue or Bug</option>
+        <option value="22">Suggestions</option>
+        <option value="21">Translations</option>
+        <option value="14">TV Series</option>
+        </select>
+        </form>
+    </div>	
+    </div>
+</div>
+</div>
+        </div>
+    
+    <!-- osta -->
+    <div class="clear"></div>
+    
+	<div id="pre-footer">
+		<div id="pre-footer-inner" class="toggle show">
+			<div class="searchArea">
+				<form method="get" action="/kb/faq.php">
+					<button type="submit" tabindex="2">
+						<div class="client-choice-icon">
+							<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+								<path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"></path>
+							</svg>
+						</div>				
+					Search</button>
+					<div class="inputDiv">
+						<input type="hidden" name="a" value="search">
+						<input type="text" name="q" class="search" placeholder="Search our knowledge base">
+					</div>
+				</form>
+			</div>					
+		</div>
+		<div class="clear"></div>
+	</div> 		
+
+	<div class="clear"></div>
+    <div id="footer"><!-- osta -->
+				<div id="osticket">
+			<a href="https://osticket.com" id="osticket-link" class="jump" target="_blank">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 233.57 47.75"><title>Powered by osTicket 2017</title><path d="M135.49,26.3c-.59,0-1.18.07-1.77.09a1.08,1.08,0,0,1-1.28-1.09l1.25-.61,2.71-.47.93-1.44-6.9-.73a.61.61,0,0,0-.14.2,15.69,15.69,0,0,1-6.49,8.06c-2.16,1.44-4.28,2.93-6.41,4.41-.26.18-.48.42-.74.61a10,10,0,0,0-4,8.09c0,1.4-.16,2.79-.3,4.18a3.53,3.53,0,0,1-3.7,3.27l-.37-1.12.9-1.07-.17-.08c.36-.91.78-1.8,1.07-2.72a6.5,6.5,0,0,0,.34-2c0-2.07,0-4.15-.2-6.22a4.19,4.19,0,0,1,2.05-4.36c.41-.25.74-.61,1.14-.87,2.9-1.89,4.08-4.69,4.28-8,0-.72.11-1.43.17-2.24a4,4,0,0,1-1.08-4.33l.11-.18-.06,0-.13.14a15.35,15.35,0,0,0-2.62,2,25.9,25.9,0,0,0-5.55,12c-.76,3.71-1.63,7.4-2.66,11a8.6,8.6,0,0,1-7.08,6.53,7.87,7.87,0,0,1-6.18-2.13c1,.14,1.76.19,2.49.34,5,1.07,8.16-2.69,8.65-6.58.52-4.08.93-8.18,1.71-12.21a40,40,0,0,1,4.38-12.24c3.21-5.67,8.3-8.57,14.6-9.55a21.59,21.59,0,0,1,8.81.26,17.64,17.64,0,0,1,3.8,1.66,23.61,23.61,0,0,1,2.43,1.75,6.25,6.25,0,0,0,5.83.78,4.62,4.62,0,0,0,1.87-1.55,14.53,14.53,0,0,0,1.26-2.2c.12-1.62-.36-3.46,1.3-4.49.79-.17.76,1.18,1.49.41.87,1.28.87,1.79,0,4,1.84.27,2.74,1.58,3.52,3.09a16.74,16.74,0,0,0,1.54,2.2c.4.54.83,1.05,1.38,1.74L156,16.49l-5.1-1.62c-.57.9-1,1.73-1.58,2.49a11,11,0,0,1-5.07,4.05,4.44,4.44,0,0,0-1.37,1.1,16,16,0,0,0-3.8,4.73.9.9,0,0,1-.22.28c-.75.7-4,.89-4.78.28a3.14,3.14,0,0,1-.44-.65l1.86-.5c2.65.43,4-1.46,4-4.3a6.87,6.87,0,0,0-1.51,2A2.56,2.56,0,0,1,135.49,26.3Z" transform="translate(-0.5 -3.22)"></path><path d="M191.23,24.07h4.22V39.75l.2.08,5.44-7.6h5.25L200,39.56l7.22,10.56h-5.35L197,42.31l-1.51,1.77v6.05h-4.26Z" transform="translate(-0.5 -3.22)"></path><path d="M222.15,42.54h-11.3a4.17,4.17,0,0,0,3.48,4.29,12.14,12.14,0,0,0,5.68-.32l.78-.21.66,3.08c-3.82,1.22-7.56,1.83-11.21-.31-2.36-1.39-3.36-3.67-3.64-6.29a11.66,11.66,0,0,1,1.17-6.63A8,8,0,0,1,217.15,32a6.27,6.27,0,0,1,3.32,2.23A10.77,10.77,0,0,1,222.15,42.54Zm-3.86-3.23c0-1.63-.35-3.07-1.78-4a3.21,3.21,0,0,0-3.62,0,4.86,4.86,0,0,0-2.11,3.95Z" transform="translate(-0.5 -3.22)"></path><path d="M165.46,50.6H161.4V28.88h-6.84V25.1h13.66v3.68h-2.77Z" transform="translate(-0.5 -3.22)"></path><path d="M225.75,35.57h-2.38V32.25h2.32V28.16l4.31-1.1v5.08h4.08V35.6h-4c0,3.09-.07,6.08,0,9.06.05,1.52,1,2.14,2.52,2,.39,0,.77-.07,1.25-.12V50a8.16,8.16,0,0,1-5,.09A4.16,4.16,0,0,1,226,46.69a17.09,17.09,0,0,1-.27-3C225.72,41,225.75,38.38,225.75,35.57Z" transform="translate(-0.5 -3.22)"></path><path d="M141.32,40.17a11.67,11.67,0,0,1-2.35,7.7,8.42,8.42,0,0,1-13.29-.29,13.49,13.49,0,0,1-.24-14.28,8.43,8.43,0,0,1,14.37.62A12,12,0,0,1,141.32,40.17Zm-15.44.26a9.9,9.9,0,0,0,1.67,5.68,5.84,5.84,0,0,0,9.81,0,11,11,0,0,0,.06-11.58,5.85,5.85,0,0,0-10,.1A10.39,10.39,0,0,0,125.88,40.43Z" transform="translate(-0.5 -3.22)"></path><path d="M188.26,46.2l.57,3.24c-5,2.61-11.29.5-13.07-4.34a10.72,10.72,0,0,1,.1-7.84,9.24,9.24,0,0,1,10.29-5.44c.63.1,1.25.26,1.87.42a7.89,7.89,0,0,1,.84.32c-.12.59-.21,1.13-.33,1.66s-.27,1.06-.42,1.64c-2.93-.84-5.72-1.15-7.65,1.77a6.84,6.84,0,0,0,.26,7.25C182.79,47.43,185.44,47.09,188.26,46.2Z" transform="translate(-0.5 -3.22)"></path><path d="M142.53,43.55h2.06a2,2,0,0,1,.19.5c.38,3.65,3.75,4.75,6.28,4.4a8.37,8.37,0,0,0,2.59-.85,3,3,0,0,0,1.73-2.93,3,3,0,0,0-2.08-2.81c-1.42-.51-2.91-.81-4.36-1.26a27.35,27.35,0,0,1-3.26-1.16c-3.56-1.62-3.35-6.75-.62-8.6a8.43,8.43,0,0,1,8.55-.77c2.36,1,3.24,3.14,3.43,5.68H154.8c-.08-.33-.16-.66-.24-1a4,4,0,0,0-3.07-3,6.19,6.19,0,0,0-4.32.36,2.92,2.92,0,0,0-1.81,2.74A2.52,2.52,0,0,0,147,37.35c1.71.64,3.5,1.06,5.25,1.6a13.78,13.78,0,0,1,2.69,1,5.49,5.49,0,0,1,.61,9.1,9.62,9.62,0,0,1-10.19.42A6.67,6.67,0,0,1,142.53,43.55Z" transform="translate(-0.5 -3.22)"></path><path d="M173.55,50.63h-4.28V32.23h4.28Z" transform="translate(-0.5 -3.22)"></path><path d="M169.23,28.79v-3.7h4.33v3.7Z" transform="translate(-0.5 -3.22)"></path><path d="M135.49,26.3A2.56,2.56,0,0,0,138,24.37a6.87,6.87,0,0,1,1.51-2c-.07,2.84-1.39,4.73-4,4.3Z" transform="translate(-0.5 -3.22)"></path><path d="M116.77,17.78l.13-.14.06,0-.11.18Z" transform="translate(-0.5 -3.22)"></path><path d="M.5,31.07a19.26,19.26,0,0,1,3.2-.25A5.3,5.3,0,0,1,7.32,31.9a3.47,3.47,0,0,1,1.13,2.7,3.8,3.8,0,0,1-1,2.76,5.35,5.35,0,0,1-3.95,1.42,5.74,5.74,0,0,1-1.34-.12v5.17H.5ZM2.17,37.3a5.6,5.6,0,0,0,1.38.13c2,0,3.24-1,3.24-2.76s-1.21-2.53-3-2.53a7,7,0,0,0-1.57.13Z" transform="translate(-0.5 -3.22)"></path><path d="M18.56,39.12A4.53,4.53,0,0,1,13.94,44c-2.51,0-4.45-1.84-4.45-4.77,0-3.1,2-4.92,4.6-4.92S18.56,36.29,18.56,39.12Zm-7.36.1c0,2,1.17,3.57,2.82,3.57s2.82-1.51,2.82-3.6c0-1.57-.79-3.56-2.78-3.56S11.2,37.46,11.2,39.22Z" transform="translate(-0.5 -3.22)"></path><path d="M21.22,34.56l1.23,4.71c.27,1,.52,2,.69,3h.06c.21-.94.52-1.94.82-2.93l1.51-4.73H27l1.44,4.64c.34,1.11.61,2.09.82,3h.06a27.94,27.94,0,0,1,.71-3l1.32-4.66H33l-3,9.28H28.45L27,39.41a31,31,0,0,1-.82-3h0a27.3,27.3,0,0,1-.84,3.07l-1.5,4.41H22.3l-2.8-9.28Z" transform="translate(-0.5 -3.22)"></path><path d="M35.41,39.51a3,3,0,0,0,3.18,3.22,6.09,6.09,0,0,0,2.57-.48l.29,1.21a7.51,7.51,0,0,1-3.09.58,4.31,4.31,0,0,1-4.56-4.68c0-2.8,1.65-5,4.35-5,3,0,3.83,2.66,3.83,4.37a6.3,6.3,0,0,1-.06.79Zm4.94-1.21c0-1.07-.44-2.74-2.34-2.74a2.79,2.79,0,0,0-2.59,2.74Z" transform="translate(-0.5 -3.22)"></path><path d="M44.08,37.46c0-1.09,0-2-.08-2.89h1.48l.06,1.82h.08a2.78,2.78,0,0,1,2.57-2,1.79,1.79,0,0,1,.48.06V36a2.55,2.55,0,0,0-.58-.06,2.37,2.37,0,0,0-2.26,2.17,4.72,4.72,0,0,0-.08.79v4.94H44.08Z" transform="translate(-0.5 -3.22)"></path><path d="M51.09,39.51a3,3,0,0,0,3.18,3.22,6.09,6.09,0,0,0,2.57-.48l.29,1.21A7.51,7.51,0,0,1,54,44a4.31,4.31,0,0,1-4.56-4.68c0-2.8,1.65-5,4.35-5,3,0,3.83,2.66,3.83,4.37a6.3,6.3,0,0,1-.06.79ZM56,38.3c0-1.07-.44-2.74-2.34-2.74a2.79,2.79,0,0,0-2.59,2.74Z" transform="translate(-0.5 -3.22)"></path><path d="M67.77,30.23V41.44c0,.82,0,1.76.08,2.4H66.33l-.08-1.61h0A3.43,3.43,0,0,1,63.06,44c-2.24,0-4-1.9-4-4.71,0-3.08,1.9-5,4.16-5A3.1,3.1,0,0,1,66,35.77h0V30.23Zm-1.69,8.11a3,3,0,0,0-.08-.71,2.48,2.48,0,0,0-2.43-2c-1.74,0-2.78,1.53-2.78,3.58,0,1.88.92,3.43,2.74,3.43a2.54,2.54,0,0,0,2.47-2,3,3,0,0,0,.08-.73Z" transform="translate(-0.5 -3.22)"></path><path d="M74.56,43.84c0-.63.08-1.57.08-2.4V30.23H76.3v5.83h0a3.46,3.46,0,0,1,3.16-1.71c2.3,0,3.93,1.92,3.91,4.73,0,3.32-2.09,5-4.16,5a3.3,3.3,0,0,1-3.1-1.74h-.06L76,43.84Zm1.74-3.72a3.17,3.17,0,0,0,.08.61,2.6,2.6,0,0,0,2.53,2c1.76,0,2.82-1.44,2.82-3.56,0-1.86-1-3.45-2.76-3.45a2.69,2.69,0,0,0-2.57,2.07,3.34,3.34,0,0,0-.1.69Z" transform="translate(-0.5 -3.22)"></path><path d="M86,34.56l2,5.48c.21.61.44,1.34.59,1.9h0c.17-.56.36-1.26.59-1.94l1.84-5.44h1.78l-2.53,6.61c-1.21,3.18-2,4.81-3.18,5.81a4.57,4.57,0,0,1-2.07,1.09l-.42-1.42a4.47,4.47,0,0,0,1.48-.82A5.11,5.11,0,0,0,87.6,44a1.21,1.21,0,0,0,.13-.4,1.47,1.47,0,0,0-.11-.44l-3.43-8.55Z" transform="translate(-0.5 -3.22)"></path></svg>
+			</a>
+		</div>		
+		<div id="ostawesome">
+			<a href="http://osticketawesome.com" id="ostawesome-link" class="jump" target="_blank">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 234.07 49.52"><path d="M74.38,1.2V17.82l5.68-7.73h5.38L79,17.48l7.44,10.66H80.9l-5-7.85L74.31,22v6.17h-4.5V1.2Z" transform="translate(0 -1.2)"></path><path d="M234.07,28.29H223.29V7H233.5v3.39h-5.61v4.87h5.35v3.49h-5.35v6h6.19Z" transform="translate(0 -1.2)"></path><path d="M151.39,6.9H156l-4.22,21.26h-4.9l-2.51-13.24-2.89,13.25h-4.71L132.63,7h4.87l2,15.57,3.11-15.63h3.84l2.68,14.77.2.06Z" transform="translate(0 -1.2)"></path><path d="M210.41,21.64l3.47-14.71h5l1.47,21.26h-4.16l-.81-13.76-3.55,13.4H208.4L205,14.72l-.15,0-.79,13.46h-4L201.8,7h5Z" transform="translate(0 -1.2)"></path><path d="M198.54,16.93a18.24,18.24,0,0,1-1.22,7.35,6.92,6.92,0,0,1-8.68,4,6.18,6.18,0,0,1-4-3.64,16.75,16.75,0,0,1,0-13.81,7,7,0,0,1,8.56-4,6.49,6.49,0,0,1,4.29,4.08A15.28,15.28,0,0,1,198.54,16.93ZM191,10.09A2.46,2.46,0,0,0,188.8,12a18.5,18.5,0,0,0-.06,11.07A2.47,2.47,0,0,0,191,25a2.59,2.59,0,0,0,2.12-2.29,21.82,21.82,0,0,0,.06-10.27A2.71,2.71,0,0,0,191,10.09Z" transform="translate(0 -1.2)"></path><path d="M117.24,28.18l5.18-21.23h5.65l4.66,21.22h-4.49l-1.11-4.75h-4.26l-1.14,4.77Zm9.46-8.13-1.45-8.56-.26,0-1.66,8.6Z" transform="translate(0 -1.2)"></path><path d="M102,20.25H90.44a3.88,3.88,0,0,0,2.89,4.45,20,20,0,0,0,4.84.21,12.69,12.69,0,0,0,2.34-.49l.66,3.08c-3.79,1.3-7.45,1.8-11.1-.08a7,7,0,0,1-3.38-3.9,11.38,11.38,0,0,1,.41-9.36,8.16,8.16,0,0,1,8.62-4.43,6.74,6.74,0,0,1,5.5,4.12A10.93,10.93,0,0,1,102,20.25ZM97.88,17c-.12-2.73-1.4-4.18-3.57-4.18A3.92,3.92,0,0,0,90.43,17Z" transform="translate(0 -1.2)"></path><path d="M167.8,18.78h-5.34v5.88h6.06v3.51H157.88V6.95h10.24v3.41h-5.64v4.87h5.32Z" transform="translate(0 -1.2)"></path><path d="M169.81,27.76l.64-3.39c1,.21,2,.47,3,.56a7.43,7.43,0,0,0,2.42-.13,2.34,2.34,0,0,0,1.21-4.06,16,16,0,0,0-2.24-1.67,22.21,22.21,0,0,1-3-2.34,5.77,5.77,0,0,1,2.1-9.52,9.54,9.54,0,0,1,7.6.18l-.64,3.27a12.22,12.22,0,0,0-2.09-.45,7.23,7.23,0,0,0-2.57.22,2.06,2.06,0,0,0-.78,3.54,16,16,0,0,0,2.28,1.61,22.22,22.22,0,0,1,2.71,1.91,6.13,6.13,0,0,1-1.92,10.36A11.63,11.63,0,0,1,169.81,27.76Z" transform="translate(0 -1.2)"></path><path d="M39.14,28.49V6.31H32V2.41H46.16V6.16l-2.92.17V28.49Z" transform="translate(0 -1.2)"></path><path d="M9.14,7.15a8.28,8.28,0,0,1,8.13,5.32,13.5,13.5,0,0,1,0,11.09A8.27,8.27,0,0,1,9.23,29a8.22,8.22,0,0,1-8.07-5.4,13.74,13.74,0,0,1,.09-11.25A8.35,8.35,0,0,1,9.14,7.15ZM16,18.1a9.91,9.91,0,0,0-1.39-5.36,6.16,6.16,0,0,0-10.81,0,10.14,10.14,0,0,0,0,10.54,6.16,6.16,0,0,0,10.89,0A9.9,9.9,0,0,0,16,18.1Z" transform="translate(0 -1.2)"></path><path d="M110.09,4.73V10h4.23v3.41h-4.08c0,3.31-.08,6.45,0,9.59,0,1.2.81,1.7,2,1.77.52,0,1.05,0,1.73,0v3.32a7.18,7.18,0,0,1-4,.4A4.31,4.31,0,0,1,106,24.87a18.73,18.73,0,0,1-.31-3.13c0-2.68,0-5.36,0-8.17l-2.42-.14v-3.3l2.35-.2v-4Z" transform="translate(0 -1.2)"></path><path d="M67.8,10.6l-.7,3.25c-3.15-.85-6.22-1.2-8.11,2.07a6.11,6.11,0,0,0,.26,6.82c2,2.88,4.92,2.39,8,1.64l.55,3.2c-3.64,1.8-9.46,1.43-12.24-2.08a10.68,10.68,0,0,1-.17-12C58.08,9.63,63.86,8.81,67.8,10.6Z" transform="translate(0 -1.2)"></path><path d="M19.69,21.68h2.19c.05.22.12.42.15.64.78,4.84,6.09,5.36,9,3.78a3.49,3.49,0,0,0,2-3.44,3.08,3.08,0,0,0-2.2-2.89c-1.42-.52-2.91-.86-4.36-1.31a30.63,30.63,0,0,1-3.15-1.07c-4.1-1.78-3.7-7.33-.57-9.19a8.83,8.83,0,0,1,8.57-.53,5.72,5.72,0,0,1,3.22,5.8c-.33,0-.67.06-1,.05s-.68-.05-1-.08c-1.12-3.85-3.62-5.29-7.15-4.2a3.38,3.38,0,0,0-2.66,2.92,3,3,0,0,0,2.11,3.27A42.87,42.87,0,0,0,29,16.7a22.84,22.84,0,0,1,3.17,1,5.64,5.64,0,0,1,1,9.6,9.91,9.91,0,0,1-10.61.31C20.57,26.21,19.86,24.17,19.69,21.68Z" transform="translate(0 -1.2)"></path><path d="M47.37,9.88h4.34V28.45H47.52C47.15,27.3,47,12.89,47.37,9.88Z" transform="translate(0 -1.2)"></path><path d="M206.4,37.92h1.49V50.34h-1.44v-9l-.26-.12L204,45.08c-.38.66-.72,1.35-1.15,2a6.4,6.4,0,0,1-1.11.95l-3.89-6.69-.25,0v9h-1.47V38l1.43-.12L202,45.58Z" transform="translate(0 -1.2)"></path><path d="M71.63,37.66a6.28,6.28,0,0,1,6.5,6.57,6.46,6.46,0,1,1-12.93-.14A6.27,6.27,0,0,1,71.63,37.66Zm4.87,6.58a4.86,4.86,0,1,0-9.71-.17,4.91,4.91,0,0,0,4.87,5.15A4.86,4.86,0,0,0,76.5,44.24Z" transform="translate(0 -1.2)"></path><path d="M91.9,47.11V38l1.41-.11V50.35H91.73l-6.14-9.79-.25.08V50.3l-1.48.08V38c.38,0,.66-.08.94-.08s.57,0,.92.08l5.86,9.31Z" transform="translate(0 -1.2)"></path><path d="M17.91,45.32l3.42,5-1.82.12-3.34-5H14.32v4.9l-1.5.07V37.91c1.67,0,3.25-.12,4.8,0A3.64,3.64,0,0,1,19,44.79C18.66,45,18.34,45.11,17.91,45.32ZM14.35,43.8c1.07,0,2,.07,2.9,0a2.1,2.1,0,0,0,2-2.06,2,2,0,0,0-1.75-2.23,21.27,21.27,0,0,0-3.13,0Z" transform="translate(0 -1.2)"></path><path d="M176.9,50.35h-1.57V44.83h-6.26v5.51h-1.47V38l1.37-.12v5.25h6.38V38h1.56Z" transform="translate(0 -1.2)"></path><path d="M38.62,47.35,40,46.84c.37.51.64,1,1,1.36A2.75,2.75,0,0,0,44,49,2,2,0,0,0,45.5,47.5a1.77,1.77,0,0,0-.84-2,21.61,21.61,0,0,0-2.21-1,12.32,12.32,0,0,1-2-1,3.08,3.08,0,0,1,0-5.08A4.19,4.19,0,0,1,46.64,40l-1.26.64a2.65,2.65,0,0,0-2.95-1.52,1.9,1.9,0,0,0-1.71,1.53c-.17.9.38,1.43,1.14,1.75s1.75.68,2.6,1.06c2.3,1,3.19,2.72,2.52,4.72-.61,1.82-2.93,2.89-5.11,2.32A4.45,4.45,0,0,1,38.62,47.35Z" transform="translate(0 -1.2)"></path><path d="M98.84,47.35l1.24-.52c.4.54.72,1,1.1,1.45a2.73,2.73,0,0,0,3.06.72,1.69,1.69,0,0,0,1.38-1.62,2.8,2.8,0,0,0-.8-1.8,8.8,8.8,0,0,0-2.18-1.09,13.17,13.17,0,0,1-2.05-1,3.13,3.13,0,0,1,.16-5.3,4.28,4.28,0,0,1,6,1.79l-1.23.68a2.8,2.8,0,0,0-2.76-1.56,2,2,0,0,0-1.93,1.51c-.23,1,.43,1.52,1.23,1.87,1,.42,2,.77,2.91,1.22a3.56,3.56,0,0,1,2.29,3.76A3.66,3.66,0,0,1,104,50.64C101.66,51.07,99.7,49.85,98.84,47.35Z" transform="translate(0 -1.2)"></path><path d="M26.42,38h7.13l.12,1.31H28.13V43.4h5v1.47h-5v4h5.46v1.46H26.52C26.3,46.28,26.47,42.22,26.42,38Z" transform="translate(0 -1.2)"></path><path d="M136.41,39.34v4h5l.08,1.47h-5.05v4h5.41l.1,1.48h-7.13V38h7l.09,1.37Z" transform="translate(0 -1.2)"></path><path d="M190.1,48.85v1.5h-7V38H190l.23,1.29h-5.59v4.07h5v1.53h-5v4Z" transform="translate(0 -1.2)"></path><path d="M214.34,50.31V38h7l.13,1.34h-5.56v4h5l.15,1.47H216v4h5.36l.17,1.49Z" transform="translate(0 -1.2)"></path><path d="M54.38,45.29v5l-1.47.1V37.93a41.7,41.7,0,0,1,4.9,0,3.65,3.65,0,0,1,3.18,4,3.73,3.73,0,0,1-3.65,3.35C56.42,45.33,55.5,45.29,54.38,45.29Zm.14-5.86v4.35c1,0,1.77,0,2.59,0a2.1,2.1,0,0,0,2.22-2,2.08,2.08,0,0,0-1.91-2.31A21.11,21.11,0,0,0,54.52,39.43Z" transform="translate(0 -1.2)"></path><path d="M125,50.37h-1.69L119,38l1.7-.09,3.49,10.27L127.81,38h1.71Z" transform="translate(0 -1.2)"></path><path d="M162.14,38v1.25l-3.36.16V50.33h-1.65V39.42l-3.35-.18L153.65,38Z" transform="translate(0 -1.2)"></path><path d="M112.7,37.94H114V50.31l-1.35.08Z" transform="translate(0 -1.2)"></path><path d="M51.68,6.12H47.37V2.4h4.31Z" transform="translate(0 -1.2)"></path></svg>
+			</a>
+		</div>
+		<div class="clear"></div>
+<script>
+//Check Ticket Status gets unique bottom border
+$("a[href*=\"view.php\"]").parent().addClass('border');
+
+// >5 language packs, let's do stuff
+$('.flag:nth-child(5)').closest('div#lang-wrapper').addClass("chevron"); 
+var intTotalWidth = 0;
+$(".button-text-container .flag").each(function(index, value) {
+	intTotalWidth = intTotalWidth + parseInt($(this).innerWidth())+5;
+	$(".button-text-container").css("width", intTotalWidth);	
+});
+$(document).ready(function(){
+  $("#myButton").click(function(){
+	$('ul#nav').toggleClass("hide-nav");	  
+    $(".button-text-container").toggleClass("grow");
+    $(".button-text-container").toggleClass("shrink");
+  });
+});
+</script>
+<script type="text/javascript" src="/osta/user-scripts.js"></script>	   
+    </div>
+	<!--osta-->
+	<div id="overlay" style="opacity: 0.3; top: 0px; left: 0px;"></div>
+	<div id="loading" style="top: 256px; left: 523px;">
+		<i class="icon-spinner icon-spin icon-3x pull-left icon-light"></i>
+		<h1>Loading ...</h1>
+	</div>
+		<script type="text/javascript">
+		getConfig().resolve({"html_thread":true,"lang":"en_US","short_lang":"en","has_rtl":true,"primary_language":"en-US","secondary_languages":[],"path":"\/"});
+	</script>
+<!-- intentionally blank --> 
+<!-- intentionally blank --><!-- intentionally blank -->    
+
+
+</body></html>

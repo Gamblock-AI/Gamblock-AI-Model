@@ -1,0 +1,49 @@
+{
+    "model_name": "Gamblock-AI Hybrid Detection Model",
+    "model_type": "Hybrid AI Detection",
+    "method": "Rule-Based System + Logistic Regression",
+    "model_source": "tuned_random_search",
+    "text_feature": "Bag-of-Words from title + content/DOM",
+    "url_features": [
+        "url_length",
+        "url_digit_count",
+        "url_dot_count",
+        "url_slash_count",
+        "url_hyphen_count",
+        "url_question_count",
+        "url_equal_count",
+        "url_keyword_count",
+        "url_has_number",
+        "url_has_https",
+        "url_is_valid",
+        "domain_length",
+        "subdomain_length",
+        "suffix_length"
+    ],
+    "hybrid_configuration": {
+        "ml_weight": 0.75,
+        "rule_weight": 0.25,
+        "threshold": 0.4,
+        "formula": "hybrid_score = (ML_WEIGHT * ml_probability) + (RULE_WEIGHT * rule_score)"
+    },
+    "label_mapping": {
+        "0": "non_judi",
+        "1": "judi"
+    },
+    "model_files": {
+        "pkl_model": "models\\gamblock_logistic_regression.pkl",
+        "onnx_model": "models\\gamblock_logistic_regression.onnx",
+        "rule_keywords": "models\\gambling_keywords.json"
+    },
+    "model_size_mb": {
+        "pkl_size_mb": 0.3699,
+        "onnx_size_mb": 0.2769
+    },
+    "evaluation_metrics": {
+        "accuracy": 0.9738,
+        "precision": 0.9638,
+        "recall": 0.9546,
+        "f1_score": 0.9592
+    },
+    "deployment_note": "ONNX digunakan untuk model Logistic Regression. Rule-Based System tetap dihitung terpisah menggunakan gambling_keywords.json. Prediksi akhir diperoleh dari hybrid_score."
+}

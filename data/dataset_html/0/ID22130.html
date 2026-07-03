@@ -1,0 +1,972 @@
+<html lang="en"><head>
+
+
+	<!-- Start cookieyes banner -->
+	<!--<script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/f675d5325b11e97346449727/script.js"></script>-->
+	<!-- End cookieyes banner -->
+	<meta charset="utf-8">
+	<meta name="renderer" content="webkit">
+	<meta name="force-rendering" content="webkit">
+	<meta name="applicable-device" content="pc">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+	<meta name="referrer" content="always">
+	<!-- 所有的搜索引擎 -->
+	<meta name="robots" content="index,follow,noodp">
+	<!-- 仅对 Google 有效 -->
+	<meta name="googlebot" content="index,follow">
+	<title>Hosting control panel - Download aaPanel</title>
+	<meta name="title" content="Hosting Control Panel">
+	<meta name="description" content="aaPanel is a powerful and easy-to-use web hosting control panel for linux server.one-click install LNMP/LAMP/OpenLiteSpeed developing environment and software.">
+	<meta name="keywords" content="hosting control panel">
+	<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+	<link href="/static/new/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="/static/new/css/reset.css?1.1" rel="stylesheet" type="text/css">
+	<link href="/static/new/css/style.css?1.7" rel="stylesheet" type="text/css">
+	<link href="/static/new/css/index.css?1.0" rel="stylesheet" type="text/css">
+	<style>
+		.navigation .icon-new {
+			position: absolute;
+			top: 18px;
+			right: -18px;
+			display: block;
+			width: 30px;
+			height: 15px;
+			background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEQAAAAgCAYAAACrdt7+AAAAAXNSR0IArs4c6QAAAupJREFUaEPtWkFC4zAMVG+55gfLS6AvYXkJ8JItL6H7EsoLevUNOsEyiiLbcksu1Lnt1rHs0Wg8ctgQER2H4Q8RPRLRX/z7yp4DEe2J6HkM4bCJYLxdGQjWdgHMFoD8u1JmWKDsAQjYgZLpD9FUMh8diW8EOiCKDR2QRkAexPjbgvjuTgr9P47V4+Rv3uqE0OMofBEvwBZordNjMBzv6scz1/ROiSGHMYQbnrlyPD+MIWDj8DRY+JNY0XYMAQtyP1HX9mMIWxH/9QTSnZpkN4Ygk4b41ri0vrjGrG66AYkTwbhZGVgDEJ0QDTSWtADbSAjG3cB0VfbQxpA4GSgLQHSmXIAchwHv3Tuowo45bTi+i+ynZwxho+eqjav5riaGCFC0s/UCkmNYDqOn06afM3EX5eIZV/NdzYDEoNrdrgVISUdkzDupU0pHZsDVfJcbEIiqqEOUDujLqr8WICUdkbqABL0wKEpH5NqqDG0B5FWpvpzcC4inRdAaZeqI1I9YBmAClxe0ivVGA1fs6FsAgW6koLF0+IhzAeIQU+vYtHQklYGwA4lN0iIYwBWT0goIH3V8hGFyALUmIFpHEA93F+x7JFMlG5AsgJR8Sk0/Wo0Zd8VapOAP3j3G7DgM1Ro2WKR1BBtFAjgpUuBleel1uWK3MoTpJgPj/yC4kxstOdUzAZkZMMzPWmG4zsSm6EcApgVctnrPBWSWNTn7SoAkHVGxdNZnOsJgROBc9z7nAoIYOWOU7WUuYMhMRxiUjE03eyePfpyrIbweUBG1PGvcKgzBcQjAas9UhmKQychMI7dgU0siLmEI1rvI3A91u1bHajVyVtdqrcl9b3wpIABFt9Y/0f5XASlkfcGmWv8i6VoEBOe9GGxd0OBnlI4ch25WdsO4G3mv1Yj63XMZpOPIKXRM68rCXFK/QlSwdEA6IOXi7R+qDIZYit6ogb9m+K5/7P7O5dfH7ujz4QpxjMnPB78m7ZWNTH8OwdcEn9tjZoVpTHYLAAAAAElFTkSuQmCC') no-repeat;
+			background-size: 100%;
+		}
+		.navigation .icon-hot {
+			position: absolute;
+			top: 9px;
+			left: 40px;
+			display: block;
+			width: 33px;
+			height: 28px;
+			background: url('data:image/png;base64,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') no-repeat;
+			background-size: 100%;
+		}
+		.wapnava>span {
+			position: relative;
+		}
+		.wapnava .icon-new {
+			position: relative;
+			top: 4px;
+			display: inline-block;
+			width: 30px;
+			height: 15px;
+			margin-left: 10px;
+			background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEQAAAAgCAYAAACrdt7+AAAAAXNSR0IArs4c6QAAAupJREFUaEPtWkFC4zAMVG+55gfLS6AvYXkJ8JItL6H7EsoLevUNOsEyiiLbcksu1Lnt1rHs0Wg8ctgQER2H4Q8RPRLRX/z7yp4DEe2J6HkM4bCJYLxdGQjWdgHMFoD8u1JmWKDsAQjYgZLpD9FUMh8diW8EOiCKDR2QRkAexPjbgvjuTgr9P47V4+Rv3uqE0OMofBEvwBZordNjMBzv6scz1/ROiSGHMYQbnrlyPD+MIWDj8DRY+JNY0XYMAQtyP1HX9mMIWxH/9QTSnZpkN4Ygk4b41ri0vrjGrG66AYkTwbhZGVgDEJ0QDTSWtADbSAjG3cB0VfbQxpA4GSgLQHSmXIAchwHv3Tuowo45bTi+i+ynZwxho+eqjav5riaGCFC0s/UCkmNYDqOn06afM3EX5eIZV/NdzYDEoNrdrgVISUdkzDupU0pHZsDVfJcbEIiqqEOUDujLqr8WICUdkbqABL0wKEpH5NqqDG0B5FWpvpzcC4inRdAaZeqI1I9YBmAClxe0ivVGA1fs6FsAgW6koLF0+IhzAeIQU+vYtHQklYGwA4lN0iIYwBWT0goIH3V8hGFyALUmIFpHEA93F+x7JFMlG5AsgJR8Sk0/Wo0Zd8VapOAP3j3G7DgM1Ro2WKR1BBtFAjgpUuBleel1uWK3MoTpJgPj/yC4kxstOdUzAZkZMMzPWmG4zsSm6EcApgVctnrPBWSWNTn7SoAkHVGxdNZnOsJgROBc9z7nAoIYOWOU7WUuYMhMRxiUjE03eyePfpyrIbweUBG1PGvcKgzBcQjAas9UhmKQychMI7dgU0siLmEI1rvI3A91u1bHajVyVtdqrcl9b3wpIABFt9Y/0f5XASlkfcGmWv8i6VoEBOe9GGxd0OBnlI4ch25WdsO4G3mv1Yj63XMZpOPIKXRM68rCXFK/QlSwdEA6IOXi7R+qDIZYit6ogb9m+K5/7P7O5dfH7ujz4QpxjMnPB78m7ZWNTH8OwdcEn9tjZoVpTHYLAAAAAElFTkSuQmCC') no-repeat;
+			background-size: 100%;
+		}
+		.wapnava .icon-hot {
+			position: relative;
+			top: 4px;
+			display: inline-block;
+			width: 30px;
+			height: 23px;
+			margin-left: 10px;
+			background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAALQElEQVR4Xu2d73HURhiHdWbC3Ud70oDpADowFQRXEKggoYIkFSRUAB0AFcSpIHTApYCM+WiHsZXd05mAsfafX11+8vvcTCaAtbp3n98+lnZ10i06XhCAwCiBBWwgAIFxAgjC6IBAggCCMDwggCCMAQi0EeAI0saNVk4IIIiToOlmGwEEaeNGKycEEMRJ0HSzjQCCtHGjlRMCCOIkaLrZRgBB2rjRygkBBHESNN1sI4Agbdxo5YQAgjgJmm62EUCQNm60ckIAQZwETTfbCCBIGzdaOSGAIE6CppttBBCkjRutnBBAECdB0802AgjSxo1WTgggiJOg6WYbAQRp40YrJwQQxEnQdLONAIK0caOVEwII4iRoutlGAEHauNHKCQEEcRI03WwjgCBt3GjlhACCOAmabrYRQJA2brRyQgBBnARNN9sIIEgbN1o5IYAgToKmm20EEKSNG62cEEAQJ0HTzTYCCNLGjVZOCCCIk6DpZhsBBGnjRisnBBDESdB0s40AgrRxo5UTAgjiJGi62UYAQdq40coJAQRxEjTdbCOAIG3caOWEAII4CZputhFAkDZutHJCAEGcBE032wggSBs3WjkhsDhdrXonfaWbEKgmgCDVyGjgiQCCeEqbvlYTQJBqZDTwRABBPKVNX6sJIEg1Mhp4IoAgntKmr9UEEKQaGQ08EUAQT2nT12oCCFKNjAaeCCCIp7TpazUBBKlGRgNPBBDEU9r0tZoAglQjo4EnAgjiKW36Wk0AQaqR0cATAQTxlDZ9rSaAINXIaOCJAIJ4Spu+VhNAkGpkNPBEAEE8pU1fqwkgSDUyGngigCCe0qav1QQQpBoZDTwRQBBPadPXagIIUo2MBp4IIIintOlrNQEEqUZGA08EEMRT2vS1mgCCVCObqEHff+gWiw9d/H/XrT/9ebHYD/+2H/6+H/79cPvfREWw2+sElAV5NhpX3/8QBsxD8ziHQfo8sd+fTAfoIMNJeM+33dnZm4Oui3/PvsIT+Y+CNA9Du+/CxkfZBvkNxlnn29pv0fffhb49sd9x/R41BQkD5+D8PIyXm19hgPxuNDCuv8H64Ozswej7Lpd/Gol50l1cPO8+flyXSpGK9nS5/DHU9Wt9/KFFhnXTPm/Z6O/V6ue9rou/jP73F4J8GcHUgqzDgHwR5P/NOvnTrtvvVqsoydOqfSNIEheC7EqQvv+tOz//xeKIkTyafPPNw+7evddhm8MiURAEQYoGyrDRNEeQIEc4aqTmNhUl5jfdHE2Wy9+LTgcRBEHyQ+rTFvaC9P3zKU6pcn3annLFI8lRclsEQZDcYPrs57aCVMgRFh4Ow/zkyWZlKi7rxlOkYWl3c2TbLP8uFu/Cn/8ICwmvSvsUJvDphYX8yt34W11cvDv4+DHW9NVrK2jbShSrWJl478IqVt+/CUeO49xA3i7Z/lp0OvT5zuKcZrF4EWRZp95jI17Xvc/V0fTzxKnjpO/bVGxbIybpX3KzOYLE38rn5w9SE/LtPCEuZT797EhRn2LBUer0/v0n3d5ePN2yfSGILc/ivc39CHJ5eXzwzz9vxvq7leOl1cWwy6775duzs5+TR5Ll8rXV+316HwQpHtK2G85ZkL5/F06tHu1Kjs/e51lqbjLJKQ+C2I774r3NWZCuSw7USa8SX1w8Gps0R/bZCXtxQNsNEaSWmNH28xVkHT5T9Whs7rGdkMdTnavVKSNgn3aTnkOtVk/Dli/N3hRBzFDW7WimguTmAuE3uP084GuyuVOtuKJ1WBfIyNYIYoKxficzFaRLTM5Ph4+A/FkPo7rFSZiLPB6dAy2XcUn5x+q93tQAQUww1u9kjoJklnYnnXt8TfjB2PWRcJpnd5qFIPVj26TFHAUJ93Ukf3OvVnanNjnIiWsj2yvc4X8GLwQxgNiyizkKkhosw0fRbQZlGc9XQdbRm6DCUcRGVgQpS8N8qzkKklje3axedV28yWtXr9xqls0NZwiyqzyvvY/gJ0xjhcnrCKkJuuV5f0kku/oFgyAlaUywzRwF6brH4bTm5CYat7olthFvqGUx1jQc0eK1kDhZv90LQW7Hr7n1HAVJXMXe8QrWgP3s7GD0gqXVUi+CNA/x2zWcoyBdN760ajUg66iO1mMmLILUJWK29RwFSRxBwimW3cW5csgIUs5qdMtZ3g9i0O+mXSQn6XM6xWIOUpz/LAXZ/ka2f3Dc8NCG8esH6dtX5zNJt/pMGKdYxaLZbrirZcqvq77NHYWjHxKc7I6+ceq5fth8aBJBbMd98d7mKMiuPt5RAjFzP7zZfSEIUpLGBNvMU5DkQxrCoDyd8D6QL0PIfexluXxvUguCTDD4S3Y5T0HSzxO2Ou8v4Ze+qn8UdmHzsRcEKUljgm3mKMiAYTcfM08hz3zs3vSqPoJMMPhLdjlfQXZ3N98Ix53e1YggJaN5gm3mKkhmcmx2BXsM+fCUxEeJm6Xi0xvjkxZt7olHkAkGf8ku5ypI5jQr/thsBekGjrmjh7mgCFIymifYZt6C5G5WOgzEpngU6En4gOLx6AcUhye+26xeXUWOIBMM/pJdzlmQzGnO5ihifQNVeFhdOG06Tj2n1/zoETuCICWjeYJt5izIMHCyD642kyTKcX7+OPkc4OHJ8XZzD44gEwz6ml3OXZDY18zzebdHkni6NTzAuvYVj1ThmbxBjle5b62a7HlcHEFqUzPa/i4IUnCqdUVr88ysvb3vtw+XjtLc/Br2+S5Mxv8IX3IZ5zrrHHHT6x7X3wxBcvgn+vldEGQ41cqe/lwnuHnI9OVlFGb4fvT4il+cc3HxofZbcTfPwOr7eC+KzbIugkw04Gt3e1cEGfq9DoP7OPVQ6Vo8Jdtvjhzx9G0qOYZfAKPfvTjJ0+RLOm68zTzvB5nb96THU6PLy8e7kmSSFaubBh6CGOtYuru7dQT5r9eJAVWKJrXddi4Tjxpt3w1YWwSC1BIz2v6uCjKclsSJ9vOaL+LMUTX7OrfcGzEHqSU00fZ3WZArZGECf7lYvA2rUfGZvie1JDdS3L9/FCbz8Vtx47fjTjMRTxXGEaQ2Nra/BYFXYfn2ryDMejOxH15xgn+1khW/FvowSLW/F78m+cuvib7F29I0RUBzkk5mEBAhgCAiQVCGJgEE0cyFqkQIIIhIEJShSQBBNHOhKhECCCISBGVoEkAQzVyoSoQAgogEQRmaBBBEMxeqEiGAICJBUIYmAQTRzIWqRAggiEgQlKFJAEE0c6EqEQIIIhIEZWgSQBDNXKhKhACCiARBGZoEEEQzF6oSIYAgIkFQhiYBBNHMhapECCCISBCUoUkAQTRzoSoRAggiEgRlaBJAEM1cqEqEAIKIBEEZmgQWmmVRFQQ0CCCIRg5UIUoAQUSDoSwNAgiikQNViBJAENFgKEuDAIJo5EAVogQQRDQYytIggCAaOVCFKAEEEQ2GsjQIIIhGDlQhSgBBRIOhLA0CCKKRA1WIEkAQ0WAoS4MAgmjkQBWiBBBENBjK0iCAIBo5UIUoAQQRDYayNAggiEYOVCFKAEFEg6EsDQIIopEDVYgSQBDRYChLgwCCaORAFaIEEEQ0GMrSIIAgGjlQhSgBBBENhrI0CCCIRg5UIUoAQUSDoSwNAgiikQNViBJAENFgKEuDAIJo5EAVogQQRDQYytIggCAaOVCFKAEEEQ2GsjQIIIhGDlQhSgBBRIOhLA0CCKKRA1WIEkAQ0WAoS4MAgmjkQBWiBBBENBjK0iCAIBo5UIUoAQQRDYayNAggiEYOVCFKAEFEg6EsDQIIopEDVYgSQBDRYChLgwCCaORAFaIEEEQ0GMrSIIAgGjlQhSgBBBENhrI0CCCIRg5UIUrgX/o1QFugbCKlAAAAAElFTkSuQmCC') no-repeat;
+			background-size: 100%;
+		}
+	</style>
+	<link href="/static/new/css/download.css?1.0" rel="stylesheet" type="text/css">
+	<link href="/static/new/css/index.css?1.0" rel="stylesheet" type="text/css">
+	<style>
+		.faq-box {
+				margin-bottom: 40px;
+			}
+			.faq-question {
+				display: flex;
+				align-items: center;
+				margin-bottom: 20px;
+				cursor: pointer;
+			}
+			.faq-question.collapsed .faq-img {
+				-o-transform: rotate(-90deg); /* Opera */
+				-ms-transform: rotate(-90deg); /* IE 9 */
+				-moz-transform: rotate(-90deg); /* Firefox */
+				-webkit-transform: rotate(-90deg); /* Safari and Chrome */
+				transform: rotate(-90deg);
+			}
+
+			.faq-question.collapsed-1 .faq-img {
+				-o-transform: rotate(0deg) !important; /* Opera */
+				-ms-transform: rotate(0deg) !important; /* IE 9 */
+				-moz-transform: rotate(0deg) !important; /* Firefox */
+				-webkit-transform: rotate(0deg) !important; /* Safari and Chrome */
+				transform: rotate(0deg) !important;
+			}
+
+			.faq-question.rotate-icon .faq-img {
+        transform: rotate(-90deg);
+			}
+
+			.faq-box.collapsed .install_command {
+					display: none;
+			}
+			.faq-box.expanded .install_command {
+					display: block;
+			}
+
+			.faq-question .faq-img {
+				width: 25px;
+				margin-right: 10px;
+			}
+			.faq-question .faq-tit {
+				font-size: 18px;
+			}
+			.install_command {
+				margin-bottom: 40px;
+				padding: 20px 45px;
+				background: #f7f7f7;
+				border-radius: 8px;
+				box-shadow: 0 0 10px 6px #ececec;
+			}
+			.install-code .ico-copy {
+				display: flex;
+				align-items: center;
+				width: 132px !important;
+				height: 40px;
+				background-color: #20a53a;
+				cursor: pointer;
+				text-indent: 0.6em;
+				font-weight: bold;
+				/* color: #20a53a; */
+				border: none;
+				border-radius: 5px;
+				padding: 6px 13px;
+				color: #ffffff;
+			}
+			.install-code .ico-copy .copy-img{
+				width:18px;
+				height:18px;
+				background: url(/static/images/ico-copy.png) no-repeat left center;
+				filter: brightness(0) invert(1);
+				background-size: 18px 18px;
+			}
+			.install-code .ico-copy .copy-text{
+				width:auto;
+			}
+			.install-code .ico-copy:hover{
+				-webkit-filter: brightness(120%);
+			}
+
+	</style>
+<!--script>
+		var _hmt = _hmt || [];
+		(function() {
+			var hm = document.createElement("script");
+			hm.src = "https://hm.baidu.com/hm.js?95e92cce61caf988d66009b7ee9c9f34";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+		})();
+	</script-->
+
+
+<!-- TrustBox script -->
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async=""></script>
+<!-- End TrustBox script -->
+<link rel="stylesheet" href="https://www.aapanel.org/static/layer/skin/default/layer.css?v=3.0.11110" id="layuicss-skinlayercss"></head>
+<body>
+
+	<div class="head_pc">
+		<div class="head">
+			<div class="head_box">
+				<div class="wrap_1200 h100 disflex flex_center">
+					<div class="hdl flex1 disflex flex_center">
+						<a href="/" class="logo">
+							<img class="disblock" src="/static/images/aaPanel.png" alt="aaPanel">
+						</a>
+						<div class="navigation nav disflex">
+							<span>
+								<a href="/new/feature.html" class="nava">
+									<span>Features</span>
+									<span class="icon">
+										<svg t="1722496431092" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4251">
+											<path d="M562.5 771c-14.3 14.3-33.7 27.5-52 23.5-18.4 3.1-35.7-11.2-50-23.5L18.8 327.3c-22.4-22.4-22.4-59.2 0-81.6s59.2-22.4 81.6 0L511.5 668l412.1-422.3c22.4-22.4 59.2-22.4 81.6 0s22.4 59.2 0 81.6L562.5 771z" p-id="4252"></path>
+										</svg>
+									</span>
+								</a>
+								<ul class="sub-menu">
+									<li class="sub-menu-item">
+										<a href="/new/feature/wp.html">
+											<div class="tit">
+												<div class="icon">
+													<svg t="1722502507516" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="16385">
+														<path d="M512 0C229.248 0 0 229.248 0 512s229.248 512 512 512 512-229.248 512-512S794.752 0 512 0zM73.152 512c0-61.952 13.696-120.832 38.016-173.952l209.344 558.592C174.08 827.392 73.152 681.152 73.152 512zM512 939.456c-43.072 0-84.608-6.144-123.968-17.408L519.68 549.376l134.848 359.936c0.896 2.112 1.984 4.096 3.136 5.952C612.16 930.88 563.136 939.456 512 939.456zM572.352 311.616c26.432-1.344 50.24-4.032 50.24-4.032 23.68-2.752 20.864-36.544-2.752-35.264 0 0-71.104 5.44-116.928 5.44-43.072 0-115.584-5.44-115.584-5.44C363.648 270.976 360.896 306.176 384.512 307.584c0 0 22.4 2.688 46.016 4.032L498.88 494.08l-96.064 280.512L243.072 311.616c26.496-1.344 50.24-4.032 50.24-4.032 23.616-2.752 20.864-36.544-2.752-35.264 0 0-71.104 5.44-116.928 5.44-8.192 0-17.92-0.192-28.224-0.512C223.808 161.216 358.72 84.544 512 84.544c114.24 0 218.24 42.56 296.384 112.192-1.92-0.128-3.712-0.384-5.696-0.384-43.136 0-73.728 36.544-73.728 75.84 0 35.264 20.864 65.024 43.072 100.288 16.768 28.544 36.224 65.088 36.224 117.888 0 36.544-14.4 79.04-33.344 138.24l-43.84 142.4L572.352 311.616zM950.848 512c0 157.696-87.744 295.36-218.24 369.344l134.08-377.408c25.024-60.992 33.344-109.696 33.344-153.088 0-15.744-1.024-30.336-2.944-43.968C931.328 367.808 950.848 437.696 950.848 512z" p-id="16386"></path>
+													</svg>
+												</div>
+												<span>WP Toolkit</span>
+											</div>
+											<div class="desc">Simple and easy setup, backup and cloning of WordPress</div>
+										</a>
+									</li>
+									<li class="sub-menu-item">
+										<a href="/new/feature/mass.html">
+											<div class="tit">
+												<div class="icon">
+													<svg t="1721903196971" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="12344">
+														<path d="M270.419408 509.259586l0.721431 0 484.626559 0c10.816347 0 19.949354 9.293667 19.949354 20.269649l0 0.561795 0 369.179201c0 11.376095-9.133008 20.829398-19.949354 20.829398l-0.560772 0L270.419408 920.099628c-11.376095 0-19.869536-9.453303-19.869536-20.829398l0-0.480954 0-369.260042C250.550894 518.553253 259.043313 509.259586 270.419408 509.259586L270.419408 509.259586zM547.223734 439.077154 547.223734 439.077154c0 18.587334-14.901385 33.568537-33.407877 33.568537-18.668175 0-33.890878-14.981203-33.890878-33.568537L479.924979 245.515716l-80.757279 80.677461c-12.978593 13.701047-34.530444 13.701047-47.829332 0-13.219069-12.897751-13.219069-34.369785 0-47.509037l138.520867-138.122801c13.060457-12.016685 31.565926-13.939477 45.426609-2.402723l1.923816 2.402723 0.720408 0.2415 137.882324 137.8813c13.218046 13.139252 13.218046 34.610262 0 47.509037-12.899798 13.701047-34.611286 13.701047-47.749514 0l-80.839143-80.677461L547.223734 439.077154 547.223734 439.077154zM794.863834 340.855108 794.863834 340.855108c-18.745946 0-33.487695-15.622816-33.487695-33.968649 0-18.588357 14.740726-33.649378 33.487695-33.649378l132.273583 0c18.508539 0 33.571606 15.062044 33.571606 33.649378l0 2.883677 0 129.308041c0 18.587334-15.304568 33.568537-33.571606 33.568537-18.58631 0-33.56956-14.981203-33.56956-33.568537l0-51.27378-74.106812 73.867358c-13.140275 13.218046-34.368762 13.218046-47.670719 0-12.737092-12.817933-12.737092-34.370809 0.561795-47.26856l73.628928-73.547063L794.863834 340.856132 794.863834 340.855108zM231.402789 273.236058 231.402789 273.236058c18.667152 0 33.488719 15.062044 33.488719 33.649378 0 18.345834-14.821567 33.968649-33.488719 33.968649L180.207803 340.854085l74.107835 73.547063c12.898775 12.897751 12.898775 34.450626 0 47.26856-13.379729 13.218046-34.449603 13.218046-47.749514 0l-74.107835-73.867358 0 51.27378c0 18.587334-14.901385 33.568537-33.407877 33.568537-18.667152 0-33.488719-14.981203-33.488719-33.568537L65.561693 309.770136l0-2.883677c0-18.588357 14.821567-33.649378 33.488719-33.649378L231.402789 273.237081 231.402789 273.236058zM735.576543 573.033052 735.576543 573.033052c-69.540819 69.301366-138.841162 138.601708-208.383004 208.465892-7.611352 7.368828-20.590967 7.368828-28.360931 0l-0.320295 0 0-1.043772-38.217417-37.734416c-56.401568-56.644091-112.804159-113.286136-169.68668-169.84734l0 306.526255L735.576543 879.399671 735.576543 573.033052 735.576543 573.033052zM324.578911 549.878702 324.578911 549.878702c63.131853 62.650899 125.702933 125.70498 188.835809 188.516538 62.650899-62.811558 125.624139-125.865639 188.19215-188.516538L324.578911 549.878702 324.578911 549.878702z" p-id="12345"></path>
+													</svg>
+												</div>
+												<span>Mass Mail</span>
+											</div>
+											<div class="desc">Get your first unlimited bulk mail server</div>
+										</a>
+									</li>
+									<li class="sub-menu-item">
+										<a href="/new/feature/mail.html">
+											<div class="tit">
+												<div class="icon">
+													<svg t="1722502796792" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="28043">
+														<path d="M913.066667 113.777778l-796.444444 0C56.888889 113.777778 8.533333 162.133333 8.533333 219.022222l0 486.4c0 56.888889 48.355556 105.244444 105.244444 105.244444l799.288889 0c56.888889 0 105.244444-48.355556 105.244444-105.244444L1018.311111 219.022222C1021.155556 162.133333 972.8 113.777778 913.066667 113.777778zM978.488889 219.022222l0 486.4c0 8.533333-2.844444 17.066667-5.688889 25.6L696.888889 455.111111 967.111111 184.888889C972.8 196.266667 978.488889 207.644444 978.488889 219.022222zM913.066667 156.444444c8.533333 0 14.222222 2.844444 22.755556 2.844444l-2.844444 0L560.355556 534.755556c-22.755556 22.755556-65.422222 22.755556-91.022222 0L96.711111 162.133333 93.866667 162.133333c5.688889-2.844444 14.222222-2.844444 22.755556-2.844444L913.066667 156.444444 913.066667 156.444444zM56.888889 731.022222c-2.844444-8.533333-5.688889-14.222222-5.688889-22.755556L51.2 219.022222c0-11.377778 2.844444-25.6 11.377778-34.133333l270.222222 270.222222L56.888889 731.022222zM116.622222 770.844444c-11.377778 0-19.911111-2.844444-31.288889-8.533333l275.911111-275.911111 79.644444 79.644444c19.911111 19.911111 45.511111 31.288889 73.955556 31.288889s54.044444-11.377778 73.955556-31.288889l76.8-76.8 275.911111 275.911111c-8.533333 5.688889-19.911111 8.533333-31.288889 8.533333L116.622222 773.688889 116.622222 770.844444z" p-id="28044"></path>
+													</svg>
+												</div>
+												<span>Mail Server</span>
+											</div>
+											<div class="desc">Easily manage your personal or company mail server</div>
+										</a>
+									</li>
+									<li class="sub-menu-item">
+										<a href="/new/feature/nginx.html">
+											<div class="tit">
+												<div class="icon">
+													<svg t="1722503774854" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="71055">
+														<path d="M512 64l384 57.6V512c0 224-166.4 409.6-384 441.6-217.6-38.4-377.6-224-377.6-441.6V121.6L512 64m0-64L70.4 64v454.4c0 256 185.6 473.6 441.6 505.6h6.4c256-38.4 441.6-256 441.6-512V64L512 0z" p-id="71056"></path>
+														<path d="M377.6 403.2l-44.8 44.8L512 627.2l44.8-44.8-179.2-179.2z" p-id="71057"></path>
+														<path d="M710.4 339.2L467.2 582.4l44.8 44.8L755.2 384l-44.8-44.8z" p-id="71058"></path>
+													</svg>
+												</div>
+												<span>Nginx WAF</span>
+											</div>
+											<div class="desc">Protect your website application security with aaPanel Nginx WAF</div>
+										</a>
+									</li>
+									<li class="sub-menu-item">
+										<a href="/new/feature/crontab.html">
+											<div class="tit">
+												<div class="icon">
+													<svg t="1722501755737" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="14313">
+														<path d="M255.744 0c21.0944 0 38.1952 17.152 38.1952 38.2976v131.7888a38.2464 38.2464 0 1 1-76.4416 0V38.2976c0-21.1456 17.1008-38.2976 38.2464-38.2976zM177.8688 476.672c0-21.1456 17.1008-38.2976 38.1952-38.2976h73.8304a38.2464 38.2464 0 0 1 0 76.5952H216.064a38.2464 38.2464 0 0 1-38.1952-38.2976zM714.3424 0c21.0944 0 38.1952 17.152 38.1952 38.2976v131.7888a38.2464 38.2464 0 1 1-76.4416 0V38.2976c0-21.1456 17.152-38.2976 38.2464-38.2976zM370.3808 707.8912c0-169.2672 136.8576-306.5344 305.664-306.5344 168.96 0 305.8176 137.216 305.8176 306.5344 0 169.2672-136.9088 306.4832-305.7664 306.4832-168.8064 0-305.7152-137.216-305.7152-306.4832z m535.04 0c0-126.976-102.656-229.888-229.3248-229.888a229.5808 229.5808 0 0 0-229.2736 229.888c0 126.976 102.656 229.888 229.2736 229.888a229.5808 229.5808 0 0 0 229.3248-229.888zM177.8688 324.7104c0-21.1456 17.1008-38.2976 38.1952-38.2976h230.8096a38.2464 38.2464 0 0 1 0 76.6464H216.064a38.2464 38.2464 0 0 1-38.1952-38.3488z" p-id="14314"></path>
+														<path d="M644.608 560.7424m36.5056 0l-0.0512 0q36.5056 0 36.5056 36.5056l0 122.0608q0 36.5056-36.5056 36.5056l0.0512 0q-36.5056 0-36.5056-36.5056l0-122.0608q0-36.5056 36.5056-36.5056Z" p-id="14315"></path><path d="M839.68 719.3088c0 20.1728-16.384 36.5568-36.5568 36.5568h-121.3952a36.5568 36.5568 0 1 1 0-73.1648h121.3952c20.224 0 36.5568 16.384 36.5568 36.608z" p-id="14316"></path>
+														<path d="M893.7472 497.7664l-76.6976-3.4304 2.2016-48.128V256.2048a76.8 76.8 0 0 0-76.8-76.8L179.2 179.2a76.8 76.8 0 0 0-76.8 76.8v563.2a76.8 76.8 0 0 0 76.8 76.8h351.0272V972.8H179.2512a153.6 153.6 0 0 1-153.6-153.6V256a153.6 153.6 0 0 1 153.6-153.6l563.2 0.2048a153.6 153.6 0 0 1 153.6 153.6v189.952l-2.304 51.6096z m0 0l-76.6976-3.4304 2.2016-48.128V256.2048a76.8 76.8 0 0 0-76.8-76.8L179.2 179.2a76.8 76.8 0 0 0-76.8 76.8v563.2a76.8 76.8 0 0 0 76.8 76.8h351.0272V972.8H179.2512a153.6 153.6 0 0 1-153.6-153.6V256a153.6 153.6 0 0 1 153.6-153.6l563.2 0.2048a153.6 153.6 0 0 1 153.6 153.6v189.952l-2.304 51.6096z" p-id="14317"></path>
+													</svg>
+												</div>
+												<span>Scheduled Tasks</span>
+											</div>
+											<div class="desc">Keep your server data secure with aaPanel Scheduled Tasks</div>
+										</a>
+									</li>
+									<li class="sub-menu-item">
+										<a href="/new/feature/file.html">
+											<div class="tit">
+												<div class="icon">
+													<svg t="1722502738241" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="24828">
+														<path d="M910.096853 360.579647v-61.707521c0-52.999376-42.030493-112.28336-98.281728-112.28336H528.430288l-11.681508-22.048347c-11.685603-22.352441-34.588894-36.229158-59.807189-36.229158H154.570848c-50.436591 0-91.447294 42.168717-91.447294 94.010079v575.540275c0 51.814741 41.010703 93.969123 91.447294 93.969124h711.539892c50.436591 0 91.447294-42.154383 91.447294-93.969124V444.614011c-0.001024-30.633625-20.252452-63.054954-47.461181-84.034364z m-98.281728-117.546131c19.540851 0 41.838002 29.75206 41.838002 55.83861v39.040748c-0.956309-0.038908-1.913642-0.097269-2.865855-0.097269H608.55341l-50.21748-94.782089h253.479195z m89.297134 554.828099c0 20.684531-15.709473 37.524373-35.002543 37.524374h-711.538868c-19.292047 0-35.002544-16.839842-35.002544-37.524374V222.32134c0-20.712176 15.709473-37.565329 35.002544-37.565329h302.370743c4.134449 0 7.882893 2.274049 9.867182 6.07676l99.825748 188.420497a28.252068 28.252068 0 0 0 24.94287 15.007087h259.209881c20.229926 0 50.326011 30.12373 50.326011 50.353656v353.247604z" p-id="24829"></path>
+													</svg>
+												</div>
+												<span>File Protection</span>
+											</div>
+											<div class="desc">Protect your files and folders from malicious modification</div>
+										</a>
+									</li>
+								</ul>
+							</span>
+							<span>
+								<a href="/new/pricing.html" class="nava">Pricing</a>
+								<span class="icon-hot"></span>
+							</span>
+							<span>
+								<a href="/new/ssl.html" class="nava">SSL</a>
+							</span>
+							<span>
+								<a href="/new/partner.html" class="nava">Partners</a>
+							</span>
+							<span>
+								<a href="https://www.aapanel.com/blog" target="_blank" class="nava">Blog</a>
+							</span>
+							<span>
+								<a href="https://www.aapanel.com/forum" target="_blank" class="nava bbs">
+									<div class="icon"></div>
+									<div>Forum</div>
+								</a>
+							</span>
+						</div>
+					</div>
+					<div class="disflex sign">
+						<a href="/user_admin/login">Login</a>
+						<a class="btn-line"></a>
+						<a href="/user_admin/register">Sign-up</a>
+					</div>
+					<span>
+						<a href="/new/download.html" class="nava install-btn">Install for free</a>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="head_wap">
+		<div class="whead clearfix">
+			<a href="/" class="wlogo fl">
+				<img class="disblock h100" src="/static/images/aaPanel.png" alt="aaPanel">
+			</a>
+			<i></i>
+		</div>
+		<div class="wpnvbg"></div>
+		<div class="wapnav">
+			<div class="wapnavtop">
+				<a href="/" class="waphdlg">
+					<img class="disblock h100" src="/static/images/aaPanel.png" alt="aaPanel">
+				</a>
+				<i></i>
+			</div>
+			<div class="wapnava clearfix">
+				<!-- <span>
+					<a href="/" class="wapprda">Home</a>
+				</span> -->
+				<!-- <span>
+					<a href="/new/pro.html" class="wapprda">
+						<span>Pro</span>
+					</a>
+				</span> -->
+				<!-- <span>
+					<a href="/new/waf.html" class="wapprda">aaWAF</a>
+				</span> -->
+				<span>
+					<a href="javascript:;" class="wapprda">
+						<span>Features</span>
+						<i><img src="/static/new/images/ricon.png"></i>
+					</a>
+					<div class="wpheadhide">
+						<a href="/new/feature/wp.html">WP Toolkit</a>
+						<a href="/new/feature/mass.html">Mass Mail</a>
+						<a href="/new/feature/mail.html">Mail Server</a>
+						<a href="/new/feature/nginx.html">Nginx WAF</a>
+						<a href="/new/feature/crontab.html">Scheduled Tasks</a>
+						<a href="/new/feature/file.html">File Protection</a>
+					</div>
+				</span>
+				<span>
+					<a href="/new/pricing.html" class="wapprda">
+						<span>Pricing</span>
+						<span class="icon-hot"></span>
+					</a>
+				</span>
+				<!-- <span><a href="/new/partner.html" class="wapprda">Hosting</a></span> -->
+				<span>
+					<a href="https://www.aapanel.com/forum" target="_blank" class="wapprda">Forum</a>
+				</span>
+				<span>
+					<a href="/new/ssl.html" class="wapprda">SSL</a>
+				</span>
+				<span>
+								<a href="/new/partner.html" class="wapprda">Partners</a>
+							</span>
+				<span>
+					<a href="https://www.aapanel.com/blog" target="_blank" class="wapprda">Blog</a>
+				</span>
+				<span class="active">
+					<a href="/new/download.html" class="wapprda">Install</a>
+				</span>
+				<div class="mt_15 w100 clearfix textcenter waplga">
+					<a class="fl active" href="/user_admin/login">Sign in</a>
+					<a class="fr" href="/user_admin/register">Sign up</a>
+				</div>
+			</div>
+		</div>
+		<div class="waphd_height"></div>
+	</div>
+	<div class="down-main">
+		<div class="d1">
+			<div class="wrap">
+				<div class="i1t">
+					<h1 class="disflex flex_center flex_lrcenter textcenter">Install aaPanel 7.0.30 for free</h1>
+					<div class="text20 mt_25 wap_mt15 textcenter cl8">
+						<p>aaPanel is free, Powerful and easy-to-use</p>
+						<p>It is a Linux control panel that has been installed and approved by 12090158 servers around the world.</p>
+					</div>
+					<!-- <div class="mt_30 i1ta wap_mt15">
+						<a href="#install">安装脚本</a>
+					</div>
+					<div class="i1timg mt_50 textcenter">
+						<img src="/static/new/images/i1tpic_03_02.png" />
+						<img src="/static/new/images/bt_video.png" />
+						<img src="/static/new/images/i1tpic_03_03.png" />
+					</div> -->
+				</div>
+			</div>
+		</div>
+		<a name="install"></a>
+		<div class="d2">
+			<div class="wrap">
+				<div class="wrap-title linux-title">
+					<div class="text">aaPanel installation script(Installed In 2 minutes)</div>
+					<a class="link" href="https://forum.aapanel.com/d/18317-aapanel-linux-panel-6834-installation-tutorial" target="_blank">View detailed installation tutorials</a>
+				</div>
+				<div style="margin-bottom: 24px;">
+					<strong style="font-size:15px;color:red;">CentOS 7 has reached end of life, and community support ended on June 30, 2024. </strong><br><br>
+					<span>It is recommended that you use <strong>Ubuntu22.04</strong> to install aaPanel</span>
+				</div>
+				<div class="install-code">
+					<span class="osname">Instarll script</span>
+					<div class="code-cont">
+						<div class="command" title="Copy successfully, please paste it to the server installation">URL=https://www.aapanel.com/script/install_7.0_en.sh &amp;&amp; if [ -f /usr/bin/curl ];then curl -ksSO "$URL" ;else wget --no-check-certificate -O install_7.0_en.sh "$URL";fi;bash install_7.0_en.sh aapanele</div>
+						<span class="ico-copy" title="Copy successfully, please paste it to the server installation" data-clipboard-text="URL=https://www.aapanel.com/script/install_7.0_en.sh &amp;&amp; if [ -f /usr/bin/curl ];then curl -ksSO &quot;$URL&quot; ;else wget --no-check-certificate -O install_7.0_en.sh &quot;$URL&quot;;fi;bash install_7.0_en.sh aapanele">
+							<span class="copy-img"></span>
+							<span class="copy-text">Copy script</span>
+						</span>
+					</div>
+				</div>
+				<!--</div>-->
+				<!--<div class="install-code">-->
+				<!--	<span class="osname">Centos</span>-->
+				<!--	<div class="code-cont">-->
+				<!--		<div class="command" title="Copy successfully, please paste it to the server installation">yum install -y wget &amp;&amp; wget -O install.sh http://www.aapanel.com/script/install_6.0_en.sh &amp;&amp; bash install.sh</div>-->
+				<!--		<span class="ico-copy" title="Copy successfully, please paste it to the server installation" data-clipboard-text="yum install -y wget &amp;&amp; wget -O install.sh http://www.aapanel.com/script/install_6.0_en.sh &amp;&amp; bash install.sh">Copy</span>-->
+				<!--	</div>-->
+				<!--</div>-->
+				<!--<div class="install-code">-->
+				<!--	<span class="osname">Ubuntu/Deepin</span>-->
+				<!--	<div class="code-cont">-->
+				<!--		<div class="command" title="Copy successfully, please paste it to the server installation">wget -O install.sh http://www.aapanel.com/script/install-ubuntu_6.0_en.sh &amp;&amp; sudo bash install.sh</div>-->
+				<!--		<span class="ico-copy" title="Copy successfully, please paste it to the server installation" data-clipboard-text="wget -O install.sh http://www.aapanel.com/script/install-ubuntu_6.0_en.sh &amp;&amp; sudo bash install.sh">Copy</span>-->
+				<!--	</div>-->
+				<!--</div>-->
+				<!--<div class="install-code">-->
+				<!--	<span class="osname">Debian</span>-->
+				<!--	<div class="code-cont">-->
+				<!--		<div class="command" title="Copy successfully, please paste it to the server installation">wget -O install.sh http://www.aapanel.com/script/install-ubuntu_6.0_en.sh &amp;&amp; bash install.sh</div>-->
+				<!--		<span class="ico-copy" title="Copy successfully, please paste it to the server installation" data-clipboard-text="wget -O install.sh http://www.aapanel.com/script/install-ubuntu_6.0_en.sh &amp;&amp; bash install.sh">Copy</span>-->
+				<!--	</div>-->
+				<!--</div>-->
+				<!-- <div class="tips" style="color: orangered; font-weight: 700">
+					<p>Notice: Ensure that it is a clean operating system, there is no other environment with Apache/Nginx/php/MySQL installed (the existing environment can not be installed)</p>
+					<p style="text-indent: 51px">It is recommended to use Chrome, Firefox, and edge browsers to access the panel login address</p>
+				</div> -->
+
+
+
+				<a name="fqa"></a>
+				<div class="reference mt_100">
+					<div class="wrap-title linux-title">
+						<div class="text">FQA</div>
+					</div>
+					<div class="faq-box expanded">
+						<div class="faq-question rotate-counter" onclick="toggleCollapse(this)">
+							<img class="faq-img" src="/static/new/images/unfold.svg" alt="">
+							<div class="faq-tit">How to install aaPanel?</div>
+						</div>
+						<div class="install_command">
+							<p style="line-height: 30px; font-size: 14px">1. Prepare a new server and log in to the SSH termina</p>
+							<p style="line-height: 30px; font-size: 14px">2. Make sure to switch to root privileges</p>
+							<p style="line-height: 30px; font-size: 14px">3. Copy the installation command and paste it into the terminal to execute</p>
+							<p style="line-height: 30px; font-size: 14px">4. Wait 2 minutes to install and start using it.</p>
+						</div>
+					</div>
+					<div class="faq-box collapsed">
+						<div class="faq-question rotate-icon" onclick="toggleCollapse(this)">
+							<img class="faq-img" src="/static/new/images/unfold.svg" alt="">
+							<div class="faq-tit">What operating systems does aaPanel support?</div>
+						</div>
+						<div class="install_command">
+							<p style="line-height: 30px; font-size: 14px">CentOS 7.x</p>
+							<p style="line-height: 30px; font-size: 14px">Debian 10, 11, 12</p>
+							<p style="line-height: 30px; font-size: 14px">Ubuntu 18.04, 20.04, 22.04</p>
+							<p style="line-height: 30px; font-size: 14px">CloudLinux 7.x, 8.x</p>
+							<p style="line-height: 30px; font-size: 14px">AlmaLinux 8.x, 9.x</p>
+							<p style="line-height: 30px; font-size: 14px">Rocky Linux 8.x</p>
+						</div>
+					</div>
+					<div class="faq-box collapsed">
+						<div class="faq-question rotate-icon" onclick="toggleCollapse(this)">
+							<img class="faq-img" src="/static/new/images/unfold.svg" alt="">
+							<div class="faq-tit">aaPanel Hardware Requirements</div>
+						</div>
+						<div class="install_command">
+							<p style="line-height: 30px; font-size: 14px">Minimum: 1 core CPU + 512MB RAM</p>
+							<p style="line-height: 30px; font-size: 14px">Recommended: 1 core CPU + 1G RAM</p>
+						</div>
+					</div>
+					<div class="faq-box collapsed">
+						<div class="faq-question rotate-icon" onclick="toggleCollapse(this)">
+							<img class="faq-img" src="/static/new/images/unfold.svg" alt="">
+							<div class="faq-tit">Can I use it without authorization?</div>
+						</div>
+						<div class="install_command">
+							<p style="line-height: 30px; font-size: 14px">It can be used without registration or authorization. The core functions of aaPanel such as website building and file management are free.</p>
+						</div>
+					</div>
+				</div>
+
+
+
+
+				<div class="reference mt_100">
+					<div class="wrap-title linux-title">
+						<div class="text">aaPanel Management script</div>
+					</div>
+					<a name="management"></a>
+					<h2 class="th2">Management</h2>
+					<div class="btcode">
+						<span>Stop</span>
+						<pre>service bt stop</pre>
+						<span>Start</span>
+						<pre>service bt start</pre>
+						<span>Restart</span>
+						<pre>service bt restart</pre>
+						<span>Uninstall</span>
+						<pre>service bt stop &amp;&amp; chkconfig --del bt &amp;&amp; rm -f /etc/init.d/bt &amp;&amp; rm -rf /www/server/panel</pre>
+						<span>View current port of control panel</span>
+						<pre>cat /www/server/panel/data/port.pl</pre>
+						<span>Change port of control panel，e.g. 8881（centos 6 Operation System）</span>
+						<pre>echo '8881' &gt; /www/server/panel/data/port.pl &amp;&amp; service bt restart iptables -I INPUT -p tcp -m state --state NEW -m tcp --dport 8881 -j ACCEPT service iptables save service iptables restart</pre>
+						<span>Change port of control panel，e.g. 8881（centos 7 Operation System）</span>
+						<pre>echo '8881' &gt; /www/server/panel/data/port.pl &amp;&amp; service bt restart firewall-cmd --permanent --zone=public --add-port=8881/tcp firewall-cmd --reload</pre>
+						<span>Force to change MySQL manager (root) Password，e.g. 123456</span>
+						<pre>cd /www/server/panel &amp;&amp; python tools.py root 123456</pre>
+						<span>Change control Panel login password，e.g. 123456</span>
+						<pre>cd /www/server/panel &amp;&amp; python tools.py panel 123456</pre>
+						<span>Site Configuration location</span>
+						<pre>/www/server/panel/vhost</pre>
+						<span>Delete banding domain of control panel</span>
+						<pre>rm -f /www/server/panel/data/domain.conf</pre>
+						<span>Clean login restriction</span>
+						<pre>rm -f /www/server/panel/data/*.login</pre>
+						<span>View control panel authorization IP</span>
+						<pre>cat /www/server/panel/data/limitip.conf</pre>
+						<span>Stop access restriction</span>
+						<pre>rm -f /www/server/panel/data/limitip.conf</pre>
+						<span>View permission domain</span>
+						<pre>cat /www/server/panel/data/domain.conf</pre>
+						<span>Turn off control panel SSL</span>
+						<pre>rm -f /www/server/panel/data/ssl.pl &amp;&amp; /etc/init.d/bt restart</pre>
+						<span>View control panel error logs</span>
+						<pre>cat /tmp/panelBoot</pre>
+						<span>View database error log</span>
+						<pre>cat /www/server/data/*.err</pre>
+						<span>Site Configuration directory(nginx)</span>
+						<pre>/www/server/panel/vhost/nginx</pre>
+						<span>Site Configuration directory(apache)</span>
+						<pre>/www/server/panel/vhost/apache</pre>
+						<span>Site default directory</span>
+						<pre>/www/wwwroot</pre>
+						<span>Database backup directory</span>
+						<pre>/www/backup/database</pre>
+						<span>Site backup directory</span>
+						<pre>/www/backup/site</pre>
+						<span>Site logs</span>
+						<pre>/www/wwwlogs</pre>
+					</div>
+					<a name="nginx"></a>
+					<h2 class="th2">Nginx</h2>
+					<div class="btcode">
+						<span>nginx installation directory</span>
+						<pre>/www/server/nginx</pre>
+						<span>Start</span>
+						<pre>service nginx start</pre>
+						<span>Stop</span>
+						<pre>service nginx stop</pre>
+						<span>Restart</span>
+						<pre>service nginx restart</pre>
+						<span>Reload</span>
+						<pre>service nginx reload</pre>
+						<span>nginx Configuration</span>
+						<pre>/www/server/nginx/conf/nginx.conf</pre>
+					</div>
+					<a name="apache"></a>
+					<h2 class="th2">Apache</h2>
+					<div class="btcode">
+						<span>apache installation directory</span>
+						<pre>/www/server/httpd</pre>
+						<span>Start</span>
+						<pre>service httpd start</pre>
+						<span>Stop</span>
+						<pre>service httpd stop</pre>
+						<span>Restart</span>
+						<pre>service httpd restart</pre>
+						<span>Reload</span>
+						<pre>service httpd reload</pre>
+						<span>apache Configuration</span>
+						<pre>/www/server/apache/conf/httpd.conf</pre>
+					</div>
+					<a name="mysql"></a>
+					<h2 class="th2">MySQL</h2>
+					<div class="btcode">
+						<span>mysql  installation directory</span>
+						<pre>/www/server/mysql</pre>
+						<span>phpmyadmin installation directory</span>
+						<pre>/www/server/phpmyadmin</pre>
+						<span>Data storage directory</span>
+						<pre>/www/server/data mysql</pre>
+						<span>Start</span>
+						<pre>service mysqld start</pre>
+						<span>Stop</span>
+						<pre>service mysqld stop</pre>
+						<span>Restart</span>
+						<pre>service mysqld restart</pre>
+						<span>Reload</span>
+						<pre>service mysqld reload</pre>
+						<span>mysql Configuration</span>
+						<pre>/etc/my.cnf</pre>
+					</div>
+					<a name="ftp"></a>
+					<h2 class="th2">FTP</h2>
+					<div class="btcode">
+						<span>ftp installation directory</span>
+						<pre>/www/server/pure-ftpd</pre>
+						<span>Start</span>
+						<pre>service pure-ftpd start</pre>
+						<span>Stop</span>
+						<pre>service pure-ftpd stop</pre>
+						<span>Restart</span>
+						<pre>service pure-ftpd restart</pre>
+						<span>ftp Configuration</span>
+						<pre>/www/server/pure-ftpd/etc/pure-ftpd</pre>
+					</div>
+					<a name="php"></a>
+					<h2 class="th2">PHP</h2>
+					<div class="btcode">
+						<span>php installation directory</span>
+						<pre>/www/server/php</pre>
+						<span>Start</span><span class="info">(Please modify by PHP version, e.g. service php-fpm-54 start)</span>
+						<pre>servicephp-fpm-{52|53|54|55|56|70|71|72|73|74|80|81} start</pre>
+						<span>Stop</span><span class="info">(Please modify by PHP version, e.g. service php-fpm-54 stop)</span>
+						<pre>service php-fpm-{52|53|54|55|56|70|71|72|73|74|80|81} stop</pre>
+						<span>Restart</span><span class="info">(Please modify by PHP version, e.g. service php-fpm-54 restart)</span>
+						<pre>service php-fpm-{52|53|54|55|56|70|71|72|73|74|80|81} restart</pre>
+						<span>Reload</span><span class="info">(Please modify by PHP version, e.g. service php-fpm-54 reload)</span>
+						<pre>service php-fpm-{52|53|54|55|56|70|71|72|73|74|80|81} reload</pre>
+						<span> Configuration</span><span class="info">(Please modify by PHP version, e.g. /www/server/php/52/etc/php.ini)</span>
+						<pre>/www/server/php/{52|53|54|55|56|70|71|72|73|74|80|81}/etc/php.ini</pre>
+					</div>
+					<a name="redis"></a>
+					<h2 class="th2">Redis</h2>
+					<div class="btcode">
+						<span>redis installation directory</span>
+						<pre>/www/server/redis</pre>
+						<span>Start</span>
+						<pre>service redis start</pre>
+						<span>Stop</span>
+						<pre>service redis stop</pre>
+						<span>redis Configuration</span>
+						<pre>/www/server/redis/redis.conf</pre>
+					</div>
+					<a name="memcached"></a>
+					<h2 class="th2">Memcached</h2>
+					<div class="btcode">
+						<span>memcached installation directory</span>
+						<pre>/usr/local/memcached</pre>
+						<span>Start</span>
+						<pre>service memcached start</pre>
+						<span>Stop</span>
+						<pre>service memcached stop</pre>
+						<span>Restart</span>
+						<pre>service memcached restart</pre>
+						<span>Reload</span>
+						<pre>service memcached reload</pre>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="code-title">
+			<h3>Index</h3>
+			<div class="code-list">
+				<ul>
+					<li><a data-name="install">Installaiton</a></li>
+					<li><a data-name="fqa">FQA</a></li>
+					<li><a data-name="management">Management</a></li>
+					<li><a data-name="nginx">Nginx</a></li>
+					<li><a data-name="apache">Apache</a></li>
+					<li><a data-name="mysql">MySQL</a></li>
+					<li><a data-name="ftp">FTP</a></li>
+					<li><a data-name="php">PHP</a></li>
+					<li><a data-name="redis">Redis</a></li>
+					<li><a data-name="memcached">Memcached</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="foot">
+		<div class="wrap_1200">
+			<div class="ft disflex flex_lmr flex_wrap">
+				<div class="ft_logo">
+					<img class="block" src="/static/images/bt_logo.png" alt="aaPanel-Logo">
+					<img class="block" src="/static/images/aaPanel.png" alt="aaPanel-Logo2">
+					<!-- TrustBox widget - Review Collector -->
+					<div class="trustpilot-widget" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="6500968260003ffc450ab0aa" data-style-height="52px" data-style-width="100%" style="position: relative;"><iframe title="Customer reviews powered by Trustpilot" loading="auto" src="https://widget.trustpilot.com/trustboxes/56278e9abfbbba0bdcd568bc/index.html?templateId=56278e9abfbbba0bdcd568bc&amp;businessunitId=6500968260003ffc450ab0aa#locale=en-US&amp;styleHeight=52px&amp;styleWidth=100%25" style="position: relative; height: 52px; width: 100%; border-style: none; display: block; overflow: hidden;"></iframe></div>
+					<!-- End TrustBox widget -->
+				</div>
+				<div class="fta fta1">
+					<h3 class="text20">COMPANY</h3>
+					<div class="mt_10 text16 color666">
+						<p><a href="https://www.aapanel.com/blog" target="_blank">Blog</a></p>
+						<p><a href="https://www.aapanel.com/forum" target="_blank">Forum</a></p>
+						<p><a href="/new/partner.html" target="_blank">Hosting Partner</a></p>
+					</div>
+				</div>
+				<div class="fta fta1">
+					<h3 class="text20">Product</h3>
+					<div class="mt_10 text16 color666">
+						<p><a href="/new/waf.html" target="_blank">aaWAF</a></p>
+						<p><a href="/new/ssl.html" target="_blank">SSL</a></p>
+						<p><a href="/new/pro.html" target="_blank">aaPanel Pro</a></p>
+					</div>
+				</div>
+				<div class="fta fta2">
+					<h3 class="text20">Support</h3>
+					<div class="mt_10 text16 color666">
+						<p><a href="https://www.aapanel.com/docs/web/#/3?page_id=117" target="_blank">Documentation</a></p>
+						<p>Contact Us: support@aapanel.com</p>
+					</div>
+				</div>
+			</div>
+			<div class="fb mt_30 textcenter">
+				<div class="ft_link">
+					<div class="ft_link_tit">Follow us: </div>
+					<a href="https://www.facebook.com/people/AApanel/61557427444771/" target="_blank" aria-label="Facebook">
+						<svg t="1711423288504" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5874">
+							<path d="M546.986667 1024H56.490667A56.533333 56.533333 0 0 1 0 967.466667V56.533333C0 25.301333 25.301333 0 56.533333 0h910.933334C998.698667 0 1024 25.301333 1024 56.533333v910.933334c0 31.232-25.301333 56.533333-56.533333 56.533333H706.56v-396.544h133.12l19.882667-154.538667H706.56V374.186667c0-44.714667 12.373333-75.221333 76.586667-75.221334h81.834666v-138.24c-14.165333-1.92-62.72-6.101333-119.253333-6.101333-118.016 0-198.784 72.021333-198.784 204.288v113.92H413.525333v154.581333h133.418667V1024z" fill="#3B5998" p-id="5875"></path>
+						</svg>
+					</a>
+					<a href="https://x.com/aaPanel_TV" target="_blank" aria-label="X">
+						<svg viewBox="0 0 24 24" aria-hidden="true">
+							<g>
+								<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+							</g>
+						</svg>
+					</a>
+					<a href="https://www.reddit.com/r/aaPanel_Offical/" target="_blank" aria-label="Reddit">
+						<img src="/static/images/reddit.svg" alt="">
+					</a>
+					<a class="youtube" href="https://www.youtube.com/@aapanel6703" target="_blank" aria-label="Youtube">
+						<svg t="1722581813740" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4706">
+							<path d="M426.666667 682.666667V384l256 149.845333L426.666667 682.666667z m587.093333-355.541334s-10.026667-71.04-40.704-102.357333c-38.954667-41.088-82.602667-41.258667-102.613333-43.648C727.168 170.666667 512.213333 170.666667 512.213333 170.666667h-0.426666s-214.954667 0-358.229334 10.453333c-20.053333 2.389333-63.658667 2.56-102.656 43.648-30.677333 31.317333-40.661333 102.4-40.661333 102.4S0 410.538667 0 493.952v78.293333c0 83.456 10.24 166.912 10.24 166.912s9.984 71.04 40.661333 102.357334c38.997333 41.088 90.154667 39.765333 112.938667 44.074666C245.76 893.568 512 896 512 896s215.168-0.341333 358.442667-10.752c20.053333-2.432 63.658667-2.602667 102.613333-43.690667 30.72-31.317333 40.704-102.4 40.704-102.4s10.24-83.413333 10.24-166.869333v-78.250667c0-83.456-10.24-166.912-10.24-166.912z" fill="#FF0000" p-id="4707"></path>
+						</svg>
+					</a>
+				</div>
+				<div class="fb2 mt_15">
+					<p>aaPanel is a Free and Easy-to-use Hosting Control Panel</p>
+					<p>Copyright © 2014-2024 by aaPanel, Our server is managed by aaPanel</p>
+				</div>
+			</div>
+		</div>
+	</div>
+		<script src="/static/js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/static/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		var storage = function(key, value) {
+			if (typeof value === 'undefined') {
+				return localStorage.getItem(key);
+			}
+			return localStorage.setItem(key, value);
+		};
+
+		var format = function(template, data) {
+			return template.replace(/\{\{\s*(.*?)\s*?\}\}/g, function($0, $1) {
+				return data[$1] || '';
+			});
+		};
+
+		var getUrlParamValue = function (name) {
+			if (name == null || name == 'undefined') { return null; }
+
+			var searchStr = decodeURI(location.search);
+
+			var infoIndex = searchStr.indexOf(name + "=");
+
+			if (infoIndex == -1) { return null; }
+
+			var searchInfo = searchStr.substring(infoIndex + name.length + 1);
+
+			var tagIndex = searchInfo.indexOf("&");
+
+			if (tagIndex != -1) { searchInfo = searchInfo.substring(0, tagIndex); }
+
+			return searchInfo;
+		}
+
+		var tokenType = storage('token_type');
+		var survivalTime = storage('survival_time');
+		var accessToken = storage('access-token');
+		var userName = storage('userName');
+
+		// 登录成功
+		if (!((! tokenType || ! accessToken) || (((+new Date) / 1000) | 0) > parseInt(survivalTime))) {
+			// $('.head .sign').html('\
+			// <a href="/user_admin/order_list" class="admin active">\
+			// 	<span>Welcome, ' + userName + '</span>\
+			// </a>');
+			$('.head .sign').html('\
+			<a href="/user_admin/order_list" class="admin-btn active">\
+				<span>My Account</span>\
+			</a>');
+			$('.head_wap .waplga').html('<a class="fl admin active" href="/user_admin/order_list">Welcome, ' + userName + '</a>');
+		}
+
+		var code = getUrlParamValue('referral_code');
+
+		if (code) {
+			var nowTime = Math.ceil(Date.now() / 100);
+			window.localStorage.setItem("referral_code", code, (nowTime + (4 * 60 * 60)));
+		}
+
+		$(function () {
+			$('.whead i,.wapnavtop i').click(function () {
+				$('.wapnav').toggleClass('wapnav_active');
+				$('.wpnvbg').toggleClass('wpnvbg_active');
+			});
+
+			$('.wpnvbg').click(function () {
+				$('.wapnav').removeClass('wapnav_active');
+				$('.wpnvbg').removeClass('wpnvbg_active');
+			});
+
+			$('.wpheadhide a').click(function () {
+				$('.wpnvbg').click();
+			});
+
+			$('.wapprda').click(function () {
+				$(this).siblings('.wpheadhide').slideToggle();
+				$(this).toggleClass('wapprda_active');
+			});
+
+			// 设置路由地址
+			function setNavAactive() {
+				var fileName = location.pathname.match(/([A-z]*(\.html)?)$/)[1];
+				var navLink = $('.navigation a, .head_wap a');
+				navLink.each(function () {
+					$(this).parent().removeClass('active');
+				});
+				var activeNav = navLink.filter(function () {
+					if (!fileName) return;
+					return $(this).attr('href').indexOf(fileName) > -1;
+				});
+				const box = activeNav.parent();
+				if (box.hasClass('sub-menu-item')) {
+					box.parents('span').addClass('active');
+					activeNav.addClass('active');
+				} else {
+					box.addClass('active');
+				}
+
+				if (box.hasClass('wpheadhide')) {
+					box.addClass('wapprda_active');
+					box.show();
+				}
+			}
+
+			setNavAactive();
+		});
+	</script>
+		<script type="text/javascript" src="/static/js/clipboard.min.js?1.1"></script>
+	<script>
+		$(function () {
+			
+			// 复制安装命令
+			var clipboard = new ClipboardJS('.ico-copy', {
+				text: function (element) {
+					return $(element).prev().text();
+				},
+			});
+
+			clipboard
+				.on('success', function (e) {
+					layer.msg('Copy successfully, please paste it to the server installation', { icon: 1 });
+				})
+				.on('error', function (e) {
+					layer.msg('Copy failed, please copy manually', { icon: 2 });
+				});
+
+			$('.install-code .command').click(function () {
+				$(this).next('.ico-copy').click();
+			});
+
+			var setCookie = function (name, value, day) {
+				if (day !== 0) {
+					var expires = day * 24 * 60 * 60 * 1000;
+					var date = new Date(+new Date()+expires);
+					document.cookie = name + "=" + escape(value) + ";expires=" + date.toUTCString();
+				} else {
+					document.cookie = name + "=" + escape(value);
+				}
+			};
+
+			var getCookie = function (name) {
+				var arr;
+				var reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+				if (arr = document.cookie.match(reg))
+					return unescape(arr[2]);
+				else
+					return null;
+			};
+
+			var invite_code = location.search.match(/\?invite_code=([0-9A-z]*)/) || 'aapanel';
+
+			if (Array.isArray(invite_code)) {
+				invite_code = invite_code[1];
+				setCookie('invite_code', invite_code, 1);
+			} else {
+				var cookie_invite_code = getCookie('invite_code');
+				if (cookie_invite_code) invite_code = cookie_invite_code;
+			}
+
+			$('.install-code').each(function () {
+					var code = $(this).find('.command'), copy_code = $(this).find('.ico-copy'), code_text = code.text() + ' ' + invite_code;
+					code.html(code_text);
+					copy_code.attr('data-clipboard-text', code_text)
+			});
+
+			$('.code-list a').click(function () {
+				var name = $(this).attr('data-name');
+				var $a = $('a[name="' + name + '"]');
+				var top = $a.offset().top;
+				$('html,body').animate({
+					scrollTop: top - $('.head_box').height()
+				})
+			});
+
+		});
+
+		// // 折叠和展开
+		// function toggleCollapse(question) {
+		// 	var installCommand = question.nextElementSibling;
+		// 	// installCommand.classList.toggle('expanded');
+		// 	question.classList.toggle('collapsed');
+		// }
+
+		// 折叠和展开
+		function toggleCollapse(question) {
+			var installCommand = question.nextElementSibling;
+			if (question.classList.contains('rotate-counter')) {
+				question.classList.toggle('collapsed');
+
+			} else {
+				question.classList.toggle('collapsed-1');
+
+			}
+		}
+
+		// 折叠和展开 淡入淡出
+			$(document).ready(function () {
+				$('.faq-box').on('click', '.faq-question', function () {
+					$(this).next('.install_command').fadeToggle(100);
+				});
+			});
+	</script>
+	<!--Start of Tawk.to Script-->
+		<!--script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/666c03ab981b6c56477d16d9/1i0auslvr';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+        </script-->
+		<!--End of Tawk.to Script-->
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;2a185cafd8114d0c86f6a45e87363823&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+</body></html>

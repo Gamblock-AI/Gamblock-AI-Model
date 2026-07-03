@@ -1,0 +1,507 @@
+<html><head>
+		<title>Unlimited-WoW | 255 Funserver | WoW Private Server</title>
+		
+		<link rel="stylesheet" href="https://unlimited-wow.com/application/css/default.css" type="text/css">
+		<link rel="stylesheet" href="https://unlimited-wow.com/application/themes/UW/css/cms.css?v=1" type="text/css">
+		<link rel="stylesheet" href="https://unlimited-wow.com/application/themes/UW/css/main.css" type="text/css">
+		<link rel="stylesheet" href="https://unlimited-wow.com/application/modules/news/css/news.css" type="text/css">		
+		<link rel="shortcut icon" href="https://unlimited-wow.com/application/themes/UW/images/favicon.gif">
+
+		<meta name="description" content="WoW Private Server - The Best WotLK 3.3.5a Instant 255 World of Warcraft Fun Server with haste and high stats.">
+		<meta name="keywords" content="instant 255, fun server, wow private server, world of warcraft, funserver, wotlk, best wow server, biggest wow server, private wow server, wow servidor privado , wrath of the lich king, free wow server, custom wow server, 3.3.5a, private server, wow, wotlk private server, cataclysm, mop, blizzlike, best free private server, unlimited wow, 255 fun, wow server">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+		<!-- Load scripts -->
+		<script src="https://unlimited-wow.com/application/js/html5shiv.js"></script>
+		<script type="text/javascript" src="https://unlimited-wow.com/application/js/jquery.min.js"></script>
+		<script type="text/javascript" src="https://unlimited-wow.com/application/js/router.js"></script>
+		<script type="text/javascript" src="https://unlimited-wow.com/application/js/require.js"></script>
+		<script type="text/javascript">
+		
+
+
+			if(!window.console)
+			{
+				var console = {
+				
+					log: function()
+					{
+						// Prevent stupid browsers from doing stupid things
+						// *cough* Internet Explorer *cough*
+					}
+				};
+			}
+
+			function getCookie(c_name)
+			{
+				var i, x, y, ARRcookies = document.cookie.split(";");
+
+				for(i = 0; i < ARRcookies.length;i++)
+				{
+					x = ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+					y = ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+					x = x.replace(/^\s+|\s+$/g,"");
+					
+					if(x == c_name)
+					{
+						return unescape(y);
+					}
+				}
+			}
+
+			function setCookie(c_name,value,exdays)
+			{
+				var exdate = new Date();
+				exdate.setDate(exdate.getDate() + exdays);
+				var c_value = escape(value) + ((exdays == null) ? "" : "; expires="+exdate.toUTCString());
+				document.cookie = c_name + "=" + c_value;
+			}
+
+			var Config = {
+				URL: "https://unlimited-wow.com/",			
+				image_path: "https://unlimited-wow.com/application/themes/UW/images/",
+				CSRF: getCookie('csrf_cookie_name'),
+				language: "english",
+
+				UseFusionTooltip: 1,
+
+				Slider: {
+					interval: 50000000,
+					effect: "",
+					id: "slider_bg"
+				},
+				
+				voteReminder: 0,
+
+				Theme: {
+					next: "",
+					previous: ""
+				}
+			};
+
+			var scripts = [
+				"https://unlimited-wow.com/application/js/ui.js",
+				"https://unlimited-wow.com/application/js/fusioneditor.js",
+				"https://unlimited-wow.com/application/js/flux.min.js",
+				"https://unlimited-wow.com/application/js/jquery.placeholder.min.js",
+				"https://unlimited-wow.com/application/js/jquery.sort.js",
+				"https://unlimited-wow.com/application/js/jquery.transit.min.js",
+				"https://unlimited-wow.com/application/js/language.js",
+				,"https://unlimited-wow.com/application/modules/news/js/ajax.js"			];
+
+			if(typeof JSON == "undefined")
+			{
+				scripts.push("https://unlimited-wow.com/application/js/json2.js");
+			}
+
+			require(scripts, function()
+			{
+				$(document).ready(function()
+				{
+											Language.set("null");
+					
+					UI.initialize();
+
+											Router.loadedCSS.push("modules/news/css/news.css");
+					
+											Router.loadedJS.push("modules/news/js/ajax.js");
+									});
+			});
+		</script>
+	
+		
+		
+		<!-- Google tag (gtag.js) -->
+		<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-7RRNN0SB11"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'G-7RRNN0SB11');
+		</script>
+		
+		
+		
+		
+	<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://unlimited-wow.com/application/js/ui.js" src="https://unlimited-wow.com/application/js/ui.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://unlimited-wow.com/application/js/fusioneditor.js" src="https://unlimited-wow.com/application/js/fusioneditor.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://unlimited-wow.com/application/js/flux.min.js" src="https://unlimited-wow.com/application/js/flux.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://unlimited-wow.com/application/js/jquery.placeholder.min.js" src="https://unlimited-wow.com/application/js/jquery.placeholder.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://unlimited-wow.com/application/js/jquery.sort.js" src="https://unlimited-wow.com/application/js/jquery.sort.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://unlimited-wow.com/application/js/jquery.transit.min.js" src="https://unlimited-wow.com/application/js/jquery.transit.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://unlimited-wow.com/application/js/language.js" src="https://unlimited-wow.com/application/js/language.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://unlimited-wow.com/application/modules/news/js/ajax.js" src="https://unlimited-wow.com/application/modules/news/js/ajax.js"></script></head>
+	<body style="zoom: 1;"><div id="tooltip"></div>
+		<!--[if lte IE 8]>
+			<style type="text/css">
+				body {
+					background-image:url(images/bg.jpg);
+					background-position:top center;
+				}
+			</style>
+		<![endif]-->
+		<section id="wrapper">
+			<div id="popup_bg"></div>
+
+<!-- confirm box -->
+<div id="confirm" class="popup">
+	<h1 class="popup_question" id="confirm_question"></h1>
+
+	<div class="popup_links">
+		<a href="javascript:void(0)" class="popup_button" id="confirm_button"></a>
+		<a href="javascript:void(0)" class="popup_hide" id="confirm_hide" onclick="UI.hidePopup()">
+			Cancel
+		</a>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+<!-- alert box -->
+<div id="alert" class="popup">
+	<h1 class="popup_message" id="alert_message"></h1>
+
+	<div class="popup_links">
+		<a href="javascript:void(0)" class="popup_button" id="alert_button">Okay</a>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+
+			<header id="hand"></header>
+
+			<header id="hand5"></header>
+
+			<header id="hand7"></header>
+
+
+			<ul id="top_menu">
+
+									<li><a href="/news" direct="1">Home</a></li>
+					
+									<li><a href="/register" direct="0">Register</a></li>
+					
+									<li><a href="https://unlimited-wow.com/page/connect" direct="1" data-hasevent="1">How to connect</a></li>
+					
+									<li><a href="https://unlimited-wow.com/page/info/" direct="0" data-hasevent="1">Server Info</a></li>
+					
+									<li><a href="/login" direct="0">Login</a></li>
+					
+							</ul>
+			<div id="main">
+			
+			
+				<aside id="left">
+						
+					<article>
+						<h1 class="top">Navigation</h1>
+													
+						<ul id="left_menu">
+															<li><a href="https://unlimited-wow.com/page/connect" direct="0" data-hasevent="1"><img src="https://unlimited-wow.com/application/themes/UW/images/bullet.png">Connection Guide</a></li>
+															<li><a href="https://unlimited-wow.com/page/vip" direct="1" data-hasevent="1"><img src="https://unlimited-wow.com/application/themes/UW/images/bullet.png">V.I.P Info</a></li>
+															<li><a href="/pvp_statistics" direct="0"><img src="https://unlimited-wow.com/application/themes/UW/images/bullet.png">PvP Statistics</a></li>
+															<li><a href="https://unlimited-wow.com/page/info/" direct="1" data-hasevent="1"><img src="https://unlimited-wow.com/application/themes/UW/images/bullet.png">Server Info &amp; Rules</a></li>
+															<li><a href="https://discord.gg/Y2BmvwgUsf" direct="0"><img src="https://unlimited-wow.com/application/themes/UW/images/bullet.png">Join our Discord</a></li>
+															<li><a href="/page/patch" direct="0"><img src="https://unlimited-wow.com/application/themes/UW/images/bullet.png">Patch Installation Guide</a></li>
+													</ul>
+					</article>
+						
+											<article>
+							<h1 class="top">User Control Panel</h1>
+							<section class="body">
+								<form action="https://unlimited-wow.com/login" method="post" accept-charset="utf-8"><div style="display:none">
+<input type="hidden" name="csrf_token_name" value="1eacd31eb3bc52669f809d12519828d0">
+</div>
+    <center id="sidebox_login">
+        <a href="https://unlimited-wow.com/login" class="nice_button" data-hasevent="1">
+            Login
+        </a>
+        <section id="forgot">
+            <a href="https://unlimited-wow.com/password_recovery" data-hasevent="1">
+                Have you lost your password?
+            </a>
+        </section>
+    </center>
+</form>
+
+							</section>
+						</article>
+			
+						
+											<article>
+							<h1 class="top">Discord</h1>
+							<section class="body">
+								<iframe src="https://discordapp.com/widget?id=323905854812454922&amp;theme=dark" width="260" height="300" allowtransparency="true" frameborder="0"></iframe>
+							</section>
+						</article>
+			
+						
+											<article>
+							<h1 class="top">Seasonal PvP Ladder</h1>
+							<section class="body">
+								<script type="text/javascript">
+	
+	var TopPvP = {
+
+		current: 0,
+
+		show: function(id)
+		{	
+			$("#toppvp_realm_" + this.current).fadeOut(150, function()
+			{
+				TopPvP.current = id;
+				$("#toppvp_realm_" + id).fadeIn(150);
+			});
+		}
+	};
+	
+
+	$(document).ready(function()
+	{
+		TopPvP.current = 0;
+		$("#toppvp_realm_0").fadeIn(150);
+	});
+</script>
+
+<script type="text/javascript">
+
+    var seasonEndTimestamp = 1776694929;
+
+    function formatTimeLeft(seconds) {
+        if (seconds <= 0) {
+            return "Season ended";
+        }
+        var days = Math.floor(seconds / 86400);
+        var hours = Math.floor((seconds % 86400) / 3600);
+        var minutes = Math.floor((seconds % 3600) / 60);
+
+        return days + "d " + hours + "h " + minutes + "m";
+    }
+
+    $(document).ready(function() {
+        var countdownEl = document.getElementById("toppvp_timeleft");
+        if (!countdownEl) return;
+
+        function updateCountdown() {
+            var now = Math.floor(Date.now() / 1000);
+            var secondsLeft = seasonEndTimestamp - now;
+            countdownEl.textContent = formatTimeLeft(secondsLeft);
+        }
+
+        if (seasonEndTimestamp > 0) {
+            updateCountdown(); // immediate update
+            setInterval(updateCountdown, 60000); // update every minute
+        } else {
+            countdownEl.textContent = "No active season";
+        }
+    });
+
+</script>
+
+
+<div id="toppvp">
+			<div class="toppvp_realm" id="toppvp_realm_0" style="">
+			<div class="toppvp_select">
+												    <div class="season_info_inline">
+        <strong>Season:</strong> 11 &nbsp; | &nbsp; <strong>Time left:</strong> <span id="toppvp_timeleft">6d 15h 44m</span>
+    </div>
+
+			</div>
+			<div class="toppvp_data">
+							<div class="toppvp_character">
+			<div style="float:right">2552 kills</div>
+			<b>1</b>
+			<img align="absbottom" src="https://unlimited-wow.com/application/images/stats/1-0.gif">			<img align="absbottom" src="https://unlimited-wow.com/application/images/stats/2.gif">			&nbsp;&nbsp;<a data-tip="View character profile" href="https://unlimited-wow.com/character/1/616680" data-hasevent="1">Holyfist</a> 
+		</div>
+			<div class="toppvp_character">
+			<div style="float:right">1704 kills</div>
+			<b>2</b>
+			<img align="absbottom" src="https://unlimited-wow.com/application/images/stats/5-1.gif">			<img align="absbottom" src="https://unlimited-wow.com/application/images/stats/4.gif">			&nbsp;&nbsp;<a data-tip="View character profile" href="https://unlimited-wow.com/character/1/615320" data-hasevent="1">Cadimira</a> 
+		</div>
+			<div class="toppvp_character">
+			<div style="float:right">1573 kills</div>
+			<b>3</b>
+			<img align="absbottom" src="https://unlimited-wow.com/application/images/stats/8-1.gif">			<img align="absbottom" src="https://unlimited-wow.com/application/images/stats/8.gif">			&nbsp;&nbsp;<a data-tip="View character profile" href="https://unlimited-wow.com/character/1/654275" data-hasevent="1">Centquinze</a> 
+		</div>
+			<div class="toppvp_character">
+			<div style="float:right">1393 kills</div>
+			<b>4</b>
+			<img align="absbottom" src="https://unlimited-wow.com/application/images/stats/10-1.gif">			<img align="absbottom" src="https://unlimited-wow.com/application/images/stats/2.gif">			&nbsp;&nbsp;<a data-tip="View character profile" href="https://unlimited-wow.com/character/1/654813" data-hasevent="1">Hyriaz</a> 
+		</div>
+			<div class="toppvp_character">
+			<div style="float:right">1373 kills</div>
+			<b>5</b>
+			<img align="absbottom" src="https://unlimited-wow.com/application/images/stats/2-0.gif">			<img align="absbottom" src="https://unlimited-wow.com/application/images/stats/5.gif">			&nbsp;&nbsp;<a data-tip="View character profile" href="https://unlimited-wow.com/character/1/706478" data-hasevent="1">Priorg</a> 
+		</div>
+			<div class="toppvp_character">
+			<div style="float:right">997 kills</div>
+			<b>6</b>
+			<img align="absbottom" src="https://unlimited-wow.com/application/images/stats/1-1.gif">			<img align="absbottom" src="https://unlimited-wow.com/application/images/stats/5.gif">			&nbsp;&nbsp;<a data-tip="View character profile" href="https://unlimited-wow.com/character/1/506663" data-hasevent="1">Emersa</a> 
+		</div>
+			<div class="toppvp_character">
+			<div style="float:right">996 kills</div>
+			<b>7</b>
+			<img align="absbottom" src="https://unlimited-wow.com/application/images/stats/8-1.gif">			<img align="absbottom" src="https://unlimited-wow.com/application/images/stats/4.gif">			&nbsp;&nbsp;<a data-tip="View character profile" href="https://unlimited-wow.com/character/1/763583" data-hasevent="1">Mdot</a> 
+		</div>
+			<div class="toppvp_character">
+			<div style="float:right">994 kills</div>
+			<b>8</b>
+			<img align="absbottom" src="https://unlimited-wow.com/application/images/stats/4-1.gif">			<img align="absbottom" src="https://unlimited-wow.com/application/images/stats/3.gif">			&nbsp;&nbsp;<a data-tip="View character profile" href="https://unlimited-wow.com/character/1/696410" data-hasevent="1">Passerby</a> 
+		</div>
+			<div class="toppvp_character">
+			<div style="float:right">746 kills</div>
+			<b>9</b>
+			<img align="absbottom" src="https://unlimited-wow.com/application/images/stats/1-1.gif">			<img align="absbottom" src="https://unlimited-wow.com/application/images/stats/2.gif">			&nbsp;&nbsp;<a data-tip="View character profile" href="https://unlimited-wow.com/character/1/495248" data-hasevent="1">Orgasme</a> 
+		</div>
+			<div class="toppvp_character">
+			<div style="float:right">724 kills</div>
+			<b>10</b>
+			<img align="absbottom" src="https://unlimited-wow.com/application/images/stats/5-0.gif">			<img align="absbottom" src="https://unlimited-wow.com/application/images/stats/8.gif">			&nbsp;&nbsp;<a data-tip="View character profile" href="https://unlimited-wow.com/character/1/322324" data-hasevent="1">Primex</a> 
+		</div>
+	
+			</div>
+		</div>
+		<div style="clear:both;"></div>
+</div>
+							</section>
+						</article>
+			
+						
+									</aside>
+
+				<aside id="right">
+					<section id="slider_bg">
+						<div id="slider">
+							<div id="slider_frame">
+															<a href="https://unlimited-wow.com/" data-hasevent="1"></a>
+								
+															
+														
+							</div>
+						<div class="fluxslider" style="width: 733px; height: 264px;"><div class="surface" style="position: relative"><div class="caption" style="opacity: 0; position: absolute; z-index: 110; width: 100%; transition-property: opacity; transition-duration: 800ms; box-sizing: border-box;"></div><div class="images" style="position: relative; overflow: hidden; min-height: 100px; width: 733px; height: 246px;"><div class="image1 hasLink" style="height: 246px; width: 733px; position: absolute; top: 0px; left: 0px; background-image: url(&quot;https://unlimited-wow.com/application/themes/UW/images/slides/3.jpg&quot;); z-index: 101; cursor: pointer;"></div><div class="image2" style="height: 246px; width: 733px; position: absolute; top: 0px; left: 0px; background-image: url(&quot;https://unlimited-wow.com/application/themes/UW/images/slides/3.jpg&quot;); z-index: 100;"></div></div><a href="#" id="slider_next" style="top: 123px; right: 10px;"></a><a href="#" id="slider_previous" style="top: 123px; left: 10px;"></a></div><ul class="pagination" style="margin: 0px; padding: 0px; text-align: center;"><li data-index="0" class="current" style="display: inline-block; margin-left: 0px; cursor: pointer;">1</li></ul></div></div>
+
+					</section>
+
+					<div id="content_ajax">
+	<article>
+		<a class="top">Tier 16 Secrets of Ulduar &amp; New Content - 27/03/2026</a>
+		<section class="body">
+						
+			<p><span>⚔️&nbsp;</span>Tier 16 Secrets of Ulduar has been released&nbsp;<span>⚔️</span><br><br></p>
+<p>Server Update &amp; Changelog<br>- New Raid: Secrets of Ulduar is now live!<br>- World Bosses: 4 new World Bosses and their associated quests have been added.<br>- Note: Two of these bosses are located in PvP zones. You will be automatically teleported to a safe spot upon death.<br>- New Area: Explore the Ruins of Alterac (Note: PvP is enabled in this zone).<br>- 4 New Solo Quests have been added specifically for this area (Ruins of Alterac).<br>- A dedicated Solo Daily Quest NPC has been added. Daily Quest NPCs are now split into three categories: World Boss, Raid, and Solo.<br><br></p>
+<p>Currency &amp; Reward Adjustments<br>- All daily raid quests now reward T16.5 Medallions.<br>- Transmog quests (Cata) now also reward T16.5 Medallions.<br>- Daily quest rewards have been updated from T15.5 to Ironsoul Medallions + T16.5.<br>- New Exchange: Added a new daily quest: Icecrown Medallion Exchange (Convert to Ironsoul).<br>- PvP &amp; Visual Tokens: Reward amounts from old dailies have been reduced; these rewards have been redistributed to the newer quests.<br><br></p>
+<p>Progression &amp; Balancing<br>- Tier 15 Changes: Quest requirements have been reduced by 25%. (Stats were also slightly nerfed last week).<br>- Tier 14.5 &amp; 15.5: Quest givers have been removed as the required Heroic Medallions are no longer obtainable.<br>- Donor &amp; VIP Gear: Following our new tier release standard, all Donor and VIP gear has received a stat boost.<br><br></p>
+<p>PvP Updates<br>- Alterac Valley: New PvP quests added "Battle for Frostwolf" and "Battle for Stormpike".<br>- Season Reset: Honor and Arena Points have been reset.<br><br></p>
+<p>Quality of Life &amp; Misc<br>- Hearthstone: Now permanently spawns a Mini Teleporter upon use (right-click to despawn).<br>- Resurrection Sickness has been disabled.<br><br></p>
+<p>Good luck and have fun!</p>
+			
+			<div class="clear"></div>
+			
+			<div class="comments" id="comments_130"></div>
+		</section>
+	</article>
+
+
+	<article>
+		<a class="top">Introduction of Tier 16 - 18/03/2026</a>
+		<section class="body">
+						
+			<p>We are pleased to announce the arrival of our newest Tier 16 instance!<br>Secrets of Ulduar offers you the chance to obtain the newest Tier sets on Unlimited-WoW.<br><br></p>
+<p>Here is some additional information:<br><br></p>
+<p>- Secrets of Ulduar (Tier 16) is a solo raid featuring 5 bosses. To ensure a smooth experience in this massive zone, the layout has been scaled down.<br>- New World Bosses: Four new bosses have arrived: Ignis the Furnace Master, Auriaya, General Vezax, and Algalon the Observer. You can find two in PvP zones and two in PvE zones.<br>- Six new visuals are being added, including four unique drops one from each of the new World Bosses.<br>- Tier 16.5 Heroic quests will be available at launch. Additionally, Tier 15.5 Heroic quests will now require fewer medallions than regular Tier 15 to help you progress toward Tier 16.<br>- Honor and Arena Points will be reset upon the release of the raid. You must complete the Tier 16 attunement quest to access the PvP Vendors.<br>- Daily and PvP quest rewards will be updated to Ironsoul Medallions, used for Tier 16.5 Heroic gear.<br>- We are adding new daily quests, including soloable objectives for Heroic Ironsoul Medallions.<br>- Donor &amp; VIP Gear: As with every new tier release, all Donor and VIP gear will receive a power boost.<br><br></p>
+<p>Get Started: The attunement quest for Secrets of Ulduar is now available at the Key Quest NPC located at the Mall.<br><br></p>
+<p>⚔️ Tier 16 will be released on Friday, March 27, 2026. ⚔️</p>
+			
+			<div class="clear"></div>
+			
+			<div class="comments" id="comments_129"></div>
+		</section>
+	</article>
+
+
+	<article>
+		<a class="top">New Team Deathmatch Battleground - 14/11/2025</a>
+		<section class="body">
+						
+			<p>Get ready for nonstop PvP action on Unlimited WoW! We are excited to launch a brand new 10v10 Team Deathmatch battleground on Dire Maul North.&nbsp;Features:<br><br></p>
+<ul>
+<li><span data-mce-mark="1"><span data-mce-mark="1"><span data-mce-mark="1">Instant Respawns:</span></span><span data-mce-mark="1"> Players will respawn immediately with full HP at random locations after death.</span></span></li>
+<li><span data-mce-mark="1"><span data-mce-mark="1"><span data-mce-mark="1">Objective:</span></span><span data-mce-mark="1"> The first team to reach </span><span data-mce-mark="1"><span data-mce-mark="1">75 kills</span></span><span data-mce-mark="1"> wins.</span></span></li>
+<li><span data-mce-mark="1"><span data-mce-mark="1"><span data-mce-mark="1">New PvP Quest:</span></span><span data-mce-mark="1"> Participate in the battleground to receive new marks.<br><br></span></span></li>
+</ul>
+<p><span><span>Release:</span></span><span> Tomorrow evening, server time. (November 15th, 2025) <br></span><span>Make sure your game is updated to </span><span><span>Patch 7</span></span><span> and clear your cache before joining. You can use the launcher to do this easily.&nbsp;Victory awaits!</span></p>
+			
+			<div class="clear"></div>
+			
+			<div class="comments" id="comments_128"></div>
+		</section>
+	</article>
+
+
+	<article>
+		<a class="top">Introduction of PvP Seasons - 25/05/2025</a>
+		<section class="body">
+						
+			<p>We are pleased to introduce a new competitive feature: PvP Seasons. This system is designed to provide ongoing, structured PvP competition with monthly rewards to recognize the top-performing players.<br><br></p>
+<p>Each PvP Season will run for one month.</p>
+<p>&nbsp;</p>
+<p>At the conclusion of each season, the top three players on the PvP ladder will be awarded Donation Points (DP) as follows:<br><br></p>
+<p>- 1st Place: 30 DP<br>- 2nd Place: 20 DP<br>- 3rd Place: 10 DP<br><br></p>
+<p>The ladder will reset at the end of each season, with a new season commencing one day later, ensuring continuous competition. The PvP leaderboard will be accessible via the website sidebox and the game launcher, providing real-time visibility of rankings.<br><br></p>
+<p>Total kills per character will continue to be displayed in the PvP statistics section.<br><br></p>
+<p>Rewards will be automatically distributed to qualifying players at the end of each season.<br>Please note that the reward amounts may be adjusted in future seasons to ensure balanced and engaging competition.<br><br></p>
+<p>The first PvP Season will start this afternoon!<br><br></p>
+<p>We believe that PvP Seasons will enhance the competitive experience by fostering a dynamic and rewarding environment for all players.</p>
+			
+			<div class="clear"></div>
+			
+			<div class="comments" id="comments_127"></div>
+		</section>
+	</article>
+
+
+	<article>
+		<a class="top">Tier 15 Announcement - 24/10/2024</a>
+		<section class="body">
+						
+			<p><span>We are pleased to announce the introduction of the new Tier 15 instance</span><span>.<br><br></span><em><span>An assault on the mighty citadel is among the most dangerous undertakings in the history of Azeroth </span><span>- and the most pivotal</span><span>. The legendary heroes Highlord Tirion Fordring of the Argent Crusade and Highlord Darion Mograine have joined forces to lead the charge through Icecrown</span><span>'s fortified gates</span><span>, and both the Horde and Alliance have sacrificed lives </span><span>- indeed</span><span>, whole battalions </span><span>- to get this far</span><span>. They dare not fail</span><span>. The Lich King</span><span>'s reign must end</span><span>.</span></em><span>&nbsp;<br><br>Icecrown Citadel will be a place that provides you with a chance of obtaining newest Tier set on Unlimited</span><span>-WoW</span><span>.</span><span> <br><br>Tier 15 Icecrown Citadel Attunement quest will be available in the coming days from the Key Quest NPC</span><span>.<br><br></span></p>
+<ol class="scrollerInner_e2e187" data-list-id="chat-messages">
+<li id="chat-messages-531497049888260097-1298940378367655958" class="messageListItem_d5deea">
+<div class="message_d5deea cozyMessage_d5deea wrapper_f9f2ca cozy_f9f2ca zalgo_f9f2ca" data-list-item-id="chat-messages___chat-messages-531497049888260097-1298940378367655958">
+<div class="contents_f9f2ca">
+<div id="message-content-1298940378367655958" class="markup_f8f345 messageContent_f9f2ca">Here is some additional information:
+<ul>
+<li><span><span>- Tier 15 </span><span>(Icecrown Citadel</span><span>) will be a solo raid</span><span>.</span></span></li>
+<li><span><span>- Icecrown Citadel will have 5 main bosses and 2 optional side bosses</span><span>.</span></span></li>
+<li><span><span>- Three new visuals will be added</span><span>.</span></span></li>
+<li><span><span>- Four new world bosses </span><span>(2 in PvP zones and 2 in PvE zones</span><span>) will be added one week after the release of Icecrown Citadel</span><span>.</span></span></li>
+<li><span><span>- The Lich King will be released as a world boss but will not be available in the solo raid</span><span>.</span></span></li>
+<li><span><span>- Tier </span><span>1</span><span>5</span><span>.5 Heroic will be available at launch</span><span>.</span></span></li>
+<li><span><span>- Tier </span><span>1</span><span>4</span><span>.5 Heroic quests will require fewer medallions compared to regular Tier 14 to complete Tier 15 quests</span><span>.</span></span></li>
+<li><span><span>- Honor and Arena Points will be reset upon the release of Tier 15 PvP Vendors</span><span>.</span></span></li>
+<li><span><span>- Daily</span><span>/PvP quest rewards will be updated to Icecrown Heroic Medallions</span><span>, which can be used to obtain Tier </span><span>1</span><span>5</span><span>.5 Heroic gear</span><span>.</span></span></li>
+<li><span><span>- New Daily quests will be added</span><span>.</span></span></li>
+<li><span><span>- The Tier 15 Honor and Arena Vendor will be added one week after the release</span><span>.</span></span></li>
+<li><span><span>- New Transmog items </span><span>(possibly from MoP</span><span>) will be added later in the patch</span><span>.</span></span></li>
+<li><span><span>- A new PvP zone or area </span><span>(potentially a custom version of Alterac Valley with new quests</span><span>) will be added later in the patch</span><span>.</span></span></li>
+<li><span><span>- Donor and VIP gear will be boosted</span><span>/buffed upon release </span><span>(We boost them each tier release</span><span>)</span><span>.</span></span></li>
+</ul>
+<br>Patch Update: The Patch-7 has been updated for the new content. Please download the latest patch-7.mpq. Make sure you install it correctly; otherwise, you won't be able to use melee weapons or enchant items (if so, re-install the patch). <br>You can update the Patch-7 directly from our launcher or follow this <a href="../../../page/patch">guide </a>for a manual installation.<br><br><br> Tier 15 will be released on Tuesday, November 5th, 2024.</div>
+</div>
+</div>
+</li>
+</ol>
+			
+			<div class="clear"></div>
+			
+			<div class="comments" id="comments_126"></div>
+		</section>
+	</article>
+
+<div id="news_pagination">&nbsp;<a href="https://unlimited-wow.com/news/5" data-hasevent="1">Older posts →</a>&nbsp;&nbsp;<a href="https://unlimited-wow.com/news/95" data-hasevent="1"></a></div></div>
+				</aside>
+
+				<div class="clear"></div>
+			</div>
+			<footer>
+				Copyright © Unlimited-WoW™ 2026. All rights reserved. | <a href="https://unlimited-wow.com/page/termsofservice" target="_blank">Terms of Service</a><p></p>
+			</footer>
+		</section>
+	<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ebdf50e4cdb8339',t:'MTc3NjExOTg2Ng=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;db3904393311427a881595c58dab4f16&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+</body></html>

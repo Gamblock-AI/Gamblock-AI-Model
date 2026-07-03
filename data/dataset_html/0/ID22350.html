@@ -1,0 +1,156 @@
+<html xmlns="http://www.w3.org/1999/xhtml" class="dxChrome dxWindowsPlatform dxWebKitFamily dxBrowserVersion-122 dxbs-4"><head><link rel="stylesheet" type="text/css" href="/UserExperience/DXR.axd?r=23_77,23_83,1_203,1_204,1_66,1_67,1_68,1_202-OGRAq"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><title>
+	HSNI User Experience
+    
+</title><link id="themeLink" href="Content/bootstrap.min.css" rel="stylesheet"><link href="Content/signin.css" rel="stylesheet"><link rel="stylesheet" type="text/css" href="Content/captchaStyle.css">
+    <script type="text/javascript">
+        function getRefreshButton() {
+            return document.getElementById("RefreshButton");
+        }
+        function onCaptchaBeginCallback(s, e) {
+            var refreshButton = getRefreshButton();
+            refreshButton.src = "Content/refreshButtonAnimated.gif";
+        }
+        function onCaptchaEndCallback(s, e) {
+            var refreshButton = getRefreshButton();
+            refreshButton.src = "Content/refreshButton.gif";
+            document.getElementById("TbCode").value = "";
+            document.querySelector("[id$='ValidateCodeMessage']").style.display = "none";
+        }
+    </script>
+<style></style></head>
+<body class="text-center" style="padding-top: 10px !important;">
+    <form method="post" action="./" id="ctl01" class="form-signin" style="max-width: 1000px !important">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTIxMDM1Nzk3ODMPFgIeE1ZhbGlkYXRlUmVxdWVzdE1vZGUCAWQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgIFB0NhcHRjaGEFCHRyYWNrQnRuhrM5pU/FEGVGXSh/v2w9O1DnOxzAAsO1/0DWtVBPAeQ=">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['ctl01'];
+if (!theForm) {
+    theForm = document.ctl01;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/UserExperience/WebResource.axd?d=JXAEV4BZ36gyrd0Lg52jZ57EeUKTkSIzYOR9S9cGiZa4QSq2Jv41msynBwrmy3DnlgWNkkvd7-S5D7GsRq6t4UqQIz_eIdkCCoD10tMg6n01&amp;t=638901788248157332" type="text/javascript"></script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="FCF78B6F">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAJjU/7G+2Ui58KpSnIfeYbVMVEOjJmwNKtPVUDj4zUWW8828fh0WvT2R5+L63xXUOcXj/xUXrVGoVUHDDf00QqD">
+</div>
+        <div class="div-signin">
+            <script id="dxss_1618926683" type="text/javascript" data-executed="true">
+<!--
+var ASPx, dx, DevExpress; !function n(o, t, e, r, i) { var a = [], c = [], u = 0, l = [], d = [], f = !1; function s(n, r, i) { n[i] = function () { r(o, t, e) } } function h() { return r == u } function v() { return !0 } function C() { throw new Error("Too late") } var m = -1; function E(n, o, t, e) { var r = ++m; return function () { i(function () { r == m && t() && (m-- , function (n) { for (var o = n.length, t = 0, e = null; (e = n[t]) && t < o; t++)e && e(); n.length = 0 }(o), e()) }) } } var w = E(0, l, function () { return f && h() }, function () { o.attachToReady = C }), x = E(0, d, v, function () { o.attachToLoad = C, w() }), S = E(0, c, v, function () { o.SS = function (n) { n(o, t, e) }, x() }), b = E(0, a, h, function () { o.IS = C, S() }), p = 0; o.SS = function (n) { var o = p++; i(function () { s(c, n, o) }) }; var T = 0; o.IS = function (n, o) { i(function () { for (s(a, n, o), u++; T < u && a[T];)a[T] = a[T]() && null, T++; b() }) }, o.attachToReady = l.push.bind(l), o.attachToLoad = d.push.bind(d), o.initResourceLoader = n, document.addEventListener("DOMContentLoaded", function () { r = document.querySelectorAll("script[id^=dxis_][defer]").length, b() }), window.addEventListener("load", function () { f = !0, w() }); var A = ["BeginCallback", "BrowserWindowResized", "CallbackError", "ControlsInitialized", "EndCallback", "ValidationCompleted"], y = ["ForEachControl", "Get", "GetByName", "GetControlsByPredicate", "GetControlsByType"], P = []; var L = A.reduce(function (n, o) { return ((n[o] = {}).AddHandler = function (n) { P.push({ e: o, h: n }) }) && n }, {}); L = y.reduce(function (n, o) { return (n[o] = (t = o, function () { throw new Error(function (n) { return "The environment has not been initialized. To access the " + n + " member, call the member from the ControlsInitialized event's handler." }(t)) })) && n; var t }, L), o.loadControlCollectionPreloadHandlers = function (n) { P.forEach(function (o) { n[o.e].AddHandler(o.h) }), A.forEach(function (o) { L[o] = n[o] }), y.forEach(function (o) { L[o] = n[o].bind(n) }), o.loadControlCollectionPreloadHandlers = P = L = null }, window.ASPxClientControl = { GetControlCollection: function () { return L } } }(ASPx || (ASPx = {}), dx || (dx = {}), DevExpress || (DevExpress = {}), -1, window.requestAnimationFrame || setTimeout);
+
+//-->
+</script><script id="dxis_132746689" src="/UserExperience/DXR.axd?r=1_10,1_62-LGRAq" type="text/javascript"></script><script id="dxis_1805187626" src="/UserExperience/DXR.axd?r=1_11,1_13,1_179,1_180,23_0,23_1,23_28,1_22,1_14,1_199,1_178,23_29-OGRAq&amp;order=0" type="text/javascript" defer=""></script><img class="mb-4" id="ctl08" src="images/HSNI_logo_crop.png" alt="" style="width:70%;">
+            <h1 class="h3 mb-3 font-weight-normal">Lacak Service</h1>
+            <label for="inputEmail" class="sr-only">Nomor Serial atau IMEI atau Nomor Service</label>
+            <script id="dxss_1685776902" type="text/javascript" data-executed="true">
+<!--
+ASPx.SS(function(ASPx, dx) {
+ASPx.AccessibilitySR.DefaultCallbackMessage = 'Callback in process.';
+
+});
+//-->
+</script><div class="dxbs-textbox" id="searchTxt">
+	<div>
+		<input id="searchTxt_I" class="form-control text-muted" type="text" name="searchTxt" value="Nomor Serial atau IMEI atau Nomor Service" savedspellcheck="[object Object]" spellcheck="false" autocomplete="off"><span class="dxbs-feedback"><span class="dxbs-icon dxbs-icon-error d-none" aria-hidden="true" data-error-image=""></span></span>
+	</div>
+</div>
+            <div class="col-lg-12" style="margin-top: 10px; text-align: center;" id="captchaDiv">
+                <div style="max-width: 224px; margin: 0 auto; padding-right: 0px;">
+                    <table class="horizontal-center-aligned">
+                        <tbody><tr>
+                            <td>
+                                <table class="mainTable">
+                                    <tbody><tr>
+                                        <td style="font-size: 0; text-align: left !important">
+                                            <img id="RefreshButton" src="Content/refreshButton.gif" alt="Show another code" title="" class="refreshButton" onclick="captcha.Refresh();" style="float: none !important">
+                                            <div class="captchaDiv">
+                                                <div class="dxcaControl dx-acc-r" id="Captcha" role="presentation">
+	<table role="presentation">
+		<tbody><tr>
+			<td><div id="Captcha_IMGD" class="dxca-imageDiv" style="background-color:Transparent;border-color:#A8A8A8;border-width:0px;width:200px;line-height:0px;font-size:0px;">
+				<img id="Captcha_IMG" src="/UserExperience/DXB.axd?DXCache=7705aea9-8471-b626-f9d0-72d8bac84645" alt="Captcha image" style="height:72px;width:200px;">
+			</div></td>
+		</tr>
+	</tbody></table>
+</div><script id="dxss_214458693" type="text/javascript" data-executed="true">
+<!--
+ASPx.SS(function(ASPx, dx) {
+ASPx.AddHoverItems('Captcha',[[['dxcaRefreshButtonHover'],[''],['RB']]]);
+ASPx.AddDisabledItems('Captcha',[[['dxcaDisabledRefreshButton'],[''],['RB']],[['dxcaDisabledRefreshButtonText'],[''],['RTS']]]);
+ASPx.createControl(ASPxClientCaptcha,'Captcha','captcha',{'callBack':function(arg) { WebForm_DoCallback('Captcha',arg,ASPx.Callback,'Captcha',ASPx.CallbackError,true); },'accessibilityCompliant':true,'ariaDescription':'{"s":"","c":[{"s":"table:not([role])","n":"presentationElements","0":"presentation"}],"n":"","0":"presentation"}'},{'BeginCallback':onCaptchaBeginCallback,'EndCallback':onCaptchaEndCallback});
+
+});
+//-->
+</script>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="labelCell">
+                                            <label for="TbCode" style="margin-bottom: 0rem;">Masukan kode verifikasi di atas</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="textBoxCell">
+                                            <input type="text" id="TbCode" name="tbCode" autocomplete="off">
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div>
+            
+            </div>
+            <div class="div-signin" style="max-width: 450px !important; padding:5px !important;">
+                
+            </div>
+            <div class="div-signin" style="max-width: 1000px !important; padding:5px !important;">
+                
+            </div>
+        <div class="div-signin">
+            <button class="btn btn-lg btn-primary btn-block btn-secondary dxbs-button" id="trackBtn" type="submit" name="trackBtn" value="Lacak">Lacak</button><script id="dxss_564309078" type="text/javascript" data-executed="true">
+<!--
+ASPx.SS(function(ASPx, dx) {
+ASPx.createControl(dx.BootstrapClientTextBox,'searchTxt','',{'stateObject':{'rawValue':''},'customValidationEnabled':true,'isValid':true,'errorText':'Invalid value','validationPatterns':[new ASPx.RequiredFieldValidationPattern('Required')],'isErrorFrameRequired':true,'errorDisplayMode':'i','errorImageIsAssigned':true,'nullText':'Nomor Serial atau IMEI atau Nomor Service','cssClasses':{}});
+
+ASPx.InitializeSVGSprite();
+ASPx.createControl(dx.BootstrapClientButton,'trackBtn','',{'autoPostBack':true,'serverEvents':['Click']});
+
+
+});
+//-->
+</script>
+        
+        <p class="mt-2 mb-0 text-muted">© 2019. Highpoint Service Network Indonesia</p>
+            </div>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+
+var callBackFrameUrl='/UserExperience/WebResource.axd?d=cPkFZayCVX_7qkmwFMXj8cGRg6HQjQVLcRakPmLaP3uBPeY159Suj_bEg66cEVF2NAVGT1pC98zkPS4j__PnA34tWU3L6xuO7f1A3c-VS-g1&t=638901788248157332';
+WebForm_InitCallback();//]]>
+</script>
+<input type="hidden" name="DXScript" value="1_10,1_62,1_11,1_13,1_179,1_180,23_0,23_1,23_28,1_22,1_14,1_199,1_178,23_29"><input type="hidden" name="DXCss" value="23_77,23_83,1_203,1_204,1_66,1_67,1_68,1_202,Content/bootstrap.min.css,Content/signin.css,Content/captchaStyle.css"></form>
+
+
+<div class="dxAIFME" role="application" aria-label=";"><div id="dxPronouncer" role="note"></div></div></body></html>

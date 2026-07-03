@@ -1,0 +1,240 @@
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Enjoy playing Sudoku online and explore various brain games.">
+<meta property="og:title" content="Online Sudoku - Play Sudoku Online">
+<meta property="og:description" content="Enjoy playing Sudoku online and explore various brain games.">
+<meta property="og:image" content="/images/sudoku_share.jpg">
+<link rel="canonical" href="/">
+<link rel="icon" href="/images/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<title>Online Sudoku - Play Sudoku Online</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body><nav>
+<div class="navbar-container">
+<div class="navbar-left">
+<div class="navbar-burger" id="burger-menu">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<div class="navbar-logo">
+<img src="/icon/logo.svg" alt="Logo">
+<a href="/"><span>OnlineSudoku.app</span></a>
+</div>
+</div>
+<div class="navbar-center">
+<ul class="navbar-menu">
+<li class="dropdown">
+<a href="#">Sudoku Difficulty</a>
+<div class="dropdown-content">
+<a href="/sudoku-beginner/">Beginner</a>
+<a href="/sudoku-easy/">Easy</a>
+<a href="/sudoku-medium/">Medium</a>
+<a href="/sudoku-hard/">Hard</a>
+<a href="/sudoku-evil/">Evil</a>
+</div>
+</li>
+<li class="dropdown">
+<a href="#">Sudoku Size</a>
+<div class="dropdown-content">
+<a href="/sudoku4x4/">4x4</a>
+<a href="/sudoku6x6/">6x6</a>
+<a href="/sudoku-medium/">9x9</a>
+</div>
+</li>
+<li class="dropdown">
+<a href="#">Magic Sum</a>
+<div class="dropdown-content">
+<a href="/magic-square/">Easy</a>
+<a href="/magic-square5x5/">Medium</a>
+<a href="/magic-sum/">Hard</a>
+</div>
+</li>
+<li><a href="/sudoku-solver/">Sudoku Solver</a></li>
+</ul>
+</div>
+<div class="navbar-right">
+<a href="#" id="shareBtn"><img src="/icon/share.svg" alt="Share"></a>
+</div>
+</div>
+<div class="mobile-menu" id="mobile-menu">
+<ul>
+<li class="dropdown">
+<a href="#">Sudoku Difficulty</a>
+<div class="dropdown-content">
+<a href="/sudoku-beginner/">Beginner</a>
+<a href="/sudoku-easy/">Easy</a>
+<a href="/sudoku-medium/">Medium</a>
+<a href="/sudoku-hard/">Hard</a>
+<a href="/sudoku-evil/">Evil</a>
+</div>
+</li>
+<li class="dropdown">
+<a href="#">Sudoku Size</a>
+<div class="dropdown-content">
+<a href="/sudoku4x4/">4x4</a>
+<a href="/sudoku6x6/">6x6</a>
+<a href="/sudoku-medium/">9x9</a>
+</div>
+</li>
+<li class="dropdown">
+<a href="#">Magic Sum</a>
+<div class="dropdown-content">
+<a href="/magic-square/">Easy</a>
+<a href="/magic-square5x5/">Medium</a>
+<a href="/magic-sum/">Hard</a>
+</div>
+</li>
+<li><a href="/sudoku-solver/">Sudoku Solver</a></li>
+</ul>
+</div>
+<div class="overlay" id="overlay"></div>
+</nav>
+<main id="mainWindow">
+<h1>Welcome to Sudoku</h1>
+<p>Fill the grid so that every row, column, and 3x3 block contains all digits from 1 to 9 without repetition.</p>
+<script>var difficulty=4</script>
+<div class="sudoku-box">
+<div class="sudoku-menubar">
+<div class="sudoku-difficulty">
+<button class="new" title="New Sudoku">New Game</button>
+<button class="reset" title="Clear Board">🔃</button>
+</div>
+<div id="level">Medium</div>
+<div class="sudoku-time">
+<span id="time">00:03</span>
+<button class="pause" title="Pause">⏸</button>
+<button class="print" title="Print">🖨</button>
+<button class="hint" title="Hint">💡
+<div id="hintCnt">3</div>
+</button>
+</div>
+</div>
+<div class="sudoku-main">
+<div class="sudoku-container" id="sudoku-container"><table class="sudoku-table"><tr><td id="c00"><div class="fixedCell">3</div></td><td id="c01"></td><td class="borderRight" id="c02"><div class="fixedCell">7</div></td><td id="c03"></td><td id="c04"></td><td class="borderRight" id="c05"></td><td id="c06"></td><td id="c07"><div class="fixedCell">4</div></td><td id="c08"><div class="fixedCell">2</div></td></tr><tr><td id="c10"><div class="fixedCell">1</div></td><td id="c11"></td><td class="borderRight" id="c12"><div class="fixedCell">2</div></td><td id="c13"></td><td id="c14"></td><td class="borderRight" id="c15"><div class="fixedCell">7</div></td><td id="c16"><div class="fixedCell">8</div></td><td id="c17"><div class="fixedCell">6</div></td><td id="c18"></td></tr><tr><td class="borderBottom" id="c20"><div class="fixedCell">8</div></td><td class="borderBottom" id="c21"></td><td class="borderRight borderBottom" id="c22"><div class="fixedCell">5</div></td><td class="borderBottom" id="c23"></td><td class="borderBottom" id="c24"></td><td class="borderRight borderBottom" id="c25"><div class="fixedCell">4</div></td><td class="borderBottom" id="c26"><div class="fixedCell">9</div></td><td class="borderBottom" id="c27"></td><td class="borderBottom" id="c28"></td></tr><tr><td id="c30"></td><td id="c31"><div class="fixedCell">1</div></td><td class="borderRight" id="c32"></td><td id="c33"></td><td id="c34"></td><td class="borderRight" id="c35"></td><td id="c36"><div class="fixedCell">5</div></td><td id="c37"><div class="fixedCell">2</div></td><td id="c38"><div class="fixedCell">4</div></td></tr><tr><td id="c40"><div class="fixedCell">7</div></td><td id="c41"><div class="fixedCell">8</div></td><td class="borderRight" id="c42"></td><td id="c43"></td><td id="c44"></td><td class="borderRight" id="c45"><div class="fixedCell">2</div></td><td id="c46"><div class="fixedCell">3</div></td><td id="c47"><div class="fixedCell">1</div></td><td id="c48"></td></tr><tr><td class="borderBottom" id="c50"></td><td class="borderBottom" id="c51"><div class="fixedCell">2</div></td><td class="borderRight borderBottom" id="c52"></td><td class="borderBottom" id="c53"><div class="fixedCell">9</div></td><td class="borderBottom" id="c54"><div class="fixedCell">1</div></td><td class="borderRight borderBottom" id="c55"></td><td class="borderBottom" id="c56"></td><td class="borderBottom" id="c57"><div class="fixedCell">8</div></td><td class="borderBottom" id="c58"><div class="fixedCell">6</div></td></tr><tr><td id="c60"><div class="fixedCell">6</div></td><td id="c61"><div class="fixedCell">7</div></td><td class="borderRight" id="c62"></td><td id="c63"><div class="fixedCell">4</div></td><td id="c64"></td><td class="borderRight" id="c65"></td><td id="c66"><div class="fixedCell">2</div></td><td id="c67"></td><td id="c68"><div class="fixedCell">8</div></td></tr><tr><td id="c70"><div class="fixedCell">4</div></td><td id="c71"></td><td class="borderRight" id="c72"></td><td id="c73"><div class="fixedCell">2</div></td><td id="c74"></td><td class="borderRight" id="c75"><div class="fixedCell">1</div></td><td id="c76"></td><td id="c77"></td><td id="c78"><div class="fixedCell">7</div></td></tr><tr><td id="c80"><div class="fixedCell">2</div></td><td id="c81"></td><td class="borderRight" id="c82"></td><td id="c83"><div class="fixedCell">6</div></td><td id="c84"></td><td class="borderRight" id="c85"><div class="fixedCell">8</div></td><td id="c86"><div class="fixedCell">4</div></td><td id="c87"></td><td id="c88"><div class="fixedCell">1</div></td></tr></table></div>
+<div id="pause-overlay" class="pause-overlay">
+<div class="paused-message">Paused<br>▶</div>
+</div>
+<div class="sudoku-input">
+<div class="input-type">
+<button class="normal activeMode">Normal</button>
+<button class="candidate">Candidate</button>
+</div>
+<div class="number-box">
+<button class="number" data-value="1">1</button>
+<button class="number" data-value="2">2</button>
+<button class="number" data-value="3">3</button>
+<button class="number" data-value="4">4</button>
+<button class="number" data-value="5">5</button>
+<button class="number" data-value="6">6</button>
+<button class="number" data-value="7">7</button>
+<button class="number" data-value="8">8</button>
+<button class="number" data-value="9">9</button>
+<button class="eraseMob">✖</button>
+</div>
+<button class="erase">Erase</button>
+</div>
+</div>
+</div>
+<ul class="circles">
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<div class="popup" id="popup">
+<div class="popup-content">
+<span class="close" onclick="hidePopup()">×</span>
+<h2>Congratulations!</h2>
+<p>You completed the Sudoku in <span id="completionTime"></span>.</p>
+<button id="newGameBtn">Start New Game</button>
+</div>
+</div>
+<div id="confirmation-dialog" class="confirmation-dialog">
+<div class="confirmation-content">
+<span class="close">×</span>
+<p>Are you sure you want to clear the board?</p>
+<button class="confirm" id="confirm-clear">Yes</button>
+<button class="cancel" id="cancel-clear">No</button>
+</div>
+</div>
+<div id="new-game-dialog" class="confirmation-dialog">
+<div class="confirmation-content">
+<span class="close">×</span>
+<p>Are you sure you want to start a new game?</p>
+<button class="confirm" id="confirm-new-game">Yes</button>
+<button class="cancel" id="cancel-new-game">Cancel</button>
+</div>
+</div>
+<script>var dif=document.getElementById("level");2==difficulty&&(dif.innerHTML="Beginner"),3==difficulty&&(dif.innerHTML="Easy"),4==difficulty&&(dif.innerHTML="Medium"),5==difficulty&&(dif.innerHTML="Hard"),6==difficulty&&(dif.innerHTML="Evil");const difficultyLevels={2:"beginner",3:"easy",4:"medium",5:"hard",6:"evil"};var EmptyBoard,UserBoard,FilledBoard;function showPopup(e){const t=document.getElementById("popup");document.getElementById("completionTime").textContent=e,t.style.display="flex"}function hidePopup(){document.getElementById("popup").style.display="none"}document.addEventListener("DOMContentLoaded",(e=>{"true"===localStorage.getItem(`newGameRequested_${difficultyLevels[difficulty]}`)?(console.log("Starting a new game"),loadGameState(!0),localStorage.setItem(`newGameRequested_${difficultyLevels[difficulty]}`,"false")):(console.log("Loading existing game state"),loadGameState(!1))}));const newGameBtn=document.getElementById("newGameBtn");function handleKeyDown(e){var t=0;const n=document.querySelector(".sudoku-table td.activeCell");if(!n)return;const o=e.key;o>="1"&&o<="9"?(t=parseInt(o),validateEnterdNumber(n.id,t)):"Delete"!==o&&"Backspace"!==o&&" "!==o||(n.innerHTML="",validateEnterdNumber(n.id,0))}newGameBtn.addEventListener("click",(function(){localStorage.setItem(`newGameRequested_${difficultyLevels[difficulty]}`,"true"),window.location.href=window.location.pathname})),document.addEventListener("keydown",handleKeyDown);const numberButtons=document.querySelectorAll(".number"),eraseButton1=document.querySelector(".erase"),eraseButton2=document.querySelector(".eraseMob"),normalModeButton=document.querySelector(".normal"),candidateModeButton=document.querySelector(".candidate");var currentMode="normal";function switchToCandidateMode(){currentMode="candidate",candidateModeButton.classList.add("activeMode"),normalModeButton.classList.remove("activeMode"),numberButtons.forEach((e=>e.classList.add("candidateButtons")))}function switchToNormalMode(){currentMode="normal",normalModeButton.classList.add("activeMode"),candidateModeButton.classList.remove("activeMode"),numberButtons.forEach((e=>e.classList.remove("candidateButtons")))}function handleErase(e){e.stopPropagation();const t=document.querySelector(".sudoku-table td.activeCell");t&&validateEnterdNumber(t.id,0)}function validateEnterdNumber(e,t){const n=document.getElementById(e),o=parseInt(e.charAt(1)),a=parseInt(e.charAt(2));if(isValidMove(o,a,t)){if(0==t&&(t=""),UserBoard[o][a]=t,n.innerHTML='<div class="enteredCell">'+t+"</div>",""==t)n.innerHTML='<div class="notes">\n                                    <div class="note" data-value="1">1</div>\n                                    <div class="note" data-value="2">2</div>\n                                    <div class="note" data-value="3">3</div>\n                                    <div class="note" data-value="4">4</div>\n                                    <div class="note" data-value="5">5</div>\n                                    <div class="note" data-value="6">6</div>\n                                    <div class="note" data-value="7">7</div>\n                                    <div class="note" data-value="8">8</div>\n                                    <div class="note" data-value="9">9</div>\n                                </div>';else if(verifySudoku(UserBoard)){console.log("You Won");document.querySelector(".circles").classList.add("winning"),stopTimer(),showPopup(timeDisplay.textContent)}}else n.innerHTML='<div class="enteredCell wrong">'+t+"</div>";saveGameState()}function isValidMove(e,t,n){const o=UserBoard[e][t];UserBoard[e][t]="";for(let a=0;a<9;a++)if(UserBoard[e][a]===n||UserBoard[a][t]===n)return UserBoard[e][t]=o,!1;const a=3*Math.floor(e/3),i=3*Math.floor(t/3);for(let l=a;l<a+3;l++)for(let a=i;a<i+3;a++)if(UserBoard[l][a]===n)return UserBoard[e][t]=o,!1;return UserBoard[e][t]=o,!0}function toggleNoteVisibility(e){e.classList.contains("visible")?e.classList.remove("visible"):e.classList.add("visible"),saveGameState()}candidateModeButton.addEventListener("click",switchToCandidateMode),normalModeButton.addEventListener("click",switchToNormalMode),numberButtons.forEach((e=>{e.addEventListener("click",(function(e){e.stopPropagation();const t=document.querySelector(".sudoku-table td.activeCell");if(t)if("normal"==currentMode){const e=parseInt(this.textContent);validateEnterdNumber(t.id,e)}else{const n=parseInt(this.textContent),o=t.querySelector(`.note[data-value="${n}"]`);e.stopPropagation(),null!=o&&toggleNoteVisibility(o)}}))})),eraseButton1.addEventListener("click",handleErase),eraseButton2.addEventListener("click",handleErase);var clickcnt=0;function handleCellActive(e){if(e.querySelector(".fixedCell")){document.querySelectorAll(".sudoku-table td").forEach((e=>e.classList.remove("activeCell"))),highlightCellsWithNumber(e.querySelector("div").textContent)}else{const t=document.querySelectorAll(".sudoku-table td");if(t.forEach((e=>e.classList.remove("activeCell"))),t.forEach((e=>{e.querySelector(".fixedCell")||e.querySelector(".enteredCell")||e.querySelector(".visible")||(e.innerHTML="")})),e.querySelector(".enteredCell"))if(++clickcnt>1){highlightCellsWithNumber(e.querySelector("div").textContent),clickcnt=0}else highlightCellsWithNumber(0);else highlightCellsWithNumber(0),clickcnt=0;if(e.classList.add("activeCell"),!e.querySelector(".enteredCell")&&!e.querySelector(".visible")){e.innerHTML='<div class="notes">\n                                    <div class="note" data-value="1">1</div>\n                                    <div class="note" data-value="2">2</div>\n                                    <div class="note" data-value="3">3</div>\n                                    <div class="note" data-value="4">4</div>\n                                    <div class="note" data-value="5">5</div>\n                                    <div class="note" data-value="6">6</div>\n                                    <div class="note" data-value="7">7</div>\n                                    <div class="note" data-value="8">8</div>\n                                    <div class="note" data-value="9">9</div>\n                                </div>';const t=e.querySelectorAll(".note");t.forEach((t=>{t.addEventListener("click",(function(n){e.classList.contains("activeCell")?(n.stopPropagation(),toggleNoteVisibility(t)):e.click()}))})),t.forEach((t=>{t.addEventListener("contextmenu",(function(n){if(n.preventDefault(),n.stopPropagation(),e.classList.contains("activeCell")){validateEnterdNumber(e.id,parseInt(t.innerHTML))}else e.click();return!1}))}))}}}function highlightCellsWithNumber(e){document.querySelectorAll(".sudoku-table td").forEach((t=>{const n=t.querySelector("div");n&&(n.classList.contains("fixedCell")||n.classList.contains("enteredCell"))&&n.textContent===e.toString()?(n.style.fontWeight="bold",n.style.backgroundColor="#ffc107"):(n&&n.classList.contains("fixedCell")&&(n.style.fontWeight="normal",n.style.backgroundColor="#E9E9E9"),n&&n.classList.contains("enteredCell")&&(n.style.fontWeight="normal",n.style.backgroundColor=""))}))}function generateBoard9x9(e){console.log("Generating Board:",e);let t=[[2,8,6,7,5,4,9,3,1],[9,3,1,2,8,6,7,5,4],[7,5,4,9,1,3,8,6,2],[8,9,2,6,7,5,4,1,3],[6,7,5,4,3,1,2,9,8],[4,1,3,8,9,2,6,7,5],[5,6,9,3,4,8,1,2,7],[3,4,7,1,2,9,5,8,6],[1,2,8,5,6,7,3,4,9]],n=Math.floor(10*Math.random()+1);for(let e=0;e<n;e++)for(let e=0;e<9;e++)for(let n=0;n<9;n++)t[e][n]=t[e][n]+1,10==t[e][n]&&(t[e][n]=1);let o=e,a=o+2;FilledBoard=t.map((e=>[...e])),t.forEach((e=>{let t=shuffleArray([0,1,2,3,4,5,6,7,8]);for(let n=0;n<Math.floor(Math.random()*(a-o+1)+o);n++)e[t[n]]=""})),EmptyBoard=t.map((e=>[...e])),UserBoard=t.map((e=>[...e])),renderBoard(t),saveGameState()}function renderBoard(e){let t=e;for(let e=0;e<9;e++)for(let n=0;n<9;n++)""!=t[e][n]&&(document.getElementById(`c${e}${n}`).innerHTML='<div class="fixedCell">'+t[e][n]+"</div>")}function shuffleArray(e){let t,n,o=e.length;for(;0!==o;)n=Math.floor(Math.random()*o),o-=1,t=e[o],e[o]=e[n],e[n]=t;return e}function verifySudoku(e){for(let t=0;t<9;t++)if(!isValidSet(e[t]))return!1;for(let t=0;t<9;t++){let n=[];for(let o=0;o<9;o++)n.push(e[o][t]);if(!isValidSet(n))return!1}for(let t=0;t<9;t+=3)for(let n=0;n<9;n+=3){let o=[];for(let a=t;a<t+3;a++)for(let t=n;t<n+3;t++)o.push(e[a][t]);if(!isValidSet(o))return!1}return!0}function isValidSet(e){let t=new Set;for(let n of e){if(""===n||t.has(n)||isNaN(n)||n<1||n>9)return!1;t.add(n)}return 9===t.size}const resetButton=document.querySelector(".reset"),dialog=document.getElementById("confirmation-dialog"),confirmClearButton=document.getElementById("confirm-clear"),cancelClearButton=document.getElementById("cancel-clear"),closeButton=document.querySelector(".confirmation-dialog .close");resetButton.addEventListener("click",(function(){dialog.style.display="block"})),closeButton.addEventListener("click",(function(){dialog.style.display="none"})),cancelClearButton.addEventListener("click",(function(){dialog.style.display="none"})),confirmClearButton.addEventListener("click",(function(){document.querySelectorAll(".sudoku-table td").forEach((e=>e.innerHTML="")),renderBoard(EmptyBoard),dialog.style.display="none",saveGameState()})),window.addEventListener("click",(function(e){e.target===dialog&&(dialog.style.display="none")}));const newGameButton=document.querySelector(".new"),newGameDialog=document.getElementById("new-game-dialog"),cancelNewGameButton=document.getElementById("cancel-new-game"),confirmNewGameButton=document.getElementById("confirm-new-game"),closeNewGameButton=document.querySelector("#new-game-dialog .close");confirmNewGameButton.addEventListener("click",(function(){localStorage.setItem(`newGameRequested_${difficultyLevels[difficulty]}`,"true"),window.location.href=window.location.pathname,newGameDialog.style.display="none"})),newGameButton.addEventListener("click",(function(){newGameDialog.style.display="block"})),closeNewGameButton.addEventListener("click",(function(){newGameDialog.style.display="none"})),cancelNewGameButton.addEventListener("click",(function(){newGameDialog.style.display="none"})),window.addEventListener("click",(function(e){e.target===newGameDialog&&(newGameDialog.style.display="none")}));let timer,timeDisplay=document.getElementById("time"),pauseButton=document.querySelector(".pause"),pauseOverlay=document.getElementById("pause-overlay"),isPaused=!1,seconds=0;function updateTime(){seconds++;let e=Math.floor(seconds/60),t=seconds%60;timeDisplay.textContent=`${String(e).padStart(2,"0")}:${String(t).padStart(2,"0")}`}function startTimer(){timer=setInterval(updateTime,1e3)}function stopTimer(){clearInterval(timer)}function togglePause(){isPaused?(pauseOverlay.style.display="none",startTimer(),pauseButton.innerHTML="&#x23F8;",document.getElementById("sudoku-container").style.filter=""):(pauseOverlay.style.display="flex",document.getElementById("sudoku-container").style.filter="blur(5px)",stopTimer(),pauseButton.innerHTML="&#9654;"),isPaused=!isPaused}pauseButton.addEventListener("click",togglePause),pauseOverlay.addEventListener("click",togglePause),startTimer();let hintCount=3;function saveGameState(){const e=document.getElementById("sudoku-container"),t=document.getElementById("time"),n={userBoard:UserBoard,filledBoard:FilledBoard,emptyBoard:EmptyBoard,hintCount:hintCount,sudokuHTML:e.innerHTML,time:t.textContent};localStorage.setItem(`sudokuGameState_${difficultyLevels[difficulty]}`,JSON.stringify(n))}function loadGameState(e){const t=localStorage.getItem(`sudokuGameState_${difficultyLevels[difficulty]}`);if(t&&!e){const e=JSON.parse(t);UserBoard=e.userBoard,FilledBoard=e.filledBoard,EmptyBoard=e.emptyBoard,hintCount=e.hintCount,document.getElementById("hintCnt").textContent=hintCount;document.getElementById("sudoku-container").innerHTML=e.sudokuHTML;document.getElementById("time").textContent=e.time;let n=e.time,[o,a]=n.split(":").map(Number);seconds=60*o+a;document.querySelectorAll(".sudoku-table td").forEach((e=>{e.addEventListener("click",(function(e){e.stopPropagation(),handleCellActive(this)}));const t=e.querySelectorAll(".note");t.forEach((t=>{t.addEventListener("click",(function(n){e.classList.contains("activeCell")?(n.stopPropagation(),toggleNoteVisibility(t)):e.click()}))})),t.forEach((t=>{t.addEventListener("contextmenu",(function(n){if(n.preventDefault(),n.stopPropagation(),e.classList.contains("activeCell")){validateEnterdNumber(e.id,parseInt(t.innerHTML))}else e.click();return!1}))}))}))}else{const e=document.getElementById("sudoku-container"),t=document.createElement("table");t.className="sudoku-table";for(let e=0;e<9;e++){const n=document.createElement("tr");for(let t=0;t<9;t++){const o=document.createElement("td");2!=t&&5!=t||o.classList.add("borderRight"),2!=e&&5!=e||o.classList.add("borderBottom"),o.id=`c${e}${t}`,o.addEventListener("click",(function(e){e.stopPropagation(),handleCellActive(this)})),n.appendChild(o)}t.appendChild(n)}e.appendChild(t),generateBoard9x9(difficulty)}}document.querySelector(".hint").addEventListener("click",(function(){const e=document.querySelector(".sudoku-table td.activeCell");if(e&&hintCount>0){let t=e.id;const n=parseInt(t.charAt(1)),o=parseInt(t.charAt(2)),a=FilledBoard[n][o];e.querySelector(".enteredCell")||(validateEnterdNumber(e.id,a),hintCount--,document.getElementById("hintCnt").textContent=hintCount,0===hintCount&&(document.querySelector(".hint").disabled=!0),saveGameState())}})),document.querySelector(".print").addEventListener("click",(function(){const e=document.getElementById("sudoku-container").innerHTML,t=window.open("","_blank","width=800,height=600");t.document.open(),t.document.write(`\n        <html>\n        <head>\n            <title>Print Sudoku</title>\n            <style>\n                @media print {\n                    body{\n                        margin: 50px 200px 200px 200px;\n                    }\n\n                    .sudoku-container {\n                        width: 100%;\n                        max-width: 600px; /* Adjust as needed */\n                        margin: 0 auto;\n                    }\n\n                    .sudoku-table {\n                        width: 100%;\n                        border-collapse: collapse;\n                        border: 2px solid #777;\n                    }\n\n                    .sudoku-table td {\n                        width: 11.11%; /* 100% / 9 = 11.11% */\n                        position: relative;\n                        border: 1px solid #bbb;\n                    }\n\n                    .sudoku-table td::after {\n                        content: '';\n                        display: block;\n                        padding-bottom: 100%; /* Maintain aspect ratio */\n                    }\n\n                    .borderRight{\n                        border-right: 2px solid #777 !important;\n                    }\n                    .borderBottom{\n                        border-bottom: 2px solid #777 !important;\n                    }\n\n                    .sudoku-table td:hover {\n                        background-color: #EEEEEE;\n                    }\n\n                    .activeCell {\n                        background-color: #ffebbc;\n                    }\n\n                    .sudoku-table td.activeCell:hover {\n                        background-color: #ffebbc;\n                    }\n\n                    .fixedCell {\n                        font-family: Arial;;\n                        display: flex;\n                        align-items: center;\n                        justify-content: center;\n                        width: 100%;\n                        height: 100%;\n                        position: absolute;\n                        top: 0;\n                        left: 0;\n                        right: 0;\n                        bottom: 0;\n                        /* font-size: min(5vw, 50px); */\n                        font-size: 1.5rem;\n                        background: #E9E9E9;\n                    }\n\n                    .enteredCell{\n                        font-family: Arial;;\n                        display: flex;\n                        align-items: center;\n                        justify-content: center;\n                        width: 100%;\n                        height: 100%;\n                        position: absolute;\n                        top: 0;\n                        left: 0;\n                        right: 0;\n                        bottom: 0;\n                        font-size: 1.5rem;\n                    }\n                    /*--------------------- Notes ----------------------------- */\n                    .notes {\n                        /* display: none;  */\n                        position: absolute;\n                        top: 50%;\n                        left: 50%;\n                        transform: translate(-50%, -50%);\n                        width: 100%;\n                        height: 100%;\n                        display: grid;\n                        grid-template-columns: repeat(3, 1fr);\n                        grid-template-rows: repeat(3, 1fr);\n                        z-index: 1; /* Ensure notes are below input */\n                    }\n\n                    .note {\n                        font-family: Arial;;\n                        background-color: transparent;\n                        color: transparent;\n                        display: flex;\n                        align-items: center;\n                        justify-content: center;\n                        cursor: pointer;\n                        font-size: 0.8rem;\n                        transition: color 0.5s;\n                    }\n                    .activeCell .note:hover{\n                        color: #000;\n                    }\n\n                    .note.permanent {\n                        background-color: transparent;\n                        color: #000;\n                    }\n\n                    .note.visible {\n                        display: flex; /* Show the note when it has the visible class */\n                        color: #000;\n                    }\n\n                }\n            </style>\n        </head>\n        <body>\n            <div class="sudoku-container">\n                ${e}\n            </div>\n        </body>\n        </html>\n    `),t.document.close(),t.print()}))</script></main>
+<div class="cd-popup" id="shareBox">
+<div class="cd-popup-container">
+<p class="message">Spread the word and share <br>the adventure with your friends!</p>
+<ul class="share-buttons">
+<li class="li"><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fonlinesudoku.app" target="_blank" rel="noopener" class="btn"><img src="/images/facebook.svg"></a></li>
+<li class="li"><a href="whatsapp://send?text=Online+Sudoku%0Ahttps://onlineSudoku.app%0A" data-action="share/whatsapp/share" target="_blank" class="btn"><img src="/images/whatsapp.svg"></a></li>
+<li class="li"><a href="https://twitter.com/intent/tweet?text=Online+Sudoku?&amp;url=https%3A%2F%2Fonlinesudoku.app&amp;via=manoj" target="_blank" rel="noopener" class="btn"><img src="/images/tweeter.svg"></a></li>
+<li class="li"><a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fonlinesudoku.app&amp;title=Online+Sudoku?" target="_blank" rel="noopener" class="btn"><img src="/images/linkedin.svg"></a></li>
+</ul>
+<a onclick="shareBox.classList.toggle(&quot;is-visible&quot;)" class="cd-popup-close img-replace"></a>
+</div>
+</div>
+<div class="cd-popup" id="langSelect">
+<div class="cd-popup-container">
+<div class="langBox"><a href="/"><div class="lang selected">English</div></a><a href="/id/"><div class="lang">Bahasa Indonesia</div></a><a href="/ms/"><div class="lang">Bahasa Malaysia</div></a><a href="/da/"><div class="lang">Dansk</div></a><a href="/de/"><div class="lang">Deutsch</div></a><a href="/es/"><div class="lang">Español</div></a><a href="/fr/"><div class="lang">Français</div></a><a href="/it/"><div class="lang">Italiano</div></a><a href="/nl/"><div class="lang">Nederlands</div></a><a href="/nb/"><div class="lang">Norsk (bokmål)</div></a><a href="/pl/"><div class="lang">Polski</div></a><a href="/pt/"><div class="lang">Português</div></a><a href="/sv/"><div class="lang">Svenska</div></a><a href="/vi/"><div class="lang">Tiếng Việt</div></a><a href="/tr/"><div class="lang">Türkçe</div></a><a href="/ru/"><div class="lang">Русский</div></a><a href="/uk/"><div class="lang">Українська</div></a><a href="/ar/"><div class="lang">العربية</div></a><a href="/hi/"><div class="lang">हिन्दी</div></a><a href="/th/"><div class="lang">ภาษาไทย</div></a><a href="/ko/"><div class="lang">한국어</div></a><a href="/ja/"><div class="lang">日本語</div></a><a href="/zh-Hans/"><div class="lang">简体中文</div></a><a href="/zh-Hant/"><div class="lang">繁體中文</div></a></div>
+<a onclick="langSelect.classList.toggle(&quot;is-visible&quot;)" class="cd-popup-close img-replace"></a>
+</div>
+</div>
+<footer>
+<div class="footer-content">
+<div class="footer-section about">
+<h2>About Us</h2>
+<p>OnlineSudoku.app offers a wide variety of Sudoku puzzles for all skill levels, from beginners to experts. Challenge yourself with daily puzzles and track your progress to become a Sudoku master. Additionally, explore the Magic Sum game, a unique twist on traditional puzzles that combines strategy and math for an engaging experience.</p>
+</div>
+<div class="footer-section other-websites">
+<h2>Other Websites</h2>
+<ul>
+<li><a href="https://onlinecamscanner.com">OnlineCamSanner</a></li>
+<li><a href="https://onlinepiano.app">Piano</a></li>
+<li><a href="https://onlinecompass.app">Compass</a></li>
+<li><a href="https://transfermyfile.com">File Transfer</a></li>
+<li><a href="https://agecalculator2.com">Age Calculator</a></li>
+<li><a href="https://image4resize.com">Image Resizer</a></li>
+<li><a href="https://imageresize2.com">Image Resizer</a></li>
+<li><a href="https://onlineqrscan.com">QR Code Scanner</a></li>
+<li><a href="https://icanscan.com">PDF Scanner</a></li>
+<li><a href="https://onlineheartbeat.com">Heart Rate Monitor</a></li>
+</ul>
+</div>
+<div class="footer-section quick-links">
+<h2>Quick Links</h2>
+<ul>
+<li><a href="/contact/">Contact Us</a></li>
+<li><a href="/terms/">Terms</a></li>
+<li><a href="/policy/">Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<div class="social-icons">
+<a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fonlinesudoku.app" target="_blank" rel="noopener" class="facebook"><img src="/icon/facebook.svg" alt="Facebook"></a>
+<a href="https://twitter.com/intent/tweet?text=Online+Sudoku?&amp;url=https%3A%2F%2FonlineSudoku.app&amp;via=manoj" target="_blank" rel="noopener" class="twitter"><img src="/icon/twitter.svg" alt="Twitter"></a>
+<a href="whatsapp://send?text=Online+Sudoku%0Ahttps://onlineSudoku.app%0A" data-action="share/whatsapp/share" target="_blank" class="linkedin"><img src="/icon/whatsapp.svg" alt="WhatsApp"></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2FonlineSudoku.app&amp;title=Online+Sudoku?" target="_blank" rel="noopener" class="facebook"><img src="/icon/linkedin.svg" alt="LinkedIn"></a>
+</div>
+<p>© 2024 OnlineSudoku.app. All rights reserved.</p>
+</div>
+</footer>
+<script defer="" src="/js/ui.js"></script>
+
+</body></html>

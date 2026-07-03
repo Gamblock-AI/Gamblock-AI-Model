@@ -1,0 +1,641 @@
+<html lang="en"><head>
+	<meta charset="utf-8">
+<title>Mitsubishi Motors Digital Kit</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="robots" content="">
+<meta name="csrf-token" content="LwjVFZw8oSClDt911TkbtRFCWRZrMqQXO2Fg9abP">
+<meta name="base-url" content="https://mymitsubishiapps.com/get-mobile-api">
+<link rel="shortcut icon" type="image/jpg" href="https://mymitsubishiapps.com/assets/warranty/img/logomitsubishi.png">
+
+<link rel="stylesheet" href="https://mymitsubishiapps.com/warranty/src/css/main.css">
+<link rel="stylesheet" href="https://mymitsubishiapps.com/assets/warranty/mycss/main.css">
+<style>
+  span.cc-message {text-align:justify; letter-spacing: normal; font-size:12px;}
+</style>
+
+<!-- moengage -->
+<script async="" src="https://scripts.clarity.ms/0.8.59/clarity.js"></script><script async="" src="https://www.clarity.ms/tag/s4av39wiae"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-P83T5BH"></script><script type="text/javascript" async="" src="https://cdn.treasuredata.com/sdk/2.4/td.min.js"></script><script async="" src="https://cdn.moengage.com/webpush/moe_webSdk.min.latest.js"></script><script type="text/javascript">
+  (function(i,s,o,g,r,a,m,n){i.moengage_object=r;t={};q=function(f){return function(){(i.moengage_q=i.moengage_q||[]).push({f:f,a:arguments})}};f=['track_event','add_user_attribute','add_first_name','add_last_name','add_email','add_mobile','add_user_name','add_gender','add_birthday','destroy_session','add_unique_user_id','moe_events','call_web_push','track','location_type_attribute'],h={onsite:["getData","registerCallback"]};for(k in f){t[f[k]]=q(f[k])}for(k in h)for(l in h[k]){null==t[k]&&(t[k]={}),t[k][h[k][l]]=q(k+"."+h[k][l])}a=s.createElement(o);m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m);i.moe=i.moe||function(){n=arguments[0];return t};a.onload=function(){if(n){i[r]=moe(n)}}})(window,document,'script','https://cdn.moengage.com/webpush/moe_webSdk.min.latest.js','Moengage')
+
+  Moengage = moe({
+    app_id:"NMR35QVXLHM031QJCUEXZPEO",
+    debug_logs: "0"
+  });
+</script>
+
+<!-- Treasure Data -->
+<script type="text/javascript">
+  !function(t,e){if(void 0===e[t]){e[t]=function(){e[t].clients.push(this),this._init=[Array.prototype.slice.call(arguments)]},e[t].clients=[];for(var r=function(t){return function(){return this["_"+t]=this["_"+t]||[],this["_"+t].push(Array.prototype.slice.call(arguments)),this}},s=["addRecord","blockEvents","fetchServerCookie","fetchGlobalID","fetchUserSegments","resetUUID","ready","setSignedMode","setAnonymousMode","set","trackEvent","trackPageview","trackClicks","unblockEvents"],n=0;n<s.length;n++){var c=s[n];e[t].prototype[c]=r(c)}var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=("https:"===document.location.protocol?"https:":"http:")+"//cdn.treasuredata.com/sdk/2.4/td.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)}}("Treasure",this);
+  // Configure an instance for your database
+  var td = new Treasure({
+    host: 'in.treasuredata.com',
+    writeKey: '10989/16b3a22af96df7e0d6be61ec3ff6eecf990ff154',
+    database: 'd100103_prod_web'
+  });
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-NE22QPMPLD"></script>
+<script>window.dataLayer = window.dataLayer || [];   function gtag(){dataLayer.push(arguments);}   gtag('js', new Date());   gtag('config', 'G-NE22QPMPLD'); </script>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',"GTM-P83T5BH");</script><!-- End Google Tag Manager -->
+
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "s4av39wiae");
+</script>
+
+<style>
+  #loadingGlobal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10000;
+    background: rgba(0,0,0,.5);
+    overflow: hidden;
+  }
+  .hide {
+    display: none !important;
+  }
+  .lds-dual-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+  @keyframes  lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .error {
+    color: red;
+  }
+</style>
+<style></style></head>
+<body><div role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc" class="cc-window cc-floating cc-type-info cc-theme-classic cc-bottom cc-left cc-color-override--1254661338 " style=""><!--googleoff: all--><span id="cookieconsent:desc" class="cc-message">Kami menggunakan cookies untuk mengumpulkan informasi mengenai bagaimana pengunjung menggunakan website kami. Cookies membantu kami untuk memberikan pengalaman terbaik kepada Anda ketika menggunakan website kami. Dengan klik tombol  "Accept Cookies", Anda setuju untuk menggunakan cookies ini <a aria-label="learn more about cookies" role="button" tabindex="0" class="cc-link" href="https://www.cookiesandyou.com" rel="noopener noreferrer nofollow" target="_blank"> </a></span><div class="cc-compliance"><a aria-label="dismiss cookie message" role="button" tabindex="0" class="cc-btn cc-dismiss">Accept Cookies</a></div><!--googleon: all--></div>
+
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P83T5BH"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
+
+    <div class="main-wrapper">
+
+	<div class="main-header">
+    <div class="main-header-wrapper">
+        <a class="main-logo" href="https://mymitsubishiapps.com">
+            <img src="https://mymitsubishiapps.com/assets/warranty/img/logo/mm.png" alt="Mitsubishi Motors" class=" ls-is-cached lazyloaded">
+        </a>
+
+        <button class="hamburger hamburger--squeeze main-nav-toggle" aria-label="Navigation" type="button" style="display: none;">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+        
+        <div class="main-nav-drawer" style="display: flex;">
+            <nav class="main-nav">
+                <ul>
+                    <li class="xl-d-none"><a href="https://mymitsubishiapps.com" class="nav-link">Homepage</a></li>
+                    <li class="has-child">
+                        <a href="https://mymitsubishiapps.com/vehicle" class="nav-link">My vehicle</a>
+                        <button class="btn" aria-label="Open submenu"><span class="sr-only">Open submenu</span></button><ul>
+                            <li><a href="https://mymitsubishiapps.com/scan" class="nav-link">Register Kendaraan</a></li>
+                            <li><a href="https://mymitsubishiapps.com/vehicle" class="nav-link">Lihat Daftar Kendaraan</a></li>
+                            <li><a href="https://mymitsubishiapps.com/activate" class="nav-link">Aktivasi Kendaraan</a></li>
+                            <li><a href="https://mymitsubishiapps.com/pdi" class="nav-link">Lihat PDI</a></li>
+                            <li><a href="https://mymitsubishiapps.com/pkt" class="nav-link">Lihat PKT</a></li>
+                            <li><a href="https://microsite.mitsubishi-motors.co.id/digital-document" class="nav-link" target="_blank">Lihat Owner Manual</a></li>
+                            <li><a href="https://mymitsubishiapps.com/scan" class="nav-link">Lihat Service History</a></li>
+                            <li><a href="https://mymitsubishiapps.com/scan" class="nav-link">Lihat Service Booklet</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="https://mymitsubishiapps.com/faq" class="nav-link">FAQ</a></li>
+                                    </ul>
+            </nav>
+                                            <div class="main-nav-user">
+                    <span class="helper d-block xl-d-none mb-150 text-center">Belum Masuk ke Akun Anda?</span>
+                    <nav>
+                        <a href="https://mymitsubishiapps.com/login" class="btn btn-outline-red w-full md-w-auto">Masuk</a>
+                        <span class="helper helper-hr xl-d-none my-075">atau</span>
+                        <a href="https://mymitsubishiapps.com#daftar" class="btn btn-red w-full md-w-auto xl-ml-200">Pendaftaran</a>
+                    </nav>
+                </div>
+                    </div>
+    </div>
+</div>
+
+
+
+	<main class="main-content">
+    <div class="main-hero">
+        
+
+        <!-- Slider main container -->
+        <div class="swiper swiper-initialized swiper-horizontal swiper-pointer-events">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper" id="swiper-wrapper-3a127f86cf22e10c5" aria-live="polite" style="transform: translate3d(0px, 0px, 0px);">
+            <!-- Slides -->
+                                            <div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 3" style="width: 1366px;">
+                  <picture>
+                    <source srcset="https://mitsubishimotorsid-mobileapp.com/storage/microsite/banner/2025-08/Kan0vovySTrPB4cmUv6pgyuwP3EKChuK1oUTyIii.jpeg" media="(max-width: 991px)" type="image/jpg">
+                    <source srcset="https://mitsubishimotorsid-mobileapp.com/storage/microsite/banner/2025-08/MyLwXoD3cM00UJNZiXg0y3UeKKd8YGCK9gKOZO7A.jpeg 1x, https://mitsubishimotorsid-mobileapp.com/storage/microsite/banner/2025-08/MyLwXoD3cM00UJNZiXg0y3UeKKd8YGCK9gKOZO7A.jpeg 1.5x" media="(min-width: 992px)" type="image/jpg">
+                    <img class="ratio-item ls-is-cached lazyloaded" sizes="(max-width: 991px) 128px, 1280px, 1920px" src="https://mitsubishimotorsid-mobileapp.com/storage/microsite/banner/2025-08/Kan0vovySTrPB4cmUv6pgyuwP3EKChuK1oUTyIii.jpeg" srcset="
+                          https://mitsubishimotorsid-mobileapp.com/storage/microsite/banner/2025-08/Kan0vovySTrPB4cmUv6pgyuwP3EKChuK1oUTyIii.jpeg 320w,
+                          https://mitsubishimotorsid-mobileapp.com/storage/microsite/banner/2025-08/MyLwXoD3cM00UJNZiXg0y3UeKKd8YGCK9gKOZO7A.jpeg 1280w,
+                          https://mitsubishimotorsid-mobileapp.com/storage/microsite/banner/2025-08/MyLwXoD3cM00UJNZiXg0y3UeKKd8YGCK9gKOZO7A.jpeg 1.5x" alt="">
+                  </picture>
+                  <a href="https://www.mitsubishi-motors.co.id/purna-jual/warranty" target="_blank"><span class="sr-only">Home Banner 1</span></a>
+                </div>
+                                            <div class="swiper-slide swiper-slide-next" role="group" aria-label="2 / 3" style="width: 1366px;">
+                  <picture>
+                    <source srcset="https://mitsubishimotorsid-mobileapp.com/storage/microsite/banner/2025-08/sQvNG38bwww5WbNiywLw4zZKkxkNOEoqVCW2uhvi.jpeg" media="(max-width: 991px)" type="image/jpg">
+                    <source srcset="https://mitsubishimotorsid-mobileapp.com/storage/microsite/banner/2025-08/2CYEhfGpHAQe3JRIA1fStbOEwXS7gzCby2j6uJaR.jpeg 1x, https://mitsubishimotorsid-mobileapp.com/storage/microsite/banner/2025-08/2CYEhfGpHAQe3JRIA1fStbOEwXS7gzCby2j6uJaR.jpeg 1.5x" media="(min-width: 992px)" type="image/jpg">
+                    <img class="ratio-item ls-is-cached lazyloaded" sizes="(max-width: 991px) 128px, 1280px, 1920px" src="https://mitsubishimotorsid-mobileapp.com/storage/microsite/banner/2025-08/sQvNG38bwww5WbNiywLw4zZKkxkNOEoqVCW2uhvi.jpeg" srcset="
+                          https://mitsubishimotorsid-mobileapp.com/storage/microsite/banner/2025-08/sQvNG38bwww5WbNiywLw4zZKkxkNOEoqVCW2uhvi.jpeg 320w,
+                          https://mitsubishimotorsid-mobileapp.com/storage/microsite/banner/2025-08/2CYEhfGpHAQe3JRIA1fStbOEwXS7gzCby2j6uJaR.jpeg 1280w,
+                          https://mitsubishimotorsid-mobileapp.com/storage/microsite/banner/2025-08/2CYEhfGpHAQe3JRIA1fStbOEwXS7gzCby2j6uJaR.jpeg 1.5x" alt="">
+                  </picture>
+                  <a href="https://apps.mitsubishi-motors.co.id/owner-manual/" target="_blank"><span class="sr-only">Owner Manual Banner</span></a>
+                </div>
+                                            <div class="swiper-slide" role="group" aria-label="3 / 3" style="width: 1366px;">
+                  <picture>
+                    <source srcset="https://mitsubishimotorsid-mobileapp.com/storage/microsite/banner/2025-08/OsT6xEgbPDawhbsVplTaCnIlBp009mztHAQEDXB9.jpeg" media="(max-width: 991px)" type="image/jpg">
+                    <source srcset="https://mitsubishimotorsid-mobileapp.com/storage/microsite/banner/2025-08/g0WYBnwRVopasr4eRVa5GiIhvDFBoKNlKSEn93ks.jpeg 1x, https://mitsubishimotorsid-mobileapp.com/storage/microsite/banner/2025-08/g0WYBnwRVopasr4eRVa5GiIhvDFBoKNlKSEn93ks.jpeg 1.5x" media="(min-width: 992px)" type="image/jpg">
+                    <img class="lazyload ratio-item" sizes="(max-width: 991px) 128px, 1280px, 1920px" src="https://mitsubishimotorsid-mobileapp.com/storage/microsite/banner/2025-08/OsT6xEgbPDawhbsVplTaCnIlBp009mztHAQEDXB9.jpeg" srcset="
+                          https://mitsubishimotorsid-mobileapp.com/storage/microsite/banner/2025-08/OsT6xEgbPDawhbsVplTaCnIlBp009mztHAQEDXB9.jpeg 320w,
+                          https://mitsubishimotorsid-mobileapp.com/storage/microsite/banner/2025-08/g0WYBnwRVopasr4eRVa5GiIhvDFBoKNlKSEn93ks.jpeg 1280w,
+                          https://mitsubishimotorsid-mobileapp.com/storage/microsite/banner/2025-08/g0WYBnwRVopasr4eRVa5GiIhvDFBoKNlKSEn93ks.jpeg 1.5x" alt="">
+                  </picture>
+                  <a href="https://mymitsubishiapps.com/scan" target="_blank"><span class="sr-only">Service Booklet Banner</span></a>
+                </div>
+                      </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span></div>
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+    </div>
+
+    <section class="bg-white text-center py-150 lg-py-200">
+        <div class="container">
+        <h2 class="text-md lg-text-2xl mb-075">Selamat Datang di Mitsubishi Motors Digital Kit.</h2>
+        <div class="row">
+            <div class="lg-col-10 mx-auto">
+            <p class="text-gray-500 text-xs lg-text-md">Silahkan masuk ke akun Anda atau melakukan pendaftaran di website <strong>"Mitsubishi Motors Digital Kit"</strong> untuk mendapatkan pelayanan terbaik dari Mitsubishi Motors.</p>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    
+
+    <div id="daftar">
+        <section class="bg-white py-200">
+            <div class="container">
+                <div class="row">
+                    <div class="sm-col-10 md-col-8 lg-col-5 mx-auto overflow-banner" style="margin-top: 0 !important;">
+
+    <h2 class="text-lg lg-text-2xl text-center mb-100">Buat Akun Anda</h2>
+
+    <form action="POST" id="form-register">
+        <div class="form-group mb-150">
+            <label for="value" class="text-bold text-black">Nomor Telepon/Email</label>
+            <input id="value" type="text" class="form-control" placeholder="Masukkan nomor telepon / email *" required="" name="value">
+            <div class="form-feedback error" id="error-value">
+            </div>
+        </div>
+
+        <div class="form-group text-gray-500">
+            <div class="form-check mb-150">
+                <input type="checkbox" id="accept_privacy_policy" name="accept_privacy_policy" value="1" required="">
+                
+                <label for="accept_privacy_policy"> Saya menyetujui penyimpanan dan penggunaan data pribadi saya serta menyetujui <a href="https://mymitsubishiapps.com/ketentuan-layanan" target="_blank" class="strong">ketentuan layanan</a> dan <a href="https://mymitsubishiapps.com/kebijakan-privasi" target="_blank" class="strong">Kebijakan Privasi</a> PT Mitsubishi Motors Krama Yudha Sales Indonesia
+                <div class="form-feedback error" id="error-accept_privacy_policy">
+            </div>
+            </label></div>
+            <div class="form-check">
+                <input type="checkbox" id="newsletter" name="newsletter" value="1">
+                <label for="newsletter">Kirimkan saya promosi Newsletter Mitsubishi</label>
+                <div class="form-feedback error" id="error-accept_privacy_policy">
+            </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-red w-full text-md" type="submit">Daftar</button>
+        </div>
+        <div class="mb-150">
+            <a href="" class="btn btn-google btn-outline-black w-full py-025 strong text-md" id="googleLogin">
+                <i class="i i-fw i-svg i-google-color mr-125 text-xl"></i>
+                Masuk dengan Google</a>
+        </div>
+
+        <p class="text-gray-500 text-md text-center">
+            atau
+            <a href="https://mymitsubishiapps.com/login" class="strong d-inline-block ml-050">Masuk di sini</a>
+        </p>
+    </form>
+</div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+</main> <!-- end main-content -->
+
+
+	<div class="modal modal-notif mfp-hide" id="modalSyarat" title="Modal Syarat">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Kebijakan Privasi </h5>
+            </div>
+            <div class="modal-body">
+                <div class="scroll-inner">
+                    <div class="content">
+
+                    </div>
+                </div>
+                <div class="floating-btn">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <footer class="main-footer py-section">
+        <div class="container">
+            <hr class="mt-0 mb-200">
+            <p class="text-uppercase text-gray-300">tetap terhubung dengan kami</p>
+            <nav class="pt-150 pb-100 text-lg line-height-none icon-wrapper">
+                <a href="https://www.facebook.com/MitsubishiMotorsIndonesia" target="_blank"><i class="i i-fw i-facebook" aria-label="Facebook"></i></a>
+                <a href="https://twitter.com/Mitsubishi_ID" target="_blank"><svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome  - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path></svg></a>
+                <a href="https://www.instagram.com/mitsubishimotorsid" target="_blank"><i class="i i-fw i-instagram" aria-label="I i-fwnstagram"></i></a>
+                <a href="https://www.tiktok.com/@mitsubishimotorsid" target="_blank"><svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.0.0 by @fontawesome  - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"></path></svg></a>
+                <a href="https://www.youtube.com/channel/UCwnY-zUiFdgpHdF0dsjlK6g" target="_blank"><i class="i i-fw i-youtube" aria-label="Youtube"></i></a>
+                <a href="mailto:publicrelations@mitsubishi-motors.co.id" target="_blank"><i class="i i-fw i-envelope" aria-label="Email"></i></a>
+            </nav>
+            
+            <div>
+                <a href="https://www.mitsubishi-motors.co.id/contact-us" target="_blank">Hubungi Kami</a>
+                <a class="mx-100" href="https://mymitsubishiapps.com/ketentuan-layanan" target="_blank">Ketentuan Layanan</a>
+                <a href="https://mymitsubishiapps.com/kebijakan-privasi" target="_blank">Kebijakan Privasi</a>
+            </div>
+            <hr class="mt-150 mb-section">
+
+            
+
+            COPYRIGHT © 2026.
+
+            <p class="text-xs text-gray-500" style="margin-top: 10px;">PT MITSUBISHI MOTORS KRAMA YUDHA SALES INDONESIA</p>
+        </div>
+    </footer>
+
+    <div id="loadingGlobal" class="hide">
+        <div class="lds-dual-ring"></div>
+    </div>	
+	<div class="modal modal-notif mfp-hide" id="modalSuccess" title="Popup Title">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title"></h5>
+			</div>
+			<div class="modal-body">
+				<p></p>
+
+				<img src="https://mymitsubishiapps.com/assets/warranty/img/style/circle-check.svg" class="modal-notif-icon lazyload" alt="">
+			</div>
+		</div>
+</div>    <div class="modal modal-notif mfp-hide" id="modalFailed" title="Popup Title">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Failed</h5>
+			</div>
+			<div class="modal-body">
+				<p></p>
+
+				<img src="https://mymitsubishiapps.com/assets/warranty/img/style/circle-times.svg" class="modal-notif-icon lazyload" alt="">
+			</div>
+		</div>
+</div>    <div class="modal modal-notif mfp-hide" id="modalVerification" title="Popup Title">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" style="font-size: 1.5rem !important;">Email Tidak Ditemukan</h5>
+        </div>
+        <div class="modal-body">
+            <p>Silahkan input terlebih dahulu.</p>
+            <div class="form-group">
+                <label for="verificationEmail" class="sr-only">Alamat Email *</label>
+                <input id="verificationEmail" type="text" class="form-control" placeholder="Alamat Email *" required="">
+                <div id="verificationEmailFeedback" class="form-feedback text-red-100"></div>
+            </div>
+            <div class="form-group">
+                <button id="submit-email-verification" class="btn btn-red w-full text-md">Download File</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="modal modal-notif mfp-hide" id="modalInputEmail" title="Popup Title">
+  <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title" style="font-size: 1.5rem !important;">Email Tidak Ditemukan</h5>
+      </div>
+      <div class="modal-body">
+          <p>Silahkan input terlebih dahulu.</p>
+          <div class="form-group">
+              <label for="verificationEmail" class="sr-only">Alamat Email *</label>
+              <input id="verificationEmail" type="text" class="form-control" placeholder="Alamat Email *" required="">
+              <div id="verificationEmailFeedback" class="form-feedback text-red-100"></div>
+          </div>
+          <div class="form-group">
+              <button id="submit-email-booklet" class="btn btn-red w-full text-md">Download File</button>
+          </div>
+      </div>
+  </div>
+</div>
+	</div> <!-- .main-wrapper -->
+	
+	<script type="text/javascript" src="https://mymitsubishiapps.com/assets/warranty/js/vendor.js"></script>
+<script type="text/javascript" src="https://mymitsubishiapps.com/assets/warranty/js/app.js"></script>
+<script type="text/javascript" src="https://mymitsubishiapps.com/warranty/src/js/fe.min.js"></script>
+<script src="https://mymitsubishiapps.com/warranty/src/lib/bootstrap.min.js"></script>
+<script src="https://mymitsubishiapps.com/warranty/src/vendors/datepicker/bootstrap-datepicker.min.js"></script>
+
+
+<script>
+    var SITE_URL = 'https://mymitsubishiapps.com';
+    
+    
+    
+        
+
+
+    
+    function showModalEmail() {
+        $('#modalInputEmail').openModal();
+    };
+    function modalSuccess(title, body) {
+        $('#modalSuccess .modal-title').text(title);
+        $('#modalSuccess .modal-body p').text(body);
+        $('#modalSuccess').openModal();
+    }
+
+    function modalError(title, body) {
+        $('#modalFailed .modal-title').text(title);
+        $('#modalFailed .modal-body p').text(body);
+        $('#modalFailed').openModal();
+    }
+
+    $('#submit-email-booklet').click(function (e) {
+        console.log("Under Development");
+    });
+
+    
+    function showLoading(){
+        $('#loadingGlobal').removeClass('hide')
+    }
+
+    function hideLoading(){
+        $('#loadingGlobal').addClass('hide')
+    }
+
+    function scrollKebijakanPrivacy(){
+        $('#modalSyarat .scroll-inner').on('scroll', function(){
+            hp = $('#modalSyarat  .scroll-inner').height();
+            hc = $('#modalSyarat  .scroll-inner .content').height();
+            s = $('#modalSyarat .scroll-inner').scrollTop();
+            
+            if((s+hp)>=(hc-100)){
+                $(this).parents('.modal-body').find('.floating-btn .btn').removeClass('btn-disabled');
+            }else{
+                $(this).parents('.modal-body').find('.floating-btn .btn').addClass('btn-disabled');
+            }
+        }) ;
+    }
+
+    window.addEventListener('load', function () {
+        //scrollKebijakanPrivacy();
+    });
+    
+    $( document ).ready(function() {
+
+        if($('#modalKebijakan').length){
+            $('#modalKebijakan').show();
+        }
+
+        $('body').on("click", ".acceptPrivacy", function(e){
+            e.preventDefault();
+            let privacyPolicyId = $(this).data('id');
+
+            $.ajax({
+                url : "https://mymitsubishiapps.com/pdp/approve",
+                type: "POST",
+                dataType: "json",
+                data: {
+                    _token: document.head.querySelector('meta[name="csrf-token"]').content,
+                    privacy_policy_id : privacyPolicyId,
+                },
+                beforeSend : function(){
+                    showLoading();
+                },
+                success : function(result) {
+                    hideLoading();
+                    if(result.error){
+                        alert(response.alerts.message);
+                    }else{
+                        $('#modalKebijakan').hide();
+                        if($.magnificPopup.instance.isOpen){                            
+                            $('#modalSyarat').magnificPopup('close');
+                        }
+                        setTimeout(function(){
+                            modalSuccess('Kebijakan Privasi','Berhasil menyetujui kebijakan privasi');
+                        }, 1000);
+                    }
+                },
+                error: function (xhr, status, statusText) {
+                    hideLoading();
+                    var response = xhr.responseJSON;
+                    if(response.error !== undefined){
+                        alert(response.alerts.message);
+                    }
+                }
+            })
+        });
+
+        $('.kebijakanPrivasi').click(function(e){
+            e.preventDefault();
+            $.ajax({
+                url : "https://mymitsubishiapps.com/pdp/content",
+                type: "GET",
+                dataType: "json",
+                beforeSend : function(){
+                    showLoading();
+                },
+                success : function(result) {
+                    hideLoading();
+                    if(result.error){
+                        alert(response.alerts.message);
+                    }else{
+                        if(result.data){
+                            $('#modalSyarat').openModal();
+                            $('#modalSyarat .modal-body .content').html(result.data.description);
+                            if(result.data.consent_status){                                     
+                                $('#modalSyarat .floating-btn').html(`<a href="" class="btn btn-default" id="privacyExit">Keluar</a>`);
+                            }else{
+                                $('#modalSyarat .floating-btn').html(`<a href="" class="btn btn-red acceptPrivacy" data-id="${result.data.id}">Saya Menyetujui</a>`);
+                            }
+                        }
+                    }
+                },
+                error: function (xhr, status, statusText) {
+                    hideLoading();
+                    var response = xhr.responseJSON;
+                    if(response){
+                        if(response.error !== undefined){
+                            alert(response.alerts.message);
+                        }
+                    }
+                    
+                }
+            });
+        });
+
+        $('body').on("click", "#privacyExit", function(event){
+            event.preventDefault();
+            $('#modalSyarat').hide();
+        });
+    });
+</script>
+
+
+    <link rel="stylesheet" href="https://mymitsubishiapps.com/warranty/src/vendors/swiper/swiper-bundle.min.css">
+    <script src="https://mymitsubishiapps.com/warranty/src/vendors/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.main-hero .swiper', {
+            speed: 400,
+            pagination: {
+              el: '.main-hero .swiper-pagination',
+              type: 'bullets',
+              clickable: true,
+            },
+          });
+    </script>
+
+    <script>
+        $('#form-register').submit(function(e){
+            e.preventDefault();
+            let value = $('input[name="value"]').val();
+            let privacy = $('input[name="accept_privacy_policy"]').val();
+            let newsletter = $('input[name="newsletter"]').val();
+
+            $('.error').hide();
+            $('.error').text('');
+
+            $.ajax({
+                url : "https://mymitsubishiapps.com/v2/register",
+                type: "POST",
+                dataType: "json",
+                data: {
+                    _token: document.head.querySelector('meta[name="csrf-token"]').content,
+                    type : "phone",
+                    value : value,
+                    accept_privacy_policy : privacy,
+                    newsletter : newsletter,
+                },
+                beforeSend : function(){
+                    showLoading();
+                },
+                success : function(result) {
+                    hideLoading();
+                    if(result.error){                        
+                        $('#error-value').show().text(result.alerts.message || 'Terjadi error saat melakukan registrasi otp');
+                    }else{
+                        window.location.href = result.redirect
+                    }
+                },
+                error: function (xhr, status, statusText) {
+                    hideLoading();
+                    var response = xhr.responseJSON;
+                    if(response.errors){
+                        response.errors.forEach(function(item, index){
+                            $(`#error-${item.rule}`).text(item.message);
+                            $(`#error-${item.rule}`).show();
+                        });
+                    }
+                }
+            });
+        });
+        $('#googleLogin').click(function(e){
+            e.preventDefault();
+            let inputValueElement = $('input[name="value"]');
+            let form = document.querySelector('form')
+            inputValueElement.removeAttr('required');
+            inputValueElement.val('');
+            if(!form.checkValidity()){
+                form.reportValidity();
+            }else{
+                window.location.href = "https://mymitsubishiapps.com/auth/google?privacy_policy=1";
+            }
+        });
+        $('input[name="value"]').keypress(function(e){
+            let attr = $(this).attr('required');
+            if (typeof attr === 'undefined') {
+                $(this).attr('required','');
+            }
+        });
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+<script>
+    window.cookieconsent.initialise({
+        "palette": {
+            "popup": {
+                "background": "#aa0000",
+                "text": "#ffdddd"
+            },
+            "button": {
+                "background": "#ff0000"
+            }
+        },
+        "theme": "classic",
+        "position": "bottom-left",
+        "content": {
+            "message": "Kami menggunakan cookies untuk mengumpulkan informasi mengenai bagaimana pengunjung menggunakan website kami. Cookies membantu kami untuk memberikan pengalaman terbaik kepada Anda ketika menggunakan website kami. Dengan klik tombol  \"Accept Cookies\", Anda setuju untuk menggunakan cookies ini",
+            "dismiss": "Accept Cookies",
+            "link": " "
+        },
+        "revokable": false,
+        onStatusChange: function(status) {
+            this.hasConsented() ? td.setSignedMode() : td.setAnonymousMode();
+        },
+    });
+</script>
+
+
+<!-- append js -->
+	
+
+
+</body></html>

@@ -1,0 +1,1430 @@
+<html lang="en"><head><style>
+    .splide__pagination__page.is-active{
+        background: #A26170
+    }
+
+    #concepts .splide__slide:not(.is-active) .concept-desc{
+        display: none;
+    }
+
+    #concepts .splide__slide.is-active .slide-inner {
+        transform: scale(1.21);
+    }
+
+    #concepts .splide__slide .slide-inner {
+        transition: transform 0.3s ease-in-out;
+        transform-origin: center center; /* scale from center */
+        width: 244px !important;
+        height: 364.76px !important;
+    }
+
+    #concepts .splide__slide{
+        width: 295px !important;
+        height: 441px !important;
+    }
+
+    #videos .splide__slide.is-active .slide-inner {
+        transform: scale(1.23);
+    }
+
+    #videos .splide__slide .slide-inner {
+        transition: transform 0.3s ease-in-out;
+        transform-origin: center center; /* scale from center */
+        width: 287px !important;
+        height: 543px !important;
+    }
+
+    #videos .splide__slide{
+        width: 353px !important;
+        height: 669px !important;
+    }
+
+    #videos .splide__arrow {
+        background: white !important;   /* remove background */
+        border: none !important;       /* remove border */
+        border-radius: 0 !important;
+        box-shadow: none !important;   /* remove shadow if any */
+        width: 5%;                   /* shrink to icon size */
+        height: 100%;
+        opacity: 1;
+    }
+
+    #videos .splide__arrow--prev{
+        left: 0 !important;
+    }
+
+    #videos .splide__arrow--next{
+        right: 0 !important;
+    }
+</style>
+
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selfie Time Moments</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://selfietimemoments.id/moments-apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://selfietimemoments.id/moments-favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://selfietimemoments.id/moments-favicon-16x16.png">
+    <link rel="manifest" href="https://selfietimemoments.id/moments-site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://selfietimemoments.id/css/app.css?v=2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css" integrity="sha512-9YHSK59/rjvhtDcY/b+4rdnl0V4LPDWdkKceBl8ZLF5TB6745ml1AfluEU6dFWqwDw9lPvnauxFgpKvJqp7jiQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-video@0.8.0/dist/js/splide-extension-video.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-video@0.8.0/dist/css/splide-extension-video.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<style>
+    * {
+        font-family: 'Quicksand', sans-serif;
+    }
+</style></head>
+
+<body class="w-full relative m-0 min-h-screen flex flex-col">
+        
+        <header class="w-full sticky z-10 top-0 left-0 bg-white py-2 px-4 shadow-xl">
+            <div class="w-full grid grid-cols-3 max-lg:hidden">
+                <div class="">
+                    <img src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/moments-logo.png" width="146px" alt="">
+                </div>
+                <div class="w-full grid grid-cols-5 items-center">
+                    <a href="#theme" class="text-[#A26170] font-semibold text-center">Tema</a>
+                    <a href="#gallery" class="text-[#A26170] font-semibold text-center">Galeri</a>
+                    <a href="#location" class="text-[#A26170] font-semibold text-center">Lokasi</a>
+                    <a href="#price-list" class="text-[#A26170] font-semibold text-center">Price List</a>
+                    <a href="#faq" class="text-[#A26170] font-semibold text-center">FAQ</a>
+                </div>
+                <div class="px-4 py-2 flex justify-end">
+                    <div class="px-4 flex items-center rounded-xl bg-[#A26170] text-white font-bold">
+                        Download Foto
+                    </div>
+                </div>
+            </div>
+            <div class="w-full flex justify-between lg:hidden">
+                <div class="">
+                    <img src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/moments-logo.png" width="146px" alt="">
+                </div>
+                <button id="trigger" onclick="trigger()" data-opened="0" class="px-4 py-2 relative">
+                    <span id="open-icon" class="absolute top-[25%] right-[25%] transition-all duration-300 ease-in-out opacity-100 scale-100">
+                        <i class="fa-solid fa-bars text-[#A26170]"></i>
+                    </span>
+                    <span id="close-icon" class="absolute top-[25%] right-[25%] transition-all duration-300 ease-in-out opacity-0 scale-95 pointer-events-none">
+                        <i class="fa-solid fa-xmark text-[#A26170]"></i>
+                    </span>
+                </button>
+                
+            </div>
+            <div id="header-dropdown" class="bg-white absolute top-[100%] left-0 opacity-0 w-full flex flex-col items-center justify-center text-white font-bold text-xl gap-6 py-6 transition-all duration-300 ease-in-out pointer-events-none">
+                <a href="#theme" class="text-[#A26170] font-semibold text-center">Tema</a>
+                <a href="#gallery" class="text-[#A26170] font-semibold text-center">Galeri</a>
+                <a href="#location" class="text-[#A26170] font-semibold text-center">Lokasi</a>
+                <a href="#price-list" class="text-[#A26170] font-semibold text-center">Price List</a>
+                <a href="#faq" class="text-[#A26170] font-semibold text-center">FAQ</a>
+            </div>
+        </header>
+    
+    <div class="w-full flex-grow flex flex-col">
+                    <div class="w-full">
+        
+        <img class="w-full max-lg:hidden" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/moments-cover-pc.jpg" alt="">
+        
+        <img class="w-full lg:hidden" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/moments-cover-mobile.jpg" alt="">
+    </div>
+    <div id="theme" class="w-full bg-[linear-gradient(180deg,#E3CBC6_0%,#C8989A_100%)] max-2xl:px-10 py-40">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="border-b border-black pb-4 mb-4 lg:w-[70%] w-full">
+                <p class="lg:text-5xl text-2xl text-[#A26170] font-bold max-lg:text-center">Dengan Setup Baru Yang Elegan Vibes Sekelas Foto Profesional</p>
+            </div>
+            <div class="text-xl lg:text-2xl text-[#6F6254] font-medium mb-8 max-lg:text-center">
+                Menghadirkan kualitas foto yang lebih profesional menjadikan setiap foto jadi lebih dari sekadar pose.
+            </div>
+            <div class="w-full grid grid-cols-1 max-xl:max-w-xl max-xl:mx-auto xl:grid-cols-3 gap-4 pt-8">
+                <div class="rounded-2xl px-6 py-4 bg-white flex flex-col h-full">
+                    <div class="w-full max-w-xl mx-auto flex flex-col h-full">
+                        <p class="text-lg lg:text-2xl text-[#A26170] font-bold mb-2">Premium Studio Setting</p>
+                        <p class="text-[#6F6254] text-sm lg:text-lg mb-4 flex-grow">
+                            Studio nyaman dengan set yang tertata
+                            rapi, pencahayaan pas, dan suasana
+                            eksklusif untuk hasil foto terbaik
+                        </p>
+                        <img class="rounded-xl mt-auto" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/desc-1.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="rounded-2xl px-6 py-4 bg-white flex flex-col h-full">
+                    <div class="w-full max-w-xl mx-auto flex flex-col h-full">
+                    <p class="text-lg lg:text-2xl text-[#A26170] font-bold mb-2">Fotografer Profesional</p>
+                    <p class="text-[#6F6254] text-sm lg:text-lg mb-4 flex-grow">
+                        Ditangani langsung oleh fotografer
+                        berpengalaman yang tahu cara
+                        menangkap momen terbaikmu.
+                    </p>
+                    <img class="rounded-xl mt-auto" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/desc-2.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="rounded-2xl px-6 py-4 bg-white flex flex-col h-full">
+                    <div class="w-full max-w-xl mx-auto flex flex-col h-full">
+                    <p class="text-lg lg:text-2xl text-[#A26170] font-bold mb-2">Properti Lengkap &amp; Stylish</p>
+                    <p class="text-[#6F6254] text-sm lg:text-lg mb-4 flex-grow">
+                        Beragam properti kekinian siap dipakai
+                        sesuai tema, bikin sesi foto makin
+                        menarik dan berkesan.
+                    </p>
+                    <img class="rounded-xl mt-auto" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/desc-3.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w-full flex flex-col gap-20 py-40">
+        <div class="max-[1420px]:px-10 max-w-[1340px] mx-auto flex justify-center gap-20 max-xl:hidden">
+            <video poster="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/st-rio-motret.png" controls="" preload="none" class="max-h-[690px]" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/ST X RIO MOTRET_PLG_FINAL_2.webm"></video>
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-2">
+                    <div class="border border-[#6F6254] h-0 w-6"></div>
+                    <p class="text-[#6F6254] text-xl">Selfie Time x Rio Motret</p>
+                </div>
+                <div class="border-b-2 border-black pb-4">
+                    <p class="text-5xl font-bold text-[#A26170]">Kolaborasi Eksklusif <br> Bareng Rio Motret</p>
+                </div>
+                <p class="text-[#6F6254] text-lg text-justify">
+                    Selfie Time Moments berkolaborasi dengan Rio Motret (@riomotret), salah satu fotografer profesional terbaik di Indonesia! <br>
+                    Dengan jam terbang tinggi dan karya-karyanya yang selalu memukau, Rio Motret siap membawa sentuhan profesional ke setiap jepretan kamu di Selfie Time Moments. <br>
+                    Dengan kolaborasi bareng Rio Motret, kualitas hasil foto kami gak perlu  diragukan lagi.
+                </p>
+            </div>
+        </div>
+        <div class="max-w-2xl mx-auto flex flex-col items-center gap-4 xl:hidden">
+            <div class="flex items-center gap-2">
+                <div class="border border-[#6F6254] h-0 w-6"></div>
+                <p class="text-[#6F6254] text-xl">Selfie Time x Rio Motret</p>
+            </div>
+            <div class="border-b-2 border-black pb-4">
+                <p class="text-3xl font-bold text-[#A26170] text-center">Kolaborasi Eksklusif <br> Bareng Rio Motret</p>
+            </div>
+            <video poster="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/st-rio-motret.png" preload="none" controls="" class="max-h-[690px]" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/ST X RIO MOTRET_PLG_FINAL_2.webm"></video>
+            <p class="text-[#6F6254] max-md:text-sm max-md:px-4 text-lg text-justify">
+                Selfie Time Moments berkolaborasi dengan Rio Motret (@riomotret),  salah satu fotografer profesional terbaik di Indonesia! Dengan jam terbang  tinggi dan karya-karyanya yang selalu memukau, Rio Motret siap membawa sentuhan profesional ke setiap jepretan kamu di Selfie Time Moments. Dengan kolaborasi bareng Rio Motret, kualitas hasil foto kami gak perlu  diragukan lagi.
+            </p>
+        </div>
+        <div class="max-[1420px]:px-10 max-w-[1340px] mx-auto flex gap-10 pt-36">
+                        <div class="w-full flex flex-col max-xl:gap-5 xl:justify-between">
+                <div class="w-full flex flex-col gap-5">
+                    <p class="text-[#A26170] text-3xl xl:text-5xl font-bold max-xl:text-center">Koleksi Konsep Foto</p>
+                    <p class="text-[#6F6254] text-xl max-xl:text-center">
+                        Dari vibe santai sampai glamour, dari yang simpel hingga yang penuh warna. <br>
+                        Abadikan momen dari gaya personal hingga kebersamaan keluarga besar dalam satu tempat.
+                    </p>
+                </div>
+                <div id="container" class="flex gap-5 max-xl:hidden">
+                                            <img onclick="changeSpotlight(1)" id="preview-1" class="rounded-xl w-[214px]" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/concept-2.jpg" alt="">
+                                            <img onclick="changeSpotlight(2)" id="preview-2" class="rounded-xl w-[214px]" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/concept-3.jpg" alt="">
+                                            <img onclick="changeSpotlight(3)" id="preview-3" class="rounded-xl w-[214px]" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/concept-4.jpg" alt="">
+                                    </div>
+            </div>
+            <div class="w-[482px] relative max-xl:hidden">
+                <img id="spotlight-img" data-holding="0" class="max-w-max w-[482px] rounded-xl aspect-square object-cover" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/concept-1.jpg" alt="">
+                <div class="w-full h-full flex flex-col justify-end absolute bottom-0 left-0 p-4 bg-white/30  backdrop-blur-sm rounded-xl [mask-image:linear-gradient(to_top,black_15%,transparent_25%)] [mask-repeat:no-repeat] [mask-size:100%_100%]">
+                    <p id="spotlight-title" class="text-white font-bold text-xl">Kids Moment</p>
+                    <p id="spotlight-description" class="text-white">Anak cepat banget tumbuh, lho! Yuk, simpan momen lucu dan gemasnya&nbsp;sekarang</p>
+                </div>
+            </div>
+
+        </div>
+        <div id="concepts" class="splide overflow-hidden w-full xl:hidden -mt-[60px] splide--loop splide--ltr splide--draggable is-active is-initialized" aria-label="Slide Container Example" role="region" aria-roledescription="carousel">
+            <div class="splide__track splide__track--loop splide__track--ltr splide__track--draggable" id="concepts-track" aria-live="polite" aria-atomic="true" style="padding-left: 0px; padding-right: 0px;">
+                <ul class="splide__list" id="concepts-list" role="presentation" style="transform: translateX(0px);">
+                                            <li class="splide__slide flex justify-center items-center splide__slide--clone is-visible" id="concepts-clone01" role="tabpanel" aria-roledescription="slide" aria-label="3 of 4" style="margin-right: 24px; width: calc(33.3333% - 16px);">
+                            <div class="slide-inner relative">
+                                <img class="w-full rounded-xl" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/concept-3.jpg" alt="">
+                                <div class="concept-desc w-full h-full flex flex-col justify-end absolute bottom-0 left-0 p-4 bg-gray-400/20 backdrop-blur-sm rounded-xl [mask-image:linear-gradient(to_top,black_25%,transparent_35%)] [mask-repeat:no-repeat] [mask-size:100%_100%]">
+                                    <p class="text-white font-bold">Wisuda Moment</p>
+                                    <p class="text-white text-xs">Toga udah kepake, saatnya rayain pencapaianmu! Foto wisuda kece biar jadi bukti perjuangan dengan keluarga</p>
+                                </div>
+                            </div>
+                        </li><li class="splide__slide flex justify-center items-center splide__slide--clone is-visible" id="concepts-clone02" role="tabpanel" aria-roledescription="slide" aria-label="4 of 4" style="margin-right: 24px; width: calc(33.3333% - 16px);">
+                            <div class="slide-inner relative">
+                                <img class="w-full rounded-xl" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/concept-4.jpg" alt="">
+                                <div class="concept-desc w-full h-full flex flex-col justify-end absolute bottom-0 left-0 p-4 bg-gray-400/20 backdrop-blur-sm rounded-xl [mask-image:linear-gradient(to_top,black_25%,transparent_35%)] [mask-repeat:no-repeat] [mask-size:100%_100%]">
+                                    <p class="text-white font-bold">Group / Couple Moment</p>
+                                    <p class="text-white text-xs">Bareng bestie atau pasangan, selalu ada cerita seru! Jepret momen&nbsp;kompak&nbsp;kalian</p>
+                                </div>
+                            </div>
+                        </li><li class="splide__slide flex justify-center items-center splide__slide--clone is-active is-visible" id="concepts-clone03" role="tabpanel" aria-roledescription="slide" aria-label="1 of 4" style="margin-right: 24px; width: calc(33.3333% - 16px);">
+                            <div class="slide-inner relative">
+                                <img class="w-full rounded-xl" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/concept-1.jpg" alt="">
+                                <div class="concept-desc w-full h-full flex flex-col justify-end absolute bottom-0 left-0 p-4 bg-gray-400/20 backdrop-blur-sm rounded-xl [mask-image:linear-gradient(to_top,black_25%,transparent_35%)] [mask-repeat:no-repeat] [mask-size:100%_100%]">
+                                    <p class="text-white font-bold">Kids Moment</p>
+                                    <p class="text-white text-xs">Anak cepat banget tumbuh, lho! Yuk, simpan momen lucu dan gemasnya&nbsp;sekarang</p>
+                                </div>
+                            </div>
+                        </li><li class="splide__slide flex justify-center items-center splide__slide--clone is-visible" id="concepts-clone04" role="tabpanel" aria-roledescription="slide" aria-label="2 of 4" style="margin-right: 24px; width: calc(33.3333% - 16px);">
+                            <div class="slide-inner relative">
+                                <img class="w-full rounded-xl" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/concept-2.jpg" alt="">
+                                <div class="concept-desc w-full h-full flex flex-col justify-end absolute bottom-0 left-0 p-4 bg-gray-400/20 backdrop-blur-sm rounded-xl [mask-image:linear-gradient(to_top,black_25%,transparent_35%)] [mask-repeat:no-repeat] [mask-size:100%_100%]">
+                                    <p class="text-white font-bold">Family Moment</p>
+                                    <p class="text-white text-xs">Momen bareng keluarga itu priceless! Yuk abadikan vibes hangat bareng orang-orang tersayang</p>
+                                </div>
+                            </div>
+                        </li><li class="splide__slide flex justify-center items-center splide__slide--clone is-visible" id="concepts-clone05" role="tabpanel" aria-roledescription="slide" aria-label="3 of 4" style="margin-right: 24px; width: calc(33.3333% - 16px);">
+                            <div class="slide-inner relative">
+                                <img class="w-full rounded-xl" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/concept-3.jpg" alt="">
+                                <div class="concept-desc w-full h-full flex flex-col justify-end absolute bottom-0 left-0 p-4 bg-gray-400/20 backdrop-blur-sm rounded-xl [mask-image:linear-gradient(to_top,black_25%,transparent_35%)] [mask-repeat:no-repeat] [mask-size:100%_100%]">
+                                    <p class="text-white font-bold">Wisuda Moment</p>
+                                    <p class="text-white text-xs">Toga udah kepake, saatnya rayain pencapaianmu! Foto wisuda kece biar jadi bukti perjuangan dengan keluarga</p>
+                                </div>
+                            </div>
+                        </li><li class="splide__slide flex justify-center items-center splide__slide--clone is-visible is-prev" id="concepts-clone06" role="tabpanel" aria-roledescription="slide" aria-label="4 of 4" style="margin-right: 24px; width: calc(33.3333% - 16px);">
+                            <div class="slide-inner relative">
+                                <img class="w-full rounded-xl" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/concept-4.jpg" alt="">
+                                <div class="concept-desc w-full h-full flex flex-col justify-end absolute bottom-0 left-0 p-4 bg-gray-400/20 backdrop-blur-sm rounded-xl [mask-image:linear-gradient(to_top,black_25%,transparent_35%)] [mask-repeat:no-repeat] [mask-size:100%_100%]">
+                                    <p class="text-white font-bold">Group / Couple Moment</p>
+                                    <p class="text-white text-xs">Bareng bestie atau pasangan, selalu ada cerita seru! Jepret momen&nbsp;kompak&nbsp;kalian</p>
+                                </div>
+                            </div>
+                        </li><li class="splide__slide flex justify-center items-center is-active is-visible" id="concepts-slide01" role="tabpanel" aria-roledescription="slide" aria-label="1 of 4" style="margin-right: 24px; width: calc(33.3333% - 16px);">
+                            <div class="slide-inner relative">
+                                <img class="w-full rounded-xl" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/concept-1.jpg" alt="">
+                                <div class="concept-desc w-full h-full flex flex-col justify-end absolute bottom-0 left-0 p-4 bg-gray-400/20 backdrop-blur-sm rounded-xl [mask-image:linear-gradient(to_top,black_25%,transparent_35%)] [mask-repeat:no-repeat] [mask-size:100%_100%]">
+                                    <p class="text-white font-bold">Kids Moment</p>
+                                    <p class="text-white text-xs">Anak cepat banget tumbuh, lho! Yuk, simpan momen lucu dan gemasnya&nbsp;sekarang</p>
+                                </div>
+                            </div>
+                        </li>
+                                            <li class="splide__slide flex justify-center items-center is-visible is-next" id="concepts-slide02" role="tabpanel" aria-roledescription="slide" aria-label="2 of 4" style="margin-right: 24px; width: calc(33.3333% - 16px);">
+                            <div class="slide-inner relative">
+                                <img class="w-full rounded-xl" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/concept-2.jpg" alt="">
+                                <div class="concept-desc w-full h-full flex flex-col justify-end absolute bottom-0 left-0 p-4 bg-gray-400/20 backdrop-blur-sm rounded-xl [mask-image:linear-gradient(to_top,black_25%,transparent_35%)] [mask-repeat:no-repeat] [mask-size:100%_100%]">
+                                    <p class="text-white font-bold">Family Moment</p>
+                                    <p class="text-white text-xs">Momen bareng keluarga itu priceless! Yuk abadikan vibes hangat bareng orang-orang tersayang</p>
+                                </div>
+                            </div>
+                        </li>
+                                            <li class="splide__slide flex justify-center items-center is-visible" id="concepts-slide03" role="tabpanel" aria-roledescription="slide" aria-label="3 of 4" style="margin-right: 24px; width: calc(33.3333% - 16px);">
+                            <div class="slide-inner relative">
+                                <img class="w-full rounded-xl" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/concept-3.jpg" alt="">
+                                <div class="concept-desc w-full h-full flex flex-col justify-end absolute bottom-0 left-0 p-4 bg-gray-400/20 backdrop-blur-sm rounded-xl [mask-image:linear-gradient(to_top,black_25%,transparent_35%)] [mask-repeat:no-repeat] [mask-size:100%_100%]">
+                                    <p class="text-white font-bold">Wisuda Moment</p>
+                                    <p class="text-white text-xs">Toga udah kepake, saatnya rayain pencapaianmu! Foto wisuda kece biar jadi bukti perjuangan dengan keluarga</p>
+                                </div>
+                            </div>
+                        </li>
+                                            <li class="splide__slide flex justify-center items-center is-visible" id="concepts-slide04" role="tabpanel" aria-roledescription="slide" aria-label="4 of 4" style="margin-right: 24px; width: calc(33.3333% - 16px);">
+                            <div class="slide-inner relative">
+                                <img class="w-full rounded-xl" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/concept-4.jpg" alt="">
+                                <div class="concept-desc w-full h-full flex flex-col justify-end absolute bottom-0 left-0 p-4 bg-gray-400/20 backdrop-blur-sm rounded-xl [mask-image:linear-gradient(to_top,black_25%,transparent_35%)] [mask-repeat:no-repeat] [mask-size:100%_100%]">
+                                    <p class="text-white font-bold">Group / Couple Moment</p>
+                                    <p class="text-white text-xs">Bareng bestie atau pasangan, selalu ada cerita seru! Jepret momen&nbsp;kompak&nbsp;kalian</p>
+                                </div>
+                            </div>
+                        </li>
+                                    <li class="splide__slide flex justify-center items-center splide__slide--clone is-active is-visible" id="concepts-clone07" role="tabpanel" aria-roledescription="slide" aria-label="1 of 4" style="margin-right: 24px; width: calc(33.3333% - 16px);">
+                            <div class="slide-inner relative">
+                                <img class="w-full rounded-xl" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/concept-1.jpg" alt="">
+                                <div class="concept-desc w-full h-full flex flex-col justify-end absolute bottom-0 left-0 p-4 bg-gray-400/20 backdrop-blur-sm rounded-xl [mask-image:linear-gradient(to_top,black_25%,transparent_35%)] [mask-repeat:no-repeat] [mask-size:100%_100%]">
+                                    <p class="text-white font-bold">Kids Moment</p>
+                                    <p class="text-white text-xs">Anak cepat banget tumbuh, lho! Yuk, simpan momen lucu dan gemasnya&nbsp;sekarang</p>
+                                </div>
+                            </div>
+                        </li><li class="splide__slide flex justify-center items-center splide__slide--clone is-visible" id="concepts-clone08" role="tabpanel" aria-roledescription="slide" aria-label="2 of 4" style="margin-right: 24px; width: calc(33.3333% - 16px);">
+                            <div class="slide-inner relative">
+                                <img class="w-full rounded-xl" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/concept-2.jpg" alt="">
+                                <div class="concept-desc w-full h-full flex flex-col justify-end absolute bottom-0 left-0 p-4 bg-gray-400/20 backdrop-blur-sm rounded-xl [mask-image:linear-gradient(to_top,black_25%,transparent_35%)] [mask-repeat:no-repeat] [mask-size:100%_100%]">
+                                    <p class="text-white font-bold">Family Moment</p>
+                                    <p class="text-white text-xs">Momen bareng keluarga itu priceless! Yuk abadikan vibes hangat bareng orang-orang tersayang</p>
+                                </div>
+                            </div>
+                        </li><li class="splide__slide flex justify-center items-center splide__slide--clone is-visible" id="concepts-clone09" role="tabpanel" aria-roledescription="slide" aria-label="3 of 4" style="margin-right: 24px; width: calc(33.3333% - 16px);">
+                            <div class="slide-inner relative">
+                                <img class="w-full rounded-xl" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/concept-3.jpg" alt="">
+                                <div class="concept-desc w-full h-full flex flex-col justify-end absolute bottom-0 left-0 p-4 bg-gray-400/20 backdrop-blur-sm rounded-xl [mask-image:linear-gradient(to_top,black_25%,transparent_35%)] [mask-repeat:no-repeat] [mask-size:100%_100%]">
+                                    <p class="text-white font-bold">Wisuda Moment</p>
+                                    <p class="text-white text-xs">Toga udah kepake, saatnya rayain pencapaianmu! Foto wisuda kece biar jadi bukti perjuangan dengan keluarga</p>
+                                </div>
+                            </div>
+                        </li><li class="splide__slide flex justify-center items-center splide__slide--clone is-visible" id="concepts-clone10" role="tabpanel" aria-roledescription="slide" aria-label="4 of 4" style="margin-right: 24px; width: calc(33.3333% - 16px);">
+                            <div class="slide-inner relative">
+                                <img class="w-full rounded-xl" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/concept-4.jpg" alt="">
+                                <div class="concept-desc w-full h-full flex flex-col justify-end absolute bottom-0 left-0 p-4 bg-gray-400/20 backdrop-blur-sm rounded-xl [mask-image:linear-gradient(to_top,black_25%,transparent_35%)] [mask-repeat:no-repeat] [mask-size:100%_100%]">
+                                    <p class="text-white font-bold">Group / Couple Moment</p>
+                                    <p class="text-white text-xs">Bareng bestie atau pasangan, selalu ada cerita seru! Jepret momen&nbsp;kompak&nbsp;kalian</p>
+                                </div>
+                            </div>
+                        </li><li class="splide__slide flex justify-center items-center splide__slide--clone is-active is-visible" id="concepts-clone11" role="tabpanel" aria-roledescription="slide" aria-label="1 of 4" style="margin-right: 24px; width: calc(33.3333% - 16px);">
+                            <div class="slide-inner relative">
+                                <img class="w-full rounded-xl" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/concept-1.jpg" alt="">
+                                <div class="concept-desc w-full h-full flex flex-col justify-end absolute bottom-0 left-0 p-4 bg-gray-400/20 backdrop-blur-sm rounded-xl [mask-image:linear-gradient(to_top,black_25%,transparent_35%)] [mask-repeat:no-repeat] [mask-size:100%_100%]">
+                                    <p class="text-white font-bold">Kids Moment</p>
+                                    <p class="text-white text-xs">Anak cepat banget tumbuh, lho! Yuk, simpan momen lucu dan gemasnya&nbsp;sekarang</p>
+                                </div>
+                            </div>
+                        </li><li class="splide__slide flex justify-center items-center splide__slide--clone is-visible" id="concepts-clone12" role="tabpanel" aria-roledescription="slide" aria-label="2 of 4" style="margin-right: 24px; width: calc(33.3333% - 16px);">
+                            <div class="slide-inner relative">
+                                <img class="w-full rounded-xl" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/concept-2.jpg" alt="">
+                                <div class="concept-desc w-full h-full flex flex-col justify-end absolute bottom-0 left-0 p-4 bg-gray-400/20 backdrop-blur-sm rounded-xl [mask-image:linear-gradient(to_top,black_25%,transparent_35%)] [mask-repeat:no-repeat] [mask-size:100%_100%]">
+                                    <p class="text-white font-bold">Family Moment</p>
+                                    <p class="text-white text-xs">Momen bareng keluarga itu priceless! Yuk abadikan vibes hangat bareng orang-orang tersayang</p>
+                                </div>
+                            </div>
+                        </li></ul>
+            </div>
+        <ul class="splide__pagination splide__pagination--ltr" role="tablist" aria-label="Select a slide to show" style="position: static; width: 100%; margin-top: 1rem;"><li role="presentation"><button class="splide__pagination__page is-active" type="button" role="tab" aria-controls="concepts-slide01" aria-label="Go to slide 1" aria-selected="true"></button></li><li role="presentation"><button class="splide__pagination__page" type="button" role="tab" aria-controls="concepts-slide02" aria-label="Go to slide 2" tabindex="-1"></button></li><li role="presentation"><button class="splide__pagination__page" type="button" role="tab" aria-controls="concepts-slide03" aria-label="Go to slide 3" tabindex="-1"></button></li><li role="presentation"><button class="splide__pagination__page" type="button" role="tab" aria-controls="concepts-slide04" aria-label="Go to slide 4" tabindex="-1"></button></li></ul></div>
+        <div id="gallery" class="flex flex-col gap-4 items-center max-xl:px-5 pt-36">
+            <p class="text-[#A26170] text-3xl xl:text-5xl font-bold text-center">Galeri Selfie Time Moment</p>
+            <div class="flex max-xl:flex-col gap-4 xl:gap-2 items-center">
+                <p class="xl:text-xl text-center">Dari gaya bebas hingga konsep elegan, Selfie Time hadir untuk semua gaya dan cerita.</p>
+                <div class="px-4 py-2 rounded-full bg-[#6F6254] text-white flex gap-2 items-center ml-3">
+                    <p>Lihat lebih banyak</p>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </div>
+            </div>
+            <img class="max-lg:hidden" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/collage-pc.png" alt="">
+            <img class="lg:hidden" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/collage-mobile.png" alt="">
+        </div>
+        <div class="flex flex-col gap-4 items-center pt-36">
+            <span class="w-max text-4xl text-[#A26170] font-bold pb-2 border-b border-[#A26170]">Video Studio</span>
+                        <div id="videos" class="splide overflow-hidden w-full splide--loop splide--ltr splide--draggable is-active is-overflow is-initialized" aria-label="Slide Container Example" role="region" aria-roledescription="carousel">
+                <div class="splide__track splide__track--loop splide__track--ltr splide__track--draggable" id="videos-track" aria-live="polite" aria-atomic="true" style="padding-left: 0px; padding-right: 0px;">
+                    <ul class="splide__list" id="videos-list" role="presentation" style="transform: translateX(-1755.5px);">
+                                                    <li class="splide__slide flex justify-center items-center splide__slide--clone" id="videos-clone01" role="group" aria-roledescription="slide" aria-label="3 of 8" style="margin-right: 24px; width: calc(33.3333% - 16px);" aria-hidden="true">
+                                <div class="slide-inner">
+                                    <video preload="none" controls="" poster="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/FAMILY WISUDA poster.jpg" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/FAMILY WISUDA.webm"></video>
+                                </div>
+                            </li><li class="splide__slide flex justify-center items-center splide__slide--clone" id="videos-clone02" role="group" aria-roledescription="slide" aria-label="4 of 8" style="margin-right: 24px; width: calc(33.3333% - 16px);" aria-hidden="true">
+                                <div class="slide-inner">
+                                    <video preload="none" controls="" poster="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/V1 poster.jpg" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/V1.webm"></video>
+                                </div>
+                            </li><li class="splide__slide flex justify-center items-center splide__slide--clone" id="videos-clone03" role="group" aria-roledescription="slide" aria-label="5 of 8" style="margin-right: 24px; width: calc(33.3333% - 16px);" aria-hidden="true">
+                                <div class="slide-inner">
+                                    <video preload="none" controls="" poster="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/V2 poster.jpg" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/V2.webm"></video>
+                                </div>
+                            </li><li class="splide__slide flex justify-center items-center splide__slide--clone" id="videos-clone04" role="group" aria-roledescription="slide" aria-label="6 of 8" style="margin-right: 24px; width: calc(33.3333% - 16px);" aria-hidden="true">
+                                <div class="slide-inner">
+                                    <video preload="none" controls="" poster="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/V3 poster.jpg" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/V3.webm"></video>
+                                </div>
+                            </li><li class="splide__slide flex justify-center items-center splide__slide--clone" id="videos-clone05" role="group" aria-roledescription="slide" aria-label="7 of 8" style="margin-right: 24px; width: calc(33.3333% - 16px);" aria-hidden="true">
+                                <div class="slide-inner">
+                                    <video preload="none" controls="" poster="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/V4 poster.jpg" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/V4.webm"></video>
+                                </div>
+                            </li><li class="splide__slide flex justify-center items-center splide__slide--clone is-visible is-prev" id="videos-clone06" role="group" aria-roledescription="slide" aria-label="8 of 8" style="margin-right: 24px; width: calc(33.3333% - 16px);">
+                                <div class="slide-inner">
+                                    <video preload="none" controls="" poster="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/V5 poster.jpg" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/V5.webm"></video>
+                                </div>
+                            </li><li class="splide__slide flex justify-center items-center is-active is-visible" id="videos-slide01" role="group" aria-roledescription="slide" aria-label="1 of 8" style="margin-right: 24px; width: calc(33.3333% - 16px);">
+                                <div class="slide-inner">
+                                    <video preload="none" controls="" poster="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/CATALOG WISUDA 3 FORMAL poster.jpg" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/CATALOG WISUDA 3 FORMAL.webm"></video>
+                                </div>
+                            </li>
+                                                    <li class="splide__slide flex justify-center items-center is-visible is-next" id="videos-slide02" role="group" aria-roledescription="slide" aria-label="2 of 8" style="margin-right: 24px; width: calc(33.3333% - 16px);">
+                                <div class="slide-inner">
+                                    <video preload="none" controls="" poster="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/CATALOG WISUDA V1 poster.jpg" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/CATALOG WISUDA V1.webm"></video>
+                                </div>
+                            </li>
+                                                    <li class="splide__slide flex justify-center items-center" id="videos-slide03" role="group" aria-roledescription="slide" aria-label="3 of 8" style="margin-right: 24px; width: calc(33.3333% - 16px);" aria-hidden="true">
+                                <div class="slide-inner">
+                                    <video preload="none" controls="" poster="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/FAMILY WISUDA poster.jpg" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/FAMILY WISUDA.webm"></video>
+                                </div>
+                            </li>
+                                                    <li class="splide__slide flex justify-center items-center" id="videos-slide04" role="group" aria-roledescription="slide" aria-label="4 of 8" style="margin-right: 24px; width: calc(33.3333% - 16px);" aria-hidden="true">
+                                <div class="slide-inner">
+                                    <video preload="none" controls="" poster="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/V1 poster.jpg" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/V1.webm"></video>
+                                </div>
+                            </li>
+                                                    <li class="splide__slide flex justify-center items-center" id="videos-slide05" role="group" aria-roledescription="slide" aria-label="5 of 8" style="margin-right: 24px; width: calc(33.3333% - 16px);" aria-hidden="true">
+                                <div class="slide-inner">
+                                    <video preload="none" controls="" poster="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/V2 poster.jpg" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/V2.webm"></video>
+                                </div>
+                            </li>
+                                                    <li class="splide__slide flex justify-center items-center" id="videos-slide06" role="group" aria-roledescription="slide" aria-label="6 of 8" style="margin-right: 24px; width: calc(33.3333% - 16px);" aria-hidden="true">
+                                <div class="slide-inner">
+                                    <video preload="none" controls="" poster="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/V3 poster.jpg" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/V3.webm"></video>
+                                </div>
+                            </li>
+                                                    <li class="splide__slide flex justify-center items-center" id="videos-slide07" role="group" aria-roledescription="slide" aria-label="7 of 8" style="margin-right: 24px; width: calc(33.3333% - 16px);" aria-hidden="true">
+                                <div class="slide-inner">
+                                    <video preload="none" controls="" poster="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/V4 poster.jpg" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/V4.webm"></video>
+                                </div>
+                            </li>
+                                                    <li class="splide__slide flex justify-center items-center" id="videos-slide08" role="group" aria-roledescription="slide" aria-label="8 of 8" style="margin-right: 24px; width: calc(33.3333% - 16px);" aria-hidden="true">
+                                <div class="slide-inner">
+                                    <video preload="none" controls="" poster="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/V5 poster.jpg" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/V5.webm"></video>
+                                </div>
+                            </li>
+                                            <li class="splide__slide flex justify-center items-center splide__slide--clone is-active" id="videos-clone07" role="group" aria-roledescription="slide" aria-label="1 of 8" style="margin-right: 24px; width: calc(33.3333% - 16px);" aria-hidden="true">
+                                <div class="slide-inner">
+                                    <video preload="none" controls="" poster="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/CATALOG WISUDA 3 FORMAL poster.jpg" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/CATALOG WISUDA 3 FORMAL.webm"></video>
+                                </div>
+                            </li><li class="splide__slide flex justify-center items-center splide__slide--clone" id="videos-clone08" role="group" aria-roledescription="slide" aria-label="2 of 8" style="margin-right: 24px; width: calc(33.3333% - 16px);" aria-hidden="true">
+                                <div class="slide-inner">
+                                    <video preload="none" controls="" poster="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/CATALOG WISUDA V1 poster.jpg" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/CATALOG WISUDA V1.webm"></video>
+                                </div>
+                            </li><li class="splide__slide flex justify-center items-center splide__slide--clone" id="videos-clone09" role="group" aria-roledescription="slide" aria-label="3 of 8" style="margin-right: 24px; width: calc(33.3333% - 16px);" aria-hidden="true">
+                                <div class="slide-inner">
+                                    <video preload="none" controls="" poster="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/FAMILY WISUDA poster.jpg" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/FAMILY WISUDA.webm"></video>
+                                </div>
+                            </li><li class="splide__slide flex justify-center items-center splide__slide--clone" id="videos-clone10" role="group" aria-roledescription="slide" aria-label="4 of 8" style="margin-right: 24px; width: calc(33.3333% - 16px);" aria-hidden="true">
+                                <div class="slide-inner">
+                                    <video preload="none" controls="" poster="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/V1 poster.jpg" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/V1.webm"></video>
+                                </div>
+                            </li><li class="splide__slide flex justify-center items-center splide__slide--clone" id="videos-clone11" role="group" aria-roledescription="slide" aria-label="5 of 8" style="margin-right: 24px; width: calc(33.3333% - 16px);" aria-hidden="true">
+                                <div class="slide-inner">
+                                    <video preload="none" controls="" poster="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/V2 poster.jpg" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/V2.webm"></video>
+                                </div>
+                            </li><li class="splide__slide flex justify-center items-center splide__slide--clone" id="videos-clone12" role="group" aria-roledescription="slide" aria-label="6 of 8" style="margin-right: 24px; width: calc(33.3333% - 16px);" aria-hidden="true">
+                                <div class="slide-inner">
+                                    <video preload="none" controls="" poster="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/V3 poster.jpg" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/V3.webm"></video>
+                                </div>
+                            </li></ul>
+                </div>
+                <div class="splide__arrows splide__arrows--ltr">
+                    <button class="splide__arrow splide__arrow--prev bg-white" aria-label="Go to last slide" aria-controls="videos-track">
+                        <i class="fa-solid fa-arrow-left text-[#A26170] text-4xl"></i>
+                    </button>
+                    <button class="splide__arrow splide__arrow--next bg-white" aria-label="Next slide" aria-controls="videos-track">
+                        <i class="fa-solid fa-arrow-right text-[#A26170] text-4xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="location" class="w-full min-h-[500px] relative flex items-center justify-center">
+        <img class="min-h-[500px] object-cover" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/store.jpg" alt="">
+        <div class="w-full h-full absolute z-[1] top-0 left-0 bg-black/70">
+            <div class="w-full h-full mx-auto my-auto flex flex-col items-center justify-center lg:gap-10 gap-5">
+                <div class="rounded-full text-white font-bold text-center px-4 py-2 bg-white/30 max-lg:text-sm">
+                    Lokasi Store
+                </div>
+                <p class="text-3xl text-white font-bold xl:hidden text-center">Welcome to Selfie Time Moments!</p>
+                <p class="text-5xl text-white font-bold max-xl:hidden">Palembang Square Mall</p>
+                <p class="text-xl text-white max-xl:hidden">Jl. Angkatan 45, Lorok Pakjo, Kec. Ilir Barat I, Kota Palembang, Sumatera Selatan</p>
+                <p class="text-2xl text-white font-bold max-xl:hidden">Level 1 Depan Azko Outlet</p>
+                <div class="rounded-full flex gap-2 items-center text-center px-5 py-2 lg:px-10 lg:py-3 bg-white max-lg:text-sm">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span class="font-medium">Store Palembang</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="price-list" class="w-full sm:px-10 py-10">
+        <div class="w-full flex flex-col items-center gap-4">
+            <span class="w-max text-4xl text-[#A26170] font-bold pb-2 border-b border-[#A26170]">Price List</span>
+            <span class="text-xl text-[#6F6254] mb-2 text-center">Harga Disesuaikan Berdasarkan Jumlah Orang Dalam 1 Studio</span>
+            
+            <div class="max-w-7xl max-xl:hidden">
+                <div class="grid grid-cols-4">
+                                            <div class="border border-[#E0C7BF] pb-4">
+                            <div class="text-center text-[#A26170] font-bold text-2xl border-b border-[#E0C7BF] py-2">1 - 4 Orang</div>
+                            <div class="flex flex-col items-center gap-2 p-4">
+                                <img class="rounded-xl" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/price-list-1.png" alt="">
+                                <div class="text-xl text-center text-[#A26170] font-bold w-full border-b border-[#A26170] pb-2 mb-2">
+                                    Rp. 249.000
+                                </div>
+                                <span class="text-xl text-[#A26170]">Small Party</span>
+                                <div class="flex flex-col gap-1 w-max mx-auto mb-2">
+                                                                            <div class="flex gap-2 w-max items-center">
+                                            <i class="fa-solid fa-check text-[#A26170]"></i>
+                                            <span class="text-[#A26170]">Durasi 30 Menit</span>
+                                        </div>
+                                                                            <div class="flex gap-2 w-max items-center">
+                                            <i class="fa-solid fa-check text-[#A26170]"></i>
+                                            <span class="text-[#A26170]">4 Soft File Editing Digital</span>
+                                        </div>
+                                                                            <div class="flex gap-2 w-max items-center">
+                                            <i class="fa-solid fa-check text-[#A26170]"></i>
+                                            <span class="text-[#A26170]">Cetak 8R (4 Pcs)</span>
+                                        </div>
+                                                                            <div class="flex gap-2 w-max items-center">
+                                            <i class="fa-solid fa-check text-[#A26170]"></i>
+                                            <span class="text-[#A26170]">Premium Studio Setting</span>
+                                        </div>
+                                                                            <div class="flex gap-2 w-max items-center">
+                                            <i class="fa-solid fa-check text-[#A26170]"></i>
+                                            <span class="text-[#A26170]">Properti Foto Lengkap</span>
+                                        </div>
+                                                                    </div>
+                                <button class="rounded-full px-4 py-2 bg-[#A26170] text-white flex items-center justify-center gap-2">
+                                    <span>Ask/Booking</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                                            <div class="border border-[#E0C7BF] pb-4">
+                            <div class="text-center text-[#A26170] font-bold text-2xl border-b border-[#E0C7BF] py-2">5 - 10 Orang</div>
+                            <div class="flex flex-col items-center gap-2 p-4">
+                                <img class="rounded-xl" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/price-list-2.png" alt="">
+                                <div class="text-xl text-center text-[#A26170] font-bold w-full border-b border-[#A26170] pb-2 mb-2">
+                                    Rp. 499.000
+                                </div>
+                                <span class="text-xl text-[#A26170]">Group Party</span>
+                                <div class="flex flex-col gap-1 w-max mx-auto mb-2">
+                                                                            <div class="flex gap-2 w-max items-center">
+                                            <i class="fa-solid fa-check text-[#A26170]"></i>
+                                            <span class="text-[#A26170]">Durasi 30 Menit</span>
+                                        </div>
+                                                                            <div class="flex gap-2 w-max items-center">
+                                            <i class="fa-solid fa-check text-[#A26170]"></i>
+                                            <span class="text-[#A26170]">6 Soft File Editing Digital</span>
+                                        </div>
+                                                                            <div class="flex gap-2 w-max items-center">
+                                            <i class="fa-solid fa-check text-[#A26170]"></i>
+                                            <span class="text-[#A26170]">Cetak 8R (6 Pcs)</span>
+                                        </div>
+                                                                            <div class="flex gap-2 w-max items-center">
+                                            <i class="fa-solid fa-check text-[#A26170]"></i>
+                                            <span class="text-[#A26170]">Premium Studio Setting</span>
+                                        </div>
+                                                                            <div class="flex gap-2 w-max items-center">
+                                            <i class="fa-solid fa-check text-[#A26170]"></i>
+                                            <span class="text-[#A26170]">Properti Foto Lengkap</span>
+                                        </div>
+                                                                    </div>
+                                <button class="rounded-full px-4 py-2 bg-[#A26170] text-white flex items-center justify-center gap-2">
+                                    <span>Ask/Booking</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                                            <div class="border border-[#E0C7BF] pb-4">
+                            <div class="text-center text-[#A26170] font-bold text-2xl border-b border-[#E0C7BF] py-2">11 - 20 Orang</div>
+                            <div class="flex flex-col items-center gap-2 p-4">
+                                <img class="rounded-xl" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/price-list-3.png" alt="">
+                                <div class="text-xl text-center text-[#A26170] font-bold w-full border-b border-[#A26170] pb-2 mb-2">
+                                    Rp. 649.000
+                                </div>
+                                <span class="text-xl text-[#A26170]">Family Party</span>
+                                <div class="flex flex-col gap-1 w-max mx-auto mb-2">
+                                                                            <div class="flex gap-2 w-max items-center">
+                                            <i class="fa-solid fa-check text-[#A26170]"></i>
+                                            <span class="text-[#A26170]">Durasi 30 Menit</span>
+                                        </div>
+                                                                            <div class="flex gap-2 w-max items-center">
+                                            <i class="fa-solid fa-check text-[#A26170]"></i>
+                                            <span class="text-[#A26170]">8 Soft File Editing Digital</span>
+                                        </div>
+                                                                            <div class="flex gap-2 w-max items-center">
+                                            <i class="fa-solid fa-check text-[#A26170]"></i>
+                                            <span class="text-[#A26170]">Cetak 8R (8 Pcs)</span>
+                                        </div>
+                                                                            <div class="flex gap-2 w-max items-center">
+                                            <i class="fa-solid fa-check text-[#A26170]"></i>
+                                            <span class="text-[#A26170]">Premium Studio Setting</span>
+                                        </div>
+                                                                            <div class="flex gap-2 w-max items-center">
+                                            <i class="fa-solid fa-check text-[#A26170]"></i>
+                                            <span class="text-[#A26170]">Properti Foto Lengkap</span>
+                                        </div>
+                                                                    </div>
+                                <button class="rounded-full px-4 py-2 bg-[#A26170] text-white flex items-center justify-center gap-2">
+                                    <span>Ask/Booking</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                                            <div class="border border-[#E0C7BF] pb-4">
+                            <div class="text-center text-[#A26170] font-bold text-2xl border-b border-[#E0C7BF] py-2">21 - 40 Orang</div>
+                            <div class="flex flex-col items-center gap-2 p-4">
+                                <img class="rounded-xl" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/price-list-4.png" alt="">
+                                <div class="text-xl text-center text-[#A26170] font-bold w-full border-b border-[#A26170] pb-2 mb-2">
+                                    Rp. 849.000
+                                </div>
+                                <span class="text-xl text-[#A26170]">Gathering Party</span>
+                                <div class="flex flex-col gap-1 w-max mx-auto mb-2">
+                                                                            <div class="flex gap-2 w-max items-center">
+                                            <i class="fa-solid fa-check text-[#A26170]"></i>
+                                            <span class="text-[#A26170]">Durasi 30 Menit</span>
+                                        </div>
+                                                                            <div class="flex gap-2 w-max items-center">
+                                            <i class="fa-solid fa-check text-[#A26170]"></i>
+                                            <span class="text-[#A26170]">10 Soft File Editing Digital</span>
+                                        </div>
+                                                                            <div class="flex gap-2 w-max items-center">
+                                            <i class="fa-solid fa-check text-[#A26170]"></i>
+                                            <span class="text-[#A26170]">Cetak 8R (10 Pcs)</span>
+                                        </div>
+                                                                            <div class="flex gap-2 w-max items-center">
+                                            <i class="fa-solid fa-check text-[#A26170]"></i>
+                                            <span class="text-[#A26170]">Premium Studio Setting</span>
+                                        </div>
+                                                                            <div class="flex gap-2 w-max items-center">
+                                            <i class="fa-solid fa-check text-[#A26170]"></i>
+                                            <span class="text-[#A26170]">Properti Foto Lengkap</span>
+                                        </div>
+                                                                    </div>
+                                <button class="rounded-full px-4 py-2 bg-[#A26170] text-white flex items-center justify-center gap-2">
+                                    <span>Ask/Booking</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                                    </div>
+            </div>
+
+            <div id="products" class="splide overflow-hidden w-full xl:hidden splide--loop splide--ltr splide--draggable is-active is-initialized" aria-label="Slide Container Example" role="region" aria-roledescription="carousel">
+                <div class="splide__track splide__track--loop splide__track--ltr splide__track--draggable" id="products-track" aria-live="polite" aria-atomic="true" style="padding-left: 0px; padding-right: 0px;">
+                    <ul class="splide__list" id="products-list" role="presentation" style="transform: translateX(0px);">
+                                                    <li class="splide__slide flex justify-center splide__slide--clone is-visible" id="products-clone01" role="tabpanel" aria-roledescription="slide" aria-label="3 of 4" style="margin-right: 24px; width: calc(100% + 0px);">
+                                <div class="border border-[#E0C7BF] pb-4 max-w-[320px]">
+                                    <div class="text-center text-[#A26170] font-bold text-2xl border-b border-[#E0C7BF] py-2">11 - 20 Orang</div>
+                                    <div class="flex flex-col items-center gap-2 p-4">
+                                        <img class="rounded-xl" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/price-list-3.png" alt="">
+                                        <div class="text-xl text-center text-[#A26170] font-bold w-full border-b border-[#A26170] pb-2 mb-2">
+                                            Rp. 649.000
+                                        </div>
+                                        <span class="text-xl text-[#A26170]">Family Party</span>
+                                        <div class="flex flex-col gap-1 w-max mx-auto mb-2">
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">Durasi 30 Menit</span>
+                                                </div>
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">8 Soft File Editing Digital</span>
+                                                </div>
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">Cetak 8R (8 Pcs)</span>
+                                                </div>
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">Premium Studio Setting</span>
+                                                </div>
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">Properti Foto Lengkap</span>
+                                                </div>
+                                                                                    </div>
+                                        <button class="rounded-full px-4 py-2 bg-[#A26170] text-white flex items-center justify-center gap-2">
+                                            <span>Ask/Booking</span>
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li><li class="splide__slide flex justify-center splide__slide--clone is-visible is-prev" id="products-clone02" role="tabpanel" aria-roledescription="slide" aria-label="4 of 4" style="margin-right: 24px; width: calc(100% + 0px);">
+                                <div class="border border-[#E0C7BF] pb-4 max-w-[320px]">
+                                    <div class="text-center text-[#A26170] font-bold text-2xl border-b border-[#E0C7BF] py-2">21 - 40 Orang</div>
+                                    <div class="flex flex-col items-center gap-2 p-4">
+                                        <img class="rounded-xl" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/price-list-4.png" alt="">
+                                        <div class="text-xl text-center text-[#A26170] font-bold w-full border-b border-[#A26170] pb-2 mb-2">
+                                            Rp. 849.000
+                                        </div>
+                                        <span class="text-xl text-[#A26170]">Gathering Party</span>
+                                        <div class="flex flex-col gap-1 w-max mx-auto mb-2">
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">Durasi 30 Menit</span>
+                                                </div>
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">10 Soft File Editing Digital</span>
+                                                </div>
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">Cetak 8R (10 Pcs)</span>
+                                                </div>
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">Premium Studio Setting</span>
+                                                </div>
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">Properti Foto Lengkap</span>
+                                                </div>
+                                                                                    </div>
+                                        <button class="rounded-full px-4 py-2 bg-[#A26170] text-white flex items-center justify-center gap-2">
+                                            <span>Ask/Booking</span>
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li><li class="splide__slide flex justify-center is-active is-visible" id="products-slide01" role="tabpanel" aria-roledescription="slide" aria-label="1 of 4" style="margin-right: 24px; width: calc(100% + 0px);">
+                                <div class="border border-[#E0C7BF] pb-4 max-w-[320px]">
+                                    <div class="text-center text-[#A26170] font-bold text-2xl border-b border-[#E0C7BF] py-2">1 - 4 Orang</div>
+                                    <div class="flex flex-col items-center gap-2 p-4">
+                                        <img class="rounded-xl" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/price-list-1.png" alt="">
+                                        <div class="text-xl text-center text-[#A26170] font-bold w-full border-b border-[#A26170] pb-2 mb-2">
+                                            Rp. 249.000
+                                        </div>
+                                        <span class="text-xl text-[#A26170]">Small Party</span>
+                                        <div class="flex flex-col gap-1 w-max mx-auto mb-2">
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">Durasi 30 Menit</span>
+                                                </div>
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">4 Soft File Editing Digital</span>
+                                                </div>
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">Cetak 8R (4 Pcs)</span>
+                                                </div>
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">Premium Studio Setting</span>
+                                                </div>
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">Properti Foto Lengkap</span>
+                                                </div>
+                                                                                    </div>
+                                        <button class="rounded-full px-4 py-2 bg-[#A26170] text-white flex items-center justify-center gap-2">
+                                            <span>Ask/Booking</span>
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                                                    <li class="splide__slide flex justify-center is-visible is-next" id="products-slide02" role="tabpanel" aria-roledescription="slide" aria-label="2 of 4" style="margin-right: 24px; width: calc(100% + 0px);">
+                                <div class="border border-[#E0C7BF] pb-4 max-w-[320px]">
+                                    <div class="text-center text-[#A26170] font-bold text-2xl border-b border-[#E0C7BF] py-2">5 - 10 Orang</div>
+                                    <div class="flex flex-col items-center gap-2 p-4">
+                                        <img class="rounded-xl" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/price-list-2.png" alt="">
+                                        <div class="text-xl text-center text-[#A26170] font-bold w-full border-b border-[#A26170] pb-2 mb-2">
+                                            Rp. 499.000
+                                        </div>
+                                        <span class="text-xl text-[#A26170]">Group Party</span>
+                                        <div class="flex flex-col gap-1 w-max mx-auto mb-2">
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">Durasi 30 Menit</span>
+                                                </div>
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">6 Soft File Editing Digital</span>
+                                                </div>
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">Cetak 8R (6 Pcs)</span>
+                                                </div>
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">Premium Studio Setting</span>
+                                                </div>
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">Properti Foto Lengkap</span>
+                                                </div>
+                                                                                    </div>
+                                        <button class="rounded-full px-4 py-2 bg-[#A26170] text-white flex items-center justify-center gap-2">
+                                            <span>Ask/Booking</span>
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                                                    <li class="splide__slide flex justify-center is-visible" id="products-slide03" role="tabpanel" aria-roledescription="slide" aria-label="3 of 4" style="margin-right: 24px; width: calc(100% + 0px);">
+                                <div class="border border-[#E0C7BF] pb-4 max-w-[320px]">
+                                    <div class="text-center text-[#A26170] font-bold text-2xl border-b border-[#E0C7BF] py-2">11 - 20 Orang</div>
+                                    <div class="flex flex-col items-center gap-2 p-4">
+                                        <img class="rounded-xl" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/price-list-3.png" alt="">
+                                        <div class="text-xl text-center text-[#A26170] font-bold w-full border-b border-[#A26170] pb-2 mb-2">
+                                            Rp. 649.000
+                                        </div>
+                                        <span class="text-xl text-[#A26170]">Family Party</span>
+                                        <div class="flex flex-col gap-1 w-max mx-auto mb-2">
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">Durasi 30 Menit</span>
+                                                </div>
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">8 Soft File Editing Digital</span>
+                                                </div>
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">Cetak 8R (8 Pcs)</span>
+                                                </div>
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">Premium Studio Setting</span>
+                                                </div>
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">Properti Foto Lengkap</span>
+                                                </div>
+                                                                                    </div>
+                                        <button class="rounded-full px-4 py-2 bg-[#A26170] text-white flex items-center justify-center gap-2">
+                                            <span>Ask/Booking</span>
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                                                    <li class="splide__slide flex justify-center is-visible" id="products-slide04" role="tabpanel" aria-roledescription="slide" aria-label="4 of 4" style="margin-right: 24px; width: calc(100% + 0px);">
+                                <div class="border border-[#E0C7BF] pb-4 max-w-[320px]">
+                                    <div class="text-center text-[#A26170] font-bold text-2xl border-b border-[#E0C7BF] py-2">21 - 40 Orang</div>
+                                    <div class="flex flex-col items-center gap-2 p-4">
+                                        <img class="rounded-xl" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/price-list-4.png" alt="">
+                                        <div class="text-xl text-center text-[#A26170] font-bold w-full border-b border-[#A26170] pb-2 mb-2">
+                                            Rp. 849.000
+                                        </div>
+                                        <span class="text-xl text-[#A26170]">Gathering Party</span>
+                                        <div class="flex flex-col gap-1 w-max mx-auto mb-2">
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">Durasi 30 Menit</span>
+                                                </div>
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">10 Soft File Editing Digital</span>
+                                                </div>
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">Cetak 8R (10 Pcs)</span>
+                                                </div>
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">Premium Studio Setting</span>
+                                                </div>
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">Properti Foto Lengkap</span>
+                                                </div>
+                                                                                    </div>
+                                        <button class="rounded-full px-4 py-2 bg-[#A26170] text-white flex items-center justify-center gap-2">
+                                            <span>Ask/Booking</span>
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                                            <li class="splide__slide flex justify-center splide__slide--clone is-active is-visible" id="products-clone03" role="tabpanel" aria-roledescription="slide" aria-label="1 of 4" style="margin-right: 24px; width: calc(100% + 0px);">
+                                <div class="border border-[#E0C7BF] pb-4 max-w-[320px]">
+                                    <div class="text-center text-[#A26170] font-bold text-2xl border-b border-[#E0C7BF] py-2">1 - 4 Orang</div>
+                                    <div class="flex flex-col items-center gap-2 p-4">
+                                        <img class="rounded-xl" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/price-list-1.png" alt="">
+                                        <div class="text-xl text-center text-[#A26170] font-bold w-full border-b border-[#A26170] pb-2 mb-2">
+                                            Rp. 249.000
+                                        </div>
+                                        <span class="text-xl text-[#A26170]">Small Party</span>
+                                        <div class="flex flex-col gap-1 w-max mx-auto mb-2">
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">Durasi 30 Menit</span>
+                                                </div>
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">4 Soft File Editing Digital</span>
+                                                </div>
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">Cetak 8R (4 Pcs)</span>
+                                                </div>
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">Premium Studio Setting</span>
+                                                </div>
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">Properti Foto Lengkap</span>
+                                                </div>
+                                                                                    </div>
+                                        <button class="rounded-full px-4 py-2 bg-[#A26170] text-white flex items-center justify-center gap-2">
+                                            <span>Ask/Booking</span>
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li><li class="splide__slide flex justify-center splide__slide--clone is-visible" id="products-clone04" role="tabpanel" aria-roledescription="slide" aria-label="2 of 4" style="margin-right: 24px; width: calc(100% + 0px);">
+                                <div class="border border-[#E0C7BF] pb-4 max-w-[320px]">
+                                    <div class="text-center text-[#A26170] font-bold text-2xl border-b border-[#E0C7BF] py-2">5 - 10 Orang</div>
+                                    <div class="flex flex-col items-center gap-2 p-4">
+                                        <img class="rounded-xl" src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/price-list-2.png" alt="">
+                                        <div class="text-xl text-center text-[#A26170] font-bold w-full border-b border-[#A26170] pb-2 mb-2">
+                                            Rp. 499.000
+                                        </div>
+                                        <span class="text-xl text-[#A26170]">Group Party</span>
+                                        <div class="flex flex-col gap-1 w-max mx-auto mb-2">
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">Durasi 30 Menit</span>
+                                                </div>
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">6 Soft File Editing Digital</span>
+                                                </div>
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">Cetak 8R (6 Pcs)</span>
+                                                </div>
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">Premium Studio Setting</span>
+                                                </div>
+                                                                                            <div class="flex gap-2 w-max items-center">
+                                                    <i class="fa-solid fa-check text-[#A26170]"></i>
+                                                    <span class="text-[#A26170]">Properti Foto Lengkap</span>
+                                                </div>
+                                                                                    </div>
+                                        <button class="rounded-full px-4 py-2 bg-[#A26170] text-white flex items-center justify-center gap-2">
+                                            <span>Ask/Booking</span>
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li></ul>
+                </div>
+            <ul class="splide__pagination splide__pagination--ltr" role="tablist" aria-label="Select a slide to show" style="position: static; width: 100%; margin-top: 0.5rem;"><li role="presentation"><button class="splide__pagination__page is-active" type="button" role="tab" aria-controls="products-slide01" aria-label="Go to slide 1" aria-selected="true"></button></li><li role="presentation"><button class="splide__pagination__page" type="button" role="tab" aria-controls="products-slide02" aria-label="Go to slide 2" tabindex="-1"></button></li><li role="presentation"><button class="splide__pagination__page" type="button" role="tab" aria-controls="products-slide03" aria-label="Go to slide 3" tabindex="-1"></button></li><li role="presentation"><button class="splide__pagination__page" type="button" role="tab" aria-controls="products-slide04" aria-label="Go to slide 4" tabindex="-1"></button></li></ul></div>
+        </div>
+    </div>
+    <div id="faq" class="w-full sm:px-10 py-10">
+        <div class="max-w-7xl mx-auto flex flex-col items-center gap-4">
+            <span class="w-max text-4xl text-[#A26170] font-bold pb-2 border-b border-[#A26170]">FAQ</span>
+                        <div class="w-full max-sm:px-8">
+                <div class="w-full flex flex-col gap-4">
+                                            <div id="faq-0" class="rounded-xl bg-[#D9D9D9] px-4 py-2 relative">
+                            <button id="faq-trigger-0" onclick="faqTrigger(0)" data-opened="0" class="w-full flex gap-8 justify-between">
+                                <strong class="text-lg text-start">Berapa lama durasi satu sesi foto?</strong>
+                                <div class="relative">
+                                    <span id="faq-open-icon-0" class="absolute top-[calc(50%-0.5em)] right-[25%] transition-all duration-300 ease-in-out opacity-100 scale-100">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </span>
+                                    <span id="faq-close-icon-0" class="absolute top-[calc(50%-0.5em)] right-[25%] transition-all duration-300 ease-in-out opacity-0 scale-95 pointer-events-none">
+                                        <i class="fa-solid fa-circle-minus"></i>
+                                    </span>
+                                </div>
+                            </button>
+                            <div id="faq-answer-0" class="absolute top-[100%] left-0 opacity-0 w-full flex flex-col justify-center gap-6 py-2 transition-all duration-300 ease-in-out pointer-events-none">
+                                <p class="">
+                                                                            Durasi untuk satu sesi foto adalah sekitar 30 menit.
+                                        <br>
+                                                                    </p>
+                            </div>
+                        </div>
+                                            <div id="faq-1" class="rounded-xl bg-[#D9D9D9] px-4 py-2 relative">
+                            <button id="faq-trigger-1" onclick="faqTrigger(1)" data-opened="0" class="w-full flex gap-8 justify-between">
+                                <strong class="text-lg text-start">Apakah perlu reservasi atau bisa datang langsung?</strong>
+                                <div class="relative">
+                                    <span id="faq-open-icon-1" class="absolute top-[calc(50%-0.5em)] right-[25%] transition-all duration-300 ease-in-out opacity-100 scale-100">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </span>
+                                    <span id="faq-close-icon-1" class="absolute top-[calc(50%-0.5em)] right-[25%] transition-all duration-300 ease-in-out opacity-0 scale-95 pointer-events-none">
+                                        <i class="fa-solid fa-circle-minus"></i>
+                                    </span>
+                                </div>
+                            </button>
+                            <div id="faq-answer-1" class="absolute top-[100%] left-0 opacity-0 w-full flex flex-col justify-center gap-6 py-2 transition-all duration-300 ease-in-out pointer-events-none">
+                                <p class="">
+                                                                            Pemesanan dapat dilakukan dengan langsung mengunjungi store.
+                                        <br>
+                                                                            Jika ingin melakukan reservasi, silakan hubungi melalui WhatsApp di nomor 0819-3687-1660.
+                                        <br>
+                                                                    </p>
+                            </div>
+                        </div>
+                                            <div id="faq-2" class="rounded-xl bg-[#D9D9D9] px-4 py-2 relative">
+                            <button id="faq-trigger-2" onclick="faqTrigger(2)" data-opened="0" class="w-full flex gap-8 justify-between">
+                                <strong class="text-lg text-start">Apakah hasil foto langsung jadi atau perlu menunggu?</strong>
+                                <div class="relative">
+                                    <span id="faq-open-icon-2" class="absolute top-[calc(50%-0.5em)] right-[25%] transition-all duration-300 ease-in-out opacity-100 scale-100">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </span>
+                                    <span id="faq-close-icon-2" class="absolute top-[calc(50%-0.5em)] right-[25%] transition-all duration-300 ease-in-out opacity-0 scale-95 pointer-events-none">
+                                        <i class="fa-solid fa-circle-minus"></i>
+                                    </span>
+                                </div>
+                            </button>
+                            <div id="faq-answer-2" class="absolute top-[100%] left-0 opacity-0 w-full flex flex-col justify-center gap-6 py-2 transition-all duration-300 ease-in-out pointer-events-none">
+                                <p class="">
+                                                                            Hasil edit foto memerlukan waktu maksimal 7 hari kerja.
+                                        <br>
+                                                                            Softcopy file foto akan dikirimkan melalui email, sedangkan cetak foto dapat diambil langsung di store tanpa biaya tambahan.
+                                        <br>
+                                                                    </p>
+                            </div>
+                        </div>
+                                            <div id="faq-3" class="rounded-xl bg-[#D9D9D9] px-4 py-2 relative">
+                            <button id="faq-trigger-3" onclick="faqTrigger(3)" data-opened="0" class="w-full flex gap-8 justify-between">
+                                <strong class="text-lg text-start">Apa saja metode pembayaran yang tersedia?</strong>
+                                <div class="relative">
+                                    <span id="faq-open-icon-3" class="absolute top-[calc(50%-0.5em)] right-[25%] transition-all duration-300 ease-in-out opacity-100 scale-100">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </span>
+                                    <span id="faq-close-icon-3" class="absolute top-[calc(50%-0.5em)] right-[25%] transition-all duration-300 ease-in-out opacity-0 scale-95 pointer-events-none">
+                                        <i class="fa-solid fa-circle-minus"></i>
+                                    </span>
+                                </div>
+                            </button>
+                            <div id="faq-answer-3" class="absolute top-[100%] left-0 opacity-0 w-full flex flex-col justify-center gap-6 py-2 transition-all duration-300 ease-in-out pointer-events-none">
+                                <p class="">
+                                                                            Metode pembayaran yang tersedia adalah cashless melalui QRIS, ShopeePay, DANA, OVO, dan M-Banking.
+                                        <br>
+                                                                    </p>
+                            </div>
+                        </div>
+                                            <div id="faq-4" class="rounded-xl bg-[#D9D9D9] px-4 py-2 relative">
+                            <button id="faq-trigger-4" onclick="faqTrigger(4)" data-opened="0" class="w-full flex gap-8 justify-between">
+                                <strong class="text-lg text-start">Apa saja tema foto yang tersedia?</strong>
+                                <div class="relative">
+                                    <span id="faq-open-icon-4" class="absolute top-[calc(50%-0.5em)] right-[25%] transition-all duration-300 ease-in-out opacity-100 scale-100">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </span>
+                                    <span id="faq-close-icon-4" class="absolute top-[calc(50%-0.5em)] right-[25%] transition-all duration-300 ease-in-out opacity-0 scale-95 pointer-events-none">
+                                        <i class="fa-solid fa-circle-minus"></i>
+                                    </span>
+                                </div>
+                            </button>
+                            <div id="faq-answer-4" class="absolute top-[100%] left-0 opacity-0 w-full flex flex-col justify-center gap-6 py-2 transition-all duration-300 ease-in-out pointer-events-none">
+                                <p class="">
+                                                                            Tema foto yang tersedia meliputi Graduation, Family, Birthday, Kids, Community, dan Maternity.
+                                        <br>
+                                                                            Untuk informasi lebih lengkap, dapat mengunjungi store untuk melihat katalog produk.
+                                        <br>
+                                                                    </p>
+                            </div>
+                        </div>
+                                            <div id="faq-5" class="rounded-xl bg-[#D9D9D9] px-4 py-2 relative">
+                            <button id="faq-trigger-5" onclick="faqTrigger(5)" data-opened="0" class="w-full flex gap-8 justify-between">
+                                <strong class="text-lg text-start">Apakah ada jam operationalnya?</strong>
+                                <div class="relative">
+                                    <span id="faq-open-icon-5" class="absolute top-[calc(50%-0.5em)] right-[25%] transition-all duration-300 ease-in-out opacity-100 scale-100">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </span>
+                                    <span id="faq-close-icon-5" class="absolute top-[calc(50%-0.5em)] right-[25%] transition-all duration-300 ease-in-out opacity-0 scale-95 pointer-events-none">
+                                        <i class="fa-solid fa-circle-minus"></i>
+                                    </span>
+                                </div>
+                            </button>
+                            <div id="faq-answer-5" class="absolute top-[100%] left-0 opacity-0 w-full flex flex-col justify-center gap-6 py-2 transition-all duration-300 ease-in-out pointer-events-none">
+                                <p class="">
+                                                                            Jam operasional store adalah pukul 10.00 – 22.00 WIB.
+                                        <br>
+                                                                    </p>
+                            </div>
+                        </div>
+                                    </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="w-full max-xl:flex max-xl:flex-col xl:grid xl:grid-cols-3 items-center px-20 py-4 gap-4 shadow-[0_-8px_6px_rgba(0,0,0,0.1)]">
+    
+        <img src="https://selfietime-public.sgp1.cdn.digitaloceanspaces.com/moments/new-logo.png" alt="">
+            
+        <div class="col-span-2 flex xl:justify-between gap-4 max-xl:flex-col-reverse">
+            <span class="xl:text-xl font-medium text-center">Selfie Time ID 2025 - © PT FOTOBOX KREASI INDONESIA</span>
+            <div class="flex gap-4 justify-center">
+                <a href="" class="text-3xl">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="" class="text-3xl">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+                <a href="" class="text-3xl">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="" class="text-3xl">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="" class="text-3xl flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="4 4 42 42">
+                        <path d="M 11 4 C 7.134 4 4 7.134 4 11 L 4 39 C 4 42.866 7.134 46 11 46 L 39 46 C 42.866 46 46 42.866 46 39 L 46 11 C 46 7.134 42.866 4 39 4 L 11 4 z M 13.085938 13 L 21.023438 13 L 26.660156 21.009766 L 33.5 13 L 36 13 L 27.789062 22.613281 L 37.914062 37 L 29.978516 37 L 23.4375 27.707031 L 15.5 37 L 13 37 L 22.308594 26.103516 L 13.085938 13 z M 16.914062 15 L 31.021484 35 L 34.085938 35 L 19.978516 15 L 16.914062 15 z"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('resize', () => {
+            if(window.innerWidth >= 1024){
+                const btn = document.getElementById('trigger')
+                const open = document.getElementById('open-icon')
+                const close = document.getElementById('close-icon')
+                const dropdown = document.getElementById('header-dropdown')
+
+                open.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+                open.classList.add('opacity-100', 'scale-100');
+
+                close.classList.remove('opacity-100', 'scale-100');
+                close.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+
+                dropdown.classList.remove('opacity-100')
+                dropdown.classList.add('opacity-0', 'pointer-events-none')
+                setTimeout(() => {
+                    dropdown.classList.add('absolute', 'top-[100%]')
+                }, 175)
+
+                btn.setAttribute('data-opened', 0)
+            }
+        });
+
+        const trigger = () => {
+            const btn = document.getElementById('trigger')
+            const open = document.getElementById('open-icon')
+            const close = document.getElementById('close-icon')
+            const dropdown = document.getElementById('header-dropdown')
+
+            switch(btn.getAttribute('data-opened')){
+                case "0":
+                    open.classList.add('hidden')
+                    close.classList.remove('hidden')
+
+                    open.classList.remove('opacity-100', 'scale-100');
+                    open.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+
+                    close.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+                    close.classList.add('opacity-100', 'scale-100');
+
+                    dropdown.classList.remove('opacity-0', 'pointer-events-none')
+                    dropdown.classList.add('opacity-100')
+                    dropdown.classList.remove('absolute', 'top-[100%]')
+
+                    btn.setAttribute('data-opened', 1)
+                    break;
+                case "1":
+                    open.classList.remove('hidden')
+                    close.classList.add('hidden')
+
+                    open.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+                    open.classList.add('opacity-100', 'scale-100');
+
+                    close.classList.remove('opacity-100', 'scale-100');
+                    close.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+
+                    dropdown.classList.remove('opacity-100')
+                    dropdown.classList.add('opacity-0', 'pointer-events-none')
+                    setTimeout(() => {
+                        dropdown.classList.add('absolute', 'top-[100%]')
+                    }, 175)
+
+                    btn.setAttribute('data-opened', 0)
+                    break;
+            }
+        }
+    </script>
+        <script>
+        new Splide('#products', {
+            loop: true,
+            type: 'loop',
+            perMove: 1,
+            gap: 24,
+            perPage: 1,
+            arrows: false,
+            pagination: true,
+        }).mount();
+
+        new Splide('#concepts', {
+            loop: true,
+            type: 'loop',
+            perMove: 1,
+            gap: 24,
+            perPage: 3,
+            arrows: false,
+            pagination: true,
+            focus: 'center',
+        }).mount();
+
+        new Splide('#videos', {
+            loop: true,
+            type: 'loop',
+            perMove: 1,
+            gap: 24,
+            perPage: 3,
+            focus: 'center',
+            arrows: true,
+            pagination: false,
+            breakpoints: {
+                1280: {
+                    arrows: false,
+                    pagination: true,
+                    perPage: 5
+                }
+            }
+        }).mount();
+
+        const productPagination = document.querySelector('#products .splide__pagination');
+        if (productPagination) {
+            productPagination.style.position = 'static';
+            productPagination.style.width = '100%';
+            productPagination.style.marginTop = '0.5rem';
+        }
+
+        const videoPagination = document.querySelector('#videos .splide__pagination');
+        if (videoPagination) {
+            videoPagination.style.position = 'static';
+            videoPagination.style.width = '100%';
+            videoPagination.style.marginTop = '1rem';
+        }
+
+        const conceptPagination = document.querySelector('#concepts .splide__pagination');
+        if (conceptPagination) {
+            conceptPagination.style.position = 'static';
+            conceptPagination.style.width = '100%';
+            conceptPagination.style.marginTop = '1rem';
+        }
+
+        const faqTrigger = (index) => {
+            const btn = document.getElementById(`faq-trigger-${index}`)
+            const open = document.getElementById(`faq-open-icon-${index}`)
+            const close = document.getElementById(`faq-close-icon-${index}`)
+            const dropdown = document.getElementById(`faq-answer-${index}`)
+
+            switch(btn.getAttribute('data-opened')){
+                case "0":
+                    open.classList.add('hidden')
+                    close.classList.remove('hidden')
+
+                    open.classList.remove('opacity-100', 'scale-100');
+                    open.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+
+                    close.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+                    close.classList.add('opacity-100', 'scale-100');
+
+                    dropdown.classList.remove('opacity-0', 'pointer-events-none')
+                    dropdown.classList.add('opacity-100')
+                    dropdown.classList.remove('absolute', 'top-[100%]')
+
+                    btn.setAttribute('data-opened', 1)
+                    break;
+                case "1":
+                    open.classList.remove('hidden')
+                    close.classList.add('hidden')
+
+                    open.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+                    open.classList.add('opacity-100', 'scale-100');
+
+                    close.classList.remove('opacity-100', 'scale-100');
+                    close.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+
+                    dropdown.classList.remove('opacity-100')
+                    dropdown.classList.add('opacity-0', 'pointer-events-none')
+                    setTimeout(() => {
+                        dropdown.classList.add('absolute', 'top-[100%]')
+                    }, 175)
+
+                    btn.setAttribute('data-opened', 0)
+                    break;
+            }
+        }
+
+        // const changeSpotlight = (idx) => {
+        //     const concepts = [{"image":"https:\/\/selfietime-public.sgp1.cdn.digitaloceanspaces.com\/moments\/concept-1.jpg","title":"Kids Moment","description":"Anak cepat banget tumbuh, lho! Yuk, simpan momen lucu dan gemasnya\u00a0sekarang"},{"image":"https:\/\/selfietime-public.sgp1.cdn.digitaloceanspaces.com\/moments\/concept-2.jpg","title":"Family Moment","description":"Momen bareng keluarga itu priceless! Yuk abadikan vibes hangat bareng orang-orang tersayang"},{"image":"https:\/\/selfietime-public.sgp1.cdn.digitaloceanspaces.com\/moments\/concept-3.jpg","title":"Wisuda Moment","description":"Toga udah kepake, saatnya rayain pencapaianmu! Foto wisuda kece biar jadi bukti perjuangan dengan keluarga"},{"image":"https:\/\/selfietime-public.sgp1.cdn.digitaloceanspaces.com\/moments\/concept-4.jpg","title":"Group \/ Couple Moment","description":"Bareng bestie atau pasangan, selalu ada cerita seru! Jepret momen\u00a0kompak\u00a0kalian"}];
+        //     const data = concepts[idx];
+
+        //     const preview = document.getElementById(`preview-${idx}`);
+
+        //     const image = document.getElementById('spotlight-img');
+
+        //     const imageHolding = +image.getAttribute('data-holding');
+        //     const title = document.getElementById('spotlight-title');
+        //     const description = document.getElementById('spotlight-description');
+
+        //     const newPreview = concepts[imageHolding].image;
+
+        //     preview.src = newPreview;
+        //     preview.id = `preview-${imageHolding}`;
+        //     preview.onclick = () => {
+        //         changeSpotlight(imageHolding);
+        //     }
+
+        //     image.src = data.image;
+        //     image.setAttribute('data-holding', idx);
+        //     title.innerHTML = data.title;
+        //     description.innerHTML = data.description;
+        // }
+
+
+        const changeSpotlight = (idx) => {
+            const concepts = [{"image":"https:\/\/selfietime-public.sgp1.cdn.digitaloceanspaces.com\/moments\/concept-1.jpg","title":"Kids Moment","description":"Anak cepat banget tumbuh, lho! Yuk, simpan momen lucu dan gemasnya\u00a0sekarang"},{"image":"https:\/\/selfietime-public.sgp1.cdn.digitaloceanspaces.com\/moments\/concept-2.jpg","title":"Family Moment","description":"Momen bareng keluarga itu priceless! Yuk abadikan vibes hangat bareng orang-orang tersayang"},{"image":"https:\/\/selfietime-public.sgp1.cdn.digitaloceanspaces.com\/moments\/concept-3.jpg","title":"Wisuda Moment","description":"Toga udah kepake, saatnya rayain pencapaianmu! Foto wisuda kece biar jadi bukti perjuangan dengan keluarga"},{"image":"https:\/\/selfietime-public.sgp1.cdn.digitaloceanspaces.com\/moments\/concept-4.jpg","title":"Group \/ Couple Moment","description":"Bareng bestie atau pasangan, selalu ada cerita seru! Jepret momen\u00a0kompak\u00a0kalian"}];
+            const data = concepts[idx];
+
+            const preview = document.getElementById(`preview-${idx}`);
+            const image = document.getElementById('spotlight-img');
+            const imageHolding = +image.getAttribute('data-holding');
+            const title = document.getElementById('spotlight-title');
+            const description = document.getElementById('spotlight-description');
+            const newPreview = concepts[imageHolding].image;
+
+            // 1. Get rects BEFORE swap
+            const imageRect = image.getBoundingClientRect();
+            const previewRect = preview.getBoundingClientRect();
+
+            // 2. Clone both nodes (so DOM doesn’t reflow during animation)
+            const imageClone = image.cloneNode(true);
+            const previewClone = preview.cloneNode(true);
+
+            document.body.appendChild(imageClone);
+            document.body.appendChild(previewClone);
+
+            image.style.visibility = "hidden";
+            preview.style.visibility = "hidden";
+            title.style.visibility = "hidden";
+            description.style.visibility = "hidden";
+
+            // Position clones absolutely on top of originals
+            Object.assign(imageClone.style, {
+                position: "fixed",
+                left: imageRect.left + "px",
+                top: imageRect.top + "px",
+                width: imageRect.width + "px",
+                height: imageRect.height + "px",
+                objectFit: 'cover',
+                objectPosition: 'center',
+                margin: 0,
+                zIndex: 9999
+            });
+            Object.assign(previewClone.style, {
+                position: "fixed",
+                left: previewRect.left + "px",
+                top: previewRect.top + "px",
+                width: previewRect.width + "px",
+                height: previewRect.height + "px",
+                objectFit: 'cover',
+                objectPosition: 'center',
+                margin: 0,
+                zIndex: 9999
+            });
+
+            // 3. Animate clones to each other's position
+            const tl = gsap.timeline({
+                defaults: { duration: 0.5, ease: "power2.inOut" },
+                onComplete: () => {
+                    // 4. Swap real DOM content AFTER animation
+                    preview.src = newPreview;
+                    preview.id = `preview-${imageHolding}`;
+                    preview.onclick = () => changeSpotlight(imageHolding);
+
+                    image.src = data.image;
+                    image.setAttribute('data-holding', idx);
+                    title.innerHTML = data.title;
+                    description.innerHTML = data.description;
+
+                    // Remove clones
+                    imageClone.remove();
+                    previewClone.remove();
+
+                    image.style.visibility = null;
+                    preview.style.visibility = null;
+                    title.style.visibility = null;
+                    description.style.visibility = null;
+                }
+            });
+
+            tl.to(imageClone, {
+                left: previewRect.left,
+                top: previewRect.top,
+                width: previewRect.width,
+                height: previewRect.height
+            }, 0);
+
+            tl.to(previewClone, {
+                left: imageRect.left,
+                top: imageRect.top,
+                width: imageRect.width,
+                height: imageRect.height
+            }, 0);
+        };
+    </script>
+
+
+</body></html>

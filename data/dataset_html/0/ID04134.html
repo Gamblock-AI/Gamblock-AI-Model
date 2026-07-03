@@ -1,0 +1,909 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="facebook-domain-verification" content="gg3yyk5j6pcx9y1gnf55jsbrs9yinu">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Santosa Hospital Bandung;Santosa Hospital Bandung Central;Santosa Hospital Bandung Kopo;Rumah Sakit Swasta Terbaik Kota Bandung;Rumah Sakit Berstandar Internasional dan Terjangkau;Rumah Sakit Bekerjasama Dengan BPJS Kesehatan">
+    <meta name="author" content="Muhammad Ari Anggara">
+    <meta name="csrf-token" content="BIYUhm1VAH1b7QCnMhk637i85fb3Sp4nI2gQO9vE">
+    <title>Santosa Hospital - One Stop Health Service
+</title>
+    <link rel="shortcut icon" href="https://santosa-hospital.com/v1/frontend/assets/favicon-blue.png" type="image/x-icon">
+
+    <!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Lobster&amp;family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,669;0,700;0,800;0,900;1,400;1,500;1,600;1,669;1,700;1,800;1,900&amp;family=Roboto+Mono&amp;display=swap" rel="stylesheet">
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://santosa-hospital.com/v1/frontend/libraries/bootstrap-4.3.1/css/bootstrap.min.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link href="https://santosa-hospital.com/v1/frontend/libraries/lightbox2-2.11.3/dist/css/lightbox.min.css" rel="stylesheet">
+<link href="https://santosa-hospital.com/v1/frontend/styles/main.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://santosa-hospital.com/v1/frontend/libraries/photobox/photobox.css">
+
+    <style>
+        /* Start by setting display:none to make this hidden.
+        Then we position it in relation to the viewport window
+        with position:fixed. Width, height, top and left speak
+        for themselves. Background we set to 80% white with
+        our animation centered, and no-repeating */
+        .loading-ajax {
+            display:    none;
+            position:   fixed;
+            z-index:    1000;
+            top:        0;
+            left:       0;
+            height:     100%;
+            width:      100%;
+            background: rgba( 255, 255, 255, .8 ) 
+                        /*url('http://i.stack.imgur.com/FhHRx.gif') */
+                        url("/storage/assets/loading.gif")
+                        50% 50% 
+                        no-repeat;
+        }
+
+        /* When the body has the loading class, we turn
+        the scrollbar off with overflow:hidden */
+        body.loading .loading-ajax {
+            overflow: hidden;   
+        }
+
+        /* Anytime the body has the loading class, our
+        modal element will be visible */
+        body.loading .loading-ajax {
+            display: block;
+        }
+    </style>
+    
+    
+    <style type="text/css">
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        .dropdown-submenu a::after {
+            transform: rotate(-90deg);
+            position: absolute;
+            right: 6px;
+            top: .8em;
+        }
+
+        .dropdown-submenu .dropdown-menu {
+            top: 0;
+            left: 100%;
+            margin-left: .1rem;
+            margin-right: .1rem;
+        }
+    </style>
+    
+</head>
+
+<body id="body" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+    
+    
+        <div class="d-none d-lg-block logo-header">
+  <div class="container">
+      <div class="row flex-column justify-content-center align-items-center pt-4 ">
+          <a href="https://santosa-hospital.com/id">
+              <img src="https://santosa-hospital.com/v1/frontend/assets/logo-santosa-blue.png" alt="Santosa Hospital Bandung" width="240" height="40">
+          </a>
+          <h6>Friendly &amp; Caring</h6>
+      </div>
+  </div>
+</div>
+<!-- Navbar -->
+<div id="navbar-main" class="container-fluid navbar-fixed-top">
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+      <a class="navbar-brand d-lg-none" href="https://santosa-hospital.com/id">
+        <div class="d-flex flex-column text-center text-white brand">
+          <img src="https://santosa-hospital.com/v1/frontend/assets/ic-logo-white.png" width="40" height="40" class="d-inline-block align-top mb-2" alt="santosa hospital bandung logo">
+            <h6>Friendly &amp; Caring</h6>
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="d-flex nav-icon-container">
+          <div class="nav-icon"></div> Menu
+        </div>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav m-auto align-items-lg-center">
+          <li class="nav-item  active ">
+            <a class="nav-link" href="https://santosa-hospital.com/id">Beranda</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-wrap" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Rumah Sakit Kami
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://santosa-hospital.com/id/hospital/SHBC">Santosa Hospital Bandung Central</a>
+                            <a class="dropdown-item" href="https://santosa-hospital.com/id/hospital/SHBK">Santosa Hospital Bandung Kopo</a>
+                          </div>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="https://santosa-hospital.com/id/agenda">Agenda</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="https://santosa-hospital.com/id/article">Artikel</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="https://santosa-hospital.com/id/schedule">Jadwal Dokter</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#modalDownload" data-title="Unduh Aplikasi Android Santosa Pasien">Daftar Online</a>
+          </li>          
+          <li class="nav-item">
+            <a class="nav-link" href="https://santosa-hospital.com/sanpasien">Santosa Pasien</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://santosa-hospital.com/id/contact-us">Kontak</a>
+          </li>
+          <li class="nav-item m-0 ml-lg-5">
+            <a class="nav-link btn btn-main" href="https://santosa-hospital.com/id/faq">Tanya Jawab</a>
+          </li>
+                    <li class="nav-item">
+            <div class="nav-link">
+              <div class="btn-group w-100 w-md-auto">
+                <button type="button" class="btn btn-light"><img src=" /storage/flag/flag-indonesia.png " alt="indonesia-language" height="16px"></button>
+                <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" id="languageOption" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
+                  <span class="sr-only">Toggle</span>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="languageOption">
+                                    <a class="dropdown-item" href="https://santosa-hospital.com/id"><img src="/storage/flag/flag-indonesia.png" alt="Indonesia-language" height="16px"> Indonesia</a>
+                                    <a class="dropdown-item" href="https://santosa-hospital.com/en"><img src="/storage/flag/flag-united-kingdom.png" alt="English-language" height="16px"> English</a>
+                                  </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        
+      </div>
+    </nav>
+  </div>
+</div>        
+        <div id="page-content">
+
+            
+<header id="header" class="header-main">
+    <div class="main-carousel">
+        <div class="container">
+            <div class="row no-gutters">
+                <div class="col-lg-12">
+                    <div id="mainCarousel" class="carousel slide pointer-event" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                                                        <li data-target="#mainCarousel" data-slide-to="0" class="active"></li>
+                                                        <li data-target="#mainCarousel" data-slide-to="1" class=""></li>
+                                                        <li data-target="#mainCarousel" data-slide-to="2" class=""></li>
+                                                        <li data-target="#mainCarousel" data-slide-to="3" class=""></li>
+                                                        <li data-target="#mainCarousel" data-slide-to="4" class=""></li>
+                                                        <li data-target="#mainCarousel" data-slide-to="5" class=""></li>
+                                                        <li data-target="#mainCarousel" data-slide-to="6" class=""></li>
+                                                        <li data-target="#mainCarousel" data-slide-to="7" class=""></li>
+                                                        <li data-target="#mainCarousel" data-slide-to="8" class=""></li>
+                                                        <li data-target="#mainCarousel" data-slide-to="9" class=""></li>
+                                                        <li data-target="#mainCarousel" data-slide-to="10" class=""></li>
+                                                        <li data-target="#mainCarousel" data-slide-to="11" class=""></li>
+                                                        <li data-target="#mainCarousel" data-slide-to="12" class=""></li>
+                                                        <li data-target="#mainCarousel" data-slide-to="13" class=""></li>
+                                                        <li data-target="#mainCarousel" data-slide-to="14" class=""></li>
+                                                    </ol>
+                        <div class="carousel-inner">
+                                                        <div class="carousel-item active">
+                                <img src="/storage/assets/banner/pvDDHavbMl8FrmbWQhPelJvmTMwuZ5PXBwvtJxh4.png" class="d-block w-100" alt="PIALA EMAS">
+                                <!--<div class="carousel-caption d-none d-md-block">-->
+                                <!--    <h5>PIALA EMAS</h5>-->
+                                <!--    -->
+                                <!--</div>-->
+                            </div>
+                                                        <div class="carousel-item ">
+                                <img src="/storage/assets/banner/APgONaLpOSRoyAW3DNFj6CEw7lEsCeBSAY04xE2B.jpeg" class="d-block w-100" alt="MEDICAL TOURSIM SHBC">
+                                <!--<div class="carousel-caption d-none d-md-block">-->
+                                <!--    <h5>MEDICAL TOURSIM SHBC</h5>-->
+                                <!--    -->
+                                <!--</div>-->
+                            </div>
+                                                        <div class="carousel-item ">
+                                <img src="/storage/assets/banner/NGJ6b9le7K4dtqWwIE4AjUKFJ3MCNY8PITDo3Mvk.jpeg" class="d-block w-100" alt="Penghargaan dari BPJS Kesehatan">
+                                <!--<div class="carousel-caption d-none d-md-block">-->
+                                <!--    <h5>Penghargaan dari BPJS Kesehatan</h5>-->
+                                <!--    -->
+                                <!--</div>-->
+                            </div>
+                                                        <div class="carousel-item ">
+                                <img src="/storage/assets/banner/B2YBLOh2osnzeH2wMnyQdknpOFX0KHJDBlj2qMxp.png" class="d-block w-100" alt="SANDRA SHBC">
+                                <!--<div class="carousel-caption d-none d-md-block">-->
+                                <!--    <h5>SANDRA SHBC</h5>-->
+                                <!--    -->
+                                <!--</div>-->
+                            </div>
+                                                        <div class="carousel-item ">
+                                <img src="/storage/assets/banner/dfMrncdkLAViSIotLmUUwOTsU6ZJ3O20WndtC1qj.jpeg" class="d-block w-100" alt="LASER HOLMIUM">
+                                <!--<div class="carousel-caption d-none d-md-block">-->
+                                <!--    <h5>LASER HOLMIUM</h5>-->
+                                <!--    -->
+                                <!--</div>-->
+                            </div>
+                                                        <div class="carousel-item ">
+                                <img src="/storage/assets/banner/tUDLSWehhfGq9IzZaWnRVZ15swicOeaU6bvN1D71.png" class="d-block w-100" alt="Pelayanan Prioritas">
+                                <!--<div class="carousel-caption d-none d-md-block">-->
+                                <!--    <h5>Pelayanan Prioritas</h5>-->
+                                <!--    -->
+                                <!--</div>-->
+                            </div>
+                                                        <div class="carousel-item ">
+                                <img src="/storage/assets/banner/UQL0tbq7gQptbxh8bOROkNvsFkEtswYoVtjrhkY7.jpeg" class="d-block w-100" alt="SANTOSA HEART CENTER">
+                                <!--<div class="carousel-caption d-none d-md-block">-->
+                                <!--    <h5>SANTOSA HEART CENTER</h5>-->
+                                <!--    -->
+                                <!--</div>-->
+                            </div>
+                                                        <div class="carousel-item ">
+                                <img src="/storage/assets/banner/kinuHnFGVu9vXsKd99D10TCaATkYKkiJOfjyEqgp.jpeg" class="d-block w-100" alt="EYE CENTER SHBC">
+                                <!--<div class="carousel-caption d-none d-md-block">-->
+                                <!--    <h5>EYE CENTER SHBC</h5>-->
+                                <!--    -->
+                                <!--</div>-->
+                            </div>
+                                                        <div class="carousel-item ">
+                                <img src="/storage/assets/banner/fOyWwEPEDWy8SOusQMbRc7w50AhLRzgv3COnmqoj.jpeg" class="d-block w-100" alt="medical tourism">
+                                <!--<div class="carousel-caption d-none d-md-block">-->
+                                <!--    <h5>medical tourism</h5>-->
+                                <!--    -->
+                                <!--</div>-->
+                            </div>
+                                                        <div class="carousel-item ">
+                                <img src="/storage/assets/banner/Y6nFZ0RUEkeMfHzsHKx2IwRXyeui02XoAwVKlhCH.jpeg" class="d-block w-100" alt="BPJS">
+                                <!--<div class="carousel-caption d-none d-md-block">-->
+                                <!--    <h5>BPJS</h5>-->
+                                <!--    -->
+                                <!--</div>-->
+                            </div>
+                                                        <div class="carousel-item ">
+                                <img src="/storage/assets/banner/JTbjyQVUvIobP3hhE0uhLJ2yPwora3Jwgoyg1Q4m.jpeg" class="d-block w-100" alt="TKR THR">
+                                <!--<div class="carousel-caption d-none d-md-block">-->
+                                <!--    <h5>TKR THR</h5>-->
+                                <!--    -->
+                                <!--</div>-->
+                            </div>
+                                                        <div class="carousel-item ">
+                                <img src="/storage/assets/banner/xbRDfZ51RAxXhCMEvkpKr35mzy90uBiSgEmhTyZa.jpeg" class="d-block w-100" alt="CANCER CENTER SHBK">
+                                <!--<div class="carousel-caption d-none d-md-block">-->
+                                <!--    <h5>CANCER CENTER SHBK</h5>-->
+                                <!--    -->
+                                <!--</div>-->
+                            </div>
+                                                        <div class="carousel-item ">
+                                <img src="/storage/assets/banner/AZ4movL0WRS2EKeY3iCQJRQEJTtXxkg7NAcWcD44.jpeg" class="d-block w-100" alt="maternity center">
+                                <!--<div class="carousel-caption d-none d-md-block">-->
+                                <!--    <h5>maternity center</h5>-->
+                                <!--    -->
+                                <!--</div>-->
+                            </div>
+                                                        <div class="carousel-item ">
+                                <img src="/storage/assets/banner/bVAiXOewzdvTC7mdhHLSVdwH10xSB5xIXq4tfHUZ.jpeg" class="d-block w-100" alt="HEMODIALISA SHBC SHBK">
+                                <!--<div class="carousel-caption d-none d-md-block">-->
+                                <!--    <h5>HEMODIALISA SHBC SHBK</h5>-->
+                                <!--    -->
+                                <!--</div>-->
+                            </div>
+                                                        <div class="carousel-item ">
+                                <img src="/storage/assets/banner/C0hTSYzqO1qJO5qKe3EvO8KLwR4YZXtYOEHzMvhW.jpeg" class="d-block w-100" alt="EMG">
+                                <!--<div class="carousel-caption d-none d-md-block">-->
+                                <!--    <h5>EMG</h5>-->
+                                <!--    -->
+                                <!--</div>-->
+                            </div>
+                                                    </div>
+                        <a class="carousel-control-prev carousel-control-dark ml-5" href="#mainCarousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next carousel-control-dark mr-5" href="#mainCarousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="hero-content">
+    <section id="unggulan">
+        <div class="container ungulan-content">
+            <div class="row">
+                <div class="col-lg-12 text-center mt-4 mb-2">
+                    <h2>Layanan Unggulan</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="d-flex justify-content-center">
+                        <div class="row">
+                                                        <div class="col-12 col-md-4 col-lg-2">
+                                <div class="unggulan-item">
+                                    <img src=" /storage/assets/S1Axi0AAPfwyL8RXjq2hGNU6AziO1BcJU4ndwAln.jpeg " width="100px" height="100px" alt="eye-center" class="img-fluid mb-4 rounded-circle">
+                                                                            <h3 class="mb-4">EYE CENTER</h3>
+                                                                    </div>
+                            </div>
+                                                        <div class="col-12 col-md-4 col-lg-2">
+                                <div class="unggulan-item">
+                                    <img src=" /storage/assets/nMLGreVbBYRXhT4wcqLRK3oqhe3RQa42A5JtU3Hb.jpeg " width="100px" height="100px" alt="cancer-center" class="img-fluid mb-4 rounded-circle">
+                                                                            <h3 class="mb-4">CANCER CENTER</h3>
+                                                                    </div>
+                            </div>
+                                                        <div class="col-12 col-md-4 col-lg-2">
+                                <div class="unggulan-item">
+                                    <img src=" /storage/assets/RzFXuyLXKfxJMk5TfV7hCv3iQd8dzxymZxruqJlw.jpeg " width="100px" height="100px" alt="jantung-dan-saraf" class="img-fluid mb-4 rounded-circle">
+                                                                            <h3 class="mb-4">JANTUNG DAN SARAF</h3>
+                                                                    </div>
+                            </div>
+                                                        <div class="col-12 col-md-4 col-lg-2">
+                                <div class="unggulan-item">
+                                    <img src=" /storage/assets/uPg9fMKRUHFrl4pimucOjws3wHMyW2vAFr15sFZH.jpeg " width="100px" height="100px" alt="instalasi-gawat-darurat" class="img-fluid mb-4 rounded-circle">
+                                                                            <h3 class="mb-4">INSTALASI GAWAT DARURAT</h3>
+                                                                    </div>
+                            </div>
+                                                        <div class="col-12 col-md-4 col-lg-2">
+                                <div class="unggulan-item">
+                                    <img src=" /storage/assets/UCD0UBCsibOroKu2s8QX0omqFmjPZ6vQvL8lJLKM.jpeg " width="100px" height="100px" alt="maternity-center" class="img-fluid mb-4 rounded-circle">
+                                                                            <h3 class="mb-4">MATERNITY CENTER</h3>
+                                                                    </div>
+                            </div>
+                                                        <div class="col-12 col-md-4 col-lg-2">
+                                <div class="unggulan-item">
+                                    <img src=" /storage/assets/K8Cg4LsOSoZ81dJTFgXgtlhbxv9vT1dD1nYyRNPq.png " width="100px" height="100px" alt="urology-center" class="img-fluid mb-4 rounded-circle">
+                                                                            <h3 class="mb-4">UROLOGY CENTER</h3>
+                                                                    </div>
+                            </div>
+                                                        <div class="col-12 col-md-4 col-lg-2">
+                                <div class="unggulan-item">
+                                    <img src=" /storage/assets/tsDFnSjshlWnW4Iyrh56soyXCZcF0XXd9m88d8AE.png " width="100px" height="100px" alt="radiologi" class="img-fluid mb-4 rounded-circle">
+                                                                            <h3 class="mb-4">RADIOLOGI</h3>
+                                                                    </div>
+                            </div>
+                                                        <div class="col-12 col-md-4 col-lg-2">
+                                <div class="unggulan-item">
+                                    <img src=" /storage/assets/hTxzrH0pZjSsILK6sPon54WRdmEohXN8HQm4g70L.png " width="100px" height="100px" alt="laboratorium" class="img-fluid mb-4 rounded-circle">
+                                                                            <h3 class="mb-4">LABORATORIUM</h3>
+                                                                    </div>
+                            </div>
+                                                        <div class="col-12 col-md-4 col-lg-2">
+                                <div class="unggulan-item">
+                                    <img src=" /storage/assets/U04ldV7QzJhBYG6Uz5ARDCc4Z67n5K0TDvNGir0p.png " width="100px" height="100px" alt="orthopedic" class="img-fluid mb-4 rounded-circle">
+                                                                            <h3 class="mb-4">ORTHOPEDIC</h3>
+                                                                    </div>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="hospital">
+        <div class="container hospital-content">
+            <div class="row flex-column align-items-center justify-content-center text-white mb-4">
+                <h2>Rumah Sakit Kami</h2>
+                <p class="text-capitalize text-muted text-white-50">Kunjungi rumah sakit terbaik</p>
+            </div>
+            <div class="row justify-content-center">
+                                <div class="col-sm-12 col-md-6 col-lg-4 mt-3">
+                    <a href="https://santosa-hospital.com/id/hospital/SHBC" class="text-decoration-none">
+                        </a><div class="card card-hover h-100"><a href="https://santosa-hospital.com/id/hospital/SHBC" class="text-decoration-none">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31685.09256204199!2d107.57577468176228!3d-6.933967427397087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e617d0c2f737%3A0x431124759b6e7ebb!2sSantosa%20Hospital%20Bandung%20Central!5e0!3m2!1sid!2sua!4v1591420827892!5m2!1sid!2sua" frameborder="0" style="border:0;" allowfullscreen="true" aria-hidden="false" tabindex="0" class="card-img-top"></iframe>
+                            </a><div class="card-body"><a href="https://santosa-hospital.com/id/hospital/SHBC" class="text-decoration-none">
+                                <h5 class="card-title">Santosa Hospital Bandung Central</h5>
+                                </a><p class="card-text text-muted text-center mt-4 text-info-rs"><a href="https://santosa-hospital.com/id/hospital/SHBC" class="text-decoration-none">
+                                    Hotline : 
+                                    <b>
+                                        </b></a><b><a href="tel:0224248333atauWhatsappSANDRA081120057701">
+                                        (022) 4248 333 atau Whatsapp SANDRA : 0811 2005 7701
+                                        </a>
+                                    </b>
+                                    <br>
+                                    Email : 
+                                    <b>
+                                        <a href="mailto:humas@santosa-hospital.com">humas@santosa-hospital.com</a>
+                                    </b>
+                                    <br><br>
+                                    <span class="" style="font-size: 16px;"> Jl. Kebon Jati No. 38 Kota Bandung 40181 - Indonesia </span>
+                                </p>
+                            </div>
+                        </div>
+                    
+                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-4 mt-3">
+                    <a href="https://santosa-hospital.com/id/hospital/SHBK" class="text-decoration-none">
+                        </a><div class="card card-hover h-100"><a href="https://santosa-hospital.com/id/hospital/SHBK" class="text-decoration-none">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.4800265195!2d107.58398481420095!3d-6.952563769997182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e690241303f06e7%3A0x5b649a604d13b07e!2sSantosa%20Hospital%20Bandung%20Kopo!5e0!3m2!1sid!2sua!4v1591421515478!5m2!1sid!2sua" frameborder="0" style="border:0;" allowfullscreen="true" aria-hidden="false" tabindex="0" class="card-img-top"></iframe>
+                            </a><div class="card-body"><a href="https://santosa-hospital.com/id/hospital/SHBK" class="text-decoration-none">
+                                <h5 class="card-title">Santosa Hospital Bandung Kopo</h5>
+                                </a><p class="card-text text-muted text-center mt-4 text-info-rs"><a href="https://santosa-hospital.com/id/hospital/SHBK" class="text-decoration-none">
+                                    Hotline : 
+                                    <b>
+                                        </b></a><b><a href="tel:0222100170002254280333atauWhatsappSANDRA08112047900">
+                                        (022) 21001700 / (022) 54280 333 atau Whatsapp SANDRA : 08112047900
+                                        </a>
+                                    </b>
+                                    <br>
+                                    Email : 
+                                    <b>
+                                        <a href="mailto:customercarekopo@santosa-hospital.com">customercarekopo@santosa-hospital.com</a>
+                                    </b>
+                                    <br><br>
+                                    <span class="" style="font-size: 16px;"> Jl. KH. Wahid Hasyim (Kopo) No.461-463 Bandung 40227 - Indonesia </span>
+                                </p>
+                            </div>
+                        </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </section>
+</div>
+
+<main id="main-content" style="margin-bottom: -30px">
+    <section id="agenda">
+        <div class="container">
+            <div class="row justify-content-start">
+                <h2 class="float-left text-line">Agenda Terkini</h2>
+            </div>
+            <div class="row justify-content-start">
+                                                <p class="font-italic">Data tidak ditemukan</p>
+                            </div>
+            <div class="row justify-content-center">
+                            </div>
+        </div>
+    </section>
+
+    <section id="artikel" class="border-top">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <h2 class="font-weight-bold text-capitalize text-line center">Artikel</h2>
+            </div>
+            <div class="row justify-content-start mt-5 p-3">
+                                                                                <div class="col-12 col-lg-6">
+                    <a href="https://santosa-hospital.com/id/article/deteksi-kanker-leher-rahim" class="text-decoration-none">
+                        <div class="container artikel-item">
+                            <div class="row">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-4 align-self-center">
+                                            <img src=" /storage/assets/article/dy2S9JKfBVefCdF0RP8xclEo6Vho2O1ZQry5m0gc.jpeg " alt="deteksi-kanker-leher-rahim" class="img-fluid" style="max-height: 200px; background-size: cover; background-position: center center;">
+                                        </div>
+                                        <div class="col-8 d-flex flex-column">
+                                                                                            <h3 class="text-capitalize">Deteksi Kanker Leher Rahim</h3>
+                                                                                        <div class="d-flex flex-column flex-md-row mt-auto">
+                                                
+                                                    <p class="mr-auto"><i class="fa fa-user-circle-o mr-1" aria-hidden="true"></i>Admin</p>
+                                                <p href="" class=""><i class="fa fa-clock-o mr-1" aria-hidden="true"></i> 2026-02-26 09:19:50</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-lg-12">
+                                                                                                                <p class="text-body">Fakta Tentang Kanker Leher Rahim
+
+
+	​Kanker leher rahim merupakan penyebab kematian no. 2 di dunia setelah kanker payudara dan no. 1 di negara berkembang.
+	​99,7% disebabkan oleh virus bernama Human Papilloma Virus (HPV).
+	​Terdapat lebih dari 100 jenis HPV, tetapi hanya beberapa jenis ya...</p>
+                                                                    </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                                                                                <div class="col-12 col-lg-6">
+                    <a href="https://santosa-hospital.com/id/article/cervical-spondylosis-nyeri-leher" class="text-decoration-none">
+                        <div class="container artikel-item">
+                            <div class="row">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-4 align-self-center">
+                                            <img src=" /storage/assets/article/5xUFYzRUNCEQCSOklExlUwNZz17qoEnISiWBL49h.jpeg " alt="cervical-spondylosis-nyeri-leher" class="img-fluid" style="max-height: 200px; background-size: cover; background-position: center center;">
+                                        </div>
+                                        <div class="col-8 d-flex flex-column">
+                                                                                            <h3 class="text-capitalize">Cervical Spondylosis - Nyeri Leher</h3>
+                                                                                        <div class="d-flex flex-column flex-md-row mt-auto">
+                                                
+                                                    <p class="mr-auto"><i class="fa fa-user-circle-o mr-1" aria-hidden="true"></i>Admin</p>
+                                                <p href="" class=""><i class="fa fa-clock-o mr-1" aria-hidden="true"></i> 2026-02-26 08:51:30</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-lg-12">
+                                                                                                                <p class="text-body">VERTEBRA CERVICAL
+
+Tulang Cervical dibentuk dari tulang kecil berbentuk bulat, tersusun sebanyak 7 ruas. Di antara tiap tulang terdapat diskus (bantalan) intervertebra yang bertindak sebagai penyangga dan memungkinkan fleksibilitas tulang belakang. Otot-otot dan ligamen terhubung satu dengan yang ...</p>
+                                                                    </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                                                                                <div class="col-12 col-lg-6">
+                    <a href="https://santosa-hospital.com/id/article/klinik-manajemen-nyeri" class="text-decoration-none">
+                        <div class="container artikel-item">
+                            <div class="row">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-4 align-self-center">
+                                            <img src=" /storage/assets/article/iLMV09XHv3eBFjHTTIx73bfsefM43KrbeDPLAqkE.jpeg " alt="klinik-manajemen-nyeri" class="img-fluid" style="max-height: 200px; background-size: cover; background-position: center center;">
+                                        </div>
+                                        <div class="col-8 d-flex flex-column">
+                                                                                            <h3 class="text-capitalize">Klinik Manajemen Nyeri</h3>
+                                                                                        <div class="d-flex flex-column flex-md-row mt-auto">
+                                                
+                                                    <p class="mr-auto"><i class="fa fa-user-circle-o mr-1" aria-hidden="true"></i>Admin</p>
+                                                <p href="" class=""><i class="fa fa-clock-o mr-1" aria-hidden="true"></i> 2026-02-26 09:09:51</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-lg-12">
+                                                                                                                <p class="text-body">Seseorang yang merasakan nyeri akan mencari cara apapun untuk menghilangkan nyerinya bahkan sampai harus mati sekalipun.
+
+​Nyeri adalah suatu pengalaman psikologis dan emosional yang tidak menyenangkan yang berhubungan dengan adanya kerusakan jaringan.
+
+&nbsp;
+
+​Tata laksana
+
+​Klinik n...</p>
+                                                                    </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+            </div>
+            <div class="row justify-content-center mt-5">
+                                <a href="https://santosa-hospital.com/id/article" class="btn btn-main mt-5">Lihat Lainnya</a>
+                            </div>
+        </div>
+    </section>
+    
+    <section id="podcast" class="border-top" style="padding:30px 0; background-color: #024249; margin:0 -16px;">
+        <div class="container">
+            <div class="row justify-content-center text-white mb-5 mt-5">
+                <div class="flex-coloumn text-center">
+                    <h3>Yuk... Ikuti Update Terkini Kami di <span class="font-weight-bold">Podcast</span></h3>
+                    <div class="mt-3">
+                        <a href="https://podcasters.spotify.com/pod/show/santosa-health-talk/embed" target="_blank" class="btn btn-main">Lihat Podcast</a>
+                        <a href="https://open.spotify.com/show/2iuUE3L4rpqYEoalM5Ot8m" target="_blank" class="btn btn-main-secondary ml-2">Dengarkan di <svg width="70px" height="20px" viewBox="0 0 70 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><polygon points="20.7523092 20.7624952 0 20.7624952 0 10.4130206 0 0.063422413 20.7523092 0.063422413"></polygon></defs><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-966.000000, -318.000000)"><g transform="translate(877.000000, 308.000000)"><g transform="translate(17.000000, 10.000000)"><g transform="translate(72.000000, 0.000000)"><g><g><mask fill="white"><use xlink:href="#path-1"></use></mask><g></g><path d="M16.5139251,9.24174589 C13.1692605,7.25982639 7.65231104,7.07759513 4.45942886,8.04450876 C3.94659021,8.19978859 3.4043863,7.91098789 3.24913459,7.39940515 C3.09363507,6.88745152 3.38282701,6.34681563 3.89591347,6.19128854 C7.5612416,5.08121087 13.6540969,5.29558604 17.5045376,7.57619667 C17.9658322,7.84941993 18.1169951,8.44371143 17.8436628,8.90312213 C17.5700828,9.36327461 16.9739807,9.51496915 16.5139251,9.24174589 Z M16.404394,12.1772269 C16.1697198,12.5571433 15.6718735,12.676323 15.2916122,12.4430324 C12.5032765,10.7328526 8.25113907,10.2373418 4.95219507,11.236523 C4.52447846,11.3654695 4.07260058,11.1248847 3.94262528,10.6987306 C3.81376512,10.2719583 4.05500621,9.82194352 4.4821033,9.69213157 C8.25064346,8.55102265 12.9355776,9.1036507 16.1382482,11.0675202 C16.5185096,11.3011817 16.6382008,11.798176 16.404394,12.1772269 Z M15.1347497,14.9963717 C14.9482742,15.3014917 14.5501706,15.397058 14.2454907,15.2111178 C11.8089185,13.7252036 8.74204672,13.3896706 5.13024512,14.212802 C4.78219878,14.29242 4.43526758,14.0748305 4.35596902,13.7276762 C4.27617485,13.3803983 4.49350246,13.0342331 4.84229222,12.954986 C8.79482982,12.0534729 12.185215,12.4414252 14.920148,14.1089525 C15.2250757,14.294769 15.3211013,14.6922409 15.1347497,14.9963717 Z M10.3760927,0.063422413 C4.64565658,0.063422413 0,4.6986983 0,10.4164823 C0,16.1348844 4.64565658,20.769913 10.3760927,20.769913 C16.1067766,20.769913 20.7523092,16.1348844 20.7523092,10.4164823 C20.7523092,4.6986983 16.1067766,0.063422413 10.3760927,0.063422413 L10.3760927,0.063422413 Z" fill="#FFFFFF" fill-rule="nonzero" mask="url(#mask-2)"></path></g><path d="M28.8124812,9.26861902 C27.0488635,8.84029018 26.7347595,8.5397521 26.7347595,7.90837377 C26.7347595,7.31164425 27.2864847,6.91026447 28.1069365,6.91026447 C28.90226,6.91026447 29.6908745,7.21514917 30.5176694,7.84280183 C30.5427977,7.86180279 30.5740251,7.86950252 30.6048866,7.86453495 C30.6357481,7.85981576 30.6630721,7.84255345 30.6811254,7.8164737 L31.5424413,6.58054192 C31.5778161,6.5297485 31.5680575,6.45958155 31.5203625,6.42058612 C30.5364546,5.61670886 29.428247,5.22588518 28.1330407,5.22588518 C26.2286557,5.22588518 24.8985625,6.3894146 24.8985625,8.05417199 C24.8985625,9.83951718 26.0459264,10.4715165 28.0288679,10.9594562 C29.7166127,11.3552474 30.001563,11.6868328 30.001563,12.2795883 C30.001563,12.9364254 29.4255634,13.344884 28.4986211,13.344884 C27.4690919,13.344884 26.629367,12.9916896 25.6899826,12.1635955 C25.666684,12.1431043 25.6347247,12.1336659 25.605205,12.1354045 C25.5740995,12.1381367 25.5456777,12.1526668 25.5259166,12.1770079 L24.560306,13.346871 C24.519808,13.395429 24.5249312,13.4679556 24.5717724,13.5100557 C25.6647323,14.5034458 27.0089753,15.0281456 28.4595869,15.0281456 C30.5116922,15.0281456 31.83776,13.8864735 31.83776,12.1197567 C31.83776,10.6265047 30.9614404,9.80064593 28.8124812,9.26861902 L28.8124812,9.26861902 Z M37.9701677,11.2698052 C37.9701677,12.530699 37.2071695,13.4105801 36.1149415,13.4105801 C35.0350336,13.4105801 34.220315,12.4907101 34.220315,11.2698052 C34.220315,10.0491487 35.0350336,9.12915446 36.1149415,9.12915446 C37.189604,9.12915446 37.9701677,10.0291542 37.9701677,11.2698052 Z M36.4805219,7.49755561 C35.5910282,7.49755561 34.8614531,7.85422724 34.2597152,8.58508119 L34.2597152,7.76245136 C34.2597152,7.69762455 34.2079948,7.64471991 34.1443201,7.64471991 L32.5650175,7.64471991 C32.5013428,7.64471991 32.4496224,7.69762455 32.4496224,7.76245136 L32.4496224,16.9031554 C32.4496224,16.9679822 32.5013428,17.0208869 32.5650175,17.0208869 L34.1443201,17.0208869 C34.2079948,17.0208869 34.2597152,16.9679822 34.2597152,16.9031554 L34.2597152,14.0178657 C34.8615751,14.7053776 35.5911502,15.0411854 36.4805219,15.0411854 C38.1332578,15.0411854 39.8063647,13.7458912 39.8063647,11.2698052 C39.8063647,8.79322244 38.1332578,7.49755561 36.4805219,7.49755561 L36.4805219,7.49755561 Z M44.0950125,13.4237442 C42.9627743,13.4237442 42.1092654,12.4976647 42.1092654,11.2698052 C42.1092654,10.036854 42.9332547,9.14194595 44.0689083,9.14194595 C45.2082214,9.14194595 46.0675855,10.0680255 46.0675855,11.2967543 C46.0675855,12.5295813 45.2379851,13.4237442 44.0950125,13.4237442 Z M44.0950125,7.49755561 C41.9664243,7.49755561 40.2990505,9.16628705 40.2990505,11.2967543 C40.2990505,13.4041223 41.95508,15.0552188 44.0689083,15.0552188 C46.2049374,15.0552188 47.8774344,13.3922001 47.8774344,11.2698052 C47.8774344,9.15448907 46.2164037,7.49755561 44.0950125,7.49755561 L44.0950125,7.49755561 Z M52.4227326,7.64471991 L50.6849752,7.64471991 L50.6849752,5.83565458 C50.6849752,5.77082777 50.6333767,5.71792313 50.5695801,5.71792313 L48.9905214,5.71792313 C48.9266027,5.71792313 48.8747603,5.77082777 48.8747603,5.83565458 L48.8747603,7.64471991 L48.1152996,7.64471991 C48.0517469,7.64471991 48.0003924,7.69762455 48.0003924,7.76245136 L48.0003924,9.14430555 C48.0003924,9.20913236 48.0517469,9.26216118 48.1152996,9.26216118 L48.8747603,9.26216118 L48.8747603,12.8376949 C48.8747603,14.2826373 49.5810369,15.0152299 50.9743168,15.0152299 C51.5408018,15.0152299 52.0107989,14.8962565 52.4537161,14.6404266 C52.4897008,14.6199354 52.5120235,14.5805674 52.5120235,14.5384672 L52.5120235,13.2226817 C52.5120235,13.1820718 52.4912866,13.1436973 52.4572535,13.122461 C52.4227326,13.1003553 52.3800389,13.0993618 52.344786,13.1171208 C52.0404406,13.2729784 51.7463417,13.344884 51.4177218,13.344884 C50.911008,13.344884 50.6849752,13.110663 50.6849752,12.5857149 L50.6849752,9.26216118 L52.4227326,9.26216118 C52.4865293,9.26216118 52.5380057,9.20913236 52.5380057,9.14430555 L52.5380057,7.76245136 C52.5380057,7.69762455 52.4865293,7.64471991 52.4227326,7.64471991 L52.4227326,7.64471991 Z M58.4776816,7.65167451 L58.4776816,7.42949988 C58.4776816,6.77589166 58.7237196,6.48441941 59.2759327,6.48441941 C59.6050405,6.48441941 59.8694978,6.55098487 60.1657924,6.65157819 C60.202265,6.66325198 60.2403234,6.65741509 60.2699651,6.6351852 C60.3003387,6.61295532 60.3176601,6.577313 60.3176601,6.53968364 L60.3176601,5.18465434 C60.3176601,5.13299159 60.2848469,5.08704156 60.2359321,5.07189046 C59.9230479,4.97713404 59.5228245,4.87976964 58.9232824,4.87976964 C57.46462,4.87976964 56.693693,5.71618448 56.693693,7.29736248 L56.693693,7.63764112 L55.9349641,7.63764112 C55.8712894,7.63764112 55.8190811,7.69054576 55.8190811,7.75537257 L55.8190811,9.14430555 C55.8190811,9.20913236 55.8712894,9.26216118 55.9349641,9.26216118 L56.693693,9.26216118 L56.693693,14.7772832 C56.693693,14.8422342 56.7450474,14.8951388 56.8087221,14.8951388 L58.3880248,14.8951388 C58.4518214,14.8951388 58.5037858,14.8422342 58.5037858,14.7772832 L58.5037858,9.26216118 L59.9781838,9.26216118 L62.237049,14.7757929 C61.9805205,15.3552601 61.7285054,15.4703836 61.3842719,15.4703836 C61.1060306,15.4703836 60.8129076,15.3858107 60.5134414,15.2190245 C60.4851416,15.2032525 60.4518405,15.2005203 60.4214669,15.2102071 C60.3913373,15.2210115 60.3658431,15.2438624 60.3531569,15.2736678 L59.8177773,16.469238 C59.7922831,16.5257442 59.8141179,16.5920613 59.867546,16.6213699 C60.4263462,16.9294835 60.9307423,17.061 61.554193,17.061 C62.7203422,17.061 63.3648957,16.5079851 63.9330885,15.0201975 L66.6729292,7.81212707 C66.6867131,7.77598799 66.6825657,7.73500552 66.6607309,7.7028405 C66.6391401,7.67092385 66.6040093,7.65167451 66.5657069,7.65167451 L64.9217537,7.65167451 C64.8724729,7.65167451 64.8284374,7.68359116 64.8123357,7.7306589 L63.1281284,12.6283118 L61.2833926,7.72742998 C61.2664371,7.68185251 61.2233774,7.65167451 61.1754385,7.65167451 L58.4776816,7.65167451 L58.4776816,7.65167451 Z M54.9674018,7.64471991 L53.3882212,7.64471991 C53.3244245,7.64471991 53.2724601,7.69762455 53.2724601,7.76245136 L53.2724601,14.7772832 C53.2724601,14.8422342 53.3244245,14.8951388 53.3882212,14.8951388 L54.9674018,14.8951388 C55.0310765,14.8951388 55.0831629,14.8422342 55.0831629,14.7772832 L55.0831629,7.76245136 C55.0831629,7.69762455 55.0310765,7.64471991 54.9674018,7.64471991 L54.9674018,7.64471991 Z M54.1858623,4.45069565 C53.560216,4.45069565 53.0525263,4.96632957 53.0525263,5.60329642 C53.0525263,6.24063584 53.560216,6.7568907 54.1858623,6.7568907 C54.8112647,6.7568907 55.3184664,6.24063584 55.3184664,5.60329642 C55.3184664,4.96632957 54.8112647,4.45069565 54.1858623,4.45069565 L54.1858623,4.45069565 Z M68.0859702,8.34241533 L67.7965066,8.34241533 L67.7965066,8.71808792 L68.0859702,8.71808792 C68.230397,8.71808792 68.3166384,8.64618232 68.3166384,8.53018953 C68.3166384,8.40798727 68.230397,8.34241533 68.0859702,8.34241533 Z M68.2734567,8.8782921 L68.5879266,9.32649123 L68.3228595,9.32649123 L68.0398609,8.91542469 L67.7965066,8.91542469 L67.7965066,9.32649123 L67.5746211,9.32649123 L67.5746211,8.1387449 L68.0948749,8.1387449 C68.3659192,8.1387449 68.544257,8.27994811 68.544257,8.51752222 C68.544257,8.71225102 68.4337412,8.83122436 68.2734567,8.8782921 Z M68.0270433,7.7434504 C67.4578842,7.7434504 67.0270433,8.20419265 67.0270433,8.76838458 C67.0270433,9.33220394 67.4547126,9.78686092 68.0213196,9.78686092 C68.5903663,9.78686092 69.0215731,9.32649123 69.0215731,8.76192674 C69.0215731,8.19798319 68.5936598,7.7434504 68.0270433,7.7434504 Z M68.0213196,9.89999736 C67.3962832,9.89999736 66.9099404,9.38895844 66.9099404,8.76838458 C66.9099404,8.14781071 67.4026263,7.6309349 68.0270528,7.6309349 C68.6520892,7.6309349 69.138432,8.14184963 69.138432,8.76192674 C69.138432,9.38262479 68.6461121,9.89999736 68.0213196,9.89999736 L68.0213196,9.89999736 Z" fill="#FFFFFF" fill-rule="nonzero"></path></g></g></g></g></g></g></svg></a>
+                    </div>
+                </div>
+            </div>
+            <iframe src="https://podcasters.spotify.com/pod/show/santosa-health-talk/embed" height="100%" width="100%" frameborder="0" scrolling="no" class="pb-md-5"></iframe>
+        </div>
+    </section>
+
+    <section id="galeri" class="">
+        <div class="container">
+            <div class="row justify-content-center text-center text-capitalize mb-3 p-2">
+                <h3 class="text-line center" style="font-family: 'Lobster', cursive; color: #fff !important;"><q> Galeri Foto Kegiatan </q></h3>
+            </div>
+            <div class="galeri-item">
+                                                                                    <a href=" /storage/assets/galeri/uGKYxggInWyylOy7fmTFYoERLMm8KJMJvkanMHRr.jpeg "><img src=" /storage/assets/galeri/uGKYxggInWyylOy7fmTFYoERLMm8KJMJvkanMHRr.jpeg " class="img-thumbnail mt-1" style="background-size:cover; object-fit:cover; width=200px; height=60px" alt=""></a>
+                                                                                    <a href=" /storage/assets/galeri/WAeyYOfTtKDivNTjmJpeldEfyIcZhOcpcRtTn8QC.jpeg "><img src=" /storage/assets/galeri/WAeyYOfTtKDivNTjmJpeldEfyIcZhOcpcRtTn8QC.jpeg " class="img-thumbnail mt-1" style="background-size:cover; object-fit:cover; width=200px; height=60px" alt=""></a>
+                                                                                    <a href=" /storage/assets/galeri/4wseErOaiKgDWIw4LqkFRynthKiz5TwAw3h3doOW.jpeg "><img src=" /storage/assets/galeri/4wseErOaiKgDWIw4LqkFRynthKiz5TwAw3h3doOW.jpeg " class="img-thumbnail mt-1" style="background-size:cover; object-fit:cover; width=200px; height=60px" alt=""></a>
+                                                                                    <a href=" /storage/assets/galeri/UJW5r15V1YvW7VuV0VDffg0zxlZBgAeEiGG4U91p.jpeg "><img src=" /storage/assets/galeri/UJW5r15V1YvW7VuV0VDffg0zxlZBgAeEiGG4U91p.jpeg " class="img-thumbnail mt-1" style="background-size:cover; object-fit:cover; width=200px; height=60px" alt=""></a>
+                                                                                    <a href=" /storage/assets/galeri/ooVZZVOLjPoJvoJn2VyziiihaDyCngro0pnd5sis.jpeg "><img src=" /storage/assets/galeri/ooVZZVOLjPoJvoJn2VyziiihaDyCngro0pnd5sis.jpeg " class="img-thumbnail mt-1" style="background-size:cover; object-fit:cover; width=200px; height=60px" alt=""></a>
+                                                                                    <a href=" /storage/assets/galeri/8AG7EpXPNzELHCjaLVbFCT8BYCMaMhCS5M06ahvZ.jpeg "><img src=" /storage/assets/galeri/8AG7EpXPNzELHCjaLVbFCT8BYCMaMhCS5M06ahvZ.jpeg " class="img-thumbnail mt-1" style="background-size:cover; object-fit:cover; width=200px; height=60px" alt=""></a>
+                                                                                    <a href=" /storage/assets/galeri/1Cg7kBljTLKnP0a9v4xfABMuiPiXux30KnVAzO1E.jpeg "><img src=" /storage/assets/galeri/1Cg7kBljTLKnP0a9v4xfABMuiPiXux30KnVAzO1E.jpeg " class="img-thumbnail mt-1" style="background-size:cover; object-fit:cover; width=200px; height=60px" alt=""></a>
+                                                                                    <a href=" /storage/assets/galeri/1zgD6kQcIUqA2KdS10CaqdbA0TGu85J7wrZt3cSI.jpeg "><img src=" /storage/assets/galeri/1zgD6kQcIUqA2KdS10CaqdbA0TGu85J7wrZt3cSI.jpeg " class="img-thumbnail mt-1" style="background-size:cover; object-fit:cover; width=200px; height=60px" alt=""></a>
+                                                                                    <a href=" /storage/assets/galeri/AKzc6XozflyVINXr8cpLGL5PbDIh3ltDIRN9fU64.jpeg "><img src=" /storage/assets/galeri/AKzc6XozflyVINXr8cpLGL5PbDIh3ltDIRN9fU64.jpeg " class="img-thumbnail mt-1" style="background-size:cover; object-fit:cover; width=200px; height=60px" alt=""></a>
+                                                                                    <a href=" /storage/assets/galeri/Y0DfKtCOeJw5fT5oB2G4uFqVMsHgEPPtONzyg6VU.jpeg "><img src=" /storage/assets/galeri/Y0DfKtCOeJw5fT5oB2G4uFqVMsHgEPPtONzyg6VU.jpeg " class="img-thumbnail mt-1" style="background-size:cover; object-fit:cover; width=200px; height=60px" alt=""></a>
+                                                                                    <a href=" /storage/assets/galeri/ilm0W4ZNoHF3z2eEbLs00BxgS7WIT1nOsaya5hjh.jpeg "><img src=" /storage/assets/galeri/ilm0W4ZNoHF3z2eEbLs00BxgS7WIT1nOsaya5hjh.jpeg " class="img-thumbnail mt-1" style="background-size:cover; object-fit:cover; width=200px; height=60px" alt=""></a>
+                                                                                    <a href=" /storage/assets/galeri/l4dGgMzJ0wVGjpYU4OewRiaX37picmoA7HXzOu0r.jpeg "><img src=" /storage/assets/galeri/l4dGgMzJ0wVGjpYU4OewRiaX37picmoA7HXzOu0r.jpeg " class="img-thumbnail mt-1" style="background-size:cover; object-fit:cover; width=200px; height=60px" alt=""></a>
+                                                                                    <a href=" /storage/assets/galeri/oQ8AnL2ZQ8Vmv4yatvmKJC70txaBabZy0qq2l2Cc.png "><img src=" /storage/assets/galeri/oQ8AnL2ZQ8Vmv4yatvmKJC70txaBabZy0qq2l2Cc.png " class="img-thumbnail mt-1" style="background-size:cover; object-fit:cover; width=200px; height=60px" alt=""></a>
+                                                                                    <a href=" /storage/assets/galeri/VgmbqF1cLOmwbdQ9MPkHm3d7kXZfgqRvBmYHdqUV.png "><img src=" /storage/assets/galeri/VgmbqF1cLOmwbdQ9MPkHm3d7kXZfgqRvBmYHdqUV.png " class="img-thumbnail mt-1" style="background-size:cover; object-fit:cover; width=200px; height=60px" alt=""></a>
+                                                                                    <a href=" /storage/assets/galeri/z8aHGmVuX6MaUgE4RYQlWN0sTY6w1ft884JG6EyA.jpeg "><img src=" /storage/assets/galeri/z8aHGmVuX6MaUgE4RYQlWN0sTY6w1ft884JG6EyA.jpeg " class="img-thumbnail mt-1" style="background-size:cover; object-fit:cover; width=200px; height=60px" alt=""></a>
+                                            </div>
+            <div class="row justify-content-center mb-5">
+                <a href="#" class="btn btn-main mt-5 d-none">Lihat Lainnya</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script type="text/javascript" id="www-widgetapi-script" src="https://www.youtube.com/s/player/8a6e7bc4/www-widgetapi.vflset/www-widgetapi.js" async=""></script><script src="https://www.youtube.com/iframe_api"></script>
+<div class="main-video-thumbnail">
+    <a href="#" id="btnThumbnail" style="float:left;" class=""><i class="fa fa-arrow-right bg-danger p-1 text-white" aria-hidden="true"></i></a>
+        <iframe id="contentVideo" class="" width="100%" height="auto" src="https://www.youtube.com/embed/_EY4hiaV1KU?enablejsapi=1&amp;?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="encrypted-media" autoplay="false" allowfullscreen="">
+    </iframe>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="modalShow">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content" style="background-color: #ebb36f;">
+        <div class="modal-header" style="background-color: #ff8c00; color:white;">
+          <h5 class="modal-title">Hari Cuci Tangan Pakai Sabun Sedunia : <br>15 Oktober</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body embed-responsive embed-responsive-16by9">
+        <!--    <iframe id="cVideoShow" class="embed-responsive-item" src="/storage/assets/video/PKRS-VideoJingleCTPS.mp4"-->
+        <!--    frameborder="0" allow="encrypted-media" allowfullscreen>-->
+        <!--</iframe>-->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+            <!-- FOOTER -->
+<footer>
+    <div class="main-footer">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="container col-sm-12 col-lg-3">
+            <div class="row">
+              <div class="col-12">
+                <img src="https://santosa-hospital.com/v1/frontend/assets/logo-santosa-blue.png" class="img-fluid" style="max-width: 260px;" alt="">
+                <p class="text-muted mt-4">Santosa Hospital Bandung merupakan rumah sakit swasta unggulan serta pilihan terbaik di kota Bandung dan sekitarnya.</p>
+              </div>
+              <div class="col-12 mt-3">
+                <h5>Office</h5>
+                <ul class="list-unstyled mt-3 mb-3">
+                  <li>
+                    <p class="text-muted">Bandung, Indonesia <br>Email:
+                      humas@santosa-hospital.com</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="container col-sm-12 col-lg-9">
+            <div class="row justify-content-between">
+              <div class="col-sm-12 col-lg-3 mt-2 ml-lg-5">
+                <h5>Rumah Sakit Kami</h5>
+                <ul class="list-unstyled mt-3 mb-3">
+                                    <li>
+                    <a href="https://santosa-hospital.com/id/hospital/SHBC">
+                      Santosa Hospital Bandung Central
+                    </a>
+                  </li>
+                                    <li>
+                    <a href="https://santosa-hospital.com/id/hospital/SHBK">
+                      Santosa Hospital Bandung Kopo
+                    </a>
+                  </li>
+                                  </ul>
+              </div>
+              <div class="col-sm-12 col-lg-3 mt-2">
+                <h5>Link</h5>
+                <ul class="list-unstyled mt-3 mb-3">
+                  <li>
+                    <a href="https://santosa-hospital.com/id/bed/all">
+                        Informasi Ketersediaan Bed
+                    </a>
+                </li>
+                <li>
+                  <a href="https://santosa-hospital.com/id/schedule/check">
+                      Cek Ketersediaan Dokter 
+                  </a>
+                </li>
+                <li>
+                  <a href="https://santosa-hospital.com/sanpasien">
+                      Santosa Pasien 
+                  </a>
+                </li>
+                </ul>
+              </div>
+              <div class="col-sm-12 col-lg-3 mt-2">
+                <h5>Unduh</h5>
+                <ul class="list-unstyled mt-3 mb-3">
+                  <li>
+                    <a href="https://play.google.com/store/apps/details?id=com.muhammadaa.santosa.mobile.sanpasien&amp;pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" target="_blank" data-toggle="tooltip" data-placement="top" title="" data-original-title="Santosa Pasien">
+                      <img alt="Santosa Pasien" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" width="153" height="56" style="margin-left: -10px; margin-bottom: -10px;">
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <div class="mt-3">
+                      <h6>Pilih Bahasa</h6>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-light"><img src=" /storage/flag/flag-indonesia.png " alt="indonesia-language" height="16px"></button>
+                        <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" id="languageOption" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
+                          <span class="sr-only">Toggle</span>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="languageOption">
+                                                    <a class="dropdown-item" href="https://santosa-hospital.com/id"><img src="/storage/flag/flag-indonesia.png" alt="Indonesia-language" height="16px"> Indonesia</a>
+                                                    <a class="dropdown-item" href="https://santosa-hospital.com/en"><img src="/storage/flag/flag-united-kingdom.png" alt="English-language" height="16px"> English</a>
+                                                  </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="background-color: #708160;">
+      <div class="row justify-content-center" style="height: 70px;">
+        <p class="m-auto text-white" style="padding: 0 30px; text-align: center;">Copyright @ 2020 - IT Development
+          SHBC,
+          Santosa Hospital Bandung. All right reserved.
+        </p>
+      </div>
+    </div>
+  </footer>            
+        </div>
+    
+      
+     
+    
+    <div class="modal fade" id="modalDownload" tabindex="-1" role="dialog" aria-labelledby="modalDownloadLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalDownloadTitle">Unduh Aplikasi Android Santosa Pasien</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <a href="https://play.google.com/store/apps/details?id=com.muhammadaa.santosa.mobile.sanpasien&amp;pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">
+                        <img src="https://santosa-hospital.com/v1/frontend/assets/sanpasien-download.png" class="rounded mx-auto d-block img-fluid" alt="Santosa Pasien Download"></a>
+                    <a href="https://play.google.com/store/apps/details?id=com.muhammadaa.santosa.mobile.sanpasien&amp;pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" class="btn btn-main w-100 mt-3" target="_blank">Daftar Sekarang!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="loading-ajax"></div>
+
+    <!-- Bootstrap core JavaScript -->
+<script src="https://santosa-hospital.com/frontend/libraries/jquery-3.4.1.min.js"></script>
+<script src="https://santosa-hospital.com/frontend/libraries/bootstrap-4.3.1/js/bootstrap.bundle.min.js"></script>
+<!-- bootstrap tooltip -->
+<script>
+  $(document).ready(function () {
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+  });
+</script>
+<script src="https://santosa-hospital.com/frontend/libraries/bootstrap-4.3.1/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script src="https://santosa-hospital.com/frontend/libraries/retinaJS/retina.min.js"></script>
+<script src="https://santosa-hospital.com/frontend/scripts/navbar-scroll.js"></script>
+    <script>
+
+    $(window).on('load',function(){
+    
+        const today = new Date();
+        if(today.getDate() == 15 && today.getMonth() + 1 == 10)
+            $('#modalShow').modal('show');
+        else
+            $("#cVideoShow").attr("src","");
+    });
+    
+    
+
+    
+    $('#modalShow').on('hide.bs.modal', function (e) {
+            $("#cVideoShow").attr("src","");
+    });
+
+    $('#modalShow').on('show.bs.modal', function (e) {
+            $("#btnThumbnail").click();
+    });
+
+    // Video thumbnail
+    var videoSrc = $("#contentVideo").attr("src");
+    $("#contentVideo").attr("src",videoSrc);
+    $("#btnThumbnail").on('click', function() {
+        var btn = $("#btnThumbnail")
+        var icon = btn.children();
+        var video = $("#contentVideo");
+    
+        if(icon.hasClass("fa-arrow-right"))
+        {
+            icon.removeClass("fa-arrow-right");
+            btn.css("float","right")
+            icon.addClass("fa-arrow-left");
+            video.addClass("d-none");
+            video.attr("src","");
+        }
+        else
+        {
+            icon.removeClass("fa-arrow-left");
+            btn.css("float","left")
+            icon.addClass("fa-arrow-right");
+            video.removeClass("d-none");
+            video.attr("src",videoSrc);
+        }    
+    });
+        
+    $(document).ready(function(){
+        // Modal
+        $('#modalDownload').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var recipient = button.data('title') // Extract info from data-* attributes
+            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            var modal = $(this)
+            // modal.find('.modal-title').text('' + recipient)
+            // modal.find('.modal-body input').val(recipient)
+            })
+        });
+</script>
+<script src="https://santosa-hospital.com/v1/frontend/libraries/photobox/jquery.photobox.js"></script>
+<script>
+		function callback(a){
+			console.log('loaded gallery 1', a);
+		}
+		$('.galeri-item').photobox('a', { thumbs:true, time:2000 , history:false, autoplay:true, loop:false,  beforeShow:callback });
+	</script><div id="pbOverlay"><input type="checkbox" id="pbThumbsToggler" checked="" hidden=""><div class="pbLoader"><b></b><b></b><b></b></div><div id="pbPrevBtn" class="prevNext"><b></b></div><div id="pbNextBtn" class="prevNext"><b></b></div><div class="pbWrapper"><img><div class="pbVideo"></div></div><div id="pbCloseBtn"></div><div id="pbAutoplayBtn"><div class="pbProgress"></div></div><div id="pbCaption"><label for="pbThumbsToggler" title="Show/hide thumbnails"></label><button title="Rotate right" class="rotateBtn show">⟳</button><div class="pbCaptionText"></div><div class="pbThumbs"></div></div></div>
+
+    <script>
+        $body = $("body");
+
+        $(document).on({
+            ajaxStart: function() { $body.addClass("loading");    },
+            ajaxStop: function() { $body.removeClass("loading"); }    
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+            // Modal
+            $('#modalDownload').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget) // Button that triggered the modal
+                var recipient = button.data('title') // Extract info from data-* attributes
+                // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+                // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+                var modal = $(this)
+                // modal.find('.modal-title').text('' + recipient)
+                // modal.find('.modal-body input').val(recipient)
+            })
+        });
+    </script>
+    
+    
+    <script type="text/javascript">
+        // jquery ready start
+        $(document).ready(function() {
+            // jQuery code
+
+            $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+                if (!$(this).next().hasClass('show')) {
+                    $(this).parents('.dropdown-menu').first().find('.show').removeClass('show');
+                }
+                var $subMenu = $(this).next('.dropdown-menu');
+                $subMenu.toggleClass('show');
+
+
+                $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
+                    $('.dropdown-submenu .show').removeClass('show');
+                });
+
+
+                return false;
+                });
+            
+        }); // jquery end
+    </script>
+    
+
+
+
+</body></html>

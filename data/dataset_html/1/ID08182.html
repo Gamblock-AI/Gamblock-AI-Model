@@ -1,0 +1,268 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+    <title>Chat window</title>
+    <link href="https://test140n.ruangkomunikasilc.com/css/chatapi.css" rel="stylesheet">
+    <link href="https://test140n.ruangkomunikasilc.com/font-awesome/css/font-awesome.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+
+
+
+
+
+    <div class="wrapper">
+        <div class="cont no-padding" id="content">
+
+            <div class="right" id="comment" style="display:none;">
+                <div class="live-chat-header" style="background-color: #da0f09">
+                    <img width="50px" src="https://datafile.ruangkomunikasilc.com/img/banner/10004ETGavatar_1749027858.png">
+                    <span class="name" style="margin-left: 6px;">CUSTOMER CARE</span>
+                </div>
+
+
+                <div class="chat komentar no-padding" data-chat="person3" style="padding-bottom: 160px; min-height: 256px;">
+                    <div style="color: #fff; text-align: center; margin-bottom: 25px; margin-top: 15px;">Anda ingin
+                        menilai chat ini ?</div>
+                    <div style="text-align: center;">
+                        <a><img style="margin-right: 10px;" id="like_icn" class="like_icn" src="img/like_before.webp"></a>
+                        <a><img class="dislike_icn" id="dislike_icn" src="img/dislike_before.webp"></a>
+                    </div>
+                    <div style="color: #fff; text-align: center; margin-bottom: 25px; margin-top: 25px;">Tinggalkan
+                        Komentar</div>
+                </div>
+
+                <div style="width: calc(100% - 30px);border-radius: 5px;margin: 0 auto;">
+
+                    <textarea id="comment-msg" class="textarea" style="overflow: auto; overflow-wrap: break-word; resize: none; height: 90px; width: 100%; padding: 5px; margin-bottom: 15px;" placeholder="Ketik pesan Anda di sini"></textarea>
+                    <div>
+                        <div class="col-xs-12" style="text-align: center;"> <a href="#" class="kirim2" id="kirim_comment">Kirim</a><a href="#" class="lewat">Lewat</a></div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="right" style="background-color: #190707;">
+
+                <!-- Update top -->
+                <div class="live-chat-header dropdown" style="background-color: #da0f09;">
+                    <img width="50px" src="https://datafile.ruangkomunikasilc.com/img/banner/10004ETGavatar_1749027858.png" style="margin-top: 5px;">
+                    <span class="name" style="margin-left: 6px;">CUSTOMER CARE</span>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="img/menu_icon.webp"></a>
+                    <ul class="dropdown-menu dropdown-user sub-menu" style="width: 100%;">
+
+                        <li><input type="file" id="chatimgupload" name="gbr-chat" accept="video/*,image/*" style="display:none"><a class="krem" style="cursor: pointer;" onclick="open_upload();">&nbsp;&nbsp;Send a File</a></li>
+                        <li><a id="endchatdiv" class="krem" style="cursor: pointer;display:none;" onclick="endchat(event)">&nbsp;&nbsp;Akhiri Chat</a></li>
+
+                    </ul>
+                </div>
+                <!-- End Update top -->
+                <div class="top1" style="background-color: #653332;">
+                    <span class="name">Layanan Sopan dan Ramah</span>
+                    <span class="rating" style="float: right;">
+                        <img width="15px" style="margin-right: 10px;" class="like_icn" src="img/like_before.webp">
+                        <img width="15px" class="dislike_icn" src="img/dislike_before.webp">
+                    </span>
+                </div>
+
+
+                <div class="chat active-chat" style="padding-bottom: 160px; min-height: 256px;">
+                    <ul class="chat-history" style="padding-left: 0px; padding-right: 0px; overflow-y: auto; position: relative; top: 0; width: 100%;word-wrap: break-word;">
+
+                    <li><div class="col-lg-12 col-xs-12 col-md-12 mh" style="margin-bottom: 5px; padding-bottom: 5px;"><div class="avatar"> <img width="50px" src="https://datafile.ruangkomunikasilc.com/img/banner/10004ETGavatar_1749027858.png"></div><div class="col-xs-8 col-lg-10 kol-10 odd"> <div class="bubble you" style="width:100%;"><span class="operator">Eyangtogel</span><br> <span class="chat-operator">Selamat datang di Eyangtogel<br><br>Rasakan permainan tebak angka real-time live casino premium hanya di 24D Spin!<br><br>Hot Promo :<br>- FREE SPIN EVOLUTION<br>- Pragmatic Play -- Bonus FREE SPIN 250x<br>- THR Gajian Heboh - Slot &amp; Live Casino<br>- Turnamen Spin Race 7 - Pragmatic Play<br>- Turnamen Spin Ways 7 - PGsoft<br>- Turnamen Poker Race - Hadiah 3 MILIAR<br>- CEME SADIS UNTUNG 100%<br>•<br>Sosmed : <a href="http://heylink.me/eyangtogel2013" class="linkified" target="_blank" style="color: #00ff16">heylink.me/eyangtogel2013</a><br>Telegram : <a href="http://t.me/Eyangtogel_Official_Bot" class="linkified" target="_blank" style="color: #00ff16">t.me/Eyangtogel_Official_Bot</a><br><br>Halo Kak, ada yang bisa kami bantu?</span></div></div></div></li></ul>
+
+                </div>
+
+
+                <div class="write">
+                    <div class="">
+                        <textarea id="send-chat" rows="1" data-min-rows="1" class="textarea live-msg autoExpand" onkeydown="send_chat(event);" style="overflow:hidden; overflow-wrap: break-word; resize: none; min-height: 36px; max-height: 60px; width: 100%; padding: 5px; padding-right: 55px;" placeholder="Ketik pesan Anda di sini"></textarea>
+                        <input type="hidden" name="_token" value="GIweGwmMQKi3ZoGj0wNcmcpnkocaSCa77kvLBUnS"><input type="hidden" name="chat-user" value="guest"><input type="hidden" name="chat-user_prov" value="10004">
+                        <a href="#" class="kirim fa fa-upload" id="btn-send2" onclick="send_chat2();"></a>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="https://test140n.ruangkomunikasilc.com/js/jquery-3.1.1.min.js"></script>
+    <script src="https://test140n.ruangkomunikasilc.com/js/bootstrap.min.js"></script>
+    <script src="https://test140n.ruangkomunikasilc.com/js/socket.io.js"></script>
+    <script src="https://test140n.ruangkomunikasilc.com/js/autoexpand.js"></script>
+    <script src="https://test140n.ruangkomunikasilc.com/js/linkify.min.js"></script>
+    <script src="https://test140n.ruangkomunikasilc.com/js/linkify-jquery.min.js"></script>
+
+
+    <script type="text/javascript">
+        
+        var public_path = "https://test140n.ruangkomunikasilc.com";
+        var prov_group = '1';
+        var user_prov_name = 'Eyangtogel';
+        var onoff = '1';
+        var t = "https://etgembul05.com/";
+
+        var prov_port = '3004';
+        var banner = '<img id="start_chat" class="chat-start-img" src="https://datafile.ruangkomunikasilc.com/img/banner/10004ETGbanner_1775007923.gif">';
+        var b_top = 'CUSTOMER CARE';
+        var b_color = '#da0f09';
+        var c_color = '#653332';
+        var bg_color = '#190707';
+
+        var b_byline = 'Layanan Sopan dan Ramah';
+        var b_avatar = 'https://datafile.ruangkomunikasilc.com/img/banner/10004ETGavatar_1749027858.png';
+        var b_plavatar = 'https://ruangkomunikasilc.com/img/banner/default-plavatar.png';
+        var b_onchat = 'CUSTOMER CARE';
+        var b_offchat = 'OFFLINE';
+
+        var cook = getCookie('min');
+        var user = rklc_user('guest');
+        var bkname = "";
+
+        var user_prov = "10004";
+
+        var con1 = "";
+        var tcon1 = "";
+        var con2 = "";
+        var tcon2 = "";
+        var con3 = "";
+        var tcon3 = "";
+        var con4 = "";
+        var tcon4 = "";
+
+        var url_lc = 'https://ruangkomunikasilc.com';
+
+                    con1 = '&quot;Selamat datang di Eyangtogel\n\nRasakan permainan tebak angka real-time live casino premium hanya di 24D Spin!\n\nHot Promo :\n- FREE SPIN EVOLUTION\n- Pragmatic Play -- Bonus FREE SPIN 250x\n- THR Gajian Heboh - Slot &amp; Live Casino\n- Turnamen Spin Race 7 - Pragmatic Play\n- Turnamen Spin Ways 7 - PGsoft\n- Turnamen Poker Race - Hadiah 3 MILIAR\n- CEME SADIS UNTUNG 100%\n\u2022\nSosmed : heylink.me\/eyangtogel2013\nTelegram : t.me\/Eyangtogel_Official_Bot\n\nHalo Kak, ada yang bisa kami bantu?&quot;';
+            con1 = con1.slice(6, -6);
+            tcon1 = '600';
+                            con2 = '&quot;Selamat datang di Eyangtogel\n\nRasakan permainan tebak angka real-time live casino premium hanya di 24D Spin!\n\nHot Promo :\n- FREE SPIN EVOLUTION\n- Pragmatic Play -- Bonus FREE SPIN 250x\n- THR Gajian Heboh - Slot &amp; Live Casino\n- Turnamen Spin Race 7 - Pragmatic Play\n- Turnamen Spin Ways 7 - PGsoft\n- Turnamen Poker Race - Hadiah 3 MILIAR\n- CEME SADIS UNTUNG 100%\n\u2022\nSosmed : heylink.me\/eyangtogel2013\nTelegram : t.me\/Eyangtogel_Official_Bot\n\nHalo Kak, ada yang bisa kami bantu?&quot;';
+            con2 = con2.slice(6, -6);
+            tcon2 = '1';
+                            con3 = '&quot;Hai! Tim Customer Service kami akan segera bersama Anda. Terima kasih sudah menunggu dengan sabar!&quot;';
+            con3 = con3.slice(6, -6);
+            tcon3 = '60';
+            once_con3 = '0';
+                
+
+
+        $(".chat-img").change(function(event) {
+
+            var file = this.files[0];
+
+            var res = file.type.split("/");
+            var ext = res[1];
+            if (file.size > 3000000) {
+                alert('max upload size is 2mb');
+                $(".chat-img").val('');
+
+            }
+
+            if (file.type != "image/jpg" && file.type != "image/png" && file.type != "image/jpeg" && file.type !=
+                "image/gif") {
+                alert("Sorry, only JPG, JPEG, PNG & GIF files are allowed.");
+                $(".chat-img").val('');
+
+            }
+
+
+            if (this.files && this.files[0]) {
+
+
+                var FR = new FileReader();
+                var basenya = '';
+                FR.addEventListener("load", function(e) {
+
+                    socket.emit('chat-img', {
+                        img: true,
+                        buffer: e.target.result,
+                        ext: ext,
+                        username: user,
+                        user_prov: user_prov
+                    });
+                });
+                FR.readAsDataURL(this.files[0]);
+            }
+            $(".chat-img").val('');
+
+        });
+
+
+
+
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function setCookie(cname, cvalue, exhours) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exhours * 60 * 60 * 1000));
+            var expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function rklc_user(user, callback) {
+
+            if (user == 'guest' || user.length === 1) {
+                if (getCookie('visit')) {
+                    user = getCookie('visit');
+                } else {
+
+                    var cryptoObj = window.crypto || window.msCrypto;
+
+                    if (cryptoObj) {
+                        var array = new Uint32Array(1);
+                        cryptoObj.getRandomValues(array)
+                        var randnum = array[0];
+                    } else {
+                        var randnum = (Math.floor(Math.random() * 100000000)).toString();
+                    }
+
+
+                    pad = '00000000';
+                    randomint = (pad + randnum).slice(-pad.length);
+                    user = '' + randomint;
+                    setCookie('visit', user, 1);
+
+                }
+
+
+            }
+            return user;
+        }
+    </script>
+    
+    <script src="https://test140n.ruangkomunikasilc.com/js/chat/livechat-cli2.js?v=1732075681"></script>
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;746433c3cee142f7b82d83bac2fd408c&quot;,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9eaad65c283d9daa',t:'MTc3NTkxOTM3OQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
+
+
+
+
+
+</body></html>

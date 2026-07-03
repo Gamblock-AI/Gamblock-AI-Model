@@ -1,0 +1,449 @@
+<html lang="id"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SOBAT777 — Situs Slot Terbaik &amp; Terpercaya • Mudah Maxwin</title>
+
+  <!-- Canonical sesuai permintaan -->
+  <link rel="canonical" href="https://probangali.com/how-to-create-a-website/">
+  <link rel="amphtml" href="https://probangali.com/how-to-create-a-website/amp/">
+
+  <meta name="description" content="SOBAT777 adalah situs slot terbaik &amp; terpercaya dengan provider lengkap, proses cepat, dan peluang maxwin yang tinggi. Daftar &amp; main sekarang!">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#6c2bd9">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SOBAT777 — Situs Slot Terbaik &amp; Terpercaya • Mudah Maxwin">
+  <meta property="og:description" content="Provider lengkap, promo menarik, proses cepat, peluang maxwin tinggi. Bergabung di SOBAT777 sekarang!">
+  <meta property="og:image" content="https://dummyimage.com/1200x630/6c2bd9/ffffff&amp;text=SOBAT777">
+  <meta property="og:url" content="https://probangali.com/how-to-create-a-website/">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SOBAT777 — Situs Slot Terbaik &amp; Terpercaya • Mudah Maxwin">
+  <meta name="twitter:description" content="Provider lengkap, promo menarik, proses cepat, peluang maxwin tinggi.">
+  <meta name="twitter:image" content="https://dummyimage.com/1200x630/6c2bd9/ffffff&amp;text=SOBAT777">
+
+  <!-- Preconnect font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0b0b12;
+      --card:#131327;
+      --text:#e7e7ff;
+      --muted:#b6b6d8;
+      --brand:#6c2bd9;
+      --brand2:#a855f7;
+      --ok:#22c55e;
+      --warn:#fbbf24;
+      --danger:#ef4444;
+      --shadow: 0 10px 30px rgba(108,43,217,.25);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:"Inter",system-ui,Segoe UI,Roboto,Arial,sans-serif;line-height:1.65}
+    a{color:#fff;text-decoration:none}
+    .container{max-width:1080px;margin:0 auto;padding:24px}
+
+    /* ===== Header elegan (mobile-first) ===== */
+    .site-header{
+      position:sticky; top:0; z-index:50;
+      background:linear-gradient(180deg, rgba(11,11,18,.9), rgba(11,11,18,.65));
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:60px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:18px;color:#fff}
+    .brand-badge{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand2));display:grid;place-items:center;box-shadow:var(--shadow)}
+    .brand-badge svg{width:22px;height:22px;fill:#fff}
+
+    .menu-btn{
+      width:44px;height:44px;border-radius:12px;
+      display:grid;place-items:center;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.08);
+      cursor:pointer; -webkit-tap-highlight-color: transparent;
+    }
+    .menu-btn:active{transform:scale(.98)}
+    .menu-icon,
+    .menu-icon::before,
+    .menu-icon::after{
+      content:""; display:block; width:20px; height:2px; background:#fff; border-radius:2px;
+      transition:.25s ease; position:relative;
+    }
+    .menu-icon::before{position:absolute; top:-6px}
+    .menu-icon::after{position:absolute; top:6px}
+
+    .main-nav{
+      position:fixed; inset:0 0 auto 0; top:60px;
+      background:linear-gradient(180deg, rgba(11,11,18,.98), rgba(11,11,18,.92));
+      transform:translateY(-10px); opacity:0; pointer-events:none;
+      transition:.25s ease; padding:18px 24px;
+      display:flex; flex-direction:column; gap:10px;
+      border-top:1px solid rgba(255,255,255,.06);
+    }
+    .main-nav .nav-link{
+      padding:12px 14px; border-radius:12px; color:#e7e7ff; font-weight:600;
+      background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08)
+    }
+    .main-nav .nav-cta{justify-content:center}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:999px;background:linear-gradient(90deg,var(--brand),var(--brand2));box-shadow:var(--shadow);font-weight:700;border:1px solid rgba(255,255,255,.08)}
+    .btn:hover{transform:translateY(-1px);transition:.2s}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,.15)}
+
+    .menu-open .main-nav{transform:translateY(0); opacity:1; pointer-events:auto}
+    .menu-open .menu-icon{background:transparent}
+    .menu-open .menu-icon::before{top:0; transform:rotate(45deg)}
+    .menu-open .menu-icon::after{top:0; transform:rotate(-45deg)}
+
+    /* ===== Banner tepat di bawah header ===== */
+    .header-banner{position:relative; isolation:isolate}
+    .header-banner img{
+      width:100%; height:auto; display:block;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      aspect-ratio: 16/6; object-fit:cover; /* crop rapi di HP/desktop */
+    }
+    .header-banner .overlay{
+      position:absolute; inset:0; display:grid; place-items:center;
+      padding:24px;
+      background:linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.45));
+    }
+    .header-banner .content{
+      text-align:center; max-width:920px; margin:auto;
+    }
+    .header-banner h1{
+      font-size:clamp(22px,4.2vw,42px);
+      margin:0 0 8px; line-height:1.15;
+      background:linear-gradient(90deg,var(--brand),var(--brand2));
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+      text-shadow: 0 1px 0 rgba(0,0,0,.2);
+    }
+    .header-banner p{color:#eaeaff;margin:0 0 14px}
+    .cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+
+    /* ===== Hero & sections ===== */
+    .hero{padding:32px 0 20px}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+    .h1{font-size:clamp(28px,4.2vw,46px);line-height:1.1;margin:8px 0 14px;font-weight:800}
+    .lead{font-size:clamp(14px,2.2vw,18px);color:var(--muted);max-width:680px}
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px}
+    .tick{display:flex;align-items:flex-start;gap:10px;margin:10px 0}
+    .tick svg{min-width:18px;margin-top:4px}
+    .badges{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:12px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px}
+    .section{padding:34px 0}
+    .section h2{font-size:26px;margin:0 0 10px}
+    .muted{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .list{margin:0;padding-left:18px}
+    .list li{margin:6px 0}
+    .provider{display:flex;align-items:center;gap:10px}
+    .provider svg{opacity:.9}
+    .pay{display:flex;gap:10px;flex-wrap:wrap}
+    .pay .pill{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
+    footer{padding:28px 0;border-top:1px solid rgba(255,255,255,.06);color:#c7c7ee}
+    .mini{font-size:12.5px;line-height:1.5}
+    .disclaimer{border-left:3px solid var(--warn);padding-left:12px}
+
+    /* ===== Responsive ===== */
+    @media (min-width:920px){
+      .menu-btn{display:none}
+      .main-nav{
+        position:static; inset:auto; transform:none; opacity:1; pointer-events:auto;
+        background:transparent; border-top:0; padding:0;
+        flex-direction:row; gap:10px;
+      }
+      .main-nav .nav-link{background:transparent;border-color:transparent}
+    }
+    @media (max-width:920px){
+      .hero-grid,.grid,.grid-2{grid-template-columns:1fr}
+      .hero{padding-top:24px}
+    }
+  </style>
+
+  <!-- Schema.org minimal -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"SOBAT777",
+    "url":"",
+    "logo":"https://dummyimage.com/300x300/6c2bd9/ffffff&text=SOBAT777",
+    "sameAs":[]
+  }
+  </script>
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="container nav">
+      <button class="menu-btn" aria-label="Buka menu" aria-expanded="false">
+        <span class="menu-icon" aria-hidden="true"></span>
+      </button>
+
+      <a class="brand" href="#">
+        <span class="brand-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 .5-5.5 4.6 1.9 7.1L12 17l-6.4 4.2 1.9-7.1L2 9.5 9 9l3-7z"></path></svg>
+        </span>
+        <span>SOBAT777</span>
+      </a>
+
+      <nav class="main-nav" data-nav="">
+        <a href="#fitur" class="nav-link">Fitur</a>
+        <a href="#provider" class="nav-link">Provider</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <a href="https://warau-e.com/sbt" class="btn nav-cta" target="_blank" rel="noreferrer noopener">Daftar / Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Gambar di bawah header (dengan overlay) ===== -->
+  <section class="header-banner" aria-label="Banner promosi SOBAT777">
+    <!-- Ganti src di bawah ini ke gambar kamu -->
+    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&amp;w=1600&amp;auto=format&amp;fit=crop" alt="Banner SOBAT777 — pengalaman bermain modern" loading="lazy" decoding="async">
+    <div class="overlay">
+      <div class="content">
+        <h1>SOBAT777 Link Alternatif Mudah Akses</h1>
+        <p>Provider lengkap • Proses cepat • Bonus harian</p>
+        <div class="cta">
+          <a id="daftar" href="https://warau-e.com/sbt" class="btn" aria-label="Daftar sekarang" target="_blank" rel="noreferrer noopener">Daftar Sekarang</a>
+          <a href="#fitur" class="btn ghost" aria-label="Lihat fitur">Lihat Fitur</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="muted" style="letter-spacing:.12em;text-transform:uppercase;font-weight:700">Situs Slot Terpercaya</p>
+        <h2 class="h1">Semua yang Kamu Butuh di <span style="background:linear-gradient(90deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent">SOBAT777</span></h2>
+        <p class="lead"><a href="https://probangali.com/how-to-create-a-website" style="color: #12c2e9; text-decoration: none;">SOBAT777</a> hadir menemani setiap pengalaman anda bermain game slot online dimanapun dan kapanpun.akses link alternatif kami melalui situs sobat777 ini dan nikmati pengalaman bermain yang aman, cepat, dan menguntungkan. Proses <b>daftar &amp; deposit</b> kilat, <b>provider lengkap</b>, dan <b>promosi aktif</b> setiap hari.</p>
+
+        <div class="badges">
+          <div class="hero-card">
+            <div class="tick">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#22c55e"><path d="M9 16.2l-3.5-3.5L4 14.2l5 5 11-11-1.5-1.5z"></path></svg>
+              <div><b>Terpercaya</b><br><span class="muted">Sistem fair &amp; transparan, keamanan berlapis.</span></div>
+            </div>
+            <div class="tick">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#22c55e"><path d="M9 16.2l-3.5-3.5L4 14.2l5 5 11-11-1.5-1.5z"></path></svg>
+              <div><b>Provider Lengkap</b><br><span class="muted">Pragmatic Play, PG Soft, Habanero, dan banyak lagi.</span></div>
+            </div>
+            <div class="tick">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#22c55e"><path d="M9 16.2l-3.5-3.5L4 14.2l5 5 11-11-1.5-1.5z"></path></svg>
+              <div><b>Mudah Maxwin</b><br><span class="muted">RTP informatif &amp; event promo rutin.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual / Stat -->
+      <div class="card" aria-label="Ringkasan keunggulan">
+        <h3 style="margin:0 0 8px">Keunggulan Utama</h3>
+        <ul class="list">
+          <li>🔐 Enkripsi &amp; verifikasi berlapis</li>
+          <li>⚡ Deposit &amp; WD cepat (e-wallet &amp; bank)</li>
+          <li>🎁 Bonus harian &amp; turnamen</li>
+          <li>📞 Layanan 24/7 via live chat</li>
+        </ul>
+        <div style="height:8px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden;margin-top:12px">
+          <div style="width:92%;height:100%;background:linear-gradient(90deg,var(--brand),var(--brand2))"></div>
+        </div>
+        <p class="mini muted" style="margin-top:6px">Kepuasan member (bulan ini)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Fitur ===== -->
+  <section id="fitur" class="section">
+    <div class="container">
+      <h2>Kenapa Memilih SOBAT777?</h2>
+      <p class="muted">Semua yang kamu perlukan untuk bermain nyaman dan fokus meraih maxwin.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Proses Ngebut</h3>
+          <p>Daftar, deposit, dan withdraw serba cepat dengan sistem otomatis 24/7.</p>
+        </div>
+        <div class="card">
+          <h3>Event &amp; Promo</h3>
+          <p>Hadiah menarik setiap minggu. Klaim bonus, free spin, dan cashback.</p>
+        </div>
+        <div class="card">
+          <h3>UI Nyaman</h3>
+          <p>Desain modern, ringan, dan responsif di semua perangkat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Provider ===== -->
+  <section id="provider" class="section">
+    <div class="container">
+      <h2>Provider Favorit</h2>
+      <div class="grid-2">
+        <div class="card">
+          <div class="provider">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#a855f7"><circle cx="12" cy="12" r="10"></circle></svg>
+            <b>Pragmatic Play</b>
+          </div>
+          <p class="muted">Slot populer, fitur buy spin, dan volatilitas beragam.</p>
+        </div>
+        <div class="card">
+          <div class="provider">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#a855f7"><rect x="3" y="3" width="18" height="18" rx="4"></rect></svg>
+            <b>PG Soft</b>
+          </div>
+          <p class="muted">Grafik tajam, mekanik unik, banyak pilihan tema.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Pembayaran ===== -->
+  <section class="section">
+    <div class="container">
+      <h2>Metode Pembayaran</h2>
+      <p class="muted">Bank utama &amp; e-wallet populer didukung penuh.</p>
+      <div class="pay">
+        <span class="pill">BCA</span>
+        <span class="pill">BNI</span>
+        <span class="pill">BRI</span>
+        <span class="pill">Mandiri</span>
+        <span class="pill">CIMB</span>
+        <span class="pill">OVO</span>
+        <span class="pill">DANA</span>
+        <span class="pill">Gopay</span>
+        <span class="pill">ShopeePay</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Testimoni ===== -->
+  <section class="section">
+    <div class="container">
+      <h2>Yang Mereka Katakan</h2>
+      <div class="grid">
+        <div class="card">
+          <p>“WD kenceng, CS responsif. Nyaman main di sini.”</p>
+          <p class="mini muted">— Andi, Jakarta</p>
+        </div>
+        <div class="card">
+          <p>“Pilihan game lengkap, eventnya menarik tiap minggu.”</p>
+          <p class="mini muted">— Sari, Surabaya</p>
+        </div>
+        <div class="card">
+          <p>“UI enak, gampang cari game favorit. Recommended!”</p>
+          <p class="mini muted">— Rudi, Bandung</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section id="faq" class="section">
+    <div class="container">
+      <h2>Pertanyaan Umum</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Bagaimana cara daftar?</h3>
+          <p>Klik tombol <b>Daftar Sekarang</b>, isi data singkat, verifikasi, lalu login.</p>
+        </div>
+        <div class="card">
+          <h3>Berapa lama WD?</h3>
+          <p>Rata-rata hitungan menit. Waktu aktual tergantung metode &amp; antrian.</p>
+        </div>
+        <div class="card">
+          <h3>Apakah ada demo?</h3>
+          <p>Beberapa game menyediakan mode demo agar kamu bisa coba terlebih dahulu.</p>
+        </div>
+        <div class="card">
+          <h3>Promonya apa saja?</h3>
+          <p>Bonus harian, cashback, dan turnamen. Cek banner promo saat login.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA block ===== -->
+  <section class="section">
+    <div class="container card">
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:18px;justify-content:space-between">
+        <div>
+          <h3 style="margin:0">Siap Gaskeun Maxwin?</h3>
+          <p class="muted" style="margin:6px 0 0">Bergabung dengan ribuan pemain yang sudah nyaman bermain di SOBAT777.</p>
+        </div>
+        <div class="cta">
+          <a href="https://warau-e.com/sbt" class="btn" target="_blank" rel="noreferrer noopener">Daftar / Login</a>
+          <a href="#" class="btn ghost">Hubungi CS</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Responsible gaming ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="disclaimer mini">
+        <p><b>Bermain Bertanggung Jawab:</b> Harap bermain secara bijak. Pastikan kamu berusia 18+ dan pahami risiko. Jika butuh bantuan, silakan batasi waktu &amp; budget bermain atau hubungi layanan dukungan terkait.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <div class="container mini">
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px">
+        <a href="#">Syarat &amp; Ketentuan</a>
+        <span class="muted">•</span>
+        <a href="#">Kebijakan Privasi</a>
+        <span class="muted">•</span>
+        <a href="#faq">FAQ</a>
+        <span class="muted">•</span>
+        <a href="mailto:support@sobat777.example">Kontak</a>
+      </div>
+      <div class="muted">© <span id="y">2026</span> SOBAT777. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- ===== Script kecil ===== -->
+  <script>
+    // Tahun otomatis & isi og:url saat runtime
+    document.getElementById('y').textContent = new Date().getFullYear();
+    try {
+      const url = window.location.href;
+      const og = document.querySelector('meta[property="og:url"]');
+      if (og) og.setAttribute('content', url);
+    } catch(e){}
+
+    // Toggle menu mobile + kunci scroll
+    (function(){
+      const btn = document.querySelector('.menu-btn');
+      const root = document.documentElement;
+      const nav = document.querySelector('[data-nav]');
+
+      function toggleMenu(force){
+        const open = typeof force === 'boolean' ? force : !root.classList.contains('menu-open');
+        root.classList.toggle('menu-open', open);
+        btn?.setAttribute('aria-expanded', open ? 'true' : 'false');
+        document.body.style.overflow = open ? 'hidden' : '';
+      }
+
+      btn?.addEventListener('click', ()=> toggleMenu());
+      nav?.addEventListener('click', e=>{
+        if(e.target.closest('a')) toggleMenu(false);
+      });
+      window.addEventListener('resize', ()=>{
+        if(window.innerWidth >= 920) toggleMenu(false);
+      });
+    })();
+  </script>
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;91e9d9daeea74fa193956ed186a80b15&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+</body></html>

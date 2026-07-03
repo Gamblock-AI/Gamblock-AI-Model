@@ -1,0 +1,146 @@
+<html lang="id"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blackyes — Insight Over Illusion</title>
+
+<meta name="description" content="Blackyes official site — Insight Over Illusion.">
+<meta name="robots" content="index, follow">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+html,body{
+    height:100%;
+    background:#000;
+}
+
+/* FULLSCREEN CONTAINER */
+.hero{
+    position:relative;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+}
+
+/* FULL BACKGROUND (BLUR) */
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:url("https://blackyes.ink/image/blackyes.jpg") center center / cover no-repeat;
+    filter: blur(45px) brightness(.35);
+    transform: scale(1.2);
+    z-index:1;
+}
+
+/* MAIN IMAGE (UTUH) */
+.hero img{
+    position:relative;
+    z-index:2;
+    max-width:90vw;
+    max-height:70vh;
+    object-fit:contain; /* KUNCI: TIDAK TERPOTONG */
+    box-shadow:0 40px 100px rgba(0,0,0,.85);
+    animation: imageIn 1.3s ease;
+}
+
+/* TEXT CONTENT */
+.content{
+    position:relative;
+    z-index:2;
+    margin-top:28px;
+    text-align:center;
+    animation: textIn 1.5s ease;
+}
+
+h1{
+    font-size:2.3rem;
+    letter-spacing:4px;
+    font-weight:600;
+    margin-bottom:18px;
+}
+
+.divider{
+    width:110px;
+    height:2px;
+    margin:0 auto;
+    background:linear-gradient(90deg,transparent,#fff,transparent);
+    opacity:.7;
+}
+
+/* FOOTER */
+footer{
+    position:absolute;
+    bottom:28px;
+    z-index:2;
+    font-size:.8rem;
+    opacity:.55;
+    letter-spacing:1px;
+}
+
+/* ANIMATION */
+@keyframes imageIn{
+    from{
+        opacity:0;
+        transform:scale(.94);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes textIn{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:600px){
+    h1{
+        font-size:1.6rem;
+        letter-spacing:2px;
+    }
+    .hero img{
+        max-height:65vh;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+
+    <!-- GAMBAR UTUH -->
+    <img src="https://blackyes.ink/image/blackyes.jpg" alt="Blackyes">
+
+    <div class="content">
+        <h1>Insight Over Illusion</h1>
+        <div class="divider"></div>
+    </div>
+
+    <footer>
+        © 2026 Blackyes. All rights reserved.
+    </footer>
+
+</div>
+
+
+
+</body></html>

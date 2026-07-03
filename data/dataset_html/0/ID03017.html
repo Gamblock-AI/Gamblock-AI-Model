@@ -1,0 +1,1066 @@
+<html lang="id"><head itemscope="itemscope" itemtype="http://schema.org/WebSite"><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.v="1.2.3",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{let r=arguments[0][e];delete arguments[0][e],arguments[0][t(e)]=r})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<!-- Google tag (gtag.js) consent mode dataLayer added by Site Kit -->
+<script type="text/javascript" id="google_gtagjs-js-consent-mode-data-layer" src="data:text/javascript;base64,Ci8qIDwhW0NEQVRBWyAqLwp3aW5kb3cuZGF0YUxheWVyID0gd2luZG93LmRhdGFMYXllciB8fCBbXTtmdW5jdGlvbiBndGFnKCl7ZGF0YUxheWVyLnB1c2goYXJndW1lbnRzKTt9Cmd0YWcoJ2NvbnNlbnQnLCAnZGVmYXVsdCcsIHsiYWRfcGVyc29uYWxpemF0aW9uIjoiZGVuaWVkIiwiYWRfc3RvcmFnZSI6ImRlbmllZCIsImFkX3VzZXJfZGF0YSI6ImRlbmllZCIsImFuYWx5dGljc19zdG9yYWdlIjoiZGVuaWVkIiwiZnVuY3Rpb25hbGl0eV9zdG9yYWdlIjoiZGVuaWVkIiwic2VjdXJpdHlfc3RvcmFnZSI6ImRlbmllZCIsInBlcnNvbmFsaXphdGlvbl9zdG9yYWdlIjoiZGVuaWVkIiwicmVnaW9uIjpbIkFUIiwiQkUiLCJCRyIsIkNIIiwiQ1kiLCJDWiIsIkRFIiwiREsiLCJFRSIsIkVTIiwiRkkiLCJGUiIsIkdCIiwiR1IiLCJIUiIsIkhVIiwiSUUiLCJJUyIsIklUIiwiTEkiLCJMVCIsIkxVIiwiTFYiLCJNVCIsIk5MIiwiTk8iLCJQTCIsIlBUIiwiUk8iLCJTRSIsIlNJIiwiU0siXSwid2FpdF9mb3JfdXBkYXRlIjo1MDB9KTsKd2luZG93Ll9nb29nbGVzaXRla2l0Q29uc2VudENhdGVnb3J5TWFwID0geyJzdGF0aXN0aWNzIjpbImFuYWx5dGljc19zdG9yYWdlIl0sIm1hcmtldGluZyI6WyJhZF9zdG9yYWdlIiwiYWRfdXNlcl9kYXRhIiwiYWRfcGVyc29uYWxpemF0aW9uIl0sImZ1bmN0aW9uYWwiOlsiZnVuY3Rpb25hbGl0eV9zdG9yYWdlIiwic2VjdXJpdHlfc3RvcmFnZSJdLCJwcmVmZXJlbmNlcyI6WyJwZXJzb25hbGl6YXRpb25fc3RvcmFnZSJdfTsKd2luZG93Ll9nb29nbGVzaXRla2l0Q29uc2VudHMgPSB7ImFkX3BlcnNvbmFsaXphdGlvbiI6ImRlbmllZCIsImFkX3N0b3JhZ2UiOiJkZW5pZWQiLCJhZF91c2VyX2RhdGEiOiJkZW5pZWQiLCJhbmFseXRpY3Nfc3RvcmFnZSI6ImRlbmllZCIsImZ1bmN0aW9uYWxpdHlfc3RvcmFnZSI6ImRlbmllZCIsInNlY3VyaXR5X3N0b3JhZ2UiOiJkZW5pZWQiLCJwZXJzb25hbGl6YXRpb25fc3RvcmFnZSI6ImRlbmllZCIsInJlZ2lvbiI6WyJBVCIsIkJFIiwiQkciLCJDSCIsIkNZIiwiQ1oiLCJERSIsIkRLIiwiRUUiLCJFUyIsIkZJIiwiRlIiLCJHQiIsIkdSIiwiSFIiLCJIVSIsIklFIiwiSVMiLCJJVCIsIkxJIiwiTFQiLCJMVSIsIkxWIiwiTVQiLCJOTCIsIk5PIiwiUEwiLCJQVCIsIlJPIiwiU0UiLCJTSSIsIlNLIl0sIndhaXRfZm9yX3VwZGF0ZSI6NTAwfTsKLyogXV0+ICovCg==">
+/* <![CDATA[ */
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {"ad_personalization":"denied","ad_storage":"denied","ad_user_data":"denied","analytics_storage":"denied","functionality_storage":"denied","security_storage":"denied","personalization_storage":"denied","region":["AT","BE","BG","CH","CY","CZ","DE","DK","EE","ES","FI","FR","GB","GR","HR","HU","IE","IS","IT","LI","LT","LU","LV","MT","NL","NO","PL","PT","RO","SE","SI","SK"],"wait_for_update":500});
+window._googlesitekitConsentCategoryMap = {"statistics":["analytics_storage"],"marketing":["ad_storage","ad_user_data","ad_personalization"],"functional":["functionality_storage","security_storage"],"preferences":["personalization_storage"]};
+window._googlesitekitConsents = {"ad_personalization":"denied","ad_storage":"denied","ad_user_data":"denied","analytics_storage":"denied","functionality_storage":"denied","security_storage":"denied","personalization_storage":"denied","region":["AT","BE","BG","CH","CY","CZ","DE","DK","EE","ES","FI","FR","GB","GR","HR","HU","IE","IS","IT","LI","LT","LU","LV","MT","NL","NO","PL","PT","RO","SE","SI","SK"],"wait_for_update":500};
+/* ]]> */
+</script>
+<!-- End Google tag (gtag.js) consent mode dataLayer added by Site Kit -->
+
+	<!-- This site is optimized with the Yoast SEO Premium plugin v23.7 (Yoast SEO v26.7) - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Metara News - Setara Bercerita</title><link rel="stylesheet" href="https://metaranews.co/wp-content/cache/min/1/b13983d519ffdd0f24ee1a10f18e00c5.css" media="all" data-minify="1">
+	<meta name="description" content="Metaranews adalah portal berita yang berkomitmen untuk menyajikan informasi terkini dan terpercaya kepada masyarakat. Berkedudukan di Jalan Kediri – Pare, Kecamatan Gurah, Kabupaten Kediri, Metaranews hadir sebagai sumber informasi yang dapat diandalkan, menjembatani kebutuhan akan berita seputar Jawa Timur.">
+	<link rel="canonical" href="https://metaranews.co/">
+	<link rel="next" href="https://metaranews.co/page/2/">
+	<meta property="og:locale" content="id_ID">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Metara News">
+	<meta property="og:description" content="Metaranews adalah portal berita yang berkomitmen untuk menyajikan informasi terkini dan terpercaya kepada masyarakat. Berkedudukan di Jalan Kediri – Pare, Kecamatan Gurah, Kabupaten Kediri, Metaranews hadir sebagai sumber informasi yang dapat diandalkan, menjembatani kebutuhan akan berita seputar Jawa Timur.">
+	<meta property="og:url" content="https://metaranews.co/">
+	<meta property="og:site_name" content="Metara News">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@metaranews">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://metaranews.co/","url":"https://metaranews.co/","name":"Metara News - Setara Bercerita","isPartOf":{"@id":"https://metaranews.co/#website"},"about":{"@id":"https://metaranews.co/#organization"},"description":"Metaranews adalah portal berita yang berkomitmen untuk menyajikan informasi terkini dan terpercaya kepada masyarakat. Berkedudukan di Jalan Kediri – Pare, Kecamatan Gurah, Kabupaten Kediri, Metaranews hadir sebagai sumber informasi yang dapat diandalkan, menjembatani kebutuhan akan berita seputar Jawa Timur.","breadcrumb":{"@id":"https://metaranews.co/#breadcrumb"},"inLanguage":"id"},{"@type":"BreadcrumbList","@id":"https://metaranews.co/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://metaranews.co/#website","url":"https://metaranews.co/","name":"Metara News","description":"Setara Bercerita","publisher":{"@id":"https://metaranews.co/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://metaranews.co/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"id"},{"@type":"Organization","@id":"https://metaranews.co/#organization","name":"Metara News","url":"https://metaranews.co/","logo":{"@type":"ImageObject","inLanguage":"id","@id":"https://metaranews.co/#/schema/logo/image/","url":"https://metaranews.co/wp-content/uploads/2022/02/m.png","contentUrl":"https://metaranews.co/wp-content/uploads/2022/02/m.png","width":296,"height":250,"caption":"Metara News"},"image":{"@id":"https://metaranews.co/#/schema/logo/image/"},"sameAs":["https://www.facebook.com/metaranews","https://x.com/metaranews","https://www.instagram.com/metaranews","https://www.tiktok.com/@metaranews.co"],"description":"Metaranews adalah portal berita yang berkomitmen untuk menyajikan informasi terkini dan terpercaya kepada masyarakat. Berkedudukan di Jalan Kediri – Pare, Kecamatan Gurah, Kabupaten Kediri, Metaranews hadir sebagai sumber informasi yang dapat diandalkan, menjembatani kebutuhan akan berita seputar Jawa Timur."}]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel="dns-prefetch" href="//www.googletagmanager.com">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+<link rel="alternate" type="application/rss+xml" title="Metara News » Feed" href="https://metaranews.co/feed/">
+<link rel="alternate" type="application/rss+xml" title="Metara News » Umpan Komentar" href="https://metaranews.co/comments/feed/">
+<style id="wp-img-auto-sizes-contain-inline-css" type="text/css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+
+
+<style id="wp-emoji-styles-inline-css" type="text/css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+
+<style id="admin-bar-inline-css" type="text/css">
+
+    /* Hide CanvasJS credits for P404 charts specifically */
+    #p404RedirectChart .canvasjs-chart-credit {
+        display: none !important;
+    }
+    
+    #p404RedirectChart canvas {
+        border-radius: 6px;
+    }
+
+    .p404-redirect-adminbar-weekly-title {
+        font-weight: bold;
+        font-size: 14px;
+        color: #fff;
+        margin-bottom: 6px;
+    }
+
+    #wpadminbar #wp-admin-bar-p404_free_top_button .ab-icon:before {
+        content: "\f103";
+        color: #dc3545;
+        top: 3px;
+    }
+    
+    #wp-admin-bar-p404_free_top_button .ab-item {
+        min-width: 80px !important;
+        padding: 0px !important;
+    }
+    
+    /* Ensure proper positioning and z-index for P404 dropdown */
+    .p404-redirect-adminbar-dropdown-wrap { 
+        min-width: 0; 
+        padding: 0;
+        position: static !important;
+    }
+    
+    #wpadminbar #wp-admin-bar-p404_free_top_button_dropdown {
+        position: static !important;
+    }
+    
+    #wpadminbar #wp-admin-bar-p404_free_top_button_dropdown .ab-item {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    .p404-redirect-dropdown-container {
+        min-width: 340px;
+        padding: 18px 18px 12px 18px;
+        background: #23282d !important;
+        color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+        margin-top: 10px;
+        position: relative !important;
+        z-index: 999999 !important;
+        display: block !important;
+        border: 1px solid #444;
+    }
+    
+    /* Ensure P404 dropdown appears on hover */
+    #wpadminbar #wp-admin-bar-p404_free_top_button .p404-redirect-dropdown-container { 
+        display: none !important;
+    }
+    
+    #wpadminbar #wp-admin-bar-p404_free_top_button:hover .p404-redirect-dropdown-container { 
+        display: block !important;
+    }
+    
+    #wpadminbar #wp-admin-bar-p404_free_top_button:hover #wp-admin-bar-p404_free_top_button_dropdown .p404-redirect-dropdown-container {
+        display: block !important;
+    }
+    
+    .p404-redirect-card {
+        background: #2c3338;
+        border-radius: 8px;
+        padding: 18px 18px 12px 18px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        border: 1px solid #444;
+    }
+    
+    .p404-redirect-btn {
+        display: inline-block;
+        background: #dc3545;
+        color: #fff !important;
+        font-weight: bold;
+        padding: 5px 22px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 17px;
+        transition: background 0.2s, box-shadow 0.2s;
+        margin-top: 8px;
+        box-shadow: 0 2px 8px rgba(220,53,69,0.15);
+        text-align: center;
+        line-height: 1.6;
+    }
+    
+    .p404-redirect-btn:hover {
+        background: #c82333;
+        color: #fff !important;
+        box-shadow: 0 4px 16px rgba(220,53,69,0.25);
+    }
+    
+    /* Prevent conflicts with other admin bar dropdowns */
+    #wpadminbar .ab-top-menu > li:hover > .ab-item,
+    #wpadminbar .ab-top-menu > li.hover > .ab-item {
+        z-index: auto;
+    }
+    
+    #wpadminbar #wp-admin-bar-p404_free_top_button:hover > .ab-item {
+        z-index: 999998 !important;
+    }
+    
+/*# sourceURL=admin-bar-inline-css */
+</style>
+<link rel="stylesheet" id="bloggingpro-fonts-css" href="https://fonts.googleapis.com/css?family=Poppins%3A300%2C700%26subset%3Dlatin%2C&amp;ver=1.4.2" type="text/css" media="all">
+
+<style id="bloggingpro-style-inline-css" type="text/css">
+kbd,a.button,button,.button,button.button,input[type="button"],input[type="reset"],input[type="submit"],.tagcloud a,ul.page-numbers li a.prev.page-numbers,ul.page-numbers li a.next.page-numbers,ul.page-numbers li span.page-numbers,.page-links > .page-link-number,.cat-links ul li a,.entry-footer .tag-text,.gmr-recentposts-widget li.listpost-gallery .gmr-rp-content .gmr-metacontent .cat-links-content a,.page-links > .post-page-numbers.current span,ol.comment-list li div.reply a,#cancel-comment-reply-link,.entry-footer .tags-links a:hover,.gmr-topnotification{background-color:#a51a31;}#primary-menu > li ul .current-menu-item > a,#primary-menu .sub-menu > li:hover > a,.cat-links-content a,.tagcloud li:before,a:hover,a:focus,a:active,.gmr-ontop:hover path,#navigationamp button.close-topnavmenu-wrap,.sidr a#sidr-id-close-topnavmenu-button,.sidr-class-menu-item i._mi,.sidr-class-menu-item img._mi,.text-marquee{color:#a51a31;}.widget-title:after,a.button,button,.button,button.button,input[type="button"],input[type="reset"],input[type="submit"],.tagcloud a,.sticky .gmr-box-content,.bypostauthor > .comment-body,.gmr-ajax-loader div:nth-child(1),.gmr-ajax-loader div:nth-child(2),.entry-footer .tags-links a:hover{border-color:#a51a31;}a,.gmr-ontop path{color:#2E2E2E;}.entry-content-single p a{color:#dd3333;}body{color:#444444;font-family:"Poppins","Helvetica Neue",sans-serif;font-weight:500;font-size:14px;}.site-header{background-image:url();-webkit-background-size:auto;-moz-background-size:auto;-o-background-size:auto;background-size:auto;background-repeat:repeat;background-position:center top;background-attachment:scroll;}.site-header,.gmr-verytopbanner{background-color:#ffffff;}.site-title a{color:#dd3333;}.site-description{color:#999999;}.top-header{background-color:#ffffff;}#gmr-responsive-menu,.gmr-mainmenu #primary-menu > li > a,.search-trigger .gmr-icon{color:#000000;}.gmr-mainmenu #primary-menu > li.menu-border > a span,.gmr-mainmenu #primary-menu > li.page_item_has_children > a:after,.gmr-mainmenu #primary-menu > li.menu-item-has-children > a:after,.gmr-mainmenu #primary-menu .sub-menu > li.page_item_has_children > a:after,.gmr-mainmenu #primary-menu .sub-menu > li.menu-item-has-children > a:after{border-color:#000000;}#gmr-responsive-menu:hover,.gmr-mainmenu #primary-menu > li:hover > a,.gmr-mainmenu #primary-menu > .current-menu-item > a,.gmr-mainmenu #primary-menu .current-menu-ancestor > a,.gmr-mainmenu #primary-menu .current_page_item > a,.gmr-mainmenu #primary-menu .current_page_ancestor > a,.search-trigger .gmr-icon:hover{color:#dd3333;}.gmr-mainmenu #primary-menu > li.menu-border:hover > a span,.gmr-mainmenu #primary-menu > li.menu-border.current-menu-item > a span,.gmr-mainmenu #primary-menu > li.menu-border.current-menu-ancestor > a span,.gmr-mainmenu #primary-menu > li.menu-border.current_page_item > a span,.gmr-mainmenu #primary-menu > li.menu-border.current_page_ancestor > a span,.gmr-mainmenu #primary-menu > li.page_item_has_children:hover > a:after,.gmr-mainmenu #primary-menu > li.menu-item-has-children:hover > a:after,.gmr-mainmenu #primary-menu .sub-menu > li.page_item_has_children:hover > a:after,.gmr-mainmenu #primary-menu .sub-menu > li.menu-item-has-children:hover > a:after{border-color:#dd3333;}.secondwrap-menu .gmr-mainmenu #primary-menu > li > a,.secondwrap-menu .search-trigger .gmr-icon{color:#555555;}#primary-menu > li.menu-border > a span{border-color:#555555;}.secondwrap-menu .gmr-mainmenu #primary-menu > li:hover > a,.secondwrap-menu .gmr-mainmenu #primary-menu > .current-menu-item > a,.secondwrap-menu .gmr-mainmenu #primary-menu .current-menu-ancestor > a,.secondwrap-menu .gmr-mainmenu #primary-menu .current_page_item > a,.secondwrap-menu .gmr-mainmenu #primary-menu .current_page_ancestor > a,.secondwrap-menu .gmr-mainmenu #primary-menu > li.page_item_has_children:hover > a:after,.secondwrap-menu .gmr-mainmenu #primary-menu > li.menu-item-has-children:hover > a:after,.secondwrap-menu .gmr-mainmenu #primary-menu .sub-menu > li.page_item_has_children:hover > a:after,.secondwrap-menu .gmr-mainmenu #primary-menu .sub-menu > li.menu-item-has-children:hover > a:after,.secondwrap-menu .search-trigger .gmr-icon:hover{color:#FF5722;}.secondwrap-menu .gmr-mainmenu #primary-menu > li.menu-border:hover > a span,.secondwrap-menu .gmr-mainmenu #primary-menu > li.menu-border.current-menu-item > a span,.secondwrap-menu .gmr-mainmenu #primary-menu > li.menu-border.current-menu-ancestor > a span,.secondwrap-menu .gmr-mainmenu #primary-menu > li.menu-border.current_page_item > a span,.secondwrap-menu .gmr-mainmenu #primary-menu > li.menu-border.current_page_ancestor > a span,.secondwrap-menu .gmr-mainmenu #primary-menu > li.page_item_has_children:hover > a:after,.secondwrap-menu .gmr-mainmenu #primary-menu > li.menu-item-has-children:hover > a:after,.secondwrap-menu .gmr-mainmenu #primary-menu .sub-menu > li.page_item_has_children:hover > a:after,.secondwrap-menu .gmr-mainmenu #primary-menu .sub-menu > li.menu-item-has-children:hover > a:after{border-color:#FF5722;}h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,.site-title,#primary-menu > li > a,.gmr-rp-biglink a,.gmr-rp-link a,.gmr-gallery-related ul li p a{font-family:"Poppins","Helvetica Neue",sans-serif;}.entry-main-single,.entry-main-single p{font-size:16px;}h1.title,h1.entry-title{font-size:28px;}h2.entry-title{font-size:19px;}.footer-container{background-color:#F5F5F5;}.widget-footer,.content-footer,.site-footer,.content-footer h3.widget-title{color:#B4B4B4;}.widget-footer a,.content-footer a,.site-footer a{color:#565656;}.widget-footer a:hover,.content-footer a:hover,.site-footer a:hover{color:#FF5722;}
+/*# sourceURL=bloggingpro-style-inline-css */
+</style>
+<style id="rocket-lazyload-inline-css" type="text/css">
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://metaranews.co/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}
+/*# sourceURL=rocket-lazyload-inline-css */
+</style>
+
+<!-- Potongan tag Google (gtag.js) ditambahkan oleh Site Kit -->
+<!-- Snippet Google Analytics telah ditambahkan oleh Site Kit -->
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.googletagmanager.com/gtag/js?id=GT-MQJZWB" id="google_gtagjs-js" async=""></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="google_gtagjs-js-after">
+/* <![CDATA[ */
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["metaranews.co"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-MQJZWB");
+//# sourceURL=google_gtagjs-js-after
+/* ]]> */
+</script>
+<link rel="https://api.w.org/" href="https://metaranews.co/wp-json/"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://metaranews.co/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.9.4">
+<meta name="generator" content="Site Kit by Google 1.176.0"><script type="rocketlazyloadscript" async="" data-rocket-src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9315587897926171" crossorigin="anonymous"></script>
+<meta name="p:domain_verify" content="ce7dda3ac7df25832f2f93ad29e91a7c">
+<meta name="msvalidate.01" content="C3F5E763842DEC7749C288ECDE5F83BC">
+<!-- Meta tag Google AdSense ditambahkan oleh Site Kit -->
+<meta name="google-adsense-platform-account" content="ca-host-pub-2644536267352236">
+<meta name="google-adsense-platform-domain" content="sitekit.withgoogle.com">
+<!-- Akhir tag meta Google AdSense yang ditambahkan oleh Site Kit -->
+<meta name="generator" content="Elementor 4.0.1; features: additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-auto">
+      <meta name="onesignal" content="wordpress-plugin">
+            <script type="rocketlazyloadscript">
+
+      window.OneSignalDeferred = window.OneSignalDeferred || [];
+
+      OneSignalDeferred.push(function(OneSignal) {
+        var oneSignal_options = {};
+        window._oneSignalInitOptions = oneSignal_options;
+
+        oneSignal_options['serviceWorkerParam'] = { scope: '/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/push/onesignal/' };
+oneSignal_options['serviceWorkerPath'] = 'OneSignalSDKWorker.js';
+
+        OneSignal.Notifications.setDefaultUrl("https://metaranews.co");
+
+        oneSignal_options['wordpress'] = true;
+oneSignal_options['appId'] = 'f5674f70-c38d-4f82-8504-9efd188c3973';
+oneSignal_options['allowLocalhostAsSecureOrigin'] = true;
+oneSignal_options['welcomeNotification'] = { };
+oneSignal_options['welcomeNotification']['title'] = "";
+oneSignal_options['welcomeNotification']['message'] = "";
+oneSignal_options['path'] = "https://metaranews.co/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/";
+oneSignal_options['safari_web_id'] = "web.onesignal.auto.4efa60d1-07b1-4ba2-89e8-693e25ede623";
+oneSignal_options['persistNotification'] = true;
+oneSignal_options['promptOptions'] = { };
+oneSignal_options['promptOptions']['actionMessage'] = "Dapatkan Informasi Berita Terbaru dari Metaranews.co dengan mengaktifkan notifikasi ini";
+oneSignal_options['promptOptions']['acceptButtonText'] = "IYA";
+oneSignal_options['promptOptions']['cancelButtonText'] = "NANTI";
+oneSignal_options['notifyButton'] = { };
+oneSignal_options['notifyButton']['enable'] = true;
+oneSignal_options['notifyButton']['position'] = 'bottom-right';
+oneSignal_options['notifyButton']['theme'] = 'default';
+oneSignal_options['notifyButton']['size'] = 'medium';
+oneSignal_options['notifyButton']['showCredit'] = true;
+oneSignal_options['notifyButton']['text'] = {};
+              OneSignal.init(window._oneSignalInitOptions);
+              OneSignal.Slidedown.promptPush()      });
+
+      function documentInitOneSignal() {
+        var oneSignal_elements = document.getElementsByClassName("OneSignal-prompt");
+
+        var oneSignalLinkClickHandler = function(event) { OneSignal.Notifications.requestPermission(); event.preventDefault(); };        for(var i = 0; i < oneSignal_elements.length; i++)
+          oneSignal_elements[i].addEventListener('click', oneSignalLinkClickHandler, false);
+      }
+
+      if (document.readyState === 'complete') {
+           documentInitOneSignal();
+      }
+      else {
+           window.addEventListener("load", function(event){
+               documentInitOneSignal();
+          });
+      }
+    </script>
+			<style>
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
+					background-image: none !important;
+				}
+				@media screen and (max-height: 1024px) {
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+				@media screen and (max-height: 640px) {
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+			</style>
+			
+<!-- Snippet Google Tag Manager telah ditambahkan oleh Site Kit -->
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+/* <![CDATA[ */
+
+			( function( w, d, s, l, i ) {
+				w[l] = w[l] || [];
+				w[l].push( {'gtm.start': new Date().getTime(), event: 'gtm.js'} );
+				var f = d.getElementsByTagName( s )[0],
+					j = d.createElement( s ), dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore( j, f );
+			} )( window, document, 'script', 'dataLayer', 'GTM-NX9XSRV' );
+			
+/* ]]> */
+</script>
+
+<!-- Snippet Google Tag Manager penutup telah ditambahkan oleh Site Kit -->
+
+<!-- Snippet Google AdSense telah ditambahkan oleh Site Kit -->
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" async="async" data-rocket-src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9315587897926171&amp;host=ca-host-pub-2644536267352236" crossorigin="anonymous"></script>
+
+<!-- Snippet Google AdSense penutup telah ditambahkan oleh Site Kit -->
+<link rel="icon" href="https://metaranews.co/wp-content/uploads/2022/02/cropped-m-32x32.png" sizes="32x32">
+<link rel="icon" href="https://metaranews.co/wp-content/uploads/2022/02/cropped-m-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://metaranews.co/wp-content/uploads/2022/02/cropped-m-180x180.png">
+<meta name="msapplication-TileImage" content="https://metaranews.co/wp-content/uploads/2022/02/cropped-m-270x270.png">
+		<style type="text/css" id="wp-custom-css">
+			.gmr-footer-logo img {
+	height:120px;
+	margin-left:-25px;
+}
+
+
+
+@media (max-width: 991px) {
+	.gmr-logo img {
+		max-height:60px;
+	}
+}
+
+
+.meta-view, .gmr-metacontent .byline {
+    display:none;
+}
+
+.posted-by {
+	display:none;
+}
+
+.gmr-gravatar-metasingle{
+	display:none;
+}		</style>
+		<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><link href="https://metaranews.co/wp-content/themes/bloggingpro/js/javascript-plugin-min.js?ver=1.4.2" rel="preload" as="script"><link href="https://metaranews.co/wp-content/cache/min/1/wp-content/themes/bloggingpro/js/tinyslider-custom.js?ver=1775145635" rel="preload" as="script"><link href="https://metaranews.co/wp-content/cache/min/1/wp-content/themes/bloggingpro/js/infinite-scroll-custom.js?ver=1775145635" rel="preload" as="script"><link href="https://metaranews.co/wp-content/cache/min/1/wp-content/themes/bloggingpro/js/customscript.js?ver=1775145635" rel="preload" as="script"><link href="https://metaranews.co/wp-content/plugins/google-site-kit/dist/assets/js/googlesitekit-consent-mode-bc2e26cfa69fcd4a8261.js" rel="preload" as="script"><link href="https://metaranews.co/wp-content/plugins/wp-consent-api/assets/js/wp-consent-api.min.js?ver=2.0.0" rel="preload" as="script"><link href="https://metaranews.co/wp-content/cache/min/1/sdks/web/v16/OneSignalSDK.page.js?ver=1775145635" rel="preload" as="script"><link href="https://metaranews.co/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" rel="preload" as="script"><link href="https://metaranews.co/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" rel="preload" as="script"><link href="https://metaranews.co/wp-includes/js/mediaelement/mediaelement-and-player.min.js?ver=4.2.17" rel="preload" as="script"><link href="https://metaranews.co/wp-includes/js/mediaelement/mediaelement-migrate.min.js?ver=6.9.4" rel="preload" as="script"><link href="https://metaranews.co/wp-includes/js/mediaelement/wp-mediaelement.min.js?ver=6.9.4" rel="preload" as="script"><link href="https://metaranews.co/wp-includes/js/mediaelement/renderers/vimeo.min.js?ver=4.2.17" rel="preload" as="script"><link href="https://www.googletagmanager.com/gtag/js?id=GT-MQJZWB" rel="preload" as="script"><link href="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9315587897926171" rel="preload" as="script" crossorigin="anonymous"><link href="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9315587897926171&amp;host=ca-host-pub-2644536267352236" rel="preload" as="script" crossorigin="anonymous"></head>
+
+<body class="home blog wp-theme-bloggingpro gmr-theme idtheme kentooz gmr-sticky gmr-disable-sticky group-blog hfeed elementor-default elementor-kit-6" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+		<!-- Snippet Google Tag Manager (noscript) telah ditambahkan oleh Site Kit -->
+		<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NX9XSRV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<!-- Snippet Google Tag Manager (noscript) penutup telah ditambahkan oleh Site Kit -->
+		<div id="full-container">
+<a class="skip-link screen-reader-text" href="#main">Loncat ke konten</a>
+
+
+<header id="masthead" class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+	<div class="container">
+					<div class="clearfix gmr-headwrapper">
+
+				<div class="list-table clearfix">
+					<div class="table-row">
+						<div class="table-cell onlymobile-menu">
+															<a id="gmr-responsive-menu" href="#menus" rel="nofollow" title="Menu Mobile"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" fill="currentColor"></path></svg><span class="screen-reader-text">Menu Mobile</span></a>
+													</div>
+												<div class="close-topnavmenu-wrap"><a id="close-topnavmenu-button" rel="nofollow" href="#"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m0-18C6.47 2 2 6.47 2 12s4.47 10 10 10s10-4.47 10-10S17.53 2 12 2m2.59 6L12 10.59L9.41 8L8 9.41L10.59 12L8 14.59L9.41 16L12 13.41L14.59 16L16 14.59L13.41 12L16 9.41L14.59 8z" fill="currentColor"></path></svg></a></div>
+												<div class="table-cell gmr-logo">
+															<div class="logo-wrap">
+									<a href="https://metaranews.co/" class="custom-logo-link" itemprop="url" title="Metara News">
+										<img src="https://metaranews.co/wp-content/uploads/2024/05/logo-metara-merah-tagline.png" alt="Metara News" title="Metara News" data-lazy-src="https://metaranews.co/wp-content/uploads/2024/05/logo-metara-merah-tagline.png" data-ll-status="loaded" class="entered lazyloaded"><noscript><img src="https://metaranews.co/wp-content/uploads/2024/05/logo-metara-merah-tagline.png" alt="Metara News" title="Metara News" /></noscript>
+									</a>
+								</div>
+														</div>
+													<div class="table-cell search">
+								<a id="search-menu-button-top" class="responsive-searchbtn pull-right" href="#" rel="nofollow"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none"><path d="M21 21l-4.486-4.494M19 10.5a8.5 8.5 0 1 1-17 0a8.5 8.5 0 0 1 17 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></g></svg></a>
+								<form method="get" id="search-topsearchform-container" class="gmr-searchform searchform topsearchform" action="https://metaranews.co/">
+									<input type="text" name="s" id="s" placeholder="Pencarian">
+									<button type="submit" class="topsearch-submit">Pencarian</button>
+								</form>
+							</div>
+							<div class="table-cell gmr-table-date">
+								<span class="gmr-top-date pull-right" data-lang="id"></span>
+							</div>
+											</div>
+				</div>
+							</div>
+				</div><!-- .container -->
+</header><!-- #masthead -->
+
+<div class="top-header">
+	<div class="container">
+	<div class="gmr-menuwrap mainwrap-menu clearfix">
+		<nav id="site-navigation" class="gmr-mainmenu" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+			<ul id="primary-menu" class="menu"><li class="menu-item menu-item-type-menulogo-btn gmr-menulogo-btn"><a href="https://metaranews.co/" id="menulogo-button" itemprop="url" title="Metara News"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Metara News" title="Metara News" itemprop="image" data-lazy-src="https://metaranews.co/wp-content/uploads/2022/08/logo-metara-web.png"><noscript><img src="https://metaranews.co/wp-content/uploads/2022/08/logo-metara-web.png" alt="Metara News" title="Metara News" itemprop="image" /></noscript></a></li><li id="menu-item-4663" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-4663"><a href="https://metaranews.co" aria-current="page" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-766" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-766"><a href="https://metaranews.co/category/news/" itemprop="url"><span itemprop="name">News</span></a></li>
+<li id="menu-item-767" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-767"><a href="https://metaranews.co/category/budaya/asli_kediri/" itemprop="url"><span itemprop="name">Asli Kediri</span></a></li>
+<li id="menu-item-768" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-768"><a href="https://metaranews.co/category/nusantara/" itemprop="url"><span itemprop="name">Nusantara</span></a></li>
+<li id="menu-item-769" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-769"><a href="https://metaranews.co/category/budaya/" itemprop="url"><span itemprop="name">Budaya</span></a></li>
+<li id="menu-item-4664" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4664"><a href="https://metaranews.co/category/olahraga/" itemprop="url"><span itemprop="name">Olahraga</span></a></li>
+<li id="menu-item-4666" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4666"><a href="https://metaranews.co/category/wisata/" itemprop="url"><span itemprop="name">Wisata</span></a></li>
+<li id="menu-item-4665" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4665"><a href="https://metaranews.co/category/kesehatan/" itemprop="url"><span itemprop="name">Kesehatan</span></a></li>
+<li id="menu-item-4667" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4667"><a href="https://metaranews.co/category/tips/" itemprop="url"><span itemprop="name">Tips</span></a></li>
+<li id="menu-item-6134" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6134"><a href="https://metaranews.co/opini" itemprop="url"><span itemprop="name">Opini</span></a></li>
+<li id="menu-item-41465" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-41465"><a href="https://metaranews.co/category/pariwara/" itemprop="url"><span itemprop="name">Pariwara</span></a></li>
+<li class="menu-item menu-item-type-search-btn gmr-search-btn pull-right"><a id="search-menu-button" href="#" rel="nofollow"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none"><path d="M21 21l-4.486-4.494M19 10.5a8.5 8.5 0 1 1-17 0a8.5 8.5 0 0 1 17 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></g></svg></a><div class="search-dropdown search" id="search-dropdown-container"><form method="get" class="gmr-searchform searchform" action="https://metaranews.co/"><input type="text" name="s" id="s" placeholder="Pencarian"></form></div></li></ul>		</nav><!-- #site-navigation -->
+	</div>
+		</div><!-- .container -->
+</div><!-- .top-header -->
+<div class="site inner-wrap" id="site-container">
+
+<div class="container"><div class="gmr-topnotification"><div class="wrap-marquee"><div class="text-marquee">News Update </div><span class="marquee">				<a href="https://metaranews.co/headline/persik-kediri-buru-3-poin-di-kandang-madura-united/" class="gmr-recent-marquee" title="Persik Kediri Buru 3 Poin di Kandang Madura United">Persik Kediri Buru 3 Poin di Kandang Madura United</a>
+							<a href="https://metaranews.co/headline/mengkreng-makin-semrawut-3-bupati-turun-tangan-upayakan-pembangunan-flyover/" class="gmr-recent-marquee" title="Mengkreng Makin Semrawut, 3 Bupati “Turun Tangan” Upayakan Pembangunan Flyover">Mengkreng Makin Semrawut, 3 Bupati “Turun Tangan” Upayakan Pembangunan Flyover</a>
+							<a href="https://metaranews.co/headline/resmi-pimpin-nasdem-kota-kediri-khusnul-arif-bakal-perkuat-konsolidasi-partai/" class="gmr-recent-marquee" title="Resmi Pimpin NasDem Kota Kediri, Khusnul Arif Bakal Perkuat Konsolidasi Partai">Resmi Pimpin NasDem Kota Kediri, Khusnul Arif Bakal Perkuat Konsolidasi Partai</a>
+							<a href="https://metaranews.co/headline/geger-tpa-di-kota-kediri-mas-pipin-ingatkan-sampah-bisa-jadi-bom-waktu-jika-tak-segera-diatasi/" class="gmr-recent-marquee" title="Geger TPA di Kota Kediri, Mas Pipin Ingatkan Sampah Bisa Jadi “Bom Waktu” Jika Tak Segera Diatasi">Geger TPA di Kota Kediri, Mas Pipin Ingatkan Sampah Bisa Jadi “Bom Waktu” Jika Tak Segera Diatasi</a>
+							<a href="https://metaranews.co/headline/nenek-104-tahun-asal-kediri-berangkat-haji-tahun-ini-jadi-yang-tertua-se-indonesia/" class="gmr-recent-marquee" title="Nenek 104 Tahun Asal Kediri Berangkat Haji Tahun Ini, Jadi yang Tertua Se-Indonesia!">Nenek 104 Tahun Asal Kediri Berangkat Haji Tahun Ini, Jadi yang Tertua Se-Indonesia!</a>
+			</span></div></div></div>
+
+	<div id="content" class="gmr-content">
+
+		<div class="container">
+			<div class="row">
+
+<div id="primary" class="col-md-main">
+	<div class="content-area">
+		<div class="gmr-bigheadline clearfix">					<div class="gmr-big-headline">
+						<div class="other-content-thumbnail">
+							<a href="https://metaranews.co/headline/persik-kediri-buru-3-poin-di-kandang-madura-united/" title="Persik Kediri Buru 3 Poin di Kandang Madura United">
+								<img fetchpriority="high" width="640" height="358" src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-09-at-14.00.42-640x358.jpeg" class="attachment-verylarge size-verylarge wp-post-image entered lazyloaded" alt="Persik Kediri" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-09-at-14.00.42-640x358.jpeg 640w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-09-at-14.00.42-200x112.jpeg 200w" data-lazy-sizes="(max-width: 640px) 100vw, 640px" title="Persik Kediri" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-09-at-14.00.42-640x358.jpeg" data-ll-status="loaded" sizes="(max-width: 640px) 100vw, 640px" srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-09-at-14.00.42-640x358.jpeg 640w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-09-at-14.00.42-200x112.jpeg 200w"><noscript><img fetchpriority="high" width="640" height="358" src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-09-at-14.00.42-640x358.jpeg" class="attachment-verylarge size-verylarge wp-post-image" alt="Persik Kediri" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-09-at-14.00.42-640x358.jpeg 640w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-09-at-14.00.42-200x112.jpeg 200w" sizes="(max-width: 640px) 100vw, 640px" title="Persik Kediri" /></noscript>							</a>
+													</div>
+						<div class="gmr-bigheadline-content">
+							<div class="gmr-metacontent"><span class="posted-on"><time class="entry-date published updated" itemprop="dateModified" datetime="2026-04-09T16:10:57+07:00">09/04/2026</time></span></div>							<div class="gmr-rp-biglink">
+								<a href="https://metaranews.co/headline/persik-kediri-buru-3-poin-di-kandang-madura-united/" class="gmr-slide-titlelink" title="Persik Kediri Buru 3 Poin di Kandang Madura United">Persik Kediri Buru 3 Poin di Kandang Madura United</a>
+							</div>
+							<p>Metaranews.co, Kota Kediri – Persik Kediri menatap laga tandang melawan Madura United dengan tekad mencuri&nbsp;[…]</p>
+						</div>
+					</div>
+					<div class="gmr-owl-bigheadline">
+						<h3 class="widget-title">HEADLINE</h3>					<div class="gmr-owl-carousel-bigheadline">
+															<div class="gmr-slider-content">
+															<div class="other-content-thumbnail thumb-radius">
+									<a href="https://metaranews.co/headline/mengkreng-makin-semrawut-3-bupati-turun-tangan-upayakan-pembangunan-flyover/" title="Mengkreng Makin Semrawut, 3 Bupati “Turun Tangan” Upayakan Pembangunan Flyover">
+										<img width="200" height="112" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20112'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image" alt="Mengkreng" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-20.38.47-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-20.38.47-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-20.38.47-640x358.jpeg 640w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" title="Mengkreng" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-20.38.47-200x112.jpeg"><noscript><img width="200" height="112" src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-20.38.47-200x112.jpeg" class="attachment-medium size-medium wp-post-image" alt="Mengkreng" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-20.38.47-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-20.38.47-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-20.38.47-640x358.jpeg 640w" sizes="(max-width: 200px) 100vw, 200px" title="Mengkreng" /></noscript>																			</a>
+								</div>
+														<div class="gmr-rp-link">
+								<div class="gmr-metacontent"><span class="posted-on"><time class="entry-date published updated" itemprop="dateModified" datetime="2026-04-08T21:21:33+07:00">08/04/2026</time></span></div>								<a href="https://metaranews.co/headline/mengkreng-makin-semrawut-3-bupati-turun-tangan-upayakan-pembangunan-flyover/" class="gmr-slide-titlelink" title="Mengkreng Makin Semrawut, 3 Bupati “Turun Tangan” Upayakan Pembangunan Flyover">Mengkreng Makin Semrawut, 3 Bupati “Turun Tangan” Upayakan Pembangunan Flyover</a>
+							</div>
+						</div>
+															<div class="gmr-slider-content">
+															<div class="other-content-thumbnail thumb-radius">
+									<a href="https://metaranews.co/headline/resmi-pimpin-nasdem-kota-kediri-khusnul-arif-bakal-perkuat-konsolidasi-partai/" title="Resmi Pimpin NasDem Kota Kediri, Khusnul Arif Bakal Perkuat Konsolidasi Partai">
+										<img width="200" height="112" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20112'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image" alt="Khusnul Arif" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.29.14-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.29.14-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.29.14-640x358.jpeg 640w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" title="Khusnul Arif" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.29.14-200x112.jpeg"><noscript><img width="200" height="112" src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.29.14-200x112.jpeg" class="attachment-medium size-medium wp-post-image" alt="Khusnul Arif" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.29.14-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.29.14-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.29.14-640x358.jpeg 640w" sizes="(max-width: 200px) 100vw, 200px" title="Khusnul Arif" /></noscript>																			</a>
+								</div>
+														<div class="gmr-rp-link">
+								<div class="gmr-metacontent"><span class="posted-on"><time class="entry-date published" itemprop="datePublished" datetime="2026-04-08T19:00:12+07:00">08/04/2026</time><time class="updated" datetime="2026-04-08T18:41:09+07:00">08/04/2026</time></span></div>								<a href="https://metaranews.co/headline/resmi-pimpin-nasdem-kota-kediri-khusnul-arif-bakal-perkuat-konsolidasi-partai/" class="gmr-slide-titlelink" title="Resmi Pimpin NasDem Kota Kediri, Khusnul Arif Bakal Perkuat Konsolidasi Partai">Resmi Pimpin NasDem Kota Kediri, Khusnul Arif Bakal Perkuat Konsolidasi Partai</a>
+							</div>
+						</div>
+															<div class="gmr-slider-content">
+															<div class="other-content-thumbnail thumb-radius">
+									<a href="https://metaranews.co/headline/geger-tpa-di-kota-kediri-mas-pipin-ingatkan-sampah-bisa-jadi-bom-waktu-jika-tak-segera-diatasi/" title="Geger TPA di Kota Kediri, Mas Pipin Ingatkan Sampah Bisa Jadi “Bom Waktu” Jika Tak Segera Diatasi">
+										<img width="200" height="112" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20112'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image" alt="Mas Pipin" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.14.18-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.14.18-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.14.18-768x432.jpeg 768w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.14.18-1536x864.jpeg 1536w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.14.18-640x358.jpeg 640w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.14.18.jpeg 1600w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" title="Mas Pipin" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.14.18-200x112.jpeg"><noscript><img width="200" height="112" src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.14.18-200x112.jpeg" class="attachment-medium size-medium wp-post-image" alt="Mas Pipin" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.14.18-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.14.18-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.14.18-768x432.jpeg 768w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.14.18-1536x864.jpeg 1536w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.14.18-640x358.jpeg 640w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.14.18.jpeg 1600w" sizes="(max-width: 200px) 100vw, 200px" title="Mas Pipin" /></noscript>																			</a>
+								</div>
+														<div class="gmr-rp-link">
+								<div class="gmr-metacontent"><span class="posted-on"><time class="entry-date published updated" itemprop="dateModified" datetime="2026-04-08T18:31:13+07:00">08/04/2026</time></span></div>								<a href="https://metaranews.co/headline/geger-tpa-di-kota-kediri-mas-pipin-ingatkan-sampah-bisa-jadi-bom-waktu-jika-tak-segera-diatasi/" class="gmr-slide-titlelink" title="Geger TPA di Kota Kediri, Mas Pipin Ingatkan Sampah Bisa Jadi “Bom Waktu” Jika Tak Segera Diatasi">Geger TPA di Kota Kediri, Mas Pipin Ingatkan Sampah Bisa Jadi “Bom Waktu” Jika Tak Segera Diatasi</a>
+							</div>
+						</div>
+															<div class="gmr-slider-content">
+															<div class="other-content-thumbnail thumb-radius">
+									<a href="https://metaranews.co/headline/nenek-104-tahun-asal-kediri-berangkat-haji-tahun-ini-jadi-yang-tertua-se-indonesia/" title="Nenek 104 Tahun Asal Kediri Berangkat Haji Tahun Ini, Jadi yang Tertua Se-Indonesia!">
+										<img width="200" height="112" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20112'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image" alt="Kediri" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-10.23.13-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-10.23.13-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-10.23.13-768x432.jpeg 768w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-10.23.13-640x358.jpeg 640w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-10.23.13.jpeg 1280w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" title="Kediri" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-10.23.13-200x112.jpeg"><noscript><img width="200" height="112" src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-10.23.13-200x112.jpeg" class="attachment-medium size-medium wp-post-image" alt="Kediri" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-10.23.13-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-10.23.13-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-10.23.13-768x432.jpeg 768w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-10.23.13-640x358.jpeg 640w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-10.23.13.jpeg 1280w" sizes="(max-width: 200px) 100vw, 200px" title="Kediri" /></noscript>																			</a>
+								</div>
+														<div class="gmr-rp-link">
+								<div class="gmr-metacontent"><span class="posted-on"><time class="entry-date published updated" itemprop="dateModified" datetime="2026-04-08T12:53:54+07:00">08/04/2026</time></span></div>								<a href="https://metaranews.co/headline/nenek-104-tahun-asal-kediri-berangkat-haji-tahun-ini-jadi-yang-tertua-se-indonesia/" class="gmr-slide-titlelink" title="Nenek 104 Tahun Asal Kediri Berangkat Haji Tahun Ini, Jadi yang Tertua Se-Indonesia!">Nenek 104 Tahun Asal Kediri Berangkat Haji Tahun Ini, Jadi yang Tertua Se-Indonesia!</a>
+							</div>
+						</div>
+															<div class="gmr-slider-content">
+															<div class="other-content-thumbnail thumb-radius">
+									<a href="https://metaranews.co/headline/lirboyo-didorong-jadi-tuan-rumah-muktamar-nu-begini-tanggapan-pengasuh/" title="Lirboyo Didorong Jadi Tuan Rumah Muktamar NU, Begini Tanggapan Pengasuh">
+										<img width="200" height="112" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20112'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image" alt="Lirboyo" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-16.56.02-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-16.56.02-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-16.56.02-640x358.jpeg 640w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" title="Lirboyo" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-16.56.02-200x112.jpeg"><noscript><img width="200" height="112" src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-16.56.02-200x112.jpeg" class="attachment-medium size-medium wp-post-image" alt="Lirboyo" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-16.56.02-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-16.56.02-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-16.56.02-640x358.jpeg 640w" sizes="(max-width: 200px) 100vw, 200px" title="Lirboyo" /></noscript>																			</a>
+								</div>
+														<div class="gmr-rp-link">
+								<div class="gmr-metacontent"><span class="posted-on"><time class="entry-date published updated" itemprop="dateModified" datetime="2026-04-07T17:33:56+07:00">07/04/2026</time></span></div>								<a href="https://metaranews.co/headline/lirboyo-didorong-jadi-tuan-rumah-muktamar-nu-begini-tanggapan-pengasuh/" class="gmr-slide-titlelink" title="Lirboyo Didorong Jadi Tuan Rumah Muktamar NU, Begini Tanggapan Pengasuh">Lirboyo Didorong Jadi Tuan Rumah Muktamar NU, Begini Tanggapan Pengasuh</a>
+							</div>
+						</div>
+															<div class="gmr-slider-content">
+															<div class="other-content-thumbnail thumb-radius">
+									<a href="https://metaranews.co/headline/blokade-tpa-klotok-akhirnya-dibuka-pemkot-kediri-janji-penuhi-tuntutan-warga-tapi/" title="Blokade TPA Klotok Akhirnya Dibuka: Pemkot Kediri Janji Penuhi Tuntutan Warga, Tapi…">
+										<img width="200" height="112" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20112'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image" alt="Kediri" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-15.50.59-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-15.50.59-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-15.50.59-640x358.jpeg 640w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" title="Kediri" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-15.50.59-200x112.jpeg"><noscript><img width="200" height="112" src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-15.50.59-200x112.jpeg" class="attachment-medium size-medium wp-post-image" alt="Kediri" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-15.50.59-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-15.50.59-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-15.50.59-640x358.jpeg 640w" sizes="(max-width: 200px) 100vw, 200px" title="Kediri" /></noscript>																			</a>
+								</div>
+														<div class="gmr-rp-link">
+								<div class="gmr-metacontent"><span class="posted-on"><time class="entry-date published" itemprop="datePublished" datetime="2026-04-07T16:23:01+07:00">07/04/2026</time><time class="updated" datetime="2026-04-07T16:03:52+07:00">07/04/2026</time></span></div>								<a href="https://metaranews.co/headline/blokade-tpa-klotok-akhirnya-dibuka-pemkot-kediri-janji-penuhi-tuntutan-warga-tapi/" class="gmr-slide-titlelink" title="Blokade TPA Klotok Akhirnya Dibuka: Pemkot Kediri Janji Penuhi Tuntutan Warga, Tapi…">Blokade TPA Klotok Akhirnya Dibuka: Pemkot Kediri Janji Penuhi Tuntutan Warga, Tapi…</a>
+							</div>
+						</div>
+															<div class="gmr-slider-content">
+															<div class="other-content-thumbnail thumb-radius">
+									<a href="https://metaranews.co/headline/warga-blokade-tpa-klotok-tuntut-kompensasi-rp-2-juta-per-kk-pemkot-kediri-gandeng-its-untuk-lakukan-kajian/" title="Warga Blokade TPA Klotok Tuntut Kompensasi Rp 2 Juta per KK, Pemkot Kediri Gandeng ITS untuk Lakukan Kajian">
+										<img width="200" height="112" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20112'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image" alt="Kediri" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-14.46.29-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-14.46.29-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-14.46.29-640x358.jpeg 640w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" title="Kediri" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-14.46.29-200x112.jpeg"><noscript><img width="200" height="112" src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-14.46.29-200x112.jpeg" class="attachment-medium size-medium wp-post-image" alt="Kediri" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-14.46.29-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-14.46.29-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-14.46.29-640x358.jpeg 640w" sizes="(max-width: 200px) 100vw, 200px" title="Kediri" /></noscript>																			</a>
+								</div>
+														<div class="gmr-rp-link">
+								<div class="gmr-metacontent"><span class="posted-on"><time class="entry-date published updated" itemprop="dateModified" datetime="2026-04-07T15:53:55+07:00">07/04/2026</time></span></div>								<a href="https://metaranews.co/headline/warga-blokade-tpa-klotok-tuntut-kompensasi-rp-2-juta-per-kk-pemkot-kediri-gandeng-its-untuk-lakukan-kajian/" class="gmr-slide-titlelink" title="Warga Blokade TPA Klotok Tuntut Kompensasi Rp 2 Juta per KK, Pemkot Kediri Gandeng ITS untuk Lakukan Kajian">Warga Blokade TPA Klotok Tuntut Kompensasi Rp 2 Juta per KK, Pemkot Kediri Gandeng ITS untuk Lakukan Kajian</a>
+							</div>
+						</div>
+									</div></div></div><div class="gmr-banner-aftermodulehome text-center"><div class="image-link">
+  <a href="https://whatsapp.com/channel/0029Vb4KmgzHLHQfqeNgfJ2c" target="_blank">
+    <img src="https://metaranews.co/wp-content/uploads/2025/03/Ads-Banner-web-saluran-metara-3.png" alt="Advertisement" data-lazy-src="https://metaranews.co/wp-content/uploads/2025/03/Ads-Banner-web-saluran-metara-3.png" data-ll-status="loaded" class="entered lazyloaded"><noscript><img src="https://metaranews.co/wp-content/uploads/2025/03/Ads-Banner-web-saluran-metara-3.png" alt="Advertisement"></noscript>
+  </a>
+</div>
+
+<style>
+
+  .image-link img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+</style></div><div class="clearfix gmr-element-carousel"><div class="gmr-title-carousel"><h3 class="widget-title">Budaya</h3></div><div class="gmr-owl-carousel">				<div class="gmr-slider-content">
+									<div class="other-content-thumbnail thumb-radius">
+					<a href="https://metaranews.co/headline/suara-yang-menemani-kala-itu-kini-pamitan-radio-wijangsongko-resmi-tutup-siar-mulai-1-april-2026/" title="Suara yang Menemani Kala Itu Kini Pamitan, Radio Wijangsongko Resmi Tutup Siar Mulai 1 April 2026">
+					<img width="200" height="112" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20112'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image" alt="Radio Wijangsongko" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-31-at-18.43.38-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-31-at-18.43.38-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-31-at-18.43.38-768x432.jpeg 768w, https://metaranews.co/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-31-at-18.43.38-1536x864.jpeg 1536w, https://metaranews.co/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-31-at-18.43.38-640x358.jpeg 640w, https://metaranews.co/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-31-at-18.43.38.jpeg 1600w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" title="Radio Wijangsongko" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-31-at-18.43.38-200x112.jpeg"><noscript><img width="200" height="112" src="https://metaranews.co/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-31-at-18.43.38-200x112.jpeg" class="attachment-medium size-medium wp-post-image" alt="Radio Wijangsongko" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-31-at-18.43.38-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-31-at-18.43.38-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-31-at-18.43.38-768x432.jpeg 768w, https://metaranews.co/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-31-at-18.43.38-1536x864.jpeg 1536w, https://metaranews.co/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-31-at-18.43.38-640x358.jpeg 640w, https://metaranews.co/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-31-at-18.43.38.jpeg 1600w" sizes="(max-width: 200px) 100vw, 200px" title="Radio Wijangsongko" /></noscript>					</a>
+										</div>
+										<div class="gmr-rp-link">
+						<a href="https://metaranews.co/headline/suara-yang-menemani-kala-itu-kini-pamitan-radio-wijangsongko-resmi-tutup-siar-mulai-1-april-2026/" class="gmr-slide-titlelink" title="Suara yang Menemani Kala Itu Kini Pamitan, Radio Wijangsongko Resmi Tutup Siar Mulai 1 April 2026">Suara yang Menemani Kala Itu Kini Pamitan, Radio Wijangsongko Resmi Tutup Siar Mulai 1 April 2026</a>
+					</div>
+				</div>
+							<div class="gmr-slider-content">
+									<div class="other-content-thumbnail thumb-radius">
+					<a href="https://metaranews.co/headline/berkah-idulfitri-omzet-penjualan-tahu-kuning-khas-kediri-naik-hingga-3-kali-lipat/" title="Berkah Idulfitri, Omzet Penjualan Tahu Kuning Khas Kediri Naik hingga 3 Kali Lipat">
+					<img width="200" height="112" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20112'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image" alt="" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/03/IMG-20260326-WA0013-200x112.jpg 200w, https://metaranews.co/wp-content/uploads/2026/03/IMG-20260326-WA0013-300x170.jpg 300w, https://metaranews.co/wp-content/uploads/2026/03/IMG-20260326-WA0013-768x432.jpg 768w, https://metaranews.co/wp-content/uploads/2026/03/IMG-20260326-WA0013-1536x864.jpg 1536w, https://metaranews.co/wp-content/uploads/2026/03/IMG-20260326-WA0013-640x358.jpg 640w, https://metaranews.co/wp-content/uploads/2026/03/IMG-20260326-WA0013.jpg 1599w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" title="IMG-20260326-WA0013" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/03/IMG-20260326-WA0013-200x112.jpg"><noscript><img width="200" height="112" src="https://metaranews.co/wp-content/uploads/2026/03/IMG-20260326-WA0013-200x112.jpg" class="attachment-medium size-medium wp-post-image" alt="" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/03/IMG-20260326-WA0013-200x112.jpg 200w, https://metaranews.co/wp-content/uploads/2026/03/IMG-20260326-WA0013-300x170.jpg 300w, https://metaranews.co/wp-content/uploads/2026/03/IMG-20260326-WA0013-768x432.jpg 768w, https://metaranews.co/wp-content/uploads/2026/03/IMG-20260326-WA0013-1536x864.jpg 1536w, https://metaranews.co/wp-content/uploads/2026/03/IMG-20260326-WA0013-640x358.jpg 640w, https://metaranews.co/wp-content/uploads/2026/03/IMG-20260326-WA0013.jpg 1599w" sizes="(max-width: 200px) 100vw, 200px" title="IMG-20260326-WA0013" /></noscript>					</a>
+										</div>
+										<div class="gmr-rp-link">
+						<a href="https://metaranews.co/headline/berkah-idulfitri-omzet-penjualan-tahu-kuning-khas-kediri-naik-hingga-3-kali-lipat/" class="gmr-slide-titlelink" title="Berkah Idulfitri, Omzet Penjualan Tahu Kuning Khas Kediri Naik hingga 3 Kali Lipat">Berkah Idulfitri, Omzet Penjualan Tahu Kuning Khas Kediri Naik hingga 3 Kali Lipat</a>
+					</div>
+				</div>
+							<div class="gmr-slider-content">
+									<div class="other-content-thumbnail thumb-radius">
+					<a href="https://metaranews.co/headline/jembatan-lama-kota-kediri-perlu-segera-direstorasi/" title="Jembatan Lama Kota Kediri Perlu Segera Direstorasi">
+					<img width="200" height="112" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20112'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image" alt="Kediri" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-21-at-12.20.16-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-21-at-12.20.16-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-21-at-12.20.16-768x430.jpeg 768w, https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-21-at-12.20.16-640x358.jpeg 640w, https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-21-at-12.20.16.jpeg 1280w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" title="Kediri" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-21-at-12.20.16-200x112.jpeg"><noscript><img width="200" height="112" src="https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-21-at-12.20.16-200x112.jpeg" class="attachment-medium size-medium wp-post-image" alt="Kediri" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-21-at-12.20.16-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-21-at-12.20.16-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-21-at-12.20.16-768x430.jpeg 768w, https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-21-at-12.20.16-640x358.jpeg 640w, https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-21-at-12.20.16.jpeg 1280w" sizes="(max-width: 200px) 100vw, 200px" title="Kediri" /></noscript>					</a>
+										</div>
+										<div class="gmr-rp-link">
+						<a href="https://metaranews.co/headline/jembatan-lama-kota-kediri-perlu-segera-direstorasi/" class="gmr-slide-titlelink" title="Jembatan Lama Kota Kediri Perlu Segera Direstorasi">Jembatan Lama Kota Kediri Perlu Segera Direstorasi</a>
+					</div>
+				</div>
+							<div class="gmr-slider-content">
+									<div class="other-content-thumbnail thumb-radius">
+					<a href="https://metaranews.co/headline/perayaan-hut-ke-157-jembatan-lama-kota-kediri-digelar-hari-ini-ada-pameran-batik-hingga-pentas-seni/" title="Perayaan HUT ke-157 Jembatan Lama Kota Kediri Digelar Hari Ini, Ada Pameran Batik hingga Pentas Seni">
+					<img width="200" height="112" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20112'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image" alt="Jembatan Lama Kota Kediri" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-14-at-05.26.33-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-14-at-05.26.33-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-14-at-05.26.33-640x358.jpeg 640w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" title="Jembatan Lama Kota Kediri" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-14-at-05.26.33-200x112.jpeg"><noscript><img width="200" height="112" src="https://metaranews.co/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-14-at-05.26.33-200x112.jpeg" class="attachment-medium size-medium wp-post-image" alt="Jembatan Lama Kota Kediri" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-14-at-05.26.33-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-14-at-05.26.33-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-14-at-05.26.33-640x358.jpeg 640w" sizes="(max-width: 200px) 100vw, 200px" title="Jembatan Lama Kota Kediri" /></noscript>					</a>
+										</div>
+										<div class="gmr-rp-link">
+						<a href="https://metaranews.co/headline/perayaan-hut-ke-157-jembatan-lama-kota-kediri-digelar-hari-ini-ada-pameran-batik-hingga-pentas-seni/" class="gmr-slide-titlelink" title="Perayaan HUT ke-157 Jembatan Lama Kota Kediri Digelar Hari Ini, Ada Pameran Batik hingga Pentas Seni">Perayaan HUT ke-157 Jembatan Lama Kota Kediri Digelar Hari Ini, Ada Pameran Batik hingga Pentas Seni</a>
+					</div>
+				</div>
+							<div class="gmr-slider-content">
+									<div class="other-content-thumbnail thumb-radius">
+					<a href="https://metaranews.co/headline/dewan-kebudayaan-kabupaten-kediri-resmi-dilantik-ini-susunan-kepengurusannya/" title="Dewan Kebudayaan Kabupaten Kediri Resmi Dilantik, Ini Susunan Kepengurusannya">
+					<img width="200" height="112" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20112'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image" alt="" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/03/IMG-20260311-WA0002-200x112.jpg 200w, https://metaranews.co/wp-content/uploads/2026/03/IMG-20260311-WA0002-300x170.jpg 300w, https://metaranews.co/wp-content/uploads/2026/03/IMG-20260311-WA0002-640x358.jpg 640w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" title="IMG-20260311-WA0002" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/03/IMG-20260311-WA0002-200x112.jpg"><noscript><img width="200" height="112" src="https://metaranews.co/wp-content/uploads/2026/03/IMG-20260311-WA0002-200x112.jpg" class="attachment-medium size-medium wp-post-image" alt="" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/03/IMG-20260311-WA0002-200x112.jpg 200w, https://metaranews.co/wp-content/uploads/2026/03/IMG-20260311-WA0002-300x170.jpg 300w, https://metaranews.co/wp-content/uploads/2026/03/IMG-20260311-WA0002-640x358.jpg 640w" sizes="(max-width: 200px) 100vw, 200px" title="IMG-20260311-WA0002" /></noscript>					</a>
+										</div>
+										<div class="gmr-rp-link">
+						<a href="https://metaranews.co/headline/dewan-kebudayaan-kabupaten-kediri-resmi-dilantik-ini-susunan-kepengurusannya/" class="gmr-slide-titlelink" title="Dewan Kebudayaan Kabupaten Kediri Resmi Dilantik, Ini Susunan Kepengurusannya">Dewan Kebudayaan Kabupaten Kediri Resmi Dilantik, Ini Susunan Kepengurusannya</a>
+					</div>
+				</div>
+			</div></div>		<main id="main" class="site-main gmr-infinite-selector" role="main">
+						<header>
+					<h1 class="page-title screen-reader-text">Metara News</h1>
+				</header>
+				<div id="gmr-main-load">
+<article id="post-50751" class="item-content gmr-box-content item-infinite gmr-smallthumb clearfix post-50751 post type-post status-publish format-standard has-post-thumbnail hentry category-headline category-news category-olahraga tag-persik-kediri" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
+	<div class="pull-left content-thumbnail thumb-radius"><a href="https://metaranews.co/headline/persik-kediri-buru-3-poin-di-kandang-madura-united/" itemprop="url" title="" rel="bookmark"><img width="200" height="112" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20112'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image" alt="Persik Kediri" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-09-at-14.00.42-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-09-at-14.00.42-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-09-at-14.00.42-640x358.jpeg 640w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" title="Persik Kediri" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-09-at-14.00.42-200x112.jpeg"><noscript><img width="200" height="112" src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-09-at-14.00.42-200x112.jpeg" class="attachment-medium size-medium wp-post-image" alt="Persik Kediri" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-09-at-14.00.42-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-09-at-14.00.42-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-09-at-14.00.42-640x358.jpeg 640w" sizes="(max-width: 200px) 100vw, 200px" title="Persik Kediri" /></noscript></a></div>	<div class="item-article">
+		<div class="gmr-metacontent gmr-metacontent-archive"><span class="cat-links-content"><a href="https://metaranews.co/category/headline/" rel="category tag">Headline</a>, <a href="https://metaranews.co/category/news/" rel="category tag">News</a>, <a href="https://metaranews.co/category/olahraga/" rel="category tag">Olahraga</a></span><span class="entry-author vcard screen-reader-text" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/person"><a class="url fn n" href="https://metaranews.co/author/moch-hadi/" title="Permalink ke: Moch Hadi" itemprop="url"><span itemprop="name">Moch Hadi</span></a></span><span class="posted-on byline"><time class="entry-date published updated" itemprop="dateModified" datetime="2026-04-09T16:10:57+07:00">09/04/2026</time></span></div>		<header class="entry-header">
+			<h2 class="entry-title" itemprop="headline"><a href="https://metaranews.co/headline/persik-kediri-buru-3-poin-di-kandang-madura-united/" title="Persik Kediri Buru 3 Poin di Kandang Madura United" rel="bookmark">Persik Kediri Buru 3 Poin di Kandang Madura United</a></h2>		</header><!-- .entry-header -->
+
+			<div class="entry-content entry-content-archive" itemprop="text">
+				<p>Metaranews.co, Kota Kediri – Persik Kediri menatap laga tandang melawan Madura United dengan tekad mencuri&nbsp;[…]</p>
+			</div><!-- .entry-content -->
+
+	</div><!-- .item-article -->
+
+	
+</article><!-- #post-## -->
+
+<article id="post-50747" class="item-content gmr-box-content item-infinite gmr-smallthumb clearfix post-50747 post type-post status-publish format-standard has-post-thumbnail hentry category-headline category-jawa-timur category-news tag-mengkreng" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
+	<div class="pull-left content-thumbnail thumb-radius"><a href="https://metaranews.co/headline/mengkreng-makin-semrawut-3-bupati-turun-tangan-upayakan-pembangunan-flyover/" itemprop="url" title="" rel="bookmark"><img width="200" height="112" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20112'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image" alt="Mengkreng" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-20.38.47-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-20.38.47-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-20.38.47-640x358.jpeg 640w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" title="Mengkreng" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-20.38.47-200x112.jpeg"><noscript><img width="200" height="112" src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-20.38.47-200x112.jpeg" class="attachment-medium size-medium wp-post-image" alt="Mengkreng" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-20.38.47-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-20.38.47-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-20.38.47-640x358.jpeg 640w" sizes="(max-width: 200px) 100vw, 200px" title="Mengkreng" /></noscript></a></div>	<div class="item-article">
+		<div class="gmr-metacontent gmr-metacontent-archive"><span class="cat-links-content"><a href="https://metaranews.co/category/headline/" rel="category tag">Headline</a>, <a href="https://metaranews.co/category/jawa-timur/" rel="category tag">Jawa Timur</a>, <a href="https://metaranews.co/category/news/" rel="category tag">News</a></span><span class="entry-author vcard screen-reader-text" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/person"><a class="url fn n" href="https://metaranews.co/author/moch-hadi/" title="Permalink ke: Moch Hadi" itemprop="url"><span itemprop="name">Moch Hadi</span></a></span><span class="posted-on byline"><time class="entry-date published updated" itemprop="dateModified" datetime="2026-04-08T21:21:33+07:00">08/04/2026</time></span></div>		<header class="entry-header">
+			<h2 class="entry-title" itemprop="headline"><a href="https://metaranews.co/headline/mengkreng-makin-semrawut-3-bupati-turun-tangan-upayakan-pembangunan-flyover/" title="Mengkreng Makin Semrawut, 3 Bupati “Turun Tangan” Upayakan Pembangunan Flyover" rel="bookmark">Mengkreng Makin Semrawut, 3 Bupati “Turun Tangan” Upayakan Pembangunan Flyover</a></h2>		</header><!-- .entry-header -->
+
+			<div class="entry-content entry-content-archive" itemprop="text">
+				<p>Metaranews.co, Kabupaten Kediri – Simpang Tiga Mengkreng, yang berada di perbatasan Kabupaten Kediri, Nganjuk, dan&nbsp;[…]</p>
+			</div><!-- .entry-content -->
+
+	</div><!-- .item-article -->
+
+	
+</article><!-- #post-## -->
+
+<article id="post-50743" class="item-content gmr-box-content item-infinite gmr-smallthumb clearfix post-50743 post type-post status-publish format-standard has-post-thumbnail hentry category-headline category-jawa-timur category-news tag-khusnul-arif" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
+	<div class="pull-left content-thumbnail thumb-radius"><a href="https://metaranews.co/headline/resmi-pimpin-nasdem-kota-kediri-khusnul-arif-bakal-perkuat-konsolidasi-partai/" itemprop="url" title="" rel="bookmark"><img width="200" height="112" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20112'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image" alt="Khusnul Arif" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.29.14-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.29.14-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.29.14-640x358.jpeg 640w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" title="Khusnul Arif" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.29.14-200x112.jpeg"><noscript><img width="200" height="112" src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.29.14-200x112.jpeg" class="attachment-medium size-medium wp-post-image" alt="Khusnul Arif" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.29.14-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.29.14-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.29.14-640x358.jpeg 640w" sizes="(max-width: 200px) 100vw, 200px" title="Khusnul Arif" /></noscript></a></div>	<div class="item-article">
+		<div class="gmr-metacontent gmr-metacontent-archive"><span class="cat-links-content"><a href="https://metaranews.co/category/headline/" rel="category tag">Headline</a>, <a href="https://metaranews.co/category/jawa-timur/" rel="category tag">Jawa Timur</a>, <a href="https://metaranews.co/category/news/" rel="category tag">News</a></span><span class="entry-author vcard screen-reader-text" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/person"><a class="url fn n" href="https://metaranews.co/author/moch-hadi/" title="Permalink ke: Moch Hadi" itemprop="url"><span itemprop="name">Moch Hadi</span></a></span><span class="posted-on byline"><time class="entry-date published" itemprop="datePublished" datetime="2026-04-08T19:00:12+07:00">08/04/2026</time><time class="updated" datetime="2026-04-08T18:41:09+07:00">08/04/2026</time></span></div>		<header class="entry-header">
+			<h2 class="entry-title" itemprop="headline"><a href="https://metaranews.co/headline/resmi-pimpin-nasdem-kota-kediri-khusnul-arif-bakal-perkuat-konsolidasi-partai/" title="Resmi Pimpin NasDem Kota Kediri, Khusnul Arif Bakal Perkuat Konsolidasi Partai" rel="bookmark">Resmi Pimpin NasDem Kota Kediri, Khusnul Arif Bakal Perkuat Konsolidasi Partai</a></h2>		</header><!-- .entry-header -->
+
+			<div class="entry-content entry-content-archive" itemprop="text">
+				<p>Metaranews.co, Kota Kediri – Wakil Ketua Komisi D DPRD Jawa Timur, Khusnul Arif, resmi menjabat&nbsp;[…]</p>
+			</div><!-- .entry-content -->
+
+	</div><!-- .item-article -->
+
+	
+</article><!-- #post-## -->
+
+<article id="post-50739" class="item-content gmr-box-content item-infinite gmr-smallthumb clearfix post-50739 post type-post status-publish format-standard has-post-thumbnail hentry category-headline category-jawa-timur category-news tag-mas-pipin" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
+	<div class="pull-left content-thumbnail thumb-radius"><a href="https://metaranews.co/headline/geger-tpa-di-kota-kediri-mas-pipin-ingatkan-sampah-bisa-jadi-bom-waktu-jika-tak-segera-diatasi/" itemprop="url" title="" rel="bookmark"><img width="200" height="112" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20112'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image" alt="Mas Pipin" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.14.18-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.14.18-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.14.18-768x432.jpeg 768w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.14.18-1536x864.jpeg 1536w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.14.18-640x358.jpeg 640w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.14.18.jpeg 1600w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" title="Mas Pipin" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.14.18-200x112.jpeg"><noscript><img width="200" height="112" src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.14.18-200x112.jpeg" class="attachment-medium size-medium wp-post-image" alt="Mas Pipin" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.14.18-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.14.18-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.14.18-768x432.jpeg 768w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.14.18-1536x864.jpeg 1536w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.14.18-640x358.jpeg 640w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-18.14.18.jpeg 1600w" sizes="(max-width: 200px) 100vw, 200px" title="Mas Pipin" /></noscript></a></div>	<div class="item-article">
+		<div class="gmr-metacontent gmr-metacontent-archive"><span class="cat-links-content"><a href="https://metaranews.co/category/headline/" rel="category tag">Headline</a>, <a href="https://metaranews.co/category/jawa-timur/" rel="category tag">Jawa Timur</a>, <a href="https://metaranews.co/category/news/" rel="category tag">News</a></span><span class="entry-author vcard screen-reader-text" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/person"><a class="url fn n" href="https://metaranews.co/author/moch-hadi/" title="Permalink ke: Moch Hadi" itemprop="url"><span itemprop="name">Moch Hadi</span></a></span><span class="posted-on byline"><time class="entry-date published updated" itemprop="dateModified" datetime="2026-04-08T18:31:13+07:00">08/04/2026</time></span></div>		<header class="entry-header">
+			<h2 class="entry-title" itemprop="headline"><a href="https://metaranews.co/headline/geger-tpa-di-kota-kediri-mas-pipin-ingatkan-sampah-bisa-jadi-bom-waktu-jika-tak-segera-diatasi/" title="Geger TPA di Kota Kediri, Mas Pipin Ingatkan Sampah Bisa Jadi “Bom Waktu” Jika Tak Segera Diatasi" rel="bookmark">Geger TPA di Kota Kediri, Mas Pipin Ingatkan Sampah Bisa Jadi “Bom Waktu” Jika Tak Segera Diatasi</a></h2>		</header><!-- .entry-header -->
+
+			<div class="entry-content entry-content-archive" itemprop="text">
+				<p>Metaranews.co, Kota Kediri – Persoalan volume sampah di Tempat Pembuangan Akhir (TPA) di Kota maupun&nbsp;[…]</p>
+			</div><!-- .entry-content -->
+
+	</div><!-- .item-article -->
+
+	
+</article><!-- #post-## -->
+
+<article id="post-50735" class="item-content gmr-box-content item-infinite gmr-smallthumb clearfix post-50735 post type-post status-publish format-standard has-post-thumbnail hentry category-headline category-news category-nusantara tag-kediri" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
+	<div class="pull-left content-thumbnail thumb-radius"><a href="https://metaranews.co/headline/nenek-104-tahun-asal-kediri-berangkat-haji-tahun-ini-jadi-yang-tertua-se-indonesia/" itemprop="url" title="" rel="bookmark"><img width="200" height="112" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20112'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image" alt="Kediri" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-10.23.13-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-10.23.13-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-10.23.13-768x432.jpeg 768w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-10.23.13-640x358.jpeg 640w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-10.23.13.jpeg 1280w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" title="Kediri" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-10.23.13-200x112.jpeg"><noscript><img width="200" height="112" src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-10.23.13-200x112.jpeg" class="attachment-medium size-medium wp-post-image" alt="Kediri" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-10.23.13-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-10.23.13-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-10.23.13-768x432.jpeg 768w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-10.23.13-640x358.jpeg 640w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-08-at-10.23.13.jpeg 1280w" sizes="(max-width: 200px) 100vw, 200px" title="Kediri" /></noscript></a></div>	<div class="item-article">
+		<div class="gmr-metacontent gmr-metacontent-archive"><span class="cat-links-content"><a href="https://metaranews.co/category/headline/" rel="category tag">Headline</a>, <a href="https://metaranews.co/category/news/" rel="category tag">News</a>, <a href="https://metaranews.co/category/nusantara/" rel="category tag">Nusantara</a></span><span class="entry-author vcard screen-reader-text" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/person"><a class="url fn n" href="https://metaranews.co/author/moch-hadi/" title="Permalink ke: Moch Hadi" itemprop="url"><span itemprop="name">Moch Hadi</span></a></span><span class="posted-on byline"><time class="entry-date published updated" itemprop="dateModified" datetime="2026-04-08T12:53:54+07:00">08/04/2026</time></span></div>		<header class="entry-header">
+			<h2 class="entry-title" itemprop="headline"><a href="https://metaranews.co/headline/nenek-104-tahun-asal-kediri-berangkat-haji-tahun-ini-jadi-yang-tertua-se-indonesia/" title="Nenek 104 Tahun Asal Kediri Berangkat Haji Tahun Ini, Jadi yang Tertua Se-Indonesia!" rel="bookmark">Nenek 104 Tahun Asal Kediri Berangkat Haji Tahun Ini, Jadi yang Tertua Se-Indonesia!</a></h2>		</header><!-- .entry-header -->
+
+			<div class="entry-content entry-content-archive" itemprop="text">
+				<p>Metaranews.co, Kabupaten Kediri – Seorang perempuan lanjut usia (lansia) asal Desa Semen, Kecamatan Semen, Kabupaten&nbsp;[…]</p>
+			</div><!-- .entry-content -->
+
+	</div><!-- .item-article -->
+
+	
+</article><!-- #post-## -->
+
+<article id="post-50731" class="item-content gmr-box-content item-infinite gmr-smallthumb clearfix post-50731 post type-post status-publish format-standard has-post-thumbnail hentry category-headline category-news category-nusantara tag-lirboyo" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
+	<div class="pull-left content-thumbnail thumb-radius"><a href="https://metaranews.co/headline/lirboyo-didorong-jadi-tuan-rumah-muktamar-nu-begini-tanggapan-pengasuh/" itemprop="url" title="" rel="bookmark"><img width="200" height="112" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20112'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image" alt="Lirboyo" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-16.56.02-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-16.56.02-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-16.56.02-640x358.jpeg 640w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" title="Lirboyo" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-16.56.02-200x112.jpeg"><noscript><img width="200" height="112" src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-16.56.02-200x112.jpeg" class="attachment-medium size-medium wp-post-image" alt="Lirboyo" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-16.56.02-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-16.56.02-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-16.56.02-640x358.jpeg 640w" sizes="(max-width: 200px) 100vw, 200px" title="Lirboyo" /></noscript></a></div>	<div class="item-article">
+		<div class="gmr-metacontent gmr-metacontent-archive"><span class="cat-links-content"><a href="https://metaranews.co/category/headline/" rel="category tag">Headline</a>, <a href="https://metaranews.co/category/news/" rel="category tag">News</a>, <a href="https://metaranews.co/category/nusantara/" rel="category tag">Nusantara</a></span><span class="entry-author vcard screen-reader-text" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/person"><a class="url fn n" href="https://metaranews.co/author/moch-hadi/" title="Permalink ke: Moch Hadi" itemprop="url"><span itemprop="name">Moch Hadi</span></a></span><span class="posted-on byline"><time class="entry-date published updated" itemprop="dateModified" datetime="2026-04-07T17:33:56+07:00">07/04/2026</time></span></div>		<header class="entry-header">
+			<h2 class="entry-title" itemprop="headline"><a href="https://metaranews.co/headline/lirboyo-didorong-jadi-tuan-rumah-muktamar-nu-begini-tanggapan-pengasuh/" title="Lirboyo Didorong Jadi Tuan Rumah Muktamar NU, Begini Tanggapan Pengasuh" rel="bookmark">Lirboyo Didorong Jadi Tuan Rumah Muktamar NU, Begini Tanggapan Pengasuh</a></h2>		</header><!-- .entry-header -->
+
+			<div class="entry-content entry-content-archive" itemprop="text">
+				<p>Metaranews.co, Kota Kediri – Sebuah video yang memperlihatkan Ketua Umum PBNU, KH Yahya Cholil Staquf,&nbsp;[…]</p>
+			</div><!-- .entry-content -->
+
+	</div><!-- .item-article -->
+
+	
+</article><!-- #post-## -->
+<div class="gmr-box-content item-infinite home-module"><div id="bloggingpro-moduleposts-3" class="widget bloggingpro-moduleposts"><h3 class="widget-title">Pemerintahan</h3>				<div class="gmr-recentposts-widget">
+												<div class="listpost-first-module clearfix">
+								<div class="gmr-rp-image thumb-radius"><a href="https://metaranews.co/headline/mas-dhito-klaim-berhasil-perkuat-pelayanan-publik-di-kabupaten-kediri-benarkah/" itemprop="url" title="Permalink ke: Mas Dhito Klaim Berhasil Perkuat Pelayanan Publik di Kabupaten Kediri, Benarkah?"><img width="640" height="358" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20358'%3E%3C/svg%3E" class="attachment-verylarge size-verylarge wp-post-image" alt="Kediri" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-21-at-13.48.23-640x358.jpeg 640w, https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-21-at-13.48.23-200x112.jpeg 200w" data-lazy-sizes="(max-width: 640px) 100vw, 640px" title="Kediri" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-21-at-13.48.23-640x358.jpeg"><noscript><img width="640" height="358" src="https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-21-at-13.48.23-640x358.jpeg" class="attachment-verylarge size-verylarge wp-post-image" alt="Kediri" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-21-at-13.48.23-640x358.jpeg 640w, https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-21-at-13.48.23-200x112.jpeg 200w" sizes="(max-width: 640px) 100vw, 640px" title="Kediri" /></noscript></a></div>								<div class="gmr-rp-content">
+																			<div class="gmr-metacontent">
+											<span class="cat-links-content"><a href="https://metaranews.co/category/headline/" rel="category tag">Headline</a>, <a href="https://metaranews.co/category/news/" rel="category tag">News</a>, <a href="https://metaranews.co/category/pemerintahan/" rel="category tag">Pemerintahan</a></span><span class="byline">21/02/2026</span>										</div>
+																		<div class="gmr-rp-biglink">
+										<a href="https://metaranews.co/headline/mas-dhito-klaim-berhasil-perkuat-pelayanan-publik-di-kabupaten-kediri-benarkah/" itemprop="url" title="Permalink ke: Mas Dhito Klaim Berhasil Perkuat Pelayanan Publik di Kabupaten Kediri, Benarkah?">Mas Dhito Klaim Berhasil Perkuat Pelayanan Publik di Kabupaten Kediri, Benarkah?</a>									</div>
+									<p>Metaranews.co, Kabupaten Kediri – Tahun pertama periode kedua Bupati Kediri, Hanindhito Himawan Pramana, langsung &nbsp;[…]</p>								</div>
+							</div>
+							<div class="gmr-owl-carousel-bigheadline">
+												<div class="gmr-slider-content">
+																		<div class="other-content-thumbnail thumb-radius">
+											<a href="https://metaranews.co/headline/kena-efisiensi-ratusan-miliar-mas-dhito-tetap-komitmen-jaga-mutu-kesehatan-dan-pendidikan/" itemprop="url" title="Permalink ke: Kena Efisiensi Ratusan Miliar, Mas Dhito Tetap Komitmen Jaga Mutu Kesehatan dan Pendidikan"><img width="200" height="112" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20112'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image" alt="Kediri" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-20-at-12.56.30-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-20-at-12.56.30-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-20-at-12.56.30-640x358.jpeg 640w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" title="Kediri" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-20-at-12.56.30-200x112.jpeg"><noscript><img width="200" height="112" src="https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-20-at-12.56.30-200x112.jpeg" class="attachment-medium size-medium wp-post-image" alt="Kediri" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-20-at-12.56.30-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-20-at-12.56.30-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-20-at-12.56.30-640x358.jpeg 640w" sizes="(max-width: 200px) 100vw, 200px" title="Kediri" /></noscript></a>										</div>
+																		<div class="gmr-rp-link">
+																			<div class="gmr-metacontent">
+											20/02/2026										</div>
+																			<a href="https://metaranews.co/headline/kena-efisiensi-ratusan-miliar-mas-dhito-tetap-komitmen-jaga-mutu-kesehatan-dan-pendidikan/" itemprop="url" title="Permalink ke: Kena Efisiensi Ratusan Miliar, Mas Dhito Tetap Komitmen Jaga Mutu Kesehatan dan Pendidikan">Kena Efisiensi Ratusan Miliar, Mas Dhito Tetap Komitmen Jaga Mutu Kesehatan dan …</a>								</div>
+							</div>
+														<div class="gmr-slider-content">
+																		<div class="other-content-thumbnail thumb-radius">
+											<a href="https://metaranews.co/headline/bupati-kediri-geber-17-program-prioritas-pada-tahun-pertama-periode-kedua/" itemprop="url" title="Permalink ke: Bupati Kediri Geber 17 Program Prioritas pada Tahun Pertama Periode Kedua"><img width="200" height="112" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20112'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image" alt="Kediri" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-20-at-12.56.19-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-20-at-12.56.19-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-20-at-12.56.19-640x358.jpeg 640w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" title="Kediri" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-20-at-12.56.19-200x112.jpeg"><noscript><img width="200" height="112" src="https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-20-at-12.56.19-200x112.jpeg" class="attachment-medium size-medium wp-post-image" alt="Kediri" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-20-at-12.56.19-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-20-at-12.56.19-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-20-at-12.56.19-640x358.jpeg 640w" sizes="(max-width: 200px) 100vw, 200px" title="Kediri" /></noscript></a>										</div>
+																		<div class="gmr-rp-link">
+																			<div class="gmr-metacontent">
+											20/02/2026										</div>
+																			<a href="https://metaranews.co/headline/bupati-kediri-geber-17-program-prioritas-pada-tahun-pertama-periode-kedua/" itemprop="url" title="Permalink ke: Bupati Kediri Geber 17 Program Prioritas pada Tahun Pertama Periode Kedua">Bupati Kediri Geber 17 Program Prioritas pada Tahun Pertama Periode Kedua</a>								</div>
+							</div>
+														<div class="gmr-slider-content">
+																		<div class="other-content-thumbnail thumb-radius">
+											<a href="https://metaranews.co/headline/wali-kota-kediri-naikkan-pangkat-18-pns-tekankan-jaga-etika-dan-utamakan-pelayanan-publik/" itemprop="url" title="Permalink ke: Wali Kota Kediri Naikkan Pangkat 18 PNS, Tekankan Jaga Etika dan Utamakan Pelayanan Publik"><img width="200" height="112" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20112'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image" alt="Kediri" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/01/4dc48e7e-b61b-43ab-8fef-a540a5b521ec-200x112.jpg 200w, https://metaranews.co/wp-content/uploads/2026/01/4dc48e7e-b61b-43ab-8fef-a540a5b521ec-300x170.jpg 300w, https://metaranews.co/wp-content/uploads/2026/01/4dc48e7e-b61b-43ab-8fef-a540a5b521ec-640x358.jpg 640w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" title="Kediri" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/01/4dc48e7e-b61b-43ab-8fef-a540a5b521ec-200x112.jpg"><noscript><img width="200" height="112" src="https://metaranews.co/wp-content/uploads/2026/01/4dc48e7e-b61b-43ab-8fef-a540a5b521ec-200x112.jpg" class="attachment-medium size-medium wp-post-image" alt="Kediri" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/01/4dc48e7e-b61b-43ab-8fef-a540a5b521ec-200x112.jpg 200w, https://metaranews.co/wp-content/uploads/2026/01/4dc48e7e-b61b-43ab-8fef-a540a5b521ec-300x170.jpg 300w, https://metaranews.co/wp-content/uploads/2026/01/4dc48e7e-b61b-43ab-8fef-a540a5b521ec-640x358.jpg 640w" sizes="(max-width: 200px) 100vw, 200px" title="Kediri" /></noscript></a>										</div>
+																		<div class="gmr-rp-link">
+																			<div class="gmr-metacontent">
+											20/01/2026										</div>
+																			<a href="https://metaranews.co/headline/wali-kota-kediri-naikkan-pangkat-18-pns-tekankan-jaga-etika-dan-utamakan-pelayanan-publik/" itemprop="url" title="Permalink ke: Wali Kota Kediri Naikkan Pangkat 18 PNS, Tekankan Jaga Etika dan Utamakan Pelayanan Publik">Wali Kota Kediri Naikkan Pangkat 18 PNS, Tekankan Jaga Etika dan Utamakan Pelaya…</a>								</div>
+							</div>
+							</div>				</div>
+			</div></div>
+<article id="post-50727" class="item-content gmr-box-content item-infinite gmr-smallthumb clearfix post-50727 post type-post status-publish format-standard has-post-thumbnail hentry category-headline category-jawa-timur category-news tag-kediri" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
+	<div class="pull-left content-thumbnail thumb-radius"><a href="https://metaranews.co/headline/blokade-tpa-klotok-akhirnya-dibuka-pemkot-kediri-janji-penuhi-tuntutan-warga-tapi/" itemprop="url" title="" rel="bookmark"><img width="200" height="112" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20112'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image" alt="Kediri" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-15.50.59-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-15.50.59-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-15.50.59-640x358.jpeg 640w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" title="Kediri" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-15.50.59-200x112.jpeg"><noscript><img width="200" height="112" src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-15.50.59-200x112.jpeg" class="attachment-medium size-medium wp-post-image" alt="Kediri" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-15.50.59-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-15.50.59-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-15.50.59-640x358.jpeg 640w" sizes="(max-width: 200px) 100vw, 200px" title="Kediri" /></noscript></a></div>	<div class="item-article">
+		<div class="gmr-metacontent gmr-metacontent-archive"><span class="cat-links-content"><a href="https://metaranews.co/category/headline/" rel="category tag">Headline</a>, <a href="https://metaranews.co/category/jawa-timur/" rel="category tag">Jawa Timur</a>, <a href="https://metaranews.co/category/news/" rel="category tag">News</a></span><span class="entry-author vcard screen-reader-text" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/person"><a class="url fn n" href="https://metaranews.co/author/moch-hadi/" title="Permalink ke: Moch Hadi" itemprop="url"><span itemprop="name">Moch Hadi</span></a></span><span class="posted-on byline"><time class="entry-date published" itemprop="datePublished" datetime="2026-04-07T16:23:01+07:00">07/04/2026</time><time class="updated" datetime="2026-04-07T16:03:52+07:00">07/04/2026</time></span></div>		<header class="entry-header">
+			<h2 class="entry-title" itemprop="headline"><a href="https://metaranews.co/headline/blokade-tpa-klotok-akhirnya-dibuka-pemkot-kediri-janji-penuhi-tuntutan-warga-tapi/" title="Blokade TPA Klotok Akhirnya Dibuka: Pemkot Kediri Janji Penuhi Tuntutan Warga, Tapi…" rel="bookmark">Blokade TPA Klotok Akhirnya Dibuka: Pemkot Kediri Janji Penuhi Tuntutan Warga, Tapi…</a></h2>		</header><!-- .entry-header -->
+
+			<div class="entry-content entry-content-archive" itemprop="text">
+				<p>Metaranews.co, Kota Kediri – Blokade akses Tempat Pembuangan Akhir (TPA) Klotok yang dilakukan warga akhirnya&nbsp;[…]</p>
+			</div><!-- .entry-content -->
+
+	</div><!-- .item-article -->
+
+	
+</article><!-- #post-## -->
+
+<article id="post-50723" class="item-content gmr-box-content item-infinite gmr-smallthumb clearfix post-50723 post type-post status-publish format-standard has-post-thumbnail hentry category-headline category-jawa-timur category-news tag-kediri" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
+	<div class="pull-left content-thumbnail thumb-radius"><a href="https://metaranews.co/headline/warga-blokade-tpa-klotok-tuntut-kompensasi-rp-2-juta-per-kk-pemkot-kediri-gandeng-its-untuk-lakukan-kajian/" itemprop="url" title="" rel="bookmark"><img width="200" height="112" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20112'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image" alt="Kediri" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-14.46.29-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-14.46.29-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-14.46.29-640x358.jpeg 640w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" title="Kediri" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-14.46.29-200x112.jpeg"><noscript><img width="200" height="112" src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-14.46.29-200x112.jpeg" class="attachment-medium size-medium wp-post-image" alt="Kediri" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-14.46.29-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-14.46.29-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-07-at-14.46.29-640x358.jpeg 640w" sizes="(max-width: 200px) 100vw, 200px" title="Kediri" /></noscript></a></div>	<div class="item-article">
+		<div class="gmr-metacontent gmr-metacontent-archive"><span class="cat-links-content"><a href="https://metaranews.co/category/headline/" rel="category tag">Headline</a>, <a href="https://metaranews.co/category/jawa-timur/" rel="category tag">Jawa Timur</a>, <a href="https://metaranews.co/category/news/" rel="category tag">News</a></span><span class="entry-author vcard screen-reader-text" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/person"><a class="url fn n" href="https://metaranews.co/author/moch-hadi/" title="Permalink ke: Moch Hadi" itemprop="url"><span itemprop="name">Moch Hadi</span></a></span><span class="posted-on byline"><time class="entry-date published updated" itemprop="dateModified" datetime="2026-04-07T15:53:55+07:00">07/04/2026</time></span></div>		<header class="entry-header">
+			<h2 class="entry-title" itemprop="headline"><a href="https://metaranews.co/headline/warga-blokade-tpa-klotok-tuntut-kompensasi-rp-2-juta-per-kk-pemkot-kediri-gandeng-its-untuk-lakukan-kajian/" title="Warga Blokade TPA Klotok Tuntut Kompensasi Rp 2 Juta per KK, Pemkot Kediri Gandeng ITS untuk Lakukan Kajian" rel="bookmark">Warga Blokade TPA Klotok Tuntut Kompensasi Rp 2 Juta per KK, Pemkot Kediri Gandeng ITS untuk Lakukan Kajian</a></h2>		</header><!-- .entry-header -->
+
+			<div class="entry-content entry-content-archive" itemprop="text">
+				<p>Metaranews.co, Kota Kediri – Pemerintah Kota (Pemkot) Kediri kembali disorot setelah tuntutan kenaikan kompensasi warga&nbsp;[…]</p>
+			</div><!-- .entry-content -->
+
+	</div><!-- .item-article -->
+
+	
+</article><!-- #post-## -->
+
+<article id="post-50719" class="item-content gmr-box-content item-infinite gmr-smallthumb clearfix post-50719 post type-post status-publish format-standard has-post-thumbnail hentry category-headline category-jawa-timur category-news tag-nasdem-kabupaten-kediri" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
+	<div class="pull-left content-thumbnail thumb-radius"><a href="https://metaranews.co/headline/nasdem-kabupaten-kediri-cium-kejanggalan-penyertaan-modal-bumd-ratusan-miliar-dipertanyakan/" itemprop="url" title="" rel="bookmark"><img width="200" height="112" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20112'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image" alt="NasDem Kabupaten Kediri" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-06-at-18.37.30-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-06-at-18.37.30-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-06-at-18.37.30-768x434.jpeg 768w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-06-at-18.37.30-640x358.jpeg 640w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-06-at-18.37.30.jpeg 1303w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" title="NasDem Kabupaten Kediri" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-06-at-18.37.30-200x112.jpeg"><noscript><img width="200" height="112" src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-06-at-18.37.30-200x112.jpeg" class="attachment-medium size-medium wp-post-image" alt="NasDem Kabupaten Kediri" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-06-at-18.37.30-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-06-at-18.37.30-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-06-at-18.37.30-768x434.jpeg 768w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-06-at-18.37.30-640x358.jpeg 640w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-06-at-18.37.30.jpeg 1303w" sizes="(max-width: 200px) 100vw, 200px" title="NasDem Kabupaten Kediri" /></noscript></a></div>	<div class="item-article">
+		<div class="gmr-metacontent gmr-metacontent-archive"><span class="cat-links-content"><a href="https://metaranews.co/category/headline/" rel="category tag">Headline</a>, <a href="https://metaranews.co/category/jawa-timur/" rel="category tag">Jawa Timur</a>, <a href="https://metaranews.co/category/news/" rel="category tag">News</a></span><span class="entry-author vcard screen-reader-text" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/person"><a class="url fn n" href="https://metaranews.co/author/moch-hadi/" title="Permalink ke: Moch Hadi" itemprop="url"><span itemprop="name">Moch Hadi</span></a></span><span class="posted-on byline"><time class="entry-date published updated" itemprop="dateModified" datetime="2026-04-06T19:49:10+07:00">06/04/2026</time></span></div>		<header class="entry-header">
+			<h2 class="entry-title" itemprop="headline"><a href="https://metaranews.co/headline/nasdem-kabupaten-kediri-cium-kejanggalan-penyertaan-modal-bumd-ratusan-miliar-dipertanyakan/" title="NasDem Kabupaten Kediri Cium Kejanggalan, Penyertaan Modal BUMD Ratusan Miliar Dipertanyakan" rel="bookmark">NasDem Kabupaten Kediri Cium Kejanggalan, Penyertaan Modal BUMD Ratusan Miliar Dipertanyakan</a></h2>		</header><!-- .entry-header -->
+
+			<div class="entry-content entry-content-archive" itemprop="text">
+				<p>Metaranews.co, Kabupaten Kediri – Fraksi Partai NasDem DPRD Kabupaten Kediri menyoroti dasar penetapan besaran maksimal&nbsp;[…]</p>
+			</div><!-- .entry-content -->
+
+	</div><!-- .item-article -->
+
+	
+</article><!-- #post-## -->
+
+<article id="post-50715" class="item-content gmr-box-content item-infinite gmr-smallthumb clearfix post-50715 post type-post status-publish format-standard has-post-thumbnail hentry category-news category-nusantara tag-industri-rokok" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
+	<div class="pull-left content-thumbnail thumb-radius"><a href="https://metaranews.co/news/gus-lilur-ingatkan-kpk-berantas-mafia-cukai-jangan-sekaligus-mematikan-industri-rokok-rakyat/" itemprop="url" title="" rel="bookmark"><img width="200" height="112" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20112'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image" alt="Industri Rokok" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-06-at-13.45.10-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-06-at-13.45.10-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-06-at-13.45.10-640x358.jpeg 640w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" title="Industri Rokok" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-06-at-13.45.10-200x112.jpeg"><noscript><img width="200" height="112" src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-06-at-13.45.10-200x112.jpeg" class="attachment-medium size-medium wp-post-image" alt="Industri Rokok" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-06-at-13.45.10-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-06-at-13.45.10-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-06-at-13.45.10-640x358.jpeg 640w" sizes="(max-width: 200px) 100vw, 200px" title="Industri Rokok" /></noscript></a></div>	<div class="item-article">
+		<div class="gmr-metacontent gmr-metacontent-archive"><span class="cat-links-content"><a href="https://metaranews.co/category/news/" rel="category tag">News</a>, <a href="https://metaranews.co/category/nusantara/" rel="category tag">Nusantara</a></span><span class="entry-author vcard screen-reader-text" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/person"><a class="url fn n" href="https://metaranews.co/author/moch-hadi/" title="Permalink ke: Moch Hadi" itemprop="url"><span itemprop="name">Moch Hadi</span></a></span><span class="posted-on byline"><time class="entry-date published updated" itemprop="dateModified" datetime="2026-04-06T14:35:33+07:00">06/04/2026</time></span></div>		<header class="entry-header">
+			<h2 class="entry-title" itemprop="headline"><a href="https://metaranews.co/news/gus-lilur-ingatkan-kpk-berantas-mafia-cukai-jangan-sekaligus-mematikan-industri-rokok-rakyat/" title="Gus Lilur Ingatkan KPK: Berantas Mafia Cukai Jangan Sekaligus Mematikan Industri Rokok Rakyat" rel="bookmark">Gus Lilur Ingatkan KPK: Berantas Mafia Cukai Jangan Sekaligus Mematikan Industri Rokok Rakyat</a></h2>		</header><!-- .entry-header -->
+
+			<div class="entry-content entry-content-archive" itemprop="text">
+				<p>Metaranews.co, Kabupaten Situbondo – Langkah Komisi Pemberantasan Korupsi (KPK) mengusut dugaan korupsi dalam pengurusan cukai&nbsp;[…]</p>
+			</div><!-- .entry-content -->
+
+	</div><!-- .item-article -->
+
+	
+</article><!-- #post-## -->
+
+<article id="post-50712" class="item-content gmr-box-content item-infinite gmr-smallthumb clearfix post-50712 post type-post status-publish format-standard has-post-thumbnail hentry category-headline category-jawa-timur category-news tag-situbondo" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
+	<div class="pull-left content-thumbnail thumb-radius"><a href="https://metaranews.co/headline/masuk-hutan-baluran-situbondo-penggembala-sapi-68-tahun-hilang-tanpa-jejak/" itemprop="url" title="" rel="bookmark"><img width="200" height="112" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20112'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image" alt="Situbondo" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-06-at-13.44.11-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-06-at-13.44.11-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-06-at-13.44.11-640x358.jpeg 640w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" title="Situbondo" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-06-at-13.44.11-200x112.jpeg"><noscript><img width="200" height="112" src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-06-at-13.44.11-200x112.jpeg" class="attachment-medium size-medium wp-post-image" alt="Situbondo" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-06-at-13.44.11-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-06-at-13.44.11-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-06-at-13.44.11-640x358.jpeg 640w" sizes="(max-width: 200px) 100vw, 200px" title="Situbondo" /></noscript></a></div>	<div class="item-article">
+		<div class="gmr-metacontent gmr-metacontent-archive"><span class="cat-links-content"><a href="https://metaranews.co/category/headline/" rel="category tag">Headline</a>, <a href="https://metaranews.co/category/jawa-timur/" rel="category tag">Jawa Timur</a>, <a href="https://metaranews.co/category/news/" rel="category tag">News</a></span><span class="entry-author vcard screen-reader-text" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/person"><a class="url fn n" href="https://metaranews.co/author/moch-hadi/" title="Permalink ke: Moch Hadi" itemprop="url"><span itemprop="name">Moch Hadi</span></a></span><span class="posted-on byline"><time class="entry-date published updated" itemprop="dateModified" datetime="2026-04-06T14:25:16+07:00">06/04/2026</time></span></div>		<header class="entry-header">
+			<h2 class="entry-title" itemprop="headline"><a href="https://metaranews.co/headline/masuk-hutan-baluran-situbondo-penggembala-sapi-68-tahun-hilang-tanpa-jejak/" title="Masuk Hutan Baluran Situbondo, Penggembala Sapi 68 Tahun Hilang Tanpa Jejak" rel="bookmark">Masuk Hutan Baluran Situbondo, Penggembala Sapi 68 Tahun Hilang Tanpa Jejak</a></h2>		</header><!-- .entry-header -->
+
+			<div class="entry-content entry-content-archive" itemprop="text">
+				<p>Metaranews.co, Kabupaten Situbondo – Seorang penggembala sapi bernama Suwardi (68), warga Desa Sumberwaru, Kecamatan Banyuputih,&nbsp;[…]</p>
+			</div><!-- .entry-content -->
+
+	</div><!-- .item-article -->
+
+	
+</article><!-- #post-## -->
+
+<article id="post-50708" class="item-content gmr-box-content item-infinite gmr-smallthumb clearfix post-50708 post type-post status-publish format-standard has-post-thumbnail hentry category-headline category-jawa-timur category-news tag-kediri" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
+	<div class="pull-left content-thumbnail thumb-radius"><a href="https://metaranews.co/headline/tasyakuran-hari-jadi-ke-1222-kabupaten-kediri-mas-dhito-tekankan-untuk-tak-lupa-jati-diri/" itemprop="url" title="" rel="bookmark"><img width="200" height="112" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20112'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image" alt="Kediri" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-04-at-17.06.46-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-04-at-17.06.46-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-04-at-17.06.46-640x358.jpeg 640w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" title="Kediri" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-04-at-17.06.46-200x112.jpeg"><noscript><img width="200" height="112" src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-04-at-17.06.46-200x112.jpeg" class="attachment-medium size-medium wp-post-image" alt="Kediri" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-04-at-17.06.46-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-04-at-17.06.46-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-04-at-17.06.46-640x358.jpeg 640w" sizes="(max-width: 200px) 100vw, 200px" title="Kediri" /></noscript></a></div>	<div class="item-article">
+		<div class="gmr-metacontent gmr-metacontent-archive"><span class="cat-links-content"><a href="https://metaranews.co/category/headline/" rel="category tag">Headline</a>, <a href="https://metaranews.co/category/jawa-timur/" rel="category tag">Jawa Timur</a>, <a href="https://metaranews.co/category/news/" rel="category tag">News</a></span><span class="entry-author vcard screen-reader-text" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/person"><a class="url fn n" href="https://metaranews.co/author/moch-hadi/" title="Permalink ke: Moch Hadi" itemprop="url"><span itemprop="name">Moch Hadi</span></a></span><span class="posted-on byline"><time class="entry-date published updated" itemprop="dateModified" datetime="2026-04-04T21:12:22+07:00">04/04/2026</time></span></div>		<header class="entry-header">
+			<h2 class="entry-title" itemprop="headline"><a href="https://metaranews.co/headline/tasyakuran-hari-jadi-ke-1222-kabupaten-kediri-mas-dhito-tekankan-untuk-tak-lupa-jati-diri/" title="Tasyakuran Hari Jadi ke-1222 Kabupaten Kediri, Mas Dhito Tekankan untuk Tak Lupa Jati Diri" rel="bookmark">Tasyakuran Hari Jadi ke-1222 Kabupaten Kediri, Mas Dhito Tekankan untuk Tak Lupa Jati Diri</a></h2>		</header><!-- .entry-header -->
+
+			<div class="entry-content entry-content-archive" itemprop="text">
+				<p>Metaranews.co, Kabupaten Kediri – Tasyakuran Hari Jadi ke-1222 Kabupaten Kediri digelar sederhana. Mengusung tema “Kediri&nbsp;[…]</p>
+			</div><!-- .entry-content -->
+
+	</div><!-- .item-article -->
+
+	
+</article><!-- #post-## -->
+
+<article id="post-50704" class="item-content gmr-box-content item-infinite gmr-smallthumb clearfix post-50704 post type-post status-publish format-standard has-post-thumbnail hentry category-headline category-jawa-timur category-news tag-bbm" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
+	<div class="pull-left content-thumbnail thumb-radius"><a href="https://metaranews.co/headline/pertamina-jamin-stok-bbm-lpg-di-jatim-aman-warga-diminta-tak-panic-buying/" itemprop="url" title="" rel="bookmark"><img width="200" height="112" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20112'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image" alt="BBM" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-03-at-16.21.02-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-03-at-16.21.02-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-03-at-16.21.02-640x358.jpeg 640w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" title="BBM" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-03-at-16.21.02-200x112.jpeg"><noscript><img width="200" height="112" src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-03-at-16.21.02-200x112.jpeg" class="attachment-medium size-medium wp-post-image" alt="BBM" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-03-at-16.21.02-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-03-at-16.21.02-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-03-at-16.21.02-640x358.jpeg 640w" sizes="(max-width: 200px) 100vw, 200px" title="BBM" /></noscript></a></div>	<div class="item-article">
+		<div class="gmr-metacontent gmr-metacontent-archive"><span class="cat-links-content"><a href="https://metaranews.co/category/headline/" rel="category tag">Headline</a>, <a href="https://metaranews.co/category/jawa-timur/" rel="category tag">Jawa Timur</a>, <a href="https://metaranews.co/category/news/" rel="category tag">News</a></span><span class="entry-author vcard screen-reader-text" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/person"><a class="url fn n" href="https://metaranews.co/author/moch-hadi/" title="Permalink ke: Moch Hadi" itemprop="url"><span itemprop="name">Moch Hadi</span></a></span><span class="posted-on byline"><time class="entry-date published updated" itemprop="dateModified" datetime="2026-04-03T17:01:53+07:00">03/04/2026</time></span></div>		<header class="entry-header">
+			<h2 class="entry-title" itemprop="headline"><a href="https://metaranews.co/headline/pertamina-jamin-stok-bbm-lpg-di-jatim-aman-warga-diminta-tak-panic-buying/" title="Pertamina Jamin Stok BBM-LPG di Jatim Aman, Warga Diminta Tak Panic Buying" rel="bookmark">Pertamina Jamin Stok BBM-LPG di Jatim Aman, Warga Diminta Tak Panic Buying</a></h2>		</header><!-- .entry-header -->
+
+			<div class="entry-content entry-content-archive" itemprop="text">
+				<p>Metaranews.co, Kota Kediri – Pertamina Patra Niaga memastikan pasokan energi di wilayah Jawa Timur, baik&nbsp;[…]</p>
+			</div><!-- .entry-content -->
+
+	</div><!-- .item-article -->
+
+	
+</article><!-- #post-## -->
+
+<article id="post-50700" class="item-content gmr-box-content item-infinite gmr-smallthumb clearfix post-50700 post type-post status-publish format-standard has-post-thumbnail hentry category-headline category-jawa-timur category-news tag-kediri" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
+	<div class="pull-left content-thumbnail thumb-radius"><a href="https://metaranews.co/headline/polisi-ringkus-peracik-petasan-berujung-petaka-di-kediri-3-korban-alami-luka-berat-hingga-diamputasi/" itemprop="url" title="" rel="bookmark"><img width="200" height="112" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20112'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image" alt="Kediri" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-03-at-13.34.06-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-03-at-13.34.06-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-03-at-13.34.06-640x358.jpeg 640w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" title="Kediri" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-03-at-13.34.06-200x112.jpeg"><noscript><img width="200" height="112" src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-03-at-13.34.06-200x112.jpeg" class="attachment-medium size-medium wp-post-image" alt="Kediri" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-03-at-13.34.06-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-03-at-13.34.06-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-03-at-13.34.06-640x358.jpeg 640w" sizes="(max-width: 200px) 100vw, 200px" title="Kediri" /></noscript></a></div>	<div class="item-article">
+		<div class="gmr-metacontent gmr-metacontent-archive"><span class="cat-links-content"><a href="https://metaranews.co/category/headline/" rel="category tag">Headline</a>, <a href="https://metaranews.co/category/jawa-timur/" rel="category tag">Jawa Timur</a>, <a href="https://metaranews.co/category/news/" rel="category tag">News</a></span><span class="entry-author vcard screen-reader-text" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/person"><a class="url fn n" href="https://metaranews.co/author/moch-hadi/" title="Permalink ke: Moch Hadi" itemprop="url"><span itemprop="name">Moch Hadi</span></a></span><span class="posted-on byline"><time class="entry-date published updated" itemprop="dateModified" datetime="2026-04-03T13:51:30+07:00">03/04/2026</time></span></div>		<header class="entry-header">
+			<h2 class="entry-title" itemprop="headline"><a href="https://metaranews.co/headline/polisi-ringkus-peracik-petasan-berujung-petaka-di-kediri-3-korban-alami-luka-berat-hingga-diamputasi/" title="Polisi Ringkus Peracik Petasan Berujung Petaka di Kediri, 3 Korban Alami Luka Berat hingga Diamputasi" rel="bookmark">Polisi Ringkus Peracik Petasan Berujung Petaka di Kediri, 3 Korban Alami Luka Berat hingga Diamputasi</a></h2>		</header><!-- .entry-header -->
+
+			<div class="entry-content entry-content-archive" itemprop="text">
+				<p>Metaranews.co, Kabupaten Kediri – Polres Kediri meringkus terduga pelaku ledakan petasan yang mengakibatkan tiga orang&nbsp;[…]</p>
+			</div><!-- .entry-content -->
+
+	</div><!-- .item-article -->
+
+	
+</article><!-- #post-## -->
+
+<article id="post-50694" class="item-content gmr-box-content item-infinite gmr-smallthumb clearfix post-50694 post type-post status-publish format-standard has-post-thumbnail hentry category-headline category-jawa-timur category-news tag-kediri" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
+	<div class="pull-left content-thumbnail thumb-radius"><a href="https://metaranews.co/headline/dinkes-kota-kediri-mulai-lakukan-vaksinasi-ke-calon-jemaah-haji/" itemprop="url" title="" rel="bookmark"><img width="200" height="112" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20112'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image" alt="Kediri" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-02-at-18.10.42-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-02-at-18.10.42-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-02-at-18.10.42-768x432.jpeg 768w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-02-at-18.10.42-640x358.jpeg 640w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-02-at-18.10.42.jpeg 1280w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" title="Kediri" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-02-at-18.10.42-200x112.jpeg"><noscript><img width="200" height="112" src="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-02-at-18.10.42-200x112.jpeg" class="attachment-medium size-medium wp-post-image" alt="Kediri" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-02-at-18.10.42-200x112.jpeg 200w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-02-at-18.10.42-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-02-at-18.10.42-768x432.jpeg 768w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-02-at-18.10.42-640x358.jpeg 640w, https://metaranews.co/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-02-at-18.10.42.jpeg 1280w" sizes="(max-width: 200px) 100vw, 200px" title="Kediri" /></noscript></a></div>	<div class="item-article">
+		<div class="gmr-metacontent gmr-metacontent-archive"><span class="cat-links-content"><a href="https://metaranews.co/category/headline/" rel="category tag">Headline</a>, <a href="https://metaranews.co/category/jawa-timur/" rel="category tag">Jawa Timur</a>, <a href="https://metaranews.co/category/news/" rel="category tag">News</a></span><span class="entry-author vcard screen-reader-text" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/person"><a class="url fn n" href="https://metaranews.co/author/moch-hadi/" title="Permalink ke: Moch Hadi" itemprop="url"><span itemprop="name">Moch Hadi</span></a></span><span class="posted-on byline"><time class="entry-date published updated" itemprop="dateModified" datetime="2026-04-02T21:16:48+07:00">02/04/2026</time></span></div>		<header class="entry-header">
+			<h2 class="entry-title" itemprop="headline"><a href="https://metaranews.co/headline/dinkes-kota-kediri-mulai-lakukan-vaksinasi-ke-calon-jemaah-haji/" title="Dinkes Kota Kediri Mulai Lakukan Vaksinasi ke Calon Jemaah Haji" rel="bookmark">Dinkes Kota Kediri Mulai Lakukan Vaksinasi ke Calon Jemaah Haji</a></h2>		</header><!-- .entry-header -->
+
+			<div class="entry-content entry-content-archive" itemprop="text">
+				<p>Metaranews.co, Kota Kediri – Dinas Kesehatan (Dinkes) Kota Kediri mulai menggelar vaksinasi bagi calon jemaah&nbsp;[…]</p>
+			</div><!-- .entry-content -->
+
+	</div><!-- .item-article -->
+
+	
+</article><!-- #post-## -->
+</div><div class="pagination"><ul class="page-numbers">
+	<li><span aria-current="page" class="page-numbers current">1</span></li>
+	<li><a class="page-numbers" href="https://metaranews.co/page/2/">2</a></li>
+	<li><a class="page-numbers" href="https://metaranews.co/page/3/">3</a></li>
+	<li><span class="page-numbers dots">…</span></li>
+	<li><a class="page-numbers" href="https://metaranews.co/page/825/">825</a></li>
+	<li><a class="next page-numbers" href="https://metaranews.co/page/2/">»</a></li>
+</ul>
+</div>
+		</main><!-- #main -->
+	</div><!-- .content-area -->
+</div><!-- #primary -->
+
+
+<aside id="secondary" class="widget-area col-md-sidebar pos-sticky" role="complementary" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+	<div id="media_video-3" class="widget widget_media_video"><h3 class="widget-title">Tualang Budaya</h3><div style="width:100%;" class="wp-video"><video class="wp-video-shortcode" id="video-50694-1" preload="auto" controls="controls"><source type="video/youtube" src="https://www.youtube.com/watch?v=duVc0AMZC5Y&amp;list=PLM2162oiecv_1NHOLNe79N-vOfNecHGr1&amp;index=9&amp;_=1"><a href="https://www.youtube.com/watch?v=duVc0AMZC5Y&amp;list=PLM2162oiecv_1NHOLNe79N-vOfNecHGr1&amp;index=9">https://www.youtube.com/watch?v=duVc0AMZC5Y&amp;list=PLM2162oiecv_1NHOLNe79N-vOfNecHGr1&amp;index=9</a></video></div></div><div id="custom_html-6" class="widget_text widget widget_custom_html"><h3 class="widget-title">Advetorial</h3><div class="textwidget custom-html-widget"></div></div><div id="media_image-7" class="widget widget_media_image"><img width="1889" height="529" src="https://metaranews.co/wp-content/uploads/2023/04/GG_FullColor_TERANG-1.png" class="image wp-image-16762 attachment-1889x529 size-1889x529 entered lazyloaded" alt="" style="max-width: 100%; height: auto;" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2023/04/GG_FullColor_TERANG-1.png 1889w, https://metaranews.co/wp-content/uploads/2023/04/GG_FullColor_TERANG-1-768x215.png 768w, https://metaranews.co/wp-content/uploads/2023/04/GG_FullColor_TERANG-1-1536x430.png 1536w" data-lazy-sizes="(max-width: 1889px) 100vw, 1889px" title="GG_FullColor_TERANG (1)" data-lazy-src="https://metaranews.co/wp-content/uploads/2023/04/GG_FullColor_TERANG-1.png" data-ll-status="loaded" sizes="(max-width: 1889px) 100vw, 1889px" srcset="https://metaranews.co/wp-content/uploads/2023/04/GG_FullColor_TERANG-1.png 1889w, https://metaranews.co/wp-content/uploads/2023/04/GG_FullColor_TERANG-1-768x215.png 768w, https://metaranews.co/wp-content/uploads/2023/04/GG_FullColor_TERANG-1-1536x430.png 1536w"><noscript><img width="1889" height="529" src="https://metaranews.co/wp-content/uploads/2023/04/GG_FullColor_TERANG-1.png" class="image wp-image-16762  attachment-1889x529 size-1889x529" alt="" style="max-width: 100%; height: auto;" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2023/04/GG_FullColor_TERANG-1.png 1889w, https://metaranews.co/wp-content/uploads/2023/04/GG_FullColor_TERANG-1-768x215.png 768w, https://metaranews.co/wp-content/uploads/2023/04/GG_FullColor_TERANG-1-1536x430.png 1536w" sizes="(max-width: 1889px) 100vw, 1889px" title="GG_FullColor_TERANG (1)" /></noscript></div><div id="custom_html-4" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><img style="display:block;" src="https://metaranews.co/wp-content/uploads/2026/04/Gempur-Rokok-Ilegal.png" alt="ADV ROKOK ILEGAL" width="300" height="300" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/04/Gempur-Rokok-Ilegal.png" data-ll-status="loaded" class="entered lazyloaded"><noscript><img style="display:block;" src="https://metaranews.co/wp-content/uploads/2026/04/Gempur-Rokok-Ilegal.png"
+alt="ADV ROKOK ILEGAL" width="300" height="300"></noscript></div></div><div id="bloggingpro-mostview-5" class="widget bloggingpro-mostview"><h3 class="widget-title">SEDANG TRENDING</h3>			<div class="gmr-recentposts-widget bloggingpro-listnumber thumb-radius">
+				<ul>
+											<li class="listpost-number first clearfix">
+							<div class="gmr-rp-image other-content-thumbnail"><a href="https://metaranews.co/headline/stadion-brawijaya-kota-kediri-disterilisasi-dipastikan-aman-untuk-salat-idulfitri/" itemprop="url" title="Permalink ke: Stadion Brawijaya Kota Kediri Disterilisasi, Dipastikan Aman untuk Salat Idulfitri"><img width="300" height="170" src="https://metaranews.co/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-19-at-18.45.55-300x170.jpeg" class="attachment-large size-large wp-post-image entered lazyloaded" alt="Kediri" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-19-at-18.45.55-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-19-at-18.45.55-200x112.jpeg 200w" data-lazy-sizes="(max-width: 300px) 100vw, 300px" title="Kediri" data-lazy-src="https://metaranews.co/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-19-at-18.45.55-300x170.jpeg" data-ll-status="loaded" sizes="(max-width: 300px) 100vw, 300px" srcset="https://metaranews.co/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-19-at-18.45.55-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-19-at-18.45.55-200x112.jpeg 200w"><noscript><img width="300" height="170" src="https://metaranews.co/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-19-at-18.45.55-300x170.jpeg" class="attachment-large size-large wp-post-image" alt="Kediri" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-19-at-18.45.55-300x170.jpeg 300w, https://metaranews.co/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-19-at-18.45.55-200x112.jpeg 200w" sizes="(max-width: 300px) 100vw, 300px" title="Kediri" /></noscript></a></div>							<div class="rp-number-content">
+								<div class="rp-number pull-left">1</div>
+								<div class="gmr-rp-content">
+																		<div class="gmr-rp-link">
+										<a href="https://metaranews.co/headline/stadion-brawijaya-kota-kediri-disterilisasi-dipastikan-aman-untuk-salat-idulfitri/" itemprop="url" title="Permalink ke: Stadion Brawijaya Kota Kediri Disterilisasi, Dipastikan Aman untuk Salat Idulfitri">Stadion Brawijaya Kota Kediri Disterilisasi, Dipastikan Aman untuk Salat Idulfitri</a>									</div>
+								</div>
+							</div>
+						</li>
+																	<li class="listpost-number clearfix">
+							<div class="rp-number-content">
+								<div class="rp-number pull-left">2</div>
+								<div class="gmr-rp-content">
+																		<div class="gmr-rp-link clearfix">
+										<a href="https://metaranews.co/headline/lebaran-beda-hari-gus-kautsar-jangan-ribut-hormati-perbedaan/" itemprop="url" title="Permalink ke: Lebaran Beda Hari, Gus Kautsar: Jangan Ribut, Hormati Perbedaan">Lebaran Beda Hari, Gus Kautsar: Jangan Ribut, Hormati Perbedaan</a>									</div>
+								</div>
+							</div>
+						</li>
+																								<li class="listpost-number clearfix">
+							<div class="rp-number-content">
+								<div class="rp-number pull-left">3</div>
+								<div class="gmr-rp-content">
+																		<div class="gmr-rp-link clearfix">
+										<a href="https://metaranews.co/headline/berkah-idulfitri-omzet-penjualan-tahu-kuning-khas-kediri-naik-hingga-3-kali-lipat/" itemprop="url" title="Permalink ke: Berkah Idulfitri, Omzet Penjualan Tahu Kuning Khas Kediri Naik hingga 3 Kali Lipat">Berkah Idulfitri, Omzet Penjualan Tahu Kuning Khas Kediri Naik hingga 3 Kali Lipat</a>									</div>
+								</div>
+							</div>
+						</li>
+																								<li class="listpost-number clearfix">
+							<div class="rp-number-content">
+								<div class="rp-number pull-left">4</div>
+								<div class="gmr-rp-content">
+																		<div class="gmr-rp-link clearfix">
+										<a href="https://metaranews.co/headline/rentetan-kecelakaan-bus-disorot-wakil-ketua-komisi-d-dprd-jatim-minta-po-tak-main-main-soal-sop/" itemprop="url" title="Permalink ke: Rentetan Kecelakaan Bus Disorot, Wakil Ketua Komisi D DPRD Jatim Minta PO Tak Main-Main Soal SOP">Rentetan Kecelakaan Bus Disorot, Wakil Ketua Komisi D DPRD Jatim Minta PO Tak Main-Main Soal SOP</a>									</div>
+								</div>
+							</div>
+						</li>
+																								<li class="listpost-number clearfix">
+							<div class="rp-number-content">
+								<div class="rp-number pull-left">5</div>
+								<div class="gmr-rp-content">
+																		<div class="gmr-rp-link clearfix">
+										<a href="https://metaranews.co/headline/piton-3-meter-teror-kandang-ayam-warga-kediri/" itemprop="url" title="Permalink ke: Piton 3 Meter Teror Kandang Ayam Warga Kediri">Piton 3 Meter Teror Kandang Ayam Warga Kediri</a>									</div>
+								</div>
+							</div>
+						</li>
+																						</ul>
+			</div>
+		</div><div id="bloggingpro-recentposts-6" class="widget bloggingpro-recentposts"><h3 class="widget-title">tips menarik</h3>			<div class="gmr-recentposts-widget">
+				<ul>
+											<li class="listpost-first clearfix">
+							<div class="gmr-rp-image other-content-thumbnail thumb-radius"><a href="https://metaranews.co/tips/hukum-memberikan-zakat-fitrah-ke-orang-tua/" itemprop="url" title="Permalink ke: Hukum Memberikan Zakat Fitrah ke Orang Tua"><img width="170" height="170" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20170%20170'%3E%3C/svg%3E" class="attachment-large size-large wp-post-image" alt="Ilustrasi zakat fitrah (Desain: Freepik)" decoding="async" title="Ilustrasi zakat fitrah (Desain: Freepik)" data-lazy-src="https://metaranews.co/wp-content/uploads/2025/03/extended_ramadhan_1_03.jpg"><noscript><img width="170" height="170" src="https://metaranews.co/wp-content/uploads/2025/03/extended_ramadhan_1_03.jpg" class="attachment-large size-large wp-post-image" alt="Ilustrasi zakat fitrah (Desain: Freepik)" decoding="async" title="Ilustrasi zakat fitrah (Desain: Freepik)" /></noscript></a></div>							<div class="gmr-rp-content">
+																	<div class="gmr-metacontent">
+										<span class="cat-links-content"><a href="https://metaranews.co/category/kalam/" rel="category tag">Kalam</a>, <a href="https://metaranews.co/category/tips/" rel="category tag">Tips</a></span><span class="byline">16/03/2025</span>									</div>
+																<div class="gmr-rp-link">
+									<a href="https://metaranews.co/tips/hukum-memberikan-zakat-fitrah-ke-orang-tua/" itemprop="url" title="Permalink ke: Hukum Memberikan Zakat Fitrah ke Orang Tua">Hukum Memberikan Zakat Fitrah ke Orang Tua</a>								</div>
+							</div>
+						</li>
+																	<li class="listpost clearfix">
+							<div class="list-table clearfix">
+								<div class="table-row">
+																				<div class="table-cell gmr-rp-thumb thumb-radius">
+												<a href="https://metaranews.co/tek-nologi/ini-cara-cari-cuan-tambahan-pakai-meta-ai-whatsapp/" itemprop="url" title="Permalink ke: Ini Cara Cari “Cuan” Tambahan Pakai Meta AI WhatsApp!"><img width="60" height="60" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2060%2060'%3E%3C/svg%3E" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" title="meta-ai-creativity-tools-562" data-lazy-src="https://metaranews.co/wp-content/uploads/2024/12/meta-ai-creativity-tools-562-60x60.jpg"><noscript><img width="60" height="60" src="https://metaranews.co/wp-content/uploads/2024/12/meta-ai-creativity-tools-562-60x60.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" title="meta-ai-creativity-tools-562" /></noscript></a>											</div>
+																				<div class="table-cell">
+																					<div class="gmr-metacontent">
+												<span class="cat-links-content"><a href="https://metaranews.co/category/tek-nologi/" rel="category tag">Teknologi</a>, <a href="https://metaranews.co/category/tips/" rel="category tag">Tips</a></span><span class="byline">27/12/2024</span>											</div>
+																				<div class="gmr-rp-link">
+											<a href="https://metaranews.co/tek-nologi/ini-cara-cari-cuan-tambahan-pakai-meta-ai-whatsapp/" itemprop="url" title="Permalink ke: Ini Cara Cari “Cuan” Tambahan Pakai Meta AI WhatsApp!">Ini Cara Cari “Cuan” Tambahan Pakai Meta AI WhatsApp!</a>										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+																								<li class="listpost clearfix">
+							<div class="list-table clearfix">
+								<div class="table-row">
+																				<div class="table-cell gmr-rp-thumb thumb-radius">
+												<a href="https://metaranews.co/tips/ramai-di-media-sosial-ini-cara-melihat-spotify-wrapped-2024/" itemprop="url" title="Permalink ke: Ramai di Media Sosial, Ini Cara Melihat Spotify Wrapped 2024"><img width="60" height="60" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2060%2060'%3E%3C/svg%3E" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Spotify Wrapped 2024" decoding="async" title="Spotify Wrapped 2024" data-lazy-src="https://metaranews.co/wp-content/uploads/2024/12/spotify-1-60x60.jpg"><noscript><img width="60" height="60" src="https://metaranews.co/wp-content/uploads/2024/12/spotify-1-60x60.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Spotify Wrapped 2024" decoding="async" title="Spotify Wrapped 2024" /></noscript></a>											</div>
+																				<div class="table-cell">
+																					<div class="gmr-metacontent">
+												<span class="cat-links-content"><a href="https://metaranews.co/category/tips/" rel="category tag">Tips</a></span><span class="byline">05/12/2024</span>											</div>
+																				<div class="gmr-rp-link">
+											<a href="https://metaranews.co/tips/ramai-di-media-sosial-ini-cara-melihat-spotify-wrapped-2024/" itemprop="url" title="Permalink ke: Ramai di Media Sosial, Ini Cara Melihat Spotify Wrapped 2024">Ramai di Media Sosial, Ini Cara Melihat Spotify Wrapped 2024</a>										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+																								<li class="listpost clearfix">
+							<div class="list-table clearfix">
+								<div class="table-row">
+																				<div class="table-cell gmr-rp-thumb thumb-radius">
+												<a href="https://metaranews.co/tips/cara-daftar-siwaslu-dan-panduannya-aplikasi-informasi-hasil-pemungutan-suara/" itemprop="url" title="Permalink ke: Cara Daftar Siwaslu dan Panduannya, Aplikasi Informasi Hasil Pemungutan Suara"><img width="60" height="60" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2060%2060'%3E%3C/svg%3E" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Cara Daftar Siwaslu" decoding="async" title="Cara Daftar Siwaslu" data-lazy-src="https://metaranews.co/wp-content/uploads/2024/11/siwaslu-60x60.jpg"><noscript><img width="60" height="60" src="https://metaranews.co/wp-content/uploads/2024/11/siwaslu-60x60.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Cara Daftar Siwaslu" decoding="async" title="Cara Daftar Siwaslu" /></noscript></a>											</div>
+																				<div class="table-cell">
+																					<div class="gmr-metacontent">
+												<span class="cat-links-content"><a href="https://metaranews.co/category/tips/" rel="category tag">Tips</a></span><span class="byline">05/11/2024</span>											</div>
+																				<div class="gmr-rp-link">
+											<a href="https://metaranews.co/tips/cara-daftar-siwaslu-dan-panduannya-aplikasi-informasi-hasil-pemungutan-suara/" itemprop="url" title="Permalink ke: Cara Daftar Siwaslu dan Panduannya, Aplikasi Informasi Hasil Pemungutan Suara">Cara Daftar Siwaslu dan Panduannya, Aplikasi Informasi Hasil Pemungutan Suara</a>										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+																								<li class="listpost clearfix">
+							<div class="list-table clearfix">
+								<div class="table-row">
+																				<div class="table-cell gmr-rp-thumb thumb-radius">
+												<a href="https://metaranews.co/tips/tips-mengerjakan-soal-skd-2024-dengan-cepat-versi-lulusan-cpns/" itemprop="url" title="Permalink ke: Tips Mengerjakan Soal SKD 2024 dengan Cepat Versi Lulusan CPNS"><img width="60" height="60" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2060%2060'%3E%3C/svg%3E" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Hasil SKD Kemenag 2024" decoding="async" title="Hasil SKD Kemenag 2024" data-lazy-src="https://metaranews.co/wp-content/uploads/2024/11/tes-skd-60x60.jpg"><noscript><img width="60" height="60" src="https://metaranews.co/wp-content/uploads/2024/11/tes-skd-60x60.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Hasil SKD Kemenag 2024" decoding="async" title="Hasil SKD Kemenag 2024" /></noscript></a>											</div>
+																				<div class="table-cell">
+																					<div class="gmr-metacontent">
+												<span class="cat-links-content"><a href="https://metaranews.co/category/tips/" rel="category tag">Tips</a></span><span class="byline">05/11/2024</span>											</div>
+																				<div class="gmr-rp-link">
+											<a href="https://metaranews.co/tips/tips-mengerjakan-soal-skd-2024-dengan-cepat-versi-lulusan-cpns/" itemprop="url" title="Permalink ke: Tips Mengerjakan Soal SKD 2024 dengan Cepat Versi Lulusan CPNS">Tips Mengerjakan Soal SKD 2024 dengan Cepat Versi Lulusan CPNS</a>										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+																						</ul>
+			</div>
+		</div></aside><!-- #secondary -->
+
+			</div><!-- .row -->
+		</div><!-- .container -->
+
+			</div><!-- .gmr-content -->
+
+</div><!-- #site-container -->
+
+<div class="footer-container">
+	<div class="container">
+					<div id="footer-sidebar" class="widget-footer" role="complementary">
+				<div class="row">
+											<div class="footer-column col-md-4">
+							<div id="block-9" class="widget widget_block"></div>						</div>
+																					<div class="footer-column col-md-4">
+							<div id="media_image-18" class="widget widget_media_image"><img width="4000" height="1000" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%204000%201000'%3E%3C/svg%3E" class="image wp-image-41825  attachment-full size-full" alt="" style="max-width: 100%; height: auto;" decoding="async" data-lazy-srcset="https://metaranews.co/wp-content/uploads/2025/03/footer-besar.png 4000w, https://metaranews.co/wp-content/uploads/2025/03/footer-besar-768x192.png 768w, https://metaranews.co/wp-content/uploads/2025/03/footer-besar-1536x384.png 1536w, https://metaranews.co/wp-content/uploads/2025/03/footer-besar-2048x512.png 2048w" data-lazy-sizes="(max-width: 4000px) 100vw, 4000px" title="footer-besar" data-lazy-src="https://metaranews.co/wp-content/uploads/2025/03/footer-besar.png"><noscript><img width="4000" height="1000" src="https://metaranews.co/wp-content/uploads/2025/03/footer-besar.png" class="image wp-image-41825  attachment-full size-full" alt="" style="max-width: 100%; height: auto;" decoding="async" srcset="https://metaranews.co/wp-content/uploads/2025/03/footer-besar.png 4000w, https://metaranews.co/wp-content/uploads/2025/03/footer-besar-768x192.png 768w, https://metaranews.co/wp-content/uploads/2025/03/footer-besar-1536x384.png 1536w, https://metaranews.co/wp-content/uploads/2025/03/footer-besar-2048x512.png 2048w" sizes="(max-width: 4000px) 100vw, 4000px" title="footer-besar" /></noscript></div>						</div>
+														</div>
+			</div>
+				<div id="footer-content" class="content-footer">
+			<div class="row">
+				<div class="footer-column col-md-6">
+					<div class="gmr-footer-logo"></div><ul id="copyright-menu" class="menu"><li id="menu-item-1463" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1463"><a href="https://metaranews.co/redaksi/" itemprop="url">Redaksi</a></li>
+<li id="menu-item-1470" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1470"><a href="https://metaranews.co/kode-etik/" itemprop="url">Kode Etik</a></li>
+<li id="menu-item-4649" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4649"><a href="https://metaranews.co/press-release/" itemprop="url">Press Release</a></li>
+<li id="menu-item-4639" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4639"><a href="https://metaranews.co/tentang-kami/" itemprop="url">Tentang Kami</a></li>
+<li id="menu-item-4640" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4640"><a href="https://metaranews.co/kontak/" itemprop="url">Kontak</a></li>
+<li id="menu-item-4650" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4650"><a href="https://metaranews.co/pasang-iklan/" itemprop="url">Pasang Iklan</a></li>
+<li id="menu-item-1471" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1471"><a href="https://metaranews.co/disclaimer/" itemprop="url">Kode Etik Perusahaan</a></li>
+<li id="menu-item-4654" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4654"><a href="https://metaranews.co/pedoman-media-siber/" itemprop="url">Pedoman Media Siber</a></li>
+</ul>				</div>
+
+				<div class="footer-column col-md-6">
+					<h3 class="widget-title">Jaringan Social</h3><ul class="footer-social-icon"><li class="facebook"><a href="https://www.facebook.com/metaranews" title="Facebook" target="_blank" rel="nofollow"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02c0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89c1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02z" fill="currentColor"></path></svg>Facebook</a></li><li class="twitter"><a href="https://twitter.com/MetaraNews" title="Twitter" target="_blank" rel="nofollow"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584l-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"></path></svg>Twitter</a></li><li class="pinterest"><a href="#" title="Pinterest" target="_blank" rel="nofollow"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M9.04 21.54c.96.29 1.93.46 2.96.46a10 10 0 0 0 10-10A10 10 0 0 0 12 2A10 10 0 0 0 2 12c0 4.25 2.67 7.9 6.44 9.34c-.09-.78-.18-2.07 0-2.96l1.15-4.94s-.29-.58-.29-1.5c0-1.38.86-2.41 1.84-2.41c.86 0 1.26.63 1.26 1.44c0 .86-.57 2.09-.86 3.27c-.17.98.52 1.84 1.52 1.84c1.78 0 3.16-1.9 3.16-4.58c0-2.4-1.72-4.04-4.19-4.04c-2.82 0-4.48 2.1-4.48 4.31c0 .86.28 1.73.74 2.3c.09.06.09.14.06.29l-.29 1.09c0 .17-.11.23-.28.11c-1.28-.56-2.02-2.38-2.02-3.85c0-3.16 2.24-6.03 6.56-6.03c3.44 0 6.12 2.47 6.12 5.75c0 3.44-2.13 6.2-5.18 6.2c-.97 0-1.92-.52-2.26-1.13l-.67 2.37c-.23.86-.86 2.01-1.29 2.7v-.03z" fill="currentColor"></path></svg>Pinterest</a></li><li class="instagram"><a href="https://www.instagram.com/metaranews/" title="Instagram" target="_blank" rel="nofollow"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3z" fill="currentColor"></path></svg>Instagram</a></li><li class="linkedin"><a href="#" title="Linkedin" target="_blank" rel="nofollow"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" fill="currentColor"></path></svg>Linkedin</a></li><li class="youtube"><a href="https://www.youtube.com/channel/UCbqDuAA1UPUvisTvpmHjWQA" title="Youtube" target="_blank" rel="nofollow"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M2.5 4.5h19c.84 0 1.5.65 1.5 1.5v11.5c0 .85-.66 1.5-1.5 1.5h-19c-.85 0-1.5-.65-1.5-1.5V6c0-.85.65-1.5 1.5-1.5m7.21 4V15l5.71-3.3l-5.71-3.2M17.25 21H6.65c-.3 0-.5-.2-.5-.5s.2-.5.5-.5h10.7c.3 0 .5.2.5.5s-.3.5-.6.5z" fill="currentColor"></path></svg>Youtube</a></li><li class="tiktok"><a href="https://www.tiktok.com/@metaranews.co" title="Tiktok" target="_blank" rel="nofollow"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="0.88em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 448 512"><path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 185 188.31v89.89a74.62 74.62 0 1 0 52.23 71.18V0h88a121.18 121.18 0 0 0 1.86 22.17A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14z" fill="currentColor"></path></svg>Tiktok</a></li><li class="rssicon"><a href="https://metaranews.co/feed/" title="RSS" target="_blank" rel="nofollow"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19 7.38 20 6.18 20C5 20 4 19 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1z" fill="currentColor"></path></svg>RSS</a></li></ul>				</div>
+			</div>
+		</div>
+		<footer id="colophon" class="site-footer" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+			<div class="site-info">
+			Copyright © 2024 <a href="https://metaranews.co/">Metaranews.co</a> <a href="https://bit.ly/3NRZrWC">.</a> All Rights Reserved			</div><!-- .site-info -->
+		</footer>
+	</div>
+</div><!-- .footer-container -->
+</div>
+
+	<div class="gmr-ontop gmr-hide"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M6 4h12v2H6zm.707 11.707L11 11.414V20h2v-8.586l4.293 4.293l1.414-1.414L12 7.586l-6.707 6.707z" fill="currentColor"></path></svg></div>
+	<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/bloggingpro/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+			<script type="rocketlazyloadscript">
+				const lazyloadRunObserver = () => {
+					const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+					const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+						entries.forEach( ( entry ) => {
+							if ( entry.isIntersecting ) {
+								let lazyloadBackground = entry.target;
+								if( lazyloadBackground ) {
+									lazyloadBackground.classList.add( 'e-lazyloaded' );
+								}
+								lazyloadBackgroundObserver.unobserve( entry.target );
+							}
+						});
+					}, { rootMargin: '200px 0px 200px 0px' } );
+					lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+						lazyloadBackgroundObserver.observe( lazyloadBackground );
+					} );
+				};
+				const events = [
+					'DOMContentLoaded',
+					'elementor/lazyload/observe',
+				];
+				events.forEach( ( event ) => {
+					document.addEventListener( event, lazyloadRunObserver );
+				} );
+			</script>
+			
+
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metaranews.co/wp-content/themes/bloggingpro/js/javascript-plugin-min.js?ver=1.4.2" id="bloggingpro-js-plugin-js" defer=""></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://metaranews.co/wp-content/cache/min/1/wp-content/themes/bloggingpro/js/tinyslider-custom.js?ver=1775145635" id="bloggingpro-tinyslider-custom-js" defer=""></script>
+<script type="text/javascript" id="bloggingpro-infscroll-js-extra">
+/* <![CDATA[ */
+var gmrobjinf = {"inf":"gmr-more"};
+//# sourceURL=bloggingpro-infscroll-js-extra
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://metaranews.co/wp-content/cache/min/1/wp-content/themes/bloggingpro/js/infinite-scroll-custom.js?ver=1775145635" id="bloggingpro-infscroll-js" defer=""></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://metaranews.co/wp-content/cache/min/1/wp-content/themes/bloggingpro/js/customscript.js?ver=1775145635" id="bloggingpro-customscript-js" defer=""></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metaranews.co/wp-content/plugins/google-site-kit/dist/assets/js/googlesitekit-consent-mode-bc2e26cfa69fcd4a8261.js" id="googlesitekit-consent-mode-js" defer=""></script>
+<script type="text/javascript" id="wp-consent-api-js-extra">
+/* <![CDATA[ */
+var consent_api = {"consent_type":"","waitfor_consent_hook":"","cookie_expiration":"30","cookie_prefix":"wp_consent","services":[]};
+//# sourceURL=wp-consent-api-js-extra
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metaranews.co/wp-content/plugins/wp-consent-api/assets/js/wp-consent-api.min.js?ver=2.0.0" id="wp-consent-api-js" defer=""></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://metaranews.co/wp-content/cache/min/1/sdks/web/v16/OneSignalSDK.page.js?ver=1775145635" id="remote_sdk-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metaranews.co/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js" defer=""></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metaranews.co/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js" defer=""></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="mediaelement-core-js-before">
+/* <![CDATA[ */
+var mejsL10n = {"language":"id","strings":{"mejs.download-file":"Unduh Berkas","mejs.install-flash":"Anda menggunakan peramban yang tidak terinstal pemutar Flash. Silakan hidupkan plugin pemutar Flash Anda atau unduh versi terakhirnya dari https://get.adobe.com/flashplayer/","mejs.fullscreen":"Selayar penuh","mejs.play":"Putar","mejs.pause":"Jeda","mejs.time-slider":"Penggeser Waktu","mejs.time-help-text":"Gunakan tuts Panah Kanan/Kiri untuk melompat satu detik, panah Atas/Bawah untuk melompat sepuluh detik.","mejs.live-broadcast":"Siaran Langsung","mejs.volume-help-text":"Gunakan Anak Panah Atas/Bawah untuk menaikkan atau menurunkan volume.","mejs.unmute":"Matikan Sunyi","mejs.mute":"Bisu","mejs.volume-slider":"Penggeser Volume","mejs.video-player":"Pemutar Video","mejs.audio-player":"Pemutar Audio","mejs.captions-subtitles":"Subteks/Subjudul","mejs.captions-chapters":"Bab","mejs.none":"Tak ada","mejs.afrikaans":"Bahasa Afrikanas","mejs.albanian":"Bahasa Albania","mejs.arabic":"Bahasa Arab","mejs.belarusian":"Bahasa Belarusia","mejs.bulgarian":"Bahasa Bulgaria","mejs.catalan":"Bahasa Katalan","mejs.chinese":"Bahasa Mandarin","mejs.chinese-simplified":"Bahasa Mandarin (Disederhanakan)","mejs.chinese-traditional":"Bahasa Mandarin (Tradisional)","mejs.croatian":"Bahasa Kroasia","mejs.czech":"Bahasa Ceko","mejs.danish":"Bahasa Denmark","mejs.dutch":"Bahasa Belanda","mejs.english":"Bahasa Inggris","mejs.estonian":"Bahasa Estonia","mejs.filipino":"Bahasa Filipino","mejs.finnish":"Bahasa Finlandia","mejs.french":"Bahasa Perancis","mejs.galician":"Bahasa Galikan","mejs.german":"Bahasa Jerman","mejs.greek":"Bahasa Yunani","mejs.haitian-creole":"Bahasa Kreol Haiti","mejs.hebrew":"Bahasa Ibrani","mejs.hindi":"Bahasa Hindi","mejs.hungarian":"Bahasa Hungaria","mejs.icelandic":"Bahasa Islandia","mejs.indonesian":"Bahasa Indonesia","mejs.irish":"Bahasa Irlandia","mejs.italian":"Bahasa Italia","mejs.japanese":"Bahasa Jepang","mejs.korean":"Bahasa Korea","mejs.latvian":"Bahasa Latvia","mejs.lithuanian":"Bahasa Lithuania","mejs.macedonian":"Bahasa Macedonia","mejs.malay":"Bahasa Melayu","mejs.maltese":"Bahasa Malta","mejs.norwegian":"Bahasa Norwegia","mejs.persian":"Bahasa Persia","mejs.polish":"Bahasa Polandia","mejs.portuguese":"Bahasa Portugis","mejs.romanian":"Bahasa Romania","mejs.russian":"Bahasa Russia","mejs.serbian":"Bahasa Serbia","mejs.slovak":"Bahasa Slovakia","mejs.slovenian":"Bahasa Slovenia","mejs.spanish":"Bahasa Spanyol","mejs.swahili":"Bahasa Swahili","mejs.swedish":"Bahasa Swedia","mejs.tagalog":"Bahasa Tagalog","mejs.thai":"Bahasa Thai","mejs.turkish":"Bahasa Turki","mejs.ukrainian":"Bahasa Ukraina","mejs.vietnamese":"Bahasa Vietnam","mejs.welsh":"Bahasa Welsh","mejs.yiddish":"Bahasa Yiddi"}};
+//# sourceURL=mediaelement-core-js-before
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metaranews.co/wp-includes/js/mediaelement/mediaelement-and-player.min.js?ver=4.2.17" id="mediaelement-core-js" defer=""></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metaranews.co/wp-includes/js/mediaelement/mediaelement-migrate.min.js?ver=6.9.4" id="mediaelement-migrate-js" defer=""></script>
+<script type="text/javascript" id="mediaelement-js-extra">
+/* <![CDATA[ */
+var _wpmejsSettings = {"pluginPath":"/wp-includes/js/mediaelement/","classPrefix":"mejs-","stretching":"responsive","audioShortcodeLibrary":"mediaelement","videoShortcodeLibrary":"mediaelement"};
+//# sourceURL=mediaelement-js-extra
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metaranews.co/wp-includes/js/mediaelement/wp-mediaelement.min.js?ver=6.9.4" id="wp-mediaelement-js" defer=""></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metaranews.co/wp-includes/js/mediaelement/renderers/vimeo.min.js?ver=4.2.17" id="mediaelement-vimeo-js" defer=""></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://metaranews.co/wp-includes/js/wp-emoji-release.min.js?ver=6.9.4"}}
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="module">
+/* <![CDATA[ */
+/*! This file is auto-generated */
+const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
+//# sourceURL=https://metaranews.co/wp-includes/js/wp-emoji-loader.min.js
+/* ]]> */
+</script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async="" src="https://metaranews.co/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});</script>
+<script>class RocketElementorAnimation{constructor(){this.deviceMode=document.createElement("span"),this.deviceMode.id="elementor-device-mode-wpr",this.deviceMode.setAttribute("class","elementor-screen-only"),document.body.appendChild(this.deviceMode)}_detectAnimations(){let t=getComputedStyle(this.deviceMode,":after").content.replace(/"/g,"");this.animationSettingKeys=this._listAnimationSettingsKeys(t),document.querySelectorAll(".elementor-invisible[data-settings]").forEach(t=>{const e=t.getBoundingClientRect();if(e.bottom>=0&&e.top<=window.innerHeight)try{this._animateElement(t)}catch(t){}})}_animateElement(t){const e=JSON.parse(t.dataset.settings),i=e._animation_delay||e.animation_delay||0,n=e[this.animationSettingKeys.find(t=>e[t])];if("none"===n)return void t.classList.remove("elementor-invisible");t.classList.remove(n),this.currentAnimation&&t.classList.remove(this.currentAnimation),this.currentAnimation=n;let s=setTimeout(()=>{t.classList.remove("elementor-invisible"),t.classList.add("animated",n),this._removeAnimationSettings(t,e)},i);window.addEventListener("rocket-startLoading",function(){clearTimeout(s)})}_listAnimationSettingsKeys(t="mobile"){const e=[""];switch(t){case"mobile":e.unshift("_mobile");case"tablet":e.unshift("_tablet");case"desktop":e.unshift("_desktop")}const i=[];return["animation","_animation"].forEach(t=>{e.forEach(e=>{i.push(t+e)})}),i}_removeAnimationSettings(t,e){this._listAnimationSettingsKeys().forEach(t=>delete e[t]),t.dataset.settings=JSON.stringify(e)}static run(){const t=new RocketElementorAnimation;requestAnimationFrame(t._detectAnimations.bind(t))}}document.addEventListener("DOMContentLoaded",RocketElementorAnimation.run);</script><script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;66869252809f4e41b1b04f6091576174&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+
+<span id="elementor-device-mode-wpr" class="elementor-screen-only"></span></body></html>

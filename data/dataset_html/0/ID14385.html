@@ -1,0 +1,133 @@
+<html><head>
+    <title>Login</title>
+<link href="https://nmc.go.ke/slt/public/assets/themes/aoac/stylesheets/dialog.css?rev=3.11.6.6" rel="Stylesheet" type="text/css"> 
+<link href="https://nmc.go.ke/slt/public/assets/themes/aoac/stylesheets/login.css?rev=3.11.6.6" rel="Stylesheet" type="text/css"> 
+<meta http-equiv="content-type" content="text/html; charset=utf-8"> 
+<link href="https://nmc.go.ke/slt/favicon.ico" rel="shortcut icon">
+
+<script type="text/javascript" src="https://nmc.go.ke/slt/public/assets/javascript/jquery/jquery.js?rev=3.11.6.6"></script>
+  </head>
+  <body class="" style="text-align:center;">
+  
+<!--[if IE 7]>
+<link href="https://nmc.go.ke/slt/public/assets/themes/aoac/stylesheets/og/ie7.css?rev=3.11.6.6" rel="Stylesheet" type="text/css" /><![endif]-->
+<!--[if IE 8]>
+<link href="https://nmc.go.ke/slt/public/assets/themes/aoac/stylesheets/og/ie8.css?rev=3.11.6.6" rel="Stylesheet" type="text/css" /><![endif]-->
+<script>
+	showMoreOptions = function() {
+		var div = document.getElementById("optionsDiv");
+		var more = document.getElementById("optionsLink");
+		var hide = document.getElementById("hideOptionsLink");
+		div.style.display = "block";
+		hide.style.display = "inline";
+		more.style.display = "none";
+	}
+	hideMoreOptions = function() {
+		var div = document.getElementById("optionsDiv");
+		var more = document.getElementById("optionsLink");
+		var hide = document.getElementById("hideOptionsLink");
+		div.style.display = "none";
+		hide.style.display = "none";
+		more.style.display = "inline";
+	}
+</script>
+
+<div class="header-container">
+	<div class="header">
+			<a class="logo" href="http://www.fengoffice.com"></a>
+		</div>
+</div>
+<div class="login-body">
+
+<form action="https://nmc.go.ke/slt/index.php?c=access&amp;a=login" method="post">
+	
+	<img src="https://nmc.go.ke/slt/public/assets/themes/aoac/images/layout/loading.gif" width="1" height="1" style="position:absolute; top:0; left:0 ;display:none">
+	
+
+
+<div class="form-container">
+
+
+  <div class="input">
+    <label for="loginUsername">Email or username</label>
+    <input id="loginUsername" type="text" name="login[username]" value="">  </div>
+  <div class="input">
+    <label for="loginPassword">Password</label>
+    <input id="loginPassword" type="password" name="login[password]" value="">  </div>
+  <div id="optionsDiv" class="input" style="display:none">
+	<label>Language</label>
+  	<div style="float:right"><select name="configOptionSelect">
+<option selected="selected" value="Default">Last</option>
+<option value="ar_sa">العربية</option>
+<option value="ca_es">Català</option>
+<option value="cs_cz">Čeština</option>
+<option value="de_de">Deutsch</option>
+<option value="el_gr">Ελληνικά</option>
+<option value="en_ca">English (Canadian)</option>
+<option value="en_gb">English (U.K.)</option>
+<option value="en_us">English (U.S.)</option>
+<option value="es_es">Español (España)</option>
+<option value="es_la">Español (Latinoamérica)</option>
+<option value="fr_ca">Français - Canada</option>
+<option value="fr_fr">Français</option>
+<option value="hr_hr">hr_hr</option>
+<option value="hu_hu">Magyar</option>
+<option value="id_ba">Bahasa</option>
+<option value="it_it">Italiano</option>
+<option value="ja_jp">日本語</option>
+<option value="ko_kr">한국어</option>
+<option value="lt_lt">Lietuvių</option>
+<option value="nb_no">Norsk - Bokmål</option>
+<option value="nl_nl">Nederlands</option>
+<option value="pl_pl">Polski</option>
+<option value="pt_br">Português</option>
+<option value="ro_ro">Romanian</option>
+<option value="ru_ru">Pусский</option>
+<option value="sl_sl">Slovenski Jezik (Slovenian)</option>
+<option value="sr_sr">српски (Serbian)</option>
+<option value="sv_se">Svenska (SE)</option>
+<option value="tr_tr">Türkçe</option>
+<option value="uk_ua">Українська</option>
+<option value="zh_cn">简体中文</option>
+<option value="zh_tw">中文 (臺灣)</option>
+</select>
+</div>
+  </div>
+  <div style="clear:both;"></div>
+
+	<div class="submit-div">
+		<button class="submit " type="submit" accesskey="s">Login</button>		<span class="forgot-pass"><a class="internalLink" href="https://nmc.go.ke/slt/index.php?c=access&amp;a=forgot_password">Send a new password</a></span>
+	</div>
+	<div class="login-options-separator"></div>
+	<div class="options-container">
+		<div class="remember-div">
+			<input id="loginRememberMe" type="checkbox" class="checkbox" name="login[remember]" value="checked">			<label class="checkbox" for="loginRememberMe">Remember me for 14 days</label>
+		</div>
+		<div class="options-links">
+			<a id="optionsLink" href="javascript:showMoreOptions()">Options</a>
+			<a id="hideOptionsLink" style="display:none" href="javascript:hideMoreOptions()">Hide options</a>
+		</div>
+	</div>
+
+  	  	
+</div>
+
+
+</form>
+
+
+</div>
+
+
+<div class="login-footer">
+	<div class="powered-by">
+		Powered by <a target="_blank" href="https://www.fengoffice.com">Feng Office</a> - version 3.11.6.6	</div>
+</div>
+
+<script>
+document.getElementById('loginUsername').focus();
+</script>
+  
+	
+  
+</body></html>

@@ -1,0 +1,761 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+    <title>LOTTE Mall - Shopping Center, Pusat Belanja &amp; Kuliner di Jakarta</title>
+<meta name="title" content="LOTTE Mall - Shopping Center, Pusat Belanja &amp; Kuliner di Jakarta">
+<meta name="description" content="Kami merupakan salah satu Mall di Jakarta yang menjadi pusat belanja (shopping center) dan juga menjadi pusat kuliner. Kami juga sering mengadakan berbagai event dan promosi menarik. Berbagai produk fashion dan lifestyle juga bisa didapatkan di Lotte Mall, bahkan Anda bisa order secara online.
+">	<meta name="medium" content="medium_type">
+	<link rel="SHORTCUT ICON" href="/images/favicon.png"> 
+    
+    <!--<meta name="viewport" content="width=1220, user-scalable=yes" />-->
+    <meta name="viewport" content="width=320, initial-scale=1, maximum-scale=1, min-width=320, user-scalable=no">
+    <meta name="distribution" content="global">
+    <meta name="revisit-after" content="1 days">
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="msnbot" content="index,follow">
+    <meta name="format-detection" content="telephone=no">
+    <link type="text/css" rel="stylesheet" href="/css/reset.css?date=20190809">
+	<link type="text/css" rel="stylesheet" href="/index.css?date=20260406">
+    <link type="text/css" rel="stylesheet" href="/index_animation.css?date=20190809b">
+    <!--<link type="text/css" rel="stylesheet" href="/index_mobile.css?date=20180222" />-->
+    <link type="text/css" rel="stylesheet" href="/index_viewport.css?date=20260406">
+    <link type="text/css" rel="stylesheet" href="/jquery/css/jquery-ui.css?date=20190809">
+    <!--<link type="text/css" rel="stylesheet" href="/css/animate.css" />-->
+    
+    <!--<link rel="stylesheet" href="dist/stylesheets/superslides.css">-->
+    
+	<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-WESZ5J1B49&amp;cx=c&amp;gtm=4e6481"></script><script src="/js/jquery-1.9.1.js?date=20190809"></script>
+    <script src="/js/jquery-ui-1.10.2.js?date=20190809"></script>
+    <script src="/js/jquery.watermark.js?date=20190809"></script>
+    <script src="/js/bxslider/jquery.bxslider.min.js?date=20190809"></script>
+    <link href="/js/bxslider/jquery.bxslider2.css?date=20190809" rel="stylesheet">
+    <link href="/js/bxslider/jquery.bxslider3.css?date=20190812" rel="stylesheet">
+    <!--<link href="/js/bxslider/jquery.bxslider3b.css?date=20170428" rel="stylesheet" />-->
+    <link rel="stylesheet" type="text/css" href="/js/sooperfish02/sooperfish.css?date=20190809" media="screen">
+    <script type="text/javascript" src="/js/sooperfish02/jquery.sooperfish.js?date=20190809"></script>
+	<!--<link href="/js/facebox/facebox.css" media="screen" rel="stylesheet" type="text/css"/>
+    <script src="/js/facebox/facebox.js" type="text/javascript"></script> -->
+	<script type="text/javascript">		
+    /*jQuery(document).ready(function($) {
+		$('a[rel*=facebox]').facebox({
+			loading_image : '/loading.gif',
+			close_image   : '/closelabel.gif'
+		}) 
+		$(".overlay,.ok,.err").show(200);
+		$(".ok,.err").fadeOut(3000);
+		$(".overlay").fadeOut(3000);
+    })*/
+    function close_overlay()
+    {
+		$(".ok,.err").fadeOut(0);
+		$(".overlay").fadeOut(0);			
+    }
+    function check_enter(e)
+    {
+		if (e.keyCode == 13) {
+			redirect_search();
+			return false;
+		}
+    }
+		
+	function redirect_search()
+	{
+		var txtsearch=document.getElementById('txtsearch').value;
+		document.location.href="/search.php?search="+txtsearch;
+	}
+	function menu_product_hard_show(){
+		if(document.getElementById("menu_product_hard")){
+			document.getElementById("menu_product_hard").style.visibility="visible";
+		}
+	}
+	function menu_product_hard_hide(){
+		if(document.getElementById("menu_product_hard")){
+			document.getElementById("menu_product_hard").style.visibility="hidden";
+		}
+	}
+	$(function () {
+		$("#txtsearch").watermark("Search","watermark");
+		$("#email_subscribe").watermark("Enter your email","watermark");
+	});
+	function scrollWin(page){
+		var topmin=0;
+		var topplus=0;
+		if(page=="indexcontactid") topmin=50;
+		
+		if(page=="homepartbg") topplus=0;
+		else topplus=5;
+		$('html,body').animate({
+			scrollTop: ($("#"+page).offset().top)-topmin+topplus
+		}, 500);	
+		
+		return true;
+	}
+    </script>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-63860127-12"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-63860127-12');
+    </script>
+        
+        <script src="js/activemenu.js?date=20190809"></script>        
+        </head>
+
+<body>
+	    
+    
+    <script>
+	function close_popup_quickbuy(){
+		document.getElementById('popupindex_qb').style.display='none';
+		document.getElementById('menuslidebackpart_qb').style.display='none';
+	}
+	function quickbuy_open(id){
+		document.getElementById('popupindex_qb').style.display='block';
+		document.getElementById('menuslidebackpart_qb').style.display='block';
+		document.getElementById('iframe_qb').src="/tenant_detail.php?id="+id;
+	}
+	function close_popup2_quickbuy(){
+		document.getElementById('popupindex2_qb').style.display='none';
+		document.getElementById('menuslidebackpart_qb2').style.display='none';
+	}
+	function quickbuy2_open(id){
+		document.getElementById('popupindex2_qb').style.display='block';
+		document.getElementById('menuslidebackpart_qb2').style.display='block';
+		document.getElementById('iframe_qb2').src="/facility_detail.php?id="+id;
+	}
+	</script>
+    <div class="">
+    <div class="menuslidebackpart" id="menuslidebackpart_qb" onclick="close_popup_quickbuy()" style="display:none"></div>
+    <div class="posfixed" id="posfixed_qb">    	
+        <div class="popupindex_qb" id="popupindex_qb" style="display:none">
+        	<div class="posrel100"><div class="posabs" style="width:100%;text-align:right;"><img src="/images/close_btn3.png" style="cursor:pointer;" onclick="close_popup_quickbuy()"></div></div>
+            <iframe id="iframe_qb" src="/tenant_detail.php?id=" width="1050" height="550" frameborder="0"></iframe>
+        </div>
+    </div>
+    </div>
+    
+    <div class="">
+    <div class="menuslidebackpart" id="menuslidebackpart_qb2" onclick="close_popup2_quickbuy()" style="display:none"></div>
+    <div class="posfixed" id="posfixed2_qb">    	
+        <div class="popupindex2_qb" id="popupindex2_qb" style="display:none">
+        	<div class="posrel100"><div class="posabs" style="width:100%;text-align:right;"><img src="/images/close_btn3.png" style="cursor:pointer;" onclick="close_popup2_quickbuy()"></div></div>
+            <iframe id="iframe_qb2" src="/facility_detail.php?id=" width="310" height="415" frameborder="0"></iframe>
+        </div>
+    </div>
+    </div>
+    
+		<!-- <div class="">
+    	<div class="wa_float_icon">
+        	<div class="displayd"><a href="https://wa.me/6281905180064" target="_blank"><img src="/images/wa_float_long.png" /></a></div>
+            <div class="displaym"><a href="https://wa.me/6281905180064" target="_blank"><img src="/images/wa_float.png" /></a></div>
+        </div>
+    </div> -->
+   
+	    <!--<div class="menuslidebackpart" id="menuslidebackpart"></div>-->
+    
+    <script>
+	$(document).ready(function(){
+		var last_option_id=0;
+		$('.headermenubtntrigger').click(function() {
+			var id = $(this).data('value');
+			
+			if(last_option_id==id){
+				$("#headeroption_"+id).slideUp(300);
+				last_option_id=0;
+			}
+			else{
+				$(".headeroption").slideUp(0);
+				$("#headeroption_"+id).slideDown(300);
+				last_option_id=id;
+			}
+		});
+	});
+	</script>
+    <script>
+		function searchbtnclick(){
+			document.getElementById("searchbtn").style.display="none";
+			document.getElementById("header_search_box_id").style.display="block";
+			
+		}
+	</script>
+        
+    
+<div class="menu">
+	<div class="vm">
+    	<div class="menuheight borderradius5">
+        	        	<div class="menupoint animationall borderradius5top" id="menu_home" onclick="scrollWin('homepartbg')"><div class="vm"><img src="/images/value/home.png"></div></div>
+            <div class="menupoint animationall" id="menu_event" onclick="scrollWin('eventpart')"><div class="vm"><img src="/images/value/megaphone.png"></div></div>
+        	<div class="menupoint animationall" id="menu_about" onclick="scrollWin('tenantpart')"><div class="vm"><img src="/images/value/about.png"></div></div>
+            <!-- <div class="menupoint animationall" id="menu_ecommerce" onclick="scrollWin('ecommercepart')"><div class="vm"><img src="/images/value/bag.png" /></div></div> -->
+            <!--<div class="menupoint animationall" id="menu_smile" onclick="scrollWin('facilitypart')"><div class="vm"><img src="/images/value/smile.png" /></div></div>-->
+            <!-- <div class="menupoint animationall" id="menu_bulb" onclick="scrollWin('comicpart')"><div class="vm"><img src="/images/value/bulb.png" /></div></div> -->
+            <a href="https://ethics.lotteshopping.com.vn/" target="_blank"><div class="menupoint animationall" id=""><div class="vm"><img src="/images/value/ethic.png" style="height:30px"></div></div></a>
+            <div class="menupoint animationall borderradius5bottom" id="menu_contact" onclick="scrollWin('contactpart')"><div class="vm"><img src="/images/value/pin.png"></div></div>
+                    </div>
+    </div>
+</div>
+<div class="homepartbg" id="homepartbg">
+    <div class="homepart" id="homepart">
+        <div class="containerpadding">
+            <div class="homeparthead posrelcontent">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%" class="tablehomeparthead">
+                    <tbody><tr>
+                        <td class="tdhomeparthead tdhomeparthead1">
+                            <img src="images/logo.png?date=20240207" style="max-width:100%">
+                        </td>
+                        <td class="tdhomeparthead tdhomeparthead2">
+                            <img src="images/playground.png" style="max-width:100%">
+                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+        </div>
+        
+        <div class="">
+            <div class="homepartbody">
+            	<div class="vb">
+                <div class="fullimageContainer" style="">
+                    <div class="imageCenterer homeimagecontainer" style="width:1279px;">
+                    	<div class="posrel100"><div class="posabs100 homeimage_ch"><img class="cloud1 animationall" style="" src="images/animation/home/cloud1.png"></div></div>
+                        <div class="posrel100"><div class="posabs100 homeimage_ch"><img class="cloud2 animationall" style="" src="images/animation/home/cloud2.png"></div></div>
+                        <div class="posrel100"><div class="posabs100 homeimage_ch"><img class="cloud3 animationall" style="" src="images/animation/home/cloud3.png"></div></div>
+                        <div class="posrel100"><div class="posabs100 homeimage_ch"><img class="cloud4 animationall" style="" src="images/animation/home/cloud4.png"></div></div>
+                        
+                        <div class="posrel100"><div class="posabs100 homeimage_ch"><img class="bicycle1 moveright1 animatedelay20s animationall" style="" src="images/animation/home/bicycle1.png"></div></div>
+                        <div class="posrel100"><div class="posabs100 homeimage_ch"><img class="people1 moveright2 animationall" style="" src="images/animation/home/people1.png"></div></div>
+                        <div class="posrel100"><div class="posabs100 homeimage_ch"><img class="people2 moveright3 animationall" style="" src="images/animation/home/people2.png"></div></div>
+                        <div class="posrel100"><div class="posabs100 homeimage_ch"><img class="car1 moveleft1 animationall" style="" src="images/animation/home/car.png"></div></div>
+                        <div class="posrel100"><div class="posabs100 homeimage_ch"><img class="people3 jump2 animationall" style="" src="images/animation/home/people3.png"></div></div>
+                        <div class="posrel100"><div class="posabs100 homeimage_ch"><img class="bus1 moveright1 animationall" style="" src="images/animation/home/bus1.png"></div></div>
+                        <div class="posrel100"><div class="posabs100 homeimage_ch"><img class="firework1 animationall" style="" src="images/animation/home/firework1.png"></div></div>
+                        <div class="posrel100"><div class="posabs100 homeimage_ch"><img class="firework1 firework1b animatedelay2s animationall" style="" src="images/animation/home/firework1.png"></div></div>
+                        <div class="posrel100"><div class="posabs100 homeimage_ch"><img class="firework2 animatedelay2s animationall" style="" src="images/animation/home/firework2.png"></div></div>
+                        <div class="posrel100"><div class="posabs100 homeimage_ch"><img class="firework2 firework2b animatedelay1s animationall" style="" src="images/animation/home/firework2.png"></div></div>
+                        <div class="posrel100"><div class="posabs100 homeimage_ch"><img class="pin1 jump1 animationall" style="" src="images/animation/home/pin1.png"></div></div>
+                        <div class="posrel100"><div class="posabs100 homeimage_ch"><img class="pin2 jump1 animationall" style="" src="images/animation/home/pin2.png"></div></div>
+                        <div class="posrel100"><div class="posabs100 homeimage_ch"><img class="plane1 moveleft4 animatedelay10s animationall" style="" src="images/animation/home/plane1.png"></div></div>
+                        <div class="posrel100"><div class="posabs100 homeimage_ch"><img class="firework3 animatedelay2s animationall" style="" src="images/animation/home/firework3.png"></div></div>
+                        <div class="posrel100"><div class="posabs100 homeimage_ch"><img class="airballoon1 jump1 animatedelay2s animationall" style="" src="images/animation/home/airballoon1.png"></div></div>
+                        <div class="posrel100"><div class="posabs100 homeimage_ch"><img class="wheel1 rotateright1 animationall" style="" src="images/animation/home/wheel1.png"></div></div>
+                        <!-- <div class="posrel100"><div class="posabs100 homeimage_ch"><img class="logo1 animationall" style="" src="images/animation/home/logo.png" /></div></div> -->
+                        <img src="images/content/homebg_wo.png" class="mainimg" style="width:1279px;">
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><div class="eventpart" id="eventpart">
+	<div class="fullimageContainer_event" style="">
+    	<div class="imageCenterer_event eventimagecontainer" style="width:1280px;">
+        	<div class="posrel100 displayd"><div class="posabs100 eventimage_ch"><img src="images/animation/event/mainleft.png" class="mainleft"></div></div>
+            <div class="posrel100 displayd"><div class="posabs100 eventimage_ch"><img src="images/animation/event/mainright.png" class="mainright"></div></div>
+            <div class="posrel100 displayd"><div class="posabs100 eventimage_ch"><img class="cloud1 animationall" style="" src="images/animation/event/cloud1.png"></div></div>
+            <div class="posrel100 displayd"><div class="posabs100 eventimage_ch"><img class="cloud2 animationall" style="" src="images/animation/event/cloud1.png"></div></div>
+            <div class="posrel100 displayd"><div class="posabs100 eventimage_ch"><img class="cloud3 animationall" style="" src="images/animation/event/cloud2.png"></div></div>
+            <div class="posrel100 displayd"><div class="posabs100 eventimage_ch"><img class="cloud4 animationall" style="" src="images/animation/event/cloud3.png"></div></div>
+            <div class="posrel100 displayd"><div class="posabs100 eventimage_ch"><img class="cloud5 animationall" style="" src="images/animation/event/cloud4.png"></div></div>
+            <div class="posrel100 displayd"><div class="posabs100 eventimage_ch"><img class="ticket1 shake1 animationall" style="" src="images/animation/event/ticket1.png"></div></div>
+            <div class="posrel100 displayd"><div class="posabs100 eventimage_ch"><img class="mic1 shakeup1 animationall" style="" src="images/animation/event/mic1.png"></div></div>
+            <div class="posrel100 displayd"><div class="posabs100 eventimage_ch"><img class="firework1 animationall" style="" src="images/animation/event/firework1.png"></div></div>
+            <div class="posrel100 displayd"><div class="posabs100 eventimage_ch"><img class="firework2 animatedelayp1s animationall" style="" src="images/animation/event/firework2.png"></div></div>
+            <div class="posrel100 displayd"><div class="posabs100 eventimage_ch"><img class="firework3 animationall" style="" src="images/animation/event/firework3.png"></div></div>
+            <div class="posrel100 displayd"><div class="posabs100 eventimage_ch"><img class="firework4 animationall animatedelayp1s" style="" src="images/animation/event/firework4.png"></div></div>
+            <div class="posrel100 displayd"><div class="posabs100 eventimage_ch"><img class="firework5 animationall animatedelayp2s" style="" src="images/animation/event/firework5.png"></div></div>
+            <div class="posrel100 displayd"><div class="posabs100 homeimage_ch"><img class="plane1 moveleft4 animatedelay2s animationall" style="" src="images/animation/event/plane1.png"></div></div>
+            
+            
+            
+            <div class="container860 posrelcontent">
+        
+                <div class="eventhead pagetitle1 padbot65">EVENT &amp; PROMOTION</div>
+                
+                <div class="eventbodypad"> 
+                	<div class="overfloweventtable">
+                    
+                    <script>
+						$(document).ready(function(){
+							$('.bxslider3c').bxSlider({
+								slideWidth: 255,
+								minSlides: 1,
+								maxSlides: 3,
+								slideMargin: 0,
+								useCSS: true,
+								infiniteLoop: false,
+								wrapperClass: 'bx-down2'
+							});
+						});
+					</script>
+					<div class="gallery_content" id="gallery_photo" style="display:block">
+						<div class="bx-down2" id="thumbnail-slider2">
+                            <div class="bx-wrapper" style="max-width: 0px;"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative;"><ul class="bxslider3c" style="width: 215%; position: relative;">
+                                                            </ul></div><div class="bx-controls bx-has-pager bx-has-controls-direction"><div class="bx-pager"></div><div class="bx-controls-direction"><a class="bx-prev" href="">Prev</a><a class="bx-next" href="">Next</a></div></div></div>
+						</div>
+                        <!--<table cellpadding="0" cellspacing="0" border="0" width="100%" class="tableevent">
+                            <tr>
+                                <td class="tdevent">
+                                    <div class="eventcont shadow">
+                                        <div class="eventimg" style="background:url(images/news/1.jpg) center center no-repeat;background-size:cover;"></div>
+                                        <div class="eventname">Lorem ipsum dolor sit amet is a simply dummy text</div>
+                                    </div>
+                                </td>
+                                <td class="tdeventsep">&nbsp;</td>
+                                <td class="tdevent">
+                                    <div class="eventcont shadow">
+                                        <div class="eventimg" style="background:url(images/news/1.jpg) center center no-repeat;background-size:cover;"></div>
+                                        <div class="eventname">Lorem ipsum dolor sit amet is a simply dummy text</div>
+                                    </div>
+                                </td>
+                                <td class="tdeventsep">&nbsp;</td>
+                                <td class="tdevent">
+                                    <div class="eventcont shadow">
+                                        <div class="eventimg" style="background:url(images/news/1.jpg) center center no-repeat;background-size:cover;"></div>
+                                        <div class="eventname">Lorem ipsum dolor sit amet is a simply dummy text</div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>-->
+                    </div>
+                </div>
+                
+                <div class="" align="center" style="padding-top:40px">
+                    <a href="/news" target=""><input type="button" class="btn2 borderradius30 animation" name="ecommerce_btn" id="ecommerce_btn" value="MORE ABOUT EVENT &amp; PROMOTION"></a>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div><div class="tenantpart" id="tenantpart">
+	<div class="fullimageContainer_tenant" style="">
+    	<div class="imageCenterer_tenant tenantimagecontainer" style="width:1362px;">
+        	<div class="posrel100 displayd"><div class="posabs100 tenantimage_ch"><img src="images/animation/tenant/mainimg.png" class="mainimg"></div></div>
+            
+            <div class="posrel100 displayd"><div class="posabs100 tenantimage_ch"><img class="people1 moveleft2 animationall" style="" src="images/animation/tenant/people1.png"></div></div>
+            <div class="posrel100 displayd"><div class="posabs100 tenantimage_ch"><img class="people2 moveright2 animationall" style="" src="images/animation/tenant/people2.png"></div></div>
+            <div class="posrel100 displayd"><div class="posabs100 tenantimage_ch"><img class="people3 moveright3 animationall" style="" src="images/animation/tenant/people3.png"></div></div>
+            <div class="posrel100 displayd"><div class="posabs100 tenantimage_ch"><img class="people4 moveright2b animationall" style="" src="images/animation/tenant/people4.png"></div></div>
+            <div class="posrel100 displayd"><div class="posabs100 tenantimage_ch"><img class="people5 moveleft3 animationall" style="" src="images/animation/tenant/people5.png"></div></div>
+            <div class="posrel100 displayd"><div class="posabs100 tenantimage_ch"><img class="pin1 jump2 animationall" style="" src="images/animation/tenant/pin1.png"></div></div> 
+            <div class="posrel100 displayd"><div class="posabs100 tenantimage_ch"><img class="pin2 jump2 animationall" style="" src="images/animation/tenant/pin1.png"></div></div>
+            <div class="posrel100 displayd"><div class="posabs100 tenantimage_ch"><img class="pin3 jump2 animationall" style="" src="images/animation/tenant/pin1.png"></div></div>
+            <div class="posrel100 displayd"><div class="posabs100 tenantimage_ch"><img class="pin4 jump2 animationall" style="" src="images/animation/tenant/pin1.png" width="30"></div></div>
+            
+            
+            
+            <div class="container860 container860responsive posrelcontent">
+        
+                <div class="tenanthead pagetitle1 padbot65">BRANDS &amp; TENANTS</div>
+                
+                <div class="tenantbodypad"> 
+                	<div class="overflowtenanttable">
+                    	<!--<div class="tenantwidthlong" style="width:1720px";>
+                    	                    	<div class="tenantpoint">
+                            <div class="">
+                            	<div class="tenantpad" onclick="quickbuy_open(1)">
+                                	<div class="vm"><div class="tenantimg"><img src="images/brand/1.png" class="animationall" /></div></div>
+                                </div>
+                                <div class="tenantpad" onclick="quickbuy_open(1)">
+                                	<div class="vm"><div class="tenantimg"><img src="images/brand/1.png" class="animationall" /></div></div>
+                                </div>
+                            </div>
+                        </div>
+                                            	<div class="tenantpoint">
+                            <div class="">
+                            	<div class="tenantpad" onclick="quickbuy_open(1)">
+                                	<div class="vm"><div class="tenantimg"><img src="images/brand/1.png" class="animationall" /></div></div>
+                                </div>
+                                <div class="tenantpad" onclick="quickbuy_open(1)">
+                                	<div class="vm"><div class="tenantimg"><img src="images/brand/1.png" class="animationall" /></div></div>
+                                </div>
+                            </div>
+                        </div>
+                                            	<div class="tenantpoint">
+                            <div class="">
+                            	<div class="tenantpad" onclick="quickbuy_open(1)">
+                                	<div class="vm"><div class="tenantimg"><img src="images/brand/1.png" class="animationall" /></div></div>
+                                </div>
+                                <div class="tenantpad" onclick="quickbuy_open(1)">
+                                	<div class="vm"><div class="tenantimg"><img src="images/brand/1.png" class="animationall" /></div></div>
+                                </div>
+                            </div>
+                        </div>
+                                            	<div class="tenantpoint">
+                            <div class="">
+                            	<div class="tenantpad" onclick="quickbuy_open(1)">
+                                	<div class="vm"><div class="tenantimg"><img src="images/brand/1.png" class="animationall" /></div></div>
+                                </div>
+                                <div class="tenantpad" onclick="quickbuy_open(1)">
+                                	<div class="vm"><div class="tenantimg"><img src="images/brand/1.png" class="animationall" /></div></div>
+                                </div>
+                            </div>
+                        </div>
+                                            	<div class="tenantpoint">
+                            <div class="">
+                            	<div class="tenantpad" onclick="quickbuy_open(1)">
+                                	<div class="vm"><div class="tenantimg"><img src="images/brand/1.png" class="animationall" /></div></div>
+                                </div>
+                                <div class="tenantpad" onclick="quickbuy_open(1)">
+                                	<div class="vm"><div class="tenantimg"><img src="images/brand/1.png" class="animationall" /></div></div>
+                                </div>
+                            </div>
+                        </div>
+                                            	<div class="tenantpoint">
+                            <div class="">
+                            	<div class="tenantpad" onclick="quickbuy_open(1)">
+                                	<div class="vm"><div class="tenantimg"><img src="images/brand/1.png" class="animationall" /></div></div>
+                                </div>
+                                <div class="tenantpad" onclick="quickbuy_open(1)">
+                                	<div class="vm"><div class="tenantimg"><img src="images/brand/1.png" class="animationall" /></div></div>
+                                </div>
+                            </div>
+                        </div>
+                                            	<div class="tenantpoint">
+                            <div class="">
+                            	<div class="tenantpad" onclick="quickbuy_open(1)">
+                                	<div class="vm"><div class="tenantimg"><img src="images/brand/1.png" class="animationall" /></div></div>
+                                </div>
+                                <div class="tenantpad" onclick="quickbuy_open(1)">
+                                	<div class="vm"><div class="tenantimg"><img src="images/brand/1.png" class="animationall" /></div></div>
+                                </div>
+                            </div>
+                        </div>
+                                            	<div class="tenantpoint">
+                            <div class="">
+                            	<div class="tenantpad" onclick="quickbuy_open(1)">
+                                	<div class="vm"><div class="tenantimg"><img src="images/brand/1.png" class="animationall" /></div></div>
+                                </div>
+                                <div class="tenantpad" onclick="quickbuy_open(1)">
+                                	<div class="vm"><div class="tenantimg"><img src="images/brand/1.png" class="animationall" /></div></div>
+                                </div>
+                            </div>
+                        </div>
+                                            	<div class="tenantpoint">
+                            <div class="">
+                            	<div class="tenantpad" onclick="quickbuy_open(1)">
+                                	<div class="vm"><div class="tenantimg"><img src="images/brand/1.png" class="animationall" /></div></div>
+                                </div>
+                                <div class="tenantpad" onclick="quickbuy_open(1)">
+                                	<div class="vm"><div class="tenantimg"><img src="images/brand/1.png" class="animationall" /></div></div>
+                                </div>
+                            </div>
+                        </div>
+                                            	<div class="tenantpoint">
+                            <div class="">
+                            	<div class="tenantpad" onclick="quickbuy_open(1)">
+                                	<div class="vm"><div class="tenantimg"><img src="images/brand/1.png" class="animationall" /></div></div>
+                                </div>
+                                <div class="tenantpad" onclick="quickbuy_open(1)">
+                                	<div class="vm"><div class="tenantimg"><img src="images/brand/1.png" class="animationall" /></div></div>
+                                </div>
+                            </div>
+                        </div>
+                                                </div>-->
+                        
+                        <script>
+							$(document).ready(function(){
+								$('.bxslider3').bxSlider({
+									slideWidth: 172,
+									minSlides: 1,
+									maxSlides: 5,
+									slideMargin: 0,
+									useCSS: true,
+									infiniteLoop: false,
+									wrapperClass: 'bx-down2'
+								});
+								/*$('.bxslider3b').bxSlider({
+									slideWidth: 220,
+									minSlides: 1,
+									maxSlides: 4,
+									slideMargin: 20,
+									useCSS: true,
+									wrapperClass: 'bx-down2b',
+									video:true
+								});*/
+							});
+						</script>
+                        <div class="gallery_content" id="gallery_photo" style="display:block">
+                            <div class="bx-down2" id="thumbnail-slider2">
+                            <div class="bx-wrapper" style="max-width: 688px;"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 357px;"><ul class="bxslider3" style="width: 615%; position: relative; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
+                            	                                <li class="galleryli" style="float: left; list-style: none; position: relative; width: 172px;">
+                                    <div class="tenantpoint">
+                                        <div class="">
+                                            <div class="tenantpad" onclick="quickbuy_open(920)">
+                                                <div class="vm"><div class="tenantimg"><img src="images/exhibitor/phpz5qs_i_resized.png" class="animationall"></div></div>
+                                            </div>
+                                                                                        <div class="tenantpad" onclick="quickbuy_open(919)">
+                                                <div class="vm"><div class="tenantimg"><img src="images/exhibitor/phpwy_my_resized.jpg" class="animationall"></div></div>
+                                            </div>
+                                                                                    </div>
+                                    </div>
+                                </li>
+                                                                <li class="galleryli" style="float: left; list-style: none; position: relative; width: 172px;">
+                                    <div class="tenantpoint">
+                                        <div class="">
+                                            <div class="tenantpad" onclick="quickbuy_open(918)">
+                                                <div class="vm"><div class="tenantimg"><img src="images/exhibitor/php0ekvpo_resized.jpg" class="animationall"></div></div>
+                                            </div>
+                                                                                        <div class="tenantpad" onclick="quickbuy_open(917)">
+                                                <div class="vm"><div class="tenantimg"><img src="images/exhibitor/php_ukcxo_resized.png" class="animationall"></div></div>
+                                            </div>
+                                                                                    </div>
+                                    </div>
+                                </li>
+                                                                <li class="galleryli" style="float: left; list-style: none; position: relative; width: 172px;">
+                                    <div class="tenantpoint">
+                                        <div class="">
+                                            <div class="tenantpad" onclick="quickbuy_open(910)">
+                                                <div class="vm"><div class="tenantimg"><img src="images/exhibitor/phpavv50f_resized.png" class="animationall"></div></div>
+                                            </div>
+                                                                                        <div class="tenantpad" onclick="quickbuy_open(890)">
+                                                <div class="vm"><div class="tenantimg"><img src="images/exhibitor/phpl8391l_resized.jpg" class="animationall"></div></div>
+                                            </div>
+                                                                                    </div>
+                                    </div>
+                                </li>
+                                                                <li class="galleryli" style="float: left; list-style: none; position: relative; width: 172px;">
+                                    <div class="tenantpoint">
+                                        <div class="">
+                                            <div class="tenantpad" onclick="quickbuy_open(606)">
+                                                <div class="vm"><div class="tenantimg"><img src="images/exhibitor/phpledixl_resized.jpg" class="animationall"></div></div>
+                                            </div>
+                                                                                        <div class="tenantpad" onclick="quickbuy_open(363)">
+                                                <div class="vm"><div class="tenantimg"><img src="images/exhibitor/phpkq_dl5_resized.png" class="animationall"></div></div>
+                                            </div>
+                                                                                    </div>
+                                    </div>
+                                </li>
+                                                            </ul></div><div class="bx-controls bx-has-pager bx-has-controls-direction"><div class="bx-pager bx-default-pager"><div class="bx-pager-item"><a href="" data-slide-index="0" class="bx-pager-link active">1</a></div></div><div class="bx-controls-direction"><a class="bx-prev disabled" href="">Prev</a><a class="bx-next disabled" href="">Next</a></div></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="" align="center">
+                    <a href="tenant-list" target="_blank"><input type="button" class="btn2 borderradius30 animation" name="ecommerce_btn" id="ecommerce_btn" value="MORE ABOUT BRANDS &amp; TENANTS"></a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div><div class="comicpart" id="comicpart" style="display:none">
+	<div class="fullimageContainer_comic" style="">
+    	<div class="imageCenterer_comic comicimagecontainer" style="width:1312px;">
+            <div class="posrel100 displayd"><div class="posabs100 comicimage_ch"><img src="images/animation/comic/mainimg.png" class="mainimg"></div></div>
+            
+            <div class="posrel100 displayd"><div class="posabs100 comicimage_ch"><img class="car1 moveleft1 animationall" style="" src="images/animation/comic/car1.png"></div></div>
+            
+            <div class="posrel100 displayd"><div class="posabs100 comicimage_ch"><img class="exc1 star star2 animationall" style="" src="images/animation/comic/exc1.png"></div></div>
+            <div class="posrel100 displayd"><div class="posabs100 comicimage_ch"><img class="exc2 star star2 animationall" style="" src="images/animation/comic/exc2.png"></div></div>
+            <div class="posrel100 displayd"><div class="posabs100 comicimage_ch"><img class="exc3 star star2 animationall" style="" src="images/animation/comic/exc3.png"></div></div>
+            <div class="posrel100 displayd"><div class="posabs100 comicimage_ch"><img class="people1 star2 animationall" style="" src="images/animation/comic/people1.png"></div></div>
+            <div class="posrel100 displayd"><div class="posabs100 comicimage_ch"><img class="people2 star2 animationall" style="" src="images/animation/comic/people2.png"></div></div>
+            <div class="posrel100 displayd"><div class="posabs100 homeimage_ch"><img class="firework1 animationall" style="" src="images/animation/comic/firework1.png"></div></div>
+            <div class="posrel100 displayd"><div class="posabs100 homeimage_ch"><img class="firework2 animationall" style="" src="images/animation/comic/firework2.png"></div></div>
+            
+            <div class="container860 posrelcontent">
+        
+                <div class="comichead pagetitle1 padbot65">ENTERTAINMENT</div>
+                
+                <div class="comicbodypad"> 
+                	<div class="overflowcomictable">
+                    
+                    <script>
+						$(document).ready(function(){
+							$('.bxslider3d').bxSlider({
+								slideWidth: 275,
+								minSlides: 1,
+								maxSlides: 3,
+								slideMargin: 10,
+								useCSS: true,
+								infiniteLoop: false,
+								wrapperClass: 'bx-down2'
+							});
+						});
+					</script>
+					<div class="gallery_content" id="gallery_photo" style="display:block">
+						<div class="bx-down2" id="thumbnail-slider2">
+                            <div class="bx-wrapper" style="max-width: 560px;"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 0px;"><ul class="bxslider3d" style="width: 415%; position: relative; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
+                                                                <li class="galleryli" style="float: left; list-style: none; position: relative; width: 100px; margin-right: 10px;">
+                                    <div class="comiccont">
+                                    	<a href="/comicedition/sold-out">
+                                        <div class="comicimg" style="background:url(images/comic/php_pd_zd_resized.jpg) center center no-repeat;background-size:cover;"></div>
+                                        <div class="comicname">
+                                        	SOLD OUT                                                                                        <div class="comicstats">
+                                            	                                            	<span class="comicstats_point"><img src="images/view_icon.png"> 21.301</span>
+                                                <span class="comicstats_point"><img src="images/love_icon.png"> 9.909</span>
+                                            </div>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </li>
+                                                                <li class="galleryli" style="float: left; list-style: none; position: relative; width: 100px; margin-right: 10px;">
+                                    <div class="comiccont">
+                                    	<a href="/comicedition/selamat-datang-kembali">
+                                        <div class="comicimg" style="background:url(images/comic/php_z1ybh_resized.png) center center no-repeat;background-size:cover;"></div>
+                                        <div class="comicname">
+                                        	SELAMAT DATANG KEMBALI                                                                                        <div class="comicstats">
+                                            	                                            	<span class="comicstats_point"><img src="images/view_icon.png"> 25.816</span>
+                                                <span class="comicstats_point"><img src="images/love_icon.png"> 11.633</span>
+                                            </div>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </li>
+                                                            </ul></div><div class="bx-controls bx-has-pager bx-has-controls-direction"><div class="bx-pager bx-default-pager"><div class="bx-pager-item"><a href="" data-slide-index="0" class="bx-pager-link active">1</a></div><div class="bx-pager-item"><a href="" data-slide-index="1" class="bx-pager-link">2</a></div></div><div class="bx-controls-direction"><a class="bx-prev" href="">Prev</a><a class="bx-next" href="">Next</a></div></div></div>
+						</div>
+                        <!--<table cellpadding="0" cellspacing="0" border="0" width="100%" class="tablecomic">
+                            <tr>
+                                <td class="tdcomic">
+                                    <div class="comiccont shadow">
+                                        <div class="comicimg" style="background:url(images/news/1.jpg) center center no-repeat;background-size:cover;"></div>
+                                        <div class="comicname">Lorem ipsum dolor sit amet is a simply dummy text</div>
+                                    </div>
+                                </td>
+                                <td class="tdcomicsep">&nbsp;</td>
+                                <td class="tdcomic">
+                                    <div class="comiccont shadow">
+                                        <div class="comicimg" style="background:url(images/news/1.jpg) center center no-repeat;background-size:cover;"></div>
+                                        <div class="comicname">Lorem ipsum dolor sit amet is a simply dummy text</div>
+                                    </div>
+                                </td>
+                                <td class="tdcomicsep">&nbsp;</td>
+                                <td class="tdcomic">
+                                    <div class="comiccont shadow">
+                                        <div class="comicimg" style="background:url(images/news/1.jpg) center center no-repeat;background-size:cover;"></div>
+                                        <div class="comicname">Lorem ipsum dolor sit amet is a simply dummy text</div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>-->
+                    </div>
+                    </div>
+                </div>
+                
+                <div class="" align="center" style="padding-top:80px">
+                    <a href="/comiclist" target=""><input type="button" class="btn1 borderradius30 animation" name="ecommerce_btn" id="ecommerce_btn" value="MORE ABOUT  ENTERTAINMENT"></a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div><div class="contactpart" id="contactpart">
+    <!-- <div class="posabs" style="width:100%">
+        <div class="posrel" style="top:-95px"> -->
+            <center>
+            <div style="padding-bottom:30px">
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" class="tablehcontact">
+                <tbody><tr>
+                    <td class="tdhcontact">
+                        <a href="https://api.whatsapp.com/send?phone=6281905180064" target="_blank"><div style="height:40px;width:auto;padding:0px 10px;display:inline-block;box-sizing:border-size;border:1px solid #000;border-radius:25px;background:#fff;color:#000;" class="pagetitle3b"><div class="vm">CONTACT US</div></div></a>
+                    </td>
+                    <td class="tdhcontact">
+                        <a href="https://ethics.lotteshopping.com.vn/" target="_blank"><div style="height:40px;width:auto;padding:0px 10px;display:inline-block;box-sizing:border-size;border:1px solid #000;border-radius:25px;background:#fff;color:#000;" class="pagetitle3b"><div class="vm">ETHICS HOTLINE</div></div></a>
+                    </td>
+                </tr>
+            </tbody></table>
+            </div>
+            </center>
+        <!-- </div>
+    </div> -->
+	<div class="container960 posrelcontent">
+    	<!-- <div class="contacthead pagetitle1 padbot65">CONTACT US</div> -->
+        
+        <!-- <div class="padbot60">
+        	<a href="http://maps.google.com" target="_blank">
+        	<div class="contactimagecontainer">
+	        	<div class="posrel100"><div class="posabs100 contactimage_ch"><img class="pin animationall" style="" src="images/animation/contact/pin.png" /></div></div>
+                
+                <img src="images/content/contact.png" style="max-width:100%" />
+            </div>
+            </a>
+        </div> -->
+        
+        <div align="center" class="">
+            <div class="contact_t1 colorblack padbot25">LOTTE MALL</div>
+            <div class="contact_t2 ">Jl. Prof. Dr. Satrio Kav 3 - 5, Karet - Kuningan<br>
+Jakarta 12940<br>
+Indonesia<br>
+                P. +62 21 2988 9292  |  E. <a href="mailto:"></a><br>
+                www.lottemall.co.id</div>
+        </div>
+    </div>
+</div>
+
+
+	    
+	<div class="webfooterpart">
+    	<div class="container">
+        	<table cellpadding="0" cellspacing="0" border="0" width="100%" class="webfooterparttable">
+            	<tbody><tr>
+                	<td class="webfooterparttd webfooterparttd1">
+                    	<div class="footer_head">A New Shopping Paradigm</div>
+                        <div class="footer_aboutdesc">LOTTE MALL<br>
+Shopping Center in Jakarta<br>
+                        <!--<a href="#">more about us</a>-->
+                        </div>
+                    </td>
+                    <td class="webfooterparttd webfooterparttd2">
+                    	<!--<div class="footer_head">Download Our Apps</div>
+                        <div>
+                        	<span class="footer_store"><a href="http://www.playstore.com" target="_blank"><img src="/images/playstore_icon.png" /></a></span>
+                            <span class="footer_store"><a href="http://www.appstore.com" target="_blank"><img src="/images/appstore_icon.png" /></a></span>
+                        </div>-->
+                    </td>
+                    <td class="webfooterparttd webfooterparttd3">
+	                    <!-- <div class="footer_head">Get Connected to Us</div>
+                        
+                        <div class="maxwidth450">
+                        <form name="form_subscribe2" id="form_subscribe2" method="post" action="">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="homesubscribetable">
+                            <tr>
+                                <td width="" style="background:none">
+                                    <input type="text" class="email_subscribe" name="email_subscribe" id="email_subscribe" value="" />
+                                </td>
+                                <td width="90" style="">
+                                    <input type="submit" class="emailsubscribebtn animation" name="emailsubscribebtn" id="emailsubscribebtn" value="SUBSCRIBE" />
+                                </td>
+                            </tr>
+                        </table>
+                        </form>
+                        </div> -->
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+    </div>
+    <div class="webfooterpart2">
+    	<div class="container">
+        	<table cellpadding="0" cellspacing="0" border="0" width="100%" class="webfooterparttable2">
+            	<tbody><tr>
+                	<td class="webfooterpart2td webfooterpart2td1">
+                    	                    	<img src="/images/hour_icon.png" style="margin-right:11px;vertical-align:middle;"> MON - SUN 10 AM - 10 PM                    </td>
+                    <td class="webfooterpart2td webfooterpart2td2">
+                    	<span class="footermenu"><a href="/">HOME</a></span>
+                        <span class="footermenu"><a href="/comiclist">ENTERTAINMENT</a></span>
+                    </td>
+                    <td class="webfooterpart2td webfooterpart2td3">
+	                    © 2026. Lotte Mall.  All Rights Reserved
+                    </td>
+                    <td class="webfooterpart2td webfooterpart2td4">
+                    	<span class="socmedpoint"><a href="https://www.facebook.com/lottemalljakarta" target="_blank"><img src="/images/facebook_icon.png"></a>
+                        <span class="socmedpoint"><a href="https://www.instagram.com/lottemall_jkt/" target="_blank"><img src="/images/instagram_icon.png"></a>
+                        <span class="socmedpoint"><a href="https://www.youtube.com" target="_blank"><img src="/images/youtube_icon.png"></a>
+                    </span></span></span></td>
+                </tr>
+            </tbody></table>
+        </div>
+    </div>
+    
+    
+
+
+</body></html>

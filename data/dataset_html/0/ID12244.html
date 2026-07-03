@@ -1,0 +1,235 @@
+<html lang="undefined"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://pertaminaclean.tipoffs.info/css/app.css">
+  <style>
+.headerStyle {
+position: absolute;
+right: 0;
+top: 0;
+z-index: 999;
+height: 48px;
+display: flex;
+width: 40px;
+justify-content: center;
+cursor: pointer;
+}
+.headerStyle img {
+  max-width: 21px;
+}
+.StyledCalendarBody {
+  height: calc(239px - 41px);
+  display: flex;
+  flex-wrap: wrap;
+  align-content: baseline;
+} 
+
+.StyledCalendarBody span {
+  flex-basis: 25%;
+  max-width: 25%;
+  font-size: 15px;
+  font-weight: 600;
+  color: rgb(16, 23, 44);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  max-height: 66px;
+  height: 66px;
+  cursor: pointer;
+}
+.StyledCalendarBody span :hover {
+  color: blueviolet;
+}
+.Header {
+  position: absolute;
+  z-index: 999;
+  margin-top: 35px;
+}
+
+.StyledHeader {
+background-color: white;
+width: 268px;
+height: 239px;
+position: absolute;
+z-index: 1000;
+border-radius: 4px;
+}
+.StyledContainer {
+  display: flex;
+  justify-content: space-between;
+  background: rgb(80, 90, 124);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 10px 0;
+  border-radius: 4px 4px 0 0;
+}
+
+.StyledContainer .clickable {
+  cursor: pointer;
+  max-width: 29px;
+  padding: 0 8px;
+  margin-top: 1px;
+
+}
+
+.StyledContainer .clickable img {
+  width: 100%;
+}
+.StyledYearContainer {
+  background-color:  '#db0040 !important';
+  color: '#fff !important'
+}
+.StyledYearContainerActive {
+  color: 'rgb(16, 23, 44) !important'
+}
+
+.StyledYear {
+  margin: 10px;
+}
+
+.BackDrop {
+  position: fixed;
+  opacity: 1;
+  z-index: 100;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+.disabled {
+  /* pointer-events: none; */
+  opacity: 0.3;
+  cursor: not-allowed !important;
+}
+.wd-15 {
+  width: 15px !important;
+}
+.year-div{
+    /* align-items: center; */
+    /* justify-content: space-between; */
+    display: flex;
+}
+
+.img-style{
+  height: 30px !important;
+  width: 30px !important;
+  cursor: pointer !important;
+}</style></head>
+  <body>
+    <!-- Pop up -->
+    <style>
+      .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+
+  /* Modal */
+  .welcome-modal {
+    background: #ffffff;
+    width: 90%;
+    max-width: 520px;
+    padding: 32px 36px 40px;
+    border-radius: 16px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+  }
+
+  .font-bold{
+    font-weight: 700;
+  }
+  /* Close button */
+  .close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: transparent;
+    border: none;
+    font-size: 22px;
+    color: #9ca3af;
+    cursor: pointer;
+  }
+
+  .close-btn:hover {
+    color: #374151;
+  }
+
+  /* Illustration */
+  .illustration img {
+    max-width: 180px;
+    margin-bottom: 20px;
+  }
+
+  /* Title */
+  .welcome-modal h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 12px;
+  }
+
+  /* Description */
+  .description {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #6b7280;
+    margin-bottom: 12px;
+  }
+
+  /* CTA button */
+  .cta-btn {
+    margin-top: 20px;
+    background: #fac340;
+    color: #ffffff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .cta-btn:hover {
+    background: #e4ae31;
+  }
+    </style>
+
+    <div id="app"><header><div class="container"><div class="border-bottom py-2"><div class="dropdown text-end"><a class="btn btn-light btn-sm dropdown-toggle" id="LanguageSwitch" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Indonesia</a><ul class="dropdown-menu" aria-labelledby="LanguageSwitch"><li><a class="dropdown-item" href="?lang=id">Indonesia</a></li><li><a class="dropdown-item" href="?lang=en">English</a></li></ul></div></div></div><div class="bg-secondary"><div class="container"><div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3"><a class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none mb-3" href="/"><img src="https://pertaminaclean.tipoffs.info/assets/deloitte-logo.png" alt="logo pertamina"></a><ul class="nav nav-pills col-12 col-md-auto mb-2 justify-content-center mb-md-0"><li class="nav-item"><a class="nav-link link-light active" href="/">Beranda</a></li><li class="nav-item"><a class="nav-link link-light dropdown-toggle null" id="DropdownReportheader" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Laporan</a><ul class="dropdown-menu" aria-labelledby="DropdownReportheader"><li><a class="dropdown-item" href="https://id.deloitte-halo.com/pertaminaclean/?Pg=makereport&amp;Lang=id-ID">Buat Laporan</a></li><li><a class="dropdown-item" href="https://id.deloitte-halo.com/pertaminaclean/?Pg=checkstatus&amp;Lang=id-ID">Cek Status</a></li><li><a class="dropdown-item null" href="/report/detail">Laporan Statistik</a></li></ul></li><li class="nav-item"><a class="nav-link link-light null" href="/faq">Sering Ditanya</a></li></ul><div class="col-md-3 text-end d-none d-md-block"><a class="d-flex align-items-center text-dark justify-content-end" href="#"><img src="https://pertaminaclean.tipoffs.info/assets/pertamina-logo.png" alt="logo deloitte"></a></div></div></div></div></header><div class="carousel slide pointer-event" id="MainCarousel" data-bs-ride="carousel"><div class="carousel-indicators"><button class="active" type="button" data-bs-target="#MainCarousel" data-bs-slide-to="0" aria-current="true" aria-label="Semangat Perubahan"></button></div><div class="carousel-inner"><div class="carousel-item active"><video autoplay="" loop="" id="videoBackground"><source src="document/banner/230117//63c6572dd3e04_1673942829_20230117.mp4" type="video/mp4"></video><div class="container h-100"><div class="carousel-caption text-start"><h1>Semangat Perubahan</h1><p class="tm-justify-content" style="max-width: 700px;">Pertamina senantiasa menggaungkan semangat transformasi yang berkelanjutan sebagai bagian dari komitmennya untuk merealisasikan visi menjadi perusahaan global energi kelas dunia serta mendukung terwujudnya kemandirian energi nasional.</p><p><a class="btn btn-lg btn-primary" href="https://id.deloitte-halo.com/pertaminaclean/?Pg=makereport&amp;Lang=id-ID">Lapor Sekarang</a></p></div></div></div></div><button class="carousel-control-prev" type="button" data-bs-target="#MainCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous </span></button><button class="carousel-control-next" type="button" data-bs-target="#MainCarousel" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next </span></button></div><div class="container"><div class="row featurette"><div class="col-md-5 d-flex align-items-center"><img src="assets/section-one.0a73d768.png" alt="" width="100%"></div><div class="col-md-7 d-flex align-items-center"><div><h2>Kriteria Pengaduan</h2><div class="tm-justify-content"><p>Kecurangan dan/atau pelanggaran peraturan Perusahaan mengakibatkan dampak buruk berupa kerugian dan tercorengnya nama baik perusahaan.</p>
+<p>Dengan melaporkan kecurangan dan/atau pelanggaran peraturan Perusahaan yang terjadi, anda telah membantu kami untuk mewujudkan Pertamina Clean.</p>
+<p>Jika anda melihat atau mencurigai suatu kecurangan dan/atau pelanggaran peraturan Perusahaan yang terjadi, seperti:</p>
+<ol>
+<li>Korupsi, konflik kepentingan, penyuapan, gratifikasi, dan pemerasan.</li>
+<li>Pencurian, penggelapan, dan penyalahgunaan aset.</li>
+<li>Kecurangan pada laporan keuangan.</li>
+<li>Pelanggaran hukum dan peraturan Perusahaan</li>
+<li><span>Pelecehan (fisik, verbal, non-verbal/isyarat, visual dan emosional)</span></li>
+</ol>
+<p>Laporkan kepada kami untuk dapat kami tindaklanjuti. Kami sangat berterima kasih atas peran serta anda membantu kami mewujudkan Pertamina Clean.<br><br></p>
+<p><strong><i>Untuk</i> <i>pengaduan</i> <i>lainnya</i> <i>terkait</i> <i>Pelayanan</i>&nbsp;<em>P</em><i>roduk</i><i>, </i><i>Penipuan</i> <i>Undian</i><i>, </i><i>dan</i><i>&nbsp;Rekrutmen&nbsp;</i><i>dapat</i> <i>disampaikan</i> <i>melalui</i><i>&nbsp;Pertamina Call Center 135.</i></strong></p></div></div></div></div></div><div class="featurette-green overflow-hidden"><div class="container"><div class="row"><div class="col-md-7 d-flex align-items-center"><div class="featurette-content"><div><h2 class="featurette-heading">Apa itu Pertamina Clean</h2><div class="tm-justify-content lead"><p>Dalam rangka menjaga serta meningkatkan reputasi Pertamina Clean, diperlukan sarana dan sistem pengendalian risiko melalui partisipasi aktif Jajaran Pertamina Clean dan stakeholders lainnya untuk menyampaikan laporan pengaduan pelanggaran disiplin yaitu perbuatan atau indikasi fraud, non fraud dan/atau pelanggaran lainnya yang dapat merugikan nasabah maupun Pertamina.</p></div></div></div></div><div class="col-md-5 d-flex align-items-center"><img class="featurette-figure" src="assets/section-two.be2660bb.png" alt=""></div></div></div></div><footer class="bg-secondary" style="height: 180px;"><div class="container h-100"><div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 h-100"><a class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none d-none d-md-block" href="/"><img src="https://pertaminaclean.tipoffs.info/assets/pertamina-logo.png" alt="logo pertamina"></a><ul class="nav nav-pills col-12 col-md-auto mb-2 justify-content-center mb-md-0"><li class="nav-item"><a class="nav-link link-light active" href="/">Beranda</a></li><li class="nav-item"><a class="nav-link link-light dropdown-toggle null" id="DropdownReportfooter" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Laporan</a><ul class="dropdown-menu" aria-labelledby="DropdownReportfooter"><li><a class="dropdown-item" href="https://id.deloitte-halo.com/pertaminaclean/?Pg=makereport&amp;Lang=id-ID">Buat Laporan</a></li><li><a class="dropdown-item" href="https://id.deloitte-halo.com/pertaminaclean/?Pg=checkstatus&amp;Lang=id-ID">Cek Status</a></li><li><a class="dropdown-item null" href="/report/detail">Laporan Statistik</a></li></ul></li><li class="nav-item"><a class="nav-link link-light null" href="/faq">Sering Ditanya</a></li></ul><div class="col-md-3 text-end"><a class="d-flex align-items-center text-dark justify-content-end" href="https://deloitte.com"><img src="https://pertaminaclean.tipoffs.info/assets/deloitte-logo.png" alt="logo deloitte"></a></div></div></div></footer></div>
+
+    <script src="/js/app.js"></script>
+
+    <script>
+      // close overlay modal
+      document.querySelector('.cta-btn').addEventListener('click', function() {
+        document.getElementById('announcement-overlay').style.display = 'none';
+      });
+
+      // check if url parameter have lang
+      const urlParams = new URLSearchParams(window.location.search);
+      const lang = urlParams.get('lang') ?? 'id';
+      if (lang) {
+        document.getElementById(lang).style.display = 'block';
+      }
+    </script>
+  
+
+</body></html>

@@ -1,0 +1,1021 @@
+<html lang="en-US"><head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>(()=>{class RocketLazyLoadScripts{constructor(){this.v="1.2.6",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this.t.bind(this),this.touchStartHandler=this.i.bind(this),this.touchMoveHandler=this.o.bind(this),this.touchEndHandler=this.h.bind(this),this.clickHandler=this.u.bind(this),this.interceptedClicks=[],this.interceptedClickListeners=[],this.l(this),window.addEventListener("pageshow",(t=>{this.persisted=t.persisted,this.everythingLoaded&&this.m()})),this.CSPIssue=sessionStorage.getItem("rocketCSPIssue"),document.addEventListener("securitypolicyviolation",(t=>{this.CSPIssue||"script-src-elem"!==t.violatedDirective||"data"!==t.blockedURI||(this.CSPIssue=!0,sessionStorage.setItem("rocketCSPIssue",!0))})),document.addEventListener("DOMContentLoaded",(()=>{this.k()})),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}p(t){document.hidden?t.t():(this.triggerEvents.forEach((e=>window.addEventListener(e,t.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler))}_(){this.triggerEvents.forEach((t=>window.removeEventListener(t,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}i(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this.L(t.target,!0),this.S(t.target,"onclick","rocket-onclick"),this.C())}o(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this.L(t.target,!1),this.S(t.target,"rocket-onclick","onclick"),this.M()}h(){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}u(t){t.target.removeEventListener("click",this.clickHandler),this.L(t.target,!1),this.S(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this.M()}O(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))}))}l(t){EventTarget.prototype.addEventListenerWPRocketBase=EventTarget.prototype.addEventListener,EventTarget.prototype.addEventListener=function(e,i,o){"click"!==e||t.windowLoaded||i===t.clickHandler||t.interceptedClickListeners.push({target:this,func:i,options:o}),(this||window).addEventListenerWPRocketBase(e,i,o)}}L(t,e){this.interceptedClickListeners.forEach((i=>{i.target===t&&(e?t.removeEventListener("click",i.func,i.options):t.addEventListener("click",i.func,i.options))})),t.parentNode!==document.documentElement&&this.L(t.parentNode,e)}D(){return new Promise((t=>{this.P?this.M=t:t()}))}C(){this.P=!0}M(){this.P=!1}S(t,e,i){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(i,event.target.getAttribute(e)),event.target.removeAttribute(e))}t(){this._(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this.R.bind(this)):this.R()}k(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript][data-rocket-src]").forEach((e=>{let i=e.getAttribute("data-rocket-src");if(i&&!i.startsWith("data:")){0===i.indexOf("//")&&(i=location.protocol+i);try{const o=new URL(i).origin;o!==location.origin&&t.push({src:o,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(t){}}})),t=[...new Map(t.map((t=>[JSON.stringify(t),t]))).values()],this.T(t,"preconnect")}async R(){this.lastBreath=Date.now(),this.j(this),this.F(this),this.I(),this.W(),this.q(),await this.A(this.delayedScripts.normal),await this.A(this.delayedScripts.defer),await this.A(this.delayedScripts.async);try{await this.U(),await this.H(this),await this.J()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this.D().then((()=>{this.O()})),this.N()}W(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)}))}async B(t){if(await this.G(),!0!==t.noModule||!("noModule"in HTMLScriptElement.prototype))return new Promise((e=>{let i;function o(){(i||t).setAttribute("data-rocket-status","executed"),e()}try{if(navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor||this.CSPIssue)i=document.createElement("script"),[...t.attributes].forEach((t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),i.setAttribute(e,t.nodeValue))})),t.text&&(i.text=t.text),i.hasAttribute("src")?(i.addEventListener("load",o),i.addEventListener("error",(function(){i.setAttribute("data-rocket-status","failed-network"),e()})),setTimeout((()=>{i.isConnected||e()}),1)):(i.text=t.text,o()),t.parentNode.replaceChild(i,t);else{const i=t.getAttribute("data-rocket-type"),s=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",o),t.addEventListener("error",(i=>{this.CSPIssue&&i.target.src.startsWith("data:")?(console.log("WPRocket: data-uri blocked by CSP -> fallback"),t.removeAttribute("src"),this.B(t).then(e)):(t.setAttribute("data-rocket-status","failed-network"),e())})),s?(t.removeAttribute("data-rocket-src"),t.src=s):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}}catch(i){t.setAttribute("data-rocket-status","failed-transform"),e()}}));t.setAttribute("data-rocket-status","skipped")}async A(t){const e=t.shift();return e&&e.isConnected?(await this.B(e),this.A(t)):Promise.resolve()}q(){this.T([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}T(t,e){var i=document.createDocumentFragment();t.forEach((t=>{const o=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(o&&!o.startsWith("data:")){const s=document.createElement("link");s.href=o,s.rel=e,"preconnect"!==e&&(s.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(s.crossOrigin=!0),t.crossOrigin&&(s.crossOrigin=t.crossOrigin),t.integrity&&(s.integrity=t.integrity),i.appendChild(s),this.trash.push(s)}})),document.head.appendChild(i)}j(t){let e={};function i(i,o){return e[o].eventsToRewrite.indexOf(i)>=0&&!t.everythingLoaded?"rocket-"+i:i}function o(t,o){!function(t){e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=i(arguments[0],t),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=i(arguments[0],t),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(o)}function s(e,i){let o=e[i];e[i]=null,Object.defineProperty(e,i,{get:()=>o||function(){},set(s){t.everythingLoaded?o=s:e["rocket"+i]=o=s}})}o(document,"DOMContentLoaded"),o(window,"DOMContentLoaded"),o(window,"load"),o(window,"pageshow"),o(document,"readystatechange"),s(document,"onreadystatechange"),s(window,"onload"),s(window,"onpageshow");try{Object.defineProperty(document,"readyState",{get:()=>t.rocketReadyState,set(e){t.rocketReadyState=e},configurable:!0}),document.readyState="loading"}catch(t){console.log("WPRocket DJE readyState conflict, bypassing")}}F(t){let e;function i(e){return t.everythingLoaded?e:e.split(" ").map((t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t)).join(" ")}function o(o){function s(t){const e=o.fn[t];o.fn[t]=o.fn.init.prototype[t]=function(){return this[0]===window&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{const e=arguments[0][t];delete arguments[0][t],arguments[0][i(t)]=e}))),e.apply(this,arguments),this}}o&&o.fn&&!t.allJQueries.includes(o)&&(o.fn.ready=o.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(o):document.addEventListener("rocket-DOMContentLoaded",(()=>e.bind(document)(o))),o([])},s("on"),s("one"),t.allJQueries.push(o)),e=o}o(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){o(t)}})}async H(t){const e=document.querySelector("script[data-webpack]");e&&(await async function(){return new Promise((t=>{e.addEventListener("load",t),e.addEventListener("error",t)}))}(),await t.K(),await t.H(t))}async U(){this.domReadyFired=!0;try{document.readyState="interactive"}catch(t){}await this.G(),document.dispatchEvent(new Event("rocket-readystatechange")),await this.G(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.G(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this.G(),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}async J(){try{document.readyState="complete"}catch(t){}await this.G(),document.dispatchEvent(new Event("rocket-readystatechange")),await this.G(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.G(),window.dispatchEvent(new Event("rocket-load")),await this.G(),window.rocketonload&&window.rocketonload(),await this.G(),this.allJQueries.forEach((t=>t(window).trigger("rocket-jquery-load"))),await this.G();const t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this.G(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted}),this.windowLoaded=!0}m(){document.onreadystatechange&&document.onreadystatechange(),window.onload&&window.onload(),window.onpageshow&&window.onpageshow({persisted:this.persisted})}I(){const t=new Map;document.write=document.writeln=function(e){const i=document.currentScript;i||console.error("WPRocket unable to document.write this: "+e);const o=document.createRange(),s=i.parentElement;let n=t.get(i);void 0===n&&(n=i.nextSibling,t.set(i,n));const c=document.createDocumentFragment();o.setStart(c,0),c.appendChild(o.createContextualFragment(e)),s.insertBefore(c,n)}}async G(){Date.now()-this.lastBreath>45&&(await this.K(),this.lastBreath=Date.now())}async K(){return document.hidden?new Promise((t=>setTimeout(t))):new Promise((t=>requestAnimationFrame(t)))}N(){this.trash.forEach((t=>t.remove()))}static run(){const t=new RocketLazyLoadScripts;t.p(t)}}RocketLazyLoadScripts.run()})();</script>
+	
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+
+	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<!-- This site is optimized with the Yoast SEO Premium plugin v21.1 (Yoast SEO v21.1) - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Student Portal</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" media="all" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&#038;display=swap" /></noscript><link rel="preload" as="image" href="https://studentportal.my/wp-content/uploads/2025/09/mybrain-2.0-768x402.png" imagesrcset="https://studentportal.my/wp-content/uploads/2025/09/mybrain-2.0-768x402.png 768w, https://studentportal.my/wp-content/uploads/2025/09/mybrain-2.0-300x157.png 300w, https://studentportal.my/wp-content/uploads/2025/09/mybrain-2.0-1024x536.png 1024w, https://studentportal.my/wp-content/uploads/2025/09/mybrain-2.0.png 1200w" imagesizes="(max-width: 768px) 100vw, 768px" fetchpriority="high">
+	<meta name="description" content="Student Portal menyediakan senarai zakat pendidikan &amp; biasiswa terkini untuk pelajar lepasan SPM. Kami turut menyediakan bahan rujukan pelajar sekolah rendah &amp; menengah seperti koleksi soalan percubaan UPSR, PT3, SPM &amp; STPM. Layari studenportal.my sekarang!">
+	<link rel="canonical" href="https://studentportal.my/">
+	<link rel="next" href="https://studentportal.my/page/2/">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Student Portal">
+	<meta property="og:description" content="Student Portal menyediakan senarai zakat pendidikan &amp; biasiswa terkini untuk pelajar lepasan SPM. Kami turut menyediakan bahan rujukan pelajar sekolah rendah &amp; menengah seperti koleksi soalan percubaan UPSR, PT3, SPM &amp; STPM. Layari studenportal.my sekarang!">
+	<meta property="og:url" content="https://studentportal.my/">
+	<meta property="og:site_name" content="Student Portal">
+	<meta name="twitter:card" content="summary_large_image">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://studentportal.my/","url":"https://studentportal.my/","name":"Student Portal","isPartOf":{"@id":"https://studentportal.my/#website"},"about":{"@id":"https://studentportal.my/#organization"},"description":"Student Portal menyediakan senarai zakat pendidikan & biasiswa terkini untuk pelajar lepasan SPM. Kami turut menyediakan bahan rujukan pelajar sekolah rendah & menengah seperti koleksi soalan percubaan UPSR, PT3, SPM & STPM. Layari studenportal.my sekarang!","breadcrumb":{"@id":"https://studentportal.my/#breadcrumb"},"inLanguage":"en-US"},{"@type":"BreadcrumbList","@id":"https://studentportal.my/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Utama"}]},{"@type":"WebSite","@id":"https://studentportal.my/#website","url":"https://studentportal.my/","name":"Student Portal","description":"Blog Pendidikan Malaysia","publisher":{"@id":"https://studentportal.my/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://studentportal.my/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://studentportal.my/#organization","name":"Student Portal","url":"https://studentportal.my/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://studentportal.my/#/schema/logo/image/","url":"https://studentportal.my/wp-content/uploads/2023/05/Layer_1-1-1.svg","contentUrl":"https://studentportal.my/wp-content/uploads/2023/05/Layer_1-1-1.svg","caption":"Student Portal"},"image":{"@id":"https://studentportal.my/#/schema/logo/image/"}}]}</script>
+	<meta name="google-site-verification" content="xvDftLc4ZK0-hWMF3suzuMuoxubY6VN3d2Lg9hjIg8A">
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect">
+<link rel="alternate" type="application/rss+xml" title="Student Portal » Feed" href="https://studentportal.my/feed/">
+<link rel="alternate" type="application/rss+xml" title="Student Portal » Comments Feed" href="https://studentportal.my/comments/feed/">
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v8.27.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+							<script type="rocketlazyloadscript" data-rocket-src="//www.googletagmanager.com/gtag/js?id=G-Q8PM91FZBE" data-cfasync="false" data-wpfc-render="false" async=""></script>
+			<script data-cfasync="false" data-wpfc-render="false" src="data:text/javascript;base64,CgkJCQl2YXIgbWlfdmVyc2lvbiA9ICc4LjI3LjAnOwoJCQkJdmFyIG1pX3RyYWNrX3VzZXIgPSB0cnVlOwoJCQkJdmFyIG1pX25vX3RyYWNrX3JlYXNvbiA9ICcnOwoJCQkJCQkJCXZhciBNb25zdGVySW5zaWdodHNEZWZhdWx0TG9jYXRpb25zID0geyJwYWdlX2xvY2F0aW9uIjoiaHR0cHM6XC9cL3N0dWRlbnRwb3J0YWwubXlcLyJ9OwoJCQkJaWYgKCB0eXBlb2YgTW9uc3Rlckluc2lnaHRzUHJpdmFjeUd1YXJkRmlsdGVyID09PSAnZnVuY3Rpb24nICkgewoJCQkJCXZhciBNb25zdGVySW5zaWdodHNMb2NhdGlvbnMgPSAodHlwZW9mIE1vbnN0ZXJJbnNpZ2h0c0V4Y2x1ZGVRdWVyeSA9PT0gJ29iamVjdCcpID8gTW9uc3Rlckluc2lnaHRzUHJpdmFjeUd1YXJkRmlsdGVyKCBNb25zdGVySW5zaWdodHNFeGNsdWRlUXVlcnkgKSA6IE1vbnN0ZXJJbnNpZ2h0c1ByaXZhY3lHdWFyZEZpbHRlciggTW9uc3Rlckluc2lnaHRzRGVmYXVsdExvY2F0aW9ucyApOwoJCQkJfSBlbHNlIHsKCQkJCQl2YXIgTW9uc3Rlckluc2lnaHRzTG9jYXRpb25zID0gKHR5cGVvZiBNb25zdGVySW5zaWdodHNFeGNsdWRlUXVlcnkgPT09ICdvYmplY3QnKSA/IE1vbnN0ZXJJbnNpZ2h0c0V4Y2x1ZGVRdWVyeSA6IE1vbnN0ZXJJbnNpZ2h0c0RlZmF1bHRMb2NhdGlvbnM7CgkJCQl9CgoJCQkJCQkJCXZhciBkaXNhYmxlU3RycyA9IFsKCQkJCQkJCQkJCSdnYS1kaXNhYmxlLUctUThQTTkxRlpCRScsCgkJCQkJCQkJCV07CgoJCQkJLyogRnVuY3Rpb24gdG8gZGV0ZWN0IG9wdGVkIG91dCB1c2VycyAqLwoJCQkJZnVuY3Rpb24gX19ndGFnVHJhY2tlcklzT3B0ZWRPdXQoKSB7CgkJCQkJZm9yICh2YXIgaW5kZXggPSAwOyBpbmRleCA8IGRpc2FibGVTdHJzLmxlbmd0aDsgaW5kZXgrKykgewoJCQkJCQlpZiAoZG9jdW1lbnQuY29va2llLmluZGV4T2YoZGlzYWJsZVN0cnNbaW5kZXhdICsgJz10cnVlJykgPiAtMSkgewoJCQkJCQkJcmV0dXJuIHRydWU7CgkJCQkJCX0KCQkJCQl9CgoJCQkJCXJldHVybiBmYWxzZTsKCQkJCX0KCgkJCQkvKiBEaXNhYmxlIHRyYWNraW5nIGlmIHRoZSBvcHQtb3V0IGNvb2tpZSBleGlzdHMuICovCgkJCQlpZiAoX19ndGFnVHJhY2tlcklzT3B0ZWRPdXQoKSkgewoJCQkJCWZvciAodmFyIGluZGV4ID0gMDsgaW5kZXggPCBkaXNhYmxlU3Rycy5sZW5ndGg7IGluZGV4KyspIHsKCQkJCQkJd2luZG93W2Rpc2FibGVTdHJzW2luZGV4XV0gPSB0cnVlOwoJCQkJCX0KCQkJCX0KCgkJCQkvKiBPcHQtb3V0IGZ1bmN0aW9uICovCgkJCQlmdW5jdGlvbiBfX2d0YWdUcmFja2VyT3B0b3V0KCkgewoJCQkJCWZvciAodmFyIGluZGV4ID0gMDsgaW5kZXggPCBkaXNhYmxlU3Rycy5sZW5ndGg7IGluZGV4KyspIHsKCQkJCQkJZG9jdW1lbnQuY29va2llID0gZGlzYWJsZVN0cnNbaW5kZXhdICsgJz10cnVlOyBleHBpcmVzPVRodSwgMzEgRGVjIDIwOTkgMjM6NTk6NTkgVVRDOyBwYXRoPS8nOwoJCQkJCQl3aW5kb3dbZGlzYWJsZVN0cnNbaW5kZXhdXSA9IHRydWU7CgkJCQkJfQoJCQkJfQoKCQkJCWlmICgndW5kZWZpbmVkJyA9PT0gdHlwZW9mIGdhT3B0b3V0KSB7CgkJCQkJZnVuY3Rpb24gZ2FPcHRvdXQoKSB7CgkJCQkJCV9fZ3RhZ1RyYWNrZXJPcHRvdXQoKTsKCQkJCQl9CgkJCQl9CgkJCQkJCQkJd2luZG93LmRhdGFMYXllciA9IHdpbmRvdy5kYXRhTGF5ZXIgfHwgW107CgoJCQkJd2luZG93Lk1vbnN0ZXJJbnNpZ2h0c0R1YWxUcmFja2VyID0gewoJCQkJCWhlbHBlcnM6IHt9LAoJCQkJCXRyYWNrZXJzOiB7fSwKCQkJCX07CgkJCQlpZiAobWlfdHJhY2tfdXNlcikgewoJCQkJCWZ1bmN0aW9uIF9fZ3RhZ0RhdGFMYXllcigpIHsKCQkJCQkJZGF0YUxheWVyLnB1c2goYXJndW1lbnRzKTsKCQkJCQl9CgoJCQkJCWZ1bmN0aW9uIF9fZ3RhZ1RyYWNrZXIodHlwZSwgbmFtZSwgcGFyYW1ldGVycykgewoJCQkJCQlpZiAoIXBhcmFtZXRlcnMpIHsKCQkJCQkJCXBhcmFtZXRlcnMgPSB7fTsKCQkJCQkJfQoKCQkJCQkJaWYgKHBhcmFtZXRlcnMuc2VuZF90bykgewoJCQkJCQkJX19ndGFnRGF0YUxheWVyLmFwcGx5KG51bGwsIGFyZ3VtZW50cyk7CgkJCQkJCQlyZXR1cm47CgkJCQkJCX0KCgkJCQkJCWlmICh0eXBlID09PSAnZXZlbnQnKSB7CgkJCQkJCQkJCQkJCQkJcGFyYW1ldGVycy5zZW5kX3RvID0gbW9uc3Rlcmluc2lnaHRzX2Zyb250ZW5kLnY0X2lkOwoJCQkJCQkJdmFyIGhvb2tOYW1lID0gbmFtZTsKCQkJCQkJCWlmICh0eXBlb2YgcGFyYW1ldGVyc1snZXZlbnRfY2F0ZWdvcnknXSAhPT0gJ3VuZGVmaW5lZCcpIHsKCQkJCQkJCQlob29rTmFtZSA9IHBhcmFtZXRlcnNbJ2V2ZW50X2NhdGVnb3J5J10gKyAnOicgKyBuYW1lOwoJCQkJCQkJfQoKCQkJCQkJCWlmICh0eXBlb2YgTW9uc3Rlckluc2lnaHRzRHVhbFRyYWNrZXIudHJhY2tlcnNbaG9va05hbWVdICE9PSAndW5kZWZpbmVkJykgewoJCQkJCQkJCU1vbnN0ZXJJbnNpZ2h0c0R1YWxUcmFja2VyLnRyYWNrZXJzW2hvb2tOYW1lXShwYXJhbWV0ZXJzKTsKCQkJCQkJCX0gZWxzZSB7CgkJCQkJCQkJX19ndGFnRGF0YUxheWVyKCdldmVudCcsIG5hbWUsIHBhcmFtZXRlcnMpOwoJCQkJCQkJfQoJCQkJCQkJCgkJCQkJCX0gZWxzZSB7CgkJCQkJCQlfX2d0YWdEYXRhTGF5ZXIuYXBwbHkobnVsbCwgYXJndW1lbnRzKTsKCQkJCQkJfQoJCQkJCX0KCgkJCQkJX19ndGFnVHJhY2tlcignanMnLCBuZXcgRGF0ZSgpKTsKCQkJCQlfX2d0YWdUcmFja2VyKCdzZXQnLCB7CgkJCQkJCSdkZXZlbG9wZXJfaWQuZFpHSXpaRyc6IHRydWUsCgkJCQkJCQkJCQkJfSk7CgkJCQkJaWYgKCBNb25zdGVySW5zaWdodHNMb2NhdGlvbnMucGFnZV9sb2NhdGlvbiApIHsKCQkJCQkJX19ndGFnVHJhY2tlcignc2V0JywgTW9uc3Rlckluc2lnaHRzTG9jYXRpb25zKTsKCQkJCQl9CgkJCQkJCQkJCQlfX2d0YWdUcmFja2VyKCdjb25maWcnLCAnRy1ROFBNOTFGWkJFJywgeyJmb3JjZVNTTCI6InRydWUiLCJsaW5rX2F0dHJpYnV0aW9uIjoidHJ1ZSJ9ICk7CgkJCQkJCQkJCQkJCQkJCXdpbmRvdy5ndGFnID0gX19ndGFnVHJhY2tlcjsJCQkJCQkJCQkJKGZ1bmN0aW9uICgpIHsKCQkJCQkJLyogaHR0cHM6Ly9kZXZlbG9wZXJzLmdvb2dsZS5jb20vYW5hbHl0aWNzL2Rldmd1aWRlcy9jb2xsZWN0aW9uL2FuYWx5dGljc2pzLyAqLwoJCQkJCQkvKiBnYSBhbmQgX19nYVRyYWNrZXIgY29tcGF0aWJpbGl0eSBzaGltLiAqLwoJCQkJCQl2YXIgbm9vcGZuID0gZnVuY3Rpb24gKCkgewoJCQkJCQkJcmV0dXJuIG51bGw7CgkJCQkJCX07CgkJCQkJCXZhciBuZXd0cmFja2VyID0gZnVuY3Rpb24gKCkgewoJCQkJCQkJcmV0dXJuIG5ldyBUcmFja2VyKCk7CgkJCQkJCX07CgkJCQkJCXZhciBUcmFja2VyID0gZnVuY3Rpb24gKCkgewoJCQkJCQkJcmV0dXJuIG51bGw7CgkJCQkJCX07CgkJCQkJCXZhciBwID0gVHJhY2tlci5wcm90b3R5cGU7CgkJCQkJCXAuZ2V0ID0gbm9vcGZuOwoJCQkJCQlwLnNldCA9IG5vb3BmbjsKCQkJCQkJcC5zZW5kID0gZnVuY3Rpb24gKCkgewoJCQkJCQkJdmFyIGFyZ3MgPSBBcnJheS5wcm90b3R5cGUuc2xpY2UuY2FsbChhcmd1bWVudHMpOwoJCQkJCQkJYXJncy51bnNoaWZ0KCdzZW5kJyk7CgkJCQkJCQlfX2dhVHJhY2tlci5hcHBseShudWxsLCBhcmdzKTsKCQkJCQkJfTsKCQkJCQkJdmFyIF9fZ2FUcmFja2VyID0gZnVuY3Rpb24gKCkgewoJCQkJCQkJdmFyIGxlbiA9IGFyZ3VtZW50cy5sZW5ndGg7CgkJCQkJCQlpZiAobGVuID09PSAwKSB7CgkJCQkJCQkJcmV0dXJuOwoJCQkJCQkJfQoJCQkJCQkJdmFyIGYgPSBhcmd1bWVudHNbbGVuIC0gMV07CgkJCQkJCQlpZiAodHlwZW9mIGYgIT09ICdvYmplY3QnIHx8IGYgPT09IG51bGwgfHwgdHlwZW9mIGYuaGl0Q2FsbGJhY2sgIT09ICdmdW5jdGlvbicpIHsKCQkJCQkJCQlpZiAoJ3NlbmQnID09PSBhcmd1bWVudHNbMF0pIHsKCQkJCQkJCQkJdmFyIGhpdENvbnZlcnRlZCwgaGl0T2JqZWN0ID0gZmFsc2UsIGFjdGlvbjsKCQkJCQkJCQkJaWYgKCdldmVudCcgPT09IGFyZ3VtZW50c1sxXSkgewoJCQkJCQkJCQkJaWYgKCd1bmRlZmluZWQnICE9PSB0eXBlb2YgYXJndW1lbnRzWzNdKSB7CgkJCQkJCQkJCQkJaGl0T2JqZWN0ID0gewoJCQkJCQkJCQkJCQknZXZlbnRBY3Rpb24nOiBhcmd1bWVudHNbM10sCgkJCQkJCQkJCQkJCSdldmVudENhdGVnb3J5JzogYXJndW1lbnRzWzJdLAoJCQkJCQkJCQkJCQknZXZlbnRMYWJlbCc6IGFyZ3VtZW50c1s0XSwKCQkJCQkJCQkJCQkJJ3ZhbHVlJzogYXJndW1lbnRzWzVdID8gYXJndW1lbnRzWzVdIDogMSwKCQkJCQkJCQkJCQl9CgkJCQkJCQkJCQl9CgkJCQkJCQkJCX0KCQkJCQkJCQkJaWYgKCdwYWdldmlldycgPT09IGFyZ3VtZW50c1sxXSkgewoJCQkJCQkJCQkJaWYgKCd1bmRlZmluZWQnICE9PSB0eXBlb2YgYXJndW1lbnRzWzJdKSB7CgkJCQkJCQkJCQkJaGl0T2JqZWN0ID0gewoJCQkJCQkJCQkJCQknZXZlbnRBY3Rpb24nOiAncGFnZV92aWV3JywKCQkJCQkJCQkJCQkJJ3BhZ2VfcGF0aCc6IGFyZ3VtZW50c1syXSwKCQkJCQkJCQkJCQl9CgkJCQkJCQkJCQl9CgkJCQkJCQkJCX0KCQkJCQkJCQkJaWYgKHR5cGVvZiBhcmd1bWVudHNbMl0gPT09ICdvYmplY3QnKSB7CgkJCQkJCQkJCQloaXRPYmplY3QgPSBhcmd1bWVudHNbMl07CgkJCQkJCQkJCX0KCQkJCQkJCQkJaWYgKHR5cGVvZiBhcmd1bWVudHNbNV0gPT09ICdvYmplY3QnKSB7CgkJCQkJCQkJCQlPYmplY3QuYXNzaWduKGhpdE9iamVjdCwgYXJndW1lbnRzWzVdKTsKCQkJCQkJCQkJfQoJCQkJCQkJCQlpZiAoJ3VuZGVmaW5lZCcgIT09IHR5cGVvZiBhcmd1bWVudHNbMV0uaGl0VHlwZSkgewoJCQkJCQkJCQkJaGl0T2JqZWN0ID0gYXJndW1lbnRzWzFdOwoJCQkJCQkJCQkJaWYgKCdwYWdldmlldycgPT09IGhpdE9iamVjdC5oaXRUeXBlKSB7CgkJCQkJCQkJCQkJaGl0T2JqZWN0LmV2ZW50QWN0aW9uID0gJ3BhZ2Vfdmlldyc7CgkJCQkJCQkJCQl9CgkJCQkJCQkJCX0KCQkJCQkJCQkJaWYgKGhpdE9iamVjdCkgewoJCQkJCQkJCQkJYWN0aW9uID0gJ3RpbWluZycgPT09IGFyZ3VtZW50c1sxXS5oaXRUeXBlID8gJ3RpbWluZ19jb21wbGV0ZScgOiBoaXRPYmplY3QuZXZlbnRBY3Rpb247CgkJCQkJCQkJCQloaXRDb252ZXJ0ZWQgPSBtYXBBcmdzKGhpdE9iamVjdCk7CgkJCQkJCQkJCQlfX2d0YWdUcmFja2VyKCdldmVudCcsIGFjdGlvbiwgaGl0Q29udmVydGVkKTsKCQkJCQkJCQkJfQoJCQkJCQkJCX0KCQkJCQkJCQlyZXR1cm47CgkJCQkJCQl9CgoJCQkJCQkJZnVuY3Rpb24gbWFwQXJncyhhcmdzKSB7CgkJCQkJCQkJdmFyIGFyZywgaGl0ID0ge307CgkJCQkJCQkJdmFyIGdhTWFwID0gewoJCQkJCQkJCQknZXZlbnRDYXRlZ29yeSc6ICdldmVudF9jYXRlZ29yeScsCgkJCQkJCQkJCSdldmVudEFjdGlvbic6ICdldmVudF9hY3Rpb24nLAoJCQkJCQkJCQknZXZlbnRMYWJlbCc6ICdldmVudF9sYWJlbCcsCgkJCQkJCQkJCSdldmVudFZhbHVlJzogJ2V2ZW50X3ZhbHVlJywKCQkJCQkJCQkJJ25vbkludGVyYWN0aW9uJzogJ25vbl9pbnRlcmFjdGlvbicsCgkJCQkJCQkJCSd0aW1pbmdDYXRlZ29yeSc6ICdldmVudF9jYXRlZ29yeScsCgkJCQkJCQkJCSd0aW1pbmdWYXInOiAnbmFtZScsCgkJCQkJCQkJCSd0aW1pbmdWYWx1ZSc6ICd2YWx1ZScsCgkJCQkJCQkJCSd0aW1pbmdMYWJlbCc6ICdldmVudF9sYWJlbCcsCgkJCQkJCQkJCSdwYWdlJzogJ3BhZ2VfcGF0aCcsCgkJCQkJCQkJCSdsb2NhdGlvbic6ICdwYWdlX2xvY2F0aW9uJywKCQkJCQkJCQkJJ3RpdGxlJzogJ3BhZ2VfdGl0bGUnLAoJCQkJCQkJCQkncmVmZXJyZXInIDogJ3BhZ2VfcmVmZXJyZXInLAoJCQkJCQkJCX07CgkJCQkJCQkJZm9yIChhcmcgaW4gYXJncykgewoJCQkJCQkJCQkJCQkJCQkJCQlpZiAoISghYXJncy5oYXNPd25Qcm9wZXJ0eShhcmcpIHx8ICFnYU1hcC5oYXNPd25Qcm9wZXJ0eShhcmcpKSkgewoJCQkJCQkJCQkJaGl0W2dhTWFwW2FyZ11dID0gYXJnc1thcmddOwoJCQkJCQkJCQl9IGVsc2UgewoJCQkJCQkJCQkJaGl0W2FyZ10gPSBhcmdzW2FyZ107CgkJCQkJCQkJCX0KCQkJCQkJCQl9CgkJCQkJCQkJcmV0dXJuIGhpdDsKCQkJCQkJCX0KCgkJCQkJCQl0cnkgewoJCQkJCQkJCWYuaGl0Q2FsbGJhY2soKTsKCQkJCQkJCX0gY2F0Y2ggKGV4KSB7CgkJCQkJCQl9CgkJCQkJCX07CgkJCQkJCV9fZ2FUcmFja2VyLmNyZWF0ZSA9IG5ld3RyYWNrZXI7CgkJCQkJCV9fZ2FUcmFja2VyLmdldEJ5TmFtZSA9IG5ld3RyYWNrZXI7CgkJCQkJCV9fZ2FUcmFja2VyLmdldEFsbCA9IGZ1bmN0aW9uICgpIHsKCQkJCQkJCXJldHVybiBbXTsKCQkJCQkJfTsKCQkJCQkJX19nYVRyYWNrZXIucmVtb3ZlID0gbm9vcGZuOwoJCQkJCQlfX2dhVHJhY2tlci5sb2FkZWQgPSB0cnVlOwoJCQkJCQl3aW5kb3dbJ19fZ2FUcmFja2VyJ10gPSBfX2dhVHJhY2tlcjsKCQkJCQl9KSgpOwoJCQkJCQkJCQl9IGVsc2UgewoJCQkJCQkJCQkJY29uc29sZS5sb2coIiIpOwoJCQkJCShmdW5jdGlvbiAoKSB7CgkJCQkJCWZ1bmN0aW9uIF9fZ3RhZ1RyYWNrZXIoKSB7CgkJCQkJCQlyZXR1cm4gbnVsbDsKCQkJCQkJfQoKCQkJCQkJd2luZG93WydfX2d0YWdUcmFja2VyJ10gPSBfX2d0YWdUcmFja2VyOwoJCQkJCQl3aW5kb3dbJ2d0YWcnXSA9IF9fZ3RhZ1RyYWNrZXI7CgkJCQkJfSkoKTsKCQkJCQkJCQkJfQoJCQk=">
+				var mi_version = '8.27.0';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+								var MonsterInsightsDefaultLocations = {"page_location":"https:\/\/studentportal.my\/"};
+				if ( typeof MonsterInsightsPrivacyGuardFilter === 'function' ) {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsPrivacyGuardFilter( MonsterInsightsExcludeQuery ) : MonsterInsightsPrivacyGuardFilter( MonsterInsightsDefaultLocations );
+				} else {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsExcludeQuery : MonsterInsightsDefaultLocations;
+				}
+
+								var disableStrs = [
+										'ga-disable-G-Q8PM91FZBE',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						if (document.cookie.indexOf(disableStrs[index] + '=true') > -1) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if (__gtagTrackerIsOptedOut()) {
+					for (var index = 0; index < disableStrs.length; index++) {
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						document.cookie = disableStrs[index] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				if ('undefined' === typeof gaOptout) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if (mi_track_user) {
+					function __gtagDataLayer() {
+						dataLayer.push(arguments);
+					}
+
+					function __gtagTracker(type, name, parameters) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply(null, arguments);
+							return;
+						}
+
+						if (type === 'event') {
+														parameters.send_to = monsterinsights_frontend.v4_id;
+							var hookName = name;
+							if (typeof parameters['event_category'] !== 'undefined') {
+								hookName = parameters['event_category'] + ':' + name;
+							}
+
+							if (typeof MonsterInsightsDualTracker.trackers[hookName] !== 'undefined') {
+								MonsterInsightsDualTracker.trackers[hookName](parameters);
+							} else {
+								__gtagDataLayer('event', name, parameters);
+							}
+							
+						} else {
+							__gtagDataLayer.apply(null, arguments);
+						}
+					}
+
+					__gtagTracker('js', new Date());
+					__gtagTracker('set', {
+						'developer_id.dZGIzZG': true,
+											});
+					if ( MonsterInsightsLocations.page_location ) {
+						__gtagTracker('set', MonsterInsightsLocations);
+					}
+										__gtagTracker('config', 'G-Q8PM91FZBE', {"forceSSL":"true","link_attribution":"true"} );
+															window.gtag = __gtagTracker;										(function () {
+						/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+						/* ga and __gaTracker compatibility shim. */
+						var noopfn = function () {
+							return null;
+						};
+						var newtracker = function () {
+							return new Tracker();
+						};
+						var Tracker = function () {
+							return null;
+						};
+						var p = Tracker.prototype;
+						p.get = noopfn;
+						p.set = noopfn;
+						p.send = function () {
+							var args = Array.prototype.slice.call(arguments);
+							args.unshift('send');
+							__gaTracker.apply(null, args);
+						};
+						var __gaTracker = function () {
+							var len = arguments.length;
+							if (len === 0) {
+								return;
+							}
+							var f = arguments[len - 1];
+							if (typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function') {
+								if ('send' === arguments[0]) {
+									var hitConverted, hitObject = false, action;
+									if ('event' === arguments[1]) {
+										if ('undefined' !== typeof arguments[3]) {
+											hitObject = {
+												'eventAction': arguments[3],
+												'eventCategory': arguments[2],
+												'eventLabel': arguments[4],
+												'value': arguments[5] ? arguments[5] : 1,
+											}
+										}
+									}
+									if ('pageview' === arguments[1]) {
+										if ('undefined' !== typeof arguments[2]) {
+											hitObject = {
+												'eventAction': 'page_view',
+												'page_path': arguments[2],
+											}
+										}
+									}
+									if (typeof arguments[2] === 'object') {
+										hitObject = arguments[2];
+									}
+									if (typeof arguments[5] === 'object') {
+										Object.assign(hitObject, arguments[5]);
+									}
+									if ('undefined' !== typeof arguments[1].hitType) {
+										hitObject = arguments[1];
+										if ('pageview' === hitObject.hitType) {
+											hitObject.eventAction = 'page_view';
+										}
+									}
+									if (hitObject) {
+										action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+										hitConverted = mapArgs(hitObject);
+										__gtagTracker('event', action, hitConverted);
+									}
+								}
+								return;
+							}
+
+							function mapArgs(args) {
+								var arg, hit = {};
+								var gaMap = {
+									'eventCategory': 'event_category',
+									'eventAction': 'event_action',
+									'eventLabel': 'event_label',
+									'eventValue': 'event_value',
+									'nonInteraction': 'non_interaction',
+									'timingCategory': 'event_category',
+									'timingVar': 'name',
+									'timingValue': 'value',
+									'timingLabel': 'event_label',
+									'page': 'page_path',
+									'location': 'page_location',
+									'title': 'page_title',
+									'referrer' : 'page_referrer',
+								};
+								for (arg in args) {
+																		if (!(!args.hasOwnProperty(arg) || !gaMap.hasOwnProperty(arg))) {
+										hit[gaMap[arg]] = args[arg];
+									} else {
+										hit[arg] = args[arg];
+									}
+								}
+								return hit;
+							}
+
+							try {
+								f.hitCallback();
+							} catch (ex) {
+							}
+						};
+						__gaTracker.create = newtracker;
+						__gaTracker.getByName = newtracker;
+						__gaTracker.getAll = function () {
+							return [];
+						};
+						__gaTracker.remove = noopfn;
+						__gaTracker.loaded = true;
+						window['__gaTracker'] = __gaTracker;
+					})();
+									} else {
+										console.log("");
+					(function () {
+						function __gtagTracker() {
+							return null;
+						}
+
+						window['__gtagTracker'] = __gtagTracker;
+						window['gtag'] = __gtagTracker;
+					})();
+									}
+			</script>
+				<!-- / Google Analytics by MonsterInsights -->
+		<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<link data-minify="1" rel="stylesheet" id="blocksy-dynamic-global-css" href="https://studentportal.my/wp-content/cache/min/1/wp-content/uploads/blocksy/css/global.css?ver=1719385270" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="https://studentportal.my/wp-includes/css/dist/block-library/style.min.css?ver=6.9.4" media="all">
+
+<style id="wp-block-heading-inline-css">
+h1:where(.wp-block-heading).has-background,h2:where(.wp-block-heading).has-background,h3:where(.wp-block-heading).has-background,h4:where(.wp-block-heading).has-background,h5:where(.wp-block-heading).has-background,h6:where(.wp-block-heading).has-background{padding:1.25em 2.375em}h1.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h1.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h2.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h2.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h3.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h3.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h4.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h4.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h5.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h5.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h6.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h6.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]){rotate:180deg}
+/*# sourceURL=https://studentportal.my/wp-includes/blocks/heading/style.min.css */
+</style>
+<style id="wp-block-paragraph-inline-css">
+.is-small-text{font-size:.875em}.is-regular-text{font-size:1em}.is-large-text{font-size:2.25em}.is-larger-text{font-size:3em}.has-drop-cap:not(:focus):first-letter{float:left;font-size:8.4em;font-style:normal;font-weight:100;line-height:.68;margin:.05em .1em 0 0;text-transform:uppercase}body.rtl .has-drop-cap:not(:focus):first-letter{float:none;margin-left:.1em}p.has-drop-cap.has-background{overflow:hidden}:root :where(p.has-background){padding:1.25em 2.375em}:where(p.has-text-color:not(.has-link-color)) a{color:inherit}p.has-text-align-left[style*="writing-mode:vertical-lr"],p.has-text-align-right[style*="writing-mode:vertical-rl"]{rotate:180deg}
+/*# sourceURL=https://studentportal.my/wp-includes/blocks/paragraph/style.min.css */
+</style>
+<style id="wp-block-table-inline-css">
+.wp-block-table{overflow-x:auto}.wp-block-table table{border-collapse:collapse;width:100%}.wp-block-table thead{border-bottom:3px solid}.wp-block-table tfoot{border-top:3px solid}.wp-block-table td,.wp-block-table th{border:1px solid;padding:.5em}.wp-block-table .has-fixed-layout{table-layout:fixed;width:100%}.wp-block-table .has-fixed-layout td,.wp-block-table .has-fixed-layout th{word-break:break-word}.wp-block-table.aligncenter,.wp-block-table.alignleft,.wp-block-table.alignright{display:table;width:auto}.wp-block-table.aligncenter td,.wp-block-table.aligncenter th,.wp-block-table.alignleft td,.wp-block-table.alignleft th,.wp-block-table.alignright td,.wp-block-table.alignright th{word-break:break-word}.wp-block-table .has-subtle-light-gray-background-color{background-color:#f3f4f5}.wp-block-table .has-subtle-pale-green-background-color{background-color:#e9fbe5}.wp-block-table .has-subtle-pale-blue-background-color{background-color:#e7f5fe}.wp-block-table .has-subtle-pale-pink-background-color{background-color:#fcf0ef}.wp-block-table.is-style-stripes{background-color:initial;border-collapse:inherit;border-spacing:0}.wp-block-table.is-style-stripes tbody tr:nth-child(odd){background-color:#f0f0f0}.wp-block-table.is-style-stripes.has-subtle-light-gray-background-color tbody tr:nth-child(odd){background-color:#f3f4f5}.wp-block-table.is-style-stripes.has-subtle-pale-green-background-color tbody tr:nth-child(odd){background-color:#e9fbe5}.wp-block-table.is-style-stripes.has-subtle-pale-blue-background-color tbody tr:nth-child(odd){background-color:#e7f5fe}.wp-block-table.is-style-stripes.has-subtle-pale-pink-background-color tbody tr:nth-child(odd){background-color:#fcf0ef}.wp-block-table.is-style-stripes td,.wp-block-table.is-style-stripes th{border-color:#0000}.wp-block-table.is-style-stripes{border-bottom:1px solid #f0f0f0}.wp-block-table .has-border-color td,.wp-block-table .has-border-color th,.wp-block-table .has-border-color tr,.wp-block-table .has-border-color>*{border-color:inherit}.wp-block-table table[style*=border-top-color] tr:first-child,.wp-block-table table[style*=border-top-color] tr:first-child td,.wp-block-table table[style*=border-top-color] tr:first-child th,.wp-block-table table[style*=border-top-color]>*,.wp-block-table table[style*=border-top-color]>* td,.wp-block-table table[style*=border-top-color]>* th{border-top-color:inherit}.wp-block-table table[style*=border-top-color] tr:not(:first-child){border-top-color:initial}.wp-block-table table[style*=border-right-color] td:last-child,.wp-block-table table[style*=border-right-color] th,.wp-block-table table[style*=border-right-color] tr,.wp-block-table table[style*=border-right-color]>*{border-right-color:inherit}.wp-block-table table[style*=border-bottom-color] tr:last-child,.wp-block-table table[style*=border-bottom-color] tr:last-child td,.wp-block-table table[style*=border-bottom-color] tr:last-child th,.wp-block-table table[style*=border-bottom-color]>*,.wp-block-table table[style*=border-bottom-color]>* td,.wp-block-table table[style*=border-bottom-color]>* th{border-bottom-color:inherit}.wp-block-table table[style*=border-bottom-color] tr:not(:last-child){border-bottom-color:initial}.wp-block-table table[style*=border-left-color] td:first-child,.wp-block-table table[style*=border-left-color] th,.wp-block-table table[style*=border-left-color] tr,.wp-block-table table[style*=border-left-color]>*{border-left-color:inherit}.wp-block-table table[style*=border-style] td,.wp-block-table table[style*=border-style] th,.wp-block-table table[style*=border-style] tr,.wp-block-table table[style*=border-style]>*{border-style:inherit}.wp-block-table table[style*=border-width] td,.wp-block-table table[style*=border-width] th,.wp-block-table table[style*=border-width] tr,.wp-block-table table[style*=border-width]>*{border-style:inherit;border-width:inherit}
+/*# sourceURL=https://studentportal.my/wp-includes/blocks/table/style.min.css */
+</style>
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--palette-color-1: var(--paletteColor1, #FB7258);--wp--preset--color--palette-color-2: var(--paletteColor2, #F74D67);--wp--preset--color--palette-color-3: var(--paletteColor3, #6e6d76);--wp--preset--color--palette-color-4: var(--paletteColor4, #0e0c1b);--wp--preset--color--palette-color-5: var(--paletteColor5, #DFDFE2);--wp--preset--color--palette-color-6: var(--paletteColor6, #F4F4F5);--wp--preset--color--palette-color-7: var(--paletteColor7, #FBFBFB);--wp--preset--color--palette-color-8: var(--paletteColor8, #ffffff);--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--gradient--juicy-peach: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);--wp--preset--gradient--young-passion: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);--wp--preset--gradient--true-sunset: linear-gradient(to right, #fa709a 0%, #fee140 100%);--wp--preset--gradient--morpheus-den: linear-gradient(to top, #30cfd0 0%, #330867 100%);--wp--preset--gradient--plum-plate: linear-gradient(135deg, #667eea 0%, #764ba2 100%);--wp--preset--gradient--aqua-splash: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);--wp--preset--gradient--love-kiss: linear-gradient(to top, #ff0844 0%, #ffb199 100%);--wp--preset--gradient--new-retrowave: linear-gradient(to top, #3b41c5 0%, #a981bb 49%, #ffc8a9 100%);--wp--preset--gradient--plum-bath: linear-gradient(to top, #cc208e 0%, #6713d2 100%);--wp--preset--gradient--high-flight: linear-gradient(to right, #0acffe 0%, #495aff 100%);--wp--preset--gradient--teen-party: linear-gradient(-225deg, #FF057C 0%, #8D0B93 50%, #321575 100%);--wp--preset--gradient--fabled-sunset: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%);--wp--preset--gradient--arielle-smile: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);--wp--preset--gradient--itmeo-branding: linear-gradient(180deg, #2af598 0%, #009efd 100%);--wp--preset--gradient--deep-blue: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);--wp--preset--gradient--strong-bliss: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);--wp--preset--gradient--sweet-period: linear-gradient(to top, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100%);--wp--preset--gradient--purple-division: linear-gradient(to top, #7028e4 0%, #e5b2ca 100%);--wp--preset--gradient--cold-evening: linear-gradient(to top, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%);--wp--preset--gradient--mountain-rock: linear-gradient(to right, #868f96 0%, #596164 100%);--wp--preset--gradient--desert-hump: linear-gradient(to top, #c79081 0%, #dfa579 100%);--wp--preset--gradient--ethernal-constance: linear-gradient(to top, #09203f 0%, #537895 100%);--wp--preset--gradient--happy-memories: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);--wp--preset--gradient--grown-early: linear-gradient(to top, #0ba360 0%, #3cba92 100%);--wp--preset--gradient--morning-salad: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%);--wp--preset--gradient--night-call: linear-gradient(-225deg, #AC32E4 0%, #7918F2 48%, #4801FF 100%);--wp--preset--gradient--mind-crawl: linear-gradient(-225deg, #473B7B 0%, #3584A7 51%, #30D2BE 100%);--wp--preset--gradient--angel-care: linear-gradient(-225deg, #FFE29F 0%, #FFA99F 48%, #FF719A 100%);--wp--preset--gradient--juicy-cake: linear-gradient(to top, #e14fad 0%, #f9d423 100%);--wp--preset--gradient--rich-metal: linear-gradient(to right, #d7d2cc 0%, #304352 100%);--wp--preset--gradient--mole-hall: linear-gradient(-20deg, #616161 0%, #9bc5c3 100%);--wp--preset--gradient--cloudy-knoxville: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);--wp--preset--gradient--soft-grass: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);--wp--preset--gradient--saint-petersburg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);--wp--preset--gradient--everlasting-sky: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);--wp--preset--gradient--kind-steel: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);--wp--preset--gradient--over-sun: linear-gradient(60deg, #abecd6 0%, #fbed96 100%);--wp--preset--gradient--premium-white: linear-gradient(to top, #d5d4d0 0%, #d5d4d0 1%, #eeeeec 31%, #efeeec 75%, #e9e9e7 100%);--wp--preset--gradient--clean-mirror: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);--wp--preset--gradient--wild-apple: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);--wp--preset--gradient--snow-again: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);--wp--preset--gradient--confident-cloud: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%);--wp--preset--gradient--glass-water: linear-gradient(to top, #dfe9f3 0%, white 100%);--wp--preset--gradient--perfect-white: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:root { --wp--style--global--content-size: var(--block-max-width);--wp--style--global--wide-size: var(--block-wide-max-width); }:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.wp-site-blocks) > * { margin-block-start: var(--content-spacing); margin-block-end: 0; }:where(.wp-site-blocks) > :first-child { margin-block-start: 0; }:where(.wp-site-blocks) > :last-child { margin-block-end: 0; }:root { --wp--style--block-gap: var(--content-spacing); }:root :where(.is-layout-flow) > :first-child{margin-block-start: 0;}:root :where(.is-layout-flow) > :last-child{margin-block-end: 0;}:root :where(.is-layout-flow) > *{margin-block-start: var(--content-spacing);margin-block-end: 0;}:root :where(.is-layout-constrained) > :first-child{margin-block-start: 0;}:root :where(.is-layout-constrained) > :last-child{margin-block-end: 0;}:root :where(.is-layout-constrained) > *{margin-block-start: var(--content-spacing);margin-block-end: 0;}:root :where(.is-layout-flex){gap: var(--content-spacing);}:root :where(.is-layout-grid){gap: var(--content-spacing);}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){font-style: inherit;font-weight: inherit;letter-spacing: inherit;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-palette-color-1-color{color: var(--wp--preset--color--palette-color-1) !important;}.has-palette-color-2-color{color: var(--wp--preset--color--palette-color-2) !important;}.has-palette-color-3-color{color: var(--wp--preset--color--palette-color-3) !important;}.has-palette-color-4-color{color: var(--wp--preset--color--palette-color-4) !important;}.has-palette-color-5-color{color: var(--wp--preset--color--palette-color-5) !important;}.has-palette-color-6-color{color: var(--wp--preset--color--palette-color-6) !important;}.has-palette-color-7-color{color: var(--wp--preset--color--palette-color-7) !important;}.has-palette-color-8-color{color: var(--wp--preset--color--palette-color-8) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-palette-color-1-background-color{background-color: var(--wp--preset--color--palette-color-1) !important;}.has-palette-color-2-background-color{background-color: var(--wp--preset--color--palette-color-2) !important;}.has-palette-color-3-background-color{background-color: var(--wp--preset--color--palette-color-3) !important;}.has-palette-color-4-background-color{background-color: var(--wp--preset--color--palette-color-4) !important;}.has-palette-color-5-background-color{background-color: var(--wp--preset--color--palette-color-5) !important;}.has-palette-color-6-background-color{background-color: var(--wp--preset--color--palette-color-6) !important;}.has-palette-color-7-background-color{background-color: var(--wp--preset--color--palette-color-7) !important;}.has-palette-color-8-background-color{background-color: var(--wp--preset--color--palette-color-8) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-palette-color-1-border-color{border-color: var(--wp--preset--color--palette-color-1) !important;}.has-palette-color-2-border-color{border-color: var(--wp--preset--color--palette-color-2) !important;}.has-palette-color-3-border-color{border-color: var(--wp--preset--color--palette-color-3) !important;}.has-palette-color-4-border-color{border-color: var(--wp--preset--color--palette-color-4) !important;}.has-palette-color-5-border-color{border-color: var(--wp--preset--color--palette-color-5) !important;}.has-palette-color-6-border-color{border-color: var(--wp--preset--color--palette-color-6) !important;}.has-palette-color-7-border-color{border-color: var(--wp--preset--color--palette-color-7) !important;}.has-palette-color-8-border-color{border-color: var(--wp--preset--color--palette-color-8) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-juicy-peach-gradient-background{background: var(--wp--preset--gradient--juicy-peach) !important;}.has-young-passion-gradient-background{background: var(--wp--preset--gradient--young-passion) !important;}.has-true-sunset-gradient-background{background: var(--wp--preset--gradient--true-sunset) !important;}.has-morpheus-den-gradient-background{background: var(--wp--preset--gradient--morpheus-den) !important;}.has-plum-plate-gradient-background{background: var(--wp--preset--gradient--plum-plate) !important;}.has-aqua-splash-gradient-background{background: var(--wp--preset--gradient--aqua-splash) !important;}.has-love-kiss-gradient-background{background: var(--wp--preset--gradient--love-kiss) !important;}.has-new-retrowave-gradient-background{background: var(--wp--preset--gradient--new-retrowave) !important;}.has-plum-bath-gradient-background{background: var(--wp--preset--gradient--plum-bath) !important;}.has-high-flight-gradient-background{background: var(--wp--preset--gradient--high-flight) !important;}.has-teen-party-gradient-background{background: var(--wp--preset--gradient--teen-party) !important;}.has-fabled-sunset-gradient-background{background: var(--wp--preset--gradient--fabled-sunset) !important;}.has-arielle-smile-gradient-background{background: var(--wp--preset--gradient--arielle-smile) !important;}.has-itmeo-branding-gradient-background{background: var(--wp--preset--gradient--itmeo-branding) !important;}.has-deep-blue-gradient-background{background: var(--wp--preset--gradient--deep-blue) !important;}.has-strong-bliss-gradient-background{background: var(--wp--preset--gradient--strong-bliss) !important;}.has-sweet-period-gradient-background{background: var(--wp--preset--gradient--sweet-period) !important;}.has-purple-division-gradient-background{background: var(--wp--preset--gradient--purple-division) !important;}.has-cold-evening-gradient-background{background: var(--wp--preset--gradient--cold-evening) !important;}.has-mountain-rock-gradient-background{background: var(--wp--preset--gradient--mountain-rock) !important;}.has-desert-hump-gradient-background{background: var(--wp--preset--gradient--desert-hump) !important;}.has-ethernal-constance-gradient-background{background: var(--wp--preset--gradient--ethernal-constance) !important;}.has-happy-memories-gradient-background{background: var(--wp--preset--gradient--happy-memories) !important;}.has-grown-early-gradient-background{background: var(--wp--preset--gradient--grown-early) !important;}.has-morning-salad-gradient-background{background: var(--wp--preset--gradient--morning-salad) !important;}.has-night-call-gradient-background{background: var(--wp--preset--gradient--night-call) !important;}.has-mind-crawl-gradient-background{background: var(--wp--preset--gradient--mind-crawl) !important;}.has-angel-care-gradient-background{background: var(--wp--preset--gradient--angel-care) !important;}.has-juicy-cake-gradient-background{background: var(--wp--preset--gradient--juicy-cake) !important;}.has-rich-metal-gradient-background{background: var(--wp--preset--gradient--rich-metal) !important;}.has-mole-hall-gradient-background{background: var(--wp--preset--gradient--mole-hall) !important;}.has-cloudy-knoxville-gradient-background{background: var(--wp--preset--gradient--cloudy-knoxville) !important;}.has-soft-grass-gradient-background{background: var(--wp--preset--gradient--soft-grass) !important;}.has-saint-petersburg-gradient-background{background: var(--wp--preset--gradient--saint-petersburg) !important;}.has-everlasting-sky-gradient-background{background: var(--wp--preset--gradient--everlasting-sky) !important;}.has-kind-steel-gradient-background{background: var(--wp--preset--gradient--kind-steel) !important;}.has-over-sun-gradient-background{background: var(--wp--preset--gradient--over-sun) !important;}.has-premium-white-gradient-background{background: var(--wp--preset--gradient--premium-white) !important;}.has-clean-mirror-gradient-background{background: var(--wp--preset--gradient--clean-mirror) !important;}.has-wild-apple-gradient-background{background: var(--wp--preset--gradient--wild-apple) !important;}.has-snow-again-gradient-background{background: var(--wp--preset--gradient--snow-again) !important;}.has-confident-cloud-gradient-background{background: var(--wp--preset--gradient--confident-cloud) !important;}.has-glass-water-gradient-background{background: var(--wp--preset--gradient--glass-water) !important;}.has-perfect-white-gradient-background{background: var(--wp--preset--gradient--perfect-white) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link data-minify="1" rel="stylesheet" id="ct-main-styles-css" href="https://studentportal.my/wp-content/cache/min/1/wp-content/themes/blocksy/static/bundle/main.min.css?ver=1719385270" media="all">
+<link rel="stylesheet" id="blocksy-ext-trending-styles-css" href="https://studentportal.my/wp-content/plugins/blocksy-companion-pro/framework/extensions/trending/static/bundle/main.min.css?ver=1.9.4" media="all">
+
+<link rel="stylesheet" id="ct-sidebar-styles-css" href="https://studentportal.my/wp-content/themes/blocksy/static/bundle/sidebar.min.css?ver=1.8.81" media="all">
+<style id="rocket-lazyload-inline-css">
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://studentportal.my/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}.wp-embed-responsive .wp-has-aspect-ratio .rll-youtube-player{position:absolute;padding-bottom:0;width:100%;height:100%;top:0;bottom:0;left:0;right:0}
+/*# sourceURL=rocket-lazyload-inline-css */
+</style>
+
+			<!-- Google Analytics -->
+			<script type="rocketlazyloadscript">
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			ga('create', 'G-Q8PM91FZBE', 'auto');
+			ga('send', 'pageview');
+						</script>
+			<!-- End Google Analytics -->
+
+			
+			<!-- Global site tag (gtag.js) - Google Analytics v4 -->
+			<script type="rocketlazyloadscript" async="" data-rocket-src="https://www.googletagmanager.com/gtag/js?id=UA-205121404-1"></script>
+			<script type="rocketlazyloadscript">
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-205121404-1');
+			</script>
+			<!-- End Google Analytics v4 -->
+
+			<script type="rocketlazyloadscript" data-rocket-src="https://studentportal.my/wp-content/plugins/google-analytics-premium/assets/js/frontend-gtag.min.js?ver=8.27.0" id="monsterinsights-frontend-script-js" defer=""></script>
+<script data-cfasync="false" data-wpfc-render="false" id="monsterinsights-frontend-script-js-extra">var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/studentportal.my","hash_tracking":"false","v4_id":"G-Q8PM91FZBE"};</script>
+<link rel="https://api.w.org/" href="https://studentportal.my/wp-json/"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://studentportal.my/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.9.4">
+<!-- Meta Pixel Code -->
+<script type="rocketlazyloadscript">
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1323648532660979');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1323648532660979&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code --><noscript><link rel='stylesheet' href='https://studentportal.my/wp-content/themes/blocksy/static/bundle/no-scripts.min.css' type='text/css'></noscript>
+<link href="https://www.googletagmanager.com" rel="preconnect"><link href="https://a.teads.tv" rel="preconnect"><link href="https://anymind360.com" rel="preconnect"><link href="https://xhr.invl.co" rel="preconnect"><link href="https://pagead2.googlesyndication.com" rel="preconnect" crossorigin="anonymous"><link href="https://studentportal.my/wp-content/plugins/google-analytics-premium/assets/js/frontend-gtag.min.js?ver=8.27.0" rel="preload" as="script"><link href="//anymind360.com/js/8599/ats.js" rel="preload" as="script"><link href="https://xhr.invl.co/magic/133501/auto.js" rel="preload" as="script"><link href="https://studentportal.my/wp-content/cache/min/1/wp-content/themes/blocksy/static/bundle/main.js?ver=1719385271" rel="preload" as="script"><link href="https://studentportal.my/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" rel="preload" as="script"><link href="https://studentportal.my/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" rel="preload" as="script"><link href="//www.googletagmanager.com/gtag/js?id=G-Q8PM91FZBE" rel="preload" as="script"><link href="https://www.googletagmanager.com/gtag/js?id=UA-205121404-1" rel="preload" as="script"><link href="//a.teads.tv/page/188507/tag" rel="preload" as="script"><link href="https://studentportal.my/wp-content/cache/min/1/tag/js/gpt.js?ver=1757660874" rel="preload" as="script" crossorigin="anonymous"><link href="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3634151581174139" rel="preload" as="script" crossorigin="anonymous"></head><body data-rsssl="1" class="home blog wp-custom-logo wp-embed-responsive wp-theme-blocksy ct-loading" data-link="type-4" data-prefix="blog" data-header="type-1:sticky" data-footer="type-1"><div data-block="hook:6988"><article id="post-6988" class="post-6988"><div class="entry-content">
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" class="teads" data-rocket-src="//a.teads.tv/page/188507/tag" async="true"></script>
+</div></article></div><script type="rocketlazyloadscript" data-rocket-type="application/javascript" data-rocket-src="//anymind360.com/js/8599/ats.js" defer=""></script><link rel="icon" href="https://studentportal.my/wp-content/uploads/2024/05/TNB-Prime-Scholarship-150x150.jpeg" sizes="32x32">
+<link rel="icon" href="https://studentportal.my/wp-content/uploads/2024/05/TNB-Prime-Scholarship-300x300.jpeg" sizes="192x192">
+<link rel="apple-touch-icon" href="https://studentportal.my/wp-content/uploads/2024/05/TNB-Prime-Scholarship-300x300.jpeg">
+<meta name="msapplication-TileImage" content="https://studentportal.my/wp-content/uploads/2024/05/TNB-Prime-Scholarship-300x300.jpeg">
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>	<div data-block="hook:6754"><article id="post-6754" class="post-6754"><div class="entry-content">
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://xhr.invl.co/magic/133501/auto.js" defer=""></script>
+
+
+
+<script type="rocketlazyloadscript" data-minify="1" async="" data-rocket-src="https://studentportal.my/wp-content/cache/min/1/tag/js/gpt.js?ver=1757660874" crossorigin="anonymous"></script>
+<div id="gpt-passback">
+  <script type="rocketlazyloadscript">
+    window.googletag = window.googletag || {cmd: []};
+    googletag.cmd.push(function() {
+    googletag.defineSlot('/22826383987/StudentPortal', [1, 1], 'gpt-passback').addService(googletag.pubads());
+    googletag.enableServices();
+    googletag.display('gpt-passback');
+    });
+  </script>
+</div>
+
+
+
+<p></p>
+</div></article></div>
+
+
+
+
+<a class="skip-link show-on-focus" href="#main">
+	Skip to content</a>
+
+<div class="ct-drawer-canvas">
+		<div id="search-modal" class="ct-panel" data-behaviour="modal">
+			<div class="ct-panel-actions">
+				<button class="ct-toggle-close" data-type="type-1" aria-label="Close search modal">
+					<svg class="ct-icon" width="12" height="12" viewBox="0 0 15 15"><path d="M1 15a1 1 0 01-.71-.29 1 1 0 010-1.41l5.8-5.8-5.8-5.8A1 1 0 011.7.29l5.8 5.8 5.8-5.8a1 1 0 011.41 1.41l-5.8 5.8 5.8 5.8a1 1 0 01-1.41 1.41l-5.8-5.8-5.8 5.8A1 1 0 011 15z"></path></svg>				</button>
+			</div>
+
+			<div class="ct-panel-content">
+				
+
+<form role="search" method="get" class="search-form" action="https://studentportal.my/" aria-haspopup="listbox" data-live-results="thumbs">
+
+	<input type="search" class="modal-field" placeholder="Type your search..." value="" name="s" autocomplete="off" title="Search for..." aria-label="Search for...">
+
+	<button type="submit" class="search-submit" aria-label="Search button">
+		<svg class="ct-icon" aria-hidden="true" width="15" height="15" viewBox="0 0 15 15"><path d="M14.8,13.7L12,11c0.9-1.2,1.5-2.6,1.5-4.2c0-3.7-3-6.8-6.8-6.8S0,3,0,6.8s3,6.8,6.8,6.8c1.6,0,3.1-0.6,4.2-1.5l2.8,2.8c0.1,0.1,0.3,0.2,0.5,0.2s0.4-0.1,0.5-0.2C15.1,14.5,15.1,14,14.8,13.7z M1.5,6.8c0-2.9,2.4-5.2,5.2-5.2S12,3.9,12,6.8S9.6,12,6.8,12S1.5,9.6,1.5,6.8z"></path></svg>
+		<span data-loader="circles"><span></span><span></span><span></span></span>
+	</button>
+
+	
+			<input type="hidden" name="ct_post_type" value="post:page">
+	
+	
+			<div class="screen-reader-text" aria-live="polite" role="status">
+			No results		</div>
+	
+</form>
+
+
+			</div>
+		</div>
+
+		<div id="offcanvas" class="ct-panel ct-header" data-behaviour="right-side"><div class="ct-panel-inner">
+		<div class="ct-panel-actions">
+			<button class="ct-toggle-close" data-type="type-1" aria-label="Close drawer">
+				<svg class="ct-icon" width="12" height="12" viewBox="0 0 15 15"><path d="M1 15a1 1 0 01-.71-.29 1 1 0 010-1.41l5.8-5.8-5.8-5.8A1 1 0 011.7.29l5.8 5.8 5.8-5.8a1 1 0 011.41 1.41l-5.8 5.8 5.8 5.8a1 1 0 01-1.41 1.41l-5.8-5.8-5.8 5.8A1 1 0 011 15z"></path></svg>
+			</button>
+		</div>
+		<div class="ct-panel-content" data-device="desktop"></div><div class="ct-panel-content" data-device="mobile">
+<nav class="mobile-menu has-submenu" data-id="mobile-menu" data-interaction="click" data-toggle-type="type-1" aria-label="Off Canvas Menu">
+	<ul id="menu-main-menu-1" role="menubar"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6655" role="none"><span class="ct-sub-menu-parent"><a href="#" class="ct-menu-link" role="menuitem">Pendidikan</a><button class="ct-toggle-dropdown-mobile" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false" role="menuitem"><svg class="ct-icon toggle-icon-1" width="15" height="15" viewBox="0 0 15 15"><path d="M3.9,5.1l3.6,3.6l3.6-3.6l1.4,0.7l-5,5l-5-5L3.9,5.1z"></path></svg></button></span>
+<ul class="sub-menu" role="menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6654" role="none"><span class="ct-sub-menu-parent"><a href="#" class="ct-menu-link" role="menuitem">Pra Sekolah</a><button class="ct-toggle-dropdown-mobile" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false" role="menuitem"><svg class="ct-icon toggle-icon-1" width="15" height="15" viewBox="0 0 15 15"><path d="M3.9,5.1l3.6,3.6l3.6-3.6l1.4,0.7l-5,5l-5-5L3.9,5.1z"></path></svg></button></span>
+	<ul class="sub-menu" role="menu">
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6659" role="none"><a href="https://studentportal.my/kemasukan-taska-tabika-kemas-2024/" class="ct-menu-link" role="menuitem">KEMAS</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6694" role="none"><a href="https://studentportal.my/tadika/" class="ct-menu-link" role="menuitem">Tadika</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6658" role="none"><a href="#" class="ct-menu-link" role="menuitem">PASTI</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6695" role="none"><span class="ct-sub-menu-parent"><a href="#" class="ct-menu-link" role="menuitem">Tadika Swasta</a><button class="ct-toggle-dropdown-mobile" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false" role="menuitem"><svg class="ct-icon toggle-icon-1" width="15" height="15" viewBox="0 0 15 15"><path d="M3.9,5.1l3.6,3.6l3.6-3.6l1.4,0.7l-5,5l-5-5L3.9,5.1z"></path></svg></button></span>
+		<ul class="sub-menu" role="menu">
+			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6696" role="none"><a href="#" class="ct-menu-link" role="menuitem">Little Caliph</a></li>
+			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6697" role="none"><a href="#" class="ct-menu-link" role="menuitem">Brainy Bunch</a></li>
+			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6698" role="none"><a href="#" class="ct-menu-link" role="menuitem">Genius Aulad</a></li>
+		</ul>
+</li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-6651" role="none"><span class="ct-sub-menu-parent"><a href="https://studentportal.my/sekolah-rendah/" class="ct-menu-link" role="menuitem">Sekolah</a><button class="ct-toggle-dropdown-mobile" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false" role="menuitem"><svg class="ct-icon toggle-icon-1" width="15" height="15" viewBox="0 0 15 15"><path d="M3.9,5.1l3.6,3.6l3.6-3.6l1.4,0.7l-5,5l-5-5L3.9,5.1z"></path></svg></button></span>
+	<ul class="sub-menu" role="menu">
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6660" role="none"><a href="#" class="ct-menu-link" role="menuitem">Darjah 1-6</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6661" role="none"><a href="#" class="ct-menu-link" role="menuitem">Tingkatan 1-5</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6662" role="none"><a href="#" class="ct-menu-link" role="menuitem">Sekolah Agama</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6699" role="none"><a href="#" class="ct-menu-link" role="menuitem">International School</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6663" role="none"><span class="ct-sub-menu-parent"><a href="#" class="ct-menu-link" role="menuitem">Peperiksaan</a><button class="ct-toggle-dropdown-mobile" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false" role="menuitem"><svg class="ct-icon toggle-icon-1" width="15" height="15" viewBox="0 0 15 15"><path d="M3.9,5.1l3.6,3.6l3.6-3.6l1.4,0.7l-5,5l-5-5L3.9,5.1z"></path></svg></button></span>
+	<ul class="sub-menu" role="menu">
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6664" role="none"><a href="#" class="ct-menu-link" role="menuitem">UPKK</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6665" role="none"><a href="#" class="ct-menu-link" role="menuitem">SPM</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6666" role="none"><a href="#" class="ct-menu-link" role="menuitem">STPM</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6680" role="none"><span class="ct-sub-menu-parent"><a href="#" class="ct-menu-link" role="menuitem">Pendidikan Tinggi</a><button class="ct-toggle-dropdown-mobile" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false" role="menuitem"><svg class="ct-icon toggle-icon-1" width="15" height="15" viewBox="0 0 15 15"><path d="M3.9,5.1l3.6,3.6l3.6-3.6l1.4,0.7l-5,5l-5-5L3.9,5.1z"></path></svg></button></span>
+<ul class="sub-menu" role="menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6656" role="none"><span class="ct-sub-menu-parent"><a href="#" class="ct-menu-link" role="menuitem">Pra Universiti</a><button class="ct-toggle-dropdown-mobile" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false" role="menuitem"><svg class="ct-icon toggle-icon-1" width="15" height="15" viewBox="0 0 15 15"><path d="M3.9,5.1l3.6,3.6l3.6-3.6l1.4,0.7l-5,5l-5-5L3.9,5.1z"></path></svg></button></span>
+	<ul class="sub-menu" role="menu">
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6670" role="none"><a href="#" class="ct-menu-link" role="menuitem">Tingkatan 6</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6668" role="none"><a href="#" class="ct-menu-link" role="menuitem">Matrikulasi</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6669" role="none"><a href="#" class="ct-menu-link" role="menuitem">Asasi</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6653" role="none"><a href="https://studentportal.my/tvet/" class="ct-menu-link" role="menuitem">TVET</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6667" role="none"><a href="#" class="ct-menu-link" role="menuitem">MUET</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6671" role="none"><span class="ct-sub-menu-parent"><a href="#" class="ct-menu-link" role="menuitem">Universiti</a><button class="ct-toggle-dropdown-mobile" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false" role="menuitem"><svg class="ct-icon toggle-icon-1" width="15" height="15" viewBox="0 0 15 15"><path d="M3.9,5.1l3.6,3.6l3.6-3.6l1.4,0.7l-5,5l-5-5L3.9,5.1z"></path></svg></button></span>
+	<ul class="sub-menu" role="menu">
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6672" role="none"><a href="#" class="ct-menu-link" role="menuitem">Diploma</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6673" role="none"><a href="#" class="ct-menu-link" role="menuitem">Degree</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6674" role="none"><a href="#" class="ct-menu-link" role="menuitem">Masters</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6675" role="none"><a href="#" class="ct-menu-link" role="menuitem">Kolej Swasta</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6708" role="none"><a href="https://studentportal.my/ipta/" class="ct-menu-link" role="menuitem">Universiti Awam</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6709" role="none"><a href="https://studentportal.my/ipts/" class="ct-menu-link" role="menuitem">Univertisi Swasta</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6678" role="none"><a href="#" class="ct-menu-link" role="menuitem">Politeknik</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6679" role="none"><a href="#" class="ct-menu-link" role="menuitem">Kolej Komuniti</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6681" role="none"><span class="ct-sub-menu-parent"><a href="#" class="ct-menu-link" role="menuitem">Kewangan</a><button class="ct-toggle-dropdown-mobile" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false" role="menuitem"><svg class="ct-icon toggle-icon-1" width="15" height="15" viewBox="0 0 15 15"><path d="M3.9,5.1l3.6,3.6l3.6-3.6l1.4,0.7l-5,5l-5-5L3.9,5.1z"></path></svg></button></span>
+<ul class="sub-menu" role="menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6704" role="none"><a href="https://studentportal.my/bantuan/" class="ct-menu-link" role="menuitem">Bantuan</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6702" role="none"><a href="https://studentportal.my/zakat/" class="ct-menu-link" role="menuitem">Zakat</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6706" role="none"><a href="https://studentportal.my/pinjaman-pelajaran/" class="ct-menu-link" role="menuitem">Pinjaman</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6700" role="none"><a href="https://studentportal.my/ptptn/" class="ct-menu-link" role="menuitem">PTPTN</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6701" role="none"><a href="https://studentportal.my/biasiswa/" class="ct-menu-link" role="menuitem">Biasiswa</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6703" role="none"><a href="https://studentportal.my/mara/" class="ct-menu-link" role="menuitem">MARA</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6705" role="none"><a href="https://studentportal.my/jpa/" class="ct-menu-link" role="menuitem">JPA</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6688" role="none"><span class="ct-sub-menu-parent"><a href="#" class="ct-menu-link" role="menuitem">Lain-Lain</a><button class="ct-toggle-dropdown-mobile" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false" role="menuitem"><svg class="ct-icon toggle-icon-1" width="15" height="15" viewBox="0 0 15 15"><path d="M3.9,5.1l3.6,3.6l3.6-3.6l1.4,0.7l-5,5l-5-5L3.9,5.1z"></path></svg></button></span>
+<ul class="sub-menu" role="menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6707" role="none"><a href="https://studentportal.my/buku-teks/" class="ct-menu-link" role="menuitem">Buku Teks</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6690" role="none"><a href="#" class="ct-menu-link" role="menuitem">Yuran Tadika</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6710" role="none"><a href="https://studentportal.my/soalan-percubaan/" class="ct-menu-link" role="menuitem">Soalan Percubaan</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6713" role="none"><a href="https://studentportal.my/kalendar-2025/" class="ct-menu-link" role="menuitem">Cuti Sekolah</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6712" role="none"><a href="https://studentportal.my/upu/" class="ct-menu-link" role="menuitem">UPU</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6711" role="none"><a href="https://studentportal.my/sistem/" class="ct-menu-link" role="menuitem">Login</a></li>
+</ul>
+</li>
+</ul></nav>
+
+</div></div></div></div>
+<div id="main-container">
+	<header id="header" class="ct-header" data-id="type-1"><div data-device="desktop"><div class="ct-sticky-container"><div data-sticky="shrink"><div data-row="middle" data-column-set="2"><div class="ct-container"><div data-column="start" data-placements="1"><div data-items="primary">
+<div class="site-branding" data-id="logo">
+
+			<a href="https://studentportal.my/" class="site-logo-container" rel="home"><img width="945" height="326" src="https://studentportal.my/wp-content/uploads/2023/05/Layer_1-1-1.svg" class="default-logo" alt="Student Portal"></a>	
+	</div>
+
+</div></div><div data-column="end" data-placements="1"><div data-items="primary">
+<nav id="header-menu-1" class="header-menu-1" data-id="menu" data-interaction="hover" data-menu="type-3" data-dropdown="type-1:simple" data-responsive="no" aria-label="Header Menu">
+
+	<ul id="menu-main-menu" class="menu" role="menubar"><li id="menu-item-6655" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6655 animated-submenu" role="none"><a href="#" class="ct-menu-link" role="menuitem">Pendidikan<span class="ct-toggle-dropdown-desktop"><svg class="ct-icon" width="8" height="8" viewBox="0 0 15 15"><path d="M2.1,3.2l5.4,5.4l5.4-5.4L15,4.3l-7.5,7.5L0,4.3L2.1,3.2z"></path></svg></span></a><button class="ct-toggle-dropdown-desktop-ghost" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false" role="menuitem"></button>
+<ul class="sub-menu" role="menu">
+	<li id="menu-item-6654" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6654 animated-submenu" role="none"><a href="#" class="ct-menu-link" role="menuitem">Pra Sekolah<span class="ct-toggle-dropdown-desktop"><svg class="ct-icon" width="8" height="8" viewBox="0 0 15 15"><path d="M2.1,3.2l5.4,5.4l5.4-5.4L15,4.3l-7.5,7.5L0,4.3L2.1,3.2z"></path></svg></span></a><button class="ct-toggle-dropdown-desktop-ghost" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false" role="menuitem"></button>
+	<ul class="sub-menu" role="menu">
+		<li id="menu-item-6659" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6659" role="none"><a href="https://studentportal.my/kemasukan-taska-tabika-kemas-2024/" class="ct-menu-link" role="menuitem">KEMAS</a></li>
+		<li id="menu-item-6694" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6694" role="none"><a href="https://studentportal.my/tadika/" class="ct-menu-link" role="menuitem">Tadika</a></li>
+		<li id="menu-item-6658" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6658" role="none"><a href="#" class="ct-menu-link" role="menuitem">PASTI</a></li>
+		<li id="menu-item-6695" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6695 animated-submenu" role="none"><a href="#" class="ct-menu-link" role="menuitem">Tadika Swasta<span class="ct-toggle-dropdown-desktop"><svg class="ct-icon" width="8" height="8" viewBox="0 0 15 15"><path d="M2.1,3.2l5.4,5.4l5.4-5.4L15,4.3l-7.5,7.5L0,4.3L2.1,3.2z"></path></svg></span></a><button class="ct-toggle-dropdown-desktop-ghost" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false" role="menuitem"></button>
+		<ul class="sub-menu" role="menu">
+			<li id="menu-item-6696" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6696" role="none"><a href="#" class="ct-menu-link" role="menuitem">Little Caliph</a></li>
+			<li id="menu-item-6697" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6697" role="none"><a href="#" class="ct-menu-link" role="menuitem">Brainy Bunch</a></li>
+			<li id="menu-item-6698" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6698" role="none"><a href="#" class="ct-menu-link" role="menuitem">Genius Aulad</a></li>
+		</ul>
+</li>
+	</ul>
+</li>
+	<li id="menu-item-6651" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-6651 animated-submenu" role="none"><a href="https://studentportal.my/sekolah-rendah/" class="ct-menu-link" role="menuitem">Sekolah<span class="ct-toggle-dropdown-desktop"><svg class="ct-icon" width="8" height="8" viewBox="0 0 15 15"><path d="M2.1,3.2l5.4,5.4l5.4-5.4L15,4.3l-7.5,7.5L0,4.3L2.1,3.2z"></path></svg></span></a><button class="ct-toggle-dropdown-desktop-ghost" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false" role="menuitem"></button>
+	<ul class="sub-menu" role="menu">
+		<li id="menu-item-6660" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6660" role="none"><a href="#" class="ct-menu-link" role="menuitem">Darjah 1-6</a></li>
+		<li id="menu-item-6661" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6661" role="none"><a href="#" class="ct-menu-link" role="menuitem">Tingkatan 1-5</a></li>
+		<li id="menu-item-6662" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6662" role="none"><a href="#" class="ct-menu-link" role="menuitem">Sekolah Agama</a></li>
+		<li id="menu-item-6699" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6699" role="none"><a href="#" class="ct-menu-link" role="menuitem">International School</a></li>
+	</ul>
+</li>
+	<li id="menu-item-6663" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6663 animated-submenu" role="none"><a href="#" class="ct-menu-link" role="menuitem">Peperiksaan<span class="ct-toggle-dropdown-desktop"><svg class="ct-icon" width="8" height="8" viewBox="0 0 15 15"><path d="M2.1,3.2l5.4,5.4l5.4-5.4L15,4.3l-7.5,7.5L0,4.3L2.1,3.2z"></path></svg></span></a><button class="ct-toggle-dropdown-desktop-ghost" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false" role="menuitem"></button>
+	<ul class="sub-menu" role="menu">
+		<li id="menu-item-6664" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6664" role="none"><a href="#" class="ct-menu-link" role="menuitem">UPKK</a></li>
+		<li id="menu-item-6665" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6665" role="none"><a href="#" class="ct-menu-link" role="menuitem">SPM</a></li>
+		<li id="menu-item-6666" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6666" role="none"><a href="#" class="ct-menu-link" role="menuitem">STPM</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-6680" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6680 animated-submenu" role="none"><a href="#" class="ct-menu-link" role="menuitem">Pendidikan Tinggi<span class="ct-toggle-dropdown-desktop"><svg class="ct-icon" width="8" height="8" viewBox="0 0 15 15"><path d="M2.1,3.2l5.4,5.4l5.4-5.4L15,4.3l-7.5,7.5L0,4.3L2.1,3.2z"></path></svg></span></a><button class="ct-toggle-dropdown-desktop-ghost" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false" role="menuitem"></button>
+<ul class="sub-menu" role="menu">
+	<li id="menu-item-6656" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6656 animated-submenu" role="none"><a href="#" class="ct-menu-link" role="menuitem">Pra Universiti<span class="ct-toggle-dropdown-desktop"><svg class="ct-icon" width="8" height="8" viewBox="0 0 15 15"><path d="M2.1,3.2l5.4,5.4l5.4-5.4L15,4.3l-7.5,7.5L0,4.3L2.1,3.2z"></path></svg></span></a><button class="ct-toggle-dropdown-desktop-ghost" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false" role="menuitem"></button>
+	<ul class="sub-menu" role="menu">
+		<li id="menu-item-6670" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6670" role="none"><a href="#" class="ct-menu-link" role="menuitem">Tingkatan 6</a></li>
+		<li id="menu-item-6668" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6668" role="none"><a href="#" class="ct-menu-link" role="menuitem">Matrikulasi</a></li>
+		<li id="menu-item-6669" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6669" role="none"><a href="#" class="ct-menu-link" role="menuitem">Asasi</a></li>
+		<li id="menu-item-6653" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6653" role="none"><a href="https://studentportal.my/tvet/" class="ct-menu-link" role="menuitem">TVET</a></li>
+		<li id="menu-item-6667" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6667" role="none"><a href="#" class="ct-menu-link" role="menuitem">MUET</a></li>
+	</ul>
+</li>
+	<li id="menu-item-6671" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6671 animated-submenu" role="none"><a href="#" class="ct-menu-link" role="menuitem">Universiti<span class="ct-toggle-dropdown-desktop"><svg class="ct-icon" width="8" height="8" viewBox="0 0 15 15"><path d="M2.1,3.2l5.4,5.4l5.4-5.4L15,4.3l-7.5,7.5L0,4.3L2.1,3.2z"></path></svg></span></a><button class="ct-toggle-dropdown-desktop-ghost" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false" role="menuitem"></button>
+	<ul class="sub-menu" role="menu">
+		<li id="menu-item-6672" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6672" role="none"><a href="#" class="ct-menu-link" role="menuitem">Diploma</a></li>
+		<li id="menu-item-6673" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6673" role="none"><a href="#" class="ct-menu-link" role="menuitem">Degree</a></li>
+		<li id="menu-item-6674" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6674" role="none"><a href="#" class="ct-menu-link" role="menuitem">Masters</a></li>
+		<li id="menu-item-6675" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6675" role="none"><a href="#" class="ct-menu-link" role="menuitem">Kolej Swasta</a></li>
+		<li id="menu-item-6708" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6708" role="none"><a href="https://studentportal.my/ipta/" class="ct-menu-link" role="menuitem">Universiti Awam</a></li>
+		<li id="menu-item-6709" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6709" role="none"><a href="https://studentportal.my/ipts/" class="ct-menu-link" role="menuitem">Univertisi Swasta</a></li>
+		<li id="menu-item-6678" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6678" role="none"><a href="#" class="ct-menu-link" role="menuitem">Politeknik</a></li>
+		<li id="menu-item-6679" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6679" role="none"><a href="#" class="ct-menu-link" role="menuitem">Kolej Komuniti</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-6681" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6681 animated-submenu" role="none"><a href="#" class="ct-menu-link" role="menuitem">Kewangan<span class="ct-toggle-dropdown-desktop"><svg class="ct-icon" width="8" height="8" viewBox="0 0 15 15"><path d="M2.1,3.2l5.4,5.4l5.4-5.4L15,4.3l-7.5,7.5L0,4.3L2.1,3.2z"></path></svg></span></a><button class="ct-toggle-dropdown-desktop-ghost" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false" role="menuitem"></button>
+<ul class="sub-menu" role="menu">
+	<li id="menu-item-6704" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6704" role="none"><a href="https://studentportal.my/bantuan/" class="ct-menu-link" role="menuitem">Bantuan</a></li>
+	<li id="menu-item-6702" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6702" role="none"><a href="https://studentportal.my/zakat/" class="ct-menu-link" role="menuitem">Zakat</a></li>
+	<li id="menu-item-6706" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6706" role="none"><a href="https://studentportal.my/pinjaman-pelajaran/" class="ct-menu-link" role="menuitem">Pinjaman</a></li>
+	<li id="menu-item-6700" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6700" role="none"><a href="https://studentportal.my/ptptn/" class="ct-menu-link" role="menuitem">PTPTN</a></li>
+	<li id="menu-item-6701" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6701" role="none"><a href="https://studentportal.my/biasiswa/" class="ct-menu-link" role="menuitem">Biasiswa</a></li>
+	<li id="menu-item-6703" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6703" role="none"><a href="https://studentportal.my/mara/" class="ct-menu-link" role="menuitem">MARA</a></li>
+	<li id="menu-item-6705" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6705" role="none"><a href="https://studentportal.my/jpa/" class="ct-menu-link" role="menuitem">JPA</a></li>
+</ul>
+</li>
+<li id="menu-item-6688" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6688 animated-submenu" role="none"><a href="#" class="ct-menu-link" role="menuitem">Lain-Lain<span class="ct-toggle-dropdown-desktop"><svg class="ct-icon" width="8" height="8" viewBox="0 0 15 15"><path d="M2.1,3.2l5.4,5.4l5.4-5.4L15,4.3l-7.5,7.5L0,4.3L2.1,3.2z"></path></svg></span></a><button class="ct-toggle-dropdown-desktop-ghost" aria-label="Expand dropdown menu" aria-haspopup="true" aria-expanded="false" role="menuitem"></button>
+<ul class="sub-menu" role="menu">
+	<li id="menu-item-6707" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6707" role="none"><a href="https://studentportal.my/buku-teks/" class="ct-menu-link" role="menuitem">Buku Teks</a></li>
+	<li id="menu-item-6690" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6690" role="none"><a href="#" class="ct-menu-link" role="menuitem">Yuran Tadika</a></li>
+	<li id="menu-item-6710" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6710" role="none"><a href="https://studentportal.my/soalan-percubaan/" class="ct-menu-link" role="menuitem">Soalan Percubaan</a></li>
+	<li id="menu-item-6713" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-6713" role="none"><a href="https://studentportal.my/kalendar-2025/" class="ct-menu-link" role="menuitem">Cuti Sekolah</a></li>
+	<li id="menu-item-6712" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6712" role="none"><a href="https://studentportal.my/upu/" class="ct-menu-link" role="menuitem">UPU</a></li>
+	<li id="menu-item-6711" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6711" role="none"><a href="https://studentportal.my/sistem/" class="ct-menu-link" role="menuitem">Login</a></li>
+</ul>
+</li>
+</ul></nav>
+
+
+<button data-toggle-panel="#search-modal" class="ct-header-search ct-toggle " aria-label="Open search form" data-label="left" data-id="search">
+
+	<span class="ct-label ct-hidden-sm ct-hidden-md ct-hidden-lg">Search</span>
+
+	<svg class="ct-icon" width="15" height="15" viewBox="0 0 15 15"><path d="M14.8,13.7L12,11c0.9-1.2,1.5-2.6,1.5-4.2c0-3.7-3-6.8-6.8-6.8S0,3,0,6.8s3,6.8,6.8,6.8c1.6,0,3.1-0.6,4.2-1.5l2.8,2.8c0.1,0.1,0.3,0.2,0.5,0.2s0.4-0.1,0.5-0.2C15.1,14.5,15.1,14,14.8,13.7zM1.5,6.8c0-2.9,2.4-5.2,5.2-5.2S12,3.9,12,6.8S9.6,12,6.8,12S1.5,9.6,1.5,6.8z"></path></svg></button>
+</div></div></div></div></div></div></div><div data-device="mobile"><div class="ct-sticky-container"><div data-sticky="shrink"><div data-row="middle" data-column-set="3"><div class="ct-container-fluid"><div data-column="start" data-placements="1"><div data-items="primary">
+<button data-toggle-panel="#offcanvas" class="ct-header-trigger ct-toggle " data-design="simple" data-label="left" aria-label="Open off canvas" data-id="trigger">
+
+	<span class="ct-label ct-hidden-sm ct-hidden-md ct-hidden-lg">Menu</span>
+
+	<svg class="ct-icon" width="18" height="14" viewBox="0 0 18 14" aria-hidden="true" data-type="type-2">
+
+		<rect y="0.00" width="18" height="1.7" rx="1"></rect>
+		<rect y="6.15" width="18" height="1.7" rx="1"></rect>
+		<rect y="12.3" width="18" height="1.7" rx="1"></rect>
+	</svg>
+</button>
+</div></div><div data-column="middle"><div data-items="">
+<div class="site-branding" data-id="logo">
+
+			<a href="https://studentportal.my/" class="site-logo-container" rel="home"><img width="945" height="326" src="https://studentportal.my/wp-content/uploads/2023/05/Layer_1-1-1.svg" class="default-logo" alt="Student Portal"></a>	
+	</div>
+
+</div></div><div data-column="end" data-placements="1"><div data-items="primary">
+<button data-toggle-panel="#search-modal" class="ct-header-search ct-toggle " aria-label="Open search form" data-label="left" data-id="search">
+
+	<span class="ct-label ct-hidden-sm ct-hidden-md ct-hidden-lg">Search</span>
+
+	<svg class="ct-icon" width="15" height="15" viewBox="0 0 15 15"><path d="M14.8,13.7L12,11c0.9-1.2,1.5-2.6,1.5-4.2c0-3.7-3-6.8-6.8-6.8S0,3,0,6.8s3,6.8,6.8,6.8c1.6,0,3.1-0.6,4.2-1.5l2.8,2.8c0.1,0.1,0.3,0.2,0.5,0.2s0.4-0.1,0.5-0.2C15.1,14.5,15.1,14,14.8,13.7zM1.5,6.8c0-2.9,2.4-5.2,5.2-5.2S12,3.9,12,6.8S9.6,12,6.8,12S1.5,9.6,1.5,6.8z"></path></svg></button>
+</div></div></div></div></div></div></div></header>
+	<section class="ct-trending-block ">
+		<div class="ct-container" data-page="1">
+			<h3 class="ct-block-title">
+				Artikel Trending
+				<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+
+									<span class="ct-arrow-left">
+					</span>
+
+					<span class="ct-arrow-right">
+					</span>
+							</h3>
+
+			<a href="https://studentportal.my/calon-persendirian-spm/"><div class="ct-image-container"><img width="150" height="150" src="https://studentportal.my/wp-content/uploads/2023/06/calon-persendirian-spm-2025-150x150.png" class="attachment-thumbnail size-thumbnail" alt="calon persendirian spm 2025" decoding="async" loading="lazy" style="aspect-ratio: 1/1;"></div><span class="ct-item-title">Pendaftaran Calon Persendirian SPM 2025</span></a><a href="https://studentportal.my/bantuan-zakat-pengajian-ipta-ipts-dalam-luar-negara/"><div class="ct-image-container"><img width="150" height="150" src="https://studentportal.my/wp-content/uploads/2021/08/bantuan-zakat-pengajian-150x150.png" class="attachment-thumbnail size-thumbnail" alt="bantuan-zakat-pengajian" decoding="async" loading="lazy" srcset="https://studentportal.my/wp-content/uploads/2021/08/bantuan-zakat-pengajian-150x150.png 150w, https://studentportal.my/wp-content/uploads/2021/08/bantuan-zakat-pengajian-80x80.png 80w, https://studentportal.my/wp-content/uploads/2021/08/bantuan-zakat-pengajian-110x110.png 110w" sizes="auto, (max-width: 150px) 100vw, 150px" style="aspect-ratio: 1/1;"></div><span class="ct-item-title">Permohonan Zakat Pengajian IPTA/IPTS Dalam &amp; Luar Negara MAIDAM</span></a><a href="https://studentportal.my/budi-sabah/"><div class="ct-image-container"><img width="150" height="150" src="https://studentportal.my/wp-content/uploads/2022/03/budi-1-1-150x150.png" class="attachment-thumbnail size-thumbnail" alt="budi" decoding="async" loading="lazy" style="aspect-ratio: 1/1;"></div><span class="ct-item-title">BUDI: Bantuan Tunai Pendaftaran IPT Sabah 2023</span></a><a href="https://studentportal.my/tesp-2024-mara/"><div class="ct-image-container"><img width="150" height="150" src="https://studentportal.my/wp-content/uploads/2024/03/tesp-2024-150x150.png" class="attachment-thumbnail size-thumbnail" alt="tesp 2024" decoding="async" loading="lazy" style="aspect-ratio: 1/1;"></div><span class="ct-item-title">TESP 2024: Program Penajaan Pengajian Tertiari MARA</span></a>
+		</div>
+	</section>
+
+	
+	<main id="main" class="site-main">
+
+		
+<div class="ct-container" data-sidebar="right" data-vertical-spacing="top:bottom">
+	<section>
+		<div class="entries" data-archive="default" data-layout="simple" data-cards="simple"><article id="post-10717" class="entry-card post-10717 post type-post status-publish format-standard has-post-thumbnail hentry category-biasiswa tag-semakan-mybrain-2-0"><a class="ct-image-container" href="https://studentportal.my/semakan-keputusan-mybrain2/" aria-label="MyBrain 2.0 2025: Semakan Keputusan Permohonan" tabindex="-1"><img fetchpriority="high" width="768" height="402" src="https://studentportal.my/wp-content/uploads/2025/09/mybrain-2.0-768x402.png" class="attachment-medium_large size-medium_large wp-post-image" alt="mybrain 2.0" decoding="async" srcset="https://studentportal.my/wp-content/uploads/2025/09/mybrain-2.0-768x402.png 768w, https://studentportal.my/wp-content/uploads/2025/09/mybrain-2.0-300x157.png 300w, https://studentportal.my/wp-content/uploads/2025/09/mybrain-2.0-1024x536.png 1024w, https://studentportal.my/wp-content/uploads/2025/09/mybrain-2.0.png 1200w" sizes="(max-width: 768px) 100vw, 768px" style="aspect-ratio: 2/1;"></a><div class="card-content"><ul class="entry-meta" data-type="simple:slash"><li class="meta-categories" data-type="pill"><a href="https://studentportal.my/biasiswa/" rel="tag" class="ct-term-4">Biasiswa</a></li></ul>
+	<h2 class="entry-title">
+		<a href="https://studentportal.my/semakan-keputusan-mybrain2/" rel="bookmark">
+			MyBrain 2.0 2025: Semakan Keputusan Permohonan		</a>
+	</h2>
+
+	</div></article><article id="post-10712" class="entry-card post-10712 post type-post status-publish format-standard has-post-thumbnail hentry category-sekolah-menengah tag-sekolah-model-khas"><a class="ct-image-container" href="https://studentportal.my/progam-sekolah-model-khas-kpm/" aria-label="Program Sekolah Model Khas KPM: Kemasukan 2026" tabindex="-1"><img width="768" height="402" src="https://studentportal.my/wp-content/uploads/2025/09/sekolah-model-khas-768x402.png" class="attachment-medium_large size-medium_large wp-post-image" alt="sekolah model khas" decoding="async" srcset="https://studentportal.my/wp-content/uploads/2025/09/sekolah-model-khas-768x402.png 768w, https://studentportal.my/wp-content/uploads/2025/09/sekolah-model-khas-300x157.png 300w, https://studentportal.my/wp-content/uploads/2025/09/sekolah-model-khas-1024x536.png 1024w, https://studentportal.my/wp-content/uploads/2025/09/sekolah-model-khas.png 1200w" sizes="(max-width: 768px) 100vw, 768px" style="aspect-ratio: 2/1;"></a><div class="card-content"><ul class="entry-meta" data-type="simple:slash"><li class="meta-categories" data-type="pill"><a href="https://studentportal.my/sekolah-menengah/" rel="tag" class="ct-term-8">Sekolah Menengah</a></li></ul>
+	<h2 class="entry-title">
+		<a href="https://studentportal.my/progam-sekolah-model-khas-kpm/" rel="bookmark">
+			Program Sekolah Model Khas KPM: Kemasukan 2026		</a>
+	</h2>
+
+	</div></article><article id="post-6990" class="entry-card post-6990 post type-post status-publish format-standard has-post-thumbnail hentry category-tvet tag-kolej-komuniti tag-politeknik"><a class="ct-image-container" href="https://studentportal.my/kemasukan-politeknik-kolej-komuniti/" aria-label="Permohonan Kemasukan Politeknik &amp; Kolej Komuniti 2025/2026" tabindex="-1"><img width="768" height="402" src="https://studentportal.my/wp-content/uploads/2025/03/politeknik-kolej-komuniti-2-768x402.png" class="attachment-medium_large size-medium_large wp-post-image" alt="politeknik &amp; kolej komuniti" decoding="async" srcset="https://studentportal.my/wp-content/uploads/2025/03/politeknik-kolej-komuniti-2-768x402.png 768w, https://studentportal.my/wp-content/uploads/2025/03/politeknik-kolej-komuniti-2-300x157.png 300w, https://studentportal.my/wp-content/uploads/2025/03/politeknik-kolej-komuniti-2-1024x536.png 1024w, https://studentportal.my/wp-content/uploads/2025/03/politeknik-kolej-komuniti-2.png 1200w" sizes="(max-width: 768px) 100vw, 768px" style="aspect-ratio: 2/1;"></a><div class="card-content"><ul class="entry-meta" data-type="simple:slash"><li class="meta-categories" data-type="pill"><a href="https://studentportal.my/tvet/" rel="tag" class="ct-term-294">TVET</a></li></ul>
+	<h2 class="entry-title">
+		<a href="https://studentportal.my/kemasukan-politeknik-kolej-komuniti/" rel="bookmark">
+			Permohonan Kemasukan Politeknik &amp; Kolej Komuniti 2025/2026		</a>
+	</h2>
+
+	</div></article><article id="post-1661" class="entry-card post-1661 post type-post status-publish format-standard has-post-thumbnail hentry category-pinjaman-pelajaran tag-pbudn"><a class="ct-image-container" href="https://studentportal.my/pbudn/" aria-label="PBUDN: Pinjaman Boleh Ubah Dalam Negara Selangor 2025" tabindex="-1"><img width="768" height="402" src="https://studentportal.my/wp-content/uploads/2024/09/pbudn-768x402.png" class="attachment-medium_large size-medium_large wp-post-image" alt="pbudn" decoding="async" loading="lazy" srcset="https://studentportal.my/wp-content/uploads/2024/09/pbudn-768x402.png 768w, https://studentportal.my/wp-content/uploads/2024/09/pbudn-300x157.png 300w, https://studentportal.my/wp-content/uploads/2024/09/pbudn-1024x536.png 1024w, https://studentportal.my/wp-content/uploads/2024/09/pbudn.png 1200w" sizes="auto, (max-width: 768px) 100vw, 768px" style="aspect-ratio: 2/1;"></a><div class="card-content"><ul class="entry-meta" data-type="simple:slash"><li class="meta-categories" data-type="pill"><a href="https://studentportal.my/pinjaman-pelajaran/" rel="tag" class="ct-term-10">Pinjaman Pelajaran</a></li></ul>
+	<h2 class="entry-title">
+		<a href="https://studentportal.my/pbudn/" rel="bookmark">
+			PBUDN: Pinjaman Boleh Ubah Dalam Negara Selangor 2025		</a>
+	</h2>
+
+	</div></article><article id="post-10681" class="entry-card post-10681 post type-post status-publish format-standard has-post-thumbnail hentry category-bantuan tag-budi95"><a class="ct-image-container" href="https://studentportal.my/budi95-2/" aria-label="BUDI95: Semakan Kelayakan Mulai 25 September" tabindex="-1"><img width="768" height="402" src="https://studentportal.my/wp-content/uploads/2025/09/budi95-1-768x402.png" class="attachment-medium_large size-medium_large wp-post-image" alt="budi95" decoding="async" loading="lazy" srcset="https://studentportal.my/wp-content/uploads/2025/09/budi95-1-768x402.png 768w, https://studentportal.my/wp-content/uploads/2025/09/budi95-1-300x157.png 300w, https://studentportal.my/wp-content/uploads/2025/09/budi95-1-1024x536.png 1024w, https://studentportal.my/wp-content/uploads/2025/09/budi95-1.png 1200w" sizes="auto, (max-width: 768px) 100vw, 768px" style="aspect-ratio: 2/1;"></a><div class="card-content"><ul class="entry-meta" data-type="simple:slash"><li class="meta-categories" data-type="pill"><a href="https://studentportal.my/bantuan/" rel="tag" class="ct-term-41">Bantuan</a></li></ul>
+	<h2 class="entry-title">
+		<a href="https://studentportal.my/budi95-2/" rel="bookmark">
+			BUDI95: Semakan Kelayakan Mulai 25 September		</a>
+	</h2>
+
+	</div></article><article id="post-10677" class="entry-card post-10677 post type-post status-publish format-standard has-post-thumbnail hentry category-sekolah-menengah tag-sman-terengganu"><a class="ct-image-container" href="https://studentportal.my/sman-terengganu/" aria-label="SMAN Terengganu: Kemasukan Tingkatan 4 2026" tabindex="-1"><img width="768" height="402" src="https://studentportal.my/wp-content/uploads/2025/09/sman-terengganu-1-768x402.png" class="attachment-medium_large size-medium_large wp-post-image" alt="sman terengganu" decoding="async" loading="lazy" srcset="https://studentportal.my/wp-content/uploads/2025/09/sman-terengganu-1-768x402.png 768w, https://studentportal.my/wp-content/uploads/2025/09/sman-terengganu-1-300x157.png 300w, https://studentportal.my/wp-content/uploads/2025/09/sman-terengganu-1-1024x536.png 1024w, https://studentportal.my/wp-content/uploads/2025/09/sman-terengganu-1.png 1200w" sizes="auto, (max-width: 768px) 100vw, 768px" style="aspect-ratio: 2/1;"></a><div class="card-content"><ul class="entry-meta" data-type="simple:slash"><li class="meta-categories" data-type="pill"><a href="https://studentportal.my/sekolah-menengah/" rel="tag" class="ct-term-8">Sekolah Menengah</a></li></ul>
+	<h2 class="entry-title">
+		<a href="https://studentportal.my/sman-terengganu/" rel="bookmark">
+			SMAN Terengganu: Kemasukan Tingkatan 4 2026		</a>
+	</h2>
+
+	</div></article><article id="post-10666" class="entry-card post-10666 post type-post status-publish format-standard has-post-thumbnail hentry category-bantuan tag-budi95"><a class="ct-image-container" href="https://studentportal.my/budi95/" aria-label="BUDI95: Tarikh Pelaksanaan, Harga &amp; Syarat Kelayakan" tabindex="-1"><img width="768" height="402" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20768%20402'%3E%3C/svg%3E" class="attachment-medium_large size-medium_large wp-post-image" alt="budi95" decoding="async" data-lazy-srcset="https://studentportal.my/wp-content/uploads/2025/09/budi95-768x402.png 768w, https://studentportal.my/wp-content/uploads/2025/09/budi95-300x157.png 300w, https://studentportal.my/wp-content/uploads/2025/09/budi95-1024x536.png 1024w, https://studentportal.my/wp-content/uploads/2025/09/budi95.png 1200w" data-lazy-sizes="auto, (max-width: 768px) 100vw, 768px" style="aspect-ratio: 2/1;" data-lazy-src="https://studentportal.my/wp-content/uploads/2025/09/budi95-768x402.png"><noscript><img width="768" height="402" src="https://studentportal.my/wp-content/uploads/2025/09/budi95-768x402.png" class="attachment-medium_large size-medium_large wp-post-image" alt="budi95" decoding="async" loading="lazy" srcset="https://studentportal.my/wp-content/uploads/2025/09/budi95-768x402.png 768w, https://studentportal.my/wp-content/uploads/2025/09/budi95-300x157.png 300w, https://studentportal.my/wp-content/uploads/2025/09/budi95-1024x536.png 1024w, https://studentportal.my/wp-content/uploads/2025/09/budi95.png 1200w" sizes="auto, (max-width: 768px) 100vw, 768px" style="aspect-ratio: 2/1;" /></noscript></a><div class="card-content"><ul class="entry-meta" data-type="simple:slash"><li class="meta-categories" data-type="pill"><a href="https://studentportal.my/bantuan/" rel="tag" class="ct-term-41">Bantuan</a></li></ul>
+	<h2 class="entry-title">
+		<a href="https://studentportal.my/budi95/" rel="bookmark">
+			BUDI95: Tarikh Pelaksanaan, Harga &amp; Syarat Kelayakan		</a>
+	</h2>
+
+	</div></article></div>
+		<nav class="ct-pagination" data-pagination="load_more">
+			<span aria-current="page" class="page-numbers current">1</span>
+<a class="page-numbers" href="https://studentportal.my/page/2/">2</a>
+<a class="page-numbers" href="https://studentportal.my/page/3/">3</a>
+<a class="page-numbers" href="https://studentportal.my/page/4/">4</a>
+<span class="page-numbers dots">…</span>
+<a class="page-numbers" href="https://studentportal.my/page/156/">156</a><a class="next page-numbers" href="https://studentportal.my/page/2/">Next <svg width="9px" height="9px" viewBox="0 0 15 15"><path class="st0" d="M4.1,15c0.2,0,0.4-0.1,0.6-0.2L11.4,8c0.3-0.3,0.3-0.8,0-1.1L4.8,0.2C4.5-0.1,4-0.1,3.7,0.2C3.4,0.5,3.4,1,3.7,1.3l6.1,6.1l-6.2,6.2c-0.3,0.3-0.3,0.8,0,1.1C3.7,14.9,3.9,15,4.1,15z"></path></svg></a>
+			<div class="ct-load-more-helper"><button class="ct-button ct-load-more">Load More</button><span data-loader="circles"><span></span><span></span><span></span></span><div class="ct-last-page-text">No more posts to load</div></div>
+		</nav>	</section>
+
+	
+	<aside class="ct-hidden-sm ct-hidden-md" data-type="type-1" id="sidebar">
+
+		
+		<div class="ct-sidebar" data-sticky="sidebar">
+			
+			<div class="ct-widget widget_block" id="block-15"><script type="rocketlazyloadscript" async="" data-rocket-src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3634151581174139" crossorigin="anonymous"></script>
+<!-- SP 250x250 sidebar -->
+<ins class="adsbygoogle" style="display:inline-block;width:250px;height:250px" data-ad-client="ca-pub-3634151581174139" data-ad-slot="9052861267"></ins>
+<script type="rocketlazyloadscript">
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+					</div>
+
+			</aside>
+
+	</div>
+
+	</main>
+
+	<footer id="footer" class="ct-footer" data-id="type-1"><div data-row="top"><div class="ct-container" data-columns-divider="md"><div data-column="logo">
+<div class="site-branding" data-id="logo">
+
+			<a href="https://studentportal.my/" class="site-logo-container" rel="home"><img width="945" height="326" src="https://studentportal.my/wp-content/uploads/2023/05/Layer_1-1-1.svg" class="default-logo wp-post-image" alt="Student Portal"></a>	
+	</div>
+
+</div><div data-column="ghost"></div></div></div><div data-row="middle"><div class="ct-container"><div data-column="socials">
+<div class="ct-footer-socials" data-id="socials">
+
+	
+		<div class="ct-social-box" data-icon-size="custom" data-color="custom" data-icons-type="simple">
+			
+			
+							
+				<a href="#" data-network="facebook" aria-label="Facebook" target="_blank" rel="noopener noreferrer nofollow">
+					<span class="ct-icon-container">
+				<svg width="20px" height="20px" viewBox="0 0 20 20" aria-hidden="true">
+					<path d="M20,10.1c0-5.5-4.5-10-10-10S0,4.5,0,10.1c0,5,3.7,9.1,8.4,9.9v-7H5.9v-2.9h2.5V7.9C8.4,5.4,9.9,4,12.2,4c1.1,0,2.2,0.2,2.2,0.2v2.5h-1.3c-1.2,0-1.6,0.8-1.6,1.6v1.9h2.8L13.9,13h-2.3v7C16.3,19.2,20,15.1,20,10.1z"></path>
+				</svg>
+			</span><span class="ct-label" hidden="">Facebook</span>				</a>
+							
+				<a href="#" data-network="instagram" aria-label="Instagram" target="_blank" rel="noopener noreferrer nofollow">
+					<span class="ct-icon-container">
+				<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+					<circle cx="10" cy="10" r="3.3"></circle>
+					<path d="M14.2,0H5.8C2.6,0,0,2.6,0,5.8v8.3C0,17.4,2.6,20,5.8,20h8.3c3.2,0,5.8-2.6,5.8-5.8V5.8C20,2.6,17.4,0,14.2,0zM10,15c-2.8,0-5-2.2-5-5s2.2-5,5-5s5,2.2,5,5S12.8,15,10,15z M15.8,5C15.4,5,15,4.6,15,4.2s0.4-0.8,0.8-0.8s0.8,0.4,0.8,0.8S16.3,5,15.8,5z"></path>
+				</svg>
+			</span><span class="ct-label" hidden="">Instagram</span>				</a>
+							
+				<a href="#" data-network="twitter" aria-label="Twitter" target="_blank" rel="noopener noreferrer nofollow">
+					<span class="ct-icon-container">
+				<svg width="20px" height="20px" viewBox="0 0 20 20" aria-hidden="true">
+					<path d="M20,3.8c-0.7,0.3-1.5,0.5-2.4,0.6c0.8-0.5,1.5-1.3,1.8-2.3c-0.8,0.5-1.7,0.8-2.6,1c-0.7-0.8-1.8-1.3-3-1.3c-2.3,0-4.1,1.8-4.1,4.1c0,0.3,0,0.6,0.1,0.9C6.4,6.7,3.4,5.1,1.4,2.6C1,3.2,0.8,3.9,0.8,4.7c0,1.4,0.7,2.7,1.8,3.4C2,8.1,1.4,7.9,0.8,7.6c0,0,0,0,0,0.1c0,2,1.4,3.6,3.3,4c-0.3,0.1-0.7,0.1-1.1,0.1c-0.3,0-0.5,0-0.8-0.1c0.5,1.6,2,2.8,3.8,2.8c-1.4,1.1-3.2,1.8-5.1,1.8c-0.3,0-0.7,0-1-0.1c1.8,1.2,4,1.8,6.3,1.8c7.5,0,11.7-6.3,11.7-11.7c0-0.2,0-0.4,0-0.5C18.8,5.3,19.4,4.6,20,3.8z"></path>
+				</svg>
+			</span><span class="ct-label" hidden="">Twitter</span>				</a>
+							
+				<a href="#" data-network="tiktok" aria-label="TikTok" target="_blank" rel="noopener noreferrer nofollow">
+					<span class="ct-icon-container">
+				<svg width="20px" height="20px" viewBox="0 0 20 20" aria-hidden="true">
+					<path d="M18.2 4.5c-2.3-.2-4.1-1.9-4.4-4.2V0h-3.4v13.8c0 1.4-1.2 2.6-2.8 2.6-1.4 0-2.6-1.1-2.6-2.6s1.1-2.6 2.6-2.6h.2l.5.1V7.5h-.7c-3.4 0-6.2 2.8-6.2 6.2S4.2 20 7.7 20s6.2-2.8 6.2-6.2v-7c1.1 1.1 2.4 1.6 3.9 1.6h.8V4.6l-.4-.1z"></path>
+				</svg>
+			</span><span class="ct-label" hidden="">TikTok</span>				</a>
+							
+				<a href="#" data-network="youtube" aria-label="YouTube" target="_blank" rel="noopener noreferrer nofollow">
+					<span class="ct-icon-container">
+				<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+					<path d="M15,0H5C2.2,0,0,2.2,0,5v10c0,2.8,2.2,5,5,5h10c2.8,0,5-2.2,5-5V5C20,2.2,17.8,0,15,0z M14.5,10.9l-6.8,3.8c-0.1,0.1-0.3,0.1-0.5,0.1c-0.5,0-1-0.4-1-1l0,0V6.2c0-0.5,0.4-1,1-1c0.2,0,0.3,0,0.5,0.1l6.8,3.8c0.5,0.3,0.7,0.8,0.4,1.3C14.8,10.6,14.6,10.8,14.5,10.9z"></path>
+				</svg>
+			</span><span class="ct-label" hidden="">YouTube</span>				</a>
+			
+			
+					</div>
+
+	</div>
+
+</div><div data-column="widget-area-2"><div class="ct-widget widget_nav_menu" id="nav_menu-1"><h3 class="widget-title">Site Links</h3><div class="menu-site-links-container"><ul id="menu-site-links" class="widget-menu"><li id="menu-item-6722" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6722"><a href="https://studentportal.my/about-us/">About Us</a></li>
+<li id="menu-item-6648" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-6648"><a rel="privacy-policy" href="https://studentportal.my/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-6724" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6724"><a href="https://serba.digital/">Advertise</a></li>
+<li id="menu-item-6723" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6723"><a href="https://studentportal.my/contact-us/">Contact Us</a></li>
+</ul></div></div></div><div data-column="widget-area-3"><div class="ct-widget widget_nav_menu" id="nav_menu-5"><h3 class="widget-title">Our Sites</h3><div class="menu-our-sites-container"><ul id="menu-our-sites" class="widget-menu"><li id="menu-item-6646" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6646"><a href="https://ecentral.my/">eCentral</a></li>
+<li id="menu-item-6647" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6647"><a href="https://taqwa.my/">Taqwa</a></li>
+<li id="menu-item-6645" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6645"><a href="https://fuh.my/">FUH.my</a></li>
+<li id="menu-item-6714" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6714"><a href="https://harianpost.my/">Harian Post</a></li>
+<li id="menu-item-6715" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6715"><a href="https://semakanonline.com/">Semakan Online</a></li>
+</ul></div></div></div></div></div><div data-row="bottom"><div class="ct-container" data-columns-divider="md:sm"><div data-column="copyright">
+<div class="ct-footer-copyright" data-id="copyright">
+
+	<p>2026 © Student Portal is part of <a href="https://serba.digital">Serba Digital</a> publishing family. Serba Digital Sdn Bhd 201801017213 (1279229-A)</p></div>
+</div></div></div></footer></div>
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/blocksy/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script type="rocketlazyloadscript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+//# sourceURL=rocket-browser-checker-js-after
+</script>
+<script id="rocket-preload-links-js-extra">
+var RocketPreloadLinksConfig = {"excludeUris":"/(?:.+/)?feed(?:/(?:.+/?)?)?$|/(?:.+/)?embed/|/(index.php/)?(.*)wp-json(/.*|$)|/refer/|/go/|/recommend/|/recommends/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https://studentportal.my","onHoverDelay":"100","rateThrottle":"3"};
+//# sourceURL=rocket-preload-links-js-extra
+</script>
+<script type="rocketlazyloadscript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+
+//# sourceURL=rocket-preload-links-js-after
+</script>
+<script id="ct-scripts-js-extra">
+var ct_localizations = {"ajax_url":"https://studentportal.my/wp-admin/admin-ajax.php","nonce":"3442f2d6c9","public_url":"https://studentportal.my/wp-content/themes/blocksy/static/bundle/","rest_url":"https://studentportal.my/wp-json/","search_url":"https://studentportal.my/search/QUERY_STRING/","show_more_text":"Show more","more_text":"More","search_live_results":"Search results","search_live_no_result":"No results","search_live_one_result":"You got %s result. Please press Tab to select it.","search_live_many_results":"You got %s results. Please press Tab to select one.","expand_submenu":"Expand dropdown menu","collapse_submenu":"Collapse dropdown menu","dynamic_js_chunks":[{"id":"blocksy_pro_micro_popups","selector":".ct-popup","url":"https://studentportal.my/wp-content/plugins/blocksy-companion-pro/framework/premium/static/bundle/micro-popups.js"},{"id":"blocksy_ext_trending","selector":".ct-trending-block [class*=\"ct-arrow\"]","url":"https://studentportal.my/wp-content/plugins/blocksy-companion-pro/framework/extensions/trending/static/bundle/main.js","trigger":"click"},{"id":"blocksy_dark_mode","selector":"[data-id=\"dark-mode-switcher\"]","url":"https://studentportal.my/wp-content/plugins/blocksy-companion-pro/static/bundle/dark-mode.js","trigger":"click"},{"id":"blocksy_sticky_header","selector":"header [data-sticky]","url":"https://studentportal.my/wp-content/plugins/blocksy-companion-pro/static/bundle/sticky.js"}],"dynamic_styles":{"lazy_load":"https://studentportal.my/wp-content/themes/blocksy/static/bundle/non-critical-styles.min.css","search_lazy":"https://studentportal.my/wp-content/themes/blocksy/static/bundle/non-critical-search-styles.min.css"},"dynamic_styles_selectors":[{"selector":"#account-modal","url":"https://studentportal.my/wp-content/plugins/blocksy-companion-pro/static/bundle/account-lazy.min.css"}]};
+//# sourceURL=ct-scripts-js-extra
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://studentportal.my/wp-content/cache/min/1/wp-content/themes/blocksy/static/bundle/main.js?ver=1719385271" id="ct-scripts-js" defer=""></script>
+<script type="rocketlazyloadscript" data-rocket-src="https://studentportal.my/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js" defer=""></script>
+<script type="rocketlazyloadscript" data-rocket-src="https://studentportal.my/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js" defer=""></script>
+<script type="rocketlazyloadscript" id="jquery-js-after">window.addEventListener('DOMContentLoaded', function() {
+		/* MonsterInsights Scroll Tracking */
+		if ( typeof(jQuery) !== 'undefined' ) {
+		jQuery( document ).ready(function(){
+		function monsterinsights_scroll_tracking_load() {
+		if ( ( typeof(__gaTracker) !== 'undefined' && __gaTracker && __gaTracker.hasOwnProperty( "loaded" ) && __gaTracker.loaded == true ) || ( typeof(__gtagTracker) !== 'undefined' && __gtagTracker ) ) {
+		(function(factory) {
+		factory(jQuery);
+		}(function($) {
+
+		/* Scroll Depth */
+		"use strict";
+		var defaults = {
+		percentage: true
+		};
+
+		var $window = $(window),
+		cache = [],
+		scrollEventBound = false,
+		lastPixelDepth = 0;
+
+		/*
+		* Plugin
+		*/
+
+		$.scrollDepth = function(options) {
+
+		var startTime = +new Date();
+
+		options = $.extend({}, defaults, options);
+
+		/*
+		* Functions
+		*/
+
+		function sendEvent(action, label, scrollDistance, timing) {
+		if ( 'undefined' === typeof MonsterInsightsObject || 'undefined' === typeof MonsterInsightsObject.sendEvent ) {
+		return;
+		}
+			var paramName = action.toLowerCase();
+	var fieldsArray = {
+	send_to: 'G-Q8PM91FZBE',
+	non_interaction: true
+	};
+	fieldsArray[paramName] = label;
+
+	if (arguments.length > 3) {
+	fieldsArray.scroll_timing = timing
+	MonsterInsightsObject.sendEvent('event', 'scroll_depth', fieldsArray);
+	} else {
+	MonsterInsightsObject.sendEvent('event', 'scroll_depth', fieldsArray);
+	}
+			}
+
+		function calculateMarks(docHeight) {
+		return {
+		'25%' : parseInt(docHeight * 0.25, 10),
+		'50%' : parseInt(docHeight * 0.50, 10),
+		'75%' : parseInt(docHeight * 0.75, 10),
+		/* Cushion to trigger 100% event in iOS */
+		'100%': docHeight - 5
+		};
+		}
+
+		function checkMarks(marks, scrollDistance, timing) {
+		/* Check each active mark */
+		$.each(marks, function(key, val) {
+		if ( $.inArray(key, cache) === -1 && scrollDistance >= val ) {
+		sendEvent('Percentage', key, scrollDistance, timing);
+		cache.push(key);
+		}
+		});
+		}
+
+		function rounded(scrollDistance) {
+		/* Returns String */
+		return (Math.floor(scrollDistance/250) * 250).toString();
+		}
+
+		function init() {
+		bindScrollDepth();
+		}
+
+		/*
+		* Public Methods
+		*/
+
+		/* Reset Scroll Depth with the originally initialized options */
+		$.scrollDepth.reset = function() {
+		cache = [];
+		lastPixelDepth = 0;
+		$window.off('scroll.scrollDepth');
+		bindScrollDepth();
+		};
+
+		/* Add DOM elements to be tracked */
+		$.scrollDepth.addElements = function(elems) {
+
+		if (typeof elems == "undefined" || !$.isArray(elems)) {
+		return;
+		}
+
+		$.merge(options.elements, elems);
+
+		/* If scroll event has been unbound from window, rebind */
+		if (!scrollEventBound) {
+		bindScrollDepth();
+		}
+
+		};
+
+		/* Remove DOM elements currently tracked */
+		$.scrollDepth.removeElements = function(elems) {
+
+		if (typeof elems == "undefined" || !$.isArray(elems)) {
+		return;
+		}
+
+		$.each(elems, function(index, elem) {
+
+		var inElementsArray = $.inArray(elem, options.elements);
+		var inCacheArray = $.inArray(elem, cache);
+
+		if (inElementsArray != -1) {
+		options.elements.splice(inElementsArray, 1);
+		}
+
+		if (inCacheArray != -1) {
+		cache.splice(inCacheArray, 1);
+		}
+
+		});
+
+		};
+
+		/*
+		* Throttle function borrowed from:
+		* Underscore.js 1.5.2
+		* http://underscorejs.org
+		* (c) 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+		* Underscore may be freely distributed under the MIT license.
+		*/
+
+		function throttle(func, wait) {
+		var context, args, result;
+		var timeout = null;
+		var previous = 0;
+		var later = function() {
+		previous = new Date;
+		timeout = null;
+		result = func.apply(context, args);
+		};
+		return function() {
+		var now = new Date;
+		if (!previous) previous = now;
+		var remaining = wait - (now - previous);
+		context = this;
+		args = arguments;
+		if (remaining <= 0) {
+		clearTimeout(timeout);
+		timeout = null;
+		previous = now;
+		result = func.apply(context, args);
+		} else if (!timeout) {
+		timeout = setTimeout(later, remaining);
+		}
+		return result;
+		};
+		}
+
+		/*
+		* Scroll Event
+		*/
+
+		function bindScrollDepth() {
+
+		scrollEventBound = true;
+
+		$window.on('scroll.scrollDepth', throttle(function() {
+		/*
+		* We calculate document and window height on each scroll event to
+		* account for dynamic DOM changes.
+		*/
+
+		var docHeight = $(document).height(),
+		winHeight = window.innerHeight ? window.innerHeight : $window.height(),
+		scrollDistance = $window.scrollTop() + winHeight,
+
+		/* Recalculate percentage marks */
+		marks = calculateMarks(docHeight),
+
+		/* Timing */
+		timing = +new Date - startTime;
+
+		checkMarks(marks, scrollDistance, timing);
+		}, 500));
+
+		}
+
+		init();
+		};
+
+		/* UMD export */
+		return $.scrollDepth;
+
+		}));
+
+		jQuery.scrollDepth();
+		} else {
+		setTimeout(monsterinsights_scroll_tracking_load, 200);
+		}
+		}
+		monsterinsights_scroll_tracking_load();
+		});
+		}
+		/* End MonsterInsights Scroll Tracking */
+		
+
+//# sourceURL=jquery-js-after
+});</script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async="" src="https://studentportal.my/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script><script>function lazyLoadThumb(e,alt,l){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';if(l){t=t.replace('data-lazy-','');t=t.replace('loading="lazy"','');t=t.replace(/<noscript>.*?<\/noscript>/g,'');}t=t.replace('alt=""','alt="'+alt+'"');return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?"":"&"+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow","accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var exclusions=[];var e,t,p,u,l,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)(e=document.createElement("div")),(u='https://i.ytimg.com/vi/ID/hqdefault.jpg'),(u=u.replace('ID',a[t].dataset.id)),(l=exclusions.some(exclusion=>u.includes(exclusion))),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query",a[t].dataset.query),e.setAttribute("data-src",a[t].dataset.src),(e.innerHTML=lazyLoadThumb(a[t].dataset.id,a[t].dataset.alt,l)),a[t].appendChild(e),(p=e.querySelector(".play")),(p.onclick=lazyLoadYoutubeIframe)});</script>
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;e0ad5a6a031b429c9805b73940f4fb59&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+
+</body></html>

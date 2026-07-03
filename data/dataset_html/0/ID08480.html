@@ -1,0 +1,455 @@
+<html class=" js no-touch csstransforms3d csstransitions webkit chrome win js" style=""><head>
+		<!-- Basic -->
+		<meta charset="utf-8">
+		<title>El siglo en PDF - essuscripcion </title>		
+		<meta name="keywords" content="diario el siglo en PDF por suscripcion">
+		<meta name="description" content="el siglo en PDF por suscripcion">
+		<meta name="author" content="Ing. Gustavo Arias">
+
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Web Fonts  -->
+        <link type="image/x-icon" href="./img/logos/favicon.ico" rel="shortcut icon">
+    <!--    <link href="img/logos/favicon.ico" rel="shortcut icon"> -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
+
+		<!-- Vendor CSS -->
+		<link rel="stylesheet" href="vendor/bootstrap/bootstrap.css">
+		<link rel="stylesheet" href="vendor/fontawesome/css/all.min.css"> <!-- font-awesome.css -->
+		<link rel="stylesheet" href="vendor/owlcarousel/owl.carousel.css" media="screen">
+		<link rel="stylesheet" href="vendor/owlcarousel/owl.theme.css" media="screen">
+	<!--	<link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.css" media="screen"> -->
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="css/theme.css">
+		<link rel="stylesheet" href="css/theme-elements.css">
+		<link rel="stylesheet" href="css/theme-blog.css">
+		<link rel="stylesheet" href="css/theme-shop.css">
+		<link rel="stylesheet" href="css/theme-animate.css">
+        <link rel="stylesheet" href="css/jquery.ui.datepicker.css" media="screen">
+        <link rel="stylesheet" href="css/jquery.ui.core.css" media="screen">
+
+		<!-- Current Page CSS -->
+		<link rel="stylesheet" href="vendor/rs-plugin/css/settings.css" media="screen">
+		<link rel="stylesheet" href="vendor/circle-flip-slideshow/css/component.css" media="screen">
+
+		<!-- Skin CSS -->
+		<link rel="stylesheet" href="css/skins/default.css">
+
+		<!-- Theme Custom CSS -->
+		<link rel="stylesheet" href="css/custom.css">
+        
+        <link href="css/style-t1.css" rel="stylesheet">
+		<!--script type="text/javascript" language="javascript" src="js/jquery.ui.datepicker.js"></script!-->
+  		<!--script type="text/JavaScript" language="javascript" src="js/jquery.ui.core.js"></script!-->
+  		
+	    <!-- .................................... $scripts .................................... -->
+	    <script type="text/javascript" language="javascript" src="js/jquery.js"></script>
+		<script src="js/jquery-ui-1.11.1/jquery-ui.js"></script>
+	    <link href="js/jquery-ui-1.11.1/jquery-ui.css" rel="stylesheet">
+        
+
+		<!-- Head Libs -->
+		<script src="vendor/modernizr/modernizr.js"></script> 
+        
+        <!--script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script!-->
+
+    
+	<script language="JavaScript" type="text/JavaScript">
+
+			$(document).ready(function() {
+				var formData = new FormData();
+			    formData.append("pagina"    , document.title);
+		      formData.append("url"    		, window.location.href);
+				$.ajax({
+					type: "POST",
+					dataType: "json",
+					data: formData,
+			        contentType:false,
+			        processData:false,
+			        cache:false,
+				    url:"tools/contador/registrar_visita.php", 
+					success: function(respuesta) {
+//						window.alert(JSON.stringify(respuesta));
+					},
+			        error: function(result) {
+//			          window.alert("error: "+JSON.stringify(result));
+			      	}
+				});
+
+			});
+
+		</script></head>
+		
+    <body class="sticky-menu-deactive">
+		<div class="body">
+			<header id="header">
+				<div class="container">
+					
+					
+					<img src="img/logo.png" alt="el siglo por suscripcion" width="264" height="93">
+					
+					<ul class="social-icons">
+				    <li class="facebook"><a href="http://es-la.facebook.com/elsiglocomve" target="_blank" title="Facebook">Facebook</a></li>
+						<li class="twitter"><a href="http://twitter.com/elsiglocomve" target="_blank" title="Twitter">Twitter</a></li>
+						<li class="youtube"><a href="http://www.youtube.com/user/elsiglocomve" target="_blank" title="Linkedin">Linkedin</a></li>
+                        <li class="instagram"><a href="http://instagram.com/elsiglocomv" target="_blank" title="Instagram">Instagram</a></li>
+					</ul>
+					<nav>
+						<ul class="nav nav-pills nav-top">							
+							<li class="phone">
+								<span><i class="fab fa-whatsapp"></i>(0424) 357-5956</span>                                
+							</li>
+						</ul>                        
+					</nav>
+          <nav>						
+            <ul class="nav nav-pills nav-top">							
+							<li class="phone">								
+                <span><i class="fa fa-calendar"></i>11-04-2026 12:40</span>
+							</li>
+						</ul>
+					</nav>
+					
+				</div>
+				<div class="navbar-collapse nav-main-collapse collapse">
+				  <div class="container">
+						<nav class="nav-main mega-menu">
+							<ul class="nav nav-pills nav-main" id="mainMenu">
+								<li>
+									<a href="https://essuscripcion.com/index.php">Inicio</a>
+								</li>
+								<li>
+									<a href="https://essuscripcion.com/tarifas.php">Tarifas</a>
+								</li>
+<!--								                                
+                <li >
+									<a href="buscarEdicion.php">Ediciones</a>
+								</li>
+-->								
+								                <li class="">
+									<a href="https://essuscripcion.com/registrar.php">Registrarse</a>
+								</li>
+																<li class="dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#"> 
+										Contacto
+										<i class="fa fa-angle-down"></i>
+									</a>
+									<ul class="dropdown-menu">
+										 <li>
+										 	 <a href="https://essuscripcion.com/contacto.php">Contacto</a>
+										 </li>
+												                									</ul>
+								</li>
+								
+								<!--									
+								<li class="">
+									<a href="login.php">Login</a>
+								</li>
+                <li class="">
+									<a href="registrar.php">Registrarse</a>
+								</li>
+-->
+								                                
+                									<li><a href="https://essuscripcion.com/micuenta.php" class="btn btn-lg btn-primary">Mi cuenta</a>
+									</li>
+																              
+						  </ul>
+						</nav>
+					</div>
+				</div>
+			</header><script language="JavaScript" type="text/JavaScript">
+	$(document).ready(function() {
+	  $('.owl-carousel').owlCarousel({'loop': true, 
+    																'autoplay': true,
+    																'items': 1, 
+    																'nav': true, 
+    																'dots': false, 
+    																'margin': 10, 
+    																'autoplayHoverPause': true, 
+    																'autoHeight': true});
+/*
+	  var owl = $('.owl-carousel');
+	  owl.owlCarousel({
+	  	items : 1,
+	    margin: 10,
+	    navigation: true,
+	    loop: true,
+	  });
+*/
+	  $('.owl-item > img').on('click', function () {
+	  	window.location.href="https://elsiglo.com.ve/52-aniversario/";
+	  });
+
+	});
+
+</script>
+			<div role="main" class="main">
+<!--
+				<section class="page-top">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<ul class="breadcrumb">
+									<li><a href="index.php">Inicio</a></li>
+									<li class="active">Detalles del servicio</li>
+								</ul>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<h2>Servicio de suscripción</h2>
+							</div>
+						</div>
+					</div>
+				</section>
+				<div class="container">
+-->
+
+				<div class="home-intro">
+					<div class="col-md-12 center">
+			      <div class="owl-carousel owl-theme owl-carousel-init" data-plugin-options="{&quot;items&quot;: 3, &quot;singleItem&quot;: false, &quot;autoPlay&quot;: true}" style="opacity: 1; display: block;">
+<!--
+			        <div>
+					     <a href="https://elsiglo.com.ve/52-aniversario/" target="_self" class="vc_single_image-wrapper   vc_box_border_grey"><img decoding="async" class="vc_single_image-img " src="img/BANNER-CON-CLICK.png" width="1074" height="180" alt="BANNER CON CLICK" title="BANNER CON CLICK" loading="lazy"></a>
+			        </div>
+-->
+			        <div class="owl-wrapper-outer autoHeight" style="height: 180px;"><div class="owl-wrapper" style="width: 16032px; left: 0px; display: block;"><div class="owl-item" style="width: 1336px;"><div class="owl-item" style="width: 1336px;">
+				        <img class="img-responsive" src="img/BANNER-CON-CLICK.png" width="1074" height="180" alt="BANNER CON CLICK" title="BANNER CON CLICK">
+			        </div></div><div class="owl-item" style="width: 1336px;"><div class="owl-item" style="width: 1336px;">
+				        <img class="img-responsive" src="img/BANNER-CON-CLICK.png" width="1074" height="180" alt="BANNER CON CLICK" title="BANNER CON CLICK">
+			        </div></div><div class="owl-item" style="width: 1336px;"><div class="owl-item" style="width: 1336px;">
+				        <img class="img-responsive" src="img/BANNER-CON-CLICK.png" width="1074" height="180" alt="BANNER CON CLICK" title="BANNER CON CLICK">
+			        </div></div></div></div>
+			        
+			        
+				    <div class="owl-controls clickable"><div class="owl-pagination"><div class="owl-page active"><span class=""></span></div><div class="owl-page"><span class=""></span></div><div class="owl-page"><span class=""></span></div></div></div></div>
+				  </div>
+				</div>
+				<div class="container">				
+					<div class="row center">
+						<div class="col-md-12">
+							<h2 class="short word-rotator-title">Una nueva manera de  <strong class="inverted appear-animation bounceIn appear-animation-visible" data-appear-animation="bounceIn">
+									<span class="word-rotate active" data-plugin-options="{&quot;delay&quot;: 2000}" style="height: 54px;">
+										<span class="word-rotate-items" style="top: -54px;">
+											<span>ver las noticias.</span>
+											<span>leer el periódico.</span>
+											<span>leer el siglo.</span>
+										<span>ver las noticias.</span></span>
+									</span>
+								</strong>
+							</h2>
+							<p class="featured lead">
+								<strong>SISTEMA DE SUSCRIPCIÓN PAGO:</strong> &nbsp;En nuestro sitio puedes disfrutar cada día de un ejemplar del diario <strong>el siglo</strong> &nbsp;<span class="alternative-font">en formato digital PDF.</span> &nbsp; También podrás ver ediciones anteriores!<br><br></p>
+							<p class="small">
+		Nota: Aunque disfrutes de algunos días GRATIS se trata de un servicio PAGO POR SUSCRIPCIÓN, cuando se hayan vencido los días de prueba deberás suscribirte a alguno de <a href="tarifas.php"><span class="alternative-font">nuestros planes</span></a> &nbsp;para poder seguir accediendo al periódico en formato PDF. </p>
+						</div>
+					</div>
+				</div>
+					<hr class="tall">
+<!--
+				</div>
+-->
+				<div class="container">
+
+					<div class="row">
+						<div class="col-md-12">
+							<div class="row">
+								<div class="col-md-4">
+									<div class="feature-box secundary">
+										<div class="feature-box-icon">
+											<i class="fa fa-group"></i>
+										</div>
+										<div class="feature-box-info">
+											<h4 class="shorter">Soporte técnico</h4>
+											<p class="tall">Estamos a la orden para ayudarte con tu servicio, resolver problemas de facturación y <span class="alternative-font">cualquier duda </span> que se presente con tu cuenta. </p>
+										</div>
+									</div>
+									<div class="feature-box secundary">
+										<div class="feature-box-icon">
+											<i class="fa fa-file"></i>
+										</div>
+										<div class="feature-box-info">
+											<h4 class="shorter">Ediciones nuevas / viejas</h4>
+											<p class="tall">Puedes mantenerte actualizado con las últimas noticias así como revisar ediciones anteriores. Lleva contigo tu hemeroteca digital!</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="feature-box secundary">
+										<div class="feature-box-icon">
+											<i class="fa fa-film"></i>
+										</div>
+										<div class="feature-box-info">
+											<h4 class="shorter">Período de prueba</h4>
+											<p class="tall">Disfruta  nuestro servicio  unos  días sin ningún compromiso. Registrate y pruébalo! Para suscribirte tan solo elige y paga por el plan que desees.</p>
+										</div>
+									</div>
+									<div class="feature-box secundary">
+										<div class="feature-box-icon">
+											<i class="fa fa-check"></i>
+										</div>
+										<div class="feature-box-info">
+											<h4 class="shorter">Vive la Experiencia Digital</h4>
+											<p class="tall">Edición al alcance de un click,  solo necesita navegar en &nbsp;<span class="alternative-font"> internet.</span> Fácil de acceder, práctico de leer y sin ensuciarse las manos.</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="feature-box secundary">
+										<div class="feature-box-icon">
+											<i class="fa fa-bars"></i>
+										</div>
+										<div class="feature-box-info">
+											<h4 class="shorter">Tarifas</h4>
+											<p class="tall">Disponemos de planes ajustados a tus necesidades, mensual, trimestral, semestral y anual. Con descuentos hasta un 40%</p>
+										</div>
+									</div>
+									<div class="feature-box secundary">
+										<div class="feature-box-icon">
+											<i class="fa fa-desktop"></i>
+										</div>
+										<div class="feature-box-info">
+											<h4 class="shorter">Portátil</h4>
+											<p class="tall">Se puede leer en cualquier dispositivo, PC, laptop, tablet o desde un teléfono inteligente. Como magia se adapta a cualquier equipo!</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<section class="featured highlight footer">
+					<div class="container">
+						<div class="row center counters">
+							<div class="col-md-3 col-sm-6">
+								<strong data-to="2000" data-append="+">0</strong>
+								<label>Lectores felices</label>
+							</div>
+							<div class="col-md-3 col-sm-6">
+								<strong data-to="52">0</strong>
+								<label>Años de antigüedad</label>
+							</div>
+							<div class="col-md-3 col-sm-6">
+								<strong data-to="360">0</strong>
+								<label>Ediciones anuales</label>
+							</div>
+							<div class="col-md-3 col-sm-6">
+								<strong data-to="2000000" data-append="+">0</strong>
+								<label>Seguidores en Instagram</label>
+							</div>
+						</div>
+					</div>
+				</section>
+				
+
+				<section class="call-to-action featured footer">
+					<div class="container">
+						<div class="row">
+							<div class="center">
+								<h3>Diario <strong>el siglo</strong>  el matutino de los valles de Aragua <a href="registrar.php" class="btn btn-lg btn-primary appear-animation" data-appear-animation="bounceIn">!Regístrate ya!</a> <span class="arrow hlb hidden-xs hidden-sm hidden-md appear-animation" data-appear-animation="rotateInUpLeft" style="top: -22px;"></span></h3>
+							</div>
+						</div>
+					</div>
+				</section>
+
+			</div>
+              <!-- .................................... $footer .................................... -->
+  <footer id="footer">
+				<div class="container">
+					<div class="row">
+						<div class="footer-ribbon">
+							<span>Mantente en contacto</span>
+						</div>
+						<div class="col-md-4">
+						  <div class="newsletter">
+								<h4>Suscrìbete</h4>
+								<p><a href="registrar.php" style=" color: #09F"> Regìstrate</a>
+                                 hoy y recibe cinco  (5) dìas GRATIS de nuestro servicio además podrás disfrutar de una nueva edición diaria de nuestro periódico en formato PDF.</p>
+							</div>
+						</div>
+
+						<div class="col-md-4">
+							<div class="contact-details">
+								<h4>Contáctanos</h4>
+								<ul class="contact">
+									<li><p align="right"><i class="fa fa-map-marker"></i> <strong>Dirección:</strong> Av. Bolivar Oeste Nº 244, Edif El Siglo, Sector La Romana, Maracay, Aragua, Venezuela</p></li>
+									<li><p><i class="fa fa-phone"></i> <strong>Teléfono:</strong> (0243) 554-4867</p></li>
+									<li><p><i class="fa fa-envelope"></i><strong>Correo:</strong> <a href="mailto:contacto@essuscripcion.com">escrìbenos </a></p></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<h4>Sìguenos</h4>
+							<div class="social-icons">
+								<ul class="social-icons">
+									<li class="facebook"><a href="http://es-la.facebook.com/elsiglocomve" target="_blank" data-placement="bottom" rel="tooltip" title="Facebook">Facebook</a></li>
+									<li class="twitter"><a href="http://twitter.com/elsiglocomve" target="_blank" data-placement="bottom" rel="tooltip" title="Twitter">Twitter</a></li>
+									<li class="youtube"><a href="http://www.youtube.com/user/elsiglocomve" target="_blank" data-placement="bottom" rel="tooltip" title="Youtube">Youtube</a></li>
+                                    <li class="instagram"><a href="http://instagram.com/elsiglocomve" target="_blank" data-placement="bottom" rel="tooltip" title="Instagram">Instagram</a></li>                                    
+								</ul> 
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer-copyright">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-1">
+							</div>
+							<div class="col-md-7">
+								 <p>@ Copyright. Todos los derechos reservados.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+                
+			</footer>
+		</div>
+	<!-- Vendor -->
+    		<script src="vendor/jquery/jquery.js"></script>
+		<script src="vendor/jquery.appear/jquery.appear.js"></script>
+		<script src="vendor/jquery.easing/jquery.easing.js"></script>
+		<script src="vendor/jquery-cookie/jquery-cookie.js"></script>
+	  		<script src="vendor/bootstrap/bootstrap.js"></script>
+		<script src="vendor/common/common.js"></script>
+    <script src="js/jquery.validate.js" type="text/javascript" language="javascript"></script>   
+		<!--script src="vendor/jquery.validation/jquery.validation.js"></script!-->
+		<script src="vendor/jquery.stellar/jquery.stellar.js"></script> 
+		<script src="vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.js"></script>
+		<script src="vendor/jquery.gmap/jquery.gmap.js"></script>
+		<script src="vendor/twitterjs/twitter.js"></script>
+		<script src="vendor/isotope/jquery.isotope.js"></script>
+		<script src="vendor/owlcarousel/owl.carousel.js"></script>
+		<script src="vendor/jflickrfeed/jflickrfeed.js"></script>
+		<script src="vendor/magnific-popup/jquery.magnific-popup.js"></script>
+		<script src="vendor/vide/jquery.vide.js"></script>
+		
+		<!-- Theme Base, Components and Settings -->
+		<script src="js/theme.js"></script>
+		
+		<!-- Specific Page Vendor and Views -->
+		<script src="vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+		<script src="vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+		<script src="vendor/circle-flip-slideshow/js/jquery.flipshow.js"></script>
+		<script src="js/views/view.home.js"></script>
+		
+		<!-- Theme Custom -->
+		<script src="js/custom.js"></script>
+		
+		<!-- Theme Initialization Files -->
+		<script src="js/theme.init.js"></script><a class="scroll-to-top hidden-mobile" href="#"><i class="fa fa-chevron-up"></i></a>
+        
+        <!-- super especiales -->
+      <script type="text/javascript" language="javascript" src="js/jquery.validate.js"></script>
+       		  <script type="text/javascript" language="javascript" src="js/jquery.ui.datepicker.js"></script>
+		  <script type="text/JavaScript" language="javascript" src="js/jquery.ui.core.js"></script>
+		  <script type="text/JavaScript" language="javascript" src="js/jquery.ui.widget.js"></script>
+		  <script type="text/JavaScript" language="javascript" src="js/datepiker_lenguaje.js"></script>
+					  <script type="text/JavaScript" language="javascript" src="js/jquery.maskedinput.js"></script>
+        
+	
+
+</body></html>

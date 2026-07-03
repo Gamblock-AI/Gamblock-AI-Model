@@ -1,0 +1,893 @@
+<html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.ico"><title>Sistem Informasi Harga dan Produk Komoditi Provinsi Jawa Tengah |  Sihati</title><link href="/css/app.0982dd6a.css" rel="preload" as="style"><link href="/css/chunk-vendors.8f846c5a.css" rel="preload" as="style"><link href="/js/app.12a7e4f7.js" rel="preload" as="script"><link href="/js/chunk-vendors.3875398e.js" rel="preload" as="script"><link href="/css/chunk-vendors.8f846c5a.css" rel="stylesheet"><link href="/css/app.0982dd6a.css" rel="stylesheet"><style type="text/css">.marquee-text-wrap{overflow:hidden}.marquee-text-content{width:100000px}.marquee-text-text{-webkit-animation-name:marquee-text-animation;animation-name:marquee-text-animation;-webkit-animation-timing-function:linear;animation-timing-function:linear;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;float:left}.marquee-text-paused .marquee-text-text{-webkit-animation-play-state:paused;animation-play-state:paused}@-webkit-keyframes marquee-text-animation{0%{-webkit-transform:translateX(0);transform:translateX(0)}to{-webkit-transform:translateX(-100%);transform:translateX(-100%)}}@keyframes marquee-text-animation{0%{-webkit-transform:translateX(0);transform:translateX(0)}to{-webkit-transform:translateX(-100%);transform:translateX(-100%)}}</style><style id="apexcharts-css">.apexcharts-canvas {
+  position: relative;
+  user-select: none;
+  /* cannot give overflow: hidden as it will crop tooltips which overflow outside chart area */
+}
+
+
+/* scrollbar is not visible by default for legend, hence forcing the visibility */
+.apexcharts-canvas ::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 6px;
+}
+
+.apexcharts-canvas ::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .5);
+  box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+
+.apexcharts-inner {
+  position: relative;
+}
+
+.apexcharts-text tspan {
+  font-family: inherit;
+}
+
+.legend-mouseover-inactive {
+  transition: 0.15s ease all;
+  opacity: 0.20;
+}
+
+.apexcharts-series-collapsed {
+  opacity: 0;
+}
+
+.apexcharts-tooltip {
+  border-radius: 5px;
+  box-shadow: 2px 2px 6px -4px #999;
+  cursor: default;
+  font-size: 14px;
+  left: 62px;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 12;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-tooltip.apexcharts-active {
+  opacity: 1;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-tooltip.apexcharts-theme-light {
+  border: 1px solid #e3e3e3;
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.apexcharts-tooltip.apexcharts-theme-dark {
+  color: #fff;
+  background: rgba(30, 30, 30, 0.8);
+}
+
+.apexcharts-tooltip * {
+  font-family: inherit;
+}
+
+
+.apexcharts-tooltip-title {
+  padding: 6px;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.apexcharts-tooltip.apexcharts-theme-light .apexcharts-tooltip-title {
+  background: #ECEFF1;
+  border-bottom: 1px solid #ddd;
+}
+
+.apexcharts-tooltip.apexcharts-theme-dark .apexcharts-tooltip-title {
+  background: rgba(0, 0, 0, 0.7);
+  border-bottom: 1px solid #333;
+}
+
+.apexcharts-tooltip-text-y-value,
+.apexcharts-tooltip-text-goals-value,
+.apexcharts-tooltip-text-z-value {
+  display: inline-block;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.apexcharts-tooltip-title:empty,
+.apexcharts-tooltip-text-y-label:empty,
+.apexcharts-tooltip-text-y-value:empty,
+.apexcharts-tooltip-text-goals-label:empty,
+.apexcharts-tooltip-text-goals-value:empty,
+.apexcharts-tooltip-text-z-value:empty {
+  display: none;
+}
+
+.apexcharts-tooltip-text-y-value,
+.apexcharts-tooltip-text-goals-value,
+.apexcharts-tooltip-text-z-value {
+  font-weight: 600;
+}
+
+.apexcharts-tooltip-text-goals-label, 
+.apexcharts-tooltip-text-goals-value {
+  padding: 6px 0 5px;
+}
+
+.apexcharts-tooltip-goals-group, 
+.apexcharts-tooltip-text-goals-label, 
+.apexcharts-tooltip-text-goals-value {
+  display: flex;
+}
+.apexcharts-tooltip-text-goals-label:not(:empty),
+.apexcharts-tooltip-text-goals-value:not(:empty) {
+  margin-top: -6px;
+}
+
+.apexcharts-tooltip-marker {
+  width: 12px;
+  height: 12px;
+  position: relative;
+  top: 0px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.apexcharts-tooltip-series-group {
+  padding: 0 10px;
+  display: none;
+  text-align: left;
+  justify-content: left;
+  align-items: center;
+}
+
+.apexcharts-tooltip-series-group.apexcharts-active .apexcharts-tooltip-marker {
+  opacity: 1;
+}
+
+.apexcharts-tooltip-series-group.apexcharts-active,
+.apexcharts-tooltip-series-group:last-child {
+  padding-bottom: 4px;
+}
+
+.apexcharts-tooltip-series-group-hidden {
+  opacity: 0;
+  height: 0;
+  line-height: 0;
+  padding: 0 !important;
+}
+
+.apexcharts-tooltip-y-group {
+  padding: 6px 0 5px;
+}
+
+.apexcharts-tooltip-box, .apexcharts-custom-tooltip {
+  padding: 4px 8px;
+}
+
+.apexcharts-tooltip-boxPlot {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.apexcharts-tooltip-box>div {
+  margin: 4px 0;
+}
+
+.apexcharts-tooltip-box span.value {
+  font-weight: bold;
+}
+
+.apexcharts-tooltip-rangebar {
+  padding: 5px 8px;
+}
+
+.apexcharts-tooltip-rangebar .category {
+  font-weight: 600;
+  color: #777;
+}
+
+.apexcharts-tooltip-rangebar .series-name {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.apexcharts-xaxistooltip {
+  opacity: 0;
+  padding: 9px 10px;
+  pointer-events: none;
+  color: #373d3f;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 2px;
+  position: absolute;
+  z-index: 10;
+  background: #ECEFF1;
+  border: 1px solid #90A4AE;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-xaxistooltip.apexcharts-theme-dark {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.apexcharts-xaxistooltip:after,
+.apexcharts-xaxistooltip:before {
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.apexcharts-xaxistooltip:after {
+  border-color: rgba(236, 239, 241, 0);
+  border-width: 6px;
+  margin-left: -6px;
+}
+
+.apexcharts-xaxistooltip:before {
+  border-color: rgba(144, 164, 174, 0);
+  border-width: 7px;
+  margin-left: -7px;
+}
+
+.apexcharts-xaxistooltip-bottom:after,
+.apexcharts-xaxistooltip-bottom:before {
+  bottom: 100%;
+}
+
+.apexcharts-xaxistooltip-top:after,
+.apexcharts-xaxistooltip-top:before {
+  top: 100%;
+}
+
+.apexcharts-xaxistooltip-bottom:after {
+  border-bottom-color: #ECEFF1;
+}
+
+.apexcharts-xaxistooltip-bottom:before {
+  border-bottom-color: #90A4AE;
+}
+
+.apexcharts-xaxistooltip-bottom.apexcharts-theme-dark:after {
+  border-bottom-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-xaxistooltip-bottom.apexcharts-theme-dark:before {
+  border-bottom-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-xaxistooltip-top:after {
+  border-top-color: #ECEFF1
+}
+
+.apexcharts-xaxistooltip-top:before {
+  border-top-color: #90A4AE;
+}
+
+.apexcharts-xaxistooltip-top.apexcharts-theme-dark:after {
+  border-top-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-xaxistooltip-top.apexcharts-theme-dark:before {
+  border-top-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-xaxistooltip.apexcharts-active {
+  opacity: 1;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-yaxistooltip {
+  opacity: 0;
+  padding: 4px 10px;
+  pointer-events: none;
+  color: #373d3f;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 2px;
+  position: absolute;
+  z-index: 10;
+  background: #ECEFF1;
+  border: 1px solid #90A4AE;
+}
+
+.apexcharts-yaxistooltip.apexcharts-theme-dark {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.apexcharts-yaxistooltip:after,
+.apexcharts-yaxistooltip:before {
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.apexcharts-yaxistooltip:after {
+  border-color: rgba(236, 239, 241, 0);
+  border-width: 6px;
+  margin-top: -6px;
+}
+
+.apexcharts-yaxistooltip:before {
+  border-color: rgba(144, 164, 174, 0);
+  border-width: 7px;
+  margin-top: -7px;
+}
+
+.apexcharts-yaxistooltip-left:after,
+.apexcharts-yaxistooltip-left:before {
+  left: 100%;
+}
+
+.apexcharts-yaxistooltip-right:after,
+.apexcharts-yaxistooltip-right:before {
+  right: 100%;
+}
+
+.apexcharts-yaxistooltip-left:after {
+  border-left-color: #ECEFF1;
+}
+
+.apexcharts-yaxistooltip-left:before {
+  border-left-color: #90A4AE;
+}
+
+.apexcharts-yaxistooltip-left.apexcharts-theme-dark:after {
+  border-left-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-yaxistooltip-left.apexcharts-theme-dark:before {
+  border-left-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-yaxistooltip-right:after {
+  border-right-color: #ECEFF1;
+}
+
+.apexcharts-yaxistooltip-right:before {
+  border-right-color: #90A4AE;
+}
+
+.apexcharts-yaxistooltip-right.apexcharts-theme-dark:after {
+  border-right-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-yaxistooltip-right.apexcharts-theme-dark:before {
+  border-right-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-yaxistooltip.apexcharts-active {
+  opacity: 1;
+}
+
+.apexcharts-yaxistooltip-hidden {
+  display: none;
+}
+
+.apexcharts-xcrosshairs,
+.apexcharts-ycrosshairs {
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-xcrosshairs.apexcharts-active,
+.apexcharts-ycrosshairs.apexcharts-active {
+  opacity: 1;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-ycrosshairs-hidden {
+  opacity: 0;
+}
+
+.apexcharts-selection-rect {
+  cursor: move;
+}
+
+.svg_select_boundingRect, .svg_select_points_rot {
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
+.apexcharts-selection-rect + g .svg_select_boundingRect,
+.apexcharts-selection-rect + g .svg_select_points_rot {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.apexcharts-selection-rect + g .svg_select_points_l,
+.apexcharts-selection-rect + g .svg_select_points_r {
+  cursor: ew-resize;
+  opacity: 1;
+  visibility: visible;
+}
+
+.svg_select_points {
+  fill: #efefef;
+  stroke: #333;
+  rx: 2;
+}
+
+.apexcharts-svg.apexcharts-zoomable.hovering-zoom {
+  cursor: crosshair
+}
+
+.apexcharts-svg.apexcharts-zoomable.hovering-pan {
+  cursor: move
+}
+
+.apexcharts-zoom-icon,
+.apexcharts-zoomin-icon,
+.apexcharts-zoomout-icon,
+.apexcharts-reset-icon,
+.apexcharts-pan-icon,
+.apexcharts-selection-icon,
+.apexcharts-menu-icon,
+.apexcharts-toolbar-custom-icon {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  line-height: 24px;
+  color: #6E8192;
+  text-align: center;
+}
+
+.apexcharts-zoom-icon svg,
+.apexcharts-zoomin-icon svg,
+.apexcharts-zoomout-icon svg,
+.apexcharts-reset-icon svg,
+.apexcharts-menu-icon svg {
+  fill: #6E8192;
+}
+
+.apexcharts-selection-icon svg {
+  fill: #444;
+  transform: scale(0.76)
+}
+
+.apexcharts-theme-dark .apexcharts-zoom-icon svg,
+.apexcharts-theme-dark .apexcharts-zoomin-icon svg,
+.apexcharts-theme-dark .apexcharts-zoomout-icon svg,
+.apexcharts-theme-dark .apexcharts-reset-icon svg,
+.apexcharts-theme-dark .apexcharts-pan-icon svg,
+.apexcharts-theme-dark .apexcharts-selection-icon svg,
+.apexcharts-theme-dark .apexcharts-menu-icon svg,
+.apexcharts-theme-dark .apexcharts-toolbar-custom-icon svg {
+  fill: #f3f4f5;
+}
+
+.apexcharts-canvas .apexcharts-zoom-icon.apexcharts-selected svg,
+.apexcharts-canvas .apexcharts-selection-icon.apexcharts-selected svg,
+.apexcharts-canvas .apexcharts-reset-zoom-icon.apexcharts-selected svg {
+  fill: #008FFB;
+}
+
+.apexcharts-theme-light .apexcharts-selection-icon:not(.apexcharts-selected):hover svg,
+.apexcharts-theme-light .apexcharts-zoom-icon:not(.apexcharts-selected):hover svg,
+.apexcharts-theme-light .apexcharts-zoomin-icon:hover svg,
+.apexcharts-theme-light .apexcharts-zoomout-icon:hover svg,
+.apexcharts-theme-light .apexcharts-reset-icon:hover svg,
+.apexcharts-theme-light .apexcharts-menu-icon:hover svg {
+  fill: #333;
+}
+
+.apexcharts-selection-icon,
+.apexcharts-menu-icon {
+  position: relative;
+}
+
+.apexcharts-reset-icon {
+  margin-left: 5px;
+}
+
+.apexcharts-zoom-icon,
+.apexcharts-reset-icon,
+.apexcharts-menu-icon {
+  transform: scale(0.85);
+}
+
+.apexcharts-zoomin-icon,
+.apexcharts-zoomout-icon {
+  transform: scale(0.7)
+}
+
+.apexcharts-zoomout-icon {
+  margin-right: 3px;
+}
+
+.apexcharts-pan-icon {
+  transform: scale(0.62);
+  position: relative;
+  left: 1px;
+  top: 0px;
+}
+
+.apexcharts-pan-icon svg {
+  fill: #fff;
+  stroke: #6E8192;
+  stroke-width: 2;
+}
+
+.apexcharts-pan-icon.apexcharts-selected svg {
+  stroke: #008FFB;
+}
+
+.apexcharts-pan-icon:not(.apexcharts-selected):hover svg {
+  stroke: #333;
+}
+
+.apexcharts-toolbar {
+  position: absolute;
+  z-index: 11;
+  max-width: 176px;
+  text-align: right;
+  border-radius: 3px;
+  padding: 0px 6px 2px 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.apexcharts-menu {
+  background: #fff;
+  position: absolute;
+  top: 100%;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 3px;
+  right: 10px;
+  opacity: 0;
+  min-width: 110px;
+  transition: 0.15s ease all;
+  pointer-events: none;
+}
+
+.apexcharts-menu.apexcharts-menu-open {
+  opacity: 1;
+  pointer-events: all;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-menu-item {
+  padding: 6px 7px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.apexcharts-theme-light .apexcharts-menu-item:hover {
+  background: #eee;
+}
+
+.apexcharts-theme-dark .apexcharts-menu {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .apexcharts-canvas:hover .apexcharts-toolbar {
+    opacity: 1;
+  }
+}
+
+.apexcharts-datalabel.apexcharts-element-hidden {
+  opacity: 0;
+}
+
+.apexcharts-pie-label,
+.apexcharts-datalabels,
+.apexcharts-datalabel,
+.apexcharts-datalabel-label,
+.apexcharts-datalabel-value {
+  cursor: default;
+  pointer-events: none;
+}
+
+.apexcharts-pie-label-delay {
+  opacity: 0;
+  animation-name: opaque;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+.apexcharts-canvas .apexcharts-element-hidden {
+  opacity: 0;
+}
+
+.apexcharts-hide .apexcharts-series-points {
+  opacity: 0;
+}
+
+.apexcharts-gridline,
+.apexcharts-annotation-rect,
+.apexcharts-tooltip .apexcharts-marker,
+.apexcharts-area-series .apexcharts-area,
+.apexcharts-line,
+.apexcharts-zoom-rect,
+.apexcharts-toolbar svg,
+.apexcharts-area-series .apexcharts-series-markers .apexcharts-marker.no-pointer-events,
+.apexcharts-line-series .apexcharts-series-markers .apexcharts-marker.no-pointer-events,
+.apexcharts-radar-series path,
+.apexcharts-radar-series polygon {
+  pointer-events: none;
+}
+
+
+/* markers */
+
+.apexcharts-marker {
+  transition: 0.15s ease all;
+}
+
+@keyframes opaque {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/* Resize generated styles */
+
+@keyframes resizeanim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.resize-triggers {
+  animation: 1ms resizeanim;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.resize-triggers,
+.resize-triggers>div,
+.contract-trigger:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.resize-triggers>div {
+  background: #eee;
+  overflow: auto;
+}
+
+.contract-trigger:before {
+  width: 200%;
+  height: 200%;
+}</style></head><body><noscript><strong>We're sorry but sihati doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app" data-v-app=""><div data-v-7fa2a9ae=""><div class="bg-biruGelap text-white text-sm sm:px-0 px-3 py-2"><div class="container mx-auto text-right"><ul class="inline-flex space-x-10"><li><a href="/profile" class="">Profil SiHati</a></li><li><a href="/kontak" class="">Kontak Kami</a></li><li><a href="/tentang" class="">Tentang TPID</a></li></ul></div></div><nav class="bg-primary text-white font-semibold py-2 sm:px-0 px-2"><div class="container flex flex-wrap items-center justify-between mx-auto py-2"><button data-collapse-toggle="mobile-menu" type="button" class="inline-flex items-center justify-center ml-3 text-gray-400 rounded-lg md:hidden hover:text-gray-900 focus:outline-none focus:ring-0" aria-controls="mobile-menu-2" aria-expanded="false"><span class="sr-only">Open main menu</span><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg><svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button><div class="hidden w-full mb-4 md:block md:w-auto md:mb-0" id="mobile-menu"><ul class="flex flex-col text-white mt-4 md:flex-row space-y-5 md:space-y-0 md:space-x-8 md:mt-0 text-sm"><li><a aria-current="page" href="/" class="router-link-active router-link-exact-active">Beranda</a></li><li><button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between text-white"><span class="font-semibold">Table Harga ▾</span></button><div id="dropdownNavbar" class="z-10 hidden bg-primary divide-y divide-white-100 rounded" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(263px, 74px);"><ul class="px-7 py-4 w-full text-sm space-y-3" aria-labelledby="dropdownLargeButton"><li><a href="/tabel-harga-komoditi" class="">Komoditas</a></li><li><a href="/tabel-harga-kab" class="">Kabupaten</a></li></ul></div></li><li><a href="/inflasi-jateng" class="">Inflasi Jawa Tengah</a></li><li><a href="/inflasi-daerah" class="">Inflasi Wilayah</a></li><li><a href="/makro" class="">Data Makroekonomi</a></li><li><a href="/produksi" class="">Data Produksi</a></li></ul></div><div class="flex space-x-2"><a href="https://play.google.com/store/apps/details?id=com.gitsolution.new_sihati" target="_blank"><img src="/img/googleplay.56b44686.svg" alt="google-play"></a><a href="https://apps.apple.com/id/app/sihati/id1634726974" target="_blank"><img src="/img/appstore.1cfd5dba.svg" alt="app-store"></a></div></div></nav></div><div class="content sm:px-0 px-4 py-5 pb-10" data-v-7fa2a9ae=""><div class="container mx-auto" data-v-7fa2a9ae=""><div class="bg-primary bg-opacity-80 rounded-md px-4 py-4 mb-5 relative grid grid-cols-12 items-center" data-v-7fa2a9ae=""><img src="/img/sihati.eba92b3c.png" alt="sihati" class="md:col-span-4 col-span-12 mx-auto" data-v-7fa2a9ae=""><div class="grid grid-cols-12 text-white items-center md:col-span-4 col-span-12" data-v-7fa2a9ae=""><div class="vue-apexcharts chart col-span-4" style="min-height: 88.7px;"><div id="apexcharts6e74q4npj" class="apexcharts-canvas apexcharts6e74q4npj apexcharts-theme-light" style="width: 118px; height: 88.7px;"><svg id="SvgjsSvg1006" width="118" height="88.7" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" class="apexcharts-svg" xmlns:data="ApexChartsNS" transform="translate(0, 0)" style="background: transparent;"><g id="SvgjsG1008" class="apexcharts-inner apexcharts-graphical" transform="translate(12, -5)"><defs id="SvgjsDefs1007"><clipPath id="gridRectMask6e74q4npj"><rect id="SvgjsRect1010" width="102" height="130" x="-3" y="-1" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath><clipPath id="forecastMask6e74q4npj"></clipPath><clipPath id="nonForecastMask6e74q4npj"></clipPath><clipPath id="gridRectMarkerMask6e74q4npj"><rect id="SvgjsRect1011" width="100" height="132" x="-2" y="-2" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath></defs><g id="SvgjsG1012" class="apexcharts-radialbar"><g id="SvgjsG1013"><g id="SvgjsG1014" class="apexcharts-tracks"><g id="SvgjsG1015" class="apexcharts-radialbar-track apexcharts-track" rel="1"><path id="apexcharts-radialbarTrack-0" d="M 48 21.51280487804878 A 26.48719512195122 26.48719512195122 0 1 1 47.995377112378506 21.512805281471827" fill="none" fill-opacity="1" stroke="rgba(242,242,242,0.85)" stroke-opacity="1" stroke-linecap="round" stroke-width="6.041207317073173" stroke-dasharray="0" class="apexcharts-radialbar-area" data:pathOrig="M 48 21.51280487804878 A 26.48719512195122 26.48719512195122 0 1 1 47.995377112378506 21.512805281471827"></path></g></g><g id="SvgjsG1017"><g id="SvgjsG1021" class="apexcharts-series apexcharts-radial-series" seriesName="seriesx1" rel="1" data:realIndex="0"><path id="SvgjsPath1022" d="M 48 21.51280487804878 A 26.48719512195122 26.48719512195122 0 0 1 48 21.51280487804878" fill="none" fill-opacity="0.85" stroke="rgba(193,194,67,0.85)" stroke-opacity="1" stroke-linecap="round" stroke-width="6.228048780487807" stroke-dasharray="0" class="apexcharts-radialbar-area apexcharts-radialbar-slice-0" data:angle="0" data:value="-0.08" index="0" j="0" data:pathOrig="M 48 21.51280487804878 A 26.48719512195122 26.48719512195122 0 0 1 48 21.51280487804878"></path></g><circle id="SvgjsCircle1018" r="18.466591463414634" cx="48" cy="48" class="apexcharts-radialbar-hollow" fill="transparent"></circle><g id="SvgjsG1019" class="apexcharts-datalabels-group" transform="translate(0, 0) scale(1)" style="opacity: 1;"><text id="SvgjsText1020" font-family="Helvetica, Arial, sans-serif" x="48" y="53" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="white" class="apexcharts-text apexcharts-datalabel-value" style="font-family: Helvetica, Arial, sans-serif;">-0.08%</text></g></g></g></g><line id="SvgjsLine1023" x1="0" y1="0" x2="96" y2="0" stroke="#b6b6b6" stroke-dasharray="0" stroke-width="1" stroke-linecap="butt" class="apexcharts-ycrosshairs"></line><line id="SvgjsLine1024" x1="0" y1="0" x2="96" y2="0" stroke-dasharray="0" stroke-width="0" stroke-linecap="butt" class="apexcharts-ycrosshairs-hidden"></line></g><g id="SvgjsG1009" class="apexcharts-annotations"></g></svg><div class="apexcharts-legend"></div></div></div><div class="col-span-8 text-sm"><span class="block">Inflasi Jawa Tengah (%, YOY) - Bulan Februari, Tahun 2025</span></div></div><div class="grid grid-cols-12 text-white items-center md:col-span-4 col-span-12" data-v-7fa2a9ae=""><div class="vue-apexcharts chart col-span-4" style="min-height: 88.7px;"><div id="apexchartsxhhh646l" class="apexcharts-canvas apexchartsxhhh646l apexcharts-theme-light" style="width: 118px; height: 88.7px;"><svg id="SvgjsSvg1025" width="118" height="88.7" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" class="apexcharts-svg" xmlns:data="ApexChartsNS" transform="translate(0, 0)" style="background: transparent;"><g id="SvgjsG1027" class="apexcharts-inner apexcharts-graphical" transform="translate(12, -5)"><defs id="SvgjsDefs1026"><clipPath id="gridRectMaskxhhh646l"><rect id="SvgjsRect1029" width="102" height="130" x="-3" y="-1" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath><clipPath id="forecastMaskxhhh646l"></clipPath><clipPath id="nonForecastMaskxhhh646l"></clipPath><clipPath id="gridRectMarkerMaskxhhh646l"><rect id="SvgjsRect1030" width="100" height="132" x="-2" y="-2" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath></defs><g id="SvgjsG1031" class="apexcharts-radialbar"><g id="SvgjsG1032"><g id="SvgjsG1033" class="apexcharts-tracks"><g id="SvgjsG1034" class="apexcharts-radialbar-track apexcharts-track" rel="1"><path id="apexcharts-radialbarTrack-0" d="M 48 21.51280487804878 A 26.48719512195122 26.48719512195122 0 1 1 47.995377112378506 21.512805281471827" fill="none" fill-opacity="1" stroke="rgba(242,242,242,0.85)" stroke-opacity="1" stroke-linecap="round" stroke-width="6.041207317073173" stroke-dasharray="0" class="apexcharts-radialbar-area" data:pathOrig="M 48 21.51280487804878 A 26.48719512195122 26.48719512195122 0 1 1 47.995377112378506 21.512805281471827"></path></g></g><g id="SvgjsG1036"><g id="SvgjsG1040" class="apexcharts-series apexcharts-radial-series" seriesName="seriesx1" rel="1" data:realIndex="0"><path id="SvgjsPath1041" d="M 48 21.51280487804878 A 26.48719512195122 26.48719512195122 0 0 1 56.184993426008134 22.809180480887086" fill="none" fill-opacity="0.85" stroke="rgba(193,194,67,0.85)" stroke-opacity="1" stroke-linecap="round" stroke-width="6.228048780487807" stroke-dasharray="0" class="apexcharts-radialbar-area apexcharts-radialbar-slice-0" data:angle="18" data:value="4.96" index="0" j="0" data:pathOrig="M 48 21.51280487804878 A 26.48719512195122 26.48719512195122 0 0 1 56.184993426008134 22.809180480887086"></path></g><circle id="SvgjsCircle1037" r="18.466591463414634" cx="48" cy="48" class="apexcharts-radialbar-hollow" fill="transparent"></circle><g id="SvgjsG1038" class="apexcharts-datalabels-group" transform="translate(0, 0) scale(1)" style="opacity: 1;"><text id="SvgjsText1039" font-family="Helvetica, Arial, sans-serif" x="48" y="53" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="white" class="apexcharts-text apexcharts-datalabel-value" style="font-family: Helvetica, Arial, sans-serif;">4.96%</text></g></g></g></g><line id="SvgjsLine1042" x1="0" y1="0" x2="96" y2="0" stroke="#b6b6b6" stroke-dasharray="0" stroke-width="1" stroke-linecap="butt" class="apexcharts-ycrosshairs"></line><line id="SvgjsLine1043" x1="0" y1="0" x2="96" y2="0" stroke-dasharray="0" stroke-width="0" stroke-linecap="butt" class="apexcharts-ycrosshairs-hidden"></line></g><g id="SvgjsG1028" class="apexcharts-annotations"></g></svg><div class="apexcharts-legend"></div></div></div><div class="col-span-8 text-sm"><span class="block">Pertumbuhan Ekonomi (%, YOY) - Triwulan 4, Tahun 2024</span></div></div></div><div data-v-7fa2a9ae=""><div class="grid grid-cols-12 items-stretch"><div class="xl:col-span-8 col-span-12"><div class="bg-primary bg-opacity-80 rounded-md px-4 py-4 mb-5 relative grid sm:grid-cols-5 grid-cols-1 gap-5 items-end"><div><label for="komoditas" class="block mb-2 text-sm text-white">Komoditas</label><select id="komoditas" class="bg-gray-50 py-1 text-gray-900 text-sm rounded-md focus:outline-none focus:ring-0 focus:border-0 block w-full"><option value="1">Beras IR 64 Premium (Kg)</option><option value="2">Beras IR 64 Medium (Kg)</option><option value="3">Gula Pasir Impor (kg)</option><option value="4">Gula Pasir Kristal Putih (kw medium) (Kg)</option><option value="5">Minyak Goreng Bimoli Botol (620 cc)</option><option value="6">Minyak Goreng merek Bimoli (botol/liter)</option><option value="7">Minyak Goreng Curah (tanpa merek)</option><option value="8">Daging Sapi (Kg)</option><option value="9">Daging Ayam Ras (Kg)</option><option value="10">Daging Ayam Kampung (Kg)</option><option value="11">Telur Ayam Ras (Kg)</option><option value="12">Telur Ayam Kampung (Kg/21 butir)</option><option value="13">Susu Kental Bendera (Cokelat) (385 gr/kaleng)</option><option value="14">Susu Kental Indomilk Plain (Putih) (385 gr/kaleng)</option><option value="15">Bubuk Indomilk (Cokelat)(400 gr)</option><option value="16">Bubuk Dancow Fullcream (Putih) (400 gr)</option><option value="17">Jagung Pipilan Kering (Kg)</option><option value="18">Garam Beryodium Bata (Kg)</option><option value="19">Garam Beryodium Halus (Kg)</option><option value="20">Tepung Terigu (Bogasari) Protein Sedang (Kg)</option><option value="21">Kacang Kedelai Ex Impor (Kg)</option><option value="22">Kacang Kedelai Kuning Lokal (Kg)</option><option value="23">Mie Instant (Bungkus)</option><option value="24">Cabe Merah Besar Keriting (Kg)</option><option value="25">Cabe Merah Besar Biasa Teropong (Kg)</option><option value="26">Cabe Rawit Merah (Kg)</option><option value="27">Cabe Rawit Hijau (Kg)</option><option value="28">Bawang Merah (Kg)</option><option value="29">Bawang Putih Jenis Kating (Kg)</option><option value="30">Ikan Laut/Asin Teri (Kg)</option><option value="31">Kacang Hijau (Kg)</option><option value="32">Kacang Tanah (Kg)</option><option value="33">Ketela Pohon (Kg)</option><option value="34">Elpiji (gas) (3 Kg)</option><option value="35">Semen Gresik (40 kg)</option><option value="36">Semen Holcim (40 kg)</option><option value="37">Semen Tiga Roda (40 kg)</option><option value="53">Bawang Putih Jenis Sin Chung (Kg)</option></select></div><div><label for="harga" class="block mb-2 text-sm text-white whitespace-nowrap">Jenis Informasi Harga</label><select id="harga" class="bg-gray-50 py-1 text-gray-900 text-sm rounded-md focus:ring-0 focus:border-0 block w-full"><option value="1">Perbandingan Harga</option><option value="2">Perubahan Harga</option></select></div><div><label for="date_filter" class="block mb-2 text-sm text-white">Tanggal</label><input id="date_filter" type="date" max="2026-04-10" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full py-1" placeholder="Date"></div><div><label for="perbandingan" class="block mb-2 text-sm text-white whitespace-nowrap">Periode</label><select disabled="" id="harga" class="bg-gray-50 py-1 text-gray-900 text-sm rounded-md focus:ring-0 focus:border-0 block w-full"><option value="dtd">Day to Day (DTD)</option><option value="wtw">Week to Week (WTW)</option><option value="mtm">Month to Month (MTM)</option></select></div><button type="button" class="bg-blue-600 text-white rounded-md px-2 py-3"> Muat Filter </button></div><div class="bg-primary bg-opacity-80 rounded-md px-4 py-4 mb-5 relative"><div class="flex justify-between items-center text-white"><span>Peta Jawa Tengah</span><span style="display: none;">Beras IR 64 Premium (Kg)</span></div><div class="block relative"><div class="box-map" data-v-5236494e=""><svg id="getMap" version="1.1" data-id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="197 -87 543 325" xml:space="preserve" data-v-5236494e=""><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Prov. Jawa Tengah" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kabupaten Cilacap" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M349.1,137.6c-0.8-3.4-4.6-6.5-8-6.6c-2.4-0.1-3.5-0.1-5.7-0.9c-1.5-0.6-3.3-0.4-4.5-1.3                   c-1.3-1-1.4-2.9-2.5-4.1c-0.9-1-3.3-3.4-4.8-3.2c-2.3-0.7-4.3-2.9-6.4-3.9c-1-0.5-2.1-0.8-3.1-1c-0.3,1.2-0.4,2.5-0.5,3.8                   c-1.3,0.1-2.5,0.1-3.7,0.2c0.5,0,1.1,0,1.6,0c0,0,0,0,0,0c-4.9,0-8.8-0.7-13.3-2c-3.7-1.1-11.1-1.6-13.9-4.1c-3-2.5-3.1-7.8-5-10.9                   c-3.5-5.7-6.7,1.6-10.9,0.6c-3-3.5,2.5-3.7,4.4-5.2c2.8-2.1,4-6,4.6-9.1c0.6-3.3,1.2-7,3.4-9.7c-0.5,0-1.1-0.1-1.6-0.2                   c-3.6-0.8-5.6-4.3-8.5-6.6c-1.1-0.8-2.9-1-4-2c-1.5-1.2-2.1-3.6-3.1-4.5c-1.9-1.8-3.8-1.2-5.9-3c-1.8-1.6-1-3.6-3-4.6                   c-3.3-1.8-6.9,1.4-10.1-1.9c-1,0.5-2.2,0.9-3.3,0.7c-0.9-0.1-1.7-0.6-2.3-1.3c-0.7-0.8-1.2-1.7-1.6-2.7c-0.2-0.4-0.6-1-0.6-1.4                   c0-0.5-0.2-0.8-0.4-1.2c-0.1-0.2-0.2-0.5-0.3-0.7c-0.1-0.2-0.1-0.6-0.4-0.5c-0.1,0-0.2,0.1-0.3,0.2c-0.3,0.1-0.7,0.1-1,0.1                   c-0.7,0-1.3,0.1-2,0.1c-0.7,0-1.3,0-2,0c-1.3,0-2.5,0.3-3.7,0.4c-1.4,0-2.8,0.1-4.2,0.2c-0.4,0-0.7,0-1.1,0.1                   c-0.1,0-0.3,0.1-0.4,0.1c-0.4,0.1-0.8,0.2-1.2,0.4c-0.2,0.1-0.3,0.2-0.4,0.3c-0.2,0.1-0.5,0.2-0.7,0.4c-1.8,1.1-3.3,2.7-3.4,4.8                   c0,1.9,0.8,3.6,1.4,5.4c0.7,2,1.2,4,0.8,6.1c-1,5.4-7.5,10-1.7,15c4.4,3.8,14.5-2.2,16.9,2.5c0.7,1.4,0.2,3.5,0.8,5.1                   c0.6,1.5,1.4,2.1,2.3,3.4c2,2.7,1.2,4.6,2.2,7.7c0.8,2.7,3.9,4.7,4.9,7.4c1,2.7,1.7,5.4,2.1,8.3c0.5,3.2,0,6.1,0,9.3                   c0,3.8,2.2,4.7,4.9,7.1c2.5,2.2,3.9,4.3,5.6,1c1.6-3.1,0.9-7.4,2.1-10.7c0.2-0.7,0.5-1.3,0.9-1.8c0.4,2.4-0.9,4.5-0.6,6.8                   c2,0.2,5.6,0.3,5.6-2.2c0.2,3-1.5,4.9-0.4,7.9c1,2.6,4.5,5.5,4,8.3c-1.3-0.5-2.8-3.3-3-4.9c-2.5-0.1-7.8-1.2-9.6,0.2                   c-2.6,1.9-1.2,6.6,0.3,8.1c2.9,2.9,7.5,1.9,11.3,1.9c3.7,0,7.3,0.5,10.7,1.5c3.2,0.9,16.2,8.4,16.3,1.9c0.1-3.7-4.1-3.4-3.7-7.3                   c0.4-4.1,3.7-2.6,7.1-3.7c1.9-0.6,4.9-2.1,6.3-3.7c0.3-0.4,0.6-0.8,0.8-1.3c0.1,0.3,0.3,0.6,0.4,0.9c1.6,3.1,4.4,2.8,7.5,2.7                   c3.7-0.2,7.5,0,11.1,0.7c7.3,1.3,14.4,2.3,22,2.3c1.6,0,3.6,0.4,4.4-1.3C349.9,140.9,349.4,138.7,349.1,137.6z M304.1,136.2                   C304.1,136.2,304.1,136.2,304.1,136.2C304.1,136.2,304.1,136.2,304.1,136.2z" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kabupaten Banyumas" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M354.1,124.1c-1.3-1.9-1.1-3.9,0.2-5.8c0.9-1.3,2.9-2.5,2-4.5c-0.8-1.7-4.5,1.7-6,0.7                   c-0.3-0.2-0.4-0.9-0.5-1.3c-0.3-0.8-0.4-0.7-1.1-1c-0.5-0.2-0.9-0.3-1.3-0.7c-0.2-0.2-0.3-0.4-0.5-0.6l0.2,0.1                   c0-0.6-0.9-0.7-1.3-0.9c-0.7-0.4-1.2-0.9-1.8-1.5c-0.1-0.1-0.2-0.2-0.3-0.2c0.9-0.6,1.4-1.2,1.2-1.9c-1.9,0.1-4.6-0.1-6.2-0.8                   c-0.6-2.2,0.9-2.1,1.8-3.7c1-1.9,0.2-2.6-0.7-4.1c-1.8-3-4.3-5.8-5.7-8.8c-1.7-3.5-2.2-7.6-4.3-10.9c-0.8-1.3-1.4-2.8-2-4.2                   c-0.3-0.7-0.6-1.4-1.1-2.1c-0.4-0.6-0.6-1.4-1.1-1.9c-0.4-0.4-0.8-0.7-1.2-1.1c-0.6-0.8-1-1.7-1.5-2.5c-0.1-0.2-1.7-2.1-1.8-2                   c-1.5,2.4-1.4,3.2-4.4,3.2c-2.6,1.5-7,1.8-9.7,2.8c-5.3,1.8-3.9,2-7,6.6c-2.1,3.1-4.5,4.9-8,4.8c-0.9,0-3.5-1.8-5.4-1.9                   c-2.5-0.1-4.6,0.7-7.1,0.1c-3.6-0.8-5.6-4.3-8.5-6.6c-0.7-0.6-1.8-0.9-2.8-1.3c0,0-0.1,0-0.1,0c1,0.4,2,0.7,2.7,1.2                   c2.9,2.2,4.8,5.8,8.5,6.6c0.6,0.1,1.1,0.2,1.6,0.2c-2.2,2.7-2.8,6.4-3.4,9.7c-0.6,3.1-1.8,7-4.6,9.1c-1.9,1.4-7.3,1.7-4.4,5.2                   c4.2,1,7.4-6.3,10.9-0.6c1.9,3.1,2.1,8.4,5,10.9c2.8,2.4,10.2,3,13.9,4.1c4,1.2,7.4,1.8,11.5,2c1.2-0.1,2.5-0.1,3.8-0.2                   c0.1-1.5,0.2-2.8,0.5-4.1c0,0.1-0.1,0.2-0.1,0.3c1.1,0.2,2.1,0.5,3.1,1c2.1,1,4.1,3.2,6.4,3.9c1.4-0.2,3.9,2.2,4.8,3.2                   c1.1,1.2,1.2,3.1,2.5,4.1c1.2,0.9,3,0.8,4.5,1.3c2.1,0.8,3.3,0.8,5.7,0.9c2,0.1,4.1,1.2,5.7,2.8c1.2-0.3,2.4-0.7,3.6-0.9                   c1.6-0.3,3.5-0.9,5-1.5c0.9-0.3,1.3-0.8,1.4-1.8C357,127.4,355.3,125.9,354.1,124.1z M343.4,108.7                   C343.4,108.7,343.4,108.7,343.4,108.7C343.4,108.7,343.4,108.7,343.4,108.7z" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kabupaten Purbalingga" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M381.9,68.7c2.1-0.2,2.7,1.8,2.8,3.5c0.1,2.2-1.5,2.3-3.4,2.8c-0.7,0.2-1.4,0-2,0.5                   c-0.5,0.4-1.1,2.2-1.3,2.8c-0.5,1.4-0.2,3-1.9,3.5c-1.8,0.5-3.5-0.8-4.6,1.1c-1.8,3.3,2.2,7,1.9,10.4c-0.2,1.9-2.7,1.5-3.9,2.7                   c-0.4,0.4-0.9,1.1-1.1,1.7c-0.2,0.6,0.1,1.9-0.2,2.4c-0.6,1-3.6,0.5-4.8,0.5c-1.6,0-3.1,0.4-4.5,0.9c-1.6,0.6-2.9,1.4-4.3,2.1                   c-1.3,0.6-2.7,0.7-4.1,1.2c-1.4,0.5-2.7,1.4-4.2,1.6c-1.3,0.2-2.8,0.1-4.1,0c-1.2-0.1-2.4-0.2-2.9-1.4c-0.6-1.4,0.5-2.1,1.1-3.1                   c1.4-2.5-0.4-4.4-2.1-6.1c-1.9-2-2.7-4.7-3.9-7.2c-0.8-1.7-1.8-3.5-2.3-5.2c-0.6-2.1-0.9-4-2.1-5.9c-1-1.6-1.7-3.3-2.7-4.9                   c-1.8-2.7-3.8-5-5.4-7.8c1-0.8,3.2-0.6,4.5-1.2c1.5-0.7,2.3-0.9,4.1-0.9c3,0,5.9-0.6,8.7-1.3c3.4-0.9,6.3-1.5,9.9-1.5                   c2.4,0,4.7,0.1,7-0.7c0.8-0.3,1.6-1.4,2.3-1.5c0.1,1.6,3.5,4,4.8,4.9c1.9,1.3,4.1,2.9,6.3,3.4c0.3,0.1,1.2,0.2,1.5,0.1                   c0.5-0.2,0.4-0.8,0.9-0.9c1.3-0.4,1.8,0.7,2.3,1.5c0.8,1.1,1.7,2.2,3.1,2.7C378.7,69.6,380.4,68.9,381.9,68.7z" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kabupaten Banjarnegara" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M386.9,60.6c1.9-0.4,1.6-1.3,2-3c0.5-2.3,2-2.6,4.2-2.6c0.7,0,2.4-0.3,3,0
+                  c0.5,0.2,1.4,1.5,1.7,2c1.2,1.5,1.3,2.9,3.4,3.1c1.9,0.2,3.4-0.4,5.1-1c2.1-0.7,4-1.9,6.1-2.4c2.1-0.5,4.6-0.9,6.8-1.1
+                  c1.8-0.2,4.6-0.3,6.3,0.4c1.8,0.8,3.7,1.6,5.4,2.6c1.4,0.8,1.9,1.5,2.3,3.1c0.5,2.3,0,2.7-2.2,3.6c-1.9,0.8-3.6,0.9-5.3,2.3
+                  c-1.5,1.2-2.2,2.6-2.7,4.3c-0.7,2.4-1.2,5.3-2.7,7.3c-1.4,1.9-3.4,3-5,4.8c-1,1-2.2,2.4-1.9,3.9c0.3,1.8,2.1,2.9,3.5,3.9
+                  c1.3,0.8,2.8,1.1,4,2.1c1.1,1,2.1,2.4,2.7,3.7c0.5,1.2,1.3,2.7-0.3,3.2c-1.3,0.4-3.3-0.2-4.6-0.4c-2.6-0.4-5.1-1.4-7.7-1.1
+                  c-1.1,0.1-2,0.7-3.3,0.4c-1.2-0.3-1.6-1.4-2.6-1.8c-1.1-0.3-2.6,0.2-3,1.1c-0.5,1-0.1,2.3-0.3,3.4c-0.5,2.6-1.7,4.1-4.3,5.2
+                  c-1,0.5-2.1,0.5-3.2,0.2c-0.6-0.2-1.3-0.7-1.8-1c-0.5-0.4-1-1.1-1.5-1.3c-1.3-0.6-2.3,0-3,0.7c-0.9,1-1.6,1.4-3,1.8
+                  c-2.8,0.7-5.4,1.2-8.3,1.4c-5.3,0.3-10.1,2-15.6,2c-1.4,0-2.4,0.1-3.6,0.6c-1.1,0.5-2.2,0.8-3.4,1.2c-1,0.4-2.3,1.5-3.4,1.5
+                  c-1.4,0-1.4-1.4-2.2-2.3c-0.4-0.4-1-0.6-1.4-1c-0.5-0.5-0.7-1.2-1.2-1.7c-0.8-0.8-2.3-1.2-1.4-2.6c0.5-0.9,2-0.7,2.9-1
+                  c1.3-0.5,2.6-0.5,3.8-1c2.4-0.9,4.6-2.2,7-3.3c2.3-1,4.1-1.3,6.7-1.3c1.1,0,2.2,0.2,3-0.5c1-0.8,0.5-1.9,1.2-3
+                  c1.3-2.2,4.9-2,4.8-5.1c-0.1-2.6-2-4.4-2.2-6.9c-0.1-1.3-0.1-2.2,1.2-2.9c1.1-0.6,2.2,0,3.4-0.4c2.3-0.7,1.8-4.7,3.7-5.9
+                  c1.2-0.8,2.9-0.2,4-1.2c0.8-0.7,0.7-2,0.6-3.1c-0.3-4.5-7.2-0.6-9.6-3.4c-2-2.3,1.7-3.3,3.2-4.2c1.7-1,3.4-1.9,5.2-2.8
+                  C384.3,60.6,385.6,60.8,386.9,60.6z" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kabupaten Kebumen" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M362.5,111c4.6,0,9.1,0,13.4-0.9c2-0.4,3.9-1,5.8-1.5c1.5-0.3,3.1-0.1,4.5-0.6
+                  c1.5-0.5,3.4-3.5,4.9-3c1.4,0.5,1.5,2.4,3.1,2.8c1.5,0.4,3.7-0.5,5.1-1c1.9-0.6,2.3-1.5,2.3-3.5c0.1-1.7-0.3-4.2,1.5-5.2
+                  c1.9-1.1,2.4,1,3.8,1.5c1.7,0.6,3.8-0.5,5.3-0.7c1.7-0.3,3.4,0.8,5.2,1c1.6,0.2,3.1-0.3,4.5,0.4c1.5,0.7,2.2,2.6,1.8,4.3
+                  c-0.4,1.6-1.9,2.9-2.9,4.2c-1,1.4-1.8,3.1-2.4,4.6c-0.8,2-1.1,4.2-1.7,6.2c-0.5,1.7-1.6,3.6-1.3,5.3c4.2-0.3,0.1,6.6-0.4,8.4
+                  c-0.4,1.4-0.8,4.1-0.4,5.6c0.4,1.4,2.8,3.6,3.9,4.5c1.8,1.6,2.3,2.1,2.8,4.6c0.4,1.7,0.3,3.4,0.3,5.2c0,1.7,0.4,4.1-0.3,5.7
+                  c-0.9,2.1-3.8,1.5-5.8,1.5c-7.5,0-14.2-0.4-20.8-3.9c-7.7-4.1-3-4-4.7-3.1c-2.1,1.1-5.3,0.7-7.5,0.4c-6.7-1-13.5-2.8-20.3-3.1
+                  c-2-0.1-3.9,0.1-5.9,0.2c-2,0.1-5.1,0.7-7,0.2c-4.1-1.1-1.2-7.2-0.3-9.5c1.4-3.6-0.9-5.8-2.7-8.6c3.1-0.2,6.2,0.2,8.8-1.8
+                  c3.1-2.3,0.2-5.3-1-7.6c-0.7-1.3-1-2.9-0.6-4.3c0.4-1.4,1.7-2.2,2.2-3.6c0.7-1.8-0.2-2.9,1.8-3.7c1.6-0.7,3.5-0.6,5.1-1.2
+                  c0.3-0.1,0.8-0.3,1-0.5" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kabupaten Purworejo" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M424.2,118.5c0.6-0.4,1.7-1,2.2-1.5c0.9-1,0.3-1.7,0.5-2.8c0.6-3.5,8.6-1.8,11.3-1.9
+                  c0.4-2,1.7-1.8,3-0.4c0.4,0.4,0.9,1.3,1.1,1.9c0.2,0.6,0,1.9,0.4,2.3c0.4,0.4,1.5,0,2,0.3c0.8,0.4,1,1.2,1.3,1.9
+                  c0.7,1.4,1,3.2,2.6,3.7c4.9,1.5,2.6-5.3,5.7-6.7c1.8-0.8,2.8,1.6,3.3,2.7c0.9,1.7,1.3,2.4,3.5,2.1c2.3-0.4,3.2-1,3.8,1.6
+                  c0.4,1.8,0.7,3.4,1.6,5.1c1.8,3.2,3.6,5.5,2.5,9.3c-0.5,1.6-0.6,3.3-0.4,5.1c0.2,1.7,1.1,3.2,1.3,4.8c0.5,3.7-1.6,5.8-4.5,7.4
+                  c-3.5,1.9-4.4,4.9-5.5,8.1c-0.9,2.6-2.9,5.6-4.4,8.1c-1.8,2.9-7,2.5-9.9,1.3c-3.1-1.3-6.3-2.1-9.3-3.5c-2.9-1.3-6.1-1.8-9-2.8
+                  c-2.6-1-7-1.1-6.6-5c0.3-2.8,1.9-5.6,1.3-8.7c-0.6-3-1.9-5.6-4.3-7.8c-1.5-1.4-3.6-3.4-3.5-5.6c0-0.9,0.8-1.9,1-2.8
+                  c0.3-1.2,0.7-2.3,1.1-3.5c0.3-1,0.6-2.4,0.7-3.4c0.1-1-0.6-2-0.6-3c0.1-0.9,2-1.8,2.8-2.1C421.4,121.5,422.5,119.7,424.2,118.5z" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kabupaten Wonosobo" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M447.2,72.9c0,1.6-0.6,3.6,0.2,5.1c1.2,2.4,4.5,4.5,6.5,6.1c1.3,1.1,2.6,2.4,3.8,3.7
+                  c0.5,0.5,1.4,1.3,1.5,2c0.1,1.2-0.5,0.9-0.8,1.8c-1.1,2.5-0.4,5.6-0.5,8.2c-0.1,2-1.2,3.4-1.7,5.3c-0.4,1.7-0.6,3.4-1.1,5.2
+                  c-0.4,1.3-0.1,2.9-0.5,4.2c-0.5,1.6-2.1,1.6-2.3,3.7c-0.2,1.7,0.4,2.9-1.5,3.8c-3.6,1.8-4.7-3.4-6.6-5.2c-1.2-1.2-1.7-2.1-2.3-3.6
+                  c-0.5-1.2-1-2.8-2.6-2.6c-0.6,0.1-1,1.1-1.7,1.3c-0.7,0.3-1.7-0.2-2.4-0.2c-1.9-0.2-3.6,0.2-5.5,0.4c-2.7,0.3-1.9,1.3-2.8,3.3
+                  c-0.7,1.6-2.3,1.6-3.5,2.7c-1,0.9-1.7,2-2.8,2.8c-1.1,0.9-2.4,1.5-3.5,2.5c-0.5,0.4-1.3,1.6-2,1.7c-1.2-3.2,2.2-7.1,3.1-10
+                  c0.6-1.8,0.8-3.2,1.8-4.8c0.8-1.3,1.7-2.7,2.7-3.9c1-1.2,2.3-2.5,1.6-4.2c-0.3-0.6-1.1-0.9-1.1-1.6c0-0.6,1.2-0.9,1.2-1.7
+                  c0-1.3-2.8-4.6-3.8-5.5c-1.3-1.1-3.1-1.1-4.3-2.2c-2.6-2.1-4.3-5.2-1.1-7.3c2.5-1.6,5.3-3.8,6.8-6.5c1.4-2.6,0.7-6.1,2.6-8.4
+                  c0.9-1,2.7-2,3.9-2.6c1.9-0.9,4-0.9,4.4-3.4c0.2-1.1,0.2-3.4,1.3-4c1.1-0.6,3.3,0.7,4.2,1.3c0.8,0.6,1.4,1.4,2.2,2.1
+                  c1.9,1.6,3.7,1.9,4.9,4.2C446.5,68.5,447.2,70.8,447.2,72.9z" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kabupaten Magelang" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M457.3,105.2c-0.6-1.2,0.2-4,0.2-5.5c0-1.6,0-3.3-0.1-4.8c-0.2-4.7,4-4.8,7.8-4.8
+                  c4.7,0,9.6-0.1,14.2,0.3c4.3,0.4,4.1,3.4,4.8,7.1c0.4-3-1.5-7.4,2.5-8.8c1.7-0.6,5.4,0,6.9,0.5c2.3,0.8,2.8,1.1,5.1-0.3
+                  c3.2-2,7.4-3.7,11.2-2.5c4.4,1.4,4.4,8.1,6.8,11.3c0.8,1.1,2.3,1.6,2.5,3c0.2,1.5-1.4,3-2.3,4c-1,1.1-2,2.5-3,3.5
+                  c-1.2,1.2-2.8,1.5-4.1,2.3c1.1,1,3.6,0.7,5,1.3c1.5,0.7,3.5,1.8,4,3.5c1.3,4.2-5.5,5.8-7.9,7.5c-1.4,1.1-2.8,2.5-4.2,3.6
+                  c-1.3,1.1-2,2.7-3.3,4c-1.5,1.6-4,2.5-5.8,3.5c-1.8,1-2.4,2.5-3.5,4.1c-0.6,0.8-1.4,1.4-1.5,2.4c-0.3,0.1-0.7,0.1-1,0
+                  c-0.5-1.2-1-2.7-1.3-4.1c-0.2-1,0.1-2.3-0.9-2.8c-0.8-0.4-2.6,0.1-3.5,0c-1-0.1-1.9-0.3-3-0.3c-3.1,0-6.3,0.3-9.4,0
+                  c-3.6-0.3-5.3-2.2-6.1-5.6c-0.4-1.6-0.9-2.6-1.9-4.1c-0.7-1.1-0.6-2.9-1.9-3.4c-1.9-0.8-3.8,1-5.2-0.7c-0.4-0.5-0.6-1.6-1-2.3
+                  c-0.5-0.9-1.4-1.1-2-1.7c-2.1-2.3-0.2-4.3,0.9-6.6c0.8-1.8,1-3.5,1-5.6" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kabupaten Boyolali" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M517.9,103.2c1.2-2.1,2-4.4,3.3-6.5c0.7-1.2,1.4-2.8,2.8-3.4c1.4-0.5,3.5-0.4,4.7,0.4
+                  c1.2,0.9,2.1,2.1,2.2,3.7c0-0.1,3-0.1,3.3-0.1c1.3,0.1,2.7,0.2,4,0.6c4.9,1.9,6,12.5,13.6,9.3c4.7-2-0.1-5.3-0.8-7.9
+                  c-0.9-3.3,0.5-5.8,0.7-9c0.2-2.8-1.6-6.2-2.3-9c-0.8-3.1-1.3-5.1-0.4-8.4c1.1-4.4,0.8-6-0.6-10.2c2.2,1.9,8.1,3.9,10.8,2
+                  c3.1-2.1,0.5-8.4,3.9-11.5c3.1-2.8,9.2-4.2,11.7,0.1c1,1.8,1.7,4.6,0.9,6.7c-0.8,2.2-3.3,3.1-2.9,5.9c1.9-0.1,2.3-2.1,3.7-3.3
+                  c1.8-1.6,3.2-1.9,5.6-1.9c-0.3,3.6,1.2,8.5,4.6,10.2c-3.2,0.2-7.1-0.5-9,2.7c-1.9,3.3,0.1,7.6,0.4,10.7c0.5,5.5-2.6,5.1-4.9,9
+                  c-2,3.3,0.6,4.8,3.8,6c-1.5,0-3,0.4-4.3,1.3c1,3,0.4,6,1.6,8.8c-1.8,1.1-4.1,0.8-5.7,2c-1.7,1.3-1.9,3.6-2.8,5.6
+                  c-2.5,5.1-3.2,5.1-8.3,4.6c-3.9-0.4-7.6,0.1-11.3-0.7c-2.1-0.4-3.6-1-5.6,0c-1.8,0.9-2.6,3.2-5.1,3.1c-0.4,7.9-8.8-3-10.3-5.2
+                  c-1.8-2.5-2-2.6-4.8-4.2c-2.2-1.2-3.3-2.5-5.9-3.1c-3.7-0.8-4.6-0.9-1.7-3.3C514.9,106.5,516.5,105.9,517.9,103.2z" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kabupaten Klaten" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M521.5,120.5c0.5,4.6,1.3,9.1,2.1,13.6c0.8,4.5,2.7,8.6,3.9,12.9c1.4,4.6,3.6,8.7,8.8,9.4
+                  c2.7,0.3,5.5,0.9,8.2,1.1c1.8,0.2,3.7-0.2,5.5,0c3.3,0.4,8.4,2.8,11.3,0c1.5-1.5,2.5-3.6,4-5.1c1.5-1.5,2.2-2.8,2.9-4.8
+                  c0.8-2.2,0.5-4.3,0.6-6.7c0.1-2.3,0.9-4.3,1.5-6.6c1.4-5.3,2.1-10.2-4.6-11.2c-3.6-0.5-6.9-0.7-10.5-0.9c-3.6-0.1-6.8-0.9-10.1-1.8
+                  c-2.8-0.7-3.7,0.9-5.7,2.5c-1.4,1.1-4.2,1.1-5.2,2.6c-0.5,0.7,0.3,1.4-0.7,1.9c-0.8,0.4-2.1-0.6-2.6-1c-1.2-1.1-1.8-3-2.9-4.3
+                  c-2-2.5-4.1-5.8-7-7.5c-1.3-0.8-3.5-2.2-5-2.3c0.7,1.5,2,3.6,3,4.9c1.2,1.6,2.9,2.7,2.6,5" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kabupaten Sukoharjo" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M574.3,159.8c3-1.4,5.6-3.5,9-2.8c3,0.6,4,1.7,4.2-1.9c0.2-3,0.6-4.3,3.8-5.2
+                  c2.8-0.8,3.7,0.3,6,1.5c3.4,1.7,3.8,0.6,4.2-2.5c0.3-2.2,0.6-4.2,1.1-6.4c0.8-3.7,2.2-9.6-0.5-13.1c-1.4-1.8-4.6-1.3-5.8-2.7
+                  c-0.8-1,0-2.8-0.8-4c-0.5-0.7-2.4-1.4-3.2-1.9c-1.7-1-3.6-3-5.7-2.8c-2.4,0.2-2,2.7-3.3,4.1c-0.7,0.8-1.9,1-3,0.7
+                  c-1-0.2-1.9-0.9-2.8-1.5c-0.9-0.7-1.9-1.5-3.1-1.5c-0.8,0-1.5,0.3-2.3,0.3c-0.8,0-1.7-0.5-1.6-1.3c-3,0.9-5.9,2.1-8.7,3.4
+                  c3.8,1,8.8,0.5,8.8,5.9c0,4-0.7,6.7-1.8,10.6c-1,3.5-0.1,7.4-1.8,10.6c-1.8,3.4-4.5,6.6-7.2,9.5c1.5,0.7,2.3,0.2,3.5-0.4
+                  c1.1-0.6,0-1.7,1.7-1.5c0.8,0.1,1.7,2,2.1,2.5c1.2,1.3,1.5,2,3.5,2.1c1.9,0,2-1.1,3.7-1.6" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kabupaten Wonogiri" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M611.5,151c3.8-0.4,3.9,1.6,6.3,3.5c2.5-2.1-0.2-4,3.8-4.8c1.2-0.2,2.8,0.1,4.1-0.2
+                  c2.1-0.5,1.9-1.2,2.9-2.8c1.8-2.7,4.1-2.7,7.1-3.8c2.5-0.9,3.8-1.3,6.1,0.3c2.2,1.5,3.6,3.2,6.1,4c1.7,0.6,6.8,0,8,1.3
+                  c1.4,1.5-0.8,4.6-0.3,6.5c0.6,2,3.1,3.8,4.2,5.5c2.9,4.3,0.5,10.4-2.2,14.4c-2.4,3.5-7.3,8.8-12.4,7.4c-4.1-1.1-9.2-7.7-12.1-0.3
+                  c-0.9,2.4-1.6,5.6-1.5,8.3c0.1,2.2,1,5.3,0.2,7.4c-0.8,2.1-3.7,3-5.9,2.6c-1.3-0.3-2-1.6-3.4-1.8c-1.9-0.2-2.2,1.2-3.2,2.2
+                  c-0.9,0.9-1,1.6-2.7,1.9c-1.3,0.3-2.6,0.3-4.1,0.3c-1.4,0-3,0.2-4.4,0c-1.4-0.2-2.7-1.1-4.1-1.2c-3.6-0.3-2.6,1.8-4.2,3.9
+                  c-1.5,1.9-4.2,3.3-5,5.8c-1.3,4,2.6,12.3-3.1,13.1c-3.4,0.5-5.4-0.7-7.7-2.7c-2-1.8-2.7-4-5-5.2c-2.4-1.3-4.3-1.7-5.1-4.8
+                  c-0.7-2.9-0.3-6-0.4-8.9c-0.2-5.4-2.2-9.8-2.3-15.2c0-5.2,2.8-9.4,3-14.4c0.1-2.8,0.3-5.5,0.5-8.3c0.1-1.2-1.1-5.1-0.7-5.8
+                  c0.6-1.3,4.3-1.8,5.5-2c2.3-0.4,4.8,0.8,7,0c0.3-4.8,2.9-8.9,8-7c1.8,0.7,3.5,1.8,5.5,2c1.9,0.1,3.8-0.1,5.6-0.5
+                  C607.7,151.3,609.7,151.2,611.5,151z" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kabupaten Karanganyar" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M641.2,137.7c-0.2-2.2,0.6-4.7,0.8-6.8c0.2-1.7-0.5-2.8-1-4.5c-0.6-1.9-1.1-2.8-2.8-3.9
+                  c-1.1-0.6-2.7-1-3.5-2.1c-1.3-1.8-0.4-7.5-2.3-8.5c-3.1-1.7-5.6,3.7-9,2.1c-1.4-0.6-1.1-2.2-1.1-3.6c0-2.6-1.3-2.1-3.7-2.2
+                  c-2.2-0.1-3.1,0.9-3.4,3c-0.3,1.5,0.6,3,0.3,4.3c-4.6,0.8-8.9-1.1-11-5c-1.9-3.5-7.3-2.8-10.8-3c-4.1-0.3-5.9-4.4-9.5-6.2
+                  c-1.9-0.9-3.8-0.9-5.9-1c-1.4-0.1-3.3-0.6-4.5,0.4c-1.6,1.3-1.4,3.2-0.8,4.8c0.5,1.6,0.7,3.2,2.1,4.1c1.7,1.2,3.5,2.6,5.4,3.4
+                  c1,0.4,2.1,0.6,3,1.1c2.1,0.9,3.5,2.7,5.5,3.8c2,1.1,3.8,2.3,5.6,3.7c1.9,1.5,0.9,2.2,1.6,4.1c0.5,1.5,2.8,2,4.2,2.6
+                  c1.6,0.7,2.8,0.9,3.1,2.9c0.2,1.5,0.3,3.2,0.3,4.7c0.1,3.2-1.2,5.3-1.8,8.2c-0.5,2.5-1.4,5.6-1.3,8c3.4,0.2,6.6-0.8,10.1-0.8
+                  c1.7,0,2.9,0.2,4.3,1.2c1.2,0.9,2.3,2.7,3.5,1.6c1.2-1.1,0.5-2.4,2.1-3.3c1.3-0.8,2.8-0.7,4.2-1.1c3.3-1,4.6-4.3,7.5-5.6
+                  c1.3-0.6,2.9-0.9,4.5-1.1c0.8-0.1,2.8,0.1,3.4-0.3c1.4-1,1.2-4.6,1.2-6.3" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kabupaten Sragen" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M633,106.8c0-2.1,0.2-4.1-0.9-5.8c-1.1-1.9-2-3.1-1.9-5.5c0.2-3.5,3.3-5.7,3.5-9
+                  c0.1-2-0.6-3.8-0.8-5.7c-0.2-1.6-0.2-3.3-0.2-5c0-3.7-0.9-7.3-5-7.7c-3.6-0.3-6.4,2.5-9.8,2.8c-2,0.2-2.7-0.9-4.5-1.3
+                  c-1.6-0.4-3.8,0.2-5.2,0.8c-3.5,1.6-6.9,2.6-10.9,1.9c-3.9-0.7-7.3-1.7-11.4-1.7c-3.7,0-7.8-0.9-8.5,3.8c-0.3,2.5,0.8,4.2,1,6.5
+                  c0.2,1.8-0.3,2.6-1,4.2c-0.6,1.5-0.1,3-1.2,4.4c-1.1,1.4-2.4,2-2.8,3.8c-0.3,1.3-0.4,3.4,0.1,4.6c0.9,2.1,2.8,1,4.7,1.3
+                  c3.2,0.5,6.5,1.6,8.9,4c1.8,1.8,4.2,3.8,6.9,4.2c2,0.3,4.5-0.6,6.3,0.2c1.4,0.6,3.1,2.6,4,3.7c1,1.2,2.2,2.4,3.8,2.9
+                  c2.1,0.7,4.9,0.2,6.9,1.2c0.9-2.6-0.9-7.4,3.3-7.4c1.5,0,2.6,0.1,3.5,1.3c0.7,0.9,0.3,2.4,1,3.2c2.1,2.3,5.2-1.1,7.7-0.8
+                  c2.8,0.4,3.3,5,4,7.3c0.3-4.4,0.6-9.7-2-13.4" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kabupaten Grobogan" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M573.8,25.3c-1.2,0.1-2.3,0.6-3.1,1.4c-0.2,0.2-0.4,0.4-0.5,0.7c-0.1,0.3-0.1,0.6-0.1,1
+                  c-0.1,2.3-1.5,4.1-3.7,4.6c-5.1,1.3-7.7-1.3-10.5-4.7c-1.3-1.7-6.1-5.3-8.9-3.3c-2.1,1.5,0.1,7.8-1,10.3c-1.4,3.3-5.6,3.9-7.3,6.7
+                  c-1.4,2.2-0.5,5.7-0.7,8.3c-0.2,3.5-2.7,5.9,0.7,7.7c1.2,0.6,3,0.5,4.3,1.2c1.8,0.9,3,2.4,4.7,3.5c2.7,1.8,6,2.6,9.3,2.6
+                  c4.7,0,3.6-1.5,3.2-5c-0.5-4.1,1.6-5.8,4.7-7.7c2.9-1.7,7-2.5,9,0.6c1.4,2.2,1.5,5.6,0.6,8.1c-0.5,1.3-1.4,2.3-1.5,3.6
+                  c3.4,0.6,5.8-2.5,8.5-3.9c1.6,2.1,0.6,4.9,1.8,7c1.7,3,2.7,1.4,5.9,2c4.5,0.8,9.1,3.1,14,2.3c2.1-0.3,4.2-2.2,6-2.7
+                  c2.6-0.7,5.2,0.6,7.7,0.7c1.3,0.1,2.4-0.1,3.7-0.4c3-0.8,5.8-2.6,9-1c2.7,1.3,3.5,2.4,4.6,4.8c0.5-1.1,0.3-3,1.4-3.8
+                  c1.6-1.2,5.3,0,7.3-0.6c3.1-1,3.1-3.1,3.7-6.1c0.6-2.8,1.1-6.1,0.4-8.9c-0.8-3.1-2.9-5.6-2.8-9c0.1-3,1.2-6.1,0.7-9.3
+                  c-0.6-3.3-3.5-5.8-5.7-8.3c-3.9-4.6-10.7-7.5-16.3-5.8c-5.7,1.7-12.5,2.1-18.7,2.1c-2.9,0-6.2-0.5-9,0c-2.9,0.5-5.2,2.5-8,3.3
+                  c-2.1,0.6-4.8,0.6-6.9-0.1C578.3,26.5,576.2,25.1,573.8,25.3z" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kabupaten Blora" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M644.8,67c-1,1.9-1.6,3.8-1.3,6c1.6,0.3,2.5,1.5,4,2.1c1.9,0.7,4.6,0.8,6.6,1.1
+                  c4.8,0.6,6.4,1.3,9.3,5.3c2.2,3,5.7,4.7,9.1,5.9c1.8,0.6,7,2.2,8.9,1.4c2.1-0.9,2.5-6.8,1-9c-1.8-2.8-4.6-1.5-5-5.7
+                  c-0.4-4.4,2.5-4.2,6.3-4.3c4-0.2,7,0.7,9.8-2.6c1.9-2.3,2.8-5.4,4.1-8c1.6-2.9,3.7-5.3,5.4-8c3.3-5.4,1.4-11.2,2.4-17.3
+                  c0.5-3,3.4-5.8,1.7-8.9c-1.5-2.7-4.9-3-6-6.5c-0.7-2.3,0.2-2.2-1.7-4c-1.1-1-3.2-1.7-4.3-2.3c-3-1.5-6.2-2.9-9.4-3.4
+                  c-3.8-0.6-8.4-0.7-12.3-0.3c-3.2,0.3-6.4,1.8-9.7,1.4c-6.6-0.9-13.1-8.3-20.3-5c-3,1.4-5.1,5.7-8.2,7.3c-2.6,1.4-6.3,0.4-9.2,1.3
+                  c-3.7,1.1-6.9,3.1-3.9,6.7c2.3,2.7,6.6,3.2,9.7,4.3c5.4,1.8,6.3,5.2,9.3,9.6c2.9,4.3,1.4,7.5,1.3,12.5c0,4.5,2.9,7.4,3.3,11.7
+                  c0.4,4.2-1.2,7.6-1.3,11.3" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kabupaten Rembang" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M646.4-6.3c-0.9-2.2-0.2-4.4-0.5-6.7c-0.3-2.2-1.5-4.3-1.7-6.7c-0.3-4,0.8-3.7,4.2-2.9
+                  c7.9,1.9,27.7,4.7,32.4-4.4c0.7-1.3-0.4-3.2,0.7-4.5c1.3-1.6,3.1-1.1,5-1.1c3.7,0,8.9,0,12.3,1.7c2,1,4.1,4.2,6.1,5.7
+                  c2.7,2,5.2,3.6,7.7,5.9c2.2,2,7,4.8,6.7,8.4c-0.2,2.6-1.7,1.2-2.7,2.3c-1.6,1.8-0.9,1.5-0.9,3.6c0,3.8,0.1,5.4-4.7,5.4
+                  c-4.1,0-5,0.3-5,4.8c0,2.9,0.4,6.9-2.1,8.9c-3.5,2.9-4.5,0.1-7.3-1.9c-3.9-2.8-10-4.1-15-4.1c-6,0-12.9,2.1-18.6,1.3
+                  c-2.4-0.3-4.2-2.3-6.5-2.7C654,6.2,652,5,649.7,4.4c-0.8-0.2-1.2-0.3-1.3-1.2c-0.2-1.4,0.4-2.7,0.3-4.1
+                  C648.4-3.3,647.4-4,646.4-6.3z" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kabupaten Pati" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M592.6-54.7c-1.5-0.4-1.6-1.3-2.7-0.1c-0.5,0.6-0.6,2.5-0.5,3.3c0.2,2.5,1.7,4.7,2.3,7
+                  c1.3,5.1-1.4,10-0.5,14.9c0.6,3.3,2.7,6.8,4,9.9c1,2.4,0.2,5.7,2,7.7c1.7,2,3.3,3.3,4,6.1c0.8,3.3-0.2,6-3,8.2
+                  c-2.4,1.8-5.5,2.4-7.9,4.3c-1.4,1.1-1.4,2.3-2.5,3.5c-1,1.1-2.4,1.8-3.5,2.7c-1.7,1.3-2,2.5-3.2,4.1c-2.7,3.5-7.5,3.4-6.7,9.5
+                  c3.7,0.1,6.5,2.2,10.5,1.8c2.8-0.3,4.3-2.6,7-3.3c6.3-1.5,13.3-0.3,19.7-1.5c2.6-0.5,4.8-0.6,7.5-0.7c0.9-0.1,3.1,0.2,3.7-0.9
+                  c0.9-1.7-1-1.3-1.6-2.6c-2.5-4.9,7.6-6.5,10.3-6.7c2.2-0.2,4.2-0.5,5.9-2c1.7-1.5,2.4-4.1,4.4-5.2c2-1.1,5.9-0.6,7-2.3
+                  c1.4-2.3-0.2-5.3-0.7-7.6c-0.7-2.9-1.4-5.7-2.2-8.6c-0.8-3.3-1.3-6.1-1.4-9.7c-3.1-0.3-4.4-1.1-6.9-2.8c-2.2-1.5-4.9-2.3-6.9-4.1
+                  c-3.2-3-5.7-8.3-8-12.1c-4.5-7.5-4.1-24.4-15-25.7C599.8-68.7,603.2-52.1,592.6-54.7z" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kabupaten Kudus" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M572.9,16.2c-0.3,1.1-0.5,2.1-0.6,3.1c-0.1,1.3,0.1,2.6-0.1,3.9c-0.3,1.4-1.1,2.7-1.2,4.1
+                  c0.2-1.3,1.6-2,2.9-2.2c0.9-0.1,2,0.1,2.2,1c0.1-0.9-0.1-1.9,0.2-2.9c0.3-0.8,1-1.4,1.7-2c1.1-0.8,2.2-1.6,3.1-2.7
+                  c1-1.2,2-2.3,3-3.4c2.1-2.2,4.2-4.4,6.2-6.6c2.1-2.2,5-2.9,7.6-4.4c2.7-1.6,4.8-2.3,5.4-5.5c0.6-3.4,0.1-5.5-2-7.6
+                  c-2.3-2.4-2.6-2.4-3-5.8c-0.4-2.9-1.5-4.4-2.6-7c-1.9-4.5-2.7-9.8-2.7-14.7c-0.3,3.1-3.7,1.6-5.4,3c-1.1,0.9-1.5,4.2-2.2,5.7
+                  c-0.8,1.6-2,3-2.6,4.7c-0.9,2.4-0.3,3.7-0.4,6c-0.1,3-1.9,4.2-4.4,5.4c-1.2,0.6-2.5,1.2-3.3,2.3c-0.8,1-2.4,2.7-1.7,4.1
+                  c0.5,0.9,1.4,1.4,2,2.2c0.5,0.6,0.6,1.2,0.8,2c0.3,1.7,0.3,3.5,0.3,5.3c-0.1,1.9-1,3.9-1.4,5.8C574.1,12.1,573.5,14.2,572.9,16.2z" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kabupaten Jepara" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M575.1-65.1c-2.3,0.4-2.8,0.7-4.9,1.8c-2.4,1.2-4.7,2.2-7,3.6c-3.8,2.4-5.1,8-6.5,12
+                  c-0.8,2.4-2.6,3.6-3,6.2c-0.4,2.3-0.3,4.5-0.9,6.7c-0.6,2.3-0.9,4.5-1.3,6.8c-0.5,2.8-1.6,4.5-2.8,7c-1.8,3.8,2,3.7,4.8,4.8
+                  c4.1,1.6,4,3.9,4.3,7.4c5.3,0.4,7.4,7.7,13.1,5c2.6-1.2,2.3-4.1,4.3-6.4c1.9-2.2,5-2,6.7-3.6c1.9-1.8,0.5-4.4,0.6-6.7
+                  c0.1-3.3,2.5-4.7,3.8-7.5c1.2-2.6,0.3-5.2,3.4-6c2.9-0.7,2.9,0,3.8-3c0.6-2.1,0.8-4,0.8-6.3c0-2.9-0.2-3.8-1.7-6.1
+                  c-1.2-1.9-2.3-4.6,0.2-5.4c2.6-0.8,5.5,1.1,7.7-1.2c2-2.1,7.1-10,3.5-11.5c-2.2-0.9-6.3-0.5-8.7-0.5c-3.2,0-6.5-0.5-9.7-0.1
+                  c-1.7,0.2-3.2,0.7-4.6,1.6C579.1-65.3,577.2-65.4,575.1-65.1z" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kabupaten Demak" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M528.1,30c-1.6,2.6-7.2,4.2-4.7,8c0.9,1.5,3.2,1.2,4.4,2.3c2.1,1.8,0.7,2.2,1.6,4.6
+                  c1.4,4.1,4.9,3.4,8.3,4.4c0.1-3,0.6-5.8,2.5-8.2c2.1-2.8,5.7-3.7,6.6-7.3c0.7-3-1.8-7.5,2.2-8.1c3-0.5,6.2,3.3,8.4,4.9
+                  c6.3,4.7,13.5,2.3,14.3-5.9c0.7-6.5,3-12.1,4.4-18.4c0.5-2.1,1.1-4.4,0.4-6.6c-0.8-2.4-3.3-3.9-4.1-6.2c-3.2,5.6-10.4,1-13.7-2.5
+                  c-2-2.2-1.6-5.8-4.7-7.9c-2.9-2-5.4-0.3-5.1-4.9c-1.2,0.1-9.9,5.8-10.5,7.2c-0.8,1.8,0.6,4,0.5,5.7c0,2.5-1,3.5-2.3,5.4
+                  c-2.7,4-5,8-8,11.6c-1.7,2.1-3.3,4.6-4.1,7.2c-0.4,1.2-0.8,2.6-0.3,3.8c0.9,1.8,2.9,2.4,3.8,4.4C529.2,25.5,529.4,27.8,528.1,30z" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kabupaten Semarang" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M549.9,98.7c-1.1-3,2-5.4,1.5-9c-0.4-2.8-2.3-5.5-2.9-8.4c-0.6-2.6-0.7-5.7,0-8.3
+                  c0.7-2.9,2.6-5.2,0.9-8.4c-1.3-2.5-3.9-4-6.3-5.3c-1.9-1-4.9-1.2-5.7-3.6c-0.6-2.1,0.4-5,1.2-6.9c-1.9-0.2-4.5-0.4-6.2-1.2
+                  c-3.3-1.6-1.6-5.5-4.3-7.4c-0.8-0.5-1.8-0.4-2.6-0.7c-0.9-0.4-1.7-1.5-2.6-1.7c-0.3,0-0.6,0.1-0.9,0.2c-0.7,0.3-1.4,0.8-2.1,1.2
+                  c-4.4,2.6-9.7,2.8-14.7,3.9c-0.2,0.1-0.5,0.1-0.7,0.2c-0.3,0.2-0.5,0.6-0.6,1c-0.2,1,0.1,1.9,0.2,2.9c0.1,1-0.3,2-0.5,3
+                  c-0.1,0.6,0,1.3,0,2c0,1,0,2,0,2.9c0.1,1.3,0.4,2.6-1.2,3c-1.4,0.3-2.7,0.6-4.1,0.5c-2.4-0.2-6-0.8-7.3,1.9
+                  c-1.4,2.9,2.3,5.8,4.3,7.5c3,2.6,3.5,3.3,4.7,7.2c0.7,2.4-0.4,2,1.9,3.4c1.2,0.7,3,0.3,4.2,0.9c3.1,1.5,4.4,4.5,5.7,7.1
+                  c1.4,2.7,4.9,13.2,7.5,13.6c1-2.6,2.3-5.1,4.6-6.2c3.5-1.6,6.8-0.6,6.8,3.5c3.1,0.1,5.8-0.2,8.5,1c3.9,1.7,2.6,3.8,4.5,6.8
+                  c1.7,2.8,6.1,3.2,8.6,1.3C556.4,103.5,551,101.7,549.9,98.7z M530.9,85.1c-0.3,0.6-1.7,0.2-2.2,0.7c-0.2,0.3,0.5,1.5,0.3,1.8
+                  c-0.6,0.7-1.6,1.5-2.3,0.9c-0.2-0.9-1.1-1.6-1.9-1.5c0-0.3,0-0.6-0.1-0.9c-0.2-0.1-0.4-1.9-0.4-2.1c0-0.7,0-1.3,0-2
+                  c-0.1-0.9-0.2-2-0.7-2.7c-0.3-0.4-0.6-0.6-0.8-1c-0.3-0.6-0.4-1.2-0.2-1.9c0.2-0.9,1.1-1.7,1.7-1.1c0.2,0.2,0.3,0.5,0.4,0.7
+                  c0.4,0.5,1,0.6,1.6,0.6c1.1-0.1,3.6-3.2,4.3-4.3c-0.3,2.4-1.7,5.2-0.4,7c0.4,0.5,0.6,3.2,0.8,3.7C531.3,83.6,531.2,84.4,530.9,85.1
+                  z" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kabupaten Temanggung" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M436.1,58.8c2.3-0.2,5.1,0.8,7.2-0.5c0.8-0.5,1-1.1,1.6-1.8c0.8-0.9,1.8-1.2,2.9-1.7
+                  c2.3-1.1,4.3-1.3,6-3.2c2.1-2.2,5.2-4.1,7.8-5.8c2.6-1.8,5.2-1.9,8.3-1.9c2.8,0,8.2-1.1,5,2.7c-0.8,1-2.9,1.5-3,2.8
+                  c-0.1,1.8,2,2.1,3.2,2.5c1.1,0.4,2.5,0.4,3.5,1.3c1.2,1,1,2.7,1.8,3.7c3.1,4,8.8-1.3,11,4.7c1.3,3.6,2.4,5.1,5.5,7.6
+                  c2.5,1.9,2.7,3.6,3.5,6.4c0.7,2.2,0.6,2,2.5,2.9c1.6,0.7,3,1.1,4.5,1.9c3.6,2,3.7,3.8,5.1,7.2c-2.5-4-11.8,1.8-15.1,1.8
+                  c-2.9,0-5.6-0.4-8.3-0.7c-1-0.1-2.8-0.4-3.6,0.2c-1.5,1-0.9,3.6-2.3,4c-1-3.5-8-2.7-11.1-2.7c-4.1,0-9.2-0.8-13.1,0.3
+                  c0.8-1.7-4.6-5.1-6.1-6.2c-3.1-2.4-5.9-4.9-6-9.1c0-3.8,0.1-7.3-2.3-10.5C443.1,63,438.3,58.6,436.1,58.8z" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kabupaten Kendal" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M470.5,7.7c1.5-0.8,2.8-1.7,4.3-2.4c2.4-1.1,6.5-3.2,8.2-0.3c1.2,2.1,2.4,4.2,3.8,6.1
+                  c0.7,0.9,1.5,1.6,2.5,2.1c2.1,1,5,2.7,7.4,2.8c-0.2,0.4-0.7,0.5-1.1,0.9c-0.5,0.5-0.7,1-1.1,1.5c-0.7,1-1.5,1.9-2,3
+                  c-0.9,2-1,5.2-1.1,7.5c-0.1,2.9,0.6,4.9,2.1,7.4c0.5,0.9,1,1.7,1.4,2.6c0.5,1.4,0.6,2,1.7,2.8c2.1,1.5,4.2,1.4,6.7,1.5
+                  c0.8,1.8,0.2,4,0.1,6c0,2.2,0.6,4.5,0.1,6.7c-0.6,3.2-3.5,2.8-6.4,2.7c-1.4-0.1-2.7-0.5-4,0.1c-0.9,0.4-2.1,1.8-3.1,1.5
+                  c-0.1-1.9-5-1.7-6.4-1.7c-3.3,0-3.4-1.9-4.6-4.4c-1.2-2.4-4.3-1.9-6.3-3.2c-1-0.7-1.7-2-0.5-2.9c0.9-0.7,2.2-0.5,2.9-1.7
+                  c1.5-3-3.2-3.1-5.2-3.1c-3.4-0.1-5.8,0.9-8.4,2.8c-1.1,0.7-2.4,1.4-3.4,2.3c-1.2,1.1-2.4,1.6-3.8,2.4c-1,0.6-1.8,1.5-2.8,2.1
+                  c-2.2,1.2-5.1,1.8-6.7,3.8c-1.5,1.9-4.4,2.4-7,2.4c-1.2,0-2.4,0.1-2-1.5c0.2-1.2,1.3-2.2,1.5-3.5c0.3-2.4,0-4.6,1.4-6.6
+                  c1.3-2.1,4.8-3.2,5.4-5.8c0.5-2.2-0.2-4.7,0.4-7c0.7-2.5,2.9-3.8,5-5.2c2-1.4,5-1.5,5.4-4.4c0.7-4.6-2.8-9.7-7.3-10.2
+                  c-0.4,0-1.3-0.1-1.5-0.1c1.3,0.2,3.1-0.4,4.4-0.5c1.9-0.2,3.7-0.4,5.6-0.8c2.2-0.5,4.1-1.2,6.3-2.1c1.5-0.6,2.8-1.6,4.3-2.2
+                  C467.8,8.6,469.2,8.3,470.5,7.7z" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kabupaten Batang" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M418.3,11.8c2.6,0.4,5.2,0.9,7.9,1.4c2.9,0.5,5.4,1.4,8.4,1.5c2.9,0.1,5.8,0.4,8.7,0.4
+                  c3.4,0,5.9-0.1,8.6,2.1c2.6,2,3,4.8,2.6,7.9c-0.3,2.2-1.6,2.7-3.5,3.6c-1.6,0.7-3,1.8-4.4,2.9c-3,2.5-3.2,4.6-2.9,8.3
+                  c0.2,2.2-1.4,3.5-2.9,4.9c-1.4,1.3-2.3,3-2.9,4.8c-0.6,1.9-0.8,3.7-1,5.7c-0.1,1.4-1.1,2.6-1,4c-0.8,0.1-1.6-0.5-2.5-0.5
+                  c-0.2,0.6-0.3,1.3-0.3,2c-1.1-0.7-2-1.8-3.2-2.5c-1.3-0.7-2.3-1.2-3.7-1.6c-2.3-0.7-4.8-0.8-7.1-1.3c0-0.1,0-0.3,0-0.4
+                  c3-0.5,0.9-3.3,0.2-4.7c-0.6-1.2-1.4-2.2-2.1-3.3c-0.8-1.1-1-2.3-1.5-3.4c-0.5-1.2-1.6-2.1-2.1-3.3c-0.5-1.1-0.3-2.3-0.4-3.5
+                  c-0.1-1.1-0.3-2.4-1.1-3.2c-1-0.9-2.7-1-3.9-1.6c-4.4-2.1-6.9-6.9-6.9-11.8c0-2.3-2-3.8-1.2-6.2c0.3-1,1-1.8,1.6-2.6
+                  c0.6-0.9,0.9-2.3,1.5-3.1c0.8-1,1.5-0.2,2.7,0.2c1,0.3,2.1,0.5,3.2,0.7c1.4,0.2,2.7,1,4,1.6C414.7,11.4,416.6,11.5,418.3,11.8z" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kabupaten Pekalongan" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M418.5,49c-1-1.7-1.7-3.6-2.8-5.3c-1.3-2-2.1-3.1-2.2-5.4c-0.1-2.5,0.1-4.2-2.4-5.2
+                  c-2-0.8-3.5-1.1-5.3-2.5c-2.2-1.6-4.3-4.6-4.3-7.5c0-2.6-0.2-4.7-1.8-6.8c-0.1-0.5,0.3-1.5,0.4-1.8c0.4-0.9,0.5-2.1,1.6-2.4
+                  c-0.7,0.2-1.4,0.4-2.2,0.6c-0.6,0.2-1.3,0.4-1.8,0.8c-0.7,0.6-1,1.6-1.9,1.9c-1,0.3-2-0.5-3-0.3c-0.4,0.1-0.7,0.4-1.1,0.7
+                  c-0.7,0.6-1.5,1.1-2.5,1.2c-0.4,0-0.9-0.1-1.3-0.2c-2.7-0.6-5.3-1.3-8-1.9c-1.1-0.3-2.4-0.7-2.9-1.7c-0.4-0.9,0-2,0-3.1
+                  c-1.1,0.8-1.2,2.3-1.2,3.7c0,1-0.1,2.3-0.9,3c-0.7,0.7-2,0.8-2.9,1.2c-1.8,0.8-2.7,2.1-3.7,3.7c-1.6,2.9-2.1,5.9-2.3,9.3
+                  c-0.2,3.4,0.5,5.7,1.5,8.8c0.5,1.5,0.5,3.3,0.7,5c0.2,1.8,0.6,3.4,0.7,5.2c0,3.1,0.7,5.7,1.7,8.5c0.9,2.6,1.4,9.2,5.8,6.6
+                  c1.4-0.8,2.5-1.9,4-2.7c1.6-0.8,2.9-1,4.6-1.4c1.6-0.4,2.9-1.1,3.7-2.7c0.8-1.6,0.3-2.8,2.3-3.3c1-0.2,3.7-0.3,4.7,0
+                  c1.5,0.5,2,2.1,3.1,3.2c4,4,9.8-0.4,13.8-1.9c1.5-0.6,3.1-0.9,4.7-1.2c0.8-0.2,2.8-0.1,3.4-0.7C422.2,53,419.2,50.1,418.5,49z" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kabupaten Pemalang" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M366.7,35c0.1,3.8,1,7.4,2,11c1.1,3.9,0.4,7.5,1.1,11.4c0.3,1.7,3.6,6.2,1.9,8
+                  c-1.3,1.3-7.8-1.5-9.2-2.4c-1.8-1.2-1.5-2.5-2.8-3.9c-2.2-2.6-0.7-1.6-4,0.3c-3.2,1.8-6,0.7-9.3,0.4c-4.7-0.5-8,2.1-12.3,2.8
+                  c-2.1,0.3-4.3,0.3-6.4,0.7c-2,0.4-4.4,2.5-6.2,2.2c-1.4-2.4-2.2-4.8-2.4-7.7c-0.2-2.2-1.2-6.5-0.8-8.3c0.6-2.6,1.1-0.7,2.8-2
+                  c1.5-1.2,1.6-2.7,2.3-4.3c1.7-3.9,4.1-3.8,6.9-6.8c2.3-2.4,1.7-5.4,3.1-8.2c1.4-2.8,4.1-4.6,5.3-7.5c1.8-4.6,2.6-12.5,6.7-14.9
+                  c2-1.1,4.8-1.4,7-2.5c2.5-1.3,4.9-2.6,7.4-3.9c1.9-1,4.1-2,5.9-3.4c1.6-1.3,2.5-3.5,4.3-3.8c1.3,3.4,2.7,6,6.4,7.7
+                  c2,0.9,7.3,0.7,8.3,2.3c-3.1,1.3-2.7,2.4-4,5c-1.3,2.6-3.1,2-4.4,4c-0.9,1.5,0,3.1-0.7,4.5c-0.7,1.3-3.5,2.3-4.8,3.2
+                  C366,22.2,366.5,29.6,366.7,35z" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kabupaten Tegal" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M335.3,8c-3.4,0.4-7.3,0.2-10.7-0.1c-1.3-0.1-2.7-1-4-0.5c-0.7,0.3-1.2,0.8-1.8,1.2
+                  c-0.9,0.7-1.8,1.4-2.8,1.9c-0.4,0.2-0.8,0.5-1.3,0.5c-0.5,0.1-0.9,0-1.4-0.1c-3.3-0.4-6.5,0.6-9.7,1.5c-1.1,0.3-2.2,0.6-3.3,0.3
+                  c-1.5-0.4-2.7-1.8-2.7-3.3c-0.8,1.7-0.2,3.9,0.2,5.7c0.8,3.5,2.8,3,0.8,6.3c-1.3,2.1-3.6,3.4-6.1,3.1c-0.9,1.6-0.7,5.8-1.5,6.9
+                  c-1.6,2.2-4.2,1.3-6.4,2.6c-5.3,3.1,0.5,8.4-3.2,10.4c0.4,0.5,0.7,1.5,1,2c-2.5-0.4-3.6,1.1-2.9,3.5c4,1.1,6.2-2.3,10.4-0.4
+                  c1.4,0.6,2,3.4,4.1,3c3-0.6,0.6-3.9-0.7-4.6c2.4-1.2,7.3-0.7,7.6,2.5c0.3,3.9-5.7,3-4.4,7.4c0.9,0.3,3.3,0.2,3.8,0.6
+                  c0.2,0.1,2.5,1.9,2.5,1.9c0.2,0.1,1.1,1.8,1.6,2.1c0.6,0.4,2.2-0.1,3,0.3c2.3,1.2,3.2,1.7,5.5,2.7c1.8,0.8,3,0.2,4.3,1.9
+                  c-0.3,0.2-0.6,0.4-1,0.6c1.1-0.3,3.2-0.7,3.8-1.9c1.5-2.9-0.8-5.8-1-8.6c-0.1-1.4,0-2.6-0.3-4c-0.3-1.3-1-2.6-0.7-4
+                  c0.4-2.2,2-1.4,3.5-2.3c0.2-0.1,0.3-0.2,0.4-0.4l1.2-2.5c-0.4,0.8-0.6,1.8-1.2,2.5L322,47c1.9-1.2,1.5-4.6,2.7-6.3
+                  c1.1-1.5,2.7-1.9,4.3-2.8c3-1.6,3.6-6.6,5-9.6c1.7-3.7,5.5-5.1,5.5-9.5c0-2.1,0.1-3.5,1.1-5.3c0.8-1.4,2-2.6,2.7-4
+                  c0.6-1.2,0.8-2.6,1-4C343.7,7.4,337.1,7.8,335.3,8z" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kabupaten Brebes" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M297.9,15.1c0.8,3.5,2.8,3,0.8,6.3c-1.3,2.1-3.6,3.4-6.1,3.1c-0.9,1.6-0.7,5.8-1.5,6.9
+                  c-1.6,2.2-4.2,1.3-6.4,2.6c-5.3,3.1,0.5,8.4-3.2,10.4c0.4,0.5,0.7,1.5,1,2c-2.5-0.4-3.6,1.1-2.9,3.5c4,1.1,6.2-2.3,10.4-0.4
+                  c1.4,0.6,2,3.4,4.1,3c3-0.6,0.6-3.9-0.7-4.6c2.4-1.2,7.3-0.7,7.6,2.5c0.3,3.9-5.7,3-4.4,7.4c0.9,0.3,3.3,0.2,3.8,0.6
+                  c0.2,0.1,2.5,1.9,2.5,1.9c0.2,0.1,1.1,1.8,1.6,2.1c0.6,0.4,2.2-0.1,3,0.3c2.3,1.2,3.2,1.7,5.5,2.7c1.8,0.8,3,0.2,4.3,1.9
+                  c-2.5,1.8-7.4,2.1-10.3,3.1c-5.3,1.8-3.9,2-7,6.6c-2.1,3.1-4.5,4.9-8,4.8c-0.9,0-3.5-1.8-5.4-1.9c-2.5-0.1-4.6,0.7-7.1,0.1
+                  c-3.6-0.8-5.6-4.3-8.5-6.6c-1.1-0.8-2.9-1-4-2c-1.5-1.2-2.1-3.6-3.1-4.5c-1.9-1.8-3.8-1.2-5.9-3c-1.8-1.6-1-3.6-3-4.6
+                  c-3.3-1.8-6.9,1.4-10.1-1.9c-5.6,2.8-7.1-2.7-8.8-7c3.1,0.1,2.8-2.3,4.9-3.7c2.7-1.8,4.7-1.9,7.9-1.9c0.1-3,0.5-5.9,1.1-8.8
+                  c0.3-1.6,1.5-4,1.6-5c0.2-1.4,1.4-2.2,0.7-4.1c-5.5,0.4-6.8-1.6-7.3-6.7c-0.6-5.8,0.6-7.3,4.1-11.4c2.7-3.2,5.1-6.6,6.4-10.7
+                  c1-3.1,1-10,3-11.9c0.5-0.4,3.6,6.3,3.9,6.9c1.5,2.9,3.8,4.3,6.8,5.2c0.8,0.2,1.6,0.5,2.4,0.7c1.3,0.4,2.7,1.3,4.1,1.5
+                  c1.3,0.2,2.9,0,3.7-1.1c0.9-1.1,1.6-2.4,2.5-3.6c0.9-1.1,2-1.8,3.1-2.7c1-0.8,1.8-2,3-2.6c1-0.5,2.4-0.8,3.5-0.7
+                  c2,0,3.3,0.8,4.6,2.2c1.2,1.4,1.3,2.8,1.8,4.5c0.4,1.1,1.2,2.2,2.1,3.1c0.4,0.4,2.7,1.7,2.8,2.1c0.1,0.7-1.6,2-2,2.5
+                  c-0.8,1-1.5,2-2.1,3C297.3,9.9,297.2,12.5,297.9,15.1z" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kota Magelang" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M485,115.9c-0.3-0.8-0.3-1.9-0.4-2.3c-0.1-0.4-0.2-0.7-0.2-1.1c0-0.4,0.1-0.8,0.3-1
+ c0.2-0.2,0.4-0.3,0.6-0.4c0.6-0.5,0.8-1.3,1-2c0.1-0.5,0.5-1.5,1.3-1.2c0.5,0.2,0.5,0.9,0.4,1.4c-0.1,0.5-0.2,1.1,0.1,1.5
+ c0.1,0.1,0.3,0.2,0.4,0.4c0.2,0.3,0.1,0.8,0.2,1.2c0.1,0.8,0.9,1.5,0.6,2.3c-0.3,0.8-1.5,0.7-2.1,1.2c-0.3,0.2-0.5,0.6-0.8,0.7
+ C485.6,116.9,485.2,116.5,485,115.9z" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kota Surakarta" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M565.8,116.2c0.7-1.7,1.3-3.7,2.7-4.9c1.4-1.2,3.4-1.4,5.2-1.9c0.2,0,0.3-0.1,0.5-0.1
+                  c0.3,0,0.6,0.2,0.8,0.4c1.7,1.4,3.6,2.4,5.7,3.1c0.5,0.2,1,0.3,1.4,0.5c1,0.4,1.8,1,2.7,1.6c1.4,1,2.7,2,4.1,3
+                  c-1.3-0.1-2.8-0.1-3.7,0.9c-0.6,0.7-0.8,1.6-1.3,2.4c-0.8,1.3-2.7,1.9-4.2,1.3c-0.4-0.2-0.7-0.4-1-0.6c-0.4-0.3-0.8-0.6-1.3-0.9
+                  c-0.8-0.5-1.6-1.1-2.5-1.4c-0.7-0.2-1.5-0.3-2.2-0.1c-0.6,0.2-1.2,0.6-1.8,0c-0.3-0.3-0.3-0.8-0.7-1c-0.6-0.4-1.2,0.4-1.8,0.8
+                  c-0.5,0.5-1.3,0.7-1.9,0.8c-1.2,0.3-2.3,0.5-3.4,1.1c-0.1,0.1-0.3,0.2-0.4,0.2c-0.2,0.1-0.5,0.1-0.7,0.1c0.4-0.3,0.9-0.7,1.3-1
+                  c0.4-0.4,0.6-0.9,0.9-1.3C564.8,118.3,565.3,117.3,565.8,116.2z" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kota Salatiga" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M522.7,76.3c-0.1,0.6,0,1.3,0.2,1.9c0.2,0.5,0.6,0.6,0.8,1c0.5,0.7,0.6,1.8,0.7,2.7
+                  c0.1,0.7,0.1,1.3,0,2c0,0.2,0.2,2,0.4,2.1c0,0.3,0,0.6,0.1,0.9c0.8-0.1,1.6,0.6,1.9,1.5c0.7,0.6,1.7-0.2,2.3-0.9
+                  c0.2-0.3-0.5-1.5-0.3-1.8c0.4-0.5,1.9-0.1,2.2-0.7c0.3-0.6,0.4-1.5,0.2-2.1c-0.2-0.6-0.4-3.3-0.8-3.7c-1.3-1.8,0.1-4.6,0.4-7
+                  c-0.7,1.1-3.2,4.2-4.3,4.3c-0.6,0.1-1.2-0.1-1.6-0.6c-0.2-0.2-0.3-0.5-0.4-0.7C523.8,74.6,522.9,75.5,522.7,76.3z" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kota Semarang" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M519.1,39.5c0.9-0.5,1.9-1,2.8-1.4c0.3-0.1,0.6-0.3,0.7-0.5c0.3-0.4,0.3-1,0.3-1.5
+                  c0.2-1.9,1.4-2.9,2.8-4c2.7-2.1,4.4-6.1,2.3-9.5c-1.7-2.8-5.7-3-3.5-7.5c-5.6,3.6-12.5,3.7-18.9,3.9c-3.4,0.1-5-1.4-8.1-2.1
+                  c-2.6-0.6-3.3,0.2-3.5,1.9c-1.4,2.7-2.4,6.6-2.8,9.2c-0.6,4.4,1.2,5.3,3,8.7c1.1,2.1,1.3,4.3,3.6,5.5c1.2,0.6,2.7,0.8,4,0.9
+                  c3.2,0.2,6.5-0.4,9.7-0.9c1.1-0.2,2.2-0.4,3.3-0.7c1.3-0.4,2.5-1,3.7-1.7C518.8,39.7,519,39.6,519.1,39.5z" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kota Pekalongan" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M396.2,15.3c0.6-0.4,1.1-1,1.6-1.4c0.7-0.6,1.6-1.1,2.5-1.3c0.4-0.1,0.8-0.1,1.2-0.3
+                  c1-0.5,2.1-2.8,2.4-3.8c0.7-2.3-3.2-2.7-4.7-3.1c-0.4-0.1-0.8-0.4-1.3-0.5c-0.7-0.2-1.3-0.4-2-0.6c-1.3-0.4-2.9-0.3-4.2-0.7
+                  c0,0.1,0,0.2,0,0.2c-0.3-0.2-0.7-0.3-1.3-0.6c-1.4-0.6-2.6-1.2-4-1.5c-4.8-0.9-4.2,4.9-7.2,6.9c-0.7,0.5-1.6,0.8-2.2,1.4
+                  c-0.9,1.1-0.3,2.8,0.8,3.7c0.8,0.6,1.7,0.9,2.7,1.2c2.2,0.6,4.4,1.2,6.6,1.9c1.1,0.3,2.3,0.6,3.4,0.1c0.9-0.5,1.6-1.7,2.6-1.7
+                  c0.7,0,1.3,0.4,1.9,0.4C395.5,15.6,395.9,15.5,396.2,15.3z" data-v-5236494e=""></path></g><g class="btn-maps tooltipped" id="tooltipped" data-position="top" data-delay="50" name-tooltip="Kota Tegal" date-tooltip="2026-04-10" harga-tooltip="N/A" data-tooltip-id="88c1014f-b50a-64b2-49f6-b31c47acee80" data-v-5236494e=""><path fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" fill="#D1CFD7" d="M320.2,7.2c0-0.2-0.2-0.2-0.4-0.3c-1.6-0.5-3.3-0.8-4.9-1.5c-0.9-0.4-2.4-1.5-3.5-1.3
+                  c-0.5,0.1-0.5,0,0-0.1c0.1,0,0.3,0,0.5,0c-0.5-0.1-0.9-0.4-1.4-0.5c-0.5-0.1-1.2-0.2-1.8-0.2c-0.6,0-1.2,0-1.9,0
+                  c-0.5,0-1,0-1.5-0.1c-0.3-0.1-0.6-0.2-0.9-0.4c-0.2-0.2-0.5-0.3-0.7-0.5c-0.2-0.1-0.3-0.3-0.5-0.4c-0.2-0.1-0.4-0.4-0.6-0.2
+                  c-0.2,0.2-0.2,0.5-0.3,0.7c-0.1,0.2-0.3,0.4-0.4,0.5c-0.4,0.4-0.9,0.8-1.3,1.3c-1.3,1.6-2.5,3.2-3,5.2c-0.1,0.4-0.2,0.8,0,1.3
+                  c0.1,0.3,0.3,0.6,0.5,0.8c1.4,1.4,3.5,1.5,5.4,1.2c1.9-0.3,3.7-1.1,5.6-1.5c1.2-0.2,2.4-0.3,3.5-0.2c0.9,0,1.7,0.2,2.6-0.1
+                  c0.8-0.2,1.4-0.7,2.1-1.2c0.9-0.7,1.8-1.4,2.6-2.2C320.1,7.5,320.2,7.4,320.2,7.2z" data-v-5236494e=""></path></g></svg><!----><!----><div class="description" data-v-5236494e=""></div></div><span class="text-white text-lg font-semibold">Beras IR 64 Premium (Kg)</span><div data-v-61f77db6=""><div class="pb-5 mt-5" data-v-61f77db6=""><div class="rangecolor grid grid-cols-6" data-v-61f77db6=""><div id="satu" data-v-61f77db6=""></div><div id="dua" data-v-61f77db6=""></div><div id="tiga" data-v-61f77db6=""></div><div id="empat" data-v-61f77db6=""></div><div id="lima" data-v-61f77db6=""></div><div id="enam" data-v-61f77db6=""></div></div></div><div class="boxrangecolor grid xl:grid-cols-4 md:grid-cols-3 grid-cols-1 p-2 mt-3" data-v-61f77db6="" style="display: none;"><div class="text-xs md:text-sm whitespace-nowrap" data-v-61f77db6="" style="color: rgb(255, 82, 155);"><i class="fa-solid fa-circle py-2 px-1" data-v-61f77db6=""></i><span data-v-61f77db6="">Turun &gt; 10%</span></div><div class="text-xs md:text-sm whitespace-nowrap" data-v-61f77db6="" style="color: rgb(202, 1, 235);"><i class="fa-solid fa-circle py-2 px-1" data-v-61f77db6=""></i><span data-v-61f77db6="">Turun 5% - 10%</span></div><div class="text-xs md:text-sm whitespace-nowrap" data-v-61f77db6="" style="color: rgb(231, 150, 29);"><i class="fa-solid fa-circle py-2 px-1" data-v-61f77db6=""></i><span data-v-61f77db6="">Turun 0% - 5%</span></div><div class="text-xs md:text-sm whitespace-nowrap" data-v-61f77db6="" style="color: rgb(39, 174, 101);"><i class="fa-solid fa-circle py-2 px-1" data-v-61f77db6=""></i><span data-v-61f77db6="">Naik 0%-5%</span></div><div class="text-xs md:text-sm whitespace-nowrap" data-v-61f77db6="" style="color: rgb(255, 224, 0);"><i class="fa-solid fa-circle py-2 px-1" data-v-61f77db6=""></i><span data-v-61f77db6="">Naik 5% - 10%</span></div><div class="text-xs md:text-sm whitespace-nowrap" data-v-61f77db6="" style="color: rgb(220, 39, 49);"><i class="fa-solid fa-circle py-2 px-1" data-v-61f77db6=""></i><span data-v-61f77db6="">Naik &gt; 10%</span></div><div class="text-xs md:text-sm whitespace-nowrap" data-v-61f77db6="" style="color: rgb(209, 207, 215);"><i class="fa-solid fa-circle py-2 px-1" data-v-61f77db6=""></i><span data-v-61f77db6="">Tidak update</span></div><div class="text-xs md:text-sm whitespace-nowrap" data-v-61f77db6="" style="color: rgb(255, 255, 255);"><i class="fa-solid fa-circle py-2 px-1" data-v-61f77db6=""></i><span data-v-61f77db6="">Tidak ada data</span></div></div></div></div><div class="hidden mt-10"><div class=""><canvas id="bar-chart" width="0" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;"></canvas></div><span class="text-white text-lg font-semibold">Beras IR 64 Premium (Kg)</span><div data-v-61f77db6=""><div class="pb-5 mt-5" data-v-61f77db6=""><div class="rangecolor grid grid-cols-6" data-v-61f77db6=""><div id="satu" data-v-61f77db6=""></div><div id="dua" data-v-61f77db6=""></div><div id="tiga" data-v-61f77db6=""></div><div id="empat" data-v-61f77db6=""></div><div id="lima" data-v-61f77db6=""></div><div id="enam" data-v-61f77db6=""></div></div></div><div class="boxrangecolor grid xl:grid-cols-4 md:grid-cols-3 grid-cols-1 p-2 mt-3" data-v-61f77db6="" style="display: none;"><div class="text-xs md:text-sm whitespace-nowrap" data-v-61f77db6="" style="color: rgb(255, 82, 155);"><i class="fa-solid fa-circle py-2 px-1" data-v-61f77db6=""></i><span data-v-61f77db6="">Turun &gt; 10%</span></div><div class="text-xs md:text-sm whitespace-nowrap" data-v-61f77db6="" style="color: rgb(202, 1, 235);"><i class="fa-solid fa-circle py-2 px-1" data-v-61f77db6=""></i><span data-v-61f77db6="">Turun 5% - 10%</span></div><div class="text-xs md:text-sm whitespace-nowrap" data-v-61f77db6="" style="color: rgb(231, 150, 29);"><i class="fa-solid fa-circle py-2 px-1" data-v-61f77db6=""></i><span data-v-61f77db6="">Turun 0% - 5%</span></div><div class="text-xs md:text-sm whitespace-nowrap" data-v-61f77db6="" style="color: rgb(39, 174, 101);"><i class="fa-solid fa-circle py-2 px-1" data-v-61f77db6=""></i><span data-v-61f77db6="">Naik 0%-5%</span></div><div class="text-xs md:text-sm whitespace-nowrap" data-v-61f77db6="" style="color: rgb(255, 224, 0);"><i class="fa-solid fa-circle py-2 px-1" data-v-61f77db6=""></i><span data-v-61f77db6="">Naik 5% - 10%</span></div><div class="text-xs md:text-sm whitespace-nowrap" data-v-61f77db6="" style="color: rgb(220, 39, 49);"><i class="fa-solid fa-circle py-2 px-1" data-v-61f77db6=""></i><span data-v-61f77db6="">Naik &gt; 10%</span></div><div class="text-xs md:text-sm whitespace-nowrap" data-v-61f77db6="" style="color: rgb(209, 207, 215);"><i class="fa-solid fa-circle py-2 px-1" data-v-61f77db6=""></i><span data-v-61f77db6="">Tidak update</span></div><div class="text-xs md:text-sm whitespace-nowrap" data-v-61f77db6="" style="color: rgb(255, 255, 255);"><i class="fa-solid fa-circle py-2 px-1" data-v-61f77db6=""></i><span data-v-61f77db6="">Tidak ada data</span></div></div></div></div></div></div><div class="bg-primary bg-opacity-80 rounded-md px-4 py-4 mb-5 relative xl:col-span-4 col-span-12 xl:ml-5"><div class="relative text-white" data-v-21065f84=""><div class="grid grid-cols-12 bg-biruGelap py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kabupaten/Kota</span><span class="col-span-4" data-v-21065f84="">Harga</span></div><div class="kab divide-y divide-solid divide-gray-100 overflow-auto scrollbar" data-v-21065f84=""><!----><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Prov. Jawa Tengah</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kabupaten Cilacap</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kabupaten Banyumas</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kabupaten Purbalingga</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kabupaten Banjarnegara</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kabupaten Kebumen</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kabupaten Purworejo</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kabupaten Wonosobo</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kabupaten Magelang</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kabupaten Boyolali</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kabupaten Klaten</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kabupaten Sukoharjo</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kabupaten Wonogiri</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kabupaten Karanganyar</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kabupaten Sragen</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kabupaten Grobogan</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kabupaten Blora</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kabupaten Rembang</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kabupaten Pati</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kabupaten Kudus</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kabupaten Jepara</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kabupaten Demak</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kabupaten Semarang</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kabupaten Temanggung</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kabupaten Kendal</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kabupaten Batang</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kabupaten Pekalongan</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kabupaten Pemalang</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kabupaten Tegal</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kabupaten Brebes</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kota Magelang</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kota Surakarta</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kota Salatiga</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kota Semarang</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kota Pekalongan</span><span class="col-span-4" data-v-21065f84="">N/A</span></div><div class="grid grid-cols-12 py-2 px-3" data-v-21065f84=""><span class="col-span-8" data-v-21065f84="">Kota Tegal</span><span class="col-span-4" data-v-21065f84="">N/A</span></div></div></div><div class="mt-10 flex justify-between items-center"><button class="bg-blue-600 text-white py-1 px-2 rounded-md text-sm"><i class="fa-solid fa-map"></i><span class="ml-3">Tampilan Peta</span></button><button class="border border-blue-600 text-blue-600 py-1 px-2 rounded-md text-sm"><i class="fa-solid fa-chart-simple"></i><span class="ml-3">Histogram</span></button></div></div></div><div class="text-center space-y-5" data-v-1579371a=""><h3 class="text-white text-2xl font-semibold" data-v-1579371a="">Harga rata rata dan Perubahan</h3><div class="bg-primary bg-opacity-80 rounded-md px-4 py-4 mb-5 relative flex justify-around py-5 items-center averageselect mx-auto" data-v-1579371a=""><span class="text-white font-semibold" data-v-1579371a="">10 April 2026</span><div data-v-1579371a=""><label for="harga" class="block mb-2 text-sm text-white" data-v-1579371a="">Kabupaten/Kota</label><select id="harga" class="bg-gray-50 py-1 text-gray-900 text-sm rounded-md focus:ring-0 focus:border-0 block w-full" data-v-1579371a=""><option value="0" data-v-1579371a="">Prov. Jawa Tengah</option><option value="1" data-v-1579371a="">Kabupaten Cilacap</option><option value="2" data-v-1579371a="">Kabupaten Banyumas</option><option value="3" data-v-1579371a="">Kabupaten Purbalingga</option><option value="4" data-v-1579371a="">Kabupaten Banjarnegara</option><option value="5" data-v-1579371a="">Kabupaten Kebumen</option><option value="6" data-v-1579371a="">Kabupaten Purworejo</option><option value="7" data-v-1579371a="">Kabupaten Wonosobo</option><option value="8" data-v-1579371a="">Kabupaten Magelang</option><option value="9" data-v-1579371a="">Kabupaten Boyolali</option><option value="10" data-v-1579371a="">Kabupaten Klaten</option><option value="11" data-v-1579371a="">Kabupaten Sukoharjo</option><option value="12" data-v-1579371a="">Kabupaten Wonogiri</option><option value="13" data-v-1579371a="">Kabupaten Karanganyar</option><option value="14" data-v-1579371a="">Kabupaten Sragen</option><option value="15" data-v-1579371a="">Kabupaten Grobogan</option><option value="16" data-v-1579371a="">Kabupaten Blora</option><option value="17" data-v-1579371a="">Kabupaten Rembang</option><option value="18" data-v-1579371a="">Kabupaten Pati</option><option value="19" data-v-1579371a="">Kabupaten Kudus</option><option value="20" data-v-1579371a="">Kabupaten Jepara</option><option value="21" data-v-1579371a="">Kabupaten Demak</option><option value="22" data-v-1579371a="">Kabupaten Semarang</option><option value="23" data-v-1579371a="">Kabupaten Temanggung</option><option value="24" data-v-1579371a="">Kabupaten Kendal</option><option value="25" data-v-1579371a="">Kabupaten Batang</option><option value="26" data-v-1579371a="">Kabupaten Pekalongan</option><option value="27" data-v-1579371a="">Kabupaten Pemalang</option><option value="28" data-v-1579371a="">Kabupaten Tegal</option><option value="29" data-v-1579371a="">Kabupaten Brebes</option><option value="30" data-v-1579371a="">Kota Magelang</option><option value="31" data-v-1579371a="">Kota Surakarta</option><option value="32" data-v-1579371a="">Kota Salatiga</option><option value="33" data-v-1579371a="">Kota Semarang</option><option value="34" data-v-1579371a="">Kota Pekalongan</option><option value="35" data-v-1579371a="">Kota Tegal</option></select></div></div><div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 relative" data-v-1579371a=""><!----></div><div data-v-1579371a=""><span class="text-white" data-v-1579371a="">Tidak ada data</span></div><div data-v-1579371a="" style="display: none;"><button type="button" class="text-white bg-blue-600 py-1 px-3 rounded-md" data-v-1579371a="">Lihat Semua</button></div></div></div></div></div><div class="flex fixed bottom-0 z-10 sm:text-base text-sm" data-v-56eec344="" data-v-7fa2a9ae=""><div class="bg-biruGelap text-white text-center harga" data-v-56eec344=""><span data-v-56eec344="">Harga hari ini</span></div><div class="bg-primary bg-opacity-80 text-white" data-v-56eec344=""><div class="marquee-text-wrap" data-v-56eec344=""><div class="marquee-text-content"><div class="marquee-text-text" style="animation-duration: 500s;"><ul class="flex space-x-10" data-v-56eec344=""></ul></div><div class="marquee-text-text" style="animation-duration: 500s;"><ul class="flex space-x-10" data-v-56eec344=""><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Prov. Jawa Tengah ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Cilacap ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Banyumas ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Purbalingga ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Banjarnegara ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Kebumen ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Purworejo ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Wonosobo ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Magelang ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Boyolali ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Klaten ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Sukoharjo ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Wonogiri ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Karanganyar ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Sragen ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Grobogan ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Blora ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Rembang ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Pati ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Kudus ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Jepara ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Demak ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Semarang ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Temanggung ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Kendal ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Batang ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Pekalongan ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Pemalang ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Tegal ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Brebes ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kota Magelang ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kota Surakarta ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kota Salatiga ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kota Semarang ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kota Pekalongan ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kota Tegal ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Prov. Jawa Tengah ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Cilacap ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Banyumas ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Purbalingga ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Banjarnegara ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Kebumen ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Purworejo ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Wonosobo ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Magelang ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Boyolali ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Klaten ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Sukoharjo ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Wonogiri ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Karanganyar ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Sragen ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Grobogan ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Blora ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Rembang ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Pati ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Kudus ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Jepara ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Demak ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Semarang ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Temanggung ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Kendal ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Batang ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Pekalongan ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Pemalang ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Tegal ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kabupaten Brebes ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kota Magelang ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kota Surakarta ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kota Salatiga ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kota Semarang ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kota Pekalongan ) 2026-04-10 - Rp0</span></li><li data-v-56eec344=""><span data-v-56eec344="">Beras IR 64 Premium (Kg) ( Kota Tegal ) 2026-04-10 - Rp0</span></li></ul></div></div></div></div></div></div><script src="https://unpkg.com/flowbite@1.4.7/dist/datepicker.js"></script><script src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js" charset="utf-8"></script><script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script><script src="/js/chunk-vendors.3875398e.js"></script><script src="/js/app.12a7e4f7.js"></script><script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;21cf52f502d64cd0b48eba85ba7c4af4&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+<svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg></body></html>

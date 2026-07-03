@@ -1,0 +1,85 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>Web Widget Live Chat</title>
+  <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=web_widget/milototo.zendesk.com"></script></head>
+  <body>
+    <script type="text/javascript">
+      var parseQueryParams = function(inputString) {
+        var params = {},
+          queries
+
+        inputString = inputString.substring(inputString.indexOf('#') + 1)
+        queries = inputString.split('&')
+
+        queries.forEach(function(element) {
+          var splitElement = element.split('=')
+
+          if (splitElement.length > 1) {
+            params[splitElement[0]] = splitElement[1]
+          }
+        })
+
+        return params
+      }
+
+      var decodeSettings = function(encodedSettings) {
+        return JSON.parse(decodeURIComponent(window.atob(encodedSettings)))
+      }
+
+      var parseSettings = function(parameters) {
+        if (!parameters || !parameters.settings) return {}
+
+        return decodeSettings(parameters.settings)
+      }
+
+      var setPageTitle = function(title) {
+        if (title) {
+          document.title = decodeURI(title)
+        }
+      }
+
+      var loadLocale = function(locale) {
+        if (locale) {
+          zE('webWidget', 'setLocale', locale)
+        }
+      }
+
+      var loadSnippet = function(parameters) {
+        var head = document.head
+        var scriptElement = document.createElement('script')
+
+        window.zEPopout = true
+        scriptElement.id = 'ze-snippet'
+
+        if (parameters && typeof parameters === 'object') {
+          scriptElement.src = 'https://static.zdassets.com/ekr/snippet.js'
+
+          if (parameters.key) {
+            scriptElement.src += '?key=web_widget/' + parameters.key
+          }
+          // Insert other required parameters below
+          head.appendChild(scriptElement)
+          if (parameters.locale) {
+            scriptElement.onload = function() {
+              loadLocale(queryParams.locale)
+            }
+          }
+        }
+      }
+
+      var queryParams = parseQueryParams(window.location.hash)
+
+      if (queryParams.mid) {
+        document.cookie = '__zlcpomid=' + queryParams.mid + '; SameSite=Lax'
+        window.location.href = (window.location.href || '').replace(/([#?&])mid=[^&#]+/, '$1')
+      }
+
+      window.zESettings = parseSettings(queryParams)
+
+      setPageTitle(queryParams.title)
+      loadSnippet(queryParams)
+    </script>
+  
+
+<iframe data-product="web_widget" title="No content" role="presentation" tabindex="-1" allow="microphone *" aria-hidden="true" src="about:blank" style="width: 0px; height: 0px; border: 0px; position: absolute; top: -9999px;"></iframe><div><iframe title="Membuka widget tempat Anda dapat mengobrol dengan salah seorang agen kami" id="launcher" tabindex="-1" style="color-scheme: light; width: 105px; height: 50px; padding: 0px; margin: 10px 20px; position: fixed; bottom: 30px; overflow: visible; opacity: 0; border: 0px; z-index: 999998; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); transition-property: opacity, top, bottom; top: -9999px; visibility: hidden;"></iframe><iframe title="Temukan informasi lebih lanjut di sini" id="webWidget" tabindex="0" style="color-scheme: light; width: 100%; max-height: none; height: 100%; position: fixed; opacity: 1; border: 0px; max-width: 100%; inset: 0px; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); transition-property: opacity, top, bottom; z-index: 999999;"></iframe></div></body></html>

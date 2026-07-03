@@ -1,0 +1,671 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Kemitraan Pertamina</title>
+    <link rel="icon" href="/images/favicon.webp" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/bundles/layout.min.css?v=pco_6adA2LaBvtileM-1dlMAo9URrZAZ_gwfDZ3bYhM">
+    <script>
+	var slug = ""
+	var env = ""
+	if (slug == '') {
+		slug = '/';
+	} else {
+		slug += '/';
+	}
+
+	var grecaptchaKey = "6LezTkskAAAAAPhAjKVAwZyH2R1n6nE4xvH1Ahqw"
+	var gmapKey = "AIzaSyBoGWNXoqfBiMXvZdVyQipClT3Bn9Zd2oU"
+
+	var baseURIPP = "https://pp.service.patraniaga.com/api/"
+	var baseURIFile = "https://file.service.patraniaga.com/api/"
+	var baseURIPEMBANGUNAN = "https://pembangunan.service.patraniaga.com/api/"
+	var baseURIKONTRAK = "https://kontrak.service.patraniaga.com/api/"
+	var baseURIKSO = "https://kso.service.patraniaga.com/api/"
+	var baseURIFileSPBB = "https://file.service.patraniaga.com/api/spbb/"
+
+	var baseURINFR = "https://kemitraan.patraniaga.com:7009/api/"
+	var baseURIFileNFR = "https://kemitraan.patraniaga.com:6009/api/"
+	var baseURIFileTENANT = "https://kemitraan.patraniaga.com:6009/api/tenant/"
+
+	var baseURIMasterDDMS = "https://master.service.patraniaga.com/api/"
+	var baseURIDataUtamaDDMS = "https://ddms.service.patraniaga.com/api/"
+	var baseURIFileDDMS = "https://file.service.patraniaga.com/api/"
+
+	var baseURIFileINMAR = "https://file-inmar.patraniaga.com/api/"
+	var baseURIINMAR = "https://dashboard-inmar.patraniaga.com/api/"
+	var baseURIMasterINMAR = "https://master-inmar.patraniaga.com/api/"
+
+	var baseURIFileAMT = "https://file.service.patraniaga.com/api/amt/"
+	var baseURIAMT = "https://kemitraan-amt.patraniaga.com/api/"
+	var baseURIMasterAMT = ""
+
+	var accessTokenName = "token"
+	var refreshTokenName = "mitraRefreshToken"
+
+	const SequenceInputdata = 1;
+	const SequenceVerifikasiDokumen = 2;
+	const SeqPembayaranVerifikasi = 3
+	const SequenceVerifikasiLapangan = 4;
+	const SequenceVerifikasiPusat = 5;
+	const SequenceVerifikasiKelengkapan = 6;
+	const SequencePersetujuanPrinsip = 7;
+	const SequenceInitialFeePembayaran = 8;
+	const SequenceDokumenPerizinan = 9;
+	const SequenceKonsultanKontraktor = 0;
+	const SequencePengajuanLayout = 10;
+	const SequencePengajuanDED = 11;
+	const SequenceKickoffMeeting = 12;
+	const SequencePersetujuanBangun = 13;
+	const SequenceProgresPembangunanAwal = 14;
+	const SequencePenerbitanNoSPBU = 15;
+	const SequenceProgessPembangunanAkhir = 16;
+	const SequenceKontrak = 17;
+	const SequenceSHPenebusanPerdana = 18;
+	const SequenceTeraDispenser = 19;
+	const SequenceSuratIzinOperasi = 20;
+</script>
+<script src="/bundles/layout.header.min.js?v=KJwwC3iz-H02jqlEO4l_tUkKpNvxDVgetVhQUhS2Ijc"></script><style type="text/css">span.im-caret {
+    -webkit-animation: 1s blink step-end infinite;
+    animation: 1s blink step-end infinite;
+}
+
+@keyframes blink {
+    from, to {
+        border-right-color: black;
+    }
+    50% {
+        border-right-color: transparent;
+    }
+}
+
+@-webkit-keyframes blink {
+    from, to {
+        border-right-color: black;
+    }
+    50% {
+        border-right-color: transparent;
+    }
+}
+
+span.im-static {
+    color: grey;
+}
+
+div.im-colormask {
+    display: inline-block;
+    border-style: inset;
+    border-width: 2px;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+div.im-colormask > input {
+    position: absolute;
+    display: inline-block;
+    background-color: transparent;
+    color: transparent;
+    -webkit-appearance: caret;
+    -moz-appearance: caret;
+    appearance: caret;
+    border-style: none;
+    left: 0; /*calculated*/
+}
+
+div.im-colormask > input:focus {
+    outline: none;
+}
+
+div.im-colormask > input::-moz-selection{
+    background: none;
+}
+
+div.im-colormask > input::selection{
+    background: none;
+}
+div.im-colormask > input::-moz-selection{
+    background: none;
+}
+
+div.im-colormask > div {
+    color: black;
+    display: inline-block;
+    width: 100px; /*calculated*/
+}</style>
+
+    
+</head>
+<body states="">
+    <nav class="navbar main navbar-expand-lg fixed-top">
+        <div class="container">
+            <img src="/images/logo_1.webp" width="180" alt="Pertamina Logo">
+            <a class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <h5 class="mb-0"><i class="icon ion-navicon-round text-white"></i></h5>
+            </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-icon" href="/home" role="button" aria-haspopup="true" aria-expanded="false">
+                            Beranda
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link nav-link-icon dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Info
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/info/spbu">SPBU</a>
+                            <a class="dropdown-item" href="/info/spbun">SPBU Nelayan</a>
+                            <a class="dropdown-item" href="/info/satuharga">BBM Satu Harga</a>
+                            <a class="dropdown-item" href="/info/pts">Pertashop Platinum</a>
+                            <a class="dropdown-item" href="/info/mitra/amt">Agen Minyak Tanah</a>
+                            <a class="dropdown-item" href="/info/mitra/dmut">Trading Operation Bisnis</a>
+                            <a class="dropdown-item" href="/info/mitra/inmar">Industrial &amp; Marine Fuel Business</a>
+                            <a class="dropdown-item" href="/info/spbe-pso">SPBE PSO</a>
+                            <a class="dropdown-item" href="/info/spbe-non-pso">SPBE Non PSO</a>
+                            <a class="dropdown-item" href="/info/bpt-pso">Bengkel Pemeliharaan Tabung LPG 3 kg</a>
+                            <a class="dropdown-item" href="/info/bpt-non-pso">Bengkel Pemeliharaan Tabung LPG Non PSO</a>
+                            <a class="dropdown-item" href="/info/agen-pso">Keagenan LPG PSO</a>
+                            <a class="dropdown-item" href="/info/agen-non-pso">Keagenan LPG Non PSO</a>
+                            
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link nav-link-icon dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Prosedur
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/procedure/spbu">SPBU</a>
+                            <a class="dropdown-item" href="/procedure/spbun">SPBU Nelayan</a>
+                            <a class="dropdown-item" href="/procedure/pts">Pertashop Platinum</a>
+                            <a class="dropdown-item" href="/procedure/spbe">SPBE</a>
+                            <a class="dropdown-item" href="/procedure/bpt">Bengkel Pemeliharaan Tabung</a>
+                            <a class="dropdown-item" href="/procedure/agen">Keagenan</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link nav-link-icon dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Ketentuan Penggunaan
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/user-terms/spbu">Calon Mitra SPBU</a>
+                            <a class="dropdown-item" href="/user-terms/ddms-fuel">SPBU Beroperasi</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-icon" href="/faq" role="button" aria-haspopup="true" aria-expanded="false">
+                            Tanya Jawab
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-icon" href="/contact" role="button" aria-haspopup="true" aria-expanded="false">
+                            Kontak
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-icon" href="/register">
+                            Register
+                        </a>
+                    </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link nav-link-icon dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Login
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/mitra/login">Mitra</a>
+                                <a class="dropdown-item" href="/spbu/login">SPBU</a>
+                                <a class="dropdown-item" href="/tenant/login">Tenant</a>
+                                <a class="dropdown-item" href="/mitra/amt/login">AMT</a>
+                                <a class="dropdown-item" href="/mitra/inmar/login">Industry Marine</a>
+                            </div>
+                        </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="main">
+        <div class="container">
+            <div id="content" class="content pt-0">
+                <div id="page-content" data-controller="" data-action="" data-title="Home">
+    <style>
+        .btn-yellow {
+            background-color: #c4d231;
+            color: #000;
+            border: none;
+            padding: 9px;
+            font-size: 0.8vw;
+        }
+
+        .btn-light-blue {
+            color: #076cb5;
+            border: none;
+            padding: 9px;
+            font-size: 0.8vw;
+        }
+
+        .btn-light-red {
+            color: #eb2030;
+            border: none;
+            padding: 9px;
+            font-size: 0.8vw;
+        }
+
+        .btn-light-yellow {
+            color: #000;
+            border: none;
+            padding: 9px;
+            font-size: 0.8vw;
+        }
+
+        .btn-blue {
+            background-color: #076cb5;
+            color: white;
+            border: none;
+            padding: 9px;
+            font-size: 0.8vw;
+        }
+
+        .btn-red {
+            background-color: #eb2030;
+            color: white;
+            border: none;
+            padding: 9px;
+            font-size: 0.8vw;
+        }
+
+        .btn-infomitra {
+            margin-top: 10px;
+        }
+
+        .bx-btn {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            text-align: left;
+        }
+        .modal-content{
+            background-color: rgba(0,0,0,.0001) !important;
+        }
+
+        
+    </style>
+    <div flashes="" id="message"></div>
+	<div class="landing-page">
+            <div class="slideshow-container mt-3">
+
+                <div id="carouselFirst" class="carousel slide pointer-event" data-ride="carousel" data-interval="5000">
+
+                    <ol class="carousel-indicators">
+                            <li data-target="#carouselFirst" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselFirst" data-slide-to="1" class=""></li>
+                    </ol>
+                    <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                    <img src="/images/landing/banner-kemitraanpertashop.webp?v=1MojgNhzXdIunYM-BCNMvp7pWlxo48_w9zQiBqi8QlY" class="d-block w-100" alt="banner-0">
+                            </div>
+                            <div class="carousel-item ">
+                                    <img src="/images/landing/banner-pdp.webp?v=QWgbB3hoxLLabwkOZMMKLg_VxTVQeNTYIeExYH-HVbM" class="d-block w-100" alt="banner-1">
+                            </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselFirst" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselFirst" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+
+            </div> 
+
+		    <div class="slideshow-container mt-3">
+                <div id="carouselSecond" class="carousel slide pointer-event" data-ride="carousel" data-interval="3000">
+
+                    <ol class="carousel-indicators">
+                            <li data-target="#carouselSecond" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselSecond" data-slide-to="1" class=""></li>
+                    </ol>
+
+                    <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                    <a href="https://mypertamina.id">
+                                        <img src="/images/landing/Banner-Carousel-MyPertamina-01.webp?v=lTfsGauvt-Q3aS-hSscW5IkjeEUjJTxzzEAmZiHpO9A" class="d-block w-100" alt="banner2-0">
+                                    </a>
+                            </div>
+                            <div class="carousel-item ">
+                                    <a href="https://kemitraan.patraniaga.com/register/rpj?Service=qboqd57QyIwZhAuOHF-ZbZu3QgfoL8mOsaviGi0xYQo">
+                                        <img src="/images/landing/web_banner_lpg_leaderboard.webp?v=dsQrjtcJvtCkoZmasc5fnCc85Ghg0pWihDiSRfhVYLc" class="d-block w-100" alt="banner2-1">
+                                    </a>
+                            </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselSecond" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselSecond" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+
+		    </div> 
+
+        <div class="mitra0601 mt-5">
+            <div class="text-center mb-4">
+                <h2>JENIS KEMITRAAN</h2>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-12">
+                <div class="row">
+                            <div class="col-md-3">
+                                <div class="mitra03">
+                                    <img src="/images/spbu.webp?v=2ATLT1-0Od4xIRnOyLF_-O8aZbbjY37ja9ITyNXVlCY" alt="" style="width: 100%">
+                                    <div class="bx-btn">
+                                        <div class="btn-daftar text-center">
+                                            <button type="button" class="btn-blue" onclick="window.location.href='/register/spbu?Service=qboqd57QyIwZhAuOHF-ZbTcGDoSHjcaikDdIG3BLTxc'">GABUNG SEKARANG</button>
+                                        </div>
+                                        <div class="btn-infomitra">
+                                            <button type="button" class="btn-light-blue" onclick="window.location.href='/info/spbu'">INFO LEBIH LANJUT</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="mitra03">
+                                    <img src="/images/spbun.webp?v=ucVPm4nOFXAQ8eodGat1WoH5q6cWEcOLO2p182w8uVM" alt="" style="width: 100%">
+                                    <div class="bx-btn">
+                                        <div class="btn-daftar text-center">
+                                            <button type="button" class="btn-blue" onclick="window.location.href='/register/spbu?Service=qboqd57QyIwZhAuOHF-ZbfOxQ31bNAYd1IxhUdjbDh8'">GABUNG SEKARANG</button>
+                                        </div>
+                                        <div class="btn-infomitra">
+                                            <button type="button" class="btn-light-blue" onclick="window.location.href='/info/spbun'">INFO LEBIH LANJUT</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="mitra03">
+                                    <img src="/images/bbm_1_harga.webp?v=S04yws3gvtc8i9z48oujLTTficYzSHcfK9Z-6zx7Fwc" alt="" style="width: 100%">
+                                    <div class="bx-btn">
+                                        <div class="btn-daftar text-center">
+                                            <button type="button" class="btn-blue" onclick="window.location.href='/register/spbu?Service=qboqd57QyIwZhAuOHF-Zbcr9wvbHPOeL-J63-gkUIWo'">GABUNG SEKARANG</button>
+                                        </div>
+                                        <div class="btn-infomitra">
+                                            <button type="button" class="btn-light-blue" onclick="window.location.href='/info/satuharga'">INFO LEBIH LANJUT</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="mitra03">
+                                    <img src="/images/pertashop_platinum.webp?v=hU-NHFQEOQt2cQtwc_bx3upMEaFK2cy6-2RWk91kEss" alt="" style="width: 100%">
+                                    <div class="bx-btn">
+                                        <div class="btn-daftar text-center">
+                                            <button type="button" class="btn-blue" onclick="window.location.href='/register/spbu?Service=qboqd57QyIwZhAuOHF-ZbdKq37_mwpUicYvLpr6QwEQ'">GABUNG SEKARANG</button>
+                                        </div>
+                                        <div class="btn-infomitra">
+                                            <button type="button" class="btn-light-blue" onclick="window.location.href='/info/pts'">INFO LEBIH LANJUT</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="mitra03">
+                                    <img src="/images/spbe-1.webp?v=CqgHe-VFQjEyuc9fvcy5LUDRgcbLR5R8zi7rHOmddRU" alt="" style="width: 100%">
+                                    <div class="bx-btn">
+                                        <div class="btn-daftar">
+                                            <button type="button" class="btn-blue" onclick="window.location.href='/register/rpj?Service=qboqd57QyIwZhAuOHF-ZbUugWfYlW3Cr2Cy6pBHqZpM'">GABUNG SEKARANG</button>
+                                        </div>
+                                        <div class="btn-infomitra">
+                                            <button type="button" class="btn-light-blue" onclick="window.location.href='/info/spbe-pso'">INFO LEBIH LANJUT</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="mitra03">
+                                    <img src="/images/spbe-2.webp?v=zPk1Y6lWkQz1LRR_3yqfsSm79GYkGEfYmr0SrML6fno" alt="" style="width: 100%">
+                                    <div class="bx-btn">
+                                        <div class="btn-daftar">
+                                            <button type="button" class="btn-yellow" onclick="window.location.href='/register/rpj?Service=qboqd57QyIwZhAuOHF-ZbYyvaFKjA2JtqiQTU24RlLI'">GABUNG SEKARANG</button>
+                                        </div>
+                                        <div class="btn-infomitra">
+                                            <button type="button" class="btn-light-yellow" onclick="window.location.href='/info/bpt-pso'">INFO LEBIH LANJUT</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="mitra03">
+                                    <img src="/images/spbe-3.webp?v=TQSlhAVBsjxUdEx8YYOZbWjmQObTfRCb2_UI1eEqbVw" alt="" style="width: 100%">
+                                    <div class="bx-btn">
+
+                                        <div class="btn-daftar">
+                                            <button type="button" class="btn-blue" onclick="window.location.href='/register/rpj?Service=qboqd57QyIwZhAuOHF-ZbZu3QgfoL8mOsaviGi0xYQo'">GABUNG SEKARANG</button>
+                                        </div>
+                                        <div class="btn-infomitra">
+                                            <button type="button" class="btn-light-blue" onclick="window.location.href='/info/agen-pso'">INFO LEBIH LANJUT</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="mitra03">
+                                    <img src="/images/nfr_tenant.webp?v=qL6K5IPS4EZWTKEJ3z85GmSVEar068enhRo2WX-fLnk" alt="" style="width: 100%">
+                                    <div class="bx-btn">
+                                        <div class="btn-daftar text-center">
+                                            <button type="button" class="btn-blue" onclick="window.location.href='/register/tenant?Service=qboqd57QyIwZhAuOHF-ZbYXu3QfM9pmEyd-0adBmMVlXCcTkwJOKodIr-BCRx1Eo'">GABUNG SEKARANG</button>
+                                        </div>
+                                        <div class="btn-infomitra">
+                                            <button type="button" class="btn-light-blue" onclick="window.location.href='/under-construction'">INFO LEBIH LANJUT</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="mitra03">
+                                    <img src="/images/dmut.webp?v=N7L6WZyZ7G7N1J6G0CPKnlwWBDPtS8-tzlElSUDJXS4" alt="" style="width: 100%">
+                                    <div class="bx-btn">
+                                        <div class="btn-daftar text-center">
+                                            <button type="button" class="btn-blue" onclick="window.location.href='https://apps.pertamina.com/DMUT_TOB'">GABUNG SEKARANG</button>
+                                        </div>
+                                        <div class="btn-infomitra">
+                                            <button type="button" class="btn-light-blue" onclick="window.location.href='/info/mitra/dmut'">INFO LEBIH LANJUT</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="mitra03">
+                                    <img src="/images/ebt.webp?v=Nq0X-tc17HulfUA5JbUhk0hBoG3LkwmSmZDai_ZYzmQ" alt="" style="width: 100%">
+                                    <div class="bx-btn">
+                                        <div class="btn-daftar text-center">
+                                            <button type="button" class="btn-blue" onclick="window.location.href='/register/tenant?Service=qboqd57QyIwZhAuOHF-ZbYXu3QfM9pmEyd-0adBmMVlXCcTkwJOKodIr-BCRx1Eo'">GABUNG SEKARANG</button>
+                                        </div>
+                                        <div class="btn-infomitra">
+                                            <button type="button" class="btn-light-blue" onclick="window.location.href='/under-construction'">INFO LEBIH LANJUT</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="bergabung desktop text-center mt-5">
+			<div class="gabung01">
+				<div class="judulgabung ">
+					<h2>4 LANGKAH <br>UNTUK BERGABUNG</h2>
+				</div>
+			</div>
+			<div class="gabung01 mt-3">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="gabung04">
+                            <img src="/images/landing/form-input.webp?v=Rw1Y_JgUMtHs3_yTfYZo04hJvk43nJKNJMC-wkVXnQA" alt="" class="img-fluid img-contain">
+                            <h5>REGISTRASI <br><br></h5>
+                            <!-- <span>(Estimasi 2 Hari)</span> -->
+                            <p>Calon mitra melakukan registrasi dengan melengkapi data dan dokumen yang dipersyaratkan</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="gabung04">
+                            <img src="/images/landing/form-verifikasi.webp?v=J3-29-yWppbzQxC4q40eiO_0x7AhluDxzTbjfyPKgwA" alt="" class="img-fluid img-contain">
+                            <h5>VERIFIKASI <br><br></h5>
+                            <!-- <span>(Estimasi 2 Hari)</span> -->
+                            <p>Verifikasi kesesuaian dokumen persyaratan</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="gabung04">
+                            <img src="/images/landing/pin.webp?v=bBoFZ99DMCfhUyfO9K3SmM59fvUerpxghQdvEj71zFY" alt="" class="img-fluid img-contain">
+                            <h5>PERIZINAN<br>&amp; PEMBANGUNAN</h5>
+                            <!-- <span>(Estimasi 13 Hari)</span> -->
+                            <p>Melengkapi dokumen perizinan dan proses pembangunan</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="gabung04">
+                            <img src="/images/landing/form-check.webp?v=gy8WHl8hxK1jRKozY6uYInE6cYC5eshAq1PtRd5raBU" alt="" class="img-fluid img-contain">
+                            <h5>OPERASI <br><br></h5>
+                            <!-- <span>(Estimasi 77 Hari)</span> -->
+                            <p>Calon mitra melakukan operasional</p>
+                        </div>
+                    </div>
+                </div>
+			</div>
+		</div>
+
+        <div id="mdlAlertAds" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false" role="dialog">
+            <div class="modal-dialog modal-dialog-centered mdl-ads" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close mb-3" data-dismiss="modal">×</button>
+                            <a href="https://forms.gle/F8EDdtuKfSemn2BNA" target="_blank"><img src="/images/ads-01.webp?v=ay42L6GcUrhtU2bTc_sbUhJUdTQpoMniZedkKiBNd4M" class="rounded" alt="" style="width:100%"></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+    <script>
+        var StatusAds = false;
+    </script>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 mb-3">
+                <h4 class="mb-3">
+                    Link
+                    <div style="border-bottom: thin solid red" class="mt-1 w-5"></div>
+                </h4>
+                <ul>
+                    <li>
+                        <a href="/faq">Tanya Jawab</a>
+                    </li>
+                    <li>
+                        <a href="/contact">Kontak</a>
+                    </li>
+                    <li>
+                        <a href="/register">Register</a>
+                    </li>
+                    <li>
+                        <a href="/mitra/login">Login</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6 mb-3">
+                <h4 class="mb-3">
+                    Info
+                    <div style="border-bottom: thin solid red" class="mt-1 w-5"></div>    
+                </h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul>
+                            <li>
+                                <a href="/info/spbu">SPBU</a>
+                            </li>
+                            <li>
+                                <a href="/info/spbun">SPBU Nelayan</a>
+                            </li>
+                            <li>
+                                <a href="/info/satuharga">BBM Satu Harga</a>
+                            </li>
+                            <li>
+                                <a href="/info/pts">Pertashop Platinum</a>
+                            </li>
+                            <li>
+                                <a href="/info/mitra/amt">Agen Minyak Tanah</a>
+                            </li>
+                            <li>
+                                <a href="/info/mitra/dmut">Trading Operation Bisnis</a>
+                            </li>
+                            <li>
+                                <a href="/info/mitra/inmar">Industrial &amp; Marine Fuel Business</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul>
+
+                            <li>
+                                <a href="/info/spbe-pso">SPBE PSO</a>
+                            </li>
+                            <li>
+                                <a href="/info/spbe-non-pso">SPBE Non PSO</a>
+                            </li>
+                            <li>
+                                <a href="/info/bpt-pso">Bengkel Pemeliharaan Tabung LPG 3 kg</a>
+                            </li>
+                            <li>
+                                <a href="/info/bpt-non-pso">Bengkel Pemeliharaan Tabung LPG Non PSO</a>
+                            </li>
+                            <li>
+                                <a href="/info/agen-pso">Keagenan LPG PSO</a>
+                            </li>
+                            <li>
+                                <a href="/info/agen-non-pso">Keagenan LPG NON PSO</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                
+                
+            </div>
+            <div class="col-md-4 mb-3">
+                <h4 class="mb-3">
+                    Contact
+                    <div style="border-bottom: thin solid red" class="mt-1 w-5"></div>
+                </h4>
+                <h1 class="mb-4">
+                    <a href="tel:135">135</a>
+                </h1>
+                <p>Address: Gedung Wisma Tugu II Lt. 2 Jl. HR. Rasuna Said Kav. C7-9 Setiabudi, Kuningan, Jakarta Selatan</p>
+                <p>Email: <a href="mailto:pcc135@pertamina.com">pcc135@pertamina.com</a></p>
+            </div>
+        </div>
+        <hr>
+        <div class="text-center">
+            © Copyright PT. Pertamina Patra Niaga 2026. All Right Reserved
+        </div>
+    </div>
+</div>
+
+    <div class="upload-progress-container"></div>
+    
+    
+        <script src="/bundles/layout.footer.min.js?v=5dYp9IgrBZbwV9JmMGNx4ifovaYeiRpXznTFzKNvFDk"></script>
+    
+    <script id="pagejs" src="/pages/Home/HomeIndex.js?v=-JP3Cev9IRq1BTUSYN2m_7hcBNMhWnJKr74hN1Wzbt4"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoGWNXoqfBiMXvZdVyQipClT3Bn9Zd2oU&amp;callback=initMap&amp;language=id&amp;region=ID&amp;libraries=places"></script>
+
+
+</body></html>

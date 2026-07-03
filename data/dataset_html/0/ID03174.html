@@ -1,0 +1,935 @@
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="mxapp" lang="en"><head id="ctl00_Head1">
+    <!-- MxMasterMin -->
+    <title>
+	MX Lookup Tool - Check your DNS MX Records online - MxToolbox
+</title><meta http-equiv="X-UA-Compatible" content="IE=EDGE;IE=8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="google-site-verification" content="GwYdaYgXD1h8BPlNlBYJznyChgAk-6zFtQqgoCImCj0"><link href="/public/stylesheets/bundles/mx3rdPartyPre.css?v=PC_pVAevhsQBR9h8QUD-eCMhj-vvY2-4kUJi-BC_PVs1" rel="stylesheet">
+<link href="https://mxtoolbox.com/public/stylesheets/min/mx.pre.css?serial=c5e98f98650e6dbf8c19918335d0c471" rel="stylesheet">
+
+
+    <!-- Favicon -->
+    <link rel="manifest" href="/public/favicon/manifest.webmanifest"><link rel="icon" href="/favicon.ico"><link rel="icon" href="/public/favicon/mx-logo-icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/public/favicon/apple-touch-icon.png">
+
+    <!-- Putting these backend-to-frontend variables here allows us to put all the script blocks into files in the future -->
+    <script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=AW-1072310887&amp;cx=c&amp;gtm=4e6481"></script><script src="https://js.hubspot.com/web-interactives-embed.js" type="text/javascript" id="hubspot-web-interactives-loader" crossorigin="anonymous" data-loader="hs-scriptloader" data-hsjs-portal="14537821" data-hsjs-env="prod" data-hsjs-hublet="na1"></script><script src="https://js.hs-analytics.net/analytics/1775818200000/14537821.js" type="text/javascript" id="hs-analytics"></script><script src="https://js.hsadspixel.net/pixels.js" type="text/javascript" id="hs-ads-pixel-14537821" data-ads-portal-id="14537821" data-ads-env="prod" data-loader="hs-scriptloader" data-hsjs-portal="14537821" data-hsjs-env="prod" data-hsjs-hublet="na1"></script><script src="https://js.usemessages.com/conversations-embed.js" type="text/javascript" id="hubspot-messages-loader" data-loader="hs-scriptloader" data-hsjs-portal="14537821" data-hsjs-env="prod" data-hsjs-hublet="na1"></script><script src="https://js.hs-banner.com/v2/14537821/banner.js" type="text/javascript" id="cookieBanner-14537821" data-cookieconsent="ignore" data-hs-ignore="true" data-loader="hs-scriptloader" data-hsjs-portal="14537821" data-hsjs-env="prod" data-hsjs-hublet="na1"></script><script type="text/javascript" async="" src="https://cl.qualaroo.com/ki.js/61819/e3J.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-YT4L4GZFH2&amp;cx=c&amp;gtm=4e6481"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-WBCHSDC"></script><script>
+        (function (MXT) {
+            MXT.DomainName = 'mxtoolbox.com';
+            MXT.MxVWO_AccountId = '24147';
+            MXT.currentLocation = 'supertool';  // Can be overridden by the page's 'head' content.  ['supertool', 'monitoring', 'dc2']
+            MXT.isClassicPaidUser = false; // This is used to determine if the user is paid or not
+
+            window.MXT = MXT;
+        })(window.MXT || (window.MXT = {}));
+    </script>
+
+    
+
+    <noscript id="render-onload">
+        <link href="/public/stylesheets/bundles/mx3rdPartyPost.css?v=wO-1DfOPU-ilJuijwLKn6IWkuAjv43wrd6uQ_OR567k1" rel="stylesheet"/>
+<link href="https://mxtoolbox.com/public/stylesheets/min/mx.post.css?serial=c5e98f98650e6dbf8c19918335d0c471" rel="stylesheet"/>
+
+    </noscript>
+
+    
+    <style type="text/css">
+        /* MEDIA CHANGES */
+        @media (min-width: 1024px) {
+            footer {
+                position: fixed; /* Sticky footer */
+            }
+        }
+
+        @media (max-width: 1024px) {
+            footer {
+                position: static; /* Static bottom footer */
+            }
+        }
+
+        .async-hide {
+            opacity: 0 !important;
+        }
+
+        .ta-hidden-input {
+            opacity: 0 !important;
+        }
+
+        body {
+            background: transparent !important;
+        }
+
+        .tools_lookup, .mx-master-content {
+            min-height: inherit !important;
+            padding: 0 !important;
+        }
+
+        /*
+            To match with the footer, some pages when at that level may get behind the footer since it is absolute
+        */
+        .mx-master-content {
+            margin-bottom: 30px;
+        }
+
+        /*
+            This is preloaded as this, but the postload of bootstrap is overriding it,
+            I am leaving this as an example, we could: leave it as is, or make it !important on the preload, so it persists.
+            If we start pre and post loading styles, we have to be aware that the async loading will override any existing style
+        */
+        h1 {
+            margin-top: 0px !important;
+        }
+
+        /* So the menu does not push everything down when it loads */
+        .navbar {
+            min-height: 50px;
+        }
+
+        .divFooter {
+            min-height: 35px;
+        }
+
+        .aboutSupertool {
+            font-size: 24px;
+        }
+    </style>
+
+    <style>
+        .mx-master-top-navigation {
+            position: relative;
+            z-index: 1000;
+        }
+    </style>
+
+    
+    <script>
+        (function master_config() {
+            window.MXT = window.MXT || {};
+            // This is no longer looked at, 
+            // but leaving this line in case we want to behave different on mxmaster.js
+            MXT.masterMin = true;
+        })();
+    </script>
+
+    
+    <script src="/bundles/mx3rdPartyMinSync.js?v=oUKfU03s4Z9Hw1nBwX_yKENkbOzkxmy7orj67VkgSNc1"></script>
+<script src="/bundles/mx3rdPartyMinDefer.js?v=K7K8ANEVoVmCmGAsvK00mQBAbR0PJIINwyiaoZ3lkzM1" defer=""></script>
+<script src="/bundles/mxSharedMin.js?v=cShWU47cX7D1-5TZPz3W9AdPa356KXSdDCCZj8XUQvM1" defer=""></script>
+<script src="/bundles/mxClassicPreloadMin.js?v=OcJP14_5w21PdkQGhayckKxKxB2IhL-rMr14E5k6wsw1" defer=""></script>
+
+    <script type="text/javascript">       
+        // VWO (needs 3rdPartyScript_Min_Sync)
+        window._vwo_code = MXT.GetVwoCode();
+        window._vwo_settings_timer = window._vwo_code.init();
+    </script><script src="//dev.visualwebsiteoptimizer.com/j.php?a=24147&amp;u=https%3A%2F%2Fmxtoolbox.com%2F&amp;r=0.6823234244616139" type="text/javascript"></script>   
+
+    <!-- Load the "post" styles after the page has loaded  -->
+    <!-- If we want to copy this into MxMaster, we need to check the devtool "coverage": to find and add the missing preload classes to the file -->
+    <script>
+        window.MXT.PostLoader = {
+            Ready: false,
+            Render: function (event) {
+                // Turn off the event caller type 
+                // (to prevent typing or cursor, etc to called this multiple times)
+                $(document).unbind(event.type);
+                if (!window.MXT.PostLoader.Ready) {
+                    // Just load this once
+                    window.MXT.PostLoader.Ready = true;
+                    var e = document.getElementById('render-onload');
+                    var n = document.createElement('div');
+                    n.innerHTML = e.textContent;
+                    document.body.appendChild(n);
+                    e.parentElement.removeChild(e)
+
+                    // In case a page wants to do something after this
+                    document.dispatchEvent(new CustomEvent('mx-post-loader-ready'));
+                }
+            }
+        };
+
+        // The trigger will handle this
+        document.addEventListener('poststyle-trigger', window.MXT.PostLoader.Render);
+    </script>
+    
+
+    
+    <link type="text/css" rel="stylesheet" href="">
+    
+
+    <style>
+        /* These styles, are part of the postload, but they really belong to the preload since the page needs them */
+        .tools_lookup_label input {
+            margin-bottom: 5px;
+        }
+
+        .toolhandler-search-panel h1.search {
+            padding-left: 15px;
+        }
+
+        .toolhandler-search-panel .divInput {
+            padding-left: 30px;
+        }
+
+        .tools_lookup {
+            min-height: 600px
+        }
+
+        .form-horizontal .control-label {
+            width: 120px
+        }
+    </style>
+<style type="text/css">html.hs-messages-widget-open.hs-messages-mobile,html.hs-messages-widget-open.hs-messages-mobile body{overflow:hidden!important;position:relative!important}html.hs-messages-widget-open.hs-messages-mobile body{height:100%!important;margin:0!important}#hubspot-messages-iframe-container{display:initial!important;z-index:2147483647;position:fixed!important;bottom:0!important}#hubspot-messages-iframe-container:hover .hs-drag-handle--v2--widget-open--left,#hubspot-messages-iframe-container:hover .hs-drag-handle--v2--widget-open--right{display:flex!important}#hubspot-messages-iframe-container.widget-align-left{left:0!important}#hubspot-messages-iframe-container.widget-align-right{right:0!important}#hubspot-messages-iframe-container.internal{z-index:1016}#hubspot-messages-iframe-container.internal iframe{min-width:108px}#hubspot-messages-iframe-container .hs-shadow-container{display:initial!important;z-index:-1;position:absolute;width:0;height:0;bottom:0;content:""}#hubspot-messages-iframe-container .hs-shadow-container.internal{display:none!important}#hubspot-messages-iframe-container .hs-shadow-container.active{width:400px;height:400px}#hubspot-messages-iframe-container iframe{display:initial!important;width:100%!important;height:100%!important;border:none!important;position:absolute!important;bottom:0!important;right:0!important;background:transparent!important}#hubspot-messages-iframe-container .hs-drag-handle--v2--widget-open--right{bottom:20px;left:-5px;display:none!important}#hubspot-messages-iframe-container .hs-drag-handle--v2--widget-open--left{bottom:20px;right:-5px;display:none!important}.hs-drag-handle{position:absolute;cursor:grab;height:60px;display:none;align-items:center;transition:opacity .5s ease;transition-delay:.5s;opacity:1}.hs-drag-handle--v1--right{right:82px;bottom:12px}.hs-drag-handle--v1--left{left:82px;bottom:12px}.hs-drag-handle--v2--pill-launcher--right{bottom:20px;left:10px}.hs-drag-handle--v2--pill-launcher--left{bottom:20px;right:10px}.hs-drag-handle--v2--hidden--left,.hs-drag-handle--v2--hidden--right{opacity:0!important;pointer-events:none!important;transition:none!important}.hs-drag-overlay{position:absolute;top:0;left:0;right:0;bottom:0;user-select:none;z-index:999;display:none}</style><style id="_goober"> .go2933276541{position:fixed;display:block;width:100%;height:0px;margin:0px;padding:0px;overflow:visible;transform-style:preserve-3d;background:transparent;backface-visibility:hidden;pointer-events:none;left:0px;z-index:9998;}.go2369186930{top:0px;z-index:9999;height:100%;width:100%;}.go1348078617{bottom:0px;}.go2417249464{position:fixed;z-index:9989;}.go3921366393{left:0;bottom:0;}.go3967842156{right:0;bottom:0;}.go613305155{left:0;top:0;}.go471583506{right:0;top:0;}.go3670563033{position:relative;overflow:hidden;display:none;}.go1041095097{display:block;}.go1632949049{position:absolute;pointer-events:none;width:101vw;height:101vh;background:rgba(0,0,0,0.7);opacity:0;z-index:-1;}.go2512015367{z-index:99998;opacity:0.8;visibility:visible;pointer-events:all;cursor:pointer;}.go1432718904{overflow:hidden;}.go812842568{display:block !important;position:static !important;box-sizing:border-box !important;background:transparent !important;border:none;min-height:0px !important;max-height:none !important;margin:0px;padding:0px !important;height:100% !important;width:1px !important;max-width:100% !important;min-width:100% !important;}.go722322694{transition:none !important;}.go3064412225{z-index:99999;visibility:hidden;position:absolute;inset:50vh auto auto 50%;left:50%;top:50%;transform:translate(-50%,-50%) translateY(100vh);pointer-events:none;max-height:95%;max-width:95%;}.go1656994552{pointer-events:auto !important;visibility:visible;transform:translate(-50%,-50%) translateY(0);transition:transform 0.75s linear(0,0.006,0.023 2.2%,0.096 4.8%,0.532 15.4%,0.72 21%,0.793,0.853 26.7%,0.902,0.941,0.968 36.2%,0.987 39.7%,1 43.7%,1.007 48.3%,1.009 55.3%,1.002 78.2%,1 );}.go456419034{transition:opacity 0.3s ease-in;}.go3128134379{pointer-events:auto !important;visibility:visible !important;max-height:95vh !important;transition:max-height 1s ease-in;}.go494047706{z-index:9999;width:100%;max-height:95%;position:fixed;visibility:hidden;}.go2481764524{z-index:9999;width:100%;max-height:95%;position:fixed;visibility:hidden;bottom:0px;}.go2685733372{visibility:hidden;}.go2985984737{visibility:visible !important;}.go3281949485{pointer-events:auto !important;visibility:visible !important;max-height:95vh !important;transform:none !important;}.go3508454897{z-index:9999;width:100%;max-height:95%;position:fixed;visibility:hidden;transition:transform 1s linear(0,0.006,0.022 2.3%,0.091 5.1%,0.18 7.6%,0.508 16.3%,0.607,0.691,0.762,0.822 28.4%,0.872,0.912 35.1%,0.944 38.9%,0.968 43%,0.985 47.6%,0.996 53.1%,1.001 58.4%,1.003 65.1%,1 );}.go988075951{z-index:9999;position:fixed;left:10px;top:10px;max-height:95vh !important;max-width:95%;visibility:hidden;}.go2699082514{z-index:9999;position:fixed;right:10px;top:10px;max-height:95vh !important;max-width:95%;visibility:hidden;}.go1595992025{z-index:9999;position:fixed;left:10px;bottom:10px;max-height:95vh !important;max-width:95%;visibility:hidden;}.go1222083472{z-index:9999;position:fixed;right:10px;bottom:10px;max-height:95vh !important;max-width:95%;visibility:hidden;}.go26732895{cursor:pointer;}.go2083580917{display:flex;justify-content:center;align-items:center;}</style><style type="text/css" id="ki-f2m-fk1"></style><style type="text/css" id="ki-f2m-fl0"></style><script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-1072310887"></script><script type="text/javascript" async="" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1072310887/?random=1775818582988&amp;cv=11&amp;fst=1775818582988&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;en=gtag.config&amp;gtm=45be6481h1v9102404006za200zb9103115928zd9103115928xec&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=0~115616986~115938465~115938468~117227714&amp;u_w=1366&amp;u_h=768&amp;url=https%3A%2F%2Fmxtoolbox.com%2F&amp;rcb=9&amp;frm=0&amp;tiba=MX%20Lookup%20Tool%20-%20Check%20your%20DNS%20MX%20Records%20online%20-%20MxToolbox&amp;did=dZTQ1Zm&amp;gdid=dZTQ1Zm&amp;hn=www.googleadservices.com&amp;npa=0&amp;pscdl=noapi&amp;auid=1455326083.1775818582&amp;uaa=x86&amp;uab=64&amp;uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&amp;uamb=0&amp;uam=&amp;uap=Windows&amp;uapv=10.0&amp;uaw=0&amp;data=event%3Dgtag.config&amp;rfmt=3&amp;fmt=4"></script></head>
+<body><div id="hs-web-interactives-top-push-anchor" class="go3670563033"></div>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WBCHSDC"
+            height="0" width="0" style="display: none; visibility: hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    
+    <form method="post" action="/Public/Content/Toolhandler.aspx?command=mx" id="aspnetForm">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="Er/JjQQuxOxfplRkOAvDeif710ZiZF7C6jsib/owx9dxHju5VsbsbQadCLiZLiU6UuYpUkmlJCkOkoJqI1bmpvE0v/0=">
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="B18E989E">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="BHN4PgPYlEPZxKPAmwWkFazV31X7kTpaWxzydLqDsoYpNznELYGVm++/GlcQja2C6cRuXcu5AvjT6VoMhwkfpcpRSfxvs6zgVJRZcDpduJv+1jHAr4EhkICBhbNegxPAq7ZFDNXB//Rj5NNbPdeWIbsiSEQ=">
+</div>
+        <div>
+            
+                
+                <div class="divMenuContainer" id="mx-top-menu"><!--<link rel="stylesheet" href="https://kit.fontawesome.com/c0c4608636.css" crossorigin="anonymous">-->
+<style>
+    /* DEFAULT STYLES ARE FOR SMALLEST SCALE */
+
+        /** MX TOP MENU = mx-tm */
+        .mx-tm-cloak {
+            display: none;
+        }
+
+        .mx-tm {
+            container-type: inline-size;
+            position:relative;
+            z-index:10;
+        }
+
+            .mx-tm a:hover,
+            .mx-tm a:active,
+            .mx-tm a:visited,
+            .mx-tm a:focus {
+                -webkit-text-decoration: none;
+                text-decoration: none;
+            }
+
+        .mx-tm-bar {
+            display: grid;
+            grid-template-columns: 212px 1fr auto;
+            align-items: center;
+            align-content: stretch;
+            gap: 20px;
+            padding: 5px 20px 5px 20px;
+            height:75px; /* NOTE!  set directly on the element in master for pre-render */
+            background: linear-gradient(to bottom, rgb(214, 214, 214) 0%, rgba(255, 255, 255, 1) 100%); /* NOTE!  set directly on the element in master for pre-render */
+        }
+
+        /**** BRANDING AREA = brand */
+        .mx-tm-brand img {
+            width: 172px;
+        }
+
+        /****** SITE MENU = [brand-]sitemenu */
+        .mx-tm-brand-sitemenu {
+            position: relative;
+            font-family: sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 10pt !important;
+            text-transform: uppercase;
+            letter-spacing: .2rem !important;
+            color: #d98a37;
+            padding-left: 16px;
+        }
+
+        .mx-tm-brand-sitemenu-dropdown {
+            z-index: 9999999;
+        }
+
+        .mx-tm-brand-sitemenu-header {
+            display: grid;
+            align-items: center;
+            cursor: pointer;
+            grid-template-columns: 20px 1fr 20px !important;
+            color: #d98a37;
+        }
+
+        .mx-tm-brand-sitemenu-item {
+            display: grid;
+            grid-template-columns: 20px 1fr;
+            align-items: center;
+            cursor: pointer;
+            color: #d98a37;
+            padding: 5px 10px 5px 16px;
+        }
+
+            .mx-tm-brand-sitemenu-item:hover {
+                background-color: #d98a37;
+                color: #ffffff;
+            }
+
+        /**** PRIMARY AREA = primary */
+        .mx-tm-primary {
+            display: none;
+            position: relative;
+            justify-self: end;
+            border-right: 1px solid #CCCCCC;
+            padding-right: 20px;
+        }
+
+        /****** PRIMARY MENU = [primary-]menu */
+        .mx-tm-primary-menu {
+            /*display: none;*/
+            gap: 20px;
+            align-self: center;
+            text-align: right;
+        }
+
+        .mx-tm-primary-menu-item {
+            -webkit-text-decoration: none;
+            text-decoration: none;
+            color: #333333;
+            font-size: 14px !important;
+        }
+
+            .mx-tm-primary-menu-item:hover {
+                color: #999999;
+            }
+
+            .mx-tm-primary-menu-item.active {
+                font-weight: bold;
+                color: #d38336;
+                background: none;
+            }
+
+        /**** USER AREA = user */
+        .mx-tm-user {
+            justify-self: end;
+        }
+
+        .mx-tm-user-toggle {
+            display: grid;
+            grid-template-columns: 1fr 20px;
+            align-items: center;
+            gap: 5px;
+            color: #777777;
+        }
+
+        .mx-tm-user-name-text {
+            display: none;
+        }
+
+        /****** USER MENU = [user-]menu */
+        .mx-tm-user-menu {
+            left: inherit;
+            right: 0;
+        }
+        /**** SECONDARY AREA =  */
+        .mx-tm-secondary {
+            display: none;
+        }
+
+            .mx-tm-secondary .fa-bars {
+                font-size: 20px;
+                color: #FFFFFF;
+            }
+
+
+        /****** SECONDARY MENU = [secondary-]menu */
+        .mx-tm-secondary-menu a.active {
+            background-color: #000000;
+            color: #FFFFFF !important;
+        }
+
+        /**** HAMBURGER AREA = hamburger */
+        .mx-tm-bar-hamburger {
+            display: block;
+            justify-self: end;
+            text-align: end;
+        }
+
+            .mx-tm-bar-hamburger .fa-bars {
+                font-size: 20px;
+                color: #000000;
+            }
+
+        .mx-tm-user-name-hamburger-text.dropdown-header {
+            padding: 3px 20px 0px 20px;
+            color: #777777;
+        }
+
+        /****** HAMBURGER MENU = [hamburger-]menu */
+        .mx-tm-hamburger-menu {
+            left: inherit;
+            right: 0;
+        }
+
+        .mx-tm-bar-hamburger button {
+            padding-top: 4px;
+        }
+
+        /** FULL SIZE */
+        @container (min-width: 600px) {
+            .mx-tm-user-name-text {
+                display: block;
+            }
+
+            .mx-tm-user-name-icon,
+            .mx-tm-user-name-hamburger-text {
+                display: none !important;
+            }
+        }
+
+        @container (min-width: 1000px) {
+            .mx-tm-primary-menu {
+                display: flex;
+                align-items: center;
+            }
+
+            .mx-tm-primary {
+                display: flex;
+            }
+
+            .mx-tm-bar-hamburger {
+                display: none;
+            }
+
+            .mx-tm-secondary {
+                display: block;
+            }
+        }
+</style>
+<div class="mx-tm">
+    <div class="mx-tm-bar">
+        <!-- BRANDING AREA -->
+        <div class="mx-tm-brand">
+            <!-- MxToolbox Logo -->
+            <div>
+                <a href="/SuperTool.aspx" aria-label="Go to product home">
+                    
+                    <img src="https://images.mxtoolbox.com/public/images/logo.png" height="43" width="172" alt="MX Logo">
+                    
+                </a>
+            </div>
+
+            <!-- MxToolbox Site Menu -->
+            <div class="mx-tm-brand-sitemenu">
+                <div data-toggle="dropdown" data-boundary="viewport" class="dropdown-toggle">
+                    <div class="mx-tm-brand-sitemenu-header">
+                        <i class="fa-duotone fa-toolbox"></i>
+                        <span>SuperTool</span>
+                        <span class="caret"></span>
+                    </div>
+                </div>
+                <div class="mx-tm-brand-sitemenu-dropdown dropdown-menu">
+                    <a href="/director.aspx?pr=supertool" class="mx-tm-brand-sitemenu-item -mx-track-url_top-menu-site-supertool">
+                        <i class="fa-duotone fa-toolbox"></i>
+                        <span>SuperTool</span>
+                    </a>
+                    <a href="/director.aspx?pr=monitoring" class="mx-tm-brand-sitemenu-item -mx-track-url_top-menu-site-monitoring">
+                        <i class="fa-duotone fa-display-chart-up"></i>
+                        <span>Monitoring</span>
+                    </a>
+                    <a href="/director.aspx?pr=dc2" class="mx-tm-brand-sitemenu-item -mx-track-url_top-menu-site-dc2">
+                        <i class="fa-duotone fa-envelope"></i>
+                        <span>Delivery Center</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRIMARY MENU AREA -->
+        <div class="mx-tm-primary">
+            <div class="mx-tm-primary-menu">
+                
+                    <a href="/c/products/matrixdos?feature=no-feature-selected&amp;source=pricing" ng-class="" class="mx-tm-primary-menu-item -mx-track-url_top-main-menu-pricing navbar-item-pricing ">
+                        Pricing
+                    </a>
+                
+                    <a href="/SuperTool.aspx" ng-class="" class="mx-tm-primary-menu-item -mx-track-url_top-main-menu-supertool navbar-item-supertool active">
+                        Tools
+                    </a>
+                
+                    <a href="https://delivery.mxtoolbox.com" ng-class="" class="mx-tm-primary-menu-item -mx-track-url_top-main-menu-delivery navbar-item-delivery ">
+                        Delivery Center
+                    </a>
+                
+                    <a href="/monitoring" ng-class="" class="mx-tm-primary-menu-item -mx-track-url_top-main-menu-monitoring navbar-item-monitoring ">
+                        Monitoring
+                    </a>
+                
+                    <a href="/c/mxtoolboxproducts" ng-class="" class="mx-tm-primary-menu-item -mx-track-url_top-main-menu-products navbar-item-products ">
+                        Products
+                    </a>
+                
+                    <a href="https://blog.mxtoolbox.com?source=greynav" ng-class="" class="mx-tm-primary-menu-item -mx-track-url_top-main-menu-blog navbar-item-blog ">
+                        Blog
+                    </a>
+                
+                    <a href="https://knowledgebase.mxtoolbox.com/home" ng-class="" class="mx-tm-primary-menu-item -mx-track-url_top-main-menu-support navbar-item-support ">
+                        Support
+                    </a>
+                
+            </div>
+        </div>
+
+        <!-- USER AREA -->
+        <div id="mx-tm-user" class="mx-tm-user">
+    <a class="mx-tm-user-name -mx-track-url_user-login" id="top-nav-login" href="/Public/Login.aspx">Login</a>
+</div>
+
+        <!-- HAMBURGER AREA -->
+        <div class="mx-tm-bar-hamburger dropdown dropleft">
+            <button type="button" class="dropdown-toggle" data-toggle="dropdown" data-offset="10,20" aria-label="Menu Picker">
+                <i class="fa-duotone fa-bars"></i>
+            </button>
+
+            <ul class="mx-tm-hamburger-menu dropdown-menu" role="menu">
+                
+                <li>
+                    <a href="/c/products/matrixdos?feature=no-feature-selected&amp;source=pricing" class=" mx-tm-primary-menu-item -mx-track-url_top-main-menu-pricing navbar-item-pricing ">
+                        Pricing
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/SuperTool.aspx" class=" mx-tm-primary-menu-item -mx-track-url_top-main-menu-supertool navbar-item-supertool active">
+                        Tools
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://delivery.mxtoolbox.com" class=" mx-tm-primary-menu-item -mx-track-url_top-main-menu-delivery navbar-item-delivery ">
+                        Delivery Center
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/monitoring" class=" mx-tm-primary-menu-item -mx-track-url_top-main-menu-monitoring navbar-item-monitoring ">
+                        Monitoring
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/c/mxtoolboxproducts" class=" mx-tm-primary-menu-item -mx-track-url_top-main-menu-products navbar-item-products ">
+                        Products
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://blog.mxtoolbox.com?source=greynav" class=" mx-tm-primary-menu-item -mx-track-url_top-main-menu-blog navbar-item-blog ">
+                        Blog
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://knowledgebase.mxtoolbox.com/home" class=" mx-tm-primary-menu-item -mx-track-url_top-main-menu-support navbar-item-support ">
+                        Support
+                    </a>
+                </li>
+                
+
+                <li class="divider"></li>
+                
+                    <li>
+                        <a href="/SuperTool.aspx" class=" mx-tm-primary-menu-item -mx-track-url_top-main-menu-supertool navbar-item-supertool active">
+                            SuperTool
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/MXLookup.aspx" class=" mx-tm-primary-menu-item -mx-track-url_top-main-menu-mxlookup navbar-item-mxlookup ">
+                            MX Lookup
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/blacklists.aspx" class=" mx-tm-primary-menu-item -mx-track-url_top-main-menu-blacklists navbar-item-blacklists ">
+                            Blacklists
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/dmarc.aspx" class=" mx-tm-primary-menu-item -mx-track-url_top-main-menu-dmarc navbar-item-dmarc ">
+                            DMARC
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/diagnostic.aspx" class=" mx-tm-primary-menu-item -mx-track-url_top-main-menu-diagnostics navbar-item-diagnostics ">
+                            Diagnostics
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/emailhealth" class=" mx-tm-primary-menu-item -mx-track-url_top-main-menu-domain navbar-item-domain ">
+                            Email Health
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/DnsLookup.aspx" class=" mx-tm-primary-menu-item -mx-track-url_top-main-menu-dnslookup navbar-item-dnslookup ">
+                            DNS Lookup
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/EmailHeaders.aspx" class=" mx-tm-primary-menu-item -mx-track-url_top-main-menu-headers navbar-item-headers ">
+                            Analyze Headers
+                        </a>
+                    </li>
+                
+
+                <li class="divider"></li>
+                
+                    <li>
+                        <a href="/NetworkTools.aspx" class=" mx-tm-primary-menu-item -mx-track-url_top-main-menu-alltools navbar-item-alltools ">
+                            All Tools
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    <!-- SECONDARY AREA -->
+    
+        <nav id="black-nav" class="mx-tm-secondary navbar navbar-inverse navbar-fixed secondhead" style="border-radius:unset;">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#second-navbar-collapse" aria-expanded="false" style="margin-top:1px;" aria-label="Second Menu Picker">
+                    <i class="fa-duotone fa-bars"></i>
+                </button>
+            </div>
+            <div class="mx-tm-secondary-menu collapse navbar-collapse" id="second-navbar-collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    
+                        <li class="item-black subnav-item-supertool"><a class="active" href="/SuperTool.aspx">SuperTool</a></li>
+                    
+                        <li class="item-black subnav-item-mxlookup"><a class="" href="/MXLookup.aspx">MX Lookup</a></li>
+                    
+                        <li class="item-black subnav-item-blacklists"><a class="" href="/blacklists.aspx">Blacklists</a></li>
+                    
+                        <li class="item-black subnav-item-dmarc"><a class="" href="/dmarc.aspx">DMARC</a></li>
+                    
+                        <li class="item-black subnav-item-diagnostics"><a class="" href="/diagnostic.aspx">Diagnostics</a></li>
+                    
+                        <li class="item-black subnav-item-domain"><a class="" href="/emailhealth">Email Health</a></li>
+                    
+                        <li class="item-black subnav-item-dnslookup"><a class="" href="/DnsLookup.aspx">DNS Lookup</a></li>
+                    
+                        <li class="item-black subnav-item-headers"><a class="" href="/EmailHeaders.aspx">Analyze Headers</a></li>
+                    
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    
+                        <li class="item-black subnav-item-alltools"><a class="" href="/NetworkTools.aspx">All Tools</a></li>
+                    
+                </ul>
+            </div>
+        </nav>
+    
+</div>
+
+<script id="mx-tm-template-anonymous" type="text/x-jsrender">
+    <a class="mx-tm-user-name -mx-track-url_user-login" id="top-nav-login" href="/Public/Login.aspx">Login</a>
+</script></div>
+            
+
+            <div class="container-fluid mx-master-content">
+                <noscript>
+                    Javascript is disabled. Javascript is required for this site.
+                </noscript>
+                <div class="row-fluid">
+                    <div id="ctl00_divPlaceHolder" class="mx-placeholder-content">
+                        
+    <div id="ctl00_ContentPlaceHolder1_pnlToolHandler" class="tools_lookup">
+	
+        <!-- DefaultButton="btnAction" -->
+        
+<div class="search panel panel-default toolhandler-search-panel">
+    <div class="panel-heading">
+        <h1 class="search">
+            <img id="ctl00_ContentPlaceHolder1_ucToolhandler_imgToolIcon" src="https://images.mxtoolbox.com/public/images/toolicons/mx.png" alt="mx icon" style="height:28px;width:28px;">
+            <span id="ctl00_ContentPlaceHolder1_ucToolhandler_ltlTitle">MX Lookup</span></h1>
+    </div>
+    <hr>
+    
+        <div class="divInput panel-body">
+        <b class="caret-large"></b>
+        <div class="form-search"></div>
+        <div class="tools_lookup_label">
+            <div style="display: inline-block">
+                <span class="inputTypeTitle" style="font-weight: bold">
+                    Domain Name
+                </span>
+                <input name="ctl00$ContentPlaceHolder1$ucToolhandler$txtToolInput" type="text" id="ctl00_ContentPlaceHolder1_ucToolhandler_txtToolInput" class="tools_lookup_textbox form-control">
+            </div>
+            
+            <input type="submit" name="ctl00$ContentPlaceHolder1$ucToolhandler$btnAction" value="MX Lookup" id="ctl00_ContentPlaceHolder1_ucToolhandler_btnAction" class="btn btn-mx">
+            <div class="extra-info-section" style="display: inline-block">
+                
+                <a id="ctl00_ContentPlaceHolder1_ucToolhandler_hlExtraButton1" class="btn btn-info" href="https://mxtoolbox.com/c/products/deliverycenter?source=toolhandler-mx        " style="margin-bottom: 4px;">Solve Email Delivery Problems</a>
+                
+                <input type="hidden" name="ctl00$ContentPlaceHolder1$ucToolhandler$hfABhelper" id="hfABhelper">
+                
+            </div>
+            
+        </div>
+    </div>
+    
+</div>
+<!-- New header -->
+<div class="p10">
+    <div class="tools_description"><h3>ABOUT MX LOOKUP</h3> <p> This test will list MX records for a domain in priority order. The MX lookup is done directly against the domain's authoritative name server, so changes to MX Records should show up instantly. You can click <a href="https://mxtoolbox.com/diagnostic.aspx">Diagnostics</a> , which will connect to the mail server, verify reverse DNS records, perform a simple Open Relay check and measure response time performance. You may also check each MX record (IP Address) against <span id="ctl00_ContentPlaceHolder1_lblNumberofBlackLists">105</span> DNS based <a href="https://mxtoolbox.com/blacklists.aspx">blacklists</a> . (Commonly called RBLs, DNSBLs) </p> </div>
+    <div style="padding-left: 20px;">
+        
+    </div>
+</div>
+<script type="text/javascript">
+    var ctl = document.getElementById('ctl00_ContentPlaceHolder1_ucToolhandler_txtToolInput');
+    if (ctl != null) ctl.focus();
+</script>
+
+        
+<style>
+    .icon-mx-admin {
+        color: rgb(228, 150, 58);
+        text-shadow: black 1px 1px;
+        position: absolute;
+        z-index: 100;
+        left: 3px;
+        top: 20px;
+    }
+</style>
+<script>
+    (function loadAdmin(MXT) {
+        if (MXT.User && MXT.User.isAdmin) {
+            $('.icon-mx-admin').show();
+        }
+    })(window.MXT || (window.MXT = {}));
+</script>
+<div id="ctl00_ContentPlaceHolder1_toolhandler0_divContent" class="mx-slot-container" style="position:relative;width:100%;">
+</div>
+
+    
+</div>
+
+    <script type="text/javascript">
+        // leave javascript below the form
+
+        function redirect() {
+
+            if (window.location.href.toLowerCase().includes("toolhandler")) {
+                // We want to stop people from using the ToolHandler.apx url directly
+                // Case statement was generated by the SQL -- 
+
+                // SELECT 'case ''' + RTRIM(Command) + ''':\n' + '    window.location=''https://mxtoolbox.com/' + ToolPage + ''';\n    break;' 
+                // FROM mxt_LookupActionProperties
+                // WHERE Visible = 1
+
+                var command = getParameterByName("command");
+                switch (command) {
+                    case 'a':
+                        window.location = 'https://mxtoolbox.com/DnsLookup.aspx';
+                        break;
+                    case 'aaaa':
+                        window.location = 'https://mxtoolbox.com/IPv6.aspx';
+                        break;
+                    case 'arin':
+                        window.location = 'https://mxtoolbox.com/arin.aspx';
+                        break;
+                    case 'asn':
+                        window.location = 'https://mxtoolbox.com/asn.aspx';
+                        break;
+                    case 'bimi':
+                        window.location = 'https://mxtoolbox.com/bimi.aspx';
+                        break;
+                    case 'blacklist':
+                        window.location = 'https://mxtoolbox.com/blacklists.aspx';
+                        break;
+                    case 'blocklist':
+                        window.location = 'https://mxtoolbox.com/blocklists.aspx';
+                        break;
+                    case 'cert':
+                        window.location = 'https://mxtoolbox.com/CERT.aspx';
+                        break;
+                    case 'cname':
+                        window.location = 'https://mxtoolbox.com/CnameLookup.aspx';
+                        break;
+                    case 'dkim':
+                        window.location = 'https://mxtoolbox.com/dkim.aspx';
+                        break;
+                    case 'dmarc':
+                        window.location = 'https://mxtoolbox.com/dmarc.aspx';
+                        break;
+                    case 'dns':
+                        window.location = 'https://mxtoolbox.com/DNSCheck.aspx';
+                        break;
+                    case 'dnskey':
+                        window.location = 'https://mxtoolbox.com/DNSKey.aspx';
+                        break;
+                    case 'domain':
+                        window.location = 'https://mxtoolbox.com/emailhealth';
+                        break;
+                    case 'ds':
+                        window.location = 'https://mxtoolbox.com/ds.aspx';
+                        break;
+                    case 'http':
+                        window.location = 'https://mxtoolbox.com/HTTPLookup.aspx';
+                        break;
+                    case 'https':
+                        window.location = 'https://mxtoolbox.com/HTTPSLookup.aspx';
+                        break;
+                    case 'ipseckey':
+                        window.location = 'https://mxtoolbox.com/IPSECKey.aspx';
+                        break;
+                    case 'loc':
+                        window.location = 'https://mxtoolbox.com/Location.aspx';
+                        break;
+                    case 'mx':
+                        window.location = 'https://mxtoolbox.com/';
+                        break;
+                    case 'nsec':
+                        window.location = 'https://mxtoolbox.com/nsec.aspx';
+                        break;
+                    case 'nsec3':
+                        window.location = 'https://mxtoolbox.com/nsec3.aspx';
+                        break;
+                    case 'nsec3param':
+                        window.location = 'https://mxtoolbox.com/nsec3param.aspx';
+                        break;
+                    case 'eprovider':
+                        window.location = 'https://mxtoolbox.com/EProvider.aspx';
+                        break;
+                    case 'ping':
+                        window.location = 'https://mxtoolbox.com/PingLookup.aspx';
+                        break;
+                    case 'ptr':
+                        window.location = 'https://mxtoolbox.com/ReverseLookup.aspx';
+                        break;
+                    case 'rrsig':
+                        window.location = 'https://mxtoolbox.com/rrsig.aspx';
+                        break;
+                    case 'scan':
+                        window.location = 'https://mxtoolbox.com/PortScan.aspx';
+                        break;
+                    case 'smtp':
+                        window.location = 'https://mxtoolbox.com/diagnostic.aspx';
+                        break;
+                    case 'soa':
+                        window.location = 'https://mxtoolbox.com/SOALookup.aspx';
+                        break;
+                    case 'spf':
+                        window.location = 'https://mxtoolbox.com/spf.aspx';
+                        break;
+                    case 'srv':
+                        window.location = 'https://mxtoolbox.com/SRVLookup.aspx';
+                        break;
+                    case 'tcp':
+                        window.location = 'https://mxtoolbox.com/TCPLookup.aspx';
+                        break;
+                    case 'trace':
+                        window.location = 'https://mxtoolbox.com/TraceRouteLookup.aspx';
+                        break;
+                    case 'txt':
+                        window.location = 'https://mxtoolbox.com/TXTLookup.aspx';
+                        break;
+                    case 'whatismyip':
+                        window.location = 'https://mxtoolbox.com/whatismyip';
+                        break;
+                    case 'whois':
+                        window.location = 'https://mxtoolbox.com/Whois.aspx';
+                        break;
+                }
+            }
+            redirect(); //Now call the function        
+        }
+
+        // Below is added for AB testing and being able to pinpoint tool handler pages easily
+        window.addEventListener('load', function () {
+            if (typeof (dataLayer) !== "undefined") {
+                dataLayer.push({ 'event': 'optimize.page_toolHandler' });
+            }
+        });
+    </script>
+
+                    </div>
+                </div>
+            </div>
+
+            <footer id="ctl00_divFooter" class="container-fluid">
+                    <div class="content-footer">
+                        <div class="footer-info">
+                            Your IP is: <a id="lnkIp" href="https://mxtoolbox.com/WhatIsMyIP/">34.50.79.28</a>&nbsp;|&nbsp;
+                            <a class="footer-link" href="https://mxtoolbox.com/AboutUs.aspx">Contact</a>
+                            <a class="footer-link" href="https://mxtoolbox.com/TermsAndConditions.aspx">Terms &amp; Conditions</a>
+                            <a class="footer-link" href="https://mxtoolbox.com/sitemap.aspx">Site Map</a>
+                            <a class="footer-link" href="https://mxtoolbox.com/SecurityStatement.aspx">Security</a>
+                            <a class="footer-link" href="https://mxtoolbox.com/c/products/mxtoolboxapi">API</a>
+                            <a class="footer-link" href="https://mxtoolbox.com/privacypolicy.aspx">Privacy</a>
+                            Phone: (866)-698-6652 | &nbsp;
+                        © Copyright 2004-2026, <a href="https://mxtoolbox.com/AboutUs.aspx">MXToolBox, Inc</a>, All
+                        rights reserved. US Patents 10839353 B2 &amp; 11461738 B2
+                            <div class="footer-icons nav navbar-nav navbar-right" style="padding-right: 2em; font-size: 12px; text-align: center">
+                                <a href="https://x.com/mxtoolbox">
+                                    <i class="fab fa-twitter" data-toggle="tooltip" data-placement="top" title="Follow us on Twitter"></i>
+                                </a>
+                                <a href="https://blog.mxtoolbox.com">
+                                    <i class="fab fa-blogger" data-toggle="tooltip" data-placement="top" title="Blog"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            
+        </div></form>
+    
+
+    
+
+    <!-- We need the JS Render for 1280 cards and the Top Menu -->
+    
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/1.0.14/jsrender.min.js" defer=""></script>
+            <script>
+                    window.addEventListener('load', function() { 
+                        if(!jQuery.views){
+                            document.write('<script src=\"/public/scripts/vendor/jsrender.min.js"><\/script>');
+                        }
+                    }); 
+            </script>
+        
+    <!-- Scripts loaded after window:load -->
+    <script type="text/javascript">    
+        window.addEventListener('load', function () {
+            // Google Tag Manager
+            // (Trackers are loaded by 3rd Party Defer)
+            MXT.LazyLoadGoogleTagManager('GTM-WBCHSDC');
+        });
+    </script>
+    
+
+
+
+<script id="hs-script-loader" text="" charset="" type="text/javascript" src="//js.hs-scripts.com/14537821.js"></script>
+
+<div class="go2933276541 go2369186930" id="hs-web-interactives-top-anchor"><div id="hs-interactives-modal-overlay" class="go1632949049"></div></div>
+<div class="go2933276541 go1348078617" id="hs-web-interactives-bottom-anchor"></div>
+<div id="hs-web-interactives-floating-container">
+  <div id="hs-web-interactives-floating-top-left-anchor" class="go2417249464 go613305155">
+  </div>
+  <div id="hs-web-interactives-floating-top-right-anchor" class="go2417249464 go471583506">
+  </div>
+  <div id="hs-web-interactives-floating-bottom-left-anchor" class="go2417249464 go3921366393">
+  </div>
+  <div id="hs-web-interactives-floating-bottom-right-anchor" class="go2417249464 go3967842156">
+  </div>
+</div>
+<iframe id="qualaroo_dnt_frame" src="//dntcl.qualaroo.com/frame.html" style="width: 1px; height: 1px; display: none; opacity: 0;"></iframe></body></html>

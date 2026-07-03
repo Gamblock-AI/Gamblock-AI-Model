@@ -1,0 +1,745 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Quality Electronics Online – Best Deals on Gadgets &amp; Home Appliances</title>
+    <meta name="description" content="Shop the latest electronics, gadgets, and home appliances at unbeatable prices. From smartphones and laptops to TVs and kitchen devices, we offer trusted brands, fast shipping, and secure payments.">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --gray: #6b7280;
+            --light-gray: #e5e7eb;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .top-bar {
+            background-color: var(--dark);
+            color: white;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+        
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #e4a91a;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-icon {
+            margin-right: 10px;
+            font-size: 32px;
+        }
+        
+        .search-bar {
+            display: flex;
+            flex: 1;
+            max-width: 500px;
+            margin: 0 20px;
+        }
+        
+        .search-bar input {
+            width: 100%;
+            padding: 12px 20px;
+            border: 1px solid var(--light-gray);
+            border-radius: 5px 0 0 5px;
+            font-size: 16px;
+        }
+        
+        .search-bar button {
+            background-color: #e4a91a;
+            color: white;
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+        
+        .nav-icons {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--dark);
+            font-size: 12px;
+        }
+        
+        .nav-icon i {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        
+        .cart-count {
+            background-color: #e4a91a;
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            position: absolute;
+            top: -5px;
+            right: -5px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ffd039 0%, #6a7100 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .btn-primary {
+            background-color: white;
+            color: #e4a91a;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+        }
+        
+        /* Categories */
+        .categories {
+            padding: 50px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+        
+        .category-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .category-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: #e4a91a;
+        }
+        
+        /* Featured Products */
+        .featured-products {
+            padding: 50px 0;
+            background-color: white;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-image {
+            height: 200px;
+            background-color: #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: var(--gray);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-category {
+            color: var(--gray);
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .product-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .product-rating {
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        
+        .product-price {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .price {
+            font-size: 20px;
+            font-weight: 700;
+            color: #e4a91a;
+        }
+        
+        .old-price {
+            text-decoration: line-through;
+            color: var(--gray);
+            font-size: 16px;
+            margin-left: 10px;
+        }
+        
+        .add-to-cart {
+            background-color: #e4a91a;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .add-to-cart:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        /* Promo Banner */
+        .promo-banner {
+            background: linear-gradient(135deg, #b99b10 0%, #9b7800 100%);
+            color: white;
+            padding: 60px 0;
+            margin: 50px 0;
+            text-align: center;
+        }
+        
+        .promo-banner h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .promo-banner p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        /* Features */
+        .features {
+            padding: 50px 0;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #e4a91a;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 15px;
+        }
+        
+        .feature-card p {
+            color: var(--gray);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 70px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: #e4a91a;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .newsletter input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .newsletter button {
+            background-color: #e4a91a;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .newsletter button:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #374151;
+            color: #9ca3af;
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .top-bar {
+                display: none;
+            }
+            
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .search-bar {
+                margin: 10px 0;
+                max-width: 100%;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div>Free shipping on orders over $99</div>
+            <div>Hotline: 1-800-ELECTRO</div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <span class="logo-icon">⚡</span>
+                    ElectroShop
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for products, brands...">
+                    <button>Search</button>
+                </div>
+                <div class="nav-icons">
+                    <a href="https://sgcwin88-hp.boats/" class="nav-icon">
+                        <i>👤</i>
+                        <span>Account</span>
+                    </a>
+                    <a href="https://sgcwin88-hp.boats/" class="nav-icon">
+                        <i>❤️</i>
+                        <span>Wishlist</span>
+                    </a>
+                    <a href="https://sgcwin88-hp.boats/" class="nav-icon" style="position: relative;">
+                        <i>🛒</i>
+                        <span>Cart</span>
+                        <span class="cart-count">3</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Buy Quality Electronics Online</h1>
+            <p>Shop the latest electronics, gadgets, and home appliances at unbeatable prices. From smartphones and laptops to TVs and kitchen devices.</p>
+            <a href="#featured" class="btn-primary">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="container">
+            <div class="section-title">
+                <h2>Shop By Category</h2>
+                <p>Discover smart technology that makes your life easier today!</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">📱</div>
+                    <h3>Smartphones</h3>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">💻</div>
+                    <h3>Laptops</h3>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">📺</div>
+                    <h3>TV &amp; Audio</h3>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">⌚</div>
+                    <h3>Wearables</h3>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🏠</div>
+                    <h3>Smart Home</h3>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🍳</div>
+                    <h3>Kitchen</h3>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🎮</div>
+                    <h3>Gaming</h3>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🔌</div>
+                    <h3>Accessories</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products" id="featured">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Products</h2>
+                <p>Best deals on gadgets &amp; home appliances from trusted brands</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">📱</div>
+                    <div class="product-info">
+                        <div class="product-category">Smartphone</div>
+                        <h3 class="product-title">UltraPhone X Pro</h3>
+                        <div class="product-rating">★★★★★</div>
+                        <div class="product-price">
+                            <div>
+                                <span class="price">$899</span>
+                                <span class="old-price">$999</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">💻</div>
+                    <div class="product-info">
+                        <div class="product-category">Laptop</div>
+                        <h3 class="product-title">SpeedBook Air M2</h3>
+                        <div class="product-rating">★★★★☆</div>
+                        <div class="product-price">
+                            <div>
+                                <span class="price">$1,299</span>
+                                <span class="old-price">$1,499</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">📺</div>
+                    <div class="product-info">
+                        <div class="product-category">Television</div>
+                        <h3 class="product-title">CrystalView 4K OLED</h3>
+                        <div class="product-rating">★★★★★</div>
+                        <div class="product-price">
+                            <div>
+                                <span class="price">$1,599</span>
+                                <span class="old-price">$1,899</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🎧</div>
+                    <div class="product-info">
+                        <div class="product-category">Audio</div>
+                        <h3 class="product-title">SoundMax Pro Headphones</h3>
+                        <div class="product-rating">★★★★☆</div>
+                        <div class="product-price">
+                            <div>
+                                <span class="price">$249</span>
+                                <span class="old-price">$299</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Banner -->
+    <section class="promo-banner">
+        <div class="container">
+            <h2>Summer Tech Sale</h2>
+            <p>Up to 40% off on selected electronics. Limited time offer!</p>
+            <a href="https://sgcwin88-hp.boats/" class="btn-primary">Shop the Sale</a>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Shop With Us</h2>
+                <p>We offer trusted brands, fast shipping, and secure payments</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Free Shipping</h3>
+                    <p>Free delivery on orders over $99. Fast and reliable shipping to your doorstep.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Secure Payment</h3>
+                    <p>Your payment information is safe with our encrypted checkout process.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">↩️</div>
+                    <h3>Easy Returns</h3>
+                    <p>30-day return policy. If you're not satisfied, we'll make it right.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Quality Guarantee</h3>
+                    <p>All our products are from trusted brands with warranty included.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>ElectroShop</h3>
+                    <p>Your one-stop destination for the latest electronics, gadgets, and home appliances at unbeatable prices.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Shop</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://sgcwin88-hp.boats/">Smartphones</a></li>
+                        <li><a href="https://sgcwin88-hp.boats/">Laptops &amp; Computers</a></li>
+                        <li><a href="https://sgcwin88-hp.boats/">TV &amp; Home Theater</a></li>
+                        <li><a href="https://sgcwin88-hp.boats/">Audio &amp; Headphones</a></li>
+                        <li><a href="https://sgcwin88-hp.boats/">Smart Home</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://sgcwin88-hp.boats/">Contact Us</a></li>
+                        <li><a href="https://sgcwin88-hp.boats/">Shipping Policy</a></li>
+                        <li><a href="https://sgcwin88-hp.boats/">Return Policy</a></li>
+                        <li><a href="https://sgcwin88-hp.boats/">FAQ</a></li>
+                        <li><a href="https://sgcwin88-hp.boats/">Track Your Order</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get special offers, free giveaways, and product updates.</p>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Your email address">
+                        <button>Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 ElectroShop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple cart functionality
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const cartCount = document.querySelector('.cart-count');
+                let count = parseInt(cartCount.textContent);
+                cartCount.textContent = count + 1;
+                
+                // Simple animation
+                this.textContent = 'Added!';
+                setTimeout(() => {
+                    this.textContent = 'Add to Cart';
+                }, 1500);
+            });
+        });
+        
+        // Newsletter form submission
+        document.querySelector('.newsletter button').addEventListener('click', function() {
+            const emailInput = document.querySelector('.newsletter input');
+            if(emailInput.value) {
+                alert('Thank you for subscribing to our newsletter!');
+                emailInput.value = '';
+            } else {
+                alert('Please enter your email address.');
+            }
+        });
+    </script>
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;7dfe48d036cb4cb88b58abc7b944ca51&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+</body></html>

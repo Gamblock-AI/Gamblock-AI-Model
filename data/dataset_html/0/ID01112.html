@@ -1,0 +1,1125 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" class="pointer skrollr skrollr-desktop"><head>
+	<style id="customRules"></style><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="https://connect.facebook.net/en_US/bundle/sdk.js/" async="" crossorigin="anonymous"></script><script id="facebook-jssdk" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v2.8&amp;appId=1822295708016537"></script><script async="" src="sp-2.0.0-dm-0.1.min.js"></script><script type="text/javascript">
+    window._currentDevice = 'desktop';
+    window.Parameters = window.Parameters || {
+        HomeUrl: 'https://www.comprehensivept.org/',
+        AccountUUID: 'c1f9a940fb4d4c0392fd141cac88908c',
+        SystemID: 'US_HIBU_PRODUCTION',
+        SiteAlias: '6811e6379ba64005918f9175b61ba280',
+        SiteType: atob('RFVEQU9ORQ=='),
+        PublicationDate: 'Tue Mar 05 00:45:28 UTC 2024',
+        ExternalUid: '645095',
+        IsSiteMultilingual: false,
+        InitialPostAlias: '',
+        InitialPostPageUuid: '',
+        InitialDynamicItem: '',
+        DynamicPageInfo: {
+            isDynamicPage: false,
+            base64JsonRowData: 'null',
+        },
+        InitialPageAlias: 'home',
+        InitialPageUuid: '01d028a6dafb44a39d1efe8919a40a90',
+        InitialPageId: '92962837',
+        InitialEncodedPageAlias: 'aG9tZQ==',
+        InitialHeaderUuid: 'de6795a4b73b4739a56d2e0d31274de9',
+        CurrentPageUrl: '',
+        IsCurrentHomePage: true,
+        AllowAjax: false,
+        AfterAjaxCommand: null,
+        HomeLinkText: 'Back To Home',
+        UseGalleryModule: false,
+        CurrentThemeName: 'Layout Theme',
+        ThemeVersion: '40560',
+        DefaultPageAlias: '',
+        RemoveDID: true,
+        WidgetStyleID: null,
+        IsHeaderFixed: false,
+        IsHeaderSkinny: false,
+        IsBfs: true,
+        StorePageAlias: 'null',
+        StorePagesUrls: 'e30=',
+        IsNewStore: 'false',
+        StorePath: '',
+        StoreId: 'null',
+        StoreVersion: 0,
+        StoreBaseUrl: '',
+        StoreCleanUrl: true,
+        StoreDisableScrolling: true,
+        IsStoreSuspended: false,
+        HasCustomDomain: true,
+        SimpleSite: false,
+        showCookieNotification: false,
+        cookiesNotificationMarkup: 'null',
+        translatedPageUrl: '',
+        isFastMigrationSite: false,
+        sidebarPosition: 'NA',
+        currentLanguage: 'en',
+        currentLocale: 'en',
+        NavItems: '{}',
+        errors: {
+            general: 'There was an error connecting to the page.<br/> Make sure you are not offline.',
+            password: 'Incorrect name/password combination',
+            tryAgain: 'Try again'
+        },
+        NavigationAreaParams: {
+            ShowBackToHomeOnInnerPages: true,
+            NavbarSize: 4,
+            NavbarLiveHomePage: 'https://www.comprehensivept.org/',
+            BlockContainerSelector: '.dmBody',
+            NavbarSelector: '#dmNav:has(a)',
+            SubNavbarSelector: '#subnav_main'
+        },
+        hasCustomCode: true,
+        planID: '701',
+        customTemplateId: 'null',
+        siteTemplateId: 'null',
+        productId: 'DM_DIRECT',
+        disableTracking: false,
+        pageType: 'FROM_SCRATCH',
+        isRuntimeServer: true,
+        isInEditor: false,
+        hasNativeStore: false,
+        defaultLang: 'en',
+        hamburgerMigration: null,
+        isFlexSite : false
+    };
+    window.Parameters.LayoutID = {};
+    window.Parameters.LayoutID[window._currentDevice] = 6;
+    window.Parameters.LayoutVariationID = {};
+    window.Parameters.LayoutVariationID[window._currentDevice] = 5;
+</script>
+<!-- Injecting site-wide to the head -->
+<!-- End Injecting site-wide to the head -->
+<!-- Inject secured cdn script -->
+<!-- ========= Meta Tags ========= -->
+<!-- PWA settings -->
+<script>
+    function toHash(str) {
+        var hash = 5381, i = str.length;
+        while (i) {
+            hash = hash * 33 ^ str.charCodeAt(--i)
+        }
+        return hash >>> 0
+    }
+</script>
+<script>
+    (function (global) {
+    //const cacheKey = global.cacheKey;
+    const isOffline = 'onLine' in navigator && navigator.onLine === false;
+    const hasServiceWorkerSupport = 'serviceWorker' in navigator;
+    if (isOffline) {
+        console.log('offline mode');
+    }
+    if (!hasServiceWorkerSupport) {
+        console.log('service worker is not supported');
+    }
+    if (hasServiceWorkerSupport && !isOffline) {
+        window.addEventListener('load', function () {
+            const serviceWorkerPath = '/runtime-service-worker.js?v=3';
+            navigator.serviceWorker
+                .register(serviceWorkerPath, { scope: './' })
+                .then(
+                    function (registration) {
+                        // Registration was successful
+                        console.log(
+                            'ServiceWorker registration successful with scope: ',
+                            registration.scope
+                        );
+                    },
+                    function (err) {
+                        // registration failed :(
+                        console.log('ServiceWorker registration failed: ', err);
+                    }
+                )
+                .catch(function (err) {
+                    console.log(err);
+                });
+        });
+        // helper function to refresh the page
+        var refreshPage = (function () {
+            var refreshing;
+            return function () {
+                if (refreshing) return;
+                // prevent multiple refreshes
+                var refreshkey = 'refreshed' + location.href;
+                var prevRefresh = localStorage.getItem(refreshkey);
+                if (prevRefresh) {
+                    localStorage.removeItem(refreshkey);
+                    if (Date.now() - prevRefresh < 30000) {
+                        return; // dont go into a refresh loop
+                    }
+                }
+                refreshing = true;
+                localStorage.setItem(refreshkey, Date.now());
+                console.log('refereshing page');
+            };
+        })();
+        function messageServiceWorker(data) {
+            return new Promise(function (resolve, reject) {
+                if (navigator.serviceWorker.controller) {
+                    var worker = navigator.serviceWorker.controller;
+                    var messageChannel = new MessageChannel();
+                    messageChannel.port1.onmessage = replyHandler;
+                    worker.postMessage(data, [messageChannel.port2]);
+                    function replyHandler(event) {
+                        resolve(event.data);
+                    }
+                } else {
+                    resolve();
+                }
+            });
+        }
+    }
+})(window);
+</script>
+<!-- Add manifest -->
+<!-- End PWA settings -->
+<meta id="view" name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<!--Add favorites icons-->
+<link rel="icon" type="image/x-icon" href="6811e6379ba64005918f9175b61ba280/site_favicon_16_1653321785943.ico">
+<!-- End favorite icons -->
+<link rel="preconnect" href="https://le-cdn.hibuwebsites.com/">
+<!-- render the required CSS and JS in the head section -->
+<script id="d-js-dmapi">
+    window.SystemID = 'US_HIBU_PRODUCTION';
+    if (!window.dmAPI) {
+        window.dmAPI = {
+            registerExternalRuntimeComponent: function () {
+            },
+            getCurrentDeviceType: function () {
+                return window._currentDevice;
+            },
+            runOnReady: (ns, fn) => {
+                const safeFn = dmAPI.toSafeFn(fn);
+                ns = ns || 'global_' + Math.random().toString(36).slice(2, 11);
+                const eventName = 'afterAjax.' + ns;
+                if (document.readyState === 'complete') {
+                    $.DM.events.off(eventName).on(eventName, safeFn);
+                    setTimeout(function () {
+                        safeFn({
+                            isAjax: false,
+                        });
+                    }, 0);
+                } else {
+                    window?.waitForDeferred?.('dmAjax', () => {
+                        $.DM.events.off(eventName).on(eventName, safeFn);
+                        safeFn({
+                            isAjax: false,
+                        });
+                    });
+                }
+            },
+            toSafeFn: (fn) => {
+                if (fn?.safe) {
+                    return fn;
+                }
+                const safeFn = function (...args) {
+                    try {
+                        return fn?.apply(null, args);
+                    } catch (e) {
+                        console.log('function failed ' + e.message);
+                    }
+                };
+                safeFn.safe = true;
+                return safeFn;
+            }
+        };
+    }
+    if (!window.requestIdleCallback) {
+        window.requestIdleCallback = function (fn) {
+            setTimeout(fn, 0);
+        }
+    }
+</script>
+<!-- loadCSS function header.jsp-->
+<script id="d-js-load-css">
+/**
+ * There are a few <link> tags with CSS resource in them that are preloaded in the page
+ * in each of those there is a "onload" handler which invokes the loadCSS callback
+ * defined here.
+ * We are monitoring 3 main CSS files - the runtime, the global and the page.
+ * When each load we check to see if we can append them all in a batch. If threre
+ * is no page css (which may happen on inner pages) then we do not wait for it
+ */
+(function () {
+  let cssLinks = {};
+  function loadCssLink(link) {
+    link.onload = null;
+    link.rel = "stylesheet";
+    link.type = "text/css";
+  }
+    function checkCss() {
+      const pageCssLink = document.querySelector("[id*='CssLink']");
+      const widgetCssLink = document.querySelector("[id*='widgetCSS']");
+        if (cssLinks && cssLinks.runtime && cssLinks.global && (!pageCssLink || cssLinks.page) && (!widgetCssLink || cssLinks.widget)) {
+            const storedRuntimeCssLink = cssLinks.runtime;
+            const storedPageCssLink = cssLinks.page;
+            const storedGlobalCssLink = cssLinks.global;
+            const storedWidgetCssLink = cssLinks.widget;
+            storedGlobalCssLink.disabled = true;
+            loadCssLink(storedGlobalCssLink);
+            if (storedPageCssLink) {
+                storedPageCssLink.disabled = true;
+                loadCssLink(storedPageCssLink);
+            }
+            if(storedWidgetCssLink) {
+                storedWidgetCssLink.disabled = true;
+                loadCssLink(storedWidgetCssLink);
+            }
+            storedRuntimeCssLink.disabled = true;
+            loadCssLink(storedRuntimeCssLink);
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    storedRuntimeCssLink.disabled = false;
+                    storedGlobalCssLink.disabled = false;
+                    if (storedPageCssLink) {
+                      storedPageCssLink.disabled = false;
+                    }
+                    if (storedWidgetCssLink) {
+                      storedWidgetCssLink.disabled = false;
+                    }
+                    // (SUP-4179) Clear the accumulated cssLinks only when we're
+                    // sure that the document has finished loading and the document 
+                    // has been parsed.
+                    if(document.readyState === 'interactive') {
+                      cssLinks = null;
+                    }
+                }, 0);
+            });
+        }
+    }
+  function loadCSS(link) {
+    try {
+      var urlParams = new URLSearchParams(window.location.search);
+      var noCSS = !!urlParams.get("nocss");
+      var cssTimeout = urlParams.get("cssTimeout") || 0;
+      if (noCSS) {
+        return;
+      }
+      if (link.href && link.href.includes("d-css-runtime")) {
+        cssLinks.runtime = link;
+        checkCss();
+      } else if (link.id === "siteGlobalCss") {
+        cssLinks.global = link;
+        checkCss();
+      } 
+      else if (link.id && link.id.includes("CssLink")) {
+        cssLinks.page = link;
+        checkCss();
+      } else if (link.id && link.id.includes("widgetCSS")) {
+        cssLinks.widget = link;
+        checkCss();
+      }
+      else {
+        requestIdleCallback(function () {
+          window.setTimeout(function () {
+            loadCssLink(link);
+          }, parseInt(cssTimeout, 10));
+        });
+      }
+    } catch (e) {
+      throw e
+    }
+  }
+  window.loadCSS = window.loadCSS || loadCSS;
+})();
+</script>
+<script data-role="deferred-init" type="text/javascript">
+    /* usage: window.getDeferred(<deferred name>).resolve() or window.getDeferred(<deferred name>).promise.then(...)*/
+    function Def() {
+        this.promise = new Promise((function (a, b) {
+            this.resolve = a, this.reject = b
+        }).bind(this))
+    }
+    const defs = {};
+    window.getDeferred = function (a) {
+        return null == defs[a] && (defs[a] = new Def), defs[a]
+    }
+    window.waitForDeferred = function (b, a, c) {
+        let d = window?.getDeferred?.(b);
+        d
+            ? d.promise.then(a)
+            : c && ["complete", "interactive"].includes(document.readyState)
+                ? setTimeout(a, 1)
+                : c
+                    ? document.addEventListener("DOMContentLoaded", a)
+                    : console.error(`Deferred  does not exist`);
+    };
+</script>
+<style id="forceCssIncludes">
+    /* This file is auto-generated from a `scss` file with the same name */
+.videobgwrapper{overflow:hidden;position:absolute;z-index:0;width:100%;height:100%;top:0;left:0;pointer-events:none;border-radius:inherit}.videobgframe{position:absolute;width:101%;height:100%;top:50%;left:50%;transform:translateY(-50%) translateX(-50%);object-fit:fill}#dm video.videobgframe{margin:0}@media (max-width:767px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:80vh}}@media (min-width:1025px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}@media (min-width:768px) and (max-width:1024px){.responsiveTablet .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}#dm [data-show-on-page-only]{display:none!important}#dmRoot div.stickyHeaderFix div.site_content{margin-top:0!important}#dmRoot div.stickyHeaderFix div.hamburger-header-container{position:relative}
+</style>
+<style id="cssVariables" type="text/css">
+</style>
+<style id="hideAnimFix">
+  .dmDesktopBody:not(.editGrid) [data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) [data-anim-extended] {
+    visibility: hidden;
+  }
+  .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-extended] {
+    visibility: hidden !important;
+  }
+  #dmRoot:not(.editGrid) .flex-element [data-anim-extended] {
+    visibility: hidden;
+  }
+</style>
+<style id="criticalCss">
+    @charset "UTF-8";.display_None,.dmPopupMask{display:none}#dm .dmRespRow.dmRespRowNoPadding,.dmContent,.dmInner ul:not(.defaultList),.dmRespRow.dmRespRowNoPadding,DIV.dmBody{padding:0}@font-face{font-family:FontAwesome;font-display:block;src:url(fonts/fontawesome-webfont_v-6.eot);src:url(fonts/fontawesome-webfont.eot) format("embedded-opentype"),url(fonts/fontawesome-webfont_v-6.woff) format("woff"),url(fonts/fontawesome-webfont_v-6.ttf) format("truetype"),url(fonts/fontawesome-webfont.svg) format("svg");font-weight:400;font-style:normal}@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/s/sourcesanspro/v22/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7l.woff) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/s/sourcesanspro/v22/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwlxdu.woff) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}.dmInner{min-height:100vh!important;position:relative}.dmPopup,.dmPopupMask{position:fixed;left:0}.dmDisplay_None{display:none!important}.clearfix:after{clear:both;visibility:hidden;line-height:0;height:0}.clearfix:after,.clearfix:before{content:' ';display:table}.clearfix{display:inline-block}#dm .dmWidget .icon{font-size:26px}body.dmRoot #dm .dmOuter .dmInner .dmWidget .icon.hasFontIcon{height:26px;margin-top:-13px;line-height:normal;text-align:center;background-image:none}.dmRoot .hasFontIcon{background-image:none!important}.dmPopupMask{margin:0;width:10px;z-index:1000000999;top:0}#dmRoot .dmPopup{display:block}.dmPopup{text-align:left;top:10px;width:93%;z-index:1000009999!important;box-sizing:border-box;background:#f5f5f5;overflow-y:auto;height:100%;display:block}.dmPopup .dmPopupTitle{text-align:left;font:700 19px Helvetica,Arial;margin:20px 20px 35px;color:#999}#dmPopup{opacity:0}.dmPopupClose,.dmPopupClose:before{position:absolute;visibility:visible}.dmPopupClose{border-radius:25px;width:27px;height:27px;z-index:1;background-color:rgba(255,255,255,.4);top:12px;right:12px}.dmPopupClose:before{display:block;font-size:20px;color:#000;top:3px;right:3px}body.dmDesktopBody:not(.mac) .data::-webkit-scrollbar{width:5px;height:5px}body.dmDesktopBody:not(.mac) .data::-webkit-scrollbar-track{background:rgba(0,0,0,.1)}body.dmDesktopBody:not(.mac) .data::-webkit-scrollbar-thumb{background:#c8c8c8;box-shadow:inset 0 1px 2px #454545;border-radius:45px}#dm .dmRespRow .dmRespColsWrapper{display:flex}.pswp{display:none;z-index:9999999999!important}.align-center{margin-left:auto;margin-right:auto}.text-align-center{text-align:center}body.fix-mobile-scrolling{overflow:initial}#hcontainer[has-shadow=true]{position:relative;z-index:1}#dmRoot{text-decoration-skip-ink:none}nav{display:block}html{font-family:Source Sans Pro;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0}img{border:0;max-width:100%;-ms-interpolation-mode:bicubic;display:inline-block}button{font-family:inherit;font-size:100%;margin:0;line-height:normal;text-transform:none;-webkit-appearance:button}button::-moz-focus-inner{border:0;padding:0}*,:after,:before{box-sizing:border-box}.dmRespRow{padding-top:15px;padding-bottom:15px}.dmRespRow:after,.dmRespRow:before{content:' ';display:table}.dmRespRow:after{clear:both}.dmRespRow,.dmRespRow .dmRespColsWrapper{max-width:960px;position:relative;margin:0 auto;width:100%}.dmHeader,.dmRespRow .dmRespCol>*{max-width:100%}.dmRespRow .dmRespCol{position:relative;width:100%;display:inline-block;vertical-align:top;float:left}.dmDesktopBody .dmRespRow .large-3{position:relative;width:25%}.dmDesktopBody .dmRespRow .large-4{position:relative;width:33.33333%}.dmDesktopBody .dmRespRow .large-5{position:relative;width:41.66667%}.dmDesktopBody .dmRespRow .large-7{position:relative;width:58.33333%}.dmDesktopBody .dmRespRow .large-12{position:relative;width:100%}[class*=' dm-common-icons-']{speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-family:dm-common-icons!important}.dm-common-icons-close:before{content:'\e901'}#dm div.dmContent [class*=' icon-'],[class*=' icon-']{font-family:FontAwesome!important;font-weight:400;font-style:normal;text-decoration:inherit;-webkit-font-smoothing:antialiased}[class*=' icon-']:before{text-decoration:none;display:inline-block;speak:none}a [class*=' icon-']{display:inline}[class*=' icon-']{display:inline;width:auto;height:auto;line-height:normal;vertical-align:baseline;background-image:none;background-position:0 0;background-repeat:repeat;margin-top:0}.icon-star:before{content:'\f005'}.icon-angle-right:before{content:'\f105'}.icon-angle-down:before{content:'\f107'}#dm .dmInner .dmWidget .iconBg{position:absolute;left:0;width:50px;top:50%;margin-top:-13px}html:not(.ios-preview) #dm .hasStickyHeader .dmInner div.dmHeaderContainer{position:fixed!important;z-index:101;width:100%;min-width:768px}.dmNewParagraph[data-version]{line-height:initial}.dmNewParagraph[data-version] .text-align-center{text-align:center!important}.dmNewParagraph[data-version] .text-align-right{text-align:right!important}.dmNewParagraph[data-version] h1,.dmNewParagraph[data-version] h3,.dmNewParagraph[data-version] h5,.dmNewParagraph[data-version] h6,.dmNewParagraph[data-version] p{margin-top:0;margin-bottom:0}.dmNewParagraph[data-version] a{vertical-align:initial}@media (max-width:767px){.dmRoot .dmNewParagraph[data-version] .m-text-align-center{text-align:center!important}}.inlineBindingLink{color:inherit!important;text-decoration:inherit!important}.imageWidget a{font-style:italic;text-align:center}.imageWidget img[width][height],img[width][height]{height:auto}*{border:0 solid #333;scrollbar-arrow-color:#fff;scrollbar-track-color:#F2F2F2;scrollbar-face-color:silver;scrollbar-highlight-color:silver;scrollbar-3dlight-color:silver;scrollbar-shadow-color:silver;scrollbar-darkshadow-color:silver;scrollbar-width:12px}body{-webkit-overflow-scrolling:touch;width:100%;overflow:hidden;-webkit-text-size-adjust:100%!important;-ms-text-size-adjust:100%!important}A IMG{border:none}h1,h3,h5,h6,ul{margin-left:0;margin-right:0}.displayNone{display:none}.dmInner *{-webkit-font-smoothing:antialiased}.clearfix,a,img,li,ul{vertical-align:top}#iscrollBody,#site_content{position:relative}.dmOuter{word-wrap:break-word}.dmInner{font-size:16px;background:#fff;color:#111}.dmDesktopBody .dmInner{min-width:960px}.dmInner a{color:#463939}.dmHeader{background:#fff;color:#111;text-align:center;position:relative;width:100%}#innerBar.lineInnerBar,.dmLargeBody .dmBody .dmRespRowsWrapper{background-color:transparent}DIV.dmBody{clear:both}.dmContent{margin:0}#site_content ul:not(.defaultList){-webkit-padding-start:0;-moz-padding-start:0;list-style-position:inside}#innerBar{position:relative;height:36px;width:100%;font-size:20px;margin:0;z-index:80}.dmRespRowsWrapper{max-width:960px;margin:0 auto}.dmLargeBody .imageWidget:not(.displayNone){display:inline-block;max-width:100%}.imageWidget:not(.displayNone) img{width:100%}.dmDivider.defaultDivider{min-height:1px;background-color:rgba(17,17,17,.2);margin:0}h3{font-weight:400;font-size:23px}#dm .dmRespColsWrapper{display:block}.dmNewParagraph{text-align:left;margin:8px 0;padding:2px 0}.dmLargeBody .dmRespRowsWrapper>.dmRespRow .dmRespCol,.dmLargeBody .fHeader .dmRespRow .dmRespCol{padding-left:.75%;padding-right:.75%}.dmLargeBody .dmRespRowsWrapper>.dmRespRow .dmRespCol:first-child,.dmLargeBody .fHeader .dmRespRow .dmRespCol:first-child{padding-left:0;padding-right:1.5%}.dmLargeBody .dmRespRowsWrapper>.dmRespRow .dmRespCol:last-child,.dmLargeBody .fHeader .dmRespRow .dmRespCol:last-child{padding-right:0;padding-left:1.5%}.dmLargeBody .dmRespRowsWrapper>.dmRespRow .dmRespCol:only-child,.dmLargeBody .fHeader .dmRespRow .dmRespCol:only-child{padding-left:0;padding-right:0}#innerBar.lineInnerBar{display:table;width:100%;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;font-size:20px;margin-top:30px;margin-bottom:30px;color:#111}#innerBar .titleLine{display:table-cell;vertical-align:middle;width:50%}.dmPageTitleRow:not(#innerBar){display:none}.titleLine hr{min-height:1px;background-color:rgba(17,17,17,.2)}.dmStandardDesktop{display:block}#dmFirstContainer .dmRespRowsWrapper:after,#dmFirstContainer .dmRespRowsWrapper:before{content:"";display:table}.dmInner a{outline:0;vertical-align:inherit}.dmLinksMenu>ul{display:block;margin:0;font-size:inherit}.standardHeaderLayout .dmHeader{float:none;display:block;height:auto}.dmStandardDesktop{margin:0 auto}#dm .dmDivider{display:block;margin:10px 0}.dmSpacer{border:0;height:15px}body{background-color:#eee}.dmDivider{min-height:2px;border:currentColor;color:grey;background:0 0}#dm .dmDividerWrapper{display:block}.main-navigation.unifiednav{display:flex;justify-content:flex-start;align-items:stretch;overflow:visible}.main-navigation.unifiednav ul{list-style:none;padding:0;margin:0;font-size:1rem}.main-navigation.unifiednav .unifiednav__container{display:flex;justify-content:flex-start;list-style:none}.main-navigation.unifiednav .unifiednav__container>.unifiednav__item-wrap{display:flex;justify-content:flex-start;position:relative;font-weight:400}.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap::after,.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap::before{content:'';-ms-grid-row-align:center;align-self:center;font-weight:700}.main-navigation.unifiednav .unifiednav__container>.unifiednav__item-wrap>.unifiednav__item{display:flex;justify-content:flex-start;align-items:center;flex-direction:row;color:inherit;text-decoration:none;position:relative;padding:12px 15px;margin:0;font-weight:inherit;letter-spacing:.03em}.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item{padding:0 15px}.main-navigation.unifiednav .unifiednav__container>.unifiednav__item-wrap>.unifiednav__item .nav-item-text{white-space:nowrap}.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::after,.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::before{content:'';width:100%;height:0;border:0 solid transparent;border-top-color:currentColor;display:block;opacity:0}.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected .nav-item-text::after,.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected .nav-item-text::before{opacity:1}.main-navigation.unifiednav.effect-bottom2{padding:calc(12px - .2em - 2px) 15px}.main-navigation.unifiednav.effect-bottom2 .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::after,.main-navigation.unifiednav.effect-bottom2 .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::before{transform:scaleX(0);border-top-width:2px}.main-navigation.unifiednav.effect-bottom2 .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::after{margin-top:.2em}.main-navigation.unifiednav.effect-bottom2 .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::before{margin-bottom:.2em;border-top-color:transparent}.main-navigation.unifiednav.effect-bottom2 .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected .nav-item-text::after,.main-navigation.unifiednav.effect-bottom2 .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected .nav-item-text::before{transform:scaleX(1)}.main-navigation.unifiednav.effect-bottom2 .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::after,.main-navigation.unifiednav.effect-bottom2 .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::before{transform-origin:left}.main-navigation.unifiednav .unifiednav__container .unifiednav__item:not(.unifiednav__item_has-sub-nav) .icon{display:none}.main-navigation.unifiednav .unifiednav__container[data-depth]{position:absolute;top:0;left:0;flex-direction:column;opacity:0;z-index:100;background-color:#faf9f9}.main-navigation.unifiednav .unifiednav__container[data-depth='0']{top:100%;transform:translateY(-10px)}#dm .p_hfcontainer .u_1190878319.main-navigation.unifiednav .unifiednav__container[data-depth="0"],#dm .p_hfcontainer .u_1190878319.main-navigation.unifiednav:not([image]) .unifiednav__container[data-depth="0"]{top:calc(100% - 0px - 0px)!important}.main-navigation.unifiednav:not(.unifiednav_vertical) .unifiednav__container[data-depth='0']{left:15px}.main-navigation.unifiednav .unifiednav__container>.unifiednav__item-wrap .unifiednav__container>.unifiednav__item-wrap{flex-direction:column}.main-navigation.unifiednav .unifiednav__container[data-depth]>.unifiednav__item-wrap .unifiednav__item{padding:15px 30px 15px 15px;margin:0}.main-navigation.unifiednav .unifiednav__container[data-depth]>.unifiednav__item-wrap:not(:last-child)::after{content:''!important;width:100%;height:0;color:#ececec;-ms-grid-row-align:center;align-self:center;border:0 solid currentColor}.main-navigation.unifiednav[layout-sub=submenu_horizontal_1] .unifiednav__container[data-depth]{color:#999}.main-navigation.unifiednav .unifiednav__container>.unifiednav__item-wrap>.unifiednav__item.unifiednav__item_has-sub-nav .icon{display:initial;padding-left:10px;margin-left:0}.main-navigation.unifiednav:not(.unifiednav_vertical)>.unifiednav__container{justify-content:inherit}#dm .p_hfcontainer nav.main-navigation.unifiednav{min-width:9em!important;text-align:initial!important}#dm .main-navigation.unifiednav .unifiednav__container[data-depth]{background-color:transparent}#dm .main-navigation.unifiednav[layout-sub=submenu_horizontal_1] .unifiednav__container[data-depth]{background-color:#faf9f9}#dm .main-navigation.unifiednav .unifiednav__container[data-depth]>.unifiednav__item-wrap:not(:last-child)::after{color:#d1d1d1}#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL])>.unifiednav__container{flex-wrap:wrap;justify-content:inherit}#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL])>.unifiednav__container .nav-item-text::before{text-align:left}#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL]) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::after,#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL]) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::before{content:''}#dm .dmBody .dmRespRowsWrapper{max-width:none;background-color:transparent}.dmLargeBody .dmRespRow{width:100%;max-width:none;margin-left:0;margin-right:0;padding-left:40px;padding-right:40px}.dm-bfs.dm-layout-home div.dmInner{background-color:#fff}.dmStandardDesktop .dmHeader{background-color:#fff;max-width:100%}#dm div.dmContent h1{color:#111}#dm div.dmRespCol>*{line-height:150%}#dm div.dmRespCol>[data-version]{line-height:1.5}#dm div.p_hfcontainer h6{color:#111;direction:ltr;font-family:"Source Sans Pro";font-weight:400;font-style:normal;text-decoration:none}#dm div.dmContent h1,#dm div.dmContent h3{color:rgba(56,145,198,1);direction:ltr;font-family:"Source Sans Pro";font-weight:700;font-style:normal}#dm div.p_hfcontainer .dmNewParagraph[data-version] h6{text-decoration:inherit}#dm div.p_hfcontainer .dmNewParagraph[data-version] h6 *{text-decoration:none}#dm .dmNewParagraph a,#dm div.dmNewParagraph a{color:rgba(56,145,198,1);text-decoration:underline}#dm div.dmContent h1{text-decoration:none;font-size:36px}#dm div.dmContent .dmNewParagraph[data-version] h1{text-decoration:inherit}#dm div.dmContent .dmNewParagraph[data-version] h1 *,#dm div.dmContent h3{text-decoration:none}#dm div.dmContent .dmNewParagraph[data-version] h3{text-decoration:inherit}#dm div.dmContent .dmNewParagraph[data-version] h3 *{text-decoration:none}#dm div.p_hfcontainer h6{font-size:16px}#dm DIV.dmOuter DIV.dmInner{background-color:rgba(235,236,238,1)}#dm div.dmContent h3{font-size:23px}@media all{:root{--btn-text-direction:ltr;--btn-border-r-color:var(--btn-border-color);--btn-border-l-color:var(--btn-border-color);--btn-border-b-width:var(--btn-border-width);--btn-border-width:1px;--btn-border-radius:0px;--btn-border-t-width:var(--btn-border-width);--btn-border-tl-radius:var(--btn-border-radius);--btn-border-br-radius:var(--btn-border-radius);--btn-border-bl-radius:var(--btn-border-radius);--btn-bg-color:rgb(56, 145, 198);--btn-border-color:rgb(255, 255, 255);--btn-border-tr-radius:var(--btn-border-radius);--btn-border-r-width:var(--btn-border-width);--btn-bg-image:none;--btn-border-b-color:var(--btn-border-color);--btn-border-l-width:var(--btn-border-width);--btn-border-t-color:var(--btn-border-color);--btn-text-align:center;--btn-text-color:rgb(255, 255, 255);--btn-text-decoration:none;--btn-text-font-weight:700;--btn-icon-color:rgb(247, 247, 247);--btn-icon-fill:rgb(247, 247, 247);--btn-icon-wrpr-display:none;--btn-hover-border-b-color:var(--btn-hover-border-color);--btn-hover-bg:rgb(34, 34, 34);--btn-hover-border-t-color:var(--btn-hover-border-color);--btn-hover-border-r-color:var(--btn-hover-border-color);--btn-hover-border-l-color:var(--btn-hover-border-color);--btn-hover-border-color:var(--btn-border-color);--btn-hover-text-color:var(--btn-text-color);--btn-hover-text-font-weight:var(--btn-text-font-weight);--btn-hover-text-decoration:var(--btn-text-decoration);--btn-hover-text-font-style:var(--btn-text-font-style)}}@media (min-width:0px) and (max-width:767px){:root{--btn-text-font-size:18px}}#dm .dmWidget:not([data-buttonstyle]) .iconBg{display:none}#dm div.dmInner #site_content .dmWidget span.icon{color:var(--btn-icon-color);fill:var(--btn-icon-fill)}.u_1239106891,.u_1827972418{background-image:none!important;background-color:rgba(0,0,0,0)!important;background-position:0 0!important;background-size:auto!important;background-repeat:repeat!important;color:#111!important;text-align:start!important}#dm div.dmInner #site_content .dmWidget:not([data-buttonstyle]) .iconBg{display:var(--btn-icon-wrpr-display)}#dm .dmInner div.dmHeader,#dm .dmInner div.dmHeader.u_hcontainer,#dm .dmInner div.u_hcontainer{box-shadow:rgba(175,174,174,.25) 0 3px 11px 0!important;-moz-box-shadow:rgba(175,174,174,.25) 0 3px 11px 0!important;-webkit-box-shadow:rgba(175,174,174,.25) 0 3px 11px 0!important}#dm .p_hfcontainer .u_1190878319.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child) .unifiednav__container[data-depth="0"]{left:30px!important}#dm .p_hfcontainer nav.u_1190878319.main-navigation.unifiednav .unifiednav__container[data-depth]>.unifiednav__item-wrap:not(:last-child)::after{border-top-color:rgba(17,17,17,1)!important}.u_1239106891{margin:0!important;padding:0!important}.u_1827972418{margin:0!important;padding:4px 40px!important}#dm .p_hfcontainer .u_1190878319.main-navigation.unifiednav[data-nav-structure=HORIZONTAL] .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child) .unifiednav__container[data-depth="0"]{left:12px!important}#dm .p_hfcontainer .u_1190878319.main-navigation.unifiednav .unifiednav__container[data-depth] .unifiednav__item{margin:0!important;padding:7px 30px 7px 15px!important}#dm .p_hfcontainer .u_1190878319.main-navigation.unifiednav:not([data-nav-structure=VERTICAL]) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::after,#dm .p_hfcontainer .u_1190878319.main-navigation.unifiednav:not([data-nav-structure=VERTICAL]) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::before{font-size:18px!important}#dm .p_hfcontainer div.u_1436922825{background-color:rgba(56,145,198,1)!important}#dm .p_hfcontainer div.u_1827972418,#dm .p_hfcontainer nav.u_1190878319.main-navigation.unifiednav .unifiednav__container[data-depth]{background-color:rgba(34,34,34,1)!important}#dm .p_hfcontainer .u_1939143293{width:100%!important}#dm .p_hfcontainer nav.u_1190878319.main-navigation.unifiednav .unifiednav__container[data-depth] .unifiednav__item{color:rgba(255,255,255,1)!important;font-weight:700!important;font-size:14px!important}#dm .p_hfcontainer .u_1190878319.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item{padding:0 12px!important;margin:0!important}#dm .p_hfcontainer nav.u_1190878319.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected{text-decoration:none!important}#dm .p_hfcontainer nav.u_1190878319.main-navigation.unifiednav:not(.unifiednav_vertical) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::after,#dm .p_hfcontainer nav.u_1190878319.main-navigation.unifiednav:not(.unifiednav_vertical) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::before{padding-top:0!important;padding-bottom:0!important;margin-top:0!important;margin-bottom:0!important}#dm .p_hfcontainer nav.u_1190878319{float:none!important;top:0!important;left:0!important;width:calc(100% - 0px)!important;position:relative!important;height:auto!important;max-width:100%!important;justify-content:center!important;align-items:stretch!important;min-width:25px!important;text-align:start!important;margin-top:0!important;padding:6px 0 6.8px!important}#dm .p_hfcontainer div.u_1436922825,div.u_1436922825{float:none!important;top:0!important;left:0!important;width:auto!important;position:relative!important;min-width:0!important}#dm .p_hfcontainer nav.u_1190878319.main-navigation.unifiednav:not([data-nav-structure=VERTICAL]) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::after,#dm .p_hfcontainer nav.u_1190878319.main-navigation.unifiednav:not([data-nav-structure=VERTICAL]) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::before{padding-top:0!important;padding-bottom:0!important;margin-top:0!important;margin-bottom:0!important}.stickyHeaderSpacer{height:408.17px!important}div.u_1457608691{padding:0!important}div.u_1992958820{padding-left:0!important}div.u_1905117857{padding-left:10px!important}div.u_1436922825{height:auto!important;max-width:none!important;text-align:center!important;padding:0 15px!important}#dm .p_hfcontainer div.u_1436922825{height:auto!important;max-width:100%!important;text-align:center!important;padding:17px 15px!important;margin:0!important}#dm .p_hfcontainer div.u_1905117857{padding:0!important}#dm .p_hfcontainer div.u_1249911509,#dm .p_hfcontainer div.u_1253444126,#dm .p_hfcontainer div.u_1777409999{padding:2px 0!important;float:none!important;top:0!important;left:0!important;position:relative!important;min-width:25px!important}@media (min-width:1025px){:root{--btn-text-font-size:18px}.responsiveTablet .stickyHeaderSpacer{height:206.53px!important}}#dm .p_hfcontainer nav.u_1190878319.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item{color:rgba(255,255,255,1)!important;font-weight:700!important;font-size:18px!important}@media (min-width:768px) and (max-width:1024px){:root{--btn-text-font-size:18px}.responsiveTablet .stickyHeaderSpacer{height:206.53px!important}}#dm .p_hfcontainer div.u_1777409999{width:calc(100% - 23px)!important;height:auto!important;max-width:272px!important;display:block!important;margin:8px auto 0!important}#dm .p_hfcontainer div.u_1249911509{width:calc(100% - 89px)!important;height:auto!important;max-width:230px!important;display:block!important;margin:-8px 0 8px 89.98px!important}#dm .p_hfcontainer div.u_1253444126{width:calc(100% - 0px)!important;height:auto!important;max-width:100%!important;margin:11px auto 8px!important}#dm .p_hfcontainer div.u_1939143293{float:none!important;top:0!important;left:0!important;width:calc(100% - 14px)!important;position:relative!important;max-width:289px!important;min-width:25px!important;text-align:center!important;height:auto!important;display:block!important;padding:0!important;margin:11px auto 0!important}#dm .dmBody .u_1476178741,#dm .dmBody .u_1510156746,#dm .dmBody .u_1512417920,#dm .dmBody .u_1954633444,#dm .dmBody .u_1984285276{width:100%!important}#dm .p_hfcontainer div.u_1827972418{border-bottom-style:solid!important;border-bottom-color:rgba(210,210,210,1)!important;border-bottom-width:0!important;padding:0!important}.u_1062526451,.u_1380998510{background-image:none!important;background-color:rgba(0,0,0,0)!important;background-position:0 0!important;background-size:auto!important;background-repeat:repeat!important;margin:0!important;text-align:center!important}.u_1380998510{padding:0 14.39px 0 0!important}.u_1062526451{padding:15px 40px!important}.u_1151142744,.u_1769054263,.u_1913869963{background-image:none!important;background-position:0 0!important;background-size:auto!important;background-repeat:repeat!important;text-align:center!important;padding:0 14.39px 0 0!important;margin:0!important}#dm .dmBody div.u_1514952208{background-color:rgba(56,145,198,1)!important}#dm .dmBody div.u_1248174138{background-color:rgba(34,34,34,1)!important}#dm .dmBody div.u_1808143428{background-color:rgba(56,145,198,1)!important}.u_1769054263{background-color:rgba(0,0,0,0)!important}#dm .dmBody div.u_1935697698{background-color:rgba(56,145,198,1)!important}.u_1151142744{background-color:rgba(0,0,0,0)!important}#dm .dmBody div.u_1834848206,#dm .dmBody div.u_1892758217{background-color:rgba(56,145,198,1)!important}.u_1913869963{background-color:rgba(0,0,0,0)!important}#dm .dmBody div.u_1514952208{width:auto!important;padding:20px 0!important;margin:0!important}#dm .dmBody div.u_1248174138{margin:0!important;padding:0 15px!important}#dm .dmBody div.u_1748889947{float:none!important;top:0!important;left:0!important;width:calc(100% - 0px)!important;position:relative!important;height:auto!important;max-width:352px!important;min-width:25px!important;padding:2px 0!important;margin:85px 0 8px!important}#dm .dmBody div.u_1380998510{margin:0!important;padding:0 10px!important}#dm .dmBody div.u_1808143428,#dm .dmBody div.u_1834848206,#dm .dmBody div.u_1892758217,#dm .dmBody div.u_1935697698{top:0!important;left:0!important;width:calc(100% - 0px)!important;position:relative!important;max-width:100%!important;min-width:25px!important;margin:0 auto!important;height:auto!important;float:none!important}#dm .dmBody div.u_1808143428{padding:5px 0!important}#dm .dmBody div.u_1769054263{padding:0 10px!important}#dm .dmBody div.u_1935697698{padding:5px 0!important}#dm .dmBody div.u_1151142744{padding:0 10px!important}#dm .dmBody div.u_1892758217{padding:5px 0!important}#dm .dmBody div.u_1913869963{padding:0 10px!important}#dm .dmBody div.u_1834848206{padding:5px 0!important}#dm .dmBody div.u_1476178741,#dm .dmBody div.u_1510156746,#dm .dmBody div.u_1954633444,#dm .dmBody div.u_1984285276{top:0!important;left:0!important;width:calc(100% - 0px)!important;position:relative!important;max-width:100%!important;min-width:25px!important;text-align:center!important;padding:0!important;margin:0 auto!important}#dm .dmBody div.u_1476178741,#dm .dmBody div.u_1954633444{float:none!important;height:auto!important}#dm .dmBody div.u_1510156746,#dm .dmBody div.u_1984285276{float:none!important}#dm .dmBody div.u_1062526451{width:auto!important;margin:0!important;padding:30px 40px 20px!important}.font-size-24,.size-24{font-size:24px!important}.dmInner{min-width:auto!important;max-width:100vw!important}
+    .dmDesktopBody [data-anim-desktop]:not([data-anim-desktop='none']) {
+      visibility: hidden;
+    }
+</style>
+<style id="fontFallbacks">
+    @font-face {
+  font-family: "Roboto Fallback";
+  src: local('Arial');
+  ascent-override: 92.6709%;
+  descent-override: 24.3871%;
+  size-adjust: 100.1106%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Lato Fallback";
+  src: local('Arial');
+  ascent-override: 101.3181%;
+  descent-override: 21.865%;
+  size-adjust: 97.4159%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Lora Fallback";
+  src: local('Arial');
+  ascent-override: 95.2907%;
+  descent-override: 25.9539%;
+  size-adjust: 105.5717%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Helvetica Fallback";
+  src: local('Arial');
+  ascent-override: 77.002%;
+  descent-override: 22.998%;
+  line-gap-override: 0%;
+ }
+</style>
+<!-- End render the required css and JS in the head section -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.comprehensivept.org/">
+  <script type="application/ld+json">
+    {
+        "@context" : "https://schema.org",
+        "@type" : "WebSite",
+        "name" : "Comprehensive Physical Therapy PC",
+        "url" : "https://www.comprehensivept.org/"
+    }
+  </script>
+  <title>
+    Comprehensive Physical Therapy PC Physical Therapists Commack
+  </title>
+	<link rel="canonical" href="https://www.comprehensivept.org">
+  <meta name="description" content="631-543-9300 - 30+ years of experience. Compassionate care. Variety of treatments. Physical therapists. NY-licensed. Sports injuries. Neck and back pain.">
+  <style type="text/css">
+.dmInner {
+min-width: auto !important;
+max-width: 100vw !important;
+}
+  </style>
+  <meta name="format-detection" content="telephone=no">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Comprehensive Physical Therapy PC Physical Therapists Commack">
+  <meta name="twitter:description" content="631-543-9300 - 30+ years of experience. Compassionate care. Variety of treatments. Physical therapists. NY-licensed. Sports injuries. Neck and back pain.">
+  <meta property="og:description" content="631-543-9300 - 30+ years of experience. Compassionate care. Variety of treatments. Physical therapists. NY-licensed. Sports injuries. Neck and back pain.">
+  <meta property="og:title" content="Comprehensive Physical Therapy PC Physical Therapists Commack">
+<!-- SYS- VVNfSElCVV9QUk9EVUNUSU9O -->
+<script type="text/javascript">(function(){ if (typeof(___zen) === "undefined") {setTimeout(arguments.callee, 50); return; }___zen.hic("__ZEHIC2790", 1743672190, 1, 0, 60); })()</script><script type="text/javascript" async="async" src="__zenedge/assets/hic_v-1674207422.js"></script><script src="https://static-res-cdn.websites.hibu.com/libs/bower-skrollr/skrollr.min.js"></script><style type="text/css" data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0px;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:lucida grande,tahoma,verdana,arial,sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:400;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{0%{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+
+.fb_dialog{background:#525252b3;position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://connect.facebook.net/rsrc.php/v4/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://connect.facebook.net/rsrc.php/v4/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://connect.facebook.net/rsrc.php/v4/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:700;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://connect.facebook.net/rsrc.php/v4/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://connect.facebook.net/rsrc.php/v4/ya/r/3rhSv5V8j3o.gif) #fff no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:#0006;inset:0;min-height:100%;position:absolute;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba),to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:#fff 0 1px 1px -1px inset;color:#fff;font:700 14px Helvetica,sans-serif;text-overflow:ellipsis;text-shadow:rgba(0,30,84,.296875) 0px -1px 0px;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2),to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:700 12px Helvetica,sans-serif;margin:2px -12px;padding:2px 6px 3px;text-shadow:rgba(0,30,84,.296875) 0px -1px 0px}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:700;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://connect.facebook.net/rsrc.php/v4/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4A4A4A;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4A4A4A;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://connect.facebook.net/rsrc.php/v4/y2/r/onuUJj0tCqE.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0)}to{transform:rotate(360deg)}}
+
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}
+</style><style>
+      cmp-toolbar {
+        --color_1: #666;
+        --color_2: #FFFFFF;
+      }</style><link rel="stylesheet" type="text/css" href="https://wsv3cdn.audioeye.com/static-scripts/v2/2026-04-08/compliance.css"><link rel="stylesheet" type="text/css" href="https://wsv3cdn.audioeye.com/static-scripts/v2/2026-04-08/fullCSS.bundle.css"><style>
+      .audioeye-skip-link {
+        display: inline-block !important;
+        position: absolute;
+        left: -9999px;
+        overflow: hidden;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        z-index: 50000 !important;
+      }
+      .audioeye-skip-link:focus, .audioeye-skip-link:active {
+        left: 0;
+        width: auto;
+        height: auto;
+        background: #fff;
+        color: #000;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 1.5;
+        margin-bottom: 8px;
+        padding: 5px;
+        border: 3px solid #000;
+        transition: none;
+      }
+    </style></head>
+<body id="dmRoot" data-page-alias="home" class="dmRoot dmDesktopBody fix-mobile-scrolling addCanvasBorder dmResellerSite dmLargeBody responsiveTablet pcCustomScrollbar d1SiteBody dmBodyNoIscroll" style="padding:0;margin:0;" data-audioeye-device-desktop="" data-audioeye-launcher=""><a href="#stickyHeaderSpacer" class="audioeye-skip-link">Skip To Main Content</a><div id="ae_enabled_site" class="ae-blurb-noaudio" role="status" aria-live="polite" data-nosnippet="" style="display: none;"><div><p data-modulename="launcher">This website is AudioEye enabled and is being optimized for accessibility. To open the AudioEye Toolbar, press "shift + =". Some assistive technologies may require the use of a passthrough function before this keystroke. For more information, activate the button labeled "Explore your accessibility options".</p></div></div>
+<!-- ========= Site Content ========= -->
+<div id="dm" class="dmwr">
+    <div class="dm_wrapper standard-var5 widgetStyle-3 standard">
+         <div dmwrapped="true" id="1901957768" class="dm-home-page" themewaschanged="true"> <div dmtemplateid="StandardLayoutMultiD" class="standardHeaderLayout dm-bfs dm-layout-home hasAnimations hasStickyHeader dmPageBody d-page-1716942098 dmFreeHeader" id="dm-outer-wrapper" data-page-class="1716942098" data-soch="true" data-background-parallax-selector=".dmHomeSection1, .dmSectionParallex"> <div id="dmStyle_outerContainer" class="dmOuter"> <div id="dmStyle_innerContainer" class="dmInner"> <div class="dmLayoutWrapper standard-var dmStandardDesktop"> <div> <div id="iscrollBody"> <div id="site_content"> <div class="dmHeaderContainer fHeader d-header-wrapper"> <div id="hcontainer" class="dmHeader p_hfcontainer u_hcontainer" freeheader="true" has-shadow="true"> <div dm:templateorder="85" class="dmHeaderResp dmHeaderStack noSwitch" id="1709005236"> <div class="u_1436922825 dmRespRow dmDefaultListContentRow" style="text-align:center" id="1436922825"> <div class="dmRespColsWrapper" id="1550068740"> <div class="u_1905117857 dmRespCol small-12 large-4 medium-4" id="1905117857"> <div class="u_1939143293 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1939143293" editablewidget="true"> <a href="/" id="1357409411"><img src="6811e6379ba64005918f9175b61ba280/dms3rep/multi/opt/11909767-346w.png" id="1759176127" class="" data-dm-image-path="https://cdn.hibuwebsites.com/6811e6379ba64005918f9175b61ba280/dms3rep/multi/11909767.png" width="286" height="53" alt="Comprehensive Physical Therapy PC Physical Therapists Commack" onerror="handleImageLoadError(this)"></a> 
+</div> 
+ <div class="u_1777409999 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1777409999" style="transition: none 0s ease 0s; text-align: left; display: block;" new-inline-bind-applied="true" data-diy-text=""> <h6 class="text-align-center" aria-level="2" role="heading"><span style="display: initial; color: rgb(255, 255, 255);"><span class="inline-data-binding" data-encoded-value="SW5kaXZpZHVhbGl6ZWQgcGF0aWVudCBjYXJlIGJ5IGhpZ2hseSBza2lsbGVkIHRoZXJhcGlzdHM=" data-inline-binding="site_text.extra hdr text">Individualized patient care by highly skilled therapists</span></span></h6> 
+</div> 
+</div> 
+ <div class="u_1992958820 dmRespCol small-12 large-4 medium-4" id="1992958820"> <div data-element-type="spacer" class="dmSpacer" id="1089422210"></div> 
+</div> 
+ <div class="u_1457608691 small-12 dmRespCol large-4 medium-4" id="1457608691"> <div class="u_1253444126 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1253444126" style="transition: opacity 1s ease-in-out 0s;" new-inline-bind-applied="true" data-diy-text=""> <h5 class="m-size-19 text-align-right size-24" aria-level="3" role="heading"><span class="m-font-size-19 font-size-24" style="font-weight: bold; display: initial; color: rgb(255, 255, 255);"><span class="inline-data-binding" data-encoded-value="NjMxLTU0My05MzAw" data-inline-binding="content_library.global.phone.main"><a class="inlineBindingLink" target="_blank" href="tel:631-543-9300" aria-describedby="audioeye_new_window_message">631-543-9300</a></span></span></h5> 
+</div> 
+ <div class="u_1249911509 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1249911509"><p class="text-align-right"><span style="display: unset; font-weight: 700; color: rgb(255, 255, 255);">6268 Jericho Tpke., Ste. 3, Commack, NY 11725</span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1827972418" id="1827972418"> <div class="dmRespColsWrapper" id="1584211045"> <div class="dmRespCol large-12 medium-12 small-12 u_1239106891" id="1239106891"> <nav class="u_1190878319 effect-bottom2 main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="horizontal_nav_layout_1" layout-sub="submenu_horizontal_1" data-show-vertical-sub-items="HOVER" id="1190878319" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" class="unifiednav__item-wrap" data-auto="more-pages" data-depth="0"> <a href="/" class="unifiednav__item dmUDNavigationItem_00 currentPage dmNavItemSelected" target="" data-target-page-alias="" data-auto="selected-page"> <span class="nav-item-text " data-link-text="
+         HOME
+        " data-auto="page-text-style">HOME<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" aria-haspopup="true" class="unifiednav__item-wrap" data-auto="more-pages" data-depth="0"> <a href="/#OURSERVICES" class="unifiednav__item dmUDNavigationItem_010101153318 unifiednav__item_has-sub-nav dmNavItemSelected" target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         OUR SERVICES
+        " data-auto="page-text-style">OUR SERVICES<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+ <ul role="menu" aria-expanded="false" class="unifiednav__container unifiednav__container_sub-nav" data-depth="0" data-auto="sub-pages"> <li role="menuitem" class="unifiednav__item-wrap" data-auto="more-pages" data-depth="1"> <a href="/" class="unifiednav__item dmUDNavigationItem_010101373034 currentPage dmNavItemSelected" target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+           SPORTS INJURY
+          " data-auto="page-text-style">SPORTS INJURY<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class="unifiednav__item-wrap" data-auto="more-pages" data-depth="1"> <a href="neck-and-back-pain/4155095" class="unifiednav__item dmUDNavigationItem_010101280175" target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+           NECK AND BACK PAIN
+          " data-auto="page-text-style">NECK AND BACK PAIN<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class="unifiednav__item-wrap" data-auto="more-pages" data-depth="1"> <a href="joint-replacement/4155096" class="unifiednav__item dmUDNavigationItem_010101449717" target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+           JOINT REPLACEMENT
+          " data-auto="page-text-style">JOINT REPLACEMENT<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</li> 
+ <li role="menuitem" class="unifiednav__item-wrap" data-auto="more-pages" data-depth="0"> <a href="/" class="unifiednav__item dmUDNavigationItem_010101549394" target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         THERAPISTS
+        " data-auto="page-text-style">THERAPISTS<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class="unifiednav__item-wrap" data-auto="more-pages" data-depth="0"> <a href="insurance-patient-forms/4155103" class="unifiednav__item dmUDNavigationItem_010101736307" target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         INSURANCE &amp; PATIENT FORMS
+        " data-auto="page-text-style">INSURANCE &amp; PATIENT FORMS<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class="unifiednav__item-wrap" data-auto="more-pages" data-depth="0"> <a href="/" class="unifiednav__item dmUDNavigationItem_010101535260" target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         ABOUT US
+        " data-auto="page-text-style">ABOUT US<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class="unifiednav__item-wrap" data-auto="more-pages" data-depth="0"> <a href="/" class="unifiednav__item dmUDNavigationItem_010101873606" target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         GALLERY
+        " data-auto="page-text-style">GALLERY<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class="unifiednav__item-wrap" data-auto="more-pages" data-depth="0"> <a href="contact/4155088" class="unifiednav__item dmUDNavigationItem_01010198084" target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         CONTACT
+        " data-auto="page-text-style">CONTACT<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="stickyHeaderSpacer" id="stickyHeaderSpacer" data-new="true" tabindex="-1"></div> 
+ <div class="dmRespRow dmRespRowStable dmRespRowNoPadding dmPageTitleRow "> <div class="dmRespColsWrapper"> <div class="large-12 dmRespCol"> <div id="innerBar" class="innerBar lineInnerBar dmDisplay_None"> <div class="titleLine display_None"><hr></div> 
+<!-- Page title is hidden in css for new responsive sites. It is left here only so we don't break old sites. Don't copy it to new layouts --> <div id="pageTitleText"></div> 
+ <div class="titleLine display_None"><hr></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div dmwrapped="true" id="dmFirstContainer" class="dmBody u_dmStyle_template_home dm-home-page" themewaschanged="true"> <div id="allWrapper" class="allWrapper"><!-- navigation placeholders --> <div id="dm_content" class="dmContent"> <div dm:templateorder="170" class="dmHomeRespTmpl mainBorder dmRespRowsWrapper dmFullRowRespTmpl dmRespRowsWrapperSize1" id="1716942098"> <div class="dmRespRow dmDividerRow displayNone u_1690404670" id="1690404670"> <div class="dmRespColsWrapper clearfix" id="1025528236"> <div class="large-12 medium-12 small-12 dmRespCol u_1950654279" id="1950654279"> <div class="dmDividerWrapper clearfix" data-element-type="dDividerId" id="1128565559"><hr class="dmDivider defaultDivider" id="1895011616"></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1514952208" id="1514952208"> <div class="dmRespColsWrapper" id="1946289225"> <div class="u_1629549719 dmRespCol small-12 large-7 medium-7" id="1629549719"> <div class="imageWidget align-center u_1512417920" data-element-type="image" data-widget-type="image" id="1512417920" editablewidget="true"><img src="6811e6379ba64005918f9175b61ba280/dms3rep/multi/opt/a-ae71-9ea004823868-654w.jpg" alt="Patient and therapist" id="1574954494" class="" data-dm-image-path="https://cdn.hibuwebsites.com/6811e6379ba64005918f9175b61ba280/dms3rep/multi/a-ae71-9ea004823868.jpg" width="555" height="364" onerror="handleImageLoadError(this)"></div> 
+</div> 
+ <div class="u_1248174138 dmRespCol small-12 large-5 medium-5" id="1248174138"> <div class="u_1748889947 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1748889947" style="transition: none 0s ease 0s; text-align: left; display: block;"> <h1 style="line-height: 1.5;" class="m-text-align-center"><span style="color: rgb(255, 255, 255); font-style: inherit; font-weight: inherit; text-decoration: inherit; display: unset;">Choose From a Variety of Treatments to Feel Better</span></h1> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1062526451" style="text-align: center;" id="1062526451"> <div class="dmRespColsWrapper" id="1631631244"> <div class="dmRespCol small-12 u_1380998510 large-3 medium-3" id="1380998510"> <div class="u_1808143428 dmNewParagraph" data-element-type="paragraph" id="1808143428" style="transition: opacity 1s ease-in-out;" data-version="5"> <h3 class="text-align-center"><a href="/" runtime_url="/sports-injury/4155085" type="page" style="display: initial; color: rgb(255, 255, 255);">Sports injuries</a></h3> 
+</div> <div class="u_1476178741 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1476178741" editablewidget="true"><img src="6811e6379ba64005918f9175b61ba280/dms3rep/multi/opt/11909137-286h.jpg" id="1970953111" class="" data-dm-image-path="https://cdn.hibuwebsites.com/6811e6379ba64005918f9175b61ba280/dms3rep/multi/11909137.jpg" width="220" height="239" alt="Boy using pulley machine" onerror="handleImageLoadError(this)"></div> 
+</div> 
+ <div class="dmRespCol small-12 u_1769054263 large-3 medium-3" id="1769054263"> <div class="u_1935697698 dmNewParagraph" data-element-type="paragraph" id="1935697698" style="transition: opacity 1s ease-in-out;" data-version="5"> <h3 class="text-align-center"><a href="/" runtime_url="/therapists/4155098" style="color: rgb(255, 255, 255); display: initial;" type="page">Experienced staff</a></h3> 
+</div> <div class="u_1954633444 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1954633444" editablewidget="true"><img src="6811e6379ba64005918f9175b61ba280/dms3rep/multi/opt/11909138-286h.jpg" id="1683419036" class="" data-dm-image-path="https://cdn.hibuwebsites.com/6811e6379ba64005918f9175b61ba280/dms3rep/multi/11909138.jpg" width="220" height="239" alt="Shoulder therapy" onerror="handleImageLoadError(this)"></div> 
+</div> 
+ <div class="dmRespCol small-12 medium-3 large-3 u_1913869963" id="1913869963"> <div class="u_1834848206 dmNewParagraph" data-element-type="paragraph" id="1834848206" style="transition: opacity 1s ease-in-out;" data-version="5"> <h3 class="text-align-center"><a href="neck-and-back-pain/4155095" runtime_url="/neck-and-back-pain/4155095" style="color: rgb(255, 255, 255); display: initial;" type="page">Neck and back pain</a></h3> 
+</div> <div class="u_1984285276 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1984285276" editablewidget="true"><img src="6811e6379ba64005918f9175b61ba280/dms3rep/multi/opt/11909139-286h.jpg" id="1846713875" class="" data-dm-image-path="https://cdn.hibuwebsites.com/6811e6379ba64005918f9175b61ba280/dms3rep/multi/11909139.jpg" width="220" height="239" alt="Neck therapy" onerror="handleImageLoadError(this)"></div> 
+</div> 
+ <div class="dmRespCol small-12 u_1151142744 large-3 medium-3" id="1151142744"> <div class="u_1892758217 dmNewParagraph" data-element-type="paragraph" id="1892758217" style="transition: opacity 1s ease-in-out;" data-version="5"> <h3 class="text-align-center"><a href="joint-replacement/4155096" runtime_url="/joint-replacement/4155096" style="color: rgb(255, 255, 255); display: initial;" type="page">Joint replacement</a></h3> 
+</div> <div class="u_1510156746 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1510156746" editablewidget="true"><img src="6811e6379ba64005918f9175b61ba280/dms3rep/multi/opt/11909140-286h.jpg" id="1245988077" class="" data-dm-image-path="https://cdn.hibuwebsites.com/6811e6379ba64005918f9175b61ba280/dms3rep/multi/11909140.jpg" width="220" height="239" alt="Knee therapy" onerror="handleImageLoadError(this)"></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1200769135" id="1200769135"> <div class="dmRespColsWrapper" id="1109988207"> <div class="dmRespCol small-12 medium-6 large-6" id="1026129503"> <div class="u_1340018261 dmNewParagraph" id="1340018261" style="display: block;" data-version="5"><p class="text-align-left"><span style="display: initial;">When you need help with a sports injury, neck and back pain, joint replacement, or more, call Comprehensive Physical Therapy PC of Commack, NY. With 30+ years of experience, our team strives to improve your health and keep you pain-free.</span></p></div> <a data-display-type="block" class="u_1606228066 dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/" id="1606228066" data-element-type="dButtonLinkId"> <span class="iconBg u_1668356603" id="1668356603"> <span class="icon hasFontIcon icon-star u_1638166439" id="1638166439"></span> 
+</span> 
+ <span class="text u_1614976331" id="1614976331">Sports Injuries</span> 
+</a> 
+</div> 
+ <div class="dmRespCol small-12 medium-6 large-6" id="1614658129"> <div class="u_1989461031 dmNewParagraph" id="1989461031" style="display: block;" data-version="5"><p class="text-align-left"><span style="display: initial;">Get compassionate care from Dr. Joseph Hayes PT, DPT, OCS, Michael Marinucci PT, MS, ATC, or Connie Monaghan MSPT, DPT. Our goal is to improve your day-to-day routine. All of our therapists are licensed in the state of New York.</span></p></div> <a data-display-type="block" class="u_1076131705 dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/" id="1076131705" data-element-type="dButtonLinkId"> <span class="iconBg u_1782441217" id="1782441217"> <span class="icon hasFontIcon icon-star u_1058814227" id="1058814227"></span> 
+</span> 
+ <span class="text u_1084867441" id="1084867441">Meet our staff</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmFooterContainer"> <div id="fcontainer" class="f_hcontainer dmFooter p_hfcontainer"> <div dm:templateorder="250" class="dmFooterResp generalFooter" id="1943048428"> <div class="u_1009935928 dmRespRow" id="1009935928"> <div class="dmRespColsWrapper" id="1859658702"> <div class="dmRespCol large-12 medium-12 small-12" id="1284904550"> <div class="u_1529041959 align-center text-align-center dmSocialHub gapSpacing" id="1529041959" dmle_extension="social_hub" data-element-type="social_hub" data-binding="W3siYmluZGluZ05hbWUiOiJzb2NpYWwiLCJ2YWx1ZSI6ImNvbnRlbnRfbGlicmFyeS5nbG9iYWwuc29jaWFsIn1d" wr="true" networks="" icon="true" surround="true" adwords=""> <div class="socialHubWrapper"> <div class="socialHubInnerDiv "> <a href="https://facebook.com/LIComprehensivePT/timeline" target="_blank" dm_dont_rewrite_url="true" aria-label="facebook" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event('socialLink', 'click', 'Facebook')" aria-describedby="audioeye_new_window_message"> <span class="dmSocialFacebook dm-social-icons-facebook oneIcon socialHubIcon style5" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div id="1236746004" class="poweredBy poweredByHibu" dmle_extension="powered_by" data-element-type="powered_by" icon="true" surround="false"> <div class="poweredLine1"> <a href="http://budurl.com/hibuprivacy" target="_blank" aria-describedby="audioeye_new_window_message">Privacy Policy</a><span id="spConsentWrapper"><cmp-toolbar></cmp-toolbar></span> 
+| <a href="http://budurl.com/hibucookie" target="_blank" aria-describedby="audioeye_new_window_message">Do Not Share My Information</a> 
+| <a href="http://budurl.com/hibuconditionsofuse" target="_blank" aria-describedby="audioeye_new_window_message">Conditions of Use</a> 
+| <a href="http://budurl.com/hibunotice" target="_blank" aria-describedby="audioeye_new_window_message">Notice and Take Down Policy</a> 
+| <a href="http://b.link/accessibility" target="_blank" aria-describedby="audioeye_new_window_message">Website Accessibility Policy</a> 
+</div> 
+ <div class="poweredLine2">© <span id="hibuYear">2025</span> 
+The content on this website is owned by us and our licensors. Do not copy any content (including images) without our consent.</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+    </div>
+</div>
+<!--  Add full CSS and Javascript before the close tag of the body if needed -->
+<!-- Google Fonts Include -->
+<!-- loadCSS function fonts.jsp-->
+<link rel="stylesheet" href="css/a-wght-400_700-family-Source-Sans-Pro-wght-200-300-400-600-700-900-subset-latin-ext-display-swap_css_8hmn45cwi43ehdxe4q0yvw.css" as="style" fetchpriority="low" onload="loadCSS(this)" type="text/css">
+<!-- RT CSS Include d-css-runtime-desktop-one-package-structured-global-->
+<link rel="stylesheet" as="style" fetchpriority="low" onload="loadCSS(this)" href="mnlt/production/5341/_dm/s/rt/dist/css/d-css-runtime-desktop-one-package-structured-global.min.css" type="text/css">
+<!-- End of RT CSS Include -->
+<link rel="stylesheet" href="WIDGET_CSS/722eb18b9b5fab167036b4829da2f5fc.css" id="widgetCSS" as="style" fetchpriority="low" onload="loadCSS(this)" type="text/css">
+<!-- Support `img` size attributes -->
+<style>img[width][height] {
+    height: auto;
+}</style>
+<!-- Support showing sticky element on page only -->
+<style>
+    body[data-page-alias="home"] #dm [data-show-on-page-only="home"] {
+        display: block !important;
+    }
+</style>
+<!-- This is populated in Ajax navigation -->
+<style id="pageAdditionalWidgetsCss" type="text/css">
+</style>
+<!-- Site CSS -->
+<link rel="stylesheet" href="6811e6379ba64005918f9175b61ba280/files/6811e6379ba64005918f9175b61ba280_withFlex_1.min_v-8.css" id="siteGlobalCss" as="style" fetchpriority="low" onload="loadCSS(this)" type="text/css">
+<!-- additional css file per platform -->
+<link type="text/css" rel="stylesheet" href="_dm/s/rt/css/hibu/hibu-runtime_version-2025-03-27T13_48_46.css">
+<style id="customWidgetStyle" type="text/css">
+</style>
+<style id="innerPagesStyle" type="text/css">
+</style>
+<style id="additionalGlobalCss" type="text/css">
+</style>
+<!-- Page CSS -->
+<link rel="stylesheet" href="6811e6379ba64005918f9175b61ba280/files/6811e6379ba64005918f9175b61ba280_home_withFlex_1.min_v-8.css" id="homeCssLink" as="style" fetchpriority="low" onload="loadCSS(this)" type="text/css">
+<style id="pagestyle" type="text/css">
+</style>
+<style id="pagestyleDevice" type="text/css">
+</style>
+<!-- Flex Sections CSS -->
+<style id="globalFontSizeStyle" type="text/css">
+    .font-size-24, .size-24, .size-24 > font { font-size: 24px !important; }
+</style>
+<style id="pageFontSizeStyle" type="text/css">
+</style>
+<!-- ========= JS Section ========= -->
+<script>
+    var isWLR = true;
+    window.customWidgetsFunctions = {};
+    window.customWidgetsStrings = {};
+    window.collections = {};
+    window.currentLanguage = "ENGLISH"
+    window.isSitePreview = false;
+</script>
+<script type="text/javascript">
+    var d_version = "production_5341";
+    var build = "2025-03-27T13_48_46";
+    window['v' + 'ersion'] = d_version;
+    function buildEditorParent() {
+        window.isMultiScreen = true;
+        window.editorParent = {};
+        window.previewParent = {};
+        window.assetsCacheQueryParam = "?version=2025-03-27T13_48_46";
+        try {
+            var _p = window.parent;
+            if (_p && _p.document && _p.$ && _p.$.dmfw) {
+                window.editorParent = _p;
+            } else if (_p.isSitePreview) {
+                window.previewParent = _p;
+            }
+        } catch (e) {
+        }
+    }
+    buildEditorParent();
+</script>
+<!-- Load jQuery -->
+<script type="text/javascript" id="d-js-jquery" src="libs/jquery/jquery-3.7.0.min.js"></script>
+<!-- End Load jQuery -->
+<!-- Injecting site-wide before scripts -->
+<script data-swh-uuid="33650cb5c8764d99a226d006bda152c5">
+    if (window.location.search.match(/[?,&]preview=true/) && window.top !== window) {      window.__AudioEyePreviewMode=true;    }  
+</script>
+<script type="text/javascript" data-swh-uuid="33650cb5c8764d99a226d006bda152c5">
+!function(){    var b=function(){      window.__AudioEyeSiteHash = "aaa64e0c019645efef49817213d41aca";            var a=document.createElement("script");      a.src="aem.js";      a.type="text/javascript";            document.getElementsByTagName("body")[0].appendChild(a)};      "complete"!==document.readyState?window.addEventListener?window.addEventListener("load",b):window.attachEvent&&window.attachEvent("onload",b):b()}();    
+</script>
+<!-- End Injecting site-wide to the head -->
+<script>
+    var _jquery = window.$;
+    var jqueryAliases = ['$', 'jquery', 'jQuery'];
+    jqueryAliases.forEach((alias) => {
+        Object.defineProperty(window, alias, {
+            get() {
+                return _jquery;
+            },
+            set() {
+                console.warn("Trying to over-write the global jquery object!");
+            }
+        });
+    });
+    window.jQuery.migrateMute = true;
+</script>
+<script>
+    window.cookiesNotificationMarkupPreview = 'null';
+</script>
+<!-- HEAD RT JS Include -->
+<script id="d-js-params">
+    window.INSITE = window.INSITE || {};
+    window.INSITE.device = "desktop";
+    window.rtCommonProps = {};
+    rtCommonProps["rt.ajax.ajaxScriptsFix"] =true;
+    rtCommonProps["rt.pushnotifs.sslframe.encoded"] = 'aHR0cHM6Ly97c3ViZG9tYWlufS5wdXNoLW5vdGlmcy5jb20=';
+    rtCommonProps["runtimecollector.url"] = 'https://rtc.hibuwebsites.com';
+    rtCommonProps["performance.tabletPreview.removeScroll"] = 'false';
+    rtCommonProps["inlineEditGrid.snap"] =true;
+    rtCommonProps["popup.insite.cookie.ttl"] = '0.5';
+    rtCommonProps["rt.pushnotifs.force.button"] =true;
+    rtCommonProps["common.mapbox.token"] = 'pk.eyJ1IjoiZGFubnliMTIzIiwiYSI6ImNqMGljZ256dzAwMDAycXBkdWxwbDgzeXYifQ.Ck5P-0NKPVKAZ6SH98gxxw';
+    rtCommonProps["common.mapbox.js.override"] =false;
+    rtCommonProps["common.here.appId"] = 'iYvDjIQ2quyEu0rg0hLo';
+    rtCommonProps["common.here.appCode"] = '1hcIxLJcbybmtBYTD9Z1UA';
+    rtCommonProps["isCoverage.test"] =false;
+    rtCommonProps["ecommerce.ecwid.script"] = 'https://app.multiscreenstore.com/script.js';
+    rtCommonProps["feature.flag.mappy.kml"] =false;
+    rtCommonProps["common.resources.dist.cdn"] =true;
+    rtCommonProps["common.build.dist.folder"] = 'production/5341';
+    rtCommonProps["common.resources.cdn.host"] = 'https://static-res-cdn.websites.hibu.com';
+    rtCommonProps["common.resources.folder"] = 'https://static-res-cdn.websites.hibu.com/mnlt/production/5341';
+    rtCommonProps["feature.flag.runtime.backgroundSlider.preload.slowly"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.respectCssAnimationProps.enabled"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.jitAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.sites.google.analytics.gtag"] =true;
+    rtCommonProps["feature.flag.runOnReadyNewTask"] =true;
+    rtCommonProps["isAutomation.test"] =false;
+    rtCommonProps['common.mapsProvider'] = 'mapbox';
+    rtCommonProps['common.mapsProvider.version'] = '0.52.0';
+    rtCommonProps['common.geocodeProvider'] = 'mapbox';
+    rtCommonProps['common.map.defaults.radiusSize'] = '1500';
+    rtCommonProps['common.map.defaults.radiusBg'] = 'rgba(255, 255, 255, 0.4)';
+    rtCommonProps['common.map.defaults.strokeColor'] = 'rgba(255, 255, 255, 1)';
+    rtCommonProps['common.map.defaults.strokeSize'] = '2';
+    rtCommonProps['server.for.resources'] = '';
+    rtCommonProps['feature.flag.lazy.widgets'] = true;
+    rtCommonProps['feature.flag.single.wow'] = false;
+    rtCommonProps['feature.flag.disallowPopupsInEditor'] = true;
+    rtCommonProps['feature.flag.mark.anchors'] = true;
+    rtCommonProps['captcha.public.key'] = '6LffcBsUAAAAAMU-MYacU-6QHY4iDtUEYv_Ppwlz';
+    rtCommonProps['captcha.invisible.public.key'] = '6LeiWB8UAAAAAHYnVJM7_-7ap6bXCUNGiv7bBPME';
+    rtCommonProps["images.sizes.small"] =160;
+    rtCommonProps["images.sizes.mobile"] =640;
+    rtCommonProps["images.sizes.tablet"] =1280;
+    rtCommonProps["images.sizes.desktop"] =1920;
+    rtCommonProps["modules.resources.cdn"] =true;
+    rtCommonProps["import.images.storage.imageCDN"] = 'https://le-cdn.hibuwebsites.com/';
+    rtCommonProps["feature.flag.runtime.inp.threshold"] =150;
+    rtCommonProps["feature.flag.performance.logs"] =true;
+    rtCommonProps["site.widget.form.captcha.type"] = 'g_recaptcha';
+    rtCommonProps["friendly.captcha.site.key"] = 'FCMGSQG9GVNMFS8K';
+    rtCommonProps["cookiebot.mapbox.consent.category"] = 'marketing';
+    // feature flags that's used out of runtime module (in  legacy files)
+    rtCommonProps["platform.monolith.personalization.dateTimeCondition.popupMsgAction.moveToclient.enabled"] =true;
+    window.rtFlags = {};
+    rtFlags["unsuspendEcwidStoreOnRuntime.enabled"] =false;
+    rtFlags["scripts.widgetCount.enabled"] =true;
+    rtFlags["ecom.ecwidNewUrlStructure.enabled"] = false;
+    rtFlags["ecom.ecwid.storefrontV3.enabled"] = false;
+    rtFlags["ecom.ecwid.old.store.fix.facebook.share"] = true;
+    rtFlags["feature.flag.photo.gallery.exact.size"] =true;
+    rtFlags["geocode.search.localize"] =false;
+    rtFlags["feature.flag.runtime.newAnimation.asyncInit.setTimeout.enabled"] =false;
+    rtFlags["twitter.heightLimit.enabled"] = true;
+    rtFlags["editor.classicHybrid.photogallery.fix"] =true;
+    rtFlags["runtime.lottieOverflow"] =false;
+    rtFlags["runtime.monitoring.sentry.ignoreErrors"] = "";
+    rtFlags["contact.form.browserValidation.enabled"] =true;
+    rtFlags["feature.flag.notifications.push.from.top"] =true;
+    rtFlags["streamline.monolith.personalization.supportMultipleConditions.enabled"] =false;
+    rtFlags["runtime.cwv.report.cls.enabled"] =false;
+    rtFlags["editor.link.on.container"] =false;
+    rtFlags["flex.runtime.popup.with.show"] =true;
+    rtFlags["contact.form.useActiveForm"] =true;
+    rtFlags["runtime.ssr.productStore.internal.observer"] =true;
+</script>
+<script src="mnlt/production/5341/_dm/s/rt/dist/scripts/d-js-one-runtime-unified-desktop.min.js" id="d-js-core"></script>
+<!-- End of HEAD RT JS Include -->
+<script src="mnlt/production/5341/_dm/s/rt/dist/scripts/d-js-jquery-migrate.min.js"></script>
+<script>
+    $(window).bind("orientationchange", function (e) {
+        $.layoutManager.initLayout();
+    });
+    $(document).resize(function () {
+    });
+</script>
+<script type="text/javascript" id="d_track_campaign">
+(function() {
+    if (!window.location.search) {
+        return;
+    }
+	const cleanParams = window.location.search.substring(1); // Strip ?
+	const queryParams = cleanParams.split('&');
+	const expires = 'expires=' + new Date().getTime() + 24 * 60 * 60 * 1000;
+	const domain = 'domain=' + window.location.hostname;
+	const path = "path=/";
+	queryParams.forEach((param) => {
+		const [key, value = ''] = param.split('=');
+		if (key.startsWith('utm_')) {
+			const cookieName = "_dm_rt_" + key.substring(4);
+			const cookie = cookieName + "=" + value;
+			const joined = [cookie, expires, domain, path].join(";");
+			document.cookie = joined;
+		}
+	});
+}());
+</script>
+<script type="text/javascript">
+  var _dm_gaq = {};
+  var _gaq = _gaq || [];
+  var _dm_insite = [];
+</script>
+<script type="text/javascript" id="d_track_sp">
+;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
+p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
+};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
+n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","sp-2.0.0-dm-0.1.min.js","snowplow"));
+window.dmsnowplow  = window.snowplow;
+dmsnowplow('newTracker', 'cf', 'd32hwlnfiv2gyn.cloudfront.net', { // Initialise a tracker
+  appId: '6811e6379ba64005918f9175b61ba280'
+});
+// snowplow queries element styles so we wait until CSS calculations are done.
+requestAnimationFrame(() => {
+	dmsnowplow('trackPageView');
+	_dm_insite.forEach((rule) => {
+		// Specifically in popup only the client knows if it is shown or not so we don't always want to track its impression here
+		// the tracking is in popup.js
+		if (rule.actionName !== "popup") {
+			dmsnowplow('trackStructEvent', 'insite', 'impression', rule.ruleType, rule.ruleId);
+		}
+		window?.waitForDeferred?.('dmAjax', () => {
+			$.DM.events.trigger('event-ruleTriggered', {value: rule});
+		});
+	});
+});
+</script>
+   <div style="display:none;" id="P6iryBW0Wu"></div>
+<!-- photoswipe markup -->
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="fb-root" data-locale="en" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div>
+<!-- Alias: 6811e6379ba64005918f9175b61ba280 -->
+<div class="dmPopupMask" id="dmPopupMask"></div>
+<div id="dmPopup" class="dmPopup">
+	<div class="dmPopupCloseWrapper"> <div class="dmPopupClose dm-common-icons-close oneIcon" onclick="dmHidePopup(event);"></div> </div>
+ 	<div class="dmPopupTitle"> <span></span> Share by:</div> 
+	<div class="data"></div>
+</div><script id="d_track_personalization">
+	window?.waitForDeferred?.('dmAjax', () => {
+		// Collects client data and updates cookies used by smart sites
+		window.expireDays = 365;
+		window.visitLength = 30 * 60000;
+		$.setCookie("dm_timezone_offset", (new Date()).getTimezoneOffset(), window.expireDays);
+			setSmartSiteCookiesInternal("dm_this_page_view","dm_last_page_view","dm_total_visits","dm_last_visit");
+	});
+</script>
+<script type="text/javascript">
+    Parameters.NavigationAreaParams.MoreButtonText = 'MORE';
+    Parameters.NavigationAreaParams.LessButtonText = 'LESS';
+    Parameters.HomeLinkText = 'Home';
+    </script>
+<!--  End Script tags -->
+<!--  Begin Body End Markup -->
+<!--THE CONTENT OF THIS FILE WILL BE APPENDED TO EVERY PAGE JUST BEFORE THE CLOSE TAG OF THE <script type="text/javascript" async="async" src="/__zenedge/assets/f.js?v=1674207422"></script><script>(function () { var v = 1743672190 * 3.1415926535898; v = Math.floor(v); document.cookie = "__zjc1983="+v+"; expires=Thu, 03 Apr 2025 09:25:10 UTC; path=/"; })()</script></BODY> ELEMENT-->
+<div id="placeholder_retargeting_pixel" style="display: none;" data-inject="placeholder_retargeting_pixel">
+  {{placeholder_retargeting_pixel}}
+</div>
+<div id="placeholder_dpni" style="display: none;" data-inject="placeholder_dpni">
+  {{placeholder_dpni}}
+</div>
+<div id="placeholder_analytics" style="display: none;" data-inject="placeholder_analytics">
+ <script>
+//<![CDATA[
+//yellAnalyticsConfig need to set before s_code.js
+var yellAnalyticsConfig = {
+"global" : {
+  "trackDownloadLinks": true,
+  "downloadFileTypes": "exe,zip,wav,mp3,mov,mpg,avi,wmv,pdf,doc,docx,xls,xlsx,ppt,pptx",
+  "currency": "USD",
+  "trackExternalLinks": true,
+  "internalDomains": "javascript:",
+  "charset": "UTF-8"
+}}
+var hibuWebsiteConfig={
+  "prodSKU":"WBS-PRM1YRM-01-US",
+  "assetID":"645095",
+  "customerID":"7016251738"
+}
+//]]>
+ </script>
+ <script type="text/javascript" src="prod/sitemaker/AppMeasurement.js">
+ </script>
+ <script type="text/javascript" src="prod/sitemaker/hibu-analytics.min.js">
+ </script>
+ <script type="text/javascript" src="prod/sitemaker/omn_setting.js">
+ </script>
+</div>
+<div id="placeholder_footer_reserve1" style="display: none;" data-inject="placeholder_footer_reserve1">
+  {{placeholder_footer_reserve1}}
+</div>
+<div id="placeholder_footer_reserve2" style="display: none;" data-inject="placeholder_footer_reserve2">
+  {{placeholder_footer_reserve2}}
+</div>
+<div id="placeholder_footer_reserve3" style="display: none;" data-inject="placeholder_footer_reserve3">
+  {{placeholder_footer_reserve3}}
+</div>
+<div id="placeholder_footer_reserve4" style="display: none;" data-inject="placeholder_footer_reserve4">
+  {{placeholder_footer_reserve4}}
+</div>
+<div id="placeholder_footer_reserve5" style="display: none;" data-inject="placeholder_footer_reserve5">
+  {{placeholder_footer_reserve5}}
+</div>
+<div id="placeholder_footer_reserve6" style="display: none;" data-inject="placeholder_footer_reserve6">
+  {{placeholder_footer_reserve6}}
+</div>
+<div id="placeholder_footer_reserve7" style="display: none;" data-inject="placeholder_footer_reserve7">
+  {{placeholder_footer_reserve7}}
+</div>
+<!--  End Body End Markup -->
+<!--  Site Wide Html Markup -->
+<div id="swh-14215ba6e68546a8a5b031a0c4451c03"><script> if (window.location.search.match(/[?,&]preview=true/) && window.top !== window) { window.__AudioEyePreviewMode=true;}</script>
+            <script type="text/javascript">!function(){
+              var b=function(){
+                window.__AudioEyeSiteHash = "aaa64e0c019645efef49817213d41aca";
+                window.__AudioEyeInstallSource = "hibu";
+                var a=document.createElement("script");
+                a.src="aem.js";
+                a.type="text/javascript";
+                a.setAttribute("async","");
+                document.getElementsByTagName("body")[0].appendChild(a)};
+                "complete"!==document.readyState?window.addEventListener?window.addEventListener("load",b):window.attachEvent&&window.attachEvent("onload",b):b()}();
+              </script></div><!--  Site Wide Html Markup -->
+<!--  Begin Product Custom HTML Markup -->
+<div id="fb-root"></div> 
+<script>(function(d, s, id) { 
+var js, fjs = d.getElementsByTagName(s)[0]; 
+if (d.getElementById(id)) return; 
+js = d.createElement(s); js.id = id; 
+js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1822295708016537"; 
+fjs.parentNode.insertBefore(js, fjs); 
+}(document, 'script', 'facebook-jssdk'));</script>
+<script>
+//make sure video's on iOS load first screen of the video.
+dmAPI.runOnReady('russTest',function() {
+    var _hibu_vid = document.getElementsByTagName('video');
+    for (var i = 0; i < _hibu_vid.length; i++) {
+        _hibu_vid[i].load();
+    }
+})
+</script>
+<script>
+//simple addition by Russ to add consent banner link into footer
+const _spSpanForFooter = document.createElement('span');
+_spSpanForFooter.id = "spConsentWrapper";
+const poweredByFirstAnchor = document.querySelector('.poweredBy a:first-child');
+poweredByFirstAnchor.insertAdjacentElement('afterend',_spSpanForFooter);
+window.localStorage.setItem("__springtime__repop__target", "#spConsentWrapper");
+</script>
+<style>#spConsentWrapper:before { content: " | " }</style>
+<script>if(window.location.search.indexOf('preview')>0){window.localStorage.setItem('ae_user_consent_decision_has_been_made',true);document.getElementById('spConsentWrapper').remove();}</script><script>let comments = document.querySelectorAll('.dmFacebookComments');if (comments) {for (i=0;i<comments.length;i++) {
+    comments[i].style.display = "none";
+}}</script><!--  End Product Custom HTML Markup -->
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;9f6cce719beb45929adba8574957198b&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+<script src="aem.js" type="text/javascript"></script><script src="aem.js" type="text/javascript" async=""></script><script src="https://wsv3cdn.audioeye.com/bootstrap.js?h=aaa64e0c019645efef49817213d41aca&amp;cb=829e7937f" type="text/javascript" async=""></script><script type="module" crossorigin="" async="" src="https://aegis.audioeye.com/assets/index.js"></script><script async="" crossorigin="anonymous" src="https://wsv3cdn.audioeye.com/v2/scripts/loader.js?h=aaa64e0c019645efef49817213d41aca&amp;lang=en&amp;cb=2026-04-08"></script><script type="text/javascript" src="https://wsv3cdn.audioeye.com/static-scripts/v2/2026-04-08/startup.bundle.js"></script><div id="ae_app" data-nosnippet="">
+    
+        <!--
+        Layout, Style or Voice Helpers
+    -->
+    <div id="ae_helpers" class="ae-module" style="display: none;">
+
+    
+    </div>
+    
+
+        <!--
+        Compliance
+    -->
+    <div id="ae_compliance" class="ae-module" style="display: none;">
+
+        <!-- For autoSmartRem addNewWindowWarnings div is referenced in an aria-describedby -->
+        <div id="audioeye_new_window_message" style="display:none">Opens in new window</div>
+        <div id="audioeye_pdf_message" style="display:none">PDF Download</div>
+        <div id="audioeye_word_message" style="display:none">Word Download</div>
+        <div id="audioeye_excel_message" style="display:none">Excel Download</div>
+        <div id="audioeye_powerpoint_message" style="display:none">PowerPoint Download</div>
+        <div id="audioeye_document_message" style="display:none">Document Download</div>
+
+                    </div>
+    
+    <!--
+        Versioning Control Panel if versioning = true !
+    -->
+        
+    <!--
+        Launcher
+    -->
+    <aside id="ae_launcher" style="display: none; bottom: 24px; inset-inline-start: 24px;" class="ae-module aetipsytip ae-active ae-cta-position-preset-left-lower" aria-label="Accessibility options" dir="ltr">
+  <button aria-label="Explore your accessibility options">
+    <div style="display: none" class="ae-left">
+      <span>Explore your accessibility options</span>
+    </div>
+
+    <div class="ae-right">
+      <span class="icomoon-wrapper">
+        <div>
+          <span class="icomoon-cta ae-icon-launcher-universalaccess ae-initial-cta">
+            <span class="icomoon-cta path1 a11y-icon-figure-and-border"></span>
+            <span class="icomoon-cta path2 a11y-icon-background" style="color: rgb(18, 117, 179);"></span>
+          </span>
+        </div>
+      </span>
+    </div>
+  </button>
+</aside>
+
+    <!-- Toolbar -->
+
+    <span id="ae_placeholder_toolbar" style="display: none;" aria-hidden="true"></span>
+
+    <!--
+        Site Menu
+    -->
+    <span id="ae_placeholder_site-menu" style="display: none;" aria-hidden="true"></span>
+
+    
+    <!--
+        Generic Aria Live message container
+    -->
+    <div class="ae-blurb-noaudio" id="ae_enabled_messages" aria-relevant="additions" aria-live="assertive"></div>
+
+    
+    <!-- Symbol definitions -->
+    <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <title>close carousel</title>
+        <defs>
+            <symbol id="icon-close-carousel" viewBox="0 0 32 32">
+                <path fill="#ffffff" style="fill: var(--color1, #ffffff)" d="M28.992 0l-12.992 12.992-12.992-12.992-3.008 3.008 12.992 12.992-12.992 12.992 3.008 3.008 12.992-12.992 12.992 12.992 3.008-3.008-12.992-12.992 12.992-12.992-3.008-3.008z"></path>
+            </symbol>
+        </defs>
+    </svg>
+
+</div><!-- end #ae_app --></body></html>

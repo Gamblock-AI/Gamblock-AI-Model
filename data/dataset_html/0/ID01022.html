@@ -1,0 +1,365 @@
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>ChordBand.com – Guitar Chords</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+:root{
+  --primary:#d9008c;
+  --bg:#f4f6fb;
+  --card:#ffffff;
+  --text:#222;
+  --muted:#777;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* HEADER */
+header{
+  background:linear-gradient(135deg,#d9008c,#6c63ff);
+  color:#fff;
+  padding:22px;
+}
+
+header h1{
+  margin:0;
+  font-size:26px;
+}
+
+header p{
+  margin:6px 0 0;
+  font-size:14px;
+  opacity:.9;
+}
+
+/* SEARCH */
+.search-bar{
+  margin-top:15px;
+  display:flex;
+  gap:10px;
+}
+
+.search-bar input{
+  flex:1;
+  padding:12px 14px;
+  border-radius:10px;
+  border:0;
+  font-size:14px;
+}
+
+.search-bar button{
+  padding:12px 18px;
+  border-radius:10px;
+  border:0;
+  background:#000;
+  color:#fff;
+  font-family: cursive;
+  font-weight:400;
+  cursor:pointer;
+}
+
+/* LAYOUT */
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:20px;
+}
+
+.section-title{
+  text-align:center;
+  color:var(--primary);
+  margin:30px 0 20px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:18px;
+}
+
+/* CARD */
+.card{
+  background:var(--card);
+  border-radius:16px;
+  padding:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  transition:.25s ease;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 16px 40px rgba(0,0,0,.15);
+}
+
+.card h2{
+  margin:0 0 8px;
+  font-size:15px;
+}
+
+.card h2 a{
+  text-decoration:none;
+  color:var(--primary);
+}
+
+.card span{
+  display:block;
+  font-size:12px;
+  color:var(--muted);
+}
+
+.card p{
+  margin:6px 0;
+  font-size:13px;
+}
+
+.datepost{
+  font-size:12px;
+  color:var(--muted);
+}
+
+/* PAGINATION */
+.pagination{
+  text-align:center;
+  margin:35px 0;
+}
+
+.pagination a{
+  display:inline-block;
+  padding:10px 18px;
+  margin:0 6px;
+  background:#fff;
+  border-radius:12px;
+  text-decoration:none;
+  color:#000;
+  font-weight:600;
+  box-shadow:0 6px 16px rgba(0,0,0,.12);
+}
+
+/* MOBILE */
+@media (max-width:768px){
+  .search-bar{
+    flex-direction:column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>ChordBand.com</h1>
+  <p>Find guitar chords for your favorite songs</p>
+
+  <form class="search-bar" action="/search.php" method="get">
+    <input type="text" name="q" placeholder="Search song or artist..." required="">
+    <button type="submit">Search</button>
+  </form>
+</header>
+
+<div class="container">
+
+  <h2 class="section-title">🔥 Trends</h2>
+
+  <div class="grid">
+          <div class="card">
+        <h2>
+          <a href="/guitar/kushagra_finding_her.crd">
+            Finding Her            <span>Kushagra ft. Bharath &amp; Alec Benjamin</span>
+          </a>
+        </h2>
+        <p><b>Chords:</b>
+          <a href="/chordsearch/keys/C, Am, Dm, G, F">
+            C, Am, Dm, G, F          </a>
+        </p>
+        <p class="datepost">
+          Created: 3 months ago        </p>
+        <p style="color:#890000">
+          Viewed: 1,395        </p>
+      </div>
+          <div class="card">
+        <h2>
+          <a href="/guitar/unknown_sibuk_dunia_sholat_entarentar_reggae.crd">
+            Sibuk Dunia, Sholat Entar-Entar (Reggae)            <span>Unknown</span>
+          </a>
+        </h2>
+        <p><b>Chords:</b>
+          <a href="/chordsearch/keys/Am, F, G, Dm, E, C">
+            Am, F, G, Dm, E, C          </a>
+        </p>
+        <p class="datepost">
+          Created: 5 months ago        </p>
+        <p style="color:#890000">
+          Viewed: 884        </p>
+      </div>
+          <div class="card">
+        <h2>
+          <a href="/guitar/unknown_adzan_cuma_jadi_alarm_reggae.crd">
+            Adzan Cuma Jadi Alarm (Reggae)            <span>Unknown</span>
+          </a>
+        </h2>
+        <p><b>Chords:</b>
+          <a href="/chordsearch/keys/Am, Dm, G, F, C">
+            Am, Dm, G, F, C          </a>
+        </p>
+        <p class="datepost">
+          Created: 5 months ago        </p>
+        <p style="color:#890000">
+          Viewed: 598        </p>
+      </div>
+          <div class="card">
+        <h2>
+          <a href="/guitar/mothica_evergreen_misery.crd">
+            Evergreen Misery            <span>MOTHICA</span>
+          </a>
+        </h2>
+        <p><b>Chords:</b>
+          <a href="/chordsearch/keys/Am, C, Em, G, F">
+            Am, C, Em, G, F          </a>
+        </p>
+        <p class="datepost">
+          Created: 4 months ago        </p>
+        <p style="color:#890000">
+          Viewed: 332        </p>
+      </div>
+      </div>
+
+  <div class="pagination">
+     <a href="?page=2">Next »</a>  </div>
+
+  <h2 class="section-title">✨ Updated Chords</h2>
+  <div class="grid">
+          <div class="card">
+        <h2>
+          <a href="/guitar/daniel_caesar_best_part.htm">
+            Best Part            <span>Daniel Caesar</span>
+          </a>
+        </h2>
+        <p><b>Chords:</b> A, Em, D, F, Bb, Bm, F#m</p>
+        <p class="datepost">
+          Updated: 2 years ago        </p>
+      </div>
+          <div class="card">
+        <h2>
+          <a href="/guitar/spencer_sutherland_chicken_little.crd">
+            Chicken Little            <span>Spencer Sutherland ft.  Meghan Trainor</span>
+          </a>
+        </h2>
+        <p><b>Chords:</b> A, D, A#, D#</p>
+        <p class="datepost">
+          Updated: 2 years ago        </p>
+      </div>
+          <div class="card">
+        <h2>
+          <a href="/guitar/venbee_die_young.crd">
+            Die Young            <span>Venbee ft. Rudimental</span>
+          </a>
+        </h2>
+        <p><b>Chords:</b> Em, C, G, D</p>
+        <p class="datepost">
+          Updated: 2 years ago        </p>
+      </div>
+          <div class="card">
+        <h2>
+          <a href="/guitar/hannah_bahng_perfect_blues.crd">
+            Perfect Blues            <span>Hannah Bahng</span>
+          </a>
+        </h2>
+        <p><b>Chords:</b> C, C7, F, Fm, Dm, G</p>
+        <p class="datepost">
+          Updated: 2 years ago        </p>
+      </div>
+          <div class="card">
+        <h2>
+          <a href="/guitar/rayi_putra_come_over.crd">
+            Come Over            <span>Rayi Putra ft. Kaleb J</span>
+          </a>
+        </h2>
+        <p><b>Chords:</b> Dm, Am, Em, F, G, Gm, C, E</p>
+        <p class="datepost">
+          Updated: 2 years ago        </p>
+      </div>
+          <div class="card">
+        <h2>
+          <a href="/guitar/christopher_a_beautiful_life.crd">
+            A Beautiful Life            <span>Christopher</span>
+          </a>
+        </h2>
+        <p><b>Chords:</b> G, Bm, Em, C, D, Gbm</p>
+        <p class="datepost">
+          Updated: 2 years ago        </p>
+      </div>
+          <div class="card">
+        <h2>
+          <a href="/guitar/shakira_jasmine_best.crd">
+            Best            <span>Shakira Jasmine</span>
+          </a>
+        </h2>
+        <p><b>Chords:</b> C, D, F, Dm, G, Ab, Bb</p>
+        <p class="datepost">
+          Updated: 2 years ago        </p>
+      </div>
+          <div class="card">
+        <h2>
+          <a href="/guitar/tina_arena_house.crd">
+            House            <span>Tina Arena</span>
+          </a>
+        </h2>
+        <p><b>Chords:</b> Bm, D, G, E, A, F#</p>
+        <p class="datepost">
+          Updated: 2 years ago        </p>
+      </div>
+          <div class="card">
+        <h2>
+          <a href="/guitar/lily_brooks_obriant_better_off_alone.crd">
+            Better Off Alone            <span>Lily Brooks O'Briant</span>
+          </a>
+        </h2>
+        <p><b>Chords:</b> C, F, Am, G, Dm, Em, A#</p>
+        <p class="datepost">
+          Updated: 2 years ago        </p>
+      </div>
+          <div class="card">
+        <h2>
+          <a href="/guitar/between_friends_whats_up.crd">
+            What’s up            <span>BETWEEN FRIENDS</span>
+          </a>
+        </h2>
+        <p><b>Chords:</b> C, Am, Dm, F, G</p>
+        <p class="datepost">
+          Updated: 2 years ago        </p>
+      </div>
+          <div class="card">
+        <h2>
+          <a href="/guitar/zara_larsson_end_of_time.crd">
+            End Of Time            <span>Zara Larsson</span>
+          </a>
+        </h2>
+        <p><b>Chords:</b> Em, D, C, G</p>
+        <p class="datepost">
+          Updated: 2 years ago        </p>
+      </div>
+          <div class="card">
+        <h2>
+          <a href="/guitar/showtek_happy.crd">
+            Happy            <span>Showtek</span>
+          </a>
+        </h2>
+        <p><b>Chords:</b> G, Dm, Am</p>
+        <p class="datepost">
+          Updated: 2 years ago        </p>
+      </div>
+      </div>
+
+</div>
+
+
+
+
+</body></html>

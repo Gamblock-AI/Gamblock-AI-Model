@@ -1,0 +1,1024 @@
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Official website for all Epsitec SA games">
+    <meta name="keywords" content="Blupi, Blupimania, BuzzingCars, CeeBot, CoLoBoT, Eggbert, Planet Blupi, Speedy Blupi, Speedy Eggbert">
+    <meta name="author" content="Mathieu Schroeter">
+    <title>Blupi / Eggbert Games</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="cdn/ubuntu/fonts.css" rel="stylesheet">
+    <link rel="stylesheet" href="cdn/fontawesome/css/all.css">
+    <link rel="stylesheet" href="cdn/bootstrap/css/bootstrap.min.css">
+    <script src="cdn/bootstrap/jquery.slim.min.js"></script>
+    <script src="cdn/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+      $(function () {
+        $('[data-toggle="popover"]').popover({
+          trigger: "hover",
+          container: "body",
+          html: true,
+        });
+        $('[data-toggle="tooltip"]').tooltip({
+          container: "body",
+          html: true,
+        });
+      });
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        margin: 0;
+        font-family: "Ubuntu";
+      }
+
+      tt {
+        font-family: "Ubuntu Mono";
+      }
+
+      body {
+        background-color: #222;
+        backface-visibility: hidden;
+      }
+
+      a:hover {
+        text-decoration: none;
+      }
+
+      .popover {
+        max-width: 500px;
+      }
+
+      .popover p {
+        margin: 2px;
+      }
+
+      .popover img {
+        margin-bottom: 3px;
+      }
+
+      .tooltip p {
+        text-align: left;
+        margin: 5px;
+      }
+
+      .tooltip img {
+        margin-right: 3px;
+        margin-bottom: 3px;
+      }
+
+      .tooltip-inner {
+        max-width: 300px !important;
+      }
+
+      .content {
+        margin: 0 auto;
+        margin-top: 10vh;
+        width: 80vw;
+        max-width: 1600px;
+        border-radius: 5px;
+        padding-top: 15px;
+        padding-bottom: 10px;
+        box-shadow: inset 8px 8px 31px -18px rgba(0, 0, 0, 1);
+        background-color: rgba(80, 80, 80, 0.8);
+        backface-visibility: hidden;
+      }
+
+      .bottom {
+        transform: translateY(50px);
+        width: 80vw;
+        max-width: 1600px;
+        height: 0;
+        backface-visibility: hidden;
+      }
+
+      .card {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        min-width: 22em;
+        border: none;
+      }
+
+      .card-img-top {
+        max-width: 19rem;
+      }
+
+      .blupi {
+        float: right;
+        position: relative;
+        top: -60px;
+        right: -20px;
+      }
+
+      .screen {
+        height: auto;
+        width: 100%;
+        max-width: 318px;
+      }
+
+      .imgbase {
+        max-width: 30em;
+      }
+
+      .imgbase:hover {
+        cursor: hand;
+      }
+
+      @keyframes highlight {
+        0% {
+          background: #eee;
+        }
+        100% {
+          background: #ddd;
+        }
+      }
+
+      .imgbase:hover {
+        animation: highlight 1s alternate-reverse infinite;
+      }
+
+      .imgbase:hover > .imgfooter {
+        animation: highlight 1s alternate-reverse infinite;
+      }
+
+      .imgfooter {
+        height: 200px;
+        z-index: 1;
+        background-color: #f7f7f7;
+      }
+
+      .imgos {
+        height: auto;
+        width: 100%;
+        margin: auto;
+        text-align: center;
+      }
+
+      .lang {
+        padding: 0;
+        padding-left: 5px;
+        padding-right: 5px;
+        min-width: 28px;
+      }
+
+      .lang-pl {
+        color: #ff92e4;
+        border-color: #ff92e4;
+      }
+
+      .lang-pl:hover {
+        border-color: #ff92e4;
+        background-color: #ff92e4;
+      }
+
+      .pop {
+        cursor: default;
+        color: #b4d3f3;
+      }
+
+      .card-video:hover > .video-player {
+        display: block;
+      }
+
+      .video-player {
+        display: none;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        top: 100%;
+        z-index: 2;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      }
+
+      th {
+        vertical-align: text-top;
+      }
+
+      @media screen and (max-width: 800px) {
+        .content {
+          left: 0;
+          width: calc(100vw - (100vw - 100%));
+        }
+        .bottom {
+          width: calc(100vw - (100vw - 100%));
+        }
+      }
+
+      @media screen and (max-device-width: 650px) {
+        @media screen and (orientation: portrait) {
+          .content {
+            width: 50vw;
+            top: -50vh;
+            zoom: 2;
+          }
+        }
+        @media screen and (orientation: landscape) {
+          .content {
+            width: 66.6666vw;
+            top: -33.3333vh;
+            zoom: 1.5;
+          }
+        }
+        .content {
+          left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <div class="container-fluid">
+        <h1 style="color: white">
+          Blupi Games <span style="font-size: 40%">(Eggbert Games)</span>
+        </h1>
+        <div class="card-group" style="cursor: pointer">
+          <div class="card-video card imgbase">
+            <a class="imgos" href="mania/index.html"><img class="card-img-top imgos" style="transform: scale(1.6) translateY(-14px)" src="images/mania.png" alt="Card image cap">
+              <video class="video-player" src="images/mania.mp4" playsinline="" muted="" loop=""></video></a>
+            <div class="card-footer imgfooter" onclick="window.location = 'mania/index.html'">
+              <h2 class="card-title">Blupimania</h2>
+              <p>
+                Official version
+                <span style="font-size: 70%">(open-source)</span><br>Version
+                officielle <span style="font-size: 70%">(code libre)</span><br>
+                <img style="margin-right: 3px" src="images/en.png">
+                <img style="margin-right: 3px" src="images/fr.png">
+                <img style="margin-right: 3px" src="images/de.png">
+              </p>
+            </div>
+          </div>
+          <div class="card-video card imgbase">
+            <a class="imgos" href="planet/index.html"><img class="card-img-top imgos" style="transform: scale(1.6) translateY(-25px)" src="images/planet.png" alt="Card image cap">
+              <video class="video-player" src="images/planet.mp4" playsinline="" muted="" loop=""></video></a>
+            <div class="card-footer imgfooter" onclick="window.location = 'planet/index.html'">
+              <h2 class="card-title">
+                Planet Blupi
+                <span style="font-size: 40%">(Planet Eggbert)</span>
+              </h2>
+              <p>
+                Official version
+                <span style="font-size: 70%">(open-source)</span><br>Version
+                officielle <span style="font-size: 70%">(code libre)</span><br>
+                <img style="margin-right: 3px" src="images/en.png">
+                <img style="margin-right: 3px" src="images/en_US.png">
+                <img style="margin-right: 3px" src="images/fr.png">
+                <img style="margin-right: 3px" src="images/de.png">
+                <img style="margin-right: 3px" src="images/it.png">
+                <img style="margin-right: 3px" src="images/pl.png">
+                <img style="margin-right: 3px" src="images/tr.png">
+                <img style="margin-right: 3px" src="images/pt.png">
+                <img style="margin-right: 3px" src="images/he.png">
+                <img style="margin-right: 3px" src="images/ar.png">
+                <img style="margin-right: 3px" src="images/es.png">
+              </p>
+            </div>
+          </div>
+          <div class="card-video card imgbase">
+            <a class="imgos" href="https://www.maniabricks.com/games/blupi-is-back/" target="_"><img><img class="card-img-top imgos" style="transform: scale(1.2) translateY(17px)" src="images/blupi-is-back.png" alt="Card image cap">
+              <video class="video-player" src="images/blupi-is-back.mp4" playsinline="" muted="" loop=""></video></a>
+            <div class="card-footer imgfooter" onclick="window.location = 'https://www.maniabricks.com/games/blupi-is-back/'">
+              <h2 class="card-title">Blupi is Back</h2>
+              <p>
+                New game by Daniel Roux
+                <br>
+                Nouveau jeu par Daniel Roux<br>
+                <img style="margin-right: 3px" src="images/en.png">
+                <img style="margin-right: 3px" src="images/fr.png">
+              </p>
+            </div>
+          </div>
+          <div class="card-video card imgbase">
+            <a class="imgos" href="https://colobot.info" target="_"><img class="card-img-top imgos" src="images/colobot.png" alt="Card image cap">
+              <video class="video-player" src="images/bot.mp4" playsinline="" muted="" loop=""></video></a>
+            <div class="card-footer imgfooter" onclick="window.open ('https://colobot.info', '_blank');">
+              <h2 class="card-title">CoLoBoT</h2>
+              <p>
+                Official version by TerranovaTeam
+                <span style="font-size: 70%">(open-source)</span><br>Version
+                officielle par TerranovaTeam
+                <span style="font-size: 70%">(code libre)</span><br>
+                <img style="margin-right: 3px" src="images/en.png">
+                <img style="margin-right: 3px" src="images/fr.png">
+                <img style="margin-right: 3px" src="images/de.png">
+                <img style="margin-right: 3px" src="images/pl.png">
+                <img style="margin-right: 3px" src="images/ru.png">
+                <img style="margin-right: 3px" src="images/cs.png">
+                <img style="margin-right: 3px" src="images/pt.png">
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card" style="max-width: 180px; min-width: 180px">
+            <img class="card-img-top screen" src="images/smaky.png" alt="Smaky">
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title">
+                <img style="margin-right: 6px" src="images/en.png">About
+              </h2>
+              <p>Official website for all Epsitec SA games.</p>
+              <p>
+                <b>Is it really free?</b><br>
+                Yes, all games can be downloaded freely. It's official and
+                legal. With some games, the source-code is available, see this
+                <a href="https://github.com/colobot/colobot/issues/896" target="_">thread</a>.
+              </p>
+              <p>
+                This website provides an archives section (<u>at the bottom of this page</u>) with mostly all the games. But you should download in
+                priority the releases provided by this website on
+                <b>top of this page</b> instead of the
+                <em>archives</em> section. The CoLoBoT game is actively
+                developed by the
+                <a href="https://colobot.info/terranovateam/" target="_">TerranovaTeam</a>. It's no longer maintained by Epsitec SA since 2014. Note that
+                this team owns the main repositories for the Buzzing Cars and
+                Blupimania 2 source-codes too. No release are available for
+                these games, then it makes sense to continue to download the
+                archives in this case.
+              </p>
+              <p>
+                About Blupimania and Planet Blupi, it's a bit different. The
+                official repositories are not really maintained by Epsitec SA,
+                but just by one employee which is working on the games as
+                hobbyist. Nothing new about the game is done under the Epsitec
+                SA name.
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title">
+                <img style="margin-right: 6px" src="images/fr.png">A propos
+              </h2>
+              <p>Site internet officiel pour tous les jeux Epsitec SA.</p>
+              <p>
+                <b>Est-ce vraiment gratuit ?</b><br>
+                Oui, tous les jeux peuvent être téléchargés librement. C'est
+                officiel et légal. Le code-source est également disponible avec
+                quelques jeux, voir cette
+                <a href="https://github.com/colobot/colobot/issues/896" target="_">discussion</a>.
+              </p>
+              <p>
+                Ce site internet met à disposition une section d'archives (<u>tout en bas de cette page</u>) avec pratiquement tous les jeux. Mais vous devriez
+                télécharger en priorité les versions proposées
+                <b>au sommet de cette page</b>, au lieu de les prendre dans la
+                section des <em>archives</em>. Le jeu CoLoBoT est activement
+                développé par
+                <a href="https://colobot.info/terranovateam/" target="_">TerranovaTeam</a>. Ce jeu n'est plus maintenu par Epsitec SA depuis 2014. Notez
+                aussi que cette équipe possède les dépôts de code-source
+                principaux des jeux Buzzing Cars et Blupimania 2. Aucune
+                publication n'est disponible pour ces deux jeux, alors dans ce
+                cas il est tout à fait sensé de continuer à les télécharger
+                depuis les archives.
+              </p>
+              <p>
+                Concernant Blupimania et Planète Blupi, c'est un petit peu
+                différent. Les dépôts de code-source officiels ne sont pas
+                vraiment sous la responsabilité d'Epsitec SA, mais uniquement à
+                la charge d'un employé de l'entreprise qui travail sur ces jeux
+                comme passionné (hobbyiste). Rien de nouveau n'est réalisé pour
+                des jeux au nom d'Epsitec SA.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <div class="card-block">
+                <p>
+                  <img style="margin-right: 6px" src="images/en.png">
+                  Feel free to donate something if you want. The money will be
+                  used for paying the hosting, domains and the certificates for
+                  example. It's not intended to be used for stuff unrelated to
+                  the Blupi games. (For CoLoBoT, Buzzing Cars and Blupimania 2,
+                  please look at
+                  <a href="https://colobot.info" target="_">colobot.info</a>)
+                </p>
+                <form action="http://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="hosted_button_id" value="G36RBNW7TV8R4">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                </form>
+                <p>
+                  Epsitec SA remains the owner of <em>Colobot</em>,
+                  <em>CeeBot</em>, <em>BuzzingCars</em> and
+                  <em>Blupi</em> names. Daniel Roux is the father of Blupi and
+                  all games.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <div class="card-block">
+                <p>
+                  <img style="margin-right: 6px" src="images/fr.png">
+                  Libre à vous de donner quelques sous si vous le souhaitez.
+                  L'argent sera utilisé, par exemple, pour financer
+                  l'hébergement, les noms de domaines et les certificats. Cet
+                  argent n'est en aucun cas utilisé pour autre chose que ce qui
+                  concerne les jeux Blupi. (Concernant CoLoBoT, Buzzing Cars et
+                  Blupimania 2, je vous invite à vous référer à
+                  <a href="https://colobot.info" target="_">colobot.info</a>)
+                </p>
+                <form action="http://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="hosted_button_id" value="G36RBNW7TV8R4">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                </form>
+                <p>
+                  Epsitec SA reste le propriétaire des noms <em>Colobot</em>,
+                  <em>CeeBot</em>, <em>BuzzingCars</em> et <em>Blupi</em>.
+                  Daniel Roux est le père de Blupi et de tous les jeux.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="min-width: 200px; max-width: 200px">
+            <div class="card-body">
+              <div class="card-block">
+                <div class="card-group">
+                  <div class="btn-group-vertical" role="group" aria-label="">
+                    <a href="https://github.com/blupi-games" target="_">
+                      <button type="button" class="btn btn-secondary" style="width: 150px; margin-bottom: 5px">
+                        <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                      </button>
+                    </a>
+                    <a rel="me" href="https://tooting.ch/@BlupiGames" target="_"><button type="button" class="btn btn-secondary" style="width: 150px; margin-bottom: 5px">
+                        <i class="fab fa-mastodon" aria-hidden="true"></i>
+                        Mastodon
+                      </button></a>
+                    <a href="https://www.facebook.com/BlupiGames" target="_">
+                      <button type="button" class="btn btn-secondary" style="width: 150px; margin-bottom: 5px">
+                        <i class="fab fa-facebook" aria-hidden="true"></i>
+                        Facebook
+                      </button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Some links / Quelques liens</h3>
+              <span>
+                <table class="table table-sm" style="width: 100%; margin-left: 3px">
+                  <tbody><tr>
+                    <th scope="row" style="width: 180px">
+                      <a target="_" href="https://www.maniabricks.com/">ManiaBricks</a>
+                    </th>
+                    <td>
+                      <img style="margin-right: 6px" src="images/en.png">The
+                      personal website of Daniel Roux<br><img style="margin-right: 6px" src="images/fr.png">Le site internet personnel de Daniel Roux
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" style="width: 180px">
+                      <a target="_" href="https://web.archive.org/web/20250731191730/https://www.ceebot.com/">CeeBot</a>
+                    </th>
+                    <td>
+                      <img style="margin-right: 6px" src="images/en.png">The
+                      legacy website for the Epsitec SA Games<br><img style="margin-right: 6px" src="images/fr.png">L'ancien site internet dédié au jeux d'Epsitec SA
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" style="width: 180px">
+                      <a target="_" href="https://fr.wikipedia.org/wiki/Blupi">Blupi</a>
+                      /
+                      <a target="_" href="https://fr.wikipedia.org/wiki/Plan%C3%A8te_Blupi">Planet Blupi</a>
+                    </th>
+                    <td>
+                      <img style="margin-right: 6px" src="images/en.png">The
+                      dedicated, french, Wikipedia pages for Blupi and Planet
+                      Blupi<br><img style="margin-right: 6px" src="images/fr.png">Les pages francophones de Wikipedia, dédiées à Blupi et
+                      Planète Blupi
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" style="width: 180px">
+                      <a target="_" href="https://en.wikipedia.org/wiki/Speedy_Eggbert">Speedy Eggbert</a>
+                    </th>
+                    <td>
+                      <img style="margin-right: 6px" src="images/en.png">The
+                      dedicated Wikipedia page for Speedy Eggbert<br><img style="margin-right: 6px" src="images/fr.png">La page anglophone de Wikipedia, dédiée à Speedy Blupi
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" style="width: 180px">
+                      <a target="_" href="https://smaky.ch/le-smaky-infini-libre/">Smaky Infini
+                      </a>
+                    </th>
+                    <td>
+                      <img style="margin-right: 6px" src="images/en.png">The
+                      Smaky emulator that you can use to play the first Blupi
+                      games (and a lot more)<br><img style="margin-right: 6px" src="images/fr.png">L'émulateur Smaky que vous pouvez utiliser pour jouer au
+                      premiers jeux Blupi (et beaucoup plus encore)
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" style="width: 180px">
+                      <a target="_" href="https://www.museebolo.ch/">Bolo FR</a>
+                      / <a target="_" href="https://www.museebolo.ch/en/">EN</a>
+                    </th>
+                    <td>
+                      <img style="margin-right: 6px" src="images/en.png">The
+                      Bolo Museum website with a lot of articles about Blupi,
+                      Daniel and the Smaky journey.<br><img style="margin-right: 6px" src="images/fr.png">Le site internet du Musée Bolo avec une multitude
+                      d'articles à propos de Blupi, Daniel et de l'aventure
+                      Smaky.
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" style="width: 180px">
+                      <a target="_" href="https://www.youtube.com/watch?v=iea_6DIFCmY">UNIL <span style="font-size: 75%">(2019.09.26)</span>
+                      </a>
+                    </th>
+                    <td>
+                      <img style="margin-right: 6px" src="images/en.png">A
+                      French video on the Blupi history with its author (Daniel
+                      Roux)<br><img style="margin-right: 6px" src="images/fr.png">Une vidéo retracant l'histoire de Blupi avec son auteur
+                      (Daniel Roux)
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" style="width: 180px">
+                      <a target="_" href="https://www.youtube.com/watch?v=cGvz1nk7iZ4">UNIL <span style="font-size: 75%">(2024.03.20)</span>
+                      </a>
+                    </th>
+                    <td>
+                      <img style="margin-right: 6px" src="images/en.png">Conference (French only) dedicated to the restoration of
+                      Blupimania<br>
+                      <img style="margin-right: 6px" src="images/fr.png">Conférence consacrée à la restauration de Blupimania
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" style="width: 180px">
+                      <a target="_" href="https://blupi.fandom.com">Blupi Fandom
+                      </a>
+                    </th>
+                    <td>
+                      <img style="margin-right: 6px" src="images/en.png">Wiki
+                      for the Blupi univers, maintained by fans<br><img style="margin-right: 6px" src="images/fr.png">Wiki de l'univers Blupi, maintenu par les fans
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" style="width: 180px">
+                      TV Tropes
+                      <a target="_" href="https://tvtropes.org/pmwiki/pmwiki.php/VideoGame/SpeedyEggbert">[1]
+                      </a>
+                      /
+                      <a target="_" href="https://tvtropes.org/pmwiki/pmwiki.php/VideoGame/PlanetBlupi">[2]
+                      </a>
+                    </th>
+                    <td>
+                      <img style="margin-right: 6px" src="images/en.png">About
+                      Speedy Eggbert [1] and Planet Blupi [2]<br><img style="margin-right: 6px" src="images/fr.png">A propos de Speedy Eggbert [1] et Planète Blupi [2]
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" style="width: 180px">
+                      <a target="_" href="https://www.playdosgames.com/publisher/epsitec/">PlayDOSGames
+                      </a>
+                    </th>
+                    <td>
+                      <img style="margin-right: 6px" src="images/en.png">Here
+                      you can play Blupi Explorer, Blupi at Home and Blupimania
+                      online (MS-DOS versions of the Smaky Blupi games)<br><img style="margin-right: 6px" src="images/fr.png">Ici vous pouvez jouer en ligne à Blupi Explorateur,
+                      Blupi à la maison et Blupimania (versions MS-DOS des jeux
+                      Blupi du Smaky)
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" style="width: 180px">
+                      <a target="_" href="https://initmaster.itch.io/blupis-adventures">GameBoy </a><br><small>Blupi's adventures</small>
+                    </th>
+                    <td>
+                      <img style="margin-right: 6px" src="images/en.png">An
+                      enthusiast, whose username is initmaster, ported Toto se
+                      promène and Toto explorateur to GameBoy Color.<br><img style="margin-right: 6px" src="images/fr.png">Un passionné, dont le pseudo est initmaster, a porté
+                      Toto se promène et Toto explorateur sur GameBoy Color.
+                    </td>
+                  </tr>
+                </tbody></table>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="container-fluid">
+          <div>
+            <h2 style="color: white">Archives</h2>
+            <div class="card-group">
+              <div class="card" style="background-color: transparent">
+                <div class="card-body">
+                  <p style="color: #ddd">
+                    <img style="margin-right: 6px" src="images/en.png"> In
+                    this section you will find the ISO images and the manuals of
+                    most Epsitec SA games (last Epsitec SA releases). If
+                    possible,
+                    <b>prefer the new releases at the top of this page</b>.
+                    <em>Please, don't report bugs for archived games because it's
+                      no longer maintained!</em>
+                  </p>
+                  <p style="color: #ddd">
+                    All images are compressed with 7zip; look at
+                    <a href="http://www.7-zip.org/" target="_">www.7-zip.org</a>.
+                  </p>
+                  <p style="color: #ddd">
+                    With all DOS games, choose the <b>Sound Blaster</b> as sound
+                    card when playing with DOSBox.
+                  </p>
+                </div>
+              </div>
+              <div class="card" style="background-color: transparent">
+                <div class="card-body">
+                  <p style="color: #ddd">
+                    <img style="margin-right: 6px" src="images/fr.png">
+                    Dans cette section vous trouverez les images ISO et les
+                    manuels de la plupart des jeux d'Epsitec SA (les dernières
+                    versions publiées). Si possible,
+                    <b>préférez les nouvelles publications au sommet de cette
+                      page</b>.
+                    <em>S'il vous plaît, ne rapportez aucun défaut pour les jeux
+                      archivés parce qu'ils ne sont plus maintenus.</em>
+                  </p>
+                  <p style="color: #ddd">
+                    Toutes les images sont comprimées avec 7zip; voir
+                    <a href="http://www.7-zip.org/" target="_">www.7-zip.org</a>.
+                  </p>
+                  <p style="color: #ddd">
+                    Concernant les jeux DOS, choisissez la carte son
+                    <b>Sound Blaster</b> quand vous désirez y jouer avec DOSBox.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <table class="table table-striped table-dark" style="width: 100%; margin-left: 3px">
+              <thead>
+                <tr>
+                  <th>Game / Jeu</th>
+                  <th>Version</th>
+                  <th>OS</th>
+                  <th>
+                    <i class="fa fa-download" aria-hidden="true"></i> Image
+                    <small>(7z)</small>
+                  </th>
+                  <th>Type</th>
+                  <th>
+                    Music / Musique <small>(7z)</small>
+                    <i class="fa fa-download" aria-hidden="true"></i>
+                  </th>
+                  <th>
+                    Manual / Manuel <small>(PDF)</small>
+                    <i class="fa fa-download" aria-hidden="true"></i>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td scope="row">
+                    <span class="pop" data-toggle="popover" data-content="&lt;img width='200' height='200' src='images/home.cover.jpg'&gt;" data-original-title="" title="">Blupi at Home<br>Blupi à la maison</span>
+                  </td>
+                  <td>v2.0 <small>(1999)</small></td>
+                  <td>Win</td>
+                  <td>
+                    <a href="download/img/BlupiAtHome-en.fr.de.it.es.pt.iso.7z" class="btn btn-outline-info btn-sm lang" role="button">en</a>
+                    <a href="download/img/BlupiAtHome-en.fr.de.it.es.pt.iso.7z" class="btn btn-outline-success btn-sm lang" role="button">fr</a>
+                    <a href="download/img/BlupiAtHome-en.fr.de.it.es.pt.iso.7z" class="btn btn-outline-secondary btn-sm lang" role="button">de</a>
+                    <a href="download/img/BlupiAtHome-en.fr.de.it.es.pt.iso.7z" class="btn btn-outline-primary btn-sm lang" role="button">it</a>
+                    <a href="download/img/BlupiAtHome-en.fr.de.it.es.pt.iso.7z" class="btn btn-outline-danger btn-sm lang" role="button">es</a>
+                    <a href="download/img/BlupiAtHome-en.fr.de.it.es.pt.iso.7z" class="btn btn-outline-light btn-sm lang" role="button">pt</a>
+                  </td>
+                  <td>CD</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td scope="row">
+                    <span class="pop" data-toggle="popover" data-content="&lt;img width='300' height='179' src='images/homelegacy.cover.jpg'&gt;" title="" data-original-title="&lt;p&gt;&lt;img src='images/en.png' /&gt; Official DOS clone of the original Smaky version.&lt;/p&gt;&lt;p&gt;&lt;img src='images/fr.png' /&gt; Clone DOS officiel de la version Smaky.&lt;/p&gt;">Blupi at Home <small>(legacy)</small><br>Blupi à la
+                      maison <small>(ancien)</small></span>
+                  </td>
+                  <td>v1.0 <small>(1993)</small></td>
+                  <td>DOS</td>
+                  <td>
+                    <a href="download/img/BlupiAtHome-Legacy-en.fr.de.iso.7z" class="btn btn-outline-info btn-sm lang" role="button" data-toggle="tooltip" title="" data-original-title="&lt;p&gt;&lt;img src='images/en.png' /&gt; The game is supported by &lt;em&gt;DOSBox&lt;/em&gt;.&lt;/p&gt;&lt;p&gt;&lt;img src='images/fr.png' /&gt; Jeu supporté par &lt;em&gt;DOSBox&lt;/em&gt;.&lt;/p&gt;">en</a>
+                    <a href="download/img/BlupiAtHome-Legacy-en.fr.de.iso.7z" class="btn btn-outline-success btn-sm lang" role="button" data-toggle="tooltip" title="" data-original-title="&lt;p&gt;&lt;img src='images/en.png' /&gt; The game is supported by &lt;em&gt;DOSBox&lt;/em&gt;.&lt;/p&gt;&lt;p&gt;&lt;img src='images/fr.png' /&gt; Jeu supporté par &lt;em&gt;DOSBox&lt;/em&gt;.&lt;/p&gt;">fr</a>
+                    <a href="download/img/BlupiAtHome-Legacy-en.fr.de.iso.7z" class="btn btn-outline-secondary btn-sm lang" role="button" data-toggle="tooltip" title="" data-original-title="&lt;p&gt;&lt;img src='images/en.png' /&gt; The game is supported by &lt;em&gt;DOSBox&lt;/em&gt;.&lt;/p&gt;&lt;p&gt;&lt;img src='images/fr.png' /&gt; Jeu supporté par &lt;em&gt;DOSBox&lt;/em&gt;.&lt;/p&gt;">de</a>
+                  </td>
+                  <td>CD</td>
+                  <td></td>
+                  <td>
+                    <a href="download/man/BlupiAtHome-Legacy-en.pdf" class="btn btn-outline-info btn-sm lang" role="button">en</a>
+                    <a href="download/man/BlupiAtHome-Legacy-fr.pdf" class="btn btn-outline-success btn-sm lang" role="button">fr</a>
+                    <a href="download/man/BlupiAtHome-Legacy-de.pdf" class="btn btn-outline-secondary btn-sm lang" role="button">de</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td scope="row">
+                    <span class="pop" data-toggle="popover" data-content="&lt;img width='300' height='164' src='images/explorerlegacy.cover.jpg'&gt;" title="" data-original-title="&lt;p&gt;&lt;img src='images/en.png' /&gt; Official DOS clone of the original Smaky version.&lt;/p&gt;&lt;p&gt;&lt;img src='images/fr.png' /&gt; Clone DOS officiel de la version Smaky.&lt;/p&gt;">Blupi Explorer <small>(legacy)</small><br>Blupi
+                      Explorateur <small>(ancien)</small></span>
+                  </td>
+                  <td>v2.4 <small>(1994-1995)</small></td>
+                  <td>DOS</td>
+                  <td>
+                    <a href="download/img/BlupiExplorer-Legacy-en.7z" class="btn btn-outline-info btn-sm lang" role="button" data-toggle="tooltip" title="" data-original-title="&lt;p&gt;&lt;img src='images/en.png' /&gt; The game is supported by &lt;em&gt;DOSBox&lt;/em&gt;.&lt;/p&gt;&lt;p&gt;&lt;img src='images/fr.png' /&gt; Jeu supporté par &lt;em&gt;DOSBox&lt;/em&gt;.&lt;/p&gt;">en</a>
+                  </td>
+                  <td>FD</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td scope="row">
+                    <span class="pop" data-toggle="popover" data-content="&lt;img width='300' height='212' src='images/mania1.cover.jpg'&gt;" title="" data-original-title="&lt;p&gt;&lt;img src='images/en.png' /&gt; Official extended DOS clone of the original Smaky version.&lt;/p&gt;&lt;p&gt;&lt;img src='images/fr.png' /&gt; Clone DOS officiel (étendu) de la version Smaky.&lt;/p&gt;">Blupimania</span>
+                  </td>
+                  <td>v1.5 <small>(1994-1996)</small></td>
+                  <td>DOS</td>
+                  <td>
+                    <a href="download/img/Blupimania-en.fr.de.iso.7z" class="btn btn-outline-info btn-sm lang" role="button" data-toggle="tooltip" title="" data-original-title="&lt;p&gt;&lt;img src='images/en.png' /&gt; The game is supported by &lt;em&gt;DOSBox&lt;/em&gt; but you should &lt;b&gt;really&lt;/b&gt; consider the new official version instead.&lt;/p&gt;&lt;p&gt;&lt;img src='images/fr.png' /&gt; Jeu supporté par &lt;em&gt;DOSBox&lt;/em&gt; mais vous devriez &lt;b&gt;vraiment&lt;/b&gt; considérer de télécharger la nouvelle version officielle.&lt;/p&gt;">en</a>
+                    <a href="download/img/Blupimania-en.fr.de.iso.7z" class="btn btn-outline-success btn-sm lang" role="button" data-toggle="tooltip" title="" data-original-title="&lt;p&gt;&lt;img src='images/en.png' /&gt; The game is supported by &lt;em&gt;DOSBox&lt;/em&gt; but you should &lt;b&gt;really&lt;/b&gt; consider the new official version instead.&lt;/p&gt;&lt;p&gt;&lt;img src='images/fr.png' /&gt; Jeu supporté par &lt;em&gt;DOSBox&lt;/em&gt; mais vous devriez &lt;b&gt;vraiment&lt;/b&gt; considérer de télécharger la nouvelle version officielle.&lt;/p&gt;">fr</a>
+                    <a href="download/img/Blupimania-fr.7z" class="btn btn-outline-success btn-sm lang" role="button" data-toggle="tooltip" title="" data-original-title="&lt;p&gt;&lt;img src='images/en.png' /&gt; Old 1.44 Floppy Disk version, prefer the new version. The game is supported by &lt;em&gt;DOSBox&lt;/em&gt;.&lt;/p&gt;&lt;p&gt;&lt;img src='images/fr.png' /&gt; Ancienne version pour disquette 1.44, préférez la nouvelle version. Jeu supporté par &lt;em&gt;DOSBox&lt;/em&gt;.&lt;/p&gt;">.<small>fd v1.3</small></a>
+                    <a href="download/img/Blupimania-en.fr.de.iso.7z" class="btn btn-outline-secondary btn-sm lang" role="button" data-toggle="tooltip" title="" data-original-title="&lt;p&gt;&lt;img src='images/en.png' /&gt; The game is supported by &lt;em&gt;DOSBox&lt;/em&gt; but you should &lt;b&gt;really&lt;/b&gt; consider the new official version instead.&lt;/p&gt;&lt;p&gt;&lt;img src='images/fr.png' /&gt; Jeu supporté par &lt;em&gt;DOSBox&lt;/em&gt; mais vous devriez &lt;b&gt;vraiment&lt;/b&gt; considérer de télécharger la nouvelle version officielle.&lt;/p&gt;">de</a>
+                  </td>
+                  <td>CD, FD</td>
+                  <td></td>
+                  <td>
+                    <a href="download/man/Blupimania-en.pdf" class="btn btn-outline-info btn-sm lang" role="button">en</a>
+                    <a href="download/man/Blupimania-fr.pdf" class="btn btn-outline-success btn-sm lang" role="button">fr</a>
+                    <a href="download/man/Blupimania-de.pdf" class="btn btn-outline-secondary btn-sm lang" role="button">de</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td scope="row">
+                    <span class="pop" data-toggle="popover" data-content="&lt;img width='200' height='282' src='images/mania.cover.jpg'&gt;" data-original-title="" title="">Blupimania 2</span>
+                  </td>
+                  <td>v1.3 <small>(2003)</small></td>
+                  <td>Win</td>
+                  <td>
+                    <a href="download/img/Blupimania-2-en.iso.7z" class="btn btn-outline-info btn-sm lang" role="button">en</a>
+                    <a href="download/img/Blupimania-2-fr.iso.7z" class="btn btn-outline-success btn-sm lang" role="button">fr</a>
+                    <a href="download/img/Blupimania-2-de.iso.7z" class="btn btn-outline-secondary btn-sm lang" role="button">de</a>
+                  </td>
+                  <td>CD</td>
+                  <td></td>
+                  <td>
+                    <a href="download/man/Blupimania-2-en.pdf" class="btn btn-outline-info btn-sm lang" role="button">en</a>
+                    <a href="download/man/Blupimania-2-fr.pdf" class="btn btn-outline-success btn-sm lang" role="button">fr</a>
+                    <a href="download/man/Blupimania-2-de.pdf" class="btn btn-outline-secondary btn-sm lang" role="button">de</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td scope="row">
+                    <span class="pop" data-toggle="popover" data-content="&lt;img width='200' height='203' src='images/cars.cover.jpg'&gt;" data-original-title="" title="">Buzzing Cars</span>
+                  </td>
+                  <td>v1.3 <small>(2002)</small></td>
+                  <td>Win</td>
+                  <td>
+                    <a href="download/img/BuzzingCars-en.fr.de.iso.7z" class="btn btn-outline-info btn-sm lang" role="button">en</a>
+                    <a href="download/img/BuzzingCars-en.fr.de.iso.7z" class="btn btn-outline-success btn-sm lang" role="button">fr</a>
+                    <a href="download/img/BuzzingCars-en.fr.de.iso.7z" class="btn btn-outline-secondary btn-sm lang" role="button">de</a>
+                  </td>
+                  <td>CD</td>
+                  <td></td>
+                  <td>
+                    <a href="download/man/BuzzingCars-en.fr.pdf" class="btn btn-outline-info btn-sm lang" role="button">en</a>
+                    <a href="download/man/BuzzingCars-en.fr.pdf" class="btn btn-outline-success btn-sm lang" role="button">fr</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td scope="row" rowspan="2">
+                    <span class="pop" data-toggle="popover" data-content="&lt;img width='300' height='201' src='images/a.cover.jpg'&gt;" data-original-title="" title="">CeeBot-A</span>
+                  </td>
+                  <td rowspan="2">v1.17 <small>(2002)</small></td>
+                  <td rowspan="2">Win</td>
+                  <td>
+                    <a href="download/img/CeeBot-A-en.iso.7z" class="btn btn-outline-info btn-sm lang" role="button">en</a>
+                    <a href="download/img/CeeBot-A-fr.iso.7z" class="btn btn-outline-success btn-sm lang" role="button">fr</a>
+                    <a href="download/img/CeeBot-A-de.iso.7z" class="btn btn-outline-secondary btn-sm lang" role="button">de</a>
+                  </td>
+                  <td>CD</td>
+                  <td></td>
+                  <td>
+                    <a href="download/man/CeeBot-A-en.pdf" class="btn btn-outline-info btn-sm lang" role="button">en</a>
+                    <a href="download/man/CeeBot-A-fr.pdf" class="btn btn-outline-success btn-sm lang" role="button">fr</a>
+                    <a href="download/man/CeeBot-A-de.pdf" class="btn btn-outline-secondary btn-sm lang" role="button">de</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="download/img/CeeBot-A-EDU-en.iso.7z" class="btn btn-outline-info btn-sm lang" role="button">en</a>
+                    <a href="download/img/CeeBot-A-EDU-fr.iso.7z" class="btn btn-outline-success btn-sm lang" role="button">fr</a>
+                    <a href="download/img/CeeBot-A-EDU-de.iso.7z" class="btn btn-outline-secondary btn-sm lang" role="button">de</a>
+                    &nbsp;<small>(school version)</small>
+                  </td>
+                  <td>CD</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td scope="row" rowspan="2">
+                    <span class="pop" data-toggle="popover" data-content="&lt;img width='300' height='200' src='images/teen.cover.jpg'&gt;" data-original-title="" title="">CeeBot-Teen</span>
+                  </td>
+                  <td rowspan="2">v1.17 <small>(2003)</small></td>
+                  <td rowspan="2">Win</td>
+                  <td>
+                    <a href="download/img/CeeBot-Teen-en.iso.7z" class="btn btn-outline-info btn-sm lang" role="button">en</a>
+                    <a href="download/img/CeeBot-Teen-fr.iso.7z" class="btn btn-outline-success btn-sm lang" role="button">fr</a>
+                    <a href="download/img/CeeBot-Teen-de.iso.7z" class="btn btn-outline-secondary btn-sm lang" role="button">de</a>
+                  </td>
+                  <td>CD</td>
+                  <td></td>
+                  <td>
+                    <a href="download/man/CeeBot-Teen-en.pdf" class="btn btn-outline-info btn-sm lang" role="button">en</a>
+                    <a href="download/man/CeeBot-Teen-fr.pdf" class="btn btn-outline-success btn-sm lang" role="button">fr</a>
+                    <a href="download/man/CeeBot-Teen-de.pdf" class="btn btn-outline-secondary btn-sm lang" role="button">de</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="download/img/CeeBot-Teen-EDU-en.iso.7z" class="btn btn-outline-info btn-sm lang" role="button">en</a>
+                    <a href="download/img/CeeBot-Teen-EDU-fr.iso.7z" class="btn btn-outline-success btn-sm lang" role="button">fr</a>
+                    <a href="download/img/CeeBot-Teen-EDU-de.iso.7z" class="btn btn-outline-secondary btn-sm lang" role="button">de</a>
+                    &nbsp;<small>(school version)</small>
+                  </td>
+                  <td>CD</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td scope="row">CeeBot-3</td>
+                  <td>v1.3 <small>(2003)</small></td>
+                  <td>Win</td>
+                  <td>
+                    <a href="download/img/CeeBot-3-en.iso.7z" class="btn btn-outline-info btn-sm lang" role="button">en</a>
+                    <a href="download/img/CeeBot-3-de.iso.7z" class="btn btn-outline-secondary btn-sm lang" role="button">de</a>
+                  </td>
+                  <td>CD</td>
+                  <td></td>
+                  <td>
+                    <a href="download/man/CeeBot-3-en.pdf" class="btn btn-outline-info btn-sm lang" role="button">en</a>
+                    <a href="download/man/CeeBot-3-fr.pdf" class="btn btn-outline-success btn-sm lang" role="button">fr</a>
+                    <a href="download/man/CeeBot-3-de.pdf" class="btn btn-outline-secondary btn-sm lang" role="button">de</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td scope="row">CeeBot-4</td>
+                  <td>v2.0 <small>(2004)</small></td>
+                  <td>Win</td>
+                  <td>
+                    <a href="download/img/CeeBot-4-en.iso.7z" class="btn btn-outline-info btn-sm lang" role="button">en</a>
+                    <a href="download/img/CeeBot-4-fr.iso.7z" class="btn btn-outline-success btn-sm lang" role="button">fr</a>
+                    <a href="download/img/CeeBot-4-de.iso.7z" class="btn btn-outline-secondary btn-sm lang" role="button">de</a>
+                  </td>
+                  <td>CD</td>
+                  <td></td>
+                  <td>
+                    <a href="download/man/CeeBot-4-en.pdf" class="btn btn-outline-info btn-sm lang" role="button">en</a>
+                    <a href="download/man/CeeBot-4-fr.pdf" class="btn btn-outline-success btn-sm lang" role="button">fr</a>
+                    <a href="download/man/CeeBot-4-de.pdf" class="btn btn-outline-secondary btn-sm lang" role="button">de</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td scope="row">
+                    <span class="pop" data-toggle="popover" data-content="&lt;img width='200' height='204' src='images/colobot.cover.jpg'&gt;" data-original-title="" title="">CoLoBoT</span>
+                  </td>
+                  <td>v1.18 <small>(2001)</small></td>
+                  <td>Win</td>
+                  <td>
+                    <a href="download/img/CoLoBoT-en.iso.7z" class="btn btn-outline-info btn-sm lang" role="button" data-toggle="tooltip" title="" data-original-title="&lt;p&gt;&lt;img src='images/en.png' /&gt; You should &lt;b&gt;really&lt;/b&gt; consider the new official version instead.&lt;/p&gt;&lt;p&gt;&lt;img src='images/fr.png' /&gt; Vous devriez &lt;b&gt;vraiment&lt;/b&gt; considérer de télécharger la nouvelle version officielle.&lt;/p&gt;">en</a>
+                    <a href="download/img/CoLoBoT-fr.iso.7z" class="btn btn-outline-success btn-sm lang" role="button" data-toggle="tooltip" title="" data-original-title="&lt;p&gt;&lt;img src='images/en.png' /&gt; You should &lt;b&gt;really&lt;/b&gt; consider the new official version instead.&lt;/p&gt;&lt;p&gt;&lt;img src='images/fr.png' /&gt; Vous devriez &lt;b&gt;vraiment&lt;/b&gt; considérer de télécharger la nouvelle version officielle.&lt;/p&gt;">fr</a>
+                    <a href="download/img/CoLoBoT-de.iso.7z" class="btn btn-outline-secondary btn-sm lang" role="button" data-toggle="tooltip" title="" data-original-title="&lt;p&gt;&lt;img src='images/en.png' /&gt; You should &lt;b&gt;really&lt;/b&gt; consider the new official version instead.&lt;/p&gt;&lt;p&gt;&lt;img src='images/fr.png' /&gt; Vous devriez &lt;b&gt;vraiment&lt;/b&gt; considérer de télécharger la nouvelle version officielle.&lt;/p&gt;">de</a>
+                    <a href="download/img/CoLoBoT-pl.bin.cue.7z" class="btn btn-outline-info btn-sm lang lang-pl" role="button" data-toggle="tooltip" title="" data-original-title="&lt;p&gt;&lt;img src='images/en.png' /&gt; You should &lt;b&gt;really&lt;/b&gt; consider the new official version instead.&lt;/p&gt;&lt;p&gt;&lt;img src='images/fr.png' /&gt; Vous devriez &lt;b&gt;vraiment&lt;/b&gt; considérer de télécharger la nouvelle version officielle.&lt;/p&gt;">pl .<small>v1.9</small></a>
+                  </td>
+                  <td>CD</td>
+                  <td>
+                    <a href="download/audio/CoLoBoT-AudioCD.7z" class="btn btn-outline-info btn-sm lang" role="button" data-toggle="tooltip" title="" data-original-title="&lt;p&gt;&lt;img src='images/en.png' /&gt; These musics can be burned with CoLoBoT in mixed mode (data on the first track, music on the next).&lt;/p&gt;&lt;p&gt;&lt;img src='images/fr.png' /&gt; Ces musiques peuvent être gravées avec CoLoBoT en mode 'mixed' (les données sur la première piste et la musique sur les suivantes).&lt;/p&gt;">.<small>flac</small></a>
+                  </td>
+                  <td>
+                    <a href="download/man/CoLoBoT-en.pdf" class="btn btn-outline-info btn-sm lang" role="button">en</a>
+                    <a href="download/man/CoLoBoT-editor-en.pdf" class="btn btn-outline-info btn-sm lang" role="button">.<small>adv</small></a>
+                    <a href="download/man/CoLoBoT-fr.pdf" class="btn btn-outline-success btn-sm lang" role="button">fr</a>
+                    <a href="download/man/CoLoBoT-editor-fr.pdf" class="btn btn-outline-success btn-sm lang" role="button">.<small>adv</small></a>
+                    <a href="download/man/CBot-fr.pdf" class="btn btn-outline-success btn-sm lang" role="button">.<small>cbot</small></a>
+                    <a href="download/man/CoLoBoT-Network-fr.pdf" class="btn btn-outline-success btn-sm lang" role="button">.<small>net</small></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td scope="row">
+                    <span class="pop" data-toggle="popover" data-content="&lt;img width='200' height='199' src='images/fun.cover.jpg'&gt;" data-original-title="" title="">Fun with Blupi<br>Blupi s'amuse</span>
+                  </td>
+                  <td>v1.0 <small>(2000)</small></td>
+                  <td>Win</td>
+                  <td>
+                    <a href="download/img/FunWithBlupi-fr.iso.7z" class="btn btn-outline-success btn-sm lang" role="button">fr</a>
+                  </td>
+                  <td>CD</td>
+                  <td></td>
+                  <td>
+                    <a href="download/man/FunWithBlupi-fr.pdf" class="btn btn-outline-success btn-sm lang" role="button">fr</a>
+                    <a href="download/man/FunWithBlupi-cd-fr.pdf" class="btn btn-outline-success btn-sm lang" role="button">.<small>cd</small></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td scope="row">
+                    <span class="pop" data-toggle="popover" data-content="&lt;img width='300' height='216' src='images/planet.cover.jpg'&gt;" data-original-title="" title="">Planet Blupi<br>Planète Blupi</span>
+                  </td>
+                  <td>v1.7, 1.8 <small>(1997)</small></td>
+                  <td>Win</td>
+                  <td>
+                    <a href="download/img/PlanetBlupi-en.en_US.fr.de.iso.7z" class="btn btn-outline-info btn-sm lang" role="button" data-toggle="tooltip" title="" data-original-title="&lt;p&gt;&lt;img src='images/en.png' /&gt; You should &lt;b&gt;really&lt;/b&gt; consider the new official version instead.&lt;/p&gt;&lt;p&gt;&lt;img src='images/fr.png' /&gt; Vous devriez &lt;b&gt;vraiment&lt;/b&gt; considérer de télécharger la nouvelle version officielle.&lt;/p&gt;">en</a>
+                    <a href="download/img/PlanetBlupi-en.en_US.fr.de.iso.7z" class="btn btn-outline-warning btn-sm lang" role="button" data-toggle="tooltip" title="" data-original-title="&lt;p&gt;&lt;img src='images/en.png' /&gt; You should &lt;b&gt;really&lt;/b&gt; consider the new official version instead.&lt;/p&gt;&lt;p&gt;&lt;img src='images/fr.png' /&gt; Vous devriez &lt;b&gt;vraiment&lt;/b&gt; considérer de télécharger la nouvelle version officielle.&lt;/p&gt;">en_US</a>
+                    <a href="download/img/PlanetBlupi-en.en_US.fr.de.iso.7z" class="btn btn-outline-success btn-sm lang" role="button" data-toggle="tooltip" title="" data-original-title="&lt;p&gt;&lt;img src='images/en.png' /&gt; You should &lt;b&gt;really&lt;/b&gt; consider the new official version instead.&lt;/p&gt;&lt;p&gt;&lt;img src='images/fr.png' /&gt; Vous devriez &lt;b&gt;vraiment&lt;/b&gt; considérer de télécharger la nouvelle version officielle.&lt;/p&gt;">fr</a>
+                    <a href="download/img/PlanetBlupi-en.en_US.fr.de.iso.7z" class="btn btn-outline-secondary btn-sm lang" role="button" data-toggle="tooltip" title="" data-original-title="&lt;p&gt;&lt;img src='images/en.png' /&gt; You should &lt;b&gt;really&lt;/b&gt; consider the new official version instead.&lt;/p&gt;&lt;p&gt;&lt;img src='images/fr.png' /&gt; Vous devriez &lt;b&gt;vraiment&lt;/b&gt; considérer de télécharger la nouvelle version officielle.&lt;/p&gt;">de</a>
+                    <a href="download/img/PlanetBlupi-it.iso.7z" class="btn btn-outline-primary btn-sm lang" role="button" data-toggle="tooltip" title="" data-original-title="&lt;p&gt;&lt;img src='images/en.png' /&gt; You should &lt;b&gt;really&lt;/b&gt; consider the new official version instead.&lt;/p&gt;&lt;p&gt;&lt;img src='images/fr.png' /&gt; Vous devriez &lt;b&gt;vraiment&lt;/b&gt; considérer de télécharger la nouvelle version officielle.&lt;/p&gt;">it</a>
+                  </td>
+                  <td>CD</td>
+                  <td></td>
+                  <td>
+                    <a href="download/man/PlanetBlupi-en.pdf" class="btn btn-outline-info btn-sm lang" role="button">en</a>
+                    <a href="download/man/PlanetBlupi-fr.pdf" class="btn btn-outline-success btn-sm lang" role="button">fr</a>
+                    <a href="download/man/PlanetBlupi-de.pdf" class="btn btn-outline-secondary btn-sm lang" role="button">de</a>
+                    <a href="download/man/PlanetBlupi-es.pdf" class="btn btn-outline-danger btn-sm lang" role="button">es</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td scope="row">
+                    <span class="pop" data-toggle="popover" data-content="&lt;img width='300' height='198' src='images/speedy.cover.jpg'&gt;" data-original-title="" title="">Speedy Blupi</span>
+                  </td>
+                  <td>v1.0 <small>(1998)</small></td>
+                  <td>Win</td>
+                  <td>
+                    <a href="download/img/SpeedyBlupi-en.en_US.fr.de.iso.7z" class="btn btn-outline-info btn-sm lang" role="button">en</a>
+                    <a href="download/img/SpeedyBlupi-en.en_US.fr.de.iso.7z" class="btn btn-outline-warning btn-sm lang" role="button">en_US</a>
+                    <a href="download/img/SpeedyBlupi-en.en_US.fr.de.iso.7z" class="btn btn-outline-success btn-sm lang" role="button">fr</a>
+                    <a href="download/img/SpeedyBlupi-en.en_US.fr.de.iso.7z" class="btn btn-outline-secondary btn-sm lang" role="button">de</a>
+                  </td>
+                  <td>CD</td>
+                  <td></td>
+                  <td>
+                    <a href="download/man/SpeedyBlupi-en.fr.de.pdf" class="btn btn-outline-info btn-sm lang" role="button">en</a>
+                    <a href="download/man/SpeedyBlupi-en.fr.de.pdf" class="btn btn-outline-success btn-sm lang" role="button">fr</a>
+                    <a href="download/man/SpeedyBlupi-en.fr.de.pdf" class="btn btn-outline-secondary btn-sm lang" role="button">de</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td scope="row">
+                    <span class="pop" data-toggle="popover" data-content="&lt;img width='200' height='208' src='images/speedy2.cover.jpg'&gt;" data-original-title="" title="">Speedy Blupi 2</span>
+                  </td>
+                  <td>v2.2 <small>(2001)</small></td>
+                  <td>Win</td>
+                  <td>
+                    <a href="download/img/SpeedyBlupi-2-en.en_US.fr.de.iso.7z" class="btn btn-outline-info btn-sm lang" role="button">en</a>
+                    <a href="download/img/SpeedyBlupi-2-en.en_US.fr.de.iso.7z" class="btn btn-outline-warning btn-sm lang" role="button">en_US</a>
+                    <a href="download/img/SpeedyBlupi-2-en.en_US.fr.de.iso.7z" class="btn btn-outline-success btn-sm lang" role="button">fr</a>
+                    <a href="download/img/SpeedyBlupi-2-en.en_US.fr.de.iso.7z" class="btn btn-outline-secondary btn-sm lang" role="button">de</a>
+                  </td>
+                  <td>CD</td>
+                  <td></td>
+                  <td>
+                    <a href="download/man/SpeedyBlupi-2-en.fr.de.pdf" class="btn btn-outline-info btn-sm lang" role="button">en</a>
+                    <a href="download/man/SpeedyBlupi-2-en.fr.de.pdf" class="btn btn-outline-success btn-sm lang" role="button">fr</a>
+                    <a href="download/man/SpeedyBlupi-2-en.fr.de.pdf" class="btn btn-outline-secondary btn-sm lang" role="button">de</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div style="height: 100px"></div>
+      </div>
+    </div>
+    <script>
+      var all = document.querySelectorAll(".card-video");
+      all.forEach(function (elem) {
+        var video = elem.querySelector(".video-player");
+
+        elem.addEventListener("mouseover", function () {
+          video.style.display = "block";
+          if (!video.playing) {
+            video.play();
+          }
+        });
+
+        elem.addEventListener("mouseleave", function () {
+          video.style.display = "none";
+          video.pause();
+          video.currentTime = 0;
+        });
+      });
+    </script>
+  
+
+</body></html>

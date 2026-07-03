@@ -1,0 +1,1210 @@
+<html><head><script async="" src="https://mc.yandex.ru/metrika/tag.js"></script>
+<title>⭐ XBOX GAME PASS for 3/6/12 months for PC</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="google" content="notranslate">
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8">
+<meta name="viewport" content="width=device-width">
+<link href="favicon.ico" rel="SHORTCUT ICON">
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="../apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="../apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="../apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../apple-touch-icon-152x152.png">
+<link rel="icon" type="image/png" href="../favicon-196x196.png" sizes="196x196">
+<link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="../favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="../favicon-128.png" sizes="128x128">
+<meta name="application-name" content="&nbsp;">
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="../mstile-144x144.png">
+<meta name="msapplication-square70x70logo" content="../mstile-70x70.png">
+<meta name="msapplication-square150x150logo" content="../mstile-150x150.png">
+<meta name="msapplication-wide310x150logo" content="../mstile-310x150.png">
+<meta name="msapplication-square310x310logo" content="../mstile-310x310.png">
+<link rel="stylesheet" type="text/css" href="../css/default.css?rnd=20260218-01">
+<link rel="stylesheet" type="text/css" href="../css/dd.css?rnd=20260218-01">
+<link rel="stylesheet" type="text/css" href="../css/jquery.qtip.css?rnd=20260218-02">
+<link rel="stylesheet" type="text/css" href="../cssmin/style.min.css?rnd=20260218-01">
+<link rel="stylesheet" type="text/css" href="../cssmin/styles.min.css?rnd=20260218-01">
+<link rel="stylesheet" type="text/css" href="../css/jquery.mCustomScrollbar.min.css?rnd=20260218-01">
+<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery.signalR-2.0.3.min.js"></script>
+<script type="text/javascript" src="../js/jquery.debounce.js"></script>
+<script type="text/javascript" src="../js/jquery.truemodal.js"></script>
+<script type="text/javascript" src="../js/jquery.dd.min.last.js?10.01.2018-1"></script>
+<script type="text/javascript" src="../js/jquery.qtip.min.js"></script>
+<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+<script type="text/javascript" src="../js/jquery.scrollbar.js"></script>
+<script type="text/javascript" src="../js/jquery.mCustomScrollbar.min.js?20251001-1242"></script><script src="https://oplata.info/js/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="../js/agent.js?rnd=20260218-01"></script>
+<script type="text/javascript" src="../js/oplata.js?rnd=20260218-01"></script>
+<script type="text/javascript" src="../js/inv-status.js"></script>
+<!--
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic-ext" rel="stylesheet">
+-->
+<!--
+<script type="text/javascript" src="https://seal.networksolutions.com/siteseal/javascript/siteseal.js"></script>
+-->
+<script type="text/javascript" src="../js/lang-en-US.js?20251001-1242"></script>
+<!--<script async src="//ulogin.ru/js/ulogin.js"></script>-->
+<script type="text/javascript">
+	function setFocus() {
+		if (!(window.location.hash)) {
+			if (document.getElementById('Phone')!=null) document.getElementById('Phone').focus();
+			else if (document.getElementById('CardNum')!=null) document.getElementById('CardNum').focus();
+			else if (document.getElementById('Email')!=null) document.getElementById('Email').focus();
+		}
+	}
+	
+	function preSubmitPay(mode) {		
+	
+		if ($("#Re_Enter_Email").length) {
+			if ($("#Re_Enter_Email").val().length==0 && mode==0) return true;
+			if ($("#email").val().toLowerCase() != $("#Re_Enter_Email").val().toLowerCase()) {				
+				$("#err_email_enter_msg").show();
+				if ($("#Re_Enter_Email").val()==0) 
+					$("#Re_Enter_Email").focus(); 
+				else 
+					$("#email").focus(); 
+				return false;
+			}
+		}
+		
+		if($('#product_cnt_set').length) $('#product_cnt').val( $('#product_cnt_set').val() );
+
+		var hasErr = false;
+		var oneElemErr = false;
+		var $form = $('#fPay');
+		
+		$form.find('input:checkbox').each(function() {
+			var t = $(this);
+			if (t.hasClass('req_chboxes')) {
+				var c = '.req_chboxes_' + t.data('id');
+				$(c).attr('required', $(c + ':checked').length < 1);
+			}
+		});
+
+		$form.find('input:text, input:password, input:hidden, input:checkbox, input:radio:checked, textarea, select').each(function() {
+			oneElemErr = false;
+			var $this = $(this);
+			var attr = $(this).attr('required');			
+			if (typeof attr !== typeof undefined && attr !== false) {                 			
+				if ($this.is(':checkbox')) {										
+					if (!($this.is(':checked'))) {
+						oneElemErr = true;
+						hasErr = true;						
+					}
+				}
+				else if ($this.val() == '') {										
+					wElem = ($this.attr('id'));
+					oneElemErr = true;
+					hasErr = true;
+				}
+			}
+			else {
+				oneElemErr = false;
+				$this.css('border-color', '');
+			}
+			if (oneElemErr) {
+				$("label[for='"+$(this).attr("id")+"']").css('color', 'red');
+				$this.css('border-color', 'red');				
+				if ($this.is('select') && !(undefined == $('.payment_wrapper .payment_method_select .dd'))) {
+					$('#'+wElem+'_msdd').css('border','1px solid red');
+				}
+			}
+			else {
+				$("label[for='"+$(this).attr("id")+"']").css('color', '#000');
+				$this.css('border-color', '');
+			}
+		});
+		if (hasErr) return false;
+		
+		return true;
+	}
+
+	$(document).ready(function(e) {
+
+		
+
+		// добавление картинок к select
+		$('#TypeCurr option, #selectBank option').each(function(){
+			optionPaymValue = this.getAttribute('value').substring(0, 3);
+			if(optionPaymValue != 'API') { $(this).attr('data-image', '../img/pm/'+optionPaymValue+'.svg'); }
+			$(this).addClass(optionPaymValue);
+		});
+		
+		$('#TypeCurr option, #TypeCurr_msdd ul li').each(function(indexOption){
+			optionPaymValue2 = this.getAttribute('value');
+			TypeCurrIndexOption = indexOption;
+		});
+
+		try {$("body select").msDropDown({ visibleRows: 22, rowHeight : 25});}
+
+		catch(e) {alert(e.message);}
+        $('#TypeCurr_msdd ul li').each(function(){
+        	var i = $(this).index();
+			$(this).addClass('name'+i);
+			$(this).addClass(optionPaymValue2);		
+		});
+
+		// select 100%
+		var quantitySelect = $('.payment_method_select form').children('.dd').length;
+		if (quantitySelect == 1) {
+			$('.payment_method_select form').children('.dd').addClass('allwidth');
+		}
+		$('#TypeCurr_msdd .ddChild li').click(function(event) {
+			var quantitySelect = $('.payment_method_select #BlockCurr').children('.dd').length;
+			console.log(quantitySelect);
+			if (quantitySelect == 1) {
+				$('.payment_method_select #BlockCurr').children('.dd').addClass('allwidth');
+			}
+		});
+
+		$('.hasTooltip').each(function() { // Notice the .each() loop, discussed below
+		    $(this).qtip({
+		        content: {
+		            text: $(this).next('div') // Use the "div" element next to this for the content
+		        },
+				position: {
+				    target: 'mouse', // Position it where the click was...
+				    adjust: {x:12, y:12},
+				    my: 'top left',
+				    at: 'bottom right'
+			    },
+			    style: {
+					 classes: 'qtip-bootstrap',
+					 tip: {corner: true, mimic: false, width: 8, height: 8, border: true, offset: 0}
+				}
+		    });
+		});
+
+		// menu-bobile, scrollbar
+		 // $(window).on("load",function(){
+   //          $(".ddChild").not( "#TypeCurrAdd_child, #msdrpdd20_child" ).mCustomScrollbar();
+   //      });
+		$('.menu-bobile').click(function(event) {
+	        event.preventDefault();
+
+	        $('header nav ul').slideToggle( "slow");
+		    $(this).toggleClass('active');
+		     $('#form_lang, .user_settings').toggleClass('active');
+		    $('.overlay').toggleClass('show');
+        });
+		$('.more').click(function(event) {
+			$(this).closest('.helpdiv').find('.helpinside, .col, .helptopic').toggle();
+			$(this).find('i:first-child').toggle();
+			$(this).find('i:last-child').toggle();
+		});
+		// menu-bobile end
+
+		setAgentCookie(''); // партнерская программа
+	});
+</script>
+
+<style>
+
+.container .lang {
+    width: 50%;
+}
+
+</style>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(32272129, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/32272129" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter --> 
+<script type="text/javascript">
+$(document).ready(function(){
+    if($("#pay_btn").length > 0){
+		window.dataLayer = window.dataLayer || [];
+        $("#pay_btn").on('click', function (){
+            try {
+                const urlParams = new URLSearchParams(window.location.search);
+                const id_d = urlParams.get('id_d') || "0";
+                const cart_uid = urlParams.get('cart_uid') || "0";
+				const owner = urlParams.get('_ow') || "-1";
+				if (owner != "1") return;
+                /*window.dataLayer.push({
+                    "ecommerce": {
+                        "currencyCode": $("#price_currency").text(),
+                        "purchase": {
+                            "actionField": {
+                                "id" : cart_uid 
+                            },
+                            "products": [
+                                {
+                                    "id": id_d,
+                                }
+                            ]
+                        }
+                    }
+                });*/
+                ym(32272129, 'reachGoal', 'oplataform', {
+                    currencyCode: $("#price_currency").text(),
+					price: parseFloat($("#price_value").text() || "0"),
+                    cartUid: cart_uid,
+                    productId: id_d
+                });
+            } catch (e) {
+                console.error(e);
+            }
+        })
+    }
+});
+</script>
+        
+<style>
+	#true-modals {}
+		#true-modals .true-modal{display:none; position:fixed; top:0; left:0; right:0; bottom:0; z-index:1000;}
+			#true-modals .true-modal-overlay{position:absolute; top:0; left:0; background-color:#000; height:100%; width:100%; z-index:1000;}
+			#true-modals .true-modal-viewport{position:absolute; top:0; left:0;  height:100%; width:100%; z-index:1000; -webkit-overflow-scrolling: touch;}
+				#true-modals .true-modal-container{position:relative; top:0; left:0; background-color:transparent; margin:0px 0px 20px 0px; float:left;}
+</style></head>
+<body style="">
+<div class="container">
+	<div class="row user_settings">
+		<form id="form_lang" method="POST">
+		<div class="ddOutOfVision" id="Lang_msddHolder" style="height: 0px; overflow: hidden; position: absolute;"><select id="Lang" name="Lang" onchange="ChangeLang($('#Lang').val())" tabindex="-1">
+			<option value="ru-RU" title="images/flag_RU.png">Russian</option>
+			<option value="en-US" title="images/flag_EN.png" selected="">English</option>
+		</select></div><div class="dd ddcommon borderRadius" id="Lang_msdd" tabindex="0" style="width: 71px;"><div class="ddTitle borderRadiusTp"><span class="divider"></span><span class="ddArrow arrowoff"></span><span class="ddTitleText " id="Lang_title"><img src="images/flag_EN.png" class="fnone"><span class="ddlabel">English</span><span class="description" style="display: none;"></span></span></div><input id="Lang_titleText" type="text" autocomplete="off" class="text shadow borderRadius" style="display: none;"><div class="ddChild ddchild_ border shadow" id="Lang_child" style="z-index: 9999; display: none; position: absolute; height: 85px;"><ul><li class="enabled _msddli_"><img src="images/flag_RU.png" class="fnone"><span class="ddlabel">Russian</span><div class="clear"></div></li><li class="enabled _msddli_ selected"><img src="images/flag_EN.png" class="fnone"><span class="ddlabel">English</span><div class="clear"></div></li></ul></div></div>
+		</form>
+	</div>
+
+	
+	<header class="row">
+		<h1 class="logo_mobile small-10"><a href=""></a></h1>
+		
+		<nav class="clearfix column small-2 medium-6">
+			<ul>
+				<li><a href="../info/purchases.asp?lang=en-US" target="_blank">Purchases</a></li>
+				<li><a href="../info/promo.asp?lang=en-US" target="_blank">Promo сodes</a> </li>
+				<li><a href="../info/card_new.asp?lang=en-US" target="_blank">Gift Cards</a></li>
+			</ul>
+			<a href="" class="menu-bobile columns"><span></span></a>
+		</nav>
+
+		<div class="lang">
+			
+				<h1>
+				Specify additional options
+				</h1>
+			
+<!-- 			<form id="form_lang" method=GET>
+			<select id="Lang" name="Lang" style="width:70px;font-size:12px;background-color:#FFF;" onchange="ChangeLang($('#Lang').val())">
+				<option value="ru-RU" data-image="images/flag_RU.png" >Ru</option>
+				<option value="en-US" data-image="images/flag_EN.png" selected>En</option>
+			</select>
+			</form> -->
+		</div>
+	</header>
+	
+
+	<div class="maindiv">
+
+		<div class="innerdiv">
+		
+				<img src="https://my.digiseller.com/inside/cntview.asp?id_d=3234560&amp;nocash=491d7a87-ae4b-4454-a9f9-27a7c2838cf0" width="1" height="1">
+			
+		<div class="ssl_seal"></div>
+		
+
+		<script type="text/javascript">
+            var c_curr; //тип валюты
+            var n_curr; //количество
+            var a_curr; //сумма
+            var initial_mq_message = "";
+
+            var OnlyInt =  false ;
+
+            function DisplayCurrency(curr) {
+                var CurrArray = ['USD', 'RUB', 'EUR', 'UAH', 'BTC', 'LTC'];
+		    
+		        var CurrDisplay = ['USD', 'RUB', 'EUR', 'UAH', 'mBTC', 'mLTC'];
+		    
+		    return CurrDisplay[CurrArray.indexOf(curr)];
+            }
+
+
+            window.onload = function () { if ($('#btn_next').length) { $('#btn_next').prop('disabled', false); $('#payspin').hide(); } };
+            window.onunload = function () { };
+
+
+
+            $(document).ready(function () {
+
+                var amount = $("#unit_cnt"),
+                    amountDst = $("#unit_amount"),
+                    amountId = 3234560,
+                        button = {
+                            decrement: $("#summ_dec"),
+                            increment: $("#summ_inc")
+                        };
+
+                amount.on('change', function () {
+
+                    if (amountDst.length) {
+                        getAmount(amountId);
+                    }
+                    else {
+                        onChangeSumm();
+                    }
+                });
+                button.decrement.on('click', function (e) {
+
+                    e.preventDefault();
+                    onChangeSumm(-1);
+                });
+                button.increment.on('click', function (e) {
+
+                    e.preventDefault();
+                    onChangeSumm(1);
+                });
+
+                onChangeSumm = function (increment) {
+
+                    var summ = parseFloat(amount.val()),
+                        increment = increment || 0,
+                        min = parseFloat(amount.data("min") || 0),
+                        max = parseFloat(amount.data("max") || null);
+
+                    if (isNaN(summ)) {
+                        summ = 0;
+                    }
+
+                    summ += increment;
+
+                    $.each(button, function (index, value) {
+                        value.removeClass("btn_gray");
+                        value.attr("disabled", false);
+                    });
+
+                    if (!isNaN(min) && summ <= min) {
+                        summ = min;
+                        button.decrement.attr("disabled", true);
+                    }
+                    else if (!isNaN(max) && summ >= max) {
+                        summ = max;
+                        button.decrement.attr("disabled", true);
+                    }
+
+                    amount.val(summ.toFixed(2));
+                };
+                onChangeSumm();
+            })
+
+            var getAmountLastReq = '';
+            function getAmount(id) {
+
+                var c = $('#TypeCurrency').val();
+                if ($("#TypeCurrencyAdd").length > 0 && !$('#TypeCurrency').length) { c = $("#TypeCurrencyAdd").val() }
+                if (c.length > 0) { c = c.substring(0, 3) }
+                var n = '0'; if ($("#unit_cnt").length > 0) { n = $("#unit_cnt").val() }
+                c_curr = c;
+
+                var rexp = new RegExp(OnlyInt ? '^\\d+$' : '^\\d+[\\.|,]?\\d*$');
+                if (n !== '' && !rexp.test(n)) { var n_new = (parseInt(n) || 0); $("#unit_cnt").val(n_new); n = n_new; }
+                if (n.length > 0) { if (n.indexOf('.') > 0) { $("#unit_cnt").val(n.replace('.', ',')); } }
+
+                var getAmountCurrReq = "n=" + n + "&c=" + c;
+                if (getAmountCurrReq !== getAmountLastReq) {
+                    $('#unit_amount').addClass('loader');
+                    getAmountLastReq = getAmountCurrReq;
+                }
+                $.getJSON("price_options.asp?p=" + id + "&n=" + n + "&c=" + c + "&x=" + getOptions() + "&rnd=" + Math.random(), function (data) {
+                    $("#unit_amount").val(data.amount);
+                    $("#unit_curr").html(DisplayCurrency(data.curr));
+                    //$("#goods_price").html(data.price + '&nbsp;<span>' + DisplayCurrency(data.curr) + '</span>');
+                    //$("#goods_price").html(data.amount + '&nbsp;<span>' + DisplayCurrency(data.curr) + '</span>');
+                    if (data.curr == 'RUB') $("#goods_price").html('<div class="selection_form_label">' + data.amount + '&nbsp;<select name="TypeCurrency" id="TypeCurrency" style="" onChange="changeCurr(this.value);"><option value="RUB">RUB</option><option value="USD">USD</option><option value="EUR">EUR</option></select></div>');
+                    if (data.curr == 'USD') $("#goods_price").html('<div class="selection_form_label">' + data.amount + '&nbsp;<select name="TypeCurrency" id="TypeCurrency" style="" onChange="changeCurr(this.value);"><option value="USD">USD</option><option value="RUB">RUB</option><option value="EUR">EUR</option></select></div>');
+                    if (data.curr == 'EUR') $("#goods_price").html('<div class="selection_form_label">' + data.amount + '&nbsp;<select name="TypeCurrency" id="TypeCurrency" style="" onChange="changeCurr(this.value);"><option value="EUR">EUR</option><option value="USD">USD</option><option value="RUB">RUB</option></select></div>');
+                    $('#TypeCurrency').msDropDown();
+                    //$("#transaction_fee").html(data.commiss+'%');
+                    checkValue(data.err);
+                    $('#unit_amount').removeClass('loader');
+                });
+            }
+
+            var getCountLastReq = '';
+            function getCount(id) {
+                var c = $('#TypeCurrency').val();
+                var a = '0'; if ($("#unit_amount").length > 0) { a = $("#unit_amount").val() }
+                if (c != c_curr || a != a_curr) {
+                    c_curr = c;
+                    var rexp = new RegExp('^\\d+[\\.|,]?\\d*$');
+                    if (a !== '' && !rexp.test(a)) { var a_new = (parseInt(a) || 0); $("#unit_amount").val(a_new); a = a_new; }
+                    if (a.length > 0) { if (a.indexOf('.') > 0) { $("#unit_amount").val(a.replace('.', ',')); } }
+
+                    var getCountCurrReq = "a=" + a + "&c=" + c;
+                    if (getCountCurrReq !== getCountLastReq) {
+                        $('#unit_cnt').addClass('loader');
+                        getCountLastReq = getCountCurrReq;
+                    }
+                    $.getJSON("price_options.asp?p=" + id + "&a=" + a + "&c=" + c + "&x=" + getOptions() + "&rnd=" + Math.random(), function (data) {
+                        $("#unit_cnt").val(data.cnt);
+                        $("#unit_curr").html(DisplayCurrency(data.curr));
+                        $("#goods_price").html(data.price);
+                        checkValue(data.err);
+                        $('#unit_cnt').removeClass('loader');
+                    });
+                }
+            }
+
+            function getOptions() {
+                var xml = '<response>';
+                var option_id;
+                $('[id^="CheckedOption_"]').each(function () {
+                    if ($(this).prop('checked')) {
+                        option_id = $(this).data('id');
+                        if (typeof option_id != "undefined") {
+                            xml = xml + '<option O="' + option_id + '" V="' + $(this).val() + '"/>'
+                        }
+                    }
+                })
+                $('[id^="SelectedOption_"]').each(function () {
+                    option_id = $(this).data('id');
+                    if (typeof option_id != "undefined") { xml = xml + '<option O="' + option_id + '" V="' + $(this).val() + '"/>' }
+                })
+                xml = xml + '</response>';
+                //alert(xml);
+                return xml;
+            }
+            function checkValue(err) {
+                if (initial_mq_message.length > 0) $("#unit_cnt_max").html(initial_mq_message);
+                $("#unit_cnt, .val").css('background-color', '#FFFFFF');
+                if ($('#unit_amount').attr('readonly') != 'readonly') { $("#unit_amount").css('background-color', '#FFFFFF'); }
+                $("#unit_cnt_min,#unit_cnt_max,#unit_cnt_free, .val").css('background-color', '#FFFFFF');
+                $("#btn_next").attr('class', 'btn btn_blue');
+                $("#btn_next").attr('disabled', false);
+                $("#unit_err_msg").html('');
+
+                if (err != '0' && err != '33') {
+                    $("#btn_next").attr('class', 'btn btn_blue'); $("#btn_next").attr('disabled', true);
+                }
+
+                switch (err) {
+                    case '3': break;
+                    case '1': $("#unit_cnt,#unit_cnt_min, .val").css('background-color', '#FCE3E3'); break;
+                    case '2': $("#unit_cnt,#unit_cnt_max, .val").css('background-color', '#FCE3E3'); break;
+                    case '4': $("#unit_cnt,#unit_amount, .val").css('background-color', '#FCE3E3'); break;
+                    case '5': $("#unit_cnt,#unit_cnt_free, .val,#unit_cnt_msdd").css('background-color', '#FCE3E3');
+                        $("#unit_err_msg").html(_langs[10]);
+                        break;
+
+                }
+            }
+            function changeCurr(curr) {
+                getAmount(3234560);
+                /*
+                $.get("block_payment_methods.asp?id_d=3234560&curr=" + curr + "&lang=en-US&rnd=" + Math.random(), function(result){
+                    if (result.length>10) {$("#BlockCurr").html(result);$('#TypeCurrency').msDropDown();$('#selectLabel').msDropDown();getAmount(3234560);
+                        var quantitySelect = $('.payment_method_select #BlockCurr').children('.dd').length;
+                        if (quantitySelect == 1) {
+                            $('.payment_method_select #BlockCurr').children('.dd').addClass('allwidth');
+                        }
+                        function selectImg(selectID, divId) {
+                            var optionValue = $(selectID).val();
+                            $(selectID).addClass(optionValue);
+                            $(divId).addClass(optionValue);
+                        }
+                        selectImg('#TypeCurrency', '#TypeCurrency_msdd');
+                        $(".ddChild").not( "#TypeCurrencyAdd_child, #msdrpdd20_child" ).mCustomScrollbar();
+                        $('#TypeCurrency_msdd ul li').each(function(){
+                            var i = $(this).index();
+                            $(this).addClass('name'+i);
+                            $(this).addClass(optionPaymValue2);
+                        });
+    
+    
+                    }
+                });
+                */
+                return false;
+            }
+
+            function collectDataForm($form) {
+                var data = {},
+                    $disabled = $form.find(':disabled').removeAttr('disabled')/*,
+				serAr = $form.serializeArray()*/;
+
+                var serAr = new Array();
+
+                $form.find('input:text, input:password, input:hidden, input:checkbox:checked, input:radio:checked, textarea, select').each(function () {
+                    var $this = $(this);
+                    console.log($this);
+                    serAr.push({ 'name': $this.attr('name'), 'value': $this.val() });
+                });
+
+                $disabled.attr('disabled', 'disabled');
+
+                for (var i in serAr) {
+                    if (typeof serAr[i].name !== 'undefined') {
+                        data[serAr[i].name] = serAr[i].value;
+                    }
+                }
+
+                return data;
+            }
+            function sendBuyParams() {
+
+                $('#btn_next').prop('disabled', true);
+                $('#payspin').show();
+
+                var $form = $('#fPay'),
+                    data = collectDataForm($form);
+
+                $form.find('input:checkbox').each(function () {
+                    var t = $(this);
+                    if (t.hasClass('req_chboxes')) {
+                        var c = '.req_chboxes_' + t.data('id');
+                        $(c).attr('required', $(c + ':checked').length < 1);
+                    }
+                });
+
+                var hasErr = false;
+                $form.find('input:text, input:password, input:hidden, input:checkbox, input:radio:checked, textarea, select').each(function () {
+                    var $this = $(this);
+                    var attr = $(this).attr('required');
+                    if (typeof attr !== typeof undefined && attr !== false && $this.val() == '') {
+                        hasErr = true;
+                        $this.css('border-color', 'red');
+                    } else {
+                        $this.css('border-color', '');
+                    }
+                });
+                if (hasErr) {
+                    $('#payspin').hide(); $('#btn_next').prop('disabled', false);
+                    return false;
+                }
+
+                $.ajax('https://api.digiseller.com/api/products/options/precheck', {
+                    type: 'post',
+                    //crossDomain: true,
+                    data: data,
+                    success: function (data) {
+                        if (data && data.cart_err) {
+
+                            modal = $.trueModal.go({
+                                render: function () {
+                                    return $('#alert-popup').html();
+                                }
+                            });
+
+                            $('#payspin').hide(); $('#btn_next').prop('disabled', false);
+                            $('#err_msg').html(data.cart_err);
+                            return;
+                        }
+                        $form[0].submit();
+                    },
+                    error: function (e) {
+                        $('#payspin').hide(); $('#btn_next').prop('disabled', false);
+                        alert('непредвиденная ошибка');
+                    }
+                });
+
+
+
+                return false;
+            }
+            $(function () {
+                var debGetAmount = $.debounce(300, function () { getAmount(3234560) });
+                var debGetCount = $.debounce(300, function () { getCount(3234560) });
+                $("input#unit_amount").keyup(debGetCount).change(debGetCount);
+                $("input#unit_cnt").keyup(debGetAmount).change(debGetAmount);
+            });
+        </script>
+
+		<!--БЛОК С НАЗВАНИЕМ-->
+		 
+
+<script>
+	function productOptionsToggle() {
+		if($('#product_options').css('display')=='none'){
+			$('#product_options').css('display','block');
+			$('#product_node').attr('class','node_minus');
+			var dataClose = $('#product_node').attr('data-close');			
+			$('#product_node').text(dataClose);
+		}
+		else{
+			$('#product_options').css('display','none');
+			$('#product_node').attr('class','node_plus');			
+			var dataOpen = $('#product_node').attr('data-open');		
+			$('#product_node').text(dataOpen);
+		}
+	}
+</script>
+
+<div class="row"> 
+	<div class="product_name columns small-12">
+			
+			<span>XBOX GAME PASS for 3/6/12 months for PC</span>
+		
+			<div class="goods_price" id="goods_price"><div class="selection_form_label">3,92&nbsp;<div class="ddOutOfVision" id="TypeCurrency_msddHolder" style="height: 0px; overflow: hidden; position: absolute;"><select name="TypeCurrency" id="TypeCurrency" style="" onchange="changeCurr(this.value);" tabindex="-1"><option value="USD">USD</option><option value="RUB">RUB</option><option value="EUR">EUR</option></select></div><div class="dd ddcommon borderRadius" id="TypeCurrency_msdd" tabindex="0" style="width: 51px;"><div class="ddTitle borderRadiusTp"><span class="divider"></span><span class="ddArrow arrowoff"></span><span class="ddTitleText " id="TypeCurrency_title"><span class="ddlabel">USD</span><span class="description" style="display: none;"></span></span></div><input id="TypeCurrency_titleText" type="text" autocomplete="off" class="text shadow borderRadius" style="display: none;"><div class="ddChild ddchild_ border shadow" id="TypeCurrency_child" style="z-index: 9999; display: none; position: absolute; visibility: visible; height: 96px;"><ul><li class="enabled _msddli_ selected"><span class="ddlabel">USD</span><div class="clear"></div></li><li class="enabled _msddli_"><span class="ddlabel">RUB</span><div class="clear"></div></li><li class="enabled _msddli_"><span class="ddlabel">EUR</span><div class="clear"></div></li></ul></div></div></div></div>
+		
+	</div>
+
+	 <style>
+    .info_price {padding-bottom:10px!important;}
+    </style>
+	
+	
+</div>
+			
+
+		<!--/БЛОК С НАЗВАНИЕМ-->
+		<style>
+	
+
+		#unit_amount{
+			color: #ff4200;
+    		font-weight: 500;
+		}
+
+        body .selection_form .selection_form_label.selection_give_val .dd.ddcommon {
+            background: linear-gradient(0deg, #f5f5f4,#fff);
+            color: #555;
+            border: 1px solid #b8b8b8;
+            border-radius: 0.25rem;
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+            font-size: 13px;
+
+            padding: 0!important;
+            width: 75px!important;
+        }
+
+        /* правая часть */
+        body .selection_form .selection_form_label .dd.ddcommon {
+            background: rgba(0,0,0,0);
+            border: 0;
+            padding: 0 7px 0 0;
+        }
+
+        body .selection_form .selection_form_label .dd.ddcommon .ddTitle {
+            padding: 0 12px 0 0;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            height: 100%;
+            padding-top: 0;
+        }
+
+        body .selection_form .selection_form_label .dd.ddcommon .ddTitle .ddTitleText{
+            display: flex;
+            align-items: center;
+            height: 28px;
+            padding-top: 0;
+        }
+
+        body .selection_form .selection_form_label.selection_give_val .dd.ddcommon .ddTitle {
+			width: 58px;
+			text-align: center;
+			display: flex;
+			justify-content: center;
+		    margin: 0 auto;
+			height: 28px;
+        }
+
+        body .selection_form .selection_form_label.selection_give_val .ddTitleText {
+            display: flex;
+            align-items: center;
+            padding: 0;
+        }
+
+        body .selection_form .selection_form_label.selection_give_val .dd.ddcommon .ddChild{
+            height: auto!important;
+        }
+
+		@media (max-width:768px) {
+			body .selection_form .selection_form_label.selection_give_val .dd.ddcommon {
+				width: 30%!important;
+			}
+		}
+        
+.maindiv .innerdiv .product_name .selection_form_label .dd {
+    border: 0;
+    background: none;
+    padding: 0;
+    width: auto!important;
+}
+
+.maindiv .innerdiv .product_name .selection_form_label .dd .ddArrow {
+    right: -12px;
+}
+
+.maindiv .innerdiv .product_name .selection_form_label .dd .ddChild li.enabled {
+    font-family: Roboto;
+    font-size: 13px;
+}
+
+.maindiv .innerdiv .product_name .selection_form_label .dd .ddChild {
+    height: auto!important;
+    width: auto;
+}
+        
+        
+		</style>
+		<div class="payment_wrapper">
+
+		<div class="row1div pay_options">
+			<form id="fPay" name="fPay" action="pay.asp" method="POST">
+
+			
+                
+                <input type="hidden" name="TypeCurrency" id="TypeCurrencyAdd" value="USD">
+
+			
+
+<!--СПОСОБЫ ОПЛАТЫ-->
+
+			<div class="payment_method_select">	
+
+<!--/СПОСОБЫ ОПЛАТЫ-->
+
+<!--ПАРАМЕТРЫ-->
+			
+							<div class="row_separator"></div>
+							<h4 class="form_label">warranty support period:</h4>
+							<label class="form_radio formlabelradio"><input type="radio" data-id="178549" id="CheckedOption_249730" name="Option_radio_178549" onchange="getAmount(3234560)" value="249730" checked=""><label for="CheckedOption_249730" style="cursor:pointer;">3 months&nbsp;</label></label><label class="form_radio formlabelradio"><input type="radio" data-id="178549" id="CheckedOption_249731" name="Option_radio_178549" onchange="getAmount(3234560)" value="249731"><label for="CheckedOption_249731" style="cursor:pointer;">6 months&nbsp;<span style="font-size:12px;color:#A0A0A0;">(+450 RUB)</span></label></label><label class="form_radio formlabelradio"><input type="radio" data-id="178549" id="CheckedOption_249732" name="Option_radio_178549" onchange="getAmount(3234560)" value="249732"><label for="CheckedOption_249732" style="cursor:pointer;">12 months&nbsp;<span style="font-size:12px;color:#A0A0A0;">(+750 RUB)</span></label></label>
+							<div class="row_separator"></div>
+							<h4 class="form_label">i UNDERSTAND THAT THESE GAMES WILL NOT WORK.:</h4>
+							<label class="transactionStateText formlabelchbx"><input type="checkbox" data-id="179232" id="CheckedOption_251062" name="Option_checkbox_179232" onchange="getAmount(3234560)" value="251062" class="req_chboxes req_chboxes_179232" required=""><label for="CheckedOption_251062" style="cursor:pointer;">EA, Ubisoft, Bethesda, Sea of Thieves, Activision and other games with own launcher&nbsp;</label></label>
+							<div class="row_separator"></div>
+							<h4 class="form_label">iMPORTANT:</h4>
+							<label class="transactionStateText formlabelchbx"><input type="checkbox" data-id="3969729" id="CheckedOption_15439369" name="Option_checkbox_3969729" onchange="getAmount(3234560)" value="15439369" class="req_chboxes req_chboxes_3969729" required=""><label for="CheckedOption_15439369" style="cursor:pointer;">I am purchasing a shared account so that I can play from my account via the XBOX app on my PC.&nbsp;</label></label>
+<!--/ПАРАМЕТРЫ-->
+
+
+			<br><br>
+			<div class="button_pay_wrapper">
+			<div class="div_button_pay">
+				<input type="hidden" name="Lang" value="en-US">
+				<input type="hidden" name="ID_D" value="3234560">
+				<input type="hidden" name="product_id" value="3234560">
+				<input type="hidden" name="Agent" value="1405511">
+				<input type="hidden" name="AgentN" value="">
+				<input type="hidden" name="FailPage" value="https://oplata.info/asp2/pay_wm.asp?id_d=3234560&amp;lang=en-US&amp;digiuid=9C39FEC0-CC1C-4CB5-8472-1A771397C5A8">
+				<input type="hidden" name="NoClearBuyerQueryString" value="NoClear">
+				<input type="hidden" name="digiuid" value="9C39FEC0-CC1C-4CB5-8472-1A771397C5A8">
+				<input type="hidden" id="Curr_add" name="Curr_add" value="">
+				<input type="hidden" id="TypeCurr" name="TypeCurr" value="API_21263_RUB">
+				<input type="hidden" id="SubCurr" name="_subcurr" value="">
+				<input type="hidden" id="SubCurr" name="_ow" value="0">
+				<input type="hidden" id="firstrun" name="firstrun" value="0">
+
+				
+					<input type="hidden" name="pseudo_content_id" value="389714033">
+				
+	<script>
+		$('#openmerchantform').submit(function() {	
+			$('#payspin').show();
+			$('#btn_next').prop('disabled',true);
+			if($('#product_cnt_set').length) $('#product_cnt').val( $('#product_cnt_set').val() );
+		});
+	</script>
+	<div class="ld ld-ring ld-spin" style="display:none;" id="payspin"></div>
+	<input type="hidden" id="product_cnt" name="product_cnt" value="1">
+	<input id="btn_next" name="btn_next" type="submit" class="btn btn_blue" value="Proceed" title="" onclick="return preSubmitPay(1);">    
+
+			</div>
+			
+
+			<script>
+				$('#fPay').submit(function() {
+					$('#payspin').show();
+					$('#btn_next').prop('disabled',true);
+				});
+			</script>
+
+			
+
+			<form name="NotPay" action="https://oplata.info/asp2/pay_wm.asp?id_d=3234560&amp;lang=en-US&amp;digiuid=9C39FEC0-CC1C-4CB5-8472-1A771397C5A8" method="POST">
+			<div class="div_button_cancel">
+				<input type="hidden" name="oper" value="back">
+				<!--<input type="submit" class="btn btn_red" value="Back" title="">-->
+
+<div><a href="https://oplata.info/asp2/pay_wm.asp?id_d=3234560&amp;lang=en-US&amp;digiuid=9C39FEC0-CC1C-4CB5-8472-1A771397C5A8">Cancel payment<!--&nbsp;and return to the store--></a></div>    
+<input type="hidden" name="digiuid" value="9C39FEC0-CC1C-4CB5-8472-1A771397C5A8">
+
+			</div>
+			</form>
+
+			<script id="alert-popup" type="text/template">
+			    <div style="background-color:#FFFFFF;width:700px;border:2px solid #777777;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;padding:20px;">
+					<div id="check_turing">
+						<div style="color:red;"><b>Error</b></div>
+						<div id="err_msg" style="margin-top:15px;margin-bottom:15px;"></div>
+						<input type="button" style="width:120px;" value="Close" class="true-modal-remove">
+						<span id="ajax_messages"></span>
+					</div>
+					<div id="loader_img" style="display:none;text-align: center;"><img src="images/ajax-loader2.gif"  /></div>
+			</script>
+		</div>
+
+		
+	</div></form>
+	</div>
+	</div>
+				</div>
+		</div>
+	</div>
+	
+	<footer class="row">
+		<!--
+		<p></p>
+		-->
+		<p style="font-size:12px;">Service prohibits the sale of goods related to casinos and gambling. Report a violation to email <a href="mailto:support@digiseller.com?казино">support@digiseller.com</a> - reward is guaranteed!</p>
+		<div class="footer_img_wrapper">
+			<!--
+			<script language="JavaScript" type="text/javascript"> SiteSeal("https://www.oplata.info/images/netsolsiteseal.png", "NETSB", "none");</script>
+			-->
+			<img src="images/network_sec.png" alt="">
+			<a href="" class="mobile_icon"><img src="images/networksolution@2x.png" alt=""></a>
+			<!--ids:730077-->
+		</div>
+	</footer>
+	
+
+<div class="overlay"></div>
+
+
+<style>
+.gdpr {
+	display: flex;
+	position: fixed !important;
+	bottom: 0 !important;
+	left: 0 !important;
+	right: 0 !important;
+	padding: 20px !important;
+	background-color: #ffffff !important;
+	box-shadow: 0 2px 50px rgba(0, 0, 0, 0.3) !important;
+	font-size: 14px !important;
+	font-family: "Roboto", sans-serif !important;
+	line-height: 1.5 !important;
+	border-top: 3px solid #1e5ba7 !important;
+	max-height: 350px !important;
+	z-index: 9999 !important;
+}
+
+.gdpr .gdpr_text {
+	flex-basis: 0 !important;
+	flex-grow: 1 !important;
+	max-width: 100% !important;
+	margin-right: 20px !important;
+	text-align: justify !important;
+}
+
+.gdpr .gdpr_text h4 {
+	margin: 0 0 0.5em 0 !important;
+	font-weight: bold !important;
+	font-size: 20px !important;
+}
+
+.gdpr .gdpr_text p {
+	margin-top: 10px !important;
+	color: #555 !important;
+}
+
+.gdpr .gdpr_buttons {
+	flex: 0 0 auto !important;
+	width: auto !important;
+	max-width: none !important;
+	display: flex;
+	align-items: center !important;
+}
+
+.gdpr .gdpr_buttons .gdpr_button, .gdpr_button {
+	border: 1px solid #1e5ba7 !important;
+	border-radius: 3px !important;
+	background-color: #1e5ba7 !important;
+	box-sizing: border-box !important;
+	width: 200px !important;
+	color: #fff !important;
+	font-size: 14px !important;
+	text-align: center !important;
+	background-image: none !important;
+	height: 40px !important;
+	appearance: none !important;
+	cursor: pointer !important;
+}
+
+@media screen and (max-width: 768px) {
+	.gdpr {
+		flex-direction: column !important;
+		overflow: scroll !important;
+	}
+
+	.gdpr .gdpr_buttons {
+		display: flex;
+		flex-direction: row !important;
+		justify-content: center !important;
+	}
+}
+
+.cookie_policy_text h3 {
+	margin-top: 15px !important;
+}
+
+.cookie_policy_text h4 {
+	margin-top: 15px !important;
+	font-size: 14px !important;
+}
+
+
+/* custom modal */
+.modal-custom {
+	display: flex;
+	justify-content: center !important;
+	align-items: center !important;
+	max-width: 100% !important;
+	position: fixed !important;
+	top: 0 !important;
+	bottom: 0 !important;
+	left: 0 !important;
+	right: 0 !important;
+	z-index: 10003 !important;
+}
+
+.modal-overlay {
+	position: fixed !important;
+	top: 0 !important;
+	bottom: 0 !important;
+	left: 0 !important;
+	right: 0 !important;
+	height: 100% !important;
+	background-color: rgba(255,255,255,.8) !important;
+	z-index: 10000 !important;
+}
+
+.modal-box {
+	padding: 40px 60px !important;
+	border-radius: 4px !important;
+	border: 1px solid #ededed !important;
+	background-color: #fff !important;
+	position: relative !important;
+	margin: 5px !important;
+	z-index: 10001 !important;
+	width: 700px !important;
+	max-height: 100% !important;
+	overflow: auto !important;
+	color: #555 !important;
+	font-family: Roboto !important;
+}
+
+.modal-text {
+	line-height: 110% !important;
+	font-family: Roboto,sans-serif !important;
+}
+
+.modal-box h2 {
+	font-weight: 500 !important;
+	font-size: 20px !important;
+	color: #000 !important;
+	font-family: Roboto, sans-serif !important;
+	margin: 0 !important;
+	line-height: 1 !important;
+}
+
+.modal-box p {
+	font-size: 14px !important;
+	margin-top: 10px !important;
+	margin-bottom: 0 !important;
+	font-family: Roboto, sans-serif !important;
+}
+
+.modal-box h3 {
+	margin-top: 15px !important;
+	color: #000 !important;
+	font-size: 16px !important;
+	font-style: italic !important;
+	font-family: Roboto, sans-serif !important;
+	margin-bottom: 0 !important;
+	line-height: 1 !important;
+}
+
+.modal-box h4 {
+	margin-top: 15px !important;
+	color: #000 !important;
+	font-size: 14px !important;
+	font-family: Roboto, sans-serif !important;
+}
+
+.modal-close {
+	text-align: center !important;
+	margin-top: 15px !important;
+}
+
+.modal-close button{
+	border-radius: 3px !important;
+	background-color: #1e5ba7 !important;
+	border: 0 !important;
+	color: #fff !important;
+	font-size: 14px !important;
+	cursor: pointer !important;
+	padding: 11px 73px !important;
+}
+
+.close-modal {
+	position: absolute !important;
+	top: 0 !important;
+	right: 15px !important;
+}
+
+.close-modal span {
+	font-size: 40px !important;
+	color: #1e5ba7 !important;
+	cursor: pointer !important;
+}
+
+@media (max-width: 768px) {
+	.modal-box {
+		padding: 20px 10px !important;
+	}
+}
+
+</style>
+
+
+
+<div class="gdpr">
+	<div class="gdpr_text">
+		<p>This website uses cookies to provide a more effective user experience. See our <a href="javascript:void(0);" onclick="showCookiePolicyPopup()">Cookie policy</a> for details.</p>
+	</div>
+	<div class="gdpr_buttons">
+		<button id="gdpr_accept_button" class="gdpr_button">OK</button>
+	</div>
+</div>
+<div class="modal-custom" style="display: none;">
+	<div class="modal-overlay"></div>
+	<div class="modal-box">
+		<span class="close-modal">
+			<span>×</span>
+		</span>
+		<div class="modal-text">
+			<h2>Cookie policy</h2>
+		
+			<p>Please read this cookie policy carefully before using oplata.info operated by us. By visiting oplata.info you agree that oplata.info may use cookies to be processed by Google Analytics and Yandex.Metrika.</p>
+			
+			<h3>What are cookies?</h3>
+			<p>Cookies are simple text files that are stored on your computer or mobile device by a website’s server. Each cookie is unique to your web browser. It will contain some anonymous information such as a unique identifier, website’s domain name, and some digits and numbers.</p>
+
+			<h3>What types of cookies do we use?</h3>
+			<h4>Necessary cookies</h4>
+			<p>Necessary cookies allow us to offer you the best possible experience when accessing and navigating through our website and using its features. For example, these cookies let us recognize that you have created an account and have logged into that account.</p>
+
+			<h4>Functionality cookies</h4>
+			<p>Functionality cookies let us operate the site in accordance with the choices you make. For example, we will recognize your username and remember how you customized the site during future visits.</p>
+
+			<h3>How to delete cookies?</h3>
+			<p>If you want to restrict or block the cookies that are set by our website, you can do so through your browser setting. Alternatively, you can visit <a href="https://www.internetcookies.org">www.internetcookies.org</a>, which contains comprehensive information on how to do this on a wide variety of browsers and devices. You will find general information about cookies and details on how to delete cookies from your device.</p>
+		</div>
+		<div class="modal-close">
+			<button>Close</button>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+
+	function setCookieGdpr(cname, cvalue, exdays) {
+		var expires = "";
+		if (exdays != undefined) {
+			var d = new Date();
+			d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+			expires = "expires=" + d.toUTCString();
+		} else {
+			expires = "expires = Fri, 31 Dec 9999 23:59:59 GMT";
+		}
+		document.cookie = cname + "=" + cvalue + ";" + expires + ";domain=oplata.info;path=/";
+	}
+
+	function initGdprPopupListener() {
+		var gdprPopupLink = document.getElementById('gdpr_accept_button');
+		gdprPopupLink.addEventListener('click', function (e) {
+			e.preventDefault();
+			setCookieGdpr('gdpr_accepted', 'yes', 365);
+
+			document.querySelector('.gdpr').remove();
+		});
+	}
+
+	function closeModal() {
+		document.querySelector('.modal-custom').style.display = 'none';
+	}
+
+	function showCookiePolicyPopup() {
+		document.querySelector('.modal-custom').style.display = 'flex';
+	}
+
+	window.addEventListener('DOMContentLoaded', initGdprPopupListener, false);
+
+	window.addEventListener('click', function(ev) {
+		if(ev.target.closest(".close-modal") == null 
+			&& ev.target.closest(".modal-close") == null) {
+
+			return;
+		}
+
+		ev.preventDefault();
+		closeModal();
+		return;
+	}, false);
+</script>
+
+
+
+<div class="preloader" id="globalpreloader" style="visibility: hidden;"></div>
+
+
+
+
+<script id="alert-popup-ajx" type="text/template">
+    <div style="background-color:#FFFFFF;width:700px;border:2px solid #777777;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;padding:20px;">
+		<div id="check_turing">
+			<div style="color:red;"><b>Error</b></div>
+			<div style="margin-top:15px;margin-bottom:15px;" id="alert-popup-ajx-msg"></div>
+			<input type="button" style="width:120px;" value="Close" class="true-modal-remove">
+			<span id="ajax_messages"></span>
+		</div>
+		<div id="loader_img" style="display:none;text-align: center;"><img src="images/ajax-loader2.gif"  /></div>
+</script>
+
+
+
+	<script>
+		$(document).ready(function() {
+			/*
+			function selectImg(selectID, divId) {
+				var optionValue = $(selectID).val();
+		    	$(selectID).addClass(optionValue);
+		    	$(divId).addClass(optionValue);
+			}
+			selectImg('#TypeCurrency', '#TypeCurrency_msdd');
+			*/
+            
+		    getAmount(3234560);
+			
+		
+			
+		});
+	</script>
+<!--------------------------------------------------------------------------------/СОДЕРЖИМОЕ СТРАНИЦЫ-------------------------------------------------------------------------------->
+
+<div id="true-modals"></div></body></html>

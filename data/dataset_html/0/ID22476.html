@@ -1,0 +1,1111 @@
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
+<title>open.mp forum</title>
+<!-- start: headerinclude -->
+<link rel="alternate" type="application/rss+xml" title="Latest Threads (RSS 2.0)" href="https://forum.open.mp/syndication.php">
+<link rel="alternate" type="application/atom+xml" title="Latest Threads (Atom 1.0)" href="https://forum.open.mp/syndication.php?type=atom1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<script type="text/javascript" src="https://forum.open.mp/jscripts/jquery.js?ver=1820"></script>
+<script type="text/javascript" src="https://forum.open.mp/jscripts/jquery.plugins.min.js?ver=1820"></script>
+<script type="text/javascript" src="https://forum.open.mp/jscripts/general.js?ver=1820"></script>
+<link type="text/css" rel="stylesheet" href="https://forum.open.mp/cache/themes/theme12/global.min.css?t=1767485014">
+<link type="text/css" rel="stylesheet" href="https://forum.open.mp/cache/themes/theme12/css3.min.css?t=1767485014">
+<link type="text/css" rel="stylesheet" href="https://forum.open.mp/cache/themes/theme12/avatarep.min.css?t=1767485014">
+<link type="text/css" rel="stylesheet" href="https://forum.open.mp/css.php?stylesheet%5B0%5D=78">
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet"> 
+<script type="text/javascript">
+<!--
+	lang.unknown_error = "An unknown error has occurred.";
+
+	lang.select2_match = "One result is available, press enter to select it.";
+	lang.select2_matches = "{1} results are available, use up and down arrow keys to navigate.";
+	lang.select2_nomatches = "No matches found";
+	lang.select2_inputtooshort_single = "Please enter one or more character";
+	lang.select2_inputtooshort_plural = "Please enter {1} or more characters";
+	lang.select2_inputtoolong_single = "Please delete one character";
+	lang.select2_inputtoolong_plural = "Please delete {1} characters";
+	lang.select2_selectiontoobig_single = "You can only select one item";
+	lang.select2_selectiontoobig_plural = "You can only select {1} items";
+	lang.select2_loadmore = "Loading more results&hellip;";
+	lang.select2_searching = "Searching&hellip;";
+	
+	var templates = {
+		modal: '<div class=\"modal\">\
+	<div style=\"overflow-y: auto; max-height: 400px;\">\
+		<table border=\"0\" cellspacing=\"0\" cellpadding=\"5\" class=\"tborder\">\
+			<tr>\
+				<td class=\"thead\"><strong>__title__</strong></td>\
+			</tr>\
+			<tr>\
+				<td class=\"trow1\">__message__</td>\
+			</tr>\
+			<tr>\
+				<td class=\"tfoot\">\
+					<div style=\"text-align: center\" class=\"modal_buttons\">__buttons__</div>\
+				</td>\
+			</tr>\
+		</table>\
+	</div>\
+</div>',
+		modal_button: '<input type=\"submit\" class=\"button\" value=\"__title__\"/>&nbsp;'
+	};
+
+	var cookieDomain = "forum.open.mp";
+	var cookiePath = "/";
+	var cookiePrefix = "";
+	var cookieSecureFlag = "1";
+	var deleteevent_confirm = "Are you sure you want to delete this event?";
+	var removeattach_confirm = "Are you sure you want to remove the selected attachment from this post?";
+	var loading_text = 'Loading. <br />Please Wait&hellip;';
+	var saving_changes = 'Saving changes&hellip;';
+	var use_xmlhttprequest = "1";
+	var my_post_key = "ba8cb4df4463fc8a80d27e98eeab7a67";
+	var rootpath = "https://forum.open.mp";
+	var imagepath = "https://forum.open.mp/images/flatty";
+  	var yes_confirm = "Yes";
+	var no_confirm = "No";
+	var MyBBEditor = null;
+	var spinner_image = "https://forum.open.mp/images/flatty/spinner.gif";
+	var spinner = "<img src='" + spinner_image +"' alt='' />";
+	var modal_zindex = 9999;
+// -->
+</script>
+<!-- end: headerinclude --><script>
+document.addEventListener("DOMContentLoaded", function() {
+    let turnstileLoaded = false;
+    let turnstileAttempts = 0;
+    const MAX_ATTEMPTS = 3;
+
+    // Load Turnstile script if not already loaded
+    function loadTurnstile() {
+        if (window.turnstile) {
+            turnstileLoaded = true;
+            return;
+        }
+        
+        const script = document.createElement('script');
+        script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+        script.async = true;
+        script.defer = true;
+        script.onload = function() {
+            turnstileLoaded = true;
+            console.log('Turnstile script loaded');
+            injectTurnstileInPopup();
+        };
+        script.onerror = function() {
+            console.error('Failed to load Turnstile script');
+            if (turnstileAttempts < MAX_ATTEMPTS) {
+                turnstileAttempts++;
+                setTimeout(loadTurnstile, 1000 * turnstileAttempts);
+            }
+        };
+        document.head.appendChild(script);
+    }
+
+    function injectTurnstileInPopup() {
+        if (!turnstileLoaded) {
+            console.log('Turnstile not loaded yet');
+            return;
+        }
+
+        const popupTable = document.querySelector('#quick_login table.tborder');
+        if (!popupTable) {
+            console.log("Login popup table not found");
+            return;
+        }
+        
+        // Remove any existing turnstile wrappers to prevent duplicates
+        const existingWrappers = popupTable.querySelectorAll('.cf-turnstile-wrapper');
+        existingWrappers.forEach(wrapper => wrapper.remove());
+
+        // Create table row using DOM methods to preserve existing nodes
+        const tr = document.createElement('tr');
+        tr.classList.add('cf-turnstile-wrapper');
+        
+        const td = document.createElement('td');
+        td.className = 'trow1';
+        td.colSpan = 2;
+        td.style.textAlign = 'center';
+        
+        const turnstileDiv = document.createElement('div');
+        turnstileDiv.className = 'cf-turnstile';
+        turnstileDiv.dataset.sitekey = '0x4AAAAAACvt_DtHj1nqnHbe';
+        turnstileDiv.dataset.theme = 'auto';
+        
+        td.appendChild(turnstileDiv);
+        tr.appendChild(td);
+
+        // Find the submit button row
+        const submitRow = popupTable.querySelector('input[type="submit"]')?.closest('tr');
+        if (submitRow && submitRow.parentNode) {
+            submitRow.parentNode.insertBefore(tr, submitRow);
+        } else {
+            // Fallback to appending to the table
+            const tbody = popupTable.querySelector('tbody');
+            if (tbody) {
+                tbody.appendChild(tr);
+            } else {
+                popupTable.appendChild(tr);
+            }
+        }
+
+        try {
+            if (window.turnstile) {
+                turnstile.render(turnstileDiv);
+                console.log("Turnstile widget rendered in popup");
+            }
+        } catch (e) {
+            console.error("Turnstile rendering error:", e);
+            if (turnstileAttempts < MAX_ATTEMPTS) {
+                turnstileAttempts++;
+                setTimeout(injectTurnstileInPopup, 1000 * turnstileAttempts);
+            }
+        }
+    }
+
+    // Observer for dynamic content
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (!mutation.addedNodes) return;
+            for (let node of mutation.addedNodes) {
+                if (node.nodeType === 1 && node.querySelector('#quick_login table.tborder')) {
+                    injectTurnstileInPopup();
+                    break;
+                }
+            }
+        });
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+    
+    // Initial load
+    loadTurnstile();
+});
+</script>
+<script type="text/javascript">
+<!--
+    lang.no_new_posts = "Forum Contains No New Posts";
+    lang.click_mark_read = "Click to mark this forum as read";
+// -->
+</script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async="" defer=""></script></head>
+<body>
+<!-- start: header -->
+<div id="container">
+	<a name="top" id="top"></a>
+	<div id="logo">
+		<div class="wrapper">
+			<a href="https://forum.open.mp/index.php"><img src="https://forum.open.mp/images/logo-coloured.png" title="open.mp forum"></a>
+		</div>
+	</div>
+	<div id="header">
+		<div id="panel">
+			<div class="upper">
+				<div class="wrapper">
+					<a href="https://forum.open.mp/index.php"><img src="https://forum.open.mp/images/logo-dark-trans.png" title="open.mp forum" id="mini-omp-logo"></a>
+					<!-- start: header_welcomeblock_guest -->
+<span class="float_left">
+	<a href="https://forum.open.mp/member.php?action=login" onclick="$('#quick_login').modal({ fadeDuration: 250, keepelement: true, zIndex: (typeof modal_zindex !== 'undefined' ? modal_zindex : 9999) }); return false;" class="login bradius">Login</a>
+	<a href="https://forum.open.mp/member.php?action=register" class="register bradius">Register</a>
+</span>
+	<div class="modal login-modal" id="quick_login" style="display: none;">
+		<form method="post" action="https://forum.open.mp/member.php">
+			<input name="action" type="hidden" value="do_login">
+			<input name="url" type="hidden" value="https://forum.open.mp/">
+			<input name="quick_login" type="hidden" value="1">
+			<input name="my_post_key" type="hidden" value="ba8cb4df4463fc8a80d27e98eeab7a67">
+			<table width="100%" cellspacing="0" cellpadding="5" border="0" class="tborder">
+				<tbody><tr>
+					<td class="thead signin" colspan="3">Login</td>
+				</tr>
+				<!-- start: header_welcomeblock_guest_login_modal -->
+<tr><td></td></tr>
+<tr>
+	<td class="trow1 white-bg nopd-tb no_bottom_border">
+		<input name="quick_username" id="quick_login_username" type="text" placeholder="Username" class="textbox initial_focus lgn" style="width: 272px; font-size: 14px;">
+	</td>
+</tr>
+<tr><td></td></tr>
+<tr>
+	<td class="trow1 white-bg nopd-tb no_bottom_border">
+		<input name="quick_password" id="quick_login_password" type="password" placeholder="Password" class="textbox lgn" style="width: 272px; font-size: 14px;">
+	</td>
+</tr>
+<tr>
+	<td class="trow1 remember_me white-bg no_bottom_border">
+		<div class="float_left">
+			<input name="quick_remember" id="quick_login_remember" type="checkbox" value="yes" class="checkbox" checked="checked">
+			<label for="quick_login_remember" class="smalltext">Remember me</label><br>
+		</div>
+		<div class="float_right" style="margin-top: 2px;">
+			<a href="https://forum.open.mp/member.php?action=lostpw" class="lost_password smalltext">Lost Password?</a>
+		</div>
+	</td>
+</tr>
+<tr class="cf-turnstile-wrapper"><td class="trow1" colspan="2" style="text-align: center;"><div class="cf-turnstile" data-sitekey="0x4AAAAAACvt_DtHj1nqnHbe" data-theme="auto"><div><input type="hidden" name="cf-turnstile-response" id="cf-chl-widget-127ty_response"></div><div><input type="hidden" name="cf-turnstile-response" id="cf-chl-widget-0mgro_response"></div></div></td></tr><tr>
+	<td class="trow2 white-bg" colspan="2">
+		<input name="submit" type="submit" class="button lgn-btn float_right" value="Login" style="margin-top: 6px;">
+	</td>
+</tr>
+<!-- end: header_welcomeblock_guest_login_modal -->
+			</tbody></table>
+		</form><!-- isango --><!-- start: global_isango_buttonframe -->
+<br>
+<div style="text-align: center;"><!-- start: global_isango_button -->
+<a class="isango_button isango_button_max isango_discord" href="member.php?action=login&amp;gateway=discord"><span>Discord</span></a>
+<!-- end: global_isango_button --><!-- start: global_isango_button -->
+<a class="isango_button isango_button_max isango_github" href="member.php?action=login&amp;gateway=github"><span>Github</span></a>
+<!-- end: global_isango_button --><!-- start: global_isango_button -->
+<a class="isango_button isango_button_max isango_google" href="member.php?action=login&amp;gateway=google"><span>Google</span></a>
+<!-- end: global_isango_button --></div>
+<!-- end: global_isango_buttonframe --><!-- /isango -->
+	</div>
+	<script type="text/javascript">
+		$("#quick_login input[name='url']").val($(location).attr('href'));
+	</script>
+	<ul class="menu top_links float_right">
+		<li><a href="https://forum.open.mp/portal.php">Portal</a></li>
+		<li><a href="https://forum.open.mp/index.php">Forums</a></li>
+		<li><a href="https://forum.open.mp/search.php">Search</a></li>
+		<li><a href="https://forum.open.mp/memberlist.php">Member List</a></li>
+		<li><a href="https://forum.open.mp/calendar.php">Calendar</a></li>
+		<li><a href="https://forum.open.mp/misc.php?action=help" class="help">Help</a></li>
+	</ul>
+	</div>
+</div>
+<div class="lower">
+	<a class="buttons float_right"></a>
+	<a class="clickedbuttons float_right"></a>
+	<div class="wrapper">
+		<ul class="menu user_links">
+			<li><a href="https://forum.open.mp/search.php?action=getnew">View New Posts</a></li>
+			<li><a href="https://forum.open.mp/search.php?action=getdaily">View Today's Posts</a></li>
+		</ul>		
+	</div>
+	<br class="clear">
+</div>
+<!-- end: header_welcomeblock_guest -->
+					<!-- </div> in header_welcomeblock_member and header_welcomeblock_guest -->
+					<!-- </div> in header_welcomeblock_member and header_welcomeblock_guest -->
+				</div>
+		</div>
+	<div id="content">
+		<div class="wrapper">
+			
+			
+			
+			
+			
+			
+			
+			<!-- start: nav -->
+<div class="navigation">
+	<!-- start: nav_bit_active -->
+<span class="active">open.mp forum</span>
+<!-- end: nav_bit_active -->				
+	<span class="toggle-container">
+		<a class="rightbutton" title="Hide Sidebar"><i class="fa fa-compress"></i></a>
+		<a class="leftbutton" title="Show Sidebar" style="display: none;"><i class="fa fa-expand"></i></a>
+	</span>
+</div>
+<!-- end: nav -->
+			<br>
+<!-- end: header -->
+<div class="forums" style="float: left; width: 76%;"><!-- start: forumbit_depth1_cat -->
+<table border="0" cellspacing="0" cellpadding="5" class="tborder">
+<thead>
+<tr>
+<td class="thead" colspan="5">
+<div class="expcolimage"><img src="https://forum.open.mp/images/flatty/collapse.png" id="cat_19_img" class="expander" alt="[-]" title="[-]" style="cursor: pointer;"></div>
+<div><strong><a href="forumdisplay.php?fid=19">General</a></strong><br><div class="smalltext clr_lgh">General discussion topics not centered around any specific community.</div></div>
+</td>
+</tr>
+</thead>
+<tbody style="" id="cat_19_e">
+<tr>
+<td class="tcat" colspan="2"><span class="smalltext"><strong>Forum</strong></span></td>
+<td class="tcat fb-pt" width="50" align="center" style="white-space: nowrap"><span class="smalltext"><strong>Threads</strong></span></td>
+<td class="tcat fb-pt" width="70" align="center" style="white-space: nowrap"><span class="smalltext"><strong>Posts</strong></span></td>
+<td class="tcat" width="250" align="right"><span class="smalltext"><strong>Last Post</strong></span></td>
+</tr>
+<!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow1" align="center" width="1"><div class="forum_status forum_on ajax_mark_read" title="Forum Contains New Posts - Click to mark this forum as read" id="mark_read_20" style="cursor: pointer;"><i class="fa fa-comments"></i></div></td>
+<td class="trow1">
+<a href="forumdisplay.php?fid=20" class="ttip">Chat<br>
+<span class="ttbg">Threads: 101 &nbsp;//&nbsp; Posts: 1,060</span>
+</a>
+<span class="smalltext" style="font-weight: 400;">Chat about anything! Old movies, new tech, your pets... anything!</span>
+</td>
+<td class="trow1 fb-pt" align="center" style="white-space: nowrap">101</td>
+<td class="trow1 fb-pt" align="center" style="white-space: nowrap">1,060</td>
+<td class="trow1" align="right" style="white-space: nowrap;"><!-- start: forumbit_depth2_forum_lastpost -->
+<avatarep_uid_[7786]><span class="smalltext fw4">
+	<a href="showthread.php?tid=3726&amp;action=lastpost" title="🎮 Free SA-MP Server Hosting — by Centnodes" style="font-weight: 600;">🎮 Free SA-MP Server Hosti...</a><br><span title="2026-04-12">Yesterday</span>, 11:29 PM<!--by-->,  <a href="https://forum.open.mp/member.php?action=profile&amp;uid=7786">Centnodes</a>
+</span>
+<!-- end: forumbit_depth2_forum_lastpost --></avatarep_uid_[7786]></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow2" align="center" width="1"><div class="forum_status forum_on ajax_mark_read" title="Forum Contains New Posts - Click to mark this forum as read" id="mark_read_21" style="cursor: pointer;"><i class="fa fa-comments"></i></div></td>
+<td class="trow2">
+<a href="forumdisplay.php?fid=21" class="ttip">Tech<br>
+<span class="ttbg">Threads: 23 &nbsp;//&nbsp; Posts: 217</span>
+</a>
+<span class="smalltext" style="font-weight: 400;">Discuss software, projects, tech industry, startups, etc.</span>
+</td>
+<td class="trow2 fb-pt" align="center" style="white-space: nowrap">23</td>
+<td class="trow2 fb-pt" align="center" style="white-space: nowrap">217</td>
+<td class="trow2" align="right" style="white-space: nowrap;"><!-- start: forumbit_depth2_forum_lastpost -->
+<avatarep_uid_[3956]><span class="smalltext fw4">
+	<a href="showthread.php?tid=3752&amp;action=lastpost" title="I recommend Xiaomi Rednote the best cellphones right now" style="font-weight: 600;">I recommend Xiaomi Rednot...</a><br>2026-01-03, 01:31 AM<!--by-->,  <a href="https://forum.open.mp/member.php?action=profile&amp;uid=3956">NoxxeR</a>
+</span>
+<!-- end: forumbit_depth2_forum_lastpost --></avatarep_uid_[3956]></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow1" align="center" width="1"><div class="forum_status forum_on ajax_mark_read" title="Forum Contains New Posts - Click to mark this forum as read" id="mark_read_22" style="cursor: pointer;"><i class="fa fa-comments"></i></div></td>
+<td class="trow1">
+<a href="forumdisplay.php?fid=22" class="ttip">Life<br>
+<span class="ttbg">Threads: 16 &nbsp;//&nbsp; Posts: 180</span>
+</a>
+<span class="smalltext" style="font-weight: 400;">Chat about life stuff: travel, relationships, entrepreneurship, your favourite morning coffee, do you like long walks on the beach?</span>
+</td>
+<td class="trow1 fb-pt" align="center" style="white-space: nowrap">16</td>
+<td class="trow1 fb-pt" align="center" style="white-space: nowrap">180</td>
+<td class="trow1" align="right" style="white-space: nowrap;"><!-- start: forumbit_depth2_forum_lastpost -->
+<avatarep_uid_[7044]><span class="smalltext fw4">
+	<a href="showthread.php?tid=711&amp;action=lastpost" title="What would you start?" style="font-weight: 600;">What would you start?</a><br>2025-12-14, 10:32 PM<!--by-->,  <a href="https://forum.open.mp/member.php?action=profile&amp;uid=7044">HELLHOUND</a>
+</span>
+<!-- end: forumbit_depth2_forum_lastpost --></avatarep_uid_[7044]></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow2" align="center" width="1"><div class="forum_status forum_on ajax_mark_read" title="Forum Contains New Posts - Click to mark this forum as read" id="mark_read_48" style="cursor: pointer;"><i class="fa fa-comments"></i></div></td>
+<td class="trow2">
+<a href="forumdisplay.php?fid=48" class="ttip">Art<br>
+<span class="ttbg">Threads: 26 &nbsp;//&nbsp; Posts: 238</span>
+</a>
+<span class="smalltext" style="font-weight: 400;">Here you are free to showcase any art forms that you deem fits this category, this is not limited to graphical images.</span><!-- start: forumbit_moderators -->
+
+<!-- end: forumbit_moderators -->
+</td>
+<td class="trow2 fb-pt" align="center" style="white-space: nowrap">26</td>
+<td class="trow2 fb-pt" align="center" style="white-space: nowrap">238</td>
+<td class="trow2" align="right" style="white-space: nowrap;"><!-- start: forumbit_depth2_forum_lastpost -->
+<avatarep_uid_[7044]><span class="smalltext fw4">
+	<a href="showthread.php?tid=3513&amp;action=lastpost" title="Silly little render a did sometime ago" style="font-weight: 600;">Silly little render a did...</a><br>2025-09-14, 09:00 PM<!--by-->,  <a href="https://forum.open.mp/member.php?action=profile&amp;uid=7044">HELLHOUND</a>
+</span>
+<!-- end: forumbit_depth2_forum_lastpost --></avatarep_uid_[7044]></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow1" align="center" width="1"><div class="forum_status forum_on ajax_mark_read" title="Forum Contains New Posts - Click to mark this forum as read" id="mark_read_56" style="cursor: pointer;"><i class="fa fa-comments"></i></div></td>
+<td class="trow1">
+<a href="forumdisplay.php?fid=56" class="ttip">Programming<br>
+<span class="ttbg">Threads: 28 &nbsp;//&nbsp; Posts: 147</span>
+</a>
+<span class="smalltext" style="font-weight: 400;">A section for talking about any programming language, doesn't need to be sa-mp specific</span>
+</td>
+<td class="trow1 fb-pt" align="center" style="white-space: nowrap">28</td>
+<td class="trow1 fb-pt" align="center" style="white-space: nowrap">147</td>
+<td class="trow1" align="right" style="white-space: nowrap;"><!-- start: forumbit_depth2_forum_lastpost -->
+<avatarep_uid_[6320]><span class="smalltext fw4">
+	<a href="showthread.php?tid=3242&amp;action=lastpost" title="Emotion Launcher(eLauncher)" style="font-weight: 600;">Emotion Launcher(eLaunche...</a><br>2025-07-24, 11:59 PM<!--by-->,  <a href="https://forum.open.mp/member.php?action=profile&amp;uid=6320">Collw</a>
+</span>
+<!-- end: forumbit_depth2_forum_lastpost --></avatarep_uid_[6320]></td>
+</tr>
+<!-- end: forumbit_depth2_forum -->
+</tbody>
+</table>
+<br>
+<!-- end: forumbit_depth1_cat --><!-- start: forumbit_depth1_cat -->
+<table border="0" cellspacing="0" cellpadding="5" class="tborder">
+<thead>
+<tr>
+<td class="thead" colspan="5">
+<div class="expcolimage"><img src="https://forum.open.mp/images/flatty/collapse.png" id="cat_40_img" class="expander" alt="[-]" title="[-]" style="cursor: pointer;"></div>
+<div><strong><a href="forumdisplay.php?fid=40">open.mp</a></strong><br><div class="smalltext clr_lgh">Development updates, suggestions, discussions and all things related to the open.mp project!</div></div>
+</td>
+</tr>
+</thead>
+<tbody style="" id="cat_40_e">
+<tr>
+<td class="tcat" colspan="2"><span class="smalltext"><strong>Forum</strong></span></td>
+<td class="tcat fb-pt" width="50" align="center" style="white-space: nowrap"><span class="smalltext"><strong>Threads</strong></span></td>
+<td class="tcat fb-pt" width="70" align="center" style="white-space: nowrap"><span class="smalltext"><strong>Posts</strong></span></td>
+<td class="tcat" width="250" align="right"><span class="smalltext"><strong>Last Post</strong></span></td>
+</tr>
+<!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow1" align="center" width="1"><div class="forum_status forum_on ajax_mark_read" title="Forum Contains New Posts - Click to mark this forum as read" id="mark_read_43" style="cursor: pointer;"><i class="fa fa-comments"></i></div></td>
+<td class="trow1">
+<a href="forumdisplay.php?fid=43" class="ttip">Development Updates<br>
+<span class="ttbg">Threads: 16 &nbsp;//&nbsp; Posts: 333</span>
+</a>
+<span class="smalltext" style="font-weight: 400;">Development updates from the team, and comment section for blog posts. You can reply to these threads.</span>
+</td>
+<td class="trow1 fb-pt" align="center" style="white-space: nowrap">16</td>
+<td class="trow1 fb-pt" align="center" style="white-space: nowrap">333</td>
+<td class="trow1" align="right" style="white-space: nowrap;"><!-- start: forumbit_depth2_forum_lastpost -->
+<avatarep_uid_[7077]><span class="smalltext fw4">
+	<a href="showthread.php?tid=194&amp;action=lastpost" title="Open Sourcing the Burgershot and open.mp Web Services" style="font-weight: 600;">Open Sourcing the Burgers...</a><br>2025-05-10, 01:46 AM<!--by-->,  <a href="https://forum.open.mp/member.php?action=profile&amp;uid=7077">CitadelServers</a>
+</span>
+<!-- end: forumbit_depth2_forum_lastpost --></avatarep_uid_[7077]></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow2" align="center" width="1"><div class="forum_status forum_on ajax_mark_read" title="Forum Contains New Posts - Click to mark this forum as read" id="mark_read_42" style="cursor: pointer;"><i class="fa fa-comments"></i></div></td>
+<td class="trow2">
+<a href="forumdisplay.php?fid=42" class="ttip">Questions and Suggestions<br>
+<span class="ttbg">Threads: 238 &nbsp;//&nbsp; Posts: 1,142</span>
+</a>
+<span class="smalltext" style="font-weight: 400;">Ask the team about the project, suggest future features and bug fixes or just chat about the project.</span>
+</td>
+<td class="trow2 fb-pt" align="center" style="white-space: nowrap">238</td>
+<td class="trow2 fb-pt" align="center" style="white-space: nowrap">1,142</td>
+<td class="trow2" align="right" style="white-space: nowrap;"><!-- start: forumbit_depth2_forum_lastpost -->
+<avatarep_uid_[7982]><span class="smalltext fw4">
+	<a href="showthread.php?tid=3821&amp;action=lastpost" title="backtrace" style="font-weight: 600;">backtrace</a><br>2026-03-09, 06:32 AM<!--by-->,  <a href="https://forum.open.mp/member.php?action=profile&amp;uid=7982">Lyvex</a>
+</span>
+<!-- end: forumbit_depth2_forum_lastpost --></avatarep_uid_[7982]></td>
+</tr>
+<!-- end: forumbit_depth2_forum -->
+</tbody>
+</table>
+<br>
+<!-- end: forumbit_depth1_cat --><!-- start: forumbit_depth1_cat -->
+<table border="0" cellspacing="0" cellpadding="5" class="tborder">
+<thead>
+<tr>
+<td class="thead" colspan="5">
+<div class="expcolimage"><img src="https://forum.open.mp/images/flatty/collapse.png" id="cat_3_img" class="expander" alt="[-]" title="[-]" style="cursor: pointer;"></div>
+<div><strong><a href="forumdisplay.php?fid=3">SA-MP</a></strong><br><div class="smalltext clr_lgh">You can find information about on going discussions, programming/scripting advice and tutorials.</div></div>
+</td>
+</tr>
+</thead>
+<tbody style="" id="cat_3_e">
+<tr>
+<td class="tcat" colspan="2"><span class="smalltext"><strong>Forum</strong></span></td>
+<td class="tcat fb-pt" width="50" align="center" style="white-space: nowrap"><span class="smalltext"><strong>Threads</strong></span></td>
+<td class="tcat fb-pt" width="70" align="center" style="white-space: nowrap"><span class="smalltext"><strong>Posts</strong></span></td>
+<td class="tcat" width="250" align="right"><span class="smalltext"><strong>Last Post</strong></span></td>
+</tr>
+<!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow2" align="center" width="1"><div class="forum_status forum_on ajax_mark_read" title="Forum Contains New Posts - Click to mark this forum as read" id="mark_read_6" style="cursor: pointer;"><i class="fa fa-comments"></i></div></td>
+<td class="trow2">
+<a href="forumdisplay.php?fid=6" class="ttip">General Discussions<br>
+<span class="ttbg">Threads: 143 &nbsp;//&nbsp; Posts: 912</span>
+</a>
+<span class="smalltext" style="font-weight: 400;">General discussions about the SA-MP platform can be made here</span>
+</td>
+<td class="trow2 fb-pt" align="center" style="white-space: nowrap">143</td>
+<td class="trow2 fb-pt" align="center" style="white-space: nowrap">912</td>
+<td class="trow2" align="right" style="white-space: nowrap;"><!-- start: forumbit_depth2_forum_lastpost -->
+<avatarep_uid_[3688]><span class="smalltext fw4">
+	<a href="showthread.php?tid=3781&amp;action=lastpost" title="Asking something" style="font-weight: 600;">Asking something</a><br>2026-01-20, 03:49 PM<!--by-->,  <a href="https://forum.open.mp/member.php?action=profile&amp;uid=3688">ALE11</a>
+</span>
+<!-- end: forumbit_depth2_forum_lastpost --></avatarep_uid_[3688]></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow1" align="center" width="1"><div class="forum_status forum_on ajax_mark_read" title="Forum Contains New Posts - Click to mark this forum as read" id="mark_read_9" style="cursor: pointer;"><i class="fa fa-comments"></i></div></td>
+<td class="trow1">
+<a href="forumdisplay.php?fid=9" class="ttip">Videos and Screenshots<br>
+<span class="ttbg">Threads: 185 &nbsp;//&nbsp; Posts: 688</span>
+</a>
+<span class="smalltext" style="font-weight: 400;">You can post any SA-MP related youtube videos, images from image hosters or media in the form of an attachment or url.</span>
+</td>
+<td class="trow1 fb-pt" align="center" style="white-space: nowrap">185</td>
+<td class="trow1 fb-pt" align="center" style="white-space: nowrap">688</td>
+<td class="trow1" align="right" style="white-space: nowrap;"><!-- start: forumbit_depth2_forum_lastpost -->
+<avatarep_uid_[5241]><span class="smalltext fw4">
+	<a href="showthread.php?tid=3757&amp;action=lastpost" title="SAMP server trailer" style="font-weight: 600;">SAMP server trailer</a><br>2026-01-06, 02:34 PM<!--by-->,  <a href="https://forum.open.mp/member.php?action=profile&amp;uid=5241">pmemorex2016</a>
+</span>
+<!-- end: forumbit_depth2_forum_lastpost --></avatarep_uid_[5241]></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow2" align="center" width="1"><div class="forum_status forum_on ajax_mark_read" title="Forum Contains New Posts - Click to mark this forum as read" id="mark_read_12" style="cursor: pointer;"><i class="fa fa-comments"></i></div></td>
+<td class="trow2">
+<a href="forumdisplay.php?fid=12" class="ttip">Support<br>
+<span class="ttbg">Threads: 242 &nbsp;//&nbsp; Posts: 684</span>
+</a>
+<span class="smalltext" style="font-weight: 400;">You can get help for client issues, server issues or even help by reporting bugs</span>
+</td>
+<td class="trow2 fb-pt" align="center" style="white-space: nowrap">242</td>
+<td class="trow2 fb-pt" align="center" style="white-space: nowrap">684</td>
+<td class="trow2" align="right" style="white-space: nowrap;"><!-- start: forumbit_depth2_forum_lastpost -->
+<avatarep_uid_[2989]><span class="smalltext fw4">
+	<a href="showthread.php?tid=3835&amp;action=lastpost" title="Pawno compiler (pawncc.exe) for open.MP/SA-MP showing a blank output and a flickering" style="font-weight: 600;">Pawno compiler (pawncc.ex...</a><br>2026-03-20, 11:12 PM<!--by-->,  <a href="https://forum.open.mp/member.php?action=profile&amp;uid=2989">PutuSuhartawan</a>
+</span>
+<!-- end: forumbit_depth2_forum_lastpost --></avatarep_uid_[2989]></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow1" align="center" width="1"><div class="forum_status forum_on ajax_mark_read" title="Forum Contains New Posts - Click to mark this forum as read" id="mark_read_10" style="cursor: pointer;"><i class="fa fa-comments"></i></div></td>
+<td class="trow1">
+<a href="forumdisplay.php?fid=10" class="ttip">Pawn Scripting<br>
+<span class="ttbg">Threads: 684 &nbsp;//&nbsp; Posts: 2,534</span>
+</a>
+<span class="smalltext" style="font-weight: 400;">Post questions related to Pawn scripts here. Please provide as much detail as possible. Read: https://stackoverflow.com/help/mcve</span>
+</td>
+<td class="trow1 fb-pt" align="center" style="white-space: nowrap">684</td>
+<td class="trow1 fb-pt" align="center" style="white-space: nowrap">2,534</td>
+<td class="trow1" align="right" style="white-space: nowrap;"><!-- start: forumbit_depth2_forum_lastpost -->
+<avatarep_uid_[8016]><span class="smalltext fw4">
+	<a href="showthread.php?tid=2501&amp;action=lastpost" title="FCNPC for open.mp" style="font-weight: 600;">FCNPC for open.mp</a><br>2026-04-01, 12:28 PM<!--by-->,  <a href="https://forum.open.mp/member.php?action=profile&amp;uid=8016">mentaletion</a>
+</span>
+<!-- end: forumbit_depth2_forum_lastpost --></avatarep_uid_[8016]></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow2" align="center" width="1"><div class="forum_status forum_on ajax_mark_read" title="Forum Contains New Posts - Click to mark this forum as read" id="mark_read_37" style="cursor: pointer;"><i class="fa fa-comments"></i></div></td>
+<td class="trow2">
+<a href="forumdisplay.php?fid=37" class="ttip">Tutorials<br>
+<span class="ttbg">Threads: 28 &nbsp;//&nbsp; Posts: 109</span>
+</a>
+<span class="smalltext" style="font-weight: 400;">Guides on scripting, playing, plugins, pawn, and more.</span>
+</td>
+<td class="trow2 fb-pt" align="center" style="white-space: nowrap">28</td>
+<td class="trow2 fb-pt" align="center" style="white-space: nowrap">109</td>
+<td class="trow2" align="right" style="white-space: nowrap;"><!-- start: forumbit_depth2_forum_lastpost -->
+<avatarep_uid_[3956]><span class="smalltext fw4">
+	<a href="showthread.php?tid=3169&amp;action=lastpost" title="How to make your GTA SA:MP like GTA 5 !" style="font-weight: 600;">How to make your GTA SA:M...</a><br>2025-06-07, 06:48 AM<!--by-->,  <a href="https://forum.open.mp/member.php?action=profile&amp;uid=3956">NoxxeR</a>
+</span>
+<!-- end: forumbit_depth2_forum_lastpost --></avatarep_uid_[3956]></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow1" align="center" width="1"><div class="forum_status forum_on ajax_mark_read" title="Forum Contains New Posts - Click to mark this forum as read" id="mark_read_13" style="cursor: pointer;"><i class="fa fa-comments"></i></div></td>
+<td class="trow1">
+<a href="forumdisplay.php?fid=13" class="ttip">Releases<br>
+<span class="ttbg">Threads: 276 &nbsp;//&nbsp; Posts: 1,079</span>
+</a>
+<span class="smalltext" style="font-weight: 400;">Post your finished gamemodes, filterscripts, libraries, plugins, tools and more here. Must be open source.</span><!-- start: forumbit_subforums -->
+<div class="smalltext" style="margin-top: 5px; color: #444 !important;"><strong>Sub Forums: </strong> <span class="smalltext and-more"><div title="Forum Contains New Posts - Click to mark this forum as read" class="subforumicon subforum_minion ajax_mark_read" id="mark_read_32" style="cursor: pointer;"> <i class="fa fa-circle"></i></div><span style="font-size: 12px;"><a href="forumdisplay.php?fid=32" title="" style="color: #777;"> Plugins</a></span>, <div title="Forum Contains New Posts - Click to mark this forum as read" class="subforumicon subforum_minion ajax_mark_read" id="mark_read_31" style="cursor: pointer;"> <i class="fa fa-circle"></i></div><span style="font-size: 12px;"><a href="forumdisplay.php?fid=31" title="" style="color: #777;"> Libraries</a></span>, <div title="Forum Contains New Posts - Click to mark this forum as read" class="subforumicon subforum_minion ajax_mark_read" id="mark_read_30" style="cursor: pointer;"> <i class="fa fa-circle"></i></div><span style="font-size: 12px;"><a href="forumdisplay.php?fid=30" title="" style="color: #777;"> Filterscripts</a></span>, <div title="Forum Contains New Posts - Click to mark this forum as read" class="subforumicon subforum_minion ajax_mark_read" id="mark_read_33" style="cursor: pointer;"> <i class="fa fa-circle"></i></div><span style="font-size: 12px;"><a href="forumdisplay.php?fid=33" title="" style="color: #777;"> Gamemodes</a></span>, <div title="Forum Contains New Posts - Click to mark this forum as read" class="subforumicon subforum_minion ajax_mark_read" id="mark_read_67" style="cursor: pointer;"> <i class="fa fa-circle"></i></div><span style="font-size: 12px;"><a href="forumdisplay.php?fid=67" title="" style="color: #777;"> Maps</a></span></span></div>
+<!-- end: forumbit_subforums -->
+</td>
+<td class="trow1 fb-pt" align="center" style="white-space: nowrap">276</td>
+<td class="trow1 fb-pt" align="center" style="white-space: nowrap">1,079</td>
+<td class="trow1" align="right" style="white-space: nowrap;"><!-- start: forumbit_depth2_forum_lastpost -->
+<avatarep_uid_[7983]><span class="smalltext fw4">
+	<a href="showthread.php?tid=3822&amp;action=lastpost" title="mysql_samp" style="font-weight: 600;">mysql_samp</a><br>2026-03-10, 03:33 AM<!--by-->,  <a href="https://forum.open.mp/member.php?action=profile&amp;uid=7983">NullSablex</a>
+</span>
+<!-- end: forumbit_depth2_forum_lastpost --></avatarep_uid_[7983]></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow2" align="center" width="1"><div class="forum_status forum_on ajax_mark_read" title="Forum Contains New Posts - Click to mark this forum as read" id="mark_read_69" style="cursor: pointer;"><i class="fa fa-comments"></i></div></td>
+<td class="trow2">
+<a href="forumdisplay.php?fid=69" class="ttip">Advertisements <br>
+<span class="ttbg">Threads: 77 &nbsp;//&nbsp; Posts: 116</span>
+</a>
+<span class="smalltext" style="font-weight: 400;">You are allowed to post advertisements for your SA-MP gaming communities. You can only post an advertisement every 30 days.</span>
+</td>
+<td class="trow2 fb-pt" align="center" style="white-space: nowrap">77</td>
+<td class="trow2 fb-pt" align="center" style="white-space: nowrap">116</td>
+<td class="trow2" align="right" style="white-space: nowrap;"><!-- start: forumbit_depth2_forum_lastpost -->
+<avatarep_uid_[5532]><span class="smalltext fw4">
+	<a href="showthread.php?tid=4207&amp;action=lastpost" title="Classic Party Server [ENG] - DM" style="font-weight: 600;">Classic Party Server [ENG...</a><br>2026-04-11, 10:12 PM<!--by-->,  <a href="https://forum.open.mp/member.php?action=profile&amp;uid=5532">GPCServ</a>
+</span>
+<!-- end: forumbit_depth2_forum_lastpost --></avatarep_uid_[5532]></td>
+</tr>
+<!-- end: forumbit_depth2_forum -->
+</tbody>
+</table>
+<br>
+<!-- end: forumbit_depth1_cat --><!-- start: forumbit_depth1_cat -->
+<table border="0" cellspacing="0" cellpadding="5" class="tborder">
+<thead>
+<tr>
+<td class="thead" colspan="5">
+<div class="expcolimage"><img src="https://forum.open.mp/images/flatty/collapse.png" id="cat_23_img" class="expander" alt="[-]" title="[-]" style="cursor: pointer;"></div>
+<div><strong><a href="forumdisplay.php?fid=23">Other languages</a></strong><br><div class="smalltext clr_lgh"></div></div>
+</td>
+</tr>
+</thead>
+<tbody style="" id="cat_23_e">
+<tr>
+<td class="tcat" colspan="2"><span class="smalltext"><strong>Forum</strong></span></td>
+<td class="tcat fb-pt" width="50" align="center" style="white-space: nowrap"><span class="smalltext"><strong>Threads</strong></span></td>
+<td class="tcat fb-pt" width="70" align="center" style="white-space: nowrap"><span class="smalltext"><strong>Posts</strong></span></td>
+<td class="tcat" width="250" align="right"><span class="smalltext"><strong>Last Post</strong></span></td>
+</tr>
+<!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow2" align="center" width="1"><div class="forum_status forum_on ajax_mark_read" title="Forum Contains New Posts - Click to mark this forum as read" id="mark_read_24" style="cursor: pointer;"><i class="fa fa-comments"></i></div></td>
+<td class="trow2">
+<a href="forumdisplay.php?fid=24" class="ttip">Spanish/Español<br>
+<span class="ttbg">Threads: 166 &nbsp;//&nbsp; Posts: 1,589</span>
+</a>
+<span class="smalltext" style="font-weight: 400;"></span><!-- start: forumbit_moderators -->
+
+<!-- end: forumbit_moderators --><!-- start: forumbit_subforums -->
+<div class="smalltext" style="margin-top: 5px; color: #444 !important;"><strong>Sub Forums: </strong> <span class="smalltext and-more"><div title="Forum Contains New Posts - Click to mark this forum as read" class="subforumicon subforum_minion ajax_mark_read" id="mark_read_51" style="cursor: pointer;"> <i class="fa fa-circle"></i></div><span style="font-size: 12px;"><a href="forumdisplay.php?fid=51" title="" style="color: #777;"> Programación</a></span>, <div title="Forum Contains New Posts - Click to mark this forum as read" class="subforumicon subforum_minion ajax_mark_read" id="mark_read_52" style="cursor: pointer;"> <i class="fa fa-circle"></i></div><span style="font-size: 12px;"><a href="forumdisplay.php?fid=52" title="" style="color: #777;"> Discusión GTA SA Multijugador</a></span>, <div title="Forum Contains New Posts - Click to mark this forum as read" class="subforumicon subforum_minion ajax_mark_read" id="mark_read_53" style="cursor: pointer;"> <i class="fa fa-circle"></i></div><span style="font-size: 12px;"><a href="forumdisplay.php?fid=53" title="" style="color: #777;"> Mods</a></span>, <div title="Forum Contains New Posts - Click to mark this forum as read" class="subforumicon subforum_minion ajax_mark_read" id="mark_read_54" style="cursor: pointer;"> <i class="fa fa-circle"></i></div><span style="font-size: 12px;"><a href="forumdisplay.php?fid=54" title="" style="color: #777;"> Offtopic</a></span>, <div title="Forum Contains New Posts - Click to mark this forum as read" class="subforumicon subforum_minion ajax_mark_read" id="mark_read_55" style="cursor: pointer;"> <i class="fa fa-circle"></i></div><span style="font-size: 12px;"><a href="forumdisplay.php?fid=55" title="" style="color: #777;"> Juegos</a></span></span></div>
+<!-- end: forumbit_subforums -->
+</td>
+<td class="trow2 fb-pt" align="center" style="white-space: nowrap">166</td>
+<td class="trow2 fb-pt" align="center" style="white-space: nowrap">1,589</td>
+<td class="trow2" align="right" style="white-space: nowrap;"><!-- start: forumbit_depth2_forum_lastpost -->
+<avatarep_uid_[7963]><span class="smalltext fw4">
+	<a href="showthread.php?tid=3806&amp;action=lastpost" title="Consulta warning mismatch SQL" style="font-weight: 600;">Consulta warning mismatch...</a><br>2026-03-01, 04:26 PM<!--by-->,  <a href="https://forum.open.mp/member.php?action=profile&amp;uid=7963">carlosmcgrimes</a>
+</span>
+<!-- end: forumbit_depth2_forum_lastpost --></avatarep_uid_[7963]></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow1" align="center" width="1"><div class="forum_status forum_on ajax_mark_read" title="Forum Contains New Posts - Click to mark this forum as read" id="mark_read_25" style="cursor: pointer;"><i class="fa fa-comments"></i></div></td>
+<td class="trow1">
+<a href="forumdisplay.php?fid=25" class="ttip">Portuguese/Português<br>
+<span class="ttbg">Threads: 53 &nbsp;//&nbsp; Posts: 153</span>
+</a>
+<span class="smalltext" style="font-weight: 400;"></span><!-- start: forumbit_moderators -->
+
+<!-- end: forumbit_moderators -->
+</td>
+<td class="trow1 fb-pt" align="center" style="white-space: nowrap">53</td>
+<td class="trow1 fb-pt" align="center" style="white-space: nowrap">153</td>
+<td class="trow1" align="right" style="white-space: nowrap;"><!-- start: forumbit_depth2_forum_lastpost -->
+<avatarep_uid_[7925]><span class="smalltext fw4">
+	<a href="showthread.php?tid=3809&amp;action=lastpost" title="Servidor RP" style="font-weight: 600;">Servidor RP</a><br>2026-02-18, 11:10 PM<!--by-->,  <a href="https://forum.open.mp/member.php?action=profile&amp;uid=7925">GhostSpectre</a>
+</span>
+<!-- end: forumbit_depth2_forum_lastpost --></avatarep_uid_[7925]></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow2" align="center" width="1"><div class="forum_status forum_on ajax_mark_read" title="Forum Contains New Posts - Click to mark this forum as read" id="mark_read_26" style="cursor: pointer;"><i class="fa fa-comments"></i></div></td>
+<td class="trow2">
+<a href="forumdisplay.php?fid=26" class="ttip">Russian/Русский<br>
+<span class="ttbg">Threads: 19 &nbsp;//&nbsp; Posts: 143</span>
+</a>
+<span class="smalltext" style="font-weight: 400;"></span><!-- start: forumbit_moderators -->
+
+<!-- end: forumbit_moderators -->
+</td>
+<td class="trow2 fb-pt" align="center" style="white-space: nowrap">19</td>
+<td class="trow2 fb-pt" align="center" style="white-space: nowrap">143</td>
+<td class="trow2" align="right" style="white-space: nowrap;"><!-- start: forumbit_depth2_forum_lastpost -->
+<avatarep_uid_[1204]><span class="smalltext fw4">
+	<a href="showthread.php?tid=3104&amp;action=lastpost" title="Gametext styles" style="font-weight: 600;">Gametext styles</a><br>2025-03-14, 07:20 AM<!--by-->,  <a href="https://forum.open.mp/member.php?action=profile&amp;uid=1204">eakwarp</a>
+</span>
+<!-- end: forumbit_depth2_forum_lastpost --></avatarep_uid_[1204]></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow1" align="center" width="1"><div class="forum_status forum_on ajax_mark_read" title="Forum Contains New Posts - Click to mark this forum as read" id="mark_read_28" style="cursor: pointer;"><i class="fa fa-comments"></i></div></td>
+<td class="trow1">
+<a href="forumdisplay.php?fid=28" class="ttip">Italian/Italiano<br>
+<span class="ttbg">Threads: 9 &nbsp;//&nbsp; Posts: 66</span>
+</a>
+<span class="smalltext" style="font-weight: 400;"></span><!-- start: forumbit_moderators -->
+
+<!-- end: forumbit_moderators -->
+</td>
+<td class="trow1 fb-pt" align="center" style="white-space: nowrap">9</td>
+<td class="trow1 fb-pt" align="center" style="white-space: nowrap">66</td>
+<td class="trow1" align="right" style="white-space: nowrap;"><!-- start: forumbit_depth2_forum_lastpost -->
+<avatarep_uid_[6138]><span class="smalltext fw4">
+	<a href="showthread.php?tid=3411&amp;action=lastpost" title="Lettering" style="font-weight: 600;">Lettering</a><br>2025-08-31, 09:59 PM<!--by-->,  <a href="https://forum.open.mp/member.php?action=profile&amp;uid=6138">NikitaFoxze</a>
+</span>
+<!-- end: forumbit_depth2_forum_lastpost --></avatarep_uid_[6138]></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow2" align="center" width="1"><div class="forum_status forum_on ajax_mark_read" title="Forum Contains New Posts - Click to mark this forum as read" id="mark_read_29" style="cursor: pointer;"><i class="fa fa-comments"></i></div></td>
+<td class="trow2">
+<a href="forumdisplay.php?fid=29" class="ttip">Dutch/Nederlands<br>
+<span class="ttbg">Threads: 3 &nbsp;//&nbsp; Posts: 55</span>
+</a>
+<span class="smalltext" style="font-weight: 400;"></span><!-- start: forumbit_moderators -->
+
+<!-- end: forumbit_moderators -->
+</td>
+<td class="trow2 fb-pt" align="center" style="white-space: nowrap">3</td>
+<td class="trow2 fb-pt" align="center" style="white-space: nowrap">55</td>
+<td class="trow2" align="right" style="white-space: nowrap;"><!-- start: forumbit_depth2_forum_lastpost -->
+<avatarep_uid_[397]><span class="smalltext fw4">
+	<a href="showthread.php?tid=71&amp;action=lastpost" title="Algemene Discussies" style="font-weight: 600;">Algemene Discussies</a><br>2024-04-07, 06:06 PM<!--by-->,  <a href="https://forum.open.mp/member.php?action=profile&amp;uid=397">Jstylezzz</a>
+</span>
+<!-- end: forumbit_depth2_forum_lastpost --></avatarep_uid_[397]></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow1" align="center" width="1"><div class="forum_status forum_on ajax_mark_read" title="Forum Contains New Posts - Click to mark this forum as read" id="mark_read_34" style="cursor: pointer;"><i class="fa fa-comments"></i></div></td>
+<td class="trow1">
+<a href="forumdisplay.php?fid=34" class="ttip">German/Deutsch<br>
+<span class="ttbg">Threads: 4 &nbsp;//&nbsp; Posts: 61</span>
+</a>
+<span class="smalltext" style="font-weight: 400;"></span><!-- start: forumbit_moderators -->
+
+<!-- end: forumbit_moderators -->
+</td>
+<td class="trow1 fb-pt" align="center" style="white-space: nowrap">4</td>
+<td class="trow1 fb-pt" align="center" style="white-space: nowrap">61</td>
+<td class="trow1" align="right" style="white-space: nowrap;"><!-- start: forumbit_depth2_forum_lastpost -->
+<avatarep_uid_[7607]><span class="smalltext fw4">
+	<a href="showthread.php?tid=3625&amp;action=lastpost" title="samp openmp scripts" style="font-weight: 600;">samp openmp scripts</a><br>2025-11-01, 01:21 AM<!--by-->,  <a href="https://forum.open.mp/member.php?action=profile&amp;uid=7607">pauli</a>
+</span>
+<!-- end: forumbit_depth2_forum_lastpost --></avatarep_uid_[7607]></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow2" align="center" width="1"><div class="forum_status forum_on ajax_mark_read" title="Forum Contains New Posts - Click to mark this forum as read" id="mark_read_35" style="cursor: pointer;"><i class="fa fa-comments"></i></div></td>
+<td class="trow2">
+<a href="forumdisplay.php?fid=35" class="ttip">Romanian/Română<br>
+<span class="ttbg">Threads: 9 &nbsp;//&nbsp; Posts: 99</span>
+</a>
+<span class="smalltext" style="font-weight: 400;"></span>
+</td>
+<td class="trow2 fb-pt" align="center" style="white-space: nowrap">9</td>
+<td class="trow2 fb-pt" align="center" style="white-space: nowrap">99</td>
+<td class="trow2" align="right" style="white-space: nowrap;"><!-- start: forumbit_depth2_forum_lastpost -->
+<avatarep_uid_[7895]><span class="smalltext fw4">
+	<a href="showthread.php?tid=3794&amp;action=lastpost" title="problema afisare dialog clan members" style="font-weight: 600;">problema afisare dialog c...</a><br>2026-01-27, 07:31 PM<!--by-->,  <a href="https://forum.open.mp/member.php?action=profile&amp;uid=7895">rcst3phan</a>
+</span>
+<!-- end: forumbit_depth2_forum_lastpost --></avatarep_uid_[7895]></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow1" align="center" width="1"><div class="forum_status forum_on ajax_mark_read" title="Forum Contains New Posts - Click to mark this forum as read" id="mark_read_36" style="cursor: pointer;"><i class="fa fa-comments"></i></div></td>
+<td class="trow1">
+<a href="forumdisplay.php?fid=36" class="ttip">Ex-Yu<br>
+<span class="ttbg">Threads: 10 &nbsp;//&nbsp; Posts: 209</span>
+</a>
+<span class="smalltext" style="font-weight: 400;">Serbian, Bosnian, Croatian, Slovenian, Macedonian, Montenegrin</span><!-- start: forumbit_moderators -->
+
+<!-- end: forumbit_moderators -->
+</td>
+<td class="trow1 fb-pt" align="center" style="white-space: nowrap">10</td>
+<td class="trow1 fb-pt" align="center" style="white-space: nowrap">209</td>
+<td class="trow1" align="right" style="white-space: nowrap;"><!-- start: forumbit_depth2_forum_lastpost -->
+<avatarep_uid_[5241]><span class="smalltext fw4">
+	<a href="showthread.php?tid=3789&amp;action=lastpost" title="Verona Community otvaranje servera" style="font-weight: 600;">Verona Community otvaranj...</a><br>2026-01-27, 06:59 AM<!--by-->,  <a href="https://forum.open.mp/member.php?action=profile&amp;uid=5241">pmemorex2016</a>
+</span>
+<!-- end: forumbit_depth2_forum_lastpost --></avatarep_uid_[5241]></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow2" align="center" width="1"><div class="forum_status forum_on ajax_mark_read" title="Forum Contains New Posts - Click to mark this forum as read" id="mark_read_38" style="cursor: pointer;"><i class="fa fa-comments"></i></div></td>
+<td class="trow2">
+<a href="forumdisplay.php?fid=38" class="ttip">Polish/Polski<br>
+<span class="ttbg">Threads: 11 &nbsp;//&nbsp; Posts: 51</span>
+</a>
+<span class="smalltext" style="font-weight: 400;"></span><!-- start: forumbit_moderators -->
+
+<!-- end: forumbit_moderators --><!-- start: forumbit_subforums -->
+<div class="smalltext" style="margin-top: 5px; color: #444 !important;"><strong>Sub Forums: </strong> <span class="smalltext and-more"><div title="Forum Contains New Posts - Click to mark this forum as read" class="subforumicon subforum_minion ajax_mark_read" id="mark_read_44" style="cursor: pointer;"> <i class="fa fa-circle"></i></div><span style="font-size: 12px;"><a href="forumdisplay.php?fid=44" title="" style="color: #777;"> Ogólne</a></span>, <div title="Forum Contains New Posts - Click to mark this forum as read" class="subforumicon subforum_minion ajax_mark_read" id="mark_read_45" style="cursor: pointer;"> <i class="fa fa-circle"></i></div><span style="font-size: 12px;"><a href="forumdisplay.php?fid=45" title="" style="color: #777;"> Serwery</a></span>, <div title="Forum Contains New Posts - Click to mark this forum as read" class="subforumicon subforum_minion ajax_mark_read" id="mark_read_46" style="cursor: pointer;"> <i class="fa fa-circle"></i></div><span style="font-size: 12px;"><a href="forumdisplay.php?fid=46" title="" style="color: #777;"> Skryptowanie</a></span>, <div title="Forum Contains New Posts - Click to mark this forum as read" class="subforumicon subforum_minion ajax_mark_read" id="mark_read_47" style="cursor: pointer;"> <i class="fa fa-circle"></i></div><span style="font-size: 12px;"><a href="forumdisplay.php?fid=47" title="" style="color: #777;"> Filmiki i zdjecia</a></span></span></div>
+<!-- end: forumbit_subforums -->
+</td>
+<td class="trow2 fb-pt" align="center" style="white-space: nowrap">11</td>
+<td class="trow2 fb-pt" align="center" style="white-space: nowrap">51</td>
+<td class="trow2" align="right" style="white-space: nowrap;"><!-- start: forumbit_depth2_forum_lastpost -->
+<avatarep_uid_[3497]><span class="smalltext fw4">
+	<a href="showthread.php?tid=3102&amp;action=lastpost" title="Infekcja 2: Zombie Survival RPG" style="font-weight: 600;">Infekcja 2: Zombie Surviv...</a><br>2025-02-28, 04:04 PM<!--by-->,  <a href="https://forum.open.mp/member.php?action=profile&amp;uid=3497">Amads</a>
+</span>
+<!-- end: forumbit_depth2_forum_lastpost --></avatarep_uid_[3497]></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow1" align="center" width="1"><div class="forum_status forum_on ajax_mark_read" title="Forum Contains New Posts - Click to mark this forum as read" id="mark_read_39" style="cursor: pointer;"><i class="fa fa-comments"></i></div></td>
+<td class="trow1">
+<a href="forumdisplay.php?fid=39" class="ttip">Lithuanian/Lietuviškas<br>
+<span class="ttbg">Threads: 5 &nbsp;//&nbsp; Posts: 37</span>
+</a>
+<span class="smalltext" style="font-weight: 400;"></span><!-- start: forumbit_moderators -->
+
+<!-- end: forumbit_moderators -->
+</td>
+<td class="trow1 fb-pt" align="center" style="white-space: nowrap">5</td>
+<td class="trow1 fb-pt" align="center" style="white-space: nowrap">37</td>
+<td class="trow1" align="right" style="white-space: nowrap;"><!-- start: forumbit_depth2_forum_lastpost -->
+<avatarep_uid_[3297]><span class="smalltext fw4">
+	<a href="showthread.php?tid=1580&amp;action=lastpost" title="Mai?osi versijos" style="font-weight: 600;">Mai?osi versijos</a><br>2021-02-12, 10:57 AM<!--by-->,  <a href="https://forum.open.mp/member.php?action=profile&amp;uid=3297">Lukas</a>
+</span>
+<!-- end: forumbit_depth2_forum_lastpost --></avatarep_uid_[3297]></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow2" align="center" width="1"><div class="forum_status forum_on ajax_mark_read" title="Forum Contains New Posts - Click to mark this forum as read" id="mark_read_49" style="cursor: pointer;"><i class="fa fa-comments"></i></div></td>
+<td class="trow2">
+<a href="forumdisplay.php?fid=49" class="ttip">French/Français<br>
+<span class="ttbg">Threads: 6 &nbsp;//&nbsp; Posts: 50</span>
+</a>
+<span class="smalltext" style="font-weight: 400;"></span><!-- start: forumbit_moderators -->
+
+<!-- end: forumbit_moderators -->
+</td>
+<td class="trow2 fb-pt" align="center" style="white-space: nowrap">6</td>
+<td class="trow2 fb-pt" align="center" style="white-space: nowrap">50</td>
+<td class="trow2" align="right" style="white-space: nowrap;"><!-- start: forumbit_depth2_forum_lastpost -->
+<avatarep_uid_[6094]><span class="smalltext fw4">
+	<a href="showthread.php?tid=2853&amp;action=lastpost" title="Il reste des français sur samp ??" style="font-weight: 600;">Il reste des français sur...</a><br>2026-01-26, 03:20 PM<!--by-->,  <a href="https://forum.open.mp/member.php?action=profile&amp;uid=6094">Lionel62300</a>
+</span>
+<!-- end: forumbit_depth2_forum_lastpost --></avatarep_uid_[6094]></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow1" align="center" width="1"><div class="forum_status forum_on ajax_mark_read" title="Forum Contains New Posts - Click to mark this forum as read" id="mark_read_50" style="cursor: pointer;"><i class="fa fa-comments"></i></div></td>
+<td class="trow1">
+<a href="forumdisplay.php?fid=50" class="ttip">Hungarian/Magyar<br>
+<span class="ttbg">Threads: 3 &nbsp;//&nbsp; Posts: 39</span>
+</a>
+<span class="smalltext" style="font-weight: 400;"></span><!-- start: forumbit_moderators -->
+
+<!-- end: forumbit_moderators -->
+</td>
+<td class="trow1 fb-pt" align="center" style="white-space: nowrap">3</td>
+<td class="trow1 fb-pt" align="center" style="white-space: nowrap">39</td>
+<td class="trow1" align="right" style="white-space: nowrap;"><!-- start: forumbit_depth2_forum_lastpost -->
+<avatarep_uid_[3822]><span class="smalltext fw4">
+	<a href="showthread.php?tid=141&amp;action=lastpost" title="Magyar" style="font-weight: 600;">Magyar</a><br>2025-10-18, 02:19 AM<!--by-->,  <a href="https://forum.open.mp/member.php?action=profile&amp;uid=3822">Cappsy</a>
+</span>
+<!-- end: forumbit_depth2_forum_lastpost --></avatarep_uid_[3822]></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow2" align="center" width="1"><div class="forum_status forum_on ajax_mark_read" title="Forum Contains New Posts - Click to mark this forum as read" id="mark_read_68" style="cursor: pointer;"><i class="fa fa-comments"></i></div></td>
+<td class="trow2">
+<a href="forumdisplay.php?fid=68" class="ttip">Turkish<br>
+<span class="ttbg">Threads: 8 &nbsp;//&nbsp; Posts: 120</span>
+</a>
+<span class="smalltext" style="font-weight: 400;"></span><!-- start: forumbit_moderators -->
+
+<!-- end: forumbit_moderators -->
+</td>
+<td class="trow2 fb-pt" align="center" style="white-space: nowrap">8</td>
+<td class="trow2 fb-pt" align="center" style="white-space: nowrap">120</td>
+<td class="trow2" align="right" style="white-space: nowrap;"><!-- start: forumbit_depth2_forum_lastpost -->
+<avatarep_uid_[7690]><span class="smalltext fw4">
+	<a href="showthread.php?tid=3807&amp;action=lastpost" title="(PC/Mobil) PrimeTurk CnR |Tırcılık Hırsız Polis| IP:server.primeturkcnr.com:7777" style="font-weight: 600;">(PC/Mobil) PrimeTurk CnR ...</a><br>2026-02-12, 04:04 PM<!--by-->,  <a href="https://forum.open.mp/member.php?action=profile&amp;uid=7690">Shacous</a>
+</span>
+<!-- end: forumbit_depth2_forum_lastpost --></avatarep_uid_[7690]></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow1" align="center" width="1"><div class="forum_status forum_on ajax_mark_read" title="Forum Contains New Posts - Click to mark this forum as read" id="mark_read_57" style="cursor: pointer;"><i class="fa fa-comments"></i></div></td>
+<td class="trow1">
+<a href="forumdisplay.php?fid=57" class="ttip">Hindi/Urdu<br>
+<span class="ttbg">Threads: 1 &nbsp;//&nbsp; Posts: 67</span>
+</a>
+<span class="smalltext" style="font-weight: 400;"></span><!-- start: forumbit_moderators -->
+
+<!-- end: forumbit_moderators -->
+</td>
+<td class="trow1 fb-pt" align="center" style="white-space: nowrap">1</td>
+<td class="trow1 fb-pt" align="center" style="white-space: nowrap">67</td>
+<td class="trow1" align="right" style="white-space: nowrap;"><!-- start: forumbit_depth2_forum_lastpost -->
+<avatarep_uid_[33]><span class="smalltext fw4">
+	<a href="showthread.php?tid=164&amp;action=lastpost" title="Hindi/Urdu" style="font-weight: 600;">Hindi/Urdu</a><br>2023-01-27, 11:18 PM<!--by-->,  <a href="https://forum.open.mp/member.php?action=profile&amp;uid=33">punklord</a>
+</span>
+<!-- end: forumbit_depth2_forum_lastpost --></avatarep_uid_[33]></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow2" align="center" width="1"><div class="forum_status forum_on ajax_mark_read" title="Forum Contains New Posts - Click to mark this forum as read" id="mark_read_27" style="cursor: pointer;"><i class="fa fa-comments"></i></div></td>
+<td class="trow2">
+<a href="forumdisplay.php?fid=27" class="ttip">Other<br>
+<span class="ttbg">Threads: 26 &nbsp;//&nbsp; Posts: 157</span>
+</a>
+<span class="smalltext" style="font-weight: 400;">Languages that don't have their own subforum yet. Only create one thread per language, it will be turned into a subforum if active enough.</span>
+</td>
+<td class="trow2 fb-pt" align="center" style="white-space: nowrap">26</td>
+<td class="trow2 fb-pt" align="center" style="white-space: nowrap">157</td>
+<td class="trow2" align="right" style="white-space: nowrap;"><!-- start: forumbit_depth2_forum_lastpost -->
+<avatarep_uid_[6394]><span class="smalltext fw4">
+	<a href="showthread.php?tid=1327&amp;action=lastpost" title="Farsi" style="font-weight: 600;">Farsi</a><br>2025-06-25, 08:21 AM<!--by-->,  <a href="https://forum.open.mp/member.php?action=profile&amp;uid=6394">acc.gangbeni</a>
+</span>
+<!-- end: forumbit_depth2_forum_lastpost --></avatarep_uid_[6394]></td>
+</tr>
+<!-- end: forumbit_depth2_forum -->
+</tbody>
+</table>
+<br>
+<!-- end: forumbit_depth1_cat --></div>
+<div class="sidebar" style="float: right; width: 22%;">
+<table border="0" cellspacing="0" cellpadding="5" class="tborder">
+	<tbody><tr>
+		<td class="thead side">
+			<strong><a href="online.php">Who's Online</a></strong>
+			<div class="float_right" style="padding-top: 5px;"><i class="fa fa-child"></i></div>
+		</td>
+	</tr>
+	<tr>
+		<td class="trow1">
+			<!-- start: index_whosonline -->
+<span class="smalltext">369 users active in the past 15 minutes (0 members, 0 of whom are invisible, and 363 guests).<br>Google,  Bing,  Twitter,  Yandex,  Baidu</span>
+<!-- end: index_whosonline -->
+		</td>
+	</tr>
+</tbody></table><br>
+<table border="0" cellspacing="0" cellpadding="5" class="tborder">
+	<tbody><tr>
+		<td class="thead side">
+			<strong><a href="stats.php">Board Statistics</a></strong>
+			<div class="float_right" style="padding-top: 5px;"><i class="fa fa-line-chart"></i></div>
+		</td>
+	</tr>
+	<tr>
+		<td class="trow1">
+			<!-- start: index_stats -->
+<span class="smalltext fw4">
+	<span class="float_left">Total Threads:</span>	<span class="float_right">2432</span> <br>
+	<span class="float_left">Total Posts:</span>  <span class="float_right">12450</span> <br>
+	<span class="float_left">Members:</span>  <span class="float_right">8078</span> <br>
+	<span class="float_left">Most Online:</span>  <span class="float_right">18732</span> <br>
+	<span class="float_left">Newest Member:</span>  <span class="float_right"><a href="https://forum.open.mp/member.php?action=profile&amp;uid=8087">nanelu</a></span> 
+</span>
+<!-- end: index_stats -->
+		</td>
+	</tr>
+</tbody></table>
+</div>
+<br class="clear">
+<!-- start: footer -->
+<script type="text/javascript">
+jQuery(function($) {
+	$("#backtop").hide();
+  	$(window).scroll(function () {
+  	  if ($(this).scrollTop() > 400) {
+    	   $("#backtop").fadeIn(160);
+	  } else {
+		  $("#backtop").fadeOut(160);
+	  }
+	});
+  $('.backtop').on( "click", function () {
+	  $('html, body').animate({
+		  scrollTop: 0
+	  }, 650);
+	  return false;
+  });
+});
+</script>
+<script type="text/javascript">
+jQuery(function($) {
+    $(".leftbutton").hide();
+    $(".rightbutton").on("click", function() {
+        $(".sidebar").animate({
+            height: "hide",
+            opacity: 0
+        }, 150, function() {
+            $(".forums").animate({
+                width: "100%"
+            }, 400)
+        });
+        $(this).hide();
+        $(".leftbutton").show();
+        Cookie.set("sidebar", "collapsed", 60 * 60 * 24 * 365);
+        return false;
+    });
+    $(".leftbutton").on("click", function() {
+        $(".forums").animate({
+            width: "76%"
+        }, 400, function() {
+            $(".sidebar").animate({
+                height: "show",
+                opacity: 1
+            }, 150)
+        });
+        $(this).hide();
+        $(".rightbutton").show();
+        Cookie.set("sidebar", "expanded", 60 * 60 * 24 * 365);
+        return false;
+    });
+    if (Cookie.get("sidebar") == "collapsed") {
+        $(".rightbutton").hide();
+        $(".leftbutton").show();
+        $(".forums").css("width", "100%");
+        $(".sidebar").hide();
+    }
+    if ($(".forums").length < 1) $(".toggle-container").hide();
+});
+</script>
+
+	</div>
+</div>
+<a class="backtop"><span id="backtop" style="display: none;"><i class="fa fa-angle-up arr-adj"></i></span></a>
+<div id="footer">
+	<div class="uppermid">
+		<div class="wrapper">
+			<div class="ft-row">
+				<div class="ft-col-1">
+					<h2>About Us</h2>
+					<span>A multiplayer mod for Grand Theft Auto: San Andreas that is <b>fully backwards compatible</b> with <b>San Andreas Multiplayer</b>.</span><br>
+					<br>
+					<div id="social" style="display: flex;">
+						<a href="https://discord.gg/samp" title="Discord">
+							<span class="sicon dc">
+								<img class="dcimg">
+    							<!-- preload the 2nd img -->
+    							<img style="display:none" src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a69f118df70ad7828d4_icon_clyde_blurple_RGB.svg">
+							</span>
+						</a>
+						<a href="https://www.facebook.com/openmultiplayer" title="Facebook"><span class="sicon fb"><i class="fa fa-facebook"></i></span></a>
+						<a href="https://instagram.com/openmultiplayer/" title="Instagram"><span class="sicon ig"><i class="fa fa-instagram"></i></span></a>
+						<a href="https://twitch.tv/openmultiplayer" title="Twitch"><span class="sicon tw"><i class="fa fa-twitch"></i></span></a>
+						<a href="https://twitter.com/openmultiplayer" title="Twitter"><span class="sicon tw"><i class="fa fa-twitter"></i></span></a>
+						<a href="https://youtube.com/openmultiplayer" title="YouTube"><span class="sicon yt"><i class="fa fa-youtube"></i></span></a>
+						<a href="https://vk.com/open_mp" title="VK"><span class="sicon re"><i class="fa fa-vk"></i></span></a>
+					</div>
+				</div>
+				<div class="ft-col-2">
+					<div class="ft-head">Navigation</div>
+						<ul class="ft-menu">
+							<li><a href="https://forum.open.mp">Forums</a></li>
+							<li><a href="https://forum.open.mp/portal.php">Portal</a></li>
+							<li><a href="https://forum.open.mp/search.php">Search</a></li>
+							<li><a href="https://forum.open.mp/misc.php?action=help">Help</a></li>
+							<li><a href="https://forum.open.mp/showteam.php">Forum Team</a></li>
+						</ul>
+					</div>	<!-- end: ft-col-2 -->
+					<div class="ft-col-2">
+					<div class="ft-head">More</div>
+						<ul class="ft-menu">
+							<li><a href="https://sa-mp.com/">SA-MP</a></li>
+							<li><a href="https://open.mp/blog">Blog</a></li>
+							<li><a href="https://github.com/openmultiplayer/">GitHub</a></li>
+						</ul>
+					</div>
+					<div class="ft-col-2">
+					<div class="ft-head">open.mp</div>
+						<ul class="ft-menu">
+							<li><a href="https://open.mp/">Home</a></li>
+							<li><a href="https://open.mp/faq">FAQ</a></li>
+							<li><a href="https://open.mp/servers">Servers</a></li>
+							<li><a href="https://open.mp/partners">Partners</a></li>
+							<li><a href="https://open.mp/docs">Docs</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+	</div>
+	<div class="lower">
+		<div class="wrapper">
+			<span id="copyright">
+				<!-- MyBB is free software developed and maintained by a volunteer community.
+					It would be much appreciated by the MyBB Group if you left the full copyright and "powered by" notice intact,
+					to show your support for MyBB.  If you choose to remove or modify the copyright below,
+					you may be refused support on the MyBB Community Forums.
+
+					This is free software, support us and we'll support you. -->
+				<span class="float_left">Powered by <a href="https://www.mybb.com" target="_blank" rel="noopener">MyBB</a>, © 2002-2026 <a href="https://www.mybb.com" target="_blank" rel="noopener">MyBB Group</a>.</span>
+				<span class="float_right">Theme designed by <a href="https://community.mybb.com/user-102346.html" target="_blank" rel="noopener">m0ckingbird</a> © 2015-2026.</span>
+				<!-- Theme version: 1.50 -->
+				<!-- End powered by -->
+			</span>
+		</div>
+	</div>
+</div>
+<!-- The following piece of code allows MyBB to run scheduled tasks. DO NOT REMOVE --><!-- start: task_image -->
+<img src="https://forum.open.mp/task.php" width="1" height="1" alt="">
+<!-- end: task_image --><!-- End task image code -->
+
+</div>
+<!-- end: footer -->
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;db8ff85ea59b44229e9add5f4bdbe0f2&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+</body></html>

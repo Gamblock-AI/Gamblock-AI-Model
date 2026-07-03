@@ -1,0 +1,1273 @@
+<html lang="en" data-theme="light"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://gawbkt.id/images/logo.png" type="image/png">
+
+            <title>
+            GAW Bukit Kototabang - Atmospheric &amp; Climate Monitoring - GAWBKT
+        </title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet">
+
+    <!-- Scripts -->
+    <link rel="stylesheet" href="https://gawbkt.id/css/bootstrap.min.css?v=1769036354">
+    <link rel="stylesheet" href="https://gawbkt.id/css/app.css?v=1769036354">
+         <!-- Swiper CSS -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+     <style>
+         .swiper {
+             padding: 20px 0;
+             overflow: hidden;
+         }
+
+         .swiper-slide {
+             background: #fff;
+             border-radius: 20px;
+             width: 350px !important;
+             height: 200px;
+             padding: 20px;
+             display: flex;
+             flex-direction: column;
+             justify-content: space-between;
+             position: relative;
+             border: 1px solid rgba(0, 0, 0, 0.1);
+         }
+
+         .card-header {
+             display: flex;
+             flex-direction: column;
+             gap: 2px;
+         }
+
+         .title {
+             font-weight: 600;
+             font-size: 18px;
+             color: #333;
+             margin-bottom: 2px;
+         }
+
+         .subtitle {
+             font-size: 13px;
+             color: #666;
+             font-weight: 400;
+         }
+
+         .card-content {
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             flex: 1;
+             height: 100%;
+             overflow: hidden;
+         }
+
+         .card-content img {
+             max-width: 100%;
+             max-height: 100%;
+             object-fit: contain;
+             display: block;
+         }
+
+         .weather-icon {
+             width: 60px;
+             height: 60px;
+             margin: 10px 0;
+         }
+
+         /* Navigation Buttons */
+         .swiper-button-next,
+         .swiper-button-prev {
+             background: white;
+             border-radius: 50%;
+             width: 40px;
+             height: 40px;
+             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+             color: #333;
+             margin-top: -20px;
+         }
+
+         .swiper-button-next::after,
+         .swiper-button-prev::after {
+             font-size: 16px;
+             font-weight: bold;
+         }
+
+
+         /* Responsive */
+         @media (max-width: 768px) {
+             .swiper-slide {
+                 width: 200px !important;
+                 height: 180px;
+                 padding: 16px;
+             }
+
+             .title {
+                 font-size: 16px;
+             }
+         }
+     </style>
+ <link rel="stylesheet" href="https://gawbkt.id/css/map.css?v=1769036354">
+<link rel="stylesheet" href="https://gawbkt.id/css/leaflet-velocity.min.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+    <link rel="stylesheet" href="https://gawbkt.id/css/swiper.css?v=1769036354">
+
+</head>
+
+<body style="user-select: none;">
+        <div>
+        <div class="top-bar-bg">
+        <div class="top-bar">
+            <div class="left-section">
+                <div class="date-info">
+                    <span>SABTU, 11 APRIL 2026</span>
+                </div>
+            </div>
+            <div id="time-info-collapsible">
+                <div class="waktu-indo">
+                    <a href="https://time.bmkg.go.id/" target="_blank" class="waktu-link">STANDAR WAKTU
+                        INDONESIA</a>
+                </div>
+                <div class="time-info">
+                    <span id="wib-time">00.23.39 WIB</span>
+                    <span>/</span>
+                    <span class="utc" id="utc-time">17:23:39 UTC</span>
+                </div>
+            </div>
+            <button class="top-bar-dropdown" id="time-toggle-button" aria-label="Toggle Time Information">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                    <path fill="currentColor" d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"></path>
+                </svg>
+            </button>
+        </div>
+</div>
+        <div class="header-bg">
+    <div>
+        <header style="position: relative;">
+            <div class="header-left">
+                <a href="/">
+                    <img loading="lazy" src="https://gawbkt.id/images/logo.png" alt="GAW Bukit Kototabang Logo" class="header-logo">
+                </a>
+                <div class="header-title">
+                    <p>BADAN METEOROLOGI, KLIMATOLOGI, DAN GEOFISIKA</p>
+                    <h1>Stasiun Pemantau Atmosfer Global (GAW)<br>Bukit Kototabang</h1>
+                </div>
+            </div>
+
+            <nav aria-label="Primary" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%)">
+                                    <div class="nav-item has-dropdown">
+                        <a href="#">Profil</a>
+
+                                                    <div class="c-dropdown-menu">
+                                <div class="c-dropdown-content">
+                                    <section class="d-flex align-items-center gap-2 pb-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="8" r="5"></circle>
+  <path d="M20 21a8 8 0 0 0-16 0"></path>
+</svg>                                        <h4 class="fw-bold m-0">Profil</h4>
+                                    </section>
+
+                                                                            <a href="https://gawbkt.id/profil/tentang">Tentang GAW</a>
+                                                                            <a href="https://gawbkt.id/profil/struktur_organisasi">Struktur Organisasi</a>
+                                                                            <a href="https://gawbkt.id/profil/visi_misi">Visi dan Misi</a>
+                                                                            <a href="https://gawbkt.id/profil/dasar_hukum">Dasar Hukum</a>
+                                                                            <a href="https://gawbkt.id/profil/instrumentasi">Instrumentasi</a>
+                                                                            <a href="https://gawbkt.id/profil/tranparansi_kinerja">Tranparansi Kinerja</a>
+                                                                    </div>
+                            </div>
+                                            </div>
+                                    <div class="nav-item has-dropdown">
+                        <a href="#">Media</a>
+
+                                                    <div class="c-dropdown-menu">
+                                <div class="c-dropdown-content">
+                                    <section class="d-flex align-items-center gap-2 pb-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path>
+  <path d="M18 14h-8"></path>
+  <path d="M15 18h-5"></path>
+  <path d="M10 6h8v4h-8V6Z"></path>
+</svg>                                        <h4 class="fw-bold m-0">Media</h4>
+                                    </section>
+
+                                                                            <a href="https://megasains.gawbkt.id/index.php/megasains/issue/archive">Megasains</a>
+                                                                            <a href="https://gawbkt.id/media/suara_kototabang">Suara Bukit Kototabang</a>
+                                                                            <a href="https://gawbkt.id/media/kabar">Kabar-Kabari</a>
+                                                                            <a href="https://gawbkt.id/media/analisis_bulanan">Analisis Data Bulanan</a>
+                                                                            <a href="https://www.empa.ch/web/s503/wcc-empa?inheritRedirect=true">Laporan Audit EMPA</a>
+                                                                            <a href="https://public.wmo.int/en/media/press-release">WMO Air Quality and Climate Bulletin</a>
+                                                                            <a href="http://www.nims.go.kr/wcc/sub/sub03.html#link05">Asia-Pacific GAW Newsletter</a>
+                                                                            <a href="https://www.eanet.asia/news/">EANET Newsletter</a>
+                                                                            <a href="https://www.ipcc.ch/reports/">IPCC Reports</a>
+                                                                    </div>
+                            </div>
+                                            </div>
+                                    <div class="nav-item has-dropdown">
+                        <a href="#">Data</a>
+
+                                                    <div class="c-dropdown-menu">
+                                <div class="c-dropdown-content">
+                                    <section class="d-flex align-items-center gap-2 pb-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+  <path d="M3 5V19A9 3 0 0 0 21 19V5"></path>
+  <path d="M3 12A9 3 0 0 0 21 12"></path>
+</svg>                                        <h4 class="fw-bold m-0">Data</h4>
+                                    </section>
+
+                                                                            <a href="https://gawbkt.id/data/pm10">Aerosol</a>
+                                                                            <a href="https://gawbkt.id/data/o3">Ozon Permukaan (O₃)</a>
+                                                                            <a href="https://gawbkt.id/data/co">Karbon Monoksida (CO)</a>
+                                                                            <a href="https://gawbkt.id/data/so2">Sulfur Dioksida (SO₂)</a>
+                                                                            <a href="https://gawbkt.id/data/nox">Nitrogen Oksida (NOₓ)</a>
+                                                                            <a href="https://gawbkt.id/data/co2">Karbon Dioksida (CO₂)</a>
+                                                                            <a href="https://gawbkt.id/data/ch4">Metana (CH₄)</a>
+                                                                    </div>
+                            </div>
+                                            </div>
+                                    <div class="nav-item has-dropdown">
+                        <a href="#">Publik</a>
+
+                                                    <div class="c-dropdown-menu">
+                                <div class="c-dropdown-content">
+                                    <section class="d-flex align-items-center gap-2 pb-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+  <circle cx="9" cy="7" r="4"></circle>
+  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+</svg>                                        <h4 class="fw-bold m-0">Publik</h4>
+                                    </section>
+
+                                                                            <a href="https://sipedati.gawbkt.id/">Layanan Data dan Informasi</a>
+                                                                            <a href="https://gawbkt.id/publik/wbs">Whistle Blowing System (WBS)</a>
+                                                                    </div>
+                            </div>
+                                            </div>
+                
+
+            </nav>
+            <a href="#contact" class="contact-button">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon" class="size-4" width="24" height="24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z">
+                    </path>
+                </svg>
+                Contact Center 196
+            </a>
+
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu" aria-expanded="false" aria-controls="mobile-menu">
+                <span class="icon-open" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" style="width: 24px; height: 24px;">&gt;
+                        <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"></path>
+                    </svg>
+                </span>
+                <span class="icon-close" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960" style="width: 24px; height: 24px;">
+                        <path d="M256 760L200 704 424 480 200 256 256 200 480 424 704 200 760 256 536 480 760 704 704 760 480 536 256 760Z"></path>
+                    </svg>
+                </span>
+            </button>
+
+            
+            <div class="mobile-menu" id="mobile-menu" role="menu" aria-label="Mobile Primary Navigation">
+                                    <div class="mobile-nav-item" style="--i: 0">
+                                                    <button class="mobile-nav-button" onclick="toggleMobileDropdown(0)" type="button">
+                                <span>Profil</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="m6 9 6 6 6-6"></path>
+</svg>                            </button>
+                            <div class="mobile-dropdown" id="mobile-dropdown-0">
+                                                                    <a href="https://gawbkt.id/profil/tentang" class="mobile-dropdown-link">Tentang GAW</a>
+                                                                    <a href="https://gawbkt.id/profil/struktur_organisasi" class="mobile-dropdown-link">Struktur Organisasi</a>
+                                                                    <a href="https://gawbkt.id/profil/visi_misi" class="mobile-dropdown-link">Visi dan Misi</a>
+                                                                    <a href="https://gawbkt.id/profil/dasar_hukum" class="mobile-dropdown-link">Dasar Hukum</a>
+                                                                    <a href="https://gawbkt.id/profil/instrumentasi" class="mobile-dropdown-link">Instrumentasi</a>
+                                                                    <a href="https://gawbkt.id/profil/tranparansi_kinerja" class="mobile-dropdown-link">Tranparansi Kinerja</a>
+                                                            </div>
+                                            </div>
+                                    <div class="mobile-nav-item" style="--i: 1">
+                                                    <button class="mobile-nav-button" onclick="toggleMobileDropdown(1)" type="button">
+                                <span>Media</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="m6 9 6 6 6-6"></path>
+</svg>                            </button>
+                            <div class="mobile-dropdown" id="mobile-dropdown-1">
+                                                                    <a href="https://megasains.gawbkt.id/index.php/megasains/issue/archive" class="mobile-dropdown-link">Megasains</a>
+                                                                    <a href="https://gawbkt.id/media/suara_kototabang" class="mobile-dropdown-link">Suara Bukit Kototabang</a>
+                                                                    <a href="https://gawbkt.id/media/kabar" class="mobile-dropdown-link">Kabar-Kabari</a>
+                                                                    <a href="https://gawbkt.id/media/analisis_bulanan" class="mobile-dropdown-link">Analisis Data Bulanan</a>
+                                                                    <a href="https://www.empa.ch/web/s503/wcc-empa?inheritRedirect=true" class="mobile-dropdown-link">Laporan Audit EMPA</a>
+                                                                    <a href="https://public.wmo.int/en/media/press-release" class="mobile-dropdown-link">WMO Air Quality and Climate Bulletin</a>
+                                                                    <a href="http://www.nims.go.kr/wcc/sub/sub03.html#link05" class="mobile-dropdown-link">Asia-Pacific GAW Newsletter</a>
+                                                                    <a href="https://www.eanet.asia/news/" class="mobile-dropdown-link">EANET Newsletter</a>
+                                                                    <a href="https://www.ipcc.ch/reports/" class="mobile-dropdown-link">IPCC Reports</a>
+                                                            </div>
+                                            </div>
+                                    <div class="mobile-nav-item" style="--i: 2">
+                                                    <button class="mobile-nav-button" onclick="toggleMobileDropdown(2)" type="button">
+                                <span>Data</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="m6 9 6 6 6-6"></path>
+</svg>                            </button>
+                            <div class="mobile-dropdown" id="mobile-dropdown-2">
+                                                                    <a href="https://gawbkt.id/data/pm10" class="mobile-dropdown-link">Aerosol</a>
+                                                                    <a href="https://gawbkt.id/data/o3" class="mobile-dropdown-link">Ozon Permukaan (O₃)</a>
+                                                                    <a href="https://gawbkt.id/data/co" class="mobile-dropdown-link">Karbon Monoksida (CO)</a>
+                                                                    <a href="https://gawbkt.id/data/so2" class="mobile-dropdown-link">Sulfur Dioksida (SO₂)</a>
+                                                                    <a href="https://gawbkt.id/data/nox" class="mobile-dropdown-link">Nitrogen Oksida (NOₓ)</a>
+                                                                    <a href="https://gawbkt.id/data/co2" class="mobile-dropdown-link">Karbon Dioksida (CO₂)</a>
+                                                                    <a href="https://gawbkt.id/data/ch4" class="mobile-dropdown-link">Metana (CH₄)</a>
+                                                            </div>
+                                            </div>
+                                    <div class="mobile-nav-item" style="--i: 3">
+                                                    <button class="mobile-nav-button" onclick="toggleMobileDropdown(3)" type="button">
+                                <span>Publik</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="m6 9 6 6 6-6"></path>
+</svg>                            </button>
+                            <div class="mobile-dropdown" id="mobile-dropdown-3">
+                                                                    <a href="https://sipedati.gawbkt.id/" class="mobile-dropdown-link">Layanan Data dan Informasi</a>
+                                                                    <a href="https://gawbkt.id/publik/wbs" class="mobile-dropdown-link">Whistle Blowing System (WBS)</a>
+                                                            </div>
+                                            </div>
+                            </div>
+        </header>
+    </div>
+</div>
+
+        
+    <div class="container-fluid hero-bg py-5">
+    <div class="container">
+        <div class="row align-items-center g-5 hero-section">
+
+            <!-- CONTENT -->
+            <div class="col-lg-6 text-center text-lg-start text-white">
+
+                <span class="badge bg-light text-success mb-3 px-3 py-2">
+                    Global Atmosphere Watch
+                </span>
+
+                <h1 class="fw-bold display-5 mt-3" style=" text-shadow: 1px 1px 2px #000000;" "="">
+                    <span>Monitoring </span>
+                    <span class="text-success">Earth's Atmosphere</span>
+                </h1>
+
+                <p class="mt-3">
+                    Providing crucial atmospheric and climate data for research,
+                    public safety, and environmental understanding from
+                    <span class="text-success fw-bold" style=" text-shadow: 1px 1px 2px #000000;" "="">West Sumatra,
+                        Indonesia</span>.
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<style>
+    .hero-bg {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.40),
+                rgba(0, 0, 0, 0.40)),
+            url("https://gawbkt.id/images/gaw.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 60vh;
+        display: flex;
+        align-items: center;
+    }
+
+    .hero-section {
+        z-index: 2;
+    }
+</style>
+    <!-- Slider HTML -->
+ <!-- Swiper -->
+ <div class="section">
+     <div class="section-bg"></div>
+     <div class="container">
+         <div class="swiper swiper-initialized swiper-horizontal swiper-backface-hidden">
+             <div class="swiper-wrapper" id="swiper-wrapper-f59892ccba98e2fd" aria-live="off" style="transition-duration: 300ms; transform: translate3d(-400px, 0px, 0px);">
+                                      <div class="swiper-slide swiper-slide-prev" role="group" aria-label="1 / 4" style="width: 370px; margin-right: 30px;">
+                         <a href="https://megasains.gawbkt.id/" class="card-content">
+                             <img loading="lazy" src="https://gawbkt.id/images/megasains_logo.webp" alt="GAW Bukit Kototabang Hero Image" class="hero-image">
+                         </a>
+                     </div>
+                                      <div class="swiper-slide swiper-slide-active" role="group" aria-label="2 / 4" style="width: 370px; margin-right: 30px;">
+                         <a href="https://www.youtube.com/channel/UCjsqbjtydO9rMtrAJLb_UOg/videos" class="card-content">
+                             <img loading="lazy" src="https://gawbkt.id/images/media.webp" alt="GAW Bukit Kototabang Hero Image" class="hero-image">
+                         </a>
+                     </div>
+                                      <div class="swiper-slide swiper-slide-next" role="group" aria-label="3 / 4" style="width: 370px; margin-right: 30px;">
+                         <a href="https://virtual.gawbkt.id/" class="card-content">
+                             <img loading="lazy" src="https://gawbkt.id/images/vivi.webp" alt="GAW Bukit Kototabang Hero Image" class="hero-image">
+                         </a>
+                     </div>
+                                      <div class="swiper-slide" role="group" aria-label="4 / 4" style="width: 370px; margin-right: 30px;">
+                         <a href="https://sipedati.gawbkt.id/" class="card-content">
+                             <img loading="lazy" src="https://gawbkt.id/images/sipedatiblue.webp" alt="GAW Bukit Kototabang Hero Image" class="hero-image">
+                         </a>
+                     </div>
+                              </div>
+
+             <div class="swiper-button-next swiper-button-disabled" tabindex="-1" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-f59892ccba98e2fd" aria-disabled="true"></div>
+             <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-f59892ccba98e2fd" aria-disabled="false"></div>
+         <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+     </div>
+ </div>
+
+ 
+     <section class="py-5" id="profil">
+    <div class="container">
+        <div class="row align-items-center g-5">
+
+            <!-- LEFT IMAGE -->
+            <div class="col-lg-6 text-center">
+                <div class="position-relative">
+                    <div class="bg-primary bg-opacity-10 rounded-pill p-4">
+                        <img src="https://gawbkt.id/images/tentang_gaw/ttg_2.jpg" alt="Profil GAW Bukit Kototabang" class="img-fluid rounded-4">
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT CONTENT -->
+            <div class="col-lg-6">
+                <div class="card border-1 rounded-4 p-4 p-lg-5">
+
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <img loading="lazy" src="https://gawbkt.id/images/logo.png" alt="GAW Bukit Kototabang Logo" class="header-logo">
+                        <div>
+                            <h3 class="fw-bold mb-3">
+                                Profil GAW <br> Bukit Kototabang
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="bg-primary mb-4 rounded" style="width: 6rem; height: 0.25rem;"></div>
+
+                    <!-- Description -->
+                    <p class="text-muted">
+                        GAW Bukit Kototabang adalah stasiun vital dalam program Global Atmosphere Watch (GAW),
+                        yang didedikasikan untuk pemantauan jangka panjang komposisi atmosfer dan parameter fisik
+                        terkait.
+                        Terletak di Sumatera Barat, Indonesia.
+                    </p>
+
+                    <p class="text-muted">
+                        Stasiun ini berkontribusi pada upaya ilmiah internasional dengan menyediakan data berkualitas
+                        tinggi tentang gas rumah kaca, aerosol, ozon, radiasi UV, dan variabel meteorologi.
+                    </p>
+
+                    <!-- Button -->
+                    <div>
+                        <a href="#" class="btn btn-primary px-4 py-2 mb-4">
+                            Selengkapnya
+                            <svg class="text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="m9 18 6-6-6-6"></path>
+</svg>                        </a>
+                    </div>
+
+                </div>
+                <p class="mt-3 text-muted small">Stasiun GAW Bukit Kototabang dibangun pada 1994 dan resmi beroperasi
+                    sejak
+                    1996
+                    sebagai bagian dari
+                    jaringan pemantauan atmosfer global BMKG–WMO</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+    <div class="section" id="hotspot">
+    
+    <div class="container">
+        <div class="d-flex flex-column align-items-center text-center mb-4">
+            <h2 class="display-5 fw-bold mb-2">Informasi Sebaran Titik Panas</h2>
+            <div class="bg-primary mb-3 rounded" style="width: 6rem; height: 0.25rem; margin: 0 auto;"></div>
+            
+        </div>
+
+        <div class="p-1 grid-item bg-white mb-5">
+            <div id="hotspot-map-container" style="position: relative;">
+                <div id="hotspot-map" style="pointer-events: none; position: relative;" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0"><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 1; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(-580px, -300px, 0px) scale(1);"><img alt="" src="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/5/16/26" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1046px, 542px, 0px); opacity: 1;"><img alt="" src="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/5/15/26" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1046px, 286px, 0px); opacity: 1;"><img alt="" src="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/5/16/25" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(790px, 542px, 0px); opacity: 1;"><img alt="" src="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/5/16/27" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1302px, 542px, 0px); opacity: 1;"><img alt="" src="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/5/17/26" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1046px, 798px, 0px); opacity: 1;"><img alt="" src="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/5/15/25" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(790px, 286px, 0px); opacity: 1;"><img alt="" src="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/5/15/27" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1302px, 286px, 0px); opacity: 1;"><img alt="" src="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/5/17/25" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(790px, 798px, 0px); opacity: 1;"><img alt="" src="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/5/17/27" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1302px, 798px, 0px); opacity: 1;"><img alt="" src="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/5/16/24" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(534px, 542px, 0px); opacity: 1;"><img alt="" src="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/5/16/28" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1558px, 542px, 0px); opacity: 1;"><img alt="" src="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/5/15/24" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(534px, 286px, 0px); opacity: 1;"><img alt="" src="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/5/15/28" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1558px, 286px, 0px); opacity: 1;"><img alt="" src="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/5/17/24" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(534px, 798px, 0px); opacity: 1;"><img alt="" src="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/5/17/28" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1558px, 798px, 0px); opacity: 1;"></div></div></div><div class="leaflet-pane leaflet-overlay-pane"><canvas class="leaflet-layer leaflet-zoom-animated velocity-overlay" width="1160" height="600" style="transform: translate3d(0px, 0px, 0px);"></canvas></div><div class="leaflet-pane leaflet-shadow-pane"></div><div class="leaflet-pane leaflet-marker-pane"><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(806px, 275px, 0px); z-index: 275;"><div style="background-color:#f00"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(810px, 208px, 0px); z-index: 208;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(810px, 208px, 0px); z-index: 208;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(810px, 208px, 0px); z-index: 208;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(760px, 179px, 0px); z-index: 179;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(570px, 258px, 0px); z-index: 258;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(672px, 270px, 0px); z-index: 270;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(564px, 270px, 0px); z-index: 270;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(669px, 288px, 0px); z-index: 288;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(669px, 288px, 0px); z-index: 288;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(677px, 294px, 0px); z-index: 294;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(668px, 301px, 0px); z-index: 301;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(668px, 301px, 0px); z-index: 301;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(629px, 334px, 0px); z-index: 334;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(581px, 227px, 0px); z-index: 227;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(581px, 226px, 0px); z-index: 226;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(743px, 217px, 0px); z-index: 217;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(645px, 471px, 0px); z-index: 471;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(716px, 431px, 0px); z-index: 431;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(562px, 445px, 0px); z-index: 445;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(564px, 270px, 0px); z-index: 270;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(564px, 270px, 0px); z-index: 270;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(693px, 273px, 0px); z-index: 273;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(669px, 287px, 0px); z-index: 287;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(669px, 288px, 0px); z-index: 288;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(668px, 300px, 0px); z-index: 300;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(668px, 301px, 0px); z-index: 301;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(668px, 301px, 0px); z-index: 301;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(668px, 301px, 0px); z-index: 301;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(668px, 301px, 0px); z-index: 301;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(668px, 301px, 0px); z-index: 301;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(668px, 301px, 0px); z-index: 301;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(668px, 301px, 0px); z-index: 301;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(668px, 301px, 0px); z-index: 301;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(668px, 301px, 0px); z-index: 301;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(633px, 340px, 0px); z-index: 340;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(693px, 228px, 0px); z-index: 228;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(581px, 227px, 0px); z-index: 227;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(581px, 226px, 0px); z-index: 226;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(318px, 379px, 0px); z-index: 379;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(318px, 379px, 0px); z-index: 379;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(318px, 379px, 0px); z-index: 379;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(691px, 330px, 0px); z-index: 330;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(692px, 330px, 0px); z-index: 330;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(128px, 146px, 0px); z-index: 146;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(1077px, 405px, 0px); z-index: 405;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(1083px, 405px, 0px); z-index: 405;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(1072px, 391px, 0px); z-index: 391;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(1063px, 415px, 0px); z-index: 415;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(483px, 421px, 0px); z-index: 421;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(570px, 450px, 0px); z-index: 450;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(570px, 450px, 0px); z-index: 450;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(251px, 289px, 0px); z-index: 289;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(622px, 299px, 0px); z-index: 299;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(227px, 299px, 0px); z-index: 299;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(548px, 301px, 0px); z-index: 301;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(362px, 301px, 0px); z-index: 301;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(529px, 308px, 0px); z-index: 308;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(526px, 312px, 0px); z-index: 312;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(639px, 327px, 0px); z-index: 327;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(628px, 328px, 0px); z-index: 328;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(635px, 328px, 0px); z-index: 328;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(642px, 331px, 0px); z-index: 331;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(311px, 351px, 0px); z-index: 351;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(311px, 351px, 0px); z-index: 351;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(653px, 222px, 0px); z-index: 222;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(606px, 441px, 0px); z-index: 441;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(474px, 273px, 0px); z-index: 273;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(483px, 279px, 0px); z-index: 279;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(232px, 288px, 0px); z-index: 288;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(404px, 232px, 0px); z-index: 232;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(228px, 299px, 0px); z-index: 299;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(228px, 299px, 0px); z-index: 299;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(228px, 301px, 0px); z-index: 301;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(206px, 261px, 0px); z-index: 261;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(207px, 261px, 0px); z-index: 261;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(129px, 226px, 0px); z-index: 226;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(245px, 293px, 0px); z-index: 293;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(223px, 270px, 0px); z-index: 270;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(214px, 272px, 0px); z-index: 272;"><div style="background-color:#ff0"></div></div><div class="leaflet-marker-icon hotspot-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -3px; margin-top: -3px; width: 6px; height: 6px; transform: translate3d(235px, 236px, 0px); z-index: 236;"><div style="background-color:#ff0"></div></div></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"></div><div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(6769.78px, 4154.29px, 0px) scale(16);"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in" aria-disabled="false"><span aria-hidden="true">+</span></a><a class="leaflet-control-zoom-out leaflet-disabled" href="#" title="Zoom out" role="button" aria-label="Zoom out" aria-disabled="true"><span aria-hidden="true">−</span></a></div></div><div class="leaflet-top leaflet-right"><div class="wind-control leaflet-control">
+        <button id="toggleWind" class="wind-toggle active">🌬️ Show Wind</button>
+    </div><div class="leaflet-control-layers leaflet-control-layers-expanded leaflet-control" aria-haspopup="true"><a class="leaflet-control-layers-toggle" href="#" title="Layers" role="button"></a><section class="leaflet-control-layers-list"><div class="leaflet-control-layers-base"></div><div class="leaflet-control-layers-separator" style="display: none;"></div><div class="leaflet-control-layers-overlays"><label><span><input type="checkbox" class="leaflet-control-layers-selector" checked=""><span> Air Quality Stations</span></span></label></div></section></div></div><div class="leaflet-bottom leaflet-left"><div class="logo-container leaflet-control">
+            <div class="logo-metadata">
+                <div class="logo-row">
+                    <img src="/images/logo.png" alt="Logo" class="logo-image">
+                </div>
+                <div class="text-rows">
+                    <div>Sumber data kualitas udara : BMKG</div>
+                    <div>Sumber data titik panas : SIPONGI+ Kementerian Kehutanan RI</div>
+                </div>
+                <div class="time-range">Initial time: 2026-04-10 02:32 WIB - 2026-04-11 03:12 WIB</div>
+            </div>
+        </div></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-velocity leaflet-control">Unavailable</div></div></div></div>
+                <div id="map-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; cursor: pointer; background: transparent;">
+                </div>
+            </div>
+        </div>
+
+        <div class="hotspot-stats bg-white p-2 grid-item">
+            <div id="hotspot-region-stats" class="hotspot-region-stats">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle text-center">
+                    <thead>
+                        <tr class="text-muted">
+                            <th>WILAYAH</th>
+                            <th>RENDAH</th>
+                            <th>MENENGAH</th>
+                            <th>TINGGI</th>
+                            <th>TOTAL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                                    <tr>
+                                        <td class="text-start">KEPULAUAN MALUKU</td>
+                                        <td><span class="badge bg-success">0</span></td>
+                                        <td><span class="badge bg-warning text-dark">3</span></td>
+                                        <td><span class="badge bg-danger">1</span></td>
+                                        <td class="fw-bold">4</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td class="text-start">SULAWESI</td>
+                                        <td><span class="badge bg-success">1</span></td>
+                                        <td><span class="badge bg-warning text-dark">69</span></td>
+                                        <td><span class="badge bg-danger">3</span></td>
+                                        <td class="fw-bold">73</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td class="text-start">KALIMANTAN</td>
+                                        <td><span class="badge bg-success">1</span></td>
+                                        <td><span class="badge bg-warning text-dark">19</span></td>
+                                        <td><span class="badge bg-danger">0</span></td>
+                                        <td class="fw-bold">20</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td class="text-start">KEPULAUAN NUSA TENGGARA</td>
+                                        <td><span class="badge bg-success">0</span></td>
+                                        <td><span class="badge bg-warning text-dark">10</span></td>
+                                        <td><span class="badge bg-danger">0</span></td>
+                                        <td class="fw-bold">10</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td class="text-start">JAWA</td>
+                                        <td><span class="badge bg-success">0</span></td>
+                                        <td><span class="badge bg-warning text-dark">8</span></td>
+                                        <td><span class="badge bg-danger">0</span></td>
+                                        <td class="fw-bold">8</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td class="text-start">SUMATERA</td>
+                                        <td><span class="badge bg-success">0</span></td>
+                                        <td><span class="badge bg-warning text-dark">16</span></td>
+                                        <td><span class="badge bg-danger">0</span></td>
+                                        <td class="fw-bold">16</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td class="text-start">PAPUA</td>
+                                        <td><span class="badge bg-success">0</span></td>
+                                        <td><span class="badge bg-warning text-dark">4</span></td>
+                                        <td><span class="badge bg-danger">0</span></td>
+                                        <td class="fw-bold">4</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td class="text-start">KEPULAUAN BANGKA BELITUNG</td>
+                                        <td><span class="badge bg-success">0</span></td>
+                                        <td><span class="badge bg-warning text-dark">1</span></td>
+                                        <td><span class="badge bg-danger">0</span></td>
+                                        <td class="fw-bold">1</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td class="text-start">UNKNOWN</td>
+                                        <td><span class="badge bg-success">0</span></td>
+                                        <td><span class="badge bg-warning text-dark">2</span></td>
+                                        <td><span class="badge bg-danger">0</span></td>
+                                        <td class="fw-bold">2</td>
+                                    </tr>
+                                
+                    </tbody>
+                    <tfoot class="table-light fw-bold">
+                        <tr>
+                            <td>Total</td>
+                            <td>2</td>
+                            <td>132</td>
+                            <td>4</td>
+                            <td>138</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        </div>
+
+            </div>
+</div>
+
+
+    <section id="news" class="py-5 section">
+    <div class="section-bg"></div>
+    <div class="container">
+
+        <!-- Title -->
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Kabar-Kabari</h2>
+            <div class="bg-primary mx-auto rounded" style="width:6rem;height:4px;"></div>
+        </div>
+
+        <div class="row g-4">
+
+            <!-- LEFT: Featured -->
+            <div class="col-lg-7">
+                                    <div class="card h-100 shadow-sm border-0 rounded-4">
+                        <img src="https://gawbkt.id/storage/thumbnails/B4ZJzm7Rwx0quhGfBcR4oSrOlPx5jLIVYL2lIpk0.jpg" class="card-img-top img-fluid rounded-top-4" style="height:450px;object-fit:cover;" alt="Hari Meteorologi Dunia ke-76">
+                        <div class="card-body">
+                            <small class="text-muted d-block mb-2">
+                                23 March 2026
+                            </small>
+                            <h4 class="fw-bold mb-3">
+                                Hari Meteorologi Dunia ke-76
+                            </h4>
+                            <a href="https://gawbkt.id/media/kabar/56-hari-meteorologi-dunia-ke-76" class="fw-semibold text-decoration-none">
+                                Baca selengkapnya →
+                            </a>
+                        </div>
+                    </div>
+                            </div>
+
+            <!-- RIGHT: Smaller Cards -->
+            <div class="col-lg-5">
+                <div class="row g-4">
+
+                                            <div class="col-12">
+                            <div class="card shadow-sm border-0 rounded-4">
+                                <img src="https://gawbkt.id/storage/thumbnails/hmd2022@2x.png" class="card-img-top img-fluid rounded-top-4" style="height:200px;object-fit:cover;" alt="Hari Meteorologi Dunia ke 72">
+                                <div class="card-body">
+                                    <small class="text-muted d-block mb-2">
+                                        23 March 2022
+                                    </small>
+                                    <h6 class="fw-bold mb-2">
+                                        Hari Meteorologi Dunia ke 72
+                                    </h6>
+                                    <a href="https://gawbkt.id/media/kabar/53-hari-meteorologi-dunia-ke-72" class="fw-semibold text-decoration-none">
+                                        Baca selengkapnya →
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="col-12">
+                            <div class="card shadow-sm border-0 rounded-4">
+                                <img src="https://gawbkt.id/storage/thumbnails/d80e7569-d900-4dff-b1f7-ce19712944ab.jpg" class="card-img-top img-fluid rounded-top-4" style="height:200px;object-fit:cover;" alt="Ancaman perubahan iklim dan komitmen COP26">
+                                <div class="card-body">
+                                    <small class="text-muted d-block mb-2">
+                                        12 November 2021
+                                    </small>
+                                    <h6 class="fw-bold mb-2">
+                                        Ancaman perubahan iklim dan komitmen COP26
+                                    </h6>
+                                    <a href="https://gawbkt.id/media/kabar/52-ancaman-perubahan-iklim-dan-komitmen-cop26" class="fw-semibold text-decoration-none">
+                                        Baca selengkapnya →
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+    <!-- In the visualization section -->
+<div class="section" id="visualization">
+    <div class="section-bg"></div>
+    <div class="container">
+        <div class="d-flex flex-column align-items-center text-center mb-4">
+            <h2 class="display-5 fw-bold mb-2">Visualisasi Data</h2>
+            <div class="bg-primary mb-3 rounded" style="width: 6rem; height: 0.25rem; margin: 0 auto;"></div>
+        </div>
+        <div class="visualization-grid">
+            <div class="grid-item">
+                <div class="slide-content">
+                    <img loading="lazy" src="https://cews.bmkg.go.id/tempatirk/CAMS_PM2p5/update_pm2p5_aq.gif" alt="Prediksi PM2.5">
+                    <p>Prediksi Kualitas Udara (PM2.5)</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="slide-content">
+                    <img loading="lazy" src="https://dataweb.bmkg.go.id/cuaca/spartan/36_indonesia_ffmc_01.png" alt="Potensi Kebakaran Hutan">
+                    <p>Potensi Kebakaran Hutan</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="slide-content">
+                    <img loading="lazy" src="https://inderaja.bmkg.go.id/Trajektori/Asap.png" alt="Trajektori Asap">
+                    <p>Trajektori Asap</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="slide-content">
+                    <img loading="lazy" src="https://dataweb.bmkg.go.id/iklim/pch/pch.bulan.1.cond1.png" alt="Prediksi Hujan">
+                    <p>Prediksi Hujan</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="slide-content">
+                    <img loading="lazy" src="https://dataweb.bmkg.go.id/iklim/hari-tanpa-hujan.png" alt="Hari Tanpa Hujan">
+                    <p>Hari Tanpa Hujan</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="slide-content">
+                    <img loading="lazy" src="https://inderaja.bmkg.go.id/IMAGE/HIMA/H08_EH_Indonesia.png" alt="Citra Satelit">
+                    <p>Citra Satelit</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="slide-content">
+                    <img loading="lazy" src="https://radar.bmkg.go.id/IMAGE/CMAX_Indonesia.png" alt="Citra Radar">
+                    <p>Citra Radar</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="slide-content">
+                    <img loading="lazy" src="https://dataweb.bmkg.go.id/maritim/gelombang-maritim.png" alt="Prakiraan Tinggi Gelombang">
+                    <p>Prakiraan Tinggi Gelombang</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="slide-content">
+                    <img loading="lazy" src="https://dataweb.bmkg.go.id/cuaca/angin/streamline-d10.jpg" alt="Prakiraan Angin">
+                    <p>Prakiraan Angin</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="section" id="cuaca">
+    
+    <div class="container">
+        <div class="d-flex flex-column align-items-center text-center mb-4">
+            <h2 class="display-5 fw-bold mb-2">Layanan dan Data</h2>
+            <div class="bg-primary mb-3 rounded" style="width: 6rem; height: 0.25rem; margin: 0 auto;"></div>
+            
+        </div>
+        <div class="grid-container">
+
+            <div class="grid-item bg-white p-4 pb-5">
+                <div class="feature-icon" style="background-color: #2f6bff;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M17.5 21H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+  <path d="M22 10a3 3 0 0 0-3-3h-2.207a5.502 5.502 0 0 0-10.702.5"></path>
+</svg>                </div>
+                <h5 class="fw-bold mb-2">Pemantauan Gas Atmosfer</h5>
+                <p class="text-muted mb-0">
+                    Pengukuran berkelanjutan CO2, CH4, N2O, dan gas rumah kaca lainnya untuk melacak tren
+                    pemanasan global.
+                </p>
+            </div>
+
+            <div class="grid-item bg-white p-4 pb-5">
+
+                <div class="feature-icon" style="background-color: #22c55e;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="12" r="4"></circle>
+  <path d="M12 2v2"></path>
+  <path d="M12 20v2"></path>
+  <path d="m4.93 4.93 1.41 1.41"></path>
+  <path d="m17.66 17.66 1.41 1.41"></path>
+  <path d="M2 12h2"></path>
+  <path d="M20 12h2"></path>
+  <path d="m6.34 17.66-1.41 1.41"></path>
+  <path d="m19.07 4.93-1.41 1.41"></path>
+</svg>                </div>
+                <h5 class="fw-bold mb-2">Ozon dan Radiasi UV</h5>
+                <p class="text-muted mb-0">
+                    Pemantauan ozon permukaan dan tingkat radiasi UV permukaan yang penting untuk studi kesehatan dan
+                    lingkungan.
+                </p>
+            </div>
+
+            <div class="grid-item bg-white p-4 pb-5">
+                <div class="feature-icon" style="background-color: #9d44f0;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="12" r="1"></circle>
+  <path d="M20.2 20.2c2.04-2.03.02-7.36-4.5-11.9-4.54-4.52-9.87-6.54-11.9-4.5-2.04 2.03-.02 7.36 4.5 11.9 4.54 4.52 9.87 6.54 11.9 4.5Z"></path>
+  <path d="M15.7 15.7c4.52-4.54 6.54-9.87 4.5-11.9-2.03-2.04-7.36-.02-11.9 4.5-4.52 4.54-6.54 9.87-4.5 11.9 2.03 2.04 7.36.02 11.9-4.5Z"></path>
+</svg>                </div>
+                <h5 class="fw-bold mb-2">Aerosol dan Sifatnya</h5>
+                <p class="text-muted mb-0">
+                    Pengukuran PM10, PM2.5, Aerosol Optical Depth (AOD), Black Carbon dan Scattering Coefficient (SC),
+                    penting untuk pemodelan iklim dan kualitas udara.
+                </p>
+            </div>
+
+            <div class="grid-item bg-white p-4 pb-5">
+
+                <div class="feature-icon" style="background-color: #e1a707;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 2v2"></path>
+  <path d="m4.93 4.93 1.41 1.41"></path>
+  <path d="M20 12h2"></path>
+  <path d="m19.07 4.93-1.41 1.41"></path>
+  <path d="M15.947 12.65a4 4 0 0 0-5.925-4.128"></path>
+  <path d="M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z"></path>
+</svg>                </div>
+                <h5 class="fw-bold mb-2">Parameter Meteorologi</h5>
+                <p class="text-muted mb-0">
+                    Data real-time tentang suhu, kelembaban, kecepatan/arah angin, dan curah hujan.
+                </p>
+            </div>
+
+            <div class="grid-item bg-white p-4 pb-5">
+                <div class="feature-icon" style="background-color: #5f5fef;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M10 9a3 3 0 1 0 0 6"></path>
+  <path d="M2 12h1"></path>
+  <path d="M14 21V3"></path>
+  <path d="M10 4V3"></path>
+  <path d="M10 21v-1"></path>
+  <path d="m3.64 18.36.7-.7"></path>
+  <path d="m4.34 6.34-.7-.7"></path>
+  <path d="M14 12h8"></path>
+  <path d="m17 4-3 3"></path>
+  <path d="m14 17 3 3"></path>
+  <path d="m21 15-3-3 3-3"></path>
+</svg>                </div>
+                <h5 class="fw-bold mb-2">Analisis Data Iklim</h5>
+                <p class="text-muted mb-0">
+                    Catatan data iklim jangka panjang dan tren untuk penelitian iklim regional dan global.
+                </p>
+            </div>
+
+            <div class="grid-item bg-white p-4 pb-5">
+
+                <div class="feature-icon" style="background-color: #ea3d3d;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"></path>
+  <path d="M9.6 4.6A2 2 0 1 1 11 8H2"></path>
+  <path d="M12.6 19.4A2 2 0 1 0 14 16H2"></path>
+</svg>                </div>
+                <h5 class="fw-bold mb-2">Wawasan Kualitas Udara</h5>
+                <p class="text-muted mb-0">
+                    Kontribusi untuk memahami dinamika kualitas udara regional melalui berbagai pengukuran atmosfer.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .feature-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 16px;
+    }
+
+    .feature-icon svg {
+        width: 28px;
+        height: 28px;
+        color: #ffffff;
+    }
+
+    .icon-purple {
+        background-color: #a855f7;
+    }
+</style>
+
+        <footer class="footer-bg" id="contact">
+    <div class="container">
+        <div class="footer-main">
+            <div class="footer-column">
+                <div class="footer-logo-container">
+                    <a href="https://gawbkt.id" target="_blank" rel="noopener noreferrer">
+                        <img loading="lazy" src="https://gawbkt.id/images/logo_footer.png" alt="BMKG Logo" class="footer-logo">
+                    </a>
+                </div>
+
+                <h4>KONTAK KAMI</h4>
+                <ul class="contact-list">
+                                            <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+  <circle cx="12" cy="10" r="3"></circle>
+</svg>                                                            <span class="link-list"><a href="https://maps.app.goo.gl/V7RMtzoQc1nRTYHw6" target="_blank">Kantor Operasional : Jalan Raya Bukittinggi - Medan KM.17 Palupuh, Kabupaten Agam, Provinsi Sumatera Barat 26151</a></span>
+                                                    </li>
+                                            <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+  <circle cx="12" cy="10" r="3"></circle>
+</svg>                                                            <span class="link-list"><a href="https://maps.app.goo.gl/vfHw8x9ZagF6g4e76" target="_blank">Guest House : Jalan Pasadama - Koto Malitang, Koto Tangah, Kec. Tilatang Kamang, Kabupaten Agam, Provinsi Sumatera Barat 26152</a></span>
+                                                    </li>
+                                            <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+</svg>                                                            <span>BMKG Contact Center (021) 196<br>Tel (0752) 7446449<br>Fax (0752) 7446089<br>WA 0819 2999 6169</span>
+                                                    </li>
+                                            <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+</svg>                                                            <ul class="link-list">
+                                                                            <li><a href="mailto:stagaw.kototabang@bmkg.go.id" target="_blank">Kantor
+                                                : stagaw.kototabang@bmkg.go.id</a></li>
+                                                                            <li><a href="mailto:megasains@gawbkt.id" target="_blank">Megasains
+                                                : megasains@gawbkt.id</a></li>
+                                                                            <li><a href="mailto:media.gawbkt@gmail.com" target="_blank">Media
+                                                : media.gawbkt@gmail.com</a></li>
+                                                                    </ul>
+                                                    </li>
+                                    </ul>
+            </div>
+            <div class="footer-column">
+                <h4>DUKUNGAN</h4>
+                <ul class="link-list">
+                                            <li><a href="https://cuaca.bmkg.go.id/" target="_blank">Informasi Cuaca</a></li>
+                                            <li><a href="https://maritim.bmkg.go.id/" target="_blank">Cuaca Maritim</a></li>
+                                            <li><a href="https://aviation.bmkg.go.id/" target="_blank">Cuaca Penerbangan</a></li>
+                                            <li><a href="https://iklim.bmkg.go.id/" target="_blank">CEWS (Climate Early Warning System)</a></li>
+                                            <li><a href="https://inatews.bmkg.go.id/" target="_blank">InaTEWS (Indonesia Tsunami Early Warning System)</a></li>
+                                    </ul>
+            </div>
+            <div class="footer-column">
+                <h4>TAUTAN TERKAIT</h4>
+                <ul class="link-list">
+                                            <li><a href="https://iklim.bmkg.go.id/id/kualitas-udara-indonesia/" target="_blank">Direktorat Layanan Iklim Terapan BMKG - Kualitas Udara Indonesia</a></li>
+                                            <li><a href="https://gaw-bariri.bmkg.go.id/" target="_blank">GAW Lore Lindu-Bariri, Palu</a></li>
+                                            <li><a href="https://gawsorong.id/" target="_blank">GAW Vihara Klademak, Sorong</a></li>
+                                            <li><a href="https://www.gawtec.de/" target="_blank">GAW Training and Education Centre</a></li>
+                                            <li><a href="https://gawsis.meteoswiss.ch/GAWSIS/#/" target="_blank">GAW Station Information System</a></li>
+                                            <li><a href="#" target="_blank">GAWBKT Staff Portal</a></li>
+                                    </ul>
+            </div>
+            <div class="footer-column">
+                <h4>APLIKASI INFO BMKG</h4>
+                <div class="app-store-buttons">
+                    <a href="https://play.google.com/store/apps/details?id=com.Info_BMKG" aria-label="Unduh Aplikasi Info BMKG di Google Play Store" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 120 40">
+    <rect width="120" height="40" fill="#fff" rx="8.384"></rect>
+    <path fill="#000" d="M97 23.972h1.614V12.785H97zm14.538-7.157-1.85 4.85h-.055l-1.921-4.85h-1.738l2.879 6.778-1.641 3.77h1.684l4.437-10.548zm-9.153 5.886c-.53 0-1.267-.273-1.267-.95 0-.864.919-1.195 1.711-1.195.711 0 1.044.159 1.475.375-.125 1.036-.988 1.77-1.919 1.77m.194-6.131c-1.168 0-2.378.533-2.88 1.713l1.433.618c.306-.618.876-.82 1.475-.82.835 0 1.683.518 1.697 1.44v.114a3.5 3.5 0 0 0-1.683-.431c-1.544 0-3.117.877-3.117 2.518 0 1.497 1.267 2.461 2.685 2.461 1.086 0 1.684-.503 2.06-1.093h.055v.863h1.558v-4.289c0-1.986-1.432-3.094-3.283-3.094m-9.975 1.606h-2.296v-3.834h2.296c1.207 0 1.892 1.034 1.892 1.917 0 .867-.685 1.917-1.892 1.917m-.042-5.391h-3.867v11.186h1.613v-4.238h2.254c1.79 0 3.548-1.34 3.548-3.474s-1.759-3.474-3.548-3.474m-21.09 9.918c-1.115 0-2.048-.966-2.048-2.292 0-1.34.933-2.321 2.048-2.321 1.101 0 1.965.98 1.965 2.32 0 1.327-.864 2.293-1.965 2.293m1.854-5.262h-.056c-.362-.447-1.06-.85-1.937-.85-1.84 0-3.526 1.672-3.526 3.82 0 2.133 1.686 3.791 3.526 3.791.878 0 1.575-.404 1.937-.865h.056v.548c0 1.456-.753 2.235-1.965 2.235-.99 0-1.603-.736-1.854-1.355l-1.407.605c.404 1.01 1.477 2.25 3.26 2.25 1.896 0 3.499-1.155 3.499-3.966v-6.833h-1.533zm2.648 6.53h1.616V12.785h-1.617zm4-3.69c-.043-1.47 1.1-2.22 1.922-2.22.642 0 1.185.331 1.366.808zm5.016-1.268c-.306-.851-1.24-2.422-3.15-2.422-1.895 0-3.47 1.542-3.47 3.805 0 2.134 1.561 3.806 3.651 3.806 1.687 0 2.663-1.067 3.067-1.686l-1.254-.865c-.418.634-.99 1.052-1.812 1.052s-1.408-.39-1.784-1.153l4.919-2.105zm-39.193-1.255v1.615h3.735c-.111.908-.404 1.571-.85 2.032-.543.563-1.394 1.183-2.885 1.183-2.3 0-4.097-1.918-4.097-4.296s1.798-4.297 4.097-4.297c1.24 0 2.146.505 2.815 1.154l1.101-1.139c-.933-.923-2.174-1.629-3.916-1.629-3.15 0-5.797 2.653-5.797 5.91 0 3.259 2.648 5.911 5.797 5.911 1.7 0 2.983-.576 3.986-1.658 1.031-1.067 1.352-2.566 1.352-3.777 0-.375-.028-.72-.084-1.009zm9.584 4.945c-1.115 0-2.077-.951-2.077-2.307 0-1.37.962-2.306 2.077-2.306s2.076.937 2.076 2.306c0 1.355-.961 2.307-2.076 2.307m0-6.112c-2.035 0-3.693 1.6-3.693 3.805 0 2.192 1.658 3.806 3.693 3.806 2.034 0 3.693-1.614 3.693-3.806 0-2.205-1.659-3.805-3.693-3.805m8.056 6.112c-1.115 0-2.076-.951-2.076-2.307 0-1.37.961-2.306 2.076-2.306s2.076.937 2.076 2.306c0 1.355-.961 2.307-2.076 2.307m0-6.112c-2.035 0-3.693 1.6-3.693 3.805 0 2.192 1.658 3.806 3.693 3.806s3.693-1.614 3.693-3.806c0-2.205-1.658-3.805-3.693-3.805">
+    </path>
+    <path fill="#00C1FF" d="M12.63 10.825c-.254.224-.405.598-.405 1.094v-.112V28.19v-.108c0 .459.13.813.35 1.04l.056.053c.179.158.407.242.67.241.255 0 .544-.08.848-.248l10.99-6.108 3.776-2.098c.48-.266.749-.61.794-.96v-.002c-.045-.35-.314-.694-.794-.96L25.14 16.94l-10.991-6.108c-.305-.168-.593-.249-.85-.249a1 1 0 0 0-.668.24">
+    </path>
+    <path fill="url(#i-1720509760__a)" d="m12.631 29.174-.056-.052c-.22-.228-.35-.582-.35-1.04v.107-16.378.108c0-.496.151-.87.405-1.094L22.012 20z">
+    </path>
+    <path fill="url(#i-1720509760__b)" d="M25.14 23.06 22.012 20l3.128-3.059 3.775 2.098c.48.266.749.61.794.96v.002c-.045-.35-.314-.694-.794.96z">
+    </path>
+    <path fill="url(#i-1720509760__c)" d="M13.3 29.415a1 1 0 0 1-.669-.24L22.012 20l3.128 3.06-10.991 6.107c-.304.168-.592.248-.849.248">
+    </path>
+    <path fill="url(#i-1720509760__d)" d="m22.012 20-9.382-9.175a1 1 0 0 1 .669-.24c.257 0 .545.08.85.249l10.99 6.107z">
+    </path>
+    <path fill="url(#i-1720509760__e)" d="M13.3 29.524a1 1 0 0 1-.669-.241l-.002-.002-.05-.047-.004-.005.056-.055a1 1 0 0 0 .67.241c.255 0 .544-.08.848-.248l10.99-6.108.071.07-.071.039-10.99 6.107a1.84 1.84 0 0 1-.78.247z">
+    </path>
+    <path fill="url(#i-1720509760__f)" d="M12.575 29.23c-.22-.228-.35-.582-.35-1.04v-.109c0 .459.13.813.35 1.04l.056.053z">
+    </path>
+    <path fill="url(#i-1720509760__g)" d="m25.21 23.128-.07-.069 3.775-2.098c.48-.266.749-.61.794-.96a.9.9 0 0 1-.088.382c-.117.252-.352.49-.706.686z">
+    </path>
+    <path fill="url(#i-1720509760__h)" d="M29.709 20c-.045-.351-.314-.695-.794-.961l-3.775-2.098.07-.069 3.705 2.06c.529.293.794.68.794 1.068">
+    </path>
+    <path fill="url(#i-1720509760__i)" d="M12.225 11.92v-.114q0-.06.003-.12v-.007c.023-.395.148-.703.347-.909l.055.055c-.254.224-.405.598-.405 1.095">
+    </path>
+    <path fill="url(#i-1720509760__j)" d="m25.14 16.941-10.991-6.107c-.305-.17-.593-.25-.85-.25a1 1 0 0 0-.669.24l-.055-.053q.025-.027.054-.052l.002-.002a1 1 0 0 1 .662-.24h.006c.257 0 .545.08.85.248l11.061 6.147z">
+    </path>
+    <defs>
+        <linearGradient id="i-1720509760__a" x1="18.22" x2="10.328" y1="11.638" y2="19.734" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#00A0FF"></stop>
+            <stop offset=".007" stop-color="#00A1FF"></stop>
+            <stop offset=".26" stop-color="#00BEFF"></stop>
+            <stop offset=".512" stop-color="#00D2FF"></stop>
+            <stop offset=".76" stop-color="#00DFFF"></stop>
+            <stop offset="1" stop-color="#00E3FF"></stop>
+        </linearGradient>
+        <linearGradient id="i-1720509760__b" x1="30.293" x2="11.971" y1="19.947" y2="19.947" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FFE000"></stop>
+            <stop offset=".409" stop-color="#FFBD00"></stop>
+            <stop offset=".775" stop-color="orange"></stop>
+            <stop offset="1" stop-color="#FF9C00"></stop>
+        </linearGradient>
+        <linearGradient id="i-1720509760__c" x1="23.479" x2="10.104" y1="22.909" y2="36.529" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FF3A44"></stop>
+            <stop offset="1" stop-color="#C31162"></stop>
+        </linearGradient>
+        <linearGradient id="i-1720509760__d" x1="10.212" x2="16.173" y1="9.465" y2="15.544" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#32A071"></stop>
+            <stop offset=".069" stop-color="#2DA771"></stop>
+            <stop offset=".476" stop-color="#15CF74"></stop>
+            <stop offset=".801" stop-color="#06E775"></stop>
+            <stop offset="1" stop-color="#00F076"></stop>
+        </linearGradient>
+        <linearGradient id="i-1720509760__e" x1="23.473" x2="12.763" y1="25.031" y2="36.017" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#CC2E36"></stop>
+            <stop offset="1" stop-color="#9C0E4E"></stop>
+        </linearGradient>
+        <linearGradient id="i-1720509760__f" x1="13.474" x2="6.522" y1="11.638" y2="18.77" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#008DE0"></stop>
+            <stop offset=".007" stop-color="#008DE0"></stop>
+            <stop offset=".26" stop-color="#00A7E0"></stop>
+            <stop offset=".512" stop-color="#00B8E0"></stop>
+            <stop offset=".76" stop-color="#00C4E0"></stop>
+            <stop offset="1" stop-color="#00C7E0"></stop>
+        </linearGradient>
+        <linearGradient id="i-1720509760__g" x1="30.293" x2="11.971" y1="20" y2="20" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#E0C500"></stop>
+            <stop offset=".409" stop-color="#E0A600"></stop>
+            <stop offset=".775" stop-color="#E09100"></stop>
+            <stop offset="1" stop-color="#E08900"></stop>
+        </linearGradient>
+        <linearGradient id="i-1720509760__h" x1="30.293" x2="11.971" y1="20" y2="20" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FFE840"></stop>
+            <stop offset=".409" stop-color="#FFCE40"></stop>
+            <stop offset=".775" stop-color="#FFBC40"></stop>
+            <stop offset="1" stop-color="#FFB540"></stop>
+        </linearGradient>
+        <linearGradient id="i-1720509760__i" x1="13.467" x2="6.763" y1="11.651" y2="18.23" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#40B8FF"></stop>
+            <stop offset=".007" stop-color="#40B9FF"></stop>
+            <stop offset=".26" stop-color="#40CEFF"></stop>
+            <stop offset=".512" stop-color="#40DDFF"></stop>
+            <stop offset=".76" stop-color="#40E7FF"></stop>
+            <stop offset="1" stop-color="#40EAFF"></stop>
+        </linearGradient>
+        <linearGradient id="i-1720509760__j" x1="10.199" x2="14.981" y1="11.405" y2="16.311" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#65B895"></stop>
+            <stop offset=".069" stop-color="#62BD95"></stop>
+            <stop offset=".476" stop-color="#50DB97"></stop>
+            <stop offset=".801" stop-color="#44ED98"></stop>
+            <stop offset="1" stop-color="#40F498"></stop>
+        </linearGradient>
+    </defs>
+</svg>
+                    </a>
+                    <a href="https://apps.apple.com/id/app/info-bmkg/id1114372539" aria-label="Unduh Aplikasi Info BMKG di Apple Play Store" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 120 40">
+    <rect width="120" height="40" x=".81" fill="#fff" rx="8.384"></rect>
+    <g fill="#000" clip-path="url(#i1636972441__a)">
+        <path d="M28.84 18.23a5.1 5.1 0 0 0-.693 2.497c.001.986.3 1.949.857 2.77a5.1 5.1 0 0 0 2.282 1.848 11.4 11.4 0 0 1-1.633 3.246c-.962 1.404-1.97 2.776-3.57 2.801-1.555.035-2.077-.893-3.86-.893-1.8 0-2.358.868-3.849.928-1.524.056-2.689-1.498-3.685-2.89-1.992-2.84-3.543-8.006-1.464-11.52.48-.843 1.176-1.55 2.018-2.05s1.805-.783 2.791-.814c1.526-.03 2.942 1.006 3.88 1.006.92 0 2.67-1.24 4.476-1.055a5.55 5.55 0 0 1 2.42.637c.744.393 1.385.95 1.87 1.628a5.25 5.25 0 0 0-1.84 1.861M26.409 8.572a5.03 5.03 0 0 1-1.198 3.663c-.418.508-.948.916-1.551 1.194s-1.262.42-1.93.413a4.8 4.8 0 0 1 .256-1.884 4.8 4.8 0 0 1 .974-1.645 5.37 5.37 0 0 1 3.449-1.742">
+        </path>
+    </g>
+    <path fill="#000" d="M47.804 23.15H43.6l-1.01 2.865h-1.78l3.982-10.6h1.85l3.982 10.6h-1.811zm-3.769-1.322h3.333l-1.643-4.65h-.046zm15.188.323c0 2.402-1.337 3.945-3.355 3.945a2.8 2.8 0 0 1-1.468-.327 2.68 2.68 0 0 1-1.063-1.025H53.3v3.828h-1.65V18.287h1.597v1.285h.03a2.8 2.8 0 0 1 1.085-1.023c.45-.24.96-.36 1.476-.343 2.04 0 3.386 1.55 3.386 3.945m-1.696 0c0-1.564-.842-2.593-2.125-2.593-1.261 0-2.11 1.05-2.11 2.593 0 1.558.849 2.6 2.11 2.6 1.283 0 2.125-1.02 2.125-2.6m10.547 0c0 2.402-1.338 3.945-3.356 3.945a2.8 2.8 0 0 1-1.467-.327 2.67 2.67 0 0 1-1.063-1.025h-.038v3.828H60.5V18.287h1.597v1.285h.03a2.8 2.8 0 0 1 1.084-1.023c.45-.24.961-.36 1.477-.343 2.04 0 3.386 1.55 3.386 3.945m-1.697 0c0-1.564-.841-2.593-2.125-2.593-1.261 0-2.11 1.05-2.11 2.593 0 1.558.849 2.6 2.11 2.6 1.284 0 2.125-1.02 2.125-2.6m7.546.91c.123 1.052 1.185 1.742 2.637 1.742 1.391 0 2.392-.69 2.392-1.638 0-.823-.604-1.315-2.033-1.653l-1.43-.331c-2.025-.47-2.965-1.38-2.965-2.858 0-1.829 1.659-3.085 4.013-3.085 2.33 0 3.929 1.256 3.982 3.085h-1.666c-.1-1.057-1.01-1.696-2.34-1.696s-2.238.646-2.238 1.586c0 .75.58 1.19 2.002 1.528l1.215.287c2.263.514 3.203 1.388 3.203 2.938 0 1.984-1.643 3.226-4.257 3.226-2.446 0-4.098-1.213-4.205-3.13zm10.334-6.603v1.829h1.53v1.256h-1.53v4.26c0 .662.306.97.979.97q.271-.003.543-.036v1.249q-.456.082-.917.073c-1.628 0-2.263-.587-2.263-2.086v-4.43h-1.17v-1.256h1.17v-1.829zm2.415 5.693c0-2.431 1.49-3.96 3.814-3.96 2.331 0 3.814 1.529 3.814 3.96 0 2.439-1.475 3.96-3.814 3.96s-3.814-1.521-3.814-3.96m5.947 0c0-1.668-.796-2.652-2.133-2.652-1.338 0-2.132.992-2.132 2.652 0 1.675.794 2.652 2.132 2.652 1.337 0 2.133-.977 2.133-2.652m3.042-3.864h1.574v1.315h.039a1.84 1.84 0 0 1 .709-1.028 1.97 1.97 0 0 1 1.225-.368q.286 0 .565.06v1.483c-.24-.07-.49-.103-.741-.096a1.69 1.69 0 0 0-1.286.509c-.163.169-.287.37-.362.589s-.1.451-.072.68v4.584h-1.65zm11.722 5.458c-.222 1.403-1.643 2.366-3.462 2.366-2.34 0-3.79-1.506-3.79-3.923 0-2.424 1.458-3.996 3.72-3.996 2.225 0 3.624 1.469 3.624 3.812v.543h-5.679v.096c-.027.285.011.571.108.84.098.27.255.517.46.724.204.207.452.37.727.478s.571.158.868.147c.39.035.781-.051 1.116-.247s.594-.49.741-.84zm-5.579-2.306h4.02a1.8 1.8 0 0 0-.119-.752 1.8 1.8 0 0 0-.422-.643 1.9 1.9 0 0 0-.654-.427 2 2 0 0 0-.778-.14 2.1 2.1 0 0 0-.784.146 2.1 2.1 0 0 0-.665.425c-.19.182-.34.399-.444.638s-.155.494-.154.753">
+    </path>
+    <defs>
+        <clipPath id="i1636972441__a">
+            <path fill="#fff" d="M10.333 8.572H33.19v22.857H10.333z"></path>
+        </clipPath>
+    </defs>
+</svg>
+                    </a>
+                </div>
+                <div class="footer-column">
+                    <h4>MEDIA SOSIAL</h4>
+                    <div class="social-media">
+                                                    <div>
+                                <a href="https://www.youtube.com/@gawbkt" aria-label="Kunjungi YouTube Media GAWBKT" target="_blank" rel="noopener noreferrer" class="social-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path>
+  <path d="m10 15 5-3-5-3z"></path>
+</svg>                                </a>
+                            </div>
+                                                    <div>
+                                <a href="https://www.facebook.com/gawbkt" aria-label="Kunjungi Facebook GAW Bukit Kototabang" target="_blank" rel="noopener noreferrer" class="social-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+</svg>                                </a>
+                            </div>
+                                                    <div>
+                                <a href="https://www.instagram.com/gawkototabang" aria-label="Kunjungi Instagram GAW Bukit Kototabang" target="_blank" rel="noopener noreferrer" class="social-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+</svg>                                </a>
+                            </div>
+                                                    <div>
+                                <a href="https://www.linkedin.com/showcase/gawbkt" aria-label="Kunjungi Linkedin Showcase GAW Bukit Kototabang" target="_blank" rel="noopener noreferrer" class="social-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+  <rect width="4" height="12" x="2" y="9"></rect>
+  <circle cx="4" cy="4" r="2"></circle>
+</svg>                                </a>
+                            </div>
+                                                    <div>
+                                <a href="https://whatsapp.com/channel/0029Va7gIOyBKfi4aw2cYy24" aria-label="Kunjungi WhatsApp Channel @infoBMKG" target="_blank" rel="noopener noreferrer" class="social-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+</svg>                                </a>
+                            </div>
+                                                <div>
+                            <a href="https://x.com/gawbkt" aria-label="Kunjungi X GAW Bukit Kototabang" target="_blank" rel="noopener noreferrer" class="social-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="-2 -2 20 20">
+                                    <path d="M12.601.769h2.453l-5.36 6.126L16 15.231h-4.937l-3.867-5.056-4.425 5.056H.316L6.05 8.677 0 .77h5.063l3.495 4.622zm-.86 12.994H13.1L4.324 2.16H2.866z"></path>
+                                </svg>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="cert-logos">
+                    <a href="https://www.menpan.go.id/site/tentang-kami/tentang-kami/fondasi-baru-bagi-aparatur-sipil-negara-asn" target="_blank" rel="noopener noreferrer">
+                        <img loading="lazy" src="https://gawbkt.id/images/berakhlak_s.png" alt="BerAKHLAK">
+                    </a>
+                    <a href="http://erp.snqa.net:8082/cert/index.php?v=25f08f&amp;c=20685" target="_blank" rel="noopener noreferrer">
+                        <img loading="lazy" src="https://gawbkt.id/images/nqa9001.jpg" alt="NQA ISO 9001">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 - BMKG - GAW Bukit Kototabang</p>
+            <a href="#" class="back-to-top-button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="m5 12 7-7 7 7"></path>
+  <path d="M12 19V5"></path>
+</svg>                <span>Kembali ke atas</span>
+            </a>
+        </div>
+    </div>
+</footer>
+    </div>
+    <button class="theme-toggle d-none" id="theme-toggle">🌙</button>
+         <!-- Swiper JS -->
+     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+     <script>
+         const swiper = new Swiper('.swiper', {
+             slidesPerView: 'auto',
+             spaceBetween: 20,
+             centeredSlides: false,
+             autoplay: {
+                 delay: 3000,
+                 disableOnInteraction: false,
+             },
+             navigation: {
+                 nextEl: '.swiper-button-next',
+                 prevEl: '.swiper-button-prev',
+             },
+             breakpoints: {
+                 0: {
+                     slidesPerView: 1,
+                     spaceBetween: 16,
+                 },
+                 768: {
+                     slidesPerView: 2,
+                     spaceBetween: 20,
+                 },
+                 1024: {
+                     slidesPerView: 3,
+                     spaceBetween: 30,
+                 }
+             },
+         });
+     </script>
+ <!-- Load Leaflet first -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://unpkg.com/leaflet-canvas-marker@0.2.0/dist/leaflet.canvas-markers.js"></script>
+<script src="https://gawbkt.id/js/map.js?v=1769036354"></script>
+<script src="https://gawbkt.id/js/map-hotspot.js?v=1769036354">
+</script>
+<script src="https://gawbkt.id/js/map-air-quality.js?v=1769036354">
+</script>
+<script src="https://gawbkt.id/js/map-wind.js?v=1769036354"></script>
+<script src="https://gawbkt.id/js/map-logo-control.js?v=1769036354">
+</script>
+<script src="https://gawbkt.id/js/leaflet-velocity.min.js"></script>
+
+<script>
+    window.hotspotsData = [{"id":4580146,"lintang":-1.46053,"bujur":127.4369,"kemungkinan":"high","region":"KEPULAUAN MALUKU","provinsi":"Maluku Utara","dtm":"2026-04-10T02:32:00.000000Z","kecamatan":"Obi","kabupaten":"Halmahera Selatan","longitude":"127.436900","latitude":"-1.460530"},{"id":4580147,"lintang":1.49781,"bujur":127.63554,"kemungkinan":"medium","region":"KEPULAUAN MALUKU","provinsi":"Maluku Utara","dtm":"2026-04-10T02:32:00.000000Z","kecamatan":"Ibu","kabupaten":"Halmahera Barat","longitude":"127.635540","latitude":"1.497810"},{"id":4580788,"lintang":1.49276,"bujur":127.63612,"kemungkinan":"medium","region":"KEPULAUAN MALUKU","provinsi":"Maluku Utara","dtm":"2026-04-10T07:17:00.000000Z","kecamatan":"Ibu","kabupaten":"Halmahera Barat","longitude":"127.636120","latitude":"1.492760"},{"id":4580789,"lintang":1.4935,"bujur":127.6315,"kemungkinan":"medium","region":"KEPULAUAN MALUKU","provinsi":"Maluku Utara","dtm":"2026-04-10T07:17:00.000000Z","kecamatan":"Ibu","kabupaten":"Halmahera Barat","longitude":"127.631500","latitude":"1.493500"},{"id":4580790,"lintang":2.78005,"bujur":125.40872,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Utara","dtm":"2026-04-10T07:17:00.000000Z","kecamatan":"Siau Barat Utara","kabupaten":"Kepulauan Siau Tagulandang Biaro","longitude":"125.408720","latitude":"2.780050"},{"id":4580791,"lintang":-0.70974,"bujur":117.06338,"kemungkinan":"medium","region":"KALIMANTAN","provinsi":"Kalimantan Timur","dtm":"2026-04-10T07:20:00.000000Z","kecamatan":"Loa Janan","kabupaten":"Kutai Kartanegara","longitude":"117.063380","latitude":"-0.709740"},{"id":4580792,"lintang":-1.23074,"bujur":121.57298,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Tengah","dtm":"2026-04-10T07:20:00.000000Z","kecamatan":"Ulubongka","kabupaten":"Tojo Una Una","longitude":"121.572980","latitude":"-1.230740"},{"id":4580793,"lintang":-1.23129,"bujur":121.57648,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Tengah","dtm":"2026-04-10T07:20:00.000000Z","kecamatan":"Ulubongka","kabupaten":"Tojo Una Una","longitude":"121.576480","latitude":"-1.231290"},{"id":4580794,"lintang":-1.24188,"bujur":116.82252,"kemungkinan":"medium","region":"KALIMANTAN","provinsi":"Kalimantan Timur","dtm":"2026-04-10T07:20:00.000000Z","kecamatan":"Balikpapan Tengah","kabupaten":"Kota Balikpapan","longitude":"116.822520","latitude":"-1.241880"},{"id":4580795,"lintang":-2.01043,"bujur":121.41763,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Tengah","dtm":"2026-04-10T07:20:00.000000Z","kecamatan":"Petasia","kabupaten":"Morowali Utara","longitude":"121.417630","latitude":"-2.010430"},{"id":4580796,"lintang":-2.01437,"bujur":121.42067,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Tengah","dtm":"2026-04-10T07:20:00.000000Z","kecamatan":"Petasia","kabupaten":"Morowali Utara","longitude":"121.420670","latitude":"-2.014370"},{"id":4580797,"lintang":-2.26837,"bujur":121.76155,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Tengah","dtm":"2026-04-10T07:20:00.000000Z","kecamatan":"Bungku Barat","kabupaten":"Morowali","longitude":"121.761550","latitude":"-2.268370"},{"id":4580798,"lintang":-2.57752,"bujur":121.38096,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:20:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.380960","latitude":"-2.577520"},{"id":4580799,"lintang":-2.57976,"bujur":121.37336,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:20:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.373360","latitude":"-2.579760"},{"id":4580800,"lintang":-2.58032,"bujur":121.3769,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:20:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.376900","latitude":"-2.580320"},{"id":4580801,"lintang":-4.02868,"bujur":119.67069,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:20:00.000000Z","kecamatan":"Bacukiki","kabupaten":"Kota Pare Pare","longitude":"119.670690","latitude":"-4.028680"},{"id":4580802,"lintang":0.67655,"bujur":117.5643,"kemungkinan":"medium","region":"KALIMANTAN","provinsi":"Kalimantan Timur","dtm":"2026-04-10T07:20:00.000000Z","kecamatan":"Bengalon","kabupaten":"Kutai Timur","longitude":"117.564300","latitude":"0.676550"},{"id":4580803,"lintang":0.69182,"bujur":117.55029,"kemungkinan":"medium","region":"KALIMANTAN","provinsi":"Kalimantan Timur","dtm":"2026-04-10T07:20:00.000000Z","kecamatan":"Bengalon","kabupaten":"Kutai Timur","longitude":"117.550290","latitude":"0.691820"},{"id":4580804,"lintang":1.0847,"bujur":124.67083,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Utara","dtm":"2026-04-10T07:20:00.000000Z","kecamatan":"Silian Raya","kabupaten":"Minahasa Tenggara","longitude":"124.670830","latitude":"1.084700"},{"id":4580805,"lintang":-10.00847,"bujur":120.38282,"kemungkinan":"medium","region":"KEPULAUAN NUSA TENGGARA","provinsi":"Nusa Tenggara Timur","dtm":"2026-04-10T07:22:00.000000Z","kecamatan":"Paberiwai","kabupaten":"Sumba Timur","longitude":"120.382820","latitude":"-10.008470"},{"id":4580806,"lintang":-8.27349,"bujur":123.50658,"kemungkinan":"medium","region":"KEPULAUAN NUSA TENGGARA","provinsi":"Nusa Tenggara Timur","dtm":"2026-04-10T07:22:00.000000Z","kecamatan":"Ile Ape","kabupaten":"Lembata","longitude":"123.506580","latitude":"-8.273490"},{"id":4580807,"lintang":-8.27568,"bujur":123.50721,"kemungkinan":"medium","region":"KEPULAUAN NUSA TENGGARA","provinsi":"Nusa Tenggara Timur","dtm":"2026-04-10T07:22:00.000000Z","kecamatan":"Ile Ape","kabupaten":"Lembata","longitude":"123.507210","latitude":"-8.275680"},{"id":4580808,"lintang":-8.27699,"bujur":123.50628,"kemungkinan":"medium","region":"KEPULAUAN NUSA TENGGARA","provinsi":"Nusa Tenggara Timur","dtm":"2026-04-10T07:22:00.000000Z","kecamatan":"Ile Ape","kabupaten":"Lembata","longitude":"123.506280","latitude":"-8.276990"},{"id":4580809,"lintang":-8.89614,"bujur":116.73775,"kemungkinan":"medium","region":"KEPULAUAN NUSA TENGGARA","provinsi":"Nusa Tenggara Barat","dtm":"2026-04-10T07:22:00.000000Z","kecamatan":"Maluk","kabupaten":"Sumbawa Barat","longitude":"116.737750","latitude":"-8.896140"},{"id":4580810,"lintang":-1.2289,"bujur":121.57346,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Tengah","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Ulubongka","kabupaten":"Tojo Una Una","longitude":"121.573460","latitude":"-1.228900"},{"id":4580811,"lintang":-1.22948,"bujur":121.57726,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Tengah","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Ulubongka","kabupaten":"Tojo Una Una","longitude":"121.577260","latitude":"-1.229480"},{"id":4580812,"lintang":-1.23346,"bujur":121.57641,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Tengah","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Ulubongka","kabupaten":"Tojo Una Una","longitude":"121.576410","latitude":"-1.233460"},{"id":4580813,"lintang":-1.24087,"bujur":116.81804,"kemungkinan":"medium","region":"KALIMANTAN","provinsi":"Kalimantan Timur","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Balikpapan Tengah","kabupaten":"Kota Balikpapan","longitude":"116.818040","latitude":"-1.240870"},{"id":4580814,"lintang":-1.25078,"bujur":116.81649,"kemungkinan":"medium","region":"KALIMANTAN","provinsi":"Kalimantan Timur","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Balikpapan Tengah","kabupaten":"Kota Balikpapan","longitude":"116.816490","latitude":"-1.250780"},{"id":4580815,"lintang":-1.25133,"bujur":116.81992,"kemungkinan":"medium","region":"KALIMANTAN","provinsi":"Kalimantan Timur","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Balikpapan Tengah","kabupaten":"Kota Balikpapan","longitude":"116.819920","latitude":"-1.251330"},{"id":4580816,"lintang":-1.38126,"bujur":122.4799,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Tengah","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Batui Selatan","kabupaten":"Banggai","longitude":"122.479900","latitude":"-1.381260"},{"id":4580817,"lintang":-1.99748,"bujur":121.42874,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Tengah","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Petasia","kabupaten":"Morowali Utara","longitude":"121.428740","latitude":"-1.997480"},{"id":4580818,"lintang":-2.00205,"bujur":121.43166,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Tengah","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Petasia","kabupaten":"Morowali Utara","longitude":"121.431660","latitude":"-2.002050"},{"id":4580819,"lintang":-2.0061,"bujur":121.43118,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Tengah","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Petasia","kabupaten":"Morowali Utara","longitude":"121.431180","latitude":"-2.006100"},{"id":4580820,"lintang":-2.01254,"bujur":121.41963,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Tengah","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Petasia","kabupaten":"Morowali Utara","longitude":"121.419630","latitude":"-2.012540"},{"id":4580821,"lintang":-2.56811,"bujur":121.37825,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Nuha","kabupaten":"Luwu Timur","longitude":"121.378250","latitude":"-2.568110"},{"id":4580822,"lintang":-2.57157,"bujur":121.37394,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Nuha","kabupaten":"Luwu Timur","longitude":"121.373940","latitude":"-2.571570"},{"id":4580823,"lintang":-2.57214,"bujur":121.3776,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Nuha","kabupaten":"Luwu Timur","longitude":"121.377600","latitude":"-2.572140"},{"id":4580824,"lintang":-2.57272,"bujur":121.38123,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Nuha","kabupaten":"Luwu Timur","longitude":"121.381230","latitude":"-2.572720"},{"id":4580825,"lintang":-2.57329,"bujur":121.38486,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Nuha","kabupaten":"Luwu Timur","longitude":"121.384860","latitude":"-2.573290"},{"id":4580826,"lintang":-2.57505,"bujur":121.36973,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Nuha","kabupaten":"Luwu Timur","longitude":"121.369730","latitude":"-2.575050"},{"id":4580827,"lintang":-2.57562,"bujur":121.37337,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Nuha","kabupaten":"Luwu Timur","longitude":"121.373370","latitude":"-2.575620"},{"id":4580828,"lintang":-2.5762,"bujur":121.37704,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.377040","latitude":"-2.576200"},{"id":4580829,"lintang":-2.57677,"bujur":121.3807,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.380700","latitude":"-2.576770"},{"id":4580830,"lintang":-2.57735,"bujur":121.38435,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.384350","latitude":"-2.577350"},{"id":4580831,"lintang":-2.57793,"bujur":121.38802,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Nuha","kabupaten":"Luwu Timur","longitude":"121.388020","latitude":"-2.577930"},{"id":4580832,"lintang":-2.5791,"bujur":121.36919,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.369190","latitude":"-2.579100"},{"id":4580833,"lintang":-2.57967,"bujur":121.37282,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.372820","latitude":"-2.579670"},{"id":4580834,"lintang":-2.57986,"bujur":121.36883,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.368830","latitude":"-2.579860"},{"id":4580835,"lintang":-2.58025,"bujur":121.37648,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.376480","latitude":"-2.580250"},{"id":4580836,"lintang":-2.5804,"bujur":121.37244,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.372440","latitude":"-2.580400"},{"id":4580837,"lintang":-2.58083,"bujur":121.38015,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.380150","latitude":"-2.580830"},{"id":4580838,"lintang":-2.58094,"bujur":121.3761,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.376100","latitude":"-2.580940"},{"id":4580839,"lintang":-2.58141,"bujur":121.38384,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.383840","latitude":"-2.581410"},{"id":4580840,"lintang":-2.58149,"bujur":121.37977,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.379770","latitude":"-2.581490"},{"id":4580841,"lintang":-2.582,"bujur":121.38756,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.387560","latitude":"-2.582000"},{"id":4580842,"lintang":-2.58205,"bujur":121.38346,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.383460","latitude":"-2.582050"},{"id":4580843,"lintang":-2.58261,"bujur":121.3872,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.387200","latitude":"-2.582610"},{"id":4580844,"lintang":-2.58317,"bujur":121.39093,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.390930","latitude":"-2.583170"},{"id":4580845,"lintang":-2.58373,"bujur":121.37232,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.372320","latitude":"-2.583730"},{"id":4580846,"lintang":-2.58431,"bujur":121.37596,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.375960","latitude":"-2.584310"},{"id":4580847,"lintang":-2.58446,"bujur":121.37196,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.371960","latitude":"-2.584460"},{"id":4580848,"lintang":-2.58488,"bujur":121.37962,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.379620","latitude":"-2.584880"},{"id":4580849,"lintang":-2.585,"bujur":121.37558,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.375580","latitude":"-2.585000"},{"id":4580850,"lintang":-2.58547,"bujur":121.38335,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.383350","latitude":"-2.585470"},{"id":4580851,"lintang":-2.58555,"bujur":121.37923,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.379230","latitude":"-2.585550"},{"id":4580852,"lintang":-2.58607,"bujur":121.38711,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.387110","latitude":"-2.586070"},{"id":4580853,"lintang":-2.58611,"bujur":121.38297,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.382970","latitude":"-2.586110"},{"id":4580854,"lintang":-4.02803,"bujur":119.66882,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Bacukiki","kabupaten":"Kota Pare Pare","longitude":"119.668820","latitude":"-4.028030"},{"id":4580855,"lintang":-4.31025,"bujur":119.83787,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Donri Donri","kabupaten":"Soppeng","longitude":"119.837870","latitude":"-4.310250"},{"id":4580856,"lintang":-8.897,"bujur":116.73853,"kemungkinan":"medium","region":"KEPULAUAN NUSA TENGGARA","provinsi":"Nusa Tenggara Barat","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Maluk","kabupaten":"Sumbawa Barat","longitude":"116.738530","latitude":"-8.897000"},{"id":4580857,"lintang":0.60901,"bujur":122.48984,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Gorontalo","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Paguyaman","kabupaten":"Boalemo","longitude":"122.489840","latitude":"0.609010"},{"id":4580858,"lintang":0.67156,"bujur":117.5344,"kemungkinan":"medium","region":"KALIMANTAN","provinsi":"Kalimantan Timur","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Bengalon","kabupaten":"Kutai Timur","longitude":"117.534400","latitude":"0.671560"},{"id":4580859,"lintang":0.67657,"bujur":117.56698,"kemungkinan":"medium","region":"KALIMANTAN","provinsi":"Kalimantan Timur","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Bengalon","kabupaten":"Kutai Timur","longitude":"117.566980","latitude":"0.676570"},{"id":4580860,"lintang":0.68428,"bujur":117.56112,"kemungkinan":"medium","region":"KALIMANTAN","provinsi":"Kalimantan Timur","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Bengalon","kabupaten":"Kutai Timur","longitude":"117.561120","latitude":"0.684280"},{"id":4580861,"lintang":0.68922,"bujur":117.5513,"kemungkinan":"medium","region":"KALIMANTAN","provinsi":"Kalimantan Timur","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Bengalon","kabupaten":"Kutai Timur","longitude":"117.551300","latitude":"0.689220"},{"id":4580862,"lintang":0.69253,"bujur":117.55183,"kemungkinan":"medium","region":"KALIMANTAN","provinsi":"Kalimantan Timur","dtm":"2026-04-10T07:41:00.000000Z","kecamatan":"Bengalon","kabupaten":"Kutai Timur","longitude":"117.551830","latitude":"0.692530"},{"id":4580863,"lintang":-6.00471,"bujur":105.98074,"kemungkinan":"medium","region":"JAWA","provinsi":"Banten","dtm":"2026-04-10T07:43:00.000000Z","kecamatan":"Ciwandan","kabupaten":"Kota Cilegon","longitude":"105.980740","latitude":"-6.004710"},{"id":4580864,"lintang":-6.00954,"bujur":105.9762,"kemungkinan":"medium","region":"JAWA","provinsi":"Banten","dtm":"2026-04-10T07:43:00.000000Z","kecamatan":"Ciwandan","kabupaten":"Kota Cilegon","longitude":"105.976200","latitude":"-6.009540"},{"id":4580865,"lintang":-6.01078,"bujur":105.98331,"kemungkinan":"medium","region":"JAWA","provinsi":"Banten","dtm":"2026-04-10T07:43:00.000000Z","kecamatan":"Ciwandan","kabupaten":"Kota Cilegon","longitude":"105.983310","latitude":"-6.010780"},{"id":4581022,"lintang":-6.00523,"bujur":105.98086,"kemungkinan":"medium","region":"JAWA","provinsi":"Banten","dtm":"2026-04-10T09:02:00.000000Z","kecamatan":"Ciwandan","kabupaten":"Kota Cilegon","longitude":"105.980860","latitude":"-6.005230"},{"id":4581023,"lintang":-6.00539,"bujur":105.97982,"kemungkinan":"medium","region":"JAWA","provinsi":"Banten","dtm":"2026-04-10T09:02:00.000000Z","kecamatan":"Ciwandan","kabupaten":"Kota Cilegon","longitude":"105.979820","latitude":"-6.005390"},{"id":4581024,"lintang":-6.01121,"bujur":105.98358,"kemungkinan":"medium","region":"JAWA","provinsi":"Banten","dtm":"2026-04-10T09:02:00.000000Z","kecamatan":"Ciwandan","kabupaten":"Kota Cilegon","longitude":"105.983580","latitude":"-6.011210"},{"id":4581430,"lintang":-3.87469,"bujur":122.40018,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Tenggara","dtm":"2026-04-10T14:52:00.000000Z","kecamatan":"Morosi","kabupaten":"Konawe","longitude":"122.400180","latitude":"-3.874690"},{"id":4581431,"lintang":-3.87608,"bujur":122.41008,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Tenggara","dtm":"2026-04-10T14:52:00.000000Z","kecamatan":"Morosi","kabupaten":"Konawe","longitude":"122.410080","latitude":"-3.876080"},{"id":4581598,"lintang":4.21906,"bujur":97.64817,"kemungkinan":"medium","region":"SUMATERA","provinsi":"Aceh","dtm":"2026-04-10T16:28:00.000000Z","kecamatan":"Pining","kabupaten":"Gayo Lues","longitude":"97.648170","latitude":"4.219060"},{"id":4581767,"lintang":-7.13149,"bujur":139.35963,"kemungkinan":"medium","region":"PAPUA","provinsi":"Papua Selatan","dtm":"2026-04-10T18:19:00.000000Z","kecamatan":"Edera","kabupaten":"Mappi","longitude":"139.359630","latitude":"-7.131490"},{"id":4581768,"lintang":-7.1456,"bujur":139.59492,"kemungkinan":"medium","region":"PAPUA","provinsi":"Papua Selatan","dtm":"2026-04-10T18:19:00.000000Z","kecamatan":"Edera","kabupaten":"Mappi","longitude":"139.594920","latitude":"-7.145600"},{"id":4581769,"lintang":-6.51923,"bujur":139.15154,"kemungkinan":"medium","region":"PAPUA","provinsi":"Papua Selatan","dtm":"2026-04-10T18:38:00.000000Z","kecamatan":"Mambioman Bapai","kabupaten":"Mappi","longitude":"139.151540","latitude":"-6.519230"},{"id":4581770,"lintang":-7.57694,"bujur":138.74963,"kemungkinan":"medium","region":"PAPUA","provinsi":"Papua Selatan","dtm":"2026-04-10T18:38:00.000000Z","kecamatan":"Tabonji","kabupaten":"Merauke","longitude":"138.749630","latitude":"-7.576940"},{"id":4581771,"lintang":-2.01515,"bujur":121.42015,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Tengah","dtm":"2026-04-10T18:40:00.000000Z","kecamatan":"Petasia","kabupaten":"Morowali Utara","longitude":"121.420150","latitude":"-2.015150"},{"id":4581861,"lintang":-7.82968,"bujur":113.26598,"kemungkinan":"medium","region":"JAWA","provinsi":"Jawa Timur","dtm":"2026-04-10T19:57:00.000000Z","kecamatan":"Dringu","kabupaten":"Probolinggo","longitude":"113.265980","latitude":"-7.829680"},{"id":4581862,"lintang":-8.8969,"bujur":116.74069,"kemungkinan":"medium","region":"KEPULAUAN NUSA TENGGARA","provinsi":"Nusa Tenggara Barat","dtm":"2026-04-10T19:57:00.000000Z","kecamatan":"Maluk","kabupaten":"Sumbawa Barat","longitude":"116.740690","latitude":"-8.896900"},{"id":4581863,"lintang":-9.08981,"bujur":117.06571,"kemungkinan":"medium","region":"KEPULAUAN NUSA TENGGARA","provinsi":"Nusa Tenggara Barat","dtm":"2026-04-10T19:57:00.000000Z","kecamatan":"Lunyuk","kabupaten":"Sumbawa","longitude":"117.065710","latitude":"-9.089810"},{"id":4581864,"lintang":-9.09733,"bujur":117.06309,"kemungkinan":"medium","region":"KEPULAUAN NUSA TENGGARA","provinsi":"Nusa Tenggara Barat","dtm":"2026-04-10T19:57:00.000000Z","kecamatan":"Lunyuk","kabupaten":"Sumbawa","longitude":"117.063090","latitude":"-9.097330"},{"id":4581865,"lintang":-2.06019,"bujur":103.06418,"kemungkinan":"medium","region":"SUMATERA","provinsi":"Jambi","dtm":"2026-04-10T19:59:00.000000Z","kecamatan":"Mandiangin","kabupaten":"Sarolangun","longitude":"103.064180","latitude":"-2.060190"},{"id":4581866,"lintang":-2.0608,"bujur":103.06016,"kemungkinan":"medium","region":"SUMATERA","provinsi":"Jambi","dtm":"2026-04-10T19:59:00.000000Z","kecamatan":"Mandiangin","kabupaten":"Sarolangun","longitude":"103.060160","latitude":"-2.060800"},{"id":4581867,"lintang":-2.5029,"bujur":119.33417,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Barat","dtm":"2026-04-10T19:59:00.000000Z","kecamatan":"Bonehau","kabupaten":"Mamuju","longitude":"119.334170","latitude":"-2.502900"},{"id":4581868,"lintang":-2.52524,"bujur":102.01727,"kemungkinan":"medium","region":"SUMATERA","provinsi":"Jambi","dtm":"2026-04-10T19:59:00.000000Z","kecamatan":"Jangkat Timur","kabupaten":"Merangin","longitude":"102.017270","latitude":"-2.525240"},{"id":4581869,"lintang":-2.57677,"bujur":121.38079,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T19:59:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.380790","latitude":"-2.576770"},{"id":4581870,"lintang":-2.57718,"bujur":116.10493,"kemungkinan":"medium","region":"KALIMANTAN","provinsi":"Kalimantan Selatan","dtm":"2026-04-10T19:59:00.000000Z","kecamatan":"Sungai Durian","kabupaten":"Kotabaru","longitude":"116.104930","latitude":"-2.577180"},{"id":4581871,"lintang":-2.57769,"bujur":121.37505,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T19:59:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.375050","latitude":"-2.577690"},{"id":4581872,"lintang":-2.58259,"bujur":121.37605,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T19:59:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.376050","latitude":"-2.582590"},{"id":4581873,"lintang":-2.59161,"bujur":107.91519,"kemungkinan":"medium","region":"Kepulauan Bangka Belitung","provinsi":"Kepulauan Bangka Belitung","dtm":"2026-04-10T19:59:00.000000Z","kecamatan":"Sijuk","kabupaten":"Belitung","longitude":"107.915190","latitude":"-2.591610"},{"id":4581874,"lintang":-2.88441,"bujur":115.2579,"kemungkinan":"medium","region":"KALIMANTAN","provinsi":"Kalimantan Selatan","dtm":"2026-04-10T19:59:00.000000Z","kecamatan":"Sungai Raya","kabupaten":"Hulu Sungai Selatan","longitude":"115.257900","latitude":"-2.884410"},{"id":4581875,"lintang":-3.08293,"bujur":115.12441,"kemungkinan":"medium","region":"KALIMANTAN","provinsi":"Kalimantan Selatan","dtm":"2026-04-10T19:59:00.000000Z","kecamatan":"Tapin Selatan","kabupaten":"Tapin","longitude":"115.124410","latitude":"-3.082930"},{"id":4581876,"lintang":-3.74138,"bujur":120.09708,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T19:59:00.000000Z","kecamatan":"Pitu Raise","kabupaten":"Sidenreng Rappang","longitude":"120.097080","latitude":"-3.741380"},{"id":4581877,"lintang":-3.76545,"bujur":119.62023,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T19:59:00.000000Z","kecamatan":"Watang Sawito","kabupaten":"Pinrang","longitude":"119.620230","latitude":"-3.765450"},{"id":4581878,"lintang":-3.794,"bujur":119.90991,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T19:59:00.000000Z","kecamatan":"Maiwa","kabupaten":"Enrekang","longitude":"119.909910","latitude":"-3.794000"},{"id":4581879,"lintang":-3.79467,"bujur":119.90575,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T19:59:00.000000Z","kecamatan":"Maiwa","kabupaten":"Enrekang","longitude":"119.905750","latitude":"-3.794670"},{"id":4581880,"lintang":-3.90024,"bujur":120.21977,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T19:59:00.000000Z","kecamatan":"Gilireng","kabupaten":"Wajo","longitude":"120.219770","latitude":"-3.900240"},{"id":4581881,"lintang":-4.7734,"bujur":105.69518,"kemungkinan":"medium","region":"UNKNOWN","provinsi":"Lampung","dtm":"2026-04-10T19:59:00.000000Z","kecamatan":"0","kabupaten":"Lampung Timur","longitude":"105.695180","latitude":"-4.773400"},{"id":4581882,"lintang":-4.77846,"bujur":105.69594,"kemungkinan":"medium","region":"UNKNOWN","provinsi":"Lampung","dtm":"2026-04-10T19:59:00.000000Z","kecamatan":"0","kabupaten":"Lampung Timur","longitude":"105.695940","latitude":"-4.778460"},{"id":4581883,"lintang":0.89514,"bujur":120.72794,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Tengah","dtm":"2026-04-10T19:59:00.000000Z","kecamatan":"Lampasio","kabupaten":"Toli Toli","longitude":"120.727940","latitude":"0.895140"},{"id":4581996,"lintang":-8.72439,"bujur":118.66686,"kemungkinan":"medium","region":"KEPULAUAN NUSA TENGGARA","provinsi":"Nusa Tenggara Barat","dtm":"2026-04-10T20:18:00.000000Z","kecamatan":"Monta","kabupaten":"Bima","longitude":"118.666860","latitude":"-8.724390"},{"id":4581997,"lintang":-1.35278,"bujur":112.86794,"kemungkinan":"medium","region":"KALIMANTAN","provinsi":"Kalimantan Tengah","dtm":"2026-04-10T20:20:00.000000Z","kecamatan":"Katingan Tengah","kabupaten":"Katingan","longitude":"112.867940","latitude":"-1.352780"},{"id":4581998,"lintang":-1.61385,"bujur":113.24864,"kemungkinan":"medium","region":"KALIMANTAN","provinsi":"Kalimantan Tengah","dtm":"2026-04-10T20:20:00.000000Z","kecamatan":"Pulau Malan","kabupaten":"Katingan","longitude":"113.248640","latitude":"-1.613850"},{"id":4581999,"lintang":-2.01533,"bujur":102.20111,"kemungkinan":"medium","region":"SUMATERA","provinsi":"Jambi","dtm":"2026-04-10T20:20:00.000000Z","kecamatan":"Nalo Tatan","kabupaten":"Merangin","longitude":"102.201110","latitude":"-2.015330"},{"id":4582000,"lintang":-2.06177,"bujur":103.06145,"kemungkinan":"medium","region":"SUMATERA","provinsi":"Jambi","dtm":"2026-04-10T20:20:00.000000Z","kecamatan":"Mandiangin","kabupaten":"Sarolangun","longitude":"103.061450","latitude":"-2.061770"},{"id":4582001,"lintang":-3.74152,"bujur":120.1006,"kemungkinan":"low","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T20:20:00.000000Z","kecamatan":"Pitu Raise","kabupaten":"Sidenreng Rappang","longitude":"120.100600","latitude":"-3.741520"},{"id":4582002,"lintang":-3.74254,"bujur":120.0948,"kemungkinan":"medium","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T20:20:00.000000Z","kecamatan":"Pitu Raise","kabupaten":"Sidenreng Rappang","longitude":"120.094800","latitude":"-3.742540"},{"id":4582003,"lintang":-6.01115,"bujur":105.97881,"kemungkinan":"medium","region":"JAWA","provinsi":"Banten","dtm":"2026-04-10T20:20:00.000000Z","kecamatan":"Ciwandan","kabupaten":"Kota Cilegon","longitude":"105.978810","latitude":"-6.011150"},{"id":4582004,"lintang":0.45133,"bujur":109.79017,"kemungkinan":"medium","region":"KALIMANTAN","provinsi":"Kalimantan Barat","dtm":"2026-04-10T20:20:00.000000Z","kecamatan":"Ngabang","kabupaten":"Landak","longitude":"109.790170","latitude":"0.451330"},{"id":4582005,"lintang":0.45185,"bujur":109.79117,"kemungkinan":"medium","region":"KALIMANTAN","provinsi":"Kalimantan Barat","dtm":"2026-04-10T20:20:00.000000Z","kecamatan":"Ngabang","kabupaten":"Landak","longitude":"109.791170","latitude":"0.451850"},{"id":4582006,"lintang":-2.57933,"bujur":121.37394,"kemungkinan":"high","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T20:59:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.373940","latitude":"-2.579330"},{"id":4582007,"lintang":-2.58101,"bujur":121.38018,"kemungkinan":"high","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T20:59:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.380180","latitude":"-2.581010"},{"id":4582008,"lintang":-2.58284,"bujur":121.36786,"kemungkinan":"high","region":"SULAWESI","provinsi":"Sulawesi Selatan","dtm":"2026-04-10T20:59:00.000000Z","kecamatan":"Towuti","kabupaten":"Luwu Timur","longitude":"121.367860","latitude":"-2.582840"},{"id":4582134,"lintang":-2.51175,"bujur":102.03628,"kemungkinan":"medium","region":"SUMATERA","provinsi":"Jambi","dtm":"2026-04-10T21:39:00.000000Z","kecamatan":"Jangkat Timur","kabupaten":"Merangin","longitude":"102.036280","latitude":"-2.511750"},{"id":4582135,"lintang":-2.51311,"bujur":102.02852,"kemungkinan":"medium","region":"SUMATERA","provinsi":"Jambi","dtm":"2026-04-10T21:39:00.000000Z","kecamatan":"Jangkat Timur","kabupaten":"Merangin","longitude":"102.028520","latitude":"-2.513110"},{"id":4582136,"lintang":-2.57264,"bujur":102.01975,"kemungkinan":"medium","region":"SUMATERA","provinsi":"Jambi","dtm":"2026-04-10T21:39:00.000000Z","kecamatan":"Jangkat Timur","kabupaten":"Merangin","longitude":"102.019750","latitude":"-2.572640"},{"id":4582137,"lintang":-0.83191,"bujur":101.09547,"kemungkinan":"medium","region":"SUMATERA","provinsi":"Sumatera Barat","dtm":"2026-04-10T21:41:00.000000Z","kecamatan":"Tanjung Gadang","kabupaten":"Sijunjung","longitude":"101.095470","latitude":"-0.831910"},{"id":4582138,"lintang":-0.83559,"bujur":101.10064,"kemungkinan":"medium","region":"SUMATERA","provinsi":"Sumatera Barat","dtm":"2026-04-10T21:41:00.000000Z","kecamatan":"Tanjung Gadang","kabupaten":"Sijunjung","longitude":"101.100640","latitude":"-0.835590"},{"id":4582139,"lintang":0.70823,"bujur":97.70458,"kemungkinan":"medium","region":"SUMATERA","provinsi":"Sumatera Utara","dtm":"2026-04-10T21:41:00.000000Z","kecamatan":"Aramo","kabupaten":"Nias Selatan","longitude":"97.704580","latitude":"0.708230"},{"id":4582271,"lintang":-2.25373,"bujur":102.78848,"kemungkinan":"medium","region":"SUMATERA","provinsi":"Jambi","dtm":"2026-04-10T22:37:00.000000Z","kecamatan":"Sarolangun","kabupaten":"Sarolangun","longitude":"102.788480","latitude":"-2.253730"},{"id":4582272,"lintang":-1.23391,"bujur":101.80378,"kemungkinan":"medium","region":"SUMATERA","provinsi":"Jambi","dtm":"2026-04-10T22:39:00.000000Z","kecamatan":"Jujuhan","kabupaten":"Bungo","longitude":"101.803780","latitude":"-1.233910"},{"id":4582273,"lintang":-1.33661,"bujur":101.4166,"kemungkinan":"medium","region":"SUMATERA","provinsi":"Sumatera Barat","dtm":"2026-04-10T22:39:00.000000Z","kecamatan":"Sangir Batang Hari","kabupaten":"Solok Selatan","longitude":"101.416600","latitude":"-1.336610"},{"id":4582274,"lintang":0.27578,"bujur":102.34389,"kemungkinan":"medium","region":"SUMATERA","provinsi":"Riau","dtm":"2026-04-10T22:39:00.000000Z","kecamatan":"Teluk Meranti","kabupaten":"Pelalawan","longitude":"102.343890","latitude":"0.275780"},{"id":4582950,"lintang":0.67643,"bujur":117.56394,"kemungkinan":"low","region":"KALIMANTAN","provinsi":"Kalimantan Timur","dtm":"2026-04-11T03:12:00.000000Z","kecamatan":"Bengalon","kabupaten":"Kutai Timur","longitude":"117.563940","latitude":"0.676430"}];
+    window.metadata = {"total_hotspots":138,"total_hotspots_certainty":{"high":4,"medium":132,"low":2},"begin_time":"2026-04-10T02:32:00.000000Z","end_time":"2026-04-11T03:12:00.000000Z","hotspots_by_region":{"KEPULAUAN MALUKU":{"total":4,"certainty":{"high":1,"medium":3}},"SULAWESI":{"total":73,"certainty":{"medium":69,"low":1,"high":3}},"KALIMANTAN":{"total":20,"certainty":{"medium":19,"low":1}},"KEPULAUAN NUSA TENGGARA":{"total":10,"certainty":{"medium":10}},"JAWA":{"total":8,"certainty":{"medium":8}},"SUMATERA":{"total":16,"certainty":{"medium":16}},"PAPUA":{"total":4,"certainty":{"medium":4}},"Kepulauan Bangka Belitung":{"total":1,"certainty":{"medium":1}},"UNKNOWN":{"total":2,"certainty":{"medium":2}}}};
+
+    // Enable map interaction on click
+    document.addEventListener('DOMContentLoaded', function() {
+        // Inisialisasi
+        window.windData = null;
+
+        // Ambil data dari API via AJAX
+        $.ajax({
+            url: '/wind-data',
+            method: 'GET',
+            dataType: 'json',
+            success: function(response) {
+                if (response.success) {
+
+                    window.windData = JSON.parse(JSON.parse(response.data));
+                    console.log("Wind data successfully fetched");
+
+                    // 🔔 Dispatch custom event when wind data is ready
+                    document.dispatchEvent(new CustomEvent("windDataReady"));
+                } else {
+                    console.error("Wind data error:", response.message);
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error("AJAX error:", error);
+            }
+        });
+
+    });
+</script>
+    <script src="https://gawbkt.id/js/swiper-init.js?v=1769036354">
+    </script>
+    <script>
+        function toggleMobileDropdown(index) {
+            const dropdown = document.getElementById(`mobile-dropdown-${index}`);
+            const toggle = dropdown.parentElement.querySelector('.mobile-dropdown-toggle');
+
+            if (dropdown.classList.contains('active')) {
+                dropdown.classList.remove('active');
+                toggle.classList.remove('active');
+            } else {
+                // Close all other dropdowns first
+                document.querySelectorAll('.mobile-dropdown.active').forEach(item => {
+                    item.classList.remove('active');
+                });
+                document.querySelectorAll('.mobile-dropdown-toggle.active').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Open current dropdown
+                dropdown.classList.add('active');
+                toggle.classList.add('active');
+            }
+        }
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.mobile-nav-item')) {
+                document.querySelectorAll('.mobile-dropdown.active').forEach(item => {
+                    item.classList.remove('active');
+                });
+                document.querySelectorAll('.mobile-dropdown-toggle.active').forEach(item => {
+                    item.classList.remove('active');
+                });
+            }
+        });
+    </script>
+
+    <script src="https://gawbkt.id/js/app.js?v=1769036354"></script>
+    <script src="https://gawbkt.id/js/jquery-3.6.0.min.js"></script>
+
+    <script>
+        // Back to Top button functionality
+        document.querySelector('.back-to-top-button').addEventListener('click', function(event) {
+            event.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+
+</body></html>

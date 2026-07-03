@@ -1,0 +1,943 @@
+<html><head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<link rel="stylesheet" href="https://revx.io/core/views/8b90358078/assets/css/owl.carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="https://revx.io/core/views/8b90358078/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://revx.io/core/views/8b90358078/assets/css/owl.carousel.min.css">
+		<link rel="stylesheet" href="https://revx.io/core/views/8b90358078/style.min.css">
+	</noscript>
+	<style>
+		@font-face{font-family:"Poppins";font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJbecmNE.woff2) format("woff2");unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF}@font-face{font-family:"Poppins";font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJnecmNE.woff2) format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:"Poppins";font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJfecg.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:"Poppins";font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLGT9Z11lFc-K.woff2) format("woff2");unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF}@font-face{font-family:"Poppins";font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLGT9Z1JlFc-K.woff2) format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:"Poppins";font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:"Poppins";font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLEj6Z11lFc-K.woff2) format("woff2");unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF}@font-face{font-family:"Poppins";font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLEj6Z1JlFc-K.woff2) format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:"Poppins";font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:"Poppins";font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLCz7Z11lFc-K.woff2) format("woff2");unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF}@font-face{font-family:"Poppins";font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLCz7Z1JlFc-K.woff2) format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:"Poppins";font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+	</style>
+
+		<script src="https://connect.facebook.net/signals/config/1195208577217981?v=2.9.297&amp;r=stable&amp;domain=revx.io&amp;hme=c048e760b3fdc0fbdc117d7607b2c36e13eff2660c515ac72e86dac5ba060bb9&amp;ex_m=104%2C205%2C154%2C22%2C72%2C73%2C145%2C68%2C67%2C11%2C162%2C90%2C16%2C138%2C127%2C39%2C75%2C78%2C134%2C159%2C164%2C8%2C4%2C5%2C7%2C6%2C3%2C91%2C101%2C165%2C170%2C219%2C62%2C186%2C187%2C55%2C277%2C30%2C74%2C231%2C230%2C229%2C23%2C33%2C103%2C61%2C10%2C63%2C97%2C98%2C99%2C105%2C130%2C31%2C29%2C132%2C133%2C129%2C128%2C155%2C76%2C158%2C156%2C157%2C50%2C60%2C123%2C15%2C161%2C45%2C264%2C265%2C263%2C26%2C27%2C28%2C48%2C146%2C77%2C112%2C18%2C20%2C44%2C40%2C42%2C41%2C83%2C92%2C96%2C110%2C144%2C147%2C46%2C111%2C24%2C21%2C119%2C69%2C36%2C149%2C148%2C150%2C141%2C139%2C25%2C35%2C59%2C109%2C160%2C70%2C17%2C152%2C114%2C81%2C66%2C19%2C85%2C86%2C116%2C84%2C136%2C135%2C34%2C279%2C294%2C212%2C201%2C202%2C200%2C297%2C289%2C52%2C213%2C107%2C131%2C80%2C121%2C54%2C47%2C49%2C113%2C120%2C126%2C58%2C64%2C151%2C115%2C37%2C32%2C53%2C56%2C100%2C163%2C1%2C124%2C14%2C122%2C12%2C2%2C57%2C93%2C65%2C118%2C89%2C88%2C166%2C167%2C94%2C95%2C9%2C125%2C102%2C51%2C142%2C87%2C79%2C71%2C117%2C106%2C43%2C143%2C0%2C82%2C137%2C140%2C153%2C38%2C108%2C13%2C168" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" id="sendinblue-js" async="" src="https://sibautomation.com/sa.js?key=gud7jscugcrn690lgu1m20v6"></script><script id="wonderpush-jssdk" async="" src="https://cdn.by.wonderpush.com/sdk/1.1.42.0/wonderpush.min.js"></script><script async="" src="https://scripts.clarity.ms/0.8.59/clarity.js"></script><script async="" src="https://www.clarity.ms/tag/g9x700uygz?ref=wordpress"></script><script>
+			window.addEventListener('load', function () {
+				setTimeout( function () {
+					var gtagScript = document.createElement('script');
+					gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-R53DF3YGSM';
+					gtagScript.async = true;
+					gtagScript.integrity = 'sha384-y5RkmwuKP8Fg7sIY0ts50wscd6Y3AoaMnkuMifr8NpooPCNYBaf6Aja3zPeiU1AW';
+					gtagScript.crossOrigin = 'anonymous';
+					document.head.appendChild(gtagScript);
+
+					gtagScript.onload = function () {
+						window.dataLayer = window.dataLayer || [];
+						function gtag() { dataLayer.push(arguments); }
+						gtag('js', new Date());
+						gtag('config', 'G-R53DF3YGSM');
+					};
+
+					(function(w, d, s, l, i) {
+						w[l] = w[l] || [];
+						w[l].push({
+							'gtm.start': new Date().getTime(),
+							event: 'gtm.js'
+						});
+						var f = d.getElementsByTagName(s)[0],
+							j = d.createElement(s),
+							dl = l != 'dataLayer' ? '&l=' + l : '';
+						j.async = true;
+						j.src =
+							'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+						f.parentNode.insertBefore(j, f);
+					})(window, document, 'script', 'dataLayer', 'GTM-T6LW2CR');
+				}, 8000);
+			});
+
+			document.addEventListener('DOMContentLoaded', function() {
+				const path = window.location.pathname;
+				const segments = path.split('/').filter(segment => segment.length > 0);
+
+				let hreflang = (segments.length > 0) ? segments[0] : 'en';
+				let lang_redirect = hreflang.slice(0, 2);
+				console.log('Language Redirect:', lang_redirect);
+				let submenuItems = document.querySelectorAll('ul.sub-menu li');
+				submenuItems.forEach(item => item.style.display = 'list-item');
+
+				let clickedItem = document.querySelector('li.lang-item-'+lang_redirect);
+				if (clickedItem) { clickedItem.style.display = 'none'; }
+
+				let switcherLink = document.querySelector('a[href="#pll_switcher"]');
+				if (switcherLink && clickedItem) {
+					switcherLink.innerHTML = clickedItem.querySelector('a').innerHTML;
+				}
+			});
+
+		</script>
+
+		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	
+	
+	<title>Privacy Policy - revx.io</title>
+	<meta name="description" content="Privacy Policy: Understand how RevX collects, uses, and protects your data to ensure privacy and security while using our services.">
+	<link rel="canonical" href="https://revx.io/privacy-policy/">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Privacy Policy - revx.io">
+	<meta property="og:description" content="Privacy Policy: Understand how RevX collects, uses, and protects your data to ensure privacy and security while using our services.">
+	<meta property="og:url" content="https://revx.io/privacy-policy/">
+	<meta property="og:site_name" content="revx.io">
+	<meta property="article:modified_time" content="2025-08-26T13:01:13+00:00">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:label1" content="Est. reading time">
+	<meta name="twitter:data1" content="7 minutes">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://revx.io/privacy-policy/","url":"https://revx.io/privacy-policy/","name":"Privacy Policy - revx.io","isPartOf":{"@id":"https://revx.io/#website"},"datePublished":"2023-02-21T06:53:10+00:00","dateModified":"2025-08-26T13:01:13+00:00","description":"Privacy Policy: Understand how RevX collects, uses, and protects your data to ensure privacy and security while using our services.","breadcrumb":{"@id":"https://revx.io/privacy-policy/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://revx.io/privacy-policy/"]}]},{"@type":"BreadcrumbList","@id":"https://revx.io/privacy-policy/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://revx.io/"},{"@type":"ListItem","position":2,"name":"Privacy Policy"}]},{"@type":"WebSite","@id":"https://revx.io/#website","url":"https://revx.io/","name":"revx.io","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://revx.io/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"}]}</script>
+	
+
+
+<link rel="dns-prefetch" href="//www.googletagmanager.com">
+<link rel="dns-prefetch" href="//stats.wp.com">
+<style id="safe-svg-svg-icon-style-inline-css" type="text/css">
+.safe-svg-cover{text-align:center}.safe-svg-cover .safe-svg-inside{display:inline-block;max-width:100%}.safe-svg-cover svg{height:100%;max-height:100%;max-width:100%;width:100%}
+
+</style>
+<link rel="stylesheet" id="mediaelement-css" href="https://revx.io/lib/js/mediaelement/mediaelementplayer-legacy.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="https://revx.io/lib/js/mediaelement/wp-mediaelement.min.css" type="text/css" media="all">
+<style id="jetpack-sharing-buttons-style-inline-css" type="text/css">
+.jetpack-sharing-buttons__services-list{display:flex;flex-direction:row;flex-wrap:wrap;gap:0;list-style-type:none;margin:5px;padding:0}.jetpack-sharing-buttons__services-list.has-small-icon-size{font-size:12px}.jetpack-sharing-buttons__services-list.has-normal-icon-size{font-size:16px}.jetpack-sharing-buttons__services-list.has-large-icon-size{font-size:24px}.jetpack-sharing-buttons__services-list.has-huge-icon-size{font-size:36px}@media print{.jetpack-sharing-buttons__services-list{display:none!important}}.editor-styles-wrapper .wp-block-jetpack-sharing-buttons{gap:0;padding-inline-start:0}ul.jetpack-sharing-buttons__services-list.has-background{padding:1.25em 2.375em}
+</style>
+<style id="classic-theme-styles-inline-css" type="text/css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id="global-styles-inline-css" type="text/css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="stylesheet" id="cookie-notice-front-css" href="https://revx.io/core/modules/eff62dc594/css/front.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="login-with-google-css" href="https://revx.io/core/modules/396e345996/assets/build/css/login.css" type="text/css" media="all">
+<link rel="stylesheet" id="sib-front-css-css" href="https://revx.io/core/modules/7344963050/css/mailin-front.css" type="text/css" media="all">
+<script type="text/javascript" id="cookie-notice-front-js-before">
+/* <![CDATA[ */
+var cnArgs = {"ajaxUrl":"https:\/\/revx.io\/wp-admin\/admin-ajax.php","nonce":"3bf21c74fc","hideEffect":"slide","position":"bottom","onScroll":false,"onScrollOffset":100,"onClick":false,"cookieName":"cookie_notice_accepted","cookieTime":2147483647,"cookieTimeRejected":2147483647,"globalCookie":false,"redirection":false,"cache":false,"revokeCookies":false,"revokeCookiesOpt":"automatic"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://revx.io/core/modules/eff62dc594/js/front.min.js" id="cookie-notice-front-js"></script>
+
+
+
+
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=GT-TQVS6ZTZ" id="google_gtagjs-js" async=""></script>
+<script type="text/javascript" id="google_gtagjs-js-after">
+/* <![CDATA[ */
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["revx.io"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-TQVS6ZTZ");
+ window._googlesitekit = window._googlesitekit || {}; window._googlesitekit.throttledEvents = []; window._googlesitekit.gtagEvent = (name, data) => { var key = JSON.stringify( { name, data } ); if ( !! window._googlesitekit.throttledEvents[ key ] ) { return; } window._googlesitekit.throttledEvents[ key ] = true; setTimeout( () => { delete window._googlesitekit.throttledEvents[ key ]; }, 5 ); gtag( "event", name, { ...data, event_source: "site-kit" } ); } 
+/* ]]> */
+</script>
+
+
+<script type="text/javascript" src="https://revx.io/lib/js/jquery/jquery.min.js" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://revx.io/lib/js/jquery/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<script type="text/javascript" id="sib-front-js-js-extra">
+/* <![CDATA[ */
+var sibErrMsg = {"invalidMail":"Please fill out valid email address","requiredField":"Please fill out required fields","invalidDateFormat":"Please fill out valid date format","invalidSMSFormat":"Please fill out valid phone number"};
+var ajax_sib_front_object = {"ajax_url":"https:\/\/revx.io\/wp-admin\/admin-ajax.php","ajax_nonce":"c1993fac7e","flag_url":"https:\/\/revx.io\/core\/modules\/7344963050\/img\/flags\/"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://revx.io/core/modules/7344963050/js/mailin-front.js" id="sib-front-js-js"></script>
+<link rel="shortlink" href="https://revx.io/?p=3">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://revx.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Frevx.io%2Fprivacy-policy%2F">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://revx.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Frevx.io%2Fprivacy-policy%2F&amp;format=xml">
+		<script type="text/javascript">
+				(function(c,l,a,r,i,t,y){
+					c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;
+					t.src="https://www.clarity.ms/tag/"+i+"?ref=wordpress";y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+				})(window, document, "clarity", "script", "g9x700uygz");
+		</script>
+			<style>img#wpstats{display:none}</style>
+		<meta name="csrf-token" content="27769cc9bd"><link rel="preload" fetchpriority="high" as="image" href="https://revx.io/storage/2023/10/Banner_1-1-1-1.webp" type="image/webp"><script type="text/javascript" src="https://cdn.brevo.com/js/sdk-loader.js" async=""></script>
+<script type="text/javascript">
+  window.Brevo = window.Brevo || [];
+  window.Brevo.push(['init', {"client_key":"gud7jscugcrn690lgu1m20v6","email_id":null,"push":{"customDomain":"https:\/\/revx.io\/core\/modules\/7344963050\/"},"service_worker_url":"wonderpush-worker-loader.min.js?webKey=24f8e0e41ca2352b9789b0b506be040edb406162bd0d57249821ee2746a8e5ae","frame_url":"brevo-frame.html"}]);
+</script><script type="text/javascript" src="https://cdn.by.wonderpush.com/sdk/1.1/wonderpush-loader.min.js" async=""></script>
+<script type="text/javascript">
+  window.WonderPush = window.WonderPush || [];
+  window.WonderPush.push(['init', {"customDomain":"https:\/\/revx.io\/core\/modules\/7344963050\/","serviceWorkerUrl":"wonderpush-worker-loader.min.js?webKey=24f8e0e41ca2352b9789b0b506be040edb406162bd0d57249821ee2746a8e5ae","frameUrl":"wonderpush.min.html","webKey":"24f8e0e41ca2352b9789b0b506be040edb406162bd0d57249821ee2746a8e5ae"}]);
+</script><link rel="icon" href="https://revx.io/storage/2023/02/favicon_revx.png" sizes="32x32">
+<link rel="icon" href="https://revx.io/storage/2023/02/favicon_revx.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://revx.io/storage/2023/02/favicon_revx.png">
+<meta name="msapplication-TileImage" content="https://revx.io/storage/2023/02/favicon_revx.png">
+		<style type="text/css" id="wp-custom-css">
+			body.privacy-policy .policy-bg ul{
+	list-style: disc;
+	padding-left: 40px;
+}
+
+.footer-social li:last-child {
+    display: none !important;
+}
+
+video::-webkit-media-controls {
+    display: none !important;
+}
+
+video::-webkit-media-controls-enclosure {
+    display: none !important;
+}
+
+video::-webkit-media-controls-overlay-play-button {
+    display: none !important;
+}
+
+video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+}
+
+.insight-container .insight-box {
+    position: relative;
+}
+
+
+/* disable slider animations on mobile */
+@media only screen and (max-width: 768px) {
+    .sliderContainer .home-slick-slider-img {
+        height: 100%;
+        -webkit-transform: none;
+        transition: none;
+        transform: translateZ(0px)
+    }
+
+    .sliderContainer .owl-item.active .home-slick-slider-img {
+        -webkit-transform: none;
+        transform: translateZ(0px)
+    }
+
+    .sliderContainer .owl-item .banner-text {
+        opacity: 0;
+        transition: none;
+        visibility: hidden;
+    }
+
+    .sliderContainer .owl-item .banner-text .slider-title-text {
+        transition: none;
+    }
+
+    .sliderContainer .owl-item .banner-text .custom_button {
+        transition: none;
+        transition-delay: none;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 3839px) {
+    .home-banner {
+        margin-top: -149px;
+        height: 92vh;
+    }
+}
+
+@media (min-width: 3840px) {
+    .home-banner {
+        margin-top: -149px;
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 280px) {
+    .insight-tab-mobile {
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 1301px) and (min-width: 768px) {
+    .feature-blog-detail h2 {
+        font-size: 24px;
+        display: none;
+    }
+}
+
+.sendinblue-contact-form .sib-form .form-custom-input select.input {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* remove office section on portugues contact us page */
+.page-id-4442 .head-office-section {
+    display: none;
+}
+
+/* remove office section on spanish contact us page */
+.page-id-4490 .head-office-section {
+    display: none;
+}
+
+/* remove footer elements for lang */
+.lang-pt .pre-footer,
+.lang-es .pre-footer {
+    display: none;
+}
+
+
+/* TC_003. change font-size from 10 and width form 60 */
+@media only screen and (max-width: 767px) and (min-width: 280px) {
+    .banner-container .banner_in .banner-text p {
+        font-size: 8px;
+        width: 80%;
+    }
+}
+
+/* TC_007. Override for iPads (targeting widths from 768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .home-banner {
+        height: auto;
+        /* Disables the height rule */
+    }
+}
+
+/* TC_010. subscribe button on blog page */
+@media only screen and (max-width: 768px) {
+    .blog-newsletter-container.blog-main-nl .newsletter-container .custom_button {
+        padding: 10px 10px !important;
+    }
+}
+
+/* TC_008, TC_009. original font-size 20px on mobile */
+@media only screen and (max-width: 767px) and (min-width: 280px) {
+    .home-banner .banner_in .banner-text h1 {
+        font-size: 17px;
+    }
+}
+
+/* TC_014. Text in header is not center aligned as all pages eg. blog page header. Original 12% */
+.page-id-18 .banner-container.banner-3 .banner_in .banner-text {
+    top: 25%;
+}
+
+@media only screen and (max-width: 767px) and (min-width: 280px) {
+    .page-id-18 .banner-container.banner-3.tech-banner .banner_in .banner-text {
+        top: 2%;
+    }
+}
+
+/* start TC_016. original 150% */
+.postid-283 .cs-testimonial-logo img,
+.cs-col .cs-logo img {
+    max-width: 100%;
+    width: auto;
+}
+
+/* original 30 px*/
+.cs-testimonial-logo {
+    margin-right: 1px;
+}
+
+.postid-283 .cs-testimonial-logo,
+.cs-col .cs-logo {
+    width: 100px;
+}
+
+.page-id-19 .cs-testimonial-logo,
+.cs-col .cs-logo {
+    width: 150px;
+}
+
+.cs-category {
+    margin: 20px 0;
+}
+
+.cs-content>h5 {
+    line-height: 1.4;
+}
+
+/* end of TC_016 */
+
+/* start TC_021. original top 200px */
+/* @media (min-height: 1080px) {
+	.page-id-33 .pai-overview-text-overlay p {
+        top: 180px;
+    }
+} */
+
+.pai-overview-text-overlay p {
+    font-size: 18px;
+}
+
+@media (min-width: 1920px) and (min-height: 1080px) {
+    .pai-overview-text-overlay p {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 1600px) and (min-width: 1300px) {
+    .pai-overview-text-overlay p {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 1301px) and (min-width: 768px) {
+    .pai-overview-text-overlay p {
+        font-size: 14px;
+    }
+}
+
+/* end of TC_021 */
+
+/* TC_029 */
+.solution-testimonials-box .solution-testimonials-content p {
+    font-size: 22px;
+}
+
+/* original 18px */
+@media only screen and (max-width: 1600px) and (min-width: 1300px) {
+    .solution-testimonials-box .solution-testimonials-content p {
+        font-size: 16px;
+    }
+}
+
+/* full hd and above */
+/* original 30% */
+@media (min-width: 1920px) and (min-height: 1080px) {
+    .solution-testimonials-box {
+        top: 28%;
+    }
+
+    .solution-testimonials-box .solution-testimonials-content p {
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 280px) {
+    .solution-testimonials-details {
+        height: 600px;
+    }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 280px) {
+    .solution-testimonials-box .solution-testimonials-content p {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    .carousel-content .carousel-logo img {
+        width: 140px;
+    }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 280px) {
+    .solution-testimonials .carousel-content .carousel-logo img {
+        width: 60px;
+    }
+}
+
+@media only screen and (max-width: 991px) and (min-width: 768px) {
+    .solution-testimonials .carousel-content .carousel-logo img {
+        width: 80px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1919px) {
+    .solution-testimonials .carousel-content .carousel-logo img {
+        width: 100px;
+    }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 280px) {
+    .solution-testimonials-box {
+
+        top: 47%;
+    }
+}
+
+/* enf of TC_029 */
+
+
+/* start TC_042 */
+@media only screen and (max-width: 767px) and (min-width: 280px) {
+    .page-id-23 .home-banner .banner_in .banner-text h1 {
+        font-size: 17px;
+        line-height: 1.3;
+    }
+}
+
+/* end of TC_042 */
+
+/* 43 */
+@media only screen and (max-width: 767px) and (min-width: 280px) {
+    .banner-container .banner_in .banner-text p {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 280px) {
+    .testimonial-slider.home-testimonial-slider .carousel-data p {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .testimonials .testimonial-slider.home-testimonial-slider .carousel-item-box {
+        height: 400px;
+    }
+}
+
+/* 43 */
+
+
+@media only screen and (max-width: 768px) {
+    .sliderContainer .home-slick-slider-img {
+        height: 100%;
+        -webkit-transform: none;
+        /*  	transform: none; */
+        transition: none;
+        transform: translateZ(0px)
+    }
+}
+
+/* .sliderContainer .owl-item.active .home-slick-slider-img {
+  -webkit-transform: none;
+  transform: none; 
+	transform: translateZ(0px)
+}
+ */
+.sliderContainer .owl-item .banner-text {
+    opacity: 0;
+    transition: none;
+    visibility: hidden;
+}
+
+.sliderContainer .owl-item .banner-text .slider-title-text {
+    transition: none;
+}
+
+.sliderContainer .owl-item .banner-text .slider-title-text h1{
+    text-transform: none;
+}
+
+.sliderContainer .owl-item .banner-text .custom_button {
+    transition: none;
+    transition-delay: none;
+}
+
+.home-banner .banner_in .banner-text{
+	width: 50%;
+}
+
+@media only screen and (max-width: 767px) and (min-width: 280px){
+	.home-banner .banner_in .banner-text{
+	width: 75%;
+	}
+	
+  .home-banner .banner_in .banner-text h1 {
+        font-size: 14px;
+    }
+}		</style>
+			<script src="https://cdn.by.wonderpush.com/sdk/1.1/wonderpush-loader.min.js" async="" id="wonderpush-sdk" type="application/javascript"></script></head>
+
+<body class="privacy-policy page-template-default page page-id-3 cookies-not-set" id="top">
+	<div class="gtranslate_wrapper" style="display:none;"></div>
+
+	<header>
+		<div class="header-container">
+			<div class="accordion" id="accordion-header-toggle">
+				<div class="accordion-item">
+											<h2 class="accordion-header" id="headingOne">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#header-toggle" aria-expanded="true" aria-controls="collapseOne">
+								<span>Supercharge social programmatic campaigns with Intellibid by RevX</span>
+							</button>
+						</h2>
+						<div id="header-toggle" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordion-header-toggle">
+							<div class="accordion-body">
+								<div class="container">
+									<div class="header-toggle-container">
+										<div class="col-sm-9 header-toggle-text">
+											<p><span style="font-weight: 400;">Convert quality users and increase ROAS within walled gardens on our Intellibid platform. Designed with our proprietary technology, Intellibid provides more customized audience segmentation and automated bid optimizations to significantly improve performance.</span></p>
+											<a href="https://revx.io/intellibid/" target="_blank" class="custom_button">Learn More</a>
+										</div>
+										<div class="col-sm-3 header-toggle-image">
+											<img src="https://revx.io/storage/2025/04/x-with-wall-of-roses.webp" alt="Supercharge social programmatic campaigns with Intellibid by RevX" loading="lazy">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+									</div>
+			</div>
+		</div>
+		
+		<nav class="navbar navbar-expand-lg inner-page-nav">
+			<div class="mobile-nav">
+				<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+					<span class="navbar-toggler-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+							<path stroke="rgba(255, 255, 255, 1)" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path>
+						</svg></span>
+				</button>
+				
+								<a class="navbar-brand logo-blue" href="https://revx.io">
+					<img src="https://revx.io/storage/2023/10/RevX_Blue_Logo.webp" alt="RevX Logo">
+				</a>
+				<a class="navbar-brand logo-white" href="https://revx.io">
+					<img src="https://revx.io/storage/2023/10/RevX_White_Logo.webp" alt="RevX Logo White">
+				</a>
+				
+			</div>
+
+			
+
+			<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+				<div class="offcanvas-header">
+					<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+				</div>
+				<div class="offcanvas-body">
+					<ul id="menu-primary-menu-english" class="navbar-nav me-auto mb-2 mb-lg-0 flex-grow-1 pe-3">
+						<li id="menu-item-1791" class="dropdown solution-dropdown menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1791 nav-item">
+							<a class="nav-link">Solutions</a>
+							<ul class="sub-menu">
+								<li id="menu-item-1792" class="dropdown-item menu-item menu-item-type-post_type menu-item-object-page menu-item-1792 nav-item" style="display: list-item;">
+									<a href="https://revx.io/app-retargeting/" class="nav-link">App Retargeting</a>
+								</li>
+								<li id="menu-item-1797" class="dropdown-item menu-item menu-item-type-post_type menu-item-object-page menu-item-1797 nav-item" style="display: list-item;">
+									<a href="https://revx.io/user-acquisition/" class="nav-link">User Acquisition</a>
+								</li>
+								<li id="menu-item-1793" class="dropdown-item menu-item menu-item-type-post_type menu-item-object-page menu-item-1793 nav-item" style="display: list-item;">
+									<a href="https://revx.io/brand-building/" class="nav-link">Brand Building</a>
+								</li>
+								<li id="menu-item-3971" class="dropdown-item menu-item menu-item-type-post_type menu-item-object-page menu-item-3971 nav-item" style="display: list-item;">
+									<a href="https://revx.io/connected-tv/" class="nav-link">Connected TV</a>
+								</li>
+								<li id="menu-item-1794" class="dropdown-item menu-item menu-item-type-post_type menu-item-object-page menu-item-1794 nav-item" style="display: list-item;">
+									<a href="https://revx.io/creative-innovation/" class="nav-link">Creative Innovation</a>
+								</li>
+								<li id="menu-item-1795" class="dropdown-item menu-item menu-item-type-post_type menu-item-object-page menu-item-1795 nav-item" style="display: list-item;">
+									<a href="https://revx.io/incrementality-testing/" class="nav-link">Incrementality Testing</a>
+								</li>
+								<li id="menu-item-1796" class="dropdown-item menu-item menu-item-type-post_type menu-item-object-page menu-item-1796 nav-item" style="display: list-item;">
+									<a href="https://revx.io/programmatic-app-impact/" class="nav-link">Programmatic App Impact</a>
+								</li>
+								<li id="menu-item-1798" class="dropdown-item menu-item menu-item-type-post_type menu-item-object-page menu-item-1798 nav-item" style="display: list-item;">
+									<a href="https://revx.io/intellibid/" class="nav-link">Intellibid</a>
+								</li>
+							</ul>
+						</li>
+						<li id="menu-item-1790" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1790 nav-item">
+							<a href="https://revx.io/technology/" class="nav-link">Technology</a>
+						</li>
+						<li id="menu-item-3253" class="dropdown resources-dropdown menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3253 nav-item">
+							<a href="#" class="nav-link">Resources</a>
+							<ul class="sub-menu">
+								<li id="menu-item-1788" class="dropdown-item menu-item menu-item-type-post_type menu-item-object-page menu-item-1788 nav-item" style="display: list-item;">
+									<a href="https://revx.io/blogs/" class="nav-link">Blogs</a>
+								</li>
+								<li id="menu-item-1789" class="dropdown-item menu-item menu-item-type-post_type menu-item-object-page menu-item-1789 nav-item" style="display: list-item;">
+									<a href="https://revx.io/case-studies/" class="nav-link">Case Studies</a>
+								</li>
+								<li id="menu-item-3254" class="dropdown-item menu-item menu-item-type-post_type menu-item-object-page menu-item-3254 nav-item" style="display: list-item;">
+									<a href="https://revx.io/guides-reports/" class="nav-link">Guides &amp; Reports</a>
+								</li>
+							</ul>
+						</li>
+						<li id="menu-item-1787" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1787 nav-item">
+							<a href="https://revx.io/about-revx/" class="nav-link">About Us</a>
+						</li>
+						
+						<li id="menu-item-2267" class="pll-parent-menu-item menu-item menu-item-type-custom menu-item-object-custom current-menu-parent menu-item-has-children menu-item-2267 nav-item">
+							<a href="#pll_switcher" class="nav-link">
+								<img src="data:image/png;base64," alt="" width="16" height="11" style="width: 16px; height: 11px;">
+								<span style="margin-left:0.3em;">English</span>
+							</a>
+							<ul class="sub-menu">
+								<li id="menu-item-2267-en iba" class="lang-item lang-item-64 lang-item-en current-lang lang-item-first menu-item menu-item-type-custom menu-item-object-custom current_page_item menu-item-home menu-item-2267-en nav-item" style="display: list-item;">
+									<a href="https://revx.io" hreflang="en-US" lang="en-US" class="nav-link"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="" width="16" height="11" style="width: 16px; height: 11px;"><span style="margin-left:0.3em;">English</span></a>
+								</li>
+								<li id="menu-item-2267-ja" class="lang-item lang-item-118 lang-item-ja menu-item menu-item-type-custom menu-item-object-custom menu-item-2267-ja nav-item" style="display: list-item;">
+									<a href="https://revx.io/ja" hreflang="ja" lang="ja" class="nav-link"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAPFBMVEX09PTy8fHy6+vm5+b+/v77+/v29vbf39/5vLz5fHz6qqr6UFD7QUH5NDT3lZXa2tr419f3JibT09P2WloskN4YAAAAVUlEQVR4AQXBQU7FMBBAMb90hCoW3P+csCAKfIodIBIyQJAGmPQTDHgrzca94K/keT/nWOgjmdm4VvIpwy1GXOsZ9ndYYL/Wee3IRI/fr4PQCuPmAv/RTRUh24Q4UgAAAABJRU5ErkJggg==" alt="" width="16" height="11" style="width: 16px; height: 11px;"><span style="margin-left:0.3em;">日本語</span></a>
+								</li>
+								<li id="menu-item-2267-ko" class="lang-item lang-item-123 lang-item-ko menu-item menu-item-type-custom menu-item-object-custom menu-item-2267-ko nav-item" style="display: list-item;">
+									<a href="https://revx.io/ko" hreflang="ko-KR" lang="ko-KR" class="nav-link"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAh1BMVEXx9/Xt8vLp7+/l6urg5eT+/v7a29vGxsb19fXz8vO8u7zLy8v5+fnr6+qKiop+fX782dlkY2N3d3fZ4d+ur6799vX6kZD7RUX6Pz75eHXo6OjzsrbpOkO2nsRkbb9RasbHeZPS2tirxfAybtqkrdrU1tR6ouZskt1VVVVpaWnI1e3O09Gfn58iHIdTAAAAh0lEQVR4ASXIA3JEARQF0b4PsW0Vs//1xDbGno8+xRZ1KqBKImkEhKThMGBO6rDIsL+opq0G9OZyRkW/PhJ4Yf1tfaKw+BoZvWLQ9mUrmulIHJhg29M9I3IMGJy1lp5ng7ievZDC4Ibt4/vZ2fvLLYkZt/noD8ednx+0+N5nXSYEqzQOYQGYAgnRIeEuj5p0AAAAAElFTkSuQmCC" alt="" width="16" height="11" style="width: 16px; height: 11px;"><span style="margin-left:0.3em;">한국어</span></a>
+								</li>
+								<li id="menu-item-2267-ru" class="lang-item lang-item-128 lang-item-ru menu-item menu-item-type-custom menu-item-object-custom menu-item-2267-ru nav-item" style="display: list-item;">
+									<a href="https://revx.io/ru" hreflang="ru-RU" lang="ru-RU" class="nav-link"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAdVBMVEX19f/u7vjm5/H+/v75+fng4Ove3ulFRfyysv6cnP6QkPmIiPh/f/YAAOYAAP1ycv5QUP06OvkxMfcoKPcgIPYUFPS0AADdaYzTRG/RPGnOM2LKLFzIIVPCEUZ7AAD0AQH7YGH3ODj0JyfzERDgAAD4TU3pAABIfLuPAAAAT0lEQVR4AQXBAQqDMAAAsZytyHzA/v9LYRS7JIAQMkBb0ATsgLoKInnHvIrHrdRaBzxupTDxuFUifUsp4R3zU4iwzmOyT1ibBtP2u3C+wB+SHBB5JNY7DAAAAABJRU5ErkJggg==" alt="" width="16" height="11" style="width: 16px; height: 11px;"><span style="margin-left:0.3em;">Русский</span></a>
+								</li>
+								<li id="menu-item-2267-zh" class="lang-item lang-item-133 lang-item-zh menu-item menu-item-type-custom menu-item-object-custom menu-item-2267-zh nav-item" style="display: list-item;">
+									<a href="https://revx.io/zh-CN" hreflang="zh-CN" lang="zh-CN" class="nav-link"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAXVBMVEXUAADlQgDLAADBAADtgXn63Xjypnf1wHHpcG/oZmbmXVzlU1PjS0q1AAD981775VvwnVD2zkvhPz/fNzfdMjHcKyvaJyfsi0baISHYGhqqAADWExPTDQ2jAACfAAApGpDBAAAAWklEQVR4ATXIhQHDQBTDUMll2n/RMiU5/vQsAE4EsPbaKVOU+pXNwc/WKQXeDZMKu+psCXw/Z7efarmENd6GIwGpXhUvM4spxoiEbouRNT7Fmtaq+RG4wAqZZvceD8DeIelqAAAAAElFTkSuQmCC" alt="" width="16" height="11" style="width: 16px; height: 11px;"><span style="margin-left:0.3em;">中文 (中国)</span></a>
+								</li>
+								<li id="menu-item-2267-pt" class="lang-item lang-item-639 lang-item-pt menu-item menu-item-type-custom menu-item-object-custom menu-item-2267-pt nav-item" style="display: list-item;">
+									<a href="https://revx.io/pt" hreflang="pt-BR" lang="pt-BR" class="nav-link"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAn1BMVEUAYQAAWwAAUgAARwAAOgAALgAAIwB/voB4uni242pttG1kr2Rdq11RpFEAGAD9/Uv8/VT690U/mz83lTguki4ADQCp2lJ3d+Q+dfpkaun47zii1B9IoEhgslHOy6fZ5virw/Iubfhsc6v29iMfih+Wy3Nbg+lzm/m61vd+oNr08hZ2uDcAAQCPlLSuraIzmA8yjzKw3z8nXvcTgxM1pTDYD/UeAAAAfUlEQVR4AUWIA3oFMBCE/4mT2nbvf6biQ91n27tjAaDNi7gaFuLAIexiUDc6QKUfhKaVva5Dh/Xu3rwrqYPTzfeYVNvrRvUiUUbvO5hIVR0f8f7TYCo797+6POgOqtm9n8nGQ1qP/395v7cHw4FsQohnXhE3DOSQSETOmN8EHiUfBxs2q7sAAAAASUVORK5CYII=" alt="" width="16" height="11" style="width: 16px; height: 11px;"><span style="margin-left:0.3em;">Português</span></a>
+								</li>
+								<li id="menu-item-2267-es" class="lang-item lang-item-667 lang-item-es menu-item menu-item-type-custom menu-item-object-custom menu-item-2267-es nav-item" style="display: list-item;">
+									<a href="https://revx.io/es" hreflang="es-ES" lang="es-ES" class="nav-link"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAflBMVEX/AAD9AAD3AADxAADrAAD/eXn9bGz8YWH8WVn6UVH5SEj5Pz/3NDT0Kir9/QD+/nL+/lT18lDt4Uf6+j/39zD39yf19R3n5wDxflXsZ1Pt4Y3x8zr0wbLs1NXz8xPj4wD37t3jmkvsUU/Bz6nrykm3vJ72IiL0FBTyDAvhAABEt4UZAAAAX0lEQVR4AQXBQUrFQBBAwXqTDkYE94Jb73+qfwVRcYxVQRBRToiUfoaVpGTrtdS9SO0Z9FR9lVy/g5c99+dKl30N5uxPuviexXEc9/msC7TOkd4kHu/Dlh4itCJ8AP4B0w4Qwmm7CFQAAAAASUVORK5CYII=" alt="" width="16" height="11" style="width: 16px; height: 11px;"><span style="margin-left:0.3em;">Español</span></a>
+								</li>
+							</ul>
+						</li>
+						<li id="menu-item-2268" class="contact-nav custom_button menu-item menu-item-type-post_type menu-item-object-page menu-item-2268 nav-item">
+							<a href="https://revx.io/contact/" class="nav-link">Contact Us</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="header_link desktop">
+				<div id="myOverlay" class="search_overlay">
+					<div class="search_overlay-content">
+						<form method="post" role="search" id="searchform" action="https://revx.io/">
+    <input type="hidden" id="csrf_token" name="csrf_token" value="27769cc9bd"><input type="hidden" name="_wp_http_referer" value="/privacy-policy/">    <input type="text" placeholder="Search insights, services and experts" name="s">
+    <button type="submit">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30.621" height="30.621" viewBox="0 0 30.621 30.621">
+            <g transform="translate(1.5 1.5)">
+                <path d="M28.5,16.5a12,12,0,1,1-12-12A12,12,0,0,1,28.5,16.5Z" transform="translate(-4.5 -4.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+                <path d="M31.5,31.5l-6.525-6.525" transform="translate(-4.5 -4.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+            </g>
+        </svg>
+    </button>
+    <span class="search_closebtn" onclick="closeSearch()" title="Close Overlay">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30.848" height="30.849" viewBox="0 0 30.848 30.849">
+            <path d="M17.995,1.928A15.424,15.424,0,1,0,33.419,17.352,15.424,15.424,0,0,0,17.995,1.928Zm0,27.956A12.532,12.532,0,1,1,30.527,17.352,12.532,12.532,0,0,1,17.995,29.885ZM22.815,9.64l-4.82,4.82-4.82-4.82-2.892,2.892,4.82,4.82-4.82,4.82,2.892,2.892,4.82-4.82,4.82,4.82,2.892-2.892-4.82-4.82,4.82-4.82Z" transform="translate(-2.571 -1.928)"></path>
+        </svg>
+    </span>
+
+</form>
+
+					</div>
+				</div>
+				<button class="search_openBtn"><svg xmlns="http://www.w3.org/2000/svg" width="30.621" height="30.621" viewBox="0 0 30.621 30.621">
+						<g transform="translate(1.5 1.5)">
+							<path d="M28.5,16.5a12,12,0,1,1-12-12A12,12,0,0,1,28.5,16.5Z" transform="translate(-4.5 -4.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+							<path d="M31.5,31.5l-6.525-6.525" transform="translate(-4.5 -4.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+						</g>
+					</svg>
+				</button>
+			</div>
+		</nav>
+	</header>	
+<div class="main">
+    <div class="banner-container">
+        <div class="policy-banner bg-grey">
+            <div class="container-fluid">
+                    <div class="banner_in">
+                        <h1 class="txt-black">Privacy Policy</h1>
+                    </div>
+            </div>
+        </div>
+    </div>
+    
+    <section class="policy-bg">
+        <div class="container-fluid">
+            <div class="policy-container">
+                <div class="policy-content">
+                                                <p><b>Affle’s Privacy Statement, effective as of 04-03-2025</b></p>
+<p>The Privacy Notice disclose the privacy practices of Affle. The Privacy Notice describes how we (i.e. Affle) collect and use your personal information in relation to Affle websites, platforms, services, events, and experiences.</p>
+<div class="privacy-questions">
+<article><b>1. What Personal Data do we collect?</b>
+<p>(i) When you use Affle’s Platform:</p>
+<p>We (i.e. Affle) collect information including your IP address (which provides broad location information as well), device type and model, system language, the device’s operating system (such as Android or iOS), SDK version, mobile carrier name, mobile browsers installed on the device (such as Chrome or Safari), using either cookies or through the HTML headers when you view/ click on our ads. In addition, through the apps/ sites we partner with, we may get additional information regarding downloads and installations of mobile applications and information regarding in-app events (such as in-app purchases), and identifiers assigned to your device, such as its iOS Identifier for Advertising (IDFA), Android Advertising ID etc.</p>
+<p>(ii) Other activities such as:</p>
+<ul>
+<li>Visiting our websites that display or link to this Privacy Statement;</li>
+<li>Visiting our social media pages;</li>
+<li>Receive communications from us or otherwise communicate with us, including but not limited to emails, phone calls, texts or faxes;</li>
+<li>Register for, attend, or take part in our marketing events, such as webinars and programs; or</li>
+<li>Participate in surveys, research or other similar data collection facilitated by us.</li>
+</ul>
+<p>The type of Personal Data we collect may include contact information (e.g. name, email address, postal address, company information, and other profile information), login details, comments, preferences, feedback, user data (Read the detailed cookie policy here) and any other Personal Data that may be required to facilitate your dealings with us.</p>
+<p>We may also collect / have access to such information that you have voluntarily shared with us through any forms submitted or collected during direct contact with you.</p>
+</article>
+<article><b>2. What we do with the personal data?</b>
+<p>When you use Affle’s Platform, Affle uses the information in order to serve targeted advertising and offers and/or detect ad fraud. Affle does not use sensitive personal data such as race, religion, health, or political views for interest-based targeting.</p>
+<p>Affle may also collect data for the following purposes:</p>
+<ul>
+<li>contact and communicate with you;</li>
+<li>to administer and manage the websites;</li>
+<li>to sort and analyse website user data;</li>
+<li>to understand how people use the features and functions of our websites in order to improve the user experience;</li>
+</ul>
+<p>We will use your information only for the purpose stated above. We will not share your information with any third party outside our organization, except with authorized Data Processing partners who would have Privacy Policies similar to ours.</p>
+<p>Unless specifically denied/ restricted, we may contact you via email in the future to update you about specials, new products, services, or any change in this Privacy Notice. We may use the data analytics from the data collected.</p>
+<p>Please be noted that should you not consent and provide us with the relevant personal data to fulfil the purposes of collection, use and disclosure of your personal information by Affle, listed in section 2 of this Privacy Policy, it may hinder our ability to continue to interact with you.</p>
+</article>
+<article><b>3. How long we keep your personal data?</b>
+<p>We may retain your Personal Data for a period of time consistent with the original purpose of collection or as long as required to fulfil our legal obligations.</p>
+<p>After this period, your personal data will be irreversibly destroyed.</p>
+<p>Any personal data held by us for marketing and service update notifications will be kept by us until such time that you notify us that you no longer wish to receive this information.</p>
+</article>
+<article><b>4. What are your rights?</b>
+<p>You may have certain rights relating to your Personal Data, subject to local data protection laws. Depending on the applicable laws these rights may include the right to:</p>
+<ul>
+<li>Access your Personal Data held by us;</li>
+<li>Know more about how we process your Personal Data;</li>
+<li>Rectify inaccurate Personal Data and, taking into account the purpose of processing the Personal Data, ensure it is complete;</li>
+<li>Erase or delete your Personal Data;</li>
+<li>Restrict our processing of your Personal Data;</li>
+<li>Transfer your Personal Data to another controller, to the extent possible;</li>
+<li>Object to any processing of your Personal Data;</li>
+<li>Opt out of certain disclosures of your Personal Data to third parties;</li>
+<li>If you’re under the age of 16, or such other applicable age of consent for privacy purposes in relevant individual jurisdictions, opt into certain disclosures of your Personal Data to third parties;</li>
+<li>Not be discriminated against for exercising your rights described above;</li>
+<li>Not be subject to a decision based solely on automated processing, including profiling, which produces legal effects (“Automated Decision-Making”); and</li>
+<li>Withdraw your consent at any time (to the extent we base processing on consent), without affecting the lawfulness of the processing based on such consent before its withdrawal.
+<ul>
+<li>If you withdraw your consent for us to collect, use or disclose your personal data, we may not be able to fulfil the Purposes listed in Section 1 of this Privacy Policy.</li>
+<li>You may withdraw your consent for your personal data to be used for marketing purposes and you will stop receiving marketing information from us via the mode(s) of communication for which you have withdrawn such consent after a period permitted under law or in accordance with our internal policies. Please note that such withdrawal of your consent will not affect our ability to provide you with the products and services for which you have requested or to which you have applied, subscribed or are participating with us.</li>
+</ul>
+</li>
+</ul>
+<p>To exercise your rights, please contact us by using the information in Section 6 below. Affle will respond to all legitimate requests within one month and will contact you if we need additional information from you to verify your identity. Taking into account the complexity and number of requests we receive, the process may take longer than a month.</p>
+<p>If you wish to complain about how we have handled your personal data, please contact us using the information at section 6 below. Our DPO will then look into your complaint and work with you to resolve the matter.</p>
+<p>If, however, you still feel that we have not been able to assist you with your complaint and concern, and you are located in the European Economic Area or the United Kingdom, you have the right to contact your local data protection authority and file a complaint with them.</p>
+<p>You may withdraw your consent for us to collect, use or disclose your personal data by giving us reasonable notice.</p>
+</article>
+<article><b>5. Security</b>
+<p>We take appropriate precautions including organizational, technical, and physical measures to help safeguard against accidental or unlawful destruction, loss, alteration, and unauthorized disclosure of, or access to, the Personal Data we process or use. When you share information, we ensure that your information is protected both online and offline.</p>
+<p>Whenever, we collect information, that information is transmitted to us in an encrypted format and the same can be verified by a lock icon in the address bar or by “https” at the beginning of the address of the Web page.</p>
+<p>While we use encryption to protect information transmitted online, we also protect your information offline. Only those employees who are assigned with the job shall be granted access to information. However, no human has access to any individual user information, and only aggregated information and reports are provided to our internal employees or Affiliates on a strictly need basis. Individual user information is only stored in computers/ servers, which are kept in a secure environment.</p>
+<p>Affle is committed to implementing appropriate technical and organizational measures to safeguard Personal Data and ensure that all personnel who have access to and/or process Data are obliged to keep the Personal Data confidential.</p>
+<p>Affle complies with its obligations under the Data Protection Legislation (GDPR) or any other applicable Data Protection Law/ Regulation by providing an adequate level of protection to any Personal Data that is transferred.</p>
+<p>However, no method of storage or transmission is 100% secure. You are solely responsible for protecting your password, limiting access to your devices and signing out of websites after your sessions.</p>
+</article>
+<article><b>6. Contacting us</b>
+<p>Affle has appointed a Data Protection Officer in Singapore. To exercise your rights regarding Personal Data, or if you have questions regarding this Privacy Statement or our privacy practices, please email us at&nbsp;<a class="email-dpo">dpo@affle.com</a></p>
+</article>
+</div>
+<p><b>The Privacy Policy was last updated on 04-03-2025</b></p>
+
+                            </div>
+        </div>
+    </div></section>
+</div>
+
+
+
+
+
+<footer>
+    <div class="footer-section pad_bot0">
+        <div class="container-fluid">
+                            <div class="pre-footer mb40">
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="footer-text pe-sm-5">
+                                <h4>Stay ahead of the curve.</h4><span>Sign up for the RevX Insights, your monthly dose of must-know information and trends shaping the future of AdTech.</span>                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
+                            <form id="brevo-footer-form" class="brevo-form">
+                                <input type="hidden" name="_token" id="wp_nonce" value="3cf82f5c05">
+                                <div id="footer-form-loader">
+                                    <img src="https://revx.io/core/views/8b90358078/assets/images/spinner.gif" alt="loader">
+                                </div>
+                                <div class="footer-form-success">
+                                    <p id="footer-form-success-message">
+                                        Thank you, you have successfully registered!
+                                    </p>
+                                </div>
+                                <div class="newsletter-container"> 
+                                    <div class="name_field">
+                                        <input type="text" name="name_field">
+                                        <input type="hidden" name="ba_time" id="ba_time" value="1775946763228">
+                                    </div>
+                                    <div class="newsletter-form"> 
+                                        <input type="email" name="email" placeholder="Your email address*" value="" required="required"> 
+                                        <span id="error_msg"></span> 
+                                        <label>
+                                            <input type="checkbox" name="terms" required="required"> *I have read the Privacy Policy and agree to its terms.
+                                        </label>
+                                    </div>
+                                    <div class="newsBtn">
+                                        <input type="submit" id="invisible" class="sib-default-btn custom_button" value="Subscribe">
+                                    </div>
+                                </div>
+                            </form>
+
+                            
+                        </div>
+                    </div>
+                </div>
+                        <div class="footer-menu">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6">
+                        <div class="footer-logo">
+                                                        <a href="https://revx.io"><img class="f-logo" src="https://revx.io/storage/2023/10/RevX_Blue_Logo.webp" alt="RevX Logo"></a>
+                        </div>
+                        <div class="logo-tagline">
+                            <span class="txt-blue">RevX is a Global Performance DSP for UA &amp; RT<br>across Apps, CTV, and Social Media</span>
+                        </div>
+                        <div class="footer-logo gap-3">
+                                                                    <img src="https://revx.io/storage/2025/09/data-protection-logo.webp" alt="Logo" class="iba-logo" loading="lazy" decoding="async" onerror="this.style.display='none';">
+                                                                    <img src="https://revx.io/storage/2025/09/iso-logo.webp" alt="Great Place to Work Logo" class="gptw-logo" loading="lazy" decoding="async" onerror="this.style.display='none';">
+                                                                    <img src="https://revx.io/storage/2025/09/sgd-logo.webp" alt="Logo" class="iba-logo" loading="lazy" decoding="async" onerror="this.style.display='none';">
+                                                                    <img src="https://revx.io/storage/2025/09/iamai-logo.webp" alt="Logo" class="iba-logo" loading="lazy" decoding="async" onerror="this.style.display='none';">
+                                                    </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <div class="footer-menu-list">
+                            <div class="menu-footer-menu-container"><ul id="menu-footer-menu" class="menu"><li id="menu-item-1800" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1800 nav-item"><a href="https://revx.io/case-studies/" class="nav-link">Case Studies</a></li>
+<li id="menu-item-1799" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1799 nav-item"><a href="https://revx.io/blogs/" class="nav-link">Blogs</a></li>
+<li id="menu-item-1798" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1798 nav-item"><a href="https://revx.io/about-revx/" class="nav-link">About Us</a></li>
+<li id="menu-item-1801" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1801 nav-item"><a href="https://revx.io/contact/" class="nav-link">Contact Us</a></li>
+</ul></div>                            <ul class="footer-social">
+                                                                    <li><a href="https://www.facebook.com/RevXPlatform"><img src="https://revx.io/core/views/8b90358078/assets/images/icons/ic-facebook.svg" alt="facebook" loading="lazy"></a></li>
+                                                                                                    <li><a href="https://twitter.com/RevX_Platform"><img src="https://revx.io/core/views/8b90358078/assets/images/icons/twitter-new.svg" alt="twitter" loading="lazy"></a></li>
+                                                                                                    <li><a href="https://www.linkedin.com/company/revxdsp/"><img src="https://revx.io/core/views/8b90358078/assets/images/icons/ic-linkedin.svg" alt="linkedin" loading="lazy"></a></li>
+                                                                                                    <li><a href="https://revx.io/#"><img src="https://revx.io/core/views/8b90358078/assets/images/icons/ic-youtube.svg" alt="youtube" loading="lazy"></a></li>
+                                                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="post-footer-links">
+            <div class="container-fluid">
+                <div class="post-footer-container">
+                    <div class="menu-post-footer-container"><ul id="menu-post-footer" class="menu"><li id="menu-item-1803" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1803 nav-item"><a href="https://revx.io/advertisers-terms-conditions/" class="nav-link">Advertisers T&amp;C</a></li>
+<li id="menu-item-1805" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1805 nav-item"><a href="https://revx.io/publishers-terms-conditions/" class="nav-link">Publishers T&amp;C</a></li>
+<li id="menu-item-1802" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy current-menu-item page_item page-item-3 current_page_item menu-item-1802 nav-item"><a rel="privacy-policy" href="https://revx.io/privacy-policy/" aria-current="page" class="nav-link">Privacy Policy</a></li>
+<li id="menu-item-1804" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1804 nav-item"><a href="https://revx.io/cookie-policy/" class="nav-link">Cookie Policy</a></li>
+</ul></div>                    <div class="copyright-text">
+                        <p class="txt-black1">Copyright 2025 - RevX. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <script type="text/javascript">
+    window._atm_client_id = "6900";
+    window._atm_params = new Object;
+    // Pass in data parameters as applicable on each page
+    // If you want to pass in multiple values, use javascript array
+    // Example: _atm_params.id = ["123", "345"] _atm_params.t = "";
+    //-- INSERT BUSINESS TYPE ( r - retail , h - hotels, p - holiday packages, f - flights, t - trains, b - bus, d - deals)
+    _atm_params.f = "r";
+    //-- INSERT PAGE TYPE (v - home page, b - category page, c - product page, s - add to cart, p - transaction confirmation page)
+    _atm_params.id = "v";
+    //-- INSERT ID OF THE PRODUCT   _atm_params.cn = ""; //-- INSERT NAME OF THE PRODUCT CATEGORY
+    // _atm_params.scn = "";
+    //-- INSERT NAME OF THE PRODUCT SUB CATEGORY
+    var ast=document.createElement('script'); ast.type="text/javascript";
+    ast.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//cdn.atomex.net/static/js/pxs/" + _atm_client_id + "/ast.js";
+    document.body.appendChild(ast);
+</script><script type="text/javascript" src="https://cdn.atomex.net/static/js/pxs/6900/ast.js"></script>
+    <script type="text/javascript" id="jetpack-stats-js-before">
+/* <![CDATA[ */
+_stq = window._stq || [];
+_stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"243566066\",\"post\":\"3\",\"tz\":\"0\",\"srv\":\"revx.io\",\"j\":\"1:14.5\"}") ]);
+_stq.push([ "clickTrackerInit", "243566066", "3" ]);
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://stats.wp.com/e-202615.js" id="jetpack-stats-js" defer="defer" data-wp-strategy="defer"></script>
+
+		
+		<div id="cookie-notice" role="dialog" class="cookie-revoke-hidden cn-position-bottom cn-effect-slide cookie-notice-visible" aria-label="Cookie Notice" style="background-color: rgba(44,119,188,1);"><div class="cookie-notice-container" style="color: #fff"><span id="cn-notice-text" class="cn-text-container">SCAM Alert: Parties falsely claiming to represent RevX as ad testers, or similar freelancers, are not affiliated with us. Verify official communications and report suspicious activity. We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it.</span><span id="cn-notice-buttons" class="cn-buttons-container"><a href="#" id="cn-accept-cookie" data-cookie-set="accept" class="cn-set-cookie cn-button" aria-label="Accept" style="background-color: #f68e3e">Accept</a><a href="#" id="cn-refuse-cookie" data-cookie-set="refuse" class="cn-set-cookie cn-button" aria-label="Cancel" style="background-color: #f68e3e">Cancel</a></span><span id="cn-close-notice" data-cookie-set="accept" class="cn-close-icon" title="Cancel"></span></div>
+			
+		</div>
+		
+<script defer="" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha512-6UofPqm0QupIL0kzS/UIzekR73/luZdC6i/kXDbWnLOJoqwklBK6519iUnShaYceJ0y4FaiPtX/hRnV/X/xlUQ==" crossorigin="anonymous"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" integrity="sha384-CgeP3wqr9h5YanePjYLENwCTSSEz42NJkbFpAFgHWQz7u3Zk8D00752ScNpXqGjS" crossorigin="anonymous"></script>
+<script defer="" src="https://revx.io/core/views/8b90358078/assets/js/owl.carousel.min.js"></script>
+<script defer="" src="https://revx.io/core/views/8b90358078/assets/js/custom.min.js"></script>
+<script defer="" src="http://localhost/core/views/8b90358078/assets/js/custom-event.min.js"></script>
+
+
+<img src="https://pixel.wp.com/g.gif?v=ext&amp;blog=243566066&amp;post=3&amp;tz=0&amp;srv=revx.io&amp;j=1%3A14.5&amp;host=revx.io&amp;ref=&amp;fcp=0&amp;rand=0.7812426068679094" alt="" width="6" height="5" id="wpstats"><script type="text/javascript" src="https://sync.atomex.net/handlers?dsc=1&amp;rh=rh0&amp;atom_sc&amp;adv_id=6900&amp;f=r"></script></body></html>

@@ -1,0 +1,2629 @@
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>sci-bot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&amp;family=Orbitron:wght@400..900&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Atkinson Hyperlegible Mono', monospace;
+    background: #ffffff;
+    color: #1a1a1a;
+    height: 100vh;
+    display: flex;
+    font-size: 17px;
+    overflow: hidden;
+  }
+
+  /* 3-column layout */
+  .logo-col {
+    flex-shrink: 0;
+    width: 420px;
+    padding: 20px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+    overflow: hidden;
+  }
+
+  .logo-img {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .logo-img img {
+    width: 120px;
+    height: auto;
+  }
+
+  .logo-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: auto;
+    padding-bottom: 20px;
+  }
+  .logo-footer .powered-by {
+    font-size: 17px;
+    margin-top:  8px;
+    color: #aaa;
+    text-align: center;
+  }
+
+  .logo-inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .logo-symbol {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 176px;
+    font-weight: 800;
+    color: #2d6a4f;
+    line-height: 0.85;
+  }
+
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo-name-sci {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 112px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #2d6a4f;
+    line-height: 1.1;
+  }
+
+  .logo-name-dash { display: none }
+
+  .logo-name-bot {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 112px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #2d6a4f;
+    line-height: 1.1;
+  }
+
+  .logo-text .description {
+    font-size: 28px;
+    color: #888;
+    line-height: 1.4;
+    width: 188px;
+    text-align: center;
+    margin-top: 33px;
+    word-wrap: break-word;
+  }
+
+  /* Center content column */
+  .content-col {
+    flex-grow: 1;
+    width: 44vw;
+    max-width: 1024px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  /* Landing state */
+  .landing {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 24px 80px;
+  }
+
+  .landing.hidden {
+    display: none;
+  }
+
+  .input-row {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+  }
+
+  .landing textarea {
+    flex: 1;
+    background: #ffffff;
+    border: none;
+    border-bottom: 2px solid #d0d0d0;
+    color: #1a1a1a;
+    padding: 12px 4px;
+    border-radius: 0;
+    font-size: 54px;
+    font-family: inherit;
+    resize: none;
+    outline: none;
+    overflow: hidden;
+    transition: border-color 0.2s;
+    max-width: 800px;
+  }
+
+/*  .landing textarea:focus {
+    border-bottom-color: #2d6a4f;
+  }
+*/
+  .landing textarea::placeholder {
+    color: #ccc;
+    font-size: 54px;
+  }
+
+
+  .btn-launch {
+    flex-shrink: 0;
+    background: #ffffff;
+    border: none;
+    color: #2d6a4f;
+    padding: 0 8px;
+    min-width: 120px;
+    height: 80px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+    margin-bottom: 6px;
+    font-family: 'Atkinson Hyperlegible Mono', monospace;
+    font-size: 58px;
+    letter-spacing: -4px;
+    line-height: 1;
+    gap: 0;
+  }
+  .btn-launch .brace {
+    font-size: 88px;
+    line-height: 1;
+    transition: opacity 0.2s;
+  }
+  .btn-launch .tri {
+    font-size: 44px;
+    line-height: 1;
+    vertical-align: middle;
+  }
+
+  .btn-launch:hover {
+    background: #2d6a4f !important;
+    color: #ffffff !important;
+    animation: none;
+  }
+  .btn-launch:hover .brace {
+    opacity: 0;
+  }
+  .btn-launch:disabled { opacity: 0.4; cursor: not-allowed; animation: none; }
+
+  /* Results state */
+  .results {
+    display: none;
+    flex: 1;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 24px 24px 60px;
+  }
+
+  .results.visible {
+    display: flex;
+  }
+
+  .results-inner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  /* Question display */
+  .question-box {
+    align-self: flex-start;
+    background: #2d6a4f;
+    color: #ffffff;
+    padding: 14px 18px;
+    border-radius: 12px;
+    border-bottom-left-radius: 4px;
+    line-height: 1.7;
+    font-size: 24px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 48px 0;
+  }
+
+  /* Search status */
+  .search-status {
+    color: #888;
+    font-size: 15px;
+    font-style: italic;
+    padding: 4px 0;
+  }
+  .reasoning-text {
+    padding: 6px 0;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .reasoning-text p { margin: 0; }
+
+  /* Paper cards (read articles) */
+  .paper-card {
+    position: relative;
+    width: 90%;
+    background: #ffffff;
+    border: 2px dashed #d0d0d0;
+    border-radius: 8px;
+    padding: 16px 18px;
+    font-size: 17px;
+    color: #1a1a1a;
+    line-height: 1.6;
+    cursor: pointer;
+    margin: 28px 0;
+    transition: border-color 0.2s, box-shadow 0.2s, opacity 0.3s;
+  }
+
+  .paper-card:hover {
+    border-color: #2d6a4f;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+
+  .paper-card.loading {
+    opacity: 0.6;
+  }
+
+  .card-corner-spinner {
+    position: absolute;
+    bottom: 8px;
+    right: 12px;
+  }
+
+  .paper-card .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+
+  .paper-card .card-header .card-icon {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .paper-card .card-title {
+    color: #000000;
+    font-weight: 400;
+    font-size: 22px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .paper-card .card-authors {
+    color: #333;
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+
+  .paper-card .card-abstract {
+    color: #1a1a1a;
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 6px 0;
+  }
+
+  .paper-card .card-meta {
+    color: #444;
+    font-size: 14px;
+    word-break: break-all;
+  }
+
+  .spinner {
+    display: inline-block;
+    width: 1.2em;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #2d6a4f;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  /* Thinking status */
+  .thinking-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #888;
+    font-size: 15px;
+    font-style: italic;
+    padding: 4px 0;
+  }
+
+  /* Answer area */
+  .answer {
+    line-height: 1.7;
+    font-size: 17px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .answer p { margin: 0 0 0.6em 0; }
+  .answer p:last-child { margin-bottom: 0; }
+  .answer h1, .answer h2, .answer h3,
+  .answer h4, .answer h5, .answer h6 {
+    margin-bottom: 0.4em;
+    line-height: 1.3;
+  }
+  .answer h1 { font-size: 1.3em; margin-top: 3.25em; }
+  .answer h2 { font-size: 1.15em; margin-top: 2.875em; }
+  .answer h3 { font-size: 1.05em; margin-top: 2.625em; }
+  .answer h4 { font-size: 1em; margin-top: 2.5em; }
+  .answer h5 { font-size: 0.95em; margin-top: 2.375em; }
+  .answer h6 { font-size: 0.9em; margin-top: 2.25em; }
+  .answer p.bold-heading { margin-top: 2.5em; margin-bottom: 0.4em; line-height: 1.3; }
+  .answer ul, .answer ol {
+    margin: 0.4em 0 0.6em 1.4em;
+  }
+  .answer li { margin-bottom: 0.2em; }
+  .answer code {
+    background: #ebebeb;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.93em;
+  }
+  .answer pre {
+    background: #ebebeb;
+    padding: 10px 14px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0.5em 0;
+  }
+  .answer pre code {
+    background: none;
+    padding: 0;
+  }
+  .answer blockquote {
+    border-left: 3px solid #ccc;
+    padding-left: 12px;
+    margin: 0.5em 0;
+    color: #777;
+  }
+  .answer strong { font-weight: 700; }
+  .answer a { color: #2d6a4f; }
+  .answer a.ref-box { color: #1a1a1a; }
+
+  .ref-box {
+    display: block;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 0;
+    margin: 2px 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 15px;
+    line-height: 1.5;
+    transition: background 0.15s;
+  }
+  .ref-box:hover {
+    background: #e8f5e9;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .ref-box .ref-num {
+    font-weight: 700;
+    margin-right: 6px;
+  }
+  .ref-box .ref-doi {
+    color: #888;
+    font-size: 13px;
+  }
+
+  .cite-group {
+    color: #2d6a4f;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .cite-ref {
+    color: #2d6a4f;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+  }
+  .cite-group .cite-ref:hover {
+    text-decoration: underline;
+  }
+  .cite-popup {
+    display: none;
+    position: fixed;
+    background: #fff;
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+    padding: 6px 0;
+    max-width: 420px;
+    max-height: 60vh;
+    overflow-y: auto;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #1a1a1a;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+    z-index: 9999;
+  }
+  .cite-popup-ref {
+    display: block;
+    padding: 8px 16px;
+    color: #1a1a1a;
+    text-decoration: none;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+  }
+  .cite-popup-ref:last-child {
+    border-bottom: none;
+  }
+  .cite-popup-ref:hover {
+    background: #f0f7f4;
+  }
+  .cite-popup .cite-popup-doi {
+    color: #888;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+  .answer table {
+    border-collapse: collapse;
+    margin: 0.5em 0;
+    font-size: 0.93em;
+  }
+  .answer th, .answer td {
+    border: 1px solid #d0d0d0;
+    padding: 4px 8px;
+  }
+  .answer th { background: #ebebeb; }
+  .answer hr {
+    border: none;
+    border-top: 1px solid #d0d0d0;
+    margin: 0.8em 0;
+  }
+
+  /* Cancel / new question button during generation */
+  .cancel-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 18px auto 18px;
+    padding: 6px 18px;
+    border: none;
+    background: none;
+    color: #888;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    transition: color 0.15s;
+  }
+  .cancel-btn:hover { color: #1a1a1a; }
+
+  /* Sidebar new-question button (wide screens only) */
+  .sidebar-new-btn {
+    margin-top: 40px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 16px;
+    color: #888;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    transition: color 0.15s;
+  }
+  .sidebar-new-btn:hover { color: #1a1a1a; }
+  .cancel-icon {
+    font-size: 28px;
+    line-height: 1;
+  }
+
+  /* Action buttons after answer */
+  .action-buttons {
+    display: flex;
+    gap: 24px;
+    margin-top: 32px;
+    justify-content: center;
+  }
+  .action-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 18px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: inherit;
+    color: #1a1a1a;
+  }
+  .action-btn .btn-icon {
+    width: 52px;
+    height: 52px;
+    background: #2d6a4f;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    transition: background 0.15s;
+  }
+  .action-btn:hover .btn-icon {
+    background: #1b4332;
+  }
+  .action-btn .btn-label {
+    font-size: 14px;
+    color: #888;
+  }
+
+  /* Share modal */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-overlay.visible { display: flex; }
+  .modal {
+    position: relative;
+    background: #fff;
+    border-radius: 14px;
+    padding: 32px;
+    max-width: 500px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    font-family: inherit;
+  }
+  .modal-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 14px;
+  }
+  .modal-text {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+  .modal-url-box {
+    background: #f4f4f4;
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #2d6a4f;
+    font-weight: 600;
+    word-break: break-all;
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .modal-url-box span { flex: 1; }
+  .btn-copy {
+    background: none;
+    border: 1px solid #d0d0d0;
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 13px;
+    font-family: inherit;
+    color: #555;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.15s;
+  }
+  .btn-copy:hover { border-color: #2d6a4f; color: #2d6a4f; }
+  .modal-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+  }
+  .modal-btn {
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.15s;
+  }
+  .modal-btn.cancel { background: #f0f0f0; color: #555; }
+  .modal-btn.cancel:hover { background: #e0e0e0; }
+  .modal-btn.confirm { background: #2d6a4f; color: #fff; }
+  .modal-btn.confirm:hover { background: #1b4332; }
+  .modal-btn.close { background: #2d6a4f; color: #fff; }
+  .modal-btn.close:hover { background: #1b4332; }
+
+  /* Modal close X */
+  .modal-close-x {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: #e0e0e0;
+    color: #555;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s;
+  }
+  .modal-close-x:hover { background: #ccc; }
+
+  /* Donate button */
+  .donate-action-btn .btn-icon.donate-icon {
+    background: #2e7d32;
+  }
+  .donate-action-btn:hover .btn-icon.donate-icon {
+    background: #1b5e20;
+  }
+  .donate-qr {
+    text-align: center;
+    margin-bottom: 22px;
+  }
+  .donate-qr img {
+    max-width: 280px;
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  /* Floating symbols column */
+  .symbols-col {
+    flex-grow: 1;
+    width: 33vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+  .symbols-col.paused .float-sym {
+    animation-play-state: paused;
+  }
+  .sym-toggle {
+    position: fixed;
+    pointer-events: none;
+    width: 48px;
+    height: 48px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #999;
+    background: rgba(240, 240, 240, 0.85);
+    border-radius: 50%;
+    z-index: 10;
+  }
+  .symbols-col:hover .sym-toggle {
+    display: flex;
+  }
+
+  .float-sym {
+    position: absolute;
+    color: #ccc;
+    font-family: 'Atkinson Hyperlegible Mono', monospace;
+    opacity: 0;
+    animation: floatUp linear infinite;
+  }
+
+  @keyframes floatUp {
+    0%   { transform: translateY(0); opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { transform: translateY(-110vh); opacity: 0; }
+  }
+
+  /* Language switcher */
+  .lang-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+
+  .lang-btn {
+    width: 34px;
+    height: 34px;
+    border: 1px solid #d0d0d0;
+    border-radius: 6px;
+    background: #f4f4f4;
+    color: #777;
+    font-size: 12px;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+    padding: 0;
+    line-height: 1;
+  }
+
+  .lang-btn:hover { border-color: #2d6a4f; color: #2d6a4f; }
+
+  .lang-btn.active {
+    background: #fff;
+    border-color: #1a1a1a;
+    color: #1a1a1a;
+    font-weight: 700;
+  }
+
+  .lang-globe {
+    width: 34px;
+    height: 34px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    padding: 0;
+    line-height: 1;
+    filter: grayscale(1);
+    opacity: 0.5;
+    transition: opacity 0.15s;
+  }
+  .lang-globe:hover { opacity: 0.8; }
+
+  .lang-bar-mobile {
+    display: none;
+  }
+  .powered-by-mobile {
+    font-size: 14px;
+    color: #aaa;
+    margin-right: 12px;
+    white-space: nowrap;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 7px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #c0c0c0; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #aaa; }
+
+  @media (max-width: 1400px) {
+    .symbols-col { display: none; }
+  }
+
+  @media (max-width: 900px) {
+    body { flex-direction: column; overflow: scroll }
+    .content-col { height: fit-content; padding-bottom: 64px;width: 100% }
+    .logo-col { width: 100%; height: auto; flex-direction: row; padding: 10px 16px; }
+    .logo-text { display: flex; flex-direction: row; margin-left: 22px }
+    .logo-name-dash { display: block; font-size: 88px; font-weight: bold; color: #2d6a4f }
+    .logo-symbol { display: flex; font-size: 88px; align-items: center }
+    .logo-img { margin-right: 22px }
+    .logo-text .description { display: none; }
+    .logo-footer { display: none; }
+    .lang-bar { display: none; }
+    .lang-bar-mobile {
+      display: flex;
+      flex-wrap: wrap;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      padding: 10px;
+      background: rgba(255,255,255,0.95);
+      border-top: 1px solid #e0e0e0;
+      z-index: 100;
+    }
+    .landing textarea { font-size: 32px; }
+    .landing textarea::placeholder { font-size: 32px; }
+    .btn-launch { height: 64px; font-size: 36px; }
+    .btn-launch .brace { font-size: 70px; }
+    .btn-launch .tri { font-size: 34px; }
+    .paper-card { width: 100%; }
+  }
+
+  @media (max-width: 700px) {
+     .logo-inner { align-items:center  }
+     .logo-name-sci, .logo-name-bot, .logo-name-dash { font-size: 68px; }
+     .content-col { height: auto; flex: 1; }
+     .landing textarea { font-size: 28px; }
+     .landing textarea::placeholder { font-size: 28px; }
+     .logo-text { flex-direction:column }
+     .logo-name-dash { display:none }
+  }
+
+  @media (max-width: 480px) {
+     .logo-symbol {font-size: 1px }
+     .landing textarea::placeholder { font-size: 18px   }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="logo-col">
+  <div class="logo-inner">
+    <div class="logo-symbol">
+<a class="logo-img" href="https://sci-hub.ru" target="_blank" rel="noopener"><img src="/sci-hub.png" alt="Sci-Hub"></a>
+
+Ξ
+</div>
+    <div class="logo-text">
+      <div class="logo-name-sci">sci</div>
+      <div class="logo-name-dash">-</div>
+      <div class="logo-name-bot">bot</div>
+      <div class="description">AI-powered research assistant</div>
+      <div class="sidebar-new-btn" id="sidebarNewBtn" style="display:none"></div>
+    </div>
+  </div>
+  <div class="logo-footer">
+    <div class="lang-bar" id="langBar"><button class="lang-btn" data-lang="ru">РУ</button><button class="lang-btn" data-lang="zh">中</button><button class="lang-btn active" data-lang="en">EN</button><button class="lang-btn" data-lang="vi">VI</button><button class="lang-btn" data-lang="fr">FR</button><button class="lang-globe" title="More languages">🌐</button></div>
+    <div class="powered-by">Powered by Sci-Hub</div>
+  </div>
+</div>
+
+<div class="content-col">
+  <div class="landing" id="landing">
+    <div class="input-row">
+      <textarea id="questionInput" placeholder="ask me anything" rows="1" maxlength="2048" onkeydown="handleKey(event)" oninput="autoGrow(this)"></textarea>
+      <button class="btn-launch" id="btnLaunch" onclick="launch()"><span class="brace">[</span><span class="tri">▶</span><span class="brace">]</span></button>
+    </div>
+  </div>
+
+  <div class="results" id="results">
+    <div class="results-inner" id="resultsInner"></div>
+  </div>
+</div>
+
+<div class="symbols-col" id="symbolsCol"><div class="sym-toggle">⏸</div><span class="float-sym" style="font-size: 78px; left: 54px; bottom: -78px; color: rgb(200, 200, 200); animation-duration: 27.6234s; animation-delay: -11.6093s;">Κ</span><span class="float-sym" style="font-size: 52px; left: 94px; bottom: -52px; color: rgb(191, 191, 191); animation-duration: 15.849s; animation-delay: -11.4725s;">K</span><span class="float-sym" style="font-size: 52px; left: 14px; bottom: -52px; color: rgb(207, 207, 207); animation-duration: 34.1758s; animation-delay: -21.0032s;">W</span><span class="float-sym" style="font-size: 37px; left: 31px; bottom: -37px; color: rgb(188, 188, 188); animation-duration: 22.2135s; animation-delay: -16.6846s;">Α</span><span class="float-sym" style="font-size: 37px; left: 8px; bottom: -37px; color: rgb(207, 207, 207); animation-duration: 24.4786s; animation-delay: -12.19s;">Ρ</span><span class="float-sym" style="font-size: 15px; left: 168px; bottom: -15px; color: rgb(184, 184, 184); animation-duration: 33.7827s; animation-delay: -9.15192s;">t</span><span class="float-sym" style="font-size: 45px; left: 239px; bottom: -45px; color: rgb(229, 229, 229); animation-duration: 33.9613s; animation-delay: -15.2317s;">N</span><span class="float-sym" style="font-size: 25px; left: 90px; bottom: -25px; color: rgb(185, 185, 185); animation-duration: 14.3599s; animation-delay: -5.65175s;">θ</span><span class="float-sym" style="font-size: 77px; left: 218px; bottom: -77px; color: rgb(174, 174, 174); animation-duration: 20.4943s; animation-delay: -9.44513s;">Ψ</span><span class="float-sym" style="font-size: 35px; left: 132px; bottom: -35px; color: rgb(205, 205, 205); animation-duration: 17.7592s; animation-delay: -10.5256s;">M</span><span class="float-sym" style="font-size: 75px; left: 136px; bottom: -75px; color: rgb(207, 207, 207); animation-duration: 33.2038s; animation-delay: -0.955775s;">K</span><span class="float-sym" style="font-size: 72px; left: 36px; bottom: -72px; color: rgb(211, 211, 211); animation-duration: 23.0223s; animation-delay: -15.7151s;">Δ</span><span class="float-sym" style="font-size: 23px; left: 259px; bottom: -23px; color: rgb(212, 212, 212); animation-duration: 35.1118s; animation-delay: -12.4964s;">A</span><span class="float-sym" style="font-size: 16px; left: 175px; bottom: -16px; color: rgb(191, 191, 191); animation-duration: 34.4526s; animation-delay: -20.9549s;">ω</span><span class="float-sym" style="font-size: 67px; left: 113px; bottom: -67px; color: rgb(171, 171, 171); animation-duration: 26.4425s; animation-delay: -3.76957s;">Φ</span><span class="float-sym" style="font-size: 49px; left: 23px; bottom: -49px; color: rgb(204, 204, 204); animation-duration: 20.2669s; animation-delay: -11.1811s;">0</span><span class="float-sym" style="font-size: 46px; left: 102px; bottom: -46px; color: rgb(192, 192, 192); animation-duration: 32.9982s; animation-delay: -5.75394s;">r</span><span class="float-sym" style="font-size: 23px; left: 10px; bottom: -23px; color: rgb(174, 174, 174); animation-duration: 30.4956s; animation-delay: -14.7202s;">M</span><span class="float-sym" style="font-size: 75px; left: 137px; bottom: -75px; color: rgb(221, 221, 221); animation-duration: 23.6311s; animation-delay: -17.7951s;">Ψ</span><span class="float-sym" style="font-size: 81px; left: 6px; bottom: -81px; color: rgb(177, 177, 177); animation-duration: 30.833s; animation-delay: -14.4967s;">≠</span><span class="float-sym" style="font-size: 51px; left: 245px; bottom: -51px; color: rgb(222, 222, 222); animation-duration: 19.8601s; animation-delay: -9.38898s;">Τ</span><span class="float-sym" style="font-size: 59px; left: 223px; bottom: -59px; color: rgb(190, 190, 190); animation-duration: 18.629s; animation-delay: -4.24873s;">Y</span><span class="float-sym" style="font-size: 49px; left: 145px; bottom: -49px; color: rgb(212, 212, 212); animation-duration: 32.2804s; animation-delay: -27.3201s;">A</span><span class="float-sym" style="font-size: 56px; left: 235px; bottom: -56px; color: rgb(184, 184, 184); animation-duration: 15.6272s; animation-delay: -12.3923s;">I</span><span class="float-sym" style="font-size: 42px; left: 120px; bottom: -42px; color: rgb(186, 186, 186); animation-duration: 24.2585s; animation-delay: -11.3937s;">3</span><span class="float-sym" style="font-size: 20px; left: 144px; bottom: -20px; color: rgb(189, 189, 189); animation-duration: 19.6957s; animation-delay: -8.81831s;">O</span><span class="float-sym" style="font-size: 39px; left: 140px; bottom: -39px; color: rgb(228, 228, 228); animation-duration: 20.6222s; animation-delay: -13.4471s;">f</span><span class="float-sym" style="font-size: 35px; left: 132px; bottom: -35px; color: rgb(202, 202, 202); animation-duration: 14.709s; animation-delay: -9.46176s;">T</span><span class="float-sym" style="font-size: 74px; left: 35px; bottom: -74px; color: rgb(174, 174, 174); animation-duration: 26.6855s; animation-delay: -19.4713s;">∫</span><span class="float-sym" style="font-size: 50px; left: 231px; bottom: -50px; color: rgb(226, 226, 226); animation-duration: 21.5692s; animation-delay: -16.1967s;">I</span><span class="float-sym" style="font-size: 21px; left: 256px; bottom: -21px; color: rgb(205, 205, 205); animation-duration: 27.5311s; animation-delay: -18.3012s;">j</span><span class="float-sym" style="font-size: 52px; left: 113px; bottom: -52px; color: rgb(196, 196, 196); animation-duration: 14.6318s; animation-delay: -7.80319s;">W</span><span class="float-sym" style="font-size: 37px; left: 256px; bottom: -37px; color: rgb(176, 176, 176); animation-duration: 14.3252s; animation-delay: -2.70753s;">q</span><span class="float-sym" style="font-size: 60px; left: 227px; bottom: -60px; color: rgb(223, 223, 223); animation-duration: 15.1199s; animation-delay: -1.0772s;">ο</span><span class="float-sym" style="font-size: 14px; left: 9px; bottom: -14px; color: rgb(172, 172, 172); animation-duration: 28.5609s; animation-delay: -5.10056s;">n</span><span class="float-sym" style="font-size: 70px; left: 65px; bottom: -70px; color: rgb(171, 171, 171); animation-duration: 24.1919s; animation-delay: -15.7096s;">w</span><span class="float-sym" style="font-size: 61px; left: 74px; bottom: -61px; color: rgb(178, 178, 178); animation-duration: 27.9051s; animation-delay: -12.6256s;">f</span><span class="float-sym" style="font-size: 41px; left: 92px; bottom: -41px; color: rgb(227, 227, 227); animation-duration: 35.9673s; animation-delay: -5.22246s;">χ</span><span class="float-sym" style="font-size: 61px; left: 175px; bottom: -61px; color: rgb(215, 215, 215); animation-duration: 18.1336s; animation-delay: -5.38974s;">Α</span><span class="float-sym" style="font-size: 76px; left: 2px; bottom: -76px; color: rgb(212, 212, 212); animation-duration: 20.4386s; animation-delay: -12.7331s;">p</span><span class="float-sym" style="font-size: 78px; left: 127px; bottom: -78px; color: rgb(187, 187, 187); animation-duration: 23.539s; animation-delay: -19.5354s;">γ</span><span class="float-sym" style="font-size: 43px; left: 74px; bottom: -43px; color: rgb(181, 181, 181); animation-duration: 25.9327s; animation-delay: -2.43859s;">∂</span><span class="float-sym" style="font-size: 17px; left: 218px; bottom: -17px; color: rgb(197, 197, 197); animation-duration: 34.5753s; animation-delay: -13.7383s;">ο</span><span class="float-sym" style="font-size: 81px; left: 22px; bottom: -81px; color: rgb(186, 186, 186); animation-duration: 28.7239s; animation-delay: -2.70816s;">β</span><span class="float-sym" style="font-size: 45px; left: 2px; bottom: -45px; color: rgb(212, 212, 212); animation-duration: 19.0356s; animation-delay: -0.238858s;">Η</span><span class="float-sym" style="font-size: 23px; left: 276px; bottom: -23px; color: rgb(184, 184, 184); animation-duration: 31.3024s;">σ</span><span class="float-sym" style="font-size: 63px; left: 3px; bottom: -63px; color: rgb(176, 176, 176); animation-duration: 15.3031s;">≈</span><span class="float-sym" style="font-size: 83px; left: 160px; bottom: -83px; color: rgb(200, 200, 200); animation-duration: 30.4414s;">Ζ</span><span class="float-sym" style="font-size: 24px; left: 104px; bottom: -24px; color: rgb(188, 188, 188); animation-duration: 31.3796s;">c</span><span class="float-sym" style="font-size: 29px; left: 166px; bottom: -29px; color: rgb(185, 185, 185); animation-duration: 20.2807s;">0</span><span class="float-sym" style="font-size: 74px; left: 179px; bottom: -74px; color: rgb(204, 204, 204); animation-duration: 23.3997s;">τ</span><span class="float-sym" style="font-size: 43px; left: 192px; bottom: -43px; color: rgb(201, 201, 201); animation-duration: 19.4021s;">Υ</span><span class="float-sym" style="font-size: 43px; left: 159px; bottom: -43px; color: rgb(196, 196, 196); animation-duration: 30.6936s;">a</span></div>
+
+<div class="modal-overlay" id="shareModal">
+  <div class="modal" id="modalContent"></div>
+</div>
+
+<div class="modal-overlay" id="donateModal">
+  <div class="modal" id="donateModalContent"></div>
+</div>
+
+<div class="lang-bar-mobile" id="langBarMobile"><span class="powered-by-mobile">Powered by Sci-Hub</span><button class="lang-btn" data-lang="ru">РУ</button><button class="lang-btn" data-lang="zh">中</button><button class="lang-btn active" data-lang="en">EN</button><button class="lang-btn" data-lang="vi">VI</button><button class="lang-btn" data-lang="fr">FR</button><button class="lang-globe" title="More languages">🌐</button></div>
+
+<script>
+marked.setOptions({ breaks: true, gfm: true });
+
+// Rotating dash spinner: animates all .spinner elements
+const SPIN_CHARS = ["\u2014", "\\", "|", "/"];
+let spinIdx = 0;
+setInterval(() => {
+  spinIdx = (spinIdx + 1) % SPIN_CHARS.length;
+  const ch = SPIN_CHARS[spinIdx];
+  document.querySelectorAll(".spinner").forEach(el => { el.textContent = ch; });
+}, 150);
+
+const landingEl = document.getElementById("landing");
+const resultsEl = document.getElementById("results");
+const resultsInner = document.getElementById("resultsInner");
+const questionInput = document.getElementById("questionInput");
+const btnLaunch = document.getElementById("btnLaunch");
+
+let ws = null;
+let answerDiv = null;
+let answerText = "";
+let thinkingEl = null;
+let restartPendingQuestion = null;
+let cancelBtn = null;
+let generating = false;
+let replaying = false;
+let autoSaveTimer = null;
+let contentIdleTimer = null;
+
+let allAnswerChunks = [];
+let currentAnswerDiv = null;
+let holdDotsActive = false;
+
+// Watch mode: /?watch=<sessionId>
+const watchSessionId = new URLSearchParams(location.search).get("watch");
+
+// Watch mode: hide input controls
+if (watchSessionId) {
+  landingEl.classList.add("hidden");
+  resultsEl.classList.add("visible");
+  btnLaunch.disabled = true;
+  questionInput.disabled = true;
+  thinkingEl = document.createElement("div");
+  thinkingEl.className = "thinking-status";
+  thinkingEl.innerHTML = '<div class="spinner"></div>';
+  resultsInner.appendChild(thinkingEl);
+}
+
+// If we have an active session, immediately show results view before WS connects
+if (!watchSessionId) (function() {
+  const sid = sessionStorage.getItem("scibot_session");
+  const sq = sessionStorage.getItem("scibot_question");
+  if (sid && sq) {
+    landingEl.classList.add("hidden");
+    resultsEl.classList.add("visible");
+    btnLaunch.disabled = true;
+    const qDiv = document.createElement("div");
+    qDiv.className = "question-box";
+    qDiv.textContent = sq;
+    resultsInner.appendChild(qDiv);
+    thinkingEl = document.createElement("div");
+    thinkingEl.className = "thinking-status";
+    thinkingEl.innerHTML = '<div class="spinner"></div>';
+    resultsInner.appendChild(thinkingEl);
+  }
+})();
+
+// --- i18n ---
+const LANGS = {"ar":{"placeholder":"اطرح سؤالك","description":"مساعد بحثي مدعوم بالذكاء الاصطناعي","poweredBy":"مدعوم من Sci-Hub","thinking":"جارٍ التفكير...","searchingFor":"جارٍ البحث عن \"{q}\"...","newBtn":"جديد","shareBtn":"مشاركة","askAnother":"اطرح سؤالاً آخر","shareTitle":"مشاركة","shareWarning":"سيصبح ردك متاحاً للعامة.","shareConfirm":"نشر للعامة","shareCancel":"إلغاء","shareSuccess":"تمت المشاركة","shareSuccessMsg":"ردك الآن متاح للعامة.","shareCopy":"نسخ","shareCopied":"تم النسخ!","shareClose":"إغلاق","verifying":"جارٍ التحقق من أنك إنسان...","readingArticle":"جارٍ قراءة المقال: \"{title}\"...","generationCancelled":"تم إلغاء التوليد.","formattingCitations":"جارٍ تنسيق الاستشهادات بتنسيق {format} ... {doi}","serverRestarting":"يتم تحديث الخادم وسيعود للإجابة على الأسئلة خلال دقائق. يرجى الانتظار، سيتم إرسال سؤالك تلقائياً...","urlNotAllowed":"يرجى طرح سؤال بحثي بلغة طبيعية. لا يتم قبول الروابط ومعرّفات DOI والروابط المباشرة.","bookmark":"إشارة مرجعية","bookmarkHint":"اضغط Ctrl+D لإضافة هذه الصفحة إلى الإشارات المرجعية."},"cu":{"placeholder":"вопроси мѧ","description":"Наꙋчьныи помощьникъ на основѣ ИИ","poweredBy":"На основѣ Sci-Hub","thinking":"Размышлѧю...","searchingFor":"Ищꙋ «{q}»...","newBtn":"новъ","shareBtn":"подѣлити","askAnother":"задати иныи вопросъ","shareTitle":"Подѣлити","shareWarning":"Ѿвѣтъ бꙋдетъ доступенъ всѣмъ по ссылкѣ.","shareConfirm":"Ꙍбнародовати","shareCancel":"Ѿмѣна","shareSuccess":"Ꙍбнародовано","shareSuccessMsg":"Вашъ ѿвѣтъ нынѣ доступенъ по ссылкѣ.","shareCopy":"Копировати","shareCopied":"Скопировано!","shareClose":"Затворити","verifying":"Провѣрѧемъ, ꙗко вы не роботъ...","readingArticle":"Читаю статію: «{title}»...","generationCancelled":"Ѿмѣна.","formattingCitations":"Форматированіе ссылокъ въ {format} ... {doi}","serverRestarting":"Серверъ ѡбновлѧетсѧ. Ѿвѣты на вопросы возобновѧтсѧ чрезъ нѣсколько минутъ. Пожалꙋйста, подождите, вашъ вопросъ бꙋдетъ отправленъ самодѣйственно...","bookmark":"закладка","bookmarkHint":"Нажмите Ctrl+D, да приложите страницꙋ въ закладки.","urlNotAllowed":"Пожалꙋйста, задайте вопросъ, свѧзанныи съ наꙋчною тематикою, на естественномъ ѧзыцѣ. Ссылки, DOI и прѧмыѧ URL не пріемлютсѧ."},"de":{"placeholder":"fragen Sie einfach","description":"KI-gestützter Forschungsassistent","poweredBy":"Unterstützt von Sci-Hub","thinking":"Denke nach...","searchingFor":"Suche nach \"{q}\"...","newBtn":"neu","shareBtn":"teilen","askAnother":"eine andere Frage stellen","shareTitle":"Teilen","shareWarning":"Ihre Antwort wird öffentlich zugänglich.","shareConfirm":"Veröffentlichen","shareCancel":"Abbrechen","shareSuccess":"Geteilt","shareSuccessMsg":"Ihre Antwort ist jetzt öffentlich zugänglich.","shareCopy":"Kopieren","shareCopied":"Kopiert!","shareClose":"Schließen","verifying":"Überprüfung, dass Sie ein Mensch sind...","readingArticle":"Artikel wird gelesen: \"{title}\"...","generationCancelled":"Generierung abgebrochen.","formattingCitations":"Zitate im {format}-Format werden formatiert ... {doi}","serverRestarting":"Der Server wird aktualisiert und wird in wenigen Minuten wieder Fragen beantworten. Bitte warten Sie, Ihre Frage wird automatisch gesendet...","urlNotAllowed":"Bitte stellen Sie eine forschungsbezogene Frage in natürlicher Sprache. URLs, DOIs und direkte Links werden nicht akzeptiert.","bookmark":"Lesezeichen","bookmarkHint":"Drücken Sie Strg+D, um diese Seite als Lesezeichen zu speichern."},"el":{"placeholder":"ρωτήστε ό,τι θέλετε","description":"Ερευνητικός βοηθός με τεχνητή νοημοσύνη","poweredBy":"Με την υποστήριξη του Sci-Hub","thinking":"Σκέφτομαι...","searchingFor":"Αναζήτηση \"{q}\"...","newBtn":"νέο","shareBtn":"κοινοποίηση","askAnother":"κάντε άλλη ερώτηση","shareTitle":"Κοινοποίηση","shareWarning":"Η απάντησή σας θα γίνει δημόσια προσβάσιμη.","shareConfirm":"Δημοσίευση","shareCancel":"Ακύρωση","shareSuccess":"Κοινοποιήθηκε","shareSuccessMsg":"Η απάντησή σας είναι πλέον δημόσια προσβάσιμη.","shareCopy":"Αντιγραφή","shareCopied":"Αντιγράφηκε!","shareClose":"Κλείσιμο","verifying":"Επαλήθευση ότι είστε άνθρωπος...","readingArticle":"Ανάγνωση άρθρου: \"{title}\"...","generationCancelled":"Η δημιουργία ακυρώθηκε.","formattingCitations":"Μορφοποίηση παραπομπών σε {format} ... {doi}","serverRestarting":"Ο διακομιστής ενημερώνεται και θα επιστρέψει για να απαντά ερωτήσεις σε λίγα λεπτά. Παρακαλώ περιμένετε, η ερώτησή σας θα σταλεί αυτόματα...","urlNotAllowed":"Παρακαλώ κάντε μια ερευνητική ερώτηση σε φυσική γλώσσα. Δεν γίνονται δεκτές διευθύνσεις URL, DOI και άμεσοι σύνδεσμοι.","bookmark":"σελιδοδείκτης","bookmarkHint":"Πατήστε Ctrl+D για να προσθέσετε αυτή τη σελίδα στους σελιδοδείκτες."},"en":{"placeholder":"ask me anything","description":"AI-powered research assistant","poweredBy":"Powered by Sci-Hub","thinking":"Thinking...","searchingFor":"Searching for \"{q}\"...","newBtn":"new","shareBtn":"share","askAnother":"ask another question","shareTitle":"Share","shareWarning":"This will make your response publicly accessible.","shareConfirm":"Make Public","shareCancel":"Cancel","shareSuccess":"Shared","shareSuccessMsg":"Your response is now publicly accessible.","shareCopy":"Copy","shareCopied":"Copied!","shareClose":"Close","verifying":"Verifying that you are human...","readingArticle":"Reading article: \"{title}\"...","generationCancelled":"Generation cancelled.","formattingCitations":"Formatting citations in {format} ... {doi}","serverRestarting":"Server is being updated and will return to answering questions in a few minutes. Please wait, your question will be sent automatically...","urlNotAllowed":"Please ask a research-related question in natural language. URLs, DOIs, and direct links are not accepted as input.","bookmark":"bookmark","bookmarkHint":"Press Ctrl+D to bookmark this page."},"es":{"placeholder":"pregunta lo que quieras","description":"Asistente de investigación impulsado por IA","poweredBy":"Impulsado por Sci-Hub","thinking":"Pensando...","searchingFor":"Buscando \"{q}\"...","newBtn":"nuevo","shareBtn":"compartir","askAnother":"hacer otra pregunta","shareTitle":"Compartir","shareWarning":"Tu respuesta será accesible públicamente.","shareConfirm":"Hacer público","shareCancel":"Cancelar","shareSuccess":"Compartido","shareSuccessMsg":"Tu respuesta ahora es accesible públicamente.","shareCopy":"Copiar","shareCopied":"¡Copiado!","shareClose":"Cerrar","verifying":"Verificando que eres humano...","readingArticle":"Leyendo artículo: \"{title}\"...","generationCancelled":"Generación cancelada.","formattingCitations":"Formateando citas en {format} ... {doi}","serverRestarting":"El servidor se está actualizando y volverá a responder preguntas en unos minutos. Por favor espere, su pregunta se enviará automáticamente...","urlNotAllowed":"Por favor, haga una pregunta de investigación en lenguaje natural. No se aceptan URLs, DOIs ni enlaces directos.","bookmark":"marcador","bookmarkHint":"Presione Ctrl+D para agregar esta página a marcadores."},"fa":{"placeholder":"هر چه می‌خواهید بپرسید","description":"دستیار پژوهشی مبتنی بر هوش مصنوعی","poweredBy":"با پشتیبانی Sci-Hub","thinking":"در حال فکر کردن...","searchingFor":"در حال جستجوی \"{q}\"...","newBtn":"جدید","shareBtn":"اشتراک‌گذاری","askAnother":"سؤال دیگری بپرسید","shareTitle":"اشتراک‌گذاری","shareWarning":"پاسخ شما به صورت عمومی قابل دسترسی خواهد بود.","shareConfirm":"انتشار عمومی","shareCancel":"لغو","shareSuccess":"به اشتراک گذاشته شد","shareSuccessMsg":"پاسخ شما اکنون به صورت عمومی قابل دسترسی است.","shareCopy":"کپی","shareCopied":"کپی شد!","shareClose":"بستن","verifying":"در حال تأیید انسان بودن شما...","readingArticle":"در حال خواندن مقاله: \"{title}\"...","generationCancelled":"تولید لغو شد.","formattingCitations":"قالب‌بندی استنادها در {format} ... {doi}","serverRestarting":"سرور در حال به‌روزرسانی است و طی چند دقیقه به پاسخ‌گویی باز خواهد گشت. لطفاً صبر کنید، سؤال شما به صورت خودکار ارسال خواهد شد...","urlNotAllowed":"لطفاً یک سؤال پژوهشی به زبان طبیعی بپرسید. لینک‌ها، DOI و آدرس‌های مستقیم پذیرفته نمی‌شوند.","bookmark":"نشانک","bookmarkHint":"برای افزودن این صفحه به نشانک‌ها Ctrl+D را فشار دهید."},"fr":{"placeholder":"posez votre question","description":"Assistant de recherche propulsé par l'IA","poweredBy":"Propulsé par Sci-Hub","thinking":"Réflexion en cours...","searchingFor":"Recherche de \"{q}\"...","newBtn":"nouveau","shareBtn":"partager","askAnother":"poser une autre question","shareTitle":"Partager","shareWarning":"Votre réponse sera accessible publiquement.","shareConfirm":"Rendre public","shareCancel":"Annuler","shareSuccess":"Partagé","shareSuccessMsg":"Votre réponse est maintenant accessible publiquement.","shareCopy":"Copier","shareCopied":"Copié !","shareClose":"Fermer","verifying":"Vérification que vous êtes humain...","readingArticle":"Lecture de l'article : \"{title}\"...","generationCancelled":"Génération annulée.","formattingCitations":"Mise en forme des citations en {format} ... {doi}","serverRestarting":"Le serveur est en cours de mise à jour et reprendra les réponses dans quelques minutes. Veuillez patienter, votre question sera envoyée automatiquement...","urlNotAllowed":"Veuillez poser une question de recherche en langage naturel. Les URL, DOI et liens directs ne sont pas acceptés.","bookmark":"marque-page","bookmarkHint":"Appuyez sur Ctrl+D pour ajouter cette page aux favoris."},"he":{"placeholder":"שאלו אותי כל דבר","description":"עוזר מחקר מבוסס בינה מלאכותית","poweredBy":"מופעל על ידי Sci-Hub","thinking":"חושב...","searchingFor":"מחפש \"{q}\"...","newBtn":"חדש","shareBtn":"שיתוף","askAnother":"שאלו שאלה נוספת","shareTitle":"שיתוף","shareWarning":"פעולה זו תהפוך את התשובה לנגישה לכולם.","shareConfirm":"פרסום","shareCancel":"ביטול","shareSuccess":"שותף","shareSuccessMsg":"התשובה שלך נגישה כעת לכולם.","shareCopy":"העתקה","shareCopied":"הועתק!","shareClose":"סגירה","verifying":"מאמת שאתה אדם...","readingArticle":"קורא מאמר: \"{title}\"...","generationCancelled":"היצירה בוטלה.","formattingCitations":"מעצב ציטוטים בפורמט {format} ... {doi}","serverRestarting":"השרת מתעדכן ויחזור לענות על שאלות בעוד מספר דקות. אנא המתינו, השאלה שלכם תישלח אוטומטית...","bookmark":"סימנייה","bookmarkHint":"לחצו Ctrl+D כדי להוסיף דף זה לסימניות.","urlNotAllowed":"אנא שאלו שאלה מחקרית בשפה טבעית. כתובות URL, מזהי DOI וקישורים ישירים אינם מתקבלים כקלט."},"hy":{"placeholder":"հարցրեք ինչ ուզում եք","description":"Հետազոտական օգնական՝ աշխատող ՀԻ-ով","poweredBy":"Sci-Hub-ի աջակցությամբ","thinking":"Մտածում եմ...","searchingFor":"Օրոնում եմ «{q}»...","newBtn":"նոր","shareBtn":"կիսել","askAnother":"տվեք այլ հարց","shareTitle":"Կիսել","shareWarning":"Ձեր պատասխանը կդառնա հանրային հասանելի։","shareConfirm":"Հրապարակել","shareCancel":"Չեղարկել","shareSuccess":"Կիսվել է","shareSuccessMsg":"Ձեր պատասխանը այժմ հանրային հասանելի է։","shareCopy":"Պատճենել","shareCopied":"Պատճենվել է։","shareClose":"Փակել","verifying":"Ստուգում ենք՝ որ դուք մարդ եք...","readingArticle":"Կարդալում եմ հոդվածը՝ «{title}»...","generationCancelled":"Ստեղծումը չեղարկվել է։","formattingCitations":"Մեջբերումների ձևավորում {format} ... {doi}","serverRestarting":"Սերվերը թարմացվում է և մի քանի րոպեից հետո կվերադառնա պատասխաններին։ Խնդրում ենք՝ սպասեք՝ ձեր հարցը կուղարկվի ինքնաշխատ...","urlNotAllowed":"Խնդրում ենք՝ տվեք հետազոտական հարց բնական լեզվով։ URL-ներ՝ DOI-ներ և ուղիղ հղումներ չեն ընդունվում։","bookmark":"էջանիշ","bookmarkHint":"Սեղմեք Ctrl+D՝ այս էջը էջանիշներին ավելացնելու համար։"},"it":{"placeholder":"chiedi quello che vuoi","description":"Assistente di ricerca basato sull'IA","poweredBy":"Fornito da Sci-Hub","thinking":"Sto pensando...","searchingFor":"Ricerca di \"{q}\"...","newBtn":"nuovo","shareBtn":"condividi","askAnother":"fai un'altra domanda","shareTitle":"Condividi","shareWarning":"La tua risposta diventerà accessibile pubblicamente.","shareConfirm":"Rendi pubblico","shareCancel":"Annulla","shareSuccess":"Condiviso","shareSuccessMsg":"La tua risposta è ora accessibile pubblicamente.","shareCopy":"Copia","shareCopied":"Copiato!","shareClose":"Chiudi","verifying":"Verifica che sei umano...","readingArticle":"Lettura dell'articolo: \"{title}\"...","generationCancelled":"Generazione annullata.","formattingCitations":"Formattazione delle citazioni in {format} ... {doi}","serverRestarting":"Il server è in fase di aggiornamento e tornerà a rispondere alle domande tra pochi minuti. Attendere, la domanda verrà inviata automaticamente...","urlNotAllowed":"Si prega di porre una domanda di ricerca in linguaggio naturale. URL, DOI e link diretti non sono accettati.","bookmark":"segnalibro","bookmarkHint":"Premi Ctrl+D per aggiungere questa pagina ai segnalibri."},"ja":{"placeholder":"何でも聞いてください","description":"AI搭載リサーチアシスタント","poweredBy":"Sci-Hub提供","thinking":"考え中...","searchingFor":"「{q}」を検索中...","newBtn":"新規","shareBtn":"共有","askAnother":"別の質問をする","shareTitle":"共有","shareWarning":"回答が一般公開されます。","shareConfirm":"公開する","shareCancel":"キャンセル","shareSuccess":"共有済み","shareSuccessMsg":"回答が一般公開されました。","shareCopy":"コピー","shareCopied":"コピーしました！","shareClose":"閉じる","verifying":"人間であることを確認中...","readingArticle":"論文を読んでいます：「{title}」...","generationCancelled":"生成がキャンセルされました。","formattingCitations":"{format}形式で引用をフォーマット中 ... {doi}","serverRestarting":"サーバーを更新中です。数分後に質問への回答を再開します。お待ちください。質問は自動的に送信されます...","urlNotAllowed":"自然言語で研究に関する質問をしてください。URL、DOI、直接リンクは受け付けていません。","bookmark":"ブックマーク","bookmarkHint":"Ctrl+Dを押してこのページをブックマークに追加してください。"},"kk":{"placeholder":"кез келген сұрақ қойыңыз","description":"AI негізіндегі зерттеу көмекшісі","poweredBy":"Sci-Hub қолдауымен","thinking":"Ойланып жатырмын...","searchingFor":"\"{q}\" іздеуде...","newBtn":"жаңа","shareBtn":"бөлісу","askAnother":"басқа сұрақ қою","shareTitle":"Бөлісу","shareWarning":"Жауабыңыз жалпыға қолжетімді болады.","shareConfirm":"Жариялау","shareCancel":"Болдырмау","shareSuccess":"Бөлісілді","shareSuccessMsg":"Жауабыңыз енді жалпыға қолжетімді.","shareCopy":"Көшіру","shareCopied":"Көшірілді!","shareClose":"Жабу","verifying":"Адам екеніңізді тексеруде...","readingArticle":"Мақала оқылуда: «{title}»...","generationCancelled":"Генерация тоқтатылды.","formattingCitations":"{format} пішімінде дәйексөздерді пішімдеу ... {doi}","serverRestarting":"Сервер жаңартылуда, бірнеше минуттан кейін сұрақтарға жауап береді. Күте тұрыңыз, сұрағыңыз автоматты түрде жіберіледі...","urlNotAllowed":"Зерттеуге қатысты сұрақты табиғи тілде қойыңыз. URL, DOI және тікелей сілтемелер қабылданбайды.","bookmark":"бетбелгі","bookmarkHint":"Бұл бетті бетбелгілерге қосу үшін Ctrl+D басыңыз."},"ko":{"placeholder":"무엇이든 물어보세요","description":"AI 기반 연구 어시스턴트","poweredBy":"Sci-Hub 제공","thinking":"생각 중...","searchingFor":"\"{q}\" 검색 중...","newBtn":"새 질문","shareBtn":"공유","askAnother":"다른 질문하기","shareTitle":"공유","shareWarning":"답변이 공개됩니다.","shareConfirm":"공개하기","shareCancel":"취소","shareSuccess":"공유됨","shareSuccessMsg":"답변이 공개되었습니다.","shareCopy":"복사","shareCopied":"복사됨!","shareClose":"닫기","verifying":"사람인지 확인 중...","readingArticle":"논문 읽는 중: \"{title}\"...","generationCancelled":"생성이 취소되었습니다.","formattingCitations":"{format} 형식으로 인용 서식 지정 중 ... {doi}","serverRestarting":"서버가 업데이트 중이며 몇 분 후에 질문에 답변할 수 있습니다. 잠시 기다려 주세요. 질문이 자동으로 전송됩니다...","urlNotAllowed":"자연어로 연구 관련 질문을 해주세요. URL, DOI 및 직접 링크는 허용되지 않습니다.","bookmark":"북마크","bookmarkHint":"Ctrl+D를 눌러 이 페이지를 북마크에 추가하세요."},"la":{"placeholder":"roga me quidlibet","description":"Adiutor scientificus intelligentia artificiali instructus","poweredBy":"Functus per Sci-Hub","thinking":"Cogito...","searchingFor":"Quaero \"{q}\"...","newBtn":"novum","shareBtn":"communicare","askAnother":"aliam quaestionem roga","shareTitle":"Communicare","shareWarning":"Hoc responsum publice accessibile fiet.","shareConfirm":"Publicare","shareCancel":"Abrogare","shareSuccess":"Publicatum","shareSuccessMsg":"Responsum tuum nunc publice accessibile est.","shareCopy":"Exscribere","shareCopied":"Exscriptum!","shareClose":"Claudere","verifying":"Confirmamus te hominem esse...","readingArticle":"Lego articulum: \"{title}\"...","generationCancelled":"Generatio abrogata.","formattingCitations":"Citationes in {format} formando ... {doi}","serverRestarting":"Servitor renovatur et intra paucas minutas ad quaestiones respondendas redibit. Quaeso exspecta, quaestio tua automatice mittetur...","bookmark":"nota","bookmarkHint":"Preme Ctrl+D ut hanc paginam in notas addas.","urlNotAllowed":"Quaeso quaestionem scientificam lingua naturali roga. URL, DOI et nexus directi non accipiuntur."},"pt":{"placeholder":"pergunte o que quiser","description":"Assistente de pesquisa com IA","poweredBy":"Desenvolvido com Sci-Hub","thinking":"Pensando...","searchingFor":"Pesquisando \"{q}\"...","newBtn":"novo","shareBtn":"compartilhar","askAnother":"fazer outra pergunta","shareTitle":"Compartilhar","shareWarning":"Sua resposta ficará acessível publicamente.","shareConfirm":"Tornar público","shareCancel":"Cancelar","shareSuccess":"Compartilhado","shareSuccessMsg":"Sua resposta agora está acessível publicamente.","shareCopy":"Copiar","shareCopied":"Copiado!","shareClose":"Fechar","verifying":"Verificando que você é humano...","readingArticle":"Lendo artigo: \"{title}\"...","generationCancelled":"Geração cancelada.","formattingCitations":"Formatando citações em {format} ... {doi}","serverRestarting":"O servidor está sendo atualizado e voltará a responder perguntas em alguns minutos. Por favor aguarde, sua pergunta será enviada automaticamente...","urlNotAllowed":"Por favor, faça uma pergunta de pesquisa em linguagem natural. URLs, DOIs e links diretos não são aceitos.","bookmark":"favorito","bookmarkHint":"Pressione Ctrl+D para adicionar esta página aos favoritos."},"ru":{"placeholder":"задайте вопрос","description":"Научный ассистент на базе ИИ","poweredBy":"На базе Sci-Hub","thinking":"Думаю...","searchingFor":"Поиск «{q}»...","newBtn":"новый вопрос","shareBtn":"поделиться","askAnother":"задать другой вопрос","shareTitle":"Поделиться","shareWarning":"Ответ станет доступен по ссылке для всех.","shareConfirm":"Опубликовать","shareCancel":"Отмена","shareSuccess":"Опубликовано","shareSuccessMsg":"Ваш ответ теперь доступен по ссылке.","shareCopy":"Копировать","shareCopied":"Скопировано!","shareClose":"Закрыть","verifying":"Проверяем, что вы не робот...","readingArticle":"Читаю статью: «{title}»...","generationCancelled":"Отмена.","formattingCitations":"Форматирование ссылок в {format} ... {doi}","serverRestarting":"Сервер обновляется. Ответы на вопросы возобновятся через несколько минут. Пожалуйста, подождите, ваш вопрос будет отправлен автоматически...","urlNotAllowed":"Пожалуйста, задайте вопрос, связанный с научной тематикой, на естественном языке. Ссылки, DOI и прямые URL не принимаются.","bookmark":"в закладки","bookmarkHint":"Нажмите Ctrl+D, чтобы добавить страницу в закладки."},"tr":{"placeholder":"bir soru sorun","description":"Yapay zeka destekli araştırma asistanı","poweredBy":"Sci-Hub tarafından desteklenmektedir","thinking":"Düşünüyor...","searchingFor":"\"{q}\" aranıyor...","newBtn":"yeni","shareBtn":"paylaş","askAnother":"başka bir soru sorun","shareTitle":"Paylaş","shareWarning":"Yanıtınız herkese açık olacaktır.","shareConfirm":"Herkese Aç","shareCancel":"İptal","shareSuccess":"Paylaşıldı","shareSuccessMsg":"Yanıtınız artık herkese açıktır.","shareCopy":"Kopyala","shareCopied":"Kopyalandı!","shareClose":"Kapat","verifying":"İnsan olduğunuz doğrulanıyor...","readingArticle":"Makale okunuyor: \"{title}\"...","generationCancelled":"Üretim iptal edildi.","formattingCitations":"{format} biçiminde atıflar düzenleniyor ... {doi}","serverRestarting":"Sunucu güncelleniyor ve birkaç dakika içinde soruları yanıtlamaya devam edecektir. Lütfen bekleyin, sorunuz otomatik olarak gönderilecektir...","urlNotAllowed":"Lütfen doğal dilde araştırmayla ilgili bir soru sorun. URL'ler, DOI'ler ve doğrudan bağlantılar kabul edilmez.","bookmark":"yer imi","bookmarkHint":"Bu sayfayı yer imlerine eklemek için Ctrl+D tuşlarına basın."},"vi":{"placeholder":"hãy hỏi bất cứ điều gì","description":"Trợ lý nghiên cứu hỗ trợ bởi AI","poweredBy":"Được hỗ trợ bởi Sci-Hub","thinking":"Đang suy nghĩ...","searchingFor":"Đang tìm kiếm \"{q}\"...","newBtn":"mới","shareBtn":"chia sẻ","askAnother":"đặt câu hỏi khác","shareTitle":"Chia sẻ","shareWarning":"Câu trả lời của bạn sẽ được công khai.","shareConfirm":"Công khai","shareCancel":"Hủy","shareSuccess":"Đã chia sẻ","shareSuccessMsg":"Câu trả lời của bạn hiện đã được công khai.","shareCopy":"Sao chép","shareCopied":"Đã sao chép!","shareClose":"Đóng","verifying":"Đang xác minh bạn là người...","readingArticle":"Đang đọc bài báo: \"{title}\"...","generationCancelled":"Đã hủy tạo nội dung.","formattingCitations":"Đang định dạng trích dẫn theo {format} ... {doi}","serverRestarting":"Máy chủ đang được cập nhật và sẽ tiếp tục trả lời câu hỏi trong vài phút. Vui lòng đợi, câu hỏi của bạn sẽ được gửi tự động...","urlNotAllowed":"Vui lòng đặt câu hỏi nghiên cứu bằng ngôn ngữ tự nhiên. URL, DOI và liên kết trực tiếp không được chấp nhận.","bookmark":"đánh dấu","bookmarkHint":"Nhấn Ctrl+D để đánh dấu trang này."},"zh":{"placeholder":"请输入问题","description":"AI 驱动的科研助手","poweredBy":"由 Sci-Hub 提供支持","thinking":"思考中...","searchingFor":"正在搜索\"{q}\"...","newBtn":"新问题","shareBtn":"分享","askAnother":"再问一个问题","shareTitle":"分享","shareWarning":"您的回答将被公开访问。","shareConfirm":"公开发布","shareCancel":"取消","shareSuccess":"已分享","shareSuccessMsg":"您的回答现已公开。","shareCopy":"复制","shareCopied":"已复制！","shareClose":"关闭","verifying":"正在验证您是人类...","readingArticle":"正在阅读文章：\"{title}\"...","generationCancelled":"生成已取消。","formattingCitations":"正在格式化 {format} 引用 ... {doi}","serverRestarting":"服务器正在更新，几分钟后将恢复回答问题。请稍候，您的问题将自动发送...","urlNotAllowed":"请用自然语言提出与研究相关的问题。不接受URL、DOI和直接链接。","bookmark":"收藏","bookmarkHint":"请按 Ctrl+D 收藏此页面。"}};
+const DONATE = {"kk":{"donate":"жобаны қолдау","message":"Халық банкі QR. Рахмет!","img":"/donate-qr/kk.jpg"},"kz":{"donate":"жобаны қолдау","message":"Халық банкі QR. Рахмет!","img":"/donate-qr/kz.jpg"},"ru":{"donate":"донат на развитие проекта","message":"Задонатить можно по QR коду. Спасибо!","img":"/donate-qr/ru.png"},"zh":{"donate":"捐赠支持项目","message":"通过支付宝捐赠","img":"/donate-qr/zh.jpg"}};
+
+const ALL_LANGS = [
+  { code: "en", label: "EN" },
+  { code: "ru", label: "РУ" },
+  { code: "zh", label: "中" },
+  { code: "ar", label: "ع" },
+  { code: "es", label: "ES" },
+  { code: "tr", label: "TR" },
+  { code: "vi", label: "VI" },
+  { code: "ko", label: "한" },
+  { code: "de", label: "DE" },
+  { code: "fr", label: "FR" },
+  { code: "ja", label: "日" },
+  { code: "pt", label: "PT" },
+  { code: "kk", label: "ҚЗ" },
+  { code: "el", label: "ΕΛ" },
+  { code: "it", label: "IT" },
+  { code: "fa", label: "فا" },
+  { code: "he", label: "עב" },
+  { code: "cu", label: "ЦС" },
+  { code: "la", label: "LA" },
+  { code: "hy", label: "ՀՅ" },
+];
+
+function detectLang() {
+  var lang = (navigator.language || navigator.userLanguage || "").toLowerCase();
+  if (lang.startsWith("zh")) return "zh";
+  if (lang.startsWith("ar")) return "ar";
+  if (lang.startsWith("es")) return "es";
+  if (lang.startsWith("tr")) return "tr";
+  if (lang.startsWith("vi")) return "vi";
+  if (lang.startsWith("ko")) return "ko";
+  if (lang.startsWith("de")) return "de";
+  if (lang.startsWith("fr")) return "fr";
+  if (lang.startsWith("ja")) return "ja";
+  if (lang.startsWith("pt")) return "pt";
+  if (lang.startsWith("kk")) return "kk";
+  if (lang.startsWith("el")) return "el";
+  if (lang.startsWith("it")) return "it";
+  if (lang.startsWith("fa")) return "fa";
+  if (lang.startsWith("he") || lang.startsWith("iw")) return "he";
+  if (lang.startsWith("hy")) return "hy";
+  var cisLangs = ["ru","uk","be","uz","ky","tg","az","ka","tk","mn","tt","ba"];
+  for (var i = 0; i < cisLangs.length; i++) { if (lang.startsWith(cisLangs[i])) return "ru"; }
+  try {
+    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+    if (/^Asia\/(Shanghai|Chongqing|Harbin|Urumqi|Hong_Kong|Macau|Taipei)/.test(tz)) return "zh";
+    if (/^Asia\/Almaty/.test(tz)) return "kk";
+    if (/^Asia\/Yerevan/.test(tz)) return "hy";
+    if (/^(Europe\/(Moscow|Minsk|Kiev|Kyiv|Samara|Volgograd|Saratov|Ulyanovsk|Astrakhan|Kirov)|Asia\/(Tashkent|Bishkek|Tbilisi|Baku|Ashgabat|Dushanbe|Novosibirsk|Omsk|Krasnoyarsk|Irkutsk|Yakutsk|Vladivostok|Kamchatka))/.test(tz)) return "ru";
+    if (/^(Asia\/(Riyadh|Baghdad|Kuwait|Dubai|Qatar|Bahrain|Muscat|Aden)|Africa\/(Cairo|Tripoli|Algiers|Tunis|Casablanca|Khartoum))/.test(tz)) return "ar";
+    if (/^(America\/(Mexico_City|Bogota|Lima|Santiago|Buenos_Aires|Caracas|Montevideo|Asuncion|La_Paz|Guayaquil)|Europe\/Madrid)/.test(tz)) return "es";
+    if (/^(Europe\/Istanbul|Asia\/Istanbul)/.test(tz)) return "tr";
+    if (/^Asia\/(Ho_Chi_Minh|Saigon)/.test(tz)) return "vi";
+    if (/^Asia\/(Seoul|Pyongyang)/.test(tz)) return "ko";
+    if (/^Europe\/(Berlin|Vienna|Zurich)/.test(tz)) return "de";
+    if (/^Europe\/(Paris|Brussels)/.test(tz)) return "fr";
+    if (/^Asia\/Tokyo/.test(tz)) return "ja";
+    if (/^(America\/(Sao_Paulo|Fortaleza|Recife|Belem|Manaus)|Europe\/Lisbon)/.test(tz)) return "pt";
+    if (/^Europe\/Athens/.test(tz)) return "el";
+    if (/^Europe\/Rome/.test(tz)) return "it";
+    if (/^Asia\/Tehran/.test(tz)) return "fa";
+    if (/^Asia\/Jerusalem/.test(tz)) return "he";
+  } catch(e) {}
+  return "en";
+}
+
+let currentLang = localStorage.getItem("scibot_lang") || detectLang();
+
+function t(key, vars) {
+  let s = (LANGS[currentLang] && LANGS[currentLang][key]) || LANGS.en[key] || "";
+  if (vars) {
+    for (const [k, v] of Object.entries(vars)) {
+      s = s.replace("{" + k + "}", v);
+    }
+  }
+  return s;
+}
+
+function pickVisibleLangs() {
+  // Always show: current language, English, Chinese, Russian + 2 random others
+  const fixed = new Set([currentLang, "en", "zh", "ru"]);
+  const others = ALL_LANGS.filter(l => !fixed.has(l.code));
+  for (let i = others.length - 1; i > 0; i--) {
+    const j = Math.random() * (i + 1) | 0;
+    [others[i], others[j]] = [others[j], others[i]];
+  }
+  const visible = Array.from(fixed);
+  if (others[0]) visible.push(others[0].code);
+  if (others[1]) visible.push(others[1].code);
+  return visible;
+}
+
+let visibleLangCodes = pickVisibleLangs();
+
+function buildLangBar(container) {
+  const poweredSpan = container.querySelector(".powered-by-mobile");
+  container.innerHTML = "";
+  if (poweredSpan) container.appendChild(poweredSpan);
+  const expanded = container.classList.contains("expanded");
+
+  let langsToShow;
+  if (expanded) {
+    langsToShow = ALL_LANGS.slice();
+  } else {
+    langsToShow = ALL_LANGS.filter(l => visibleLangCodes.includes(l.code));
+  }
+  // Move current language to center
+  const curIdx = langsToShow.findIndex(l => l.code === currentLang);
+  if (curIdx >= 0) {
+    const cur = langsToShow.splice(curIdx, 1)[0];
+    const mid = Math.floor(langsToShow.length / 2);
+    langsToShow.splice(mid, 0, cur);
+  }
+
+  for (const l of langsToShow) {
+    const btn = document.createElement("button");
+    btn.className = "lang-btn" + (l.code === currentLang ? " active" : "");
+    btn.dataset.lang = l.code;
+    btn.textContent = l.label;
+    btn.onclick = function() {
+      switchLang(l.code);
+    };
+    container.appendChild(btn);
+  }
+
+  // Globe button
+  const globe = document.createElement("button");
+  globe.className = "lang-globe";
+  globe.innerHTML = "&#127760;";
+  globe.title = expanded ? "" : "More languages";
+  globe.onclick = function(e) {
+    e.stopPropagation();
+    container.classList.toggle("expanded");
+    buildLangBar(container);
+  };
+  container.appendChild(globe);
+}
+
+function renderAllLangBars() {
+  document.querySelectorAll(".lang-bar, .lang-bar-mobile").forEach(bar => {
+    bar.classList.remove("expanded");
+    buildLangBar(bar);
+  });
+}
+
+function switchLang(lang) {
+  currentLang = lang;
+  localStorage.setItem("scibot_lang", lang);
+
+  // Recompute visible langs with new current language, then rebuild
+  visibleLangCodes = pickVisibleLangs();
+  renderAllLangBars();
+
+  questionInput.placeholder = t("placeholder");
+  const descEl = document.querySelector(".logo-text .description");
+  if (descEl) descEl.textContent = t("description");
+  const poweredEl = document.querySelector(".powered-by");
+  if (poweredEl) poweredEl.textContent = t("poweredBy");
+  const poweredMobileEl = document.querySelector(".powered-by-mobile");
+  if (poweredMobileEl) poweredMobileEl.textContent = t("poweredBy");
+}
+
+// Build language bars and apply saved language on load
+(function() {
+  renderAllLangBars();
+  if (currentLang !== "en") {
+    switchLang(currentLang);
+  }
+})();
+
+function escapeHtml(str) {
+  const d = document.createElement("div");
+  d.textContent = str;
+  return d.innerHTML;
+}
+
+function scrollToBottom() {
+  if (window.innerWidth < 900) {
+    window.scrollTo(0, document.body.scrollHeight);
+  } else {
+    resultsEl.scrollTop = resultsEl.scrollHeight;
+  }
+}
+
+function handleKey(e) {
+  if (e.key === "Enter" && !e.shiftKey) {
+    e.preventDefault();
+    launch();
+  }
+}
+
+function autoGrow(el) {
+  el.style.height = "auto";
+  el.style.height = el.scrollHeight + "px";
+}
+
+function ensureAnswerDiv() {
+  if (currentAnswerDiv && currentAnswerDiv.parentNode === resultsInner) {
+    // Check it's the last real element (cancel button doesn't count)
+    let last = resultsInner.lastElementChild;
+    if (last && last.classList.contains("cancel-btn")) last = last.previousElementSibling;
+    if (last === currentAnswerDiv) return currentAnswerDiv;
+  }
+  currentAnswerDiv = document.createElement("div");
+  currentAnswerDiv.className = "answer";
+  // Insert before cancel button if present, otherwise append
+  if (cancelBtn && cancelBtn.parentNode === resultsInner) {
+    resultsInner.insertBefore(currentAnswerDiv, cancelBtn);
+  } else {
+    resultsInner.appendChild(currentAnswerDiv);
+  }
+  allAnswerChunks = [];
+  return currentAnswerDiv;
+}
+
+function unescapeHtml(str) {
+  const ta = document.createElement('textarea');
+  ta.innerHTML = str;
+  return ta.value;
+}
+
+let mathPlaceholders = [];
+
+function extractMath(text) {
+  mathPlaceholders = [];
+  let idx = 0;
+  // Block math first: $$...$$
+  text = text.replace(/\$\$([\s\S]*?)\$\$/g, (m, tex) => {
+    const key = '\x00MATH' + idx++ + '\x00';
+    mathPlaceholders.push({ key, tex: tex.trim(), display: true });
+    return key;
+  });
+  // Inline math: $...$
+  text = text.replace(/\$([^\$\n]+?)\$/g, (m, tex) => {
+    if (/^\d+$/.test(tex.trim())) return m;
+    const key = '\x00MATH' + idx++ + '\x00';
+    mathPlaceholders.push({ key, tex: tex.trim(), display: false });
+    return key;
+  });
+  return text;
+}
+
+function decodeHTMLEntities(str) {
+  return String(str).replace(/&#x27;/gi, "'").replace(/&#0*39;/g, "'")
+    .replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+}
+
+function sanitizeHTML(str) {
+  var safeTags = ['i', 'b', 'em', 'strong', 'sub', 'sup', 'br'];
+  var decoded = decodeHTMLEntities(str);
+  return decoded.replace(/<\/?[a-zA-Z][^>]*>|[^<]+|</g, function(match) {
+    if (match === '<' || match.charAt(0) !== '<') {
+      return escapeHtml(match);
+    }
+    var inner = match.slice(1, -1);
+    var closing = inner.charAt(0) === '/';
+    if (closing) inner = inner.slice(1);
+    var nameMatch = inner.match(/^(\w+)/);
+    if (!nameMatch) return escapeHtml(match);
+    var tagName = nameMatch[1].toLowerCase();
+    if (safeTags.indexOf(tagName) >= 0) {
+      return '<' + (closing ? '/' : '') + tagName + '>';
+    }
+    if (tagName === 'span') {
+      return closing ? '</span>' : '<span>';
+    }
+    return escapeHtml(match);
+  });
+}
+
+function renderMathInText(str, forceInline) {
+  // Render $$...$$ and $...$ in a plain text string, return HTML
+  // forceInline: treat $$ as inline too (for titles/abstracts)
+  let html = sanitizeHTML(str);
+  html = html.replace(/\$\$([\s\S]*?)\$\$/g, (m, tex) => {
+    try { return katex.renderToString(tex.trim(), { displayMode: !forceInline, throwOnError: false }); }
+    catch { return m; }
+  });
+  html = html.replace(/\$([^\$\n]+?)\$/g, (m, tex) => {
+    if (/^\d+$/.test(tex.trim())) return m;
+    try { return katex.renderToString(tex.trim(), { displayMode: false, throwOnError: false }); }
+    catch { return m; }
+  });
+  return html;
+}
+
+function restoreMath(el) {
+  for (const { key, tex, display } of mathPlaceholders) {
+    try {
+      const rendered = katex.renderToString(tex, { displayMode: display, throwOnError: false });
+      el.innerHTML = el.innerHTML.replace(key, rendered);
+    } catch {
+      el.innerHTML = el.innerHTML.replace(key, (display ? '$$' : '$') + tex + (display ? '$$' : '$'));
+    }
+  }
+  mathPlaceholders = [];
+}
+
+function makeRefBox(text, refMap, fallbackNum, maxCited) {
+  // Try to extract a leading number from various formats:
+  // [1], 1., 1), 1:, just "1" at start
+  const numMatch = text.match(/^\s*\[?(\d+)\]?[\.\):]?\s*/);
+  let num = numMatch ? numMatch[1] : null;
+  let desc = numMatch ? text.slice(numMatch[0].length) : text;
+
+  // If no leading number, check for trailing number (DeepSeek sometimes puts it at end)
+  if (!num) {
+    const trailMatch = text.match(/\s+\[?(\d+)\]?[\.\):]?\s*$/);
+    if (trailMatch && !/^(19|20)\d{2}$/.test(trailMatch[1])) {
+      const trailNum = parseInt(trailMatch[1], 10);
+      // Only use trailing number if it looks like a reference number, not a page number
+      if (maxCited === 0 || trailNum <= maxCited) {
+        num = trailMatch[1];
+        desc = text.slice(0, trailMatch.index).trim();
+      }
+    }
+  }
+
+  // Use fallback number if none found in text
+  if (!num && fallbackNum) {
+    num = String(fallbackNum);
+  }
+
+  // Strip doi.org URL wrappers before DOI extraction
+  desc = desc.replace(/https?:\/\/doi\.org\//g, '');
+
+  const doiRe = /\[?(10\.\d{4,9}\/[^\s,\]]+)\]?/;
+  const doiMatch = desc.match(doiRe);
+  let doi = doiMatch ? doiMatch[1].replace(/[\.\]]+$/, '') : null;
+  if (doi) {
+    while (doi.endsWith(')') && doi.split('(').length < doi.split(')').length) doi = doi.slice(0, -1);
+    while (doi.endsWith('>') && doi.split('<').length < doi.split('>').length) doi = doi.slice(0, -1);
+  }
+
+  desc = desc.replace(/\[?(10\.\d{4,9}\/[^\s,\]]+)\]?/g, '').replace(/\s*doi:\s*/gi, '').trim().replace(/[.,;]+$/, '');
+
+  if (!desc && !doi) return null;
+
+  // Skip uncited references that have a DOI
+  if (doi && maxCited > 0) {
+    if (!num || parseInt(num, 10) > maxCited) return null;
+  }
+
+  if (num && refMap) {
+    refMap[num] = { desc, doi: doi || '' };
+  }
+
+  const a = document.createElement('a');
+  a.className = 'ref-box';
+  a.href = doi ? 'https://sci-hub.ru/' + doi : '#';
+  a.target = doi ? '_blank' : '_self';
+  a.rel = 'noopener';
+  let html = (num ? '<span class="ref-num">[' + num + ']</span>' : '') +
+    '<span class="ref-text">' + escapeHtml(desc) + '</span>';
+  if (doi) {
+    html += '<br><span class="ref-doi">DOI: ' + escapeHtml(doi) + '</span>';
+  }
+  a.innerHTML = html;
+  return a;
+}
+
+function transformReferences(el, refMap, maxCited) {
+  const refPattern = /references|bibliography|works?\s*cited|список\s*литературы|литература|ссылки|источники|参考文献|参考资料|引用文献/i;
+
+  const headings = el.querySelectorAll('h1, h2, h3, h4, h5, h6');
+  let refHeading = null;
+  for (const h of headings) {
+    if (refPattern.test(h.textContent)) refHeading = h;
+  }
+  if (!refHeading) {
+    const paras = el.querySelectorAll('p');
+    for (const p of paras) {
+      const strong = p.querySelector('strong');
+      if (strong && p.textContent.trim() === strong.textContent.trim() && refPattern.test(strong.textContent)) {
+        refHeading = p;
+        break;
+      }
+    }
+  }
+
+  let toProcess = [];
+
+  if (refHeading) {
+    let node = refHeading.nextElementSibling;
+    while (node) { toProcess.push(node); node = node.nextElementSibling; }
+  } else {
+    // Fallback: find last <ol> with reference-like items
+    const ols = el.querySelectorAll('ol');
+    for (let i = ols.length - 1; i >= 0; i--) {
+      const items = ols[i].querySelectorAll('li');
+      if (items.length >= 3) {
+        let refLike = 0;
+        for (const li of items) {
+          const txt = li.textContent;
+          if (/10\.\d{4,9}\//.test(txt) || /[\(,]\s*\d{4}\s*[\),.\s]/.test(txt) || /et\s+al/i.test(txt)) refLike++;
+        }
+        if (refLike >= Math.ceil(items.length * 0.4)) {
+          toProcess = [ols[i]];
+          break;
+        }
+      }
+    }
+    if (toProcess.length === 0) return;
+  }
+
+  let refCounter = 1;
+
+  for (const elem of toProcess) {
+    // Case 1: <ol> or <ul> — each <li> is a reference
+    if (elem.tagName === 'OL' || elem.tagName === 'UL') {
+      const frag = document.createDocumentFragment();
+      const items = elem.querySelectorAll('li');
+      for (const li of items) {
+        const box = makeRefBox(li.textContent, refMap, refCounter, maxCited);
+        if (box) { frag.appendChild(box); refCounter++; }
+        else if (!/10\.\d{4,9}\//.test(li.textContent)) { frag.appendChild(li.cloneNode(true)); }
+      }
+      elem.replaceWith(frag);
+      continue;
+    }
+
+    // Case 2: <p> possibly containing multiple refs separated by <br> or newlines
+    const html = elem.innerHTML;
+    if (html && (html.includes('<br') || html.includes('\n'))) {
+      const lines = html.split(/<br\s*\/?>\s*|\n/).map(l => {
+        const tmp = document.createElement('span');
+        tmp.innerHTML = l;
+        return tmp.textContent.trim();
+      }).filter(l => l.length > 0);
+
+      if (lines.length > 1) {
+        const frag = document.createDocumentFragment();
+        for (const line of lines) {
+          const box = makeRefBox(line, refMap, refCounter, maxCited);
+          if (box) { frag.appendChild(box); refCounter++; }
+          else if (line && !/10\.\d{4,9}\//.test(line)) {
+            const p = document.createElement('p');
+            p.textContent = line;
+            frag.appendChild(p);
+          }
+        }
+        elem.replaceWith(frag);
+        continue;
+      }
+    }
+
+    // Case 3: single element — treat as reference only if it looks like one
+    const text = elem.textContent.trim();
+    if (text) {
+      const looksLikeRef = /10\.\d{4,9}\//.test(text) || /^\s*\[?\d+[\].\):]/.test(text);
+      if (looksLikeRef) {
+        const box = makeRefBox(text, refMap, refCounter, maxCited);
+        if (box) { elem.replaceWith(box); refCounter++; }
+        else if (/10\.\d{4,9}\//.test(text)) { elem.remove(); }
+      }
+    }
+  }
+}
+
+function markBoldHeadings(el) {
+  const paras = el.querySelectorAll('p');
+  for (const p of paras) {
+    const strong = p.querySelector('strong');
+    if (strong && p.textContent.trim() === strong.textContent.trim()) {
+      p.classList.add('bold-heading');
+    }
+  }
+}
+
+function renderAnswer(text) {
+  if (!currentAnswerDiv) return;
+  try {
+    const cleaned = unescapeHtml(text);
+    const withPlaceholders = extractMath(cleaned);
+    currentAnswerDiv.innerHTML = marked.parse(withPlaceholders);
+    restoreMath(currentAnswerDiv);
+    markBoldHeadings(currentAnswerDiv);
+  } catch (e) {
+    currentAnswerDiv.textContent = text;
+  }
+}
+
+let lastQuestion = '';
+let lastRawMarkdown = '';
+let readArticles = [];
+let lastReadDoi = null;
+let reasoningSteps = [];
+
+function finalizeAnswer() {
+  const answerDivs = resultsInner.querySelectorAll('.answer');
+
+  // Store raw markdown for sharing
+  lastRawMarkdown = allAnswerChunks.join('');
+
+  // Find the highest [N] citation referenced in the answer text
+  let maxCited = 0;
+  for (const div of answerDivs) {
+    const matches = div.textContent.match(/\[\d+(?:,\s*\d+)*\]/g);
+    if (matches) {
+      for (const m of matches) {
+        const nums = m.match(/\d+/g);
+        for (const ns of nums) {
+          const n = parseInt(ns, 10);
+          if (n > maxCited) maxCited = n;
+        }
+      }
+    }
+  }
+
+  const refMap = {};
+  for (const div of answerDivs) {
+    transformReferences(div, refMap, maxCited);
+  }
+  for (const div of answerDivs) {
+    linkCitations(div, refMap);
+  }
+
+  showActionButtons();
+}
+
+function showActionButtons() {
+  const wrap = document.createElement('div');
+  wrap.className = 'action-buttons';
+
+  // New question button
+  const newBtn = document.createElement('button');
+  newBtn.className = 'action-btn';
+  newBtn.innerHTML = '<div class="btn-icon">&#8634;</div><div class="btn-label">' + escapeHtml(t("newBtn")) + '</div>';
+  newBtn.onclick = function() { sessionStorage.removeItem("scibot_session"); sessionStorage.removeItem("scibot_question"); location.reload(); };
+
+  // Share button
+  const shareBtn = document.createElement('button');
+  shareBtn.className = 'action-btn';
+  shareBtn.innerHTML = '<div class="btn-icon">&#8599;</div><div class="btn-label">' + escapeHtml(t("shareBtn")) + '</div>';
+  shareBtn.onclick = shareResponse;
+
+  wrap.appendChild(newBtn);
+  wrap.appendChild(shareBtn);
+
+  var donateInfo = DONATE[currentLang];
+  if (donateInfo) {
+    var donateBtn = document.createElement('button');
+    donateBtn.className = 'action-btn donate-action-btn';
+    donateBtn.innerHTML = '<div class="btn-icon donate-icon">&#9829;</div><div class="btn-label">' + escapeHtml(donateInfo.donate) + '</div>';
+    donateBtn.onclick = showDonateModal;
+    wrap.appendChild(donateBtn);
+  }
+
+  resultsInner.appendChild(wrap);
+  scrollToBottom();
+}
+
+function resetToLanding() {
+  resultsEl.classList.remove('visible');
+  landingEl.classList.remove('hidden');
+  resultsInner.innerHTML = '';
+  questionInput.value = '';
+  btnLaunch.disabled = false;
+  currentAnswerDiv = null;
+  allAnswerChunks = [];
+  holdDotsActive = false;
+  lastQuestion = '';
+  lastRawMarkdown = '';
+  readArticles = [];
+  lastReadDoi = null;
+  reasoningSteps = [];
+  sharedHandle = null;
+  pendingShareHandle = null;
+  generating = false;
+  removeCancelBtn();
+  clearAutoSaveTimer();
+  sessionStorage.removeItem("scibot_session");
+  sessionStorage.removeItem("scibot_question");
+  questionInput.focus();
+  // Reconnect WS to get fresh session
+  if (ws) ws.close();
+}
+
+function clearAutoSaveTimer() {
+  if (autoSaveTimer) { clearTimeout(autoSaveTimer); autoSaveTimer = null; }
+}
+
+function startAutoSaveTimer() {
+  clearAutoSaveTimer();
+  if (!lastQuestion || !lastRawMarkdown || sharedHandle) return;
+  autoSaveTimer = setTimeout(async function() {
+    if (sharedHandle || generating) return;
+    try {
+      var hRes = await fetch('/api/generate-handle', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question: lastQuestion }),
+      });
+      var hData = await hRes.json();
+      var handle = hData.handle;
+      var res = await fetch('/api/share', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          handle: handle,
+          question: lastQuestion,
+          markdown: lastRawMarkdown,
+          articles: readArticles,
+          reasoning: reasoningSteps,
+        }),
+      });
+      var data = await res.json();
+      if (data.ok) {
+        if (ws && ws.readyState === WebSocket.OPEN) {
+          ws.send(JSON.stringify({ type: "auto_saved_notify", handle: handle }));
+        }
+        location.href = '/' + handle;
+      }
+    } catch (e) {
+      console.error("Auto-save failed:", e);
+    }
+  }, 10 * 60 * 1000);
+}
+
+let pendingShareHandle = null;
+let sharedHandle = null;
+
+async function shareResponse() {
+  if (!lastQuestion || !lastRawMarkdown) return;
+
+  const overlay = document.getElementById('shareModal');
+  const modal = document.getElementById('modalContent');
+
+  // Already shared — show URL
+  if (sharedHandle) {
+    const url = location.origin + '/' + sharedHandle;
+    modal.innerHTML =
+      '<div class="modal-title">' + escapeHtml(t("shareSuccess")) + '</div>' +
+      '<div class="modal-text">' + escapeHtml(t("shareSuccessMsg")) + '</div>' +
+      '<div class="modal-url-box"><span>' + escapeHtml(url) + '</span>' +
+        '<button class="btn-copy" onclick="copyShareUrl(\'' + escapeHtml(url) + '\')">' + escapeHtml(t("shareCopy")) + '</button></div>' +
+      '<div class="modal-actions"><button class="modal-btn close" onclick="closeShareModal()">' + escapeHtml(t("shareClose")) + '</button></div>';
+    overlay.classList.add('visible');
+    return;
+  }
+
+  // Generate handle
+  modal.innerHTML = '<div class="modal-title">' + escapeHtml(t("shareTitle")) + '</div><div class="modal-text">...</div>';
+  overlay.classList.add('visible');
+
+  try {
+    const hRes = await fetch('/api/generate-handle', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ question: lastQuestion }),
+    });
+    const hData = await hRes.json();
+    pendingShareHandle = hData.handle;
+    const url = location.origin + '/' + pendingShareHandle;
+
+    modal.innerHTML =
+      '<div class="modal-title">' + escapeHtml(t("shareTitle")) + '</div>' +
+      '<div class="modal-text">' + escapeHtml(t("shareWarning")) + '</div>' +
+      '<div class="modal-url-box"><span>' + escapeHtml(url) + '</span>' +
+        '<button class="btn-copy" onclick="copyShareUrl(\'' + escapeHtml(url) + '\')">' + escapeHtml(t("shareCopy")) + '</button></div>' +
+      '<div class="modal-actions">' +
+        '<button class="modal-btn cancel" onclick="closeShareModal()">' + escapeHtml(t("shareCancel")) + '</button>' +
+        '<button class="modal-btn confirm" onclick="confirmShare()">' + escapeHtml(t("shareConfirm")) + '</button>' +
+      '</div>';
+  } catch (e) {
+    modal.innerHTML =
+      '<div class="modal-title">Error</div>' +
+      '<div class="modal-text">Failed to generate share link.</div>' +
+      '<div class="modal-actions"><button class="modal-btn close" onclick="closeShareModal()">' + escapeHtml(t("shareClose")) + '</button></div>';
+  }
+}
+
+function closeShareModal() {
+  document.getElementById('shareModal').classList.remove('visible');
+  pendingShareHandle = null;
+}
+
+function showDonateModal() {
+  var info = DONATE[currentLang];
+  if (!info) return;
+  var modal = document.getElementById('donateModalContent');
+  modal.innerHTML =
+    '<button class="modal-close-x" onclick="closeDonateModal()">&times;</button>' +
+    '<div class="modal-text">' + escapeHtml(info.message) + '</div>' +
+    (info.img ? '<div class="donate-qr"><img src="' + escapeHtml(info.img) + '" alt="QR"></div>' : '');
+  document.getElementById('donateModal').classList.add('visible');
+}
+
+function closeDonateModal() {
+  document.getElementById('donateModal').classList.remove('visible');
+}
+
+async function confirmShare() {
+  if (!pendingShareHandle) return;
+  const modal = document.getElementById('modalContent');
+  modal.innerHTML = '<div class="modal-title">' + escapeHtml(t("shareTitle")) + '</div><div class="modal-text">...</div>';
+
+  try {
+    const res = await fetch('/api/share', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        handle: pendingShareHandle,
+        question: lastQuestion,
+        markdown: lastRawMarkdown,
+        articles: readArticles,
+        reasoning: reasoningSteps,
+      }),
+    });
+    const data = await res.json();
+    if (data.ok) {
+      sharedHandle = pendingShareHandle;
+      clearAutoSaveTimer();
+      // Notify watchers and redirect
+      if (ws && ws.readyState === WebSocket.OPEN) {
+        ws.send(JSON.stringify({ type: "auto_saved_notify", handle: sharedHandle }));
+      }
+      location.href = '/' + sharedHandle;
+      return;
+    } else {
+      modal.innerHTML =
+        '<div class="modal-title">Error</div>' +
+        '<div class="modal-text">' + escapeHtml(data.error || 'Failed to share') + '</div>' +
+        '<div class="modal-actions"><button class="modal-btn close" onclick="closeShareModal()">' + escapeHtml(t("shareClose")) + '</button></div>';
+    }
+  } catch (e) {
+    modal.innerHTML =
+      '<div class="modal-title">Error</div>' +
+      '<div class="modal-text">Failed to share: ' + escapeHtml(e.message) + '</div>' +
+      '<div class="modal-actions"><button class="modal-btn close" onclick="closeShareModal()">' + escapeHtml(t("shareClose")) + '</button></div>';
+  }
+  pendingShareHandle = null;
+}
+
+function copyShareUrl(url) {
+  navigator.clipboard.writeText(url).then(() => {
+    const btn = document.querySelector('.btn-copy');
+    if (btn) { btn.textContent = t("shareCopied"); setTimeout(() => btn.textContent = t("shareCopy"), 2000); }
+  }).catch(() => prompt('Share URL:', url));
+}
+
+// Compress sorted numbers into ranges: [1,3,4,5,8] → [{s:1,e:1},{s:3,e:5},{s:8,e:8}]
+function compressRanges(nums) {
+  var sorted = nums.map(Number).sort(function(a,b){return a-b;});
+  var ranges = [], i = 0;
+  while (i < sorted.length) {
+    var start = sorted[i], end = start;
+    while (i + 1 < sorted.length && sorted[i+1] === end + 1) { end = sorted[++i]; }
+    ranges.push({ s: start, e: end });
+    i++;
+  }
+  return ranges;
+}
+
+function buildCiteGroup(nums, refMap) {
+  var wrapper = document.createElement('span');
+  wrapper.className = 'cite-group';
+  wrapper.dataset.refNum = nums.join(',');
+  wrapper._refData = nums.map(function(n) { return refMap[n]; });
+  var ranges = compressRanges(nums);
+  wrapper.appendChild(document.createTextNode('['));
+  for (var ri = 0; ri < ranges.length; ri++) {
+    if (ri > 0) wrapper.appendChild(document.createTextNode(','));
+    var r = ranges[ri];
+    var startSpan = document.createElement('span');
+    startSpan.className = 'cite-ref';
+    startSpan.textContent = r.s;
+    wrapper.appendChild(startSpan);
+    if (r.e > r.s) {
+      wrapper.appendChild(document.createTextNode(r.e - r.s > 1 ? '\u2013' : ','));
+      var endSpan = document.createElement('span');
+      endSpan.className = 'cite-ref';
+      endSpan.textContent = r.e;
+      wrapper.appendChild(endSpan);
+    }
+  }
+  wrapper.appendChild(document.createTextNode(']'));
+  return wrapper;
+}
+
+function linkCitations(el, refMap) {
+  if (Object.keys(refMap).length === 0) return;
+
+  const citeRe = /\[\d+(?:,\s*\d+)*\]/;
+  const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, {
+    acceptNode(node) {
+      if (node.parentElement.closest('.ref-box, h1, h2, h3, h4, h5, h6')) return NodeFilter.FILTER_REJECT;
+      return citeRe.test(node.textContent) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+    }
+  });
+
+  const textNodes = [];
+  while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+  for (const tn of textNodes) {
+    // Merge consecutive brackets: [1][5][8] → [1,5,8]
+    const merged = tn.textContent.replace(/(\[\d+(?:,\s*\d+)*\])(?:\s*(\[\d+(?:,\s*\d+)*\]))+/g, function(match) {
+      const allNums = [];
+      match.replace(/\[(\d+(?:,\s*\d+)*)\]/g, function(_, inner) {
+        inner.split(/,\s*/).forEach(function(n) { allNums.push(n); });
+      });
+      return '[' + allNums.join(',') + ']';
+    });
+
+    const frag = document.createDocumentFragment();
+    const parts = merged.split(/(\[\d+(?:,\s*\d+)*\])/g);
+    for (const part of parts) {
+      const m = part.match(/^\[(\d+(?:,\s*\d+)*)\]$/);
+      if (m) {
+        const nums = m[1].split(/,\s*/).filter(n => refMap[n]);
+        if (nums.length > 0) {
+          const prev = frag.lastChild;
+          if (prev && prev.nodeType === 3 && prev.textContent.length > 0 && !prev.textContent.endsWith(' ')) {
+            prev.textContent += ' ';
+          }
+          frag.appendChild(buildCiteGroup(nums, refMap));
+        } else {
+          frag.appendChild(document.createTextNode(part));
+        }
+      } else {
+        frag.appendChild(document.createTextNode(part));
+      }
+    }
+    tn.parentNode.replaceChild(frag, tn);
+  }
+}
+
+// --- ALTCHA proof-of-work solver ---
+function solveAltchaChallenge(challenge) {
+  return new Promise((resolve, reject) => {
+    const workerCode = `
+      self.onmessage = async function(e) {
+        var salt = e.data.salt, target = e.data.challenge, max = e.data.maxnumber;
+        var enc = new TextEncoder();
+        for (var start = 0; start <= max; start += 500) {
+          var end = Math.min(start + 500, max + 1);
+          var promises = [];
+          for (var n = start; n < end; n++) {
+            promises.push(
+              crypto.subtle.digest("SHA-256", enc.encode(salt + n))
+                .then(function(buf) { return { n: this, hex: Array.from(new Uint8Array(buf)).map(function(b) { return b.toString(16).padStart(2, "0"); }).join("") }; }.bind(n))
+            );
+          }
+          var results = await Promise.all(promises);
+          for (var i = 0; i < results.length; i++) {
+            if (results[i].hex === target) {
+              self.postMessage({ found: true, number: results[i].n });
+              return;
+            }
+          }
+        }
+        self.postMessage({ found: false });
+      };
+    `;
+    const blob = new Blob([workerCode], { type: "application/javascript" });
+    const worker = new Worker(URL.createObjectURL(blob));
+    worker.onmessage = (e) => {
+      worker.terminate();
+      if (e.data.found) {
+        const solution = {
+          algorithm: challenge.algorithm,
+          challenge: challenge.challenge,
+          number: e.data.number,
+          salt: challenge.salt,
+          signature: challenge.signature,
+        };
+        resolve(btoa(JSON.stringify(solution)));
+      } else {
+        reject(new Error("Failed to solve challenge"));
+      }
+    };
+    worker.onerror = (e) => { worker.terminate(); reject(e); };
+    worker.postMessage({ salt: challenge.salt, challenge: challenge.challenge, maxnumber: challenge.maxnumber });
+  });
+}
+
+function removeCancelBtn() {
+  if (cancelBtn) {
+    cancelBtn.remove();
+    cancelBtn = null;
+  }
+  var sb = document.getElementById("sidebarNewBtn");
+  if (sb) sb.style.display = "none";
+}
+
+function appendToResults(el) {
+  if (cancelBtn && cancelBtn.parentNode === resultsInner) {
+    resultsInner.insertBefore(el, cancelBtn);
+  } else {
+    resultsInner.appendChild(el);
+  }
+}
+
+function cancelAndReload() {
+  if (ws && ws.readyState === WebSocket.OPEN) {
+    ws.send(JSON.stringify({ type: "cancel" }));
+  }
+  sessionStorage.removeItem("scibot_session");
+  sessionStorage.removeItem("scibot_question");
+  location.reload();
+}
+
+function showCancelBtn() {
+  // Wide screen: show in sidebar
+  if (window.innerWidth > 900) {
+    var sb = document.getElementById("sidebarNewBtn");
+    sb.innerHTML = '<span class="cancel-icon">&#8634;</span> <span class="cancel-label">' + escapeHtml(t("newBtn")) + '</span>';
+    sb.onclick = cancelAndReload;
+    sb.style.display = "flex";
+    return;
+  }
+  // Narrow screen: inline cancel button
+  if (cancelBtn) {
+    resultsInner.appendChild(cancelBtn);
+    return;
+  }
+  cancelBtn = document.createElement("div");
+  cancelBtn.className = "cancel-btn";
+  cancelBtn.innerHTML = '<span class="cancel-icon">&#8634;</span> <span class="cancel-label">' + escapeHtml(t("newBtn")) + '</span>';
+  cancelBtn.onclick = cancelAndReload;
+  resultsInner.appendChild(cancelBtn);
+  scrollToBottom();
+}
+
+function handleEvent(evt) {
+    // Only remove thinking spinner for events that show real progress
+    if (thinkingEl && (evt.type === "content" || evt.type === "tool_start" || evt.type === "done" || evt.type === "error")) {
+      thinkingEl.remove();
+      thinkingEl = null;
+    }
+    // Clear content idle timer on any meaningful event
+    if (contentIdleTimer) { clearTimeout(contentIdleTimer); contentIdleTimer = null; }
+    // Remove all waiting spinners when new content/tool/done arrives
+    if (evt.type === "content" || evt.type === "done" || evt.type === "error") {
+      resultsInner.querySelectorAll(".post-tool-spinner, .card-corner-spinner").forEach(s => s.remove());
+    }
+
+    switch (evt.type) {
+      case "content":
+        if (!generating) {
+          generating = true;
+        }
+        holdDotsActive = false;
+        ensureAnswerDiv();
+        allAnswerChunks.push(evt.text);
+        renderAnswer(allAnswerChunks.join(""));
+        if (!replaying) {
+          showCancelBtn();
+          scrollToBottom();
+          // Show spinner if no new event arrives within 500ms
+          contentIdleTimer = setTimeout(function() {
+            contentIdleTimer = null;
+            if (!generating) return;
+            var sp = document.createElement("span");
+            sp.className = "spinner post-tool-spinner";
+            // Find the deepest last element with text to append spinner inline
+            var container = currentAnswerDiv || resultsInner;
+            var node = container.lastElementChild;
+            while (node && !node.textContent.trim()) node = node.previousElementSibling;
+            if (node) node.appendChild(sp);
+            else if (container) container.appendChild(sp);
+            scrollToBottom();
+          }, 500);
+        }
+        break;
+
+      case "content_hold":
+        holdDotsActive = true;
+        ensureAnswerDiv();
+        renderAnswer(allAnswerChunks.join(""));
+        // Append spinner to the last text node in the answer
+        if (currentAnswerDiv) {
+          const holdSpan = document.createElement("span");
+          holdSpan.className = "spinner hold-spinner";
+          currentAnswerDiv.appendChild(holdSpan);
+        }
+        if (!replaying) scrollToBottom();
+        break;
+
+      case "hold_clear":
+        if (holdDotsActive) {
+          holdDotsActive = false;
+          renderAnswer(allAnswerChunks.join(""));
+        }
+        break;
+
+      case "tool_start": {
+        if (!generating) {
+          generating = true;
+        }
+        holdDotsActive = false;
+        // Remove waiting spinners
+        resultsInner.querySelectorAll(".post-tool-spinner, .card-corner-spinner").forEach(s => s.remove());
+
+        if (evt.tool === "cite") {
+          const existing = document.getElementById("citeStatus");
+          const fmt = evt.format && evt.format.toLowerCase() === "gost" ? "ГОСТ" : (evt.format || "").toUpperCase();
+          const doisStr = Array.isArray(evt.dois) ? evt.dois.join(", ") : (evt.dois || "");
+          const msg = t("formattingCitations", { format: fmt, doi: doisStr }).replace(/\.{3}\s*$/, " ");
+          if (existing) {
+            existing.textContent = msg;
+            const sp2 = document.createElement("span");
+            sp2.className = "spinner";
+            existing.appendChild(sp2);
+          } else {
+            const el = document.createElement("div");
+            el.className = "search-status";
+            el.id = "citeStatus";
+            el.textContent = msg;
+            const sp2 = document.createElement("span");
+            sp2.className = "spinner";
+            el.appendChild(sp2);
+            appendToResults(el);
+          }
+          if (!replaying) { showCancelBtn(); scrollToBottom(); }
+          break;
+        }
+        if (allAnswerChunks.length > 0) {
+          const prevText = allAnswerChunks.join("");
+          reasoningSteps.push({ type: "content", text: prevText });
+          if (currentAnswerDiv) {
+            currentAnswerDiv.className = "reasoning-text";
+            // If previous content is a short tool-description message, hide it
+            const trimmed = prevText.trim().replace(/\.\.\.\s*$/, "").replace(/[«»""]/g, "");
+            if (trimmed.length < 200 && evt.tool === "search" && evt.query) {
+              const queryClean = evt.query.replace(/[«»""]/g, "").substring(0, 60);
+              if (trimmed.includes(queryClean.substring(0, 30)) || /^(search|поиск|ищу|let me search|searching|I will search|I'll search|Далее.*поиск)/i.test(trimmed)) {
+                currentAnswerDiv.style.display = "none";
+              }
+            } else if (trimmed.length < 200 && evt.tool === "read") {
+              if (/^(read|чита|let me read|reading|I will read|I'll read|Далее.*чита|прочита)/i.test(trimmed)) {
+                currentAnswerDiv.style.display = "none";
+              }
+            }
+          }
+        }
+        currentAnswerDiv = null;
+        allAnswerChunks = [];
+        if (evt.tool === "search") {
+          reasoningSteps.push({ type: "search", query: evt.query });
+          const el = document.createElement("div");
+          el.className = "search-status";
+          el.dataset.toolType = "search";
+          el.textContent = t("searchingFor", { q: evt.query }).replace(/\.{3}\s*$/, " ");
+          const sp = document.createElement("span");
+          sp.className = "spinner";
+          el.appendChild(sp);
+          appendToResults(el);
+        } else if (evt.tool === "read") {
+          if (!(evt.doi && evt.doi === lastReadDoi)) {
+            const card = createPaperCard(evt.article, evt.doi, true);
+            appendToResults(card);
+          }
+          lastReadDoi = evt.doi || null;
+        }
+        if (!replaying) { showCancelBtn(); scrollToBottom(); }
+        break;
+      }
+
+      case "tool_end":
+        if (evt.tool === "cite_articles") {
+          var citeEl = document.getElementById("citeStatus");
+          if (citeEl) { var csp = citeEl.querySelector(".spinner"); if (csp) csp.remove(); }
+          break;
+        }
+        if (evt.tool === "search_relevant_articles") {
+          const searchEls = resultsInner.querySelectorAll(".search-status[data-tool-type='search']");
+          const lastSearch = searchEls[searchEls.length - 1];
+          if (lastSearch) {
+            const sp = lastSearch.querySelector(".spinner");
+            if (sp) sp.remove();
+          }
+        } else if (evt.tool === "read_article") {
+          const cards = resultsInner.querySelectorAll(".paper-card.loading");
+          const lastCard = cards[cards.length - 1];
+          if (lastCard) {
+            lastCard.classList.remove("loading");
+            const csp = lastCard.querySelector(".card-corner-spinner");
+            if (csp) csp.remove();
+            if (evt.article) {
+              updatePaperCard(lastCard, evt.article, evt.doi);
+              const artData = {
+                doi: evt.doi,
+                title: evt.article.title,
+                authors: evt.article.authors,
+                abstract: evt.article.abstract,
+                year: evt.article.year,
+                journal: evt.article.journal,
+              };
+              readArticles.push(artData);
+              reasoningSteps.push({ type: "read", article: artData, doi: evt.doi });
+            }
+          }
+        }
+        currentAnswerDiv = null;
+        allAnswerChunks = [];
+        // Show spinner after tool completes, appended to previous element
+        if (!replaying) {
+          const sp = document.createElement("span");
+          sp.className = "spinner post-tool-spinner";
+          // Find last content element (skip cancel button and empty elements)
+          let target = cancelBtn ? cancelBtn.previousElementSibling : resultsInner.lastElementChild;
+          while (target && (target === cancelBtn || (!target.classList.contains("paper-card") && !target.textContent.trim()))) {
+            target = target.previousElementSibling;
+          }
+          if (target && target.classList.contains("paper-card")) {
+            sp.classList.add("card-corner-spinner");
+            target.appendChild(sp);
+          } else if (target) {
+            target.appendChild(sp);
+          }
+          scrollToBottom();
+        }
+        break;
+
+      case "done":
+        generating = false;
+        restartPendingQuestion = null; // don't re-submit if server is restarting
+        removeCancelBtn();
+        if (evt.cancelled) {
+          // Show cancelled state
+          const cancelledDiv = document.createElement("div");
+          cancelledDiv.className = "answer";
+          cancelledDiv.style.color = "#888";
+          cancelledDiv.style.fontStyle = "italic";
+          cancelledDiv.textContent = t("generationCancelled");
+          resultsInner.appendChild(cancelledDiv);
+          showActionButtons();
+        } else {
+          finalizeAnswer();
+          startAutoSaveTimer();
+        }
+        currentAnswerDiv = null;
+        allAnswerChunks = [];
+        sessionStorage.removeItem("scibot_session");
+        sessionStorage.removeItem("scibot_question");
+        console.log("Response complete");
+        break;
+
+      case "session":
+        sessionStorage.setItem("scibot_session", evt.sessionId);
+        if (lastQuestion) sessionStorage.setItem("scibot_question", lastQuestion);
+        break;
+
+      case "verify":
+        const verifyEl = document.createElement("div");
+        verifyEl.className = "thinking-status";
+        verifyEl.id = "verifyStatus";
+        verifyEl.innerHTML = '<div class="spinner"></div> ' + escapeHtml(t("verifying"));
+        resultsInner.appendChild(verifyEl);
+        scrollToBottom();
+        solveAltchaChallenge(evt.challenge).then(payload => {
+          ws.send(JSON.stringify({ type: "verify_response", payload }));
+        }).catch(() => {
+          const vel = document.getElementById("verifyStatus");
+          if (vel) vel.innerHTML = '<span style="color:#b5202a">Verification failed</span>';
+        });
+        break;
+
+      case "verified_ok":
+        const vokEl = document.getElementById("verifyStatus");
+        if (vokEl) vokEl.remove();
+        break;
+
+      case "auto_saved":
+        // Server auto-saved our answer before restart — redirect to it
+        sessionStorage.removeItem("scibot_session");
+        sessionStorage.removeItem("scibot_question");
+        location.href = evt.url;
+        return;
+
+      case "server_restarting":
+        restartPendingQuestion = lastQuestion;
+        if (thinkingEl) {
+          thinkingEl.innerHTML = '<div class="spinner"></div> ' + escapeHtml(t("serverRestarting"));
+        } else {
+          thinkingEl = document.createElement("div");
+          thinkingEl.className = "thinking-status";
+          thinkingEl.innerHTML = '<div class="spinner"></div> ' + escapeHtml(t("serverRestarting"));
+          resultsInner.appendChild(thinkingEl);
+        }
+        scrollToBottom();
+        if (restartPendingQuestion && ws && ws.readyState === WebSocket.OPEN) {
+          ws.send(JSON.stringify({ type: "restart_waiting" }));
+        }
+        break;
+
+      case "error":
+        generating = false;
+        removeCancelBtn();
+        const errDiv = document.createElement("div");
+        errDiv.className = "answer";
+        errDiv.style.color = "#b5202a";
+        errDiv.textContent = "Error: " + evt.message;
+        resultsInner.appendChild(errDiv);
+        currentAnswerDiv = null;
+        allAnswerChunks = [];
+        break;
+    }
+}
+
+function connectWs() {
+  const proto = location.protocol === "https:" ? "wss:" : "ws:";
+  ws = new WebSocket(`${proto}//${location.host}`);
+
+  ws.onopen = () => {
+    console.log("WebSocket connected");
+    // Watch mode — read-only live view
+    if (watchSessionId) {
+      ws.send(JSON.stringify({ type: "watch", sessionId: watchSessionId }));
+      return;
+    }
+    // Try to resume existing session
+    const savedSession = sessionStorage.getItem("scibot_session");
+    console.log("Saved session:", savedSession);
+    if (savedSession) {
+      console.log("Sending resume for session:", savedSession);
+      ws.send(JSON.stringify({ type: "resume", sessionId: savedSession }));
+      return;
+    }
+    if (restartPendingQuestion) {
+      const q = restartPendingQuestion;
+      restartPendingQuestion = null;
+      if (thinkingEl) {
+        thinkingEl.innerHTML = '<div class="spinner"></div> ' + escapeHtml(t("thinking"));
+      }
+      ws.send(JSON.stringify({ type: "chat", message: q, lang: currentLang }));
+    }
+  };
+
+  ws.onmessage = (event) => {
+    let evt;
+    try { evt = JSON.parse(event.data); } catch { return; }
+
+    console.log("WS event:", evt.type, evt.type === "content" ? evt.text.length + "ch" : "");
+
+    // Watch mode events
+    if (evt.type === "watch_state") {
+      // Replay like resume but read-only (no cancel button, no session storage)
+      lastQuestion = evt.question || "";
+      readArticles = [];
+  lastReadDoi = null;
+      reasoningSteps = [];
+      currentAnswerDiv = null;
+      allAnswerChunks = [];
+      resultsInner.innerHTML = "";
+      landingEl.classList.add("hidden");
+      resultsEl.classList.add("visible");
+      btnLaunch.disabled = true;
+      questionInput.disabled = true;
+      if (evt.question) {
+        const qDiv = document.createElement("div");
+        qDiv.className = "question-box";
+        qDiv.textContent = evt.question;
+        resultsInner.appendChild(qDiv);
+      }
+      replaying = true;
+      for (const e of evt.events) {
+        handleEvent(e);
+      }
+      replaying = false;
+      if (evt.busy) {
+        generating = true;
+      }
+      scrollToBottom();
+      return;
+    }
+    if (evt.type === "watch_not_found") {
+      landingEl.classList.add("hidden");
+      resultsEl.classList.add("visible");
+      resultsInner.innerHTML = "<div class=\"answer\" style=\"color:#888;font-style:italic\">This session is no longer active.</div>";
+      return;
+    }
+
+    // Handle session_not_found: clear stored session, resend pending question
+    if (evt.type === "session_not_found") {
+      console.log("Session not found, clearing");
+      sessionStorage.removeItem("scibot_session");
+      sessionStorage.removeItem("scibot_question");
+      if (restartPendingQuestion) {
+        const q = restartPendingQuestion;
+        restartPendingQuestion = null;
+        if (thinkingEl) {
+          thinkingEl.innerHTML = '<div class="spinner"></div> ' + escapeHtml(t("thinking"));
+        }
+        ws.send(JSON.stringify({ type: "chat", message: q, lang: currentLang }));
+      } else {
+        // Reset to landing if we were showing a pre-rendered question
+        if (thinkingEl) { thinkingEl.remove(); thinkingEl = null; }
+        resultsInner.innerHTML = "";
+        resultsEl.classList.remove("visible");
+        landingEl.classList.remove("hidden");
+        btnLaunch.disabled = false;
+      }
+      return;
+    }
+
+    // Handle resume_state: rebuild UI from buffered events
+    if (evt.type === "resume_state") {
+      console.log("Resume state:", evt.busy, "question:", evt.question, "events:", evt.events.length);
+      if (evt.sessionId) sessionStorage.setItem("scibot_session", evt.sessionId);
+      if (!evt.busy) {
+        // Session exists but not generating — clear stored session
+        sessionStorage.removeItem("scibot_session");
+        sessionStorage.removeItem("scibot_question");
+        // Reset to landing if we were showing a pre-rendered question
+        if (thinkingEl) { thinkingEl.remove(); thinkingEl = null; }
+        resultsInner.innerHTML = "";
+        resultsEl.classList.remove("visible");
+        landingEl.classList.remove("hidden");
+        btnLaunch.disabled = false;
+        return;
+      }
+      // Rebuild the UI from replayed events
+      lastQuestion = evt.question || "";
+      readArticles = [];
+  lastReadDoi = null;
+      reasoningSteps = [];
+      currentAnswerDiv = null;
+      allAnswerChunks = [];
+      resultsInner.innerHTML = "";
+
+      landingEl.classList.add("hidden");
+      resultsEl.classList.add("visible");
+      btnLaunch.disabled = true;
+
+      if (evt.question) {
+        const qDiv = document.createElement("div");
+        qDiv.className = "question-box";
+        qDiv.textContent = evt.question;
+        resultsInner.appendChild(qDiv);
+      }
+
+      // Replay all buffered events
+      replaying = true;
+      for (const e of evt.events) {
+        handleEvent(e);
+      }
+      replaying = false;
+
+      // If still busy, show cancel button
+      if (evt.busy) {
+        generating = true;
+        showCancelBtn();
+      }
+      scrollToBottom();
+      return;
+    }
+
+    handleEvent(evt);
+  };
+
+  ws.onclose = () => {
+    console.log("WebSocket closed, reconnecting...");
+    setTimeout(connectWs, 2000);
+  };
+
+  ws.onerror = (err) => {
+    console.error("WebSocket error:", err);
+  };
+}
+
+function formatAuthors(article) {
+  if (!article) return "";
+  if (article.authors) {
+    const list = Array.isArray(article.authors) ? article.authors : [article.authors];
+    if (list.length <= 4) return list.join(", ");
+    return list[0] + ", " + list[1] + " et al.";
+  }
+  if (article.cite) {
+    const m = article.cite.match(/^(.+?)\s*\(\d{4}\)/);
+    if (m) return m[1].replace(/,\s*$/, "").trim();
+  }
+  return "";
+}
+
+function createPaperCard(article, doi, loading) {
+  const card = document.createElement("div");
+  card.className = "paper-card" + (loading ? " loading" : "");
+  card.dataset.toolType = "read";
+  if (doi) {
+    card.dataset.doi = doi;
+    card.onclick = () => window.open("https://sci-hub.ru/" + doi, "_blank");
+  }
+
+  const title = article ? (article.title || "Untitled") : doi;
+  const authors = formatAuthors(article);
+  const abstract = article ? (article.abstract || "") : "";
+  const year = article ? (article.year || "") : "";
+
+  let html = '';
+  if (loading) {
+    html += '<span class="spinner card-corner-spinner"></span>';
+  }
+  html += '<div class="card-header">';
+  html += '<div class="card-title">' + renderMathInText(title, true) + '</div>';
+  html += '</div>';
+
+  if (authors) {
+    html += '<div class="card-authors">' + escapeHtml(authors) + '</div>';
+  }
+
+  if (abstract) {
+    const truncated = abstract.length > 300 ? abstract.slice(0, 300) + "..." : abstract;
+    html += '<div class="card-abstract">' + renderMathInText(truncated, true) + '</div>';
+  }
+
+  const metaParts = [];
+  if (year) metaParts.push(String(year));
+  if (doi) metaParts.push("DOI: " + doi);
+  if (metaParts.length) {
+    html += '<div class="card-meta">' + escapeHtml(metaParts.join(" \u00B7 ")) + '</div>';
+  }
+
+  card.innerHTML = html;
+  return card;
+}
+
+function updatePaperCard(card, article, doi) {
+  const titleEl = card.querySelector(".card-title");
+  if (titleEl && article.title) {
+    titleEl.innerHTML = renderMathInText(article.title, true);
+  }
+
+  const authors = formatAuthors(article);
+  if (authors && !card.querySelector(".card-authors")) {
+    const authDiv = document.createElement("div");
+    authDiv.className = "card-authors";
+    authDiv.textContent = authors;
+    const header = card.querySelector(".card-header");
+    if (header && header.nextSibling) {
+      card.insertBefore(authDiv, header.nextSibling);
+    } else {
+      card.appendChild(authDiv);
+    }
+  }
+
+  if (article.abstract && !card.querySelector(".card-abstract")) {
+    const absDiv = document.createElement("div");
+    absDiv.className = "card-abstract";
+    const truncated = article.abstract.length > 300
+      ? article.abstract.slice(0, 300) + "..."
+      : article.abstract;
+    absDiv.innerHTML = renderMathInText(truncated, true);
+    const meta = card.querySelector(".card-meta");
+    if (meta) {
+      card.insertBefore(absDiv, meta);
+    } else {
+      card.appendChild(absDiv);
+    }
+  }
+}
+
+function launch() {
+  const text = questionInput.value.trim();
+  if (!text || !ws || ws.readyState !== WebSocket.OPEN) return;
+
+  // Detect bare DOIs and redirect to Sci-Hub
+  const doiMatch = text.match(/^(?:https?:\/\/(?:dx\.)?doi\.org\/)?(?:doi:\s*)?(10\.\d{4,9}\/\S+)$/i);
+  if (doiMatch) {
+    window.open('https://sci-hub.ru/' + doiMatch[1], '_blank');
+    return;
+  }
+
+  btnLaunch.disabled = true;
+  lastQuestion = text;
+  readArticles = [];
+  lastReadDoi = null;
+  reasoningSteps = [];
+
+  landingEl.classList.add("hidden");
+  resultsEl.classList.add("visible");
+
+  const qDiv = document.createElement("div");
+  qDiv.className = "question-box";
+  qDiv.textContent = text;
+  resultsInner.appendChild(qDiv);
+
+  thinkingEl = document.createElement("div");
+  thinkingEl.className = "thinking-status";
+  thinkingEl.innerHTML = '<div class="spinner"></div> ' + escapeHtml(t("thinking"));
+  resultsInner.appendChild(thinkingEl);
+
+  generating = true;
+  showCancelBtn();
+
+  currentAnswerDiv = null;
+  allAnswerChunks = [];
+
+  ws.send(JSON.stringify({ type: "chat", message: text, lang: currentLang }));
+}
+
+connectWs();
+questionInput.focus();
+
+// Floating symbols with pause/play
+(function() {
+  const col = document.getElementById("symbolsCol");
+  const syms = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz\u03B1\u03B2\u03B3\u03B4\u03B5\u03B6\u03B7\u03B8\u03B9\u03BA\u03BB\u03BC\u03BD\u03BE\u03BF\u03C0\u03C1\u03C3\u03C4\u03C5\u03C6\u03C7\u03C8\u03C9\u0391\u0392\u0393\u0394\u0395\u0396\u0397\u0398\u0399\u039A\u039B\u039C\u039D\u039E\u039F\u03A0\u03A1\u03A3\u03A4\u03A5\u03A6\u03A7\u03A8\u03A9\u2202\u222B\u2211\u221A\u221E\u2207\u2248\u2260\u2264\u2265";
+  let paused = false;
+
+  // Toggle icon that follows the mouse
+  const toggle = document.createElement("div");
+  toggle.className = "sym-toggle";
+  toggle.textContent = "\u23F8"; // pause icon
+  col.appendChild(toggle);
+
+  function colWidth() {
+    return col.offsetWidth || 300;
+  }
+
+  function makeSym(seed) {
+    if (paused && !seed) return;
+    const el = document.createElement("span");
+    el.className = "float-sym";
+    el.textContent = syms[Math.random() * syms.length | 0];
+    const size = 12 + Math.random() * 72 | 0;
+    const w = colWidth();
+    const left = Math.random() * (w - size) | 0;
+    const dur = 14 + Math.random() * 22;
+    const shade = 170 + Math.random() * 60 | 0;
+    el.style.fontSize = size + "px";
+    el.style.left = left + "px";
+    el.style.bottom = "-" + size + "px";
+    el.style.color = "rgb(" + shade + "," + shade + "," + shade + ")";
+    el.style.animationDuration = dur + "s";
+    if (seed) {
+      const delay = Math.random() * dur;
+      el.style.animationDelay = "-" + delay + "s";
+      setTimeout(() => el.remove(), (dur - delay) * 1000);
+    } else {
+      setTimeout(() => el.remove(), dur * 1000);
+    }
+    col.appendChild(el);
+  }
+
+  for (let i = 0; i < 50; i++) makeSym(true);
+  setInterval(() => makeSym(false), 350);
+
+  col.addEventListener("mousemove", (e) => {
+    toggle.style.left = (e.clientX + 14) + "px";
+    toggle.style.top = (e.clientY + 14) + "px";
+  });
+
+  col.addEventListener("click", () => {
+    paused = !paused;
+    col.classList.toggle("paused", paused);
+    toggle.textContent = paused ? "\u25B6" : "\u23F8";
+  });
+})();
+
+// Citation popup on hover
+(function() {
+  const popup = document.createElement('div');
+  popup.className = 'cite-popup';
+  document.body.appendChild(popup);
+
+  let hideTimer = null;
+  let activeCite = null;
+  let overPopup = false;
+
+  function showPopup(cite) {
+    clearTimeout(hideTimer);
+    if (activeCite === cite && popup.style.display === 'block') return;
+    activeCite = cite;
+    const refs = cite._refData;
+    if (!refs) return;
+    const refArr = Array.isArray(refs) ? refs : [refs];
+    const nums = cite.dataset.refNum.split(',');
+    let html = '';
+    for (let i = 0; i < refArr.length; i++) {
+      const doi = refArr[i].doi;
+      if (doi) {
+        html += '<a class="cite-popup-ref" href="https://sci-hub.ru/' + escapeHtml(doi) + '" target="_blank">';
+      } else {
+        html += '<span class="cite-popup-ref">';
+      }
+      html += '<strong>[' + escapeHtml(nums[i] || '') + ']</strong> ' +
+        escapeHtml(refArr[i].desc);
+      if (doi) html += '<div class="cite-popup-doi">DOI: ' + escapeHtml(doi) + '</div>';
+      html += doi ? '</a>' : '</span>';
+    }
+    popup.innerHTML = html;
+    popup.style.display = 'block';
+    const rect = cite.getBoundingClientRect();
+    let left = rect.right + 4;
+    let top = rect.top - 4;
+    if (left + 440 > window.innerWidth) left = rect.left - 440;
+    if (top + popup.offsetHeight > window.innerHeight) top = window.innerHeight - popup.offsetHeight - 8;
+    if (top < 4) top = 4;
+    popup.style.left = left + 'px';
+    popup.style.top = top + 'px';
+  }
+
+  function hidePopup() {
+    popup.style.display = 'none';
+    activeCite = null;
+  }
+
+  function scheduleHide() {
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(() => {
+      if (!overPopup) hidePopup();
+    }, 200);
+  }
+
+  popup.addEventListener('mouseenter', () => {
+    overPopup = true;
+    clearTimeout(hideTimer);
+  });
+
+  popup.addEventListener('mouseleave', () => {
+    overPopup = false;
+    scheduleHide();
+  });
+
+  document.addEventListener('mouseover', (e) => {
+    const cite = e.target.closest('.cite-group');
+    if (cite) { showPopup(cite); return; }
+  });
+
+  document.addEventListener('mouseout', (e) => {
+    const cite = e.target.closest('.cite-group');
+    if (!cite) return;
+    const related = e.relatedTarget;
+    if (related && (related.closest('.cite-group') === cite || related.closest('.cite-popup'))) return;
+    scheduleHide();
+  });
+})();
+
+// Close modals on overlay click
+document.getElementById('shareModal').addEventListener('click', (e) => {
+  if (e.target === e.currentTarget) closeShareModal();
+});
+document.getElementById('donateModal').addEventListener('click', (e) => {
+  if (e.target === e.currentTarget) closeDonateModal();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeDonateModal();
+});
+</script><div class="cite-popup"></div>
+
+
+</body></html>

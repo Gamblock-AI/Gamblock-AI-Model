@@ -1,0 +1,1283 @@
+<html lang="id"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUXURY138 – The Cancelled Podcast | Entertainment Premium</title>
+  <meta name="description" content="LUXURY138 menghadirkan The Cancelled Podcast — ruang suara tanpa sensor, penuh cerita, tawa, dan kebenaran yang belum pernah kamu dengar sebelumnya.">
+  <link rel="canonical" href="https://thecancelledpodcast.com/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PodcastSeries",
+    "name": "The Cancelled Podcast by LUXURY138",
+    "url": "https://thecancelledpodcast.com/",
+    "description": "Podcast entertainment premium yang menghadirkan percakapan berani, jujur, dan tanpa batas dari berbagai sudut pandang.",
+    "inLanguage": "id",
+    "genre": ["Entertainment", "Talk Show", "Comedy", "Culture"],
+    "publisher": {
+      "@type": "Organization",
+      "name": "LUXURY138",
+      "url": "https://thecancelledpodcast.com/"
+    },
+    "image": "https://ayowasabi.com/cdn/thecancelledpodcast-logo-1.webp"
+  }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --black: #080808;
+      --deep: #0f0f0f;
+      --card: #141414;
+      --border: #1e1e1e;
+      --red: #c8102e;
+      --red-glow: #ff1a3c;
+      --red-dim: #7a0a1c;
+      --gold: #b8922a;
+      --white: #f0ece4;
+      --muted: #7a7370;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--black);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NOISE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.4;
+    }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--black); }
+    ::-webkit-scrollbar-thumb { background: var(--red); border-radius: 2px; }
+
+    /* ════════════════════════════
+       HEADER / NAV
+    ════════════════════════════ */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 20px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(to bottom, rgba(8,8,8,0.97) 0%, transparent 100%);
+      backdrop-filter: blur(4px);
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 1px solid var(--red-dim);
+      flex-shrink: 0;
+    }
+
+    .logo-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .brand-name {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .brand-name span {
+      display: block;
+      font-size: 0.62rem;
+      font-family: var(--font-body);
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+
+    .nav-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .nav-badge .dot {
+      width: 6px;
+      height: 6px;
+      background: var(--red);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.7); }
+    }
+
+    /* ════════════════════════════
+       HERO
+    ════════════════════════════ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: var(--black);
+    }
+
+    .hero-bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      opacity: 0.35;
+      filter: grayscale(30%) contrast(1.1);
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top, var(--black) 25%, transparent 65%),
+        linear-gradient(to right, rgba(8,8,8,0.85) 30%, transparent 70%);
+    }
+
+    /* diagonal red accent */
+    .hero-accent {
+      position: absolute;
+      top: 0; right: 0;
+      width: 38%;
+      height: 100%;
+      background: linear-gradient(135deg, transparent 50%, rgba(200,16,46,0.07) 100%);
+      pointer-events: none;
+    }
+
+    .hero-accent::before {
+      content: '';
+      position: absolute;
+      top: 12%;
+      right: 8%;
+      width: 1px;
+      height: 50%;
+      background: linear-gradient(to bottom, transparent, var(--red-dim), transparent);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 48px 80px;
+      max-width: 820px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.9s ease forwards 0.3s;
+    }
+
+    .hero-tag::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--red);
+    }
+
+    .hero-h1 {
+      font-family: var(--font-display);
+      font-size: clamp(3.2rem, 7vw, 7rem);
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeUp 1s ease forwards 0.5s;
+    }
+
+    .hero-h1 em {
+      font-style: italic;
+      color: var(--red);
+      -webkit-text-stroke: 0px;
+    }
+
+    .hero-h1 .outline {
+      -webkit-text-stroke: 1.5px var(--white);
+      color: transparent;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: rgba(240,236,228,0.65);
+      max-width: 480px;
+      margin-bottom: 44px;
+      opacity: 0;
+      animation: fadeUp 1s ease forwards 0.7s;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      opacity: 0;
+      animation: fadeUp 1s ease forwards 0.9s;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 32px;
+      background: var(--red);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--red-glow);
+      transform: translateY(-2px);
+    }
+
+    .hero-stat {
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    .hero-stat strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      color: var(--white);
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    /* scrolling ticker */
+    .ticker-wrap {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      overflow: hidden;
+      border-top: 1px solid var(--border);
+      background: rgba(8,8,8,0.7);
+      backdrop-filter: blur(8px);
+      padding: 10px 0;
+      z-index: 10;
+    }
+
+    .ticker {
+      display: flex;
+      white-space: nowrap;
+      animation: ticker 30s linear infinite;
+      gap: 0;
+    }
+
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 0 40px;
+    }
+
+    .ticker-item .sep {
+      color: var(--red);
+      font-size: 1rem;
+    }
+
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ════════════════════════════
+       INTRO SECTION
+    ════════════════════════════ */
+    .intro {
+      position: relative;
+      padding: 120px 48px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .intro-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .intro-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .intro h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+
+    .intro h2 em {
+      font-style: italic;
+      color: var(--red);
+    }
+
+    .intro p {
+      font-size: 0.95rem;
+      color: rgba(240,236,228,0.6);
+      margin-bottom: 16px;
+      font-weight: 300;
+    }
+
+    .intro-visual {
+      position: relative;
+    }
+
+    .intro-img-frame {
+      position: relative;
+      border: 1px solid var(--border);
+    }
+
+    .intro-img-frame::before {
+      content: '';
+      position: absolute;
+      top: -12px; left: -12px;
+      right: 12px; bottom: 12px;
+      border: 1px solid var(--red-dim);
+      z-index: -1;
+    }
+
+    .intro-img-frame::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent 70%, rgba(200,16,46,0.15) 100%);
+    }
+
+    .intro-img-frame img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      aspect-ratio: 4/5;
+      filter: grayscale(15%);
+    }
+
+    .intro-badge {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: var(--red);
+      padding: 16px 20px;
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      line-height: 1.3;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ════════════════════════════
+       FEATURES / PILLARS
+    ════════════════════════════ */
+    .features {
+      background: var(--deep);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 100px 48px;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 72px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 16px;
+    }
+
+    .section-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: var(--white);
+    }
+
+    .section-header p {
+      margin-top: 16px;
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-weight: 300;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .feat-card {
+      background: var(--card);
+      padding: 48px 36px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+    }
+
+    .feat-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: transparent;
+      transition: background 0.3s;
+    }
+
+    .feat-card:hover { background: #181818; }
+    .feat-card:hover::before { background: var(--red); }
+
+    .feat-num {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: rgba(200,16,46,0.1);
+      line-height: 1;
+      margin-bottom: 20px;
+      transition: color 0.3s;
+    }
+
+    .feat-card:hover .feat-num { color: rgba(200,16,46,0.25); }
+
+    .feat-icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 16px;
+      color: var(--red);
+    }
+
+    .feat-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .feat-card p {
+      font-size: 0.87rem;
+      color: var(--muted);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* ════════════════════════════
+       GALLERY / SHOWCASE
+    ════════════════════════════ */
+    .showcase {
+      padding: 100px 48px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .showcase-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 48px;
+    }
+
+    .showcase-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: var(--white);
+    }
+
+    .showcase-header h2 em {
+      font-style: italic;
+      color: var(--red);
+    }
+
+    .showcase-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: auto;
+      gap: 8px;
+    }
+
+    .gal-item {
+      overflow: hidden;
+      position: relative;
+      background: var(--card);
+    }
+
+    .gal-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease, filter 0.4s;
+      filter: grayscale(20%);
+    }
+
+    .gal-item:hover img {
+      transform: scale(1.05);
+      filter: grayscale(0%);
+    }
+
+    .gal-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(8,8,8,0.5) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    .gal-item:hover::after { opacity: 1; }
+
+    .gi-1 { grid-column: 1 / 7; grid-row: 1; aspect-ratio: 16/10; }
+    .gi-2 { grid-column: 7 / 10; grid-row: 1; aspect-ratio: 3/4; }
+    .gi-3 { grid-column: 10 / 13; grid-row: 1; aspect-ratio: 3/4; }
+    .gi-4 { grid-column: 1 / 5; grid-row: 2; aspect-ratio: 4/3; }
+    .gi-5 { grid-column: 5 / 9; grid-row: 2; aspect-ratio: 4/3; }
+    .gi-6 { grid-column: 9 / 13; grid-row: 2; aspect-ratio: 4/3; }
+
+    /* ════════════════════════════
+       EPISODE / QUOTE SECTION
+    ════════════════════════════ */
+    .quote-section {
+      position: relative;
+      padding: 120px 48px;
+      overflow: hidden;
+      background: var(--deep);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .quote-section::before {
+      content: '"';
+      position: absolute;
+      top: -60px;
+      left: 30px;
+      font-family: var(--font-display);
+      font-size: 20rem;
+      color: rgba(200,16,46,0.04);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .quote-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .quote-eyebrow {
+      font-size: 0.68rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 32px;
+    }
+
+    blockquote {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+      font-style: italic;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+    }
+
+    .quote-attr {
+      margin-top: 32px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .quote-attr::before, .quote-attr::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ════════════════════════════
+       EPISODE HIGHLIGHTS
+    ════════════════════════════ */
+    .episodes {
+      padding: 100px 48px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .ep-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      margin-top: 56px;
+    }
+
+    .ep-card {
+      background: var(--card);
+      padding: 36px 40px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 24px;
+      align-items: start;
+      border: 1px solid transparent;
+      transition: border-color 0.3s, background 0.3s;
+      cursor: default;
+    }
+
+    .ep-card:hover {
+      border-color: var(--red-dim);
+      background: #181818;
+    }
+
+    .ep-num {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--red);
+      min-width: 40px;
+      padding-top: 3px;
+    }
+
+    .ep-info h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .ep-info p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    .ep-tags {
+      display: flex;
+      gap: 8px;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+
+    .ep-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* ════════════════════════════
+       LOGO BANNER
+    ════════════════════════════ */
+    .logo-section {
+      padding: 80px 48px;
+      background: var(--deep);
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .logo-section img {
+      max-width: 340px;
+      width: 80%;
+      opacity: 0.9;
+      filter: brightness(1.1);
+    }
+
+    .logo-section p {
+      margin-top: 20px;
+      font-size: 0.78rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ════════════════════════════
+       CTA / CLOSING
+    ════════════════════════════ */
+    .cta-section {
+      position: relative;
+      padding: 140px 48px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(200,16,46,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-section::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 48px; right: 48px;
+      border-left: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      pointer-events: none;
+    }
+
+    .cta-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 24px;
+    }
+
+    .cta-inner h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+
+    .cta-inner h2 .outline {
+      -webkit-text-stroke: 1.5px var(--white);
+      color: transparent;
+    }
+
+    .cta-inner p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-weight: 300;
+      margin-bottom: 48px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 36px;
+      background: transparent;
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border: 1px solid rgba(240,236,228,0.3);
+      cursor: pointer;
+      transition: border-color 0.3s, background 0.3s, color 0.3s;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--red);
+      background: rgba(200,16,46,0.08);
+      color: var(--red);
+    }
+
+    /* ════════════════════════════
+       FOOTER
+    ════════════════════════════ */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .footer-brand {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.1em;
+    }
+
+    .footer-brand span {
+      color: var(--red);
+    }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+
+    .footer-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ════════════════════════════
+       ANIMATIONS
+    ════════════════════════════ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ════════════════════════════
+       RESPONSIVE
+    ════════════════════════════ */
+    @media (max-width: 900px) {
+      header { padding: 16px 24px; }
+      .nav-badge { display: none; }
+      .hero-content { padding: 0 24px 100px; }
+
+      .intro {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        padding: 80px 24px;
+      }
+
+      .intro-visual { order: -1; }
+
+      .features { padding: 80px 24px; }
+      .features-grid { grid-template-columns: 1fr; gap: 2px; }
+
+      .showcase { padding: 80px 24px; }
+      .showcase-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+      .gi-1 { grid-column: 1 / 3; }
+      .gi-2 { grid-column: 1 / 2; }
+      .gi-3 { grid-column: 2 / 3; }
+      .gi-4 { grid-column: 1 / 2; }
+      .gi-5 { grid-column: 2 / 3; }
+      .gi-6 { grid-column: 1 / 3; }
+
+      .quote-section { padding: 80px 24px; }
+      .episodes { padding: 80px 24px; }
+      .ep-grid { grid-template-columns: 1fr; }
+
+      .cta-section { padding: 100px 24px; }
+      .cta-section::after { left: 24px; right: 24px; }
+
+      footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 32px 24px;
+      }
+
+      .footer-line { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-wrap">
+      <div class="logo-icon">
+        <img src="https://ayowasabi.com/cdn/thecancelledpodcast-icon.webp" alt="The Cancelled Podcast Icon">
+      </div>
+      <div class="brand-name">
+        LUXURY138
+        <span>The Cancelled Podcast</span>
+      </div>
+    </div>
+    <div class="nav-badge">
+      <span class="dot"></span>
+      Sedang Mengudara
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img class="hero-bg-img" src="https://ayowasabi.com/cdn/thecancelledpodcast-6.jpg" alt="The Cancelled Podcast Visual">
+    </div>
+    <div class="hero-accent"></div>
+
+    <div class="hero-content">
+      <div class="hero-tag">Podcast Entertainment Premium</div>
+      <h1 class="hero-h1">
+        Suara yang<br>
+        <em>Tak Pernah</em><br>
+        <span class="outline">Diam.</span>
+      </h1>
+      <p class="hero-sub">
+        Percakapan tanpa sensor. Cerita yang tersembunyi. Kebenaran yang akhirnya berani diucapkan — keras, jelas, dan tanpa filter.
+      </p>
+      <div class="hero-cta-row">
+        <button class="btn-primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"></polygon></svg>
+          Dengarkan Sekarang
+        </button>
+        <div class="hero-stat">
+          <strong>100+</strong>
+          Episode Tayang
+        </div>
+      </div>
+    </div>
+
+    <div class="ticker-wrap">
+      <div class="ticker">
+        <span class="ticker-item">The Cancelled Podcast <span class="sep">✦</span></span>
+        <span class="ticker-item">Cerita Yang Tak Pernah Diceritakan <span class="sep">✦</span></span>
+        <span class="ticker-item">LUXURY138 Entertainment <span class="sep">✦</span></span>
+        <span class="ticker-item">Tanpa Filter. Tanpa Sensor. <span class="sep">✦</span></span>
+        <span class="ticker-item">Suara Yang Dilarang <span class="sep">✦</span></span>
+        <span class="ticker-item">The Cancelled Podcast <span class="sep">✦</span></span>
+        <span class="ticker-item">Cerita Yang Tak Pernah Diceritakan <span class="sep">✦</span></span>
+        <span class="ticker-item">LUXURY138 Entertainment <span class="sep">✦</span></span>
+        <span class="ticker-item">Tanpa Filter. Tanpa Sensor. <span class="sep">✦</span></span>
+        <span class="ticker-item">Suara Yang Dilarang <span class="sep">✦</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <div class="intro-text reveal">
+      <div class="intro-label">Tentang Kami</div>
+      <h2>Dilarang.<br><em>Tapi Tetap Bicara.</em></h2>
+      <p>
+        The Cancelled Podcast hadir dari keyakinan sederhana: ada terlalu banyak cerita yang dibungkam, terlalu banyak suara yang dipinggirkan, dan terlalu banyak kebenaran yang ditolak platform lain.
+      </p>
+      <p>
+        Kami hadir di sini untuk semuanya. Percakapan mendalam, tawa yang jujur, dan momen-momen yang tak akan kamu temukan di tempat lain. Ini bukan sekadar podcast — ini ruang untuk berani.
+      </p>
+      <p>
+        Dipersembahkan oleh <strong>LUXURY138</strong>, platform entertainment premium yang percaya bahwa konten terbaik lahir dari kejujuran.
+      </p>
+    </div>
+    <div class="intro-visual reveal">
+      <div class="intro-img-frame">
+        <img src="https://ayowasabi.com/cdn/thecancelledpodcast-5.jpg" alt="The Cancelled Podcast Studio">
+        <div class="intro-badge">Premium<br>Podcast<br>Entertainment</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="section-header reveal">
+      <div class="section-tag">Mengapa The Cancelled Podcast</div>
+      <h2>Berbeda dari yang Sudah Ada</h2>
+      <p>Tiga hal yang membuat setiap episode terasa seperti kejutan yang kamu tunggu-tunggu.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feat-card reveal">
+        <div class="feat-num">01</div>
+        <svg class="feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <path d="M12 2a3 3 0 0 1 3 3v7a3 3 0 0 1-6 0V5a3 3 0 0 1 3-3z"></path>
+          <path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v3M8 22h8"></path>
+        </svg>
+        <h3>Bicara Tanpa Batas</h3>
+        <p>Tidak ada topik yang terlalu tabu. Tidak ada tamu yang terlalu kontroversial. Setiap episode dibangun di atas satu prinsip: kejujuran itu berharga.</p>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-num">02</div>
+        <svg class="feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M12 6v6l4 2"></path>
+        </svg>
+        <h3>Konten Berkualitas Tinggi</h3>
+        <p>Produksi premium, riset mendalam, dan format yang mengalir secara natural. Dengarkan satu episode — dan kamu akan mengerti perbedaannya.</p>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-num">03</div>
+        <svg class="feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+        <h3>Tamu yang Tak Terduga</h3>
+        <p>Dari tokoh kontroversial hingga suara-suara yang lama diam — setiap tamu hadir dengan perspektif yang akan mengubah cara kamu melihat sesuatu.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWCASE / GALLERY -->
+  <section class="showcase">
+    <div class="showcase-header reveal">
+      <h2>Momen yang <em>Berbicara</em><br>Sendiri</h2>
+      <div class="showcase-note">Behind the Mic</div>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gal-item gi-1">
+        <img src="https://ayowasabi.com/cdn/thecancelledpodcast-1.jpg" alt="The Cancelled Podcast Momen 1">
+      </div>
+      <div class="gal-item gi-2">
+        <img src="https://ayowasabi.com/cdn/thecancelledpodcast-2.jpg" alt="The Cancelled Podcast Momen 2">
+      </div>
+      <div class="gal-item gi-3">
+        <img src="https://ayowasabi.com/cdn/thecancelledpodcast-3.jpg" alt="The Cancelled Podcast Momen 3">
+      </div>
+      <div class="gal-item gi-4">
+        <img src="https://ayowasabi.com/cdn/thecancelledpodcast-4.jpg" alt="The Cancelled Podcast Momen 4">
+      </div>
+      <div class="gal-item gi-5">
+        <img src="https://ayowasabi.com/cdn/thecancelledpodcast-5.jpg" alt="The Cancelled Podcast Momen 5">
+      </div>
+      <div class="gal-item gi-6">
+        <img src="https://ayowasabi.com/cdn/thecancelledpodcast-6.jpg" alt="The Cancelled Podcast Momen 6">
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="quote-section">
+    <div class="quote-inner reveal">
+      <div class="quote-eyebrow">Filosofi Kami</div>
+      <blockquote>
+        "Yang namanya 'dibatalkan' itu hanya berarti kamu terlalu jujur untuk dunia yang lebih nyaman dengan kebohongan."
+      </blockquote>
+      <div class="quote-attr">The Cancelled Podcast — LUXURY138</div>
+    </div>
+  </section>
+
+  <!-- EPISODE HIGHLIGHTS -->
+  <section class="episodes">
+    <div class="section-header reveal" style="text-align: left; max-width: 100%; margin-bottom: 0;">
+      <div class="section-tag">Episode Pilihan</div>
+      <h2 style="font-family: var(--font-display); font-size: clamp(1.8rem,3vw,2.8rem); font-weight: 900; letter-spacing: -0.02em; color: var(--white);">Mulai dari yang Paling <em style="font-style:italic; color: var(--red);">Berani</em></h2>
+    </div>
+    <div class="ep-grid">
+      <div class="ep-card reveal">
+        <div class="ep-num">EP·01</div>
+        <div class="ep-info">
+          <h3>Mereka Yang Diturunkan Platform</h3>
+          <p>Kisah-kisah kreator yang dibungkam di era digital — dan mengapa keberanian berbicara justru semakin mahal harganya.</p>
+          <div class="ep-tags">
+            <span class="ep-tag">Kontroversial</span>
+            <span class="ep-tag">Digital Freedom</span>
+          </div>
+        </div>
+      </div>
+      <div class="ep-card reveal">
+        <div class="ep-num">EP·02</div>
+        <div class="ep-info">
+          <h3>Rahasia di Balik Ketenaran</h3>
+          <p>Satu percakapan dengan seorang mantan selebriti tentang apa yang sebenarnya terjadi di balik layar industri hiburan.</p>
+          <div class="ep-tags">
+            <span class="ep-tag">Entertainment</span>
+            <span class="ep-tag">Insider Story</span>
+          </div>
+        </div>
+      </div>
+      <div class="ep-card reveal">
+        <div class="ep-num">EP·03</div>
+        <div class="ep-info">
+          <h3>Opini yang Terlalu Mahal</h3>
+          <p>Diskusi tanpa tedeng aling-aling tentang mengapa kebenaran sering kali terasa lebih berbahaya dari kebohongan yang elegan.</p>
+          <div class="ep-tags">
+            <span class="ep-tag">Filosofi</span>
+            <span class="ep-tag">Sosial</span>
+          </div>
+        </div>
+      </div>
+      <div class="ep-card reveal">
+        <div class="ep-num">EP·04</div>
+        <div class="ep-info">
+          <h3>Ketika Tawa Menjadi Perlawanan</h3>
+          <p>Komedi sebagai senjata, humor sebagai kritik. Bagaimana stand-up comedy bertahan di dunia yang semakin mudah tersinggung.</p>
+          <div class="ep-tags">
+            <span class="ep-tag">Komedi</span>
+            <span class="ep-tag">Budaya</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGO -->
+  <div class="logo-section reveal">
+    <img src="https://ayowasabi.com/cdn/thecancelledpodcast-logo-1.webp" alt="The Cancelled Podcast Logo">
+    <p>Dipersembahkan oleh LUXURY138</p>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-inner reveal">
+      <div class="cta-label">Mulai Perjalanan Suaramu</div>
+      <h2>
+        Siap untuk<br>
+        <span class="outline">Mendengar</span><br>
+        Lebih Dalam?
+      </h2>
+      <p>
+        Setiap episode adalah pintu ke percakapan yang belum pernah kamu ikuti sebelumnya. Tidak ada yang dibungkam di sini.
+      </p>
+      <button class="btn-ghost">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"></polygon></svg>
+        Mulai Dengarkan
+      </button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">LUXURY<span>138</span></div>
+    <div class="footer-line"></div>
+    <div class="footer-copy">© 2026 The Cancelled Podcast. Semua Hak Dilindungi.</div>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 80);
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => io.observe(el));
+  </script>
+
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;071f034cf8724da0bc38beda34f1899e&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+</body></html>

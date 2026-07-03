@@ -1,0 +1,121 @@
+<html><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Barcelona Pools</title>
+	<link rel="stylesheet" href="https://barcelonapools.com/other/css/reset.css">
+	<link rel="stylesheet" href="https://barcelonapools.com/other/css/layout.css">
+	<script src="https://barcelonapools.com/other/js/jquery-1.10.2.min.js"></script>
+	<script src="https://barcelonapools.com/other/js/jquery-ui-1.10.3.custom.min.js"></script>
+</head>
+<body style="">
+	<div id="frame">
+		<div id="toppart">
+			<div class="logo"></div>
+			<div class="menu_part">
+				<ul>
+					<li><a href="https://barcelonapools.com/" class="chose">Home</a></li>
+					<li><a href="https://barcelonapools.com/About_us">About Us</a></li>
+					<li><a href="https://barcelonapools.com/Latest_result">Latest Result</a></li>
+					<li><a href="https://barcelonapools.com/Contact_us">Contact Us</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="main_part">
+			<div class="banner"></div>
+			<div class="main_content" id="main_content">
+				<h1>SORTEO EN DIRECTO</h1>
+				<div id="shin">
+		<table class="live_draw" cellspacing="0" cellpadding="0">
+			<thead>
+				<tr>
+					<th style="text-align:left;"></th>  <th style="text-align:right;">12 - Abril - 2026</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="left" style="border-top:3px solid #fff;">
+						1st Prize
+					</td>
+					<td class="right" style="border-top:3px solid #fff;">
+						.
+						.
+						.
+						.
+						.
+						.
+					</td>
+				</tr>
+				<tr>
+					<td class="left">
+						2nd Prize
+					</td>
+					<td class="right" style="border-top:3px solid #fff;">
+						.
+						.
+						.
+						.
+						.
+						.
+					</td>
+				</tr>
+				<tr>
+					<td class="left">
+						3rd Prize
+					</td>
+					<td class="right" style="border-top:3px solid #fff;">
+						.
+						.
+						.
+						.
+						.
+						.
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="spacer"></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="head_prize">Premio inicial</td>
+				</tr><tr><td class="starter">......</td><td class="starter">......</td></tr><tr><td class="starter">......</td><td class="starter">......</td></tr><tr><td class="starter">......</td><td class="starter">......</td></tr><tr><td class="starter">......</td></tr>
+				<tr>
+					<td colspan="2" class="spacer"></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="head_prize">Premio de consolación</td>
+				</tr>
+		<tr><td class="starter">......</td><td class="starter">......</td></tr><tr><td class="starter">......</td><td class="starter">......</td></tr><tr><td class="starter">......</td><td class="starter">......</td></tr>
+				</tbody>
+			</table>
+		</div>
+				<div class="advertising">
+					<img src="https://barcelonapools.com/other/images/advertise.png">
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<h4>Copyright Barcelona Pools | All Right Reserved</h4>
+		</div>
+	</div>
+<script>
+$(document).ready(function() {		
+	refresh_me();
+});
+var refresh_me = function(){
+	get_update();
+	setTimeout(refresh_me, 3000);
+}
+function get_update(){
+	$.ajax(
+		{
+			url: "https://barcelonapools.com/action",
+			success:function(response)
+			{
+				$('#shin').html(response);
+			}
+		}
+	);
+}
+</script>
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;0c43d9b6a5d64420818e094c20b12c75&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+</body></html>

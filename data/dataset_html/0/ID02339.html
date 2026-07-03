@@ -1,0 +1,335 @@
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Website resmi jombang yang memuat informasi tentang kabupaten jombang">
+  <meta name="keywords" content="kominfo, website, jombang, santri, berita, agenda, profil">
+  <meta name="author" content="Dinas Kominfo Jombang">
+  <title>Portal Resmi Pemerintah Kabupaten Jombang</title>
+
+  <link rel="shortcut icon" href="https://www.jombangkab.go.id/assets/main/img/favicon.png">
+  <link rel="stylesheet" href="https://www.jombangkab.go.id/assets/main/css/plugins.css">
+  <link rel="stylesheet" href="https://www.jombangkab.go.id/assets/main/css/style.css">
+  <link rel="stylesheet" href="https://www.jombangkab.go.id/assets/main/css/icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&amp;family=Poppins:wght@300;400;500;600;700;800;900&amp;display=swap">
+  <link rel="stylesheet" href="https://www.jombangkab.go.id/assets/main/css/fonts/dm.css" as="style" onload="this.rel='stylesheet'">
+
+  <meta name="title" content="Beranda">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.jombangkab.go.id/">
+  <meta property="og:title" content="Beranda">
+  <meta property="og:site_name" content="Website Jombangkab">
+  <meta property="og:description" content="Website resmi jombang yang memuat informasi tentang kabupaten jombang">
+  <meta property="og:image" content="https://www.jombangkab.go.id/assets/main/img/RINGIN-CONTONG.jpg">
+  <meta property="og:image:width" content="140">
+  <meta property="og:image:height" content="140">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.jombangkab.go.id/">
+  <meta property="twitter:title" content="Beranda">
+  <meta property="twitter:description" content="Website resmi jombang yang memuat informasi tentang kabupaten jombang">
+  <meta property="twitter:image" content="https://www.jombangkab.go.id/assets/main/img/RINGIN-CONTONG.jpg">
+
+
+
+  <style>
+  .main-wrapper {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background:#f0f0f0
+  }
+  .main-wrapper .content-left {
+    width:50%;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    background: #4a4a4a;
+
+  }
+
+  .main-wrapper .content-right {
+    margin-left:50%;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+    background: #ffffff;
+    position: relative;
+  }
+  .content-right .header{
+    height:130px;
+    width:100%;
+  }
+
+  .content-right .body{
+    height:calc(100vh - 130px);
+    width:100%;
+    padding:35px;
+    overflow-x:scroll;
+
+  }
+
+  .content-right .footer{
+    position:absolute;
+    bottom:20px;
+    padding:0px 30px;
+    width:100%;
+    height:auto;
+  }
+
+  .swiper-menu:hover .swiper-button-next,
+  .swiper-menu:hover .swiper-button-prev,
+  .swiper-image:hover .swiper-button-next,
+  .swiper-image:hover .swiper-button-prev {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  .swiper-menu .swiper-button-next,
+  .swiper-image .swiper-button-next {
+    transform: translateX(-50px);
+  }
+  .swiper-menu .swiper-button-prev,
+  .swiper-image .swiper-button-prev {
+    transform: translateX(50px);
+  }
+  .swiper-menu .swiper-button-next,
+  .swiper-menu .swiper-button-prev,
+  .swiper-image .swiper-button-next,
+  .swiper-image .swiper-button-prev{
+    background: 0 0;
+    width: 55px;
+    height: 55px;
+    line-height: 53px;
+    margin-top: -30px;
+    text-align: center;
+    border: 2px solid #d4d3d3;
+    border-radius: 55px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .swiper-menu .swiper-controls .swiper-navigation .swiper-button.swiper-button-prev,
+  .swiper-image .swiper-controls .swiper-navigation .swiper-button.swiper-button-prev {
+    left: -1rem;
+  }
+
+  .swiper-menu .swiper-controls .swiper-navigation .swiper-button.swiper-button-next,
+  .swiper-image .swiper-controls .swiper-navigation .swiper-button.swiper-button-next {
+    right: -1rem;
+  }
+
+  .menu-card {
+    padding-top:30px;
+    z-index: 99;
+    bottom: 0px;
+    text-align: center;
+    width:100%;
+    position: relative;
+    aspect-ratio:1/1;
+    border-radius: 20px;
+    /* -webkit-box-shadow: 0 3.4px 2.7px -30px rgb(0 0 0 / 6%), 0 8.2px 8.9px -30px rgb(0 0 0 / 7%), 0 25px 40px -30px rgb(0 0 0 / 20%);
+    box-shadow: 0 3.4px 2.7px -30px rgb(0 0 0 / 6%), 0 8.2px 8.9px -30px rgb(0 0 0 / 7%), 0 25px 40px -30px rgb(0 0 0 / 20%); */
+    -webkit-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+  }
+
+
+
+  .menu-card .icon-bg img{
+    display: block;
+    height: 70px;
+    width: 70px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .menu-card p{
+    color: #050748;
+    position: absolute;
+    width:100%;
+    bottom:30px;
+    font-family: Poppins, sans-serif;
+    line-height: 18px;
+    font-size: 15px;
+    margin: 5px 0 0;
+    padding: 0 20px;
+  }
+/*
+  .menu-card:hover{
+    transform: translate(0px,-10px);
+  } */
+
+  .slider-wrapper {
+    background-color:#fff;
+    width: 100%;
+    min-height:300px;
+    position: relative;
+  }
+
+  .image-wrapper {
+    background-color:#e7e7e7;
+    width: 100%;
+    padding-top: 100%; /* 1:1 Aspect Ratio */
+    position: relative; /* If you want text inside of it */
+    background-position: 50% 50%;
+    background-repeat:no-repeat;
+    background-size:cover;
+  }
+
+  .content-left img{
+    height: 100%  !important;
+    width: 100%  !important;
+    transition: all .3s ease  !important;
+    object-fit: cover  !important;
+  }
+
+  .swiper-menu .swiper{
+    padding-top: 30px;
+  }
+
+  @media (max-width: 991.98px){
+    .content-left{
+      display: none;
+    }
+    .main-wrapper .content-right{
+      margin-left: 0px;
+    }
+  }
+
+  @media (min-width: 600px){
+    #responsive_logo{
+      display: none
+    }
+    #main_logo,
+    #branding_logo{
+      display: block
+    }
+  }
+
+  @media (max-width: 600px){
+    .menu-card .icon-bg img{
+      display: block;
+      height: 50px;
+      width: 50px;
+    }
+    .menu-card p{
+      bottom:20px;
+      line-height: 15px;
+      font-size: 13px;
+    }
+    #responsive_logo{
+      display: block
+    }
+    #main_logo,
+    #branding_logo{
+      display: none
+    }
+  }
+
+  </style>
+  <style type="text/css">img[onload^="SVGInject("]{visibility:hidden;}</style></head>
+<body>
+  <div class="main-wrapper">
+    <div class="content-left">
+      <img src="https://www.jombangkab.go.id/assets/main/img/cityview.jpg">
+    </div>
+    <div class="content-right">
+      <div class="header">
+        <img src="https://www.jombangkab.go.id/assets/main/img/logo-footer.png" id="responsive_logo" alt="" style="height:80px;position:absolute;top:30px;left:30px">
+        <img src="https://www.jombangkab.go.id/assets/main/img/logo.png" id="main_logo" alt="" style="height:80px;position:absolute;top:30px;left:30px">
+        <img src="https://www.jombangkab.go.id/assets/main/img/logo-branding.png" id="branding_logo" alt="" style="height:80px;position:absolute;top:30px;right:30px">
+      </div>
+      <div class="body">
+        <a href="https://www.jombangkab.go.id/beranda" class="btn btn-success mb-6" style="width:100%">Halaman Beranda</a>
+        <div class="row gx-5 gy-5">
+                    <div class="col-xl-4 col-md-4 col-6">
+            <a href="https://www.jombangkab.go.id/profil/kabupaten/sejarah">
+              <div class="menu-card shadow" style="background-color:#e5f4fd">
+                <div class="icon-bg"><img src="https://www.jombangkab.go.id/storage/sliding_menu/ve2dY7ATTBIk0WPbg2L1JpQGtJ5rEl5Ls4HOPtdW.png"></div>
+                <p>Profil Kabupaten</p>
+              </div>
+            </a>
+          </div>
+                    <div class="col-xl-4 col-md-4 col-6">
+            <a href="https://www.jombangkab.go.id/profil/pemerintahan/kepala_daerah">
+              <div class="menu-card shadow" style="background-color:#fae6e7">
+                <div class="icon-bg"><img src="https://www.jombangkab.go.id/storage/sliding_menu/BbBEnDJfOmkNx8wFmaGWWJOaNOG4tlCMUpGU50M8.png"></div>
+                <p>Profil Pemerintahan</p>
+              </div>
+            </a>
+          </div>
+                    <div class="col-xl-4 col-md-4 col-6">
+            <a href="https://www.jombangkab.go.id/fasilitas">
+              <div class="menu-card shadow" style="background-color:#fef3e4">
+                <div class="icon-bg"><img src="https://www.jombangkab.go.id/storage/sliding_menu/ajmxScBCVv7YQLY8OWlIsG3kyFieOFXSFW8FZmF8.png"></div>
+                <p>Fasilitas Publik</p>
+              </div>
+            </a>
+          </div>
+                    <div class="col-xl-4 col-md-4 col-6">
+            <a href="https://www.jombangkab.go.id/berita">
+              <div class="menu-card shadow" style="background-color:#e6e5f4">
+                <div class="icon-bg"><img src="https://www.jombangkab.go.id/storage/sliding_menu/qRk7BdhCpRleckpmJlhcVziYHICFVbE24QoZyQsj.png"></div>
+                <p>Berita</p>
+              </div>
+            </a>
+          </div>
+                    <div class="col-xl-4 col-md-4 col-6">
+            <a href="https://www.jombangkab.go.id/agenda">
+              <div class="menu-card shadow" style="background-color:#e5f4fd">
+                <div class="icon-bg"><img src="https://www.jombangkab.go.id/storage/sliding_menu/pE1zNWNYZ0vuPKhcHWF3OVPVaxmm7mN2MBvAU1Wc.png"></div>
+                <p>Agenda</p>
+              </div>
+            </a>
+          </div>
+                    <div class="col-xl-4 col-md-4 col-6">
+            <a href="https://www.jombangkab.go.id/layanan">
+              <div class="menu-card shadow" style="background-color:#f8e7ec">
+                <div class="icon-bg"><img src="https://www.jombangkab.go.id/storage/sliding_menu/V0Ud03m2GP7SoxEZ8lYs1yNwUTPYJ7Q12E2M1nla.png"></div>
+                <p>Layanan Publik</p>
+              </div>
+            </a>
+          </div>
+                    <div class="col-xl-4 col-md-4 col-6">
+            <a href="https://www.jombangkab.go.id/dokumen">
+              <div class="menu-card shadow" style="background-color:#ebf6e1">
+                <div class="icon-bg"><img src="https://www.jombangkab.go.id/storage/sliding_menu/ci5fw1HibCZAOxjY9Xv6nqziCdBO22Bba7voktBV.png"></div>
+                <p>Dokumen</p>
+              </div>
+            </a>
+          </div>
+                    <div class="col-xl-4 col-md-4 col-6">
+            <a href="https://www.jombangkab.go.id/foto">
+              <div class="menu-card shadow" style="background-color:#eae0f4">
+                <div class="icon-bg"><img src="https://www.jombangkab.go.id/storage/sliding_menu/0lShDHADeBdWmVetvsCLo1SLpyfyfahXRfqcxVYO.png"></div>
+                <p>Gallery Foto</p>
+              </div>
+            </a>
+          </div>
+                    <div class="col-xl-4 col-md-4 col-6">
+            <a href="https://www.jombangkab.go.id/video">
+              <div class="menu-card shadow" style="background-color:#f8e7ec">
+                <div class="icon-bg"><img src="https://www.jombangkab.go.id/storage/sliding_menu/Ukx8uiqQhpTW7JKkAUYyM9pNPfoMl6TGqpjBblQC.png"></div>
+                <p>Video</p>
+              </div>
+            </a>
+          </div>
+                  </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <script src="https://www.jombangkab.go.id/assets/main/js/plugins.js"></script>
+  <script src="https://www.jombangkab.go.id/assets/main/js/theme.js"></script>
+
+
+</body></html>

@@ -1,0 +1,971 @@
+<html prefix="
+og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ansible Community | Ansible documentation</title>
+<style type="text/css">:root, :host {
+  --fa-font-solid: normal 900 1em/1 "Font Awesome 7 Free";
+  --fa-font-regular: normal 400 1em/1 "Font Awesome 7 Free";
+  --fa-font-light: normal 300 1em/1 "Font Awesome 7 Pro";
+  --fa-font-thin: normal 100 1em/1 "Font Awesome 7 Pro";
+  --fa-font-duotone: normal 900 1em/1 "Font Awesome 7 Duotone";
+  --fa-font-duotone-regular: normal 400 1em/1 "Font Awesome 7 Duotone";
+  --fa-font-duotone-light: normal 300 1em/1 "Font Awesome 7 Duotone";
+  --fa-font-duotone-thin: normal 100 1em/1 "Font Awesome 7 Duotone";
+  --fa-font-brands: normal 400 1em/1 "Font Awesome 7 Brands";
+  --fa-font-sharp-solid: normal 900 1em/1 "Font Awesome 7 Sharp";
+  --fa-font-sharp-regular: normal 400 1em/1 "Font Awesome 7 Sharp";
+  --fa-font-sharp-light: normal 300 1em/1 "Font Awesome 7 Sharp";
+  --fa-font-sharp-thin: normal 100 1em/1 "Font Awesome 7 Sharp";
+  --fa-font-sharp-duotone-solid: normal 900 1em/1 "Font Awesome 7 Sharp Duotone";
+  --fa-font-sharp-duotone-regular: normal 400 1em/1 "Font Awesome 7 Sharp Duotone";
+  --fa-font-sharp-duotone-light: normal 300 1em/1 "Font Awesome 7 Sharp Duotone";
+  --fa-font-sharp-duotone-thin: normal 100 1em/1 "Font Awesome 7 Sharp Duotone";
+  --fa-font-slab-regular: normal 400 1em/1 "Font Awesome 7 Slab";
+  --fa-font-slab-press-regular: normal 400 1em/1 "Font Awesome 7 Slab Press";
+  --fa-font-whiteboard-semibold: normal 600 1em/1 "Font Awesome 7 Whiteboard";
+  --fa-font-thumbprint-light: normal 300 1em/1 "Font Awesome 7 Thumbprint";
+  --fa-font-notdog-solid: normal 900 1em/1 "Font Awesome 7 Notdog";
+  --fa-font-notdog-duo-solid: normal 900 1em/1 "Font Awesome 7 Notdog Duo";
+  --fa-font-etch-solid: normal 900 1em/1 "Font Awesome 7 Etch";
+  --fa-font-jelly-regular: normal 400 1em/1 "Font Awesome 7 Jelly";
+  --fa-font-jelly-fill-regular: normal 400 1em/1 "Font Awesome 7 Jelly Fill";
+  --fa-font-jelly-duo-regular: normal 400 1em/1 "Font Awesome 7 Jelly Duo";
+  --fa-font-chisel-regular: normal 400 1em/1 "Font Awesome 7 Chisel";
+  --fa-font-utility-semibold: normal 600 1em/1 "Font Awesome 7 Utility";
+  --fa-font-utility-duo-semibold: normal 600 1em/1 "Font Awesome 7 Utility Duo";
+  --fa-font-utility-fill-semibold: normal 600 1em/1 "Font Awesome 7 Utility Fill";
+}
+
+.svg-inline--fa {
+  box-sizing: content-box;
+  display: var(--fa-display, inline-block);
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+  width: var(--fa-width, 1.25em);
+}
+.svg-inline--fa.fa-2xs {
+  vertical-align: 0.1em;
+}
+.svg-inline--fa.fa-xs {
+  vertical-align: 0em;
+}
+.svg-inline--fa.fa-sm {
+  vertical-align: -0.0714285714em;
+}
+.svg-inline--fa.fa-lg {
+  vertical-align: -0.2em;
+}
+.svg-inline--fa.fa-xl {
+  vertical-align: -0.25em;
+}
+.svg-inline--fa.fa-2xl {
+  vertical-align: -0.3125em;
+}
+.svg-inline--fa.fa-pull-left,
+.svg-inline--fa .fa-pull-start {
+  float: inline-start;
+  margin-inline-end: var(--fa-pull-margin, 0.3em);
+}
+.svg-inline--fa.fa-pull-right,
+.svg-inline--fa .fa-pull-end {
+  float: inline-end;
+  margin-inline-start: var(--fa-pull-margin, 0.3em);
+}
+.svg-inline--fa.fa-li {
+  width: var(--fa-li-width, 2em);
+  inset-inline-start: calc(-1 * var(--fa-li-width, 2em));
+  inset-block-start: 0.25em; /* syncing vertical alignment with Web Font rendering */
+}
+
+.fa-layers-counter, .fa-layers-text {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+}
+
+.fa-layers {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  text-align: center;
+  vertical-align: -0.125em;
+  width: var(--fa-width, 1.25em);
+}
+.fa-layers .svg-inline--fa {
+  inset: 0;
+  margin: auto;
+  position: absolute;
+  transform-origin: center center;
+}
+
+.fa-layers-text {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+}
+
+.fa-layers-counter {
+  background-color: var(--fa-counter-background-color, #ff253a);
+  border-radius: var(--fa-counter-border-radius, 1em);
+  box-sizing: border-box;
+  color: var(--fa-inverse, #fff);
+  line-height: var(--fa-counter-line-height, 1);
+  max-width: var(--fa-counter-max-width, 5em);
+  min-width: var(--fa-counter-min-width, 1.5em);
+  overflow: hidden;
+  padding: var(--fa-counter-padding, 0.25em 0.5em);
+  right: var(--fa-right, 0);
+  text-overflow: ellipsis;
+  top: var(--fa-top, 0);
+  transform: scale(var(--fa-counter-scale, 0.25));
+  transform-origin: top right;
+}
+
+.fa-layers-bottom-right {
+  bottom: var(--fa-bottom, 0);
+  right: var(--fa-right, 0);
+  top: auto;
+  transform: scale(var(--fa-layers-scale, 0.25));
+  transform-origin: bottom right;
+}
+
+.fa-layers-bottom-left {
+  bottom: var(--fa-bottom, 0);
+  left: var(--fa-left, 0);
+  right: auto;
+  top: auto;
+  transform: scale(var(--fa-layers-scale, 0.25));
+  transform-origin: bottom left;
+}
+
+.fa-layers-top-right {
+  top: var(--fa-top, 0);
+  right: var(--fa-right, 0);
+  transform: scale(var(--fa-layers-scale, 0.25));
+  transform-origin: top right;
+}
+
+.fa-layers-top-left {
+  left: var(--fa-left, 0);
+  right: auto;
+  top: var(--fa-top, 0);
+  transform: scale(var(--fa-layers-scale, 0.25));
+  transform-origin: top left;
+}
+
+.fa-1x {
+  font-size: 1em;
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-4x {
+  font-size: 4em;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
+.fa-6x {
+  font-size: 6em;
+}
+
+.fa-7x {
+  font-size: 7em;
+}
+
+.fa-8x {
+  font-size: 8em;
+}
+
+.fa-9x {
+  font-size: 9em;
+}
+
+.fa-10x {
+  font-size: 10em;
+}
+
+.fa-2xs {
+  font-size: calc(10 / 16 * 1em); /* converts a 10px size into an em-based value that's relative to the scale's 16px base */
+  line-height: calc(1 / 10 * 1em); /* sets the line-height of the icon back to that of it's parent */
+  vertical-align: calc((6 / 10 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text's descender */
+}
+
+.fa-xs {
+  font-size: calc(12 / 16 * 1em); /* converts a 12px size into an em-based value that's relative to the scale's 16px base */
+  line-height: calc(1 / 12 * 1em); /* sets the line-height of the icon back to that of it's parent */
+  vertical-align: calc((6 / 12 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text's descender */
+}
+
+.fa-sm {
+  font-size: calc(14 / 16 * 1em); /* converts a 14px size into an em-based value that's relative to the scale's 16px base */
+  line-height: calc(1 / 14 * 1em); /* sets the line-height of the icon back to that of it's parent */
+  vertical-align: calc((6 / 14 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text's descender */
+}
+
+.fa-lg {
+  font-size: calc(20 / 16 * 1em); /* converts a 20px size into an em-based value that's relative to the scale's 16px base */
+  line-height: calc(1 / 20 * 1em); /* sets the line-height of the icon back to that of it's parent */
+  vertical-align: calc((6 / 20 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text's descender */
+}
+
+.fa-xl {
+  font-size: calc(24 / 16 * 1em); /* converts a 24px size into an em-based value that's relative to the scale's 16px base */
+  line-height: calc(1 / 24 * 1em); /* sets the line-height of the icon back to that of it's parent */
+  vertical-align: calc((6 / 24 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text's descender */
+}
+
+.fa-2xl {
+  font-size: calc(32 / 16 * 1em); /* converts a 32px size into an em-based value that's relative to the scale's 16px base */
+  line-height: calc(1 / 32 * 1em); /* sets the line-height of the icon back to that of it's parent */
+  vertical-align: calc((6 / 32 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text's descender */
+}
+
+.fa-width-auto {
+  --fa-width: auto;
+}
+
+.fa-fw,
+.fa-width-fixed {
+  --fa-width: 1.25em;
+}
+
+.fa-ul {
+  list-style-type: none;
+  margin-inline-start: var(--fa-li-margin, 2.5em);
+  padding-inline-start: 0;
+}
+.fa-ul > li {
+  position: relative;
+}
+
+.fa-li {
+  inset-inline-start: calc(-1 * var(--fa-li-width, 2em));
+  position: absolute;
+  text-align: center;
+  width: var(--fa-li-width, 2em);
+  line-height: inherit;
+}
+
+/* Heads Up: Bordered Icons will not be supported in the future!
+  - This feature will be deprecated in the next major release of Font Awesome (v8)!
+  - You may continue to use it in this version *v7), but it will not be supported in Font Awesome v8.
+*/
+/* Notes:
+* --@{v.$css-prefix}-border-width = 1/16 by default (to render as ~1px based on a 16px default font-size)
+* --@{v.$css-prefix}-border-padding =
+  ** 3/16 for vertical padding (to give ~2px of vertical whitespace around an icon considering it's vertical alignment)
+  ** 4/16 for horizontal padding (to give ~4px of horizontal whitespace around an icon)
+*/
+.fa-border {
+  border-color: var(--fa-border-color, #eee);
+  border-radius: var(--fa-border-radius, 0.1em);
+  border-style: var(--fa-border-style, solid);
+  border-width: var(--fa-border-width, 0.0625em);
+  box-sizing: var(--fa-border-box-sizing, content-box);
+  padding: var(--fa-border-padding, 0.1875em 0.25em);
+}
+
+.fa-pull-left,
+.fa-pull-start {
+  float: inline-start;
+  margin-inline-end: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-pull-right,
+.fa-pull-end {
+  float: inline-end;
+  margin-inline-start: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-beat {
+  animation-name: fa-beat;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-bounce {
+  animation-name: fa-bounce;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+}
+
+.fa-fade {
+  animation-name: fa-fade;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-beat-fade {
+  animation-name: fa-beat-fade;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-flip {
+  animation-name: fa-flip;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-shake {
+  animation-name: fa-shake;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin {
+  animation-name: fa-spin;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 2s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin-reverse {
+  --fa-animation-direction: reverse;
+}
+
+.fa-pulse,
+.fa-spin-pulse {
+  animation-name: fa-spin;
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, steps(8));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fa-beat,
+  .fa-bounce,
+  .fa-fade,
+  .fa-beat-fade,
+  .fa-flip,
+  .fa-pulse,
+  .fa-shake,
+  .fa-spin,
+  .fa-spin-pulse {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+@keyframes fa-beat {
+  0%, 90% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(var(--fa-beat-scale, 1.25));
+  }
+}
+@keyframes fa-bounce {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+  }
+  30% {
+    transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+  }
+  50% {
+    transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+  }
+  57% {
+    transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+  }
+  64% {
+    transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
+@keyframes fa-fade {
+  50% {
+    opacity: var(--fa-fade-opacity, 0.4);
+  }
+}
+@keyframes fa-beat-fade {
+  0%, 100% {
+    opacity: var(--fa-beat-fade-opacity, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(var(--fa-beat-fade-scale, 1.125));
+  }
+}
+@keyframes fa-flip {
+  50% {
+    transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+  }
+}
+@keyframes fa-shake {
+  0% {
+    transform: rotate(-15deg);
+  }
+  4% {
+    transform: rotate(15deg);
+  }
+  8%, 24% {
+    transform: rotate(-18deg);
+  }
+  12%, 28% {
+    transform: rotate(18deg);
+  }
+  16% {
+    transform: rotate(-22deg);
+  }
+  20% {
+    transform: rotate(22deg);
+  }
+  32% {
+    transform: rotate(-12deg);
+  }
+  36% {
+    transform: rotate(12deg);
+  }
+  40%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.fa-rotate-90 {
+  transform: rotate(90deg);
+}
+
+.fa-rotate-180 {
+  transform: rotate(180deg);
+}
+
+.fa-rotate-270 {
+  transform: rotate(270deg);
+}
+
+.fa-flip-horizontal {
+  transform: scale(-1, 1);
+}
+
+.fa-flip-vertical {
+  transform: scale(1, -1);
+}
+
+.fa-flip-both,
+.fa-flip-horizontal.fa-flip-vertical {
+  transform: scale(-1, -1);
+}
+
+.fa-rotate-by {
+  transform: rotate(var(--fa-rotate-angle, 0));
+}
+
+.svg-inline--fa .fa-primary {
+  fill: var(--fa-primary-color, currentColor);
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa .fa-secondary {
+  fill: var(--fa-secondary-color, currentColor);
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-primary {
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-secondary {
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa mask .fa-primary,
+.svg-inline--fa mask .fa-secondary {
+  fill: black;
+}
+
+.svg-inline--fa.fa-inverse {
+  fill: var(--fa-inverse, #fff);
+}
+
+.fa-stack {
+  display: inline-block;
+  height: 2em;
+  line-height: 2em;
+  position: relative;
+  vertical-align: middle;
+  width: 2.5em;
+}
+
+.fa-inverse {
+  color: var(--fa-inverse, #fff);
+}
+
+.svg-inline--fa.fa-stack-1x {
+  --fa-width: 1.25em;
+  height: 1em;
+  width: var(--fa-width);
+}
+.svg-inline--fa.fa-stack-2x {
+  --fa-width: 2.5em;
+  height: 2em;
+  width: var(--fa-width);
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+  inset: 0;
+  margin: auto;
+  position: absolute;
+  z-index: var(--fa-stack-z-index, auto);
+}</style><link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="assets/css/theme.css" rel="stylesheet" type="text/css">
+<!-- Red Hat fonts --><link rel="stylesheet" href="https://static.redhat.com/libs/redhat/redhat-font/2.0.0/webfonts/red-hat-font.css">
+<!-- Font Awesome --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.0/css/all.min.css">
+<!-- Fork Awesome --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
+<!-- Sass compiled css  --><link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/redhat-footer.css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="rss.xml">
+<link rel="canonical" href="https://docs.ansible.com/">
+<link rel="icon" href="favicon/favicon.ico" sizes="16x16">
+<link rel="icon" href="favicon/favicon-32x32.png" sizes="32x32">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]-->
+<script async="" type="text/javascript" src="/_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="ansible"><meta name="readthedocs-version-slug" content="latest"><meta name="readthedocs-resolver-filename" content="/"><meta name="readthedocs-http-status" content="200"></head>
+<body id="top">
+
+<div class="top-banner" id="top-banner">Join us at <a href="https://www.redhat.com/en/summit?sc_id=RHCTE0250000464461" target="_blank">Red Hat Summit in Atlanta</a> to learn about Ansible Automation Platform | May 11-14, 2026</div>
+<div class="global-container" id="content" role="main">
+  <div class="hero-container">
+<!-- Start menubar -->
+<nav class="navbar navbar-expand-lg static-top mb-4 navbar-padding   bg-transparent  "><div class="masthead">
+    <!-- This keeps the margins nice -->
+    <a class="navbar-brand" href=".">
+        <img src="images/community_logo_black.svg" alt="Ansible community logo" id="logo" class="d-inline-block align-top" width="50" height="50"><span id="blog-title">Ansible documentation</span>    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon nav-toggle-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="bs-navbar">
+      <ul class="navbar-nav mr-auto"></ul>
+<ul class="navbar-nav navbar-right">
+<li class="nav-item dropdown">
+	        <a href="#" class="nav-link nav-link-color dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    <i class=""></i> Resources
+                </a>
+		<div class="dropdown-menu dropdown-menu-border">
+	    
+                    <a href="https://docs.ansible.com/projects/ansible/latest/index.html" class="dropdown-item">
+		        <i class=""></i> Ansible package documentation
+                    </a>
+                    <a href="users.html" class="dropdown-item">
+		        <i class=""></i> Users
+                    </a>
+                    <a href="developers.html" class="dropdown-item">
+		        <i class=""></i> Developers
+                    </a>
+                    <a href="maintainers.html" class="dropdown-item">
+		        <i class=""></i> Maintainers
+                    </a>
+                    <a href="ecosystem.html" class="dropdown-item">
+		        <i class=""></i> Ecosystem
+                    </a>
+                    <a href="https://docs.ansible.com/projects/ansible/latest/collections/index.html" class="dropdown-item">
+		        <i class=""></i> Collection index
+                    </a>
+                    <a href="https://docs.ansible.com/projects/ansible/latest/collections/all_plugins.html" class="dropdown-item">
+		        <i class=""></i> Modules and plugins index
+                    </a>
+                    <a href="ansible-prior-versions.html" class="dropdown-item">
+		        <i class=""></i> Documentation archive
+                    </a>
+                    <a href="https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/?sc_id=RHCTE0250000464439" class="dropdown-item">
+		        <i class=""></i> Red Hat Ansible Automation Platform
+                    </a>
+            </div>
+                 </li>
+<li class="nav-item">
+		     <a href="https://forum.ansible.com/" target="_blank" class="nav-link nav-link-color">
+		         <i class=""></i> Ansible forum
+		     </a>
+		 </li>
+                 <li class="nav-item">
+                     <a href="community.html" class="nav-link nav-link-color">
+                         <i class=""></i> Join the community
+                     </a>
+                 </li>
+
+        
+      </ul>
+</div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav><!-- End default Menubar --><div class="grid-wrapper homepage-banner-band">
+  <div class="width-12-12 width-12-12-m">
+    <div class="banner-row">
+      <div class="banner-main-content">
+        <h1>Ansible community documentation</h1>
+        <p>Ansible community documentation can help you configure most operating systems, deploy software, and orchestrate advanced workflows to support application deployment, system updates, and more!</p>
+        <div class="banner-platform-learn">
+          <img class="banner-redhat-logo" src="images/redhat.svg" alt="Red Hat logo" width="20" height="20"><span class="banner-platform-link"><a href="#platform">Looking for Red Hat Ansible Automation Platform?</a> <i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+        </div>
+      </div>
+      <div class="banner-welcome-image">
+        <img src="images/bull_welcome.svg" alt="Welcome to Ansible" width="350" height="300">
+</div>
+    </div>
+  </div>
+</div>  </div>
+    <div class="body-content">
+        <!--Body content-->
+        
+<div class="grid-wrapper homepage-tab-menu-band full-width-band">
+  <div class="tab-menu-row width-12-12 width-12-12-m">
+    <!-- Ansible section -->
+    <a class="tab-menu-anchor" href="#get_started" role="button">
+      <i class="fas fa-rocket tab-menu-icon"></i>
+      <p>Get started</p>
+    </a>
+    <!-- Users -->
+    <a class="tab-menu-anchor" href="#users" role="button">
+      <i class="fas fa-cogs tab-menu-icon"></i>
+      <p>Users</p>
+    </a>
+    <!-- Developers -->
+    <a class="tab-menu-anchor" href="#developers" role="button">
+      <i class="fas fa-terminal tab-menu-icon"></i>
+      <p>Developers</p>
+    </a>
+    <!-- Maintainers -->
+    <a class="tab-menu-anchor" href="#maintainers" role="button">
+      <i class="fas fa-screwdriver-wrench tab-menu-icon"></i>
+      <p>Maintainers</p>
+    </a>
+    <!-- Ecosystem section -->
+    <a class="tab-menu-anchor" href="#ecosystem" role="button">
+      <i class="fas fa-circle-nodes tab-menu-icon"></i>
+      <p>Ansible ecosystem</p>
+    </a>
+    <!-- Contribute section -->
+    <a class="tab-menu-anchor" href="#contribute" role="button">
+      <i class="fas fa-hands-helping tab-menu-icon"></i>
+      <p>Contribute to Ansible</p>
+    </a>
+  </div>
+</div>
+<div class="grid-wrapper homepage-ansible-band full-width-band" id="get_started">
+  <div class="section-title width-12-12 width-12-12-m">
+    <div class="section-top">
+      <i class="fas fa-rocket section-icon"></i>
+      <h2>Get started</h2>
+    </div>
+    <p>Ansible is open-source technology that can perform virtually any IT task and remove complexity from workflows.</p>
+  </div>
+  <div class="section-title width-6-12 width-12-12-m">
+    <div class="what-is-ansible max-width-prose">
+      <h3>Code that reads like documentation</h3>
+      <p>Ansible is an automation language that can describe any IT environment, whether homelab or large scale infrastructure. It is easy to learn, beautiful code that reads like clear documentation.</p>
+    </div>
+  </div>
+  <div class="section-title width-6-12 width-12-12-m">
+    <div class="what-is-ansible max-width-prose">
+      <h3>Freedom from repetitive tasks</h3>
+      <p>As an automation engine, Ansible ensures that your IT environment stays exactly as you describe it, no matter the complexity. Not only that, you can automate any command with Ansible to eliminate drudgery from your daily routine. Ansible gives you tooling to be more productive and solve problems that really matter.</p>
+    </div>
+  </div>
+  <div class="width-12-12 width-12-12-m">
+    <h4>Ready to start automating?</h4>
+    <div class="ansible-main-row">
+      <div class="ansible-clipboard">
+        <button class="btn text-nowrap" data-clipboard-text="pip install ansible">
+          pip install ansible <i class="fa fa-copy" aria-hidden="true"></i>
+        </button>
+        <div id="clipboard-popup" class="popup hidden">
+          <p>Copied!</p>
+        </div>
+      </div>
+      <div class="btn-group-vertical" role="group" aria-label="Button group that links to Ansible community documentation.">          <div class="doc-link-row doc-link">
+            <i class="fas fa-book"></i><a class="btn" href="https://docs.ansible.com/ansible/latest/index.html" role="button">Understand the fundamentals of Ansible automation</a>
+          </div>          <div class="doc-link-row doc-link">
+            <i class="fas fa-book"></i><a class="btn" href="https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-and-upgrading-ansible" role="button">Install the Ansible package</a>
+          </div>          <div class="doc-link-row doc-link">
+            <i class="fas fa-book"></i><a class="btn" href="https://docs.ansible.com/ansible/latest/getting_started/index.html" role="button">Run your first ad hoc command in a few easy steps</a>
+          </div>      </div>
+    </div>
+  </div>
+<div class="width-12-12 width-12-12-m">
+  <div class="back-to-top">
+    <span class="homepage-link"><a href="#top">Back to top</a> <i class="fa fa-arrow-up" aria-hidden="true"></i></span>
+  </div>
+</div>
+</div>
+<div class="grid-wrapper homepage-personas-grey full-width-band" id="users">
+  <div class="section-title width-12-12 width-12-12-m">
+    <div class="section-top">
+      <i class="fas fa-cogs section-icon"></i>
+      <h2>Users</h2>
+    </div>
+    <p>Automate the management of remote systems and control their desired state.</p>
+  </div>
+  <div class="width-6-12 width-12-12-m">
+    <div class="btn-group-vertical" role="group" aria-label="Button group that links to Ansible community documentation.">        <div class="doc-link-row doc-link">
+          <i class="fas fa-book"></i><a class="btn" href="https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_intro.html#playbook-syntax" role="button">Start writing Ansible playbooks</a>
+        </div>        <div class="doc-link-row doc-link">
+          <i class="fas fa-book"></i><a class="btn" href="https://docs.ansible.com/ansible/latest/module_plugin_guide/modules_intro.html" role="button">Learn about Ansible modules</a>
+        </div>        <div class="doc-link-row doc-link">
+          <i class="fas fa-book"></i><a class="btn" href="https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html" role="button">Build inventory files to manage multiple hosts</a>
+        </div>    </div>
+  </div>
+  <div class="continue-link width-6-12 width-12-12-m">
+    <a href="users.html">Find more user documentation <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+  </div>
+<div class="width-12-12 width-12-12-m">
+  <div class="back-to-top">
+    <span class="homepage-link"><a href="#top">Back to top</a> <i class="fa fa-arrow-up" aria-hidden="true"></i></span>
+  </div>
+</div>
+</div>
+<div class="grid-wrapper homepage-personas-white full-width-band" id="developers">
+  <div class="section-title width-12-12 width-12-12-m">
+    <div class="section-top">
+      <i class="fas fa-terminal section-icon"></i>
+      <h2>Developers</h2>
+    </div>
+    <p>Extend automation with custom Ansible modules, add functionality to existing modules, or fix bugs to improve existing code.</p>
+  </div>
+  <div class="width-6-12 width-12-12-m">
+    <div class="btn-group-vertical" role="group" aria-label="Button group that links to Ansible community documentation.">        <div class="doc-link-row doc-link">
+          <i class="fas fa-book"></i><a class="btn" href="https://docs.ansible.com/ansible/latest/dev_guide/developing_modules_general.html#environment-setup" role="button">Set up your development environment</a>
+        </div>        <div class="doc-link-row doc-link">
+          <i class="fas fa-book"></i><a class="btn" href="https://docs.ansible.com/ansible/latest/dev_guide/overview_architecture.html" role="button">Learn how Ansible works</a>
+        </div>        <div class="doc-link-row doc-link">
+          <i class="fas fa-book"></i><a class="btn" href="https://docs.ansible.com/ansible/latest/dev_guide/developing_locally.html" role="button">Write custom modules or plugins</a>
+        </div>    </div>
+  </div>
+  <div class="continue-link width-6-12 width-12-12-m">
+    <a href="developers.html" role="button">Find more developer documentation <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+  </div>
+<div class="width-12-12 width-12-12-m">
+  <div class="back-to-top">
+    <span class="homepage-link"><a href="#top">Back to top</a> <i class="fa fa-arrow-up" aria-hidden="true"></i></span>
+  </div>
+</div>
+</div>
+<div class="grid-wrapper homepage-personas-grey full-width-band" id="maintainers">
+  <div class="section-title width-12-12 width-12-12-m">
+    <div class="section-top">
+      <i class="fas fa-screwdriver-wrench section-icon"></i>
+      <h2>Maintainers</h2>
+    </div>
+    <p>Ansible community maintainers are trusted contributors who oversee project lifecycle and overall health.</p>
+  </div>
+  <div class="width-6-12 width-12-12-m">
+    <div class="btn-group-vertical" role="group" aria-label="Button group that links to Ansible community documentation.">        <div class="doc-link-row doc-link">
+          <i class="fas fa-book"></i><a class="btn" href="https://docs.ansible.com/ansible/latest/community/maintainers_guidelines.html" role="button">Review community maintainer responsibilities</a>
+        </div>        <div class="doc-link-row doc-link">
+          <i class="fas fa-book"></i><a class="btn" href="https://docs.ansible.com/ansible/latest/community/contributor_path.html" role="button">Understand Ansible contributor paths</a>
+        </div>        <div class="doc-link-row doc-link">
+          <i class="fas fa-book"></i><a class="btn" href="https://docs.ansible.com/ansible/latest/community/maintainers_guidelines.html#expanding-the-collection-community" role="button">Explore ways to grow community</a>
+        </div>    </div>
+  </div>
+  <div class="continue-link width-6-12 width-12-12-m">
+    <a href="maintainers.html" role="button">Find more maintainer documentation <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+  </div>
+<div class="width-12-12 width-12-12-m">
+  <div class="back-to-top">
+    <span class="homepage-link"><a href="#top">Back to top</a> <i class="fa fa-arrow-up" aria-hidden="true"></i></span>
+  </div>
+</div>
+</div>
+<div class="grid-wrapper homepage-bullhorn-band full-width-band">
+  <div class="bullhorn-blast width-4-12 width-12-12-m">
+    <img src="images/bullhorn_subscribe.svg" alt="" width="360" height="285">
+</div>
+  <div class="bullhorn-subscribe width-8-12 width-12-12-m">
+    <h2>Grab the Bullhorn</h2>
+    <p>The Bullhorn is a weekly newsletter full of Ansible Community news and updates.</p>
+    <div class="bullhorn-subscribe-row">
+      <a class="homepage-anchor" href="https://forum.ansible.com/c/news/bullhorn/17" role="button" target="_blank">Read the latest edition</a>
+    </div>
+  </div>
+</div>
+<div class="grid-wrapper homepage-ecosystem-band full-width-band" id="ecosystem">
+  <div class="section-title width-12-12 width-12-12-m">
+    <div class="section-top">
+      <i class="fas fa-circle-nodes section-icon"></i>
+      <h2>Ansible ecosystem</h2>
+      <div class="section-view-more">
+        <span class="homepage-link"><a href="ecosystem.html" target="_blank">View more</a> <i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+      </div>
+    </div>
+    <p>Expand automation to an unlimited set of use cases with projects in the Ansible ecosystem.</p>
+  </div>
+    <div class="ecosystem-card width-6-12 width-12-12-m">
+      <div class="ecosystem-content">
+        <h3>Ansible Core</h3>
+        <p>The Ansible programming language, automation tooling, and architectural framework.</p>
+        <span class="homepage-link"><a href="https://docs.ansible.com/projects/ansible-core/" target="_blank">Find out more</a> <i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+      </div>
+      <img class="ecosystem-logo" src="images/project-logos/ansible-core.svg" alt="Ansible Core project logo" width="100" height="100">
+</div>
+    <div class="ecosystem-card width-6-12 width-12-12-m">
+      <div class="ecosystem-content">
+        <h3>Antsibull Nox</h3>
+        <p>A nox helper library that simplifies the process of testing Ansible collections through a common interface for various tools.</p>
+        <span class="homepage-link"><a href="https://docs.ansible.com/projects/antsibull-nox/" target="_blank">Find out more</a> <i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+      </div>
+      <img class="ecosystem-logo" src="images/project-logos/ansible-community.svg" alt="Antsibull-nox project logo" width="100" height="100">
+</div>
+    <div class="ecosystem-card width-6-12 width-12-12-m">
+      <div class="ecosystem-content">
+        <h3>Ansible Builder</h3>
+        <p>Ansible Builder lets you create Execution Environments, which are container images that act as Ansible control nodes.</p>
+        <span class="homepage-link"><a href="https://docs.ansible.com/projects/builder/" target="_blank">Find out more</a> <i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+      </div>
+      <img class="ecosystem-logo" src="images/project-logos/builder.svg" alt="Ansible Builder project logo" width="100" height="100">
+</div>
+    <div class="ecosystem-card width-6-12 width-12-12-m">
+      <div class="ecosystem-content">
+        <h3>Ansible developer tools</h3>
+        <p>An integrated tool kit and framework for creating Ansible automation content, from bootstrapping new projects to setting up ci/cd pipelines.</p>
+        <span class="homepage-link"><a href="https://docs.ansible.com/projects/dev-tools/" target="_blank">Find out more</a> <i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+      </div>
+      <img class="ecosystem-logo" src="images/project-logos/ansible-community.svg" alt="Ansible DevTools project logo" width="100" height="100">
+</div>
+<div class="width-12-12 width-12-12-m">
+  <div class="back-to-top">
+    <span class="homepage-link"><a href="#top">Back to top</a> <i class="fa fa-arrow-up" aria-hidden="true"></i></span>
+  </div>
+</div>
+</div>
+<div class="grid-wrapper homepage-contribute-band full-width-band" id="contribute">
+  <div class="contribute-title width-8-12 width-12-12-m max-width-prose">
+    <div class="section-top">
+      <i class="fas fa-hands-helping section-icon"></i>
+      <h2>Contribute</h2>
+    </div>
+    <p></p>
+    <div class="contribute-content">
+      <h3>You can contribute to Ansible in so many ways...</h3>
+        <ul>
+<li>Organize meetups with other automation enthusiasts.</li>
+        </ul>
+<ul>
+<li>Give lighting talks.</li>
+        </ul>
+<ul>
+<li>Host Ansible workshops.</li>
+        </ul>
+<ul>
+<li>Code a new module or fix a bug.</li>
+        </ul>
+<ul>
+<li>Improve the documentation.</li>
+        </ul>
+<p>
+        Want to get involved?&nbsp;Check out our <a href="https://forum.ansible.com/pub/how-to-contribute" target="_blank">contributor resources</a> and <a href="community.html" target="_blank">join the Ansible community</a> - we'd love to have you.
+      </p>
+    </div>
+  </div>
+  <div class="contribute-bull width-4-12 width-12-12-m">
+    <a href="https://forum.ansible.com/pub/how-to-contribute" target="_blank" aria-label="Visit the forum and find out how to contribute">
+      <img src="images/bull-builder.svg" alt="Ansible bull contributor logo" width="357" height="302"></a>
+  </div>
+<div class="width-12-12 width-12-12-m">
+  <div class="back-to-top">
+    <span class="homepage-link"><a href="#top">Back to top</a> <i class="fa fa-arrow-up" aria-hidden="true"></i></span>
+  </div>
+</div>
+</div>
+<div class="grid-wrapper homepage-platform-band full-width-band" id="platform">
+  <div class="width-12-12 width-12-12-m">
+    <div class="platform-row">
+      <div class="platform-box-left">
+        <img src="images/platform.svg" alt="Red Hat Ansible Automation Platform logo" width="500" height="150">
+</div>
+      <div class="platform-box-right max-width-prose">
+        <p>Red Hat Ansible Automation Platform provides everything needed to create, execute, and manage automation in a single subscription. From execution environments to certified collections to automation analytics, discover the features and benefits of Ansible Automation Platform.</p>
+        <a class="homepage-anchor platform-anchor" href="https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/?sc_id=RHCTE0250000464439" role="button" target="_blank">Red Hat Ansible Automation Platform documentation</a>
+      </div>
+    </div>
+  </div>
+<div class="width-12-12 width-12-12-m">
+  <div class="back-to-top">
+    <span class="homepage-link"><a href="#top">Back to top</a> <i class="fa fa-arrow-up" aria-hidden="true"></i></span>
+  </div>
+</div>
+</div>        <!--End of body content-->
+    </div>
+        <div class="content-slim redhat-footer">
+      <div class="footer-left">
+        <ul class="footer-left-links">
+<li>
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>
+          </li>
+          <li>
+            <a href="https://www.redhat.com/en/about/privacy-policy" target="_blank">Privacy policy</a>
+          </li>
+          <li>
+            <a href="https://docs.ansible.com/ansible/latest/community/code_of_conduct.html" target="_blank">Code of conduct</a>
+          </li>
+        </ul>
+</div>
+      <div class="footer-right">
+        <span class="redhat">Sponsored by</span>
+        <span class="redhat-logo">
+          <a href="https://www.redhat.com/en/technologies/management/ansible?sc_id=RHCTE0250000464439" target="_blank">
+            <img src="assets/images/redhat_reversed.svg" alt="Red Hat logo." width="96" height="28"></a>
+        </span>
+      </div>
+    </div>
+
+</div>
+
+            <script src="assets/js/jquery.min.js"></script><script src="assets/js/popper.min.js"></script><script src="assets/js/bootstrap.min.js"></script><script src="assets/js/baguetteBox.min.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+</script><div role="dialog" id="baguetteBox-overlay"><div id="baguetteBox-slider"></div><button type="button" id="previous-button" aria-label="Previous" class="baguetteBox-button"><svg width="44" height="60"><polyline points="30 10 10 30 30 50" stroke="rgba(255,255,255,0.5)" stroke-width="4" stroke-linecap="butt" fill="none" stroke-linejoin="round"></polyline></svg></button><button type="button" id="next-button" aria-label="Next" class="baguetteBox-button"><svg width="44" height="60"><polyline points="14 10 34 30 14 50" stroke="rgba(255,255,255,0.5)" stroke-width="4" stroke-linecap="butt" fill="none" stroke-linejoin="round"></polyline></svg></button><button type="button" id="close-button" aria-label="Close" class="baguetteBox-button"><svg width="30" height="30"><g stroke="rgb(160,160,160)" stroke-width="4"><line x1="5" y1="5" x2="25" y2="25"></line><line x1="5" y1="25" x2="25" y2="5"></line></g></svg></button></div><script src="assets/js/clipboard.min.js" type="text/javascript"></script><script src="assets/js/clipboard.js" type="text/javascript"></script>
+
+
+<readthedocs-search class="raised floating"></readthedocs-search><readthedocs-hotkeys></readthedocs-hotkeys></body></html>

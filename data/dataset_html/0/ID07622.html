@@ -1,0 +1,2627 @@
+<html lang="id"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Yasin &amp; Tahlil Digital</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&amp;family=Scheherazade+New:wght@400;700&amp;display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
+    <link rel="shortcut icon" href="favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="Yasin">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Yasin &amp; Tahlil Digital Lengkap - Arab, Latin, Terjemahan</title>
+    <meta name="title" content="Yasin &amp; Tahlil Digital Lengkap - Arab, Latin, Terjemahan">
+    <meta name="description" content="Bacaan Surat Yasin dan Tahlil Lengkap dengan terjemahan Bahasa Indonesia dan Melayu. Aplikasi ringan, tanpa iklan, mode gelap, dan fitur bookmark ayat. Cocok untuk yasinan dan tahlilan.">
+    <meta name="keywords" content="yasin, tahlil, surat yasin, bacaan tahlil, yasin digital, tahlil digital, doa arwah, yasin nu, tahlil nu, yasin latin, terjemahan yasin">
+    <meta name="author" content="Murottalku">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Indonesian">
+    <!-- Open Graph / Facebook (Untuk Share di WA/FB) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bacayasin.org/"> <!-- Ganti dengan URL asli nanti -->
+    <meta property="og:title" content="Yasin &amp; Tahlil Digital Lengkap">
+    <meta property="og:description" content="Bacaan Surat Yasin dan Tahlil Lengkap dengan terjemahan. Ringan, mode gelap, dan bookmark ayat.">
+    <meta property="og:image" content="favicon.svg"> <!-- Ganti dengan URL gambar cover jika ada -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="https://bacayasin.org/">
+    <meta property="twitter:title" content="Yasin &amp; Tahlil Digital Lengkap">
+    <meta property="twitter:description" content="Bacaan Surat Yasin dan Tahlil Lengkap dengan terjemahan. Ringan, mode gelap, dan bookmark ayat.">
+    <meta property="twitter:image" content="favicon.svg">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#10b981', 
+                        'dark-bg': '#121212',
+                        'dark-surface': '#1e1e1e',
+                        'sepia-bg': '#fbf0d9',
+                    },
+                    fontFamily: {
+                        'scheherazade': ['"Scheherazade New"', 'serif'],
+                        'noto': ['"Noto Naskh Arabic"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            transition: background-color 0.3s, color 0.3s;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        /* Logic Ukuran Font Arab */
+        [data-size="small"] .arabic-text { font-size: 1.5rem; line-height: 2.2; }
+        [data-size="medium"] .arabic-text { font-size: 2rem; line-height: 2.4; }
+        [data-size="large"] .arabic-text { font-size: 2.5rem; line-height: 2.6; }
+        [data-size="xl"] .arabic-text { font-size: 3rem; line-height: 2.8; }
+
+        /* Tweak khusus per font */
+        .font-amiri { line-height: 2.6 !important; }
+        
+        [data-size="small"] .latin-text, [data-size="small"] .translation-text { font-size: 0.875rem; }
+        [data-size="medium"] .latin-text, [data-size="medium"] .translation-text { font-size: 1rem; }
+        [data-size="large"] .latin-text, [data-size="large"] .translation-text { font-size: 1.125rem; }
+        [data-size="xl"] .latin-text, [data-size="xl"] .translation-text { font-size: 1.25rem; }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Modal Animations */
+        .modal {
+            transition: opacity 0.3s ease-in-out;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .modal-content {
+            transform: translateY(100%);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .modal.active .modal-content {
+            transform: translateY(0);
+        }
+
+        /* Tombol Aktif Style */
+        .btn-option.active {
+            border-color: #10b981;
+            background-color: #ecfdf5;
+            color: #047857;
+        }
+        .dark .btn-option.active {
+            background-color: #064e3b;
+            color: #6ee7b7;
+            border-color: #059669;
+        }
+        
+        /* Style khusus tombol bahasa */
+        .lang-btn.active {
+            background-color: #10b981;
+            color: white;
+            border-color: #10b981;
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border-width:0}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.left-0{left:0px}.right-0{right:0px}.top-0{top:0px}.z-10{z-index:10}.z-40{z-index:40}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-3{margin-bottom:0.75rem}.mb-1{margin-bottom:0.25rem}.mb-4{margin-bottom:1rem}.mb-8{margin-bottom:2rem}.ml-4{margin-left:1rem}.mt-2{margin-top:0.5rem}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-16{height:4rem}.h-20{height:5rem}.h-6{height:1.5rem}.h-7{height:1.75rem}.h-8{height:2rem}.h-full{height:100%}.min-h-screen{min-height:100vh}.w-11{width:2.75rem}.w-12{width:3rem}.w-8{width:2rem}.w-full{width:100%}.max-w-5xl{max-width:64rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}@keyframes spin{to{transform:rotate(360deg)}}.animate-spin{animation:spin 1s linear infinite}.cursor-pointer{cursor:pointer}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-end{align-items:flex-end}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.space-y-5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.25rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.space-y-8 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(2rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(2rem * var(--tw-space-y-reverse))}.overflow-y-auto{overflow-y:auto}.rounded-full{border-radius:9999px}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-b-2{border-bottom-width:2px}.border-t{border-top-width:1px}.border-gray-100{--tw-border-opacity:1;border-color:rgb(243 244 246 / var(--tw-border-opacity, 1))}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.border-primary{--tw-border-opacity:1;border-color:rgb(16 185 129 / var(--tw-border-opacity, 1))}.bg-black\/50{background-color:rgb(0 0 0 / 0.5)}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-gray-200{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-primary{--tw-bg-opacity:1;background-color:rgb(16 185 129 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-primary\/10{background-color:rgb(16 185 129 / 0.1)}.p-1{padding:0.25rem}.p-2{padding:0.5rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.px-4{padding-left:1rem;padding-right:1rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-3\.5{padding-top:0.875rem;padding-bottom:0.875rem}.py-4{padding-top:1rem;padding-bottom:1rem}.pb-10{padding-bottom:2.5rem}.text-center{text-align:center}.text-right{text-align:right}.font-noto{font-family:"Noto Naskh Arabic", serif}.font-scheherazade{font-family:"Scheherazade New", serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-loose{line-height:2}.tracking-tight{letter-spacing:-0.025em}.tracking-wider{letter-spacing:0.05em}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.text-primary{--tw-text-opacity:1;color:rgb(16 185 129 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-primary\/20{--tw-shadow-color:rgb(16 185 129 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-200{transition-duration:200ms}.duration-300{transition-duration:300ms}.after\:absolute::after{content:var(--tw-content);position:absolute}.after\:left-\[2px\]::after{content:var(--tw-content);left:2px}.after\:left-\[3px\]::after{content:var(--tw-content);left:3px}.after\:top-\[2px\]::after{content:var(--tw-content);top:2px}.after\:top-\[3px\]::after{content:var(--tw-content);top:3px}.after\:h-5::after{content:var(--tw-content);height:1.25rem}.after\:w-5::after{content:var(--tw-content);width:1.25rem}.after\:rounded-full::after{content:var(--tw-content);border-radius:9999px}.after\:border::after{content:var(--tw-content);border-width:1px}.after\:border-gray-300::after{content:var(--tw-content);--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.after\:bg-white::after{content:var(--tw-content);--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.after\:transition-all::after{content:var(--tw-content);transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.after\:content-\[\'\'\]::after{--tw-content:'';content:var(--tw-content)}.hover\:border-primary:hover{--tw-border-opacity:1;border-color:rgb(16 185 129 / var(--tw-border-opacity, 1))}.hover\:bg-emerald-600:hover{--tw-bg-opacity:1;background-color:rgb(5 150 105 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-100:hover{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-200:hover{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-50:hover{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.hover\:text-gray-900:hover{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.active\:scale-\[0\.98\]:active{--tw-scale-x:0.98;--tw-scale-y:0.98;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.peer:checked ~ .peer-checked\:bg-primary{--tw-bg-opacity:1;background-color:rgb(16 185 129 / var(--tw-bg-opacity, 1))}.peer:checked ~ .peer-checked\:after\:translate-x-full::after{content:var(--tw-content);--tw-translate-x:100%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.peer:checked ~ .peer-checked\:after\:border-white::after{content:var(--tw-content);--tw-border-opacity:1;border-color:rgb(255 255 255 / var(--tw-border-opacity, 1))}.peer:focus ~ .peer-focus\:outline-none{outline:2px solid transparent;outline-offset:2px}.dark\:border-gray-700:is(.dark *){--tw-border-opacity:1;border-color:rgb(55 65 81 / var(--tw-border-opacity, 1))}.dark\:border-gray-800:is(.dark *){--tw-border-opacity:1;border-color:rgb(31 41 55 / var(--tw-border-opacity, 1))}.dark\:bg-dark-bg:is(.dark *){--tw-bg-opacity:1;background-color:rgb(18 18 18 / var(--tw-bg-opacity, 1))}.dark\:bg-dark-surface:is(.dark *){--tw-bg-opacity:1;background-color:rgb(30 30 30 / var(--tw-bg-opacity, 1))}.dark\:bg-gray-700:is(.dark *){--tw-bg-opacity:1;background-color:rgb(55 65 81 / var(--tw-bg-opacity, 1))}.dark\:bg-gray-800:is(.dark *){--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.dark\:bg-gray-800\/50:is(.dark *){background-color:rgb(31 41 55 / 0.5)}.dark\:bg-\[\#1a1a1a\]:is(.dark *){--tw-bg-opacity:1;background-color:rgb(26 26 26 / var(--tw-bg-opacity, 1))}.dark\:text-gray-100:is(.dark *){--tw-text-opacity:1;color:rgb(243 244 246 / var(--tw-text-opacity, 1))}.dark\:text-gray-300:is(.dark *){--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.dark\:text-gray-400:is(.dark *){--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.dark\:text-gray-200:is(.dark *){--tw-text-opacity:1;color:rgb(229 231 235 / var(--tw-text-opacity, 1))}.dark\:text-white:is(.dark *){--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.dark\:hover\:bg-gray-700:hover:is(.dark *){--tw-bg-opacity:1;background-color:rgb(55 65 81 / var(--tw-bg-opacity, 1))}.dark\:hover\:bg-gray-700\/50:hover:is(.dark *){background-color:rgb(55 65 81 / 0.5)}.dark\:hover\:bg-gray-800:hover:is(.dark *){--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.dark\:hover\:text-gray-200:hover:is(.dark *){--tw-text-opacity:1;color:rgb(229 231 235 / var(--tw-text-opacity, 1))}@media (min-width: 640px){.sm\:h-auto{height:auto}.sm\:max-h-\[85vh\]{max-height:85vh}.sm\:max-w-md{max-width:28rem}.sm\:items-center{align-items:center}.sm\:rounded-2xl{border-radius:1rem}.sm\:rounded-b-2xl{border-bottom-right-radius:1rem;border-bottom-left-radius:1rem}}</style></head>
+<body class="bg-gray-50 text-gray-900 dark:bg-dark-bg dark:text-gray-100" data-size="large">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-40 bg-white dark:bg-dark-surface shadow-sm border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
+        <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="font-bold text-xl tracking-tight text-primary"><a href="/">Bacayasin</a></div>
+            <div class="flex bg-gray-100 dark:bg-gray-800 rounded-full p-1">
+                <button onclick="switchTab('yasin')" id="btn-yasin" class="px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 bg-white dark:bg-gray-700 shadow-sm text-primary">Yasin</button>
+                <button onclick="switchTab('tahlil')" id="btn-tahlil" class="px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200">Tahlil</button>
+            </div>
+            <button onclick="toggleSettings()" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-300 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings-2"><path d="M20 7h-9"></path><path d="M14 17H5"></path><circle cx="17" cy="17" r="3"></circle><circle cx="7" cy="7" r="3"></circle></svg>
+            </button>
+        </div>
+    </header>
+
+    <div class="h-20"></div>
+
+    <main id="main-content" class="max-w-5xl mx-auto px-4 pb-10 min-h-screen">
+        <div id="loader" class="flex justify-center py-10 hidden">
+            <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+        </div>
+        <div id="verses-container" class="space-y-6">
+                <div class="text-center py-4 mb-4">
+                    <h1 class="text-2xl font-bold text-primary">Surat Yasin</h1>
+                </div>
+            
+                    <div class="text-center mb-8 mt-2 px-4">
+                        <p class="arabic-text font-scheherazade text-gray-800 dark:text-gray-200 leading-loose">
+                            بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+                        </p>
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                1
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    يٰسۤۚ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                yâ sîn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Yā Sīn.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                2
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَالْقُرْاٰنِ الْحَكِيْمِۙ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                wal-qur'ânil-ḫakîm
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Demi Al-Qur’an yang penuh hikmah,
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                3
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    اِنَّكَ لَمِنَ الْمُرْسَلِيْنَۙ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                innaka laminal-mursalîn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                sesungguhnya engkau (Nabi Muhammad) benar-benar salah seorang dari rasul-rasul
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                4
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    عَلٰى صِرَاطٍ مُّسْتَقِيْمٍۗ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                ‘alâ shirâthim mustaqîm
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                (yang berada) di atas jalan yang lurus,
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                5
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    تَنْزِيْلَ الْعَزِيْزِ الرَّحِيْمِۙ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                tanzîlal-‘azîzir-raḫîm
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                (sebagai wahyu) yang diturunkan oleh (Allah) Yang Mahaperkasa lagi Maha Penyayang,
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                6
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    لِتُنْذِرَ قَوْمًا مَّآ اُنْذِرَ اٰبَاۤؤُهُمْ فَهُمْ غٰفِلُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                litundzira qaumam mâ undzira âbâ'uhum fa hum ghâfilûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                agar engkau (Nabi Muhammad) memberi peringatan kepada suatu kaum yang nenek moyang mereka belum pernah diberi peringatan, sehingga mereka lalai.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                7
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    لَقَدْ حَقَّ الْقَوْلُ عَلٰٓى اَكْثَرِهِمْ فَهُمْ لَا يُؤْمِنُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                laqad ḫaqqal-qaulu ‘alâ aktsarihim fa hum lâ yu'minûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Sungguh, benar-benar berlaku perkataan (ketetapan takdir) terhadap kebanyakan mereka, maka mereka tidak akan beriman.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                8
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    اِنَّا جَعَلْنَا فِيْٓ اَعْنَاقِهِمْ اَغْلٰلًا فَهِيَ اِلَى الْاَذْقَانِ فَهُمْ مُّقْمَحُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                innâ ja‘alnâ fî a‘nâqihim aghlâlan fa hiya ilal-adzqâni fa hum muqmaḫûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Sesungguhnya Kami telah memasang belenggu di leher mereka, lalu (tangan mereka yang terbelenggu diangkat) ke dagu, karena itu mereka tertengadah.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                9
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَجَعَلْنَا مِنْۢ بَيْنِ اَيْدِيْهِمْ سَدًّا وَّمِنْ خَلْفِهِمْ سَدًّا فَاَغْشَيْنٰهُمْ فَهُمْ لَا يُبْصِرُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                wa ja‘alnâ mim baini aidîhim saddaw wa min khalfihim saddan fa aghsyainâhum fa hum lâ yubshirûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Kami memasang penghalang di hadapan mereka dan di belakang mereka, sehingga Kami menutupi (pandangan) mereka. Mereka pun tidak dapat melihat.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                10
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَسَوَاۤءٌ عَلَيْهِمْ ءَاَنْذَرْتَهُمْ اَمْ لَمْ تُنْذِرْهُمْ لَا يُؤْمِنُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                wa sawâ'un ‘alaihim a andzartahum am lam tundzir-hum lâ yu'minûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Sama saja bagi mereka, apakah engkau (Nabi Muhammad) memberi peringatan kepada mereka atau tidak. Mereka (tetap) tidak akan beriman.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                11
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    اِنَّمَا تُنْذِرُ مَنِ اتَّبَعَ الذِّكْرَ وَخَشِيَ الرَّحْمٰنَ بِالْغَيْبِۚ فَبَشِّرْهُ بِمَغْفِرَةٍ وَّاَجْرٍ كَرِيْمٍ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                innamâ tundziru manittaba‘adz-dzikra wa khasyiyar-raḫmâna bil-ghaîb, fa basysyir-hu bimaghfiratiw wa ajring karîm
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Sesungguhnya engkau (Nabi Muhammad) hanya (bisa) memberi peringatan kepada orang-orang yang mau mengikutinya dan yang takut kepada Tuhan Yang Maha Pengasih tanpa melihat-Nya. Berilah mereka kabar gembira dengan ampunan dan pahala yang mulia.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                12
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    اِنَّا نَحْنُ نُحْيِ الْمَوْتٰى وَنَكْتُبُ مَا قَدَّمُوْا وَاٰثَارَهُمْۗ وَكُلَّ شَيْءٍ اَحْصَيْنٰهُ فِيْٓ اِمَامٍ مُّبِيْنٍࣖ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                innâ naḫnu nuḫyil-mautâ wa naktubu mâ qaddamû wa âtsârahum, wa kulla syai'in aḫshainâhu fî imâmim mubîn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Sesungguhnya Kamilah yang menghidupkan orang-orang yang mati dan Kami (pulalah) yang mencatat apa yang telah mereka kerjakan dan bekas-bekas yang mereka (tinggalkan). Segala sesuatu Kami kumpulkan dalam kitab induk yang nyata (Lauh Mahfuz).
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                13
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَاضْرِبْ لَهُمْ مَّثَلًا اَصْحٰبَ الْقَرْيَةِۘ اِذْ جَاۤءَهَا الْمُرْسَلُوْنَۚ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                wadlrib lahum matsalan ash-ḫâbal-qaryah, idz jâ'ahal-mursalûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Buatlah suatu perumpamaan bagi mereka (kaum kafir Makkah), yaitu penduduk suatu negeri, ketika para utusan datang kepada mereka,
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                14
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    اِذْ اَرْسَلْنَآ اِلَيْهِمُ اثْنَيْنِ فَكَذَّبُوْهُمَا فَعَزَّزْنَا بِثَالِثٍ فَقَالُوْٓا اِنَّآ اِلَيْكُمْ مُّرْسَلُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                idz arsalnâ ilaihimutsnaini fa kadzdzabûhumâ fa ‘azzaznâ bitsâlitsin fa qâlû innâ ilaikum mursalûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                (yaitu) ketika Kami mengutus kepada mereka dua orang utusan, lalu mereka mendustakan keduanya. Kemudian Kami menguatkan dengan (utusan) yang ketiga. Maka, ketiga (utusan itu) berkata, “Sesungguhnya kami adalah orang-orang yang diutus kepadamu.”
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                15
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    قَالُوْا مَآ اَنْتُمْ اِلَّا بَشَرٌ مِّثْلُنَاۙ وَمَآ اَنْزَلَ الرَّحْمٰنُ مِنْ شَيْءٍۙ اِنْ اَنْتُمْ اِلَّا تَكْذِبُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                qâlû mâ antum illâ basyarum mitslunâ wa mâ anzalar-raḫmânu min syai'in in antum illâ takdzibûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Mereka (penduduk negeri) menjawab, “Kamu tidak lain hanyalah manusia seperti kami. (Allah) Yang Maha Pengasih tidak (pernah) menurunkan sesuatu apa pun. Kamu hanyalah berdusta.”
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                16
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    قَالُوْا رَبُّنَا يَعْلَمُ اِنَّآ اِلَيْكُمْ لَمُرْسَلُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                qâlû rabbunâ ya‘lamu innâ ilaikum lamursalûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Mereka (para rasul) berkata, “Tuhan kami mengetahui bahwa sesungguhnya kami benar-benar para utusan(-Nya) kepadamu.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                17
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَمَا عَلَيْنَآ اِلَّا الْبَلٰغُ الْمُبِيْنُ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                wa mâ ‘alainâ illal-balâghul-mubîn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Adapun kewajiban kami hanyalah menyampaikan (perintah Allah) yang jelas.”
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                18
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    قَالُوْٓا اِنَّا تَطَيَّرْنَا بِكُمْۚ لَىِٕنْ لَّمْ تَنْتَهُوْا لَنَرْجُمَنَّكُمْ وَلَيَمَسَّنَّكُمْ مِّنَّا عَذَابٌ اَلِيْمٌ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                qâlû innâ tathayyarnâ bikum, la'il lam tantahû lanarjumannakum wa layamassannakum minnâ ‘adzâbun alîm
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Mereka (penduduk negeri) menjawab, “Sesungguhnya kami bernasib malang karenamu. Sungguh, jika kamu tidak berhenti (menyeru kami), niscaya kami merajam kamu dan kamu pasti akan merasakan siksaan yang pedih dari kami.”
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                19
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    قَالُوْا طَاۤىِٕرُكُمْ مَّعَكُمْۗ اَىِٕنْ ذُكِّرْتُمْۗ بَلْ اَنْتُمْ قَوْمٌ مُّسْرِفُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                qâlû thâ'irukum ma‘akum, a in dzukkirtum, bal antum qaumum musrifûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Mereka (para rasul) berkata, “Kemalangan kamu itu (akibat perbuatan) kamu sendiri. Apakah karena kamu diberi peringatan, (lalu kamu menjadi malang)? Sebenarnya kamu adalah kaum yang melampaui batas.”
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                20
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَجَاۤءَ مِنْ اَقْصَا الْمَدِيْنَةِ رَجُلٌ يَّسْعٰى قَالَ يٰقَوْمِ اتَّبِعُوا الْمُرْسَلِيْنَۙ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                wa jâ'a min aqshal-madînati rajuluy yas‘â qâla yâ qaumittabi‘ul-mursalîn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Datanglah dengan bergegas dari ujung kota, seorang laki-laki. Dia berkata, “Wahai kaumku, ikutilah para rasul itu!
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                21
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    اتَّبِعُوْا مَنْ لَّا يَسْـَٔلُكُمْ اَجْرًا وَّهُمْ مُّهْتَدُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                ittabi‘û mal lâ yas'alukum ajraw wa hum muhtadûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Ikutilah orang yang tidak meminta imbalan (dalam berdakwah) kepadamu. Mereka adalah orang-orang yang mendapat petunjuk.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                22
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَمَا لِيَ لَآ اَعْبُدُ الَّذِيْ فَطَرَنِيْ وَاِلَيْهِ تُرْجَعُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                wa mâ liya lâ a‘budulladzî fatharanî wa ilaihi turja‘ûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Apa (alasanku) untuk tidak menyembah (Allah) yang telah menciptakanku dan hanya kepada-Nyalah kamu akan dikembalikan.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                23
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    ءَاَتَّخِذُ مِنْ دُوْنِهٖٓ اٰلِهَةً اِنْ يُّرِدْنِ الرَّحْمٰنُ بِضُرٍّ لَّا تُغْنِ عَنِّيْ شَفَاعَتُهُمْ شَيْـًٔا وَّلَا يُنْقِذُوْنِۚ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                a attakhidzu min dûnihî âlihatan iy yuridnir-raḫmânu bidlurril lâ tughni ‘annî syafâ‘atuhum syai'aw wa lâ yungqidzûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Mengapa aku (harus) mengambil sembahan-sembahan selain-Nya? Jika (Allah) Yang Maha Pengasih menghendaki bencana terhadapku, pasti pertolongan mereka tidak berguna sama sekali bagi diriku dan mereka (juga) tidak dapat menyelamatkanku.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                24
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    اِنِّيْٓ اِذًا لَّفِيْ ضَلٰلٍ مُّبِيْنٍ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                innî idzal lafî dlalâlim mubîn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Sesungguhnya aku (jika berbuat) begitu, pasti berada dalam kesesatan yang nyata.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                25
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    اِنِّيْٓ اٰمَنْتُ بِرَبِّكُمْ فَاسْمَعُوْنِۗ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                innî âmantu birabbikum fasma‘ûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Sesungguhnya aku telah beriman kepada Tuhanmu. Maka, dengarkanlah (pengakuan)-ku.”
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                26
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    قِيْلَ ادْخُلِ الْجَنَّةَۗ قَالَ يٰلَيْتَ قَوْمِيْ يَعْلَمُوْنَۙ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                qîladkhulil-jannah, qâla yâ laita qaumî ya‘lamûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Dikatakan (kepadanya), “Masuklah ke surga.” Dia (laki-laki itu) berkata, “Aduhai, sekiranya kaumku mengetahui
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                27
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    بِمَا غَفَرَ لِيْ رَبِّيْ وَجَعَلَنِيْ مِنَ الْمُكْرَمِيْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                bimâ ghafara lî rabbî wa ja‘alanî minal-mukramîn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                (bagaimana) Tuhanku mengampuniku dan menjadikanku termasuk orang-orang yang dimuliakan.”
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                28
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَمَآ اَنْزَلْنَا عَلٰى قَوْمِهٖ مِنْۢ بَعْدِهٖ مِنْ جُنْدٍ مِّنَ السَّمَاۤءِ وَمَا كُنَّا مُنْزِلِيْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                wa mâ anzalnâ ‘alâ qaumihî mim ba‘dihî min jundim minas-samâ'i wa mâ kunnâ munzilîn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Setelah dia (dibunuh), Kami tidak menurunkan satu pasukan pun dari langit kepada kaumnya dan Kami tidak perlu menurunkannya.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                29
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    اِنْ كَانَتْ اِلَّا صَيْحَةً وَّاحِدَةً فَاِذَا هُمْ خٰمِدُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                ing kânat illâ shaiḫataw wâḫidatan fa idzâ hum khâmidûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                (Azab mereka) itu cukup dengan satu teriakan saja. Maka, seketika itu mereka mati.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                30
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    يٰحَسْرَةً عَلَى الْعِبَادِۚ مَا يَأْتِيْهِمْ مِّنْ رَّسُوْلٍ اِلَّا كَانُوْا بِهٖ يَسْتَهْزِءُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                yâ ḫasratan ‘alal-‘ibâd, mâ ya'tîhim mir rasûlin illâ kânû bihî yastahzi'ûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Alangkah besar penyesalan diri para hamba itu. Setiap datang seorang rasul kepada mereka, mereka selalu memperolok-olokkannya.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                31
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    اَلَمْ يَرَوْا كَمْ اَهْلَكْنَا قَبْلَهُمْ مِّنَ الْقُرُوْنِ اَنَّهُمْ اِلَيْهِمْ لَا يَرْجِعُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                a lam yarau kam ahlaknâ qablahum minal-qurûni annahum ilaihim lâ yarji‘ûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Tidakkah mereka mengetahui berapa banyak umat sebelum mereka yang telah Kami binasakan. Mereka (setelah binasa) tidak ada yang kembali kepada mereka (di dunia).
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                32
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَاِنْ كُلٌّ لَّمَّا جَمِيْعٌ لَّدَيْنَا مُحْضَرُوْنَࣖ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                wa ing kullul lammâ jamî‘ul ladainâ muḫdlarûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Tidak ada satu (umat) pun, kecuali semuanya akan dihadirkan kepada Kami (untuk dihisab).
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                33
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَاٰيَةٌ لَّهُمُ الْاَرْضُ الْمَيْتَةُۖ اَحْيَيْنٰهَا وَاَخْرَجْنَا مِنْهَا حَبًّا فَمِنْهُ يَأْكُلُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                wa âyatul lahumul-ardlul-maitatu aḫyainâhâ wa akhrajnâ min-hâ ḫabban fa min-hu ya'kulûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Suatu tanda (kekuasaan-Nya) bagi mereka adalah bumi yang mati (tandus lalu) Kami menghidupkannya dan mengeluarkan darinya biji-bijian kemudian dari (biji-bijian) itu mereka makan.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                34
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَجَعَلْنَا فِيْهَا جَنّٰتٍ مِّنْ نَّخِيْلٍ وَّاَعْنَابٍ وَّفَجَّرْنَا فِيْهَا مِنَ الْعُيُوْنِۙ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                wa ja‘alnâ fîhâ jannâtim min nakhîliw wa a‘nâbiw wa fajjarnâ fîhâ minal-‘uyûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Kami (juga) menjadikan padanya (bumi) kebun-kebun kurma dan anggur serta Kami memancarkan padanya beberapa mata air
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                35
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    لِيَأْكُلُوْا مِنْ ثَمَرِهٖۙ وَمَا عَمِلَتْهُ اَيْدِيْهِمْۗ اَفَلَا يَشْكُرُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                liya'kulû min tsamarihî wa mâ ‘amilat-hu aidîhim, a fa lâ yasykurûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                agar mereka dapat makan dari buahnya, dan dari hasil usaha tangan mereka. Mengapa mereka tidak bersyukur?
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                36
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    سُبْحٰنَ الَّذِيْ خَلَقَ الْاَزْوَاجَ كُلَّهَا مِمَّا تُنْۢبِتُ الْاَرْضُ وَمِنْ اَنْفُسِهِمْ وَمِمَّا لَا يَعْلَمُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                sub-ḫânalladzî khalaqal-azwâja kullahâ mimmâ tumbitul-ardlu wa min anfusihim wa mimmâ lâ ya‘lamûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Mahasuci (Allah) yang telah menciptakan semuanya berpasang-pasangan, baik dari apa yang ditumbuhkan oleh bumi dan dari diri mereka sendiri maupun dari apa yang tidak mereka ketahui.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                37
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَاٰيَةٌ لَّهُمُ الَّيْلُۖ نَسْلَخُ مِنْهُ النَّهَارَ فَاِذَا هُمْ مُّظْلِمُوْنَۙ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                wa âyatul lahumul-lailu naslakhu min-hun-nahâra fa idzâ hum mudhlimûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Suatu tanda juga (atas kekuasaan Allah) bagi mereka adalah malam. Kami pisahkan siang dari (malam) itu. Maka, seketika itu mereka (berada dalam) kegelapan.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                38
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَالشَّمْسُ تَجْرِيْ لِمُسْتَقَرٍّ لَّهَاۗ ذٰلِكَ تَقْدِيْرُ الْعَزِيْزِ الْعَلِيْمِۗ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                wasy-syamsu tajrî limustaqarril lahâ, dzâlika taqdîrul-‘azîzil-‘alîm
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                (Suatu tanda juga atas kekuasaan Allah bagi mereka adalah) matahari yang berjalan di tempat peredarannya. Demikianlah ketetapan (Allah) Yang Mahaperkasa lagi Maha Mengetahui.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                39
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَالْقَمَرَ قَدَّرْنٰهُ مَنَازِلَ حَتّٰى عَادَ كَالْعُرْجُوْنِ الْقَدِيْمِ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                wal-qamara qaddarnâhu manâzila ḫattâ ‘âda kal-‘urjûnil-qadîm
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                (Begitu juga) bulan, Kami tetapkan bagi(-nya) tempat-tempat peredaran sehingga (setelah ia sampai ke tempat peredaran yang terakhir,) kembalilah ia seperti bentuk tandan yang tua.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                40
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    لَا الشَّمْسُ يَنْۢبَغِيْ لَهَآ اَنْ تُدْرِكَ الْقَمَرَ وَلَا الَّيْلُ سَابِقُ النَّهَارِۗ وَكُلٌّ فِيْ فَلَكٍ يَّسْبَحُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                lasy-syamsu yambaghî lahâ an tudrikal-qamara wa lal-lailu sâbiqun-nahâr, wa kullun fî falakiy yasbaḫûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Tidaklah mungkin bagi matahari mengejar bulan dan malam pun tidak dapat mendahului siang. Masing-masing beredar pada garis edarnya.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                41
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَاٰيَةٌ لَّهُمْ اَنَّا حَمَلْنَا ذُرِّيَّتَهُمْ فِي الْفُلْكِ الْمَشْحُوْنِۙ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                wa âyatul lahum annâ ḫamalnâ dzurriyyatahum fil-fulkil-masy-ḫûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Suatu tanda (kebesaran Allah) bagi mereka adalah bahwa Kami mengangkut keturunan mereka dalam kapal yang penuh muatan.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                42
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَخَلَقْنَا لَهُمْ مِّنْ مِّثْلِهٖ مَا يَرْكَبُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                wa khalaqnâ lahum mim mitslihî mâ yarkabûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                (Begitu juga) Kami menciptakan untuk mereka dari jenis itu angkutan (lain) yang mereka kendarai.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                43
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَاِنْ نَّشَأْ نُغْرِقْهُمْ فَلَا صَرِيْخَ لَهُمْ وَلَاهُمْ يُنْقَذُوْنَۙ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                wa in nasya' nughriq-hum fa lâ sharîkha lahum wa lâ hum yungqadzûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Jika Kami menghendaki, Kami akan menenggelamkan mereka. Kemudian, tidak ada penolong bagi mereka dan tidak (pula) mereka diselamatkan.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                44
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    اِلَّا رَحْمَةً مِّنَّا وَمَتَاعًا اِلٰى حِيْنٍ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                illâ raḫmatam minnâ wa matâ‘an ilâ ḫîn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Akan tetapi, (Kami menyelamatkan mereka) karena rahmat yang besar dari Kami dan untuk memberi mereka kesenangan hidup sampai waktu tertentu.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                45
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَاِذَا قِيْلَ لَهُمُ اتَّقُوْا مَا بَيْنَ اَيْدِيْكُمْ وَمَا خَلْفَكُمْ لَعَلَّكُمْ تُرْحَمُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                wa idzâ qîla lahumuttaqû mâ baina aidîkum wa mâ khalfakum la‘allakum tur-ḫamûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Ketika dikatakan kepada mereka, “Takutlah kamu akan (siksa) yang ada di hadapanmu (di dunia) dan azab yang ada di belakangmu (akhirat) agar kamu mendapat rahmat,” (maka mereka berpaling).
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                46
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَمَا تَأْتِيْهِمْ مِّنْ اٰيَةٍ مِّنْ اٰيٰتِ رَبِّهِمْ اِلَّا كَانُوْا عَنْهَا مُعْرِضِيْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                wa mâ ta'tîhim min âyatim min âyâti rabbihim illâ kânû ‘an-hâ mu‘ridlîn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Tidak satu pun dari tanda-tanda (kebesaran) Tuhan datang kepada mereka, kecuali mereka berpaling darinya.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                47
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَاِذَا قِيْلَ لَهُمْ اَنْفِقُوْا مِمَّا رَزَقَكُمُ اللّٰهُۙ قَالَ الَّذِيْنَ كَفَرُوْا لِلَّذِيْنَ اٰمَنُوْٓا اَنُطْعِمُ مَنْ لَّوْ يَشَاۤءُ اللّٰهُ اَطْعَمَهٗٓۖ اِنْ اَنْتُمْ اِلَّا فِيْ ضَلٰلٍ مُّبِيْنٍ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                wa idzâ qîla lahum anfiqû mimmâ razaqakumullâhu qâlalladzîna kafarû lilladzîna âmanû a nuth‘imu mal lau yasyâ'ullâhu ath‘amahû in antum illâ fî dlalâlim mubîn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Apabila dikatakan kepada mereka, “Infakkanlah sebagian rezeki yang diberikan Allah kepadamu,” orang-orang yang kufur itu berkata kepada orang-orang yang beriman, “Apakah pantas kami memberi makan kepada orang-orang yang jika Allah menghendaki, Dia akan memberinya makan? Kamu benar-benar dalam kesesatan yang nyata.”
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                48
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَيَقُوْلُوْنَ مَتٰى هٰذَا الْوَعْدُ اِنْ كُنْتُمْ صٰدِقِيْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                wa yaqûlûna matâ hâdzal-wa‘du ing kuntum shâdiqîn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Mereka berkata, “Kapankah janji (hari Kebangkitan) ini (terjadi) jika kamu orang-orang benar?”
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                49
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    مَا يَنْظُرُوْنَ اِلَّا صَيْحَةً وَّاحِدَةً تَأْخُذُهُمْ وَهُمْ يَخِصِّمُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                mâ yandhurûna illâ shaiḫataw wâḫidatan ta'khudzuhum wa hum yakhishshimûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Mereka hanya menunggu satu teriakan yang akan membinasakan mereka saat mereka (sibuk) bertengkar (tentang urusan dunia).
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                50
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    فَلَا يَسْتَطِيْعُوْنَ تَوْصِيَةً وَّلَآ اِلٰىٓ اَهْلِهِمْ يَرْجِعُوْنَࣖ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                fa lâ yastathî‘ûna taushiyataw wa lâ ilâ ahlihim yarji‘ûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Oleh sebab itu, mereka tidak dapat berwasiat dan tidak dapat kembali kepada keluarganya.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                51
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَنُفِخَ فِي الصُّوْرِ فَاِذَا هُمْ مِّنَ الْاَجْدَاثِ اِلٰى رَبِّهِمْ يَنْسِلُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                wa nufikha fish-shûri fa idzâ hum minal-ajdâtsi ilâ rabbihim yansilûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Sangkakala pun ditiup dan seketika itu mereka bergerak cepat dari kuburnya menuju kepada Tuhannya.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                52
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    قَالُوْا يٰوَيْلَنَا مَنْۢ بَعَثَنَا مِنْ مَّرْقَدِنَاࣝ هٰذَا مَا وَعَدَ الرَّحْمٰنُ وَصَدَقَ الْمُرْسَلُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                qâlû yâ wailanâ mam ba‘atsanâ mim marqadinâ hâdzâ mâ wa‘adar-raḫmânu wa shadaqal-mursalûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Mereka berkata, “Celakalah kami! Siapakah yang membangkitkan kami dari tempat tidur kami (kubur)?” (Lalu, dikatakan kepada mereka,) “Inilah yang dijanjikan (Allah) Yang Maha Pengasih dan benarlah para rasul(-Nya).”
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                53
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    اِنْ كَانَتْ اِلَّا صَيْحَةً وَّاحِدَةً فَاِذَا هُمْ جَمِيْعٌ لَّدَيْنَا مُحْضَرُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                ing kânat illâ shaiḫataw wâḫidatan fa idzâ hum jamî‘ul ladainâ muḫdlarûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Teriakan itu hanya sekali saja, maka seketika itu mereka semua dihadapkan kepada Kami (untuk dihisab).
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                54
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    فَالْيَوْمَ لَا تُظْلَمُ نَفْسٌ شَيْـًٔا وَّلَا تُجْزَوْنَ اِلَّا مَا كُنْتُمْ تَعْمَلُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                fal-yauma lâ tudhlamu nafsun syai'aw wa lâ tujzauna illâ mâ kuntum ta‘malûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Pada hari itu tidak ada sama sekali orang yang dirugikan sedikit pun. Kamu tidak akan diberi balasan, kecuali atas apa yang telah kamu kerjakan.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                55
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    اِنَّ اَصْحٰبَ الْجَنَّةِ الْيَوْمَ فِيْ شُغُلٍ فٰكِهُوْنَۚ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                inna ash-ḫâbal-jannatil-yauma fî syughulin fâkihûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Sesungguhnya penghuni surga pada hari itu berada dalam kesibukan (sehingga tidak sempat berpikir tentang penghuni neraka) lagi bersenang-senang.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                56
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    هُمْ وَاَزْوَاجُهُمْ فِيْ ظِلٰلٍ عَلَى الْاَرَاۤىِٕكِ مُتَّكِــُٔوْنَۚ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                hum wa azwâjuhum fî dhilâlin ‘alal-arâ'iki muttaki'ûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Mereka dan pasangan-pasangannya berada dalam tempat yang teduh sambil berbaring di atas ranjang berkelambu.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                57
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    لَهُمْ فِيْهَا فَاكِهَةٌ وَّلَهُمْ مَّا يَدَّعُوْنَۚ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                lahum fîhâ fâkihatuw wa lahum mâ yadda‘ûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Di (surga) itu mereka memperoleh buah-buahan dan apa saja yang mereka inginkan.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                58
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    سَلٰمٌۗ قَوْلًا مِّنْ رَّبٍّ رَّحِيْمٍ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                salâm, qaulam mir rabbir raḫîm
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                (Kepada mereka dikatakan,) “Salam sejahtera” sebagai ucapan dari Tuhan Yang Maha Penyayang.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                59
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَامْتَازُوا الْيَوْمَ اَيُّهَا الْمُجْرِمُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                wamtâzul-yauma ayyuhal-mujrimûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                (Dikatakan kepada orang-orang kafir,) “Berpisahlah kamu (dari orang-orang mukmin) pada hari ini, wahai para pendurhaka!
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                60
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    اَلَمْ اَعْهَدْ اِلَيْكُمْ يٰبَنِيْٓ اٰدَمَ اَنْ لَّا تَعْبُدُوا الشَّيْطٰنَۚ اِنَّهٗ لَكُمْ عَدُوٌّ مُّبِيْنٌ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                a lam a‘had ilaikum yâ banî âdama al lâ ta‘budusy-syaithân, innahû lakum ‘aduwwum mubîn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Bukankah Aku telah berpesan kepadamu dengan sungguh-sungguh, wahai anak cucu Adam, bahwa janganlah kamu menyembah setan? Sesungguhnya setan itu musuh yang nyata bagi kamu.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                61
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَاَنِ اعْبُدُوْنِيْۗ هٰذَا صِرَاطٌ مُّسْتَقِيْمٌ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                wa ani‘budûnî, hâdzâ shirâthum mustaqîm
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                (Begitu juga bahwa) sembahlah Aku. Inilah jalan yang lurus.”
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                62
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَلَقَدْ اَضَلَّ مِنْكُمْ جِبِلًّا كَثِيْرًاۗ اَفَلَمْ تَكُوْنُوْا تَعْقِلُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                wa laqad adlalla mingkum jibillang katsîrâ, a fa lam takûnû ta‘qilûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Sungguh, ia (setan itu) benar-benar telah menyesatkan sangat banyak orang dari kamu. Maka, apakah kamu tidak mengerti?
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                63
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    هٰذِهٖ جَهَنَّمُ الَّتِيْ كُنْتُمْ تُوْعَدُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                hâdzihî jahannamullatî kuntum tû‘adûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Inilah (neraka) Jahanam yang dahulu telah diperingatkan kepadamu.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                64
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    اِصْلَوْهَا الْيَوْمَ بِمَا كُنْتُمْ تَكْفُرُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                ishlauhal-yauma bimâ kuntum takfurûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Masuklah ke dalamnya pada hari ini karena dahulu kamu mengingkarinya.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                65
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    اَلْيَوْمَ نَخْتِمُ عَلٰٓى اَفْوَاهِهِمْ وَتُكَلِّمُنَآ اَيْدِيْهِمْ وَتَشْهَدُ اَرْجُلُهُمْ بِمَا كَانُوْا يَكْسِبُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                al-yauma nakhtimu ‘alâ afwâhihim wa tukallimunâ aidîhim wa tasy-hadu arjuluhum bimâ kânû yaksibûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Pada hari ini Kami membungkam mulut mereka. Tangan merekalah yang berkata kepada Kami dan kaki merekalah yang akan bersaksi terhadap apa yang dahulu mereka kerjakan.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                66
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَلَوْ نَشَاۤءُ لَطَمَسْنَا عَلٰٓى اَعْيُنِهِمْ فَاسْتَبَقُوا الصِّرَاطَ فَاَنّٰى يُبْصِرُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                walau nasyâ'u lathamasnâ ‘alâ a‘yunihim fastabaqush-shirâtha fa annâ yubshirûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Seandainya Kami menghendaki, pastilah Kami akan menghapus penglihatan (membutakan) mereka sehingga mereka berlomba-lomba (mencari) jalan (selamat). Maka, bagaimana mungkin mereka dapat melihat?
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                67
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَلَوْ نَشَاۤءُ لَمَسَخْنٰهُمْ عَلٰى مَكَانَتِهِمْ فَمَا اسْتَطَاعُوْا مُضِيًّا وَّلَا يَرْجِعُوْنَࣖ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                walau nasyâ'u lamasakhnâhum ‘alâ makânatihim famastathâ‘û mudliyyaw wa lâ yarji‘ûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Seandainya Kami menghendaki, pastilah Kami akan mengubah bentuk mereka di tempat mereka berada, sehingga mereka tidak sanggup meneruskan perjalanan dan juga tidak sanggup pulang kembali.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                68
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَمَنْ نُّعَمِّرْهُ نُنَكِّسْهُ فِي الْخَلْقِۗ اَفَلَا يَعْقِلُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                wa man nu‘ammir-hu nunakkis-hu fil-khalq, a fa lâ ya‘qilûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Siapa yang Kami panjangkan umurnya niscaya Kami balik proses penciptaannya (dari kuat menuju lemah). Maka, apakah mereka tidak mengerti?
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                69
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَمَا عَلَّمْنٰهُ الشِّعْرَ وَمَا يَنْۢبَغِيْ لَهٗۗ اِنْ هُوَ اِلَّا ذِكْرٌ وَّقُرْاٰنٌ مُّبِيْنٌۙ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                wa mâ ‘allamnâhusy-syi‘ra wa mâ yambaghî lah, in huwa illâ dzikruw wa qur'ânum mubîn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Kami tidak mengajarkan syair kepadanya (Nabi Muhammad) dan (bersyair) itu tidaklah pantas baginya. (Wahyu yang Kami turunkan kepadanya) itu tidak lain hanyalah pelajaran dan Al-Qur’an yang jelas,
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                70
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    لِّيُنْذِرَ مَنْ كَانَ حَيًّا وَّيَحِقَّ الْقَوْلُ عَلَى الْكٰفِرِيْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                liyundzira mang kâna ḫayyaw wa yaḫiqqal-qaulu ‘alal-kâfirîn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                agar dia (Nabi Muhammad) memberi peringatan kepada orang-orang yang hidup (hatinya) dan agar ketetapan (azab) terhadap orang-orang kafir itu menjadi pasti.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                71
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    اَوَلَمْ يَرَوْا اَنَّا خَلَقْنَا لَهُمْ مِّمَّا عَمِلَتْ اَيْدِيْنَآ اَنْعَامًا فَهُمْ لَهَا مٰلِكُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                a wa lam yarau annâ khalaqnâ lahum mimmâ ‘amilat aidînâ an‘âman fa hum lahâ mâlikûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Tidakkah mereka mengetahui bahwa Kami telah menciptakan untuk mereka hewan-hewan ternak dari ciptaan tangan Kami (sendiri), lalu mereka menjadi pemiliknya?
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                72
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَذَلَّلْنٰهَا لَهُمْ فَمِنْهَا رَكُوْبُهُمْ وَمِنْهَا يَأْكُلُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                wa dzallalnâhâ lahum fa min-hâ rakûbuhum wa min-hâ ya'kulûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Kami menjadikannya (hewan-hewan itu) tunduk kepada mereka. Sebagian di antaranya menjadi tunggangan mereka dan sebagian (lagi) mereka makan.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                73
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَلَهُمْ فِيْهَا مَنَافِعُ وَمَشَارِبُۗ اَفَلَا يَشْكُرُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                wa lahum fîhâ manâfi‘u wa masyârib, a fa lâ yasykurûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Pada dirinya (hewan-hewan ternak itu) terdapat berbagai manfaat dan minuman untuk mereka. Apakah mereka tidak bersyukur?
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                74
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَاتَّخَذُوْا مِنْ دُوْنِ اللّٰهِ اٰلِهَةً لَّعَلَّهُمْ يُنْصَرُوْنَۗ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                wattakhadzû min dûnillâhi âlihatal la‘allahum yunsharûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Mereka menjadikan sesembahan selain Allah agar mereka mendapat pertolongan.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                75
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    لَا يَسْتَطِيْعُوْنَ نَصْرَهُمْۙ وَهُمْ لَهُمْ جُنْدٌ مُّحْضَرُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                lâ yastathî‘ûna nashrahum wa hum lahum jundum muḫdlarûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                (Sesembahan) itu tidak mampu menolong mereka, padahal (sesembahan) itu adalah tentara yang dihadirkan untuk menjaganya.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                76
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    فَلَا يَحْزُنْكَ قَوْلُهُمْۘ اِنَّا نَعْلَمُ مَا يُسِرُّوْنَ وَمَا يُعْلِنُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                fa lâ yaḫzungka qauluhum, innâ na‘lamu mâ yusirrûna wa mâ yu‘linûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Maka, jangan sampai ucapan mereka membuat engkau (Nabi Muhammad) bersedih hati. Sesungguhnya Kami mengetahui apa yang mereka rahasiakan dan apa yang mereka nyatakan.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                77
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    اَوَلَمْ يَرَ الْاِنْسَانُ اَنَّا خَلَقْنٰهُ مِنْ نُّطْفَةٍ فَاِذَا هُوَ خَصِيْمٌ مُّبِيْنٌ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                a wa lam yaral-insânu annâ khalaqnâhu min nuthfatin fa idzâ huwa khashîmum mubîn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Tidakkah manusia mengetahui bahwa Kami menciptakannya dari setetes mani? Kemudian tiba-tiba saja dia menjadi musuh yang nyata.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                78
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    وَضَرَبَ لَنَا مَثَلًا وَّنَسِيَ خَلْقَهٗۗ قَالَ مَنْ يُّحْيِ الْعِظَامَ وَهِيَ رَمِيْمٌ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                wa dlaraba lanâ matsalaw wa nasiya khalqah, qâla may yuḫyil-‘idhâma wa hiya ramîm
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Dia membuat perumpamaan bagi Kami dan melupakan asal penciptaannya. Dia berkata, “Siapakah yang bisa menghidupkan tulang-belulang yang telah hancur luluh?”
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                79
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    قُلْ يُحْيِيْهَا الَّذِيْٓ اَنْشَاَهَآ اَوَّلَ مَرَّةٍۗ وَهُوَ بِكُلِّ خَلْقٍ عَلِيْمٌۙ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                qul yuḫyîhalladzî ansya'ahâ awwala marrah, wa huwa bikulli khalqin ‘alîm
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Katakanlah (Nabi Muhammad), “Yang akan menghidupkannya adalah Zat yang menciptakannya pertama kali. Dia Maha Mengetahui setiap makhluk.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                80
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    ۙالَّذِيْ جَعَلَ لَكُمْ مِّنَ الشَّجَرِ الْاَخْضَرِ نَارًاۙ فَاِذَآ اَنْتُمْ مِّنْهُ تُوْقِدُوْنَ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                alladzî ja‘ala lakum minasy-syajaril-akhdlari nâran fa idzâ antum min-hu tûqidûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                (Dialah) yang menjadikan api untukmu dari kayu yang hijau. Kemudian, seketika itu kamu menyalakan (api) darinya.”
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                81
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    اَوَلَيْسَ الَّذِيْ خَلَقَ السَّمٰوٰتِ وَالْاَرْضَ بِقٰدِرٍ عَلٰٓى اَنْ يَّخْلُقَ مِثْلَهُمْۗ بَلٰى وَهُوَ الْخَلّٰقُ الْعَلِيْمُ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                a wa laisalladzî khalaqas-samâwâti wal-ardla biqâdirin ‘alâ ay yakhluqa mitslahum, balâ wa huwal-khallâqul-‘alîm
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Bukankah Zat yang menciptakan langit dan bumi mampu menciptakan manusia yang serupa mereka itu (di akhirat kelak)? Benar. Dialah yang Maha Banyak Mencipta lagi Maha Mengetahui.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1a1a1a] shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                82
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    اِنَّمَآ اَمْرُهٗٓ اِذَآ اَرَادَ شَيْـًٔاۖ اَنْ يَّقُوْلَ لَهٗ كُنْ فَيَكُوْنُ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                innamâ amruhû idzâ arâda syai'an ay yaqûla lahû kun fa yakûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Sesungguhnya ketetapan-Nya, jika Dia menghendaki sesuatu, Dia hanya berkata kepadanya, “Jadilah!” Maka, jadilah (sesuatu) itu.
+                            </div>
+                        
+                    </div>
+                
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-surface shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                83
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                
+                                <p class="arabic-text font-scheherazade text-gray-900 dark:text-white" dir="rtl">
+                                    فَسُبْحٰنَ الَّذِيْ بِيَدِهٖ مَلَكُوْتُ كُلِّ شَيْءٍ وَّاِلَيْهِ تُرْجَعُوْنَࣖ
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="latin-text text-primary font-medium mb-1">
+                                fa sub-ḫânalladzî biyadihî malakûtu kulli syai'iw wa ilaihi turja‘ûn
+                            </div>
+                        
+                        
+                        
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                Maka, Mahasuci (Allah) yang di tangan-Nya kekuasaan atas segala sesuatu dan kepada-Nya kamu dikembalikan.
+                            </div>
+                        
+                    </div>
+                </div>
+    </main>
+
+    <!-- Settings Modal (Full Screen on Mobile, Centered on Desktop) -->
+    <div id="settings-modal" class="modal fixed inset-0 z-50 flex items-end justify-center sm:items-center">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" onclick="toggleSettings()"></div>
+        
+        <!-- Content Wrapper -->
+        <div class="modal-content bg-white dark:bg-dark-surface w-full h-full sm:h-auto sm:max-h-[85vh] sm:max-w-md sm:rounded-2xl shadow-xl relative z-10 flex flex-col">
+            
+            <!-- Sticky Header -->
+            <div class="flex justify-between items-center p-4 border-b border-gray-100 dark:border-gray-800 shrink-0">
+                <h3 class="text-lg font-bold">Pengaturan Tampilan</h3>
+                <button onclick="toggleSettings()" class="p-2 rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+                </button>
+            </div>
+
+            <!-- Scrollable Body -->
+            <div class="flex-1 overflow-y-auto p-6 space-y-8">
+                
+                <!-- Bahasa Terjemahan -->
+                <div>
+                    <span class="block text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3">Bahasa Terjemahan</span>
+                    <div class="grid grid-cols-2 gap-3">
+                         <button onclick="updateSetting('translationLanguage', 'id')" class="lang-btn py-3 border rounded-xl text-sm font-medium transition-all hover:border-primary dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 active" data-val="id">
+                            🇮🇩 Indonesia
+                         </button>
+                         <button onclick="updateSetting('translationLanguage', 'my')" class="lang-btn py-3 border rounded-xl text-sm font-medium transition-all hover:border-primary dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50" data-val="my">
+                            🇲🇾 Melayu
+                         </button>
+                    </div>
+                </div>
+
+                <hr class="border-gray-100 dark:border-gray-800">
+
+                <!-- Tampilan Umum -->
+                <div class="space-y-5">
+                    <div class="flex justify-between items-center">
+                        <div class="flex flex-col">
+                            <span class="font-medium text-base">Mode Gelap</span>
+                            <span class="text-xs text-gray-500">Tema gelap untuk malam hari</span>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="toggle-darkmode" class="sr-only peer" onchange="updateSetting('darkMode', this.checked)">
+                            <div class="w-12 h-7 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[3px] after:left-[3px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                        </label>
+                    </div>
+
+                    <div class="flex justify-between items-center">
+                        <span class="font-medium text-base">Tampilkan Latin</span>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="toggle-latin" class="sr-only peer" onchange="updateSetting('showLatin', this.checked)">
+                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                        </label>
+                    </div>
+
+                    <div class="flex justify-between items-center">
+                        <span class="font-medium text-base">Tampilkan Terjemahan</span>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="toggle-translation" class="sr-only peer" onchange="updateSetting('showTranslation', this.checked)">
+                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                        </label>
+                    </div>
+                </div>
+
+                <hr class="border-gray-100 dark:border-gray-800">
+
+                <!-- Jenis Font -->
+                <div>
+                    <span class="block text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3">Jenis Huruf Arab</span>
+                    <div class="grid grid-cols-1 gap-3">
+                        <button onclick="updateSetting('fontFamily', 'noto')" class="btn-option font-type-btn flex items-center justify-between p-4 border rounded-xl border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-all" data-font="noto">
+                            <span class="text-sm font-medium">Noto Naskh (Jelas)</span>
+                            <span class="font-noto text-2xl">بِسْمِ ٱللَّهِ</span>
+                        </button>
+                        <button onclick="updateSetting('fontFamily', 'scheherazade')" class="btn-option font-type-btn flex items-center justify-between p-4 border rounded-xl border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-all active" data-font="scheherazade">
+                            <span class="text-sm font-medium">Scheherazade (Standar)</span>
+                            <span class="font-scheherazade text-2xl">بِسْمِ ٱللَّهِ</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Ukuran Font -->
+                <div>
+                    <span class="block text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3">Ukuran Tulisan</span>
+                    <div class="grid grid-cols-4 gap-2">
+                        <button onclick="updateSetting('fontSize', 'small')" class="font-btn py-3 border rounded-xl text-sm font-medium hover:border-primary dark:border-gray-700 bg-white dark:bg-gray-800" data-val="small">Kecil</button>
+                        <button onclick="updateSetting('fontSize', 'medium')" class="font-btn py-3 border rounded-xl text-sm font-medium hover:border-primary dark:border-gray-700 bg-white dark:bg-gray-800" data-val="medium">Sedang</button>
+                        <button onclick="updateSetting('fontSize', 'large')" class="font-btn py-3 border rounded-xl text-sm font-medium bg-primary text-white border-primary" data-val="large">Besar</button>
+                        <button onclick="updateSetting('fontSize', 'xl')" class="font-btn py-3 border rounded-xl text-sm font-medium hover:border-primary dark:border-gray-700 bg-white dark:bg-gray-800" data-val="xl">Jumbo</button>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- Sticky Footer -->
+            <div class="p-4 border-t border-gray-100 dark:border-gray-800 shrink-0 bg-white dark:bg-dark-surface sm:rounded-b-2xl">
+                <button onclick="toggleSettings()" class="w-full py-3.5 rounded-xl font-bold text-white bg-primary hover:bg-emerald-600 active:scale-[0.98] transition-all shadow-lg shadow-primary/20">
+                    Tutup Pengaturan
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- 1. State Management & Defaults ---
+        const defaultSettings = {
+            darkMode: false,
+            showLatin: true,
+            showTranslation: true,
+            fontSize: 'large',
+            fontFamily: 'scheherazade',
+            translationLanguage: 'id' // 'id' or 'my'
+        };
+
+        let appState = {
+            activeTab: 'yasin',
+            data: { yasin: null, tahlil: null },
+            settings: JSON.parse(localStorage.getItem('quranAppSettings')) || defaultSettings
+        };
+
+        const els = {
+            body: document.body,
+            container: document.getElementById('verses-container'),
+            loader: document.getElementById('loader'),
+            modal: document.getElementById('settings-modal'),
+            btnYasin: document.getElementById('btn-yasin'),
+            btnTahlil: document.getElementById('btn-tahlil'),
+            inputs: {
+                dark: document.getElementById('toggle-darkmode'),
+                latin: document.getElementById('toggle-latin'),
+                trans: document.getElementById('toggle-translation')
+            }
+        };
+
+        function init() {
+            applySettingsToUI();
+            loadData('yasin');
+        }
+
+        async function loadData(type) {
+            if (appState.data[type]) {
+                renderContent();
+                return;
+            }
+
+            els.loader.classList.remove('hidden');
+            els.container.classList.add('hidden');
+
+            const fallbackData = {
+                yasin: { "title": "Surat Yasin", "verses": [{ "id": 1, "arabic": "يسٓ", "latin": "Yaa siin", "translation": "Yasin.", "translation_my": "Yaa, Siin." }] },
+                tahlil: { "title": "Doa Tahlil", "verses": [{ "id": 1, "title": "Al-Ikhlas", "arabic": "قُلْ هُوَ ٱللَّهُ أَحَدٌ", "latin": "Qul huwallāhu aḥad", "translation": "Katakanlah: Dialah Allah, Yang Maha Esa.", "translation_my": "Katakanlah (wahai Muhammad): (Tuhanku) ialah Allah Yang Maha Esa." }] }
+            };
+
+            try {
+                const fileName = type === 'yasin' ? 'yasin.json' : 'tahlil.json';
+                const response = await fetch(fileName);
+                if (!response.ok) throw new Error("File not found");
+                appState.data[type] = await response.json();
+            } catch (error) {
+                console.warn(`Fetching ${type} failed. Using Fallback.`, error);
+                appState.data[type] = fallbackData[type];
+            } finally {
+                if (appState.activeTab === type) {
+                    renderContent();
+                    els.loader.classList.add('hidden');
+                    els.container.classList.remove('hidden');
+                }
+            }
+        }
+
+        function renderContent() {
+            const data = appState.data[appState.activeTab];
+            if (!data) return;
+
+            els.container.innerHTML = '';
+            const currentFont = appState.settings.fontFamily;
+            const currentLang = appState.settings.translationLanguage;
+
+            const headerHtml = `
+                <div class="text-center py-4 mb-4">
+                    <h1 class="text-2xl font-bold text-primary">${data.title}</h1>
+                </div>
+            `;
+            els.container.insertAdjacentHTML('beforeend', headerHtml);
+
+            if (appState.activeTab === 'yasin') {
+                const basmalahHtml = `
+                    <div class="text-center mb-8 mt-2 px-4">
+                        <p class="arabic-text font-${currentFont} text-gray-800 dark:text-gray-200 leading-loose">
+                            بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+                        </p>
+                    </div>
+                `;
+                els.container.insertAdjacentHTML('beforeend', basmalahHtml);
+            }
+
+            data.verses.forEach((verse, index) => {
+                const isEven = index % 2 === 0;
+                const bgClass = isEven ? 'bg-white dark:bg-dark-surface' : 'bg-gray-50 dark:bg-[#1a1a1a]';
+                
+                const translationText = (currentLang === 'my' && verse.translation_my) 
+                                        ? verse.translation_my 
+                                        : verse.translation;
+
+                const verseHtml = `
+                    <div class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 ${bgClass} shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0 mt-2">
+                                ${verse.id}
+                            </span>
+                            <div class="text-right w-full ml-4">
+                                ${verse.title ? `<h4 class="text-sm font-bold text-gray-500 mb-4 text-left">${verse.title}</h4>` : ''}
+                                <p class="arabic-text font-${currentFont} text-gray-900 dark:text-white" dir="rtl">
+                                    ${verse.arabic}
+                                </p>
+                            </div>
+                        </div>
+                        
+                        ${appState.settings.showLatin ? `
+                            <div class="latin-text text-primary font-medium mb-1">
+                                ${verse.latin}
+                            </div>
+                        ` : ''}
+                        
+                        ${appState.settings.showTranslation ? `
+                            <div class="translation-text text-gray-600 dark:text-gray-400">
+                                ${translationText}
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+                els.container.insertAdjacentHTML('beforeend', verseHtml);
+            });
+        }
+
+        async function switchTab(tab) {
+            if (appState.activeTab === tab) return;
+            appState.activeTab = tab;
+            
+            const activeClass = "bg-white dark:bg-gray-700 shadow-sm text-primary";
+            const inactiveClass = "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200";
+            els.btnYasin.className = `px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${tab === 'yasin' ? activeClass : inactiveClass}`;
+            els.btnTahlil.className = `px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${tab === 'tahlil' ? activeClass : inactiveClass}`;
+
+            window.scrollTo(0, 0);
+
+            if (appState.data[tab]) {
+                renderContent();
+            } else {
+                await loadData(tab);
+            }
+        }
+
+        function toggleSettings() {
+            els.modal.classList.toggle('active');
+        }
+
+        function updateSetting(key, value) {
+            appState.settings[key] = value;
+            saveSettings();
+            applySettingsToUI();
+            
+            if (['showLatin', 'showTranslation', 'fontFamily', 'translationLanguage'].includes(key)) {
+                renderContent();
+            }
+        }
+
+        function saveSettings() {
+            localStorage.setItem('quranAppSettings', JSON.stringify(appState.settings));
+        }
+
+        function applySettingsToUI() {
+            const s = appState.settings;
+            
+            if (s.darkMode) document.documentElement.classList.add('dark');
+            else document.documentElement.classList.remove('dark');
+            els.inputs.dark.checked = s.darkMode;
+
+            els.body.setAttribute('data-size', s.fontSize);
+            
+            document.querySelectorAll('.font-btn').forEach(btn => {
+                if(btn.dataset.val === s.fontSize) {
+                    btn.classList.add('bg-primary', 'text-white', 'border-primary');
+                    btn.classList.remove('hover:border-primary', 'dark:border-gray-700', 'bg-white', 'dark:bg-gray-800');
+                } else {
+                    btn.classList.remove('bg-primary', 'text-white', 'border-primary');
+                    btn.classList.add('hover:border-primary', 'dark:border-gray-700', 'bg-white', 'dark:bg-gray-800');
+                }
+            });
+
+            document.querySelectorAll('.font-type-btn').forEach(btn => {
+                if(btn.dataset.font === s.fontFamily) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                if(btn.dataset.val === s.translationLanguage) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            els.inputs.latin.checked = s.showLatin;
+            els.inputs.trans.checked = s.showTranslation;
+        }
+
+        init();
+    </script>
+    <img src="//sstatic1.histats.com/0.gif?4992581&amp;101" alt="" border="0" style="display:none">
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;e62c92343f3b43118741aee68e8502ec&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+</body></html>

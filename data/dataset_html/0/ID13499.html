@@ -1,0 +1,211 @@
+<html lang="en"><!--
+                 __ _
+               .: .' '.
+              /: /     \_
+             ;: ;  ,-'/`:\
+             |: | |  |() :|
+             ;: ;  '-.\_:/
+              \: \     /`
+               ':_'._.'
+                  ||
+                 /__\
+      .---.     {====}
+    .'   _,"-,__|::  |
+   /    ((O)=;--.::  |
+  ;      `|: |  |::  |
+  |       |: |  |::  |            *****************************
+  |       |: |  |::  |            * LookingGlass by Telephone *
+  |       |: |  |::  |            *  http://iamtelephone.com  *
+  |       |: |  |::  |            *****************************
+  |       |: |  |::  |
+  |      /:'__\ |::  |
+  |     [______]|::  |
+  |      `----` |::  |__
+  |         _.--|::  |  ''--._
+  ;       .'  __{====}__      '.
+   \    .'_.-'._ `""` _.'-._    '.
+    '--'/`      `''''`      `\    '.__
+        '._                _.'
+           `""--......--""`
+--><head>
+    <meta charset="utf-8">
+    <title>Qwords Info</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LookingGlass - Open source PHP looking glass">
+    <meta name="author" content="Telephone">
+
+    <!-- IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Styles -->
+    <link href="assets/css/cerulean.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Container -->
+    <div class="container">
+
+      <!-- Header -->
+      <header class="header nohighlight" id="overview">
+        <div class="row">
+          <div class="span12">
+            <h1><a id="title" href="https://qwords.info"><img src="img/qwlogo.png" style="max-width:100%;height:auto;"></a></h1>
+          </div>
+        </div>
+      </header>
+<!-- IP Information -->
+      <section id="information">
+        <div class="row">
+          <div class="span12">
+            <div class="well">
+              <span id="legend"> Informasi Untuk Anda </span><!-- IE/Safari dislike <legend> out of context -->
+              <div style="margin-left: 10px;">
+<p><b>---- Copy Disini ---</b></p>
+<p>User Agent: <b>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36</b></p>
+<p>IP Anda: <b><a href="#tests" id="userip">34.50.79.28</a></b></p>
+<p>Proxy:<b></b></p>
+<p>Koneksi:<b></b></p>
+<p><b>---- Copy Disini ---</b></p>
+              </div>
+<p><b>IP Anda adalah IP ISP (Koneksi Internet) yang anda gunakan, anda dapat menggunakan IP Anda untuk membuka Blok IP pada Firewall, Informasikan IP Anda ke Tim Teknis Qwords.com</b></p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Network Information -->
+      <section id="information">
+        <div class="row">
+          <div class="span12">
+            <div class="well">
+              <span id="legend">Network information</span><!-- IE/Safari dislike <legend> out of context -->
+              <p>Server Location: <b>Jakarta</b></p>
+              <div style="margin-left: 10px;">
+                <p>Test IPv4: 103.102.152.25</p>
+                <p></p>
+                <p>Test files: <a href="25MB.test" id="testfile">25MB</a> <a href="50MB.test" id="testfile">50MB</a> </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- Network Tests -->
+      <section id="tests">
+        <div class="row">
+          <div class="span12">
+            <form class="well form-inline" id="networktest" action="#results" method="post">
+              <fieldset>
+                <span id="legend">Network Tests</span>
+<p><b>Network test ini merupakan test dari website ini ke alamat IP atau domain yang anda masukan, anda dapat mengetest apakah website anda dapat diakses atau tidak dari orang lain atau dari server website ini</b></p>
+                <div id="hosterror" class="control-group">
+                  <div class="controls">
+                    <input id="host" name="host" type="text" class="input-large" placeholder="Host or IP address">
+                  </div>
+                </div>
+                <select id="select" name="cmd" class="input-medium" style="margin-left: 5px;">
+                  <option value="host" selected="selected">host</option>
+                  <option value="mtr">mtr</option>
+                                    <option value="ping" selected="selected">ping</option>
+                                    <option value="traceroute">traceroute</option>
+                   </select>
+                <button type="submit" id="submit" name="submit" class="btn btn-primary" style="margin-left: 10px;">Run Test</button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section id="results" style="display:none">
+        <div class="row">
+          <div class="span12">
+            <div class="well">
+              <span id="legend">Hasil</span>
+              <pre id="response" style="display:none"></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Whois Domain -->
+      <section id="tests">
+        <div class="row">
+          <div class="span12">
+            <form class="well form-inline" id="whoistest" action="#resultswhois" method="post">
+              <fieldset>
+                <span id="legend">Whois Domain</span>
+<p><b>Anda dapat menggunakan Whois Domain ini untuk mengetahui ketersediaan domain dan atau status domain</b></p>
+                <div id="whoiserror" class="control-group">
+                  <div class="controls">
+                    <input id="domain" name="domain" type="text" class="input-large" placeholder="Nama Domain">
+                  </div>
+                </div>
+                
+                <button type="submit" id="submitwhois" name="submitwhois" class="btn btn-primary" style="margin-left: 10px;">Cek Whois</button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </section>
+      
+      
+      <section id="resultswhois" style="display:none">
+        <div class="row">
+          <div class="span12">
+            <div class="well">
+              <span id="legend">Hasil Whois</span>
+              <pre id="responsewhois" style="display:none"></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+<!-- Speedtest Network -->
+      <section id="tests">
+        <div class="row">
+          <div class="span12">
+               <fieldset>
+            <span id="legend">Network Speedtest</span>
+<center><script src="https://ws.nperf.com/partner/js?k=8f27659e-bd60-45ca-a98c-87224a26225c&amp;sp=8150"></script><iframe id="nPerfSpeedTest" src="https://ws.nperf.com/partner/frame?k=8f27659e-bd60-45ca-a98c-87224a26225c&amp;sp=8150" width="0" height="0" frameborder="0" scrolling="no" style="overflow: hidden; display: block; margin: 0px; padding: 0px; max-width: 600px; height: 400px; width: 100%" allow="geolocation" referrerpolicy="unsafe-url"></iframe><div style="font-size: 0.7em">Free <a href="https://www.nperf.com/en/" target="_blank">speed test</a> plugin powered by <a href="https://www.nperf.com/web-plugin/" target="_blank">nPerf.com</a>.</div></center>
+</fieldset>
+
+	</div>
+        </div>
+      </section>
+
+
+<section id="information">
+        <div class="row">
+          <div class="span12">
+            <div class="well">
+              <span id="legend">Disclaimer:</span><!-- IE/Safari dislike <legend> out of context -->
+              <div style="margin-left: 10px;">
+<p>1. Layanan ini bersifat cuma-cuma, tidak ada garansi apapun mengenai layanan ini.</p> 
+<p>2. Segala informasi yang ditampilkan di halaman ini tidak disimpan dalam bentuk apapun oleh pengelola.</p> 
+<p>3. Pengelola dibebaskan dari segala tuntutan dan tanggung jawab terhadap penggunaan layanan ini. </p>
+<p>4. Pengguna layanan ini bertanggung jawab 100% atas penggunaan layanan yang sudah diberikan oleh pengelola.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer nohighlight">
+        <p class="pull-right">
+            <a href="#">Back to top</a>
+        </p>
+        <p>copyright (c) 2021 <a href="http://www.Qwords.com" alt="Qwords.com Web Hosting">Qwords.com Web Hosting Indonesia</a></p>
+      </footer>
+
+    </div><!-- /container -->
+    <!-- Javascript -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/hide.js"></script>
+    <script src="assets/js/LookingGlass.min.js"></script>
+    <script src="assets/js/XMLHttpRequest.min.js"></script>
+  
+
+</body></html>

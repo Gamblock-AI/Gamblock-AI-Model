@@ -1,0 +1,804 @@
+<html lang="en-us" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" class="en-us js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths"><head><style><!----> <!--?lit$412097679$-->:export{fadeTransitionTime:700ms;slideTransitionTime:400ms}.osano-cm-window{font-size:16px;font-family:Helvetica,Arial,"Hiragino Sans GB",STXihei,"Microsoft YaHei","WenQuanYi Micro Hei",Hind,"MS Gothic","Apple SD Gothic Neo",NanumBarunGothic,sans-serif;font-smooth:always;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothingz:auto;display:block;position:absolute;left:0;top:0;z-index:2147483638;line-height:1;width:100%}.osano-cm-window--context_amp{height:100%}.osano-cm-window{--fade-transition-time: 700ms;--slide-transition-time: 400ms;--osano-focus-outline: 3px solid var(--osano-focus-outline-color);--osano-focus-outline-offset: 2px}.osano-visually-hidden{height:1px;width:1px;margin:-1px;opacity:0;position:absolute;left:-10000px;overflow:hidden}.osano-cm-button{border-width:thin;border-style:solid;border-radius:.25em;font-weight:bold;font-size:1em;padding:.5em .75em;margin:.125em;line-height:1;flex:1 1 auto;min-width:6em;cursor:pointer;transition-duration:200ms;transition-property:background-color;transition-timing-function:ease-out;background-color:var(--osano-button-background-color);border-color:var(--osano-button-border-color);color:var(--osano-button-foreground-color)}.osano-cm-button:hover{--osano-button-background-color: var(--osano-button-background-color-hover)}.osano-cm-button:focus-visible{--osano-button-background-color: var(--osano-button-background-color-hover);outline:var(--osano-focus-outline);outline-offset:var(--osano-focus-outline-offset)}.osano-cm-button--type_icon{min-width:1em;width:1em;line-height:0;height:1em;border-radius:50%}.osano-cm-button--type_accept,.osano-cm-button--type_accept-all{--osano-button-background-color: var(--osano-button-accept-background-color);--osano-button-border-color: var(--osano-button-accept-border-color);--osano-button-foreground-color: var(--osano-button-accept-foreground-color)}.osano-cm-button--type_accept:focus-visible,.osano-cm-button--type_accept:hover,.osano-cm-button--type_accept-all:focus-visible,.osano-cm-button--type_accept-all:hover{--osano-button-background-color: var(--osano-button-accept-background-color-hover)}.osano-cm-button--type_deny{--osano-button-background-color: var(--osano-button-deny-background-color);--osano-button-border-color: var(--osano-button-deny-border-color);--osano-button-foreground-color: var(--osano-button-deny-foreground-color)}.osano-cm-button--type_deny:focus-visible,.osano-cm-button--type_deny:hover{--osano-button-background-color: var(--osano-button-deny-background-color-hover)}.osano-cm-button--type_denyAll{--osano-button-background-color: var(--osano-button-reject-all-background-color);--osano-button-border-color: var(--osano-button-reject-all-border-color);--osano-button-foreground-color: var(--osano-button-reject-all-foreground-color)}.osano-cm-button--type_denyAll:focus-visible,.osano-cm-button--type_denyAll:hover{--osano-button-background-color: var( --osano-button-reject-all-background-color-hover )}.osano-cm-button--type_manage{--osano-button-background-color: var(--osano-button-manage-background-color);--osano-button-border-color: var(--osano-button-manage-border-color);--osano-button-foreground-color: var(--osano-button-manage-foreground-color)}.osano-cm-button--type_manage:focus-visible,.osano-cm-button--type_manage:hover{--osano-button-background-color: var(--osano-button-manage-background-color-hover)}.osano-cm-close{--osano-button-close-background-color: transparent;--osano-button-close-stroke-color: var(--osano-button-close-color);border-radius:50%;border-style:solid;border-width:2px;cursor:pointer;order:0;overflow:hidden;margin:.5em;min-height:20px;min-width:20px;padding:0;box-sizing:content-box;width:20px;height:20px;stroke-width:1px;text-decoration:none;transform:rotate(0deg);transition-property:transform,color,background-color,stroke,stroke-width;transition-duration:200ms;transition-timing-function:ease-out;z-index:2;line-height:normal;justify-content:center;display:flex;background-color:var(--osano-button-close-background-color);border-color:var(--osano-button-close-background-color);color:var(--osano-button-close-stroke-color);stroke:var(--osano-button-close-stroke-color)}.osano-cm-close:focus-visible{--osano-button-close-background-color: var(--osano-button-close-color);--osano-button-close-stroke-color: var(--osano-dialog-background-color);transform:rotate(90deg);stroke-width:2px;outline:var(--osano-focus-outline);outline-offset:var(--osano-focus-outline-offset)}.osano-cm-close:hover{transform:rotate(90deg);stroke-width:2px}.ccpa-opt-out-icon{display:flex;flex:1 1 auto}.ccpa-opt-out-icon svg{max-width:40px}.osano-cm-link{cursor:pointer;text-decoration:underline;transition-duration:200ms;transition-property:color;transition-timing-function:ease-out;color:var(--osano-link-color)}.osano-cm-link:hover,.osano-cm-link:active{outline:none;color:var(--osano-link-color-contrast)}.osano-cm-link:visited{outline:none;color:var(--osano-link-color-contrast)}.osano-cm-link:focus-visible{font-weight:bold;outline:var(--osano-focus-outline);outline-offset:var(--osano-focus-outline-offset);color:var(--osano-link-color-contrast)}.osano-cm-link--type_purpose,.osano-cm-link--type_specialPurpose,.osano-cm-link--type_feature,.osano-cm-link--type_specialFeature{cursor:help;display:block;font-weight:normal;text-decoration:dashed}.osano-cm-link--type_purpose:active,.osano-cm-link--type_purpose:hover,.osano-cm-link--type_specialPurpose:active,.osano-cm-link--type_specialPurpose:hover,.osano-cm-link--type_feature:active,.osano-cm-link--type_feature:hover,.osano-cm-link--type_specialFeature:active,.osano-cm-link--type_specialFeature:hover{font-weight:normal;text-decoration:underline}.osano-cm-link--type_purpose:focus-visible,.osano-cm-link--type_specialPurpose:focus-visible,.osano-cm-link--type_feature:focus-visible,.osano-cm-link--type_specialFeature:focus-visible{outline:var(--osano-focus-outline);outline-offset:var(--osano-focus-outline-offset);font-weight:normal;text-decoration:underline}.osano-cm-link--type_denyAll{display:block;text-align:right}[dir=rtl] .osano-cm-link--type_denyAll{text-align:left}.osano-cm-link--type_vendor,.osano-cm-link--type_link{display:block}.osano-cm-link-separator::before{content:"|";padding:0 .5em}.osano-cm-vendor-link{font-size:.75em}.osano-cm-list-item{margin:0}.osano-cm-list-item--type_term{border-top-width:1px;border-top-style:solid;font-size:.875rem;font-weight:normal;margin-bottom:.25em;margin-top:.5em;padding:0 .75rem;padding-top:.5em;position:relative;top:-1px}.osano-cm-list-item--type_description{font-size:.75rem;font-weight:lighter;padding:0 .75rem}.osano-cm-list{list-style-position:outside;list-style-type:none;margin:0;padding:0}.osano-cm-list__list-item{text-indent:0}.osano-cm-list--type_description{margin:0 -1em}.osano-cm-list:first-of-type .osano-cm-list__list-item:first-of-type{border-top-width:0;margin-top:0;padding-top:0}.osano-cm-toggle{align-items:center;display:flex;flex-direction:row-reverse;justify-content:flex-start;margin:.25em 0;position:relative;pointer-events:auto;--osano-toggle-track-color: var(--osano-toggle-off-track-color);--osano-toggle-thumb-color: var(--osano-toggle-off-thumb-color);--osano-toggle-border-color: transparent}.osano-cm-toggle:hover{cursor:pointer}.osano-cm-toggle__label{margin:0 .5em 0 0}[dir=rtl] .osano-cm-toggle__label{margin:0 0 0 .5em}.osano-cm-toggle__switch{box-sizing:content-box;color:rgba(0,0,0,0);line-height:0;text-indent:-9999px;width:40px;height:18px;display:block;flex-shrink:0;border-radius:14px;border-style:solid;border-width:2px;margin:0;position:relative;transition-duration:200ms;transition-property:background-color,filter,border-color;transition-timing-function:ease-out;background-color:var(--osano-toggle-track-color);border-color:var(--osano-toggle-track-color)}.osano-cm-toggle__switch:hover{cursor:pointer}.osano-cm-toggle__switch::after{border-width:0;top:0;left:0;width:18px;height:18px;border-radius:9px;background-color:var(--osano-toggle-thumb-color);border-color:var(--osano-toggle-thumb-color)}.osano-cm-toggle__switch::before{border-radius:16px;border-width:2px;box-sizing:border-box;bottom:-6px;left:-6px;right:-6px;top:-6px;border-color:var(--osano-toggle-border-color)}.osano-cm-toggle__switch::after,.osano-cm-toggle__switch::before{border-style:solid;content:"";position:absolute;margin:0;transform:translateX(0);transition-duration:300ms;transition-property:transform,left,border-color;transition-timing-function:ease-out}.osano-cm-toggle__switch::after:active,.osano-cm-toggle__switch::before:active{transition-duration:100ms}.osano-cm-toggle__switch::after:active{width:26px}.osano-cm-toggle__switch::before:active{width:34px}[dir=rtl] .osano-cm-toggle__switch::after{left:100%;transform:translateX(-100%)}.osano-cm-toggle__input{height:1px;width:1px;margin:-1px;opacity:0;left:-10000px;position:absolute;overflow:hidden}[dir=rtl] .osano-cm-toggle__input{left:0;right:-10000px}.osano-cm-toggle__input:disabled{cursor:default}.osano-cm-toggle--type_checkbox .osano-cm-toggle__switch{border-style:solid;border-radius:4px;border-width:1px;height:22px;width:22px}.osano-cm-toggle--type_checkbox .osano-cm-toggle__switch::after{background-color:rgba(0,0,0,0) !important;border-bottom-width:2px;border-left-width:2px;border-radius:0;content:none;height:6px;left:3px;top:3px;transform:rotate(-45deg);transition-property:color;transition-timing-function:ease-out;width:12px}.osano-cm-toggle--type_opt-out .osano-cm-toggle__switch{border-style:solid;border-radius:4px;border-width:1px;height:22px;width:22px}.osano-cm-toggle--type_opt-out .osano-cm-toggle__switch::after,.osano-cm-toggle--type_opt-out .osano-cm-toggle__switch::before{background-color:rgba(0,0,0,0) !important;border-top-width:1px;border-bottom-width:1px;border-radius:0;content:none;height:0;left:-3px;top:7px;transition-property:color;transition-timing-function:ease-out;width:12px}.osano-cm-toggle--type_opt-out .osano-cm-toggle__switch::after{transform:translate(50%, 50%) rotate(-45deg)}.osano-cm-toggle--type_opt-out .osano-cm-toggle__switch::before{transform:translate(50%, 50%) rotate(45deg)}.osano-cm-toggle__input:checked+.osano-cm-toggle__switch{--osano-toggle-track-color: var(--osano-toggle-on-track-color);--osano-toggle-thumb-color: var(--osano-toggle-on-thumb-color)}.osano-cm-toggle__input:checked+.osano-cm-toggle__switch::after{left:100%;transform:translateX(-100%)}[dir=rtl] .osano-cm-toggle__input:checked+.osano-cm-toggle__switch::after{left:0;transform:translateX(0)}.osano-cm-toggle__input:focus-visible+.osano-cm-toggle__switch,.osano-cm-toggle__input:hover+.osano-cm-toggle__switch{--osano-toggle-track-color: var(--osano-toggle-off-track-color-hover);--osano-toggle-thumb-color: var(--osano-toggle-off-thumb-color-hover)}.osano-cm-toggle__input:focus-visible+.osano-cm-toggle__switch::before{--osano-toggle-border-color: var(--osano-toggle-off-track-color-hover)}.osano-cm-toggle__input:disabled+.osano-cm-toggle__switch{cursor:default}.osano-cm-toggle--type_checkbox .osano-cm-toggle__input:checked+.osano-cm-toggle__switch::after{content:"";left:3px;top:3px;transform:rotate(-45deg)}.osano-cm-toggle--type_opt-out .osano-cm-toggle__input:checked+.osano-cm-toggle__switch::before,.osano-cm-toggle--type_opt-out .osano-cm-toggle__input:checked+.osano-cm-toggle__switch::after{content:"";left:-1px;top:9px}.osano-cm-toggle--type_opt-out .osano-cm-toggle__input:checked+.osano-cm-toggle__switch::after{transform:translate(50%, 50%) rotate(-45deg)}.osano-cm-toggle--type_opt-out .osano-cm-toggle__input:checked+.osano-cm-toggle__switch::before{transform:translate(50%, 50%) rotate(45deg)}.osano-cm-toggle--type_checkbox .osano-cm-toggle__input:disabled+.osano-cm-toggle__switch,.osano-cm-toggle--type_opt-out .osano-cm-toggle__input:disabled+.osano-cm-toggle__switch{opacity:.3}.osano-cm-toggle__input:checked:focus-visible+.osano-cm-toggle__switch,.osano-cm-toggle__input:checked:hover+.osano-cm-toggle__switch{--osano-toggle-track-color: var(--osano-toggle-on-track-color-hover);--osano-toggle-thumb-color: var(--osano-toggle-on-thumb-color-hover)}.osano-cm-toggle__input:checked:focus-visible+.osano-cm-toggle__switch::before{--osano-toggle-border-color: var(--osano-toggle-on-track-color-hover)}.osano-cm-toggle__input:disabled+.osano-cm-toggle__switch,.osano-cm-toggle__input:disabled:focus-visible+.osano-cm-toggle__switch,.osano-cm-toggle__input:disabled:hover+.osano-cm-toggle__switch{--osano-toggle-track-color: var(--osano-toggle-off-track-color-disabled)}.osano-cm-toggle__input:disabled+.osano-cm-toggle__switch::after,.osano-cm-toggle__input:disabled:focus-visible+.osano-cm-toggle__switch::after,.osano-cm-toggle__input:disabled:hover+.osano-cm-toggle__switch::after{--osano-toggle-thumb-color: var(--osano-toggle-off-thumb-color-disabled)}.osano-cm-toggle__input:disabled+.osano-cm-toggle__switch::before,.osano-cm-toggle__input:disabled:focus-visible+.osano-cm-toggle__switch::before,.osano-cm-toggle__input:disabled:hover+.osano-cm-toggle__switch::before{--osano-toggle-border-color: transparent}.osano-cm-toggle__input:disabled:checked+.osano-cm-toggle__switch,.osano-cm-toggle__input:disabled:checked:focus-visible+.osano-cm-toggle__switch,.osano-cm-toggle__input:disabled:checked:hover+.osano-cm-toggle__switch{--osano-toggle-track-color: var(--osano-toggle-on-track-color-disabled)}.osano-cm-toggle__input:disabled:checked+.osano-cm-toggle__switch::after,.osano-cm-toggle__input:disabled:checked:focus-visible+.osano-cm-toggle__switch::after,.osano-cm-toggle__input:disabled:checked:hover+.osano-cm-toggle__switch::after{--osano-toggle-thumb-color: var(--osano-toggle-on-thumb-color-disabled)}.osano-cm-toggle__input:disabled:checked+.osano-cm-toggle__switch::before,.osano-cm-toggle__input:disabled:checked:focus-visible+.osano-cm-toggle__switch::before,.osano-cm-toggle__input:disabled:checked:hover+.osano-cm-toggle__switch::before{--osano-toggle-border-color: transparent}.osano-cm-widget{cursor:pointer;position:fixed;background:none;border:none;bottom:12px;z-index:2147483636;width:40px;height:40px;opacity:.9;outline:none;padding:0;transition:transform 100ms linear 0s,opacity 200ms linear 0ms,visibility 0ms linear 0ms;visibility:visible}.osano-cm-widget--position_right{right:12px}.osano-cm-widget--position_left{left:12px}.osano-cm-widget:focus-visible{outline:var(--osano-focus-outline);outline-offset:var(--osano-focus-outline-offset);opacity:1;transform:scale(1.1)}.osano-cm-widget:hover{opacity:1;transform:scale(1.1)}.osano-cm-widget--hidden{opacity:0;visibility:hidden}.osano-cm-widget--hidden:focus-visible,.osano-cm-widget--hidden:hover{opacity:0;transform:scale(1)}.osano-cm-widget__outline{fill:var(--osano-widget-fill-color);stroke:var(--osano-widget-outline-color)}.osano-cm-widget__dot{fill:var(--osano-widget-color)}.osano-cm-dialog{--osano-gpc-color: var(--osano-dialog-gpc-color);--osano-gpc-border-color: var(--osano-dialog-gpc-border-color);--osano-gpc-background-color: var(--osano-dialog-gpc-background-color);--osano-gpc-foreground-color: var(--osano-dialog-gpc-foreground-color);box-sizing:border-box;font-size:1em;line-height:1.25;align-items:center;position:fixed;z-index:2147483637;padding:1.5em;overflow:auto;transition-property:opacity,visibility;transition-duration:700ms,0ms;transition-delay:0ms,0ms;visibility:visible;max-height:100vh;background:var(--osano-dialog-background-color);color:var(--osano-dialog-foreground-color)}.osano-cm-dialog--hidden{opacity:0;transition-delay:0ms,700ms;visibility:hidden}.osano-cm-dialog--type_bar{display:flex;flex-direction:column;box-sizing:border-box;right:0;left:0}.osano-cm-dialog--type_bar .osano-cm-button{flex:none;margin:.125em auto;width:80%}@media screen and (min-width: 768px){.osano-cm-dialog--type_bar{flex-direction:row}.osano-cm-dialog--type_bar .osano-cm-button{flex:1 1 100%;width:auto;margin:.25em .5em}}.osano-cm-dialog--type_box{width:calc(100vw - 2em);flex-direction:column;max-width:20em;max-height:calc(100vh - 2em)}.osano-cm-dialog__close{position:absolute;right:0;top:0}.osano-cm-dialog__list{margin:.5em 0 0;padding:0}.osano-cm-dialog__list .osano-cm-item{display:flex;margin-top:0}.osano-cm-dialog__list .osano-cm-item:last-child{margin-bottom:0}.osano-cm-dialog__list .osano-cm-toggle{flex-direction:row}[dir=rtl] .osano-cm-dialog__list .osano-cm-toggle{flex-direction:row-reverse}.osano-cm-dialog__list .osano-cm-label{white-space:nowrap}*[dir=ltr] .osano-cm-dialog__list .osano-cm-label{margin-left:.375em}*[dir=rtl] .osano-cm-dialog__list .osano-cm-label{margin-right:.375em}.osano-cm-dialog__buttons{display:flex;flex-wrap:wrap}.osano-cm-dialog--type_bar .osano-cm-dialog__content{flex:5;margin-bottom:.25em;width:100%}.osano-cm-dialog--type_box .osano-cm-dialog__content{display:flex;flex-direction:column;flex-grow:.0001;transition:flex-grow 1000ms linear}.osano-cm-dialog--type_box .osano-cm-link-separator::before{content:"";padding:0}.osano-cm-dialog--type_box .osano-cm-content__link{margin-bottom:.5em}.osano-cm-dialog--type_bar .osano-cm-dialog__list{display:flex;flex-direction:column;flex-wrap:wrap;justify-content:flex-start;margin:.75em auto}@media screen and (min-width: 376px){.osano-cm-dialog--type_bar .osano-cm-dialog__list{flex-direction:row}}@media screen and (min-width: 768px){.osano-cm-dialog--type_bar .osano-cm-dialog__list{margin:.5em 0 0 auto}[dir=rtl] .osano-cm-dialog--type_bar .osano-cm-dialog__list{margin:.5em auto 0 0}}[dir=ltr] .osano-cm-dialog--type_bar .osano-cm-dialog__list .osano-cm-item{margin-right:.5em}[dir=rtl] .osano-cm-dialog--type_bar .osano-cm-dialog__list .osano-cm-item{margin-left:.5em}.osano-cm-dialog--type_bar .osano-cm-dialog__list .osano-cm-label{padding-top:0}.osano-cm-dialog--type_bar .osano-cm-dialog__buttons{flex:1;justify-content:flex-end;width:100%;margin:0}@media screen and (min-width: 768px){.osano-cm-dialog--type_bar .osano-cm-dialog__buttons{position:sticky;top:0;width:auto;max-width:30vw;min-width:16em;margin:0 0 0 .5em}[dir=rtl] .osano-cm-dialog--type_bar .osano-cm-dialog__buttons{margin:0 .5em 0 0}}.osano-cm-dialog--type_box .osano-cm-dialog__buttons{margin:.5em 0 0}.osano-cm-dialog--type_bar.osano-cm-dialog--position_top{top:0}.osano-cm-dialog--type_bar.osano-cm-dialog--position_bottom{bottom:0}.osano-cm-dialog--type_box.osano-cm-dialog--position_top-left{top:1em;left:1em}.osano-cm-dialog--type_box.osano-cm-dialog--position_top-right{top:1em;right:1em}.osano-cm-dialog--type_box.osano-cm-dialog--position_bottom-left{bottom:1em;left:1em}.osano-cm-dialog--type_box.osano-cm-dialog--position_bottom-right{bottom:1em;right:1em}.osano-cm-dialog--type_box.osano-cm-dialog--position_center{top:50%;left:50%;transform:translate(-50%, -50%)}.osano-cm-dialog--type_box.osano-cm-dialog--wide{max-width:50em}@media screen and (max-height: 800px)and (max-width: 1200px){.osano-cm-dialog--type_box.osano-cm-dialog--wide{max-width:calc(100vw - 4em)}}.osano-cm-dialog--type_box.osano-cm-dialog--wide .osano-cm-dialog__list{display:flex;flex-wrap:wrap}.osano-cm-dialog--context_amp{position:relative;height:100%}.osano-cm-content__message{margin-bottom:1em;word-break:break-word;white-space:pre-line}.osano-cm-drawer-links{margin:.5em 0 0}.osano-cm-drawer-links__link{display:block}.osano-cm-storage-policy{display:inline-block}.osano-cm-usage-list{margin:0 0 .5em}.osano-cm-usage-list__list{list-style-position:inside;list-style-type:initial}.osano-cm-info-dialog{--osano-dialog-background-color: var(--osano-info-dialog-background-color);--osano-dialog-foreground-color: var(--osano-info-dialog-foreground-color);--osano-toggle-off-track-color: var(--osano-info-dialog-toggle-off-track-color);--osano-toggle-off-thumb-color: var(--osano-info-dialog-toggle-off-thumb-color);--osano-toggle-on-track-color: var(--osano-info-dialog-toggle-on-track-color);--osano-toggle-on-thumb-color: var(--osano-info-dialog-toggle-on-thumb-color);--osano-toggle-off-track-color-hover: var(--osano-info-dialog-toggle-off-track-color-hover);--osano-toggle-off-track-color-focus: var(--osano-info-dialog-toggle-off-track-color-focus);--osano-toggle-off-thumb-color-hover: var(--osano-info-dialog-toggle-off-thumb-color-hover);--osano-toggle-off-thumb-color-focus: var(--osano-info-dialog-toggle-off-thumb-color-focus);--osano-toggle-on-track-color-hover: var(--osano-info-dialog-toggle-on-track-color-hover);--osano-toggle-on-track-color-focus: var(--osano-info-dialog-toggle-on-track-color-focus);--osano-toggle-on-thumb-color-hover: var(--osano-info-dialog-toggle-on-thumb-color-hover);--osano-toggle-on-thumb-color-focus: var(--osano-info-dialog-toggle-on-thumb-color-focus);--osano-toggle-off-track-color-contrast: var( --osano-info-dialog-toggle-off-track-color-contrast );--osano-toggle-off-thumb-color-contrast: var( --osano-info-dialog-toggle-off-thumb-color-contrast );--osano-toggle-on-track-color-contrast: var(--osano-info-dialog-toggle-on-track-color-contrast);--osano-toggle-on-thumb-color-contrast: var(--osano-info-dialog-toggle-on-thumb-color-contrast);--osano-toggle-on-track-color-disabled: var(--osano-info-dialog-toggle-on-track-color-disabled);--osano-toggle-on-thumb-color-disabled: var(--osano-info-dialog-toggle-on-thumb-color-disabled);--osano-toggle-off-track-color-disabled: var( --osano-info-dialog-toggle-off-track-color-disabled );--osano-toggle-off-thumb-color-disabled: var( --osano-info-dialog-toggle-off-thumb-color-disabled );--osano-button-background-color: var(--osano-info-dialog-button-background-color);--osano-button-border-color: var(--osano-info-dialog-button-border-color);--osano-button-foreground-color: var(--osano-info-dialog-button-foreground-color);--osano-button-foreground-color-focus: var(--osano-info-dialog-button-foreground-color-focus);--osano-button-background-color-focus: var(--osano-info-dialog-button-background-color-focus);--osano-button-foreground-color-hover: var(--osano-info-dialog-button-foreground-color-hover);--osano-button-background-color-hover: var(--osano-info-dialog-button-background-color-hover);--osano-button-accept-background-color: var(--osano-info-dialog-button-background-color);--osano-button-accept-border-color: var(--osano-info-dialog-button-border-color);--osano-button-accept-foreground-color: var(--osano-info-dialog-button-foreground-color);--osano-button-accept-foreground-color-focus: var( --osano-info-dialog-button-foreground-color-focus );--osano-button-accept-background-color-focus: var( --osano-info-dialog-button-background-color-focus );--osano-button-accept-foreground-color-hover: var( --osano-info-dialog-button-foreground-color-hover );--osano-button-accept-background-color-hover: var( --osano-info-dialog-button-background-color-hover );--osano-button-deny-background-color: var(--osano-info-dialog-button-background-color);--osano-button-deny-border-color: var(--osano-info-dialog-button-border-color);--osano-button-deny-foreground-color: var(--osano-info-dialog-button-foreground-color);--osano-button-deny-foreground-color-focus: var( --osano-info-dialog-button-foreground-color-focus );--osano-button-deny-background-color-focus: var( --osano-info-dialog-button-background-color-focus );--osano-button-deny-foreground-color-hover: var( --osano-info-dialog-button-foreground-color-hover );--osano-button-deny-background-color-hover: var( --osano-info-dialog-button-background-color-hover );--osano-link-color: var(--osano-info-dialog-link-color);--osano-link-color-contrast: var(--osano-info-dialog-link-color-contrast);--osano-link-color-hover: var(--osano-info-dialog-link-color-hover);--osano-link-color-focus: var(--osano-info-dialog-link-color-focus);--osano-button-close-color: var(--osano-info-dialog-button-close-color);--osano-gpc-color: var(--osano-info-dialog-gpc-color);--osano-gpc-border-color: var(--osano-info-dialog-gpc-border-color);--osano-gpc-background-color: var(--osano-info-dialog-gpc-background-color);--osano-gpc-foreground-color: var(--osano-info-dialog-gpc-foreground-color);position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:2147483638;transition-property:opacity,visibility;transition-duration:200ms,0ms;transition-delay:0ms,0ms;visibility:visible;background:var(--osano-info-dialog-overlay-color)}.osano-cm-info-dialog--hidden{opacity:0;transition-delay:0ms,200ms;visibility:hidden}.osano-cm-header{margin:0 0 -1em;padding:1em 0;position:sticky;top:0;z-index:1;background:var(--osano-dialog-background-color);background:linear-gradient(180deg, var(--osano-dialog-background-color) 2.5em, var(--osano-clear-dialog-background) 100%)}.osano-cm-info{animation:400ms delay-overflow;box-sizing:border-box;position:fixed;bottom:0;top:0;max-width:20em;transition-property:transform;transition-duration:400ms;box-shadow:0 0 2px 2px #ccc;overflow:visible visible;width:100%;background:var(--osano-dialog-background-color);color:var(--osano-dialog-foreground-color)}.osano-cm-info--position_left{left:0;transform:translate(-100%, 0)}.osano-cm-info--position_right{right:0;transform:translate(100%, 0)}.osano-cm-info--open{animation:none;overflow:hidden auto;transform:translate(0, 0)}.osano-cm-info--do_not_sell{animation:none;transition:none;position:fixed;top:50%;left:50%;right:auto;transform:translate(-50%, -50%);height:fit-content;max-height:100vh}.osano-cm-info--do_not_sell .osano-cm-close{order:-1}.osano-cm-info--do_not_sell .osano-cm-header{box-sizing:content-box;display:block;flex:none}.osano-cm-info-views{align-items:flex-start;display:flex;flex-direction:row;flex-wrap:nowrap;height:100%;transition-property:transform;transition-duration:400ms;width:100%}*[dir=rtl] .osano-cm-info-views{flex-direction:row-reverse}.osano-cm-info-views__view{box-sizing:border-box;flex-shrink:0;width:100%}.osano-cm-info-views--position_0>*:not(:nth-of-type(1)){max-height:100%;overflow:hidden}.osano-cm-info-views--position_1>*:not(:nth-of-type(2)){max-height:100%;overflow:hidden}.osano-cm-info-views--position_1{transform:translateX(-100%)}.osano-cm-info-views--position_2>*:not(:nth-of-type(3)){max-height:100%;overflow:hidden}.osano-cm-info-views--position_2{transform:translateX(-200%)}.osano-cm-info--do_not_sell .osano-cm-info-views{height:fit-content}.osano-cm-view{height:0;padding:0 .75em 1em;width:100%;transition-property:height,visibility;transition-duration:0ms;transition-delay:400ms;visibility:hidden}.osano-cm-view__button{font-size:.875em;width:100%;margin:1em 0 0}.osano-cm-view--active{height:auto;transition-delay:0ms;visibility:visible}.osano-cm-description{font-size:.75em;font-weight:300;line-height:1.375;margin:1em 0 0;white-space:pre-line}.osano-cm-description:first-child{margin:0}.osano-cm-description:last-of-type{margin-bottom:1em}.osano-cm-drawer-toggle .osano-cm-label{font-size:.875em;margin:0 auto 0 0;line-height:1.375em}[dir=rtl] .osano-cm-drawer-toggle .osano-cm-label{margin:0 0 0 auto}.osano-cm-info-dialog-header{align-items:center;display:flex;flex-direction:row-reverse;min-height:3.25em;position:sticky;top:0;left:auto;width:100%;z-index:1;background:var(--osano-dialog-background-color);background:linear-gradient(180deg, var(--osano-dialog-background-color) 2.5em, var(--osano-clear-dialog-background) 100%)}*[dir=rtl] .osano-cm-info-dialog-header{flex-direction:row}.osano-cm-info-dialog-header__header{align-items:center;display:flex;flex:1 1 auto;font-size:1em;justify-content:flex-start;margin:0;order:1;padding:1em .75em}.osano-cm-info-dialog-header__description{font-size:.75em;line-height:1.375}.osano-cm-info-dialog-header__close{position:relative}.osano-cm-back{flex:0 1 auto;margin:0 0 0 .5em;min-width:0;order:2;position:relative;width:auto;z-index:2}[dir=rtl] .osano-cm-back{margin:0 .5em 0 0}.osano-cm-powered-by{align-items:center;display:flex;flex-direction:column;justify-content:center;margin:1em 0;font-weight:bold}.osano-cm-powered-by__link{font-size:.625em;text-decoration:none}.osano-cm-powered-by__link:hover{text-decoration:underline}.osano-cm-powered-by__link:focus-visible{outline:var(--osano-focus-outline);outline-offset:var(--osano-focus-outline-offset);text-decoration:underline}@keyframes delay-overflow{from{overflow:hidden auto}}.osano-cm-drawer-iab-button-container{display:flex;justify-content:center;gap:.5em;margin-bottom:2em}.osano-cm-illustrations__list>.osano-cm-list-item--type_description{padding:.2rem 1rem}.osano-cm-drawer-item.osano-cm-description__list li{padding-top:.75em}.osano-cm-consent-id-box{display:flex;align-items:center;gap:.5em;margin:1em 0;padding:.5em;border-width:thin;border-style:solid;border-color:var(--osano-button-border-color);border-radius:.25em;background:rgba(0,0,0,.02);cursor:pointer;transition:background-color .2s ease-out}.osano-cm-consent-id-box:hover{background-color:var(--osano-button-background-color-hover)}.osano-cm-consent-id-box:focus-visible{background-color:var(--osano-button-background-color-hover);outline:var(--osano-focus-outline);outline-offset:var(--osano-focus-outline-offset)}.osano-cm-consent-id-box__content{flex:5;display:flex;flex-direction:column;min-width:0}.osano-cm-consent-id-box__label{font-size:.625em;font-weight:bold;margin-bottom:.25em}.osano-cm-consent-id-box__uuid{font-size:.75em;font-family:monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.osano-cm-consent-id-box__button{flex-shrink:0;font-size:.75em;padding:.25em .3em;margin:0;width:auto;min-width:0}.osano-cm-consent-id-box__button--copied{--osano-button-background-color: var(--osano-button-accept-background-color-hover);--osano-button-border-color: var(--osano-button-accept-background-color-hover);--osano-button-foreground-color: var(--osano-button-accept-foreground-color-hover)}.osano-cm-tcf-purpose__label{display:block;padding:.25em 0 .5em;border-bottom:1px solid rgba(0,0,0,.1);margin-bottom:.5em}.osano-cm-tcf-purpose__toggle{float:right;margin-right:.5em;accent-color:var(--osano-toggle-on-track-color)}.osano-cm-opt-out-honored-wrapper{display:flex;align-items:center;max-width:max-content;padding:.5em;border-radius:1em;gap:.5em;margin:0 0 1em;border:1px solid;background:none;outline:none;position:relative}.osano-cm-opt-out-honored-wrapper__label{font-size:.75em;font-style:normal;font-weight:400;line-height:1.25;letter-spacing:.0625em;margin-right:.25em}.osano-cm-opt-out-honored-wrapper__additional-label{margin:.5em 0 0;font-size:.75em;font-weight:400;color:inherit;line-height:1.5}.osano-cm-opt-out-honored-wrapper__tooltip{position:absolute;background:#fff;color:#333;padding:1rem;border-radius:.25em;max-width:calc(100vw - 4em);white-space:normal;width:14rem;opacity:0;visibility:hidden;transition:opacity 200ms linear 0ms,visibility 200ms linear 200ms;z-index:2147483636;box-shadow:0 1px 10px rgba(0,0,0,.12),0 4px 5px rgba(0,0,0,.14),0 2px 4px rgba(0,0,0,.2);bottom:calc(100% + 12px)}.osano-cm-opt-out-honored-wrapper__tooltip::before{content:"";position:absolute;bottom:-6px;left:15%;transform:translateX(-50%) rotate(45deg);width:12px;height:12px;background:#fff;box-shadow:2px 2px 4px rgba(0,0,0,.1)}.osano-cm-opt-out-honored-wrapper__tooltip{display:flex;gap:.5rem;align-items:flex-start}.osano-cm-opt-out-honored-wrapper__tooltip-icon{flex-shrink:0}.osano-cm-opt-out-honored-wrapper__tooltip-icon svg{display:block}.osano-cm-opt-out-honored-wrapper__tooltip-content{flex:1;display:flex;flex-direction:column;gap:.25rem}.osano-cm-opt-out-honored-wrapper__tooltip-title{margin:.125em 0;font-size:.875em;font-weight:600;color:#333;line-height:1.25}.osano-cm-opt-out-honored-wrapper__tooltip-subtitle{margin:0;font-size:.75em;font-weight:400;color:#666;line-height:1.25}.osano-cm-opt-out-honored-wrapper--position_right{bottom:1em;right:.75em}.osano-cm-opt-out-honored-wrapper--position_left{bottom:1em;left:.75em}.osano-cm-opt-out-honored-wrapper--position_right,.osano-cm-opt-out-honored-wrapper--position_left{background:var(--osano-gpc-background-color, );border-color:var(--osano-gpc-border-color);color:var(--osano-gpc-foreground-color);margin:0;max-width:calc(100vw - 2.5em);position:fixed;opacity:.9;transition:opacity 200ms linear 0ms,visibility 0ms linear 0ms;visibility:visible;z-index:2147483636}.osano-cm-opt-out-honored-wrapper--position_right:hover,.osano-cm-opt-out-honored-wrapper--position_left:hover{background:var(--osano-gpc-background-color-hover);opacity:1}.osano-cm-opt-out-honored-wrapper--position_right.osano-cm-opt-out-honored-wrapper--has-main-widget{bottom:1em;right:4em}.osano-cm-opt-out-honored-wrapper--position_left.osano-cm-opt-out-honored-wrapper--has-main-widget{bottom:1em;left:4em}.osano-cm-opt-out-honored-wrapper--clickable{cursor:pointer}.osano-cm-opt-out-honored-wrapper--hidden{opacity:0;transition-delay:0ms,200ms;visibility:hidden}.osano-cm-opt-out-honored-wrapper--context_dialog,.osano-cm-opt-out-honored-wrapper--context_description,.osano-cm-opt-out-honored-wrapper--context_list-item{background:var(--osano-gpc-background-color);border-color:var(--osano-gpc-border-color);color:var(--osano-gpc-foreground-color)}.osano-cm-opt-out-honored-wrapper--context_dialog,.osano-cm-opt-out-honored-wrapper--context_description{position:static;margin:0 0 .5em;opacity:1;z-index:auto;cursor:default}.osano-cm-opt-out-honored-wrapper--context_dialog .osano-cm-opt-out-honored-wrapper__label,.osano-cm-opt-out-honored-wrapper--context_description .osano-cm-opt-out-honored-wrapper__label{color:inherit}.osano-cm-opt-out-honored-wrapper--context_dialog .osano-cm-opt-out-honored-wrapper__tooltip,.osano-cm-opt-out-honored-wrapper--context_description .osano-cm-opt-out-honored-wrapper__tooltip{display:none}.osano-cm-opt-out-honored-wrapper--tooltip-active:hover .osano-cm-opt-out-honored-wrapper__tooltip,.osano-cm-opt-out-honored-wrapper--tooltip-active:focus-within .osano-cm-opt-out-honored-wrapper__tooltip{opacity:1;transition-delay:0ms,0ms;visibility:visible}.osano-cm-opt-out-honored-wrapper--clickable:focus-visible{outline:2px solid var(--osano-gpc-border-color, #06c);outline-offset:2px}.osano-cm-dialog .osano-cm-opt-out-honored-wrapper{margin:0 0 .5em}.osano-cm-opt-out-honored-wrapper__dot{fill:var(--osano-gpc-color)}.osano-cm-expansion-panel{display:block;font-size:.75em;margin:0 -1.5em 1em;padding:1.5em 1.5em 0;border-bottom:1px solid rgba(0,0,0,.1)}.osano-cm-expansion-panel--expanded{border-bottom:none}.osano-cm-expansion-panel--empty,.osano-cm-expansion-panel--empty:not([open]){border-bottom:1px solid rgba(0,0,0,.1);padding-bottom:0}.osano-cm-expansion-panel__body{background-color:rgba(0,0,0,.1);list-style:none;overflow:hidden;max-height:0;margin:0 -1.5em;padding:0 1.5em;transition-property:max-height,padding-top,padding-bottom,visibility;transition-duration:.3s,.3s,.3s,0s;transition-delay:0ms,0ms,0ms,.3s;transition-timing-function:ease-out;line-height:1.25;visibility:hidden}.osano-cm-expansion-panel__toggle{cursor:pointer;display:block;line-height:1.25;margin:0 auto 1em 0;position:relative;color:var(--osano-link-color)}.osano-cm-expansion-panel__toggle:hover,.osano-cm-expansion-panel__toggle:active{outline:none;color:var(--osano-link-color-hover)}.osano-cm-expansion-panel__toggle:focus-visible{outline:var(--osano-focus-outline);outline-offset:var(--osano-focus-outline-offset);color:var(--osano-link-color-focus)}[dir=rtl] .osano-cm-expansion-panel__toggle{margin:0 0 1em auto}.osano-cm-expansion-panel--expanded .osano-cm-expansion-panel__body{max-height:none;padding:1.25em 1.5em 1em;transition-delay:0ms,0ms,0ms,0ms;visibility:visible}.osano-cm-disclosure-item__title{border:0;clear:both;display:block;flex:0 1 30%;font-size:1em;font-weight:bold;line-height:1.375;margin:0 0 .5em;padding:0}.osano-cm-disclosure-item__description{flex:0 1 70%;font-size:1em;line-height:1.375;margin:0 0 .5em;overflow:hidden;padding:0;text-overflow:ellipsis;white-space:pre-line}.osano-cm-disclosure{display:block;font-size:.75em;margin:0 -1.5em 1em;padding:1.5em 1.5em 0;border-bottom:none;padding-bottom:0}.osano-cm-disclosure--collapse{border-bottom:1px solid rgba(0,0,0,.1);padding-bottom:1em}.osano-cm-disclosure--empty,.osano-cm-disclosure--empty:not([open]){border-bottom:1px solid rgba(0,0,0,.1);padding-bottom:0}.osano-cm-disclosure__list{line-height:1.25;list-style:none;margin:0 -1.5em;padding:1.25em 1.5em 1em;background-color:rgba(0,0,0,.1)}.osano-cm-disclosure__list:empty{border:none;padding:0 1.5em}.osano-cm-disclosure__list:first-of-type{margin-top:1em;padding:1.25em 1.5em 1em}.osano-cm-disclosure__list:first-of-type::after{background-color:var(--osano-link-color)}.osano-cm-disclosure__list:first-of-type:empty{padding:1.75em 1.5em .75em}.osano-cm-disclosure__list:not(:first-of-type):not(:empty){border-top:1px solid rgba(0,0,0,.1)}.osano-cm-disclosure__list:empty+.osano-cm-disclosure__list:not(:empty){border:none;padding:0 1.5em}.osano-cm-disclosure__list:not(:empty)~.osano-cm-disclosure__list:empty+.osano-cm-disclosure__list:not(:empty){border-top:1px solid rgba(0,0,0,.1)}.osano-cm-disclosure__list>.osano-cm-list-item{line-height:1.25}.osano-cm-disclosure__list>.osano-cm-list-item:not(:first-of-type){border-top:1px solid rgba(0,0,0,.1);margin:1em -1.25em 0;padding:1em 1.25em 0}.osano-cm-disclosure__toggle{cursor:pointer;display:block;line-height:1.25;margin:0 auto 0 0;position:relative;font-weight:bold;color:var(--osano-link-color)}.osano-cm-disclosure__toggle:hover{text-decoration:underline}.osano-cm-disclosure__toggle:active,.osano-cm-disclosure__toggle:hover{color:var(--osano-link-color)}.osano-cm-disclosure__toggle:focus-visible{outline:var(--osano-focus-outline);outline-offset:var(--osano-focus-outline-offset);text-decoration:underline;color:var(--osano-link-color-contrast)}[dir=rtl] .osano-cm-disclosure__toggle{margin:0 0 0 auto}.osano-cm-disclosure--loading .osano-cm-disclosure__list{height:0;line-height:0;max-height:0}.osano-cm-disclosure--loading .osano-cm-disclosure__list>*{display:none}.osano-cm-disclosure--loading .osano-cm-disclosure__list::after{content:"";display:block;transform:translate(0, -50%);width:1em;height:1em;border-radius:100%;animation-name:osano-load-scale;animation-duration:1s;animation-iteration-count:infinite;animation-timing-function:ease-in-out;top:-0.125em;position:relative}.osano-cm-disclosure--collapse .osano-cm-disclosure__list{display:none}.osano-cm-disclosure--collapse .osano-cm-disclosure__list::after{content:none}.osano-cm-disclosure-item{display:flex;flex-wrap:wrap;margin:0}.osano-cm-disclosure-item__title:last-of-type{margin-bottom:0}.osano-cm-disclosure-item__description:hover{word-break:break-word}.osano-cm-disclosure-item__description:last-of-type{margin-bottom:0}@keyframes osano-load-scale{0%{transform:translate(0, -50%) scale(0)}100%{transform:translate(0, -50%) scale(1);opacity:0}} :root { --osano-clear-dialog-background: <!--?lit$412097679$-->rgba(250,250,250,0); <!--?lit$412097679$-->--osano-button-border-color: #fff;
+--osano-dialog-type: bar;
+--osano-display-position: bottom;
+--osano-info-dialog-position: left;
+--osano-widget-position: left;
+--osano-opt-out-widget-position: left;
+--osano-button-background-color: #e30613;
+--osano-button-foreground-color: #ffffff;
+--osano-dialog-background-color: #fafafa;
+--osano-dialog-foreground-color: #0d0d0d;
+--osano-info-dialog-overlay-color: rgba(255,255,255,0);
+--osano-link-color: #e30613;
+--osano-toggle-off-track-color: #3a3a3a;
+--osano-toggle-off-thumb-color: #ffffff;
+--osano-toggle-on-track-color: #e30613;
+--osano-toggle-on-thumb-color: #c25b61;
+--osano-widget-color: #37cd8f;
+--osano-widget-outline-color: #29246a;
+--osano-widget-fill-color: #fff;
+--osano-focus-outline-color: Highlight;
+--osano-button-close-color: var(--osano-dialog-foreground-color);
+--osano-button-accept-background-color: var(--osano-button-background-color);
+--osano-button-accept-border-color: var(--osano-button-border-color, var(--osano-button-foreground-color));
+--osano-button-accept-foreground-color: var(--osano-button-foreground-color);
+--osano-button-deny-background-color: #e30613;
+--osano-button-deny-border-color: var(--osano-button-border-color, var(--osano-button-foreground-color));
+--osano-button-deny-foreground-color: #ffffff;
+--osano-button-reject-all-background-color: var(--osano-button-background-color);
+--osano-button-reject-all-background-color-hover: var(--osano-button-background-color-hover, var(--osano-button-background-color-contrast));
+--osano-button-reject-all-border-color: var(--osano-button-border-color, var(--osano-button-foreground-color));
+--osano-button-reject-all-foreground-color: var(--osano-button-foreground-color);
+--osano-button-manage-background-color: var(--osano-button-background-color);
+--osano-button-manage-border-color: var(--osano-button-border-color, var(--osano-button-foreground-color));
+--osano-button-manage-foreground-color: var(--osano-button-foreground-color);
+--osano-info-dialog-link-color: var(--osano-link-color);
+--osano-info-dialog-button-close-color: var(--osano-info-dialog-foreground-color, var(--osano-dialog-foreground-color));
+--osano-info-dialog-toggle-off-track-color: var(--osano-toggle-off-track-color);
+--osano-info-dialog-toggle-off-thumb-color: var(--osano-toggle-off-thumb-color);
+--osano-info-dialog-toggle-on-track-color: var(--osano-toggle-on-track-color);
+--osano-info-dialog-toggle-on-thumb-color: var(--osano-toggle-on-thumb-color);
+--osano-info-dialog-button-background-color: var(--osano-button-background-color);
+--osano-info-dialog-button-border-color: var(--osano-info-dialog-button-foreground-color, var(--osano-button-foreground-color));
+--osano-info-dialog-button-foreground-color: var(--osano-button-foreground-color);
+--osano-dialog-gpc-background-color: var(--osano-dialog-background-color);
+--osano-dialog-gpc-border-color: var(--osano-dialog-foreground-color);
+--osano-dialog-gpc-foreground-color: var(--osano-dialog-foreground-color);
+--osano-dialog-gpc-color: #37cd84;
+--osano-info-dialog-gpc-background-color: var(--osano-info-dialog-background-color, var(--osano-dialog-background-color));
+--osano-info-dialog-gpc-border-color: var(--osano-info-dialog-foreground-color, var(--osano-dialog-foreground-color));
+--osano-info-dialog-gpc-foreground-color: var(--osano-info-dialog-foreground-color, var(--osano-dialog-foreground-color));
+--osano-info-dialog-gpc-color: var(--osano-dialog-gpc-color);
+--osano-gpc-background-color: #ffffff;
+--osano-gpc-border-color: #058a5e;
+--osano-gpc-foreground-color: #058a5e;
+--osano-gpc-color: #37cd84;
+--osano-gpc-background-color-hover: #ffffff;
+--osano-info-dialog-background-color: #fafafa;
+--osano-info-dialog-foreground-color: #0d0d0d;
+--osano-toggle-off-background-color: #d2cfff;
+--osano-toggle-button-off-color: #ffffff;
+--osano-toggle-on-background-color: #37cd8f;
+--osano-toggle-button-on-color: #f4f4f4;
+--osano-button-background-color-contrast: #f71a27;
+--osano-button-foreground-color-contrast: #ebebeb;
+--osano-button-deny-background-color-contrast: #f71a27;
+--osano-button-deny-foreground-color-contrast: #ebebeb;
+--osano-dialog-background-color-contrast: #e6e6e6;
+--osano-dialog-foreground-color-contrast: #212121;
+--osano-link-color-contrast: #f71a27;
+--osano-toggle-off-track-color-contrast: #4e4e4e;
+--osano-toggle-off-track-color-disabled: #7a7a7a;
+--osano-toggle-off-thumb-color-contrast: #ebebeb;
+--osano-toggle-off-thumb-color-disabled: #bfbfbf;
+--osano-toggle-on-track-color-contrast: #f71a27;
+--osano-toggle-on-track-color-disabled: #ff4653;
+--osano-toggle-on-thumb-color-contrast: #d66f75;
+--osano-toggle-on-thumb-color-disabled: #ff9ba1;
+--osano-gpc-background-color-contrast: #ebebeb;
+--osano-button-background-color-hover: var(--osano-button-background-color-contrast, #f71a27);
+--osano-button-foreground-color-hover: var(--osano-button-foreground-color-contrast, #ebebeb);
+--osano-button-background-color-focus: var(--osano-button-foreground-color-hover, var(--osano-button-foreground-color-contrast));
+--osano-button-foreground-color-focus: var(--osano-button-background-color-hover, var(--osano-button-background-color-contrast));
+--osano-toggle-off-track-color-hover: var(--osano-toggle-off-track-color-contrast, #4e4e4e);
+--osano-toggle-off-thumb-color-hover: var(--osano-toggle-off-thumb-color-contrast, #ebebeb);
+--osano-toggle-off-track-color-focus: var(--osano-toggle-off-thumb-color-hover, var(--osano-toggle-off-thumb-color-contrast));
+--osano-toggle-off-thumb-color-focus: var(--osano-toggle-off-track-color-hover, var(--osano-toggle-off-track-color-contrast));
+--osano-toggle-on-track-color-hover: var(--osano-toggle-on-track-color-contrast, #f71a27);
+--osano-toggle-on-thumb-color-hover: var(--osano-toggle-on-thumb-color-contrast, #d66f75);
+--osano-toggle-on-track-color-focus: var(--osano-toggle-on-thumb-color-hover, var(--osano-toggle-on-thumb-color-contrast));
+--osano-toggle-on-thumb-color-focus: var(--osano-toggle-on-track-color-hover, var(--osano-toggle-on-track-color-contrast));
+--osano-button-accept-background-color-contrast: var(--osano-button-background-color-contrast, #f71a27);
+--osano-button-accept-foreground-color-contrast: var(--osano-button-foreground-color-contrast, #ebebeb);
+--osano-button-accept-background-color-hover: var(--osano-button-background-color-hover, var(--osano-button-background-color-contrast));
+--osano-button-accept-foreground-color-hover: var(--osano-button-accept-foreground-color-contrast, var(--osano-button-foreground-color-contrast));
+--osano-button-accept-background-color-focus: var(--osano-button-accept-foreground-color-hover, var(--osano-button-accept-foreground-color-contrast));
+--osano-button-accept-foreground-color-focus: var(--osano-button-accept-background-color-hover, var(--osano-button-background-color-hover));
+--osano-button-deny-background-color-hover: var(--osano-button-background-color-hover, var(--osano-button-background-color-contrast));
+--osano-button-deny-foreground-color-hover: var(--osano-button-deny-foreground-color-contrast, #ebebeb);
+--osano-button-deny-background-color-focus: var(--osano-button-deny-foreground-color-hover, var(--osano-button-deny-foreground-color-contrast));
+--osano-button-deny-foreground-color-focus: var(--osano-button-deny-background-color-hover, var(--osano-button-background-color-hover));
+--osano-button-reject-all-background-color-contrast: var(--osano-button-background-color-contrast, #f71a27);
+--osano-button-reject-all-foreground-color-contrast: var(--osano-button-foreground-color-contrast, #ebebeb);
+--osano-button-reject-all-foreground-color-hover: var(--osano-button-reject-all-foreground-color-contrast, var(--osano-button-foreground-color-contrast));
+--osano-button-reject-all-background-color-focus: var(--osano-button-reject-all-foreground-color-hover, var(--osano-button-reject-all-foreground-color-contrast));
+--osano-button-reject-all-foreground-color-focus: var(--osano-button-reject-all-background-color-hover, var(--osano-button-background-color-hover));
+--osano-button-manage-background-color-contrast: var(--osano-button-background-color-contrast, #f71a27);
+--osano-button-manage-foreground-color-contrast: var(--osano-button-foreground-color-contrast, #ebebeb);
+--osano-button-manage-background-color-hover: var(--osano-button-background-color-hover, var(--osano-button-background-color-contrast));
+--osano-button-manage-foreground-color-hover: var(--osano-button-manage-foreground-color-contrast, var(--osano-button-foreground-color-contrast));
+--osano-button-manage-background-color-focus: var(--osano-button-manage-foreground-color-hover, var(--osano-button-manage-foreground-color-contrast));
+--osano-button-manage-foreground-color-focus: var(--osano-button-manage-background-color-hover, var(--osano-button-background-color-hover));
+--osano-info-dialog-button-background-color-contrast: var(--osano-button-background-color-contrast, #f71a27);
+--osano-info-dialog-button-foreground-color-contrast: var(--osano-button-foreground-color-contrast, #ebebeb);
+--osano-info-dialog-button-background-color-hover: var(--osano-button-background-color-hover, var(--osano-button-background-color-contrast));
+--osano-info-dialog-button-foreground-color-hover: var(--osano-info-dialog-button-foreground-color-contrast, var(--osano-button-foreground-color-contrast));
+--osano-info-dialog-button-background-color-focus: var(--osano-info-dialog-button-foreground-color-hover, var(--osano-info-dialog-button-foreground-color-contrast));
+--osano-info-dialog-button-foreground-color-focus: var(--osano-info-dialog-button-background-color-hover, var(--osano-button-background-color-hover));
+--osano-info-dialog-toggle-off-track-color-contrast: var(--osano-toggle-off-track-color-contrast, #4e4e4e);
+--osano-info-dialog-toggle-off-thumb-color-contrast: var(--osano-toggle-off-thumb-color-contrast, #ebebeb);
+--osano-info-dialog-toggle-off-track-color-hover: var(--osano-info-dialog-toggle-off-track-color-contrast, var(--osano-toggle-off-track-color-contrast));
+--osano-info-dialog-toggle-off-thumb-color-hover: var(--osano-info-dialog-toggle-off-thumb-color-contrast, var(--osano-toggle-off-thumb-color-contrast));
+--osano-info-dialog-toggle-off-track-color-focus: var(--osano-info-dialog-toggle-off-thumb-color-hover, var(--osano-info-dialog-toggle-off-thumb-color-contrast));
+--osano-info-dialog-toggle-off-thumb-color-focus: var(--osano-info-dialog-toggle-off-track-color-hover, var(--osano-info-dialog-toggle-off-track-color-contrast));
+--osano-info-dialog-toggle-off-track-color-disabled: var(--osano-toggle-off-track-color-disabled, #7a7a7a);
+--osano-info-dialog-toggle-off-thumb-color-disabled: var(--osano-toggle-off-thumb-color-disabled, #bfbfbf);
+--osano-info-dialog-toggle-on-track-color-contrast: var(--osano-toggle-on-track-color-contrast, #f71a27);
+--osano-info-dialog-toggle-on-thumb-color-contrast: var(--osano-toggle-on-thumb-color-contrast, #d66f75);
+--osano-info-dialog-toggle-on-track-color-hover: var(--osano-info-dialog-toggle-on-track-color-contrast, var(--osano-toggle-on-track-color-contrast));
+--osano-info-dialog-toggle-on-thumb-color-hover: var(--osano-info-dialog-toggle-on-thumb-color-contrast, var(--osano-toggle-on-thumb-color-contrast));
+--osano-info-dialog-toggle-on-track-color-focus: var(--osano-info-dialog-toggle-on-thumb-color-hover, var(--osano-info-dialog-toggle-on-thumb-color-contrast));
+--osano-info-dialog-toggle-on-thumb-color-focus: var(--osano-info-dialog-toggle-on-track-color-hover, var(--osano-info-dialog-toggle-on-track-color-contrast));
+--osano-info-dialog-toggle-on-track-color-disabled: var(--osano-toggle-on-track-color-disabled, #ff4653);
+--osano-info-dialog-toggle-on-thumb-color-disabled: var(--osano-toggle-on-thumb-color-disabled, #ff9ba1);
+--osano-info-dialog-link-color-contrast: var(--osano-link-color-contrast, #f71a27); } .osano-cm-window { direction: <!--?lit$412097679$-->ltr; text-align: <!--?lit$412097679$-->left; } </style><meta charset="utf-8">
+
+<!-- Google Tag Manager -->
+<script type="text/javascript" id="www-widgetapi-script" src="https://www.youtube.com/s/player/041232d8/www-widgetapi.vflset/www-widgetapi.js" async=""></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-TRT85CK&amp;l=digitalData&amp;gtm=4e6490"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-5B85TLL&amp;l=digitalData&amp;gtm=4e6490"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-PZBX977&amp;l=digitalData&amp;gtm=4e6490"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-TC9NQJ9&amp;l=digitalData&amp;gtm=4e6490"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-55Z4HC7&amp;l=digitalData&amp;gtm=4e6490"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-P37XSWJ&amp;l=digitalData"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','digitalData','GTM-P37XSWJ');</script>
+<!-- End Google Tag Manager -->
+
+<title>FINAL FANTASY XIV Promotional Site</title>
+<meta name="description" content="The official promotional site for FINAL FANTASY XIV.">
+
+<meta name="keywords" content="FF14,FFXIV,Final Fantasy XIV,Final Fantasy 14">
+
+<meta name="author" content="SQUARE ENIX Inc.">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://lds-img.finalfantasyxiv.com/promo/h/x/yxIpXXbmjNlzzPhjSZfdrU9n1Y.ico">
+<link rel="apple-touch-icon-precomposed" href="https://lds-img.finalfantasyxiv.com/promo/h/0/U2uGfVX4GdZgU1jASO0m9h_xLg.png">
+<meta name="msapplication-TileImage" content="https://lds-img.finalfantasyxiv.com/promo/h/0/U2uGfVX4GdZgU1jASO0m9h_xLg.png">
+
+<meta name="msapplication-TileColor" content="#000000">
+
+<link rel="alternate" hreflang="en-gb" href="https://eu.finalfantasyxiv.com/">
+<link rel="alternate" hreflang="fr" href="https://fr.finalfantasyxiv.com/">
+<link rel="alternate" hreflang="de" href="https://de.finalfantasyxiv.com/">
+<link rel="alternate" hreflang="ja" href="https://jp.finalfantasyxiv.com/">
+
+
+
+
+<!--[if lt IE 9]>
+	<script src="https://lds-img.finalfantasyxiv.com/promo/h/I/SMlNRnAvuilc1lYKBpzKWpmADs.js"></script>
+<![endif]-->
+<!-- ** CSS ** -->
+<link href="https://lds-img.finalfantasyxiv.com/promo/h/S/Tyyl1Z_SVLS4Ld5UoNPMVC3cGQ.css" rel="stylesheet">
+<link href="https://lds-img.finalfantasyxiv.com/promo/h/b/N_r0-QgdAUIPv4x8S9FJudwYag.css" rel="stylesheet">
+
+
+<link href="https://lds-img.finalfantasyxiv.com/promo/h/O/xlx2szaC3Bf2KdqaK11fmTRNKM.css" rel="stylesheet">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- OGP -->
+<meta property="fb:app_id" content="1400886233468625">
+<meta property="og:type" content="website">
+<meta property="og:description" content="The official promotional site for FINAL FANTASY XIV.">
+<meta property="og:title" content="FINAL FANTASY XIV Promotional Site">
+<meta property="og:url" content="https://na.finalfantasyxiv.com/">
+<meta property="og:site_name" content="FINAL FANTASY XIV">
+
+<meta property="og:image" content="https://lds-img.finalfantasyxiv.com/promo/h/W/IJiRfHALRP9Au7blzPTH7mxpac.jpg">
+
+<meta property="og:locale" content="en_US">
+
+	<meta property="fb:pages" content="116214575870">
+
+
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@ff_xiv_en">
+
+<script>
+var cookie_suffix = '';
+var base_domain = 'finalfantasyxiv.com';
+var ldst_subdomain = 'na';
+var ldst_cdn_prefix = 'https://lds-img.finalfantasyxiv.com/';
+var strftime_fmt = {
+	'dateHHMM_now': 'Today %H:%M',
+	'dateYMDHMS': '%m/%d/%Y %\u002dI:%M:%S %p',
+	'dateYMDHM': '%m/%d/%Y %\u002dI:%M %p',
+	'dateYMDHM_jp': '%Y/%m/%d %H:%M',
+	'dateHM': '',
+	'dateYMDH': '%m/%d/%Y %\u002dI',
+	'dateYMD': '%m/%d/%Y',
+	'dateEternal': '',
+	'dateYMDW': '%m/%d/%Y (%a)',
+	'dateHM': '',
+	'week.0': 'Sun.',
+	'week.1': 'Mon.',
+	'week.2': 'Tue.',
+	'week.3': 'Wed.',
+	'week.4': 'Thu.',
+	'week.5': 'Fri.',
+	'week.6': 'Sat.'
+};
+</script>
+<script src="https://lds-img.finalfantasyxiv.com/promo/h/A/PknAmzDJUZCNhTGtSGGMIGi5k4.js"></script>
+<script src="https://lds-img.finalfantasyxiv.com/promo/h/0/TJg57pE1pGtX7GiVYxAf28DF5Q.js"></script>
+
+
+
+</head>
+<body id="" class="en-us"><div data-nosnippet="" class="osano-cm-window" dir="ltr"><!----> <!--?lit$412097679$--><div hidden="" class="osano-visually-hidden"> <span id="osano-cm-aria.newWindow"><!--?lit$412097679$-->Buka di jendela baru</span> <span id="osano-cm-aria.external"><!--?lit$412097679$-->Membuka situs web eksternal</span> <span id="osano-cm-aria.externalNewWindow"><!--?lit$412097679$-->Membuka situs web eksternal di jendela baru</span> </div> <!--?lit$412097679$--> <div role="dialog" id="81d64531-562d-42c8-a940-3dd0e7cfe8e5" aria-label="Spanduk Persetujuan Cookie" aria-describedby="81d64531-562d-42c8-a940-3dd0e7cfe8e5__label" class="osano-cm-window__dialog osano-cm-dialog osano-cm-dialog--position_bottom osano-cm-dialog--type_bar osano-cm-dialog--hidden"> <!--?lit$412097679$--> <button class=" osano-cm-dialog__close osano-cm-close "> <!--?lit$412097679$--><svg width="20px" height="20px" viewBox="0 0 20 20" aria-labelledby="d4d07469-dfba-4dba-872f-64f79b3136a3"> <title id="d4d07469-dfba-4dba-872f-64f79b3136a3"><!---->Tutup dialog ini<!----></title> <line role="presentation" x1="2" y1="2" x2="18" y2="18"></line> <line role="presentation" x1="2" y1="18" x2="18" y2="2"></line> </svg> </button>  <div class=" osano-cm-dialog__content osano-cm-content "> <!--?lit$412097679$--> <!--?lit$412097679$--> <span id="81d64531-562d-42c8-a940-3dd0e7cfe8e5__label" class=" osano-cm-content__message osano-cm-message "> <!--?lit$412097679$-->Situs web ini menggunakan teknologi seperti cookie untuk mengaktifkan fungsionalitas penting situs, serta untuk analitis, peronalisasi, dan iklan yang ditargetkan. <!--?lit$412097679$-->Anda dapat mengubah pengaturan kapan saja atau menerima pengaturan default. <!--?lit$412097679$-->Anda dapat menutup spanduk ini untuk melanjutkan hanya dengan cookie penting </span>  <!--?lit$412097679$--> <!--?lit$412097679$--><!--?lit$412097679$--><a rel="noopener" tabindex="0" href="https://www.square-enix-games.com/documents/cookies" target="_blank" class=" osano-cm-storage-policy osano-cm-content__link osano-cm-link " aria-describedby="osano-cm-aria.newWindow"><!--?lit$412097679$-->Pemberitahuan Cookie</a><!--?--><!--?lit$412097679$--><!----><span class="osano-cm-link-separator"></span><!--?lit$412097679$--><!--?lit$412097679$--><a rel="noopener" tabindex="0" href="https://www.square-enix-games.com/documents/privacy" target="_blank" class=" osano-cm-additional-link osano-cm-content__link osano-cm-link " aria-describedby="osano-cm-aria.newWindow"><!--?lit$412097679$-->Rahasia pribadi</a><!--?--><!--?--><!----> <!--?lit$412097679$--> <p class=" osano-cm-content__drawer-links osano-cm-drawer-links "> <!--?lit$412097679$--><a rel="noopener" tabindex="0" href="#fd701bf4-4126-43b7-8127-77da8957a78c" class=" osano-cm-drawer-links__link osano-cm-link osano-cm-link--type_manage "><!--?lit$412097679$-->Preferensi Penyimpanan</a> <!--?lit$412097679$--> </p>  <!--?lit$412097679$--><div role="group" aria-labelledby="osano-cm-dialog-toggle-group"> <!--?lit$412097679$--><ul id="osano-cm-dialog-toggle-group" class="osano-cm-dialog__list osano-cm-list" aria-label="Preferensi Penyimpanan"> <!--?lit$412097679$--><!----><li class=" osano-cm-list__list-item osano-cm-list-item "> <!--?lit$412097679$--><label class=" osano-cm-list-item__toggle osano-cm-toggle " for="osano-cm-dialog-toggle--category_MARKETING"><input type="checkbox" role="switch" class=" osano-cm-toggle__input osano-cm-input " id="osano-cm-dialog-toggle--category_MARKETING" data-category="MARKETING" tabindex="-1"><span class=" osano-cm-toggle__switch osano-cm-switch "></span><span class=" osano-cm-toggle__label osano-cm-label "><!--?lit$412097679$-->Iklan yang Ditargetkan</span></label> </li><!----><!----><li class=" osano-cm-list__list-item osano-cm-list-item "> <!--?lit$412097679$--><label class=" osano-cm-list-item__toggle osano-cm-toggle " for="osano-cm-dialog-toggle--category_PERSONALIZATION"><input type="checkbox" role="switch" class=" osano-cm-toggle__input osano-cm-input " id="osano-cm-dialog-toggle--category_PERSONALIZATION" data-category="PERSONALIZATION" tabindex="-1"><span class=" osano-cm-toggle__switch osano-cm-switch "></span><span class=" osano-cm-toggle__label osano-cm-label "><!--?lit$412097679$-->Peronalisasi</span></label> </li><!----><!----><li class=" osano-cm-list__list-item osano-cm-list-item "> <!--?lit$412097679$--><label class=" osano-cm-list-item__toggle osano-cm-toggle " for="osano-cm-dialog-toggle--category_ANALYTICS"><input type="checkbox" role="switch" class=" osano-cm-toggle__input osano-cm-input " id="osano-cm-dialog-toggle--category_ANALYTICS" data-category="ANALYTICS" tabindex="-1"><span class=" osano-cm-toggle__switch osano-cm-switch "></span><span class=" osano-cm-toggle__label osano-cm-label "><!--?lit$412097679$-->Analitis</span></label> </li><!----> </ul> </div> </div> <!--?lit$412097679$--> <div class="osano-cm-dialog__buttons osano-cm-buttons osano-cm-buttons--disabled"> <!--?lit$412097679$--><!--?lit$412097679$--><!--?lit$412097679$--><button class=" osano-cm-save osano-cm-buttons__button osano-cm-button osano-cm-button--type_save " tabindex="0"> <!--?lit$412097679$-->Simpan </button><!--?--><!--?--> <!--?lit$412097679$--><!--?lit$412097679$--><button class=" osano-cm-accept-all osano-cm-buttons__button osano-cm-button osano-cm-button--type_accept " tabindex="0"> <!--?lit$412097679$-->Terima semua </button><!--?--> <!--?lit$412097679$--><!--?lit$412097679$--><!--?lit$412097679$--><button class=" osano-cm-denyAll osano-cm-buttons__button osano-cm-button osano-cm-button--type_denyAll " tabindex="0"> <!--?lit$412097679$-->Tolak yang Tidak Penting </button><!--?--><!--?--> </div>  </div>  <!--?lit$412097679$--> <!--?lit$412097679$--> <button id="3da7f3ef-c37a-4521-92e9-e21fbde57153" class="osano-cm-window__widget osano-cm-widget osano-cm-widget--position_left" title="Preferensi Cookie" aria-label="Preferensi Cookie"> <svg role="img" width="40" height="40" viewBox="0 0 71.85 72.23" xmlns="http://www.w3.org/2000/svg" aria-labelledby="3da7f3ef-c37a-4521-92e9-e21fbde57153"> <path d="m67.6 36.73a6.26 6.26 0 0 1 -3.2-2.8 5.86 5.86 0 0 0 -5.2-3.1h-.3a11 11 0 0 1 -11.4-9.5 6 6 0 0 1 -.1-1.4 9.2 9.2 0 0 1 .4-2.9 8.65 8.65 0 0 0 .2-1.6 5.38 5.38 0 0 0 -1.9-4.3 7.3 7.3 0 0 1 -2.5-5.5 3.91 3.91 0 0 0 -3.5-3.9 36.46 36.46 0 0 0 -15 1.5 33.14 33.14 0 0 0 -22.1 22.7 35.62 35.62 0 0 0 -1.5 10.2 34.07 34.07 0 0 0 4.8 17.6.75.75 0 0 0 .07.12c.11.17 1.22 1.39 2.68 3-.36.47 5.18 6.16 5.65 6.52a34.62 34.62 0 0 0 55.6-21.9 4.38 4.38 0 0 0 -2.7-4.74z" stroke-width="3" class=" osano-cm-widget__outline osano-cm-outline "></path> <path d="m68 41.13a32.37 32.37 0 0 1 -52 20.5l-2-1.56c-2.5-3.28-5.62-7.15-5.81-7.44a32 32 0 0 1 -4.5-16.5 34.3 34.3 0 0 1 1.4-9.6 30.56 30.56 0 0 1 20.61-21.13 33.51 33.51 0 0 1 14.1-1.4 1.83 1.83 0 0 1 1.6 1.8 9.38 9.38 0 0 0 3.3 7.1 3.36 3.36 0 0 1 1.2 2.6 3.37 3.37 0 0 1 -.1 1 12.66 12.66 0 0 0 -.5 3.4 9.65 9.65 0 0 0 .1 1.7 13 13 0 0 0 10.5 11.2 16.05 16.05 0 0 0 3.1.2 3.84 3.84 0 0 1 3.5 2 10 10 0 0 0 4.1 3.83 2 2 0 0 1 1.4 2z" stroke-width="3" class=" osano-cm-widget__outline osano-cm-outline "></path> <g class=" osano-cm-widget__dot osano-cm-dot "> <path d="m26.6 31.43a5.4 5.4 0 1 1 5.4-5.43 5.38 5.38 0 0 1 -5.33 5.43z"></path> <path d="m25.2 53.13a5.4 5.4 0 1 1 5.4-5.4 5.44 5.44 0 0 1 -5.4 5.4z"></path> <path d="m47.9 52.33a5.4 5.4 0 1 1 5.4-5.4 5.32 5.32 0 0 1 -5.24 5.4z"></path> </g> </svg> </button>  <!--?lit$412097679$--><div role="dialog" aria-modal="true" id="fd701bf4-4126-43b7-8127-77da8957a78c" aria-labelledby="fd701bf4-4126-43b7-8127-77da8957a78c__label" aria-hidden="true" class=" osano-cm-window__info-dialog osano-cm-info-dialog osano-cm-info-dialog--hidden "> <!--?lit$412097679$--><!--?lit$412097679$--><span tabindex="0" aria-hidden="true" data-focus="first"></span><!--?--> <div role="presentation" class=" osano-cm-info-dialog__info osano-cm-info osano-cm-info--position_left "> <!--?lit$412097679$--><div role="presentation" class=" osano-cm-info__info-dialog-header osano-cm-info-dialog-header "> <p role="heading" aria-level="1" aria-hidden="true" id="fd701bf4-4126-43b7-8127-77da8957a78c__label" class=" osano-cm-info-dialog-header__header osano-cm-header "> <!--?lit$412097679$--> </p> <!--?lit$412097679$--> <!--?lit$412097679$--><button class=" osano-cm-info-dialog-header__close osano-cm-close "> <!--?lit$412097679$--><svg width="20px" height="20px" viewBox="0 0 20 20" aria-labelledby="2eadb619-10aa-4ad8-ab10-85d6c2e6792c"> <title id="2eadb619-10aa-4ad8-ab10-85d6c2e6792c"><!---->Tutup Preferensi Cookie<!----></title> <line role="presentation" x1="2" y1="2" x2="18" y2="18"></line> <line role="presentation" x1="2" y1="18" x2="18" y2="2"></line> </svg> </button> </div> <div role="presentation" class=" osano-cm-info__info-views osano-cm-info-views osano-cm-info-views--hidden osano-cm-info-views--position_0 "> <!--?lit$412097679$--> </div> </div> <!--?lit$412097679$--><!--?lit$412097679$--><span tabindex="0" aria-hidden="true" data-focus="last"></span><!--?--> </div> </div>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P37XSWJ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="l__response__sp"><div id="brand">
+	<div class="brand brand--relative">
+		<div class="brand__section brand__section--rwd">
+			<div class="brand__logo">
+				<a href="
+						https://na.square-enix.com/us/home
+					" target="_blank" rel=" noopener"><img src="https://lds-img.finalfantasyxiv.com/promo/h/a/1LbK-2Cqoku3zorQFR0VQ6jP0Y.png" width="130" height="14" alt="SQUARE ENIX">
+				</a>
+			</div>
+		</div>
+	</div>
+	
+	<div class="dropdown_trigger_box">
+		<div class="brand__lang">
+			<a href="javascript:void(0);" class="brand__lang__btn brand__lang__btn--rwd dropdown_trigger">
+				<span class="pc_view">English (US)</span>
+			</a>
+		</div>
+		<ul class="brand__lang__select brand__lang__select--rwd dropdown" style="opacity: 0;">
+		
+			<li><a href="javascript:location.reload()" class="brand__lang__na checked">English (US)</a></li>
+		
+			<li><a href="javascript:location.hostname='eu.finalfantasyxiv.com'" class="brand__lang__eu">English (UK)</a></li>
+		
+			<li><a href="javascript:location.hostname='fr.finalfantasyxiv.com'" class="brand__lang__fr">Français</a></li>
+		
+			<li><a href="javascript:location.hostname='de.finalfantasyxiv.com'" class="brand__lang__de">Deutsch</a></li>
+		
+			<li><a href="javascript:location.hostname='jp.finalfantasyxiv.com'" class="brand__lang__jp">日本語</a></li>
+		
+		</ul>
+	</div>
+	
+	
+</div>
+<!-- contents -->
+	
+
+<div class="top">
+	<div id="player-black"></div>
+	<div id="bg_movie" style="height: 768.375px; width: 1366px; left: 0px; top: -0.1875px;">
+		<img id="bg-img" src="https://lds-img.finalfantasyxiv.com/promo/h/E/fFPTVZXAyroKLHwSC2UKWCSZmE.jpg" alt="" style="display: none;">
+		<iframe id="ytapiplayer" frameborder="0" allowfullscreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" title="FFXIV_LP: Promotion" width="640" height="360" src="https://www.youtube.com/embed/WsFhlKgFqOM?width=100%25&amp;height=100%25&amp;autoplay=1&amp;controls=0&amp;enablejsapi=1&amp;iv_load_policy=3&amp;disablekb=1&amp;rel=0&amp;start=0&amp;origin=https%3A%2F%2Fna.finalfantasyxiv.com&amp;widgetid=1&amp;forigin=https%3A%2F%2Fna.finalfantasyxiv.com%2F&amp;aoriginsup=1&amp;vf=1" style="height: 768.375px; width: 1366px; left: 0px; top: -0.1875px;"></iframe>
+		<video id="bg-video" loop="" autoplay="" muted="" playsinline="" style="display: none;">
+			<source src="https://lds-img.finalfantasyxiv.com/promo/h/u/BR9uq0eqBmEAOJ39r72hAPBE0U.mp4" type="video/mp4">
+			<source src="https://lds-img.finalfantasyxiv.com/promo/h/3/VpGXBhljnHbSJusSt2vXNMvpz0.webm" type="video/webm">
+		</video>
+	</div>
+	
+	
+	<div class="header">
+		<div class="header__link" style="opacity: 1;">
+			<a href="/lodestone/?utm_source=pr2&amp;utm_medium=top_topbtn&amp;utm_campaign=na_lodestone" class="ldst_link">FINAL FANTASY XIV The Lodestone</a>
+			<ul class="social__btn ">
+	<li><a href="http://www.facebook.com/share.php?u=https://na.finalfantasyxiv.com/" target="_blank" aria-label="facebook" rel=" noopener">
+		<i class="xiv-lds xiv-lds-facebook js__tooltip" data-tooltip="Share"></i>
+	</a></li>
+	<li><a href="https://x.com/intent/tweet?url=https://na.finalfantasyxiv.com/&amp;text=FINAL%20FANTASY%20XIV%20Promotional%20Site" target="_blank" aria-label="x" rel=" noopener">
+		<i class="xiv-lds xiv-lds-x js__tooltip" data-tooltip="Post"></i>
+	</a></li>
+	<li><a href="https://bsky.app/intent/compose?text=FINAL%20FANTASY%20XIV%20Promotional%20Site%20https://na.finalfantasyxiv.com/" target="_blank" aria-label="bluesky" rel=" noopener">
+		<i class="xiv-lds xiv-lds-bluesky js__tooltip" data-tooltip="Post"></i>
+	</a></li>
+</ul>
+		</div>
+	</div>
+	
+	
+	<div id="player-over">
+		<div class="visual" style="opacity: 1;">
+			<div class="visual__inner">
+				<p class="catch_copy__top">
+					<img src="https://lds-img.finalfantasyxiv.com/promo/h/J/vjN6VK4vtPQH43a02yzzHACkuI.png" width="604" height="104" alt="Adventure awaits you beyond the horizon">
+				</p>
+				<h1 class="logo">
+					
+						<img src="https://lds-img.finalfantasyxiv.com/promo/h/9/TBVRsar5baT4eGcagTZYfHtPbY.png" width="604" height="200" alt="FINAL FANTASY XIV Online">
+					
+				</h1>
+				<p class="catch_copy__bottom">
+					<img src="https://lds-img.finalfantasyxiv.com/promo/h/c/fQ6F353FZQGPdjJ-Zbmwwx0lu0.png" width="604" height="96" alt="Join over 30 million players worldwide in this critically acclaimed online RPG!">
+				</p>
+				<ul class="cta_link">
+					<li>
+						<div class="pc_view">
+							
+							<a href="https://freetrial.finalfantasyxiv.com/" class="cta_link__green js__btn_press js_gtag" onmousedown="gtag('event','click', {'event_category':'pr-na_top-toplink-pc', 'event_label':'freetrial-na', 'non_interaction': true});">
+							
+								<i></i>
+								<img src="https://lds-img.finalfantasyxiv.com/promo/h/D/LEPF55S7mxeXKPdjKP3avkpFkY.png" width="240" height="120" alt="Start&lt;br /&gt;Your Free Trial">
+							</a>
+						</div>
+						<div class="sp_view">
+							
+							<a href="https://freetrial.finalfantasyxiv.com/" class="cta_link__green js__btn_press js_gtag" onmousedown="gtag('event','click', {'event_category':'pr-na_top-toplink-sp', 'event_label':'freetrial-na', 'non_interaction': true});">
+							
+								<i></i>
+								<img src="https://lds-img.finalfantasyxiv.com/promo/h/D/LEPF55S7mxeXKPdjKP3avkpFkY.png" width="240" height="120" alt="Start&lt;br /&gt;Your Free Trial">
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="pc_view">
+							
+							<a href="/product/" class="cta_link__blue js__btn_press js_gtag" onmousedown="gtag('event','click', {'event_category':'pr-na_top-toplink-pc', 'event_label':'sqex-onlinestore-na', 'non_interaction': true});">
+								<i></i>
+								<img src="https://lds-img.finalfantasyxiv.com/promo/h/M/N45aqK288H9ujTQ9s_lXfB-qe0.png" width="240" height="120" alt="BUY&lt;br /&gt;NOW">
+							</a>
+							
+						</div>
+						<div class="sp_view">
+							
+							<a href="/product/" class="cta_link__blue js__btn_press js_gtag" onmousedown="gtag('event','click', {'event_category':'pr-na_top-toplink-sp', 'event_label':'sqex-onlinestore-na', 'non_interaction': true});">
+								<i></i>
+								<img src="https://lds-img.finalfantasyxiv.com/promo/h/M/N45aqK288H9ujTQ9s_lXfB-qe0.png" width="240" height="120" alt="BUY&lt;br /&gt;NOW">
+							</a>
+							
+						</div>
+					</li>
+				</ul>
+
+				
+
+	<div class="btn_sale">
+		<a href="" class="bt_sale js--top_bnr" target="_blank" style="display: none;" aria-label="sale" rel=" noopener">
+			<img src="" width="528" height="96" alt="">
+		</a>
+	</div>
+
+		
+
+
+			</div>
+			
+			<a href="/winning/" class="rewards js__btn_press">
+				<img src="https://lds-img.finalfantasyxiv.com/promo/h/Z/vIybqWlfmcXcrahYgjAcKyU0kc.png" width="160" height="120" alt="Awards and Nominations">
+				<img src="https://lds-img.finalfantasyxiv.com/promo/h/7/yvLzXD9y30Su78r03V6Hpl_hck.png" width="160" height="120" alt="Awards and Nominations" class="on">
+			</a>
+
+			<ul class="platform">
+				<li class="platform-ps"><img src="https://lds-img.finalfantasyxiv.com/promo/h/A/KTSra7Ep7hNnyncN1szz3UH7e8.png" width="252" height="40" alt=""></li>
+				<li class="platform-xbox"><img src="https://lds-img.finalfantasyxiv.com/promo/h/3/6_9cNKTIS4wbiZcbXQon804ZhQ.png" width="234" height="40" alt=""></li>
+				<li class="platform-win"><img src="https://lds-img.finalfantasyxiv.com/promo/h/-/VGaMiq-LzR0_x46aalaXcIDZIE.png" width="106" height="40" alt=""></li>
+				<li class="platform-mac"><img src="https://lds-img.finalfantasyxiv.com/promo/h/n/KFM0zRyEOUXaU8JzwMt4lE-hJA.png" width="30" height="40" alt=""></li>
+				<li class="platform-steam"><img src="https://lds-img.finalfantasyxiv.com/promo/h/8/7eU66_HdDfwBYghL1Aa-PT5tSY.png" width="92" height="40" alt=""></li>
+			</ul>
+		
+		</div>
+	</div>
+	
+	<div class="contents">
+
+			
+		<div class="trailers">
+			<h2>
+				<img src="https://lds-img.finalfantasyxiv.com/promo/h/P/v5EZIHcVwD3PgQX71OCm_L-RkY.png" width="512" height="48" alt="Trailers">
+			</h2>
+			<div class="trailers__inner">
+				
+				<ul class="trailers__list column-2">	
+					<li>
+						<a href="//www.youtube-nocookie.com/embed/jtnwuCvoA_Q?autoplay=1" class="js__movie js__btn_press">
+							<img src="https://lds-img.finalfantasyxiv.com/promo/h/E/CW92PGaprnL6Uh2OjZioXGTw4E.jpg" width="512" height="288" alt="FINAL FANTASY XIV Online in 1 Minute">
+							<i class="play"></i>
+						</a>
+						<p>FINAL FANTASY XIV Online in 1 Minute</p>
+					</li>
+					<li>
+						<a href="//www.youtube-nocookie.com/embed/hCMxiSH1Otw?autoplay=1" class="js__movie js__btn_press">
+							<img src="https://lds-img.finalfantasyxiv.com/promo/h/w/308vpXbgu1SLeIDLpmBwG_Epws.jpg" width="512" height="288" alt="FINAL FANTASY XIV: Starter Guide Series&lt;br /&gt;Episode 0: Intro">
+							<i class="play"></i>
+						</a>
+						<p>FINAL FANTASY XIV: Starter Guide Series<br>Episode 0: Intro</p>
+					</li>
+				</ul>
+				
+			</div>
+		</div>
+		
+		
+		<div class="introduction">
+			<div class="introduction__slide js__introduction_slide" style="touch-action: pan-y; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+				<div class="introduction__slide__btn">
+					<a class="introduction__slide__prev" href="javascript:void(0);" aria-label="prev"></a>
+					<a class="introduction__slide__next" href="javascript:void(0);" aria-label="next"></a>
+				</div>
+				<ul class="introduction__list" style="width: 5464px; transform: translate(0%, 0px);">
+					<li class="story" style="width: 1366px; height: 768.375px;">
+						<h2>
+							<img src="https://lds-img.finalfantasyxiv.com/promo/h/y/n9qedu_J5Xv_O_KGDWA9pMr9mE.png" width="960" height="360" alt="Your Story Begins">
+						</h2>
+						<div class="detail">
+							<h3>Become the Warrior of Light,<br>and fight to deliver the realm from certain destruction.</h3>
+							<p>Hydaelyn─a vibrant planet blessed by the Light of the Crystal.<br><br>Amid azure seas, encompassing the westernmost of the Three Great Continents, there lies a realm embraced by gods and forged by heroes. Her name─Eorzea. <br><br>It is here that your tale unfolds. Beckoned by the Mothercrystal─the source of all life─you must embark upon a quest to deliver the land from an eternity of Darkness.</p>
+						</div>
+					</li>
+					<li class="battle_system" style="width: 1366px; height: 768.375px;">
+						<h2>
+							<img src="https://lds-img.finalfantasyxiv.com/promo/h/b/YvqY9x9URfgC8ZGd-wmKCKxcpQ.png" width="960" height="360" alt="Combat">
+						</h2>
+						<div class="detail">
+							<h3>Team Up with Friends or Fight Solo</h3>
+							<p>Whether you prefer to recruit NPCs to your party, or seek the thrill of battle alongside other players, the myriad dungeons and trials that await will challenge the skills you hone on your journey.</p>
+						</div>
+					</li>
+					<li class="character_making" style="width: 1366px; height: 768.375px;">
+						<h2>
+							<img src="https://lds-img.finalfantasyxiv.com/promo/h/w/5ZJRvgneVQ2RG2gOrnGhv30658.png" width="960" height="360" alt="Character Creation">
+						</h2>
+						<div class="detail">
+							<h3>Become the Hero You Want to Be</h3>
+							<p>Customize your character's race, clan, gender, facial features, hair color, voice, and more to bring your inner adventurer to life.</p>
+						</div>
+					</li>
+					<li class="various_contents" style="width: 1366px; height: 768.375px;">
+						<h2>
+							<img src="https://lds-img.finalfantasyxiv.com/promo/h/k/ktMR5xZDh51_J9y0DF2ljS-GYQ.png" width="960" height="360" alt="Find Adventure Everywhere">
+						</h2>
+						<div class="detail">
+							<h3>Let Recreation Be Your Guide</h3>
+							<p>Go fishing, craft items, flaunt the latest fashions, take screenshots, build a home with your friends, or just relax and chat for a while. There are endless ways to enjoy the world of FFXIV!</p>
+						</div>
+					</li>
+				</ul>
+				<ul class="introduction__slide__pager"><li class="current"></li><li></li><li></li><li></li></ul>
+			</div>
+		</div>
+		
+		
+		<div class="links">
+			<div class="links__inner">
+				<h2>Begin Your FINAL FANTASY XIV Journey Today!</h2>
+
+				<div class="sale_banner">
+					
+
+		
+
+
+	<div class="product__sale">
+		<a href="" target="_blank" class="js--product_bnr" style="display: none;" rel=" noopener">
+			<img src="" width="1440" height="376" alt="" aria-label="sale">
+		</a>
+	</div>
+
+				</div>
+			
+				
+				<ul class="induction__list">
+					<li>
+						<div class="pc_view">
+							
+							<a href="https://freetrial.finalfantasyxiv.com/" class="free js__btn_press js_gtag" onmousedown="gtag('event','click', {'event_category':'pr-na_top-bottomlink-pc', 'event_label':'freetrial-na', 'non_interaction': true});">
+							
+							
+								<img src="https://lds-img.finalfantasyxiv.com/promo/h/k/UPYMScrP9wabndP5ldLcZGYqjs.jpg" width="400" height="225" alt="Start for Free">
+							
+								<p>Start for Free</p>
+							</a>
+						</div>
+						<div class="sp_view">
+							
+							<a href="https://freetrial.finalfantasyxiv.com/" class="free js__btn_press js_gtag" onmousedown="gtag('event','click', {'event_category':'pr-na_top-bottomlink-sp', 'event_label':'freetrial-na', 'non_interaction': true});">
+							
+							
+								<img src="https://lds-img.finalfantasyxiv.com/promo/h/k/UPYMScrP9wabndP5ldLcZGYqjs.jpg" width="400" height="225" alt="Start for Free">
+							
+								<p>Start for Free</p>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="pc_view">
+							
+							<a href="/product/" class="buynow js__btn_press js_gtag" onmousedown="gtag('event','click', {'event_category':'pr-na_top-bottomlink-pc', 'event_label':'sqex-onlinestore-na', 'non_interaction': true});">
+								<img src="https://lds-img.finalfantasyxiv.com/promo/h/H/kSuaVsWwkfzSPDJao7Z5bTBrgE.jpg" width="400" height="225" alt="Buy Expansions">
+							
+								<p>Buy Expansions</p>
+							</a>
+						</div>
+						<div class="sp_view">
+							
+							<a href="/product/" class="buynow js__btn_press js_gtag" onmousedown="gtag('event','click', {'event_category':'pr-na_top-bottomlink-sp', 'event_label':'sqex-onlinestore-na', 'non_interaction': true});">
+								<img src="https://lds-img.finalfantasyxiv.com/promo/h/H/kSuaVsWwkfzSPDJao7Z5bTBrgE.jpg" width="400" height="225" alt="Buy Expansions">
+							
+								<p>Buy Expansions</p>
+							</a>
+						</div>
+					</li>
+					<li>
+						<a href="/dawntrail/" class="latest js__btn_press">
+						
+							<img src="https://lds-img.finalfantasyxiv.com/promo/h/K/hviKVw5WYG_aQDlLa-628xMAFc.jpg" width="400" height="225" alt="The Latest Expansion">
+						
+							<p>The Latest Expansion</p>
+						</a>
+					</li>
+				</ul>
+
+				
+				<div class="mogstation">
+					<a href="https://sqex.to/Msp" class="js__btn_press">
+						<div class="text">
+							<p>Prolong or Resume Your Journey</p>
+							<p>Account Management</p>
+						</div>
+						<img src="https://lds-img.finalfantasyxiv.com/promo/h/9/7LLFv1ncHw0gsViL6KciyrpK6I.png" width="424" height="160" alt="Mog Station">
+					</a>
+				</div>
+			
+				
+				<ul class="related__list">
+					
+					<li>
+						<a href="https://starter-guide.finalfantasyxiv.com/na">
+							<img src="https://lds-img.finalfantasyxiv.com/promo/h/k/Yfkefa2YrTDBd1peDr4FM9-r0A.jpg" width="400" height="144" alt="FINAL FANTASY XIV Online Starter Guide Series">
+						</a>
+						<p></p>
+					</li>
+					<li>
+						<a href="/lodestone/playguide/#game_playguide">
+							<img src="https://lds-img.finalfantasyxiv.com/promo/h/s/bR4ipTciR_0708L5MVryrLNbd0.jpg" width="400" height="144" alt="FINAL FANTASY XIV Play Guide">
+						</a>
+					</li>
+					<li>
+						<a href="https://store.finalfantasyxiv.com/ffxivstore/en-us/">
+							<img src="https://lds-img.finalfantasyxiv.com/promo/h/0/lLLCo8VgVrfkSEaW0n0VlXEE1E.jpg" width="400" height="144" alt="FINAL FANTASY XIV Online Store">
+						</a>
+					</li>
+					
+				</ul>
+
+			</div>
+		</div>
+
+	</div>
+	
+	<div class="footer">
+		<div class="footer__inner">
+			<div class="site-top">
+				<a href="/lodestone/?utm_source=pr2&amp;utm_medium=top_topbtn&amp;utm_campaign=na_lodestone">FINAL FANTASY XIV The Lodestone</a>
+			</div>
+			<ul class="social__btn">
+	<li><a href="http://www.facebook.com/share.php?u=https://na.finalfantasyxiv.com/" target="_blank" class="js__btn_press" aria-label="facebook" rel=" noopener">
+		<i class="xiv-lds xiv-lds-facebook"></i>
+	</a></li>
+	<li><a href="https://x.com/intent/tweet?url=https://na.finalfantasyxiv.com/&amp;text=FINAL%20FANTASY%20XIV%20Promotional%20Site" target="_blank" class="js__btn_press" aria-label="x" rel=" noopener">
+		<i class="xiv-lds xiv-lds-x"></i>
+	</a></li>
+	<li><a href="https://bsky.app/intent/compose?text=FINAL%20FANTASY%20XIV%20Promotional%20Site%20https://na.finalfantasyxiv.com/" target="_blank" class="js__btn_press" aria-label="bluesky" rel=" noopener">
+		<i class="xiv-lds xiv-lds-bluesky"></i>
+	</a></li>
+</ul>
+		</div>
+	</div>
+</div>
+
+<!-- //#contetnts-->
+
+
+<!-- footer -->
+
+<div class="inner footer__pc_view">
+	<footer class="l__footer">
+		<div class="page-top">
+			<span class="page-top__btn"></span>
+		</div>
+		<div class="l__footer__inner">
+			<div class="l__footer__logo">
+				<a href="/lodestone/" aria-label="lodestone"><img src="https://lds-img.finalfantasyxiv.com/promo/h/L/EbtcXqPUGzsVYdi23FpUR25oH4.png" width="320" height="32" alt=""></a>
+			</div>
+			<div class="l__footer__shop">
+				<a href="/lodestone/playguide/#returner" class="l__footer__shop__btn">Game Download</a>
+			</div>
+			<p class="l__footer__officiel">Official Information</p>
+			<ul class="l__footer__sns">
+				<li><a href="https://www.facebook.com/finalfantasyxiv" target="_blank" class="l__footer__sns--link" rel=" noopener">
+					<i class="xiv-lds xiv-lds-facebook xiv-lds-3x"></i>
+					<span>Facebook</span>
+				</a></li>
+				<li class="l__footer__sns--twitter">
+					<a href="https://x.com/ff_xiv_en" target="_blank" rel=" noopener"><i class="xiv-lds xiv-lds-x xiv-lds-3x"></i>X</a> / <a href="https://x.com/FFXIV_NEWS_EN" target="_blank" rel=" noopener">News</a>
+				</li>
+				<li><a href="http://www.youtube.com/finalfantasyxiv" target="_blank" class="l__footer__sns--link" rel=" noopener">
+					<i class="xiv-lds xiv-lds-youtube xiv-lds-3x"></i>
+					<span>YouTube</span>
+				</a></li>
+				<li><a href="https://www.instagram.com/ffxiv/" target="_blank" class="l__footer__sns--link" rel=" noopener">
+					<i class="xiv-lds xiv-lds-instagram xiv-lds-3x"></i>
+					<span>Instagram</span>
+				</a></li>
+				<li><a href="https://www.twitch.tv/finalfantasyxiv" target="_blank" class="l__footer__sns--link" rel=" noopener">
+					<i class="xiv-lds xiv-lds-twitch xiv-lds-3x"></i>
+					<span>Twitch</span>
+				</a></li>
+				<li><a href="https://bsky.app/profile/en.finalfantasyxiv.com" target="_blank" class="l__footer__sns--link" rel=" noopener">
+					<i class="xiv-lds xiv-lds-bluesky xiv-lds-3x"></i>
+					<span>Bluesky</span>
+				</a></li>
+			</ul>
+
+			<ul class="l__footer__link-list">
+				<li class="link_license" id="link_license"><a href="/license/" target="_blank" rel=" noopener">
+				License</a></li>
+				<li><a href="https://support.na.square-enix.com/rule.php?id=5382&amp;la=1" target="_blank" rel=" noopener">Rules &amp; Policies</a></li>
+				<li><a href="https://square-enix-games.com/en_US/documents/privacy" target="_blank" rel=" noopener">Privacy Notice</a></li>
+				<li><a href="https://square-enix-games.com/en_US/documents/cookies" target="_blank" rel=" noopener">Cookies Notice</a></li>
+				<li><a href="https://support.square-enix-games.com/s/ccpaoptout" target="_blank" rel=" noopener">Do Not Sell or Share My Personal Information</a></li>
+			</ul>
+		</div>
+		<div class="l__footer__legal-area"><div class="l__footer__legal-area__inner clearfix">
+			<div class="l__footer__legal-area__box">
+				<ul class="l__footer__legal-area__bnr-list">
+					<li><a href="https://www.playstation.com/en-us/" target="_blank" rel=" noopener"><img src="https://lds-img.finalfantasyxiv.com/promo/h/D/egrXwtjrQC8nFGhA1rWb0PO8R0.png" width="245" height="39" alt="PlayStation PS5 PS4"></a></li>
+					<li><img src="https://lds-img.finalfantasyxiv.com/promo/h/M/5T9l7AE_cSDlsD4EM4rjEQRgCE.png" width="227" height="39" alt="XBOX SERIES XIS"></li>
+					<li><img src="https://lds-img.finalfantasyxiv.com/promo/h/v/oxRQz2cT8riqV5VLCu2-nADVkE.png" width="42" height="39" alt="PC"></li>
+					<li><img src="https://lds-img.finalfantasyxiv.com/promo/h/v/hyXqlwktN4v0EssRTzkbMf_7OQ.png" width="30" height="39" alt="Mac"></li>
+					<li><img src="https://lds-img.finalfantasyxiv.com/promo/h/U/15QxPO___EcPlhMI9ydNRRxEY8.png" width="90" height="39" alt="Steam"></li>
+				</ul>
+				<ul class="l__footer__legal-area__bnr-list na">
+					<li><a href="http://www.esrb.org/" target="_blank" rel=" noopener"><img src="https://lds-img.finalfantasyxiv.com/promo/h/E/8R4FrEQFMaGtRtuRNMU0nhfZ9c.png" width="200" height="95" alt="ESRB Ratings"></a></li>
+					<li><a href="http://www.esrb.org/confirm/squareenix-confirmation.aspx" target="_blank" rel=" noopener"><img src="https://lds-img.finalfantasyxiv.com/promo/h/i/OfvDbUY2NolZsL2r-nN_N8G6Sc.png" width="64" height="87" alt="ESRB"></a><a href="https://square-enix-games.com/en_US/documents/privacy" target="_blank" class="l__footer__legal-area__bnr-list--text_link esrb" rel=" noopener">Privacy Notice</a></li>
+				</ul>
+				<p class="l__footer__legal-area__text">©2026 Sony Interactive Entertainment LLC."PlayStation Family Mark", "PlayStation", "PS5 logo", "PS5", "PS4 logo" and "PS4" are registered trademarks or trademarks of Sony Interactive Entertainment Inc.<br>Microsoft, the Xbox Sphere mark, the Series X|S logo and Xbox Series X|S are trademarks of the Microsoft group of companies.<br>Windows is either a registered trademark or trademark of Microsoft Corporation in the United States and/or other countries.<br>MAC is a trademark of Apple Inc., registered in the U.S. and other countries.<br>©2026 Valve Corporation. Steam and the Steam logo are trademarks and/or registered trademarks of Valve Corporation in the U.S. and/or other countries.<br>ESRB and the ESRB rating icon are registered trademarks of the Entertainment Software Association. <br>All other trademarks are property of their respective owners.</p>
+			</div>
+			<div class="l__footer__legal-area__box">
+				<p class="l__footer__legal-area__copyright">
+					© SQUARE ENIX<br>Square Enix, Inc.,&nbsp; 999 N. Pacific Coast Highway, El Segundo, California 90245&nbsp; <br>
+					LOGO ILLUSTRATION:© YOSHITAKA AMANO
+				</p>
+			</div>
+		</div></div>
+	</footer>
+</div>
+
+
+<div class="footer__sp_view">
+	<div class="l__page-top__base-position">
+		<span class="l__page-top__button absolute" style="right: 0px; opacity: 0.5;"></span>
+	</div>
+
+	<footer class="l__footer l__footer--na">
+		<div class="l__footer__inner">
+			<div class="l__footer__logo">
+				<a href="/lodestone/" aria-label="lodestone"><img src="https://lds-img.finalfantasyxiv.com/promo/h/l/xyai_6mIZpuTtVR4OO0xoR_DdI.png" width="280" height="32" alt=""></a>
+			</div>
+			<div class="l__footer__shop">
+				<a href="/lodestone/playguide/#returner" class="l__footer__shop__btn">Game Download</a>
+			</div>
+			<p class="l__footer__officiel">Official Information</p>
+	
+			<ul class="l__footer__sns">
+				<li><a href="https://www.facebook.com/finalfantasyxiv" target="_blank" class="l__footer__sns--link" rel=" noopener">
+					<i class="xiv-lds xiv-lds-facebook xiv-lds-3x"></i>
+					<span>Facebook</span>
+				</a></li>
+				<li class="l__footer__sns--twitter">
+					<a href="https://x.com/ff_xiv_en" target="_blank" rel=" noopener"><i class="xiv-lds xiv-lds-x xiv-lds-3x"></i></a>
+					<a href="https://x.com/ff_xiv_en" target="_blank" rel=" noopener">X</a> / <a href="https://x.com/FFXIV_NEWS_EN" target="_blank" rel=" noopener">News</a>
+				</li>
+				<li><a href="http://www.youtube.com/finalfantasyxiv" target="_blank" class="l__footer__sns--link" rel=" noopener">
+					<i class="xiv-lds xiv-lds-youtube xiv-lds-3x"></i>
+					<span>YouTube</span>
+				</a></li>
+				<li><a href="https://www.instagram.com/ffxiv/" target="_blank" class="l__footer__sns--link" rel=" noopener">
+					<i class="xiv-lds xiv-lds-instagram xiv-lds-3x"></i>
+					<span>Instagram</span>
+				</a></li>
+				<li><a href="https://www.twitch.tv/finalfantasyxiv" target="_blank" class="l__footer__sns--link" rel=" noopener">
+					<i class="xiv-lds xiv-lds-twitch xiv-lds-3x"></i>
+					<span>Twitch</span>
+				</a></li>
+				<li><a href="https://bsky.app/profile/en.finalfantasyxiv.com" target="_blank" class="l__footer__sns--link" rel=" noopener">
+					<i class="xiv-lds xiv-lds-bluesky xiv-lds-3x"></i>
+					<span>Bluesky</span>
+				</a></li>
+			</ul>
+
+			<hr class="l__footer__line">
+
+			<ul class="l__footer__link-list l__footer__sp__link-list--na">
+				<li><a href="/license/" target="_blank" rel=" noopener">License</a></li><li><a href="https://support.na.square-enix.com/rule.php?id=5382&amp;la=1" target="_blank" rel=" noopener">Rules &amp; Policies</a></li><li><a href="https://square-enix-games.com/en_US/documents/privacy" target="_blank" rel=" noopener">Privacy Notice</a></li><li><a href="https://square-enix-games.com/en_US/documents/cookies" target="_blank" rel=" noopener">Cookies Notice</a></li><li><a href="https://support.square-enix-games.com/s/ccpaoptout" target="_blank" rel=" noopener">Do Not Sell or Share My Personal Information</a></li><li></li>
+			</ul>
+			
+			<div class="l__footer__copyright l__footer__copyright--en">
+				<div class="l__footer__legal__area"><div class="l__footer__legal__area__inner">
+					<ul class="l__footer__legal__bnr-list">
+						<li><a href="https://www.playstation.com/en-us/" target="_blank" rel=" noopener"><img src="https://lds-img.finalfantasyxiv.com/promo/h/D/egrXwtjrQC8nFGhA1rWb0PO8R0.png" width="245" height="39" alt="PlayStation PS5 PS4"></a></li>
+					</ul>
+					<ul class="l__footer__legal__bnr-list">
+						<li><img src="https://lds-img.finalfantasyxiv.com/promo/h/M/5T9l7AE_cSDlsD4EM4rjEQRgCE.png" width="227" height="39" alt="XBOX SERIES XIS"></li>
+					</ul>
+					<ul class="l__footer__legal__bnr-list">
+						<li><img src="https://lds-img.finalfantasyxiv.com/promo/h/v/oxRQz2cT8riqV5VLCu2-nADVkE.png" width="42" height="39" alt="PC"></li>
+						<li><img src="https://lds-img.finalfantasyxiv.com/promo/h/v/hyXqlwktN4v0EssRTzkbMf_7OQ.png" width="30" height="39" alt="Mac"></li>
+						<li><img src="https://lds-img.finalfantasyxiv.com/promo/h/U/15QxPO___EcPlhMI9ydNRRxEY8.png" width="90" height="39" alt="Steam"></li>
+					</ul>
+					<ul class="l__footer__legal__bnr-list na">
+						<li><a href="http://www.esrb.org/" target="_blank" rel=" noopener"><img src="https://lds-img.finalfantasyxiv.com/promo/h/E/8R4FrEQFMaGtRtuRNMU0nhfZ9c.png" width="200" height="95" alt="ESRB Ratings"></a></li>
+						<li><a href="http://www.esrb.org/confirm/squareenix-confirmation.aspx" target="_blank" rel=" noopener"><img src="https://lds-img.finalfantasyxiv.com/promo/h/i/OfvDbUY2NolZsL2r-nN_N8G6Sc.png" width="60" height="82" alt="ESRB"></a><a href="https://square-enix-games.com/en_US/documents/privacy" target="_blank" class="l__footer__legal__bnr-list--text_link esrb" rel=" noopener">Privacy Notice</a></li>
+					</ul>
+					<p class="l__footer__legal__text">©2026 Sony Interactive Entertainment LLC."PlayStation Family Mark", "PlayStation", "PS5 logo", "PS5", "PS4 logo" and "PS4" are registered trademarks or trademarks of Sony Interactive Entertainment Inc.<br>Microsoft, the Xbox Sphere mark, the Series X|S logo and Xbox Series X|S are trademarks of the Microsoft group of companies.<br>Windows is either a registered trademark or trademark of Microsoft Corporation in the United States and/or other countries.<br>MAC is a trademark of Apple Inc., registered in the U.S. and other countries.<br>©2026 Valve Corporation. Steam and the Steam logo are trademarks and/or registered trademarks of Valve Corporation in the U.S. and/or other countries.<br>ESRB and the ESRB rating icon are registered trademarks of the Entertainment Software Association. <br>All other trademarks are property of their respective owners.</p>
+					<p class="l__footer__copyright--text">© SQUARE ENIX<br>Square Enix, Inc.,&nbsp; 999 N. Pacific Coast Highway, El Segundo, California 90245&nbsp; <br>LOGO ILLUSTRATION:© YOSHITAKA AMANO</p>
+				</div></div>
+			</div>
+			
+		</div>
+	</footer>
+</div>
+
+<!-- //footer -->
+
+
+<script src="https://lds-img.finalfantasyxiv.com/promo/h/7/khZLR__lS_PBs4LZm7UeFSTr9w.js"></script>
+<script src="https://lds-img.finalfantasyxiv.com/promo/h/g/uQNBgvCaabd4gw5kMpaT-psp1Q.js"></script>
+<script src="https://lds-img.finalfantasyxiv.com/promo/h/8/b_tPmOnEw1tyr2dp2InkGxUlMA.js"></script>
+<script src="https://lds-img.finalfantasyxiv.com/promo/h/k/lMqTKH2f4LbEVsiYTYt_9d4GU0.js"></script>
+<script src="https://lds-img.finalfantasyxiv.com/promo/h/i/6Yu4KdmuGMX_T28xbxlD8m6iuI.js"></script>
+<script src="https://lds-img.finalfantasyxiv.com/promo/h/8/t6EU_zLNLrybXhK-pZdvowNFVA.js"></script>
+<script src="https://lds-img.finalfantasyxiv.com/promo/h/h/4_PdfMAGZOH_6cjJBI4rNdMzyQ.js"></script>
+<script src="https://lds-img.finalfantasyxiv.com/promo/h/J/_A05duMMuJo4pWbmnwSWNNuRRA.js"></script>
+<script src="https://lds-img.finalfantasyxiv.com/promo/h/Z/wqo4GxX1wALdnxx6xOv38NxFVY.js"></script>
+<script src="https://lds-img.finalfantasyxiv.com/promo/h/q/CoA4TAQzBc8_XD14Aoce6ad_7U.js"></script>
+<script src="https://lds-img.finalfantasyxiv.com/promo/h/P/MYGDtxveSuUwuhprm8oj1Hhuq8.js"></script>
+<script src="https://lds-img.finalfantasyxiv.com/promo/h/s/OLc7cPXOvEJz2oVoGD3EVzhmAk.js"></script>
+
+
+<!-- //footer -->
+</div><script src="https://www.youtube.com/iframe_api"></script>
+
+
+<div class="tooltip__text" style="position: fixed; display: none;"></div><script type="text/javascript" id="" charset="">window.digitalData=window.digitalData||[];function gtag(){digitalData.push(arguments)}gtag("consent","default",{ad_storage:"denied",analytics_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",personalization_storage:"denied",functionality_storage:"granted",security_storage:"granted",wait_for_update:500});gtag("set","ads_data_redaction",!0);</script><style type="text/css">
+ .osano-cm-dialog {
+   color: #000;
+   background: #fff;
+   box-shadow: 0 0 0 100vmax rgba(0,0,0,0.66)
+ }
+ .osano-cm-dialog__list.osano-cm-list,
+ .osano-cm-button--type_save,
+ .osano-cm-dialog__close.osano-cm-close
+ {display: none;}
+</style>
+<script id="" text="" charset="" type="text/javascript" src="https://cmp.osano.com/AzqBmjU9kxOsA2Db5/6edde14e-41e0-4a37-81e8-3e73f7750c87/osano.js?variant=two"></script><iframe name="__uspapiLocator" style="display: none;"></iframe>
+<script type="text/javascript" id="" charset="">function OsanoConsent(){window.digitalData=window.digitalData||[];window.digitalData.push({event:"cookieStatusUpdate","analytics-acceptance":window.Osano.cm.analytics,"marketing-acceptance":window.Osano.cm.marketing,"personalisation-acceptance":window.Osano.cm.personalization})}window.Osano.cm.addEventListener("osano-cm-consent-saved",function(){setTimeout(function(){OsanoConsent()},200)});</script><iframe width="0" height="0" src="https://cmp.osano.com" title="Osano Consent Manager Iframe" aria-hidden="true" tabindex="-1" style="width: 0px; height: 0px; border: none; position: absolute; left: -9999px; overflow: hidden;"></iframe></body></html>

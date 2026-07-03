@@ -1,0 +1,545 @@
+<html lang="id"><head>    <link href="/rappasoft/laravel-livewire-tables/core.min.css" rel="stylesheet">     <link href="/rappasoft/laravel-livewire-tables/thirdparty.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+
+    <title>Kebun Raya Tiket Online</title>
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Rubik:ital,wght@0,300..900;1,300..900&amp;display=swap" rel="stylesheet">
+
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+
+    <link rel="preload" as="style" href="https://tiketkebunraya.id/build/assets/app-CBbJ0OPV.css"><link rel="preload" as="style" href="https://tiketkebunraya.id/build/assets/app-CksuuEqD.css"><link rel="modulepreload" href="https://tiketkebunraya.id/build/assets/app-DS80mDYf.js"><link rel="stylesheet" href="https://tiketkebunraya.id/build/assets/app-CBbJ0OPV.css" data-navigate-track="reload"><link rel="stylesheet" href="https://tiketkebunraya.id/build/assets/app-CksuuEqD.css" data-navigate-track="reload"><script src="https://connect.facebook.net/signals/config/25790530623876067?v=2.9.293&amp;r=stable&amp;domain=tiketkebunraya.id&amp;hme=295b1b33901e14aeab879c0b58f907ef4d5f44fdd19814310771af911c5f6ac8&amp;ex_m=102%2C198%2C147%2C22%2C70%2C71%2C139%2C66%2C65%2C11%2C155%2C88%2C16%2C132%2C124%2C37%2C73%2C76%2C130%2C152%2C157%2C8%2C4%2C5%2C7%2C6%2C3%2C89%2C99%2C158%2C163%2C212%2C60%2C179%2C180%2C53%2C267%2C30%2C72%2C224%2C223%2C222%2C23%2C32%2C101%2C59%2C10%2C61%2C95%2C96%2C97%2C103%2C127%2C31%2C29%2C129%2C126%2C125%2C148%2C74%2C151%2C149%2C150%2C48%2C58%2C120%2C15%2C154%2C43%2C254%2C255%2C253%2C26%2C27%2C28%2C46%2C140%2C75%2C110%2C18%2C20%2C42%2C38%2C40%2C39%2C81%2C90%2C94%2C108%2C138%2C141%2C44%2C109%2C24%2C21%2C116%2C67%2C35%2C143%2C142%2C144%2C135%2C133%2C25%2C34%2C57%2C107%2C153%2C68%2C17%2C145%2C112%2C79%2C64%2C19%2C83%2C84%2C113%2C82%2C33%2C269%2C284%2C205%2C194%2C195%2C193%2C287%2C279%2C50%2C206%2C105%2C128%2C78%2C118%2C52%2C45%2C47%2C111%2C117%2C123%2C56%2C62%2C51%2C54%2C98%2C156%2C1%2C121%2C14%2C119%2C12%2C2%2C55%2C91%2C63%2C115%2C87%2C86%2C159%2C160%2C92%2C93%2C9%2C122%2C100%2C49%2C136%2C85%2C77%2C69%2C114%2C104%2C41%2C137%2C0%2C80%2C131%2C134%2C146%2C36%2C106%2C13%2C161" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=AW-17854988738&amp;cx=c&amp;gtm=4e6481"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-E471Y5FCWN&amp;cx=c&amp;gtm=4e6481"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-MMXSX8XD"></script><script type="module" src="https://tiketkebunraya.id/build/assets/app-DS80mDYf.js" data-navigate-track="reload"></script>    <!-- Livewire Styles --><style>[wire\:loading][wire\:loading], [wire\:loading\.delay][wire\:loading\.delay], [wire\:loading\.inline-block][wire\:loading\.inline-block], [wire\:loading\.inline][wire\:loading\.inline], [wire\:loading\.block][wire\:loading\.block], [wire\:loading\.flex][wire\:loading\.flex], [wire\:loading\.table][wire\:loading\.table], [wire\:loading\.grid][wire\:loading\.grid], [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.none][wire\:loading\.delay\.none], [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short][wire\:loading\.delay\.short], [wire\:loading\.delay\.default][wire\:loading\.delay\.default], [wire\:loading\.delay\.long][wire\:loading\.delay\.long], [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {display: none;}[wire\:offline][wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}:root {--livewire-progress-bar-color: #2299dd;}[x-cloak] {display: none !important;}[wire\:cloak] {display: none !important;}dialog#livewire-error::backdrop {background-color: rgba(0, 0, 0, .6);}</style>
+
+        <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MMXSX8XD');
+    </script>
+    <!-- End Google Tag Manager -->
+
+
+<script src="/rappasoft/laravel-livewire-tables/core.min.js"></script> <script src="/rappasoft/laravel-livewire-tables/thirdparty.min.js"></script><style>/* Make clicks pass-through */
+
+    #nprogress {
+      pointer-events: none;
+    }
+
+    #nprogress .bar {
+      background: var(--livewire-progress-bar-color, #29d);
+
+      position: fixed;
+      z-index: 1031;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 2px;
+    }
+
+    /* Fancy blur effect */
+    #nprogress .peg {
+      display: block;
+      position: absolute;
+      right: 0px;
+      width: 100px;
+      height: 100%;
+      box-shadow: 0 0 10px var(--livewire-progress-bar-color, #29d), 0 0 5px var(--livewire-progress-bar-color, #29d);
+      opacity: 1.0;
+
+      -webkit-transform: rotate(3deg) translate(0px, -4px);
+          -ms-transform: rotate(3deg) translate(0px, -4px);
+              transform: rotate(3deg) translate(0px, -4px);
+    }
+
+    /* Remove these to get rid of the spinner */
+    #nprogress .spinner {
+      display: block;
+      position: fixed;
+      z-index: 1031;
+      top: 15px;
+      right: 15px;
+    }
+
+    #nprogress .spinner-icon {
+      width: 18px;
+      height: 18px;
+      box-sizing: border-box;
+
+      border: solid 2px transparent;
+      border-top-color: var(--livewire-progress-bar-color, #29d);
+      border-left-color: var(--livewire-progress-bar-color, #29d);
+      border-radius: 50%;
+
+      -webkit-animation: nprogress-spinner 400ms linear infinite;
+              animation: nprogress-spinner 400ms linear infinite;
+    }
+
+    .nprogress-custom-parent {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .nprogress-custom-parent #nprogress .spinner,
+    .nprogress-custom-parent #nprogress .bar {
+      position: absolute;
+    }
+
+    @-webkit-keyframes nprogress-spinner {
+      0%   { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+    @keyframes nprogress-spinner {
+      0%   { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    </style><script type="text/javascript" async="" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/17854988738/?random=1775831612267&amp;cv=11&amp;fst=1775831612267&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;en=gtag.config&amp;gtm=45be6481v9241890667z89240440463za20gzb9240440463zd9240440463xec&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=0~115938465~115938468~117266402&amp;u_w=1366&amp;u_h=768&amp;url=https%3A%2F%2Ftiketkebunraya.id%2F&amp;rcb=11&amp;frm=0&amp;tiba=Kebun%20Raya%20Tiket%20Online&amp;hn=www.googleadservices.com&amp;npa=0&amp;pscdl=noapi&amp;auid=1146674664.1775831612&amp;uaa=x86&amp;uab=64&amp;uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&amp;uamb=0&amp;uam=&amp;uap=Windows&amp;uapv=10.0&amp;uaw=0&amp;data=event%3Dgtag.config&amp;rfmt=3&amp;fmt=4"></script><script type="text/javascript" async="" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/666683440/?random=1775831612324&amp;cv=11&amp;fst=1775831612324&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;en=gtag.config&amp;gtm=45be6481v9241890667z89240440463za20gzb9240440463zd9240440463xec&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=0~115938465~115938468~117266402&amp;u_w=1366&amp;u_h=768&amp;url=https%3A%2F%2Ftiketkebunraya.id%2F&amp;rcb=11&amp;frm=0&amp;tiba=Kebun%20Raya%20Tiket%20Online&amp;hn=www.googleadservices.com&amp;npa=0&amp;pscdl=noapi&amp;auid=1146674664.1775831612&amp;uaa=x86&amp;uab=64&amp;uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&amp;uamb=0&amp;uam=&amp;uap=Windows&amp;uapv=10.0&amp;uaw=0&amp;data=event%3Dgtag.config&amp;rfmt=3&amp;fmt=4"></script></head>
+
+
+<body class=" text-main font-sfpro">
+
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MMXSX8XD" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    
+    <div wire:snapshot="{&quot;data&quot;:{&quot;locations&quot;:[null,{&quot;keys&quot;:[2,1,3,4],&quot;class&quot;:&quot;Illuminate\\Database\\Eloquent\\Collection&quot;,&quot;modelClass&quot;:&quot;App\\Models\\Locations&quot;,&quot;s&quot;:&quot;elcln&quot;}],&quot;listKebun&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;bundlePromotions&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;promoLocations&quot;:[null,{&quot;keys&quot;:[2,1,3,4],&quot;class&quot;:&quot;Illuminate\\Database\\Eloquent\\Collection&quot;,&quot;modelClass&quot;:&quot;App\\Models\\Locations&quot;,&quot;s&quot;:&quot;elcln&quot;}]},&quot;memo&quot;:{&quot;id&quot;:&quot;QYWJCrNnwMvCpeLjmEXE&quot;,&quot;name&quot;:&quot;home&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;id&quot;},&quot;checksum&quot;:&quot;2dc1112159cb9cd1485a5196a78c1ecf0c450d3289c2ec75ce3ce4d170d6ae82&quot;}" wire:effects="[]" wire:id="QYWJCrNnwMvCpeLjmEXE" class="mt-20 md:mt-16">
+    <nav class="bg-white fixed w-full z-40 top-0 start-0 border-b border-gray-200 text-base">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="https://tiketkebunraya.id/buy-ticket" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="https://tiketkebunraya.id/assets/images/kebun-raya.png" alt="Logo" class="h-8">
+        </a>
+        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+
+            
+            <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-sticky" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+            <ul class="md:flex items-center flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white ">
+                <li class="text-center py-5 md:py-0 order-first md:order-last mx-5 px-4">
+                    <!--[if BLOCK]><![endif]-->                        <a href="https://tiketkebunraya.id/login" class="text-hunterGreen border border-hunterGreen hover:text-white hover:bg-green-800 transition ease-in-out focus:ring-4 focus:outline-none focus:ring-green-300 font-semibold rounded-lg text-sm px-6 py-2 text-center ">
+                            Login / Register</a>
+                    <!--[if ENDBLOCK]><![endif]-->                </li>
+
+                <li>
+                    <a href="https://tiketkebunraya.id/buy-ticket" class="block py-2 px-3 rounded md:bg-transparent md:p-0 underline underline-offset-4 text-black hover:text-blue-700" aria-current="page">Beranda</a>
+                </li>
+                <li>
+                    <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto md:dark:hover:text-blue-500 md:dark:hover:bg-transparent">Aktivitas
+                        <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"></path>
+                        </svg></button>
+                    <!-- Dropdown menu -->
+                    <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white shadow-xl border border-gray-100 divide-y divide-gray-100 rounded-lg  w-64 " style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(611px, 54px);" data-popper-placement="bottom">
+                        <ul class="py-2 text-sm text-gray-700 divide-y divide-gray-200 font-semibold  " aria-labelledby="dropdownLargeButton">
+
+                            <li>
+                                <a href="https://tiketkebunraya.id/virtual-tour-de-kebun-raya" class="block px-5 py-2 hover:bg-gray-100">Virtual
+                                    Tour De Kebun Raya</a>
+                            </li>
+                            <li>
+                                <a href="https://tiketkebunraya.id/kelas-edukasi" class="block px-5 py-2 hover:bg-gray-100 ">Kelas
+                                    Edukasi</a>
+                            </li>
+
+                            <li>
+                                <a href="https://tiketkebunraya.id/join-membership" class="block px-5 py-2 hover:bg-gray-100">Join
+                                    Membership</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://tiketkebunraya.id/terms-conditions" class="block py-2 px-3 rounded md:bg-transparent md:p-0  hover:text-blue-700">Syarat
+                        &amp;
+                        Ketentuan</a>
+
+                </li>
+
+                <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->            </ul>
+        </div>
+    </div>
+</nav>
+
+    <section class="">
+        <div class="hidden md:block">
+    <div class="grid grid-flow-row-dense grid-cols-4">
+        <img src="https://tiketkebunraya.id/assets/images/artboard-all.png" alt="" class="">
+        <img src="https://tiketkebunraya.id/assets/images/artboard-all.png" alt="" class="">
+        <img src="https://tiketkebunraya.id/assets/images/artboard-all.png" alt="" class="">
+        <img src="https://tiketkebunraya.id/assets/images/artboard-all.png" alt="" class="">
+    </div>
+</div>
+<div class="block md:hidden">
+    <div class="grid grid-flow-row-dense grid-cols-3">
+        <img src="https://tiketkebunraya.id/assets/images/artboard-all.png" alt="" class="">
+        <img src="https://tiketkebunraya.id/assets/images/artboard-all.png" alt="" class="">
+        <img src="https://tiketkebunraya.id/assets/images/artboard-all.png" alt="" class="">
+
+    </div>
+</div>
+
+        <div class="mx-auto md:w-4/5 px-3 md:px-0 my-5 pb-1">
+
+            
+            <section>
+                <div class="font-sfpro mx-3 text-center uppercase text-hunterGreen pt-5">
+                    <a href="https://tiketkebunraya.id/buy-ticket" class="flex justify-center items-center space-x-3 rtl:space-x-reverse">
+                        <img src="https://tiketkebunraya.id/assets/images/kebun-raya.png" alt="Logo" class="h-16">
+                    </a>
+                </div>
+
+                <div class="md:mx-10 my-5">
+                    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                </div>
+                <div class="md:mx-10 grid md:grid-cols-2 gap-5 my-5">
+                    <!--[if BLOCK]><![endif]-->                                                <div class="shadow-md shadow-hunterGreen/20 rounded-xl border border-hunterGreen/10 ">
+    <div class="flex max-[1024px]:flex-col max-[1024px]:text-center justify-center items-center max-[1024px]:pr-0 pr-5 pt-3 pb-5">
+
+        <div>
+            <img src="https://tiketkebunraya.id/assets/images/kebun-raya-bogor.png" class="w-72 md:w-60 lg:w-64" alt="location image">
+        </div>
+        <div>
+            <form wire:submit.prevent="buy('bogor')" method="GET">
+                <p class="font-sfpro font-semibold text-md mb-2">Kebun Raya Bogor</p>
+                <button type="submit" class="text-white bg-hunterGreen hover:text-white text-lg  border-black border md:border-1 hover:border-gray-200  font-semibold rounded-md text-md px-5 py-2 text-center me-2 focus:ring-4  focus:ring-green-300 hover:bg-gray-700 transition ease-in-out">
+                    <i class="fa-solid fa-cart-shopping mr-2 text-sm"></i>
+                    Beli Tiket
+                </button>
+
+            </form>
+        </div>
+    </div>
+</div>
+                                                                    <div class="shadow-md shadow-hunterGreen/20 rounded-xl border border-hunterGreen/10 ">
+    <div class="flex max-[1024px]:flex-col max-[1024px]:text-center justify-center items-center max-[1024px]:pr-0 pr-5 pt-3 pb-5">
+
+        <div>
+            <img src="https://tiketkebunraya.id/assets/images/kebun-raya-cibodas.png" class="w-72 md:w-60 lg:w-64" alt="location image">
+        </div>
+        <div>
+            <form wire:submit.prevent="buy('cibodas')" method="GET">
+                <p class="font-sfpro font-semibold text-md mb-2">Kebun Raya Cibodas</p>
+                <button type="submit" class="text-white bg-hunterGreen hover:text-white text-lg  border-black border md:border-1 hover:border-gray-200  font-semibold rounded-md text-md px-5 py-2 text-center me-2 focus:ring-4  focus:ring-green-300 hover:bg-gray-700 transition ease-in-out">
+                    <i class="fa-solid fa-cart-shopping mr-2 text-sm"></i>
+                    Beli Tiket
+                </button>
+
+            </form>
+        </div>
+    </div>
+</div>
+                                                                    <div class="shadow-md shadow-hunterGreen/20 rounded-xl border border-hunterGreen/10 ">
+    <div class="flex max-[1024px]:flex-col max-[1024px]:text-center justify-center items-center max-[1024px]:pr-0 pr-5 pt-3 pb-5">
+
+        <div>
+            <img src="https://tiketkebunraya.id/assets/images/kebun-raya-purwodadi.png" class="w-72 md:w-60 lg:w-64" alt="location image">
+        </div>
+        <div>
+            <form wire:submit.prevent="buy('purwodadi')" method="GET">
+                <p class="font-sfpro font-semibold text-md mb-2">Kebun Raya Purwodadi</p>
+                <button type="submit" class="text-white bg-hunterGreen hover:text-white text-lg  border-black border md:border-1 hover:border-gray-200  font-semibold rounded-md text-md px-5 py-2 text-center me-2 focus:ring-4  focus:ring-green-300 hover:bg-gray-700 transition ease-in-out">
+                    <i class="fa-solid fa-cart-shopping mr-2 text-sm"></i>
+                    Beli Tiket
+                </button>
+
+            </form>
+        </div>
+    </div>
+</div>
+                                                                    <div class="shadow-md shadow-hunterGreen/20 rounded-xl border border-hunterGreen/10 ">
+    <div class="flex max-[1024px]:flex-col max-[1024px]:text-center justify-center items-center max-[1024px]:pr-0 pr-5 pt-3 pb-5">
+
+        <div>
+            <img src="https://tiketkebunraya.id/assets/images/kebun-raya-bali.png" class="w-72 md:w-60 lg:w-64" alt="location image">
+        </div>
+        <div>
+            <form wire:submit.prevent="buy('bali')" method="GET">
+                <p class="font-sfpro font-semibold text-md mb-2">Kebun Raya Bali</p>
+                <button type="submit" class="text-white bg-hunterGreen hover:text-white text-lg  border-black border md:border-1 hover:border-gray-200  font-semibold rounded-md text-md px-5 py-2 text-center me-2 focus:ring-4  focus:ring-green-300 hover:bg-gray-700 transition ease-in-out">
+                    <i class="fa-solid fa-cart-shopping mr-2 text-sm"></i>
+                    Beli Tiket
+                </button>
+
+            </form>
+        </div>
+    </div>
+</div>
+                    <!--[if ENDBLOCK]><![endif]-->                </div>
+
+            </section>
+
+            
+            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+            
+            <section>
+                <div class="mt-10 pt-10 flex justify-center">
+                    
+                    <div class="flex flex-col items-center relative py-10">
+                        <div class="relative z-20" style="transform: rotate(-2deg);">
+                            <span class="inline-block text-2xl md:text-3xl font-black text-[#F6E061] bg-[#FF6200] px-12 py-3 shadow-xl tracking-wide">
+                                NIKMATI PROMO
+                            </span>
+                        </div>
+
+                        <div class="relative  z-30">
+                            <span class="inline-block text-xl md:text-3xl font-black text-[#0F3D2E] bg-[#FAC5C5] px-12 py-3 shadow-xl tracking-wide">
+                                BUAT KAMU HEALING
+                            </span>
+                        </div>
+
+                        <div class="relative z-10" style="transform: rotate(-1.5deg);">
+                            <span class="inline-block text-2xl md:text-3xl font-black text-[#F6E061] bg-[#FF6200] px-12 py-3 shadow-xl tracking-wide">
+                                DI KEBUN RAYA
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!--[if BLOCK]><![endif]-->                    <div class="md:mx-10 grid md:grid-cols-2 gap-5 my-8">
+                        <!--[if BLOCK]><![endif]-->                                                        <div class="shadow-md shadow-hunterGreen/20 rounded-xl border border-gray-200 relative overflow-hidden">
+                                <!-- Promo Badge -->
+                                <div class="absolute top-3 right-3 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                                    <i class="fa-solid fa-fire mr-1"></i>PROMO
+                                </div>
+
+                                <div class="flex max-[1024px]:flex-col max-[1024px]:text-center justify-center items-center max-[1024px]:pr-0 pr-5 pt-3 pb-5 md:gap-3">
+                                    <div>
+                                        <img src="https://tiketkebunraya.id/assets/images/kebun-raya-bogor.png" class="w-72 md:w-60 lg:w-64" alt="Kebun Raya Bogor">
+                                    </div>
+                                    <div>
+                                        <p class="font-sfpro font-bold text-md mb-1 text-hunterGreen md:pr-20">Promo
+                                            Kebun Raya Bogor</p>
+                                        <a href="https://tiketkebunraya.id/promo-bundling-kebun-raya/bogor" class="text-white bg-hunterGreen hover:from-orange-600 hover:to-orange-700 text-sm border border-orange-600 hover:border-orange-700 font-medium rounded-lg text-md px-6 py-2 text-center me-2 focus:ring-4 focus:ring-orange-300 transition-all ease-in-out inline-block shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                                            <i class="fa-solid fa-tags mr-2 text-sm"></i>
+                                            Lihat Promo
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                                                                                <div class="shadow-md shadow-hunterGreen/20 rounded-xl border border-gray-200 relative overflow-hidden">
+                                <!-- Promo Badge -->
+                                <div class="absolute top-3 right-3 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                                    <i class="fa-solid fa-fire mr-1"></i>PROMO
+                                </div>
+
+                                <div class="flex max-[1024px]:flex-col max-[1024px]:text-center justify-center items-center max-[1024px]:pr-0 pr-5 pt-3 pb-5 md:gap-3">
+                                    <div>
+                                        <img src="https://tiketkebunraya.id/assets/images/kebun-raya-cibodas.png" class="w-72 md:w-60 lg:w-64" alt="Kebun Raya Cibodas">
+                                    </div>
+                                    <div>
+                                        <p class="font-sfpro font-bold text-md mb-1 text-hunterGreen md:pr-20">Promo
+                                            Kebun Raya Cibodas</p>
+                                        <a href="https://tiketkebunraya.id/promo-bundling-kebun-raya/cibodas" class="text-white bg-hunterGreen hover:from-orange-600 hover:to-orange-700 text-sm border border-orange-600 hover:border-orange-700 font-medium rounded-lg text-md px-6 py-2 text-center me-2 focus:ring-4 focus:ring-orange-300 transition-all ease-in-out inline-block shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                                            <i class="fa-solid fa-tags mr-2 text-sm"></i>
+                                            Lihat Promo
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                                                                                <div class="shadow-md shadow-hunterGreen/20 rounded-xl border border-gray-200 relative overflow-hidden">
+                                <!-- Promo Badge -->
+                                <div class="absolute top-3 right-3 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                                    <i class="fa-solid fa-fire mr-1"></i>PROMO
+                                </div>
+
+                                <div class="flex max-[1024px]:flex-col max-[1024px]:text-center justify-center items-center max-[1024px]:pr-0 pr-5 pt-3 pb-5 md:gap-3">
+                                    <div>
+                                        <img src="https://tiketkebunraya.id/assets/images/kebun-raya-purwodadi.png" class="w-72 md:w-60 lg:w-64" alt="Kebun Raya Purwodadi">
+                                    </div>
+                                    <div>
+                                        <p class="font-sfpro font-bold text-md mb-1 text-hunterGreen md:pr-20">Promo
+                                            Kebun Raya Purwodadi</p>
+                                        <a href="https://tiketkebunraya.id/promo-bundling-kebun-raya/purwodadi" class="text-white bg-hunterGreen hover:from-orange-600 hover:to-orange-700 text-sm border border-orange-600 hover:border-orange-700 font-medium rounded-lg text-md px-6 py-2 text-center me-2 focus:ring-4 focus:ring-orange-300 transition-all ease-in-out inline-block shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                                            <i class="fa-solid fa-tags mr-2 text-sm"></i>
+                                            Lihat Promo
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                                                                                <div class="shadow-md shadow-hunterGreen/20 rounded-xl border border-gray-200 relative overflow-hidden">
+                                <!-- Promo Badge -->
+                                <div class="absolute top-3 right-3 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                                    <i class="fa-solid fa-fire mr-1"></i>PROMO
+                                </div>
+
+                                <div class="flex max-[1024px]:flex-col max-[1024px]:text-center justify-center items-center max-[1024px]:pr-0 pr-5 pt-3 pb-5 md:gap-3">
+                                    <div>
+                                        <img src="https://tiketkebunraya.id/assets/images/kebun-raya-bali.png" class="w-72 md:w-60 lg:w-64" alt="Kebun Raya Bali">
+                                    </div>
+                                    <div>
+                                        <p class="font-sfpro font-bold text-md mb-1 text-hunterGreen md:pr-20">Promo
+                                            Kebun Raya Bali</p>
+                                        <a href="https://tiketkebunraya.id/promo-bundling-kebun-raya/bali" class="text-white bg-hunterGreen hover:from-orange-600 hover:to-orange-700 text-sm border border-orange-600 hover:border-orange-700 font-medium rounded-lg text-md px-6 py-2 text-center me-2 focus:ring-4 focus:ring-orange-300 transition-all ease-in-out inline-block shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                                            <i class="fa-solid fa-tags mr-2 text-sm"></i>
+                                            Lihat Promo
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        <!--[if ENDBLOCK]><![endif]-->                    </div>
+                <!--[if ENDBLOCK]><![endif]-->            </section>
+
+
+
+            
+            <section>
+                <div class="mt-10 pt-10 flex justify-center">
+                    <div class="relative inline-block">
+                        <h2 class="font-semibold text-2xl tracking-wider text-hunterGreen text-center">
+                            PROGRAM
+                        </h2>
+
+                        <!-- underline accent -->
+                        <span class="absolute left-1/2 -bottom-2 w-16 h-1 bg-hunterGreen rounded-full -translate-x-1/2">
+                        </span>
+                    </div>
+                </div>
+
+                <div class="md:mx-10 grid md:grid-cols-2 gap-5 my-8">
+                    <!--[if BLOCK]><![endif]-->                        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                                                <div class="flex justify-center items-center shadow-md shadow-hunterGreen/20 rounded-xl border border-hunterGreen/10 ">
+    <div class="text-center justify-center items-center max-[1024px]:pr-0 pr-5 pt-3 pb-5" style="padding:2rem">
+
+        <div class="mb-2 font-bold uppercase">Sunset di Kebun</div>
+        <div>
+            <!--[if BLOCK]><![endif]-->                <img src="https://tiketkebunraya.id/assets/images/logo-sdk25.png" class="w-[180px] " alt="">
+            <!--[if ENDBLOCK]><![endif]-->        </div>
+        <div class="mt-5 flex justify-center ">
+            <!--[if BLOCK]><![endif]-->                <a href="https://sunsetdikebun.id/" class="w-full text-white bg-gray-700 hover:text-white hover:bg-hunterGreen border-black border md:border-1 hover:border-gray-200  font-semibold rounded-md text-md px-5 py-3 text-center me-2 focus:ring-4  focus:ring-green-300 hover:hunterGreen transition ease-in-out">
+                    <i class="fa-solid fa-cart-shopping mr-2 text-sm"></i>
+                    Beli Tiket
+                </a>
+            <!--[if ENDBLOCK]><![endif]-->        </div>
+    </div>
+</div>
+                    <!--[if ENDBLOCK]><![endif]-->                </div>
+            </section>
+
+
+        </div>
+    </section>
+
+</div>
+    <script src="/livewire/livewire.min.js?id=61e33937" data-csrf="Hd3zq6ASQpfrJBM1ZnGnCRPlbA7AG2sGr9V7vfBg" data-update-uri="/livewire/update" data-navigate-once="true"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/l10n/id.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    
+
+    
+
+
+
+    
+
+    <footer class="bg-white mt-20">
+    <hr class="my-3 border-gray-200 sm:mx-auto lg:my-5">
+    <div class="mx-auto w-full max-w-screen-xl p-4 py-2 lg:py-4">
+        <div class="md:flex gap-6 justify-center py-10">
+            <div class="mb-6 md:mb-0">
+                <a href="#" class="flex items-center">
+                    <img src="https://tiketkebunraya.id/assets/images/kebun-raya.png" class="h-10 me-3" alt="FlowBite Logo">
+                </a>
+            </div>
+            <div class="md:grid grid-cols-2 gap-8 sm:gap-6">
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase ">Hubungi Kami</h2>
+                    <ul class="text-gray-500">
+                        <li class="mb-4">
+                            <div class="text-sm mb-5">
+    <p class="font-semibold">Bogor</p>
+    <a href="mailto:viscos.bogor@kebunraya.id" class="text-blue-900/70"><i class="fa-solid fa-envelope mr-1"></i>viscos.bogor@kebunraya.id</a>
+    <p><i class="fa-solid fa-phone mr-1 text-gray-500"></i>+62(251)-8311362</p>
+</div>
+                        </li>
+                        <li>
+                            <div class="text-sm mb-5">
+    <p class="font-semibold">Cibodas</p>
+    <a href="mailto:viscos.cibodas@kebunraya.id" class="text-blue-900/70"><i class="fa-solid fa-envelope mr-1"></i>viscos.cibodas@kebunraya.id</a>
+    <p><i class="fa-solid fa-phone mr-1 text-gray-500"></i>+62(263)-2953070</p>
+</div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="md:mb-6 text-sm font-semibold text-white uppercase">Hubungi Kami</h2>
+                    <ul class="text-gray-500">
+                        <li class="mb-4">
+                            <div class="text-sm mb-5">
+    <p class="font-semibold">Purwodadi</p>
+    <a href="mailto:viscos.purwodadi@kebunraya.id" class="text-blue-900/70"><i class="fa-solid fa-envelope mr-1"></i>viscos.purwodadi@kebunraya.id</a>
+    <p><i class="fa-solid fa-phone mr-1 text-gray-500"></i>+62(343)-6014001</p>
+</div>
+                        </li>
+                        <li>
+                            <div class="text-sm mb-5">
+    <p class="font-semibold">Bali</p>
+    <a href="mailto:viscos.bali@kebunraya.id" class="text-blue-900/70"><i class="fa-solid fa-envelope mr-1"></i>viscos.bali@kebunraya.id</a>
+    <p><i class="fa-solid fa-phone mr-1 text-gray-500"></i>+62 811-2112-020</p>
+</div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <hr class="my-3 border-gray-200 sm:mx-auto lg:my-5">
+        <div class="flex flex-col md:flex-row items-center justify-between pb-5">
+            <div>
+                <span class="text-xs text-gray-500 sm:text-center">© Copyright 2024 <a href="#" class="hover:underline">Kebunraya.id</a>. All Rights Reserved.
+                </span>
+
+            </div>
+            <div>
+                <a href="https://tiketkebunraya.id/terms-conditions" class="text-sm underline font-bold underline-offset-4">Terms &amp;
+                    Conditions</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+
+
+<script type="text/javascript" id="" charset="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","25790530623876067");fbq("track","PageView");</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=25790530623876067&amp;ev=PageView&amp;noscript=1"></noscript>
+</body></html>

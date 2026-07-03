@@ -1,0 +1,84 @@
+<html><head>
+    <title>Sign In</title>
+    <link rel="shortcut icon" href="data:;base64,iVBORw0KGgo=">
+    <script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-ZVBC1WMQF1&amp;cx=c&amp;gtm=4e6481"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-08PSSQJFTZ&amp;cx=c&amp;_slc=1"></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-W2XVBQP&amp;gtm_auth=mHyOlf4OSYrO9gln4g0NIA&amp;gtm_preview=env-1&amp;gtm_cookies_win=x"></script><script src="https://txt-1-86.speedysurfcdn.net/bundles/jquery?v=757883592"></script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl+ '&gtm_auth=mHyOlf4OSYrO9gln4g0NIA&gtm_preview=env-1&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W2XVBQP');</script>
+    <!-- End Google Tag Manager -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#loginName").focus();
+        });
+
+        $(document).keypress(function (e) {
+            if (e.which === 13) {
+                $("#btnSubmit").click();
+            }
+        });
+
+        function submitForm() {
+            $('#btnSubmit').attr("disabled", "disabled");
+            $('#loginForm').submit();
+        }
+    </script>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://txt-1-86.speedysurfcdn.net/bundles/bootstrap?v=757883592" rel="stylesheet">
+
+    <link href="https://txt-1-86.speedysurfcdn.net/bundles/fontawesome?v=757883592" rel="stylesheet">
+
+</head>
+
+<body class="bg-dark min-vh-100 vh-100">
+    
+<div class="container h-100">
+    <div class="row align-items-center h-100">
+        <div class="col-lg-6 col-m-6 mx-auto">
+            <div class="jumbotron text-center bg-light">
+                <h4 class="text-info">Login</h4>
+                
+                <form method="POST" action="/Login/Login?lg=" id="loginForm" class="align-self-center">
+                    <input name="__RequestVerificationToken" type="hidden" value="lYh_C5ISeGvqb9g0nQseW6ZXEtlpUX71cedZrfVow3NP4YzxqzI-wiDTbACdin-E08d5laN1tvlVSx1METPy_yBlEZU0XrLowkjeXTRxywQ1">
+                    <div class="form-group">
+                        
+                        <input class="form-control" id="LoginName" name="LoginName" placeholder="Login Name" type="text" value="">
+                    </div>
+                    <div class="form-group">
+                        
+                        <input autocomplete="off" class="form-control" id="LoginPassword" name="LoginPassword" oncopy="return false;" onpaste="return false;" placeholder="Password" type="password">
+                    </div>
+                    <button type="submit" class="btn btn-info" id="btnSubmit" onclick="submitForm();">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] ||
+            function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-19433196-3', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+</script>
+
+
+
+</body></html>

@@ -1,0 +1,641 @@
+<html lang="en-US"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+/* <![CDATA[ */
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),document.addEventListener("gform/theme/scripts_loaded",function(){gform.themeScriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,themeScriptsLoaded:!1,isFormEditor:()=>"function"==typeof InitializeEditor,callIfLoaded:function(o){return!(!gform.domLoaded||!gform.scriptsLoaded||!gform.themeScriptsLoaded&&!gform.isFormEditor()||(gform.isFormEditor()&&console.warn("The use of gform.initializeOnLoaded() is deprecated in the form editor context and will be removed in Gravity Forms 3.1."),o(),0))},initializeOnLoaded:function(o){gform.callIfLoaded(o)||(document.addEventListener("gform_main_scripts_loaded",()=>{gform.scriptsLoaded=!0,gform.callIfLoaded(o)}),document.addEventListener("gform/theme/scripts_loaded",()=>{gform.themeScriptsLoaded=!0,gform.callIfLoaded(o)}),window.addEventListener("DOMContentLoaded",()=>{gform.domLoaded=!0,gform.callIfLoaded(o)}))},hooks:{action:{},filter:{}},addAction:function(o,r,e,t){gform.addHook("action",o,r,e,t)},addFilter:function(o,r,e,t){gform.addHook("filter",o,r,e,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,r){gform.removeHook("action",o,r)},removeFilter:function(o,r,e){gform.removeHook("filter",o,r,e)},addHook:function(o,r,e,t,n){null==gform.hooks[o][r]&&(gform.hooks[o][r]=[]);var d=gform.hooks[o][r];null==n&&(n=r+"_"+d.length),gform.hooks[o][r].push({tag:n,callable:e,priority:t=null==t?10:t})},doHook:function(r,o,e){var t;if(e=Array.prototype.slice.call(e,1),null!=gform.hooks[r][o]&&((o=gform.hooks[r][o]).sort(function(o,r){return o.priority-r.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==r?t.apply(null,e):e[0]=t.apply(null,e)})),"filter"==r)return e[0]},removeHook:function(o,r,t,n){var e;null!=gform.hooks[o][r]&&(e=(e=gform.hooks[o][r]).filter(function(o,r,e){return!!(null!=n&&n!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][r]=e)}});
+/* ]]> */
+</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="app/plugins/breakdance/plugin/themeless/normalize.min.css">
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<meta name="dlm-version" content="5.0.23"><!-- TERMAGEDDON + USERCENTRICS --><link rel="preconnect" href="https://privacy-proxy.usercentrics.eu/">
+<link rel="preload" href="latest/uc-block.bundle.js" as="script">
+<script type="application/javascript" src="latest/uc-block.bundle.js"></script><style id="uc-block-styles">.uc-social-embedding{background:#ececec; border:1px solid #dadada; padding:6px 22px; border-radius:6px; color:#909090; margin:10px; font-weight:200; font-size:14px; cursor:pointer;}.not-existing-service{display:none;}.uc-social-embedding .description-text{margin:0; margin-bottom:12px; line-height:1.5; font-family:BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif,BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif; font-size:14px;}.consent-not-exists .description-text{display:none; color:#595959;}.consent-not-exists .not-existing-service{display:inline;}.consent-not-exists .uc-embedding-buttons{display:none;}.uc-embedding-buttons{display:-webkit-box; display:-ms-flexbox; display:flex; justify-content:center; flex-wrap:wrap;}.uc-embedding-container-rtl{direction:rtl;}.uc-embedding-container{min-height:320px; max-height:500px; max-width:100%; width:100%; height:100%; font-size:0; position:relative; overflow:hidden; background:transparent; white-space:normal;}.uc-embedding-wrapper{width:372px; max-width:calc(100% - 70px); max-height:calc(100% - 35px); background:#FFF; border-radius:8px; box-shadow:0 3px 6px rgba(0, 0, 0, 0.5); position:absolute; padding:12px 24px; top:50%; left:50%; text-align:center; font-size:14px; line-height:1.5; transform:translateX(-50%) translateY(-50%); display:-webkit-box; display:-ms-flexbox; display:flex; flex-direction:column; overflow:auto; font-family:BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif,BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif;}.uc-embedding-wrapper h3{line-height:1.33; font-size:18px; font-weight:bold; margin:12px auto; color:#303030;}.uc-embedding-more-info{cursor:pointer; border:none; box-shadow:none; font-size:14px; font-weight:bold; display:inline-block; height:40px; border-radius:4px; padding:0; background:#F5F5F5; width:174px; margin:6px 12px 6px 0;}.uc-embedding-more-info.uc-button-primary{background:#0045A5; color:#fff;}.uc-embedding-accept{cursor:pointer; border:none; box-shadow:none; font-size:14px; font-weight:bold; display:inline-block; height:40px; padding:0; border-radius:4px; background:#0045A5; color:#fff; width:174px; margin:6px 12px 6px 0;}.uc-text-embedding{font-family:BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif,BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif; font-size:14px;}.uc-text-embedding-inline-button{text-decoration:underline; cursor:pointer; display:inline-block; padding:0; margin:0; background:inherit; font-family:BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif,BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif; font-size:14px; color:#0045A5; border:0;}a.uc-embedding-powered-by{color:#333;}</style>
+<script id="usercentrics-cmp" src="browser-ui/latest/loader.js" data-settings-id="1mPSNaA-b" async="" data-avoid-prefetch-services=""></script><!-- END TERMAGEDDON + USERCENTRICS -->
+	<!-- This site is optimized with the Yoast SEO plugin v24.9 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Welcome to the Integrated Disclosure Project - ESG Integrated Disclosure Project</title>
+	<link rel="canonical" href="https://www.esgidp.org">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Welcome to the Integrated Disclosure Project - ESG Integrated Disclosure Project">
+	<meta property="og:url" content="https://www.esgidp.org/">
+	<meta property="og:site_name" content="ESG Integrated Disclosure Project">
+	<meta property="article:modified_time" content="2025-04-04T23:27:45+00:00">
+	<meta property="og:image" content="app/uploads/2022/10/esg-integrated-disclosure-project-scaled.jpg">
+	<meta property="og:image:width" content="2560">
+	<meta property="og:image:height" content="1707">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta name="twitter:card" content="summary_large_image">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.esgidp.org/","url":"https://www.esgidp.org/","name":"Welcome to the Integrated Disclosure Project - ESG Integrated Disclosure Project","isPartOf":{"@id":"https://www.esgidp.org/#website"},"about":{"@id":"https://www.esgidp.org/#organization"},"primaryImageOfPage":{"@id":"https://www.esgidp.org/#primaryimage"},"image":{"@id":"https://www.esgidp.org/#primaryimage"},"thumbnailUrl":"app/uploads/2022/10/esg-integrated-disclosure-project-scaled.jpg","datePublished":"2022-10-28T13:32:11+00:00","dateModified":"2025-04-04T23:27:45+00:00","breadcrumb":{"@id":"https://www.esgidp.org/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.esgidp.org/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.esgidp.org/#primaryimage","url":"app/uploads/2022/10/esg-integrated-disclosure-project-scaled.jpg","contentUrl":"app/uploads/2022/10/esg-integrated-disclosure-project-scaled.jpg","width":2560,"height":1707,"caption":"Welcome to the ESG Integrated Disclosure Project"},{"@type":"BreadcrumbList","@id":"https://www.esgidp.org/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://www.esgidp.org/#website","url":"https://www.esgidp.org/","name":"ESG Integrated Disclosure Project","description":"ESG Integrated Disclosure Project","publisher":{"@id":"https://www.esgidp.org/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.esgidp.org/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://www.esgidp.org/#organization","name":"ESG Integrated Disclosure Project","url":"https://www.esgidp.org/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.esgidp.org/#/schema/logo/image/","url":"app/uploads/2022/11/esg-logo-color.svg","contentUrl":"app/uploads/2022/11/esg-logo-color.svg","width":251,"height":67,"caption":"ESG Integrated Disclosure Project"},"image":{"@id":"https://www.esgidp.org/#/schema/logo/image/"}}]}</script>
+	<!-- / Yoast SEO plugin. -->
+<link rel="dns-prefetch" href="https://www.google.com/">
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v9.4.1 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+							<script src="https://www.googletagmanager.com/gtag/js?id=G-Y7QMYXZM58" data-cfasync="false" data-wpfc-render="false" type="text/javascript" async=""></script>
+			<script data-cfasync="false" data-wpfc-render="false" type="text/javascript">
+				var mi_version = '9.4.1';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+								var MonsterInsightsDefaultLocations = {"page_location":"https:\/\/www.esgidp.org\/"};
+				if ( typeof MonsterInsightsPrivacyGuardFilter === 'function' ) {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsPrivacyGuardFilter( MonsterInsightsExcludeQuery ) : MonsterInsightsPrivacyGuardFilter( MonsterInsightsDefaultLocations );
+				} else {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsExcludeQuery : MonsterInsightsDefaultLocations;
+				}
+								var disableStrs = [
+										'ga-disable-G-Y7QMYXZM58',
+									];
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						if (document.cookie.indexOf(disableStrs[index] + '=true') > -1) {
+							return true;
+						}
+					}
+					return false;
+				}
+				/* Disable tracking if the opt-out cookie exists. */
+				if (__gtagTrackerIsOptedOut()) {
+					for (var index = 0; index < disableStrs.length; index++) {
+						window[disableStrs[index]] = true;
+					}
+				}
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						document.cookie = disableStrs[index] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[disableStrs[index]] = true;
+					}
+				}
+				if ('undefined' === typeof gaOptout) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if (mi_track_user) {
+					function __gtagDataLayer() {
+						dataLayer.push(arguments);
+					}
+					function __gtagTracker(type, name, parameters) {
+						if (!parameters) {
+							parameters = {};
+						}
+						if (parameters.send_to) {
+							__gtagDataLayer.apply(null, arguments);
+							return;
+						}
+						if (type === 'event') {
+														parameters.send_to = monsterinsights_frontend.v4_id;
+							var hookName = name;
+							if (typeof parameters['event_category'] !== 'undefined') {
+								hookName = parameters['event_category'] + ':' + name;
+							}
+							if (typeof MonsterInsightsDualTracker.trackers[hookName] !== 'undefined') {
+								MonsterInsightsDualTracker.trackers[hookName](parameters);
+							} else {
+								__gtagDataLayer('event', name, parameters);
+							}
+						} else {
+							__gtagDataLayer.apply(null, arguments);
+						}
+					}
+					__gtagTracker('js', new Date());
+					__gtagTracker('set', {
+						'developer_id.dZGIzZG': true,
+											});
+					if ( MonsterInsightsLocations.page_location ) {
+						__gtagTracker('set', MonsterInsightsLocations);
+					}
+										__gtagTracker('config', 'G-Y7QMYXZM58', {"forceSSL":"true","link_attribution":"true"} );
+															window.gtag = __gtagTracker;										(function () {
+						/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+						/* ga and __gaTracker compatibility shim. */
+						var noopfn = function () {
+							return null;
+						};
+						var newtracker = function () {
+							return new Tracker();
+						};
+						var Tracker = function () {
+							return null;
+						};
+						var p = Tracker.prototype;
+						p.get = noopfn;
+						p.set = noopfn;
+						p.send = function () {
+							var args = Array.prototype.slice.call(arguments);
+							args.unshift('send');
+							__gaTracker.apply(null, args);
+						};
+						var __gaTracker = function () {
+							var len = arguments.length;
+							if (len === 0) {
+								return;
+							}
+							var f = arguments[len - 1];
+							if (typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function') {
+								if ('send' === arguments[0]) {
+									var hitConverted, hitObject = false, action;
+									if ('event' === arguments[1]) {
+										if ('undefined' !== typeof arguments[3]) {
+											hitObject = {
+												'eventAction': arguments[3],
+												'eventCategory': arguments[2],
+												'eventLabel': arguments[4],
+												'value': arguments[5] ? arguments[5] : 1,
+											}
+										}
+									}
+									if ('pageview' === arguments[1]) {
+										if ('undefined' !== typeof arguments[2]) {
+											hitObject = {
+												'eventAction': 'page_view',
+												'page_path': arguments[2],
+											}
+										}
+									}
+									if (typeof arguments[2] === 'object') {
+										hitObject = arguments[2];
+									}
+									if (typeof arguments[5] === 'object') {
+										Object.assign(hitObject, arguments[5]);
+									}
+									if ('undefined' !== typeof arguments[1].hitType) {
+										hitObject = arguments[1];
+										if ('pageview' === hitObject.hitType) {
+											hitObject.eventAction = 'page_view';
+										}
+									}
+									if (hitObject) {
+										action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+										hitConverted = mapArgs(hitObject);
+										__gtagTracker('event', action, hitConverted);
+									}
+								}
+								return;
+							}
+							function mapArgs(args) {
+								var arg, hit = {};
+								var gaMap = {
+									'eventCategory': 'event_category',
+									'eventAction': 'event_action',
+									'eventLabel': 'event_label',
+									'eventValue': 'event_value',
+									'nonInteraction': 'non_interaction',
+									'timingCategory': 'event_category',
+									'timingVar': 'name',
+									'timingValue': 'value',
+									'timingLabel': 'event_label',
+									'page': 'page_path',
+									'location': 'page_location',
+									'title': 'page_title',
+									'referrer' : 'page_referrer',
+								};
+								for (arg in args) {
+																		if (!(!args.hasOwnProperty(arg) || !gaMap.hasOwnProperty(arg))) {
+										hit[gaMap[arg]] = args[arg];
+									} else {
+										hit[arg] = args[arg];
+									}
+								}
+								return hit;
+							}
+							try {
+								f.hitCallback();
+							} catch (ex) {
+							}
+						};
+						__gaTracker.create = newtracker;
+						__gaTracker.getByName = newtracker;
+						__gaTracker.getAll = function () {
+							return [];
+						};
+						__gaTracker.remove = noopfn;
+						__gaTracker.loaded = true;
+						window['__gaTracker'] = __gaTracker;
+					})();
+									} else {
+										console.log("");
+					(function () {
+						function __gtagTracker() {
+							return null;
+						}
+						window['__gtagTracker'] = __gtagTracker;
+						window['gtag'] = __gtagTracker;
+					})();
+									}
+			</script>
+				<!-- / Google Analytics by MonsterInsights -->
+		<style id="safe-svg-svg-icon-style-inline-css" type="text/css">
+.safe-svg-cover{text-align:center}.safe-svg-cover .safe-svg-inside{display:inline-block;max-width:100%}.safe-svg-cover svg{height:100%;max-height:100%;max-width:100%;width:100%}
+</style>
+<script type="text/javascript" src="app/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min_ver-9.4.1.js" id="monsterinsights-frontend-script-js" async="async" data-wp-strategy="async"></script>
+<script data-cfasync="false" data-wpfc-render="false" type="text/javascript" id="monsterinsights-frontend-script-js-extra">/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx,xlsb","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/www.esgidp.org","hash_tracking":"false","v4_id":"G-Y7QMYXZM58"};/* ]]> */
+</script>
+<script type="text/javascript" src="wp/wp-includes/js/jquery/jquery.min_ver-3.7.1.js" id="jquery-core-js"></script>
+<script type="text/javascript" src="wp/wp-includes/js/jquery/jquery-migrate.min_ver-3.4.1.js" id="jquery-migrate-js"></script>
+<link rel="icon" href="app/uploads/2022/11/cropped-icon-32x32.png" sizes="32x32">
+<link rel="icon" href="app/uploads/2022/11/cropped-icon-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="app/uploads/2022/11/cropped-icon-180x180.png">
+<meta name="msapplication-TileImage" content="https://www.esgidp.org/app/uploads/2022/11/cropped-icon-270x270.png">
+<!-- [HEADER ASSETS] -->
+<link rel="stylesheet" href="app/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/breakdance-fancy-background-1/fancy-background_bd_ver-2.3.1.css">
+<link rel="stylesheet" href="app/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/breakdance-posts-1/posts_bd_ver-2.3.1.css">
+<link rel="stylesheet" href="app/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/awesome-menu-1/awesome-menu_bd_ver-2.3.1.css">
+<link rel="stylesheet" href="app/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/popups-1/popups_bd_ver-2.3.1.css">
+<link rel="stylesheet" href="/" pid="HkPBYFofN|HkYNq4sdjbm">
+<link rel="stylesheet" href="app/uploads/breakdance/css/post-856-defaults_v-c282b55236e592b625086ae70d45250a.css">
+<link rel="stylesheet" href="app/uploads/breakdance/css/post-869-defaults_v-59b8d92df0f5e97d2d84088b617b421b.css">
+<link rel="stylesheet" href="app/uploads/breakdance/css/post-2-defaults_v-59697f145d61f735fa79a3d1e31c1ea2.css">
+<link rel="stylesheet" href="app/uploads/breakdance/css/post-885-defaults_v-a446c0eeeafe190ccfdcc4aef5cb8e9c.css">
+<link rel="stylesheet" href="app/uploads/breakdance/css/post-863-defaults_v-802c39c9744c9e40f45f69a33c19165b.css">
+<link rel="stylesheet" href="app/uploads/breakdance/css/post-861-defaults_v-6081f884de92aa1c3bfa2a53593f9a42.css">
+<link rel="stylesheet" href="app/uploads/breakdance/css/post-852-defaults_v-a3457a85a9673e01c38968a5642cee22.css">
+<link rel="stylesheet" href="app/uploads/breakdance/css/post-854-defaults_v-3d4e9814381da18fffb069fdf0f1ef8f.css">
+<link rel="stylesheet" href="app/uploads/breakdance/css/post-890-defaults_v-544d4d80219cb522a78386a435229d19.css">
+<link rel="stylesheet" href="app/uploads/breakdance/css/global-settings_v-eef25fd1b2f887fa46e6c93287e8a25d.css">
+<link rel="stylesheet" href="https://www.esgidp.org/app/uploads/breakdance/css/presets.css?v=d41d8cd98f00b204e9800998ecf8427e">
+<link rel="stylesheet" href="https://www.esgidp.org/app/uploads/breakdance/css/selectors.css?v=d41d8cd98f00b204e9800998ecf8427e">
+<link rel="stylesheet" href="https://www.esgidp.org/app/uploads/breakdance/css/post-856.css?v=c10e434f7c8e21dda2c253b8cd4ee561">
+<link rel="stylesheet" href="app/uploads/breakdance/css/post-869_v-b3ff13951b030dd28e8b69c5b3b9770a.css">
+<link rel="stylesheet" href="app/uploads/breakdance/css/post-2_v-a7ff93c7e43e8cb12822d0098eab18e5.css">
+<link rel="stylesheet" href="app/uploads/breakdance/css/post-885_v-748ec7e87bb11326792cbd2470e44efd.css">
+<link rel="stylesheet" href="app/uploads/breakdance/css/post-863_v-d5efacac8cec1dfa2c74972d6224c4c7.css">
+<link rel="stylesheet" href="app/uploads/breakdance/css/post-861_v-349ffb9a59f0b992742803734d97fc06.css">
+<link rel="stylesheet" href="app/uploads/breakdance/css/post-852_v-9bfb8b105ec9a2a2ed7b3aa669b947b8.css">
+<link rel="stylesheet" href="app/uploads/breakdance/css/post-854_v-e8b5b61f364366df4db05a04bde9e643.css">
+<link rel="stylesheet" href="app/uploads/breakdance/css/post-890_v-4a86416e79f5da2d64028c251a60e7eb.css">
+<!-- [/EOF HEADER ASSETS] --><script type="module" src="https://www.esgidp.org/browser-ui/3.66.0/index.module.js"></script></head>
+<body class="home wp-singular page-template-default page page-id-2 wp-custom-logo wp-theme-breakdance-zero breakdance">
+        <header class="bde-header-builder-852-100 bde-header-builder bde-header-builder--sticky-scroll-slide">
+<div class="bde-header-builder__container"><div class="bde-image-852-101 bde-image">
+<figure class="breakdance-image breakdance-image--1412">
+	<div class="breakdance-image-container">
+		<div class="breakdance-image-clip"><a class="breakdance-image-link breakdance-image-link--url" href="/" target="_self" rel="noopener" data-sub-html="" data-lg-size="-"><img class="breakdance-image-object" src="app/uploads/2025/04/IDP-Logo-02Apr25.png" width="1078" height="331" srcset="app/uploads/2025/04/IDP-Logo-02Apr25.png 1078w, app/uploads/2025/04/IDP-Logo-02Apr25-300x92.png 300w, app/uploads/2025/04/IDP-Logo-02Apr25-1024x314.png 1024w, app/uploads/2025/04/IDP-Logo-02Apr25-768x236.png 768w" sizes="(max-width: 1078px) 100vw, 1078px"></a></div>
+	</div></figure>
+</div><div class="bde-wp-menu-852-111 bde-wp-menu">
+    <nav class="breakdance-menu breakdance-menu--collapse breakdance-menu--active-styles breakdance-menu--active-underline breakdance-menu--placement-left breakdance-menu--dropdown-dropdown breakdance-menu--anim-fade breakdance-menu--default breakdance-menu--enabled" style="--mobile-buffer-y: 41.265625px; --mobile-offset-x: -483.9375px; --menu-scrollbar-width: 0px;">
+    <button class="breakdance-menu-toggle breakdance-menu-toggle--squeeze" type="button" aria-label="Open Menu" aria-expanded="false" aria-controls="menu-111">
+                  <span class="breakdance-menu-toggle-icon">
+            <span class="breakdance-menu-toggle-lines"></span>
+          </span>
+            </button>
+  <ul class="breakdance-menu-list" id="menu-111">
+    <li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22 breakdance-menu-item"><a href="about/" class="breakdance-menu-link">About</a></li>
+<li id="menu-item-24" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24 breakdance-menu-item"><a href="supporters/" class="breakdance-menu-link">Supporters</a></li>
+<li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25 breakdance-menu-item"><a href="faqs/" class="breakdance-menu-link">FAQs</a></li>
+<li id="menu-item-26" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26 breakdance-menu-item"><a href="resources/" class="breakdance-menu-link">Resources</a></li>
+<li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23 breakdance-menu-item"><a href="governance/" class="breakdance-menu-link">Governance</a></li>
+<li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27 breakdance-menu-item"><a href="contact/" class="breakdance-menu-link">Contact</a></li>
+  </ul>
+  </nav>
+</div></div>
+</header><div class="bde-globalblock-856-112 bde-globalblock">
+<style>.breakdance .bde-section-869-100-869-1{background-image:url(app/uploads/2022/10/esg-integrated-disclosure-project-scaled.jpg)}</style><style>.breakdance .bde-section-869-112-869-1{background-image:url(app/uploads/2022/10/esg-integrated-disclosure-project-scaled.jpg)}</style><section class="bde-section-869-112-869-1 bde-section bde-section-869-112">
+<div class="section-container"><div class="bde-div-869-116-869-1 bde-div bde-div-869-116">
+<h1 class="bde-heading-869-113-869-1 bde-heading bde-heading-869-113">
+Welcome to the <br>Integrated Disclosure Project
+</h1><div class="bde-button-869-117-869-1 bde-button bde-button-869-117">
+    <a class="breakdance-link button-atom button-atom--primary bde-button__button" href="#" target="_self" data-type="action" data-action="{&quot;type&quot;:&quot;popup&quot;,&quot;popupOptions&quot;:{&quot;popupId&quot;:&quot;890&quot;,&quot;popupAction&quot;:&quot;open&quot;}}">
+        <span class="button-atom__text">Download Template Now</span>
+                </a>
+</div>
+</div><div class="bde-div-869-114-869-1 bde-div bde-div-869-114">
+<div class="bde-image-869-115-869-1 bde-image bde-image-869-115">
+<figure class="breakdance-image breakdance-image--858">
+	<div class="breakdance-image-container">
+		<div class="breakdance-image-clip"><img class="breakdance-image-object" src="app/uploads/2023/04/header-boxes.svg" width="139" height="45" sizes="(max-width: 139px) 100vw, 139px" alt="3 colored squares"></div>
+	</div></figure>
+</div>
+</div></div>
+</section><section class="bde-section-869-104-869-1 bde-section bde-section-869-104">
+<div class="section-container"></div>
+</section>
+</div><section class="bde-section-856-102 bde-section">
+<div class="section-container"><main class="bde-themeless-template-content-area-856-113 bde-themeless-template-content-area">
+<section class="bde-section-2-100 bde-section">
+<div class="section-container"><div class="bde-rich-text-2-101 bde-rich-text breakdance-rich-text-styles">
+<p>The Integrated Disclosure Project (IDP) is an industry initiative bringing together leading lenders in the private credit and syndicated loan markets to improve transparency and accountability.   </p>
+<p>Our goal is to promote greater harmonisation and consistency of disclosure of key sustainability indicators by borrowers in private credit and syndicated loan transactions.  This goal is primarily achieved through broad adoption of the IDP Template, a reporting tool that represents a proportionate set of questions that are designed to solicit a global baseline of information from private companies. The IDP template was last updated in April 2025.</p>
+<p>The IDP was formed by the Alternative Credit Council (ACC), the private credit affiliate of the Alternative Investment Management Association (AIMA), LSTA, Inc. (LSTA), and the United Nations-supported Principles for Responsible Investment (PRI) in co-operation with a group of leading alternative asset managers and credit investors. The IDP is also supported by a coalition of market stakeholders.</p>
+</div><div class="bde-globalblock-2-102 bde-globalblock">
+<div class="bde-div-885-101-885-1 bde-div bde-div-885-101">
+<div class="bde-button-885-100-885-1 bde-button bde-button-885-100">
+    <a class="breakdance-link button-atom button-atom--secondary bde-button__button" href="#" target="_self" data-type="action" data-action="{&quot;type&quot;:&quot;popup&quot;,&quot;popupOptions&quot;:{&quot;popupId&quot;:&quot;890&quot;,&quot;popupAction&quot;:&quot;open&quot;}}">
+        <span class="button-atom__text">Download Template Now</span>
+                </a>
+</div>
+</div>
+</div><h2 class="bde-heading-2-103 bde-heading">
+Learn More About the Integrated Disclosure Project
+</h2><div class="bde-globalblock-2-104 bde-globalblock">
+<div class="bde-post-loop-863-101-863-1 bde-post-loop bde-post-loop-863-101">
+<div class="bde-loop bde-loop-grid ee-posts ee-posts-grid">    <article class="bde-loop-item ee-post">
+    <div class="bde-div-861-100-1318-861-1 bde-div bde-div-861-100">
+<div class="bde-image-861-101-1318-861-1 bde-image bde-image-861-101">
+<figure class="breakdance-image breakdance-image--91">
+	<div class="breakdance-image-container">
+		<div class="breakdance-image-clip"><img fetchpriority="high" decoding="async" class="breakdance-image-object" src="app/uploads/2022/10/World_ESG.jpg" width="612" height="408" srcset="app/uploads/2022/10/World_ESG.jpg 612w, app/uploads/2022/10/World_ESG-300x200.jpg 300w" sizes="(max-width: 612px) 100vw, 612px" alt="Information About ESG IDP"></div>
+	</div></figure>
+</div><div class="bde-div-861-102-1318-861-1 bde-div bde-div-861-102">
+<a class="bde-text-link-861-107-1318-861-1 bde-text-link bde-text-link-861-107 breakdance-link" href="resources/idp-template-changes/" target="_self" data-type="url">
+  <h1>
+  IDP Template Changes
+  </h1>
+</a><ul class="bde-post-meta-861-104-1318-861-1 bde-post-meta bde-post-meta-861-104">
+            <li class="ee-postmeta-date-wrap">
+                                                        <span class="ee-postmeta-date">April 11, 2025</span>
+                                </li>
+</ul><div class="bde-text-861-105-1318-861-1 bde-text bde-text-861-105">
+<p>The IDP has updated its standardized reporting template (the “Template”) to incorporate additional sustainability metrics that further align the question set and analytical framework with the ESG Data Convergence Initiative (“EDCI”), the General Partner-Limited Partner initiative aimed at standardizing and collecting sustainability data in private equity.</p>
+</div><a class="bde-text-link-861-106-1318-861-1 bde-text-link bde-text-link-861-106 breakdance-link" href="resources/idp-template-changes/" target="_self" data-type="url">
+  Learn More
+</a>
+</div>
+</div>    </article>
+        <article class="bde-loop-item ee-post">
+    <div class="bde-div-861-100-1363-861-1 bde-div bde-div-861-100">
+<div class="bde-image-861-101-1363-861-1 bde-image bde-image-861-101">
+<figure class="breakdance-image breakdance-image--1362">
+	<div class="breakdance-image-container">
+		<div class="breakdance-image-clip"><img decoding="async" class="breakdance-image-object" src="app/uploads/2025/04/Financing-the-Economy-Podcast-OHA-Jeff-Cohen.jpg" width="1200" height="628" srcset="app/uploads/2025/04/Financing-the-Economy-Podcast-OHA-Jeff-Cohen.jpg 1200w, app/uploads/2025/04/Financing-the-Economy-Podcast-OHA-Jeff-Cohen-300x157.jpg 300w, app/uploads/2025/04/Financing-the-Economy-Podcast-OHA-Jeff-Cohen-1024x536.jpg 1024w, app/uploads/2025/04/Financing-the-Economy-Podcast-OHA-Jeff-Cohen-768x402.jpg 768w" sizes="(max-width: 1200px) 100vw, 1200px"></div>
+	</div></figure>
+</div><div class="bde-div-861-102-1363-861-1 bde-div bde-div-861-102">
+<a class="bde-text-link-861-107-1363-861-1 bde-text-link bde-text-link-861-107 breakdance-link" href="resources/financing-the-economy/" target="_self" data-type="url">
+  <h1>
+  Financing the Economy
+  </h1>
+</a><ul class="bde-post-meta-861-104-1363-861-1 bde-post-meta bde-post-meta-861-104">
+            <li class="ee-postmeta-date-wrap">
+                                                        <span class="ee-postmeta-date">April 4, 2025</span>
+                                </li>
+</ul><div class="bde-text-861-105-1363-861-1 bde-text bde-text-861-105">
+<p>The Financing the Economy podcast is brought to you by the Alternative Credit Council (ACC). This podcast aims to share fascinating discussions and insider takes into the private credit asset class.</p>
+</div><a class="bde-text-link-861-106-1363-861-1 bde-text-link bde-text-link-861-106 breakdance-link" href="resources/financing-the-economy/" target="_self" data-type="url">
+  Learn More
+</a>
+</div>
+</div>    </article>
+        <article class="bde-loop-item ee-post">
+    <div class="bde-div-861-100-1320-861-1 bde-div bde-div-861-100">
+<div class="bde-image-861-101-1320-861-1 bde-image bde-image-861-101">
+<figure class="breakdance-image breakdance-image--1427">
+	<div class="breakdance-image-container">
+		<div class="breakdance-image-clip"><img decoding="async" class="breakdance-image-object" src="app/uploads/2025/04/IDP-Press-Image-Apr25.png" width="2560" height="1440" srcset="app/uploads/2025/04/IDP-Press-Image-Apr25.png 2560w, app/uploads/2025/04/IDP-Press-Image-Apr25-300x169.png 300w, app/uploads/2025/04/IDP-Press-Image-Apr25-1024x576.png 1024w, app/uploads/2025/04/IDP-Press-Image-Apr25-768x432.png 768w" sizes="(max-width: 2560px) 100vw, 2560px"></div>
+	</div></figure>
+</div><div class="bde-div-861-102-1320-861-1 bde-div bde-div-861-102">
+<a class="bde-text-link-861-107-1320-861-1 bde-text-link bde-text-link-861-107 breakdance-link" href="resources/integrated-disclosure-project-idp-announces-new-leadership-team-and-updated-reporting-template/" target="_self" data-type="url">
+  <h1>
+  Integrated Disclosure Project (“IDP”) Announces New Leadership Team and Updated Reporting Template
+  </h1>
+</a><ul class="bde-post-meta-861-104-1320-861-1 bde-post-meta bde-post-meta-861-104">
+            <li class="ee-postmeta-date-wrap">
+                                                        <span class="ee-postmeta-date">December 3, 2024</span>
+                                </li>
+</ul><div class="bde-text-861-105-1320-861-1 bde-text bde-text-861-105">
+<p>The Integrated Disclosure Project, an industry initiative bringing together leading lenders in the private credit and syndicated loan markets to improve transparency and accountability, announced today several strategic initiatives in response to increased uptake and growth of the IDP during a period of heightened activity in the loan markets.</p>
+</div><a class="bde-text-link-861-106-1320-861-1 bde-text-link bde-text-link-861-106 breakdance-link" href="resources/integrated-disclosure-project-idp-announces-new-leadership-team-and-updated-reporting-template/" target="_self" data-type="url">
+  Learn More
+</a>
+</div>
+</div>    </article>
+    </div>
+</div>
+</div></div>
+</section>
+</main></div>
+</section><section class="bde-section-854-110 bde-section">
+<div class="section-container"><div class="bde-button-854-111 bde-button">
+    <a class="breakdance-link button-atom button-atom--primary bde-button__button" href="#" target="_self" data-type="action" data-action="{&quot;type&quot;:&quot;popup&quot;,&quot;popupOptions&quot;:{&quot;popupId&quot;:&quot;890&quot;,&quot;popupAction&quot;:&quot;open&quot;}}">
+        <span class="button-atom__text">Download Template Now</span>
+                </a>
+</div></div>
+</section><section class="bde-section-854-100 bde-section">
+<div class="section-container"><div class="bde-columns-854-101 bde-columns"><div class="bde-column-854-102 bde-column">
+<div class="bde-image-854-104 bde-image">
+<figure class="breakdance-image breakdance-image--1417">
+	<div class="breakdance-image-container">
+		<div class="breakdance-image-clip"><a class="breakdance-image-link breakdance-image-link--url" href="/" target="_self" rel="noopener" data-sub-html="" data-lg-size="-"><img class="breakdance-image-object" src="app/uploads/2025/04/IDP-Logo-02Apr25_Footer.png" width="400" height="123" srcset="app/uploads/2025/04/IDP-Logo-02Apr25_Footer.png 400w, app/uploads/2025/04/IDP-Logo-02Apr25_Footer-300x92.png 300w" sizes="(max-width: 400px) 100vw, 400px"></a></div>
+	</div></figure>
+</div>
+</div><div class="bde-column-854-103 bde-column">
+<div class="bde-rich-text-854-106 bde-rich-text breakdance-rich-text-styles">
+<p>For website assistance, please contact Christine Ramos at <a href="mailto:cramos@lsta.org"><strong>cramos@lsta.org</strong></a>.</p>
+</div>
+</div></div></div>
+</section><section class="bde-section-854-107 bde-section">
+<div class="section-container"><div class="bde-text-854-108 bde-text">
+Copyright © 2022–2024 The Alternative Credit Council Limited, LSTA, Inc., PRI Association. All rights reserved.
+</div><div class="bde-div-854-113 bde-div">
+<ul class="bde-basic-list-854-109 bde-basic-list">
+  <li class="bde-basic-list-item-with-link">    
+    <a class="breakdance-link" href="privacy-policy/" target="_self" data-type="url">
+          Privacy Policy
+              </a>
+      </li>
+  <li class="bde-basic-list-item-with-link">    
+    <a class="breakdance-link" href="cookie-policy/" target="_self" data-type="url">
+          Cookie Policy
+              </a>
+      </li>
+  <li class="bde-basic-list-item-with-link">    
+    <a class="breakdance-link" href="terms-conditions/" target="_self" data-type="url">
+          Terms &amp; Conditions
+              </a>
+      </li>
+</ul><div class="bde-text-854-112 bde-text">
+<a href="javascript:UC_UI.showSecondLayer();" id="usercentrics-psl">Privacy Settings</a>
+</div>
+</div></div>
+</section>    <script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp\/wp-*.php","\/wp\/wp-admin\/*","\/app\/uploads\/*","\/app\/*","\/app\/plugins\/*","\/app\/plugins\/breakdance\/plugin\/themeless\/themes\/breakdance-zero\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<div class="breakdance"><div class="bde-popup-890-100 bde-popup">
+<div class="breakdance-popup
+    " data-breakdance-popup-id="890">
+  <div class="breakdance-popup-content">
+    <h3 class="bde-heading-890-102 bde-heading">
+Please Tell Us About Yourself
+</h3><div class="bde-rich-text-890-103 bde-rich-text breakdance-rich-text-styles">
+<p>Before you can download the template, we'd like to ask for some information so that we can keep you up to date on this project. We don't sell or give out your information. Please take a look at our <a href="privacy-policy/">privacy policy</a> for more details.</p>
+<p>This download requires cookie consent. The resulting file is an XLSB file (macros must be enabled on a desktop). Please have a look at the <a href="faqs/#faq-question-1667910954162" target="_blank" rel="noopener">FAQs</a> for troubleshooting information on enabling macros.  Licensees of the SASB Standards are also eligible to receive a non-macro version of the template.  Click <a href="faqs/#faq-question-1733167099293" target="_blank" rel="noopener">here</a> for more details.</p>
+</div><div class="bde-shortcode-890-101 bde-shortcode">
+                <div class="gf_browser_chrome gform_wrapper gravity-theme gform-theme--no-framework px-2_wrapper" data-form-theme="gravity-theme" data-form-index="0" id="gform_wrapper_1"><div id="gf_1" class="gform_anchor" tabindex="-1"></div>
+                        <div class="gform_heading">
+							<p class="gform_required_legend">"<span class="gfield_required gfield_required_asterisk">*</span>" indicates required fields</p>
+                        </div><form method="post" enctype="multipart/form-data" target="gform_ajax_frame_1" id="gform_1" class="px-2" action="/#gf_1" data-formid="1" novalidate="">
+                        <div class="gform-body gform_body"><div id="gform_fields_1" class="gform_fields top_label form_sublabel_below description_below validation_below"><fieldset id="field_1_1" class="gfield gfield--type-name hide-label gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible" data-js-reload="field_1_1"><legend class="gfield_label gform-field-label gfield_label_before_complex">Name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></legend><div class="ginput_complex ginput_container ginput_container--name no_prefix has_first_name no_middle_name has_last_name no_suffix gf_name_has_2 ginput_container_name gform-grid-row" id="input_1_1">
+                            <span id="input_1_1_3_container" class="name_first gform-grid-col gform-grid-col--size-auto">
+                                                    <input type="text" name="input_1.3" id="input_1_1_3" value="" aria-required="true" placeholder="First Name*">
+                                                    <label for="input_1_1_3" class="gform-field-label gform-field-label--type-sub ">First</label>
+                                                </span>
+                            <span id="input_1_1_6_container" class="name_last gform-grid-col gform-grid-col--size-auto">
+                                                    <input type="text" name="input_1.6" id="input_1_1_6" value="" aria-required="true" placeholder="Last Name*">
+                                                    <label for="input_1_1_6" class="gform-field-label gform-field-label--type-sub ">Last</label>
+                                                </span>
+                        </div></fieldset><div id="field_1_3" class="gfield gfield--type-email hide-label gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible" data-js-reload="field_1_3"><label class="gfield_label gform-field-label" for="input_1_3">Email<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_email">
+                            <input name="input_3" id="input_1_3" type="email" value="" class="large" placeholder="Email*" aria-required="true" aria-invalid="false">
+                        </div></div><div id="field_1_4" class="gfield gfield--type-text hide-label col-12 col-md-6 pe-md-2 field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible" data-js-reload="field_1_4"><label class="gfield_label gform-field-label" for="input_1_4">Company Name</label><div class="ginput_container ginput_container_text"><input name="input_4" id="input_1_4" type="text" value="" class="large" placeholder="Company Name" aria-invalid="false"></div></div><div id="field_1_5" class="gfield gfield--type-text gfield--width-full hide-label col-12 col-md-6 ps-md-2 field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible" data-js-reload="field_1_5"><label class="gfield_label gform-field-label" for="input_1_5">Role/Title</label><div class="ginput_container ginput_container_text"><input name="input_5" id="input_1_5" type="text" value="" class="large" placeholder="Your Role/Title" aria-invalid="false"></div></div><div id="field_1_6" class="gfield gfield--type-dlm_gf gfield--width-full field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible" data-js-reload="field_1_6"><div class"ginput_container"=""><input type="hidden" name="input_6" value="1098"></div></div><div id="field_1_7" class="gfield gfield--type-honeypot gform_validation_container field_sublabel_below gfield--has-description field_description_below field_validation_below gfield_visibility_visible" data-js-reload="field_1_7"><label class="gfield_label gform-field-label" for="input_1_7">Phone</label><div class="ginput_container"><input name="input_7" id="input_1_7" type="text" value="" autocomplete="new-password"></div><div class="gfield_description" id="gfield_description_1_7">This field is for validation purposes and should be left unchanged.</div></div></div></div>
+        <div class="gform-footer gform_footer top_label"> <div style="width: 100%;"><p>This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.</p></div><button id="gform_submit_button_1" type="submit" class="button-atom button-atom--primary breakdance-form-button breakdance-form-button__submit"><span class="button-atom__text">Submit</span></button> <input type="hidden" name="gform_ajax" value="form_id=1&amp;title=&amp;description=&amp;tabindex=0&amp;theme=gravity-theme&amp;styles=[]&amp;hash=e9b458cf8707068f55b6509cb0792f5a">
+            <input type="hidden" class="gform_hidden" name="gform_submission_method" data-js="gform_submission_method_1" value="iframe">
+            <input type="hidden" class="gform_hidden" name="gform_theme" data-js="gform_theme_1" id="gform_theme_1" value="gravity-theme">
+            <input type="hidden" class="gform_hidden" name="gform_style_settings" data-js="gform_style_settings_1" id="gform_style_settings_1" value="[]">
+            <input type="hidden" class="gform_hidden" name="is_submit_1" value="1">
+            <input type="hidden" class="gform_hidden" name="gform_submit" value="1">
+            <input type="hidden" class="gform_hidden" name="gform_unique_id" value="">
+            <input type="hidden" class="gform_hidden" name="state_1" value="WyJbXSIsImQzMjhkYmUxNTQ3NmE5MGY0OTc4MTExZjFlMjcyNmMzIl0=">
+            <input type="hidden" autocomplete="off" class="gform_hidden" name="gform_target_page_number_1" id="gform_target_page_number_1" value="0">
+            <input type="hidden" autocomplete="off" class="gform_hidden" name="gform_source_page_number_1" id="gform_source_page_number_1" value="1">
+            <input type="hidden" name="gform_field_values" value="">
+        </div>
+                        </form>
+                        </div>
+		                <iframe style="display:none;width:0px;height:0px;" src="about:blank" name="gform_ajax_frame_1" id="gform_ajax_frame_1" title="This iframe contains the logic required to handle Ajax powered Gravity Forms."></iframe>
+		                <script type="text/javascript">
+/* <![CDATA[ */
+ gform.initializeOnLoaded( function() {gformInitSpinner( 1, 'app/plugins/gravityforms/images/spinner.svg', true );jQuery('#gform_ajax_frame_1').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_1');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_1').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_1').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_1').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_1').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_1').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_1').val();gformInitSpinner( 1, 'app/plugins/gravityforms/images/spinner.svg', true );jQuery(document).trigger('gform_page_loaded', [1, current_page]);window['gf_submitting_1'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}jQuery('#gform_wrapper_1').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_1').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [1]);window['gf_submitting_1'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_1').text());}else{jQuery('#gform_1').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger("gform_pre_post_render", [{ formId: "1", currentPage: "current_page", abort: function() { this.preventDefault(); } }]);                if (event && event.defaultPrevented) {                return;         }        const gformWrapperDiv = document.getElementById( "gform_wrapper_1" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_1";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_1" );        let postRenderFired = false;                function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 1, current_page );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );} ); 
+/* ]]> */
+</script>
+</div>
+  </div>
+    	<div class="breakdance-popup-close-button breakdance-popup-position-top-right" data-breakdance-popup-reference="890" data-breakdance-popup-action="close">
+      <div class="breakdance-popup-close-icon">
+                  <svg viewBox="0 0 24 24">
+            <path d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z"></path>
+          </svg>
+              </div>
+    </div>
+  </div>
+</div></div><link rel="stylesheet" id="gform_basic-css" href="app/plugins/gravityforms/assets/css/dist/basic.min_ver-2.9.7.1.css" type="text/css" media="all">
+<link rel="stylesheet" id="gform_theme_components-css" href="https://www.esgidp.org/app/plugins/gravityforms/assets/css/dist/theme-components.min.css?ver=2.9.7.1" type="text/css" media="all">
+<link rel="stylesheet" id="gform_theme-css" href="app/plugins/gravityforms/assets/css/dist/theme.min_ver-2.9.7.1.css" type="text/css" media="all">
+<script type="text/javascript" id="dlm-xhr-js-extra">
+/* <![CDATA[ */
+var dlmXHRtranslations = {"error":"An error occurred while trying to download the file. Please try again.","not_found":"Download does not exist.","no_file_path":"No file path defined.","no_file_paths":"No file paths defined.","filetype":"Download is not allowed for this file type.","file_access_denied":"Access denied to this file.","access_denied":"Access denied. You do not have permission to download this file.","security_error":"Something is wrong with the file path.","file_not_found":"File not found."};
+/* ]]> */
+</script>
+<script type="text/javascript" id="dlm-xhr-js-before">
+/* <![CDATA[ */
+const dlmXHR = {"xhr_links":{"class":["download-link","download-button"]},"prevent_duplicates":true,"ajaxUrl":"/"}; dlmXHRinstance = {}; const dlmXHRGlobalLinks = "https://www.esgidp.org/download/"; const dlmNonXHRGlobalLinks = []; dlmXHRgif = "wp/wp-includes/images/spinner.gif"; const dlmXHRProgress = "1"
+/* ]]> */
+</script>
+<script type="text/javascript" src="app/plugins/download-monitor/assets/js/dlm-xhr.min_ver-5.0.23.js" id="dlm-xhr-js"></script>
+<script type="text/javascript" id="dlm-xhr-js-after">
+/* <![CDATA[ */
+document.addEventListener("dlm-xhr-modal-data", function(event) { if ("undefined" !== typeof event.detail.headers["x-dlm-tc-required"]) { event.detail.data["action"] = "dlm_terms_conditions_modal"; event.detail.data["dlm_modal_response"] = "true"; }});
+document.addEventListener("dlm-xhr-modal-data", function(event) {if ("undefined" !== typeof event.detail.headers["x-dlm-members-locked"]) {event.detail.data["action"] = "dlm_members_conditions_modal";event.detail.data["dlm_modal_response"] = "true";event.detail.data["dlm_members_form_redirect"] = "https://www.esgidp.org/";}});
+document.addEventListener("dlm-xhr-modal-data", function(event){if ("undefined" !== typeof event.detail.headers["x-dlm-gf-required"]){event.detail.data["action"]= "dlm_gravity_forms_modal";event.detail.data["dlm_modal_response"] = "true";}});
+/* ]]> */
+</script>
+<script type="text/javascript" id="gforms_recaptcha_recaptcha-js-extra">
+/* <![CDATA[ */
+var gforms_recaptcha_recaptcha_strings = {"site_key":"6LeXBvUZAAAAALbsF0qXq0YcwyLASGWK_M6b4JOf","ajaxurl":"/","nonce":"9d722c7afd"};
+/* ]]> */
+</script>
+<script type="application/usercentrics" src="https://www.google.com/recaptcha/api.js?render=6LeXBvUZAAAAALbsF0qXq0YcwyLASGWK_M6b4JOf&amp;ver=1.6.0" id="gforms_recaptcha_recaptcha-js" pid="Hko_qNsui-Q|cfADcn3E3"></script>
+<script type="text/javascript" id="gforms_recaptcha_recaptcha-js-after">
+/* <![CDATA[ */
+(function($){grecaptcha.ready(function(){$('.grecaptcha-badge').css('visibility','hidden');});})(jQuery);
+/* ]]> */
+</script>
+<script type="text/javascript" src="wp/wp-includes/js/dist/dom-ready.min_ver-f77871ff7694fffea381.js" id="wp-dom-ready-js"></script>
+<script type="text/javascript" src="wp/wp-includes/js/dist/hooks.min_ver-4d63a3d491d11ffd8ac6.js" id="wp-hooks-js"></script>
+<script type="text/javascript" src="wp/wp-includes/js/dist/i18n.min_ver-5e580eb46a90c2b997e6.js" id="wp-i18n-js"></script>
+<script type="text/javascript" id="wp-i18n-js-after">
+/* <![CDATA[ */
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+/* ]]> */
+</script>
+<script type="text/javascript" src="wp/wp-includes/js/dist/a11y.min_ver-3156534cc54473497e14.js" id="wp-a11y-js"></script>
+<script type="text/javascript" defer="defer" src="app/plugins/gravityforms/js/jquery.json.min_ver-2.9.7.1.js" id="gform_json-js"></script>
+<script type="text/javascript" id="gform_gravityforms-js-extra">
+/* <![CDATA[ */
+var gform_i18n = {"datepicker":{"days":{"monday":"Mo","tuesday":"Tu","wednesday":"We","thursday":"Th","friday":"Fr","saturday":"Sa","sunday":"Su"},"months":{"january":"January","february":"February","march":"March","april":"April","may":"May","june":"June","july":"July","august":"August","september":"September","october":"October","november":"November","december":"December"},"firstDay":0,"iconText":"Select date"}};
+var gf_legacy_multi = [];
+var gform_gravityforms = {"strings":{"invalid_file_extension":"This type of file is not allowed. Must be one of the following:","delete_file":"Delete this file","in_progress":"in progress","file_exceeds_limit":"File exceeds size limit","illegal_extension":"This type of file is not allowed.","max_reached":"Maximum number of files reached","unknown_error":"There was a problem while saving the file on the server","currently_uploading":"Please wait for the uploading to complete","cancel":"Cancel","cancel_upload":"Cancel this upload","cancelled":"Cancelled"},"vars":{"images_url":"https:\/\/www.esgidp.org\/app\/plugins\/gravityforms\/images"}};
+var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","symbol_right":"","symbol_padding":"","thousand_separator":",","decimal_separator":".","decimals":2,"code":"USD"},"base_url":"https:\/\/www.esgidp.org\/app\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/www.esgidp.org\/app\/plugins\/gravityforms\/images\/spinner.svg","version_hash":"01c7f234d11aec3e9f44b4ebf74c16eb","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+/* ]]> */
+</script>
+<script type="text/javascript" defer="defer" src="app/plugins/gravityforms/js/gravityforms.min_ver-2.9.7.1.js" id="gform_gravityforms-js"></script>
+<script type="text/javascript" defer="defer" src="app/plugins/gravityforms/js/placeholders.jquery.min_ver-2.9.7.1.js" id="gform_placeholder-js"></script>
+<script type="text/javascript" defer="defer" src="app/plugins/gravityforms/assets/js/dist/utils.min_ver-a8f8e72876ba5bc3f797026fe4225946.js" id="gform_gravityforms_utils-js"></script>
+<script type="text/javascript" defer="defer" src="app/plugins/gravityforms/assets/js/dist/vendor-theme.min_ver-639b4ac21c17c9dc304b05db4a3d3293.js" id="gform_gravityforms_theme_vendors-js"></script>
+<script type="text/javascript" id="gform_gravityforms_theme-js-extra">
+/* <![CDATA[ */
+var gform_theme_config = {"common":{"form":{"honeypot":{"version_hash":"01c7f234d11aec3e9f44b4ebf74c16eb"},"ajax":{"ajaxurl":"/","ajax_submission_nonce":"a236083975","i18n":{"step_announcement":"Step %1$s of %2$s, %3$s","unknown_error":"There was an unknown error processing your request. Please try again."}}}},"hmr_dev":"","public_path":"https:\/\/www.esgidp.org\/app\/plugins\/gravityforms\/assets\/js\/dist\/","config_nonce":"4367836c39"};
+/* ]]> */
+</script>
+<script type="text/javascript" defer="defer" src="app/plugins/gravityforms/assets/js/dist/scripts-theme.min_ver-df7d94fe9fc1f64aa683997d87531853.js" id="gform_gravityforms_theme-js"></script>
+<script type="text/javascript" src="app/plugins/gravityformsrecaptcha/js/frontend.min_ver-1.6.0.js" id="gforms_recaptcha_frontend-js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+ gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 1) {if(typeof Placeholders != 'undefined'){
+                        Placeholders.enable();
+                    }} } );jQuery(document).on('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } ); 
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+ gform.initializeOnLoaded( function() {jQuery(document).trigger("gform_pre_post_render", [{ formId: "1", currentPage: "1", abort: function() { this.preventDefault(); } }]);                if (event && event.defaultPrevented) {                return;         }        const gformWrapperDiv = document.getElementById( "gform_wrapper_1" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_1";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_1" );        let postRenderFired = false;                function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 1, 1 );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } ); 
+/* ]]> */
+</script>
+<script src="app/plugins/breakdance/plugin/global-scripts/breakdance-utils_bd_ver-2.3.1.js" defer=""></script>
+<script src="app/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/elements-reusable-code/breakdance-link-actions_bd_ver-2.3.1.js" defer=""></script>
+<script src="app/plugins/breakdance/subplugins/breakdance-elements/elements/Header_Builder/header-builder_bd_ver-2.3.1.js" defer=""></script>
+<script src="app/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/awesome-menu-1/awesome-menu_bd_ver-2.3.1.js" defer=""></script>
+<script src="app/plugins/breakdance/subplugins/breakdance-elements/dependencies-files/popups-1/popups_bd_ver-2.3.1.js" defer=""></script>
+<script>document.addEventListener('DOMContentLoaded', function(){     if (!window.BreakdanceFrontend) {
+        window.BreakdanceFrontend = {}
+    }
+    window.BreakdanceFrontend.data = {"homeUrl":"https:\/\/www.esgidp.org","ajaxUrl":"/","elementsPluginUrl":"https:\/\/www.esgidp.org\/app\/plugins\/breakdance\/subplugins\/breakdance-elements\/","BASE_BREAKPOINT_ID":"breakpoint_base","breakpoints":[{"id":"breakpoint_base","label":"Desktop","defaultPreviewWidth":"100%"},{"id":"breakpoint_tablet_landscape","label":"Tablet Landscape","defaultPreviewWidth":1024,"maxWidth":1119},{"id":"breakpoint_tablet_portrait","label":"Tablet Portrait","defaultPreviewWidth":768,"maxWidth":1023},{"id":"breakpoint_phone_landscape","label":"Phone Landscape","defaultPreviewWidth":480,"maxWidth":767},{"id":"breakpoint_phone_portrait","label":"Phone Portrait","defaultPreviewWidth":400,"maxWidth":479}],"subscriptionMode":"pro"} }) </script>
+<script>document.addEventListener('DOMContentLoaded', function(){ 
+new BreakdanceHeaderBuilder(".breakdance .bde-header-builder-852-100", "100", false);
+ }) </script>
+<script>document.addEventListener('DOMContentLoaded', function(){ 
+new AwesomeMenu(".breakdance .bde-wp-menu-852-111 .breakdance-menu", {
+  dropdown: {
+    openOnClick: false,
+    mode: {
+      desktop: 'dropdown'
+    },
+    placement: 'left',
+    width: null,
+    animation: 'fade'
+  },
+  link: {
+    effect: '',
+    effectDirection: '',
+  },
+  mobile: {
+    breakpoint: 'breakpoint_tablet_portrait',
+    mode: 'default',
+    offcanvasPosition: 'left',
+    offset: null,
+    followLinks: true
+  }
+});
+ }) </script>
+<script>document.addEventListener('DOMContentLoaded', function(){ new BreakdancePopup(890, {"onlyShowOnce":false,"avoidMultiple":false,"limitSession":null,"limitPageLoad":null,"limitForever":null,"triggers":[],"breakpointConditions":[]}); }) </script>
+<script>document.addEventListener('DOMContentLoaded', function(){ 
+if (window.breakdancePopupInstances) {
+  const popupInstance = window.breakdancePopupInstances[890] ?? null;
+  if (popupInstance) {
+    popupInstance.setOptions({
+      keepOpenOnHashlinkClicks: false,
+      closeOnClickOutside: true,
+      closeOnEscapeKey: true,
+      closeAfterMilliseconds: null,
+      showCloseButtonAfterMilliseconds: null,
+      disableScrollWhenOpen: true,
+                });
+  }
+}
+ }) </script>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e9f74c8fce281fb',t:'MTc3NTgwMDAzOQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
+    <p id="a11y-speak-intro-text" class="a11y-speak-intro-text" style="position: absolute;margin: -1px;padding: 0;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);-webkit-clip-path: inset(50%);clip-path: inset(50%);border: 0;word-wrap: normal !important;" hidden="hidden">Notifications</p><div id="a11y-speak-assertive" class="a11y-speak-region" style="position: absolute;margin: -1px;padding: 0;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);-webkit-clip-path: inset(50%);clip-path: inset(50%);border: 0;word-wrap: normal !important;" aria-live="assertive" aria-relevant="additions text" aria-atomic="true"></div><div id="a11y-speak-polite" class="a11y-speak-region" style="position: absolute;margin: -1px;padding: 0;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);-webkit-clip-path: inset(50%);clip-path: inset(50%);border: 0;word-wrap: normal !important;" aria-live="polite" aria-relevant="additions text" aria-atomic="true"></div></body></html>

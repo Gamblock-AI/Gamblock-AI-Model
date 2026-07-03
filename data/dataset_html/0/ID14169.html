@@ -1,0 +1,2253 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SSVM Institutions</title>
+    <link rel="icon" href="https://entrar.in/images/SSVM-fav-icon.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        .container-fluid,
+        .the_main_row,
+        .col-12,
+        .col-md-8,
+        .col-xl-8 {
+            height: 100%;
+        }
+
+        .mainArea {
+            position: relative;
+            background-image: url('https://entrar.in/images/bg_ssvm.png');
+            height: 100%;
+            overflow: hidden;
+            background-repeat: repeat-y;
+            background-position: center;
+            transition: background-image 1s ease-in-out;
+        }
+
+        .mainArea {
+            animation: slideBackground 15s infinite linear;
+        }
+
+        @keyframes slideBackground {
+            0% {
+                background-image: url('https://entrar.in/images/ssvm/mettupalyam-min.png');
+            }
+
+            25% {
+                background-image: url('https://entrar.in/images/ssvm/reeds-min.png');
+            }
+
+            50% {
+                background-image: url('https://entrar.in/images/ssvm/world-min.png');
+            }
+
+            75% {
+                background-image: url('https://entrar.in/images/ssvm/Excellecnce-min.png');
+            }
+
+            100% {
+                background-image: url('https://entrar.in/images/ssvm/matriculation-min.jpg');
+            }
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .mainContent {
+            position: relative;
+            z-index: 1;
+            color: white;
+            height: 100%;
+            overflow-y: auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .sideArea img {
+            padding: 0px;
+            margin: 0px;
+            height: 100%;
+            width: 100%;
+            vertical-align: middle;
+            object-fit: cover;
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+
+        #getNumberOTP {
+            /* margin-top: 26px; */
+        }
+
+        /* Ensure responsiveness */
+        @media (max-width: 768px) {
+            .mainContent {
+                padding: 10px;
+            }
+            /* .row{
+                height: auto;
+            } */
+        }
+    </style>
+
+    <div class="container-fluid">
+        <div class="row the_main_row">
+            <div class="col-12 col-md-8 col-xl-8 mainArea p-0 m-0">
+                <div class="overlay"></div>
+                <div class="mainContent">
+                    <h4 class="fw-bold  text-center mt-2" style="font-size: 20px;">ADMISSION ENQUIRY FORM</h4>
+                    <h6 class="fw-bold  text-center mt-2">Register</h6>
+                    <form method="post" id="admission_form">
+                        <div class="container px-3">
+                            <div class="row">
+                                <div class="col-md-12 ">
+                                    <h4>Location/Place</h4>
+                                    <div class="form-check form-check-inline mb-2">
+                                        <input class="form-check-input" name="school_district" type="radio" id="school_district_mettupalayam" value="Mettupalayam">
+                                        <label class="form-check-label" for="school_district_mettupalayam">Mettupalayam</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mb-2">
+                                        <input class="form-check-input" name="school_district" type="radio" id="school_district_coimbatore" value="Coimbatore">
+                                        <label class="form-check-label" for="school_district_coimbatore">Coimbatore</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" name="school_district" type="radio" id="school_district_tiruppur" value="Tiruppur">
+                                        <label class="form-check-label" for="school_district_tiruppur">Tiruppur</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 ">
+                                    <h4>School Category</h4>
+                                    <div class="form-check form-check-inline mb-2">
+                                        <input class="form-check-input" name="school_type" type="radio" id="school_type_non_resd" value="NON-RESIDENTIAL">
+                                        <label class="form-check-label" for="school_type_non_resd">NON-RESIDENTIAL</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" name="school_type" type="radio" id="school_type_resd" value="RESIDENTIAL">
+                                        <label class="form-check-label" for="school_type_resd">RESIDENTIAL</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 ">
+                                    <h4>Select Board</h4>
+                                    <div class="form-check form-check-inline mb-2">
+                                        <input class="form-check-input" name="board" type="radio" id="board_cbse" value="CBSE">
+                                        <label class="form-check-label" for="board_cbse">CBSE</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mb-2">
+                                        <input class="form-check-input" name="board" type="radio" id="board_ib" value="IB">
+                                        <label class="form-check-label" for="board_ib">IB</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mb-2">
+                                        <input class="form-check-input" name="board" type="radio" id="board_igcse" value="IGCSE">
+                                        <label class="form-check-label" for="board_igcse">IGCSE</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mb-2">
+                                        <input class="form-check-input" name="board" type="radio" id="board_state" value="STATE">
+                                        <label class="form-check-label" for="board_state">STATE</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mb-2">
+                                        <input class="form-check-input" name="board" type="radio" id="board_nios" value="NIOS">
+                                        <label class="form-check-label" for="board_nios">NIOS</label>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-12 mb-2">
+                                    <h4>Select School</h4>
+                                    <div class="row justify-content-center">
+
+                                        <div class="col-sm-3 col-6 schoolImage mb-2" id="schoolDiv252">
+                                            <div class="card schoolDiv252 schoolImage1" onclick="selectSchool('252')">
+                                                <img src="https://entrar.in/images/ssvm/admission logos/SSVM_World_School252.svg" width="90%" height="90">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-6 schoolImage mb-2" id="schoolDiv253">
+
+                                            <div class="card schoolDiv253 schoolImage1" onclick="selectSchool('253')">
+                                                <img src="https://entrar.in/images/ssvm/admission logos/School_of_excellence253.svg" width="100%" height="90">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-6 schoolImage mb-2" id="schoolDiv311">
+
+                                            <div class="card schoolDiv311 schoolImage1" onclick="selectSchool('311')">
+                                                <img src="https://entrar.in/images/ssvm/admission logos/ssvm_excellence_theethipalayam.jpg" width="100%" height="90">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-6 schoolImage mb-2" id="schoolDiv255">
+                                            <div class="card schoolDiv255 schoolImage1" onclick="selectSchool('255')">
+                                                <img src="https://entrar.in/images/ssvm/admission logos/reeds255.svg" width="100%" height="90">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-6 schoolImage mb-2" id="schoolDiv256">
+                                            <div class="card schoolDiv256 schoolImage1" onclick="selectSchool('256')">
+                                                <img src="https://entrar.in/images/ssvm/admission logos/day_cum_residential256_new.svg" width="100%" height="90">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-6 schoolImage mb-2" id="schoolDiv260">
+                                            <div class="card schoolDiv260 schoolImage1" onclick="selectSchool('260')">
+                                                <img src="https://entrar.in/images/ssvm/admission logos/Ruh_Continnum260.svg" width="100%" height="90">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-6 schoolImage mb-2" id="schoolDiv257">
+                                            <div class="card schoolDiv257 schoolImage1" onclick="selectSchool('257')">
+                                                <img src="https://entrar.in/images/ssvm/admission logos/Marticulation257.svg" width="100%" height="90">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-6 schoolImage mb-2" id="schoolDiv261">
+                                            <div class="card schoolDiv261 schoolImage1" onclick="selectSchool('261')">
+                                                <img src="https://entrar.in/images/ssvm/admission logos/day_cum_residential261.svg" width="100%" height="90">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-6 schoolImage mb-2" id="schoolDiv270">
+                                            <div class="card schoolDiv270 schoolImage1" onclick="selectSchool('270')">
+                                                <img src="https://entrar.in/images/ssvm/admission logos/SSVM_kids_casa.svg" width="100%" height="90">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-6 schoolImage mb-2" id="schoolDiv272">
+                                            <div class="card schoolDiv272 schoolImage1" onclick="selectSchool('272')">
+                                                <img src="https://entrar.in/images/ssvm/admission logos/ssvm_kids_casa2.svg" width="100%" height="90">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-6 schoolImage mb-2" id="schoolDiv295">
+                                            <div class="card schoolDiv295 schoolImage1" onclick="selectSchool('295')">
+                                                <img src="https://entrar.in/images/ssvm/admission logos/kids_casa_tripura.svg" width="100%" height="90">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-6 schoolImage mb-2" id="schoolDiv310">
+                                            <div class="card schoolDiv310 schoolImage1" onclick="selectSchool('310')">
+                                                <img src="https://entrar.in/images/ssvm/admission logos/ssvm_kidscasa_310.png" width="100%" height="90">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-6 schoolImage mb-2" id="schoolDiv254">
+                                            <div class="card schoolDiv254 schoolImage1" onclick="selectSchool('254')">
+                                                <img src="https://entrar.in/images/ssvm/admission logos/ruh_early.svg" width="100%" height="90">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-6 schoolImage mb-2" id="schoolDiv269">
+                                            <div class="card schoolDiv269 schoolImage1" onclick="selectSchool('269')">
+                                                <img src="https://entrar.in/images/ssvm/admission logos/ruh_pre_primary.svg" width="100%" height="90">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="form-group offset-md-4 col-md-4 mb-2 mt-3">
+                                            <label for="academicyear_id">Academic Year <span class="text-danger">*</span></label>
+                                            <select class="form-control academicyear_id" id="academicyear_id" name="academicyear_id" required="">
+                                                <option value="">Choose Academic Year</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <h3>Student Information</h3>
+                                        <div class="form-group col-md-4 mb-2">
+                                            <label for="username">Student Name(As Per Aadhar) <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="username" placeholder="Name As Per Aadhar" id="username" autocomplete="off">
+
+                                        </div>
+                                        <div class="form-group col-md-4 mb-2">
+                                            <label for="gender">Student Gender <span class="text-danger">*</span></label>
+                                            <select class="form-control gender" id="gender" name="gender">
+                                                <option value="">Select Gender</option>
+                                                <option value="m">Male</option>
+                                                <option value="f">Female</option>
+                                            </select>
+
+                                        </div>
+                                        <div class="form-group col-md-4 mb-2">
+                                            <label for="dob">Student DOB <span class="text-danger">*</span></label>
+                                            <input placeholder="Date Of Birth" type="date" name="dob" class="form-control" id="dob" autocomplete="off" max="2026-04-12">
+
+                                        </div>
+                                        <div class="form-group col-md-4 mb-2">
+                                            <label for="school_std_id">Standard <span class="text-danger">*</span></label>
+                                            <select class="form-control school_std_id" id="school_std_id" name="school_std_id">
+                                                <option value="">Choose Standard</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4 form-group mb-2" id="forSecondaryStudent" style="display: none;">
+                                            <label for="foundation_course">Want foundation course of NEET/JEE?<span class="text-danger">*</span></label>
+                                            <select name="foundation_course" id="foundation_course" class="form-control">
+                                                <option value="no">No</option>
+                                                <option value="yes">Yes</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4 form-group mb-2" id="forUpperSecondaryStudent" style="display: none;">
+                                            <label for="enroll_course">Want To Enroll for NEET/JEE?<span class="text-danger">*</span></label>
+                                            <select name="enroll_course" id="enroll_course" class="form-control">
+                                                <option value="no">No</option>
+                                                <option value="yes">Yes</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-4 mb-2 d-none">
+                                            <label for="gender">Blood Group <span class="text-danger">*</span></label>
+                                            <select class="form-control bloodgroup" id="bloodgroup" name="bloodgroup">
+                                                <option value="">Select Blood Group</option>
+                                            </select>
+
+                                        </div>
+                                        <div class="form-group col-md-4 mb-2">
+                                            <label for="fathername">Father's Name <span class="text-danger">*</span></label>
+                                            <input type="text" name="fathername" class="form-control" placeholder="Father's Name" id="fathername" autocomplete="off">
+                                        </div>
+                                        <div class="form-group col-md-4 mb-2">
+                                            <label for="mothername">Mother's Name <span class="text-danger">*</span></label>
+                                            <input type="text" name="mothername" class="form-control" placeholder="Mother's Name" id="mothername" autocomplete="off">
+                                        </div>
+                                        <div class="form-group col-md-4 mb-2">
+                                            <label for="emailId">Email Id <span class="text-danger">*</span></label>
+                                            <input type="email" id="emailId" name="emailId" class="form-control" placeholder="Email Id ">
+                                        </div>
+                                        <div class="form-group col-md-4 col-12 mb-2 ">
+                                            <div class="row">
+                                                <div class="form-group col-4" style="padding-right: 0px;">
+
+                                                    <select class="mt-4 form-control" id="country" name="country" required="" style="padding: 5px;">
+                                                        <option value="93">+93</option>
+                                                        <option value="355">+355</option>
+                                                        <option value="213">+213</option>
+                                                        <option value="1684">+1684</option>
+                                                        <option value="376">+376</option>
+                                                        <option value="244">+244</option>
+                                                        <option value="1264">+1264</option>
+                                                        <option value="0">+0</option>
+                                                        <option value="1268">+1268</option>
+                                                        <option value="54">+54</option>
+                                                        <option value="374">+374</option>
+                                                        <option value="297">+297</option>
+                                                        <option value="61">+61</option>
+                                                        <option value="43">+43</option>
+                                                        <option value="994">+994</option>
+                                                        <option value="1242">+1242</option>
+                                                        <option value="973">+973</option>
+                                                        <option value="880">+880</option>
+                                                        <option value="1246">+1246</option>
+                                                        <option value="375">+375</option>
+                                                        <option value="32">+32</option>
+                                                        <option value="501">+501</option>
+                                                        <option value="229">+229</option>
+                                                        <option value="1441">+1441</option>
+                                                        <option value="975">+975</option>
+                                                        <option value="591">+591</option>
+                                                        <option value="387">+387</option>
+                                                        <option value="267">+267</option>
+                                                        <option value="0">+0</option>
+                                                        <option value="55">+55</option>
+                                                        <option value="246">+246</option>
+                                                        <option value="673">+673</option>
+                                                        <option value="359">+359</option>
+                                                        <option value="226">+226</option>
+                                                        <option value="257">+257</option>
+                                                        <option value="855">+855</option>
+                                                        <option value="237">+237</option>
+                                                        <option value="1">+1</option>
+                                                        <option value="238">+238</option>
+                                                        <option value="1345">+1345</option>
+                                                        <option value="236">+236</option>
+                                                        <option value="235">+235</option>
+                                                        <option value="56">+56</option>
+                                                        <option value="86">+86</option>
+                                                        <option value="61">+61</option>
+                                                        <option value="672">+672</option>
+                                                        <option value="57">+57</option>
+                                                        <option value="269">+269</option>
+                                                        <option value="242">+242</option>
+                                                        <option value="242">+242</option>
+                                                        <option value="682">+682</option>
+                                                        <option value="506">+506</option>
+                                                        <option value="225">+225</option>
+                                                        <option value="385">+385</option>
+                                                        <option value="53">+53</option>
+                                                        <option value="357">+357</option>
+                                                        <option value="420">+420</option>
+                                                        <option value="45">+45</option>
+                                                        <option value="253">+253</option>
+                                                        <option value="1767">+1767</option>
+                                                        <option value="1809">+1809</option>
+                                                        <option value="593">+593</option>
+                                                        <option value="20">+20</option>
+                                                        <option value="503">+503</option>
+                                                        <option value="240">+240</option>
+                                                        <option value="291">+291</option>
+                                                        <option value="372">+372</option>
+                                                        <option value="251">+251</option>
+                                                        <option value="500">+500</option>
+                                                        <option value="298">+298</option>
+                                                        <option value="679">+679</option>
+                                                        <option value="358">+358</option>
+                                                        <option value="33">+33</option>
+                                                        <option value="594">+594</option>
+                                                        <option value="689">+689</option>
+                                                        <option value="0">+0</option>
+                                                        <option value="241">+241</option>
+                                                        <option value="220">+220</option>
+                                                        <option value="995">+995</option>
+                                                        <option value="49">+49</option>
+                                                        <option value="233">+233</option>
+                                                        <option value="350">+350</option>
+                                                        <option value="30">+30</option>
+                                                        <option value="299">+299</option>
+                                                        <option value="1473">+1473</option>
+                                                        <option value="590">+590</option>
+                                                        <option value="1671">+1671</option>
+                                                        <option value="502">+502</option>
+                                                        <option value="224">+224</option>
+                                                        <option value="245">+245</option>
+                                                        <option value="592">+592</option>
+                                                        <option value="509">+509</option>
+                                                        <option value="0">+0</option>
+                                                        <option value="39">+39</option>
+                                                        <option value="504">+504</option>
+                                                        <option value="852">+852</option>
+                                                        <option value="36">+36</option>
+                                                        <option value="354">+354</option>
+                                                        <option value="91" selected="">+91</option>
+                                                        <option value="62">+62</option>
+                                                        <option value="98">+98</option>
+                                                        <option value="964">+964</option>
+                                                        <option value="353">+353</option>
+                                                        <option value="972">+972</option>
+                                                        <option value="39">+39</option>
+                                                        <option value="1876">+1876</option>
+                                                        <option value="81">+81</option>
+                                                        <option value="962">+962</option>
+                                                        <option value="7">+7</option>
+                                                        <option value="254">+254</option>
+                                                        <option value="686">+686</option>
+                                                        <option value="850">+850</option>
+                                                        <option value="82">+82</option>
+                                                        <option value="965">+965</option>
+                                                        <option value="996">+996</option>
+                                                        <option value="856">+856</option>
+                                                        <option value="371">+371</option>
+                                                        <option value="961">+961</option>
+                                                        <option value="266">+266</option>
+                                                        <option value="231">+231</option>
+                                                        <option value="218">+218</option>
+                                                        <option value="423">+423</option>
+                                                        <option value="370">+370</option>
+                                                        <option value="352">+352</option>
+                                                        <option value="853">+853</option>
+                                                        <option value="389">+389</option>
+                                                        <option value="261">+261</option>
+                                                        <option value="265">+265</option>
+                                                        <option value="60">+60</option>
+                                                        <option value="960">+960</option>
+                                                        <option value="223">+223</option>
+                                                        <option value="356">+356</option>
+                                                        <option value="692">+692</option>
+                                                        <option value="596">+596</option>
+                                                        <option value="222">+222</option>
+                                                        <option value="230">+230</option>
+                                                        <option value="269">+269</option>
+                                                        <option value="52">+52</option>
+                                                        <option value="691">+691</option>
+                                                        <option value="373">+373</option>
+                                                        <option value="377">+377</option>
+                                                        <option value="976">+976</option>
+                                                        <option value="1664">+1664</option>
+                                                        <option value="212">+212</option>
+                                                        <option value="258">+258</option>
+                                                        <option value="95">+95</option>
+                                                        <option value="264">+264</option>
+                                                        <option value="674">+674</option>
+                                                        <option value="977">+977</option>
+                                                        <option value="31">+31</option>
+                                                        <option value="599">+599</option>
+                                                        <option value="687">+687</option>
+                                                        <option value="64">+64</option>
+                                                        <option value="505">+505</option>
+                                                        <option value="227">+227</option>
+                                                        <option value="234">+234</option>
+                                                        <option value="683">+683</option>
+                                                        <option value="672">+672</option>
+                                                        <option value="1670">+1670</option>
+                                                        <option value="47">+47</option>
+                                                        <option value="968">+968</option>
+                                                        <option value="92">+92</option>
+                                                        <option value="680">+680</option>
+                                                        <option value="970">+970</option>
+                                                        <option value="507">+507</option>
+                                                        <option value="675">+675</option>
+                                                        <option value="595">+595</option>
+                                                        <option value="51">+51</option>
+                                                        <option value="63">+63</option>
+                                                        <option value="0">+0</option>
+                                                        <option value="48">+48</option>
+                                                        <option value="351">+351</option>
+                                                        <option value="1787">+1787</option>
+                                                        <option value="974">+974</option>
+                                                        <option value="262">+262</option>
+                                                        <option value="40">+40</option>
+                                                        <option value="70">+70</option>
+                                                        <option value="250">+250</option>
+                                                        <option value="290">+290</option>
+                                                        <option value="1869">+1869</option>
+                                                        <option value="1758">+1758</option>
+                                                        <option value="508">+508</option>
+                                                        <option value="1784">+1784</option>
+                                                        <option value="684">+684</option>
+                                                        <option value="378">+378</option>
+                                                        <option value="239">+239</option>
+                                                        <option value="966">+966</option>
+                                                        <option value="221">+221</option>
+                                                        <option value="381">+381</option>
+                                                        <option value="248">+248</option>
+                                                        <option value="232">+232</option>
+                                                        <option value="65">+65</option>
+                                                        <option value="421">+421</option>
+                                                        <option value="386">+386</option>
+                                                        <option value="677">+677</option>
+                                                        <option value="252">+252</option>
+                                                        <option value="27">+27</option>
+                                                        <option value="0">+0</option>
+                                                        <option value="34">+34</option>
+                                                        <option value="94">+94</option>
+                                                        <option value="249">+249</option>
+                                                        <option value="597">+597</option>
+                                                        <option value="47">+47</option>
+                                                        <option value="268">+268</option>
+                                                        <option value="46">+46</option>
+                                                        <option value="41">+41</option>
+                                                        <option value="963">+963</option>
+                                                        <option value="886">+886</option>
+                                                        <option value="992">+992</option>
+                                                        <option value="255">+255</option>
+                                                        <option value="66">+66</option>
+                                                        <option value="670">+670</option>
+                                                        <option value="228">+228</option>
+                                                        <option value="690">+690</option>
+                                                        <option value="676">+676</option>
+                                                        <option value="1868">+1868</option>
+                                                        <option value="216">+216</option>
+                                                        <option value="90">+90</option>
+                                                        <option value="7370">+7370</option>
+                                                        <option value="1649">+1649</option>
+                                                        <option value="688">+688</option>
+                                                        <option value="256">+256</option>
+                                                        <option value="380">+380</option>
+                                                        <option value="971">+971</option>
+                                                        <option value="44">+44</option>
+                                                        <option value="1">+1</option>
+                                                        <option value="1">+1</option>
+                                                        <option value="598">+598</option>
+                                                        <option value="998">+998</option>
+                                                        <option value="678">+678</option>
+                                                        <option value="58">+58</option>
+                                                        <option value="84">+84</option>
+                                                        <option value="1284">+1284</option>
+                                                        <option value="1340">+1340</option>
+                                                        <option value="681">+681</option>
+                                                        <option value="212">+212</option>
+                                                        <option value="967">+967</option>
+                                                        <option value="260">+260</option>
+                                                        <option value="263">+263</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group col-8" style="padding-left: 1px;">
+                                                    <label for="mobile">Whatsapp Mobile No <span class="text-danger">*</span></label>
+                                                    <input type="number" class="form-control" placeholder="Whatsapp Mobile No." id="mobile" name="mobile">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-4 mb-2">
+                                            <label for="filled_by">Enquiry Filled By <span class="text-danger">*</span></label>
+                                           <select class="form-control" name="filled_by" id="filled_by">
+                                                <option value="">Select</option>
+                                                <option value="Father">Father</option>
+                                                <option value="Mother">Mother</option>
+                                                <option value="Guardian">Guardian</option>
+                                            </select>
+                                        </div>
+                                        
+
+                                    </div>
+                                    
+                                </div>
+                                <div class="form-group col-md-4 mb-2 d-none" id="father_mobile_no_div">
+                                            <label for="father_mobile_no">Father's Mobile No</label>
+                                            <input type="number" class="form-control" id="father_mobile_no" name="father_mobile_no" placeholder="Father's Mobile No">
+                                        </div>
+                                        <div class="form-group col-md-4 mb-2 d-none" id="mother_mobile_no_div">
+                                            <label for="mother_mobile_no">Mother's Mobile No</label>
+                                            <input type="number" class="form-control" id="mother_mobile_no" name="mother_mobile_no" placeholder="Mother's Mobile No">
+                                        </div>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <h5>Is there a sibling who is also applying for admission? If yes, please add
+                                            here</h5>
+                                        <div class="col-md-12" id="addSiblingSection">
+                                            <button type="button" class="btn btn-success" id="addSibling" style="background-color: #00326D; border-color: #00326D;">+
+                                                Sibling</button>
+                                            <button type="button" class="btn btn-danger" id="removeSibling" style="display: none;">- Sibling</button>
+                                        </div>
+                                        <div class="col-md-12 sibling-group" id="sibling1" style="display: none;">
+                                            <div class="row">
+                                                <div class="form-group mb-2 col-md-3">
+                                                    <label for="sibling_name">Sibling Name</label>
+                                                    <input type="text" class="form-control sibling_name" name="sibling_name[]" id="sibling_name_1" placeholder="Sibling Name">
+                                                </div>
+                                                <div class="form-group mb-2 col-md-3">
+                                                    <label for="sibling_standard">Sibling Standard</label>
+                                                    <select class="form-control sibling_standard" name="sibling_standard[]" id="sibling_standard_1">
+                                                        <option value="">Select Standard</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-3 form-group mb-2">
+                                                    <label for="sibling_dob">Sibling DOB</label>
+                                                    <input type="date" class="form-control sibling_dob" name="sibling_dob[]" id="sibling_dob_1">
+                                                </div>
+                                                <div class="col-md-3 form-group mb-2">
+                                                    <label for="sibling_gender">Sibling Gender</label>
+                                                    <select class="form-control sibling_gender" name="sibling_gender[]" id="sibling_gender_1">
+                                                        <option value="">Select Gender</option>
+                                                        <option value="Male">Male</option>
+                                                        <option value="Female">Female</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 sibling-group" id="sibling2" style="display: none;">
+                                            <div class="row">
+                                                <div class="form-group mb-2 col-md-3">
+                                                    <label for="sibling_name">Sibling Name</label>
+                                                    <input type="text" class="form-control sibling_name" name="sibling_name[]" id="sibling_name_2" placeholder="Sibling Name">
+                                                </div>
+                                                <div class="form-group mb-2 col-md-3">
+                                                    <label for="sibling_standard">Sibling Standard</label>
+                                                    <select class="form-control sibling_standard" name="sibling_standard[]" id="sibling_standard_2">
+                                                        <option value="">Select Standard</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-3 form-group mb-2">
+                                                    <label for="sibling_dob">Sibling DOB</label>
+                                                    <input type="date" class="form-control sibling_dob" name="sibling_dob[]" id="sibling_dob_2">
+                                                </div>
+                                                <div class="col-md-3 form-group mb-2">
+                                                    <label for="sibling_gender">Sibling Gender</label>
+                                                    <select class="form-control sibling_gender" name="sibling_gender[]" id="sibling_gender_2">
+                                                        <option value="">Select Gender</option>
+                                                        <option value="Male">Male</option>
+                                                        <option value="Female">Female</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 sibling-group" id="sibling3" style="display: none;">
+                                            <div class="row">
+                                                <div class="form-group mb-2 col-md-3">
+                                                    <label for="sibling_name">Sibling Name</label>
+                                                    <input type="text" class="form-control sibling_name" name="sibling_name[]" id="sibling_name_3" placeholder="Sibling Name">
+                                                </div>
+                                                <div class="form-group mb-2 col-md-3">
+                                                    <label for="sibling_standard">Sibling Standard</label>
+                                                    <select class="form-control sibling_standard" name="sibling_standard[]" id="sibling_standard_3">
+                                                        <option value="">Select Standard</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-3 form-group mb-2">
+                                                    <label for="sibling_dob">Sibling DOB</label>
+                                                    <input type="date" class="form-control sibling_dob" name="sibling_dob[]" id="sibling_dob_3">
+                                                </div>
+                                                <div class="col-md-3 form-group mb-2">
+                                                    <label for="sibling_gender">Sibling Gender</label>
+                                                    <select class="form-control sibling_gender" name="sibling_gender[]" id="sibling_gender_3">
+                                                        <option value="">Select Gender</option>
+                                                        <option value="Male">Male</option>
+                                                        <option value="Female">Female</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <h3>Address</h3>
+                                        <div class="form-group col-md-4 mb-2">
+                                            <label for="street_address">Door No./ Street /Area /Taluk <span class="text-danger">*</span></label>
+                                            <input type="text" name="street_address" id="street_address" class="form-control" placeholder="Door No./ Street /Area /Taluk">
+                                        </div>
+                                        <div class="form-group col-md-4 mb-2">
+                                            <label for="city">City Name <span class="text-danger">*</span></label>
+                                            <input type="text" name="city" id="city" class="form-control" placeholder="City Name">
+                                        </div>
+                                        <div class="form-group col-md-4 mb-2">
+                                            <label for="district">District <span class="text-danger">*</span></label>
+                                            <input type="text" name="district" id="district" class="form-control" placeholder="District">
+                                        </div>
+                                        <div class="form-group col-md-4 mb-2" id="stateDiv">
+        <label for="state">State <span class="text-danger">*</span></label>
+        <select class="form-control" id="state" name="state" required="">
+    <option value="">Select State</option>
+    <option value="Andhra Pradesh">Andhra Pradesh</option>
+    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+    <option value="Assam">Assam</option>
+    <option value="Bihar">Bihar</option>
+    <option value="Chhattisgarh">Chhattisgarh</option>
+    <option value="Goa">Goa</option>
+    <option value="Gujarat">Gujarat</option>
+    <option value="Haryana">Haryana</option>
+    <option value="Himachal Pradesh">Himachal Pradesh</option>
+    <option value="Jharkhand">Jharkhand</option>
+    <option value="Karnataka">Karnataka</option>
+    <option value="Kerala">Kerala</option>
+    <option value="Madhya Pradesh">Madhya Pradesh</option>
+    <option value="Maharashtra">Maharashtra</option>
+    <option value="Manipur">Manipur</option>
+    <option value="Meghalaya">Meghalaya</option>
+    <option value="Mizoram">Mizoram</option>
+    <option value="Nagaland">Nagaland</option>
+    <option value="Odisha">Odisha</option>
+    <option value="Punjab">Punjab</option>
+    <option value="Rajasthan">Rajasthan</option>
+    <option value="Sikkim">Sikkim</option>
+    <option value="Tamil Nadu">Tamil Nadu</option>
+    <option value="Telangana">Telangana</option>
+    <option value="Tripura">Tripura</option>
+    <option value="Uttar Pradesh">Uttar Pradesh</option>
+    <option value="Uttarakhand">Uttarakhand</option>
+    <option value="West Bengal">West Bengal</option>
+    <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+    <option value="Chandigarh">Chandigarh</option>
+    <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+    <option value="Daman and Diu">Daman and Diu</option>
+    <option value="Lakshadweep">Lakshadweep</option>
+    <option value="Delhi">Delhi</option>
+    <option value="Puducherry">Puducherry</option>
+    <option value="Ladakh">Ladakh</option>
+    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+</select>
+</div>
+                                        <div class="form-group col-md-4 mb-2">
+                                            <label for="pincode">Pin Code <span class="text-danger">*</span></label>
+                                            <input type="number" name="pincode" id="pincode" class="form-control" placeholder="Pin Code/ Zip Code">
+                                        </div>
+                                        <div class="form-group col-md-4 mb-2">
+                                            <label for="countryname">Country Name <span class="text-danger">*</span></label>
+                                            <select class="form-control" name="countryname" id="countryname">
+                                                <option value="AF">Afghanistan</option>
+                                                <option value="AL">Albania</option>
+                                                <option value="DZ">Algeria</option>
+                                                <option value="AS">American Samoa</option>
+                                                <option value="AD">Andorra</option>
+                                                <option value="AO">Angola</option>
+                                                <option value="AI">Anguilla</option>
+                                                <option value="AQ">Antarctica</option>
+                                                <option value="AG">Antigua and Barbuda</option>
+                                                <option value="AR">Argentina</option>
+                                                <option value="AM">Armenia</option>
+                                                <option value="AW">Aruba</option>
+                                                <option value="AU">Australia</option>
+                                                <option value="AT">Austria</option>
+                                                <option value="AZ">Azerbaijan</option>
+                                                <option value="BS">Bahamas</option>
+                                                <option value="BH">Bahrain</option>
+                                                <option value="BD">Bangladesh</option>
+                                                <option value="BB">Barbados</option>
+                                                <option value="BY">Belarus</option>
+                                                <option value="BE">Belgium</option>
+                                                <option value="BZ">Belize</option>
+                                                <option value="BJ">Benin</option>
+                                                <option value="BM">Bermuda</option>
+                                                <option value="BT">Bhutan</option>
+                                                <option value="BO">Bolivia</option>
+                                                <option value="BA">Bosnia and Herzegovina</option>
+                                                <option value="BW">Botswana</option>
+                                                <option value="BV">Bouvet Island</option>
+                                                <option value="BR">Brazil</option>
+                                                <option value="IO">British Indian Ocean Territory</option>
+                                                <option value="BN">Brunei Darussalam</option>
+                                                <option value="BG">Bulgaria</option>
+                                                <option value="BF">Burkina Faso</option>
+                                                <option value="BI">Burundi</option>
+                                                <option value="KH">Cambodia</option>
+                                                <option value="CM">Cameroon</option>
+                                                <option value="CA">Canada</option>
+                                                <option value="CV">Cape Verde</option>
+                                                <option value="KY">Cayman Islands</option>
+                                                <option value="CF">Central African Republic</option>
+                                                <option value="TD">Chad</option>
+                                                <option value="CL">Chile</option>
+                                                <option value="CN">China</option>
+                                                <option value="CX">Christmas Island</option>
+                                                <option value="CC">Cocos (Keeling) Islands</option>
+                                                <option value="CO">Colombia</option>
+                                                <option value="KM">Comoros</option>
+                                                <option value="CG">Congo</option>
+                                                <option value="CD">Congo, the Democratic Republic of the</option>
+                                                <option value="CK">Cook Islands</option>
+                                                <option value="CR">Costa Rica</option>
+                                                <option value="CI">Cote D'Ivoire</option>
+                                                <option value="HR">Croatia</option>
+                                                <option value="CU">Cuba</option>
+                                                <option value="CY">Cyprus</option>
+                                                <option value="CZ">Czech Republic</option>
+                                                <option value="DK">Denmark</option>
+                                                <option value="DJ">Djibouti</option>
+                                                <option value="DM">Dominica</option>
+                                                <option value="DO">Dominican Republic</option>
+                                                <option value="EC">Ecuador</option>
+                                                <option value="EG">Egypt</option>
+                                                <option value="SV">El Salvador</option>
+                                                <option value="GQ">Equatorial Guinea</option>
+                                                <option value="ER">Eritrea</option>
+                                                <option value="EE">Estonia</option>
+                                                <option value="ET">Ethiopia</option>
+                                                <option value="FK">Falkland Islands (Malvinas)</option>
+                                                <option value="FO">Faroe Islands</option>
+                                                <option value="FJ">Fiji</option>
+                                                <option value="FI">Finland</option>
+                                                <option value="FR">France</option>
+                                                <option value="GF">French Guiana</option>
+                                                <option value="PF">French Polynesia</option>
+                                                <option value="TF">French Southern Territories</option>
+                                                <option value="GA">Gabon</option>
+                                                <option value="GM">Gambia</option>
+                                                <option value="GE">Georgia</option>
+                                                <option value="DE">Germany</option>
+                                                <option value="GH">Ghana</option>
+                                                <option value="GI">Gibraltar</option>
+                                                <option value="GR">Greece</option>
+                                                <option value="GL">Greenland</option>
+                                                <option value="GD">Grenada</option>
+                                                <option value="GP">Guadeloupe</option>
+                                                <option value="GU">Guam</option>
+                                                <option value="GT">Guatemala</option>
+                                                <option value="GN">Guinea</option>
+                                                <option value="GW">Guinea-Bissau</option>
+                                                <option value="GY">Guyana</option>
+                                                <option value="HT">Haiti</option>
+                                                <option value="HM">Heard Island and Mcdonald Islands</option>
+                                                <option value="VA">Holy See (Vatican City State)</option>
+                                                <option value="HN">Honduras</option>
+                                                <option value="HK">Hong Kong</option>
+                                                <option value="HU">Hungary</option>
+                                                <option value="IS">Iceland</option>
+                                                <option value="IN" selected="">India</option>
+                                                <option value="ID">Indonesia</option>
+                                                <option value="IR">Iran, Islamic Republic of</option>
+                                                <option value="IQ">Iraq</option>
+                                                <option value="IE">Ireland</option>
+                                                <option value="IL">Israel</option>
+                                                <option value="IT">Italy</option>
+                                                <option value="JM">Jamaica</option>
+                                                <option value="JP">Japan</option>
+                                                <option value="JO">Jordan</option>
+                                                <option value="KZ">Kazakhstan</option>
+                                                <option value="KE">Kenya</option>
+                                                <option value="KI">Kiribati</option>
+                                                <option value="KP">Korea, Democratic People's Republic of</option>
+                                                <option value="KR">Korea, Republic of</option>
+                                                <option value="KW">Kuwait</option>
+                                                <option value="KG">Kyrgyzstan</option>
+                                                <option value="LA">Lao People's Democratic Republic</option>
+                                                <option value="LV">Latvia</option>
+                                                <option value="LB">Lebanon</option>
+                                                <option value="LS">Lesotho</option>
+                                                <option value="LR">Liberia</option>
+                                                <option value="LY">Libyan Arab Jamahiriya</option>
+                                                <option value="LI">Liechtenstein</option>
+                                                <option value="LT">Lithuania</option>
+                                                <option value="LU">Luxembourg</option>
+                                                <option value="MO">Macao</option>
+                                                <option value="MK">Macedonia, the Former Yugoslav Republic of</option>
+                                                <option value="MG">Madagascar</option>
+                                                <option value="MW">Malawi</option>
+                                                <option value="MY">Malaysia</option>
+                                                <option value="MV">Maldives</option>
+                                                <option value="ML">Mali</option>
+                                                <option value="MT">Malta</option>
+                                                <option value="MH">Marshall Islands</option>
+                                                <option value="MQ">Martinique</option>
+                                                <option value="MR">Mauritania</option>
+                                                <option value="MU">Mauritius</option>
+                                                <option value="YT">Mayotte</option>
+                                                <option value="MX">Mexico</option>
+                                                <option value="FM">Micronesia, Federated States of</option>
+                                                <option value="MD">Moldova, Republic of</option>
+                                                <option value="MC">Monaco</option>
+                                                <option value="MN">Mongolia</option>
+                                                <option value="MS">Montserrat</option>
+                                                <option value="MA">Morocco</option>
+                                                <option value="MZ">Mozambique</option>
+                                                <option value="MM">Myanmar</option>
+                                                <option value="NA">Namibia</option>
+                                                <option value="NR">Nauru</option>
+                                                <option value="NP">Nepal</option>
+                                                <option value="NL">Netherlands</option>
+                                                <option value="AN">Netherlands Antilles</option>
+                                                <option value="NC">New Caledonia</option>
+                                                <option value="NZ">New Zealand</option>
+                                                <option value="NI">Nicaragua</option>
+                                                <option value="NE">Niger</option>
+                                                <option value="NG">Nigeria</option>
+                                                <option value="NU">Niue</option>
+                                                <option value="NF">Norfolk Island</option>
+                                                <option value="MP">Northern Mariana Islands</option>
+                                                <option value="NO">Norway</option>
+                                                <option value="OM">Oman</option>
+                                                <option value="PK">Pakistan</option>
+                                                <option value="PW">Palau</option>
+                                                <option value="PS">Palestinian Territory, Occupied</option>
+                                                <option value="PA">Panama</option>
+                                                <option value="PG">Papua New Guinea</option>
+                                                <option value="PY">Paraguay</option>
+                                                <option value="PE">Peru</option>
+                                                <option value="PH">Philippines</option>
+                                                <option value="PN">Pitcairn</option>
+                                                <option value="PL">Poland</option>
+                                                <option value="PT">Portugal</option>
+                                                <option value="PR">Puerto Rico</option>
+                                                <option value="QA">Qatar</option>
+                                                <option value="RE">Reunion</option>
+                                                <option value="RO">Romania</option>
+                                                <option value="RU">Russian Federation</option>
+                                                <option value="RW">Rwanda</option>
+                                                <option value="SH">Saint Helena</option>
+                                                <option value="KN">Saint Kitts and Nevis</option>
+                                                <option value="LC">Saint Lucia</option>
+                                                <option value="PM">Saint Pierre and Miquelon</option>
+                                                <option value="VC">Saint Vincent and the Grenadines</option>
+                                                <option value="WS">Samoa</option>
+                                                <option value="SM">San Marino</option>
+                                                <option value="ST">Sao Tome and Principe</option>
+                                                <option value="SA">Saudi Arabia</option>
+                                                <option value="SN">Senegal</option>
+                                                <option value="CS">Serbia and Montenegro</option>
+                                                <option value="SC">Seychelles</option>
+                                                <option value="SL">Sierra Leone</option>
+                                                <option value="SG">Singapore</option>
+                                                <option value="SK">Slovakia</option>
+                                                <option value="SI">Slovenia</option>
+                                                <option value="SB">Solomon Islands</option>
+                                                <option value="SO">Somalia</option>
+                                                <option value="ZA">South Africa</option>
+                                                <option value="GS">South Georgia and the South Sandwich Islands</option>
+                                                <option value="ES">Spain</option>
+                                                <option value="LK">Sri Lanka</option>
+                                                <option value="SD">Sudan</option>
+                                                <option value="SR">Suriname</option>
+                                                <option value="SJ">Svalbard and Jan Mayen</option>
+                                                <option value="SZ">Swaziland</option>
+                                                <option value="SE">Sweden</option>
+                                                <option value="CH">Switzerland</option>
+                                                <option value="SY">Syrian Arab Republic</option>
+                                                <option value="TW">Taiwan, Province of China</option>
+                                                <option value="TJ">Tajikistan</option>
+                                                <option value="TZ">Tanzania, United Republic of</option>
+                                                <option value="TH">Thailand</option>
+                                                <option value="TL">Timor-Leste</option>
+                                                <option value="TG">Togo</option>
+                                                <option value="TK">Tokelau</option>
+                                                <option value="TO">Tonga</option>
+                                                <option value="TT">Trinidad and Tobago</option>
+                                                <option value="TN">Tunisia</option>
+                                                <option value="TR">Turkey</option>
+                                                <option value="TM">Turkmenistan</option>
+                                                <option value="TC">Turks and Caicos Islands</option>
+                                                <option value="TV">Tuvalu</option>
+                                                <option value="UG">Uganda</option>
+                                                <option value="UA">Ukraine</option>
+                                                <option value="AE">United Arab Emirates</option>
+                                                <option value="GB">United Kingdom</option>
+                                                <option value="US">United States</option>
+                                                <option value="UM">United States Minor Outlying Islands</option>
+                                                <option value="UY">Uruguay</option>
+                                                <option value="UZ">Uzbekistan</option>
+                                                <option value="VU">Vanuatu</option>
+                                                <option value="VE">Venezuela</option>
+                                                <option value="VN">Viet Nam</option>
+                                                <option value="VG">Virgin Islands, British</option>
+                                                <option value="VI">Virgin Islands, U.s.</option>
+                                                <option value="WF">Wallis and Futuna</option>
+                                                <option value="EH">Western Sahara</option>
+                                                <option value="YE">Yemen</option>
+                                                <option value="ZM">Zambia</option>
+                                                <option value="ZW">Zimbabwe</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-12">
+
+                                    <div class="row">
+                                        <h3>Source of Information</h3>
+                                        <div class="col-md-4 form-group mb-2">
+                                            <label for="information_source">Source of Information?<span class="text-danger">*</span> </label>
+                                            <select name="information_source" id="information_source" class="form-control">
+                                                <option value="">Select</option>
+                                                <option value="Walk In Enquiry">Walk In Enquiry</option>
+                                                <option value="Telephonic Enquiry">Telephonic Enquiry</option>
+                                                <option value="Google search">Google search</option>
+                                                <option value="Referred By Relatives/ Friends">Referred By Relatives/
+                                                    Friends
+                                                </option>
+                                                <option value="Social Media">Social Media</option>
+                                                <option value="Advertisement">Advertisement</option>
+                                                <option value="Website Enquires">Website Enquires</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <h3>Present School</h3>
+                                        <div class="form-group col-md-3 mb-2">
+                                            <label for="present_school_name">Present School Name? <span class="text-danger">*</span><br></label>
+                                            <input type="text" name="present_school_name" id="present_school_name" class="form-control" placeholder="Present School Name?">
+                                        </div>
+                                        <div class="form-group col-md-3 mb-2">
+                                            <label for="present_school_board">Present School Board? <span class="text-danger">*</span><br></label>
+                                            <select name="present_school_board" id="present_school_board" class="form-control">
+                                                <option value="">Select Board</option>
+                                                <option value="CBSE">CBSE</option>
+                                                <option value="ICSE">ICSE</option>
+                                                <option value="IGCSE">IGCSE</option>
+                                                <option value="IB">IB</option>
+                                                <option value="MATRICULATION">MATRICULATION</option>
+                                                <option value="STATE BOARD">STATE BOARD</option>
+                                                <option value="NA">NA</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-6 mb-2">
+                                            <label for="school_change_reason">Please state the reason for seeking a
+                                                school change? <span class="text-danger">*</span></label>
+                                            <input type="text" name="school_change_reason" id="school_change_reason" class="form-control" placeholder="Please state the reason for seeking a school change">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="row justify-content-center">
+                                        <div class="form-group offset-md-4 col-md-4 mb-2" id="otpDiv" style="display: none;">
+                                            <label for="otp">OTP <span class="text-danger">*</span></label>
+                                            <input type="number" class="form-control" placeholder="Enter OTP" id="otp" name="otp">
+                                            <a href="javascript:void(0);" id="resend_pwd_otp" onclick="resend_otp();" style="display:none;color: #fff;" value="Resend OTP">Resend OTP</a>
+                                        </div>
+                                        <div class="form-group col-sm-4 text-center mt-3">
+                                            <a href="javascript:void(0);" value="Get OTP" id="getNumberOTP" class="btn-primary btn btn-primary fw-bold">Get OTP</a>
+                                            <a href="javascript:void(0);" id="verifyOtp" class="btn-primary btn btn-sm" style="display: none;margin-top: 28px;">Verify OTP</a>
+                                            <a href="javascript:void(0);" id="resend_pwd_otp" onclick="resend_otp();" style="display:none;color: #fff;" value="Resend OTP">Resend OTP</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <button type="submit" id="submitButton" class="btn btn-primary fw-bold" style="display: none;">Sign
+                                        Up</button>
+                                    <p>Already Register ? <a href="http://entrar.in/online_registration_ssvm/login" class="fw-bold">Login Now</a></p>
+                                    <h4 id="responseMessage"></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-4 col-xl-4 d-md-block d-none  sideArea p-0 m-0">
+                <img src="https://entrar.in/images/SSVM_Image_bg.jpg">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            getuserIpdata();
+            // getcountryList();
+            // getbloodgroup();
+            $('#submitButton').hide();
+            var today = new Date().toISOString().split('T')[0];
+            $('#dob').attr('max', today);
+        });
+        let stateList = `
+        <label for="state">State <span class="text-danger">*</span></label>
+        <select class="form-control" id="state" name="state" required="">
+    <option value="">Select State</option>
+    <option value="Andhra Pradesh">Andhra Pradesh</option>
+    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+    <option value="Assam">Assam</option>
+    <option value="Bihar">Bihar</option>
+    <option value="Chhattisgarh">Chhattisgarh</option>
+    <option value="Goa">Goa</option>
+    <option value="Gujarat">Gujarat</option>
+    <option value="Haryana">Haryana</option>
+    <option value="Himachal Pradesh">Himachal Pradesh</option>
+    <option value="Jharkhand">Jharkhand</option>
+    <option value="Karnataka">Karnataka</option>
+    <option value="Kerala">Kerala</option>
+    <option value="Madhya Pradesh">Madhya Pradesh</option>
+    <option value="Maharashtra">Maharashtra</option>
+    <option value="Manipur">Manipur</option>
+    <option value="Meghalaya">Meghalaya</option>
+    <option value="Mizoram">Mizoram</option>
+    <option value="Nagaland">Nagaland</option>
+    <option value="Odisha">Odisha</option>
+    <option value="Punjab">Punjab</option>
+    <option value="Rajasthan">Rajasthan</option>
+    <option value="Sikkim">Sikkim</option>
+    <option value="Tamil Nadu">Tamil Nadu</option>
+    <option value="Telangana">Telangana</option>
+    <option value="Tripura">Tripura</option>
+    <option value="Uttar Pradesh">Uttar Pradesh</option>
+    <option value="Uttarakhand">Uttarakhand</option>
+    <option value="West Bengal">West Bengal</option>
+    <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+    <option value="Chandigarh">Chandigarh</option>
+    <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+    <option value="Daman and Diu">Daman and Diu</option>
+    <option value="Lakshadweep">Lakshadweep</option>
+    <option value="Delhi">Delhi</option>
+    <option value="Puducherry">Puducherry</option>
+    <option value="Ladakh">Ladakh</option>
+    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+</select>
+`;
+        let stateInput = `<label for="state">State <span class="text-danger">*</span></label><input type="text" name="state" id="state" class="form-control" placeholder="State">`;
+        function getuserIpdata() {
+            $.getJSON("https://api64.ipify.org?format=json", function (ipInfo) {
+                var userIp = ipInfo.ip;
+                $.getJSON("http://ip-api.com/json/" + userIp, function (geolocationData) {
+                    if (geolocationData.countryCode) {
+                        var countryCode = geolocationData.countryCode;
+                        $("#countryname").val(countryCode);
+                        if (countryCode == 'IN') {
+                            $('#stateDiv').html(stateList);
+                        } else {
+                            $('#stateDiv').html(stateInput);
+                        }
+                    }
+                    if (geolocationData.city) {
+                        var city = geolocationData.city;
+                        $("#city").val(city);
+                    }
+                    // if (geolocationData.regionName) {
+                    //     var state = geolocationData.regionName;
+                    //     $("#state").val(state);
+                    // }
+                    if (geolocationData.zip) {
+                        var zip = geolocationData.zip;
+                        $("#pincode").val(zip);
+                    }
+                }).fail(function () {
+                    let countryCode = 'IN';
+                    $("#countryname").val(countryCode);
+                    if (countryCode == 'IN') {
+                        $('#stateDiv').html(stateList);
+                    } else {
+                        $('#stateDiv').html(stateInput);
+                    }
+                });
+            });
+        }
+
+        function getcountryList() {
+            $.getJSON("https://restcountries.com/v3.1/all", function (countrydata) {
+                let html = '';
+                for (let x = 0; x < countrydata.length; x++) {
+                    if (!countrydata[x].idd || !countrydata[x].idd.root || !countrydata[x].idd.suffixes || !countrydata[x].flags || !countrydata[x].flags.svg) {
+                        continue;
+                    }
+                    let code = countrydata[x].idd.root + countrydata[x].idd.suffixes[0];
+                    let flag = countrydata[x].flags.svg;
+                    html += '<option value="' + code + '" data-flag="' + flag + '">' + code + '</option>';
+                }
+                $('#country').html(html);
+
+                // Initialize Select2 with a custom template
+                $('#country').select2({
+                    templateResult: formatCountry,
+                    templateSelection: formatCountry
+                });
+                $('#country').val('+91').trigger('change');
+                function formatCountry(option) {
+                    if (!option.id) {
+                        return option.text;
+                    }
+                    var $option = $(
+                        '<span><img src="' + $(option.element).data('flag') + '" width="20px"/> ' + option.text + '</span>'
+                    );
+                    return $option;
+                }
+
+            });
+
+
+
+        }
+        function getbloodgroup() {
+            $.ajax({
+                type: "POST",
+                url: "submit_form.php",
+                data: { "getBloodGroups": true },
+                success: function (data) {
+                    let result = JSON.parse(data);
+                    if (result.status == 1) {
+                        $('#bloodgroup').html(result.data);
+                    }
+                }
+            })
+        }
+    $('#filled_by').on('change', function (e) {
+        let filledBy = $(this).val();
+        if(filledBy == 'Father') {
+           $('#mother_mobile_no_div').removeClass('d-none').val('');
+           $('#father_mobile_no_div').addClass('d-none').val('');
+        }else if(filledBy == 'Mother') {
+           $('#father_mobile_no_div').removeClass('d-none').val('');
+           $('#mother_mobile_no_div').addClass('d-none').val('');
+        } else if(filledBy == 'Guardian') {
+           $('#father_mobile_no_div').removeClass('d-none').val('');
+           $('#mother_mobile_no_div').removeClass('d-none').val('');
+        }else{
+              $('#father_mobile_no_div').addClass('d-none').val('');
+              $('#mother_mobile_no_div').addClass('d-none').val('');
+        }
+    });
+    
+        // $('.schoolImage1').on('click',function(e){
+        //     let clickEvent=$(this).attr('onclick');
+        // })
+        let selectedSchool = 0;
+        let schoolList = [252, 253, 255, 256, 257, 260, 261, 270, 272, 254, 269, 295,310,311];
+        let mtpSchoolList = [256, 257, 261];
+        let coimbatoreSchoolList = [252, 253, 255, 260, 270, 272, 254, 269,310,311];
+        let tirupurSchoolList = [295];
+        let inactiveSchoolList = [];
+        let residentialSchoolList=[261,311];
+        let otpVerified = false;
+        $('#school_district_mettupalayam').on('change', function (e) {
+            if ($(this).prop('checked')) {
+                $('input[name="school_type"]').prop('checked', false);
+                $('#school_type_resd').attr('disabled', false);
+                $('input[name="board"]').prop('checked', false);
+                $('#board_ib').attr('disabled', false);
+                $('#board_igcse').attr('disabled', false);
+                $('#board_state').attr('disabled', false);
+                $('#board_nios').attr('disabled', false);
+                $('#board_cbse').attr('disabled', false);
+                // inactiveSchoolList = [295];
+                for (x = 0; x < schoolList.length; x++) {
+                    if (!mtpSchoolList.includes(schoolList[x])) {
+                        $('#schoolDiv' + schoolList[x]).hide();
+                    } else {
+                        $('#schoolDiv' + schoolList[x]).show();
+                    }
+                }
+                selectedSchool = 0;
+            }
+        });
+        $('#school_district_coimbatore').on('change', function (e) {
+            if ($(this).prop('checked')) {
+                $('input[name="school_type"]').prop('checked', false);
+                $('#school_type_resd').attr('disabled', false);
+                $('input[name="board"]').prop('checked', false);
+                $('#board_ib').attr('disabled', false);
+                $('#board_igcse').attr('disabled', false);
+                $('#board_state').attr('disabled', true);
+                $('#board_nios').attr('disabled', false);
+                $('#board_cbse').attr('disabled', false);
+                // inactiveSchoolList = [295];
+                for (x = 0; x < schoolList.length; x++) {
+                    if (!coimbatoreSchoolList.includes(schoolList[x])) {
+                        $('#schoolDiv' + schoolList[x]).hide();
+                    } else {
+                        $('#schoolDiv' + schoolList[x]).show();
+                    }
+                }
+                selectedSchool = 0;
+            }
+        });
+        $('#school_district_tiruppur').on('change', function (e) {
+            if ($(this).prop('checked')) {
+                $('input[name="school_type"]').prop('checked', false);
+                $('#school_type_resd').attr('disabled', true);
+                $('#school_type_non_resd').prop('checked', true);
+                $('input[name="board"]').prop('checked', false);
+                $('#board_ib').attr('disabled', true);
+                $('#board_igcse').attr('disabled', true);
+                $('#board_state').attr('disabled', true);
+                $('#board_nios').attr('disabled', true);
+                $('#board_cbse').prop('checked', true);
+                // inactiveSchoolList = [252, 253, 255, 256, 257, 260, 261, 270, 272, 254, 269];
+                for (x = 0; x < schoolList.length; x++) {
+                    if (!tirupurSchoolList.includes(schoolList[x])) {
+                        $('#schoolDiv' + schoolList[x]).hide();
+                    } else {
+                        $('#schoolDiv' + schoolList[x]).show();
+                    }
+                }
+                let difference = schoolList.filter(id => tirupurSchoolList.includes(id));
+                if (difference.length === 1) {
+                    let uniqueId = difference[0];
+                    selectSchool(uniqueId);
+                }
+            }
+        });
+
+        $('#school_type_non_resd').on('change', function (e) {
+            if ($(this).prop('checked')) {
+                $('#board_cbse').attr('disabled', false);
+                $('#board_ib').attr('disabled', false);
+                $('#board_igcse').attr('disabled', false);
+                $('#board_state').attr('disabled', true);
+                let districtValue = $('input[name="school_district"]:checked').val();
+                if (!districtValue) {
+
+                    setTimeout(() => {
+                        alert('District is required!');
+                        $(this).prop('checked', false);
+                    }, 1);
+                    return false;
+                }
+                if (districtValue == 'Mettupalayam') {
+                    for (x = 0; x < schoolList.length; x++) {
+                        if (schoolList[x] == 256 || schoolList[x] == 257) {
+                            $('#schoolDiv' + schoolList[x]).show();
+                            $('#schoolDiv' + schoolList[x] + ' .card').css("border", "none");
+                        } else {
+                            $('#schoolDiv' + schoolList[x]).hide();
+                        }
+                    }
+                    $('#board_cbse').prop('disabled', false);
+                    $('#board_ib').prop('disabled', true);
+                    $('#board_igcse').prop('disabled', true);
+                    $('#board_state').prop('disabled', false);
+                    $('#board_nios').prop('disabled', false);
+                } else if (districtValue == 'Coimbatore') {
+                    for (x = 0; x < coimbatoreSchoolList.length; x++) {
+                        $('#schoolDiv' + coimbatoreSchoolList[x]).show();
+                        $('#schoolDiv' + coimbatoreSchoolList[x] + ' .card').css("border", "none");
+                    }
+                }
+                $('input[name="board"]').prop('checked', false);
+                selectedSchool = 0;
+
+            }
+        });
+        $('#school_type_resd').on('change', function (e) {
+            if ($(this).prop('checked')) {
+                $('#board_cbse').attr('disabled', false);
+                $('#board_ib').attr('disabled', true);
+                $('#board_igcse').attr('disabled', true);
+                $('#board_state').attr('disabled', true);
+                for (x = 0; x < schoolList.length; x++) {
+                    if (residentialSchoolList.includes(schoolList[x])) {
+
+                        $('#schoolDiv' + residentialSchoolList[x]).show();
+                        $('#schoolDiv' + residentialSchoolList[x] + ' .card').css("border", "none");
+                    } else {
+                        $('#schoolDiv' + schoolList[x]).hide();
+                    }
+                }
+                $('#board_cbse').prop('checked', true);
+                $('#board_nios').prop('disabled', true);
+               var school_district = $('input[name="school_district"]:checked').val();
+               if(school_district=='Mettupalayam'){
+                selectSchool(261);
+               }
+               if(school_district=='Coimbatore'){
+                selectSchool(311);
+               }
+            }
+        });
+        $('#board_cbse').on('change', function (e) {
+            if ($(this).prop('checked')) {
+                var school_district = $('input[name="school_district"]:checked').val();
+                var selectedValue = $('input[name="school_type"]:checked').val();
+                if (school_district == undefined) {
+                    alert('Choose the School District first!!!');
+                    $('#board_cbse').prop('checked', false);
+                    return false;
+                } else if (selectedValue == undefined) {
+                    alert('Choose the School Category first!!!');
+                    $('#board_cbse').prop('checked', false);
+                    return false;
+                } else {
+                    selectedSchool = 0;
+                    if (school_district == 'Mettupalayam') {
+                        for (x = 0; x < schoolList.length; x++) {
+                            if (schoolList[x] == 256 || schoolList[x] == 257) {
+                                $('#schoolDiv' + schoolList[x]).show();
+                            } else {
+                                $('#schoolDiv' + schoolList[x]).hide();
+                                $('#schoolDiv' + schoolList[x] + ' .card').css("border", "none");
+                            }
+                        }
+                        // selectSchool(256);
+                    } else if (school_district == 'Coimbatore') {
+                        let myList = [252, 253, 255, 270, 272, 310,311]
+                        for (x = 0; x < schoolList.length; x++) {
+                            if (myList.includes(schoolList[x])) {
+                                $('#schoolDiv' + schoolList[x]).show();
+                            } else {
+                                $('#schoolDiv' + schoolList[x]).hide();
+                                $('#schoolDiv' + schoolList[x] + ' .card').css("border", "none");
+                            }
+                        }
+                    }
+
+                }
+            }
+        });
+        $('#board_ib').on('change', function (e) {
+            if ($(this).prop('checked')) {
+                var school_district = $('input[name="school_district"]:checked').val();
+                var selectedValue = $('input[name="school_type"]:checked').val();
+                if (school_district == undefined) {
+                    alert('Choose the School District first!!!');
+                    $('#board_cbse').prop('checked', false);
+                    return false;
+                } else if (selectedValue == undefined) {
+                    alert('Choose the School Category first!!!');
+                    $('#board_cbse').prop('checked', false);
+                    return false;
+                } else {
+                    selectedSchool = 0;
+                    for (x = 0; x < schoolList.length; x++) {
+                        $('#schoolDiv' + schoolList[x] + ' .card').css("border", "none");
+                    }
+                    if (selectedValue == 'NON-RESIDENTIAL') {
+                        for (x = 0; x < schoolList.length; x++) {
+                            if (schoolList[x] != 260) {
+                                $('#schoolDiv' + schoolList[x]).hide();
+                            } else {
+                                $('#schoolDiv' + schoolList[x]).show();
+                            }
+                        }
+                        selectSchool(260);
+                    }
+                }
+            }
+        });
+        $('#board_igcse').on('change', function (e) {
+            if ($(this).prop('checked')) {
+                var school_district = $('input[name="school_district"]:checked').val();
+                var selectedValue = $('input[name="school_type"]:checked').val();
+                if (school_district == undefined) {
+                    alert('Choose the School District first!!!');
+                    $('#board_cbse').prop('checked', false);
+                    return false;
+                } else if (selectedValue == undefined) {
+                    alert('Choose the School Category first!!!');
+                    $('#board_cbse').prop('checked', false);
+                    return false;
+                } else {
+                    selectedSchool = 0;
+                    for (x = 0; x < schoolList.length; x++) {
+                        $('#schoolDiv' + schoolList[x] + ' .card').css("border", "none");
+                    }
+                    if (selectedValue == 'NON-RESIDENTIAL') {
+                        theActiveSchoolList = [260, 254, 269];
+                        for (x = 0; x < schoolList.length; x++) {
+                            if (!theActiveSchoolList.includes(schoolList[x])) {
+                                $('#schoolDiv' + schoolList[x]).hide();
+                            } else {
+                                $('#schoolDiv' + schoolList[x]).show();
+                            }
+                        }
+                    }
+
+                }
+            }
+        });
+        $('#board_state').on('change', function (e) {
+            if ($(this).prop('checked')) {
+                var school_district = $('input[name="school_district"]:checked').val();
+                var selectedValue = $('input[name="school_type"]:checked').val();
+                if (school_district == undefined) {
+                    alert('Choose the School District first!!!');
+                    $('#board_cbse').prop('checked', false);
+                    return false;
+                } else if (selectedValue == undefined) {
+                    alert('Choose the School Category first!!!');
+                    $('#board_cbse').prop('checked', false);
+                    return false;
+                } else {
+                    selectedSchool = 0;
+                    for (x = 0; x < schoolList.length; x++) {
+                        $('#schoolDiv' + schoolList[x] + ' .card').css("border", "none");
+                    }
+                    if (selectedValue == 'NON-RESIDENTIAL') {
+                        for (x = 0; x < schoolList.length; x++) {
+                            if (schoolList[x] != 257) {
+                                $('#schoolDiv' + schoolList[x]).hide();
+                            } else {
+                                $('#schoolDiv' + schoolList[x]).show();
+                            }
+                        }
+                        selectSchool(257);
+                    }
+                }
+            }
+        });
+        $('#board_nios').on('change', function (e) {
+            if ($(this).prop('checked')) {
+                var school_district = $('input[name="school_district"]:checked').val();
+                var selectedValue = $('input[name="school_type"]:checked').val();
+                if (school_district == undefined) {
+                    alert('Choose the School District first!!!');
+                    $('#board_cbse').prop('checked', false);
+                    return false;
+                } else if (selectedValue == undefined) {
+                    alert('Choose the School Category first!!!');
+                    $('#board_cbse').prop('checked', false);
+                    return false;
+                } else {
+                    selectedSchool = 0;
+                    for (x = 0; x < schoolList.length; x++) {
+                        $('#schoolDiv' + schoolList[x] + ' .card').css("border", "none");
+                    }
+                    if (school_district == 'Mettupalayam') {
+                        if (selectedValue == 'NON-RESIDENTIAL') {
+                            for (x = 0; x < schoolList.length; x++) {
+                                if (schoolList[x] != 256) {
+                                    $('#schoolDiv' + schoolList[x]).hide();
+                                } else {
+                                    $('#schoolDiv' + schoolList[x]).show();
+                                }
+                            }
+                            selectSchool(256);
+                        }
+                    } else if (school_district == 'Coimbatore') {
+                        if (selectedValue == 'NON-RESIDENTIAL') {
+                            for (x = 0; x < schoolList.length; x++) {
+                                if (schoolList[x] != 252) {
+                                    $('#schoolDiv' + schoolList[x]).hide();
+                                } else {
+                                    $('#schoolDiv' + schoolList[x]).show();
+                                }
+                            }
+                            selectSchool(252);
+                        }
+                    }
+
+                }
+            }
+        });
+        function selectSchool(schoolId) {
+            var school_district = $('input[name="school_district"]:checked').val();
+            var selectedSchoolType = $('input[name="school_type"]:checked').val();
+            var selectedBoard = $('input[name="board"]:checked').val();
+
+            if (!school_district) {
+                // district not selected
+                selectedSchool = 0;
+                $('input[name="school_district"]').prop('checked', false);
+                $('input[name="school_type"]').prop('checked', false);
+                $('input[name="school_district"]').prop('board', false);
+                let myList = [252, 253, 255, 270, 272, 311]  // cbse school
+                let myList1 = [260, 254, 269]
+                if (myList.includes(parseInt(schoolId))) {
+                    if (myList.includes(parseInt(schoolId))) {
+                        $('#school_district_coimbatore').prop('checked', true);
+                        $('#school_type_non_resd').prop('checked', true);
+                        $('#board_cbse').prop('checked', true);
+                        $('#board_ib').prop('disabled', false);
+                        $('#board_igcse').prop('disabled', false);
+                        $('#board_state').prop('disabled', true);
+                        $('#board_nios').prop('disabled', false);
+                        for (x = 0; x < schoolList.length; x++) {
+                            if (myList.includes(schoolList[x])) {
+                                $('#schoolDiv' + schoolList[x]).show();
+                            } else {
+                                $('#schoolDiv' + schoolList[x]).hide();
+                                $('#schoolDiv' + schoolList[x] + ' .card').css("border", "none");
+                            }
+                            if (schoolList[x] == schoolId) {
+                                $('#schoolDiv' + schoolList[x] + ' .card').css("border", "8px solid #07eb2b");
+                            } else {
+                                $('#schoolDiv' + schoolList[x] + ' .card').css("border", "none");
+                            }
+                        }
+
+                    }
+
+                } else if (myList1.includes(parseInt(schoolId))) {
+                    $('#school_district_coimbatore').prop('checked', true);
+                        $('#school_type_non_resd').prop('checked', true);
+                    $('#board_cbse').prop('checked', false);
+                    $('#board_ib').prop('checked', false);
+                    $('#board_igcse').prop('checked', true);
+                    $('#board_state').prop('disabled', true);
+                    $('#board_nios').prop('checked', false);
+                    for (x = 0; x < schoolList.length; x++) {
+                        if (myList1.includes(schoolList[x])) {
+                            $('#schoolDiv' + schoolList[x]).show();
+                        } else {
+                            $('#schoolDiv' + schoolList[x]).hide();
+                            $('#schoolDiv' + schoolList[x] + ' .card').css("border", "none");
+                        }
+                        if (schoolList[x] == schoolId) {
+                            $('#schoolDiv' + schoolList[x] + ' .card').css("border", "8px solid #07eb2b");
+                        } else {
+                            $('#schoolDiv' + schoolList[x] + ' .card').css("border", "none");
+                        }
+                    }
+
+                } else if (schoolId == 256) {
+                    $('#school_district_mettupalayam').prop('checked', true);
+                    $('#school_type_non_resd').prop('checked', true);
+                    $('#school_type_resd').prop('checked', false);
+                    $('#school_type_non_resd').prop('checked', true);
+                    $('#board_cbse').prop('checked', true);
+                    $('#board_ib').prop('disabled', true);
+                    $('#board_igcse').prop('disabled', true);
+                    $('#board_state').prop('disabled', false);
+                    $('#board_nios').prop('disabled', false);
+                    for (x = 0; x < schoolList.length; x++) {
+                        if (schoolList[x] == 256) {
+                            $('#schoolDiv' + schoolList[x]).show();
+                            $('#schoolDiv' + schoolList[x] + ' .card').css("border", "8px solid #07eb2b");
+                        } else {
+                            $('#schoolDiv' + schoolList[x]).hide();
+                            $('#schoolDiv' + schoolList[x] + ' .card').css("border", "none");
+                        }
+                    }
+                } else if (schoolId == 257) {
+                    $('#school_district_mettupalayam').prop('checked', true);
+                    $('#school_type_non_resd').prop('checked', true);
+                    $('#board_cbse').prop('checked', false);
+                    $('#board_ib').prop('disabled', true);
+                    $('#board_igcse').prop('disabled', true);
+                    $('#board_state').prop('disabled', false);
+                    $('#board_state').prop('checked', true);
+                    $('#board_nios').prop('disabled', false);
+                    for (x = 0; x < schoolList.length; x++) {
+                        if (schoolList[x] == 257) {
+                            $('#schoolDiv' + schoolList[x]).show();
+                            $('#schoolDiv' + schoolList[x] + ' .card').css("border", "8px solid #07eb2b");
+                        } else {
+                            $('#schoolDiv' + schoolList[x]).hide();
+                            $('#schoolDiv' + schoolList[x] + ' .card').css("border", "none");
+                        }
+                    }
+                } else if (schoolId == 261) {
+                    $('#school_district_mettupalayam').prop('checked', true);
+                    $('#school_type_resd').prop('checked', true);
+                    $('#school_type_non_resd').prop('checked', false);
+                    $('#board_cbse').prop('checked', true);
+                    $('#board_ib').prop('disabled', true);
+                    $('#board_igcse').prop('disabled', true);
+                    $('#board_state').prop('disabled', true);
+                    $('#board_nios').prop('disabled', true);
+                    for (x = 0; x < schoolList.length; x++) {
+                        if (schoolList[x] == 256) {
+                            $('#schoolDiv' + schoolList[x]).show();
+                            $('#schoolDiv' + schoolList[x] + ' .card').css("border", "8px solid #07eb2b");
+                        } else {
+                            $('#schoolDiv' + schoolList[x]).hide();
+                            $('#schoolDiv' + schoolList[x] + ' .card').css("border", "none");
+                        }
+                    }
+                } else if (schoolId == 295) {
+                    $('#school_district_tiruppur').prop('checked', true);
+                    $('#school_type_non_resd').prop('checked', true);
+                    $('#school_type_resd').prop('disabled', true);
+                    $('#board_cbse').prop('checked', true);
+                    $('#board_ib').prop('disabled', true);
+                    $('#board_igcse').prop('disabled', true);
+                    $('#board_state').prop('disabled', true);
+                    $('#board_nios').prop('disabled', true);
+                    for (x = 0; x < schoolList.length; x++) {
+                        if (schoolList[x] == schoolId) {
+                            $('#schoolDiv' + schoolList[x] + ' .card').css("border", "8px solid #07eb2b");
+                        } else {
+                            $('#schoolDiv' + schoolList[x] + ' .card').css("border", "none");
+                            $('#schoolDiv' + schoolList[x]).hide();
+
+                        }
+                    }
+                }
+                selectedSchool = schoolId;
+                getYears(schoolId);
+            } else if (!selectedSchoolType) {
+                // school type not selected
+                console.log('school type not selected');
+
+            } else if (!selectedBoard) {
+                // school board not selected
+                console.log('school board not selected');
+
+            } else {
+                if (selectedSchoolType == undefined) {
+                    alert('Choose the School Category first!!!');
+                    return false;
+                } else if (selectedBoard == undefined) {
+                    alert('Choose the School Board first!!!');
+                    return false;
+                } else {
+                    selectedSchool = schoolId;
+                    getYears(schoolId);
+                    for (x = 0; x < schoolList.length; x++) {
+                        if (schoolList[x] == schoolId) {
+                            $('#schoolDiv' + schoolList[x] + ' .card').css("border", "8px solid #07eb2b");
+                        } else {
+                            $('#schoolDiv' + schoolList[x] + ' .card').css("border", "none");
+
+                        }
+                    }
+                }
+            }
+        }
+        function getYears(school_id) {
+            var dataString = 'getAcdYears=true&school_id=' + school_id;
+            $.ajax({
+                type: "POST",
+                url: "submit_form.php",
+                data: dataString,
+                cache: false,
+                success: function (x) {
+                    let result = JSON.parse(x);
+                    if (result.status == 1) {
+                        $('#academicyear_id').html(result.data);
+                        setTimeout(() => {
+                            autoGetStandard();
+                        }, 1);
+                    } else {
+                        alert(result.message);
+                        $('#academicyear_id').html('<option value="">Choose Academic Year</option>');
+                        return false;
+                    }
+                }
+            });
+
+        }
+        $("#academicyear_id").change(function (e) {
+            var school_id = selectedSchool;
+            var academicyear_id = $(this).val();
+            var selectedBoard = $('input[name="board"]:checked').val();
+
+            if (selectedBoard == undefined) {
+                alert('Choose the School Board first!!!');
+                return false;
+            } else if (academicyear_id == '') {
+                alert('Choose the Academic Year first!!!');
+                return false;
+            }
+            var dataString = 'getStandards=true&school_id=' + school_id + '&academicyear_id=' + academicyear_id + '&board=' + selectedBoard;
+            $.ajax({
+                type: "POST",
+                url: "submit_form.php",
+                data: dataString,
+                cache: false,
+                success: function (x) {
+                    let result = JSON.parse(x);
+                    if (result.status == 1) {
+                        $('#school_std_id').html(result.data);
+                        $('.sibling_standard').html(result.data);
+                    } else {
+                        alert(result.message);
+                        return false;
+                    }
+                }
+            });
+        });
+        function autoGetStandard() {
+            var school_id = selectedSchool;
+            var academicyear_id = $('#academicyear_id').val();
+            var selectedBoard = $('input[name="board"]:checked').val();
+            if (selectedBoard == undefined) {
+                alert('Choose the School Board first!!!');
+                return false;
+            } else if (academicyear_id == '') {
+                alert('Choose the Academic Year first!!!');
+                return false;
+            }
+            var dataString = 'getStandards=true&school_id=' + school_id + '&academicyear_id=' + academicyear_id + '&board=' + selectedBoard;
+            $.ajax({
+                type: "POST",
+                url: "submit_form.php",
+                data: dataString,
+                cache: false,
+                success: function (x) {
+                    let result = JSON.parse(x);
+                    if (result.status == 1) {
+                        $('#school_std_id').html(result.data);
+                        $('.sibling_standard').html(result.data);
+                    } else {
+                        $('#school_std_id').html('<option value="">No Standard</option>');
+                        $('.sibling_standard').html('<option value="">No Standard</option>');
+                        alert(result.message);
+                        return false;
+                    }
+                }
+            });
+        }
+        $('#school_std_id').on('change', function () {
+            let val = parseInt($(this).val(), 10); // Convert val to a number
+            if (!isNaN(val)) {
+                var school_id = selectedSchool;
+                if (school_id == 256 || school_id == 261) {
+                    let forSecondary = [2230, 2231, 2232, 2247, 2248, 2249];
+                    let forUpperSecondary = [2233, 2234, 2250, 2251];
+
+                    if (forSecondary.includes(val)) {
+                        $('#forUpperSecondaryStudent').hide();
+                        $('#forSecondaryStudent').show();
+                        // Secondary
+                    } else if (forUpperSecondary.includes(val)) {
+                        $('#forUpperSecondaryStudent').show();
+                        $('#forSecondaryStudent').hide();
+                    } else {
+                        $('#forSecondaryStudent').hide();
+                        $('#forUpperSecondaryStudent').hide();
+                    }
+                } else {
+                    $('#forSecondaryStudent').hide();
+                    $('#forUpperSecondaryStudent').hide();
+                }
+            } else {
+                $('#forSecondaryStudent').hide();
+                $('#forUpperSecondaryStudent').hide();
+            }
+        });
+
+        var emailAlertShown = false;
+        function validateEmail(email) {
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                if (!emailAlertShown) {
+                    alert('Invalid email. Please enter a valid email address.');
+                    $('#emailId').focus();
+                    emailAlertShown = true;
+                }
+                return false;
+            } else {
+                emailAlertShown = false;
+            }
+        }
+        $('#emailId').on('blur', function (e) {
+            let val = $('#emailId').val();
+            if (val !== '') {
+                validateEmail(val);
+            }
+        });
+        $('#mobile').on('input', function (e) {
+            let phoneNumber = $(this).val();
+            phoneNumber = phoneNumber.replace(/\D/g, '');
+            if (phoneNumber.length > 10) {
+                phoneNumber = phoneNumber.slice(0, 10);
+                $(this).val(phoneNumber);
+            }
+        });
+        function resend_otp() {
+            if (validateForm()) {
+                $('#resend_pwd_otp').hide();
+                let mobile_no = $('#mobile').val();
+                let country = $('#country').val();
+                var dataString = 'sendOtp=true&school_id=' + selectedSchool + '&mobile_no=' + mobile_no + '&country=' + country;
+                $.ajax({
+                    type: "POST",
+                    url: "submit_form.php",
+                    data: dataString,
+                    cache: false,
+                    success: function (x) {
+                        let result = JSON.parse(x);
+                        if (result.status == 1) {
+                            alert(result.message);
+                            $('#getNumberOTP').hide();
+                            $('#otpDiv').show();
+                            $('#submitButton').show();
+                            setTimeout(() => {
+                                $('#resend_pwd_otp').show();
+                            }, 2000);
+                        } else {
+                            alert(result.message);
+                            return false;
+                        }
+                    }
+                });
+            }
+        }
+        $('#getNumberOTP').on('click', function () {
+            if (validateForm()) {
+                $('#resend_pwd_otp').hide();
+                let mobile_no = $('#mobile').val();
+                let country = $('#country').val();
+                let email = $('#emailId').val();
+                var dataString = 'sendOtp=true&school_id=' + selectedSchool + '&mobile_no=' + mobile_no + '&country=' + country + '&email=' + email;
+                $.ajax({
+                    type: "POST",
+                    url: "submit_form.php",
+                    data: dataString,
+                    cache: false,
+                    success: function (x) {
+                        let result = JSON.parse(x);
+                        if (result.status == 1) {
+                            alert(result.message);
+                            $('#getNumberOTP').hide();
+                            $('#otpDiv').show();
+                            $('#submitButton').show();
+                            setTimeout(() => {
+                                $('#resend_pwd_otp').show();
+                            }, 2000);
+                        } else {
+                            alert(result.message);
+                            return false;
+                        }
+                    }
+                });
+            }
+
+
+        });
+        $('#verifyOtp').on('click', function () {
+            if (!validateForm()) {
+                return false;
+            }
+            let mobile_no = $('#mobile').val();
+            let otp = $('#otp').val();
+            if (otp == '') {
+                alert('OTP is required!!!');
+                return false;
+            }
+            if (otp.length != 6) {
+                alert('OTP is not valid!!!');
+                return false;
+            }
+            var dataString = 'verifyOtp=true&school_id=' + selectedSchool + '&mobile_no=' + mobile_no + '&otp=' + otp;
+            $.ajax({
+                type: "POST",
+                url: "submit_form.php",
+                data: dataString,
+                cache: false,
+                success: function (x) {
+                    let result = JSON.parse(x);
+                    if (result.status == 1) {
+                        alert(result.message);
+                        $('#otpDiv').hide();
+                        $('#verifyOtp').hide();
+                        $('#submitButton').show();
+                    } else {
+                        alert(result.message);
+                        return false;
+                    }
+
+                }
+            });
+        });
+        function validateForm() {
+            var selectedschoolDistrict = $('input[name="school_district"]:checked').val();
+            var selectedSchoolType = $('input[name="school_type"]:checked').val();
+            var selectedBoard = $('input[name="board"]:checked').val();
+            var school_id = selectedSchool;
+            var academicyear_id = $('#academicyear_id').val();
+            var school_std_id = $('#school_std_id').val();
+            var username = $('#username').val();
+            var fathername = $('#fathername').val();
+            var mothername = $('#mothername').val();
+            var gender = $('#gender').val();
+            var dob = $('#dob').val();
+            var emailId = $('#emailId').val();
+            var mobile = $('#mobile').val();
+            var country = $('#country').val();
+            var countryname = $('#countryname').val();
+            var bloodgroup = $('#bloodgroup').val();
+            var street_address = $('#street_address').val();
+            var city = $('#city').val();
+            var district = $('#district').val();
+            var state = $('#state').val();
+            var pincode = $('#pincode').val();
+            var information_source = $('#information_source').val();
+            var present_school_name = $('#present_school_name').val();
+            var present_school_board = $('#present_school_board').val();
+            var school_change_reason = $('#school_change_reason').val();
+            var filled_by=$('#filled_by').val();
+            var father_mobile_no=$('#father_mobile_no').val();
+            var mother_mobile_no=$('#mother_mobile_no').val();
+            if (!selectedschoolDistrict) {
+                alert('Please Choose a School District.');
+                return false;
+            }
+            if (!selectedSchoolType) {
+                alert('Please Choose a School Category.');
+                return false;
+            }
+            if (!selectedBoard) {
+                alert('Please Choose a board.');
+                return false;
+            }
+            if (school_id == '' || school_id == 0) {
+                alert('Please choose a school.');
+                return false;
+            }
+            if (!academicyear_id) {
+                alert('Please select the academic year.');
+                return false;
+            }
+            if (!school_std_id) {
+                alert('Please Select school standard.');
+                return false;
+            }
+            if (!username) {
+                alert('Please enter the student name.');
+                return false;
+            }
+            if (!gender) {
+                alert('Please select the gender.');
+                return false;
+            }
+            // if (!bloodgroup) {
+            //     alert('Please select the Blood group.');
+            //     return false;
+            // }
+            if (!dob) {
+                alert('Please enter the date of birth.');
+                return false;
+            }
+            if (!fathername) {
+                alert('Please enter the father name.');
+                return false;
+            }
+            if (!mothername) {
+                alert('Please enter the mother name.');
+                return false;
+            }
+            if (!street_address) {
+                alert('Please enter Door No./ Street /Area /Taluk');
+                return false;
+            }
+
+            if (!city) {
+                alert('Please enter city name.');
+                return false;
+            }
+            if (!district) {
+                alert('Please enter district name.');
+                return false;
+            }
+            if (!state) {
+                alert('Please enter state name.');
+                return false;
+            }
+            if (!pincode) {
+                alert('Please enter the pincode.');
+                return false;
+            }
+            if (pincode.length != 6) {
+                alert('Please enter valid pincode.');
+                return false;
+            }
+            if (!countryname) {
+                alert('Please select the country name.');
+                return false;
+            }
+            if (!emailId) {
+                alert('Please enter the email address.');
+                return false;
+            }
+
+            if (!country) {
+                alert('Please select the country code.');
+                return false;
+            }
+            if (!mobile) {
+                alert('Please enter the mobile number.');
+                return false;
+            }
+            if (country == '+91') {
+                if (mobile.length != 10) {
+                    alert('Please enter valid mobile number.');
+                    return false;
+                }
+            } else {
+                if (mobile.length < 7) {
+                    alert('Please enter valid mobile number.');
+                    return false;
+                }
+                if (mobile.length > 15) {
+                    alert('Please enter valid mobile number.');
+                    return false;
+                }
+            }
+
+            if (!information_source) {
+                alert('Please select the source of information.');
+                return false;
+            }
+            if (!present_school_name) {
+                alert('Please enter the present school name.');
+                return false;
+            }
+            if (!school_change_reason) {
+                alert('Please enter the reason of school change.');
+                return false;
+            }
+            if (!country) {
+                alert('Please select the country code.');
+                return false;
+            }
+            if(!filled_by){
+                alert('Please select who is filling the form.');
+                return false;
+            }
+            // if(filled_by=='Father' && !mother_mobile_no){
+            //     alert('Please enter mother mobile number.');
+            //     return false;
+            // }
+            // if(filled_by=='Mother' && !father_mobile_no){
+            //     alert('Please enter father mobile number.');
+            //     return false;
+            // }
+            // if (filled_by=='Guardian' && (!father_mobile_no || !mother_mobile_no)){
+            //     alert('Please enter both parent mobile number.');
+            //     return false;
+
+            // }
+            var siblings = [];
+            var hasDuplicate = false;
+            $('.sibling-group').each(function () {
+                var siblingData = {
+                    name: $(this).find('input[name="sibling_name[]"]').val(),
+                    class: $(this).find('input[name="sibling_class[]"]').val(),
+                    dob: $(this).find('input[name="sibling_dob[]"]').val(),
+                    gender: $(this).find('select[name="sibling_gender[]"]').val(),
+                };
+
+                // Check if all fields are blank
+                if (!siblingData.name && !siblingData.class && !siblingData.dob && !siblingData.gender) {
+                    return; // Skip this iteration if all fields are blank
+                }
+
+                if (siblings.some(sibling => JSON.stringify(sibling) === JSON.stringify(siblingData))) {
+                    alert('Duplicate sibling information is not allowed.');
+                    hasDuplicate = true;
+                    return false; // break loop
+                }
+                siblings.push(siblingData);
+            });
+            if (hasDuplicate) {
+                return false; // Prevent form submission if a duplicate was found
+            }
+            // Log "proceed" if all values are filled
+            // console.log('Proceed');
+            return true;
+        }
+        $('#admission_form').on('submit', function (e) {
+            e.preventDefault();
+            if (validateForm()) {
+
+                //make sibling blank if name is blank
+                $('.sibling-group').each(function () {
+                    if ($(this).find('input[name="sibling_name[]"]').val() == '') {
+                        $(this).find('input[name="sibling_name[]"]').val('');
+                        $(this).find('input[name="sibling_class[]"]').val('');
+                        $(this).find('input[name="sibling_dob[]"]').val('');
+                        $(this).find('select[name="sibling_gender[]"]').val('');
+                    }
+                });
+
+                let formData = new FormData($('#admission_form')[0]);
+                formData.append('school_id', selectedSchool);
+                formData.append('submitForm', true);
+                $.ajax({
+                    type: "POST",
+                    url: "submit_form.php",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    cache: false,
+                    success: function (x) {
+                        let result = JSON.parse(x);
+                        if (result.status == 1) {
+                            $('#otpDiv').hide();
+                            $('#verifyOtp').hide();
+                            $('#submitButton').show();
+                            $('#responseMessage').addClass('bg-success text-white text-center');
+                            $('#responseMessage').html(result.message);
+                            setTimeout(() => {
+                                window.location.href = "https://ssvminstitutions.ac.in/thankyou.html";
+                            }, 2000);
+                        } else {
+                            alert(result.message);
+                            return false;
+                        }
+
+                    }
+                });
+            }
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            // Add more sibling fields
+            let siblingCount = 0;
+            $('#addSibling').click(function () {
+                if (siblingCount == 0) {
+                    siblingCount++;
+                    $('#sibling' + siblingCount).show();
+                    $('#removeSibling').show();
+                } else {
+                    if (siblingCount >= 3) {
+                        $(this).css('display', 'none');
+                    } else {
+                        siblingCount++;
+                        $('#sibling' + siblingCount).show();
+                        if (siblingCount == 3) {
+                            $(this).css('display', 'none');
+                        }
+                    }
+                }
+            });
+            $('#removeSibling').click(function () {
+                $('#sibling' + siblingCount).hide();
+                siblingCount--;
+                if (siblingCount == 0) {
+                    $(this).css('display', 'none');
+                }
+                $('#addSibling').show();
+
+            });
+
+
+        });
+        $('#countryname').on('change', function (e) {
+            let val = $(this).val();
+            if (val != '') {
+                if (val == 'IN') {
+                    $('#stateDiv').html(stateList);
+                } else {
+                    $('#stateDiv').html(stateInput);
+                }
+            }
+        })
+    </script>
+
+
+</body></html>

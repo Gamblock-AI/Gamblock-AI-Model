@@ -1,0 +1,1003 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>VERSUSbet</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+	<script src="js/script.js"></script>
+    <script src="js/translations.js"></script>
+
+    <style>
+        @font-face {
+            font-family: 'IBMPlexSans';
+            src: url('assets/fonts/IBMPlexSans-Regular.ttf') format('truetype');
+        }
+        @font-face {
+            font-family: 'IBMPlexSans-Medium';
+            src: url('assets/fonts/IBMPlexSans-Medium.ttf') format('truetype');
+        }
+        @font-face {
+            font-family: 'SharpGrotesk-Bold';
+            src: url('assets/fonts/SharpGrotesk-Bold10.otf') format('opentype');
+        }
+        @font-face {
+            font-family: 'SharpGrotesk-SemiBold';
+            src: url('assets/fonts/SharpGrotesk-SemiBold10.otf') format('opentype');
+        }
+        @font-face {
+            font-family: 'SharpGroteskBold10-Regular';
+            src: url('assets/fonts/SharpGroteskBold10-Regular.ttf') format('truetype');
+        }
+        @font-face {
+            font-family: 'Supply-Regular';
+            src: url('assets/fonts/Supply-Regular.otf') format('opentype');
+        }
+
+        body {
+            margin: 0;
+            font-family: 'IBMPlexSans', Arial, sans-serif;
+            background-color: black;
+            color: white;
+        }
+        .blue {
+            color: #06ffd8;
+        }
+        .header {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 90px;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-sizing: border-box;
+            z-index: 1000;
+        }
+        .header img {
+            height: 30px;
+            margin-left: 7vw;
+            width: auto;
+        }
+        .header .nav-links {
+            display: flex;
+            gap: 20px;
+            margin-right: 7vw;
+        }
+        .login {
+            color: #e7ff3c;
+            text-decoration: none !important;
+            padding: 10px 20px;
+            background-color: black;
+            border: 1px solid #e7ff3c;
+            font-family: 'Supply-Regular';
+            transition: background-color 0.3s;
+        }
+        .login:hover {
+            background-color: #e7ff3c;
+            color: black;
+        }
+        .register {
+            text-decoration: none !important;
+            padding: 10px 20px;
+            font-family: 'Supply-Regular';
+            transition: background-color 0.3s;
+            background-color: #e7ff3c;
+            color: black;
+            border: 1px solid #e7ff3c; 
+            cursor: pointer;
+        }
+        .register:hover {
+            color: #e7ff3c;
+            background-color: black;
+        }
+        /* .content {
+            padding-top: 90px;
+        } */
+        .carousel-inner img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+        .scrolling-image-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        .scrolling-image {
+            display: flex;
+            width: 200%;
+            animation: scroll 20s linear infinite;
+        }
+        .scrolling-image img {
+            width: 50%;
+        }
+        .scroll2 {
+            display: flex;
+            width: 200%;
+            animation: scroll2 20s linear infinite;
+        }
+        @keyframes scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+        @keyframes scroll2 {
+            from { transform: translateX(-50%); }
+            to { transform: translateX(0%); }
+        }
+        .columns-section {
+            display: flex;
+            justify-content: center;
+            margin: 50px 0;
+        }
+        .column {
+            flex: 1;
+            max-width: calc(70% / 3);
+            margin: 0 50px;
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: opacity 1s, transform 1s;
+        }
+        .column img {
+            width: 100%;
+            height: auto;
+        }
+        .column.show {
+            opacity: 1;
+            transform: translateX(0);
+            text-align: center;
+        }
+        .column.show p {
+            font-size: 18px;
+        }
+
+        /* New section styles */
+        .columns-section-large {
+            display: flex;
+            justify-content: center;
+            margin: 50px 0;
+        }
+        .column-large {
+            flex: 1;
+            max-width: 350px;
+            margin: 0 30px;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 1s, transform 1s;
+        }
+        .column-large img {
+            width: 100%;
+            height: auto;
+        }
+        .column-large.show {
+            opacity: 1;
+            transform: scale(1);
+            text-align: center;
+        }
+        .column-large.show p {
+            font-size: 20px;
+        }
+        .button-section {
+            text-align: center;
+            padding-bottom: 50px;
+        }
+        .button-section a {
+            padding: 15px 40px;
+            font-size: 20px;
+        }
+
+        /* Section with background image */
+        .bg-section {
+            background: url('assets/img/desktop/BG 01.png') no-repeat center center;
+            background-size: cover;
+            padding: 60px 0;
+            text-align: center;
+            color: white;
+            background-position: top;
+        }
+        .bg-section h1 {
+            margin-bottom: 40px;
+            font-family: 'SharpGrotesk-SemiBold';
+            font-size: 50px;
+        }
+        .bg-section .row {
+            display: flex;
+            justify-content: center;
+            height: 300px;
+            max-width: 90%;
+            margin-left: 5%;
+        }
+        .bg-section .col {
+            perspective: 1000px; /* Add perspective */
+        }
+        .bg-section .card {
+            width: 100%;
+            max-width: 300px;
+            height: 300px; /* Adjust height as needed */
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+            background-image: url("assets/img/desktop/BOX\ 01.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-color: transparent;
+            align-items: center;
+        }
+        .bg-section .card:hover {
+            transform: rotateY(180deg);
+        }
+        .card img {
+            /* width: fit-content; */
+            height: 100px;
+            position: absolute;
+            top: -40px;
+        }
+        .bg-section .front, .bg-section .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 10px;
+            box-sizing: border-box;
+            pointer-events: none;
+        }
+        .bg-section .front {
+            font-family: 'SharpGrotesk-SemiBold';
+            font-size: 40px;
+            line-height: 1;
+        }
+        .bg-section .back {
+            color: white;
+            transform: rotateY(180deg);
+        }
+        .bg-section .overlay {
+            display: block;
+        }
+        .hiddenText {
+            font-family: 'IBMPlexSans';
+            font-size: 16px;
+            max-width: 90%;
+            text-align: -webkit-center;
+        }
+        /* Add this to your existing CSS */
+        .contact-section {
+            padding: 150px 20px;
+            text-align: center;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .contact-section h1 {
+            margin-bottom: 40px;
+            font-family: 'SharpGrotesk-SemiBold';
+            font-size: 50px;
+        }
+
+        .contact-section .row {
+            display: flex;
+            justify-content: center;
+        }
+
+        .contact-section .col {
+            flex: 1;
+            max-width: 300px;
+            margin: 0 20px;
+        }
+
+        .contact-section .col img {
+            width: auto;
+            height: 40px;
+            margin-bottom: 20px;
+        }
+
+        .contact-section .col p {
+            font-size: 18px;
+            font-family: 'IBMPlexSans';
+        }
+        .contact-section .col a {
+            text-decoration: none !important;
+        }
+        .center-image {
+            text-align: center;
+        }
+        .center-image img {
+            width: 30%;
+        }
+        /* Add this to your existing CSS */
+        .custom-section {
+            background-size: auto;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 60px 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .custom-section .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .custom-section .first-row .col {
+            flex: 1;
+            max-width: 50vw;
+            margin: 0 20px;
+        }
+
+        .custom-section .first-row .col img,
+        .custom-section .second-row .col img {
+            width: 100%;
+            height: auto;
+        }
+
+        .custom-section .second-row .col {
+            max-width: 50%;
+            padding: 100px;
+        }
+
+        .custom-section .second-row .col img {
+            width: 20vw;
+            height: auto;
+            
+        }
+
+        .custom-section .third-row p {
+            font-size: 18px;
+            max-width: 70%;
+            margin: 0 auto;
+            font-family: 'IBMPlexSans';
+        }
+
+        .footer {
+            background-color: #000;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-images {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 80px; /* Increase the gap between the images */
+        }
+
+        .footer-images img {
+            height: 40px;
+            max-width: 100%;
+        }
+        .movil {
+            display: none;
+        }
+        .row.third-row p{
+            font-size: 10px;
+            color: #e7ff3c;
+        }
+        @media (max-width: 768px) {
+            .desktop {
+                display: none;
+            }
+            .movil {
+                display: block;
+            }
+            .header img {
+                height: 20px;
+                margin-left: 0vw;
+            }
+            .nav-links {
+                margin-right: 10px;
+                gap: 10px
+            }
+            .login, .register {
+                font-size: 10px;
+                padding: 5px 5px;
+            }
+            .columns-section {
+                display: block;
+            }
+            .columns-section .column {
+                margin: 7vw 1vw;
+                max-width: 80%;
+                opacity: 1;
+                transform: translateX(0);
+                text-align: center;
+                margin-left: 10%;
+            }
+            .column img {
+                width: 65vw;
+                /* height: fit-content; */
+            }
+            .column.show p {
+                font-size: 18px;
+                margin-bottom: 0;
+            }
+            .scrolling-image img {
+                width: 100%;
+            }
+            .carousel-item p {
+                text-align: center;
+            }
+            #carouselMovil {
+                padding: 50px;
+            }
+            .button-section {
+                text-align: center;
+                padding-bottom: 50px;
+                padding-top: 50px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+    .bg-section.mobile {
+        display: block;
+        padding: 20px;
+    }
+
+    .bg-section.mobile .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bg-section.mobile .col {
+        width: 100%;
+        margin: 10px 0;
+        cursor: pointer;
+        position: relative;
+        text-align: center;
+        display: flex;
+    }
+
+    .bg-section.mobile .col img {
+        width: auto;
+        height: 90px;
+    }
+
+    .bg-section.mobile .overlay {
+        background: none;
+        display: block;
+        width: 100%;
+        align-content: center;
+        font-family: 'SharpGrotesk-SemiBold';
+        line-height: 1;
+        font-size: 40px;
+    }
+
+    .bg-section.mobile .hiddenText {
+        display: none;
+        font-family: 'IBMPlexSans';
+        font-size: 14px;
+        max-width: 80%;
+        text-align: center;
+        margin-top: 10px;
+        margin-left: 15px;
+    }
+
+    .bg-section.mobile .col.active .hiddenText {
+        display: block;
+    }
+    .bg-section.mobile .col.active .overlay {
+        display: none;
+    }
+    .bg-section .row {
+        height: 150px;
+        background-image: url("assets/img/mobile/BOX.png");
+        background-repeat: no-repeat;
+        background-size: 100% 130px;
+    }
+    .contact-section .row {
+        display: block;
+        text-align: -webkit-center;
+    }
+    .contact-section .col {
+        display: flex;
+        max-width: 70vw;
+    }
+    .contact-section .col p {
+        font-size: 18px;
+        font-family: 'IBMPlexSans';
+        margin-left: 25px;
+        text-align: left;
+    }
+    .center-image img {
+        width: 45%;
+    }
+    .custom-section .row {
+        display: block;
+        text-align: -webkit-center;
+    }
+    .custom-section .first-row .col {
+        flex: 1;
+        max-width: 300px;
+        margin: 20px 20px;
+    }
+    .custom-section .second-row .col {
+        max-width: 50%;
+        padding: 50px 0;
+    }
+    .custom-section .third-row p {
+        font-size: 12px;
+    }
+    .footer-images {
+        gap: 25px;
+    }
+    .row.third-row {
+        width: auto !important;
+        margin-left: 0 !important;
+    }
+    .row.third-row img {
+        width: 80vw;
+    }
+}
+
+.larger-image {
+    width: 150px; /* Ajusta el tamaño que desees */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+        .versus-operations {
+            padding: 50px 0;
+            text-align: center;
+            color: white;
+            font-family: 'Supply-Regular';
+            background-image: url('assets/img/desktop/LANDING\ APUESTAS\ DESK.jpg');
+            text-transform: uppercase;
+            background-position: center;
+            background-size: cover;
+
+        }
+
+        .versus-operations h2 {
+            font-size: 50px !important;
+        }
+
+        .country-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .country-item, .country-item a {
+            width: 20%; /* Adjust column width if needed */
+            margin: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        .country-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .country-item p {
+            font-size: 16px;
+        }
+
+        /* Responsive design for smaller screens */
+        @media screen and (max-width: 768px) {
+            .country-item {
+                width: 40%;
+            }
+            .custom-section .second-row .col img {
+                width: 40vw;
+                height: auto;
+            }
+            .versus-operations {
+                background: url('assets/img/mobile/LANDING\ APUESTAS\ MOBILE\ copia.jpg');
+                background-size: cover;
+            }
+        }
+.language-switcher {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.language-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 50px
+}
+button:focus {
+    outline: none !important;
+}
+
+.language-button img {
+    width: 30px; /* Adjust the size as needed */
+    height: auto;
+    margin: 0;
+}
+
+.language-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Position it below the button */
+    right: 0; /* Align to the right if needed */
+    background-color: #000; /* Match your website's background */
+    padding: 5px 0;
+    min-width: 50px;
+    
+    z-index: 1000;
+}
+
+.language-menu button {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.language-menu button:hover {
+    background-color: #e7ff3c; /* Highlight color on hover */
+}
+
+.language-menu button img {
+    width: 30px; /* Adjust the size as needed */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.language-menu button:last-child {
+    
+}
+
+
+        /* @media screen and (max-width: 480px) {
+            .country-item {
+                width: 80%;
+            }
+        } */
+
+    </style>
+	
+	
+	    <!-- Favicons-->
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="assets/img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="assets/img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="assets/img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="assets/img/apple-touch-icon-144x144-precomposed.png">
+	
+	
+	
+	
+</head>
+<body>
+    <!-- <header>
+        <div id="header" class="header">
+            <div class="header__logo"><op-company-logo _nghost-op-root-c2317255916="">
+                <div _ngcontent-op-root-c2317255916="" class="company-logo ng-star-inserted">
+                    <a _ngcontent-op-root-c2317255916="" href="/apuestas">
+                        <img _ngcontent-op-root-c2317255916="" src="https://versusmx-prod-strapi.s3.eu-central-1.amazonaws.com/small_VERSUS_4a5cd95b54.png" alt="null" width="134" height="33" class="ng-star-inserted">
+                     </a>
+                </div>
+            </div>
+            
+            <div class="language-switcher">
+                <button class="language-button" onclick="toggleLanguageMenu()" aria-haspopup="true" aria-expanded="false">
+                    <img src="assets/img/GLOBICO.png" alt="Select Language">
+                </button>
+                <div class="language-menu" id="language-menu" role="menu">
+                    <button onclick="setLanguage('es'); toggleLanguageMenu();" role="menuitem">
+                        <img src="assets/img/world.png" alt="Español">
+                    </button>
+                    <button onclick="setLanguage('en'); toggleLanguageMenu();" role="menuitem">
+                        <img src="assets/img/united-kingdom.png" alt="English">
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </header> -->
+
+<div id="carouselExampleIndicators" class="carousel slide content desktop pointer-event" data-ride="carousel" data-interval="5000">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+		
+		<!-- IMPORTANTE: CUANDO SE AÑADA UNA SLIDER NUEVA, A LA IMAGEN HAY QUE AÑADIRLE LA FUNCIÓN ONCLICK -->
+		
+		
+<a>
+    <img src="assets/img/desktop/BANNER SLIDER.png" class="d-block w-100" alt="First slide">
+</a>	
+			
+        </div>
+      <!--  <div class="carousel-item">
+            <img src="assets/img/desktop/BANNER SLIDER JUVE.jpg" class="d-block w-100" alt="Second slide" onclick="dataLayerAdd('btnRegistrarse','registration')">
+        </div>
+         <div class="carousel-item">
+            <img src="assets/img/desktop/BANNER SLIDER JUVE.png" class="d-block w-100" alt="Third slide">
+        </div>
+        <div class="carousel-item">
+            <img src="assets/img/desktop/BANNER SLIDER SEVILLA.png" class="d-block w-100" alt="Fourth slide">
+        </div> -->
+    </div>
+</div>
+
+<div id="carouselExampleIndicators" class="carousel slide content movil pointer-event" data-ride="carousel" data-interval="5000">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="assets/img/mobile/BANNER MOBILE.png" class="d-block w-100" alt="First slide">
+        </div>
+     <!--  <div class="carousel-item">
+            <img src="assets/img/mobile/BANNER SLIDER JUVE.jpg" class="d-block w-100" alt="Second slide" onclick="dataLayerAdd('btnRegistrarse','registration')">
+        </div>
+          <div class="carousel-item">
+            <img src="assets/img/mobile/BANNER SLIDER JUVE.png" class="d-block w-100" alt="Third slide">
+        </div>
+        <div class="carousel-item">
+            <img src="assets/img/mobile/BANNER SLIDER SEVILLA.png" class="d-block w-100" alt="Fourth slide">
+        </div> -->
+    </div>
+</div>
+
+<div class="scrolling-image-container">
+    <div class="scrolling-image">
+        <img data-key-img="tira_image" alt="Scrolling Image" src="assets/img/desktop/tira1-en.png">
+        <img data-key-img="tira_image" alt="Scrolling Image" src="assets/img/desktop/tira1-en.png">
+    </div>
+</div>
+
+<div class="columns-section">
+    <div class="column" style="transition-delay: 0s;">
+        <img data-key-img="rombo1_image" alt="Image 1" src="assets/img/desktop/ROMBO 1-en.png">
+        <p data-key="sports_betting_text">Enjoy your favorite sporting events with <span class="blue">the most competitive betting odds in the market.</span> Feel the adrenaline of live betting and have a great time.</p>
+    </div>
+    <div class="column" style="transition-delay: 0.5s;">
+        <img data-key-img="rombo2_image" alt="Image 1" src="assets/img/desktop/ROMBO 2-en.png">
+        <p data-key="online_casino_text">Find in VERSUSbet the most complete offer of games with<span class="blue"> more than 1300 slots, 11 live roulette tables and 7 blackjack tables.</span> </p>
+    </div>
+    <div class="column" style="transition-delay: 1s;">
+        <img data-key-img="rombo3_image" alt="Image 1" src="assets/img/desktop/ROMBO 3-en.png">
+        <p data-key="retail_betting_text">At VERSUSbet, with more than 1,000 betting sites, you will find the best betting parlors wherever you are.<span class="blue"> You will find the best staff and the best betting corners and terminals in the market</span> where you can enjoy the best entertainment, atmosphere and service.</p>
+    </div>
+</div>
+
+<div class="scrolling-image-container">
+    <div class="scrolling-image scroll2">
+        <img src="assets/img/desktop/REAL MADRID  REGIONAL BETTING PARTNER  REAL MADRID  REGIONAL BE copia 4.png" alt="Scrolling Image">
+        <img src="assets/img/desktop/REAL MADRID  REGIONAL BETTING PARTNER  REAL MADRID  REGIONAL BE copia 4.png" alt="Scrolling Image">
+    </div>
+</div>
+
+<section class="versus-operations">
+    <div style="padding: 8vw 0;">
+        <h2 data-key="countries_title" style="font-family: 'SharpGrotesk-SemiBold'; font-size: 70px; padding:0 0 50px 0;">IN WHICH COUNTRIES DOES <span style="color: #06ffd8; text-transform: none;">VERSUSbet </span>OPERATE?</h2>
+        <div class="country-grid">
+            <div class="country-item">
+                <a href="https://www.versus.es/home">
+                    <img src="assets/img/flags/1 SP.png" alt="Spain">
+                    <p data-key="country1_name"><span style="color: #06ffd8;">&gt;Spain</span> <br> Online &amp; Retail</p>
+                </a>
+            </div>
+            <div class="country-item">
+                <img src="assets/img/flags/2 PT.png" alt="Portugal">
+                <p data-key="country2_name"><span style="color: #06ffd8;">&gt;Portugal</span> <br> Coming Soon</p>
+            </div>
+            <div class="country-item">
+                <a href="https://www.versusbet.ie">
+                    <img src="assets/img/flags/3 IR.png" alt="Ireland">
+                    <p data-key="country3_name"><span style="color: #06ffd8;">&gt;Ireland</span> <br> Retail</p>
+                </a>
+            </div>
+            <div class="country-item">
+                <img src="assets/img/flags/4 GE.png" alt="Germany">
+                <p data-key="country4_name"><span style="color: #06ffd8;">&gt;Germany</span> <br> Coming Soon</p>
+            </div>
+        </div>
+    
+        <div class="country-grid">
+            <div class="country-item">
+                <img src="assets/img/flags/5 AU.png" alt="Austria">
+                <p data-key="country5_name"><span style="color: #06ffd8;">&gt;Austria</span> <br> Online &amp; Retail</p>
+            </div>
+            <div class="country-item">
+                <img src="assets/img/flags/6 LX.png" alt="Luxembourg">
+                <p data-key="country6_name"><span style="color: #06ffd8;">&gt;Luxembourg</span> <br> Coming Soon</p>
+            </div>
+            <div class="country-item">
+                <a href="https://www.versusbet.mx/">
+                    <img src="assets/img/flags/7 MX.png" alt="Mexico">
+                    <p data-key="country7_name"><span style="color: #06ffd8;">&gt;México</span> <br> Online</p>
+                </a>
+            </div>
+            <div class="country-item">
+                <img src="assets/img/flags/8 BR.png" alt="Brazil">
+                <p data-key="country8_name"><span style="color: #06ffd8;">&gt;Brasil</span> <br> Online</p>
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <div class="custom-section">
+            <div class="row first-row">
+               <!--  <div class="col">
+                    <img class="larger-image" src="assets/img/desktop/BAYERN-COLOR-NEGATIVO.svg" alt="COMPOSITE-BAYERN">
+                </div> -->
+                 <div class="col">
+                    <img class="larger-image" src="assets/img/desktop/COMPOSITE_REAL MADRID.svg" alt="COMPOSITE-MADRID">
+                </div>
+                <!--  <div class="col">
+                    <img class="larger-image" src="assets/img/desktop/SEVILLA-COLOR-NEGATIVO.svg" alt="COMPOSITE-SEVILLA">
+                </div> -->
+            </div>
+            <div class="row second-row">
+                <div class="col">
+                    <img src="assets/img/desktop/NOTEAMNODREAM.svg" alt="Centered Image">
+                </div>
+            </div>
+            <p data-key="providers_title">PROVIDERS</p>
+            <div class="row third-row" style="width: 80vw; margin-left: 10vw;">
+                
+                <img class="desktop" style="width: 80vw; height: auto;" src="assets/img/desktop/PROVEEDORES.png">
+                <img class="movil" src="assets/img/mobile/PROVEEDORES_MOBILE.png">
+            </div>
+        </div>
+        <!-- <div class="row third-row" style="width: 80vw; margin-left: 10vw;">
+            <p>VERSUSbet se encuentra autorizado a través del oficio DGJS/2038/2023 de fecha 14 de junio de 2023, emitido por la Dirección General de Juegos y Sorteos de la Secretaría de Gobernación, a favor de 
+            la sociedad SABIA CORPORATION, S.A. DE C.V., Permisionario autorizado con número de Permiso DGJS/DGAJ/DEV/P-01/2014 de fecha 16 de enero de 2014.</p>
+        </div> -->
+    </div>
+   
+</section>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+   
+
+    // Function to check if an element is in the viewport
+    function isElementInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+            
+        );
+    }
+
+    // Function to add the 'show' class to columns when they are in view
+    function checkColumns() {
+        var columns = document.querySelectorAll('.column');
+        columns.forEach(function(column, index) {
+            if (isElementInViewport(column)) {
+                setTimeout(function() {
+                    column.classList.add('show');
+                }, index * 100); // Delay of 0.1s for each subsequent column
+            }
+        });
+
+        var largeColumns = document.querySelectorAll('.column-large');
+        largeColumns.forEach(function(column, index) {
+            if (isElementInViewport(column)) {
+                setTimeout(function() {
+                    column.classList.add('show');
+                }, index * 100); // Delay of 0.1s for each subsequent column
+            }
+        });
+    }
+
+    // Check columns on scroll and on initial load
+    window.addEventListener('scroll', checkColumns);
+    window.addEventListener('load', checkColumns);
+</script>
+<script>
+    function toggleText(element) {
+        element.classList.toggle('active');
+    }
+</script>
+
+
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/wow.js"></script>
+	<script type="text/javascript" src="js/scrollme.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/jquery.cookie.js"></script>
+	<script>
+		$(document).ready(function () {
+			 var btag = (getParameterByName("btag")) ? getParameterByName("btag") : "";
+			 var gclid = (getParameterByName("gclid")) ? getParameterByName("gclid") : "";
+	 
+	 
+			 window.dataLayer.push({
+				 "btag": btag,
+				 "gclid": gclid,
+				 "from": (window.location.href),
+				 "referrer": (document.referrer),
+				 "toState": "",
+				 "estoyEnDirecto": "",
+				 "playerId": "",
+				 "userAgent": navigator.userAgent,
+				 "event": "pageLoad"
+			 });
+		 });
+	 
+		 var dataLayer = (typeof dataLayer !== 'undefined') ? dataLayer : [];
+	 
+	 
+		 function getParameterByName(name) {
+			 name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+			 var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+				 results = regex.exec(location.search);
+			 return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+		 }
+	 
+		 function dataLayerAdd(eventListener, status) {
+			 console.log(status);
+			 window.dataLayer = (typeof window.dataLayer !== 'undefined') ? window.dataLayer : [];
+	 
+			 var newToUrl;
+			 var btagQP = (getParameterByName("btag")) ? getParameterByName("btag") : "";
+			 var crefererQP = (getParameterByName("creferer")) ? getParameterByName("creferer") : "";
+			 var gclidPostClick = (getParameterByName("gclid")) ? getParameterByName("gclid") : "";
+	 
+	 
+	 
+			 var btagPostClick ='';
+			 if(crefererQP){
+				 btagPostClick = crefererQP
+			 } else if(btagQP){
+				 btagPostClick = btagQP
+			 }
+	 
+			 switch (status) {
+				 case "registration":
+					 btagPostClick = btagPostClick.replace('btag:','');
+					 var parts = btagPostClick.split(';');
+					 if(parts && parts.length){
+						 btagPostClick = parts[0]
+					 }
+					 newToUrl = "https://www.versusbet.mx/registro?btag=" + btagPostClick;
+					 break;
+				 case "promociones":
+					 newToUrl = "https://www.versusbet.mx/promociones";
+					 break;
+				 case "inicio":
+					 newToUrl = "https://www.yaasscasino.es/login";
+					 break;
+				 default:
+					 newToUrl = "https://www.yaasscasino.es/apuestas";
+					 break;
+					 ;
+			 }
+			 window.dataLayer.push({
+				 "btagPostClick": btagPostClick,
+				 "gclidPostClick": gclidPostClick,
+				 "from": (window.location.href),
+				 "to": (newToUrl),
+				 "referrer": (document.referrer),
+				 "toState": "",
+				 "estoyEnDirecto": "",
+				 "playerId": "",
+				 "userAgent": navigator.userAgent,
+				 "event": "click_" + eventListener,
+			 });
+
+			 window.open(newToUrl, "_self");
+		 }
+	 </script>
+
+
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;1d14d2a56d0249bc890cd961a9062935&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+</body></html>

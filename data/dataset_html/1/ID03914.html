@@ -1,0 +1,449 @@
+<html lang="id"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNTUNG88 - Eksklusivitas Resort &amp; Pengalaman Relaksasi Tropis</title>
+    <meta name="description" content="Temukan ketenangan sejati di UNTUNG88. Destinasi resort mewah dengan layanan personal, pemandangan alam memukau, dan fasilitas kelas dunia untuk pelarian sempurna Anda.">
+    <link rel="canonical" href="https://www.queenshouse.org">
+    <link rel="icon" href="https://ayowasabi.com/cdn/queenshouse-favicon.png" type="image/png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap');
+
+        :root {
+            --cream: #FFFDF0;
+            --soft-yellow: #F9F1C6;
+            --accent-gold: #D4AF37;
+            --text-main: #2C2C2C;
+            --text-light: #6B6B6B;
+            --white: #FFFFFF;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--white);
+            color: var(--text-main);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, .brand-font {
+            font-family: 'Marcellus', serif;
+        }
+
+        /* --- UI Elements --- */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-reserve {
+            padding: 16px 36px;
+            background: var(--text-main);
+            color: var(--white);
+            border: none;
+            border-radius: 0;
+            font-weight: 600;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+
+        .btn-reserve:hover {
+            background: var(--accent-gold);
+            letter-spacing: 4px;
+        }
+
+        /* --- Header --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 12px 5%;
+            background: var(--white);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .logo-container img {
+            height: 50px;
+            filter: brightness(1);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 0 5%;
+            background: var(--cream);
+            overflow: hidden;
+        }
+
+        .hero-bg-accent {
+            position: absolute;
+            width: 60vw;
+            height: 100%;
+            right: 0;
+            top: 0;
+            background: url('https://ayowasabi.com/cdn/queenshouse-1.png') center/cover no-repeat;
+            mask-image: linear-gradient(to left, black 70%, transparent);
+            -webkit-mask-image: linear-gradient(to left, black 70%, transparent);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .hero-text-box {
+            max-width: 600px;
+            padding: 40px;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            line-height: 1;
+            margin-bottom: 24px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 32px;
+            line-height: 1.8;
+            border-left: 3px solid var(--accent-gold);
+            padding-left: 20px;
+        }
+
+        /* --- Philosophy Section --- */
+        .philosophy {
+            padding: 120px 5%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .philosophy-image {
+            position: relative;
+        }
+
+        .philosophy-image img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            box-shadow: 30px 30px 0 var(--soft-yellow);
+        }
+
+        .phi-content h2 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+
+        .phi-content p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        /* --- Features Cards --- */
+        .amenities {
+            padding: 100px 5%;
+            background: var(--soft-yellow);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 50px 40px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .feature-card:hover {
+            background: transparent;
+            border-color: var(--text-main);
+            transform: translateY(-10px);
+        }
+
+        .feature-card svg {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 25px;
+            fill: var(--accent-gold);
+        }
+
+        /* --- Showcase / Impression --- */
+        .impression {
+            padding: 120px 0;
+            overflow: hidden;
+        }
+
+        .scroll-wrapper {
+            display: flex;
+            gap: 20px;
+            padding: 0 5%;
+        }
+
+        .impression-item {
+            flex: 0 0 450px;
+            height: 550px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .impression-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .impression-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .impression-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 40px;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: var(--white);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .impression-item:hover .impression-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* --- Final CTA --- */
+        .footer-cta {
+            padding: 150px 5%;
+            text-align: center;
+            background: linear-gradient(to bottom, var(--white), var(--cream));
+        }
+
+        .cta-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-inner h2 {
+            font-size: 3.5rem;
+            margin-bottom: 24px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 60px 5%;
+            background: var(--text-main);
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .footer-logo {
+            height: 40px;
+            opacity: 0.8;
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 992px) {
+            .philosophy { grid-template-columns: 1fr; }
+            .hero-bg-accent { opacity: 0.4; width: 100%; }
+            .hero h1 { font-size: 4rem; }
+            .scroll-wrapper { flex-wrap: wrap; justify-content: center; }
+            .impression-item { flex: 0 0 100%; height: 400px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="mainHeader">
+        <div class="logo-container">
+            <img src="https://ayowasabi.com/cdn/queenshouse.gif" alt="UNTUNG88 Logo">
+        </div>
+        <button class="btn-reserve">Booking Sekarang</button>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-bg-accent"></div>
+            <div class="hero-content">
+                <div class="hero-text-box glass-panel">
+                    <h1>Satu Atap Menuju Ketenangan</h1>
+                    <p>UNTUNG88 menghadirkan standar baru dalam dunia hospitality. Perpaduan antara kemewahan modern dengan kehangatan alam tropis yang memanjakan panca indera.</p>
+                    <button class="btn-reserve">Lihat Detail Kamar</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="philosophy">
+            <div class="philosophy-image">
+                <img src="https://ayowasabi.com/cdn/queenshouse-2.png" alt="Resort View">
+            </div>
+            <div class="phi-content" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
+                <span style="color: var(--accent-gold); font-weight: 600; letter-spacing: 2px;">OUR PHILOSOPHY</span>
+                <h2>Ruang Dimana Waktu Berhenti Sejenak</h2>
+                <p>Di UNTUNG88, kami tidak hanya menyediakan tempat menginap. Kami merancang ekosistem relaksasi yang memungkinkan Anda terhubung kembali dengan diri sendiri dan alam sekitar.</p>
+                <p>Setiap sudut resort kami dibangun dengan material organik pilihan, memastikan kenyamanan termal dan estetika visual yang tak tertandingi di kelasnya.</p>
+            </div>
+        </section>
+
+        <section class="amenities">
+            <div class="section-header">
+                <h2>Fasilitas Eksklusif</h2>
+                <p>Dikurasi khusus untuk melengkapi momen berharga Anda.</p>
+            </div>
+            <div class="card-container">
+                <div class="feature-card" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
+                    <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                    <h3>Wellness Spa</h3>
+                    <p>Terapi holistik dengan bahan rempah tradisional untuk pemulihan energi total.</p>
+                </div>
+                <div class="feature-card" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
+                    <svg viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"></path></svg>
+                    <h3>Fine Dining</h3>
+                    <p>Simfoni rasa dari koki berpengalaman dengan bahan segar dari kebun lokal kami.</p>
+                </div>
+                <div class="feature-card" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
+                    <svg viewBox="0 0 24 24"><path d="M21 3L3 10.53v.98l6.84 2.65L12.48 21h.98L21 3z"></path></svg>
+                    <h3>Private Excursion</h3>
+                    <p>Petualangan eksklusif menjelajahi keindahan tersembunyi di sekitar resort.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="impression">
+            <div class="section-header">
+                <h2>Visual Discovery</h2>
+            </div>
+            <div class="scroll-wrapper">
+                <div class="impression-item">
+                    <img src="https://ayowasabi.com/cdn/queenshouse-3.png" alt="Showcase 1">
+                    <div class="impression-overlay">
+                        <h3>Ocean Front Suite</h3>
+                        <p>Bangun dengan suara deburan ombak tepat di depan jendela Anda.</p>
+                    </div>
+                </div>
+                <div class="impression-item">
+                    <img src="https://ayowasabi.com/cdn/queenshouse-1.png" alt="Showcase 2">
+                    <div class="impression-overlay">
+                        <h3>Infinity Horizon</h3>
+                        <p>Kolam renang tanpa batas yang menyatu dengan garis cakrawala.</p>
+                    </div>
+                </div>
+                <div class="impression-item">
+                    <img src="https://ayowasabi.com/cdn/queenshouse-2.png" alt="Showcase 3">
+                    <div class="impression-overlay">
+                        <h3>Zen Garden</h3>
+                        <p>Area meditasi terbuka untuk menjernihkan pikiran di tengah rimbunnya hijau.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="footer-cta">
+            <div class="cta-inner">
+                <h2>Jadwalkan Pelarian Anda</h2>
+                <p style="margin-bottom: 40px; color: var(--text-light);">Eksklusivitas dan ketenangan menanti Anda di UNTUNG88. Pastikan slot Anda tersedia untuk musim liburan kali ini.</p>
+                <button class="btn-reserve">Periksa Ketersediaan</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <img src="https://ayowasabi.com/cdn/queenshouse.gif" alt="UNTUNG88 Footer" class="footer-logo">
+        <div class="copyright">
+            © 2026 UNTUNG88 Resort &amp; Spa. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('mainHeader');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Simple Fade-in Observer
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .phi-content').forEach(el => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(30px)";
+            el.style.transition = "all 0.8s ease-out";
+            observer.observe(el);
+        });
+    </script>
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;9f4a572a814240bcb941862be1727be9&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+</body></html>

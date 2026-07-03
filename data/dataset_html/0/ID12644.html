@@ -1,0 +1,1557 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" class="pointer skrollr skrollr-desktop"><head>
+    <style id="customRules"></style><meta charset="utf-8">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script async="" src="//d32hwlnfiv2gyn.cloudfront.net/sp-2.0.0-dm-0.1.min.js"></script><script type="text/javascript">
+    window._currentDevice = 'desktop';
+    window.Parameters = window.Parameters || {
+        HomeUrl: 'https://thenexusengine.io/',
+
+        SystemID: 'US_DIRECT_PRODUCTION',
+        SiteAlias: 'f11b8112',
+        SiteType: atob('RFVEQU9ORQ=='),
+        PublicationDate: 'Wed Apr 01 19:58:13 UTC 2026',
+        ExternalUid: 'looka',
+        IsSiteMultilingual: false,
+        InitialPostAlias: '',
+        InitialPostPageUuid: '',
+        InitialDynamicItem: '',
+        DynamicPageInfo: {
+            isDynamicPage: false,
+            base64JsonRowData: 'null',
+        },
+        InitialPageAlias: 'privacy',
+        InitialPageUuid: 'b249e76e365a4f4eac80a00f5ad5498b',
+        InitialPageId: '1188179069',
+        InitialEncodedPageAlias: 'cHJpdmFjeQ==',
+        InitialHeaderUuid: 'b39c33284fbf464180ba905ab8edbf8b',
+        CurrentPageUrl: '',
+        IsCurrentHomePage: false,
+        AllowAjax: false,
+        AfterAjaxCommand: null,
+        HomeLinkText: 'Back To Home',
+        UseGalleryModule: false,
+        CurrentThemeName: 'Layout Theme',
+        ThemeVersion: '500000',
+        DefaultPageAlias: '',
+        RemoveDID: true,
+        WidgetStyleID: null,
+        IsHeaderFixed: false,
+        IsHeaderSkinny: false,
+        IsBfs: true,
+        StorePageAlias: 'null',
+        StorePagesUrls: 'e30=',
+        IsNewStore: 'false',
+        StorePath: '',
+        StoreId: 'null',
+        StoreVersion: 0,
+        StoreBaseUrl: '',
+        StoreCleanUrl: true,
+        StoreDisableScrolling: true,
+        IsStoreSuspended: false,
+        HasCustomDomain: true,
+        SimpleSite: false,
+        showCookieNotification: true,
+        cookiesNotificationMarkup: ' <div>We use cookies to ensure that we give you the best experience on our website. To learn more, go to the Privacy Page.<\/div> \n',
+        translatedPageUrl: '',
+        isFastMigrationSite: false,
+        sidebarPosition: 'NA',
+        currentLanguage: 'en',
+        currentLocale: 'en',
+        NavItems: '{}',
+        errors: {
+            general: 'There was an error connecting to the page.<br/> Make sure you are not offline.',
+            password: 'Incorrect name/password combination',
+            tryAgain: 'Try again'
+        },
+        NavigationAreaParams: {
+            ShowBackToHomeOnInnerPages: true,
+            NavbarSize: -1,
+            NavbarLiveHomePage: 'https://thenexusengine.io/',
+            BlockContainerSelector: '.dmBody',
+            NavbarSelector: '#dmNav:has(a)',
+            SubNavbarSelector: '#subnav_main'
+        },
+        hasCustomCode: true,
+        planID: '7',
+        customTemplateId: 'null',
+        siteTemplateId: 'null',
+        productId: 'DM_DIRECT',
+        disableTracking: false,
+        pageType: 'PRIVACY_PAGE',
+        isRuntimeServer: true,
+        isInEditor: false,
+        hasNativeStore: false,
+        defaultLang: 'en',
+        hamburgerMigration: null,
+        isFlexSite: false
+    };
+
+    window.Parameters.LayoutID = {};
+    window.Parameters.LayoutID[window._currentDevice] = 6;
+    window.Parameters.LayoutVariationID = {};
+    window.Parameters.LayoutVariationID[window._currentDevice] = 5;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Injecting site-wide to the head -->
+
+
+
+
+<!-- End Injecting site-wide to the head -->
+
+<!-- Inject secured cdn script -->
+
+
+<!-- ========= Meta Tags ========= -->
+<!-- PWA settings -->
+<script>
+    function toHash(str) {
+        var hash = 5381, i = str.length;
+        while (i) {
+            hash = hash * 33 ^ str.charCodeAt(--i)
+        }
+        return hash >>> 0
+    }
+</script>
+<script>
+    (function (global) {
+    //const cacheKey = global.cacheKey;
+    const isOffline = 'onLine' in navigator && navigator.onLine === false;
+    const hasServiceWorkerSupport = 'serviceWorker' in navigator;
+    if (isOffline) {
+        console.log('offline mode');
+    }
+    if (!hasServiceWorkerSupport) {
+        console.log('service worker is not supported');
+    }
+    if (hasServiceWorkerSupport && !isOffline) {
+        window.addEventListener('load', function () {
+            const serviceWorkerPath = '/runtime-service-worker.js?v=3';
+            navigator.serviceWorker
+                .register(serviceWorkerPath, { scope: './' })
+                .then(
+                    function (registration) {
+                        // Registration was successful
+                        console.log(
+                            'ServiceWorker registration successful with scope: ',
+                            registration.scope
+                        );
+                    },
+                    function (err) {
+                        // registration failed :(
+                        console.log('ServiceWorker registration failed: ', err);
+                    }
+                )
+                .catch(function (err) {
+                    console.log(err);
+                });
+        });
+
+        // helper function to refresh the page
+        var refreshPage = (function () {
+            var refreshing;
+            return function () {
+                if (refreshing) return;
+                // prevent multiple refreshes
+                var refreshkey = 'refreshed' + location.href;
+                var prevRefresh = localStorage.getItem(refreshkey);
+                if (prevRefresh) {
+                    localStorage.removeItem(refreshkey);
+                    if (Date.now() - prevRefresh < 30000) {
+                        return; // dont go into a refresh loop
+                    }
+                }
+                refreshing = true;
+                localStorage.setItem(refreshkey, Date.now());
+                console.log('refereshing page');
+                window.location.reload();
+            };
+        })();
+
+        function messageServiceWorker(data) {
+            return new Promise(function (resolve, reject) {
+                if (navigator.serviceWorker.controller) {
+                    var worker = navigator.serviceWorker.controller;
+                    var messageChannel = new MessageChannel();
+                    messageChannel.port1.onmessage = replyHandler;
+                    worker.postMessage(data, [messageChannel.port2]);
+                    function replyHandler(event) {
+                        resolve(event.data);
+                    }
+                } else {
+                    resolve();
+                }
+            });
+        }
+    }
+})(window);
+</script>
+<!-- Add manifest -->
+<!-- End PWA settings -->
+
+
+
+<link rel="canonical" href="https://www.thenexusengine.io/privacy">
+
+<meta id="view" name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>privacy
+</title>
+
+<!--Add favorites icons-->
+
+<link rel="apple-touch-icon" href="https://irp.cdn-website.com/f11b8112/dms3rep/multi/iPhone-647ad17b.png">
+
+<link rel="icon" type="image/x-icon" href="https://irp.cdn-website.com/f11b8112/site_favicon_16_1762117830678.ico">
+
+<!-- End favorite icons -->
+<link rel="preconnect" href="https://lirp.cdn-website.com/">
+
+
+
+<!-- render the required CSS and JS in the head section -->
+<script id="d-js-dmapi">
+    window.SystemID = 'US_DIRECT_PRODUCTION';
+
+    if (!window.dmAPI) {
+        window.dmAPI = {
+            registerExternalRuntimeComponent: function () {
+            },
+            getCurrentDeviceType: function () {
+                return window._currentDevice;
+            },
+            runOnReady: (ns, fn) => {
+                const safeFn = dmAPI.toSafeFn(fn);
+                ns = ns || 'global_' + Math.random().toString(36).slice(2, 11);
+                const eventName = 'afterAjax.' + ns;
+
+                if (document.readyState === 'complete') {
+                    $.DM.events.off(eventName).on(eventName, safeFn);
+                    setTimeout(function () {
+                        safeFn({
+                            isAjax: false,
+                        });
+                    }, 0);
+                } else {
+                    window?.waitForDeferred?.('dmAjax', () => {
+                        $.DM.events.off(eventName).on(eventName, safeFn);
+                        safeFn({
+                            isAjax: false,
+                        });
+                    });
+                }
+            },
+            toSafeFn: (fn) => {
+                if (fn?.safe) {
+                    return fn;
+                }
+                const safeFn = function (...args) {
+                    try {
+                        return fn?.apply(null, args);
+                    } catch (e) {
+                        console.log('function failed ' + e.message);
+                    }
+                };
+                safeFn.safe = true;
+                return safeFn;
+            }
+        };
+    }
+
+    if (!window.requestIdleCallback) {
+        window.requestIdleCallback = function (fn) {
+            setTimeout(fn, 0);
+        }
+    }
+</script>
+
+<!-- loadCSS function header.jsp-->
+
+
+
+
+
+
+<script id="d-js-load-css">
+/**
+ * There are a few <link> tags with CSS resource in them that are preloaded in the page
+ * in each of those there is a "onload" handler which invokes the loadCSS callback
+ * defined here.
+ * We are monitoring 3 main CSS files - the runtime, the global and the page.
+ * When each load we check to see if we can append them all in a batch. If threre
+ * is no page css (which may happen on inner pages) then we do not wait for it
+ */
+(function () {
+  let cssLinks = {};
+  function loadCssLink(link) {
+    link.onload = null;
+    link.rel = "stylesheet";
+    link.type = "text/css";
+  }
+  
+    function checkCss() {
+      const pageCssLink = document.querySelector("[id*='CssLink']");
+      const widgetCssLink = document.querySelector("[id*='widgetCSS']");
+
+        if (cssLinks && cssLinks.runtime && cssLinks.global && (!pageCssLink || cssLinks.page) && (!widgetCssLink || cssLinks.widget)) {
+            const storedRuntimeCssLink = cssLinks.runtime;
+            const storedPageCssLink = cssLinks.page;
+            const storedGlobalCssLink = cssLinks.global;
+            const storedWidgetCssLink = cssLinks.widget;
+
+            storedGlobalCssLink.disabled = true;
+            loadCssLink(storedGlobalCssLink);
+
+            if (storedPageCssLink) {
+                storedPageCssLink.disabled = true;
+                loadCssLink(storedPageCssLink);
+            }
+
+            if(storedWidgetCssLink) {
+                storedWidgetCssLink.disabled = true;
+                loadCssLink(storedWidgetCssLink);
+            }
+
+            storedRuntimeCssLink.disabled = true;
+            loadCssLink(storedRuntimeCssLink);
+
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    storedRuntimeCssLink.disabled = false;
+                    storedGlobalCssLink.disabled = false;
+                    if (storedPageCssLink) {
+                      storedPageCssLink.disabled = false;
+                    }
+                    if (storedWidgetCssLink) {
+                      storedWidgetCssLink.disabled = false;
+                    }
+                    // (SUP-4179) Clear the accumulated cssLinks only when we're
+                    // sure that the document has finished loading and the document 
+                    // has been parsed.
+                    if(document.readyState === 'interactive') {
+                      cssLinks = null;
+                    }
+                }, 0);
+            });
+        }
+    }
+  
+
+  function loadCSS(link) {
+    try {
+      var urlParams = new URLSearchParams(window.location.search);
+      var noCSS = !!urlParams.get("nocss");
+      var cssTimeout = urlParams.get("cssTimeout") || 0;
+
+      if (noCSS) {
+        return;
+      }
+      if (link.href && link.href.includes("d-css-runtime")) {
+        cssLinks.runtime = link;
+        checkCss();
+      } else if (link.id === "siteGlobalCss") {
+        cssLinks.global = link;
+        checkCss();
+      } 
+      
+      else if (link.id && link.id.includes("CssLink")) {
+        cssLinks.page = link;
+        checkCss();
+      } else if (link.id && link.id.includes("widgetCSS")) {
+        cssLinks.widget = link;
+        checkCss();
+      }
+      
+      else {
+        requestIdleCallback(function () {
+          window.setTimeout(function () {
+            loadCssLink(link);
+          }, parseInt(cssTimeout, 10));
+        });
+      }
+    } catch (e) {
+      throw e
+    }
+  }
+  window.loadCSS = window.loadCSS || loadCSS;
+})();
+</script>
+
+
+
+<script data-role="deferred-init" type="text/javascript">
+    /* usage: window.getDeferred(<deferred name>).resolve() or window.getDeferred(<deferred name>).promise.then(...)*/
+    function Def() {
+        this.promise = new Promise((function (a, b) {
+            this.resolve = a, this.reject = b
+        }).bind(this))
+    }
+
+    const defs = {};
+    window.getDeferred = function (a) {
+        return null == defs[a] && (defs[a] = new Def), defs[a]
+    }
+    window.waitForDeferred = function (b, a, c) {
+        let d = window?.getDeferred?.(b);
+        d
+            ? d.promise.then(a)
+            : c && ["complete", "interactive"].includes(document.readyState)
+                ? setTimeout(a, 1)
+                : c
+                    ? document.addEventListener("DOMContentLoaded", a)
+                    : console.error(`Deferred  does not exist`);
+    };
+</script>
+<style id="forceCssIncludes">
+    /* This file is auto-generated from a `scss` file with the same name */
+
+.videobgwrapper{overflow:hidden;position:absolute;z-index:0;width:100%;height:100%;top:0;left:0;pointer-events:none;border-radius:inherit}.videobgframe{position:absolute;width:101%;height:100%;top:50%;left:50%;transform:translateY(-50%) translateX(-50%);object-fit:fill}#dm video.videobgframe{margin:0}@media (max-width:767px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:80vh}}@media (min-width:1025px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}@media (min-width:768px) and (max-width:1024px){.responsiveTablet .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}#dm [data-show-on-page-only]{display:none!important}#dmRoot div.stickyHeaderFix div.site_content{margin-top:0!important}#dmRoot div.stickyHeaderFix div.hamburger-header-container{position:relative}
+    
+
+</style>
+<style id="cssVariables" type="text/css">
+    
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Google Fonts Include -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- loadCSS function fonts.jsp-->
+
+
+
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/fonts/css2?family=Belgrano:ital,wght@0,400&amp;family=Staatliches:ital,wght@0,400&amp;family=Indie+Flower:ital,wght@0,400&amp;family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;family=Amiri:ital,wght@0,400;0,700;1,400;1,700&amp;family=Montserrat:ital,wght@0,100..900;1,100..900&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Bebas+Neue:ital,wght@0,400&amp;family=DM+Sans:ital,wght@0,100..1000;1,100..1000&amp;family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;family=Roboto+Slab:ital,wght@0,100..900;1,100..900&amp;family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&amp;family=Alata:ital,wght@0,400&amp;family=Alice:ital,wght@0,400&amp;family=Rock+Salt:ital,wght@0,400&amp;family=Noto+Color+Emoji:ital,wght@0,400&amp;family=Cinzel:ital,wght@0,400..900;1,400..900&amp;family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&amp;family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&amp;subset=latin-ext&amp;display=swap">
+
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/fonts/css2?family=Delius:ital,wght@0,400&amp;family=Rubik:ital,wght@0,300..900;1,300..900&amp;family=Exo:ital,wght@0,100..900;1,100..900&amp;family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;subset=latin-ext&amp;display=swap">
+
+
+
+
+
+<!-- RT CSS Include d-css-runtime-desktop-one-package-structured-global-->
+<link rel="stylesheet" type="text/css" href="https://static.cdn-website.com/mnlt/production/6329/_dm/s/rt/dist/css/d-css-runtime-desktop-one-package-structured-global.min.css">
+
+<!-- End of RT CSS Include -->
+
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/WIDGET_CSS/41732327e6ab5084246bc46bf22ea41c.css" id="widgetCSS">
+
+<!-- Support `img` size attributes -->
+<style>img[width][height] {
+  height: auto;
+}</style>
+
+<!-- Support showing sticky element on page only -->
+<style>
+  body[data-page-alias="privacy"] #dm [data-show-on-page-only="privacy"] {
+    display: block !important;
+  }
+</style>
+
+<!-- This is populated in Ajax navigation -->
+<style id="pageAdditionalWidgetsCss" type="text/css">
+</style>
+
+
+
+
+<!-- Site CSS -->
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/f11b8112/files/f11b8112_1.min.css?v=3ce585aacb8854c0660158cb14a81d80" id="siteGlobalCss">
+
+
+
+<style id="customWidgetStyle" type="text/css">
+    
+</style>
+<style id="innerPagesStyle" type="text/css">
+    
+</style>
+
+
+<style id="additionalGlobalCss" type="text/css">
+</style>
+
+<style id="pagestyle" type="text/css">
+    *#dm *.dmBody a.span.textonly {
+ color: rgb(255, 255, 255) !important;
+ }
+*#dm *.dmBody a.span.textonly {
+ color: rgb(255, 255, 255) !important;
+ }
+*#dm *.dmBody div.dmform-error {
+ font-style: normal !important;
+ }
+*#dm *.dmBody div.dmforminput textarea {
+ font-style: italic !important;
+ }
+*#dm *.dmBody div.dmforminput *.fileUploadLink {
+ font-style: italic !important;
+ }
+*#dm *.dmBody div.checkboxwrapper span {
+ font-style: italic !important;
+ }
+*#dm *.dmBody div.radiowrapper span {
+ font-style: italic !important;
+ }
+
+</style>
+
+<style id="pagestyleDevice" type="text/css">
+    *#dm *.d-page-1716942098 DIV.dmInner {
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-attachment:fixed;
+  background-position:50% 50%;
+}
+
+*#dm *.d-page-1716942098 DIV#dmSlideRightNavRight {
+  background-repeat:no-repeat !important;
+  background-image:none !important;
+  background-size:cover !important;
+  background-attachment:fixed !important;
+  background-position:50% 50% !important;
+}
+
+</style>
+
+<!-- Flex Sections CSS -->
+
+
+
+
+
+
+
+<style id="globalFontSizeStyle" type="text/css">
+    .font-size-22, .size-22, .size-22 > font { font-size: 22px !important; }.font-size-18, .size-18, .size-18 > font { font-size: 18px !important; }.font-size-13, .size-13, .size-13 > font { font-size: 13px !important; }
+</style>
+<style id="pageFontSizeStyle" type="text/css">
+</style>
+
+
+
+
+<style id="hideAnimFix">
+  .dmDesktopBody:not(.editGrid) [data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) [data-anim-extended] {
+    visibility: hidden;
+  }
+
+  .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-extended] {
+    visibility: hidden !important;
+  }
+
+  #dmRoot:not(.editGrid) .flex-element [data-anim-extended] {
+    visibility: hidden;
+  }
+
+</style>
+
+
+
+
+<style id="fontFallbacks">
+    @font-face {
+  font-family: "Belgrano Fallback";
+  src: local('Arial');
+  ascent-override: 87.5736%;
+  descent-override: 24.5914%;
+  size-adjust: 113.0478%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Staatliches Fallback";
+  src: local('Arial');
+  ascent-override: 110.3516%;
+  descent-override: 34.8479%;
+  size-adjust: 86.0885%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Indie Flower Fallback";
+  src: local('Arial');
+  ascent-override: 101.0963%;
+  descent-override: 50.8533%;
+  size-adjust: 96.0177%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Roboto Fallback";
+  src: local('Arial');
+  ascent-override: 92.6709%;
+  descent-override: 24.3871%;
+  size-adjust: 100.1106%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Amiri Fallback";
+  src: local('Arial');
+  ascent-override: 123.7258%;
+  descent-override: 69.7884%;
+  size-adjust: 90.846%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Montserrat Fallback";
+  src: local('Arial');
+  ascent-override: 84.9466%;
+  descent-override: 22.0264%;
+  size-adjust: 113.954%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Poppins Fallback";
+  src: local('Arial');
+  ascent-override: 92.326%;
+  descent-override: 30.7753%;
+  line-gap-override: 8.793%;
+  size-adjust: 113.7274%;
+}@font-face {
+  font-family: "Noto Sans Fallback";
+  src: local('Arial');
+  ascent-override: 100.1833%;
+  descent-override: 27.459%;
+  size-adjust: 106.7044%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Verdana Fallback";
+  src: local('Arial');
+  ascent-override: 87.306%;
+  descent-override: 18.2329%;
+  size-adjust: 115.1549%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Bebas Neue Fallback";
+  src: local('Arial');
+  ascent-override: 116.5002%;
+  descent-override: 38.8334%;
+  size-adjust: 77.2531%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "DM Sans Fallback";
+  src: local('Arial');
+  ascent-override: 94.3696%;
+  descent-override: 29.4905%;
+  size-adjust: 105.1186%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Noto Serif Fallback";
+  src: local('Arial');
+  ascent-override: 98.7162%;
+  descent-override: 27.0569%;
+  size-adjust: 108.2903%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Roboto Slab Fallback";
+  src: local('Arial');
+  ascent-override: 97.7562%;
+  descent-override: 25.2818%;
+  size-adjust: 107.1903%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Ubuntu Fallback";
+  src: local('Arial');
+  ascent-override: 90.8147%;
+  descent-override: 18.4163%;
+  line-gap-override: 2.7283%;
+  size-adjust: 102.6265%;
+}@font-face {
+  font-family: "Alata Fallback";
+  src: local('Arial');
+  ascent-override: 107.1847%;
+  descent-override: 27.2834%;
+  size-adjust: 102.6265%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Alice Fallback";
+  src: local('Arial');
+  ascent-override: 89.5621%;
+  descent-override: 23.0556%;
+  size-adjust: 101.4938%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Rock Salt Fallback";
+  src: local('Arial');
+  ascent-override: 112.6419%;
+  descent-override: 54.69%;
+  line-gap-override: 2.2209%;
+  size-adjust: 140.708%;
+}@font-face {
+  font-family: "Noto Color Emoji Fallback";
+  src: local('Arial');
+  ascent-override: 32.8891%;
+  descent-override: 8.655%;
+  size-adjust: 282.0796%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Helvetica Fallback";
+  src: local('Arial');
+  ascent-override: 77.002%;
+  descent-override: 22.998%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Cinzel Fallback";
+  src: local('Arial');
+  ascent-override: 76.7937%;
+  descent-override: 29.2697%;
+  size-adjust: 127.0938%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Arial Fallback";
+  src: local('Arial');
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Barlow Fallback";
+  src: local('Arial');
+  ascent-override: 103.1323%;
+  descent-override: 20.6265%;
+  size-adjust: 96.9628%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Overlock Fallback";
+  src: local('Arial');
+  ascent-override: 106.0693%;
+  descent-override: 27.8898%;
+  size-adjust: 91.0726%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Lato Fallback";
+  src: local('Arial');
+  ascent-override: 101.3181%;
+  descent-override: 21.865%;
+  size-adjust: 97.4159%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Tahoma Fallback";
+  src: local('Arial');
+  ascent-override: 99.1712%;
+  descent-override: 20.4731%;
+  size-adjust: 100.885%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Delius Fallback";
+  src: local('Arial');
+  ascent-override: 97.1488%;
+  descent-override: 26.6026%;
+  size-adjust: 101.4938%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Rubik Fallback";
+  src: local('Arial');
+  ascent-override: 88.5654%;
+  descent-override: 23.6806%;
+  size-adjust: 105.5717%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Exo Fallback";
+  src: local('Arial');
+  ascent-override: 95.3209%;
+  descent-override: 31.1077%;
+  size-adjust: 105.1186%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Open Sans Fallback";
+  src: local('Arial');
+  ascent-override: 101.1768%;
+  descent-override: 27.7323%;
+  size-adjust: 105.6416%;
+  line-gap-override: 0%;
+ }
+</style>
+
+
+<!-- End render the required css and JS in the head section -->
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.thenexusengine.io/privacy">
+
+  <!-- Google tag (gtag.js) -->  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-CCVLHJ82R4">
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+  
+
+  </script>
+  <script>
+
+
+
+
+
+
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CCVLHJ82R4');
+  
+  
+  
+
+  
+
+  
+
+  
+
+  </script>
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://lirp.cdn-website.com/f11b8112/dms3rep/multi/opt/Color+logo+-+no+background-5573b5d9-1920w.png">
+  <meta property="og:image" content="https://lirp.cdn-website.com/f11b8112/dms3rep/multi/opt/Color+logo+-+no+background-5573b5d9-1920w.png">
+
+
+
+
+<!-- SYS- VVNfRElSRUNUX1BST0RVQ1RJT04= -->
+<script src="https://static.cdn-website.com/libs/bower-skrollr/skrollr.min.js"></script></head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body id="dmRoot" data-page-alias="privacy" class="dmRoot dmDesktopBody fix-mobile-scrolling addCanvasBorder dmResellerSite dmLargeBody responsiveTablet pcCustomScrollbar d1SiteBody dmBodyNoIscroll" style="padding:0;margin:0;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========= Site Content ========= -->
+<div id="dm" class="dmwr">
+    
+    <div class="dm_wrapper standard-var5 widgetStyle-3 standard">
+         <div dmwrapped="true" id="1901957768" class="dm-home-page" themewaschanged="true"> <div dmtemplateid="Hamburger" data-responsive-name="ResponsiveDesktopTopTabletHamburger" class="runtime-module-container dm-bfs dm-layout-sec hasAnimations rows-1200 hamburger-reverse dmPageBody d-page-1716942098 inputs-css-clean dmFreeHeader showing-message showing-message--bottom showing-message--shown" id="dm-outer-wrapper" data-page-class="1716942098" data-soch="true" data-background-parallax-selector=".dmHomeSection1, .dmSectionParallex"> <div id="dmStyle_outerContainer" class="dmOuter"> <div id="dmStyle_innerContainer" class="dmInner"> <div class="dmLayoutWrapper standard-var dmStandardDesktop"> <div id="site_content"> <div class="p_hfcontainer showOnMedium"> <div id="hamburger-drawer" class="hamburger-drawer layout-drawer" layout="e9d510f4eb904e939c2be8efaf777e6e===header" data-origin="side" aria-hidden="true" inert=""> <div class="u_1659226760 dmRespRow" style="text-align: center;" id="1659226760"> <div class="dmRespColsWrapper" id="1466039722"> <div class="u_1237431346 dmRespCol small-12 medium-12 large-12 empty-column" id="1237431346"></div> 
+</div> 
+</div> 
+ <div class="u_1400308459 dmRespRow middleDrawerRow" style="text-align: center;" id="1400308459"> <div class="dmRespColsWrapper" id="1599690468"> <div class="dmRespCol small-12 u_1654548184 medium-12 large-12" id="1654548184"> <nav class="u_1990803048 effect-bottom main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="vertical_nav_layout_2" layout-sub="" data-show-vertical-sub-items="HIDE" id="1990803048" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" data-logo-src="" alt="" data-nav-structure="VERTICAL" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" class="unifiednav__item-wrap" data-auto="more-pages" data-depth="0"> <a href="/" class="unifiednav__item dmUDNavigationItem_00" target="" data-target-page-alias="" tabindex="0"> <span class="nav-item-text " data-link-text="
+         Home
+        " data-auto="page-text-style">Home<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class="unifiednav__item-wrap" data-auto="more-pages" data-depth="0"> <a href="/contact" class="unifiednav__item dmUDNavigationItem_010101509673" target="" data-target-page-alias="" tabindex="0"> <span class="nav-item-text " data-link-text="Contact" data-auto="page-text-style">Contact<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1501870129" style="text-align: center;" id="1501870129"> <div class="dmRespColsWrapper" id="1016756157"> <div class="u_1350944081 dmRespCol small-12 medium-12 large-12" id="1350944081"> <div class="u_1870442388 dmNewParagraph" id="1870442388" style="transition: none;"> <div style="text-align:left;"> <font style="color:rgb(255, 255, 255);"> <b> <span class="font-size-22 lh-1"> <div style="text-align: left;"> <span style=""> <span style=""> <font style="color: rgb(255, 255, 255);"> <span style="" class="font-size-22 lh-1"> <b style=""> <span style="font-weight: 700;">Get in touch</span> 
+</b> 
+</span> 
+</font> 
+</span> 
+</span> 
+</div> 
+</span> 
+</b> 
+</font> 
+</div> 
+</div> <div class="u_1888279977 dmNewParagraph" id="1888279977"> <div style="text-align:left;"> <font style="color:rgb(255, 255, 255);"> <span style="font-size:20px;"> <div> <span style="font-size: 20px;"> <font style="color: rgb(255, 255, 255);"></font> 
+</span> 
+</div> 
+ <div> <span style="font-weight: 400;" class="font-size-18 lh-1"> <font style="color: rgb(103, 103, 103);"> <div style="text-align: left;"> <span style="font-weight: inherit;"> <font style="">555-555-5555</font> 
+</span> 
+</div> 
+ <div style="text-align: left;"> <span style="font-weight: inherit;"> <font style="">mymail@mailservice.com</font> 
+</span> 
+</div> 
+</font> 
+</span> 
+</div> 
+ <div> <span style="font-size: 20px;"> <font style="color: rgb(255, 255, 255);"></font> 
+</span> 
+</div> 
+</span> 
+</font> 
+</div> 
+</div> <div class="u_1024966543 align-center text-align-center dmSocialHub gapSpacing" id="1024966543" dmle_extension="social_hub" data-element-type="social_hub" wr="true" networks="" icon="true" surround="true" adwords=""> <div class="socialHubWrapper"> <div class="socialHubInnerDiv "> <a href="mailto:scott@thenexusengine.io" dm_dont_rewrite_url="true" aria-label="email" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event('socialLink', 'click', 'Email')" target="_blank"> <span class="dmSocialEmail dm-social-icons-email oneIcon socialHubIcon style8" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="layout-drawer-overlay" id="layout-drawer-overlay"></div> 
+</div> 
+ <div class="site_content"> <div id="hamburger-header-container" class="showOnMedium hamburger-header-container p_hfcontainer"> <div id="hamburger-header" class="hamburger-header p_hfcontainer" layout="44dc38f951e9489490b055748e10ba9f===header" has-shadow="true"> <div class="u_1431095102 dmRespRow" style="text-align: center;" id="1431095102"> <div class="dmRespColsWrapper" id="1782554332"> <div class="dmRespCol small-12 u_1290552231 medium-4 large-4 content-removed" id="1290552231"> <a data-display-type="block" class="u_1724104754 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="mailto:mymail@mailservice.com" data-element-type="dButtonLinkId" id="1724104754" target="_blank"> <span class="iconBg" id="1609479936"> <span class="icon hasFontIcon icon-star" id="1024165479"></span> 
+</span> 
+ <span class="text" id="1861367127">Contact us</span> 
+</a> 
+</div> 
+ <div class="dmRespCol small-12 medium-4 large-4" id="1254785180"> <div class="u_1783276311 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1783276311" editablewidget="true"> <a href="/" id="1207575729" file="false"><img src="https://lirp.cdn-website.com/f11b8112/dms3rep/multi/opt/noBgColor-1920w.png" id="1226827877" class="" data-dm-image-path="https://lirp.cdn-website.com/f11b8112/dms3rep/multi/opt/noBgColor-1920w.png" alt="Logo for " the="" nexus="" engine"="" with="" light="" blue="" horizontal="" ovals="" above="" text."="" onerror="handleImageLoadError(this)"></a> 
+</div> 
+</div> 
+ <div class="dmRespCol small-12 medium-4 large-4 empty-column" id="1989656846"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <button class="showOnMedium layout-drawer-hamburger hamburger-on-header" id="layout-drawer-hamburger" aria-label="menu" aria-controls="hamburger-drawer" aria-expanded="false"> <span class="hamburger__slice"></span> 
+ <span class="hamburger__slice"></span> 
+ <span class="hamburger__slice"></span> 
+</button> 
+ <div class="dmHeaderContainer fHeader d-header-wrapper showOnLarge"> <div id="hcontainer" class="u_hcontainer dmHeader p_hfcontainer" freeheader="true" headerlayout="b58ba5b5703b4cd7b5f5f7951565dc87===horizontal-layout-5" layout="7f3c1de367df47d5b45ab63d33101c7b===header"> <div dm:templateorder="85" class="dmHeaderResp dmHeaderStack noSwitch" id="1709005236"> <div class="dmRespRow dmDefaultListContentRow u_1723182756 fullBleedChanged fullBleedMode" style="text-align:center" id="1723182756"> <div class="dmRespColsWrapper" id="1250737188"> <div class="u_1162706111 small-12 dmRespCol medium-6 large-6" id="1162706111"> <div class="u_1916316771 imageWidget align-center hasFullWidth" data-widget-type="image" id="1916316771" data-element-type="image" editablewidget="true"> <a href="/" id="1293628588"><img src="https://lirp.cdn-website.com/f11b8112/dms3rep/multi/opt/Color+logo+-+no+background-6eae26c1-1920w.png" id="1475746179" class="" data-dm-image-path="https://irp.cdn-website.com/f11b8112/dms3rep/multi/Color+logo+-+no+background-6eae26c1.png" width="1920" height="326" data-hover-effect="none" alt="Blank white image." onerror="handleImageLoadError(this)"></a> 
+</div> 
+</div> 
+ <div class="u_1204578179 dmRespCol small-12 medium-6 large-6" id="1204578179"> <nav class="u_1422275976 effect-none main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="horizontal_nav_layout_2" layout-sub="submenu_horizontal_1" data-show-vertical-sub-items="HOVER" id="1422275976" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" data-logo-src="https://lirp.cdn-website.com/f11b8112/dms3rep/multi/opt/noBgWhite-1920w.png" data-nav-structure="HORIZONTAL" wr="true" data-direction="LEFT" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" class="unifiednav__item-wrap" data-auto="more-pages" data-depth="0"> <a href="/" class="unifiednav__item dmUDNavigationItem_00" target="" data-target-page-alias="" tabindex="0"> <span class="nav-item-text " data-link-text="
+         Home
+        " data-auto="page-text-style">Home<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class="unifiednav__item-wrap" data-auto="more-pages" data-depth="0"> <a href="/contact" class="unifiednav__item dmUDNavigationItem_010101509673" target="" data-target-page-alias="" tabindex="0"> <span class="nav-item-text " data-link-text="Contact" data-auto="page-text-style">Contact<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div dmwrapped="true" id="dmFirstContainer" class="dmBody u_dmStyle_template_privacy dm-home-page" themewaschanged="true"> <div id="allWrapper" class="allWrapper"><!-- navigation placeholders --> <div id="dm_content" class="dmContent" role="main"> <div dm:templateorder="170" class="dmHomeRespTmpl mainBorder dmRespRowsWrapper dmFullRowRespTmpl dmRespRowsWrapperSize1" id="1716942098"> <div class="dmRespRow" id="1920061104"> <div class="dmRespColsWrapper" id="1789886420"> <div class="dmRespCol large-12 medium-12 small-12" id="1730259013"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1349749164" style="transition: opacity 1s ease-in-out;"> <h3 style="line-height: 1.38;"><span style="display: initial;">Privacy Policy</span></h3> 
+ <h3 style="line-height: 1.38;"><span style="display: initial;">&nbsp;</span></h3> 
+ <h4 style="line-height: 1.38;"><span style="display: initial;">Introduction</span></h4> 
+<p style="line-height: 1.38;"><span style="display: initial;">This Privacy Policy outlines The Nexus Engine LTD. ("The Nexus Engine", " we ", " our " or " the Company ") practices with respect to information collected from users who access our website at www.thenexusengine.io (" Site "), or otherwise share personal information with us (collectively: " Users ").&nbsp;</span></p> <h4 style="line-height: 1.38;"><span style="display: initial;"><br></span></h4> 
+ <h4 style="line-height: 1.38;"><span style="display: initial;">Grounds for data collection&nbsp;</span></h4> 
+<p style="line-height: 1.38;"><span class="" style="display: initial;"><span style="display: initial;">Processing of your personal information (meaning, any information which may potentially allow your identification with reasonable means; hereinafter "</span> 
+</span><strong style="display: initial; font-weight: 700;">Personal Information</strong><span class="" style="display: initial;"> <span style="display: initial;">") information you voluntarily provide: is necessary for the performance of our contractual obligations towards you and providing you with our services, to protect our legitimate interests and for compliance with legal and financial regulatory obligations to which we are subject.</span></span></p><p style="line-height: 1.38;"><span style="display: initial;"><br></span></p><p style="line-height: 1.38;"><span style="display: initial;">When you use the Site, you consent to the collection, storage, use, disclosure and other uses of your Personal Information as described in this Privacy Policy.</span></p><p style="line-height: 1.38;"><span style="display: initial;"><br></span></p><p style="line-height: 1.38;"><span style="display: initial;">We encourage our Users to carefully read the Privacy Policy and use it to make informed decisions.&nbsp;</span></p><p><span style="display: initial;"><br></span></p> <h4 style="line-height: 1.38;"><span style="display: initial;">What information we collect?</span></h4> 
+<p style="line-height: 1.38;"><span style="display: initial;">We collect two types of data and information from Users.&nbsp;</span></p><p style="line-height: 1.38;"><span style="display: initial;"><br></span></p><p style="line-height: 1.38;"><span class="" style="display: initial;"><span style="display: initial;">The first type of information is un-identified and non-identifiable information pertaining to a User(s), which may be made available or gathered via your use of the Site (“</span> 
+</span><strong style="display: initial; font-weight: 700;">Non-personal Information</strong><span class="" style="display: initial;"> <span style="display: initial;">”). We are not aware of the identity of a User from which the Non-personal Information was collected. Non-personal Information which is being collected may include your aggregated usage information and technical information transmitted by your device, including certain software and hardware information (e.g. the type of browser and operating system your device uses, language preference, access time, etc.) in order to enhance the functionality of our Site. We may also collect information on your activity on the Site (e.g. pages viewed, online browsing, clicks, actions, etc.).</span></span></p><p style="line-height: 1.38;"><span style="display: initial;"><br></span></p><p style="line-height: 1.38;"><span class="" style="display: initial;"><span style="display: initial;">The second type of information</span> 
+</span><strong style="display: initial; font-weight: 700;">Personal Information</strong><span class="" style="display: initial;"> <span style="display: initial;">which is individually identifiable information, namely information that identifies an individual or may with reasonable effort identify an individual. Such information includes:</span></span></p> <ul class="defaultList bullet"><li style="line-height: 1.38;"><span style="display: initial;">Device Information: We collect Personal Information from your device. Such information includes geolocation data, IP address, unique identifiers (e.g. MAC address and UUID) and other information which relates to your activity through the Site.</span></li><li style="line-height: 1.38;"><span style="display: initial;">Registration information: When you register to our Site you will be asked to provide us certain details such as: full name; e-mail or physical address, and other information.&nbsp;</span></li></ul> 
+ <h4 style="line-height: 1.38;"><span style="display: initial;"><br></span></h4> 
+ <h4 style="line-height: 1.38;"><span style="display: initial;">How do we receive information about you?</span></h4> 
+<p style="line-height: 1.38;"><span style="display: initial;">We receive your Personal Information from various sources:</span></p> <ul class="defaultList bullet"><li style="line-height: 1.38;"><span style="display: initial;">When you voluntarily provide us your personal details in order to register on our Site;</span></li><li style="line-height: 1.38;"><span style="display: initial;">When you use or access our Site in connection with your use of our services;</span></li><li style="line-height: 1.38;"><span style="display: initial;">From third party providers, services and public registers (for example, traffic analytics vendors).</span></li></ul> 
+ <h4 style="line-height: 1.38;"><span style="display: initial;"><br></span></h4> 
+ <h4 style="line-height: 1.38;"><span style="display: initial;">What information we collect?</span></h4> 
+<p style="line-height: 1.38;"><span style="display: initial;">We do not rent, sell, or share Users’ information with third parties except as described in this Privacy Policy.</span></p><p style="line-height: 1.38;"><span style="display: initial;"><br></span></p><p style="line-height: 1.38;"><span style="display: initial;">We may use the information for the following:</span></p> <ul class="defaultList bullet"><li style="line-height: 1.38;"><span style="display: initial;">Communicating with you – sending you notices regarding our services, providing you with technical information and responding to any customer service issue you may have;</span></li><li style="line-height: 1.38;"><span style="display: initial;">To communicate with you and to keep you informed of our latest updates and services;</span></li><li style="line-height: 1.38;"><span style="display: initial;">To serve you advertisements when you use our Site (see more under "Advertisements");&nbsp;</span></li><li style="line-height: 1.38;"><span style="display: initial;">To market our websites and products (see more under "Marketing");&nbsp;</span></li><li style="line-height: 1.38;"><span style="display: initial;">Conducting statistical and analytical purposes, intended to improve the Site.</span></li></ul> 
+<p style="line-height: 1.38;"><span style="display: initial;">In addition to the different uses listed above, we may transfer or disclose Personal Information to our subsidiaries, affiliated companies and subcontractors.</span></p><p style="line-height: 1.38;"><span style="display: initial;"><br></span></p><p style="line-height: 1.38;"><span style="display: initial;">In addition to the purposes listed in this Privacy Policy, we may share Personal Information with our trusted third party providers, who may be located in different jurisdictions across the world, for any of the following purposes:&nbsp;</span></p> <ul class="defaultList bullet"><li style="line-height: 1.38;"><span style="display: initial;">Hosting and operating our Site;</span></li><li style="line-height: 1.38;"><span style="display: initial;">Providing you with our services, including providing a personalized display of our Site;</span></li><li style="line-height: 1.38;"><span style="display: initial;">Storing and processing such information on our behalf;&nbsp;</span></li><li style="line-height: 1.38;"><span style="display: initial;">Serving you with advertisements and assist us in evaluating the success of our advertising campaigns and help us retarget any of our users;</span></li><li style="line-height: 1.38;"><span style="display: initial;">Providing you with marketing offers and promotional materials related to our Site and services;&nbsp;</span></li><li style="line-height: 1.38;"><span style="display: initial;">Performing research, technical diagnostics or analytics;</span></li></ul> 
+<p style="line-height: 1.38;"><span style="display: initial;"><br></span></p><p style="line-height: 1.38;"><span style="display: initial;">We may also disclose information if we have good faith to believe that disclosure of such information is helpful or reasonably necessary to: (i) comply with any applicable law, regulation, legal process or governmental request; (ii) enforce our policies (including our Agreement), including investigations of potential violations thereof; (iii) investigate, detect, prevent, or take action regarding illegal activities or other wrongdoing, suspected fraud or security issues; (iv) to establish or exercise our rights to defend against legal claims; (v) prevent harm to the rights, property or safety of us, our users, yourself or any third party; or (vi) for the purpose of collaborating with law enforcement agencies and/or in case we find it necessary in order to enforce intellectual property or other legal rights.</span></p> <h4 style="line-height: 1.38;"><span style="display: initial;"><br></span></h4> 
+ <h4 style="line-height: 1.38;"><span style="display: initial;">User Rights</span></h4> 
+<p style="line-height: 1.38;"><span style="display: initial;">You may request to:&nbsp;</span></p> <ol class="defaultList ordered"><li style="line-height: 1.38;"><span style="display: initial;">Receive confirmation as to whether or not personal information concerning you is being processed, and access your stored personal information, together with supplementary information.&nbsp;</span></li><li style="line-height: 1.38;"><span style="display: initial;">Receive a copy of personal information you directly volunteer to us in a structured, commonly used and machine-readable format.&nbsp;</span></li><li style="line-height: 1.38;"><span style="display: initial;">Request rectification of your personal information that is in our control.</span></li><li style="line-height: 1.38;"><span style="display: initial;">Request erasure of your personal information.&nbsp;</span></li><li style="line-height: 1.38;"><span style="display: initial;">Object to the processing of personal information by us.&nbsp;</span></li><li style="line-height: 1.38;"><span style="display: initial;">Request to restrict processing of your personal information by us.</span></li><li style="line-height: 1.38;"><span style="display: initial;">Lodge a complaint with a supervisory authority.</span></li></ol> 
+<p style="line-height: 1.38;"><span style="display: initial;">However, please note that these rights are not absolute, and may be subject to our own legitimate interests and regulatory requirements.&nbsp;</span></p><p style="line-height: 1.38;"><span style="display: initial;"><br></span></p><p style="line-height: 1.38;"><span style="display: initial;">If you wish to exercise any of the aforementioned rights, or receive more information, please contact us at contact@thenexusengine.io. We will respond in accordance with applicable law.</span></p><p><span style="display: initial;"><br></span></p> <h4 style="line-height: 1.38;"><span style="display: initial;">Retention</span></h4> 
+<p style="line-height: 1.38;"><span style="display: initial;">We will retain your personal information for as long as necessary to provide our services, and as necessary to comply with our legal obligations, resolve disputes, and enforce our policies. Retention periods will be determined taking into account the type of information that is collected and the purpose for which it is collected, bearing in mind the requirements applicable to the situation and the need to destroy outdated, unused information at the earliest reasonable time. Under applicable regulations, we will keep records containing client personal data, account opening documents, communications and anything else as required by applicable laws and regulations.&nbsp;</span></p><p style="line-height: 1.38;"><span style="display: initial;"><br></span></p><p style="line-height: 1.38;"><span style="display: initial;">We may rectify, replenish or remove incomplete or inaccurate information, at any time and at our own discretion.</span></p><p><span style="display: initial;"><br></span></p> <h4 style="line-height: 1.38;"><span style="display: initial;">Cookies</span></h4> 
+<p style="line-height: 1.38;"><span style="display: initial;">We and our trusted partners use cookies and other technologies in our related services, including when you visit our Site or access our services.&nbsp;</span></p><p style="line-height: 1.38;"><span style="display: initial;"><br></span></p><p style="line-height: 1.38;"><span style="display: initial;">A "cookie" is a small piece of information that a website assign to your device while you are viewing a website. Cookies are very helpful and can be used for various different purposes. These purposes include allowing you to navigate between pages efficiently, enable automatic activation of certain features, remembering your preferences and making the interaction between you and our Services quicker and easier. Cookies are also used to help ensure that the advertisements you see are relevant to you and your interests and to compile statistical data on your use of our Services.&nbsp;</span></p><p style="line-height: 1.38;"><span style="display: initial;"><br></span></p><p style="line-height: 1.38;"><span style="display: initial;">The Site uses the following types of cookies:</span></p><p style="line-height: 1.38;"><span style="display: initial;"><br></span></p><p style="line-height: 1.38;"><strong style="display: initial; font-weight: 700;">a. 'session cookies'</strong><span class="" style="display: initial;"> <span style="display: initial;">which are stored only temporarily during a browsing session in order to allow normal use of the system and are deleted from your device when the browser is closed;&nbsp;</span></span></p><p style="line-height: 1.38;"><span style="display: initial;"><br></span></p><p style="line-height: 1.38;"><strong style="display: initial; font-weight: 700;">b. 'persistent cookies</strong><span class="" style="display: initial;"> <span style="display: initial;">' which are read only by the Site, saved on your computer for a fixed period and are not deleted when the browser is closed. Such cookies are used where we need to know who you are for repeat visits, for example to allow us to store your preferences for the next sign-in;&nbsp;</span></span></p><p style="line-height: 1.38;"><span style="display: initial;"><br></span></p><p style="line-height: 1.38;"><strong style="display: initial; font-weight: 700;">c. 'third party cookies'</strong><span class="" style="display: initial;"> <span style="display: initial;">which are set by other online services who run content on the page you are viewing, for example by third party analytics companies who monitor and analyze our web access.</span></span></p><p style="line-height: 1.38;"><span style="display: initial;"><br></span></p><p style="line-height: 1.38;"><span style="display: initial;">Cookies do not contain any information that personally identifies you, but Personal Information that we store about you may be linked, by us, to the information stored in and obtained from cookies. You may remove the cookies by following the instructions of your device preferences; however, if you choose to disable cookies, some features of our Site may not operate properly and your online experience may be limited.</span></p><p style="line-height: 1.38;"><span style="display: initial;"><br></span></p><p style="line-height: 1.38;"><span class="" style="display: initial;"><span style="display: initial;">We also use a tool called “Google Analytics” to collect information about your use of the Site. Google Analytics collects information such as how often users access the Site, what pages they visit when they do so, etc. We use the information we get from Google Analytics only to improve our Site and services. Google Analytics collects the IP address assigned to you on the date you visit sites, rather than your name or other identifying information. We do not combine the information collected through the use of Google Analytics with personally identifiable information. Google’s ability to use and share information collected by Google Analytics about your visits to this Site is restricted by the Google Analytics</span> 
+</span><a href="https://thenexusengine.io/" target="_blank" runtime_url="https://thenexusengine.io/" style="display: initial;">Terms of Use</a><span class="" style="display: initial;"> <span style="display: initial;">and the</span> 
+</span><a href="https://thenexusengine.io/" target="_blank" runtime_url="https://thenexusengine.io/" style="display: initial;">Google Privacy Policy</a><span style="display: initial;">.</span></p><p><span style="display: initial;"><br></span></p> <h4 style="line-height: 1.38;"><span style="display: initial;">Third party collection of information</span></h4> 
+<p style="line-height: 1.38;"><span style="display: initial;">Our policy only addresses the use and disclosure of information we collect from you. To the extent you disclose your information to other parties or sites throughout the internet, different rules may apply to their use or disclosure of the information you disclose to them. Accordingly, we encourage you to read the terms and conditions and privacy policy of each third party that you choose to disclose information to.&nbsp;</span></p><p style="line-height: 1.38;"><span style="display: initial;"><br></span></p><p style="line-height: 1.38;"><span style="display: initial;">This Privacy Policy does not apply to the practices of companies that we do not own or control, or to individuals whom we do not employ or manage, including any of the third parties which we may disclose information as set forth in this Privacy Policy.&nbsp;</span></p><p><span style="display: initial;"><br></span></p> <h4 style="line-height: 1.38;"><span style="display: initial;">How do we safeguard your information?</span></h4> 
+<p style="line-height: 1.38;"><span style="display: initial;">We take great care in implementing and maintaining the security of the Site and your information. We employ industry standard procedures and policies to ensure the safety of the information we collect and retain, and prevent unauthorized use of any such information, and we require any third party to comply with similar security requirements, in accordance with this Privacy Policy. Although we take reasonable steps to safeguard information, we cannot be responsible for the acts of those who gain unauthorized access or abuse our Site, and we make no warranty, express, implied or otherwise, that we will prevent such access.</span></p> <h4 style="line-height: 1.38;"><span style="display: initial;"><br></span></h4> 
+ <h4 style="line-height: 1.38;"><span style="display: initial;">Advertisements</span></h4> 
+<p style="line-height: 1.38;"><span style="display: initial;">&nbsp;We may use a third-party advertising technology to serve advertisements when you access the Site. This technology uses your information with regards to your use of the Services to serve advertisements to you (e.g., by placing third-party cookies on your web browser).&nbsp;</span></p><p style="line-height: 1.38;"><span style="display: initial;"><br></span></p><p style="line-height: 1.38;"><span class="" style="display: initial;"><span style="display: initial;">You may opt-out of many third-party ad networks, including those operated by members of the Network Advertising Initiative ("NAI") and the Digital Advertising Alliance ("DAA"). For more information about this practice by NAI and DAA members, and your choices regarding having this information used by these companies, including how to opt-out of third-party ad networks operated by NAI and DAA members, please visit their respective websites:</span> 
+</span><a href="http://optout.networkadvertising.org/#!/%20and%20http://optout.aboutads.info/#!/" target="_blank" runtime_url="http://optout.networkadvertising.org/#!/%20and%20http://optout.aboutads.info/#!/" style="display: initial;">http://optout.networkadvertising.org/#!/ and http://optout.aboutads.info/#!/</a><span style="display: initial;">.</span></p><p><span style="display: initial;"><br></span></p> <h4 style="line-height: 1.38;"><span style="display: initial;">Marketing</span></h4> 
+<p style="line-height: 1.38;"><span class="" style="display: initial;"><span style="display: initial;">We may use your Personal Information, such as your name, email address, telephone number, etc. ourselves or by using our third party subcontractors for the purpose of providing you with promotional materials, concerning our services, which we believe may interest you.&nbsp;</span> 
+</span></p><p style="line-height: 1.38;"><span style="display: initial;"><br></span></p><p style="line-height: 1.38;"><span style="display: initial;">Out of respect to your right to privacy we provide you within such marketing materials with means to decline receiving further marketing offers from us. If you unsubscribe we will remove your email address or telephone number from our marketing distribution lists.&nbsp;</span></p><p style="line-height: 1.38;"><span style="display: initial;"><br></span></p><p style="line-height: 1.38;"><span style="display: initial;">Please note that even if you have unsubscribed from receiving marketing emails from us, we may send you other types of important e-mail communications without offering you the opportunity to opt out of receiving them. These may include customer service announcements or administrative notices.</span></p><p><span style="display: initial;"><br></span></p> <h4 style="line-height: 1.38;"><span style="display: initial;">Corporate transaction</span></h4> 
+<p style="line-height: 1.38;"><span style="display: initial;">We may share information in the event of a corporate transaction (e.g. sale of a substantial part of our business, merger, consolidation or asset sale). In the event of the above, the transferee or acquiring company will assume the rights and obligations as described in this Privacy Policy.</span></p> <h4 style="line-height: 1.38;"><span style="display: initial;"><br></span></h4> 
+ <h4 style="line-height: 1.38;"><span style="display: initial;">Minors</span></h4> 
+<p style="line-height: 1.38;"><span style="display: initial;">We understand the importance of protecting children’s privacy, especially in an online environment. The Site is not designed for or directed at children. Under no circumstances shall we allow use of our services by minors without prior consent or authorisation by a parent or legal guardian. We do not knowingly collect Personal Information from minors. If a parent or guardian becomes aware that his or her child has provided us with Personal Information without their consent, he or she should contact us at contact@thenexusengine.io.</span></p><p style="line-height: 1.38;"><br></p><p style="line-height: 1.38;"><span class="" style="display: initial;"><span style="display: initial;">For Details about our Legitimate Interest Assessments, see our</span> 
+</span><a href="https://thenexusengine.io/legitimate-interest-assessment" runtime_url="https://thenexusengine.io/legitimate-interest-assessment" type="url" style="display: initial;" target="_blank">Legitimate Interest Assessment Page</a></p> <h4 style="line-height: 1.38;"><br></h4> 
+ <h4 style="line-height: 1.38;"><span style="display: initial;">Updates or amendments to this Privacy Policy</span></h4> 
+<p style="line-height: 1.38;"><span style="display: initial;">We reserve the right to periodically amend or revise the Privacy Policy; material changes will be effective immediately upon the display of the revised Privacy policy. The last revision will be reflected in the "Last modified" section. Your continued use of the Platform, following the notification of such amendments on our website, constitutes your acknowledgment and consent of such amendments to the Privacy Policy and your agreement to be bound by the terms of such amendments.</span></p> <h4 style="line-height: 1.38;"><span style="display: initial;"><br></span></h4> 
+ <h4 style="line-height: 1.38;"><span style="display: initial;">How to contact us</span></h4> 
+<p style="line-height: 1.38;"><span style="display: initial;">If you have any general questions about the Site or the information we collect about you and how we use it, you can contact us at contact@thenexusengine.io.</span></p><p style="line-height: 1.38;"><span style="display: initial;"><br></span></p><p style="line-height: 1.38;"><span style="display: initial;">The Nexus Engine LTD</span></p><p style="line-height: 1.38;"><span style="display: initial;">20 Wenlock Road, N1 7GU, London, United Kingdom</span></p><p style="line-height: 1.38;"><span style="display: initial;"><br></span></p><p style="line-height: 1.38;"><span style="display: initial;">Last Modified September 28, 2025<br></span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow" id="1325787040"> <div class="dmRespColsWrapper" id="1771573448"> <div class="dmRespCol empty-column large-12 medium-12 small-12" id="1557821881"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="sticky-widgets-container-global" id="1007077558"></div> 
+ <div class="dmFooterContainer"> <div id="fcontainer" class="u_fcontainer f_hcontainer dmFooter p_hfcontainer"> <div dm:templateorder="250" class="dmFooterResp generalFooter" id="1943048428"> <div class="u_1766181392 dmRespRow dm1766181392Content fullBleedChanged fullBleedMode" id="1766181392" data-page-element-type="section" data-page-element-id="1697810911"> <div class="dmRespColsWrapper" id="1210671369"> <div class="u_1233486222 dmRespCol small-12 large-9 medium-9" id="1233486222"> <div class="dmRespRow u_1139258021 fullBleedChanged fullBleedMode" id="1139258021"> <div class="dmRespColsWrapper" id="1243926270"> <div class="u_1519432429 dmRespCol small-12 large-6 medium-6" id="1519432429"> <div class="u_1314897636 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1314897636" editablewidget="true"> <a id="1159495029"><img src="https://lirp.cdn-website.com/f11b8112/dms3rep/multi/opt/noBgWhite-1920w.png" alt="Blank white image." id="1504409348" class="" data-dm-image-path="https://irp.cdn-website.com/f11b8112/dms3rep/multi/noBgWhite.png" width="1920" height="326" onerror="handleImageLoadError(this)"></a> 
+</div> 
+ <div class="u_1578168264 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1578168264" style="transition: none; text-align: left; display: block;"><p class="text-align-left"><span style="color:rgb(255, 255, 255);font-weight:400;display:initial;font-family:'DM Sans', 'DM Sans Fallback';">Built for publishers. Built for speed.</span></p></div> 
+</div> 
+ <div class="u_1270994532 dmRespCol small-12 large-6 medium-6" id="1270994532"> <div class="u_1763832534 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1763832534" style="transition: none 0s ease 0s; text-align: left; display: block;"><p><a href="mailto:The Nexus Engine LTD20 Wenlock Road, N1 7GU, London, United Kingdomcontact@thenexusengine.iothenexusengine.ioPrivacy Policy" target="_blank" type="email" style="color:rgb(255, 255, 255);font-weight:400;display:initial;font-family:'DM Sans', 'DM Sans Fallback';">The Nexus Engine LTD</a></p><p><a href="mailto:The Nexus Engine LTD20 Wenlock Road, N1 7GU, London, United Kingdomcontact@thenexusengine.iothenexusengine.ioPrivacy Policy" target="_blank" type="email" style="color:rgb(255, 255, 255);font-weight:400;display:initial;font-family:'DM Sans', 'DM Sans Fallback';">20 Wenlock Road, N1 7GU, London, United Kingdom</a></p><p class="text-align-justify m-text-align-left"><a href="mailto:The Nexus Engine LTD20 Wenlock Road, N1 7GU, London, United Kingdomcontact@thenexusengine.iothenexusengine.ioPrivacy Policy" target="_blank" type="email" style="color:rgb(255, 255, 255);font-weight:400;display:initial;font-family:'DM Sans', 'DM Sans Fallback';">contact@thenexusengine.io</a></p><p class="text-align-justify m-text-align-left"><span style="color:rgb(255, 255, 255);font-weight:400;display:initial;font-family:'DM Sans', 'DM Sans Fallback';"><br></span></p><p class="text-align-left m-text-align-left"><a href="mailto:The Nexus Engine LTD20 Wenlock Road, N1 7GU, London, United Kingdomcontact@thenexusengine.iothenexusengine.ioPrivacy Policy" target="_blank" type="email" style="color:rgb(255, 255, 255);font-weight:400;display:initial;text-decoration:none;font-family:'DM Sans', 'DM Sans Fallback';">London | New York</a></p><p class="text-align-left m-text-align-left"><span style="display: initial;"><br></span></p></div> 
+ <div class="u_1700344160 widget-1f5975 dmCustomWidget" data-lazy-load="" data-title="" id="1700344160" dmle_extension="custom_extension" data-element-type="custom_extension" icon="false" surround="false" data-widget-id="1f5975986930429f819d4cd2154b5c4a" data-widget-version="25" data-widget-config="eyJyZXZlcnNlRmxhZyI6ZmFsc2UsImNvcHlyaWdodFRleHQiOiI8cCBjbGFzcz1cInJ0ZUJsb2NrXCI+VGhlIE5leHVzIEVuZ2luZSBMdGQuPC9wPiJ9" data-widget-initialized=""> <div class="copyright"> <div>© 2026&nbsp;</div> 
+ <div><p class="rteBlock">The Nexus Engine Ltd.</p></div> 
+</div> 
+</div> 
+ <div class="u_1483868322 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1483868322" data-styletopreserve="{" background-image":""}"=""><p class="m-size-9 text-align-left m-text-align-center size-13"><a href="https://thenexusengine.io/privacy" target="_blank" runtime_url="https://thenexusengine.io/privacy" type="url" class="m-font-size-9 font-size-13" style="color:rgb(255, 253, 253);font-weight:400;display:initial;font-family:'DM Sans', 'DM Sans Fallback';">Privacy &amp; Terms</a></p></div> 
+ <div class="u_1176634959 align-center text-align-center dmSocialHub gapSpacing" id="1176634959" dmle_extension="social_hub" data-element-type="social_hub" wr="true" networks="" icon="true" surround="true" adwords=""> <div class="socialHubWrapper"> <div class="socialHubInnerDiv "> <a href="https://www.linkedin.com/company/the-nexus-engine" target="_blank" dm_dont_rewrite_url="true" aria-label="linkedin" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event('socialLink', 'click', 'Linkedin')"> <span class="dmSocialLinkedin icon-linkedin oneIcon socialHubIcon style6" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+ <a href="mailto:scott@thenexusengine.io" dm_dont_rewrite_url="true" aria-label="email" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event('socialLink', 'click', 'Email')" target="_blank"> <span class="dmSocialEmail dm-social-icons-email oneIcon socialHubIcon style6" aria-hidden="true" data-hover-effect=""></span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1321917543 dmRespCol small-12 large-3 medium-3" id="1321917543"> <div class="u_1134760744 imageWidget align-center hasFullWidthMobile" data-element-type="image" data-widget-type="image" id="1134760744" editablewidget="true"> <a href="https://iabeurope.eu/vendor-list/page/25/" id="1513533118" class="" target="_blank" file="false"><img src="https://lirp.cdn-website.com/f11b8112/dms3rep/multi/opt/TCF+registered+Vendor-1920w.png" alt="IAB Europe Transparency and Consent Framework logo. Dark blue and purple, white text." id="1102783155" class="" width="1920" height="1357" data-dm-image-path="https://irp.cdn-website.com/f11b8112/dms3rep/multi/TCF+registered+Vendor.png" onerror="handleImageLoadError(this)"></a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div id="1236746004" dmle_extension="powered_by" data-element-type="powered_by" icon="true" surround="false"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+<div id="d-notification-bar" data-rule-type="notification" data-visible="true"> <div>We use cookies to ensure that we give you the best experience on our website. To learn more, go to the Privacy Page.</div> 
+<div class="notification-dismiss" aria-label="Dismiss notification">×</div></div></div> 
+</div> 
+
+    </div>
+</div>
+<!--  Add full CSS and Javascript before the close tag of the body if needed -->
+<!-- ========= JS Section ========= -->
+<script>
+    var isWLR = true;
+
+    window.customWidgetsFunctions = {};
+    window.customWidgetsStrings = {};
+    window.collections = {};
+    window.currentLanguage = "ENGLISH"
+    window.isSitePreview = false;
+</script>
+<script>
+    window.customWidgetsFunctions["1f5975986930429f819d4cd2154b5c4a~25"] = function (element, data, api) {
+        null
+    };
+</script>
+<script type="text/javascript">
+
+    var d_version = "production_6329";
+    var build = "2026-03-31T14_44_35";
+    window['v' + 'ersion'] = d_version;
+
+    function buildEditorParent() {
+        window.isMultiScreen = true;
+        window.editorParent = {};
+        window.previewParent = {};
+        window.assetsCacheQueryParam = "?version=2026-03-31T14_44_35";
+        try {
+            var _p = window.parent;
+            if (_p && _p.document && _p.$ && _p.$.dmfw) {
+                window.editorParent = _p;
+            } else if (_p.isSitePreview) {
+                window.previewParent = _p;
+            }
+        } catch (e) {
+
+        }
+    }
+
+    buildEditorParent();
+</script>
+
+<!-- Load jQuery -->
+<script type="text/javascript" id="d-js-jquery" src="https://static.cdn-website.com/libs/jquery/jquery-3.7.0.min.js"></script>
+<!-- End Load jQuery -->
+<!-- Injecting site-wide before scripts -->
+<!-- End Injecting site-wide to the head -->
+
+
+<script>
+    var _jquery = window.$;
+
+    var jqueryAliases = ['$', 'jquery', 'jQuery'];
+
+    jqueryAliases.forEach((alias) => {
+        Object.defineProperty(window, alias, {
+            get() {
+                return _jquery;
+            },
+            set() {
+                console.warn("Trying to over-write the global jquery object!");
+            }
+        });
+    });
+    window.jQuery.migrateMute = true;
+</script>
+<script>
+    window.cookiesNotificationMarkupPreview = ' <div>We use cookies to ensure that we give you the best experience on our website. To learn more, go to the Privacy Page.<\/div> \n';
+</script>
+
+<!-- HEAD RT JS Include -->
+<script id="d-js-params">
+    window.INSITE = window.INSITE || {};
+    window.INSITE.device = "desktop";
+
+    window.rtCommonProps = {};
+    rtCommonProps["rt.ajax.ajaxScriptsFix"] =true;
+    rtCommonProps["rt.pushnotifs.sslframe.encoded"] = 'aHR0cHM6Ly97c3ViZG9tYWlufS5wdXNoLW5vdGlmcy5jb20=';
+    rtCommonProps["runtimecollector.url"] = 'https://rtc.multiscreensite.com';
+    rtCommonProps["performance.tabletPreview.removeScroll"] = 'false';
+    rtCommonProps["inlineEditGrid.snap"] =true;
+    rtCommonProps["popup.insite.cookie.ttl"] = '0.5';
+    rtCommonProps["rt.pushnotifs.force.button"] =true;
+    rtCommonProps["common.mapbox.token"] = 'pk.eyJ1IjoiZGFubnliMTIzIiwiYSI6ImNqMGljZ256dzAwMDAycXBkdWxwbDgzeXYifQ.Ck5P-0NKPVKAZ6SH98gxxw';
+    rtCommonProps["common.mapbox.js.override"] =false;
+    rtCommonProps["common.here.appId"] = 'iYvDjIQ2quyEu0rg0hLo';
+    rtCommonProps["common.here.appCode"] = '1hcIxLJcbybmtBYTD9Z1UA';
+    rtCommonProps["isCoverage.test"] =false;
+    rtCommonProps["ecommerce.ecwid.script"] = 'https://app.multiscreenstore.com/script.js';
+    rtCommonProps["common.resources.dist.cdn"] =true;
+    rtCommonProps["common.build.dist.folder"] = 'production/6329';
+    rtCommonProps["common.resources.cdn.host"] = 'https://static.cdn-website.com';
+    rtCommonProps["common.resources.folder"] = 'https://static.cdn-website.com/mnlt/production/6329';
+    rtCommonProps["feature.flag.runtime.backgroundSlider.preload.slowly"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.jitAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.sites.google.analytics.gtag"] =true;
+    rtCommonProps["feature.flag.runOnReadyNewTask"] =true;
+    rtCommonProps["isAutomation.test"] =false;
+    rtCommonProps["booking.cal.api.domain"] = 'api.cal.com';
+
+    
+    rtCommonProps['common.mapsProvider'] = 'mapbox';
+    
+    rtCommonProps['common.mapsProvider.version'] = '0.52.0';
+    rtCommonProps['common.geocodeProvider'] = 'mapbox';
+    rtCommonProps['server.for.resources'] = '';
+    rtCommonProps['feature.flag.lazy.widgets'] = true;
+    rtCommonProps['feature.flag.single.wow'] = false;
+    rtCommonProps['feature.flag.disallowPopupsInEditor'] = true;
+    rtCommonProps['feature.flag.mark.anchors'] = true;
+    rtCommonProps['captcha.public.key'] = '6LffcBsUAAAAAMU-MYacU-6QHY4iDtUEYv_Ppwlz';
+    rtCommonProps['captcha.invisible.public.key'] = '6LeiWB8UAAAAAHYnVJM7_-7ap6bXCUNGiv7bBPME';
+    rtCommonProps["images.sizes.small"] =160;
+    rtCommonProps["images.sizes.mobile"] =640;
+    rtCommonProps["images.sizes.tablet"] =1280;
+    rtCommonProps["images.sizes.desktop"] =1920;
+    rtCommonProps["modules.resources.cdn"] =true;
+    rtCommonProps["import.images.storage.imageCDN"] = 'https://lirp.cdn-website.com/';
+    rtCommonProps["feature.flag.runtime.inp.threshold"] =150;
+    rtCommonProps["feature.flag.performance.logs"] =false;
+    rtCommonProps["site.widget.form.captcha.type"] = 'g_recaptcha';
+    rtCommonProps["friendly.captcha.site.key"] = 'FCMGSQG9GVNMFS8K';
+    rtCommonProps["cookiebot.mapbox.consent.category"] = 'marketing';
+    // feature flags that's used out of runtime module (in  legacy files)
+    rtCommonProps["platform.monolith.personalization.dateTimeCondition.popupMsgAction.moveToclient.enabled"] =true;
+
+    window.rtFlags = {};
+    rtFlags["unsuspendEcwidStoreOnRuntime.enabled"] =true;
+    rtFlags["scripts.widgetCount.enabled"] =true;
+    rtFlags["fnb.animations.tracking.enabled"] =true;
+    rtFlags["ecom.ecwidNewUrlStructure.enabled"] = false;
+    rtFlags["ecom.ecwid.accountPage.emptyBaseUrl.enabled"] = true;
+    rtFlags["ecom.ecwid.pages.links.disable.listeners"] = true;
+    rtFlags["ecom.ecwid.storefrontV3.enabled"] = false;
+    rtFlags["ecom.ecwid.old.store.fix.facebook.share"] = true;
+    rtFlags["feature.flag.photo.gallery.exact.size"] =true;
+    rtFlags["geocode.search.localize"] =false;
+    rtFlags["feature.flag.runtime.newAnimation.asyncInit.setTimeout.enabled"] =false;
+    rtFlags["twitter.heightLimit.enabled"] = true;
+    rtFlags["runtime.lottieOverflow"] =false;
+    rtFlags["runtime.monitoring.sentry.ignoreErrors"] = "";
+    rtFlags["streamline.monolith.personalization.supportMultipleConditions.enabled"] =false;
+    rtFlags["flex.animation.design.panel.layout"] =true;
+    rtFlags["runtime.cwv.report.cls.enabled"] =false;
+    rtFlags["runtime.cwv.report.lcp.enabled"] =false;
+    rtFlags["contact.form.useActiveForm"] =true;
+    rtFlags["contact.form.custom.errors.enabled"] =false;
+    rtFlags["runtime.ssr.productStore.internal.observer"] =true;
+    rtFlags["runtime.ssr.productCustomizations"] =true;
+    rtFlags["runtime.ssr.runtime.filter-sort.newFilterSortWidgetWithOptions.enabled"] =true;
+    rtFlags["runtime.ssr.ssrSlider.jumpThreshold.enabled"] =true;
+</script>
+<script src="https://static.cdn-website.com/mnlt/production/6329/_dm/s/rt/dist/scripts/d-js-one-runtime-unified-desktop.min.js" id="d-js-core"></script>
+<!-- End of HEAD RT JS Include -->
+<script src="https://static.cdn-website.com/mnlt/production/6329/_dm/s/rt/dist/scripts/d-js-jquery-migrate.min.js"></script>
+<script>
+    
+    $(window).bind("orientationchange", function (e) {
+        $.layoutManager.initLayout();
+        
+    });
+    $(document).resize(function () {
+        
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="d_track_campaign">
+(function() {
+    if (!window.location.search) {
+        return;
+    }
+	const cleanParams = window.location.search.substring(1); // Strip ?
+	const queryParams = cleanParams.split('&');
+
+	const expires = 'expires=' + new Date().getTime() + 24 * 60 * 60 * 1000;
+	const domain = 'domain=' + window.location.hostname;
+	const path = "path=/";
+
+	queryParams.forEach((param) => {
+		const [key, value = ''] = param.split('=');
+		if (key.startsWith('utm_')) {
+			const cookieName = "_dm_rt_" + key.substring(4);
+			const cookie = cookieName + "=" + value;
+			const joined = [cookie, expires, domain, path].join(";");
+			document.cookie = joined;
+		}
+	});
+}());
+</script>
+<script type="text/javascript">
+  var _dm_gaq = {};
+  var _gaq = _gaq || [];
+  var _dm_insite = [];
+</script>
+
+
+
+
+
+
+
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-CCVLHJ82R4"></script>
+<script type="text/javascript" id="d_track_ga">
+  _dm_gaq.siteAlias = 'f11b8112';
+  _dm_gaq.systemAggregatedGaqID = '';
+  _dm_gaq.externalGaqID = 'G-CCVLHJ82R4';
+  _dm_gaq.gaAggregatedEventAttributes = {
+	  'site_alias':  _dm_gaq.siteAlias,
+	  'product': 'DM_DIRECT',
+	  'plan': 'BUSINESS_PLUS',
+	  'dfooter': 'false',
+	  'sitetype': '1',
+	  'pwaEnabled': 'true'
+  }
+
+  _dm_gaq.pushEvent = function(trackingId, event, category, label, value, additionalParams = {}) {
+	  const eventProps = {
+		  send_to: trackingId,
+		  event_category: category,
+		  event_label: label,
+		  value,
+		  ...additionalParams,
+		  ...(trackingId === _dm_gaq.systemAggregatedGaqID
+				  ? _dm_gaq.gaAggregatedEventAttributes : {})
+	  };
+	  gtag('event', event, eventProps);
+  }
+
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+    gtag('set', 'developer_id.dMDU5Nj', true);
+
+  function pushInsiteImpressions(id) {
+	  _dm_insite.forEach((rule) => {
+		  _dm_gaq.pushEvent(id, 'insite_impression', 'insite', rule.ruleType + '__' + rule.ruleId);
+	  });
+  }
+
+if(_dm_gaq.systemAggregatedGaqID){
+	// track aggregated account
+	gtag('config', '', {
+		'send_page_view': false,
+		'anonymize_ip': true,
+		'transport_type': 'beacon',
+		'custom_map': {'dimension1': 'site_alias', 'dimension2': 'product', 'dimension3': 'dFooter', 'dimension4': 'sitetype'}
+	});
+
+	_dm_gaq.pushEvent('', 'page_view');
+	pushInsiteImpressions(_dm_gaq.systemAggregatedGaqID);
+}
+
+if(_dm_gaq.externalGaqID && _dm_gaq.externalGaqID!= '') {
+	gtag('config', 'G-CCVLHJ82R4', {
+		'send_page_view': false,
+		'anonymize_ip': true,
+		'transport_type': 'beacon',
+		'linker': {
+			'domains': ['thenexusengine.io']
+		}
+	});
+	_dm_gaq.pushEvent('G-CCVLHJ82R4', 'page_view');
+	pushInsiteImpressions(_dm_gaq.externalGaqID);
+}
+</script>
+
+
+<script type="text/javascript" id="d_track_sp">
+;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
+p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
+};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
+n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","//d32hwlnfiv2gyn.cloudfront.net/sp-2.0.0-dm-0.1.min.js","snowplow"));
+window.dmsnowplow  = window.snowplow;
+
+dmsnowplow('newTracker', 'cf', 'd32hwlnfiv2gyn.cloudfront.net', { // Initialise a tracker
+  appId: 'f11b8112'
+});
+
+// snowplow queries element styles so we wait until CSS calculations are done.
+requestAnimationFrame(() => {
+	dmsnowplow('trackPageView');
+	_dm_insite.forEach((rule) => {
+		// Specifically in popup only the client knows if it is shown or not so we don't always want to track its impression here
+		// the tracking is in popup.js
+		if (rule.actionName !== "popup") {
+			dmsnowplow('trackStructEvent', 'insite', 'impression', rule.ruleType, rule.ruleId);
+		}
+		window?.waitForDeferred?.('dmAjax', () => {
+			$.DM.events.trigger('event-ruleTriggered', {value: rule});
+		});
+	});
+});
+</script>
+   
+
+
+<div style="display:none;" id="P6iryBW0Wu"></div>
+
+<!-- photoswipe markup -->
+
+
+
+
+
+
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="fb-root" data-locale="en"></div>
+<!-- Alias: f11b8112 -->
+<div class="dmPopupMask" id="dmPopupMask"></div>
+<div id="dmPopup" class="dmPopup">
+	<div class="dmPopupCloseWrapper"> <div class="dmPopupClose dm-common-icons-close oneIcon" onclick="dmHidePopup(event);"></div> </div>
+ 	<div class="dmPopupTitle"> <span></span> Share by:</div> 
+	<div class="data"></div>
+</div><script id="d_track_personalization">
+	window?.waitForDeferred?.('dmAjax', () => {
+		// Collects client data and updates cookies used by smart sites
+		window.expireDays = 365;
+		window.visitLength = 30 * 60000;
+		$.setCookie("dm_timezone_offset", (new Date()).getTimezoneOffset(), window.expireDays);
+			setSmartSiteCookiesInternal("dm_this_page_view","dm_last_page_view","dm_total_visits","dm_last_visit");
+	});
+</script>
+<script type="text/javascript">
+    
+    Parameters.NavigationAreaParams.MoreButtonText = 'MORE';
+    
+    Parameters.NavigationAreaParams.LessButtonText = 'LESS';
+    Parameters.HomeLinkText = 'Home';
+    </script>
+<!--  End Script tags -->
+<!--  Site Wide Html Markup -->
+<!--  Site Wide Html Markup -->
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;624cd502cfd7433391a094c9f87ba7cb&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+</body></html>

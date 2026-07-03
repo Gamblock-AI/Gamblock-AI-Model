@@ -1,0 +1,1052 @@
+<html data-wf-domain="www.langchain.com" data-wf-page="660189f45f9033dd87f82a27" data-wf-site="65b8cd72835ceeacd4449a53" data-wf-intellimize-customer-id="117666088" lang="en" class="w-mod-js wf-jetbrainsmono-n3-active wf-jetbrainsmono-n7-active wf-jetbrainsmono-n4-active wf-jetbrainsmono-n6-active wf-jetbrainsmono-n5-active wf-active w-mod-ix w-mod-ix3"><head><style>.wf-force-outline-none[tabindex="-1"]:focus{outline:none;}</style><iframe hidden="" tabindex="-1" width="0" height="0" style="display:none" sandbox="allow-scripts allow-same-origin" src="https://117666088.intellimizeio.com/storage.html" referrerpolicy="strict-origin-when-cross-origin"></iframe><meta charset="utf-8"><title>LangChain: Observe, Evaluate, and Deploy Reliable AI Agents</title><meta content="LangChain provides the engineering platform and open source frameworks developers use to build, test, and deploy reliable AI agents." name="description"><meta content="LangChain: Observe, Evaluate, and Deploy Reliable AI Agents" property="og:title"><meta content="LangChain provides the engineering platform and open source frameworks developers use to build, test, and deploy reliable AI agents." property="og:description"><meta content="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69a1e9409d6b1c287c69da0d_Website%20preview.png" property="og:image"><meta content="LangChain: Observe, Evaluate, and Deploy Reliable AI Agents" property="twitter:title"><meta content="LangChain provides the engineering platform and open source frameworks developers use to build, test, and deploy reliable AI agents." property="twitter:description"><meta property="og:type" content="website"><meta content="summary_large_image" name="twitter:card"><meta content="width=device-width, initial-scale=1" name="viewport"><link href="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/css/langchain-tonik.shared.463d32f25.min.css" rel="stylesheet" type="text/css" integrity="sha384-Rj0y8lIXKg6HrPJ1feXISJnhvEbl6P+EA3BWXAWpvwZQhLNuqCQpZKTcdNDslL/s" crossorigin="anonymous"><style>@media (min-width:992px) {html.w-mod-js:not(.w-mod-ix) [data-w-id="280a458b-2f96-b33b-93ab-2071882dd463"] {opacity:0;}}</style><style>html.w-mod-js:not(.w-mod-ix3) :is([text-paragraph-animation-start], [text-paragraph-animation], .home-anim-2, .home-anim-frameworks._2nd, .home-anim-3) {visibility: hidden !important;}</style><link href="https://fonts.googleapis.com" rel="preconnect"><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"><script src="https://js-na2.hs-banner.com/v2/242623570/banner.js" type="text/javascript" id="cookieBanner-242623570" data-cookieconsent="ignore" data-hs-ignore="true" data-loader="hs-scriptloader" data-hsjs-portal="242623570" data-hsjs-env="prod" data-hsjs-hublet="na2"></script><script src="https://js-na2.hs-analytics.net/analytics/1775950200000/242623570.js" type="text/javascript" id="hs-analytics"></script><script type="text/javascript" async="" data-global-segment-analytics-key="analytics" src="https://cdn.segment.com/analytics.js/v1/vVASt0GITtXAEO8zMnaR1Y9J83D1lIw1/analytics.min.js"></script><script type="text/javascript" async="" src="https://snap.licdn.com/li.lms-analytics/insight.min.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-47WX3HKKY2&amp;cx=c&amp;gtm=4e6481"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-V1YFVJYTLP&amp;cx=c&amp;gtm=4e6481"></script><script type="text/javascript" async="" src="https://cdn-cookieyes.com/client_data/d2e859934c4309be824ea8bb/script.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-T675KH33"></script><script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=JetBrains+Mono:300,400,500,600,700" media="all"><script type="text/javascript">WebFont.load({  google: {    families: ["JetBrains Mono:300,400,500,600,700"]  }});</script><script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script><link href="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69a17e4a429d54e956e2a763_favicon.png" rel="shortcut icon" type="image/x-icon"><link href="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69a17e4f0c916c644f4de1cd_webclip%20lg.png" rel="apple-touch-icon"><link href="https://www.langchain.com" rel="canonical"><style>.anti-flicker, .anti-flicker * {visibility: hidden !important; opacity: 0 !important;}</style><style>[data-wf-hidden-variation], [data-wf-hidden-variation] * {
+        display: none !important;
+      }</style><script type="text/javascript">localStorage.removeItem('intellimize_opt_out_117666088'); if (localStorage.getItem('intellimize_data_tracking_type') !== 'always') { localStorage.setItem('intellimize_data_tracking_type', 'always'); }</script><script type="text/javascript">(function(e){var s={r:[]};e.wf={r:s.r,ready:t=>{s.r.push(t)}}})(window)</script><script type="text/javascript">(function(e,t,p){var n=document.documentElement,s={p:[],r:[]},u={p:s.p,r:s.r,push:function(e){s.p.push(e)},ready:function(e){s.r.push(e)}};e.intellimize=u,n.className+=" "+p,setTimeout(function(){n.className=n.className.replace(RegExp(" ?"+p),"")},t)})(window, 4000, 'anti-flicker')</script><link href="https://cdn.intellimize.co/snippet/117666088.js" rel="preload" as="script"><script type="text/javascript">var wfClientScript=document.createElement("script");wfClientScript.src="https://cdn.intellimize.co/snippet/117666088.js",wfClientScript.async=!0,wfClientScript.onerror=function(){document.documentElement.className=document.documentElement.className.replace(RegExp(" ?anti-flicker"),"")},document.head.appendChild(wfClientScript);</script><script src="https://cdn.intellimize.co/snippet/117666088.js" async=""></script><link href="https://api.intellimize.co" rel="preconnect" crossorigin="true"><link href="https://log.intellimize.co" rel="preconnect" crossorigin="true"><link href="https://117666088.intellimizeio.com" rel="preconnect"><!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T675KH33');</script>
+<!-- End Google Tag Manager -->
+
+
+<script defer="" data-domain="langchain.com" src="https://plausible.io/js/script.js"></script>
+
+
+<!-- Keep this css code to improve the font quality-->
+<style>
+  * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -o-font-smoothing: antialiased;
+}
+</style>
+
+<!-- [Attributes by Finsweet] Disable scrolling -->
+<script defer="" src="https://cdn.jsdelivr.net/npm/@finsweet/attributes-scrolldisable@1/scrolldisable.js"></script>
+
+
+<style>
+  /* Make Flowbase / Tippy tooltip text respect \n */
+  .tippy-box .tippy-content { white-space: pre-line; }
+</style>
+
+<!-- Flowbase Booster [Tooltips] -->
+<script src="https://cdn.jsdelivr.net/npm/@flowbase-co/boosters-tooltip@1/dist/tooltip.min.js" type="text/javascript" defer="">
+</script>
+
+
+
+<!-- V2 - REDESIGN -->
+<!-- GLOBAL SCRIPTS TO ADD INTO PROJECT CUSTOM CODE -->
+
+<style>
+  [text-letters-animation-start] {
+    opacity: 0.3;
+    color: #7fc8ff;
+  }
+</style>
+
+<script type="text/javascript" src="https://www.bugherd.com/sidebarv2.js?apikey=gtyutzr5v3azxbszhamxcw" async="true"></script>
+
+<!-- FINISH GLOBAL SCRIPTS --><style></style><style>.tippy-box[data-animation=fade][data-state=hidden]{opacity:0}[data-tippy-root]{max-width:calc(100vw - 10px)}.tippy-box{position:relative;background-color:#333;color:#fff;border-radius:4px;font-size:14px;line-height:1.4;white-space:normal;outline:0;transition-property:transform,visibility,opacity}.tippy-box[data-placement^=top]>.tippy-arrow{bottom:0}.tippy-box[data-placement^=top]>.tippy-arrow:before{bottom:-7px;left:0;border-width:8px 8px 0;border-top-color:initial;transform-origin:center top}.tippy-box[data-placement^=bottom]>.tippy-arrow{top:0}.tippy-box[data-placement^=bottom]>.tippy-arrow:before{top:-7px;left:0;border-width:0 8px 8px;border-bottom-color:initial;transform-origin:center bottom}.tippy-box[data-placement^=left]>.tippy-arrow{right:0}.tippy-box[data-placement^=left]>.tippy-arrow:before{border-width:8px 0 8px 8px;border-left-color:initial;right:-7px;transform-origin:center left}.tippy-box[data-placement^=right]>.tippy-arrow{left:0}.tippy-box[data-placement^=right]>.tippy-arrow:before{left:-7px;border-width:8px 8px 8px 0;border-right-color:initial;transform-origin:center right}.tippy-box[data-inertia][data-state=visible]{transition-timing-function:cubic-bezier(.54,1.5,.38,1.11)}.tippy-arrow{width:16px;height:16px;color:#333}.tippy-arrow:before{content:"";position:absolute;border-color:transparent;border-style:solid}.tippy-content{position:relative;padding:5px 9px;z-index:1}.tippy-box[data-theme~=translucent]{background-color:#000000b3}.tippy-box[data-theme~=translucent]>.tippy-arrow{width:14px;height:14px}.tippy-box[data-theme~=translucent][data-placement^=top]>.tippy-arrow:before{border-width:7px 7px 0;border-top-color:#000000b3}.tippy-box[data-theme~=translucent][data-placement^=bottom]>.tippy-arrow:before{border-width:0 7px 7px;border-bottom-color:#000000b3}.tippy-box[data-theme~=translucent][data-placement^=left]>.tippy-arrow:before{border-width:7px 0 7px 7px;border-left-color:#000000b3}.tippy-box[data-theme~=translucent][data-placement^=right]>.tippy-arrow:before{border-width:7px 7px 7px 0;border-right-color:#000000b3}.tippy-box[data-theme~=translucent]>.tippy-backdrop{background-color:#000000b3}.tippy-box[data-theme~=translucent]>.tippy-svg-arrow{fill:#000000b3}.tippy-box[data-theme~=material]{background-color:#505355;font-weight:600}.tippy-box[data-theme~=material][data-placement^=top]>.tippy-arrow:before{border-top-color:#505355}.tippy-box[data-theme~=material][data-placement^=bottom]>.tippy-arrow:before{border-bottom-color:#505355}.tippy-box[data-theme~=material][data-placement^=left]>.tippy-arrow:before{border-left-color:#505355}.tippy-box[data-theme~=material][data-placement^=right]>.tippy-arrow:before{border-right-color:#505355}.tippy-box[data-theme~=material]>.tippy-backdrop{background-color:#505355}.tippy-box[data-theme~=material]>.tippy-svg-arrow{fill:#505355}.tippy-box[data-theme~=light]{color:#26323d;box-shadow:0 0 20px 4px #9aa1b126,0 4px 80px -8px #24282f40,0 4px 4px -2px #5b5e6926;background-color:#fff}.tippy-box[data-theme~=light][data-placement^=top]>.tippy-arrow:before{border-top-color:#fff}.tippy-box[data-theme~=light][data-placement^=bottom]>.tippy-arrow:before{border-bottom-color:#fff}.tippy-box[data-theme~=light][data-placement^=left]>.tippy-arrow:before{border-left-color:#fff}.tippy-box[data-theme~=light][data-placement^=right]>.tippy-arrow:before{border-right-color:#fff}.tippy-box[data-theme~=light]>.tippy-backdrop{background-color:#fff}.tippy-box[data-theme~=light]>.tippy-svg-arrow{fill:#fff}.tippy-box[data-animation=shift-toward][data-state=hidden]{opacity:0}.tippy-box[data-animation=shift-toward][data-state=hidden][data-placement^=top]{transform:translateY(-10px)}.tippy-box[data-animation=shift-toward][data-state=hidden][data-placement^=bottom]{transform:translateY(10px)}.tippy-box[data-animation=shift-toward][data-state=hidden][data-placement^=left]{transform:translate(-10px)}.tippy-box[data-animation=shift-toward][data-state=hidden][data-placement^=right]{transform:translate(10px)}.tippy-box[data-animation=perspective][data-placement^=top]{transform-origin:bottom}.tippy-box[data-animation=perspective][data-placement^=top][data-state=visible]{transform:perspective(700px)}.tippy-box[data-animation=perspective][data-placement^=top][data-state=hidden]{transform:perspective(700px) translateY(8px) rotateX(60deg)}.tippy-box[data-animation=perspective][data-placement^=bottom]{transform-origin:top}.tippy-box[data-animation=perspective][data-placement^=bottom][data-state=visible]{transform:perspective(700px)}.tippy-box[data-animation=perspective][data-placement^=bottom][data-state=hidden]{transform:perspective(700px) translateY(-8px) rotateX(-60deg)}.tippy-box[data-animation=perspective][data-placement^=left]{transform-origin:right}.tippy-box[data-animation=perspective][data-placement^=left][data-state=visible]{transform:perspective(700px)}.tippy-box[data-animation=perspective][data-placement^=left][data-state=hidden]{transform:perspective(700px) translate(8px) rotateY(-60deg)}.tippy-box[data-animation=perspective][data-placement^=right]{transform-origin:left}.tippy-box[data-animation=perspective][data-placement^=right][data-state=visible]{transform:perspective(700px)}.tippy-box[data-animation=perspective][data-placement^=right][data-state=hidden]{transform:perspective(700px) translate(-8px) rotateY(60deg)}.tippy-box[data-animation=perspective][data-state=hidden],.tippy-box[data-animation=shift-away][data-state=hidden]{opacity:0}.tippy-box[data-animation=shift-away][data-state=hidden][data-placement^=top]{transform:translateY(10px)}.tippy-box[data-animation=shift-away][data-state=hidden][data-placement^=bottom]{transform:translateY(-10px)}.tippy-box[data-animation=shift-away][data-state=hidden][data-placement^=left]{transform:translate(10px)}.tippy-box[data-animation=shift-away][data-state=hidden][data-placement^=right]{transform:translate(-10px)}.tippy-box[data-animation=scale][data-placement^=top]{transform-origin:bottom}.tippy-box[data-animation=scale][data-placement^=bottom]{transform-origin:top}.tippy-box[data-animation=scale][data-placement^=left]{transform-origin:right}.tippy-box[data-animation=scale][data-placement^=right]{transform-origin:left}.tippy-box[data-animation=scale][data-state=hidden]{transform:scale(.5);opacity:0}.tippy-box[data-placement^=top]>.tippy-svg-arrow{bottom:0}.tippy-box[data-placement^=top]>.tippy-svg-arrow:after,.tippy-box[data-placement^=top]>.tippy-svg-arrow>svg{top:16px;transform:rotate(180deg)}.tippy-box[data-placement^=bottom]>.tippy-svg-arrow{top:0}.tippy-box[data-placement^=bottom]>.tippy-svg-arrow>svg{bottom:16px}.tippy-box[data-placement^=left]>.tippy-svg-arrow{right:0}.tippy-box[data-placement^=left]>.tippy-svg-arrow:after,.tippy-box[data-placement^=left]>.tippy-svg-arrow>svg{transform:rotate(90deg);top:calc(50% - 3px);left:11px}.tippy-box[data-placement^=right]>.tippy-svg-arrow{left:0}.tippy-box[data-placement^=right]>.tippy-svg-arrow:after,.tippy-box[data-placement^=right]>.tippy-svg-arrow>svg{transform:rotate(-90deg);top:calc(50% - 3px);right:11px}.tippy-svg-arrow{width:16px;height:16px;fill:#333;text-align:initial}.tippy-svg-arrow,.tippy-svg-arrow>svg{position:absolute}</style><script src="https://cdn-cookieyes.com/client_data/d2e859934c4309be824ea8bb/banner.js" async="" id="cookieyes-banner"></script><script src="https://static.reo.dev/334496741e114fd/reo.js" defer=""></script><style id="intellimize-anti-flicker-regions" class="iStyleBlock"></style></head><body class="body-v2" style=""><div class="page-wrapper"><div class="global-styles"><div class="style-overrides w-embed"><style>
+/* Ensure all elements inherit the color from its parent */
+a,
+/*     .w-input,    */
+.w-select,
+.w-tab-link,
+.w-nav-link,
+.w-nav-brand,
+.w-dropdown-btn,
+/*.w-dropdown-toggle, */
+.w-slider-arrow-left,
+.w-slider-arrow-right,
+.w-dropdown-link {
+  color: inherit;
+  text-decoration: inherit;
+  font-size: inherit;
+}
+
+/* Focus state style for keyboard navigation for the focusable elements */
+*[tabindex]:focus-visible,
+  input[type="file"]:focus-visible {
+   outline: 0.125rem solid #4d65ff;
+   outline-offset: 0.125rem;
+}
+
+/* Get rid of top margin on first element in any rich text element */
+.w-richtext > :not(div):first-child, .w-richtext > div:first-child > :first-child {
+  margin-top: 0 !important;
+}
+
+/* Get rid of bottom margin on last element in any rich text element */
+.w-richtext>:last-child, .w-richtext ol li:last-child, .w-richtext ul li:last-child {
+	margin-bottom: 0 !important;
+}
+
+/* Prevent all click and hover interaction with an element */
+.pointer-events-off {
+	pointer-events: none;
+}
+
+/* Enables all click and hover interaction with an element */
+.pointer-events-on {
+  pointer-events: auto;
+}
+
+/* Create a class of .div-square which maintains a 1:1 dimension of a div */
+.div-square::after {
+	content: "";
+	display: block;
+	padding-bottom: 100%;
+}
+
+/* Make sure containers never lose their center alignment */
+.container-medium,.container-small, .container-large {
+	margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+
+/* Apply "..." after 3 lines of text */
+.text-style-3lines {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+/* Apply "..." after 2 lines of text */
+.text-style-2lines {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+/* Adds inline flex display */
+.display-inlineflex {
+  display: inline-flex;
+}
+
+/* These classes are never overwritten */
+.hide {
+  display: none !important;
+}
+
+/* Remove default Webflow chevron from form select */
+select{
+  -webkit-appearance:none;
+}
+
+
+@media screen and (max-width: 991px) {
+    .hide, .hide-tablet {
+        display: none !important;
+    }
+}
+  @media screen and (max-width: 767px) {
+    .hide-mobile-landscape{
+      display: none !important;
+    }
+}
+  @media screen and (max-width: 479px) {
+    .hide-mobile{
+      display: none !important;
+    }
+}
+ 
+.margin-0 {
+  margin: 0rem !important;
+}
+  
+.padding-0 {
+  padding: 0rem !important;
+}
+
+.spacing-clean {
+padding: 0rem !important;
+margin: 0rem !important;
+}
+
+.margin-top {
+  margin-right: 0rem !important;
+  margin-bottom: 0rem !important;
+  margin-left: 0rem !important;
+}
+
+.padding-top {
+  padding-right: 0rem !important;
+  padding-bottom: 0rem !important;
+  padding-left: 0rem !important;
+}
+  
+.margin-right {
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
+  margin-left: 0rem !important;
+}
+
+.padding-right {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+  padding-left: 0rem !important;
+}
+
+.margin-bottom {
+  margin-top: 0rem !important;
+  margin-right: 0rem !important;
+  margin-left: 0rem !important;
+}
+
+.padding-bottom {
+  padding-top: 0rem !important;
+  padding-right: 0rem !important;
+  padding-left: 0rem !important;
+}
+
+.margin-left {
+  margin-top: 0rem !important;
+  margin-right: 0rem !important;
+  margin-bottom: 0rem !important;
+}
+  
+.padding-left {
+  padding-top: 0rem !important;
+  padding-right: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+  
+.margin-horizontal {
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
+}
+
+.padding-horizontal {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+
+.margin-vertical {
+  margin-right: 0rem !important;
+  margin-left: 0rem !important;
+}
+  
+.padding-vertical {
+  padding-right: 0rem !important;
+  padding-left: 0rem !important;
+}
+
+/* Apply "..." at 100% width */
+.truncate-width { 
+		width: 100%; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+}
+/* Removes native scrollbar */
+.no-scrollbar {
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none; 
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.page-wrapper {
+	overflow: clip;
+}
+
+/* Bullets Pricing */
+.bullet-list_wrapper{
+  list-style: none;
+  margin: 0;
+}
+
+.bullet-list_wrapper > li{
+  position: relative;
+  padding-left: 1.3em;
+}
+
+.bullet-list_wrapper > li::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 999px;
+  background: var(--_v-2-colors---c-blue-light--900);
+  transform: translateY(-50%);
+}
+
+</style></div><div class="w-embed"><style>
+  :root {
+    --font-from: 18;
+    --font-to: 20;
+    --vw-from: calc(1920 / 100);
+    --vw-to: calc(2400 / 100);
+    --coefficient: calc((var(--font-to) - var(--font-from)) / (var(--vw-to) - var(--vw-from)));
+    --base: calc((var(--font-from) - var(--vw-from) * var(--coefficient)) / 16);
+  }
+
+  html {
+    font-size: calc(var(--base) * 1rem + var(--coefficient) * 1vw);
+  }
+
+  @media screen and (max-width: 1920px) {
+    :root {
+      --font-from: 16;
+      --font-to: 18;
+      --vw-from: calc(1440 / 100);
+      --vw-to: calc(1920 / 100);
+      }
+  }
+
+  @media screen and (max-width: 1440px) {
+    :root {
+      --font-from: 16;
+      --font-to: 16;
+      --vw-from: calc(1 / 100);
+      --vw-to: calc(1440 / 100);
+      }
+  }
+</style></div></div><div class="top-banner"><div class="v2-padding-global"><div class="w-layout-blockcontainer v2-container w-container"><div class="top-banner-wrapper"><div class="t-paragraph-23-b">Join us May 13th &amp;&nbsp;May 14th at Interrupt, the Agent Conference by LangChain</div><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd44b" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="280a458b-2f96-b33b-93ab-2071882dd44b" href="https://interrupt.langchain.com" target="_blank" class="banner-link w-inline-block"><div class="t-label-1-rg">Buy tickets</div><div class="embed-icon is-banner w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.61538 4V5.23077H9.90154L4 11.1323L4.86769 12L10.7692 6.09846V11.3846H12V4H4.61538Z" fill="currentColor"></path>
+</svg></div></a><div class="hide w-embed"><style>
+
+  .banner-link:hover .embed-icon.is-banner {
+    transform: translateX(-0.75rem);
+  }
+
+</style></div></div></div></div></div><div data-animation="default" class="navbar2_component w-nav" data-wf--navbar--variant="dark" data-easing2="ease" fs-scrolldisable-element="smart-nav" data-easing="ease" data-collapse="medium" data-w-id="162b5140-9840-3ab9-d243-3a325f908689" role="banner" data-duration="400"><div class="navbar2_container"><a href="/" data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd450:162b5140-9840-3ab9-d243-3a325f90868b" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="162b5140-9840-3ab9-d243-3a325f90868b" data-wf-component-context="%5B%7B%22componentId%22%3A%22162b5140-9840-3ab9-d243-3a325f908689%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd450%22%7D%5D" aria-current="page" class="navbar2_logo-link w-nav-brand w--current" aria-label="home"><div class="navbar2_logo w-embed"><svg width="100%" height="100%" viewBox="0 0 131 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_4783_495)">
+<path d="M69.3795 9.85744H69.3579C68.9576 8.92431 67.8011 7.92334 65.8885 7.92334C62.7764 7.92334 60.5527 10.1023 60.5527 13.7488C60.5527 17.3953 62.7979 19.6189 65.91 19.6189C67.8888 19.6189 68.9112 18.6411 69.3563 17.5525H69.3778V18.9307C69.3778 20.8879 68.3768 21.8211 66.5767 21.8211C65.0645 21.8211 64.0652 21.2867 63.7988 20.0425H60.9978C61.3088 22.3108 63.4001 24 66.6231 24C69.669 24 72.3807 22.4647 72.3807 18.5303V8.23438H69.3811V9.85744H69.3795ZM66.5321 17.3738C64.464 17.3738 63.4183 15.6614 63.4183 13.772C63.4183 11.8825 64.4855 10.1933 66.5321 10.1933C68.5787 10.1933 69.6442 12.1274 69.6442 13.772C69.6442 15.4165 68.7987 17.3738 66.5321 17.3738Z" fill="currentColor"></path>
+<path d="M47.2325 12.7727C47.2325 9.94849 45.899 7.88037 42.2955 7.88037C39.2711 7.88037 37.696 9.86245 37.3618 11.7502H40.052C40.3416 10.6831 41.187 10.0163 42.3203 10.0163C43.6307 10.0163 44.4315 10.5491 44.4315 11.4607C44.4315 12.4385 43.72 12.6619 42.231 12.8836C40.6294 13.1268 36.8506 13.4378 36.8506 16.5962C36.8506 18.5303 38.3628 20.0425 40.8743 20.0425C43.0533 20.0425 44.0096 18.8861 44.4761 17.9761H44.4993V18.5535C44.4993 18.9307 44.5225 19.3543 44.5886 19.7315H47.4559C47.2987 18.9969 47.2342 17.8189 47.2342 16.9304V12.7727H47.2325ZM44.4761 14.3974C44.4761 17.0661 43.1211 17.9314 41.6536 17.9314C40.3647 17.9314 39.6963 17.3308 39.6963 16.4639C39.6963 15.5969 40.3862 15.1304 41.92 14.8177C43.6092 14.4851 44.2098 13.9739 44.4761 13.418V14.3958V14.3974Z" fill="currentColor"></path>
+<path d="M55.2815 7.9248C53.503 7.9248 52.4821 8.87945 51.8352 10.2146V8.23585H49.0342V19.7313H51.9014V14.5726C51.9014 11.7715 52.9471 10.4148 54.4808 10.4148C56.127 10.4148 56.5704 11.7268 56.5704 13.3946V19.7313H59.4161V12.7046C59.4161 9.88207 58.2596 7.9248 55.2799 7.9248H55.2815Z" fill="currentColor"></path>
+<path d="M81.9947 6.10158C84.1505 6.10158 85.618 6.96853 86.4634 8.83645H89.3985C88.4207 5.59034 85.9737 3.56689 81.9947 3.56689C77.1702 3.56689 73.9009 6.99335 73.9009 11.8162C73.9009 16.639 77.147 20.0208 81.9715 20.0192C85.9075 20.0192 88.5977 17.908 89.3985 14.7496H86.4419C85.7967 16.4388 84.4185 17.4845 81.9947 17.4845C78.9256 17.4845 76.8806 15.0838 76.8806 11.8162C76.8806 8.54857 78.9041 6.10323 81.9947 6.10323V6.10158Z" fill="currentColor"></path>
+<path d="M125.996 7.9248C124.217 7.9248 123.196 8.87945 122.55 10.2146V8.23585H119.749V19.7313H122.616V14.5726C122.616 11.7715 123.661 10.4148 125.195 10.4148C126.84 10.4148 127.285 11.7268 127.285 13.3946V19.7313H130.13V12.7046C130.13 9.88207 128.974 7.9248 125.994 7.9248H125.996Z" fill="currentColor"></path>
+<path d="M117.814 4.84424H114.858V7.51294H117.814V4.84424Z" fill="currentColor"></path>
+<path d="M114.903 10.2264V19.7298H117.77V8.23438H116.893C115.793 8.23438 114.903 9.12615 114.903 10.2264Z" fill="currentColor"></path>
+<path d="M97.2693 7.92172C95.4908 7.92172 94.4699 8.87802 93.823 10.19V3.85498H91.022V19.7265H93.8892V14.5678C93.8892 11.7668 94.9349 10.4101 96.4686 10.4101C98.1148 10.4101 98.5582 11.7221 98.5582 13.3898V19.7265H101.404V12.6999C101.404 9.87733 100.247 7.92007 97.2677 7.92007L97.2693 7.92172Z" fill="currentColor"></path>
+<path d="M113.035 12.7727C113.035 9.94849 111.701 7.88037 108.098 7.88037C105.073 7.88037 103.498 9.86245 103.166 11.7502H105.856C106.145 10.6831 106.991 10.0163 108.124 10.0163C109.434 10.0163 110.235 10.5491 110.235 11.4607C110.235 12.4385 109.524 12.6619 108.035 12.8836C106.433 13.1268 102.654 13.4378 102.654 16.5962C102.654 18.5303 104.167 20.0425 106.678 20.0425C108.857 20.0425 109.813 18.8861 110.28 17.9761H110.301V18.5535C110.301 18.9307 110.323 19.3543 110.391 19.7315H113.258C113.102 18.9969 113.036 17.8189 113.036 16.9304V12.7727H113.035ZM110.277 14.3974C110.277 17.0661 108.922 17.9314 107.454 17.9314C106.165 17.9314 105.497 17.3308 105.497 16.4639C105.497 15.5969 106.187 15.1304 107.72 14.8177C109.41 14.4851 110.01 13.9739 110.277 13.418V14.3958V14.3974Z" fill="currentColor"></path>
+<path d="M28.525 14.4586V3.85498H25.6445V16.4589H26.5247C27.6299 16.4589 28.525 15.5638 28.525 14.4586Z" fill="currentColor"></path>
+<path d="M35.9537 17.1851H25.6445V19.7313H35.9537V17.1851Z" fill="currentColor"></path>
+</g>
+<g clip-path="url(#clip1_4783_495)">
+<path d="M6.64803 14.103C7.89438 12.8566 8.595 11.1643 8.595 9.40177C8.595 7.63928 7.89378 5.94697 6.64803 4.70058L1.94697 0C0.701225 1.24639 0 2.9387 0 4.70119C0 6.46368 0.701225 8.15599 1.94697 9.40238L6.64742 14.103H6.64803Z" fill="currentColor"></path>
+<path d="M16.4845 14.5379C15.2388 13.2921 13.5459 12.5908 11.7841 12.5908C10.0222 12.5908 8.32936 13.2921 7.08301 14.5379L11.7841 19.239C13.0298 20.4848 14.7227 21.1861 16.4851 21.1861C18.2476 21.1861 19.9398 20.4848 21.1862 19.239L16.4851 14.5379H16.4845Z" fill="currentColor"></path>
+<path d="M1.95832 19.228C3.20468 20.4738 4.89693 21.1751 6.65938 21.1751V14.5269H0.0107422C0.0113472 16.2893 0.711968 17.9817 1.95832 19.228Z" fill="currentColor"></path>
+<path d="M18.2997 7.58717C17.0533 6.34138 15.3611 5.63953 13.598 5.64014C11.8356 5.64014 10.1433 6.34138 8.89697 7.58777L13.598 12.289L18.2997 7.58717Z" fill="currentColor"></path>
+</g>
+<defs>
+<clipPath id="clip0_4783_495">
+<rect width="104.488" height="20.433" fill="currentColor" transform="translate(25.6445 3.56689)"></rect>
+</clipPath>
+<clipPath id="clip1_4783_495">
+<rect width="21.1862" height="21.1862" fill="currentColor"></rect>
+</clipPath>
+</defs>
+</svg></div></a><nav role="navigation" id="w-node-_162b5140-9840-3ab9-d243-3a325f90868d-5f908689" class="navbar2_menu is-page-height-tablet w-nav-menu"><div class="navbar-menu-wrapper"><div data-delay="100" data-hover="true" data-w-id="162b5140-9840-3ab9-d243-3a325f90868e" class="navbar2_menu-dropdown w-dropdown"><div data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd450:162b5140-9840-3ab9-d243-3a325f90868f" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="162b5140-9840-3ab9-d243-3a325f90868f" data-wf-component-context="%5B%7B%22componentId%22%3A%22162b5140-9840-3ab9-d243-3a325f908689%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd450%22%7D%5D" class="navbar2_dropdwn-toggle w-dropdown-toggle" id="w-dropdown-toggle-0" aria-controls="w-dropdown-list-0" aria-haspopup="menu" aria-expanded="false" role="button" tabindex="0"><div class="t-label-1-rg is-bigger-nav">Products</div><div class="embed-icon is-nav-arrow w-embed"><svg width="100%" height="100%" viewBox="0 0 6 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 5.96046e-07L3.26786 4H2.66071L0 0L0.958333 1.19209e-07L2.96429 3L5.04167 4.76837e-07L6 5.96046e-07Z" fill="currentColor"></path>
+</svg></div></div><nav class="navbar2_dropdown-list is-product w-dropdown-list" style="transform: translate3d(0px, 2rem, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; opacity: 0;" id="w-dropdown-list-0" aria-labelledby="w-dropdown-toggle-0"><div class="navbar2_dropdown-list-wrapper is-product"><div class="v2-navbar-dropdown-grid"><div class="v2-navbar-dropdown-column"><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd450:2bd3fb27-ac1d-5c4e-17dd-f101d2ef7329" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="2bd3fb27-ac1d-5c4e-17dd-f101d2ef7329" data-wf-component-context="%5B%7B%22componentId%22%3A%22162b5140-9840-3ab9-d243-3a325f908689%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd450%22%7D%5D" href="/langsmith-platform" class="nav-link w-inline-block" tabindex="0"><div class="t-label-1-rg is-primary-font">LangSmith Platform</div><div class="embed-icon-2 is-nav w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.61538 4V5.23077H9.90154L4 11.1323L4.86769 12L10.7692 6.09846V11.3846H12V4H4.61538Z" fill="currentColor"></path>
+</svg></div></a><div class="v2-navbar-divider"></div><div class="v2-navbar-dropdown-links"><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd450:162b5140-9840-3ab9-d243-3a325f90869b" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="162b5140-9840-3ab9-d243-3a325f90869b" data-wf-component-context="%5B%7B%22componentId%22%3A%22162b5140-9840-3ab9-d243-3a325f908689%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd450%22%7D%5D" href="/langsmith/observability" class="v2-navbar-dropdown-link w-inline-block" tabindex="0"><img loading="lazy" src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/6989c024180a65887312dd40_Frame%202147254707.svg" alt="" class="v2-navbar-dropdown-icon"><div class="v2-navbar-dropdown-content"><div class="t-label-1-rg is-primary-font">Observability</div><div class="t-paragraph-3-rg text-c-white-60-p">See exactly what your agents are doing</div></div></a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd450:162b5140-9840-3ab9-d243-3a325f9086a2" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="162b5140-9840-3ab9-d243-3a325f9086a2" data-wf-component-context="%5B%7B%22componentId%22%3A%22162b5140-9840-3ab9-d243-3a325f908689%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd450%22%7D%5D" href="/langsmith/evaluation" class="v2-navbar-dropdown-link w-inline-block" tabindex="0"><img loading="lazy" src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/6989c0247f235ca5583fa63b_Frame%202147255166.svg" alt="" class="v2-navbar-dropdown-icon"><div class="v2-navbar-dropdown-content"><div class="t-label-1-rg is-primary-font">Evaluation</div><div class="t-paragraph-3-rg text-c-white-60-p">Score and improve agent performance</div></div></a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd450:162b5140-9840-3ab9-d243-3a325f9086a9" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="162b5140-9840-3ab9-d243-3a325f9086a9" data-wf-component-context="%5B%7B%22componentId%22%3A%22162b5140-9840-3ab9-d243-3a325f908689%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd450%22%7D%5D" href="/langsmith/deployment" class="v2-navbar-dropdown-link w-inline-block" tabindex="0"><img loading="lazy" src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/6989c024926f877c1de6e728_updated.svg" alt="" class="v2-navbar-dropdown-icon"><div class="v2-navbar-dropdown-content"><div class="t-label-1-rg is-primary-font">Deployment</div><div class="t-paragraph-3-rg text-c-white-60-p">Ship and scale agents in production</div></div></a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd450:162b5140-9840-3ab9-d243-3a325f9086b0" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="162b5140-9840-3ab9-d243-3a325f9086b0" data-wf-component-context="%5B%7B%22componentId%22%3A%22162b5140-9840-3ab9-d243-3a325f908689%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd450%22%7D%5D" href="/langsmith/fleet" class="v2-navbar-dropdown-link w-inline-block" tabindex="0"><img loading="lazy" src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69baea024a5f7c2d229815b0_LangSmith%20Fleet_icon_light%20mode%203.svg" alt="" class="v2-navbar-dropdown-icon"><div class="v2-navbar-dropdown-content"><div class="t-label-1-rg is-primary-font">Fleet</div><div class="t-paragraph-3-rg text-c-white-60-p">Agents for the whole company</div></div></a></div><div class="hide w-embed"><style>
+
+.nav-link:hover .embed-icon-2.is-nav {
+	transform: translateX(-0.75rem);
+}
+
+</style></div></div><div class="v2-navbar-dropdown-column"><div class="t-label-1-rg blue-light-500 is-primary-font">Open Source Frameworks</div><div class="v2-navbar-divider"></div><div class="v2-navbar-dropdown-links"><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd450:162b5140-9840-3ab9-d243-3a325f9086ca" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="162b5140-9840-3ab9-d243-3a325f9086ca" data-wf-component-context="%5B%7B%22componentId%22%3A%22162b5140-9840-3ab9-d243-3a325f908689%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd450%22%7D%5D" href="/deep-agents" class="v2-navbar-dropdown-link w-inline-block" tabindex="0"><img loading="lazy" src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/6989c02453d869396317aaa3_updated-1.svg" alt="" class="v2-navbar-dropdown-icon"><div class="v2-navbar-dropdown-content"><div class="t-label-1-rg is-primary-font">deepagents</div><div class="t-paragraph-3-rg text-c-white-60-p">Build long-running agents for complex tasks</div></div></a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd450:162b5140-9840-3ab9-d243-3a325f9086bc" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="162b5140-9840-3ab9-d243-3a325f9086bc" data-wf-component-context="%5B%7B%22componentId%22%3A%22162b5140-9840-3ab9-d243-3a325f908689%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd450%22%7D%5D" href="/langchain" class="v2-navbar-dropdown-link w-inline-block" tabindex="0"><img loading="lazy" src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/6989c024409fcfc7e5b8f78f_Frame%202147254707-1.svg" alt="" class="v2-navbar-dropdown-icon"><div class="v2-navbar-dropdown-content"><div class="t-label-1-rg is-primary-font">langchain</div><div class="t-paragraph-3-rg text-c-white-60-p">Quick start agents with any model provider</div></div></a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd450:162b5140-9840-3ab9-d243-3a325f9086c3" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="162b5140-9840-3ab9-d243-3a325f9086c3" data-wf-component-context="%5B%7B%22componentId%22%3A%22162b5140-9840-3ab9-d243-3a325f908689%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd450%22%7D%5D" href="/langgraph" class="v2-navbar-dropdown-link w-inline-block" tabindex="0"><img loading="lazy" src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/6989c024c2d98286a8fb058f_Frame%202147255166-1.svg" alt="" class="v2-navbar-dropdown-icon"><div class="v2-navbar-dropdown-content"><div class="t-label-1-rg is-primary-font">langgraph</div><div class="t-paragraph-3-rg text-c-white-60-p">Build reliable agents with low-level control</div></div></a></div></div></div></div></nav></div><div data-delay="100" data-hover="true" data-w-id="162b5140-9840-3ab9-d243-3a325f9086d1" class="navbar2_menu-dropdown w-dropdown"><div data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd450:162b5140-9840-3ab9-d243-3a325f9086d2" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="162b5140-9840-3ab9-d243-3a325f9086d2" data-wf-component-context="%5B%7B%22componentId%22%3A%22162b5140-9840-3ab9-d243-3a325f908689%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd450%22%7D%5D" class="navbar2_dropdwn-toggle w-dropdown-toggle" id="w-dropdown-toggle-1" aria-controls="w-dropdown-list-1" aria-haspopup="menu" aria-expanded="false" role="button" tabindex="0"><div class="t-label-1-rg is-bigger-nav">Learn</div><div class="embed-icon is-nav-arrow w-embed"><svg width="100%" height="100%" viewBox="0 0 6 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 5.96046e-07L3.26786 4H2.66071L0 0L0.958333 1.19209e-07L2.96429 3L5.04167 4.76837e-07L6 5.96046e-07Z" fill="currentColor"></path>
+</svg></div></div><nav class="navbar2_dropdown-list is-learn w-dropdown-list" style="transform: translate3d(0px, 2rem, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; opacity: 0;" id="w-dropdown-list-1" aria-labelledby="w-dropdown-toggle-1"><div class="navbar2_dropdown-list-wrapper is-product"><div class="v2-navbar-dropdown-grid is-3col"><div class="v2-navbar-dropdown-column"><div class="t-label-1-rg blue-light-500 is-primary-font">Resources</div><div class="v2-navbar-divider"></div><div class="v2-navbar-dropdown-links is-gap-16"><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd450:162b5140-9840-3ab9-d243-3a325f9086de" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="162b5140-9840-3ab9-d243-3a325f9086de" data-wf-component-context="%5B%7B%22componentId%22%3A%22162b5140-9840-3ab9-d243-3a325f908689%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd450%22%7D%5D" href="https://blog.langchain.com/" target="_blank" class="v2-navbar-dropdown-link w-inline-block" tabindex="0"><div class="t-label-1-rg is-primary-font">Blog</div></a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd450:162b5140-9840-3ab9-d243-3a325f9086e4" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="162b5140-9840-3ab9-d243-3a325f9086e4" data-wf-component-context="%5B%7B%22componentId%22%3A%22162b5140-9840-3ab9-d243-3a325f908689%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd450%22%7D%5D" href="/customers" class="v2-navbar-dropdown-link w-inline-block" tabindex="0"><div class="t-label-1-rg is-primary-font">Customer Stories</div></a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd450:162b5140-9840-3ab9-d243-3a325f9086e7" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="162b5140-9840-3ab9-d243-3a325f9086e7" data-wf-component-context="%5B%7B%22componentId%22%3A%22162b5140-9840-3ab9-d243-3a325f908689%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd450%22%7D%5D" href="/resources" class="v2-navbar-dropdown-link w-inline-block" tabindex="0"><div class="t-label-1-rg is-primary-font">Guides</div></a></div></div><div class="v2-navbar-dropdown-column"><div class="t-label-1-rg blue-light-500 is-primary-font">How-To</div><div class="v2-navbar-divider"></div><div class="v2-navbar-dropdown-links is-gap-16"><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd450:162b5140-9840-3ab9-d243-3a325f9086f8" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="162b5140-9840-3ab9-d243-3a325f9086f8" data-wf-component-context="%5B%7B%22componentId%22%3A%22162b5140-9840-3ab9-d243-3a325f908689%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd450%22%7D%5D" href="https://academy.langchain.com/" target="_blank" class="v2-navbar-dropdown-link w-inline-block" tabindex="0"><div class="t-label-1-rg is-primary-font">LangChain Academy</div></a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd450:162b5140-9840-3ab9-d243-3a325f9086fb" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="162b5140-9840-3ab9-d243-3a325f9086fb" data-wf-component-context="%5B%7B%22componentId%22%3A%22162b5140-9840-3ab9-d243-3a325f908689%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd450%22%7D%5D" href="https://www.youtube.com/@LangChain" target="_blank" class="v2-navbar-dropdown-link w-inline-block" tabindex="0"><div class="t-label-1-rg is-primary-font">YouTube</div></a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd450:162b5140-9840-3ab9-d243-3a325f9086fe" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="162b5140-9840-3ab9-d243-3a325f9086fe" data-wf-component-context="%5B%7B%22componentId%22%3A%22162b5140-9840-3ab9-d243-3a325f908689%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd450%22%7D%5D" href="https://docs.langchain.com/" target="_blank" class="v2-navbar-dropdown-link w-inline-block" tabindex="0"><div class="t-label-1-rg is-primary-font">Documentation</div></a></div></div><div class="v2-navbar-dropdown-column"><div class="t-label-1-rg blue-light-500 is-primary-font">Community</div><div class="v2-navbar-divider"></div><div class="v2-navbar-dropdown-links is-gap-16"><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd450:162b5140-9840-3ab9-d243-3a325f908706" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="162b5140-9840-3ab9-d243-3a325f908706" data-wf-component-context="%5B%7B%22componentId%22%3A%22162b5140-9840-3ab9-d243-3a325f908689%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd450%22%7D%5D" href="/startups" class="v2-navbar-dropdown-link w-inline-block" tabindex="0"><div class="t-label-1-rg is-primary-font">LangSmith for Startups</div></a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd450:463d3455-81b9-ddfe-c5bb-cd2e74ef35b2" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="463d3455-81b9-ddfe-c5bb-cd2e74ef35b2" data-wf-component-context="%5B%7B%22componentId%22%3A%22162b5140-9840-3ab9-d243-3a325f908689%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd450%22%7D%5D" href="https://luma.com/langchain?k=c" class="v2-navbar-dropdown-link w-inline-block" tabindex="0"><div class="t-label-1-rg is-primary-font">Events</div></a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd450:162b5140-9840-3ab9-d243-3a325f908709" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="162b5140-9840-3ab9-d243-3a325f908709" data-wf-component-context="%5B%7B%22componentId%22%3A%22162b5140-9840-3ab9-d243-3a325f908689%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd450%22%7D%5D" href="/community" class="v2-navbar-dropdown-link w-inline-block" tabindex="0"><div class="t-label-1-rg is-primary-font">Community</div></a></div></div></div></div></nav></div><a href="https://docs.langchain.com/" data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd450:162b5140-9840-3ab9-d243-3a325f908712" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="162b5140-9840-3ab9-d243-3a325f908712" data-wf-component-context="%5B%7B%22componentId%22%3A%22162b5140-9840-3ab9-d243-3a325f908689%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd450%22%7D%5D" target="_blank" class="navbar2_link t-label-1-rg w-nav-link">Docs</a><div data-delay="100" data-hover="true" data-w-id="162b5140-9840-3ab9-d243-3a325f908714" class="navbar2_menu-dropdown w-dropdown"><div data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd450:162b5140-9840-3ab9-d243-3a325f908715" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="162b5140-9840-3ab9-d243-3a325f908715" data-wf-component-context="%5B%7B%22componentId%22%3A%22162b5140-9840-3ab9-d243-3a325f908689%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd450%22%7D%5D" class="navbar2_dropdwn-toggle w-dropdown-toggle" id="w-dropdown-toggle-2" aria-controls="w-dropdown-list-2" aria-haspopup="menu" aria-expanded="false" role="button" tabindex="0"><div class="t-label-1-rg is-bigger-nav">Company</div><div class="embed-icon is-nav-arrow w-embed"><svg width="100%" height="100%" viewBox="0 0 6 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 5.96046e-07L3.26786 4H2.66071L0 0L0.958333 1.19209e-07L2.96429 3L5.04167 4.76837e-07L6 5.96046e-07Z" fill="currentColor"></path>
+</svg></div></div><nav class="navbar2_dropdown-list is-company w-dropdown-list" style="transform: translate3d(0px, 2rem, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; opacity: 0;" id="w-dropdown-list-2" aria-labelledby="w-dropdown-toggle-2"><div class="navbar2_dropdown-list-wrapper is-product"><div class="v2-navbar-dropdown-grid is-1col"><div class="v2-navbar-dropdown-column"><div class="v2-navbar-dropdown-links is-gap-16"><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd450:162b5140-9840-3ab9-d243-3a325f90871e" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="162b5140-9840-3ab9-d243-3a325f90871e" data-wf-component-context="%5B%7B%22componentId%22%3A%22162b5140-9840-3ab9-d243-3a325f908689%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd450%22%7D%5D" href="/about" class="v2-navbar-dropdown-link w-inline-block" tabindex="0"><div class="t-label-1-rg is-primary-font">About</div></a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd450:162b5140-9840-3ab9-d243-3a325f908721" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="162b5140-9840-3ab9-d243-3a325f908721" data-wf-component-context="%5B%7B%22componentId%22%3A%22162b5140-9840-3ab9-d243-3a325f908689%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd450%22%7D%5D" href="/careers" class="v2-navbar-dropdown-link w-inline-block" tabindex="0"><div class="t-label-1-rg is-primary-font">Careers</div></a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd450:162b5140-9840-3ab9-d243-3a325f908724" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="162b5140-9840-3ab9-d243-3a325f908724" data-wf-component-context="%5B%7B%22componentId%22%3A%22162b5140-9840-3ab9-d243-3a325f908689%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd450%22%7D%5D" href="/langchain-partner-network" class="v2-navbar-dropdown-link w-inline-block" tabindex="0"><div class="t-label-1-rg is-primary-font">Partners</div></a></div></div></div></div></nav></div><a href="/pricing" data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd450:162b5140-9840-3ab9-d243-3a325f908727" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="162b5140-9840-3ab9-d243-3a325f908727" data-wf-component-context="%5B%7B%22componentId%22%3A%22162b5140-9840-3ab9-d243-3a325f908689%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd450%22%7D%5D" class="navbar2_link t-label-1-rg w-nav-link">Pricing</a><div class="navbar-tablet-buttons"><a data-wf--button--variant="primary" class="button-v2 w-inline-block" data-wf-component-context="%5B%7B%22componentId%22%3A%22162b5140-9840-3ab9-d243-3a325f908689%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd450%22%7D%2C%7B%22componentId%22%3A%22cc338c70-b506-f985-732b-95e9d08eb22b%22%2C%22instanceId%22%3A%2286ccd8ab-c82a-75d1-cb6e-db7e26aee212%22%7D%5D" data-wf-element-id="cc338c70-b506-f985-732b-95e9d08eb22b" data-wf-event-ids="157078768-157078769" href="https://smith.langchain.com/" target="_blank" data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd450:86ccd8ab-c82a-75d1-cb6e-db7e26aee212:cc338c70-b506-f985-732b-95e9d08eb22b" data-wf-ao-click-engagement-tracking="true"><div class="no-wrap-arrow">Try LangSmith</div><div class="embed-icon is-btn-arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.9852 4L12 10.7704H10.9314V6.60741L10.9462 5.80741L4.74211 12L4 11.2444L10.2041 5.03704L9.47681 5.05185L5.21707 5.05185V4L11.9852 4Z" fill="currentColor"></path>
+</svg></div></a><a data-wf--button--variant="secondary" data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd450:23febc70-175f-ea3e-2f1f-0ab0fd5a97a5:cc338c70-b506-f985-732b-95e9d08eb22b" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="cc338c70-b506-f985-732b-95e9d08eb22b" data-wf-component-context="%5B%7B%22componentId%22%3A%22162b5140-9840-3ab9-d243-3a325f908689%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd450%22%7D%2C%7B%22componentId%22%3A%22cc338c70-b506-f985-732b-95e9d08eb22b%22%2C%22instanceId%22%3A%2223febc70-175f-ea3e-2f1f-0ab0fd5a97a5%22%7D%5D" href="/contact-sales" data-wf-event-ids="157078768-157078769" class="button-v2 w-variant-cc2081e2-2f66-fa48-5d36-c70458cedec9 w-inline-block"><div class="no-wrap-arrow">Get a demo</div><div class="embed-icon is-btn-arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.9852 4L12 10.7704H10.9314V6.60741L10.9462 5.80741L4.74211 12L4 11.2444L10.2041 5.03704L9.47681 5.05185L5.21707 5.05185V4L11.9852 4Z" fill="currentColor"></path>
+</svg></div></a></div></div></nav><div id="w-node-_162b5140-9840-3ab9-d243-3a325f908729-5f908689" class="navbar2_button-wrapper"><div class="hide-tablet"><a data-wf--button--variant="primary" class="button-v2 w-inline-block" data-wf-component-context="%5B%7B%22componentId%22%3A%22162b5140-9840-3ab9-d243-3a325f908689%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd450%22%7D%2C%7B%22componentId%22%3A%22cc338c70-b506-f985-732b-95e9d08eb22b%22%2C%22instanceId%22%3A%22fe64cee5-aa8f-546e-1445-b71417425da7%22%7D%5D" data-wf-element-id="cc338c70-b506-f985-732b-95e9d08eb22b" data-wf-event-ids="157078768-157078769" href="https://smith.langchain.com/" target="_blank" data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd450:fe64cee5-aa8f-546e-1445-b71417425da7:cc338c70-b506-f985-732b-95e9d08eb22b" data-wf-ao-click-engagement-tracking="true"><div class="no-wrap-arrow">Try LangSmith</div><div class="embed-icon is-btn-arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.9852 4L12 10.7704H10.9314V6.60741L10.9462 5.80741L4.74211 12L4 11.2444L10.2041 5.03704L9.47681 5.05185L5.21707 5.05185V4L11.9852 4Z" fill="currentColor"></path>
+</svg></div></a></div><div class="hide-tablet"><a data-wf--button--variant="secondary" data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd450:bcc20040-21ed-b010-a7fc-273d735cc1d2:cc338c70-b506-f985-732b-95e9d08eb22b" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="cc338c70-b506-f985-732b-95e9d08eb22b" data-wf-component-context="%5B%7B%22componentId%22%3A%22162b5140-9840-3ab9-d243-3a325f908689%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd450%22%7D%2C%7B%22componentId%22%3A%22cc338c70-b506-f985-732b-95e9d08eb22b%22%2C%22instanceId%22%3A%22bcc20040-21ed-b010-a7fc-273d735cc1d2%22%7D%5D" href="/contact-sales" data-wf-event-ids="157078768-157078769" class="button-v2 w-variant-cc2081e2-2f66-fa48-5d36-c70458cedec9 w-inline-block"><div class="no-wrap-arrow">Get a demo</div><div class="embed-icon is-btn-arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.9852 4L12 10.7704H10.9314V6.60741L10.9462 5.80741L4.74211 12L4 11.2444L10.2041 5.03704L9.47681 5.05185L5.21707 5.05185V4L11.9852 4Z" fill="currentColor"></path>
+</svg></div></a></div><div class="hide w-embed"><style>
+  @media only screen and (min-width: 992px) and (max-width: 1279px) {
+    .navbar2_button-wrapper a {
+      padding: .5rem .5rem;
+      min-height: 2.5rem;
+    }
+  }
+
+</style></div><div class="navbar2_menu-button w-nav-button" style="-webkit-user-select: text;" aria-label="menu" role="button" tabindex="0" aria-controls="w-nav-overlay-0" aria-haspopup="menu" aria-expanded="false"><div class="menu-icon2"><div class="menu-icon2_line-top"></div><div class="menu-icon2_line-middle"><div class="menu-icon2_line-middle-inner"></div></div><div class="menu-icon2_line-bottom"></div></div></div></div></div><div class="hide w-embed"><style>
+  @media only screen and (max-width: 991px) {
+    .navbar2_component.w-nav.w--open,
+    .navbar2_component:has(.w-nav-button.w--open) {
+      background-color: var(--_v-2-colors---c-blue-dark--900);
+    }
+
+    .navbar2_component.w-variant-5ea50dfb-c632-4d13-5830-b2180e4df891.w-nav.w--open,
+    .navbar2_component.w-variant-5ea50dfb-c632-4d13-5830-b2180e4df891:has(.w-nav-button.w--open),
+    .navbar2_component[data-wf--navbar--variant="light"].w-nav.w--open,
+    .navbar2_component[data-wf--navbar--variant="light"]:has(.w-nav-button.w--open) {
+      background-color: var(--_v-2-colors---c-blue-light--300);
+    }
+  }
+</style></div><div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0"></div></div><div class="hide w-embed w-script"><script>
+function updateNavbarHeight() {
+  if (window.innerWidth > 992) return;
+
+  const navbar = document.querySelector('.navbar2_menu.is-page-height-tablet');
+  const topBanner = document.querySelector('.top-banner');
+  if (!navbar) return;
+
+  const bannerHeight = topBanner ? topBanner.getBoundingClientRect().height : 0;
+
+  if (window.scrollY <= bannerHeight) {
+    navbar.style.height = `calc(100dvh - (4rem + ${bannerHeight}px))`;
+  } else {
+    navbar.style.height = `calc(100dvh - 4rem)`;
+  }
+}
+
+function resetNavbarHeight() {
+  const navbar = document.querySelector('.navbar2_menu.is-page-height-tablet');
+  if (navbar) navbar.style.height = '';
+}
+
+function handleResize() {
+  if (window.innerWidth > 992) {
+    resetNavbarHeight();
+  } else {
+    updateNavbarHeight();
+  }
+}
+
+window.addEventListener('scroll', updateNavbarHeight, { passive: true });
+window.addEventListener('resize', handleResize, { passive: true });
+
+updateNavbarHeight();
+</script></div><main class="main-wrapper"><section class="home_hero-section"><div class="v2-padding-global"><div class="w-layout-blockcontainer v2-container w-container"><div class="home-hero-wrapper"><div class="option option-a"><div class="w-embed"><h1 class="t-heading-1-rg color-t-7fc8ff homepage">Ship agents that <span class="word-swap"><span class="word-old">work</span><span class="word-new">wow</span></span></h1></div><div class="hide w-embed"><style>
+.word-swap {
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+      vertical-align: bottom;
+      width: 3.5ch;
+      height: 1.15em;
+    }
+
+    .word-swap .word-old,
+    .word-swap .word-new {
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+
+    /* ══════════════════════════════════════
+       OPTION A — Slide in from right
+       ══════════════════════════════════════ */
+    .option-a .word-old {
+      animation: shoveOut 0.5s cubic-bezier(0.7, 0, 0.3, 1) 1s forwards;
+    }
+
+    .option-a .word-new {
+      transform: translateX(130%);
+      opacity: 0;
+      color: #7FC8FF;
+      animation:
+        bargeIn 0.55s cubic-bezier(0.15, 0.8, 0.2, 1.15) 1s forwards,
+        glowUp 0.9s ease 1.55s forwards;
+    }
+
+    @keyframes shoveOut {
+      0%   { transform: translateX(0); opacity: 1; }
+      50%  { opacity: 0.6; }
+      100% { transform: translateX(-140%); opacity: 0; }
+    }
+
+    @keyframes bargeIn {
+      0%   { transform: translateX(130%); opacity: 0; }
+      15%  { opacity: 1; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes glowUp {
+      0% {
+        color: #7FC8FF;
+        text-shadow: 0 0 0px transparent;
+      }
+      60% {
+        color: #7FC8FF;
+        text-shadow:
+          0 0 30px rgba(127, 200, 255, 0.6),
+          0 0 60px rgba(127, 200, 255, 0.3);
+      }
+      100% {
+        color: #7FC8FF;
+        text-shadow:
+          0 0 20px rgba(127, 200, 255, 0.4),
+          0 0 40px rgba(127, 200, 255, 0.15);
+      }
+    }
+
+    /* ══════════════════════════════════════
+       OPTION B — Break out from below
+       ══════════════════════════════════════ */
+    .option-b .word-old {
+      animation: crumbleAway 0.45s cubic-bezier(0.7, 0, 0.3, 1) 1s forwards;
+    }
+
+    .option-b .word-new {
+      transform: translateY(120%) scale(0.6);
+      opacity: 0;
+      color: #7FC8FF;
+      animation:
+        burstUp 0.6s cubic-bezier(0.15, 0.9, 0.25, 1.15) 1s forwards,
+        triumphGlow 1s ease 1.5s forwards;
+    }
+
+    @keyframes crumbleAway {
+      0%   { transform: translateY(0) scale(1); opacity: 1; }
+      40%  { transform: translateY(-15%) scale(0.95); opacity: 0.7; }
+      100% { transform: translateY(-80%) scale(0.7); opacity: 0; }
+    }
+
+    @keyframes burstUp {
+      0%   { transform: translateY(120%) scale(0.6); opacity: 0; }
+      30%  { opacity: 1; }
+      70%  { transform: translateY(-8%) scale(1.05); }
+      100% { transform: translateY(0) scale(1); opacity: 1; }
+    }
+
+    @keyframes triumphGlow {
+      0% {
+        color: #7FC8FF;
+        text-shadow: 0 0 0px transparent;
+      }
+      40% {
+        color: #99D4FF;
+        text-shadow:
+          0 0 40px rgba(127, 200, 255, 0.8),
+          0 0 80px rgba(127, 200, 255, 0.4),
+          0 4px 20px rgba(127, 200, 255, 0.3);
+      }
+      100% {
+        color: #7FC8FF;
+        text-shadow:
+          0 0 24px rgba(127, 200, 255, 0.5),
+          0 0 48px rgba(127, 200, 255, 0.2),
+          0 2px 12px rgba(127, 200, 255, 0.15);
+      }
+    }
+ 
+</style></div></div><div class="spacer-24"></div><div class="max-width-580"><p class="t-paragraph-1-rg">Observe, evaluate, and deploy agents with LangSmith, the agent engineering platform.</p></div><div class="spacer-32 _24-landscape"></div><div class="button-group is-center"><a data-wf--button--variant="primary" class="button-v2 w-inline-block" data-wf-component-context="%5B%7B%22componentId%22%3A%22cc338c70-b506-f985-732b-95e9d08eb22b%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd45d%22%7D%5D" data-wf-element-id="cc338c70-b506-f985-732b-95e9d08eb22b" data-wf-event-ids="157078768-157078769" href="https://smith.langchain.com/" target="_blank" data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd45d:cc338c70-b506-f985-732b-95e9d08eb22b" data-wf-ao-click-engagement-tracking="true"><div class="no-wrap-arrow">Start building</div><div class="embed-icon is-btn-arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.9852 4L12 10.7704H10.9314V6.60741L10.9462 5.80741L4.74211 12L4 11.2444L10.2041 5.03704L9.47681 5.05185L5.21707 5.05185V4L11.9852 4Z" fill="currentColor"></path>
+</svg></div></a><a data-wf--button--variant="secondary" data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd45e:cc338c70-b506-f985-732b-95e9d08eb22b" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="cc338c70-b506-f985-732b-95e9d08eb22b" data-wf-component-context="%5B%7B%22componentId%22%3A%22cc338c70-b506-f985-732b-95e9d08eb22b%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd45e%22%7D%5D" href="/contact-sales" data-wf-event-ids="157078768-157078769" class="button-v2 w-variant-cc2081e2-2f66-fa48-5d36-c70458cedec9 w-inline-block"><div class="no-wrap-arrow">Get a demo</div><div class="embed-icon is-btn-arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.9852 4L12 10.7704H10.9314V6.60741L10.9462 5.80741L4.74211 12L4 11.2444L10.2041 5.03704L9.47681 5.05185L5.21707 5.05185V4L11.9852 4Z" fill="currentColor"></path>
+</svg></div></a></div></div></div></div></section><section class="home_animation-section"><div class="home_animation-main-line"></div><div class="home_vertical-line"><div data-w-id="280a458b-2f96-b33b-93ab-2071882dd463" class="line-circle" style="opacity: 0;"></div></div><div class="hide w-embed w-script"><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  const startTop = window.innerWidth < 479 ? 17 : window.innerWidth < 768 ? 12 : 13;
+
+  ScrollTrigger.create({
+    trigger: ".home_vertical-line",
+    start: "top 50%",
+    end: "bottom 50%",
+    onUpdate: (self) => {
+      gsap.set(".line-circle", { top: `${startTop + self.progress * (100 - startTop)}%` });
+    },
+  });
+</script></div><div class="home_animation-words-wrapper"><div class="v2-padding-global"><div class="w-layout-blockcontainer v2-container w-container"><div class="home_animation-words"><div id="w-node-_280a458b-2f96-b33b-93ab-2071882dd469-87f82a27" class="t-label-1-rg blue-light-900 is-tag">Build</div><div id="w-node-_280a458b-2f96-b33b-93ab-2071882dd46b-87f82a27" class="t-label-1-rg blue-light-900 is-tag">Observe</div><div id="w-node-_280a458b-2f96-b33b-93ab-2071882dd46d-87f82a27" class="t-label-1-rg blue-light-900 is-tag">Evaluate</div><div id="w-node-_280a458b-2f96-b33b-93ab-2071882dd46f-87f82a27" class="t-label-1-rg blue-light-900 is-tag">Deploy</div></div><div class="home_animation-image"><div id="home-lottie" class="home_animation-lottie" data-w-id="280a458b-2f96-b33b-93ab-2071882dd472" data-animation-type="lottie" data-src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/698ae9966e348ac201850958_a318e4c98fb3b546397d09b07c005d61_langchain-hero-15.json" data-loop="0" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="0" data-duration="7.033333333333333"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 600" width="1920" height="600" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;"><defs><clipPath id="__lottie_element_2"><rect width="1920" height="600" x="0" y="0"></rect></clipPath><clipPath id="__lottie_element_7"><path d="M0,0 L1920,0 L1920,517 L0,517z"></path></clipPath><clipPath id="__lottie_element_11"><path d="M0,0 L1920,0 L1920,517 L0,517z"></path></clipPath><clipPath id="__lottie_element_15"><path d="M0,0 L1920,0 L1920,517 L0,517z"></path></clipPath><clipPath id="__lottie_element_19"><path d="M0,0 L1920,0 L1920,517 L0,517z"></path></clipPath><clipPath id="__lottie_element_23"><path d="M0,0 L1920,0 L1920,517 L0,517z"></path></clipPath><clipPath id="__lottie_element_27"><path d="M0,0 L1920,0 L1920,517 L0,517z"></path></clipPath><clipPath id="__lottie_element_31"><path d="M0,0 L1920,0 L1920,800 L0,800z"></path></clipPath><clipPath id="__lottie_element_35"><path d="M0,0 L1920,0 L1920,800 L0,800z"></path></clipPath><g id="__lottie_element_38"><g id="287" transform="matrix(1,0,0,-1,362.25,198)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="url(#__lottie_element_41)" fill-opacity="1" d=" M597.5,-176 C597.5,-0.6869999766349792 588.7410278320312,109.34600067138672 455.5589904785156,176 C455.5589904785156,176 -597.5,176 -597.5,176 C-552.0189819335938,58.66699981689453 -249.3459930419922,-176 597.5,-176z"></path></g></g></g><radialGradient id="__lottie_element_41" spreadMethod="pad" gradientUnits="userSpaceOnUse" cx="405.5799865722656" cy="-49.520999908447266" r="2367.2470616474507" fx="405.5799865722656" fy="-49.520999908447266"><stop offset="57%" stop-color="rgb(3,7,16)"></stop><stop offset="79%" stop-color="rgb(65,104,135)"></stop><stop offset="100%" stop-color="rgb(127,200,255)"></stop></radialGradient><clipPath id="__lottie_element_43"><path d="M0,0 L1093,0 L1093,831 L0,831z"></path></clipPath><mask id="__lottie_element_38_1" mask-type="alpha"><use xlink:href="#__lottie_element_38"></use></mask><filter id="__lottie_element_48" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur result="filter_result_0" stdDeviation="24 24" edgeMode="duplicate"></feGaussianBlur></filter><g id="__lottie_element_49"><g id="307" transform="matrix(1,0,0,-1,475.75,192)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="url(#__lottie_element_52)" fill-opacity="1" d=" M484,-170 C483.5,13.25 249,170 33.13399887084961,170 C33.13399887084961,170 -484,170 -484,170 C-435.99200439453125,56.66699981689453 -175.17999267578125,-170 484,-170z"></path></g></g></g><radialGradient id="__lottie_element_52" spreadMethod="pad" gradientUnits="userSpaceOnUse" cx="41.638999938964844" cy="-81.50900268554688" r="2078.3261445882226" fx="41.638999938964844" fy="-81.50900268554688"><stop offset="58%" stop-color="rgb(3,7,16)"></stop><stop offset="79%" stop-color="rgb(65,104,135)"></stop><stop offset="100%" stop-color="rgb(127,200,255)"></stop></radialGradient><clipPath id="__lottie_element_54"><path d="M0,0 L1093,0 L1093,831 L0,831z"></path></clipPath><mask id="__lottie_element_49_1" mask-type="alpha"><use xlink:href="#__lottie_element_49"></use></mask><filter id="__lottie_element_59" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur result="filter_result_0" stdDeviation="24 24" edgeMode="duplicate"></feGaussianBlur></filter><g id="__lottie_element_60"><g id="325" transform="matrix(1,0,0,-1,410.75,213.5)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="url(#__lottie_element_63)" fill-opacity="1" d=" M549,-191.5 C505.3479919433594,28.41699981689453 119.64600372314453,191.5 -245.5330047607422,191.5 C-612.7150268554688,191.5 -714.2459716796875,-14.824000358581543 33.22800064086914,-200.6840057373047 C173.25,-235.5 548.25,-330.5 549,-191.5z"></path></g></g></g><radialGradient id="__lottie_element_63" spreadMethod="pad" gradientUnits="userSpaceOnUse" cx="-38.79600143432617" cy="-62.292999267578125" r="1361.7238529898414" fx="-38.79600143432617" fy="-62.292999267578125"><stop offset="65%" stop-color="rgb(3,7,16)"></stop><stop offset="82%" stop-color="rgb(65,104,135)"></stop><stop offset="99%" stop-color="rgb(127,200,255)"></stop></radialGradient><clipPath id="__lottie_element_65"><path d="M0,0 L1093,0 L1093,831 L0,831z"></path></clipPath><mask id="__lottie_element_60_1" mask-type="alpha"><use xlink:href="#__lottie_element_60"></use></mask><filter id="__lottie_element_70" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur result="filter_result_0" stdDeviation="24 24" edgeMode="duplicate"></feGaussianBlur></filter><g id="__lottie_element_71"><g id="287" transform="matrix(1,0,0,-1,362.25,198)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="url(#__lottie_element_74)" fill-opacity="1" d=" M597.5,-176 C597.5,-0.6869999766349792 588.7410278320312,109.34600067138672 455.5589904785156,176 C455.5589904785156,176 -597.5,176 -597.5,176 C-552.0189819335938,58.66699981689453 -249.3459930419922,-176 597.5,-176z"></path></g></g></g><radialGradient id="__lottie_element_74" spreadMethod="pad" gradientUnits="userSpaceOnUse" cx="405.5799865722656" cy="-49.520999908447266" r="2367.2470616474507" fx="405.5799865722656" fy="-49.520999908447266"><stop offset="57%" stop-color="rgb(3,7,16)"></stop><stop offset="79%" stop-color="rgb(65,104,135)"></stop><stop offset="100%" stop-color="rgb(127,200,255)"></stop></radialGradient><clipPath id="__lottie_element_76"><path d="M0,0 L1093,0 L1093,831 L0,831z"></path></clipPath><mask id="__lottie_element_71_1" mask-type="alpha"><use xlink:href="#__lottie_element_71"></use></mask><filter id="__lottie_element_81" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur result="filter_result_0" stdDeviation="24 24" edgeMode="duplicate"></feGaussianBlur></filter><g id="__lottie_element_82"><g id="307" transform="matrix(1,0,0,-1,475.75,192)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="url(#__lottie_element_85)" fill-opacity="1" d=" M484,-170 C483.5,13.25 249,170 33.13399887084961,170 C33.13399887084961,170 -484,170 -484,170 C-435.99200439453125,56.66699981689453 -175.17999267578125,-170 484,-170z"></path></g></g></g><radialGradient id="__lottie_element_85" spreadMethod="pad" gradientUnits="userSpaceOnUse" cx="41.638999938964844" cy="-81.50900268554688" r="2078.3261445882226" fx="41.638999938964844" fy="-81.50900268554688"><stop offset="58%" stop-color="rgb(3,7,16)"></stop><stop offset="79%" stop-color="rgb(65,104,135)"></stop><stop offset="100%" stop-color="rgb(127,200,255)"></stop></radialGradient><clipPath id="__lottie_element_87"><path d="M0,0 L1093,0 L1093,831 L0,831z"></path></clipPath><mask id="__lottie_element_82_1" mask-type="alpha"><use xlink:href="#__lottie_element_82"></use></mask><filter id="__lottie_element_92" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur result="filter_result_0" stdDeviation="24 24" edgeMode="duplicate"></feGaussianBlur></filter><g id="__lottie_element_93"><g id="325" transform="matrix(1,0,0,-1,410.75,213.5)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="url(#__lottie_element_96)" fill-opacity="1" d=" M549,-191.5 C505.3479919433594,28.41699981689453 119.64600372314453,191.5 -245.5330047607422,191.5 C-612.7150268554688,191.5 -714.2459716796875,-14.824000358581543 33.22800064086914,-200.6840057373047 C173.25,-235.5 548.25,-330.5 549,-191.5z"></path></g></g></g><radialGradient id="__lottie_element_96" spreadMethod="pad" gradientUnits="userSpaceOnUse" cx="-38.79600143432617" cy="-62.292999267578125" r="1361.7238529898414" fx="-38.79600143432617" fy="-62.292999267578125"><stop offset="65%" stop-color="rgb(3,7,16)"></stop><stop offset="82%" stop-color="rgb(65,104,135)"></stop><stop offset="99%" stop-color="rgb(127,200,255)"></stop></radialGradient><clipPath id="__lottie_element_98"><path d="M0,0 L1093,0 L1093,831 L0,831z"></path></clipPath><mask id="__lottie_element_93_1" mask-type="alpha"><use xlink:href="#__lottie_element_93"></use></mask><filter id="__lottie_element_103" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur result="filter_result_0" stdDeviation="24 24" edgeMode="duplicate"></feGaussianBlur></filter><linearGradient id="__lottie_element_107" spreadMethod="pad" gradientUnits="userSpaceOnUse" x1="0" y1="-191.5" x2="0" y2="191.5"><stop offset="0%" stop-color="rgb(127,200,255)"></stop><stop offset="50%" stop-color="rgb(87,139,178)"></stop><stop offset="100%" stop-color="rgb(48,78,100)"></stop></linearGradient><linearGradient id="__lottie_element_111" spreadMethod="pad" gradientUnits="userSpaceOnUse" x1="0" y1="-170" x2="0" y2="170"><stop offset="0%" stop-color="rgb(127,200,255)"></stop><stop offset="50%" stop-color="rgb(87,139,178)"></stop><stop offset="100%" stop-color="rgb(48,78,100)"></stop></linearGradient><linearGradient id="__lottie_element_115" spreadMethod="pad" gradientUnits="userSpaceOnUse" x1="0" y1="-400.2929992675781" x2="0" y2="176"><stop offset="41%" stop-color="rgb(127,200,255)"></stop><stop offset="70%" stop-color="rgb(87,139,178)"></stop><stop offset="100%" stop-color="rgb(48,78,100)"></stop></linearGradient><linearGradient id="__lottie_element_119" spreadMethod="pad" gradientUnits="userSpaceOnUse" x1="0" y1="-191.5" x2="0" y2="191.5"><stop offset="0%" stop-color="rgb(127,200,255)"></stop><stop offset="50%" stop-color="rgb(87,139,178)"></stop><stop offset="100%" stop-color="rgb(48,78,100)"></stop></linearGradient><linearGradient id="__lottie_element_123" spreadMethod="pad" gradientUnits="userSpaceOnUse" x1="0" y1="-170" x2="0" y2="170"><stop offset="0%" stop-color="rgb(127,200,255)"></stop><stop offset="50%" stop-color="rgb(87,139,178)"></stop><stop offset="100%" stop-color="rgb(48,78,100)"></stop></linearGradient><linearGradient id="__lottie_element_127" spreadMethod="pad" gradientUnits="userSpaceOnUse" x1="0" y1="-400.2929992675781" x2="0" y2="176"><stop offset="41%" stop-color="rgb(127,200,255)"></stop><stop offset="70%" stop-color="rgb(87,139,178)"></stop><stop offset="100%" stop-color="rgb(48,78,100)"></stop></linearGradient><clipPath id="__lottie_element_129"><path d="M0,0 L1920,0 L1920,600 L0,600z"></path></clipPath><clipPath id="__lottie_element_130"><path fill="#ffffff" clip-rule="nonzero" d=" M113.27999877929688,-10.199999809265137 C-11.520000457763672,0.6000000238418579 -82.55999755859375,337.79998779296875 216.9600067138672,496.79998779296875 C357.1199951171875,571.7999877929688 958.0800170898438,589.2000122070312 960,486 C960,444 960,420 960,387.6000061035156 C960,343.20001220703125 927.3599853515625,289.20001220703125 908.1599731445312,265.79998779296875 C850.5599975585938,191.39999389648438 766.0800170898438,134.39999389648438 641.280029296875,81.5999984741211 C489.6000061035156,17.399999618530273 236.16000366210938,-21.600000381469727 113.27999877929688,-10.199999809265137" fill-opacity="1"></path></clipPath><clipPath id="__lottie_element_139"><path d="M0,0 L1920,0 L1920,600 L0,600z"></path></clipPath><clipPath id="__lottie_element_140"><path fill="#ffffff" clip-rule="nonzero" d=" M489.6000061035156,-18 C403.20001220703125,-29.399999618530273 272.6400146484375,76.19999694824219 433.9200134277344,196.1999969482422 C520.3200073242188,260.3999938964844 961.9199829101562,552 960,464.3999938964844 C960,437.3999938964844 960,390.6000061035156 960,369.6000061035156 C958.0800170898438,294 956.1599731445312,286.20001220703125 948.47998046875,259.79998779296875 C936.9600219726562,224.39999389648438 898.5599975585938,150.60000610351562 810.239990234375,89.4000015258789 C721.9199829101562,28.200000762939453 635.52001953125,0.6000000238418579 489.6000061035156,-18" fill-opacity="1"></path></clipPath><clipPath id="__lottie_element_149"><path d="M0,0 L1920,0 L1920,600 L0,600z"></path></clipPath><clipPath id="__lottie_element_150"><path fill="#ffffff" clip-rule="nonzero" d=" M351.3599853515625,-46.79999923706055 C111.36000061035156,66 681.5999755859375,457.79998779296875 817.9199829101562,496.79998779296875 C952.3200073242188,535.2000122070312 960,465.6000061035156 960,465.6000061035156 C960,465.6000061035156 960,271.79998779296875 958.0800170898438,234.60000610351562 C952.3200073242188,184.1999969482422 944.6400146484375,121.80000305175781 915.8400268554688,77.4000015258789 C887.0399780273438,30.600000381469727 840.9600219726562,-3.5999999046325684 785.280029296875,-22.200000762939453 C725.760009765625,-42.599998474121094 497.2799987792969,-115.19999694824219 351.3599853515625,-46.79999923706055" fill-opacity="1"></path></clipPath><filter id="__lottie_element_160" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur result="filter_result_0" stdDeviation="45 45" edgeMode="duplicate"></feGaussianBlur></filter><clipPath id="__lottie_element_162"><path d="M0,0 L1920,0 L1920,600 L0,600z"></path></clipPath><clipPath id="__lottie_element_163"><path fill="#ffffff" clip-rule="nonzero" d=" M1816.3199462890625,-10.800000190734863 C1941.1199951171875,0.6000000238418579 2014.0799560546875,337.79998779296875 1710.719970703125,496.79998779296875 C1568.6400146484375,571.7999877929688 961.9199829101562,589.2000122070312 960,486 C960,444 960,420 960,387.6000061035156 C960,343.20001220703125 992.6400146484375,289.20001220703125 1011.8400268554688,265.79998779296875 C1069.43994140625,191.39999389648438 1153.9200439453125,133.8000030517578 1280.6400146484375,81 C1434.239990234375,16.200000762939453 1691.52001953125,-21.600000381469727 1816.3199462890625,-10.800000190734863" fill-opacity="1"></path></clipPath><filter id="__lottie_element_173" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur result="filter_result_0" stdDeviation="45 45" edgeMode="duplicate"></feGaussianBlur></filter><filter id="__lottie_element_176" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur result="filter_result_0" stdDeviation="45 45" edgeMode="duplicate"></feGaussianBlur></filter><filter id="__lottie_element_179" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur result="filter_result_0" stdDeviation="45 45" edgeMode="duplicate"></feGaussianBlur></filter><clipPath id="__lottie_element_181"><path d="M0,0 L1920,0 L1920,600 L0,600z"></path></clipPath><clipPath id="__lottie_element_182"><path fill="#ffffff" clip-rule="nonzero" d=" M1426.56005859375,-18 C1511.0400390625,-29.399999618530273 1637.760009765625,76.19999694824219 1478.4000244140625,196.1999969482422 C1393.9200439453125,260.3999938964844 958.0800170898438,552 960,464.3999938964844 C960,437.3999938964844 960,390.6000061035156 960,369.6000061035156 C961.9199829101562,294 965.760009765625,286.79998779296875 973.4400024414062,259.79998779296875 C983.0399780273438,221.39999389648438 1021.4400024414062,151.8000030517578 1107.8399658203125,90.5999984741211 C1196.1600341796875,29.399999618530273 1282.56005859375,1.2000000476837158 1426.56005859375,-18" fill-opacity="1"></path></clipPath><clipPath id="__lottie_element_191"><path d="M0,0 L1920,0 L1920,600 L0,600z"></path></clipPath><clipPath id="__lottie_element_192"><path fill="#ffffff" clip-rule="nonzero" d=" M1566.719970703125,-46.79999923706055 C1808.6400146484375,66 1238.4000244140625,457.79998779296875 1102.0799560546875,496.20001220703125 C967.6799926757812,535.2000122070312 960,465.6000061035156 960,465.6000061035156 C960,465.6000061035156 960,271.79998779296875 961.9199829101562,234.60000610351562 C967.6799926757812,184.1999969482422 973.4400024414062,123.5999984741211 1004.1599731445312,77.4000015258789 C1032.9599609375,30.600000381469727 1080.9599609375,-3.5999999046325684 1134.719970703125,-22.200000762939453 C1196.1600341796875,-42.599998474121094 1422.719970703125,-115.19999694824219 1566.719970703125,-46.79999923706055" fill-opacity="1"></path></clipPath><filter id="__lottie_element_199" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur result="filter_result_0" stdDeviation="45 45" edgeMode="duplicate"></feGaussianBlur></filter><filter id="__lottie_element_205" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur result="filter_result_0" stdDeviation="45 45" edgeMode="duplicate"></feGaussianBlur></filter></defs><g clip-path="url(#__lottie_element_2)"><g id="1170" transform="matrix(1,0,0,1,960.5,300.125)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(126,199,254)" stroke-opacity="1" stroke-width="2" d=" M-0.5,80 C-0.5,80 -0.5,298.8089904785156 -0.5,298.8089904785156"></path></g></g><g id="344" clip-path="url(#__lottie_element_7)" transform="matrix(1,0,0,1,0,-30.5)" opacity="0.9856568664274775" style="display: block;"><g mask="url(#__lottie_element_38_1)" style="display: block;"><g id="292" clip-path="url(#__lottie_element_43)" transform="matrix(0.9945219159126282,0.10452846437692642,-0.10452846437692642,0.9945219159126282,255.7637939453125,-451.9432678222656)" opacity="0.5"><g id="107" filter="url(#__lottie_element_48)" transform="matrix(1,0,0,1,838,441.5)" opacity="0.79" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(126,199,255)" fill-opacity="1" d=" M-625,-382.5 C-824,-385.5 -808.4349975585938,-277.4049987792969 -706,-256.5 C-608,-236.5 -421.1860046386719,-172.73199462890625 -234,-38.5 C-82,70.5 14,193.5 49,261.5 C95.5739974975586,351.98699951171875 142,337.5 156,300.5 C170,263.5 258,83.5 117,-151.5 C-24,-386.5 -426,-379.5 -625,-382.5z"></path></g></g></g></g></g><g id="342" clip-path="url(#__lottie_element_11)" transform="matrix(1,0,0,1,0,-30.5)" opacity="0.8847936982810093" style="display: block;"><g mask="url(#__lottie_element_49_1)" style="display: block;"><g id="310" clip-path="url(#__lottie_element_54)" transform="matrix(0.9925461411476135,-0.12186934053897858,0.12186934053897858,0.9925461411476135,49.85113525390625,-263.9051818847656)" opacity="0.5"><g id="107" filter="url(#__lottie_element_59)" transform="matrix(1,0,0,1,838,441.5)" opacity="0.79" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(126,199,255)" fill-opacity="1" d=" M-625,-382.5 C-824,-385.5 -808.4349975585938,-277.4049987792969 -706,-256.5 C-608,-236.5 -421.1860046386719,-172.73199462890625 -234,-38.5 C-82,70.5 14,193.5 49,261.5 C95.5739974975586,351.98699951171875 142,337.5 156,300.5 C170,263.5 258,83.5 117,-151.5 C-24,-386.5 -426,-379.5 -625,-382.5z"></path></g></g></g></g></g><g id="340" clip-path="url(#__lottie_element_15)" transform="matrix(1,0,0,1,0,-30.5)" opacity="0.7452345984541379" style="display: block;"><g mask="url(#__lottie_element_60_1)" style="display: block;"><g id="326" clip-path="url(#__lottie_element_65)" transform="matrix(0.9876883625984192,-0.15643446147441864,0.15643446147441864,0.9876883625984192,-2.0577392578125,-170.46548461914062)" opacity="0.5"><g id="107" filter="url(#__lottie_element_70)" transform="matrix(1,0,0,1,838,441.5)" opacity="0.79" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(126,199,255)" fill-opacity="1" d=" M-625,-382.5 C-824,-385.5 -808.4349975585938,-277.4049987792969 -706,-256.5 C-608,-236.5 -421.1860046386719,-172.73199462890625 -234,-38.5 C-82,70.5 14,193.5 49,261.5 C95.5739974975586,351.98699951171875 142,337.5 156,300.5 C170,263.5 258,83.5 117,-151.5 C-24,-386.5 -426,-379.5 -625,-382.5z"></path></g></g></g></g></g><g id="352" clip-path="url(#__lottie_element_19)" transform="matrix(-1,0,0,1,1920,-30.5)" opacity="0.9856568664274775" style="display: block;"><g mask="url(#__lottie_element_71_1)" style="display: block;"><g id="292" clip-path="url(#__lottie_element_76)" transform="matrix(0.9945219159126282,0.10452846437692642,-0.10452846437692642,0.9945219159126282,255.7637939453125,-451.9432678222656)" opacity="0.5"><g id="107" filter="url(#__lottie_element_81)" transform="matrix(1,0,0,1,838,441.5)" opacity="0.79" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(126,199,255)" fill-opacity="1" d=" M-625,-382.5 C-824,-385.5 -808.4349975585938,-277.4049987792969 -706,-256.5 C-608,-236.5 -421.1860046386719,-172.73199462890625 -234,-38.5 C-82,70.5 14,193.5 49,261.5 C95.5739974975586,351.98699951171875 142,337.5 156,300.5 C170,263.5 258,83.5 117,-151.5 C-24,-386.5 -426,-379.5 -625,-382.5z"></path></g></g></g></g></g><g id="350" clip-path="url(#__lottie_element_23)" transform="matrix(-1,0,0,1,1920,-30.5)" opacity="0.8847936982810093" style="display: block;"><g mask="url(#__lottie_element_82_1)" style="display: block;"><g id="310" clip-path="url(#__lottie_element_87)" transform="matrix(0.9925461411476135,-0.12186934053897858,0.12186934053897858,0.9925461411476135,49.85113525390625,-263.9051818847656)" opacity="0.5"><g id="107" filter="url(#__lottie_element_92)" transform="matrix(1,0,0,1,838,441.5)" opacity="0.79" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(126,199,255)" fill-opacity="1" d=" M-625,-382.5 C-824,-385.5 -808.4349975585938,-277.4049987792969 -706,-256.5 C-608,-236.5 -421.1860046386719,-172.73199462890625 -234,-38.5 C-82,70.5 14,193.5 49,261.5 C95.5739974975586,351.98699951171875 142,337.5 156,300.5 C170,263.5 258,83.5 117,-151.5 C-24,-386.5 -426,-379.5 -625,-382.5z"></path></g></g></g></g></g><g id="348" clip-path="url(#__lottie_element_27)" transform="matrix(-1,0,0,1,1920,-30.5)" opacity="0.7452345984541379" style="display: block;"><g mask="url(#__lottie_element_93_1)" style="display: block;"><g id="326" clip-path="url(#__lottie_element_98)" transform="matrix(0.9876883625984192,-0.15643446147441864,0.15643446147441864,0.9876883625984192,-2.0577392578125,-170.46548461914062)" opacity="0.5"><g id="107" filter="url(#__lottie_element_103)" transform="matrix(1,0,0,1,838,441.5)" opacity="0.79" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(126,199,255)" fill-opacity="1" d=" M-625,-382.5 C-824,-385.5 -808.4349975585938,-277.4049987792969 -706,-256.5 C-608,-236.5 -421.1860046386719,-172.73199462890625 -234,-38.5 C-82,70.5 14,193.5 49,261.5 C95.5739974975586,351.98699951171875 142,337.5 156,300.5 C170,263.5 258,83.5 117,-151.5 C-24,-386.5 -426,-379.5 -625,-382.5z"></path></g></g></g></g></g><g id="279" clip-path="url(#__lottie_element_31)" transform="matrix(1,0,0,1,0.25,-172)" opacity="1" style="display: block;"><g id="265" transform="matrix(1,0,0,-1,562.25,355)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path stroke="url(#__lottie_element_107)" stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke-opacity="1" stroke-width="2" d=" M397.5,-191.5 C353.8580017089844,28.233999252319336 -20.75,188.5 -396.5849914550781,191.4810028076172 C-444.99798583984375,191.86500549316406 -509.1659851074219,195.19900512695312 -525.6519775390625,195.2169952392578"></path></g></g><g id="266" transform="matrix(1,0,0,-1,738.75,333.5)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path stroke="url(#__lottie_element_111)" stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke-opacity="1" stroke-width="2" d=" M-391.7720031738281,171.29100036621094 C-391.7489929199219,171.29100036621094 -462.25,170.25 -388.00201416015625,171.26300048828125 C-313.7539978027344,172.27699279785156 -280,172 -220.21400451660156,169.99899291992188 C-2.871999979019165,162.7259979248047 221,9.956999778747559 221,-170"></path></g></g><g id="267" transform="matrix(1,0,0,-1,888.75,339.5)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path stroke="url(#__lottie_element_115)" stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke-opacity="1" stroke-width="2" d=" M70.75499725341797,-213.93699645996094 C70.75499725341797,-213.58299255371094 71,-175.29100036621094 71,-174.93699645996094 C70.96399688720703,-0.24199999868869781 61.96799850463867,109.48100280761719 -71,176"></path></g></g></g><g id="282" clip-path="url(#__lottie_element_35)" transform="matrix(-1,0,0,1,1919.75,-172)" opacity="1" style="display: block;"><g id="265" transform="matrix(1,0,0,-1,562.25,355)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path stroke="url(#__lottie_element_119)" stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke-opacity="1" stroke-width="2" d=" M397.5,-191.5 C353.8580017089844,28.233999252319336 -20.75,188.5 -396.5849914550781,191.4810028076172 C-444.99798583984375,191.86500549316406 -509.1659851074219,195.19900512695312 -525.6519775390625,195.2169952392578"></path></g></g><g id="266" transform="matrix(1,0,0,-1,738.75,333.5)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path stroke="url(#__lottie_element_123)" stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke-opacity="1" stroke-width="2" d=" M-391.7720031738281,171.29100036621094 C-391.7489929199219,171.29100036621094 -462.25,170.25 -388.00201416015625,171.26300048828125 C-313.7539978027344,172.27699279785156 -280,172 -220.21400451660156,169.99899291992188 C-2.871999979019165,162.7259979248047 221,9.956999778747559 221,-170"></path></g></g><g id="267" transform="matrix(1,0,0,-1,888.75,339.5)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path stroke="url(#__lottie_element_127)" stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke-opacity="1" stroke-width="2" d=" M70.75499725341797,-213.93699645996094 C70.75499725341797,-213.58299255371094 71,-175.29100036621094 71,-174.93699645996094 C70.96399688720703,-0.24199999868869781 61.96799850463867,109.48100280761719 -71,176"></path></g></g></g><g clip-path="url(#__lottie_element_162)" transform="matrix(1,0,0,1,0,0)" opacity="1" style="display: block;"><g id="1042" clip-path="url(#__lottie_element_163)"><g id="1019" filter="url(#__lottie_element_173)" style="display: block;" transform="matrix(0.7475981116294861,0,0,-0.7475981116294861,1007.7172241210938,270.50372314453125)" opacity="0.3434984218417836"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(127,199,255)" fill-opacity="1" d=" M0,-50 C27.594999313354492,-50 50,-27.594999313354492 50,0 C50,27.594999313354492 27.594999313354492,50 0,50 C-27.594999313354492,50 -50,27.594999313354492 -50,0 C-50,-27.594999313354492 -27.594999313354492,-50 0,-50z"></path></g></g><g id="1020" transform="matrix(0,-1,-1,0,1006.5872192382812,271.9457092285156)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(127,199,255)" fill-opacity="1" d=" M0,-5 C2.759500026702881,-5 5,-2.759500026702881 5,0 C5,2.759500026702881 2.759500026702881,5 0,5 C-2.759500026702881,5 -5,2.759500026702881 -5,0 C-5,-2.759500026702881 -2.759500026702881,-5 0,-5z"></path></g></g></g></g><g clip-path="url(#__lottie_element_181)" transform="matrix(1,0,0,1,0,0)" opacity="1" style="display: block;"><g id="1007" clip-path="url(#__lottie_element_182)"><g id="984" filter="url(#__lottie_element_199)" style="display: block;" transform="matrix(1,0,0,-1,1181.3099365234375,45.87025833129883)" opacity="0.3999355204237394"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(127,199,255)" fill-opacity="1" d=" M0,-50 C27.594999313354492,-50 50,-27.594999313354492 50,0 C50,27.594999313354492 27.594999313354492,50 0,50 C-27.594999313354492,50 -50,27.594999313354492 -50,0 C-50,-27.594999313354492 -27.594999313354492,-50 0,-50z"></path></g></g><g id="986" transform="matrix(0,-1,-1,0,1180.179931640625,47.312259674072266)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(127,199,255)" fill-opacity="1" d=" M0,-5 C2.759500026702881,-5 5,-2.759500026702881 5,0 C5,2.759500026702881 2.759500026702881,5 0,5 C-2.759500026702881,5 -5,2.759500026702881 -5,0 C-5,-2.759500026702881 -2.759500026702881,-5 0,-5z"></path></g></g></g></g><g clip-path="url(#__lottie_element_191)" transform="matrix(1,0,0,1,0,0)" opacity="1" style="display: block;"><g id="971" clip-path="url(#__lottie_element_192)"><g id="948" filter="url(#__lottie_element_205)" transform="matrix(0.7804898023605347,0,0,-0.7804898023605347,966.4596557617188,202.45201110839844)" opacity="0.3847134530826158" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(127,199,255)" fill-opacity="1" d=" M0,-50 C27.594999313354492,-50 50,-27.594999313354492 50,0 C50,27.594999313354492 27.594999313354492,50 0,50 C-27.594999313354492,50 -50,27.594999313354492 -50,0 C-50,-27.594999313354492 -27.594999313354492,-50 0,-50z"></path></g></g><g id="951" transform="matrix(0,-1,-1,0,965.3296508789062,203.89401245117188)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(127,199,255)" fill-opacity="1" d=" M0,-5 C2.759500026702881,-5 5,-2.759500026702881 5,0 C5,2.759500026702881 2.759500026702881,5 0,5 C-2.759500026702881,5 -5,2.759500026702881 -5,0 C-5,-2.759500026702881 -2.759500026702881,-5 0,-5z"></path></g></g></g></g><g clip-path="url(#__lottie_element_149)" transform="matrix(1,0,0,1,0,0)" opacity="1" style="display: block;"><g id="934" clip-path="url(#__lottie_element_150)"><g id="911" filter="url(#__lottie_element_176)" style="display: block;" transform="matrix(-0.7195170521736145,0,0,-0.7195170521736145,957.8677978515625,277.60455322265625)" opacity="0.3273661160729192"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(127,199,255)" fill-opacity="1" d=" M0,-50 C27.594999313354492,-50 50,-27.594999313354492 50,0 C50,27.594999313354492 27.594999313354492,50 0,50 C-27.594999313354492,50 -50,27.594999313354492 -50,0 C-50,-27.594999313354492 -27.594999313354492,-50 0,-50z"></path></g></g><g id="915" transform="matrix(0,-1,1,0,958.997802734375,279.0465393066406)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(127,199,255)" fill-opacity="1" d=" M0,-5 C2.759500026702881,-5 5,-2.759500026702881 5,0 C5,2.759500026702881 2.759500026702881,5 0,5 C-2.759500026702881,5 -5,2.759500026702881 -5,0 C-5,-2.759500026702881 -2.759500026702881,-5 0,-5z"></path></g></g></g></g><g clip-path="url(#__lottie_element_139)" transform="matrix(1,0,0,1,0,0)" opacity="1" style="display: block;"><g id="896" clip-path="url(#__lottie_element_140)"><g id="873" filter="url(#__lottie_element_160)" style="display: block;" transform="matrix(-0.9643367528915405,0,0,-0.9643367528915405,877.7039794921875,146.75645446777344)" opacity="0.36745379620937835"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(127,199,255)" fill-opacity="1" d=" M0,-50 C27.594999313354492,-50 50,-27.594999313354492 50,0 C50,27.594999313354492 27.594999313354492,50 0,50 C-27.594999313354492,50 -50,27.594999313354492 -50,0 C-50,-27.594999313354492 -27.594999313354492,-50 0,-50z"></path></g></g><g id="878" transform="matrix(0,-1,1,0,878.833984375,148.19845581054688)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(127,199,255)" fill-opacity="1" d=" M0,-5 C2.759500026702881,-5 5,-2.759500026702881 5,0 C5,2.759500026702881 2.759500026702881,5 0,5 C-2.759500026702881,5 -5,2.759500026702881 -5,0 C-5,-2.759500026702881 -2.759500026702881,-5 0,-5z"></path></g></g></g></g><g clip-path="url(#__lottie_element_129)" transform="matrix(1,0,0,1,0,0)" opacity="1" style="display: block;"><g id="857" clip-path="url(#__lottie_element_130)"><g id="834" filter="url(#__lottie_element_179)" style="display: block;" transform="matrix(0,-1,1,0,950.3575439453125,340.1824645996094)" opacity="0.4"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(127,199,255)" fill-opacity="1" d=" M0,-50 C27.594999313354492,-50 50,-27.594999313354492 50,0 C50,27.594999313354492 27.594999313354492,50 0,50 C-27.594999313354492,50 -50,27.594999313354492 -50,0 C-50,-27.594999313354492 -27.594999313354492,-50 0,-50z"></path></g></g><g id="840" transform="matrix(0,-1,1,0,950.37255859375,340.6674499511719)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(127,199,255)" fill-opacity="1" d=" M0,-5 C2.759500026702881,-5 5,-2.759500026702881 5,0 C5,2.759500026702881 2.759500026702881,5 0,5 C-2.759500026702881,5 -5,2.759500026702881 -5,0 C-5,-2.759500026702881 -2.759500026702881,-5 0,-5z"></path></g></g></g></g><g id="812" transform="matrix(0,-1,1,0,878.833984375,148.19845581054688)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(127,199,255)" fill-opacity="1" d=" M0,-5 C2.759500026702881,-5 5,-2.759500026702881 5,0 C5,2.759500026702881 2.759500026702881,5 0,5 C-2.759500026702881,5 -5,2.759500026702881 -5,0 C-5,-2.759500026702881 -2.759500026702881,-5 0,-5z"></path></g></g><g id="813" transform="matrix(0,-1,1,0,958.997802734375,279.0465393066406)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(127,199,255)" fill-opacity="1" d=" M0,-5 C2.759500026702881,-5 5,-2.759500026702881 5,0 C5,2.759500026702881 2.759500026702881,5 0,5 C-2.759500026702881,5 -5,2.759500026702881 -5,0 C-5,-2.759500026702881 -2.759500026702881,-5 0,-5z"></path></g></g><g id="814" transform="matrix(0,-1,-1,0,1006.5872192382812,271.9457092285156)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(127,199,255)" fill-opacity="1" d=" M0,-5 C2.759500026702881,-5 5,-2.759500026702881 5,0 C5,2.759500026702881 2.759500026702881,5 0,5 C-2.759500026702881,5 -5,2.759500026702881 -5,0 C-5,-2.759500026702881 -2.759500026702881,-5 0,-5z"></path></g></g><g id="815" transform="matrix(0,-1,-1,0,1180.179931640625,47.312259674072266)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(127,199,255)" fill-opacity="1" d=" M0,-5 C2.759500026702881,-5 5,-2.759500026702881 5,0 C5,2.759500026702881 2.759500026702881,5 0,5 C-2.759500026702881,5 -5,2.759500026702881 -5,0 C-5,-2.759500026702881 -2.759500026702881,-5 0,-5z"></path></g></g><g id="816" transform="matrix(0,-1,-1,0,965.3296508789062,203.89401245117188)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(127,199,255)" fill-opacity="1" d=" M0,-5 C2.759500026702881,-5 5,-2.759500026702881 5,0 C5,2.759500026702881 2.759500026702881,5 0,5 C-2.759500026702881,5 -5,2.759500026702881 -5,0 C-5,-2.759500026702881 -2.759500026702881,-5 0,-5z"></path></g></g><g id="817" transform="matrix(0,-1,1,0,950.37255859375,340.6674499511719)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(127,199,255)" fill-opacity="1" d=" M0,-5 C2.759500026702881,-5 5,-2.759500026702881 5,0 C5,2.759500026702881 2.759500026702881,5 0,5 C-2.759500026702881,5 -5,2.759500026702881 -5,0 C-5,-2.759500026702881 -2.759500026702881,-5 0,-5z"></path></g></g></g></svg></div><img src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/698dcf651e8e04cce00f9739_ae60ffcdd4838b256bffd9f86b1a4c70_Langchain-Hero%20%281%29%201.svg" loading="lazy" id="home-image" alt="" class="home_animation-lottie is-safari"><div class="hide w-embed w-script"><script>
+document.addEventListener('DOMContentLoaded', () => {
+  const isSafari = navigator.vendor === 'Apple Computer, Inc.' && 
+                   !navigator.userAgent.includes('Chrome');
+
+  if (isSafari) {
+    const lottie = document.getElementById('home-lottie');
+    if (lottie) lottie.remove();
+
+    const img = document.getElementById('home-image');
+    if (img) img.style.display = 'block';
+  }
+});
+</script></div><div class="hide w-embed"><style>
+#home-image {
+  display: none;
+}
+</style></div></div></div></div></div><div class="v2-padding-global _w-100"><div class="w-layout-blockcontainer v2-container w-container"><div class="home_text-animation-wrapper"><div class="max-width-849 w100 no-tablet"><h2 text-letters-animation="" class="t-heading-4-rg text-c-blue-light-900"><div class="word" style="display: inline-block;"><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">L</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">a</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">n</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">g</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">S</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">m</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">i</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">t</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">h</div></div> <div class="word" style="display: inline-block;"><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">p</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">o</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">w</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">e</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">r</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">s</div></div> <div class="word" style="display: inline-block;"><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">t</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">o</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">p</div></div> <div class="word" style="display: inline-block;"><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">A</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">I</div></div> <div class="word" style="display: inline-block;"><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">t</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">e</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">a</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">m</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">s</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">,</div></div> <div class="word" style="display: inline-block;"><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">f</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">r</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">o</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">m</div></div> <div class="word" style="display: inline-block;"><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">s</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">t</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">a</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">r</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">t</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">u</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">p</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">s</div></div> <div class="word" style="display: inline-block;"><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">t</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">o</div></div> <div class="word" style="display: inline-block;"><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">g</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">l</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">o</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">b</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">a</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">l</div></div> <div class="word" style="display: inline-block;"><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">e</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">n</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">t</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">e</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">r</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">p</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">r</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">i</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">s</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">e</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">s</div></div></h2></div><div class="line-bg"></div></div><div class="home_logos-wrapper"><div class="home_logos-list-wrapper hide-tablet w-dyn-list"><div role="list" class="home_logos-list w-dyn-items"><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/698af5f2d20a12424370edee_logo_klarna.svg" loading="lazy" alt="Klarna" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/698af60a3595f5918eb55b2f_logo_klarna-1.svg" loading="lazy" alt="Vanta" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/698b4a3d4480f4fa53c3b0b8_logo_Gitlab.svg" loading="lazy" alt="clay" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/698af613b1e439fab3cbda6d_logo_klarna-2.svg" loading="lazy" alt="RIPPLING" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/698af61c4871f1baed6eb36d_logo_klarna-3.svg" loading="lazy" alt="lyft" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/698af648fc78763596e95934_logo_klarna-4.svg" loading="lazy" alt="Harvey" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/699d8dd819b1b50d87a87a7e_logo_gitlab.svg" loading="lazy" alt="ABRIDGE" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69a03ab2d1048c0f7047a83f_cloudfire.svg" loading="lazy" alt="Cloudflare" class="home_logo"></div></div></div><div class="home_logos-list-wrapper hide-tablet w-dyn-list"><div role="list" class="home_logos-list w-dyn-items"><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/698af694f5a8b61a81e61651_The_Home_Depot-Logo.wine%201.svg" loading="lazy" alt="THE HOME DEPOT" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69a03aa35f131c951040c55f_workday.svg" loading="lazy" alt="workday" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/698af6ae78d3de70d5c3fd10_logo_Rakuten.svg" loading="lazy" alt="CISCO" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69a03b07847c18efb637c5e1_mercor.svg" loading="lazy" alt="Mercor" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/699d8e487c686f8fc51fd9b0_nu.svg" loading="lazy" alt="NU" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69a03ace58968e58f476ce24_monday.svg" loading="lazy" alt="monday.com" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/699d8e65f906c336280de178_podium.svg" loading="lazy" alt="Podium" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69a03b15e423c55ca7219fec_bridgewater.svg" loading="lazy" alt="BRIDGEWATER" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/698af738793838e9c6945cc0_logo_linkedin.svg" loading="lazy" alt="LinkedIn" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/698af6a5bce126b2dc318630_logo_rakuten-1.svg" loading="lazy" alt="coinbase" class="home_logo"></div></div></div><div data-w-id="280a458b-2f96-b33b-93ab-2071882dd48d" class="tablet-version is-logos-flex"><div class="tablet-logos-wrapper"><div class="tablet-logos-marquee"><div class="tablet-logos-marquee-track"><div class="tablet-logos-marquee-item w-dyn-list"><div role="list" class="home_logos-list w-dyn-items"><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/698af5f2d20a12424370edee_logo_klarna.svg" loading="eager" alt="Klarna" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/698af60a3595f5918eb55b2f_logo_klarna-1.svg" loading="eager" alt="Vanta" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/698b4a3d4480f4fa53c3b0b8_logo_Gitlab.svg" loading="eager" alt="clay" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/698af613b1e439fab3cbda6d_logo_klarna-2.svg" loading="eager" alt="RIPPLING" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/698af61c4871f1baed6eb36d_logo_klarna-3.svg" loading="eager" alt="lyft" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/698af648fc78763596e95934_logo_klarna-4.svg" loading="eager" alt="Harvey" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/699d8dd819b1b50d87a87a7e_logo_gitlab.svg" loading="eager" alt="ABRIDGE" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69a03ab2d1048c0f7047a83f_cloudfire.svg" loading="eager" alt="Cloudflare" class="home_logo"></div></div></div><div class="tablet-logos-marquee-item w-dyn-list"><div role="list" class="home_logos-list w-dyn-items"><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/698af5f2d20a12424370edee_logo_klarna.svg" loading="eager" alt="Klarna" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/698af60a3595f5918eb55b2f_logo_klarna-1.svg" loading="eager" alt="Vanta" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/698b4a3d4480f4fa53c3b0b8_logo_Gitlab.svg" loading="eager" alt="clay" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/698af613b1e439fab3cbda6d_logo_klarna-2.svg" loading="eager" alt="RIPPLING" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/698af61c4871f1baed6eb36d_logo_klarna-3.svg" loading="eager" alt="lyft" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/698af648fc78763596e95934_logo_klarna-4.svg" loading="eager" alt="Harvey" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/699d8dd819b1b50d87a87a7e_logo_gitlab.svg" loading="eager" alt="ABRIDGE" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69a03ab2d1048c0f7047a83f_cloudfire.svg" loading="eager" alt="Cloudflare" class="home_logo"></div></div></div></div></div></div><div class="tablet-logos-wrapper"><div class="tablet-logos-marquee is-reverse"><div class="tablet-logos-marquee-track-reverse"><div class="tablet-logos-marquee-item w-dyn-list"><div role="list" class="home_logos-list w-dyn-items"><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/698af694f5a8b61a81e61651_The_Home_Depot-Logo.wine%201.svg" loading="eager" alt="THE HOME DEPOT" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69a03aa35f131c951040c55f_workday.svg" loading="eager" alt="workday" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/698af6ae78d3de70d5c3fd10_logo_Rakuten.svg" loading="eager" alt="CISCO" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69a03b07847c18efb637c5e1_mercor.svg" loading="eager" alt="Mercor" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/699d8e487c686f8fc51fd9b0_nu.svg" loading="eager" alt="NU" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69a03ace58968e58f476ce24_monday.svg" loading="eager" alt="monday.com" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/699d8e65f906c336280de178_podium.svg" loading="eager" alt="Podium" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69a03b15e423c55ca7219fec_bridgewater.svg" loading="eager" alt="BRIDGEWATER" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/698af738793838e9c6945cc0_logo_linkedin.svg" loading="eager" alt="LinkedIn" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/698af6a5bce126b2dc318630_logo_rakuten-1.svg" loading="eager" alt="coinbase" class="home_logo"></div></div></div><div class="tablet-logos-marquee-item w-dyn-list"><div role="list" class="home_logos-list w-dyn-items"><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/698af694f5a8b61a81e61651_The_Home_Depot-Logo.wine%201.svg" loading="eager" alt="THE HOME DEPOT" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69a03aa35f131c951040c55f_workday.svg" loading="eager" alt="workday" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/698af6ae78d3de70d5c3fd10_logo_Rakuten.svg" loading="eager" alt="CISCO" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69a03b07847c18efb637c5e1_mercor.svg" loading="eager" alt="Mercor" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/699d8e487c686f8fc51fd9b0_nu.svg" loading="eager" alt="NU" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69a03ace58968e58f476ce24_monday.svg" loading="eager" alt="monday.com" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/699d8e65f906c336280de178_podium.svg" loading="eager" alt="Podium" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69a03b15e423c55ca7219fec_bridgewater.svg" loading="eager" alt="BRIDGEWATER" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/698af738793838e9c6945cc0_logo_linkedin.svg" loading="eager" alt="LinkedIn" class="home_logo"></div><div role="listitem" class="home_logos-item w-dyn-item"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/698af6a5bce126b2dc318630_logo_rakuten-1.svg" loading="eager" alt="coinbase" class="home_logo"></div></div></div></div></div></div></div><div class="line-bg"></div><div class="hide w-embed"><style>
+
+img[alt="BRIDGEWATER"] {
+  position: relative;
+  top: -12px;
+}
+
+
+</style></div></div><div class="home_text-wrapper"><div class="max-width-533 no-tablet"><h3 class="t-heading-3-rg text-c-blue-light-900">LangSmith Agent Engineering Platform</h3></div><div id="w-node-_280a458b-2f96-b33b-93ab-2071882dd4ba-87f82a27" class="max-width-445 no-tablet"><p class="t-paragraph-1-rg">Improve agent performance across the development lifecycle. Trace your preferred framework or integrate LangSmith with any agent stack using our Python, TypeScript, Go, or Java SDKs.<br></p></div></div></div></div></section><section class="home_cards-section"><div class="v2-padding-global"><div class="w-layout-blockcontainer v2-container w-container"><div class="home-cards-wrapper"><div id="w-node-_280a458b-2f96-b33b-93ab-2071882dd4c2-87f82a27" class="home_cards-toc"><div class="home_cards-toc-wrapper no-scrollbar"><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd4c4" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="280a458b-2f96-b33b-93ab-2071882dd4c4" href="#observability" class="home_cards-toc-link w-inline-block"><div class="cards-toc-circle"></div><div class="t-label-1-rg blue-light-900">Observability</div></a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd4c8" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="280a458b-2f96-b33b-93ab-2071882dd4c8" href="#evaluation" class="home_cards-toc-link w-inline-block"><div class="cards-toc-circle"></div><div class="t-label-1-rg blue-light-900">Evaluation</div></a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd4cc" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="280a458b-2f96-b33b-93ab-2071882dd4cc" href="#deployment" class="home_cards-toc-link w-inline-block"><div class="cards-toc-circle"></div><div class="t-label-1-rg blue-light-900">Deployment</div></a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd4d0" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="280a458b-2f96-b33b-93ab-2071882dd4d0" href="#fleet" class="home_cards-toc-link w-inline-block"><div class="cards-toc-circle"></div><div class="t-label-1-rg blue-light-900">Fleet</div></a></div><div class="hide w-embed"><style>
+
+.home_cards-toc-link.w--current .cards-toc-circle {
+	opacity: 100%;
+}
+
+.home_cards-toc-link .cards-toc-circle {
+	opacity: 0%;
+}
+</style></div><div class="hide w-embed w-script"><script>
+  function initTocScroll() {
+    const mq = window.matchMedia('(max-width: 768px)');
+
+    function setup() {
+      if (!mq.matches) return;
+      const wrapper = document.querySelector('.home_cards-toc-wrapper');
+      if (!wrapper) return;
+
+      const links = wrapper.querySelectorAll('.home_cards-toc-link');
+      if (!links.length) return;
+
+      const observer = new MutationObserver(() => {
+        const activeLink = wrapper.querySelector('.w--current');
+        if (!activeLink) return;
+
+        const targetLeft =
+          activeLink.offsetLeft -
+          wrapper.offsetLeft -
+          wrapper.offsetWidth / 2 +
+          activeLink.offsetWidth / 2;
+
+        try {
+          wrapper.scrollTo({
+            left: targetLeft,
+            behavior: 'smooth',
+          });
+        } catch (e) {
+          wrapper.scrollLeft = targetLeft;
+        }
+      });
+
+      links.forEach((link) => {
+        observer.observe(link, { attributes: true, attributeFilter: ['class'] });
+      });
+    }
+
+    // Try immediately
+    setup();
+
+    // Retry after Webflow finishes rendering
+    window.addEventListener('load', setup);
+
+    // Also retry after a short delay as a fallback
+    setTimeout(setup, 1500);
+
+    if (mq.addEventListener) {
+      mq.addEventListener('change', setup);
+    } else if (mq.addListener) {
+      mq.addListener(setup);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTocScroll);
+  } else {
+    initTocScroll();
+  }
+</script></div><div class="cards-toc-circle is-end"></div><div class="hide w-embed"><style>
+  @media only screen and (max-width: 992px) {
+    .home_cards-toc-link {
+      min-width: fit-content;
+      flex-shrink: 0;
+    }
+  }
+</style></div></div><div class="home_cards-wrapper"><div id="observability" class="home_card-grid more-gap w-node-_280a458b-2f96-b33b-93ab-2071882dd4d8-87f82a27"><div class="home_card-content"><div class="home_card-logo"><img src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/698afeb61612bb3b1af6e9ee_Frame%202147254707.svg" loading="lazy" alt="" class="icon-40-40 is-v2"><div class="t-label-1-rg blue-light-900">Observability</div></div><div class="spacer-16"></div><div class="max-width-384 no-tablet"><h4 class="t-heading-5-rg text-c-white">Understand exactly what your agent is doing</h4></div><div class="spacer-64 _40-landscape"></div><div class="text-rich-text-v2-in-section w-richtext"><p>Agents can be hard to debug and understand. Long context, branching logic, and many tools make it difficult to pinpoint where things went wrong. Tracing breaks each run into a structured timeline of steps so you can see exactly what happened, in what order, and why.<br></p><ul role="list"><li><span><em>Native tracing for popular agent frameworks and OpenTelemetry</em></span></li><li><span><em>SDKs for Python, TypeScript, Go, and Java</em></span></li><li><span><em>Message threading for multi-turn chat interactions</em></span></li><li><span><em>Analytics and AI-driven insights to uncover patterns across traces</em></span></li></ul></div><div class="spacer-40 _32-landscape"></div><a data-wf--button--variant="secondary---arrow" data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd4f9:cc338c70-b506-f985-732b-95e9d08eb22b" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="cc338c70-b506-f985-732b-95e9d08eb22b" data-wf-component-context="%5B%7B%22componentId%22%3A%22cc338c70-b506-f985-732b-95e9d08eb22b%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd4f9%22%7D%5D" href="/langsmith/observability" data-wf-event-ids="157078768-157078769" class="button-v2 w-variant-f44e612c-d93f-d147-e6a4-fd7888246ef0 w-inline-block"><div class="no-wrap-arrow w-variant-f44e612c-d93f-d147-e6a4-fd7888246ef0">LangSmith Observability</div><div class="embed-icon is-btn-arrow w-variant-f44e612c-d93f-d147-e6a4-fd7888246ef0 w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.9852 4L12 10.7704H10.9314V6.60741L10.9462 5.80741L4.74211 12L4 11.2444L10.2041 5.03704L9.47681 5.05185L5.21707 5.05185V4L11.9852 4Z" fill="currentColor"></path>
+</svg></div></a></div><div class="home_card-image-wrapper is-test"><div class="home_card-images-test"><img src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/699327eef63609b183692f16_observ_default.avif" loading="eager" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/699327eef63609b183692f16_observ_default-p-500.avif 500w, https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/699327eef63609b183692f16_observ_default-p-800.png 800w, https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/699327eef63609b183692f16_observ_default-p-1080.png 1080w, https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/699327eef63609b183692f16_observ_default.avif 1800w" alt="" class="home_card-image-test"></div></div></div><div id="evaluation" class="home_card-grid more-gap w-node-_280a458b-2f96-b33b-93ab-2071882dd4fe-87f82a27"><div class="home_card-content"><div class="home_card-logo"><img src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/698afeb8f6d6d95dc67c49c2_Frame%202147254707-1.svg" loading="lazy" alt="" class="icon-40-40 is-v2"><div class="t-label-1-rg blue-light-900">Evaluation</div></div><div class="spacer-16"></div><h4 class="t-heading-5-rg text-c-white">Use real-world usage for iterative improvement </h4><div class="spacer-64 _40-landscape"></div><div class="text-rich-text-v2-in-section w-richtext"><p>Capture production traces, turn them into test cases, and score agents with a mix of human review and automated evals. Each iteration makes your agent measurably better.<br></p><ul role="list"><li><em>Reusable LLM-as-judge and multi-turn evals</em></li><li><em>Eval calibration with human feedback</em></li><li><em>Human feedback annotations</em></li><li><em>Online and offline scoring</em></li></ul></div><div class="spacer-40 _32-landscape"></div><a data-wf--button--variant="secondary---arrow" data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd51a:cc338c70-b506-f985-732b-95e9d08eb22b" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="cc338c70-b506-f985-732b-95e9d08eb22b" data-wf-component-context="%5B%7B%22componentId%22%3A%22cc338c70-b506-f985-732b-95e9d08eb22b%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd51a%22%7D%5D" href="/langsmith/evaluation" data-wf-event-ids="157078768-157078769" class="button-v2 w-variant-f44e612c-d93f-d147-e6a4-fd7888246ef0 w-inline-block"><div class="no-wrap-arrow w-variant-f44e612c-d93f-d147-e6a4-fd7888246ef0">LangSmith Evaluation</div><div class="embed-icon is-btn-arrow w-variant-f44e612c-d93f-d147-e6a4-fd7888246ef0 w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.9852 4L12 10.7704H10.9314V6.60741L10.9462 5.80741L4.74211 12L4 11.2444L10.2041 5.03704L9.47681 5.05185L5.21707 5.05185V4L11.9852 4Z" fill="currentColor"></path>
+</svg></div></a></div><div class="home_card-image-wrapper is-test"><div class="home_card-images-test"><img src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/699327eece4d056fbcc070cd_eval_default.avif" loading="eager" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/699327eece4d056fbcc070cd_eval_default-p-500.avif 500w, https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/699327eece4d056fbcc070cd_eval_default-p-800.png 800w, https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/699327eece4d056fbcc070cd_eval_default.avif 1800w" alt="" class="home_card-image-test"></div></div></div><div id="deployment" class="home_card-grid more-gap w-node-_280a458b-2f96-b33b-93ab-2071882dd51f-87f82a27"><div class="home_card-content"><div class="home_card-logo"><img src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/698afeb61aa4c669a370f8ca_updated.svg" loading="lazy" alt="" class="icon-40-40 is-v2"><div class="t-label-1-rg blue-light-900">Deployment</div></div><div class="spacer-16"></div><div class="max-width-310 no-tablet"><h4 class="t-heading-5-rg text-c-white">Ship and scale agents in production</h4></div><div class="spacer-64 _40-landscape"></div><div class="text-rich-text-v2-in-section w-richtext"><p>Unlike traditional web apps, agents work for long durations and need to handle async collaboration with humans and other agents. The agent server provides memory, conversational threads, and durable checkpointing out of the box - on infrastructure that’s fault-tolerant and scales to handle any workload.</p><ul role="list"><li><em>Supports human-in-the-loop interactions, input concurrency, and background agents</em></li><li><em>Type-safe streaming of messages, UI components, and custom events</em></li><li><em>Scalable, distributed runtime to handle agent swarms</em></li><li><em>Native protocol support for A2A &amp; MCP</em></li></ul></div><div class="spacer-40 _32-landscape"></div><a data-wf--button--variant="secondary---arrow" data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd53b:cc338c70-b506-f985-732b-95e9d08eb22b" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="cc338c70-b506-f985-732b-95e9d08eb22b" data-wf-component-context="%5B%7B%22componentId%22%3A%22cc338c70-b506-f985-732b-95e9d08eb22b%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd53b%22%7D%5D" href="/langsmith/deployment" data-wf-event-ids="157078768-157078769" class="button-v2 w-variant-f44e612c-d93f-d147-e6a4-fd7888246ef0 w-inline-block"><div class="no-wrap-arrow w-variant-f44e612c-d93f-d147-e6a4-fd7888246ef0">LangSmith Deployment</div><div class="embed-icon is-btn-arrow w-variant-f44e612c-d93f-d147-e6a4-fd7888246ef0 w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.9852 4L12 10.7704H10.9314V6.60741L10.9462 5.80741L4.74211 12L4 11.2444L10.2041 5.03704L9.47681 5.05185L5.21707 5.05185V4L11.9852 4Z" fill="currentColor"></path>
+</svg></div></a></div><div class="home_card-image-wrapper is-test"><div class="home_card-images-test"><img src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/699327ee468c01d51d25917e_deploy_default.avif" loading="eager" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/699327ee468c01d51d25917e_deploy_default-p-500.avif 500w, https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/699327ee468c01d51d25917e_deploy_default-p-800.avif 800w, https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/699327ee468c01d51d25917e_deploy_default.avif 1800w" alt="" class="home_card-image-test"></div></div></div><div id="fleet" class="home_card-grid more-gap w-node-_280a458b-2f96-b33b-93ab-2071882dd540-87f82a27"><div class="home_card-content"><div class="home_card-logo"><img src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69bae20e727b24b507666efe_LangSmith%20Fleet_icon_dark%20mode%202.svg" loading="lazy" alt="" class="icon-40-40 is-v2"><div class="t-label-1-rg blue-light-900">Fleet</div></div><div class="spacer-16"></div><h4 class="t-heading-5-rg text-c-white">Agents for the whole company</h4><div class="spacer-64 _40-landscape"></div><div class="text-rich-text-v2-in-section w-richtext"><p>Routine tasks like research, follow-ups, and status checks eat up your day. Describe what you need in plain language, and Fleet takes action on it across your daily tools. Turn any question or task into a recurring agent that improves with feedback and acts autonomously. Designed with enterprise security and admin in mind.</p><ul role="list"><li><em>Bring your own models</em></li><li><em>Use first-party integrations or extend with any MCP server</em></li><li><em>Export agent files for pro-code development</em></li><li><em>Integrated LangSmith tracing</em></li><li><em>Agents improve with user feedback</em></li></ul></div><div class="spacer-40 _32-landscape"></div><a data-wf--button--variant="secondary---arrow" data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd55e:cc338c70-b506-f985-732b-95e9d08eb22b" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="cc338c70-b506-f985-732b-95e9d08eb22b" data-wf-component-context="%5B%7B%22componentId%22%3A%22cc338c70-b506-f985-732b-95e9d08eb22b%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd55e%22%7D%5D" href="/langsmith/fleet" data-wf-event-ids="157078768-157078769" class="button-v2 w-variant-f44e612c-d93f-d147-e6a4-fd7888246ef0 w-inline-block"><div class="no-wrap-arrow w-variant-f44e612c-d93f-d147-e6a4-fd7888246ef0">LangSmith Fleet</div><div class="embed-icon is-btn-arrow w-variant-f44e612c-d93f-d147-e6a4-fd7888246ef0 w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.9852 4L12 10.7704H10.9314V6.60741L10.9462 5.80741L4.74211 12L4 11.2444L10.2041 5.03704L9.47681 5.05185L5.21707 5.05185V4L11.9852 4Z" fill="currentColor"></path>
+</svg></div></a></div><div class="home_card-image-wrapper is-test"><div class="home_card-images-test"><img src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69c17b7fa8fdfabb326f8150_agent-fleet.avif" loading="eager" alt="" class="home_card-image-test"></div></div></div><div class="spacer-150 _100-landscape"></div></div></div></div></div></section><div light-bg="true"><section class="home_frameworks-section"><div class="v2-padding-global"><div class="w-layout-blockcontainer v2-container w-container"><div class="v2-home-frameworks-wrapper"><div class="frameworks-heading-wrapper"><div class="max-width-445 no-tablet"><h3 class="t-heading-3-rg">Build with our open source frameworks</h3></div><div class="heading-text-wrapper"><div class="max-width-445 no-tablet"><p class="t-paragraph-1-rg-twk">Build agents fast with any model provider. Choose the right framework for the job from batteries included to low-level control.</p></div></div></div><div class="frameworks-3col-grid"><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd59f" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="280a458b-2f96-b33b-93ab-2071882dd59f" href="/deep-agents" class="frameworks-col-wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/698b2ab3a27435f0af4607ce_83408050bc46f6f7d309df03d6155be9_graph-2.avif" loading="lazy" sizes="100vw" srcset="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/698b2ab3a27435f0af4607ce_83408050bc46f6f7d309df03d6155be9_graph-2-p-500.avif 500w, https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/698b2ab3a27435f0af4607ce_83408050bc46f6f7d309df03d6155be9_graph-2.avif 912w" alt="" class="framework-image"><div class="spacer-32 _24-tablet"></div><div class="framework-content-wrapper"><div><div class="home_card-logo"><img src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/698b2b2641d117b53e025af6_Frame%202147255016.svg" loading="lazy" alt="" class="icon-40-40 is-v2"><div class="t-paragraph-1-rg">deepagents</div></div><div class="spacer-24"></div><h5 class="t-heading-5-rg">Build intelligent agents for open-ended work</h5><div class="spacer-16 _8-landscape"></div><div class="t-paragraph-2-rg">For highly autonomous, long-running agents</div><div class="spacer-24"></div></div><div class="button-arrow-no-hover"><div class="t-label-1-rg">Explore deepagents</div><div class="embed-icon link-arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.9852 4L12 10.7704H10.9314V6.60741L10.9462 5.80741L4.74211 12L4 11.2444L10.2041 5.03704L9.47681 5.05185L5.21707 5.05185V4L11.9852 4Z" fill="currentColor"></path>
+</svg></div></div></div></a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd5b3" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="280a458b-2f96-b33b-93ab-2071882dd5b3" href="/langchain" class="frameworks-col-wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/698b2ab36ec04bd906a45a47_04a211ab00b30e07dc51edffebd9aff2_graph.avif" loading="eager" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 912px" srcset="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/698b2ab36ec04bd906a45a47_04a211ab00b30e07dc51edffebd9aff2_graph-p-500.avif 500w, https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/698b2ab36ec04bd906a45a47_04a211ab00b30e07dc51edffebd9aff2_graph.avif 912w" alt="" class="framework-image"><div class="spacer-32 _24-tablet"></div><div class="framework-content-wrapper"><div><div class="home_card-logo"><img src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/698b2b26acc19233c104b1cd_logo.svg" loading="lazy" alt="" class="icon-40-40 is-v2"><div class="t-paragraph-1-rg">langchain</div></div><div class="spacer-24 _16-landscape"></div><h5 class="t-heading-5-rg">Quick start agents with any model provider</h5><div class="spacer-16 _8-landscape"></div><div class="t-paragraph-2-rg">For building agents fast with templates</div><div class="spacer-24"></div></div><div class="button-arrow-no-hover"><div class="t-label-1-rg">Explore langchain</div><div class="embed-icon link-arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.9852 4L12 10.7704H10.9314V6.60741L10.9462 5.80741L4.74211 12L4 11.2444L10.2041 5.03704L9.47681 5.05185L5.21707 5.05185V4L11.9852 4Z" fill="currentColor"></path>
+</svg></div></div></div></a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd5c7" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="280a458b-2f96-b33b-93ab-2071882dd5c7" href="/langgraph" class="frameworks-col-wrapper w-inline-block"><img src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/698b2ab3357e0836fe4cdcac_70f00ac3114760cac8e792a9375a4814_graph-1.avif" loading="lazy" sizes="100vw" srcset="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/698b2ab3357e0836fe4cdcac_70f00ac3114760cac8e792a9375a4814_graph-1-p-500.avif 500w, https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/698b2ab3357e0836fe4cdcac_70f00ac3114760cac8e792a9375a4814_graph-1.avif 912w" alt="" class="framework-image"><div class="spacer-32 _24-tablet"></div><div class="framework-content-wrapper"><div><div class="home_card-logo"><img src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/698b2b268612e91affecd414_Frame%202147254720.svg" loading="lazy" alt="" class="icon-40-40 is-v2"><div class="t-paragraph-1-rg">langgraph</div></div><div class="spacer-24"></div><h5 class="t-heading-5-rg">Build reliable agents with low-level control</h5></div><div class="spacer-16 _8-landscape"></div><div class="t-paragraph-2-rg">For production agents that require some determinism</div><div class="spacer-24"></div><div class="button-arrow-no-hover"><div class="t-label-1-rg">Explore langgraph</div><div class="embed-icon link-arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.9852 4L12 10.7704H10.9314V6.60741L10.9462 5.80741L4.74211 12L4 11.2444L10.2041 5.03704L9.47681 5.05185L5.21707 5.05185V4L11.9852 4Z" fill="currentColor"></path>
+</svg></div></div></div></a></div></div></div></div><div class="hide w-embed"><style>
+
+.frameworks-col-wrapper:hover .link-arrow {
+	transform: translateX(-0.75rem);
+}
+
+.frameworks-col-wrapper:hover .button-arrow-no-hover {
+color: var(--_v-2-colors---c-blue-dark--900);
+}
+
+</style></div></section><section class="home_usecases-section"><div class="full-width-line hide-mobile-landscape"></div><div class="v2-padding-global"><div class="w-layout-blockcontainer v2-container w-container"><div class="v2-home-use-cases"><div class="v2-use-cases-wrapper"><div class="use-cases-heading-wrapper"><div class="max-width-600"><h2 class="t-heading-3-rg">Learn from teams running agents in production</h2></div><div class="hide-mobile-landscape"><a data-wf--button--variant="primary---dark" data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd5e7:cc338c70-b506-f985-732b-95e9d08eb22b" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="cc338c70-b506-f985-732b-95e9d08eb22b" data-wf-component-context="%5B%7B%22componentId%22%3A%22cc338c70-b506-f985-732b-95e9d08eb22b%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd5e7%22%7D%5D" href="/customers" data-wf-event-ids="157078768-157078769" class="button-v2 w-variant-2e956572-b1af-5b84-be93-9608dcc82abe w-inline-block"><div class="no-wrap-arrow">More customer stories</div><div class="embed-icon is-btn-arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.9852 4L12 10.7704H10.9314V6.60741L10.9462 5.80741L4.74211 12L4 11.2444L10.2041 5.03704L9.47681 5.05185L5.21707 5.05185V4L11.9852 4Z" fill="currentColor"></path>
+</svg></div></a></div></div><div class="use-cases-swiper is-v2 swiper-initialized swiper-horizontal swiper-backface-hidden"><div class="swiper-wrapper v2-is-use-cases" id="swiper-wrapper-51c99be5f1c2504d" aria-live="polite" style="cursor: grab;"><a data-wf--use-case-element--variant="base" data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd5eb:316b0850-729d-f8ad-7e5d-a0af3c322bc3" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="316b0850-729d-f8ad-7e5d-a0af3c322bc3" data-wf-component-context="%5B%7B%22componentId%22%3A%22316b0850-729d-f8ad-7e5d-a0af3c322bc3%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd5eb%22%7D%5D" href="https://blog.langchain.com/customers-klarna/" target="_blank" class="swiper-slide v2-is-use-cases w-inline-block swiper-slide-active" role="group" aria-label="1 / 5" data-swiper-slide-index="0" style="width: 350.667px; margin-right: 16px;"><div class="v2-use-cases-box"><img loading="eager" src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69a03fbd88f7622a14049a2b_logo_klarna.svg" alt="" class="use-case-logo"><div class="flex-y-space-between"><div><p class="t-heading-6-rg">Klarna’s AI assistant reduced case resolution time by 80% with LangSmith</p><div class="spacer-40 _32-landscape"></div></div><div class="button-arrow-no-hover is-black"><div class="t-label-1-rg">Read Use Case</div><div class="embed-icon link-arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.9852 4L12 10.7704H10.9314V6.60741L10.9462 5.80741L4.74211 12L4 11.2444L10.2041 5.03704L9.47681 5.05185L5.21707 5.05185V4L11.9852 4Z" fill="currentColor"></path>
+</svg></div></div></div></div></a><a data-wf--use-case-element--variant="base" data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd5f2:316b0850-729d-f8ad-7e5d-a0af3c322bc3" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="316b0850-729d-f8ad-7e5d-a0af3c322bc3" data-wf-component-context="%5B%7B%22componentId%22%3A%22316b0850-729d-f8ad-7e5d-a0af3c322bc3%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd5f2%22%7D%5D" href="https://blog.langchain.com/customers-monday/" target="_blank" class="swiper-slide v2-is-use-cases w-inline-block swiper-slide-next" role="group" aria-label="2 / 5" data-swiper-slide-index="1" style="width: 350.667px; margin-right: 16px;"><div class="v2-use-cases-box"><img loading="eager" src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69a03b8bf31109c9aa556568_logo_rakuten.svg" alt="" class="use-case-logo"><div class="flex-y-space-between"><div><p class="t-heading-6-rg">Monday Service achieved 8.7x faster feedback loops for evals with LangSmith</p><div class="spacer-40 _32-landscape"></div></div><div class="button-arrow-no-hover is-black"><div class="t-label-1-rg">Read Use Case</div><div class="embed-icon link-arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.9852 4L12 10.7704H10.9314V6.60741L10.9462 5.80741L4.74211 12L4 11.2444L10.2041 5.03704L9.47681 5.05185L5.21707 5.05185V4L11.9852 4Z" fill="currentColor"></path>
+</svg></div></div></div></div></a><a data-wf--use-case-element--variant="base" data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd5f6:316b0850-729d-f8ad-7e5d-a0af3c322bc3" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="316b0850-729d-f8ad-7e5d-a0af3c322bc3" data-wf-component-context="%5B%7B%22componentId%22%3A%22316b0850-729d-f8ad-7e5d-a0af3c322bc3%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd5f6%22%7D%5D" href="https://blog.langchain.com/customers-podium/" target="_blank" class="swiper-slide v2-is-use-cases w-inline-block" role="group" aria-label="3 / 5" data-swiper-slide-index="2" style="width: 350.667px; margin-right: 16px;"><div class="v2-use-cases-box"><img loading="eager" src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69a03b8b008adda0b0b309fb_podium.svg" alt="" class="use-case-logo"><div class="flex-y-space-between"><div><p class="t-heading-6-rg">Podium reduced engineering escalations by 90% with LangSmith</p><div class="spacer-40 _32-landscape"></div></div><div class="button-arrow-no-hover is-black"><div class="t-label-1-rg">Read Use Case</div><div class="embed-icon link-arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.9852 4L12 10.7704H10.9314V6.60741L10.9462 5.80741L4.74211 12L4 11.2444L10.2041 5.03704L9.47681 5.05185L5.21707 5.05185V4L11.9852 4Z" fill="currentColor"></path>
+</svg></div></div></div></div></a><a data-wf--use-case-element--variant="base" data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd5fa:316b0850-729d-f8ad-7e5d-a0af3c322bc3" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="316b0850-729d-f8ad-7e5d-a0af3c322bc3" data-wf-component-context="%5B%7B%22componentId%22%3A%22316b0850-729d-f8ad-7e5d-a0af3c322bc3%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd5fa%22%7D%5D" href="https://blog.langchain.com/customers-chrobinson/" target="_blank" class="swiper-slide v2-is-use-cases w-inline-block" role="group" aria-label="4 / 5" data-swiper-slide-index="3" style="width: 350.667px; margin-right: 16px;"><div class="v2-use-cases-box"><img loading="eager" src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69a03b8b7bec6d94a146a30f_servicenow-1.svg" alt="" class="use-case-logo"><div class="flex-y-space-between"><div><p class="t-heading-6-rg">C.H. Robinson automated 5,500 orders per day, saving 600+ hours daily with LangSmith</p><div class="spacer-40 _32-landscape"></div></div><div class="button-arrow-no-hover is-black"><div class="t-label-1-rg">Read Use Case</div><div class="embed-icon link-arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.9852 4L12 10.7704H10.9314V6.60741L10.9462 5.80741L4.74211 12L4 11.2444L10.2041 5.03704L9.47681 5.05185L5.21707 5.05185V4L11.9852 4Z" fill="currentColor"></path>
+</svg></div></div></div></div></a><a data-wf--use-case-element--variant="base" data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd5fe:316b0850-729d-f8ad-7e5d-a0af3c322bc3" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="316b0850-729d-f8ad-7e5d-a0af3c322bc3" data-wf-component-context="%5B%7B%22componentId%22%3A%22316b0850-729d-f8ad-7e5d-a0af3c322bc3%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd5fe%22%7D%5D" href="https://blog.langchain.com/customers-servicenow/" target="_blank" class="swiper-slide v2-is-use-cases w-inline-block" role="group" aria-label="5 / 5" data-swiper-slide-index="4" style="width: 350.667px; margin-right: 16px;"><div class="v2-use-cases-box"><img loading="eager" src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69a03b8b8dc42ed899d1fcaf_servicenow.svg" alt="" class="use-case-logo"><div class="flex-y-space-between"><div><p class="t-heading-6-rg">ServiceNow orchestrates agents across 8 customer stages using LangSmith</p><div class="spacer-40 _32-landscape"></div></div><div class="button-arrow-no-hover is-black"><div class="t-label-1-rg">Read Use Case</div><div class="embed-icon link-arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.9852 4L12 10.7704H10.9314V6.60741L10.9462 5.80741L4.74211 12L4 11.2444L10.2041 5.03704L9.47681 5.05185L5.21707 5.05185V4L11.9852 4Z" fill="currentColor"></path>
+</svg></div></div></div></div></a></div><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div><div class="swiper-elements"><div class="swiper-dots swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-dot is-active" tabindex="0" role="button" aria-label="Go to slide 1" aria-current="true"></span><span class="swiper-dot" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-dot" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-dot" tabindex="0" role="button" aria-label="Go to slide 4"></span><span class="swiper-dot" tabindex="0" role="button" aria-label="Go to slide 5"></span></div><div class="v2-swiper-buttons"><button class="swiper-btn-prev" tabindex="0" aria-label="Previous slide" aria-controls="swiper-wrapper-51c99be5f1c2504d"><div class="embed-icon w-embed"><svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M-1.33514e-05 5.98687L5.98686 12L6.93215 11.0547L3.24288 7.36543L2.52078 6.66958H13.4967L13.4836 5.34355L2.49452 5.33041L3.15097 4.70022L6.91902 0.932166L5.98686 0L-1.33514e-05 5.98687Z" fill="#030710"></path>
+</svg></div></button><button class="swiper-btn-next" tabindex="0" aria-label="Next slide" aria-controls="swiper-wrapper-51c99be5f1c2504d"><div class="embed-icon w-embed"><svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.4967 5.98687L7.50985 12L6.56455 11.0547L10.2538 7.36543L10.9759 6.66958H0L0.0131292 5.34355L11.0022 5.33041L10.3457 4.70022L6.57768 0.932166L7.50985 0L13.4967 5.98687Z" fill="#030710"></path>
+</svg></div></button></div></div><div class="hide w-embed w-script"><!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+<script>
+const useCasesSwiper = new Swiper('.use-cases-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 16,
+    grabCursor: true,
+    loop: true,
+    simulateTouch: true,
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      992: {
+        slidesPerView: 3,
+      },
+      1280: {
+        slidesPerView: 3,
+      },
+    },
+    navigation: {
+      prevEl: '.swiper-btn-prev',
+      nextEl: '.swiper-btn-next',
+    },
+    pagination: {
+      el: '.swiper-dots',
+      bulletClass: 'swiper-dot',
+      bulletActiveClass: 'is-active',
+      clickable: true,
+    },
+  });
+</script></div><div class="w-embed"><style>
+
+.swiper-slide:hover .v2-use-cases-box {
+	background: white;
+}
+
+a[data-wf--use-case-element--variant="no-link"] {
+  cursor: default;
+}
+
+</style></div><div class="show-landscape"><a data-wf--button--variant="primary---dark" data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd610:cc338c70-b506-f985-732b-95e9d08eb22b" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="cc338c70-b506-f985-732b-95e9d08eb22b" data-wf-component-context="%5B%7B%22componentId%22%3A%22cc338c70-b506-f985-732b-95e9d08eb22b%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd610%22%7D%5D" href="/customers" data-wf-event-ids="157078768-157078769" class="button-v2 w-variant-2e956572-b1af-5b84-be93-9608dcc82abe w-inline-block"><div class="no-wrap-arrow">More use cases</div><div class="embed-icon is-btn-arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.9852 4L12 10.7704H10.9314V6.60741L10.9462 5.80741L4.74211 12L4 11.2444L10.2041 5.03704L9.47681 5.05185L5.21707 5.05185V4L11.9852 4Z" fill="currentColor"></path>
+</svg></div></a></div></div><div class="use-cases-line"><div class="line-circle-usecases"></div></div><div class="hide w-embed w-script"><script>
+  ScrollTrigger.create({
+    trigger: ".use-cases-line",
+    start: "top 50%",
+    end: "bottom 50%",
+    onUpdate: (self) => {
+      const circleHeight = document.querySelector(".line-circle-usecases").offsetHeight;
+      const lineHeight = document.querySelector(".use-cases-line").offsetHeight;
+      const maxPercent = ((lineHeight - circleHeight) / lineHeight) * 100;
+      gsap.set(".line-circle-usecases", { top: `${16 + self.progress * (maxPercent - 16)}%` });
+    }
+  });
+</script></div><div class="home-stats-wrapper"><div class="max-width-809"><h2 class="t-heading-2-rg">Trusted by the largest builder community in AI</h2></div><div class="spacer-100 _80-landscape"></div><div class="stats-3col"><div class="stats-box"><div class="t-label-3-rg">100M+</div><div class="t-label-1-rg is-opacity-60">Monthly open source downloads</div></div><div class="stats-box"><div class="t-label-3-rg">6K+</div><div class="t-label-1-rg is-opacity-60">Active LangSmith customers</div></div><div class="stats-box homepage"><div class="div-block-7"><div class="t-label-3-rg">5 &nbsp;</div><div class="t-label-1-rg is-opacity-60 homepage">Of the <br>Fortune 10</div></div><div class="t-label-1-rg is-opacity-60">are LangSmith customers</div></div></div></div></div></div></div></section></div><section class="home_cta-section"><div class="v2-padding-global"><div class="w-layout-blockcontainer v2-container w-container"><div class="home-cta-wrapper"><div class="home-cta-image-wrapper"><div class="cta-tablet-bg"></div><div class="cta-image-wrapper"><img src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/698b2d053d82a375e355b0ab_Group%202147239175.avif" loading="eager" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/698b2d053d82a375e355b0ab_Group%202147239175-p-500.avif 500w, https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/698b2d053d82a375e355b0ab_Group%202147239175.avif 1456w" alt="" class="home-cta-image"><div class="cta-image-bg-desktop"></div></div></div><div class="home-cta-content-wrapper"><div class="max-width-533"><h2 text-letters-animation="" class="t-heading-2-rg text-c-blue-light-900"><div class="word" style="display: inline-block;"><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">G</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">e</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">t</div></div> <div class="word" style="display: inline-block;"><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">s</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">t</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">a</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">r</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">t</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">e</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">d</div></div> <div class="word" style="display: inline-block;"><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">w</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">i</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">t</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">h</div></div> <div class="word" style="display: inline-block;"><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">L</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">a</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">n</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">g</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">S</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">m</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">i</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">t</div><div class="char" style="display: inline-block; color: rgb(127, 200, 255); opacity: 0.3;">h</div></div></h2></div><div class="home-cta-content-absolute"><div class="button-group v2"><a data-wf--button--variant="primary" class="button-v2 w-inline-block" data-wf-component-context="%5B%7B%22componentId%22%3A%22cc338c70-b506-f985-732b-95e9d08eb22b%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd659%22%7D%5D" data-wf-element-id="cc338c70-b506-f985-732b-95e9d08eb22b" data-wf-event-ids="157078768-157078769" href="https://smith.langchain.com/" target="_blank" data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd659:cc338c70-b506-f985-732b-95e9d08eb22b" data-wf-ao-click-engagement-tracking="true"><div class="no-wrap-arrow">Start building</div><div class="embed-icon is-btn-arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.9852 4L12 10.7704H10.9314V6.60741L10.9462 5.80741L4.74211 12L4 11.2444L10.2041 5.03704L9.47681 5.05185L5.21707 5.05185V4L11.9852 4Z" fill="currentColor"></path>
+</svg></div></a><a data-wf--button--variant="secondary" data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd65a:cc338c70-b506-f985-732b-95e9d08eb22b" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="cc338c70-b506-f985-732b-95e9d08eb22b" data-wf-component-context="%5B%7B%22componentId%22%3A%22cc338c70-b506-f985-732b-95e9d08eb22b%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd65a%22%7D%5D" href="/contact-sales" data-wf-event-ids="157078768-157078769" class="button-v2 w-variant-cc2081e2-2f66-fa48-5d36-c70458cedec9 w-inline-block"><div class="no-wrap-arrow">Get a demo</div><div class="embed-icon is-btn-arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.9852 4L12 10.7704H10.9314V6.60741L10.9462 5.80741L4.74211 12L4 11.2444L10.2041 5.03704L9.47681 5.05185L5.21707 5.05185V4L11.9852 4Z" fill="currentColor"></path>
+</svg></div></a></div><p class="t-paragraph-1-rg-twk">Use LangSmith, the agent engineering platform, to improve every step of the agent development lifecycle.</p></div></div></div></div></div></section></main><footer dark-bg="" class="v2-footer"><div class="v2-padding-global"><div class="w-layout-blockcontainer v2-container w-container"><div class="v2-footer-wrapper"><div class="v2-footer-grid"><div class="v2-footer-col"><div class="v2-footer-divider"></div><h6 class="t-heading-6-rg text-c-blue-light-900">Products</h6><div class="v2-footer-links"><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd65c:08562405-8b11-48b6-ab5d-f3b7e924ef82" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="08562405-8b11-48b6-ab5d-f3b7e924ef82" data-wf-component-context="%5B%7B%22componentId%22%3A%2208562405-8b11-48b6-ab5d-f3b7e924ef74%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd65c%22%7D%5D" href="/langsmith-platform" class="v2-footer-link t-label-1-rg">LangSmith Platform</a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd65c:6587bd1f-3132-1119-0097-31194a71ee3e" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="6587bd1f-3132-1119-0097-31194a71ee3e" data-wf-component-context="%5B%7B%22componentId%22%3A%2208562405-8b11-48b6-ab5d-f3b7e924ef74%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd65c%22%7D%5D" href="/langsmith/observability" class="v2-footer-link t-label-1-rg">LangSmith Observability</a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd65c:08562405-8b11-48b6-ab5d-f3b7e924ef84" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="08562405-8b11-48b6-ab5d-f3b7e924ef84" data-wf-component-context="%5B%7B%22componentId%22%3A%2208562405-8b11-48b6-ab5d-f3b7e924ef74%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd65c%22%7D%5D" href="/langsmith/evaluation" class="v2-footer-link t-label-1-rg">LangSmith Evaluation</a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd65c:08562405-8b11-48b6-ab5d-f3b7e924ef86" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="08562405-8b11-48b6-ab5d-f3b7e924ef86" data-wf-component-context="%5B%7B%22componentId%22%3A%2208562405-8b11-48b6-ab5d-f3b7e924ef74%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd65c%22%7D%5D" href="/langsmith/deployment" class="v2-footer-link t-label-1-rg">LangSmith Deployment</a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd65c:6f2d145d-8faa-970b-572b-ed8fcf15c5c8" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="6f2d145d-8faa-970b-572b-ed8fcf15c5c8" data-wf-component-context="%5B%7B%22componentId%22%3A%2208562405-8b11-48b6-ab5d-f3b7e924ef74%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd65c%22%7D%5D" href="/langsmith/fleet" class="v2-footer-link t-label-1-rg">LangSmith Fleet</a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd65c:315fa652-fc49-41b9-c1da-f002ec55fe1a" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="315fa652-fc49-41b9-c1da-f002ec55fe1a" data-wf-component-context="%5B%7B%22componentId%22%3A%2208562405-8b11-48b6-ab5d-f3b7e924ef74%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd65c%22%7D%5D" href="/deep-agents" class="v2-footer-link t-label-1-rg">Deep Agents</a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd65c:08562405-8b11-48b6-ab5d-f3b7e924ef7e" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="08562405-8b11-48b6-ab5d-f3b7e924ef7e" data-wf-component-context="%5B%7B%22componentId%22%3A%2208562405-8b11-48b6-ab5d-f3b7e924ef74%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd65c%22%7D%5D" href="/langchain" class="v2-footer-link t-label-1-rg">LangChain</a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd65c:08562405-8b11-48b6-ab5d-f3b7e924ef80" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="08562405-8b11-48b6-ab5d-f3b7e924ef80" data-wf-component-context="%5B%7B%22componentId%22%3A%2208562405-8b11-48b6-ab5d-f3b7e924ef74%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd65c%22%7D%5D" href="/langgraph" class="v2-footer-link t-label-1-rg">LangGraph</a></div></div><div class="v2-footer-col"><div class="v2-footer-divider"></div><h6 class="t-heading-6-rg text-c-blue-light-900">Resources</h6><div class="v2-footer-links"><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd65c:08562405-8b11-48b6-ab5d-f3b7e924ef8f" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="08562405-8b11-48b6-ab5d-f3b7e924ef8f" data-wf-component-context="%5B%7B%22componentId%22%3A%2208562405-8b11-48b6-ab5d-f3b7e924ef74%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd65c%22%7D%5D" href="https://blog.langchain.com" target="_blank" class="v2-footer-link t-label-1-rg">Blog</a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd65c:08562405-8b11-48b6-ab5d-f3b7e924ef91" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="08562405-8b11-48b6-ab5d-f3b7e924ef91" data-wf-component-context="%5B%7B%22componentId%22%3A%2208562405-8b11-48b6-ab5d-f3b7e924ef74%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd65c%22%7D%5D" href="/customers" class="v2-footer-link t-label-1-rg">Customer Stories</a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd65c:08562405-8b11-48b6-ab5d-f3b7e924ef8d" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="08562405-8b11-48b6-ab5d-f3b7e924ef8d" data-wf-component-context="%5B%7B%22componentId%22%3A%2208562405-8b11-48b6-ab5d-f3b7e924ef74%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd65c%22%7D%5D" href="/resources" class="v2-footer-link t-label-1-rg">Guides</a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd65c:08562405-8b11-48b6-ab5d-f3b7e924ef93" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="08562405-8b11-48b6-ab5d-f3b7e924ef93" data-wf-component-context="%5B%7B%22componentId%22%3A%2208562405-8b11-48b6-ab5d-f3b7e924ef74%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd65c%22%7D%5D" href="https://academy.langchain.com" target="_blank" class="v2-footer-link t-label-1-rg">LangChain Academy</a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd65c:08562405-8b11-48b6-ab5d-f3b7e924ef95" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="08562405-8b11-48b6-ab5d-f3b7e924ef95" data-wf-component-context="%5B%7B%22componentId%22%3A%2208562405-8b11-48b6-ab5d-f3b7e924ef74%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd65c%22%7D%5D" href="/join-community" class="v2-footer-link t-label-1-rg">Community</a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd65c:08562405-8b11-48b6-ab5d-f3b7e924ef97" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="08562405-8b11-48b6-ab5d-f3b7e924ef97" data-wf-component-context="%5B%7B%22componentId%22%3A%2208562405-8b11-48b6-ab5d-f3b7e924ef74%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd65c%22%7D%5D" href="https://lu.ma/langchain" target="_blank" class="v2-footer-link t-label-1-rg">Events</a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd65c:08562405-8b11-48b6-ab5d-f3b7e924ef99" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="08562405-8b11-48b6-ab5d-f3b7e924ef99" data-wf-component-context="%5B%7B%22componentId%22%3A%2208562405-8b11-48b6-ab5d-f3b7e924ef74%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd65c%22%7D%5D" href="https://changelog.langchain.com/" target="_blank" class="v2-footer-link t-label-1-rg">Changelog</a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd65c:08562405-8b11-48b6-ab5d-f3b7e924ef9b" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="08562405-8b11-48b6-ab5d-f3b7e924ef9b" data-wf-component-context="%5B%7B%22componentId%22%3A%2208562405-8b11-48b6-ab5d-f3b7e924ef74%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd65c%22%7D%5D" href="https://docs.langchain.com/" target="_blank" class="v2-footer-link t-label-1-rg">Docs</a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd65c:08562405-8b11-48b6-ab5d-f3b7e924ef9d" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="08562405-8b11-48b6-ab5d-f3b7e924ef9d" data-wf-component-context="%5B%7B%22componentId%22%3A%2208562405-8b11-48b6-ab5d-f3b7e924ef74%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd65c%22%7D%5D" href="https://support.langchain.com/" target="_blank" class="v2-footer-link t-label-1-rg">Support</a></div></div><div class="v2-footer-col"><div class="v2-footer-divider"></div><h6 class="t-heading-6-rg text-c-blue-light-900">Company</h6><div class="v2-footer-links"><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd65c:08562405-8b11-48b6-ab5d-f3b7e924efa4" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="08562405-8b11-48b6-ab5d-f3b7e924efa4" data-wf-component-context="%5B%7B%22componentId%22%3A%2208562405-8b11-48b6-ab5d-f3b7e924ef74%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd65c%22%7D%5D" href="/about" class="v2-footer-link t-label-1-rg">About</a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd65c:08562405-8b11-48b6-ab5d-f3b7e924efa6" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="08562405-8b11-48b6-ab5d-f3b7e924efa6" data-wf-component-context="%5B%7B%22componentId%22%3A%2208562405-8b11-48b6-ab5d-f3b7e924ef74%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd65c%22%7D%5D" href="/careers" class="v2-footer-link t-label-1-rg">Careers</a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd65c:bdb55378-0d58-8a70-4a53-3e80c95e740d" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="bdb55378-0d58-8a70-4a53-3e80c95e740d" data-wf-component-context="%5B%7B%22componentId%22%3A%2208562405-8b11-48b6-ab5d-f3b7e924ef74%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd65c%22%7D%5D" href="/langchain-partner-network" class="v2-footer-link t-label-1-rg">Partners</a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd65c:08562405-8b11-48b6-ab5d-f3b7e924efaa" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="08562405-8b11-48b6-ab5d-f3b7e924efaa" data-wf-component-context="%5B%7B%22componentId%22%3A%2208562405-8b11-48b6-ab5d-f3b7e924ef74%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd65c%22%7D%5D" href="https://trust.langchain.com/" target="_blank" class="v2-footer-link t-label-1-rg">Trust Center</a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd65c:ef824c9a-cedd-c057-e0b3-7fa33d604c8c" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="ef824c9a-cedd-c057-e0b3-7fa33d604c8c" data-wf-component-context="%5B%7B%22componentId%22%3A%2208562405-8b11-48b6-ab5d-f3b7e924ef74%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd65c%22%7D%5D" href="https://drive.google.com/drive/folders/1cc_Wdd8k7J5wUONBMvtfIZH_BaYvonym" target="_blank" class="v2-footer-link t-label-1-rg">Marketing Assets</a></div></div><div class="v2-footer-col"><div class="v2-footer-divider"></div><h6 class="t-heading-6-rg text-c-blue-light-900">Sign up for our newsletter to stay up to date</h6><div class="spacer-24"></div><div class="v2-footer-form-block w-form"><form id="wf-form-footer_form" name="wf-form-footer_form" data-name="footer_form" action="https://langchain.us11.list-manage.com/subscribe/post?u=4ad47fb6a8889d6654064ff1b&amp;amp;id=6bc1ef8ac4&amp;amp;f_id=0072b7e0f0" method="post" data-webflow-hubspot-api-form-url="https://hubspotonwebflow.com/api/forms/175bb662-7202-4470-b7b0-85c3e4bf7321" class="v2-footer-form" data-wf-page-id="660189f45f9033dd87f82a27" data-wf-element-id="606ebe6c-e56a-68eb-635f-3431f4bf7c7e" aria-label="footer_form"><input class="v2-input w-input" data-wfhsfieldname="FormTextInput-2" maxlength="256" name="EMAIL" data-name="EMAIL" placeholder="Your email" type="email" id="EMAIL" required=""><div class="spacer-16"></div><input class="button-v2 is-right w-button" data-wf-component-context="%5B%7B%22componentId%22%3A%2208562405-8b11-48b6-ab5d-f3b7e924ef74%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd65c%22%7D%5D" data-wf-element-id="606ebe6c-e56a-68eb-635f-3431f4bf7c80" aria-label="Subscribe" data-wait="Please wait..." type="submit" data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd65c:606ebe6c-e56a-68eb-635f-3431f4bf7c80" data-wf-ao-click-engagement-tracking="true" value="Subscribe"><input type="hidden" name="hutk" value=""><input type="hidden" name="ipAddress" value=""><input type="hidden" name="pageUri" value=""><input type="hidden" name="pageId" value=""><input type="hidden" name="pageName" value=""></form><div class="v2-footer-success-message w-form-done" tabindex="-1" role="region" aria-label="footer_form success"><div class="v2-footer-success-wrapper"><div class="embed-icon w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C12.416 0 16 3.584 16 8C16 12.416 12.416 16 8 16C3.58401 16 8.25596e-06 12.416 0 8C0 3.584 3.584 0 8 0ZM6.40039 9.73633L4.32812 7.67188L3.20117 8.80078L6.40039 12L12.8008 5.59961L11.6719 4.46484L6.40039 9.73633Z" fill="#7FC8FF"></path>
+</svg></div><div class="t-label-1-rg text-padding"><span class="text-c-white">Thank you!</span> Your submission has been received!</div></div></div><div class="form_error is-news w-form-fail" tabindex="-1" role="region" aria-label="footer_form failure"><div>Oops! Something went wrong while submitting the form.</div></div></div><div class="spacer-16"></div><div class="v2-footer-sm"><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd65c:08562405-8b11-48b6-ab5d-f3b7e924efb8" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="08562405-8b11-48b6-ab5d-f3b7e924efb8" data-wf-component-context="%5B%7B%22componentId%22%3A%2208562405-8b11-48b6-ab5d-f3b7e924ef74%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd65c%22%7D%5D" href="https://www.linkedin.com/company/langchain/" target="_blank" class="v2-footer-sm-link w-inline-block"><div class="embed-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.8571 0H1.13929C0.510714 0 0 0.517857 0 1.15357V14.8464C0 15.4821 0.510714 16 1.13929 16H14.8571C15.4857 16 16 15.4821 16 14.8464V1.15357C16 0.517857 15.4857 0 14.8571 0ZM4.83571 13.7143H2.46429V6.07857H4.83929V13.7143H4.83571ZM3.65 5.03571C2.88929 5.03571 2.275 4.41786 2.275 3.66071C2.275 2.90357 2.88929 2.28571 3.65 2.28571C4.40714 2.28571 5.025 2.90357 5.025 3.66071C5.025 4.42143 4.41071 5.03571 3.65 5.03571ZM13.725 13.7143H11.3536V10C11.3536 9.11429 11.3357 7.975 10.1214 7.975C8.88571 7.975 8.69643 8.93929 8.69643 9.93571V13.7143H6.325V6.07857H8.6V7.12143H8.63214C8.95 6.52143 9.725 5.88929 10.8786 5.88929C13.2786 5.88929 13.725 7.47143 13.725 9.52857V13.7143Z" fill="currentColor"></path>
+</svg></div></a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd65c:08562405-8b11-48b6-ab5d-f3b7e924efba" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="08562405-8b11-48b6-ab5d-f3b7e924efba" data-wf-component-context="%5B%7B%22componentId%22%3A%2208562405-8b11-48b6-ab5d-f3b7e924ef74%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd65c%22%7D%5D" href="https://twitter.com/LangChain" target="_blank" class="v2-footer-sm-link w-inline-block"><div class="embed-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.0390096 0L6.21643 8.82495L0 16H1.39907L6.84154 9.71813L11.2389 16H16L9.47501 6.67867L15.2612 0H13.8621L8.8499 5.78548L4.8001 0H0.0390096ZM2.09644 1.10107H4.2837L13.9422 14.8988H11.755L2.09644 1.10107Z" fill="currentColor"></path>
+</svg></div></a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd65c:08562405-8b11-48b6-ab5d-f3b7e924efbc" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="08562405-8b11-48b6-ab5d-f3b7e924efbc" data-wf-component-context="%5B%7B%22componentId%22%3A%2208562405-8b11-48b6-ab5d-f3b7e924ef74%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd65c%22%7D%5D" href="https://www.youtube.com/@LangChain" target="_blank" class="v2-footer-sm-link w-inline-block"><div class="embed-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 23 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.2801 2.50346C22.0184 1.51804 21.2473 0.741958 20.2682 0.478583C18.4937 0 11.3778 0 11.3778 0C11.3778 0 4.26196 0 2.48733 0.478583C1.50829 0.742 0.737208 1.51804 0.4755 2.50346C0 4.28958 0 8.01617 0 8.01617C0 8.01617 0 11.7428 0.4755 13.5289C0.737208 14.5143 1.50829 15.258 2.48733 15.5214C4.26196 16 11.3778 16 11.3778 16C11.3778 16 18.4936 16 20.2682 15.5214C21.2473 15.258 22.0184 14.5143 22.2801 13.5289C22.7556 11.7428 22.7556 8.01617 22.7556 8.01617C22.7556 8.01617 22.7556 4.28958 22.2801 2.50346ZM9.0505 11.3996V4.63271L14.998 8.01625L9.0505 11.3996Z" fill="currentColor"></path>
+</svg></div></a></div></div></div><img src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/699d97d5053f8cef4c4a4026_LangChain_Footer.svg" loading="lazy" alt="" class="v2-footer-logo"><div class="footer-bottom-wrapper"><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd65c:08562405-8b11-48b6-ab5d-f3b7e924efc6" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="08562405-8b11-48b6-ab5d-f3b7e924efc6" data-wf-component-context="%5B%7B%22componentId%22%3A%2208562405-8b11-48b6-ab5d-f3b7e924ef74%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd65c%22%7D%5D" href="https://status.smith.langchain.com/" target="_blank" class="footer-system-lin w-inline-block"><div class="v2-status-dot"></div><div class="t-label-1-rg">All systems operational</div></a><div class="v2-footer-policy"><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd65c:08562405-8b11-48b6-ab5d-f3b7e924efcb" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="08562405-8b11-48b6-ab5d-f3b7e924efcb" data-wf-component-context="%5B%7B%22componentId%22%3A%2208562405-8b11-48b6-ab5d-f3b7e924ef74%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd65c%22%7D%5D" href="/privacy-policy" class="footer-policy-link t-label-1-rg">Privacy policy</a><a data-wf-native-id-path="280a458b-2f96-b33b-93ab-2071882dd65c:08562405-8b11-48b6-ab5d-f3b7e924efcd" data-wf-ao-click-engagement-tracking="true" data-wf-element-id="08562405-8b11-48b6-ab5d-f3b7e924efcd" data-wf-component-context="%5B%7B%22componentId%22%3A%2208562405-8b11-48b6-ab5d-f3b7e924ef74%22%2C%22instanceId%22%3A%22280a458b-2f96-b33b-93ab-2071882dd65c%22%7D%5D" href="/terms-of-service" class="footer-policy-link t-label-1-rg">Terms of service</a></div></div></div></div></div></footer></div><script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=65b8cd72835ceeacd4449a53" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script><script src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/js/langchain-tonik.schunk.d6c10c5410c344d6.js" type="text/javascript" integrity="sha384-RVGICFKTGOgzHrFKBxxvrcwXFQjmUde8cPrc602OwQafehcIkM9grIG5O0I4/aEQ" crossorigin="anonymous"></script><script src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/js/langchain-tonik.schunk.c42549641b7d4501.js" type="text/javascript" integrity="sha384-EeGd0MuCSKO1a60JtC5HSnHq/C4KrtHuH4qImMGUQIlIox5ZJ0y/b+zo9WWvnaty" crossorigin="anonymous"></script><script src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/js/langchain-tonik.schunk.ba365e35ea49b2cb.js" type="text/javascript" integrity="sha384-5pMl7mSnX6JW5HmPF2QGZqkiWH7qceloxjjX3GLf7ItiVo+vyUKBMtAY6DyUgOB0" crossorigin="anonymous"></script><script src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/js/langchain-tonik.schunk.a5328fc6e4f79712.js" type="text/javascript" integrity="sha384-qeNjdwYkJwsfLBrocVqUy8p1pZHPgmdkAHoaD0aqlRHuYk9wxDd/F58uhEe0JNNJ" crossorigin="anonymous"></script><script src="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/js/langchain-tonik.bdfc71c4.7b17dffff992fb06.js" type="text/javascript" integrity="sha384-RA0d3HldDlkYz/uzenPTeLx2aEYR3Gq+H+uavUpbb09Xcpkv7g4bf9oIh0h2zX7X" crossorigin="anonymous"></script><script src="https://cdn.prod.website-files.com/gsap/3.14.2/gsap.min.js" type="text/javascript"></script><script src="https://cdn.prod.website-files.com/gsap/3.14.2/ScrollTrigger.min.js" type="text/javascript"></script><script src="https://cdn.prod.website-files.com/gsap/3.14.2/SplitText.min.js" type="text/javascript"></script><script type="text/javascript">gsap.registerPlugin(ScrollTrigger,SplitText);</script><script>
+
+  var Webflow = Webflow || [];
+  Webflow.push(function () {
+    // DOMready has fired
+    // May now use jQuery and Webflow api
+    document.querySelector('.w-nav-button').addEventListener('click', function() {
+      var logo = document.querySelector('.navbar_logo-svg');
+
+      // Toggle 'open' class for both nav and logo
+      logo.classList.toggle('is-light');
+    });
+  });
+
+</script>
+
+<script>
+  // Debounce function to limit the rate at which a function is executed
+  function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+
+  // Function to update video sources
+  function updateVideoSources() {
+    const videos = document.querySelectorAll('video'); // Select all video elements
+    videos.forEach(video => {
+      const sources = video.querySelectorAll('source[data-src]'); // Select all source elements with a "data-src" attribute within each video
+      if (window.innerWidth > 990) {
+        sources.forEach(source => {
+          source.src = source.getAttribute('data-src'); // If screen width > 990, set src to data-src
+        });
+      } else {
+        sources.forEach(source => {
+          source.src = '#'; 
+        });
+      }
+      video.load(); // Important: load the new source(s) into the video
+    });
+  }
+
+  // Event listener for DOMContentLoaded to run once on start
+  document.addEventListener('DOMContentLoaded', function() {
+    updateVideoSources();
+  });
+
+  // Event listener for resize with debounce
+  window.addEventListener('resize', debounce(updateVideoSources, 250)); // Debounce resize event
+
+</script>
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T675KH33"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+<!-- V2 - REDESIGN -->
+<!-- GLOBAL SCRIPTS TO ADD INTO PROJECT CUSTOM CODE -->
+
+<!-- GSAP Text animation -->
+<script src="https://unpkg.com/split-type"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Shared animation factory
+  function animateLetters(el, { scrollTrigger, delay, colors, durations, stagger }) {
+    const { chars } = new SplitType(el, { types: "words, chars" });
+
+    // Set initial state
+    if (typeof colors.initial === "function") {
+      chars.forEach((char) => {
+        const c = colors.initial(char);
+        gsap.set(char, { opacity: 0.3, color: c });
+      });
+    } else {
+      gsap.set(chars, { opacity: 0.3, color: colors.initial });
+    }
+
+    if (delay !== undefined) gsap.set(el, { opacity: 1 });
+
+    const tl = gsap.timeline(scrollTrigger ? { scrollTrigger } : { delay: delay ?? 0 });
+
+    chars.forEach((char, i) => {
+      const highlight = typeof colors.highlight === "function" ? colors.highlight(char) : colors.highlight;
+      const base = typeof colors.base === "function" ? colors.base(char) : colors.base;
+      const offset = i * stagger;
+
+      tl.to(char, {
+        opacity: 1,
+        color: highlight,
+        textShadow: "0 0 12px rgba(127, 200, 255, 0.6)",
+        duration: durations[0],
+        ease: durations[2] || undefined,
+      }, offset).to(char, {
+        color: base,
+        textShadow: "none",
+        duration: durations[1],
+        ease: durations[2] || undefined,
+      }, offset + durations[0]);
+    });
+  }
+
+  const scrollConfig = (el, scrub = 0.3) => ({
+    trigger: el,
+    start: "top bottom-=5%",
+    end: "center center-=5%",
+    scrub,
+  });
+
+  // Scroll-triggered (light)
+  document.querySelectorAll("[text-letters-animation]").forEach((el) => {
+    animateLetters(el, {
+      scrollTrigger: scrollConfig(el, 1), // increase scrub from 0.3 → 1 for more lag/smoothing
+      colors: { initial: "#7fc8ff", highlight: "#ffffff", base: "#7fc8ff" },
+      durations: [0.8, 0.8],   // slower highlight & fade (was 0.5, 0.5)
+      stagger: 0.15,            // more spacing between letters (was 0.1)
+    });
+  });
+
+  // Page load
+  document.querySelectorAll("[text-letters-animation-start]").forEach((el) => {
+    animateLetters(el, {
+      delay: 0.5,
+      colors: { initial: "#7fc8ff", highlight: "#ffffff", base: "#7fc8ff" },
+      durations: [0.15, 0.3, "power2.out"],
+      stagger: 0.03,
+    });
+  });
+
+  // Scroll-triggered (dark)
+  const getDarkColors = (char) => {
+    const isBlue = char.closest(".text-c-blue-dark-400");
+    return isBlue
+      ? { highlight: "#ffffff", base: "#006ddd", initial: "#006ddd" }
+    : { highlight: "#7fc8ff", base: "#030710", initial: "#030710" };
+  };
+
+  document.querySelectorAll("[text-letters-animation-dark]").forEach((el) => {
+    animateLetters(el, {
+      scrollTrigger: scrollConfig(el),
+      colors: {
+        initial: (char) => getDarkColors(char).initial,
+        highlight: (char) => getDarkColors(char).highlight,
+        base: (char) => getDarkColors(char).base,
+      },
+      durations: [0.5, 0.5],
+      stagger: 0.1,
+    });
+  });
+
+
+  // Page load (dark)
+  document.querySelectorAll("[text-letters-animation-dark-start]").forEach((el) => {
+    animateLetters(el, {
+      delay: 0.5,
+      colors: {
+        initial: (char) => getDarkColors(char).initial,
+        highlight: (char) => getDarkColors(char).highlight,
+        base: (char) => getDarkColors(char).base,
+      },
+      durations: [0.15, 0.3, "power2.out"],
+      stagger: 0.03,
+    });
+  });
+</script>
+
+<!-- Navbar Light/Dark mode change -->
+<script>
+const navbar = document.querySelector(".navbar2_component");
+const VARIANTS = {
+  light: "w-variant-5ea50dfb-c632-4d13-5830-b2180e4df891",
+  primaryDark: "w-variant-2e956572-b1af-5b84-be93-9608dcc82abe",
+  secondaryDark: "w-variant-402b5851-8ab4-772f-b336-8fff22939a35",
+  secondaryBase: "w-variant-cc2081e2-2f66-fa48-5d36-c70458cedec9",
+};
+const LIGHT_SELECTORS =
+  ".navbar2_container, .navbar2_logo.w-embed, .navbar2_menu.is-page-height-tablet.w-nav-menu, .navbar2_dropdwn-toggle.w-dropdown-toggle, .t-label-1-rg, .embed-icon.is-nav-arrow.w-embed, .navbar2_dropdown-list-wrapper.is-product, .t-label-1-rg.blue-light-500, .v2-navbar-divider, .v2-navbar-dropdown-link.w-inline-block, .t-paragraph-3-rg.text-c-white-60-p, .navbar2_link.t-label-1-rg.w-nav-link, .button-v2.w-inline-block, .embed-icon.is-btn-arrow.w-embed, .menu-icon2_line-top, .menu-icon2_line-middle, .menu-icon2_line-bottom, .nav-link";
+const BTN_CONFIG = [
+  { from: "primary", to: "primary---dark", variant: VARIANTS.primaryDark },
+  {
+    from: "secondary",
+    to: "secondary---dark",
+    variant: VARIANTS.secondaryDark,
+    embedIcon: true,
+  },
+];
+
+function setNavbarTheme(isLight) {
+  const action = isLight ? "add" : "remove";
+
+  // Toggle navbar variant attribute
+  navbar.setAttribute("data-wf--navbar--variant", isLight ? "light" : "dark");
+
+  // Toggle light variant on navbar + child elements
+  navbar.classList[action](VARIANTS.light);
+  if (isLight) {
+    navbar
+      .querySelectorAll(LIGHT_SELECTORS)
+      .forEach((el) => el.classList.add(VARIANTS.light));
+  } else {
+    navbar
+      .querySelectorAll(`.${CSS.escape(VARIANTS.light)}`)
+      .forEach((el) => el.classList.remove(VARIANTS.light));
+  }
+
+  // Toggle button variants
+  BTN_CONFIG.forEach(({ from, to, variant, embedIcon }) => {
+    const [src, dest] = isLight ? [from, to] : [`${from}---dark`, from];
+    const btns = navbar.querySelectorAll(
+      `[data-wf--button--variant="${src}"]`
+    );
+    btns.forEach((btn) => {
+      btn.setAttribute("data-wf--button--variant", dest);
+      btn.classList[action](variant);
+      // Secondary buttons need base variant toggled inversely
+      if (from === "secondary") {
+        if (isLight) {
+          btn.classList.remove(VARIANTS.secondaryBase);
+        } else {
+          btn.classList.add(VARIANTS.secondaryBase);
+        }
+      }
+      if (embedIcon)
+        btn.querySelector(".embed-icon")?.classList[action](variant);
+    });
+  });
+}
+
+document.querySelectorAll('[light-bg="true"]').forEach((section) => {
+  ScrollTrigger.create({
+    trigger: section,
+    start: "top top",
+    end: "bottom top",
+    onEnter: () => setNavbarTheme(true),
+    onLeave: () => setNavbarTheme(false),
+    onEnterBack: () => setNavbarTheme(true),
+    onLeaveBack: () => setNavbarTheme(false),
+  });
+});
+
+document.querySelectorAll('[dark-bg="true"]').forEach((section) => {
+  ScrollTrigger.create({
+    trigger: section,
+    start: "top top",
+    end: "bottom top",
+    onEnter: () => setNavbarTheme(false),
+    onLeave: () => setNavbarTheme(true),
+    onEnterBack: () => setNavbarTheme(false),
+    onLeaveBack: () => setNavbarTheme(true),
+  });
+});
+</script>
+<!-- FINISH GLOBAL SCRIPTS --><script src="https://hubspotonwebflow.com/assets/js/form-124.js" type="text/javascript" integrity="sha384-bjyNIOqAKScdeQ3THsDZLGagNN56B4X2Auu9YZIGu+tA/PlggMk4jbWruG/P6zYj" crossorigin="anonymous"></script>
+<script id="hs-script-loader" text="" charset="" type="text/javascript" src="//js-na2.hs-scripts.com/242623570.js"></script><script type="text/javascript" id="" charset="">!function(){var h="analytics",b=window[h]=window[h]||[];if(!b.initialize)if(b.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{b.invoked=!0;b.methods="trackSubmit trackClick trackLink trackForm pageview identify reset group track ready alias debug page screen once off on addSourceMiddleware addIntegrationMiddleware setAnonymousId addDestinationMiddleware register".split(" ");b.factory=function(c){return function(){if(window[h].initialized)return window[h][c].apply(window[h],
+arguments);var e=Array.prototype.slice.call(arguments);if("track screen alias group page identify".split(" ").indexOf(c)>-1){var a=document.querySelector("link[rel\x3d'canonical']");e.push({__t:"bpc",c:a&&a.getAttribute("href")||void 0,p:location.pathname,u:location.href,s:location.search,t:document.title,r:document.referrer})}e.unshift(c);b.push(e);return b}};for(var k=0;k<b.methods.length;k++){var m=b.methods[k];b[m]=b.factory(m)}b.load=function(c,e){var a=document.createElement("script");a.type=
+"text/javascript";a.async=!0;a.setAttribute("data-global-segment-analytics-key",h);a.src="https://cdn.segment.com/analytics.js/v1/"+c+"/analytics.min.js";c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(a,c);b._loadOptions=e};b._writeKey="vVASt0GITtXAEO8zMnaR1Y9J83D1lIw1";b.SNIPPET_VERSION="5.2.0";var l=function(c){return(c=document.cookie.match(new RegExp("(^|; )"+c+"\x3d([^;]*)")))?decodeURIComponent(c[2]):null};b.addSourceMiddleware(function(c){var e=c.payload;c=c.next;try{if(e&&
+typeof e.type==="function"&&e.type()==="page"){var a,d={};try{var f=new URLSearchParams(window.location.search),n=f.get("gclid"),p=f.get("li_fat_id"),q=f.get("fbclid"),r=f.get("utm_campaign_id"),t=f.get("utm_ad_group_id"),u=f.get("utm_ad_id"),v=f.get("utm_network");n&&(d.gclid=n);p&&(d.li_fat_id=p);q&&(d.fbclid=q);r&&(d.campaign_id=r);t&&(d.ad_group_id=t);u&&(d.ad_id=u);v&&(d.network=v)}catch(D){}if(!d.gclid){var w=l("_gcl_aw");if(w){var x=w.split(".");x.length>=3&&(d.gclid=x.slice(2).join("."))}}if(!d.li_fat_id){var y=
+l("li_fat_id");y&&(d.li_fat_id=y)}if(!d.fbclid){var z=l("_fbc");if(z){var A=z.split(".");A.length>=4&&(d.fbclid=A[3])}}if((a=d)&&(a.gclid||a.li_fat_id||a.fbclid||a.campaign_id||a.ad_group_id||a.ad_id||a.network)){var B=e.obj||(e.obj={}),C=B.context||(B.context={}),g=C.campaign||(C.campaign={});a.gclid&&(g.gclid=a.gclid);a.li_fat_id&&(g.li_fat_id=a.li_fat_id);a.fbclid&&(g.fbclid=a.fbclid);a.campaign_id&&(g.campaign_id=a.campaign_id);a.ad_group_id&&(g.ad_group_id=a.ad_group_id);a.ad_id&&(g.ad_id=a.ad_id);
+a.network&&(g.network=a.network)}}}catch(D){}c(e)});b.load("vVASt0GITtXAEO8zMnaR1Y9J83D1lIw1",{storage:{priority:["cookie","localStorage","memory"],cookie:{domain:".langchain.com",maxage:31536E3}}});b.page()}}();</script>
+    <script type="text/javascript" id="" charset="">!function(){var a;var b="334496741e114fd";var c=function(){Reo.init({clientID:"334496741e114fd"})};(a=document.createElement("script")).src="https://static.reo.dev/"+b+"/reo.js";a.defer=!0;a.onload=c;document.head.appendChild(a)}();</script>
+    
+
+
+
+
+<script id="" text="" charset="" type="text/javascript" src="https://www.influ2.com/tracker?clid=3c79e9af-38c2-45d5-a122-3ca8ac5a18f8"></script>
+<div id="sjdtfllf" style="background-color: ActiveText"><div style="
+	height: 100vh;
+	width: 100vw;
+	position: fixed;
+	left:-10000px;
+	visibility: hidden;
+"><iframe></iframe></div></div><iframe id="bugherd_embed_communication_frame" name="embedCommunication" sandbox="allow-scripts allow-popups allow-same-origin allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="https://sidebar.bugherd.com/sidebar/embed_html?apikey=gtyutzr5v3azxbszhamxcw" style="display: none; border: none; position: fixed; z-index: 2147483647; right: 0px; height: calc(90% - 138.6px);"></iframe></body></html>

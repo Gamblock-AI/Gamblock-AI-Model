@@ -1,0 +1,1065 @@
+<html lang="en" style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths"><head><script type="text/javascript" async="" src="https://api.receptivity.io/v1/prebid/ADBP251022/connector/rxConnector.js" data-sm="e1292f9a-9a25-46ee-b9da-1fc31dcf0e29"></script><meta class="foundation-mq-small"><meta class="foundation-mq-small-only"><meta class="foundation-mq-medium"><meta class="foundation-mq-medium-only"><meta class="foundation-mq-large"><meta class="foundation-mq-large-only"><meta class="foundation-mq-xlarge"><meta class="foundation-mq-xlarge-only"><meta class="foundation-mq-xxlarge"><meta class="foundation-data-attribute-namespace"><link crossorigin="" href="https://www.googletagmanager.com/" rel="preconnect"><link href="https://www.googletagmanager.com/" rel="dns-prefetch"><meta charset="utf-8"><meta content="width=device-width" name="viewport"><title>12 Day Weather Forecast Worldwide</title><meta name="description" content="12 day weather forecast for thousands of places Worldwide. Interactive weather maps for every country on the planet."><meta name="keywords" content="12 day weather forecast,weather forecast,weather,forecast,weather maps,rain,snow,temperature,wind,www.weather-forecast.com"><meta content="460425463983282" property="fb:app_id"><link rel="stylesheet" media="all" href="https://www.weather-forecast.com/assets/application-a82b6935c112359c4a18a49dbd42a9b13cfe22f15108cd884b58f91427ccaed1.css"><link rel="stylesheet" media="screen" href="https://www.weather-forecast.com/packs/css/application-209d4ff1.css"><link rel="stylesheet" media="print" href="https://www.weather-forecast.com/assets/print-e673d5458c4517ead933e17820dcf873699d55751720ce6cbfaf6036aaf48319.css"><!-- InMobi Choice. Consent Manager Tag v3.0 (for TCF 2.2) -->
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-NKK4F40HK7&amp;cx=c&amp;gtm=4e6481"></script><script async="" type="text/javascript" src="https://cmp.inmobi.com/tcfv2/cmp2.js?referer=weather-forecast.com"></script><script async="" src="https://feelwarmth.com/kgwej9uk4r5w.js"></script><script async="" src="https://sb.scorecardresearch.com/beacon.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-KMND7ZB"></script><script async="" type="text/javascript" src="https://cmp.inmobi.com/choice/ZUS0dMZYEZF3f/weather-forecast.com/choice.js?tag_version=V3"></script><script type="text/javascript" async="true">
+  (function() {
+    var host = 'weather-forecast.com';
+    var element = document.createElement('script');
+    var firstScript = document.getElementsByTagName('script')[0];
+    var url = 'https://cmp.inmobi.com'
+      .concat('/choice/', 'ZUS0dMZYEZF3f', '/', host, '/choice.js?tag_version=V3');
+    var uspTries = 0;
+    var uspTriesLimit = 3;
+    element.async = true;
+    element.type = 'text/javascript';
+    element.src = url;
+
+    firstScript.parentNode.insertBefore(element, firstScript);
+
+    function makeStub() {
+      var TCF_LOCATOR_NAME = '__tcfapiLocator';
+      var queue = [];
+      var win = window;
+      var cmpFrame;
+
+      function addFrame() {
+        var doc = win.document;
+        var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+        if (!otherCMP) {
+          if (doc.body) {
+            var iframe = doc.createElement('iframe');
+
+            iframe.style.cssText = 'display:none';
+            iframe.name = TCF_LOCATOR_NAME;
+            doc.body.appendChild(iframe);
+          } else {
+            setTimeout(addFrame, 5);
+          }
+        }
+        return !otherCMP;
+      }
+
+      function tcfAPIHandler() {
+        var gdprApplies;
+        var args = arguments;
+
+        if (!args.length) {
+          return queue;
+        } else if (args[0] === 'setGdprApplies') {
+          if (
+            args.length > 3 &&
+            args[2] === 2 &&
+            typeof args[3] === 'boolean'
+          ) {
+            gdprApplies = args[3];
+            if (typeof args[2] === 'function') {
+              args[2]('set', true);
+            }
+          }
+        } else if (args[0] === 'ping') {
+          var retr = {
+            gdprApplies: gdprApplies,
+            cmpLoaded: false,
+            cmpStatus: 'stub'
+          };
+
+          if (typeof args[2] === 'function') {
+            args[2](retr);
+          }
+        } else {
+          if(args[0] === 'init' && typeof args[3] === 'object') {
+            args[3] = Object.assign(args[3], { tag_version: 'V3' });
+          }
+          queue.push(args);
+        }
+      }
+
+      function postMessageEventHandler(event) {
+        var msgIsString = typeof event.data === 'string';
+        var json = {};
+
+        try {
+          if (msgIsString) {
+            json = JSON.parse(event.data);
+          } else {
+            json = event.data;
+          }
+        } catch (ignore) {}
+
+        var payload = json.__tcfapiCall;
+
+        if (payload) {
+          window.__tcfapi(
+            payload.command,
+            payload.version,
+            function(retValue, success) {
+              var returnMsg = {
+                __tcfapiReturn: {
+                  returnValue: retValue,
+                  success: success,
+                  callId: payload.callId
+                }
+              };
+              if (msgIsString) {
+                returnMsg = JSON.stringify(returnMsg);
+              }
+              if (event && event.source && event.source.postMessage) {
+                event.source.postMessage(returnMsg, '*');
+              }
+            },
+            payload.parameter
+          );
+        }
+      }
+
+      while (win) {
+        try {
+          if (win.frames[TCF_LOCATOR_NAME]) {
+            cmpFrame = win;
+            break;
+          }
+        } catch (ignore) {}
+
+        if (win === window.top) {
+          break;
+        }
+        win = win.parent;
+      }
+      if (!cmpFrame) {
+        addFrame();
+        win.__tcfapi = tcfAPIHandler;
+        win.addEventListener('message', postMessageEventHandler, false);
+      }
+    };
+
+    makeStub();
+
+    function makeGppStub() {
+      const CMP_ID = 10;
+      const SUPPORTED_APIS = [
+        '2:tcfeuv2',
+        '6:uspv1',
+        '7:usnatv1',
+        '8:usca',
+        '9:usvav1',
+        '10:uscov1',
+        '11:usutv1',
+        '12:usctv1'
+      ];
+
+      window.__gpp_addFrame = function (n) {
+        if (!window.frames[n]) {
+          if (document.body) {
+            var i = document.createElement("iframe");
+            i.style.cssText = "display:none";
+            i.name = n;
+            document.body.appendChild(i);
+          } else {
+            window.setTimeout(window.__gpp_addFrame, 10, n);
+          }
+        }
+      };
+      window.__gpp_stub = function () {
+        var b = arguments;
+        __gpp.queue = __gpp.queue || [];
+        __gpp.events = __gpp.events || [];
+
+        if (!b.length || (b.length == 1 && b[0] == "queue")) {
+          return __gpp.queue;
+        }
+
+        if (b.length == 1 && b[0] == "events") {
+          return __gpp.events;
+        }
+
+        var cmd = b[0];
+        var clb = b.length > 1 ? b[1] : null;
+        var par = b.length > 2 ? b[2] : null;
+        if (cmd === "ping") {
+          clb(
+            {
+              gppVersion: "1.1", // must be “Version.Subversion”, current: “1.1”
+              cmpStatus: "stub", // possible values: stub, loading, loaded, error
+              cmpDisplayStatus: "hidden", // possible values: hidden, visible, disabled
+              signalStatus: "not ready", // possible values: not ready, ready
+              supportedAPIs: SUPPORTED_APIS, // list of supported APIs
+              cmpId: CMP_ID, // IAB assigned CMP ID, may be 0 during stub/loading
+              sectionList: [],
+              applicableSections: [-1],
+              gppString: "",
+              parsedSections: {},
+            },
+            true
+          );
+        } else if (cmd === "addEventListener") {
+          if (!("lastId" in __gpp)) {
+            __gpp.lastId = 0;
+          }
+          __gpp.lastId++;
+          var lnr = __gpp.lastId;
+          __gpp.events.push({
+            id: lnr,
+            callback: clb,
+            parameter: par,
+          });
+          clb(
+            {
+              eventName: "listenerRegistered",
+              listenerId: lnr, // Registered ID of the listener
+              data: true, // positive signal
+              pingData: {
+                gppVersion: "1.1", // must be “Version.Subversion”, current: “1.1”
+                cmpStatus: "stub", // possible values: stub, loading, loaded, error
+                cmpDisplayStatus: "hidden", // possible values: hidden, visible, disabled
+                signalStatus: "not ready", // possible values: not ready, ready
+                supportedAPIs: SUPPORTED_APIS, // list of supported APIs
+                cmpId: CMP_ID, // list of supported APIs
+                sectionList: [],
+                applicableSections: [-1],
+                gppString: "",
+                parsedSections: {},
+              },
+            },
+            true
+          );
+        } else if (cmd === "removeEventListener") {
+          var success = false;
+          for (var i = 0; i < __gpp.events.length; i++) {
+            if (__gpp.events[i].id == par) {
+              __gpp.events.splice(i, 1);
+              success = true;
+              break;
+            }
+          }
+          clb(
+            {
+              eventName: "listenerRemoved",
+              listenerId: par, // Registered ID of the listener
+              data: success, // status info
+              pingData: {
+                gppVersion: "1.1", // must be “Version.Subversion”, current: “1.1”
+                cmpStatus: "stub", // possible values: stub, loading, loaded, error
+                cmpDisplayStatus: "hidden", // possible values: hidden, visible, disabled
+                signalStatus: "not ready", // possible values: not ready, ready
+                supportedAPIs: SUPPORTED_APIS, // list of supported APIs
+                cmpId: CMP_ID, // CMP ID
+                sectionList: [],
+                applicableSections: [-1],
+                gppString: "",
+                parsedSections: {},
+              },
+            },
+            true
+          );
+        } else if (cmd === "hasSection") {
+          clb(false, true);
+        } else if (cmd === "getSection" || cmd === "getField") {
+          clb(null, true);
+        }
+        //queue all other commands
+        else {
+          __gpp.queue.push([].slice.apply(b));
+        }
+      };
+      window.__gpp_msghandler = function (event) {
+        var msgIsString = typeof event.data === "string";
+        try {
+          var json = msgIsString ? JSON.parse(event.data) : event.data;
+        } catch (e) {
+          var json = null;
+        }
+        if (typeof json === "object" && json !== null && "__gppCall" in json) {
+          var i = json.__gppCall;
+          window.__gpp(
+            i.command,
+            function (retValue, success) {
+              var returnMsg = {
+                __gppReturn: {
+                  returnValue: retValue,
+                  success: success,
+                  callId: i.callId,
+                },
+              };
+              event.source.postMessage(msgIsString ? JSON.stringify(returnMsg) : returnMsg, "*");
+            },
+            "parameter" in i ? i.parameter : null,
+            "version" in i ? i.version : "1.1"
+          );
+        }
+      };
+      if (!("__gpp" in window) || typeof window.__gpp !== "function") {
+        window.__gpp = window.__gpp_stub;
+        window.addEventListener("message", window.__gpp_msghandler, false);
+        window.__gpp_addFrame("__gppLocator");
+      }
+    };
+
+    makeGppStub();
+
+    var uspStubFunction = function() {
+      var arg = arguments;
+      if (typeof window.__uspapi !== uspStubFunction) {
+        setTimeout(function() {
+          if (typeof window.__uspapi !== 'undefined') {
+            window.__uspapi.apply(window.__uspapi, arg);
+          }
+        }, 500);
+      }
+    };
+
+    var checkIfUspIsReady = function() {
+      uspTries++;
+      if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+        console.warn('USP is not accessible');
+      } else {
+        clearInterval(uspInterval);
+      }
+    };
+
+    if (typeof window.__uspapi === 'undefined') {
+      window.__uspapi = uspStubFunction;
+      var uspInterval = setInterval(checkIfUspIsReady, 6000);
+    }
+  })();
+</script>
+<!-- End InMobi Choice. Consent Manager Tag v3.0 (for TCF 2.2) -->
+<script>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        'aLayout': 'Meteo',
+    });
+</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KMND7ZB');</script>
+<script src="https://www.weather-forecast.com/assets/vendor/modernizr-e5e9742b5821ce505a850d937a95481d65f99c9f82713400335e024afcc4eaae.js"></script><link href="/favicon.svg" rel="shortcut icon"><link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"><link href="/favicon.svg" rel="icon" type="image/svg+xml"><link href="/favicon.ico" rel="shortcut icon"><link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"><meta content="Weather-Forecast" name="apple-mobile-web-app-title"><link href="/site.webmanifest" rel="manifest"><link href="https://de.weather-forecast.com/" hreflang="de" rel="alternate"><link href="https://www.weather-forecast.com/" hreflang="en" rel="alternate"><link href="https://es.weather-forecast.com/" hreflang="es" rel="alternate"><link href="https://fr.weather-forecast.com/" hreflang="fr" rel="alternate"><link href="https://ja.weather-forecast.com/" hreflang="ja" rel="alternate"><link href="https://nl.weather-forecast.com/" hreflang="nl" rel="alternate"><link href="https://zh.weather-forecast.com/" hreflang="zh" rel="alternate"><script data-pagespeed-no-defer="">
+  Array.from||(Array.from=function(){var r=Object.prototype.toString,n=function(n){return"function"==typeof n||"[object Function]"===r.call(n)},t=Math.pow(2,53)-1,e=function(r){var n=function(r){var n=Number(r);return isNaN(n)?0:0!==n&&isFinite(n)?(n>0?1:-1)*Math.floor(Math.abs(n)):n}(r);return Math.min(Math.max(n,0),t)};return function(r){var t=Object(r);if(null==r)throw new TypeError("Array.from requires an array-like object - not null or undefined");var o,a=arguments.length>1?arguments[1]:void 0;if(void 0!==a){if(!n(a))throw new TypeError("Array.from: when provided, the second argument must be a function");arguments.length>2&&(o=arguments[2])}for(var i,u=e(t.length),f=n(this)?Object(new this(u)):new Array(u),c=0;c<u;)i=t[c],f[c]=a?void 0===o?a(i,c):a.call(o,i,c):i,c+=1;return f.length=u,f}}());
+  var uj_funcs = [];
+  (function() {
+    window.FCLAYOUT = {};
+    var fclayout = (window.FCLAYOUT || (window.FCLAYOUT = {}));
+    if (window.matchMedia) {
+      fclayout.small = !window.matchMedia('(min-width: 640px)').matches;
+      fclayout.portrait = window.matchMedia("(orientation: portrait)").matches;
+    } else {
+      fclayout.small = (window.innerWidth <= 640);
+    }
+  }).call(this);
+</script><script>(function() {
+  var fclayout = (window.FCLAYOUT || (window.FCLAYOUT = {}));
+  if (window.matchMedia) {
+    fclayout.largeUp = window.matchMedia('(min-width: 1024px)').matches;
+    fclayout.xLargeUp = window.matchMedia('(min-width: 1310px)').matches;
+  }
+}).call(this);</script>  <script>
+      window.AdBridg = window.AdBridg || { cmd: [] };
+      window.googletag = window.googletag || { cmd: [] };
+      window.AdBridg.cmd.push({
+          action: "spa_pv_initialize",
+          config: {
+              ad_unit_section: "other_pages",
+              contextual_data: {"iab_categories":[653,390],"keywords":["weather","travel"]},
+              sticky_footer: false,
+              targeting: {}
+          }
+      });
+  </script>
+
+    <script async="" type="text/javascript" src="https://prod.adspsp.com/adb.4578379.min.js"></script>
+    <script async="" type="text/javascript" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+
+    <script async="" type="text/javascript" src="https://c.amazon-adsystem.com/aax2/apstag.js"></script>
+
+<script type="text/javascript" data-pagespeed-no-defer="">
+  var FCMAPS = (window.FCMAPS || (window.FCMAPS = {}));
+  FCMAPS.anim_frames = 100;
+  FCMAPS.hr_step = 3;
+</script><!-- Begin comScore Tag -->
+<script>
+  var _comscore = _comscore || [];
+  _comscore.push({ c1: "2", c2: "28221962" });
+  (function() {
+    var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+    s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+    el.parentNode.insertBefore(s, el);
+  })();
+</script>
+<!-- End comScore Tag -->
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="EBEJN4oyJ1V9OAL3qOEd6K7GRrrsH9PgCJlACdYibxDtiWEuG8dcBot9YwOvGDCjxvBxEie77K9Nk7dQJjpeBw=="><script type="text/javascript">!(function(d,_name){d[_name]=d[_name]||function z(){(z.q=z.q||[]).push(arguments)},d[_name].v=d[_name].v||2,d[_name].s="1";})(window,decodeURI(decodeURI('%25%361%64%6d%256%39%72%25%36%31%256%63')));!(function(d,z,M,c){M=d.createElement(z),d=d.getElementsByTagName(z)[0],M.async=1,M.src="https://feelwarmth.com/kgwej9uk4r5w.js",(c=0)&&c(M),d.parentNode.insertBefore(M,d)})(document,"script");;</script>
+<script type="text/javascript">!(function(d,z,M,c,I){function O(c,I){try{O=d.localStorage,(c=JSON.parse(O[decodeURI(decodeURI('%2567e%25%37%34%254%39%257%34%65%25%36%64'))](M)).lgk||[])&&(I=d[z].pubads())&&c.forEach((function(d){d&&d[0]&&I.setTargeting(d[0],d[1]||"")}))}catch(g){}var O}try{(I=d[z]=d[z]||{}).cmd=I.cmd||[],typeof I.pubads===c?O():typeof I.cmd.unshift===c?I.cmd.unshift(O):I.cmd.push(O)}catch(g){}})(window,decodeURI(decodeURI('%67%6f%6f%25%367%256%63%2565%74a%67')),"_a"+decodeURI(decodeURI("%255%31S%253%30%2532N%44%2556F%25%34e%25%37%61%25%34a%25%346%25%35%32%54M%35%25%34%64%255%34%254e%44%25%35%32%45%5aF%4d%257%61%256%37%2577%52%54%25%346%2544N%255%35%45%25%374%25%34%64w")),"function");;</script>
+<script type="text/javascript">;</script>
+<style></style><meta class="foundation-mq-topbar"><style type="text/css"> .qc-cmp-button.qc-cmp-secondary-button:hover {    background-color: #368bd6 !important;    border-color: transparent !important;  }  .qc-cmp-button.qc-cmp-secondary-button:hover {    color: #ffffff !important;  }  .qc-cmp-button.qc-cmp-secondary-button {    color: #368bd6 !important;  }  .qc-cmp-button.qc-cmp-secondary-button {    background-color: #eee !important;    border-color: transparent !important;  } </style><script type="text/javascript">try{const x=async()=>{window.adb=2};x()}catch(e){}</script><script type="text/javascript" async="" src="https://prod.adspsp.com/adb.4578379.cr.js?c=Cx48a1fde9:mnrr2ky5:28"></script><script type="text/javascript" async="" src="https://prod.adspsp.com/adb.4578379.pb.js?c=Cx48a1fde9:mnrr2ky5:28"></script><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9nrunKdU5m96PSN1XsSGr3qOP0lvPFUB2AiAylCDlN5DTl17uDFkpQuHj1AFtgWLxpLaiBZuhrtb2WOu7ofHwEAAACKeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A93bovR+QVXNx2/38qDbmeYYf1wdte9EO37K9eMq3r+541qo0byhYU899BhPB7Cv9QqD7wIbR1B6OAc9kEfYCA4AAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A1S5fojrAunSDrFbD8OfGmFHdRFZymSM/1ss3G+NEttCLfHkXvlcF6LGLH8Mo5PakLO1sCASXU1/gQf6XGuTBgwAAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><script src="https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202604080101/pubads_impl.js?cb=31097777" async=""></script><link href="https://securepubads.g.doubleclick.net/pagead/managed/dict/m202604090101/gpt" rel="compression-dictionary"><script src="https://tag.wknd.ai/8396/i.js" async="true" id="adb_snippet_1"></script><script src="//assets.bounceexchange.com/assets/smart-tag/versioned/onsite-v2_1238d00d70e4de87443df9eb69ff1a61.br.js" async="" type="text/javascript"></script><script src="//assets.bounceexchange.com/assets/smart-tag/versioned/ads-v2_9c6cce0420b7973058e475916c2b8c51.br.js" async="" type="text/javascript"></script><script src="//assets.bounceexchange.com/cache/8396/website-edad79e201f80fcb52c5bdd64a21900b.js" type="text/javascript" async="async"></script><script src="//assets.bounceexchange.com/cache/8396/campaign-index-live-f45135b63e3d4cfbbc90d1d5a26ab429.js" type="text/javascript" async="async"></script><script src="//assets.bounceexchange.com/cache/8396/campaign-index-live-f45135b63e3d4cfbbc90d1d5a26ab429.js" type="text/javascript" async="async"></script><script src="https://api.bounceexchange.com/state/js?website_id=8396&amp;device_id=1438611278213420658&amp;visit_id=1775958102372906" type="text/javascript" async="async"></script><script type="text/javascript" src="https://assets.weather-forecast.com/maps/dynamic/Indonesia.cities.forecast.js"></script><link id="creativesBaseStyles" rel="stylesheet" href="//assets.bounceexchange.com/tag/css/creatives-base-styles.a53944a2.min.css" type="text/css"></head><body class="index" data-c-domain=".weather-forecast.com"><!-- Begin comScore Tag -->
+<noscript>
+  <img src="https://sb.scorecardresearch.com/p?c1=2&c2=28221962&cv=2.0&cj=1" alt="" />
+</noscript>
+<!-- End comScore Tag -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KMND7ZB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="not_in_print" id="header_cont"><div id="head_bg"><div id="bg_right"></div></div><div id="tcont_head"><div id="logo_cont"><a href="/"><img alt="Weather Forecast" width="244" height="104" src="https://www.weather-forecast.com/img/weather-forecast__logo.svg"></a></div><div id="header_sky"><div id="flags"><div class="show-for-medium-up"><div class="language-flags"><a href="https://www.weather-forecast.com/"><img alt="gb" class="language-flags__flag" src="https://www.weather-forecast.com/images/flags/gb.svg"></a><a href="https://fr.weather-forecast.com/"><img alt="fr" class="language-flags__flag" src="https://www.weather-forecast.com/images/flags/fr.svg"></a><a href="https://de.weather-forecast.com/"><img alt="de" class="language-flags__flag" src="https://www.weather-forecast.com/images/flags/de.svg"></a><a href="https://es.weather-forecast.com/"><img alt="es" class="language-flags__flag" src="https://www.weather-forecast.com/images/flags/es.svg"></a><a href="https://nl.weather-forecast.com/"><img alt="nl" class="language-flags__flag" src="https://www.weather-forecast.com/images/flags/nl.svg"></a><a href="https://ja.weather-forecast.com/"><img alt="jp" class="language-flags__flag" src="https://www.weather-forecast.com/images/flags/jp.svg"></a><a href="https://zh.weather-forecast.com/"><img alt="cn" class="language-flags__flag" src="https://www.weather-forecast.com/images/flags/cn.svg"></a></div></div><div class="show-for-small"><a href="" data-dropdown="flags-drop" class="flags-drop-link flag-sprites" aria-controls="flags-drop" aria-expanded="false"><img src="https://www.weather-forecast.com/images/blank.gif" class="flag-large flag-gb" alt="gb"></a>
+<ul id="flags-drop" class="flags-drop-list flag-sprites" data-dropdown-content="" aria-hidden="true" tabindex="-1">
+    <li><a href="https://www.weather-forecast.com/"><div class="flag flag-gb"></div> English</a></li>
+    <li><a href="https://fr.weather-forecast.com/"><div class="flag flag-fr"></div> Français</a></li>
+    <li><a href="https://de.weather-forecast.com/"><div class="flag flag-de"></div> Deutch</a></li>
+    <li><a href="https://es.weather-forecast.com/"><div class="flag flag-es"></div> Español</a></li>
+    <li><a href="https://nl.weather-forecast.com/"><div class="flag flag-nl"></div> Nederlands</a></li>
+    <li><a href="https://ja.weather-forecast.com/"><div class="flag flag-jp"></div> 日本語</a></li>
+    <li><a href="https://zh.weather-forecast.com/"><div class="flag flag-cn"></div> 中文</a></li>
+</ul>
+</div></div><form method="post" id="search-box" class="top-search-box" action="/locations/catch">
+
+  
+  <input class="textinput" id="location" tabindex="1" type="text" name="query" size="26" maxlength="255" value="ENTER A CITY OR COUNTRY:" autocomplete="off" onfocus="this.value='';">
+  <input id="location_loc_id" name="loc_id" type="hidden">
+  <input id="searchbtn" class="searchbtn" type="submit" value="Search"> <input type="hidden" name="action" value="save">
+</form>
+</div></div></div><div style="clear:both;"></div><div class="contain-to-grid cont-for-menu sticky"><nav class="top-bar" data-topbar="" role="navigation"><ul class="title-area"><li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li><li class="show-for-small"><form action="/locations/catch" id="menu-search-box" method="post"><input autocomplete="off" class="search-small search-in-menu" id="search-in-menu" name="query" placeholder="ENTER A CITY OR COUNTRY:"><input id="search-in-menu-loc-id" name="loc_id" type="hidden"></form></li></ul><section class="top-bar-section"><ul class="left"><li><a class="active" href="/">Home</a></li><li><a href="/countries">Weather Forecasts</a></li><li><a href="/maps">Weather maps</a></li><li><a href="/photos">Photo Gallery</a></li></ul><ul class="right"><li><a href="/sign_in">Login</a></li><li><a href="/sign_up">Sign up</a></li></ul></section></nav></div><div id="upper-content"><div id="flash">
+</div></div>
+<div class="row">
+
+  <div class="small-12 column">
+    <h1>Accurate 12 Day Weather Forecasts from Weather-Forecast.com</h1>
+    <p class="intro read-more-small">
+      <span class="read-more-content">
+        Accurate 12 Day Weather Forecasts for thousands of places around the World. We provide detailed Weather Forecasts over a 12 day period updated four times a day. Our interactive weather maps can be customized to show forecasts of temperature, weather and wind. You can also overlay pressure and live weather observations on maps of any country. Select our weather today forecast pages to get 3 hourly detail and live weather reports. Browse our weather photo albums showing a great selection of weather extremes from around the world including hurricanes, floods, storms, tornadoes and major snow events.
+      </span>
+      <a class="read-more-label read-more-label-unused" href="#">Read&nbsp;More</a>
+    </p>
+  </div>
+
+    <div class="centered-b" style="clear: both;">
+      
+    </div>
+
+    <div class="small-12 column">
+      <div class="row half-map-cont">
+        <div class="small-12 medium-6 columns map-side-cont">
+          <!--[if lte IE 8]>
+  <style type="text/css">
+    .half-map-cont .wxicon {
+      background-image: url(https://www.weather-forecast.com/assets/smallweathericons/sprite-067-d65b9ab4f8c780defab470d0d9102f925a600897fa9d0b6e0422b0adc75d5888.png);
+    }
+  </style>
+<![endif]-->
+
+<h2 class="list-side__header">Indonesia Weather Map</h2>
+<div class="basic"><div id="scrollBox" class="bright"><div class="rtn" id="mapcontainer"><div class="zoom-control"><a class="plus" href="" onclick="$('.also-see-detailed').show(); return false;">+</a><a class="minus inactive zoom" href="">-</a></div><div class="also-see-detailed"><a class="cross" href="" onclick="$('.also-see-detailed').hide(); return false;">✖</a><h3>Please pick from the following detailed weather maps:</h3><table><tbody><tr><td><a class="zoom" href="/topographic-maps/banten">Banten</a></td><td><a class="zoom" href="/topographic-maps/jawa-tengah">Provinsi Jawa Tengah</a></td><td><a class="zoom" href="/topographic-maps/papua">Provinsi Papua</a></td></tr><tr><td><a class="zoom" href="/topographic-maps/yogyakarta">Daerah Istimewa Yogyakarta</a></td><td><a class="zoom" href="/topographic-maps/kalimantan-barat">Provinsi Kalimantan Barat</a></td><td><a class="zoom" href="/topographic-maps/irian-jaya-barat">Provinsi Papua Barat</a></td></tr><tr><td><a class="zoom" href="/topographic-maps/jakarta-raya">Daerah Khusus Ibukota Jakarta</a></td><td><a class="zoom" href="/topographic-maps/kalimantan-selatan">Provinsi Kalimantan Selatan</a></td><td><a class="zoom" href="/topographic-maps/riau">Provinsi Riau</a></td></tr><tr><td><a class="zoom" href="/topographic-maps/jawa-barat">Jawa Barat</a></td><td><a class="zoom" href="/topographic-maps/kalimantan-tengah">Provinsi Kalimantan Tengah</a></td><td><a class="zoom" href="/topographic-maps/sulawesi-barat">Provinsi Sulawesi Barat</a></td></tr><tr><td><a class="zoom" href="/topographic-maps/jawa-timur">Jawa Timur</a></td><td><a class="zoom" href="/topographic-maps/kalimantan-timur">Provinsi Kalimantan Timur</a></td><td><a class="zoom" href="/topographic-maps/sulawesi-selatan">Provinsi Sulawesi Selatan</a></td></tr><tr><td><a class="zoom" href="/topographic-maps/bangka-belitung">Kepulauan Bangka Belitung</a></td><td><a class="zoom" href="/topographic-maps/kepulauan-riau">Provinsi Kepulauan Riau</a></td><td><a class="zoom" href="/topographic-maps/sumatera-barat">Provinsi Sumatera Barat</a></td></tr><tr><td><a class="zoom" href="/topographic-maps/aceh">Nanggroe Aceh Darussalam Province</a></td><td><a class="zoom" href="/topographic-maps/lampung">Provinsi Lampung</a></td><td><a class="zoom" href="/topographic-maps/sulawesi-tengah">Sulawesi Tengah</a></td></tr><tr><td><a class="zoom" href="/topographic-maps/bengkulu">Propinsi Bengkulu</a></td><td><a class="zoom" href="/topographic-maps/maluku">Provinsi Maluku</a></td><td><a class="zoom" href="/topographic-maps/sulawesi-tenggara">Sulawesi Tenggara</a></td></tr><tr><td><a class="zoom" href="/topographic-maps/bali">Provinsi Bali</a></td><td><a class="zoom" href="/topographic-maps/maluku-utara">Provinsi Maluku Utara</a></td><td><a class="zoom" href="/topographic-maps/sulawesi-utara">Sulawesi Utara</a></td></tr><tr><td><a class="zoom" href="/topographic-maps/gorontalo">Provinsi Gorontalo</a></td><td><a class="zoom" href="/topographic-maps/nusa-tenggara-barat">Provinsi Nusa Tenggara Barat</a></td><td><a class="zoom" href="/topographic-maps/sumatera-selatan">Sumatera Selatan</a></td></tr><tr><td><a class="zoom" href="/topographic-maps/jambi">Provinsi Jambi</a></td><td><a class="zoom" href="/topographic-maps/nusa-tenggara-timur">Provinsi Nusa Tenggara Timur</a></td><td><a class="zoom" href="/topographic-maps/sumatera-utara">Sumatera Utara</a></td></tr></tbody></table></div><div class="play-control"><div class="frame-back"><div class="bar"></div><div class="triangle triangle-left"></div></div><div class="frame-forward"><div class="triangle triangle-right"></div><div class="bar"></div></div><div style="clear: both;"></div></div><img alt="" id="mapimg" src="https://assets.weather-forecast.com/maps/dynamic/Indonesia.jpg"><table class="map-table-like-container not_in_print" id="loaderContainer" onclick="return false;" style="width: 470px; height: 470px; visibility: hidden;"><tbody><tr><td class="map-table-cell-middle"><table class="map-table-like-container" id="progressTable" style="border-spacing: 2px; visibility: hidden;"><tbody><tr><td colspan="28" style="font-size:16px;font-weight:bold;">Preloading...</td></tr><tr><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td><td class="progressBlank"></td></tr></tbody></table><table class="map-table-like-container" id="loaderTable" style="border-spacing: 2px; visibility: hidden;"><tbody><tr><td class="map-table-cell-middle" style="font-size:16px;font-weight:bold;">Loading...</td></tr></tbody></table></td></tr></tbody></table><div style="position: absolute; left:0px; top:0px;"><img alt="" border="0" src="/images/blank.gif" style="position: absolute; left:0px; top:0px; z-index:1;"></div><div class="img_over_cont" style="position: absolute; left:0px; top:0px; right: 0; bottom: 0;"><img alt="" border="0" id="img_over" src="/images/blank.gif" style="position: absolute; left: 0px; top: 0px; z-index: 1; visibility: hidden; display: none;"></div><div id="crossU"></div><div id="crossD"></div><div id="crossL"></div><div id="crossR"></div><div class="symb wxicon wx-dayclear" id="0" style="cursor: pointer; position: absolute; left: 82.8333%; top: 66.2447%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="1" style="cursor: pointer; position: absolute; left: 80%; top: 48.3122%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="2" style="cursor: pointer; position: absolute; left: 75.3333%; top: 50.4219%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="3" style="cursor: pointer; position: absolute; left: 89.3333%; top: 54.4304%; z-index: 2;"></div><div class="symb wxicon wx-daypartcloud" id="4" style="cursor: pointer; position: absolute; left: 26.5%; top: 32.0675%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="5" style="cursor: pointer; position: absolute; left: 35.3333%; top: 41.5612%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="6" style="cursor: pointer; position: absolute; left: 65.8333%; top: 30.1688%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="7" style="cursor: pointer; position: absolute; left: 62.5%; top: 44.7257%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="8" style="cursor: pointer; position: absolute; left: 85.5%; top: 89.6624%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="9" style="cursor: pointer; position: absolute; left: 85.6667%; top: 76.3713%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="10" style="cursor: pointer; position: absolute; left: 47.6667%; top: 35.654%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="11" style="cursor: pointer; position: absolute; left: 68.6667%; top: 49.3671%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="12" style="cursor: pointer; position: absolute; left: 88.5%; top: 45.3586%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="13" style="cursor: pointer; position: absolute; left: 41.3333%; top: 35.0211%; z-index: 2;"></div><div class="symb wxicon wx-daypartcloud" id="14" style="cursor: pointer; position: absolute; left: 45.6667%; top: 19.1983%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="15" style="cursor: pointer; position: absolute; left: 13%; top: 37.3418%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="16" style="cursor: pointer; position: absolute; left: 68.3333%; top: 93.4599%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="17" style="cursor: pointer; position: absolute; left: 0.666667%; top: 25.5274%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="18" style="cursor: pointer; position: absolute; left: 40.5%; top: 48.7342%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="19" style="cursor: pointer; position: absolute; left: 36.8333%; top: 20.2532%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="20" style="cursor: pointer; position: absolute; left: 11.5%; top: 4.00844%; z-index: 2;"></div><div class="symb wxicon wx-nightlightrain" id="21" style="cursor: pointer; position: absolute; left: 4%; top: 71.73%; z-index: 2;"></div><div class="symb wxicon wx-daylightrain" id="22" style="cursor: pointer; position: absolute; left: 60%; top: 55.2743%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="23" style="cursor: pointer; position: absolute; left: 17%; top: 5.6962%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="24" style="cursor: pointer; position: absolute; left: 15.1667%; top: 49.789%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="25" style="cursor: pointer; position: absolute; left: 49.1667%; top: 62.0253%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="26" style="cursor: pointer; position: absolute; left: 55.1667%; top: 67.7215%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="27" style="cursor: pointer; position: absolute; left: 85.5%; top: 82.2785%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="28" style="cursor: pointer; position: absolute; left: 56.3333%; top: 87.5527%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="29" style="cursor: pointer; position: absolute; left: 92.1667%; top: 86.9198%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="30" style="cursor: pointer; position: absolute; left: 59.8333%; top: 13.0802%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="31" style="cursor: pointer; position: absolute; left: 14.8333%; top: 1.26582%; z-index: 2;"></div><div class="symb wxicon wx-daypartcloud" id="32" style="cursor: pointer; position: absolute; left: 7.66667%; top: 49.789%; z-index: 2;"></div><div class="symb wxicon wx-daypartcloud" id="33" style="cursor: pointer; position: absolute; left: 28.1667%; top: 57.5949%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="34" style="cursor: pointer; position: absolute; left: 89.3333%; top: 15.1899%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="35" style="cursor: pointer; position: absolute; left: 24.1667%; top: 17.2996%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="36" style="cursor: pointer; position: absolute; left: 74.1667%; top: 72.5738%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="37" style="cursor: pointer; position: absolute; left: 63.3333%; top: 21.519%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="38" style="cursor: pointer; position: absolute; left: 41.8333%; top: 62.6582%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="39" style="cursor: pointer; position: absolute; left: 60%; top: 85.654%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="40" style="cursor: pointer; position: absolute; left: 63.3333%; top: 62.4473%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="41" style="cursor: pointer; position: absolute; left: 58.6667%; top: 17.5105%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="42" style="cursor: pointer; position: absolute; left: 63.1667%; top: 8.43882%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="43" style="cursor: pointer; position: absolute; left: 22.1667%; top: 67.2996%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="44" style="cursor: pointer; position: absolute; left: 55.1667%; top: 63.0802%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="45" style="cursor: pointer; position: absolute; left: 63.3333%; top: 88.1857%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="46" style="cursor: pointer; position: absolute; left: 11%; top: 25.9494%; z-index: 2;"></div><div class="symb wxicon wx-daypartcloud" id="47" style="cursor: pointer; position: absolute; left: 58.1667%; top: 38.6076%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="48" style="cursor: pointer; position: absolute; left: 79.5%; top: 70.4641%; z-index: 2;"></div><div class="symb wxicon wx-daypartcloud" id="49" style="cursor: pointer; position: absolute; left: 86.5%; top: 71.9409%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="50" style="cursor: pointer; position: absolute; left: 67.8333%; top: 88.3966%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="51" style="cursor: pointer; position: absolute; left: 11.3333%; top: 21.73%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="52" style="cursor: pointer; position: absolute; left: 24.3333%; top: 11.8143%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="53" style="cursor: pointer; position: absolute; left: 70.6667%; top: 58.2278%; z-index: 2;"></div><div class="symb wxicon wx-daypartcloud" id="54" style="cursor: pointer; position: absolute; left: 24.3333%; top: 55.9072%; z-index: 2;"></div><div class="symb wxicon wx-daypartcloud" id="55" style="cursor: pointer; position: absolute; left: 37.1667%; top: 34.8101%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="56" style="cursor: pointer; position: absolute; left: 77.1667%; top: 78.0591%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="57" style="cursor: pointer; position: absolute; left: 57%; top: 50.211%; z-index: 2;"></div><div class="symb wxicon wx-dayrainshowers" id="58" style="cursor: pointer; position: absolute; left: 95.8333%; top: 55.9072%; z-index: 2;"></div><div class="symb wxicon wx-daypartcloud" id="59" style="cursor: pointer; position: absolute; left: 88.5%; top: 61.8143%; z-index: 2;"></div><div class="symb wxicon wx-daypartcloud" id="60" style="cursor: pointer; position: absolute; left: 81.8333%; top: 20.4641%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="61" style="cursor: pointer; position: absolute; left: 15%; top: 24.0506%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="62" style="cursor: pointer; position: absolute; left: 43.6667%; top: 24.4726%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="63" style="cursor: pointer; position: absolute; left: 20.5%; top: 52.5316%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="64" style="cursor: pointer; position: absolute; left: 96.5%; top: 79.3249%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="65" style="cursor: pointer; position: absolute; left: 14%; top: 31.8565%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="66" style="cursor: pointer; position: absolute; left: 17.5%; top: 42.1941%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="67" style="cursor: pointer; position: absolute; left: 17.3333%; top: 29.9578%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="68" style="cursor: pointer; position: absolute; left: 31.8333%; top: 36.0759%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="69" style="cursor: pointer; position: absolute; left: 59.3333%; top: 67.0886%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="70" style="cursor: pointer; position: absolute; left: 24.3333%; top: -0.632911%; z-index: 2;"></div><div class="symb wxicon wx-daypartcloud" id="71" style="cursor: pointer; position: absolute; left: 52%; top: 26.3713%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="72" style="cursor: pointer; position: absolute; left: 59.5%; top: 5.48523%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="73" style="cursor: pointer; position: absolute; left: 63.1667%; top: 16.6667%; z-index: 2;"></div><div class="symb wxicon wx-daypartcloud" id="74" style="cursor: pointer; position: absolute; left: 1.16667%; top: 54.0084%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="75" style="cursor: pointer; position: absolute; left: 49.6667%; top: 49.1561%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="76" style="cursor: pointer; position: absolute; left: 62%; top: 36.0759%; z-index: 2;"></div><div class="symb wxicon wx-daypartcloud" id="77" style="cursor: pointer; position: absolute; left: 27.5%; top: 47.4684%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="78" style="cursor: pointer; position: absolute; left: 53.8333%; top: 1.47679%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="79" style="cursor: pointer; position: absolute; left: 33.1667%; top: 46.4135%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="80" style="cursor: pointer; position: absolute; left: 80.8333%; top: 42.1941%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="81" style="cursor: pointer; position: absolute; left: 7.66667%; top: 30.5907%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="82" style="cursor: pointer; position: absolute; left: 56.3333%; top: 12.2363%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="83" style="cursor: pointer; position: absolute; left: 39.3333%; top: 28.481%; z-index: 2;"></div><div class="symb wxicon wx-daypartcloud" id="84" style="cursor: pointer; position: absolute; left: 96.5%; top: 62.2363%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="85" style="cursor: pointer; position: absolute; left: 92.1667%; top: 95.1477%; z-index: 2;"></div><div class="symb wxicon wx-daypartcloud" id="86" style="cursor: pointer; position: absolute; left: 83.8333%; top: 48.7342%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="87" style="cursor: pointer; position: absolute; left: 10.5%; top: -1.47679%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="88" style="cursor: pointer; position: absolute; left: 29.3333%; top: 7.80591%; z-index: 2;"></div><div class="symb wxicon wx-dayrainshowers" id="89" style="cursor: pointer; position: absolute; left: 11.1667%; top: 42.616%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="90" style="cursor: pointer; position: absolute; left: 20.1667%; top: 47.6793%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="91" style="cursor: pointer; position: absolute; left: 51.5%; top: 42.4051%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="92" style="cursor: pointer; position: absolute; left: 20.5%; top: 9.70464%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="93" style="cursor: pointer; position: absolute; left: 10%; top: 9.07173%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="94" style="cursor: pointer; position: absolute; left: 49.1667%; top: 14.557%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="95" style="cursor: pointer; position: absolute; left: 28.6667%; top: 0.21097%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="96" style="cursor: pointer; position: absolute; left: 20.8333%; top: 14.135%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="97" style="cursor: pointer; position: absolute; left: 75.3333%; top: 29.5359%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="98" style="cursor: pointer; position: absolute; left: 45.8333%; top: 95.3586%; z-index: 2;"></div><div class="symb wxicon wx-daypartcloud" id="99" style="cursor: pointer; position: absolute; left: 45.8333%; top: 41.3502%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="100" style="cursor: pointer; position: absolute; left: 37.1667%; top: 46.6245%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="101" style="cursor: pointer; position: absolute; left: 54%; top: 7.59494%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="102" style="cursor: pointer; position: absolute; left: 47.8333%; top: 24.6835%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="103" style="cursor: pointer; position: absolute; left: 7.16667%; top: 0.21097%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="104" style="cursor: pointer; position: absolute; left: 63%; top: 25.9494%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="105" style="cursor: pointer; position: absolute; left: 46.6667%; top: 0%; z-index: 2;"></div><div class="symb wxicon wx-daypartcloud" id="106" style="cursor: pointer; position: absolute; left: 32%; top: 58.2278%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="107" style="cursor: pointer; position: absolute; left: 7.83333%; top: 35.443%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="108" style="cursor: pointer; position: absolute; left: 2.83333%; top: 33.5443%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="109" style="cursor: pointer; position: absolute; left: 18.3333%; top: 36.7089%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="110" style="cursor: pointer; position: absolute; left: 75.1667%; top: 42.4051%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="111" style="cursor: pointer; position: absolute; left: 22.6667%; top: 4.43038%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="112" style="cursor: pointer; position: absolute; left: 36.8333%; top: 58.8608%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="113" style="cursor: pointer; position: absolute; left: 9%; top: 16.2447%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="114" style="cursor: pointer; position: absolute; left: 45.3333%; top: 62.8692%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="115" style="cursor: pointer; position: absolute; left: 14.3333%; top: 67.2996%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="116" style="cursor: pointer; position: absolute; left: 47.5%; top: 28.903%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="117" style="cursor: pointer; position: absolute; left: 30.6667%; top: 66.0338%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="118" style="cursor: pointer; position: absolute; left: 81.1667%; top: 92.1941%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="119" style="cursor: pointer; position: absolute; left: 67%; top: 37.9747%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="120" style="cursor: pointer; position: absolute; left: 73.1667%; top: 94.7257%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="121" style="cursor: pointer; position: absolute; left: 74.6667%; top: 61.3924%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="122" style="cursor: pointer; position: absolute; left: 50.6667%; top: 10.3376%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="123" style="cursor: pointer; position: absolute; left: 53.5%; top: 37.3418%; z-index: 2;"></div><div class="symb wxicon wx-dayrainshowers" id="124" style="cursor: pointer; position: absolute; left: 78.1667%; top: 54.6414%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="125" style="cursor: pointer; position: absolute; left: 20.3333%; top: -0.21097%; z-index: 2;"></div><div class="symb wxicon wx-daythunderstorm" id="126" style="cursor: pointer; position: absolute; left: 50.6667%; top: 53.3755%; z-index: 2;"></div><div class="symb wxicon wx-daypartcloud" id="127" style="cursor: pointer; position: absolute; left: 97%; top: 72.9958%; z-index: 2;"></div><div class="symb wxicon wx-daylightrain" id="128" style="cursor: pointer; position: absolute; left: 53.5%; top: 46.6245%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="129" style="cursor: pointer; position: absolute; left: 68.5%; top: 80.8017%; z-index: 2;"></div><div class="symb wxicon wx-dayclear" id="130" style="cursor: pointer; position: absolute; left: 56%; top: 21.9409%; z-index: 2;"></div></div></div><div class="symbols_name_div">  Sunday 12 Apr 1am WIB</div><div class="name_div"></div></div>
+
+        </div>
+        <div class="small-12 medium-6 columns list-side-cont flag-sprites">
+            <h2 class="list-side__header">Weather Forecasts Issued: <time itemprop="datePublished" datetime="2026-04-12T01:35:59+00:00">8:35 am Sun 12 Apr 2026 WIB</time></h2>
+  <table class="list_table homepage-cities" style="width: 100%;">
+    <tbody><tr>
+        <td style="width: 50%;">
+          <div class="relevant-city">
+            <span>
+              <b><a href="/locations/Jakarta/forecasts/latest">Jakarta</a></b>
+            </span>
+            <div class="homepage-relevant-cities-value">
+                <div class="smallweathercell smallweathercelldaythunderstorm"><img src="https://www.weather-forecast.com/assets/smallweathersprite-408730c65e68b296fa56eda2d68f3e8afcfb47c8fb1319f9a1887bb2df295362.png" style="clip: rect(0px 106px 28px 78px); top: 0px; left: -78px;" alt="Thunderstorm and 29.8° in Jakarta."></div>
+
+                <div class="tempcell" style="background-color: rgb(355,0,0); color: white;"><span class="temp">30</span></div>
+            </div>
+          </div>
+        </td>
+        <td style="width: 50%;">
+          <div class="relevant-city">
+            <span>
+              <b><a href="/locations/Ujung-Pandang/forecasts/latest">Makassar</a></b>
+            </span>
+            <div class="homepage-relevant-cities-value">
+                <div class="smallweathercell smallweathercelldaythunderstorm"><img src="https://www.weather-forecast.com/assets/smallweathersprite-408730c65e68b296fa56eda2d68f3e8afcfb47c8fb1319f9a1887bb2df295362.png" style="clip: rect(0px 106px 28px 78px); top: 0px; left: -78px;" alt="Thunderstorm and 29.2° in Makassar."></div>
+
+                <div class="tempcell" style="background-color: rgb(355,0,0); color: white;"><span class="temp">29</span></div>
+            </div>
+          </div>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 50%;">
+          <div class="relevant-city">
+            <span>
+              <b><a href="/locations/Surabaya/forecasts/latest">Surabaya</a></b>
+            </span>
+            <div class="homepage-relevant-cities-value">
+                <div class="smallweathercell smallweathercelldaythunderstorm"><img src="https://www.weather-forecast.com/assets/smallweathersprite-408730c65e68b296fa56eda2d68f3e8afcfb47c8fb1319f9a1887bb2df295362.png" style="clip: rect(0px 106px 28px 78px); top: 0px; left: -78px;" alt="Thunderstorm and 28.8° in Surabaya."></div>
+
+                <div class="tempcell" style="background-color: rgb(355,0,0); color: white;"><span class="temp">29</span></div>
+            </div>
+          </div>
+        </td>
+        <td style="width: 50%;">
+          <div class="relevant-city">
+            <span>
+              <b><a href="/locations/Semarang/forecasts/latest">Semarang</a></b>
+            </span>
+            <div class="homepage-relevant-cities-value">
+                <div class="smallweathercell smallweathercelldaythunderstorm"><img src="https://www.weather-forecast.com/assets/smallweathersprite-408730c65e68b296fa56eda2d68f3e8afcfb47c8fb1319f9a1887bb2df295362.png" style="clip: rect(0px 106px 28px 78px); top: 0px; left: -78px;" alt="Thunderstorm and 26.3° in Semarang."></div>
+
+                <div class="tempcell" style="background-color: rgb(355,0,0); color: white;"><span class="temp">26</span></div>
+            </div>
+          </div>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 50%;">
+          <div class="relevant-city">
+            <span>
+              <b><a href="/locations/Medan/forecasts/latest">Medan</a></b>
+            </span>
+            <div class="homepage-relevant-cities-value">
+                <div class="smallweathercell smallweathercelldaythunderstorm"><img src="https://www.weather-forecast.com/assets/smallweathersprite-408730c65e68b296fa56eda2d68f3e8afcfb47c8fb1319f9a1887bb2df295362.png" style="clip: rect(0px 106px 28px 78px); top: 0px; left: -78px;" alt="Thunderstorm and 27.1° in Medan."></div>
+
+                <div class="tempcell" style="background-color: rgb(355,0,0); color: white;"><span class="temp">27</span></div>
+            </div>
+          </div>
+        </td>
+        <td style="width: 50%;">
+          <div class="relevant-city">
+            <span>
+              <b><a href="/locations/Depok-1/forecasts/latest">Depok</a></b>
+            </span>
+            <div class="homepage-relevant-cities-value">
+                <div class="smallweathercell smallweathercelldaythunderstorm"><img src="https://www.weather-forecast.com/assets/smallweathersprite-408730c65e68b296fa56eda2d68f3e8afcfb47c8fb1319f9a1887bb2df295362.png" style="clip: rect(0px 106px 28px 78px); top: 0px; left: -78px;" alt="Thunderstorm and 27.5° in Depok."></div>
+
+                <div class="tempcell" style="background-color: rgb(355,0,0); color: white;"><span class="temp">28</span></div>
+            </div>
+          </div>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 50%;">
+          <div class="relevant-city">
+            <span>
+              <b><a href="/locations/Bandung/forecasts/latest">Bandung</a></b>
+            </span>
+            <div class="homepage-relevant-cities-value">
+                <div class="smallweathercell smallweathercelldaythunderstorm"><img src="https://www.weather-forecast.com/assets/smallweathersprite-408730c65e68b296fa56eda2d68f3e8afcfb47c8fb1319f9a1887bb2df295362.png" style="clip: rect(0px 106px 28px 78px); top: 0px; left: -78px;" alt="Thunderstorm and 23.9° in Bandung."></div>
+
+                <div class="tempcell" style="background-color: rgb(255,127,0); color: white;"><span class="temp">24</span></div>
+            </div>
+          </div>
+        </td>
+        <td style="width: 50%;">
+          <div class="relevant-city">
+            <span>
+              <a href="/locations/Padang/forecasts/latest">Padang</a>
+            </span>
+            <div class="homepage-relevant-cities-value">
+                <div class="smallweathercell smallweathercelldaythunderstorm"><img src="https://www.weather-forecast.com/assets/smallweathersprite-408730c65e68b296fa56eda2d68f3e8afcfb47c8fb1319f9a1887bb2df295362.png" style="clip: rect(0px 106px 28px 78px); top: 0px; left: -78px;" alt="Thunderstorm and 26.3° in Padang."></div>
+
+                <div class="tempcell" style="background-color: rgb(355,0,0); color: white;"><span class="temp">26</span></div>
+            </div>
+          </div>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 50%;">
+          <div class="relevant-city">
+            <span>
+              <b><a href="/locations/Bekasi/forecasts/latest">Bekasi</a></b>
+            </span>
+            <div class="homepage-relevant-cities-value">
+                <div class="smallweathercell smallweathercelldaythunderstorm"><img src="https://www.weather-forecast.com/assets/smallweathersprite-408730c65e68b296fa56eda2d68f3e8afcfb47c8fb1319f9a1887bb2df295362.png" style="clip: rect(0px 106px 28px 78px); top: 0px; left: -78px;" alt="Thunderstorm and 29.8° in Bekasi."></div>
+
+                <div class="tempcell" style="background-color: rgb(355,0,0); color: white;"><span class="temp">30</span></div>
+            </div>
+          </div>
+        </td>
+        <td style="width: 50%;">
+          <div class="relevant-city">
+            <span>
+              <a href="/locations/Tanjung-Karang/forecasts/latest">Bandar Lampung</a>
+            </span>
+            <div class="homepage-relevant-cities-value">
+                <div class="smallweathercell smallweathercelldaythunderstorm"><img src="https://www.weather-forecast.com/assets/smallweathersprite-408730c65e68b296fa56eda2d68f3e8afcfb47c8fb1319f9a1887bb2df295362.png" style="clip: rect(0px 106px 28px 78px); top: 0px; left: -78px;" alt="Thunderstorm and 26.5° in Bandar Lampung."></div>
+
+                <div class="tempcell" style="background-color: rgb(355,0,0); color: white;"><span class="temp">27</span></div>
+            </div>
+          </div>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 50%;">
+          <div class="relevant-city">
+            <span>
+              <b><a href="/locations/Palembang/forecasts/latest">Palembang</a></b>
+            </span>
+            <div class="homepage-relevant-cities-value">
+                <div class="smallweathercell smallweathercelldaythunderstorm"><img src="https://www.weather-forecast.com/assets/smallweathersprite-408730c65e68b296fa56eda2d68f3e8afcfb47c8fb1319f9a1887bb2df295362.png" style="clip: rect(0px 106px 28px 78px); top: 0px; left: -78px;" alt="Thunderstorm and 28.0° in Palembang."></div>
+
+                <div class="tempcell" style="background-color: rgb(355,0,0); color: white;"><span class="temp">28</span></div>
+            </div>
+          </div>
+        </td>
+        <td style="width: 50%;">
+          <div class="relevant-city">
+            <span>
+              <a href="/locations/Bogor/forecasts/latest">Bogor</a>
+            </span>
+            <div class="homepage-relevant-cities-value">
+                <div class="smallweathercell smallweathercelldaythunderstorm"><img src="https://www.weather-forecast.com/assets/smallweathersprite-408730c65e68b296fa56eda2d68f3e8afcfb47c8fb1319f9a1887bb2df295362.png" style="clip: rect(0px 106px 28px 78px); top: 0px; left: -78px;" alt="Thunderstorm and 27.0° in Bogor."></div>
+
+                <div class="tempcell" style="background-color: rgb(355,0,0); color: white;"><span class="temp">27</span></div>
+            </div>
+          </div>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 50%;">
+          <div class="relevant-city">
+            <span>
+              <b><a href="/locations/Tangerang/forecasts/latest">Tangerang</a></b>
+            </span>
+            <div class="homepage-relevant-cities-value">
+                <div class="smallweathercell smallweathercelldaythunderstorm"><img src="https://www.weather-forecast.com/assets/smallweathersprite-408730c65e68b296fa56eda2d68f3e8afcfb47c8fb1319f9a1887bb2df295362.png" style="clip: rect(0px 106px 28px 78px); top: 0px; left: -78px;" alt="Thunderstorm and 28.9° in Tangerang."></div>
+
+                <div class="tempcell" style="background-color: rgb(355,0,0); color: white;"><span class="temp">29</span></div>
+            </div>
+          </div>
+        </td>
+        <td style="width: 50%;">
+          <div class="relevant-city">
+            <span>
+              <a href="/locations/Malang/forecasts/latest">Malang</a>
+            </span>
+            <div class="homepage-relevant-cities-value">
+                <div class="smallweathercell smallweathercelldaythunderstorm"><img src="https://www.weather-forecast.com/assets/smallweathersprite-408730c65e68b296fa56eda2d68f3e8afcfb47c8fb1319f9a1887bb2df295362.png" style="clip: rect(0px 106px 28px 78px); top: 0px; left: -78px;" alt="Thunderstorm and 22.6° in Malang."></div>
+
+                <div class="tempcell" style="background-color: rgb(255,127,0); color: white;"><span class="temp">23</span></div>
+            </div>
+          </div>
+        </td>
+    </tr>
+  </tbody></table>
+  <div class="view-more"><div class="flag flag-id" onclick="window.location.href='/countries/Indonesia'"></div> <a href="/countries/Indonesia" style="text-decoration: underline;">More Indonesia cities </a></div>
+
+    <table class="mapctrytab flag-sprites" style="width: 100%; text-align: center;">
+        <tbody><tr>
+          <td><div class="flag flag-in" onclick="window.location.href='/countries/India'"></div>&nbsp;<a href="/countries/India">India</a></td>
+          <td><div class="flag flag-jp" onclick="window.location.href='/countries/Japan'"></div>&nbsp;<a href="/countries/Japan">Japan</a></td>
+        </tr>
+        <tr>
+          <td><div class="flag flag-cn" onclick="window.location.href='/countries/China'"></div>&nbsp;<a href="/countries/China">China</a></td>
+          <td><div class="flag flag-ph" onclick="window.location.href='/countries/Philippines'"></div>&nbsp;<a href="/countries/Philippines">Philippines</a></td>
+        </tr>
+    </tbody></table>
+  <div class="view-more"><a href="/countries" style="text-decoration: underline;">More countries</a></div>
+
+        </div>
+      </div>
+    </div>
+
+    <p class="geo-ip">
+      Geolocation by IP: <a href="/locations/Jakarta/forecasts/latest">Jakarta</a>
+    </p>
+
+
+    <div class="global-weatherfinder">
+
+
+  <p class="global-weatherfinder__header">
+      INDONESIA WEATHER EXTREMES
+  </p>
+
+
+    <div class="global-weatherfinder__container">
+      <div class="global-weatherfinder__container-scroll">
+        <table class="global-weatherfinder__list">
+          <tbody><tr>
+            <th>Today (Sun)</th>
+              <th>Mon</th>
+              <th>Tue</th>
+              <th>Wed</th>
+              <th>Thu</th>
+              <th>Fri</th>
+          </tr>
+          <tr>
+            <th colspan="6"><span style="color: #FF0000;">HOTTEST</span></th>
+          </tr>
+          <tr>
+              <td>
+                  <a class="loclink" href="/locations/Binjai/forecasts/latest">Binjai</a> <br>
+                  high <span class="temp">32.7</span>
+                  °<span class="tempu">C</span>
+              </td>
+              <td>
+                  <a class="loclink" href="/locations/Pontianak/forecasts/latest">Pontianak</a> <br>
+                  high <span class="temp">32.5</span>
+                  °<span class="tempu">C</span>
+              </td>
+              <td>
+                  <a class="loclink" href="/locations/Bandjarmasin/forecasts/latest">Banjarmasin</a> <br>
+                  high <span class="temp">32.6</span>
+                  °<span class="tempu">C</span>
+              </td>
+              <td>
+                  <a class="loclink" href="/locations/Pekanbaru/forecasts/latest">Pekanbaru</a> <br>
+                  high <span class="temp">32.8</span>
+                  °<span class="tempu">C</span>
+              </td>
+              <td>
+                  <a class="loclink" href="/locations/Jambi/forecasts/latest">Jambi City</a> <br>
+                  high <span class="temp">32.1</span>
+                  °<span class="tempu">C</span>
+              </td>
+              <td>
+                  <a class="loclink" href="/locations/Lubuklinggau/forecasts/latest">Lubuklinggau</a> <br>
+                  high <span class="temp">33.0</span>
+                  °<span class="tempu">C</span>
+              </td>
+          </tr>
+          <tr>
+            <th colspan="6"><span style="color: #0000FF;">COLDEST</span></th>
+          </tr>
+          <tr>
+              <td>
+                  <a class="loclink" href="/locations/Lembang/forecasts/latest">Lembang</a> <br>
+                  low <span class="temp">19.4</span>
+                  °<span class="tempu">C</span>
+              </td>
+              <td>
+                  <a class="loclink" href="/locations/Lembang/forecasts/latest">Lembang</a> <br>
+                  low <span class="temp">19.8</span>
+                  °<span class="tempu">C</span>
+              </td>
+              <td>
+                  <a class="loclink" href="/locations/Lembang/forecasts/latest">Lembang</a> <br>
+                  low <span class="temp">18.3</span>
+                  °<span class="tempu">C</span>
+              </td>
+              <td>
+                  <a class="loclink" href="/locations/Lembang/forecasts/latest">Lembang</a> <br>
+                  low <span class="temp">18.3</span>
+                  °<span class="tempu">C</span>
+              </td>
+              <td>
+                  <a class="loclink" href="/locations/Lembang/forecasts/latest">Lembang</a> <br>
+                  low <span class="temp">19.1</span>
+                  °<span class="tempu">C</span>
+              </td>
+              <td>
+                  <a class="loclink" href="/locations/Lembang/forecasts/latest">Lembang</a> <br>
+                  low <span class="temp">18.7</span>
+                  °<span class="tempu">C</span>
+              </td>
+          </tr>
+          <tr>
+            <th colspan="6"><span style="color: #000033;">WETTEST</span></th>
+          </tr>
+          <tr>
+              <td>
+                  <a class="loclink" href="/locations/Sorong/forecasts/latest">Sorong</a><br>
+                   <span class="rain">15.5</span> <span class="rainu">mm</span>
+               </td>
+              <td>
+                  <a class="loclink" href="/locations/Payakumbuh/forecasts/latest">Payakumbuh</a><br>
+                   <span class="rain">17.9</span> <span class="rainu">mm</span>
+               </td>
+              <td>
+                  <a class="loclink" href="/locations/Jambi/forecasts/latest">Jambi City</a><br>
+                   <span class="rain">85.4</span> <span class="rainu">mm</span>
+               </td>
+              <td>
+                  <a class="loclink" href="/locations/Sumedang-Utara/forecasts/latest">Sumedang Utara</a><br>
+                   <span class="rain">55.8</span> <span class="rainu">mm</span>
+               </td>
+              <td>
+                  <a class="loclink" href="/locations/Cirebon/forecasts/latest">Cirebon</a><br>
+                   <span class="rain">28.7</span> <span class="rainu">mm</span>
+               </td>
+              <td>
+                  <a class="loclink" href="/locations/Lembang/forecasts/latest">Lembang</a><br>
+                   <span class="rain">26.8</span> <span class="rainu">mm</span>
+               </td>
+          </tr>
+          <tr>
+            <th colspan="6"><span style="color: #009933;">WINDIEST</span></th>
+          </tr>
+          <tr>
+                <td>
+                    <a class="loclink" href="/locations/Jayapura/forecasts/latest">Jayapura</a> <br>
+                    <span class="wind">22</span> <span class="windu">km/h</span>
+                </td>
+                <td>
+                    <a class="loclink" href="/locations/Kupang/forecasts/latest">Kupang</a> <br>
+                    <span class="wind">21</span> <span class="windu">km/h</span>
+                </td>
+                <td>
+                    <a class="loclink" href="/locations/Tanjungpinang/forecasts/latest">Tanjung Pinang</a> <br>
+                    <span class="wind">29</span> <span class="windu">km/h</span>
+                </td>
+                <td>
+                    <a class="loclink" href="/locations/Indramayu/forecasts/latest">Indramayu</a> <br>
+                    <span class="wind">23</span> <span class="windu">km/h</span>
+                </td>
+                <td>
+                    <a class="loclink" href="/locations/Sorong/forecasts/latest">Sorong</a> <br>
+                    <span class="wind">17</span> <span class="windu">km/h</span>
+                </td>
+                <td>
+                    <a class="loclink" href="/locations/Kediri/forecasts/latest">Kediri</a> <br>
+                    <span class="wind">21</span> <span class="windu">km/h</span>
+                </td>
+          </tr>
+        </tbody></table>
+      </div>
+    </div>
+  </div>
+
+
+  <br>
+
+    <div class="leaflet" data-loading-strategy="in-viewport" data-map-id="0" style="background-image: url('https://www.weather-forecast.com/packs/media/components/leaflet/static/placeholder-0c56d52bce1a5ecdc2391ee0ac598779.jpg')"><div class="leaflet__placeholder"><div class="leaflet__pulse-animation"><img alt="Map placeholder" class="leaflet__placeholder-icon" src="https://www.weather-forecast.com/packs/media/components/leaflet/static/placeholder-icon-746b3148347bd3d64760536e5b88ec68.svg" width="60" height="60"></div></div></div>
+</div>
+<div id="sfooter">
+  <div class="linear-share show-for-small">
+    <h5 class="show-for-medium-up">Share</h5>
+<ul>
+  <li><a href="https://www.facebook.com/wxforecast"><img src="/images/fb.png" alt="facebook"><span>Like us</span></a></li>
+  <li><a href="https://twitter.com/meteo365"><img src="/images/t.png" alt="twitter"><span>Follow us</span></a></li>
+</ul>
+
+  </div>
+
+  <div class="footer-logo-links show-for-large-up">
+    <ul>
+      <li>
+          <a href="https://www.surf-forecast.com/">
+            <img alt="Surf Forecast" height="41" src="https://www.weather-forecast.com/images/surf.png" width="130">
+          </a>
+      </li>
+      <li>
+          <a href="https://www.snow-forecast.com/">
+            <img alt="Snow Forecast" height="37" src="https://www.weather-forecast.com/images/snow.png" width="130">
+          </a>
+      </li>
+      <li>
+          <a href="https://www.mountain-forecast.com/">
+            <img alt="Mountain Forecast" height="37" src="https://www.weather-forecast.com/images/mountain.png" width="130">
+          </a>
+      </li>
+      <li>
+          <a href="https://www.tide-forecast.com/">
+            <img alt="Tide Forecast" height="37" src="https://www.weather-forecast.com/images/tide.png" width="130">
+          </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-links">
+    <div class="row">
+      <div class="medium-4 columns">
+        <h5>Company</h5>
+        <ul>
+          <li><a rel="nofollow" href="/pages/contact">Contact us</a></li>
+          <li><a rel="nofollow" href="/pages/terms">Terms</a></li>
+          <li><a rel="nofollow" href="/pages/privacy">Privacy</a></li>
+          <li><a rel="nofollow" href="/pages/cookie_policy">Cookie Policy</a></li>
+          
+          <li><a id="gdpr_link" class="change-consent page-footer__link" style="display: block; cursor: pointer;" onclick="window.__tcfapi('displayConsentUi', 2, function() {} );">Privacy Settings</a></li>
+<li><a id="ccpa_link" class="page-footer__link" style="display: none; cursor: pointer;" onclick="window.__uspapi('displayUspUi')">Do Not Sell My Personal Information</a></li>
+
+<script type="text/javascript">
+    if (typeof window.__uspapi === 'function') {
+        window.__uspapi('uspPing', 1, function(obj, status) {
+            if (status && obj.mode.includes('USP') && obj.jurisdiction.includes(obj.location.toUpperCase())) {
+                document.getElementById("ccpa_link").style.display = "block";
+            }
+        });
+    }
+
+    window.__tcfapi('getTCData',2,function(data,success){
+        console.log("data.gdprApplies: "  + data.gdprApplies);
+        if(data.gdprApplies){
+            document.getElementById("gdpr_link").style.display = "block";
+        }
+    });
+</script>
+
+        </ul>
+      </div>
+
+
+      <div class="medium-4 columns">
+      <h5>Weather Photos</h5>
+        <ul>
+          <li><a href="/albums/5/photos">Cloud Formations</a></li>
+          <li><a href="/albums/18/photos">Autumn Colours</a></li>
+          <li><a href="/albums/3/photos">Lightning</a></li>
+          <li><a href="/albums/12/photos">Rainbows &amp; Reflections</a></li>
+          <li><a href="/albums/1/photos">Snow, Ice &amp; Frost</a></li>
+          <li><a href="/albums/2/photos">Sunrises &amp; Sunsets</a></li>
+          <li><a href="/albums/6/photos">Rain &amp; Floods</a></li>
+        </ul>
+      </div>
+
+      <div class="medium-4 columns show-for-medium-up">
+        <h5 class="show-for-medium-up">Share</h5>
+<ul>
+  <li><a href="https://www.facebook.com/wxforecast"><img src="/images/fb.png" alt="facebook"><span>Like us</span></a></li>
+  <li><a href="https://twitter.com/meteo365"><img src="/images/t.png" alt="twitter"><span>Follow us</span></a></li>
+</ul>
+
+      </div>
+    </div>
+
+
+    <div style="width:100%; text-align:center; clear: both;">
+      <p>
+        © 2026 Meteo365.com
+        
+      </p>
+    </div>
+  </div>
+
+ </div>
+<script>
+//<![CDATA[
+window.FCGON = {"maps":[{"topoUrl":"https://snowmap.fast-sfc.com/base_snow_map/{z}/{x}/{y}.png","metarReports":[{"name":"Soekarno-Hatta International Airport","filename":"Soekarno-Hatta-Airport","lat":-6.117,"lon":106.65,"wind_icon":"\u003cdiv class=\"wind-icon\" data-precision=\"5\" data-speed=\"2.0\"\u003e\u003csvg class=\"wind-icon__svg\" fill=\"rgb(0, 0, 0)\" viewBox=\"-19 -19 38 38\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\u003ccircle cx=\"0\" cy=\"0\" r=\"10.5\"\u003e\u003c/circle\u003e\u003cg class=\"wind-icon__arrow\" transform=\"rotate(50)\"\u003e\u003cpolygon points=\"-7 -13.5 0 -19.5 7 -13.5\"\u003e\u003c/polygon\u003e\u003crect height=\"4\" width=\"4\" x=\"-2\" y=\"-13.5\"\u003e\u003c/rect\u003e\u003c/g\u003e\u003ctext class=\"wind-icon__val\" fill=\"rgb(255, 255, 255)\" text-anchor=\"middle\" x=\"0\" y=\"5\"\u003e0\u003c/text\u003e\u003c/svg\u003e\u003c/div\u003e","temp":27,"temp_css_class":"temp-color3","weather":"Haze","weather_icon":"\u003cimg alt=\"clear\" class=\"weather-icon\" src=\"https://www.weather-forecast.com/packs/media/components/weather-icon/static/dayclear-af30c218df7d56904a79f3bd51b3c055.svg\" /\u003e","gusts_icon":null},{"name":"Pisangan Timur wx","filename":"Pisangan-Timur-weather-station","lat":-6.242,"lon":106.738,"wind_icon":"\u003cdiv class=\"wind-icon\" data-precision=\"5\" data-speed=\"2.0\"\u003e\u003csvg class=\"wind-icon__svg\" fill=\"rgb(0, 0, 0)\" viewBox=\"-19 -19 38 38\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\u003ccircle cx=\"0\" cy=\"0\" r=\"10.5\"\u003e\u003c/circle\u003e\u003cg class=\"wind-icon__arrow\" transform=\"rotate(237)\"\u003e\u003cpolygon points=\"-7 -13.5 0 -19.5 7 -13.5\"\u003e\u003c/polygon\u003e\u003crect height=\"4\" width=\"4\" x=\"-2\" y=\"-13.5\"\u003e\u003c/rect\u003e\u003c/g\u003e\u003ctext class=\"wind-icon__val\" fill=\"rgb(255, 255, 255)\" text-anchor=\"middle\" x=\"0\" y=\"5\"\u003e0\u003c/text\u003e\u003c/svg\u003e\u003c/div\u003e","temp":31,"temp_css_class":"temp-color2","weather":"dry","weather_icon":"","gusts_icon":"\u003cdiv class=\"wind-icon\" data-precision=\"5\" data-speed=\"3.0\"\u003e\u003csvg class=\"wind-icon__svg\" fill=\"rgb(0, 0, 0)\" viewBox=\"-19 -19 38 38\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\u003ccircle cx=\"0\" cy=\"0\" r=\"10.5\"\u003e\u003c/circle\u003e\u003cg class=\"wind-icon__arrow\" transform=\"rotate(237)\"\u003e\u003cpolygon points=\"-7 -13.5 0 -19.5 7 -13.5\"\u003e\u003c/polygon\u003e\u003crect height=\"4\" width=\"4\" x=\"-2\" y=\"-13.5\"\u003e\u003c/rect\u003e\u003c/g\u003e\u003ctext class=\"wind-icon__val\" fill=\"rgb(255, 255, 255)\" text-anchor=\"middle\" x=\"0\" y=\"5\"\u003e5\u003c/text\u003e\u003c/svg\u003e\u003c/div\u003e"},{"name":"Halim Perdanakus Airport","filename":"Halim-Perdanakus-Airport","lat":-6.25,"lon":106.883,"wind_icon":"\u003cdiv class=\"wind-icon\" data-precision=\"5\" data-speed=\"0.0\"\u003e\u003csvg class=\"wind-icon__svg\" fill=\"rgb(0, 0, 0)\" viewBox=\"-19 -19 38 38\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\u003ccircle cx=\"0\" cy=\"0\" r=\"10.5\"\u003e\u003c/circle\u003e\u003cg class=\"wind-icon__arrow\" transform=\"rotate(180)\"\u003e\u003cpolygon points=\"-7 -13.5 0 -19.5 7 -13.5\"\u003e\u003c/polygon\u003e\u003crect height=\"4\" width=\"4\" x=\"-2\" y=\"-13.5\"\u003e\u003c/rect\u003e\u003c/g\u003e\u003ctext class=\"wind-icon__val\" fill=\"rgb(255, 255, 255)\" text-anchor=\"middle\" x=\"0\" y=\"5\"\u003e0\u003c/text\u003e\u003c/svg\u003e\u003c/div\u003e","temp":26,"temp_css_class":"temp-color3","weather":"-","weather_icon":"\u003cimg alt=\"clear\" class=\"weather-icon\" src=\"https://www.weather-forecast.com/packs/media/components/weather-icon/static/dayclear-af30c218df7d56904a79f3bd51b3c055.svg\" /\u003e","gusts_icon":null},{"name":"Mampang-agung wx","filename":"Mampang-agung-weather-station","lat":-6.39933,"lon":106.7935,"wind_icon":"\u003cdiv class=\"wind-icon\" data-precision=\"5\" data-speed=\"0.0\"\u003e\u003csvg class=\"wind-icon__svg\" fill=\"rgb(0, 0, 0)\" viewBox=\"-19 -19 38 38\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\u003ccircle cx=\"0\" cy=\"0\" r=\"10.5\"\u003e\u003c/circle\u003e\u003cg class=\"wind-icon__arrow\" transform=\"rotate(180)\"\u003e\u003cpolygon points=\"-7 -13.5 0 -19.5 7 -13.5\"\u003e\u003c/polygon\u003e\u003crect height=\"4\" width=\"4\" x=\"-2\" y=\"-13.5\"\u003e\u003c/rect\u003e\u003c/g\u003e\u003ctext class=\"wind-icon__val\" fill=\"rgb(255, 255, 255)\" text-anchor=\"middle\" x=\"0\" y=\"5\"\u003e0\u003c/text\u003e\u003c/svg\u003e\u003c/div\u003e","temp":null,"temp_css_class":null,"weather":"-","weather_icon":"","gusts_icon":"\u003cdiv class=\"wind-icon\" data-precision=\"5\" data-speed=\"0.0\"\u003e\u003csvg class=\"wind-icon__svg\" fill=\"rgb(0, 0, 0)\" viewBox=\"-19 -19 38 38\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\u003ccircle cx=\"0\" cy=\"0\" r=\"10.5\"\u003e\u003c/circle\u003e\u003cg class=\"wind-icon__arrow\" transform=\"rotate(180)\"\u003e\u003cpolygon points=\"-7 -13.5 0 -19.5 7 -13.5\"\u003e\u003c/polygon\u003e\u003crect height=\"4\" width=\"4\" x=\"-2\" y=\"-13.5\"\u003e\u003c/rect\u003e\u003c/g\u003e\u003ctext class=\"wind-icon__val\" fill=\"rgb(255, 255, 255)\" text-anchor=\"middle\" x=\"0\" y=\"5\"\u003e0\u003c/text\u003e\u003c/svg\u003e\u003c/div\u003e"},{"name":"Ceheuleut wx","filename":"Ceheuleut-weather-station-14","lat":-6.566,"lon":106.82067,"wind_icon":"\u003cdiv class=\"wind-icon\" data-precision=\"5\" data-speed=\"0.0\"\u003e\u003csvg class=\"wind-icon__svg\" fill=\"rgb(0, 0, 0)\" viewBox=\"-19 -19 38 38\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\u003ccircle cx=\"0\" cy=\"0\" r=\"10.5\"\u003e\u003c/circle\u003e\u003cg class=\"wind-icon__arrow\" transform=\"rotate(180)\"\u003e\u003cpolygon points=\"-7 -13.5 0 -19.5 7 -13.5\"\u003e\u003c/polygon\u003e\u003crect height=\"4\" width=\"4\" x=\"-2\" y=\"-13.5\"\u003e\u003c/rect\u003e\u003c/g\u003e\u003ctext class=\"wind-icon__val\" fill=\"rgb(255, 255, 255)\" text-anchor=\"middle\" x=\"0\" y=\"5\"\u003e0\u003c/text\u003e\u003c/svg\u003e\u003c/div\u003e","temp":null,"temp_css_class":null,"weather":"-","weather_icon":"","gusts_icon":"\u003cdiv class=\"wind-icon\" data-precision=\"5\" data-speed=\"0.0\"\u003e\u003csvg class=\"wind-icon__svg\" fill=\"rgb(0, 0, 0)\" viewBox=\"-19 -19 38 38\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\u003ccircle cx=\"0\" cy=\"0\" r=\"10.5\"\u003e\u003c/circle\u003e\u003cg class=\"wind-icon__arrow\" transform=\"rotate(180)\"\u003e\u003cpolygon points=\"-7 -13.5 0 -19.5 7 -13.5\"\u003e\u003c/polygon\u003e\u003crect height=\"4\" width=\"4\" x=\"-2\" y=\"-13.5\"\u003e\u003c/rect\u003e\u003c/g\u003e\u003ctext class=\"wind-icon__val\" fill=\"rgb(255, 255, 255)\" text-anchor=\"middle\" x=\"0\" y=\"5\"\u003e0\u003c/text\u003e\u003c/svg\u003e\u003c/div\u003e"}],"currentLocation":{"name":"Jakarta","filename":"Jakarta","lat":-6.13,"lon":106.75,"weather_icon":null}}]};
+//]]>
+</script><script src="https://www.weather-forecast.com/packs/js/application-5687239e32a48899c204.js"></script><iframe name="__tcfapiLocator" style="display: none;"></iframe><iframe name="__gppLocator" style="display: none;"></iframe><script src="https://www.weather-forecast.com/assets/application-200f3ab5206ed73d1be68c383adbaa26151c6690789a95799761d801ab861a0f.js"></script><script>$(".zoom-control a.zoom, .also-see-detailed a.zoom").click(function() {
+  if (this.href) {
+    window.location.href=FCMAPS.mapPathPreservingMode(this.href);
+  }
+  return false;
+});</script><script>$(".play-control .frame-back").click(function() {
+  FCMAPS.advanceByFrames(-1);
+});
+$(".play-control .frame-forward").click(function() {
+  FCMAPS.advanceByFrames(1);
+});</script><script src="https://assets.weather-forecast.com/maps/dynamic/Indonesia.title.js"></script><script type="text/javascript">
+
+  window.fcmaps_cmd = window.fcmaps_cmd || [];
+  fcmaps_cmd.push(function() {
+
+    window.params = {};
+    window.filename = "Indonesia";
+    window.main_filename = "Indonesia";
+    window.guests_code=".cc23";
+    window.members_code="";
+    window.map_hosts=['https://assets.weather-forecast.com'];
+    window.static_map_hosts=['https://assets.weather-forecast.com'];
+    window.symbol_path = "/maps/dynamic/";
+    window.map_path = "/maps/dynamic/";
+    window.default_type_for_anim = "prec";
+    window.max_guest_hours = 300;
+    window.last_hr = 300;
+
+    window.units = 'metric';
+    window.noClick = false;
+
+    $(document).ready(function () {
+      $(".basic_controls .dyn_thumb_controls .mode a").click(function() {
+        // var a_element = $("a", $(this).parents("td")[0])[0];
+        FCMAPS.setMapModeFromUrl(this.href);
+        if (history && history.replaceState) {
+          history.replaceState(null, "", this.href);
+        }
+        $(".dyn_thumb_controls .selected").removeClass("selected").addClass("not_selected");
+
+        var currentCont = $(".not_selected", $(this).parentsUntil(".btncontblock, .dyn_thumb_controls", "tr"))[0];
+        $(currentCont).addClass("selected").removeClass("not_selected");
+
+        $(this).parents("li.not_selected").addClass("selected").removeClass("not_selected");
+        return false;
+      });
+      $(".advanced_controls .dyn_thumb_controls .mode a").click(function() {
+        FCMAPS.setMapModeFromUrl(this.href, false);
+        var controls_group = $(this).parents(".dyn_thumb_controls");
+        controls_group.find(".selected").removeClass("selected").addClass("not_selected");
+        $($(".not_selected", $(this).parents("tr"))[0]).addClass("selected").removeClass("not_selected");
+        return false;
+      });
+      window.params.map_mode = {"default":{"type":"nav","over":"none","symbols":"cities.forecast.weather","hr":"6"},"current":{"type":"nav","over":"none","symbols":"cities.forecast.weather","hr":"6"}};
+      window.params.basic = true;
+      FCMAPS.detailed = false;
+      FCMAPS.scale = 0.67;
+      FCMAPS.width = 600;
+      FCMAPS.height = 474;
+      FCMAPS.thumb_filename = "Indonesia";
+      FCMAPS.titles_for_symbols = {
+        "cities.forecast.weather": " ",
+        "cities.forecast.wind": "Wind Forecast",
+        "cities.forecast.temp": "Temperature Forecast",
+        "snow.forecast.weather.top": "Weather Forecast (Top Lift at Resorts)",
+        "snow.forecast.weather.mid": "Weather Forecast (Mid Mountain)",
+        "snow.forecast.weather.bot": "Weather Forecast (Bottom Lift at Resorts)",
+        "isgoodpiste": "Resorts with Good Piste Conditions Reported",
+        "ispowder": "Resorts with Powder Reported",
+        "isnewsnow": "Resorts with New Snow Reported",
+        "isnewsnow": "Resorts with New Snow Reported",
+        "summary.upper_depth": "Snow Depths at the Resort Top Lift",
+        "summary.lower_depth": "Snow Depths at the Resort Bottom Lift",
+        "summary.fresh_snow_depth": "Resorts with Fresh Snow Reported",
+        "summary.lastsnowed": "Number of Days Since Last Snow",
+        "livecams": "Resort Webcams",
+        "isfullyopen": "Resorts that are Fully Open",
+        "runstoresort": "Runs to Resort Open",
+        "liveweather": "Weather Now",
+        "livetemp": "Temperature Now",
+        "livewind": "Wind Now",
+        "livecitycams": "City Webcams",
+        "livesurfcams": "Beach Webcams",
+        "liveswell": "Wave Buoys"
+      }
+      FCMAPS.time_descriptions = ['Saturday 11 Apr 10pm', 'Sunday 12 Apr 1am', 'Sunday 12 Apr 4am', 'Sunday 12 Apr 7am', 'Sunday 12 Apr 10am', 'Sunday 12 Apr 1pm', 'Sunday 12 Apr 4pm', 'Sunday 12 Apr 7pm', 'Sunday 12 Apr 10pm', 'Monday 13 Apr 1am', 'Monday 13 Apr 4am', 'Monday 13 Apr 7am', 'Monday 13 Apr 10am', 'Monday 13 Apr 1pm', 'Monday 13 Apr 4pm', 'Monday 13 Apr 7pm', 'Monday 13 Apr 10pm', 'Tuesday 14 Apr 1am', 'Tuesday 14 Apr 4am', 'Tuesday 14 Apr 7am', 'Tuesday 14 Apr 10am', 'Tuesday 14 Apr 1pm', 'Tuesday 14 Apr 4pm', 'Tuesday 14 Apr 7pm', 'Tuesday 14 Apr 10pm', 'Wednesday 15 Apr 1am', 'Wednesday 15 Apr 4am', 'Wednesday 15 Apr 7am', 'Wednesday 15 Apr 10am', 'Wednesday 15 Apr 1pm', 'Wednesday 15 Apr 4pm', 'Wednesday 15 Apr 7pm', 'Wednesday 15 Apr 10pm', 'Thursday 16 Apr 1am', 'Thursday 16 Apr 4am', 'Thursday 16 Apr 7am', 'Thursday 16 Apr 10am', 'Thursday 16 Apr 1pm', 'Thursday 16 Apr 4pm', 'Thursday 16 Apr 7pm', 'Thursday 16 Apr 10pm', 'Friday 17 Apr 1am', 'Friday 17 Apr 4am', 'Friday 17 Apr 7am', 'Friday 17 Apr 10am', 'Friday 17 Apr 1pm', 'Friday 17 Apr 4pm', 'Friday 17 Apr 7pm', 'Friday 17 Apr 10pm', 'Saturday 18 Apr 1am', 'Saturday 18 Apr 4am', 'Saturday 18 Apr 7am', 'Saturday 18 Apr 10am', 'Saturday 18 Apr 1pm', 'Saturday 18 Apr 4pm', 'Saturday 18 Apr 7pm', 'Saturday 18 Apr 10pm', 'Sunday 19 Apr 1am', 'Sunday 19 Apr 4am', 'Sunday 19 Apr 7am', 'Sunday 19 Apr 10am', 'Sunday 19 Apr 1pm', 'Sunday 19 Apr 4pm', 'Sunday 19 Apr 7pm', 'Sunday 19 Apr 10pm', 'Monday 20 Apr 1am', 'Monday 20 Apr 4am', 'Monday 20 Apr 7am', 'Monday 20 Apr 10am', 'Monday 20 Apr 1pm', 'Monday 20 Apr 4pm', 'Monday 20 Apr 7pm', 'Monday 20 Apr 10pm', 'Tuesday 21 Apr 1am', 'Tuesday 21 Apr 4am', 'Tuesday 21 Apr 7am', 'Tuesday 21 Apr 10am', 'Tuesday 21 Apr 1pm', 'Tuesday 21 Apr 4pm', 'Tuesday 21 Apr 7pm', 'Tuesday 21 Apr 10pm', 'Wednesday 22 Apr 1am', 'Wednesday 22 Apr 4am', 'Wednesday 22 Apr 7am', 'Wednesday 22 Apr 10am', 'Wednesday 22 Apr 1pm', 'Wednesday 22 Apr 4pm', 'Wednesday 22 Apr 7pm', 'Wednesday 22 Apr 10pm', 'Thursday 23 Apr 1am', 'Thursday 23 Apr 4am', 'Thursday 23 Apr 7am', 'Thursday 23 Apr 10am', 'Thursday 23 Apr 1pm', 'Thursday 23 Apr 4pm', 'Thursday 23 Apr 7pm', 'Thursday 23 Apr 10pm', 'Friday 24 Apr 1am', 'Friday 24 Apr 4am', 'Friday 24 Apr 7am'];
+      FCMAPS.timezone_descr = 'WIB';
+      FCMAPS.thumbs_to_preload = [ "lapse", "cloud", "weather_pressure", "wind", "prec" ];
+      FCMAPS.initMap1();
+      FCMAPS.initialSwitch();
+
+      
+
+      
+
+      $('#map-loc-namebox').auto_complete_loc({
+        url: '/maps/Indonesia/ac_location_name?query=__VALUE__',
+        immediate_submit: false,
+        loc_id: 'map_loc_id',
+        default_text: '',
+        use_first_entry: true,
+        callback_on_choice: function (input, result) {
+          eval("FCMAPS.putCross("+result+")");
+        },
+        matchesUseJSON: false
+      });
+      $("input[name='airports']").click(function() {
+        if ($(this).attr('data-class') == 'rtn') {
+          $('#mapcontainer').addClass('rtn');
+        } else {
+          $('#mapcontainer').removeClass('rtn');
+        }
+        FCMAPS.setAirports(this.value);
+      });
+    });
+
+    
+  });
+</script>    <script>
+        (function() {
+            
+            window.googletag = window.googletag || { cmd: [] };
+            googletag.cmd.push(function() {
+                googletag.pubads().addEventListener('slotRenderEnded', event => {
+                    if (!event.isEmpty) {
+                        var slotId = event.slot.getSlotElementId();
+                        var el = document.getElementById(slotId);
+                        el.classList.remove('bn-placeholder-visual');
+                    }
+                });
+            });
+        })();
+    </script>
+  <script>
+    $(document).ready(function () {
+      var url_str = '/locations/ac_location_name?query=__VALUE__';
+      var default_text_str = 'ENTER A CITY OR COUNTRY:';
+      $('#location').auto_complete_loc({url: url_str, default_text: default_text_str, loc_id: 'location_loc_id', prevent_empty_submit: true, matchesUseJSON: true});
+    });
+  </script>
+<script>if (typeof init_uj == "function") {
+  init_uj();
+}</script><!-- Generated 2026-04-12 01:41:40 UTC --><script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;c3443d77ddba4d37872567633f29af96&quot;,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+<iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" id="1e795e5cc5738f" width="0" height="0" src="about:blank" name="__pb_locator__" style="display: none; height: 0px; width: 0px; border: 0px;"></iframe><script src="//assets.bounceexchange.com/assets/smart-tag/versioned/runtime_c81e76ee00d795b1eebf8d27949f8dc5.br.js" async="async"></script><script src="//assets.bounceexchange.com/assets/smart-tag/versioned/main-v2_3d8fc483aef418c546ea5e64fd4afb9f.br.js" async="async"></script><iframe id="bcx_local_storage_frame" src="https://assets.bounceexchange.com/assets/bounce/local_storage_frame17.min.html#8396" title="empty" style="display: none;"></iframe><div style="border: 1px solid gray; background: rgb(237, 238, 240); color: rgb(0, 0, 0); padding: 10px; z-index: 1000; text-align: left; display: none; position: absolute;">true</div><iframe width="1" height="1" src="https://js-sec.indexww.com/um/ixmatch.html" style="display: none;"></iframe><iframe width="1" height="1" src="https://eus.rubiconproject.com/usync.html?p=20986&amp;endpoint=us-east" style="display: none;"></iframe><iframe width="1" height="1" src="//ads.pubmatic.com/AdServer/js/user_sync.html?p=156512" style="display: none;"></iframe></body></html>

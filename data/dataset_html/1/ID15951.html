@@ -1,0 +1,606 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nairobi Pools</title>
+    <link href="Assets/css/bootstrap.css" rel="stylesheet">
+    <link href="Assets/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="Assets/css/jquery-ui.css" rel="stylesheet">
+    <style type="text/css">
+        a, img, a img {
+            border:none;
+            outline:none !important;
+        }
+        .search-form{
+		    text-align:center;
+		    padding-top:10px;
+	    }
+	    .navbar{
+		    min-height:44px;	
+	    }
+	    .nav > li > a {
+		    padding: 12px 15px;
+	    }
+	    .navbar-main{
+		    border:0px;
+		    border:none;
+		    border-radius: 0px;
+            border-bottom:1px solid #333333;
+	    }
+	    .navbar-toggle{
+		    padding-top:8px;
+		    padding-bottom:8px;
+		    margin-top:6px;	
+		    margin-bottom:6px;	
+	    }
+	    .navbar-main:link, .navbar-main:hover, .navbar-main:visited {
+		    color:#ffffff;
+		    text-decoration:none;
+	    }
+	    .navbar-word-toggle{
+		    padding:6px 15px;
+		    line-height:32px;
+		    font-size:15px;
+		    color:#ffffff;
+	    }
+	    .navbar-word-toggle:link, .navbar-word-toggle:hover, .navbar-word-toggle:visited, .navbar-word-toggle:active, .navbar-word-toggle:focus {
+		    color:#ffffff;
+		    text-decoration:none;
+	    }
+	
+	    h4.panel-newHeader{
+		    font-size:16px;	
+		    font-weight:bold;
+		    margin:0px;
+	    }
+	    a.morelink{
+		    color:#ffffff;
+		    text-decoration:none;
+		    padding:10px 3px;
+	    }
+	    .prizeHeader{
+		    font-weight:bold;
+		    font-size:15px;
+		    background-color:#f39600;
+		    display:block;
+		    color:#ffffff;
+		    line-height:36px;
+		    border:1px solid #f39600;
+	    }
+	    .prizeNum{
+		    font-weight:bold;
+		    font-size:21px;
+		    color:#000000;
+		    border:1px solid #f39600;
+		    display:block;
+		    line-height:36px;
+		    background-color:#ffffff;
+	    }
+	    .prizeHeader2{
+		    font-weight:bold;
+		    font-size:15px;
+		    background-color:#f39600;
+		    display:block;
+		    color:#ffffff;
+		    line-height:28px;
+		    border:1px solid #f39600;
+	    }
+	    .prizeNum2{
+		    font-weight:bold;
+		    font-size:18px;
+		    color:#000000;
+		    display:block;
+		    line-height:28px;
+	    }
+	    .prizeNum-container{
+		    border:1px solid #f39600;
+		    display:table;
+		    width:100%;
+		    content:' ';
+		    padding-top:10px;
+		    padding-bottom:10px;
+		    background-color:#ffffff;	
+	    }
+	    .col-result{
+		    padding-left:3px;
+		    padding-right:3px;	
+	    }
+	    .table-bordered > thead > tr > th{
+		    text-align:center;
+		    background-color:#f39600;
+		    color:#ffffff;
+		    font-size:15px;
+	    }
+	    .table-bordered > tbody > tr > td{
+		    text-align:center;
+		    vertical-align:middle;
+		    background-color:#ffffff;
+	    }
+	    .footer-list a{
+		    color:#999999;	
+	    }
+	    .panel-default {
+		    border-color: #aaaaaa;
+	    }
+	    .panel-default.side-bar > .panel-heading{
+		    background-image: -webkit-linear-gradient(top, #3c3c3c 0%, #222222 100%);
+		    background-image: -o-linear-gradient(top, #3c3c3c 0%, #222222 100%);
+		    background-image: -webkit-gradient(linear, left top, left bottom, from(#3c3c3c), to(#222222));
+		    background-image: linear-gradient(to bottom, #3c3c3c 0%, #222222 100%);
+		    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3c3c3c', endColorstr='#ff222222', GradientType=0);
+		    background-color: #222222;
+		    border-color: #999999;
+		    color:#ffffff;
+	    }
+	    .panel-primary {
+		    border-color: #aaaaaa;
+	    }
+	    .panel-primary > .panel-heading{
+		    background-image: -webkit-linear-gradient(top, #3c3c3c 0%, #222222 100%);
+		    background-image: -o-linear-gradient(top, #3c3c3c 0%, #222222 100%);
+		    background-image: -webkit-gradient(linear, left top, left bottom, from(#3c3c3c), to(#222222));
+		    background-image: linear-gradient(to bottom, #3c3c3c 0%, #222222 100%);
+		    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3c3c3c', endColorstr='#ff222222', GradientType=0);
+		    background-color: #222222;
+		    border-color: #999999;
+		    color:#ffffff;
+	    }
+        .space-btm {
+            margin-bottom: 10px;
+        }
+        .sidebar-link {
+            color:#333333;
+            display:block;
+        }
+        .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+            background-color: #f39600;
+            border-color: #f39600;
+        }
+        .shadow-container {
+            -webkit-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.5);
+            -moz-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.5);
+            box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.5);
+        }
+	    @media(min-width:768px) {
+		    .navbar-collapse{
+			    padding-left:0px;
+			    padding-right:0px;
+		    }
+		    .search-form{
+			    text-align:right;
+			    padding-top:22px;
+		    }
+	    }
+	    @media(max-width:767px){
+		    .navbar-word-toggle.visible-xs-block{
+			    display:inline-block !important;	
+		    }
+		    .search-form button{
+			    margin-top:10px;
+			    margin-bottom:10px;
+		    }
+            .remove-xs-pull.pull-right {
+                float: none !important;
+            }
+	    }
+        .col-countdown {
+            padding-left:3px;
+            padding-right:3px;
+        }
+        .countdownBox {
+            background-color:#333333;
+            color:#ffffff;
+            padding:7px;
+            text-align:center;
+            display: block;
+            font-size:18px;
+            font-weight:bold;
+        }
+        .countdownDesc {
+            color:#000000;
+            padding-top:5px;
+            text-align:center;
+            display: block;
+            font-size:12px;
+        }
+    </style>
+    <!--[if lt IE 9]>
+      <script type="text/javascript" src="Assets/js/html5shiv.min.js"></script>
+      <script type="text/javascript" src="Assets/js/respond.min.js"></script>
+    <![endif]-->
+    
+
+</head>
+<body>
+    <form method="post" action="./" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="PJpa/DfWzx6oYEPB3wf3ZyyTPORo2ZsBfvLBAI8KSYAXhqcsaFP4z5RDZbnCbkU1lLvCUfiAud9d1tKIxN5njD+XfDRyZ4EiFirPTJvA8i4=">
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="1opW6re+PCg2pw9CnMSknzl+ennZMXJLp+5JWr4kvNNKV3vlit26KMQIw87UZWW56laxZ2eIQIvUSJ+r+LLLka8GM/vvU/mdrVkuVnDjOT+rnSgF116U9l+thlQ54VFz">
+</div>
+        <div style="background-color:#ffffff;">
+    	    <div class="container" style="min-height:80px;">
+        	    <div class="row">
+                    <div class="col-sm-12 search-form">
+                        <div class="form-inline">
+                            <input type="text" id="inputdate" class="form-control hasDatepicker" placeholder="Search Date">
+                            <button type="button" class="btn btn-default" onclick="SearchResultDate()">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="background-color:#f39600;min-height:4px;"></div>
+        <nav class="navbar navbar-main navbar-inverse" style="margin-bottom:0px;">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="javascript:;" class="navbar-word-toggle visible-xs-block" data-toggle="collapse" data-target="#navbar">MENU</a>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        
+                        <li><a href="Default.aspx?f=w1">Monday</a></li>
+                        <li><a href="Default.aspx?f=w2">Tuesday</a></li>
+                        <li><a href="Default.aspx?f=w3">Wednesday</a></li>
+                        <li><a href="Default.aspx?f=w4">Thursday</a></li>
+                        <li><a href="Default.aspx?f=w5">Friday</a></li>
+                        <li><a href="Default.aspx?f=w6">Saturday</a></li>
+                        <li><a href="Default.aspx?f=w7">Sunday</a></li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </nav>
+        <div class="container" style="background-color:#ffffff;">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <img src="Assets/images/background.jpg" class="img-responsive" style="margin:10px 0px;">
+                    </div>
+                    <div class="col-sm-4" style="padding-bottom: 5px;">
+                        <a href="Default.aspx">
+                            <img src="Assets/images/logo.jpg" class="img-responsive" style="margin:10px auto;">
+                        </a>
+                    </div>
+                </div>
+        </div>
+        <div class="container" style="background-color:#ffffff;">
+            <div class="row">
+                <div class="col-sm-8">
+                    
+    
+    <div class="row" style="text-align: center; margin: 0px -3px 10px -3px;">
+        <div class="col-xs-12 col-result">
+            <div class="prizeHeader2" style="min-height:41px;padding-top:7px;padding-bottom:7px;text-align:center;float:left;width:100%;">
+                <div class="col-xs-6">Sun, 12 Apr 2026</div>
+                <div class="col-xs-6">Draw No. 3421</div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="text-align: center; margin: 0px -3px 10px -3px;">
+        <div class="col-xs-4 col-result">
+            <span class="prizeHeader">1st Prize</span>
+            <span id="result1" class="prizeNum">8437</span>
+        </div>
+        <div class="col-xs-4 col-result">
+            <span class="prizeHeader">2nd Prize</span>
+            <span id="result2" class="prizeNum">7444</span>
+        </div>
+        <div class="col-xs-4 col-result">
+            <span class="prizeHeader">3rd Prize</span>
+            <span id="result3" class="prizeNum">0224</span>
+        </div>
+    </div>
+    <div class="row" style="text-align: center; margin: 0px -3px 10px -3px;">
+        <div class="col-xs-12 col-result">
+            <span class="prizeHeader2">Starter Prize</span>
+        </div>
+        <div class="col-xs-12 col-result">
+            <div id="MainContent_result4" class="prizeNum-container">
+            <div class="col-xs-3 remove-wpadding"><span id="result4_1" class="prizeNum2">6053</span></div><div class="col-xs-3 remove-wpadding"><span id="result4_2" class="prizeNum2"> 6772</span></div><div class="col-xs-3 remove-wpadding"><span id="result4_3" class="prizeNum2"> 9231</span></div><div class="col-xs-3 remove-wpadding"><span id="result4_4" class="prizeNum2"> 1390</span></div><div class="col-xs-3 remove-wpadding"><span id="result4_5" class="prizeNum2"> 2421</span></div><div class="col-xs-3 remove-wpadding"><span id="result4_6" class="prizeNum2"> 0504</span></div><div class="col-xs-3 remove-wpadding"><span id="result4_7" class="prizeNum2"> 3356</span></div><div class="col-xs-3 remove-wpadding"><span id="result4_8" class="prizeNum2"> 5795</span></div><div class="col-xs-offset-3 col-xs-3 remove-wpadding"><span id="result4_9" class="prizeNum2"> 2342</span></div><div class="col-xs-3 remove-wpadding"><span id="result4_10" class="prizeNum2"> 4958</span></div></div>
+        </div>
+    </div>
+    <div class="row" style="text-align: center; margin: 0px -3px 20px -3px;">
+        <div class="col-xs-12 col-result">
+            <span class="prizeHeader2">Consolation Prize</span>
+        </div>
+        <div class="col-xs-12 col-result">
+            <div id="MainContent_result5" class="prizeNum-container">
+            <div class="col-xs-3 remove-wpadding"><span id="result5_1" class="prizeNum2">8723</span></div><div class="col-xs-3 remove-wpadding"><span id="result5_2" class="prizeNum2"> 2500</span></div><div class="col-xs-3 remove-wpadding"><span id="result5_3" class="prizeNum2"> 7970</span></div><div class="col-xs-3 remove-wpadding"><span id="result5_4" class="prizeNum2"> 5168</span></div><div class="col-xs-3 remove-wpadding"><span id="result5_5" class="prizeNum2"> 4696</span></div><div class="col-xs-3 remove-wpadding"><span id="result5_6" class="prizeNum2"> 3194</span></div><div class="col-xs-3 remove-wpadding"><span id="result5_7" class="prizeNum2"> 5045</span></div><div class="col-xs-3 remove-wpadding"><span id="result5_8" class="prizeNum2"> 9572</span></div><div class="col-xs-offset-3 col-xs-3 remove-wpadding"><span id="result5_9" class="prizeNum2"> 1977</span></div><div class="col-xs-3 remove-wpadding"><span id="result5_10" class="prizeNum2"> 4905</span></div></div>
+        </div>
+    </div>
+    
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h4 id="MainContent_divSubHeader" class="panel-newHeader">Past Draw Result</h4>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" style="margin-bottom: 0px;">
+                    <thead>
+                        <tr class="table-header-st">
+                            <th>Date</th>
+                            <th>Match</th>
+                            <th>1st Prize</th>
+                            <th>2nd Prize</th>
+                            <th>3rd Prize</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td>Sun, 12 Apr 2026</td>
+                            <td>No. 3421</td>
+                            <td>8437</td>
+                            <td>7444</td>
+                            <td>0224</td>
+                            <td><a href="Result.aspx?id=16191096" class="btn btn-default btn-sm">More <span class="glyphicon glyphicon-chevron-right"></span></a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Sat, 11 Apr 2026</td>
+                            <td>No. 3420</td>
+                            <td>0924</td>
+                            <td>4727</td>
+                            <td>9891</td>
+                            <td><a href="Result.aspx?id=16184729" class="btn btn-default btn-sm">More <span class="glyphicon glyphicon-chevron-right"></span></a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Fri, 10 Apr 2026</td>
+                            <td>No. 3419</td>
+                            <td>7894</td>
+                            <td>5464</td>
+                            <td>0622</td>
+                            <td><a href="Result.aspx?id=16178149" class="btn btn-default btn-sm">More <span class="glyphicon glyphicon-chevron-right"></span></a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Thu, 09 Apr 2026</td>
+                            <td>No. 3418</td>
+                            <td>6484</td>
+                            <td>9930</td>
+                            <td>6334</td>
+                            <td><a href="Result.aspx?id=16171570" class="btn btn-default btn-sm">More <span class="glyphicon glyphicon-chevron-right"></span></a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Wed, 08 Apr 2026</td>
+                            <td>No. 3417</td>
+                            <td>2240</td>
+                            <td>7806</td>
+                            <td>2615</td>
+                            <td><a href="Result.aspx?id=16165202" class="btn btn-default btn-sm">More <span class="glyphicon glyphicon-chevron-right"></span></a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Tue, 07 Apr 2026</td>
+                            <td>No. 3416</td>
+                            <td>2815</td>
+                            <td>6021</td>
+                            <td>4019</td>
+                            <td><a href="Result.aspx?id=16158689" class="btn btn-default btn-sm">More <span class="glyphicon glyphicon-chevron-right"></span></a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Mon, 06 Apr 2026</td>
+                            <td>No. 3415</td>
+                            <td>9867</td>
+                            <td>5201</td>
+                            <td>5263</td>
+                            <td><a href="Result.aspx?id=16152112" class="btn btn-default btn-sm">More <span class="glyphicon glyphicon-chevron-right"></span></a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Sun, 05 Apr 2026</td>
+                            <td>No. 3414</td>
+                            <td>2460</td>
+                            <td>0483</td>
+                            <td>5983</td>
+                            <td><a href="Result.aspx?id=16145533" class="btn btn-default btn-sm">More <span class="glyphicon glyphicon-chevron-right"></span></a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Sat, 04 Apr 2026</td>
+                            <td>No. 3413</td>
+                            <td>4680</td>
+                            <td>2505</td>
+                            <td>2122</td>
+                            <td><a href="Result.aspx?id=16139165" class="btn btn-default btn-sm">More <span class="glyphicon glyphicon-chevron-right"></span></a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Fri, 03 Apr 2026</td>
+                            <td>No. 3412</td>
+                            <td>6385</td>
+                            <td>5995</td>
+                            <td>7885</td>
+                            <td><a href="Result.aspx?id=16132641" class="btn btn-default btn-sm">More <span class="glyphicon glyphicon-chevron-right"></span></a></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+            <div style="text-align: center;">
+                <ul class="pagination" style="margin: 15px auto 0px auto;">
+                    
+                    <li class="disabled"><a href="javascript:;"><span>First</span></a></li>
+                    <li class="disabled"><a href="javascript:;"><span>Previous</span></a></li>
+                    
+                    <li class="active"><a href="javascript:;">1</a></li>
+                    
+                    <li><a href="Default.aspx?page=2">2</a></li>
+                    
+                    <li><a href="Default.aspx?page=3">3</a></li>
+                    
+                    <li><a href="Default.aspx?page=4">4</a></li>
+                    
+                    <li><a href="Default.aspx?page=2"><span>Next</span></a></li>
+                    <li><a href="Default.aspx?page=37"><span>Last</span></a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="Assets/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript">
+        var resultTimeout = 0;
+        $(function () {
+            getResult();
+        });
+        function getResult() {
+            $.ajax({
+                type: "POST",
+                url: "Default.aspx/UpdateResult",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    var i;
+                    if (msg.d.result1 != null) $("#result1").html(msg.d.result1);
+                    if (msg.d.result2 != null) $("#result2").html(msg.d.result2);
+                    if (msg.d.result3 != null) $("#result3").html(msg.d.result3);
+                    if (msg.d.result4 != null) {
+                        var result4arr = msg.d.result4.split(",");
+                        for (i = 0; i < result4arr.length; i++) {
+                            $("#result4_" + (i + 1)).html(result4arr[i]);
+                        }
+                    }
+                    if (msg.d.result5 != null) {
+                        var result5arr = msg.d.result5.split(",");
+                        for (i = 0; i < result5arr.length; i++) {
+                            $("#result5_" + (i + 1)).html(result5arr[i]);
+                        }
+                    }
+                    if (msg.d.callbackTime != null && msg.d.callbackTime > 0) {
+                        clearTimeout(resultTimeout);
+                        resultTimeout = setTimeout(getResult, msg.d.callbackTime);
+                    }
+                }
+            });
+        }
+    </script>
+
+                </div>
+                <div class="col-sm-4" style="padding-bottom: 5px;">
+                    <input type="hidden" name="ctl00$CountDownField" id="CountDownField" value="77489">
+                    <div id="divCountdown" class="panel panel-default panel-result">
+                        <div class="panel-heading">
+                            <h4 class="panel-newHeader">Next Draw</h4>
+                        </div>
+                        <div class="panel-body">
+                        <div class="col-xs-4 col-countdown"><span id="txtHour" class="countdownBox">21</span></div>
+                        <div class="col-xs-4 col-countdown"><span id="txtMin" class="countdownBox">31</span></div>
+                        <div class="col-xs-4 col-countdown"><span id="txtSec" class="countdownBox">25</span></div>
+                        <div class="col-xs-4 col-countdown"><span class="countdownDesc">HOUR</span></div>
+                        <div class="col-xs-4 col-countdown"><span class="countdownDesc">MIN</span></div>
+                        <div class="col-xs-4 col-countdown"><span class="countdownDesc">SEC</span></div>
+                        </div>
+                    </div>
+                    <img src="Assets/images/link1.jpg" class="img-responsive" style="margin: 0px auto 15px auto;">
+                    <img src="Assets/images/link2.jpg" class="img-responsive" style="margin: 0px auto 15px auto;">
+                    <img src="Assets/images/link3.jpg" class="img-responsive" style="margin: 0px auto 15px auto;">
+                    <img src="Assets/images/link4.jpg" class="img-responsive" style="margin: 0px auto 15px auto;">
+                </div>
+            </div>
+        </div>
+        <div style="background-color: #f39600; color: #ffffff;">
+            <div class="container">
+                <div class="row" style="text-align: center; margin: 5px;">
+                    <img src="Assets/images/certified.jpg" class="img-responsive" style="margin: 0px auto;">
+                </div>
+            </div>
+        </div>
+        <div style="background-color: #1a1a1a; color: #ffffff;">
+            <div class="container">
+                <div class="row" style="min-height: 150px;">
+                    <div class="col-sm-3">
+                        <h4 style="margin-top: 20px;">Lottery</h4>
+                        <ul class="list-unstyled footer-list">
+                            <li><a href="javascript:;">4D</a></li>
+                            <li><a href="javascript:;">Lottery</a></li>
+                            <li><a href="javascript:;">Casino</a></li>
+                            <li><a href="javascript:;">Horse Racing</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3">
+                        <h4 style="margin-top: 20px;">About</h4>
+                        <ul class="list-unstyled footer-list">
+                            <li><a href="PrivacyPolicy.aspx">Privacy Policy</a></li>
+                            <li><a href="ResponsibleGaming.aspx">Responsible Gaming</a></li>
+                            <li><a href="Disclaimer.aspx">Disclaimer</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6">
+                        <p style="margin-top: 20px;">We takes a strong Play Responsibly stand. We want our customers to have some fun playing our games. Our game rules state that no person under the age of 18 shall be allowed to purchase a ticket or claim any prize. Please exit this website immediately if you are under 18. Read our DISCLAIMER on the use of this website.</p>
+                        <p>Copyright © 2002 NairobiPools. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="Assets/js/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="Assets/js/bootstrap.js"></script>
+        <script type="text/javascript" src="Assets/js/ie10-viewport-bug-workaround.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                $("#inputdate").datepicker({
+                    beforeShow: function () {
+                        setTimeout(function () {
+                            $('.ui-datepicker').css('z-index', 9999);
+                        }, 0);
+                    },
+                    dateFormat: 'dd-mm-yy'
+                });
+                //$("#inputdate").datepicker({ dateFormat: 'dd-mm-yy' });
+                var timeNum = $("#CountDownField").val();
+                if (isNaN(timeNum) || $("#CountDownField").val() == "") $("#divCountdown").hide();
+                else UpdateTime(timeNum);
+            });
+            function SearchResultDate() {
+                if ($("#inputdate").val() == "") {
+                    alert("Please select a date");
+                } else {
+                    location.href = "Result.aspx?date=" + $("#inputdate").val();
+                }
+            }
+            var delay;
+            var cdTime;
+            function UpdateTime(time) {
+                cdTime = time;
+                DisplayTime();
+                clearInterval(delay);
+                delay = setInterval(DisplayTime, 1000);
+            }
+            function DisplayTime() {
+                cdTime--;
+                while (cdTime < 0) cdTime += 86400;
+                var hour = Math.max(0, Math.floor(cdTime / 3600));
+                var min = Math.max(0, Math.floor(cdTime / 60) % 60);
+                var sec = Math.max(0, cdTime % 60);
+                $("#txtHour").html(("0" + hour).slice(-2));
+                $("#txtMin").html(("0" + min).slice(-2));
+                $("#txtSec").html(("0" + sec).slice(-2));
+                if (cdTime == 0) {
+                    clearInterval(delay);
+                    location.reload();
+                }
+            }
+        </script>
+        
+
+    </form>
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;0d8af9e0b59042a7ab7cf0faaec3a886&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>

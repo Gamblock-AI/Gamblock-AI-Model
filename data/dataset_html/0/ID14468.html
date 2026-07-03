@@ -1,0 +1,796 @@
+<html lang="en"><head>
+<!-- Ensighten Script --> 
+<script async="" src="//javascript:;"></script><script type="text/javascript" src="//nexus.ensighten.com/uw-suzuki/dev/Bootstrap.js"></script><style type="text/css">@font-face {
+    font-family: 'SuzukiPRORegular';
+    src: url("/font/SuzukiPRORegular.ttf") format("truetype"), url("/font/SuzukiPRORegular.woff") format("woff");
+} 
+
+@font-face {
+    font-family: 'SuzukiPROHeadline';
+    src: url("/font/SuzukiPROHeadline.ttf") format("truetype"), url("/font/SuzukiPROHeadline.woff") format("woff");
+}
+
+@font-face {
+    font-family: 'SuzukiPROBold';
+    src: url("/font/SuzukiPROBold.ttf") format("truetype"), url("/font/SuzukiPROBold.woff") format("woff");
+}
+
+#ensNotifyBanner{
+    background-color: RGB(255,255,255);
+	color: RGB(0,0,0);
+    font-family: 'SuzukiPRORegular', sans-serif;
+    font-size: 14px;
+    text-align: left;
+    opacity: 0.9;
+    position: fixed;
+    line-height: 1.4;
+    outline: none!important;
+    box-shadow: none!important;
+}
+
+#ensCloseBanner{
+	background-color: RGB(0,49,69);
+	font-family: 'SuzukiPROBold', sans-serif;
+	font-size: 16px;
+	color: #fff;
+    /* ▼追加（縦中央寄せ） */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+#ensModalWrapper{
+    background-color: RGB(255,255,255);
+    color: RGB(0,0,0);
+    font-family: 'SuzukiPRORegular', sans-serif;
+    width: 70%;
+    text-align: left;
+    border: none;
+    border-radius: 10px;
+    opacity: 0.9;
+    position: fixed;
+    line-height: 1.4;
+}
+
+#ensModalWrapper .ensTitle{
+    font-family: 'SuzukiPROHeadline', sans-serif;
+    color: RGB(0,0,0);
+    font-size: 20px;
+    text-align: center;
+}
+
+#ensModalWrapper .consentDescription{
+    display:none;
+    font-family: 'SuzukiPRORegular', sans-serif;
+    font-size: 14px;
+    margin-top: 0 !important;  /* ←これで15pxを潰す */
+}
+
+#ensModalWrapper .ensModal .description{
+  margin-top: 0 !important;
+}
+
+#ensModalWrapper .ensToggleLabel{
+    font-family: 'SuzukiPROHeadline', sans-serif;
+    font-size: 18px;
+}
+
+#ensModalWrapper .description{
+    font-family: 'SuzukiPRORegular', sans-serif;
+    font-size: 14px;
+}
+
+#ensModalWrapper #ensSave{
+	background-color: RGB(0,49,69);
+	font-family: 'SuzukiPROBold', sans-serif;
+	font-size: 16px;	
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    order: 2;
+}
+
+#ensModalWrapper #ensCancel{
+    font-family: 'SuzukiPROBold', sans-serif;
+    font-size: 16px;
+    /* 文字が下に寄る問題対策 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    /* 左に出したいので保存より先 */
+    order: 1;
+}
+
+#ensModalWrapper .ensCenter{
+	font-family: 'SuzukiPROBold', sans-serif;
+	font-size: 16px;	
+}
+#ensModalWrapper .ensTitle {
+    background: transparent;
+}
+/*gatewayアップデート用ダミーコメント*/</style> 
+<!-- Google Tag Manager --> 
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TJ3T4L6');</script> 
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<title>Global Suzuki</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<meta name="keywords" content="suzuki, global suzuki, suzuki worldwide, automobile, car, motorcycle, bike, motocross, atv, marine, outboard">
+<meta name="description" content="The official SUZUKI global website - our products, news, corporate &amp; IR information, and global links.">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:title" content="Global Suzuki">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.globalsuzuki.com/">
+<meta property="og:image" content="https://www.globalsuzuki.com/common/img/facebookIcon.gif">
+<meta property="og:site_name" content="Global Suzuki">
+<meta property="og:description" content="The official SUZUKI global website - our products, news, corporate &amp; IR information, and global links.">
+<link rel="shortcut icon" href="/favicon.ico">
+<script src="/js/jquery.js"></script> 
+<script src="/js/html5.js"></script> 
+<script src="/js/gimmicks.js"></script> 
+
+<!-- スライダー -->
+<link rel="stylesheet" href="/css/slider-pro.css">
+<script src="/js/jquery.sliderPro.js"></script> 
+<script type="text/javascript">
+$( document ).ready(function( $ ) {
+	$( '#slider-pro' ).sliderPro({
+		buttons: false, //スライダーのページャを表示する
+		startSlide: 0, //最初のスライドを指定する
+		arrows: true, //左右の矢印ボタンを表示する
+		width: 1200, //横幅を設定する
+		height: 500, //高さを設定する
+		autoplay: true, //自動再生の設定
+		loop: true, //スライドをループさせる設定
+		thumbnailWidth: 154,
+		thumbnailPointer: false,
+		thumbnailArrows: true,
+		fadeThumbnailArrows: false,
+		breakpoints: {
+			767: {
+				thumbnailWidth: 100
+			}
+		}
+	});
+});
+</script> 
+<!-- スライダー --> 
+
+<!-- ライトボックス -->
+<link rel="stylesheet" href="/css/colorbox.css">
+<script src="/js/jquery.colorbox.js"></script> 
+<script>
+$(document).ready(function(){
+	$(".youtube").colorbox({
+		iframe:true,
+		innerWidth:640,
+		innerHeight:390,
+		maxWidth:"80%",
+	});
+	if(navigator.userAgent.match(/(iPhone|iPod|Android)/)){
+		$(function(){
+				$(".youtube").colorbox({
+				cbox_open:true,
+				iframe:true,
+				innerWidth:"80%",
+				innerHeight:260,
+			});
+		});
+	}
+});
+$(function() {
+	$(".inline").colorbox({
+		inline:true,
+		maxWidth:"60%",
+		opacity: 0.7,
+	});
+	$(".inline2").colorbox({
+		inline:true,
+		maxWidth:"60%",
+		opacity: 0.7,
+	});
+
+	if(navigator.userAgent.match(/(iPhone|iPod|Android)/)){
+		$(function(){
+			$(".inline").colorbox({
+				inline:true,
+				maxWidth:"90%",
+			});
+			$(".inline2").colorbox({
+				inline:true,
+				maxWidth:"90%",
+			});
+		});
+	}
+});
+
+</script> 
+<!-- ライトボックス --> 
+
+<!-- SNS画像 --> 
+<script src="/js/masonry.pkgd.min.js"></script> 
+<script>
+$(window).load(function() {
+  $('.js-masonry').masonry({
+    isFitWidth: true,
+	columnWidth: 151,
+  });
+	if(navigator.userAgent.match(/(iPhone|iPod|Android)/)){
+		$(function(){
+			$('.js-masonry').masonry({
+				columnWidth: 123,
+			});
+		});
+	}
+});
+</script> 
+<!-- SNS画像 --> 
+
+<!-- 高さ揃える --> 
+<script src="/js/jquery.matchHeight.js"></script> 
+<script>
+$(function(){
+　　$('#m-img > div').matchHeight();
+});
+</script> 
+<!-- 高さ揃える --> 
+
+<!-- 共通CSS -->
+<link rel="stylesheet" href="/css/reset.css">
+<link rel="stylesheet" href="/css/common.css">
+<!-- 共通CSS --> 
+
+<!-- ページ別CSS -->
+<link rel="stylesheet" href="/css/top.css">
+<!-- ページ別CSS --> 
+
+<script type="text/javascript">
+if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
+    document.write('<link rel="stylesheet" href="/css/sp.css">');
+}
+</script> 
+<script type="text/javascript">
+$(function(){
+    $.ajax({
+        url:'/news/top.xml',
+        cache:false,
+        type:'GET',
+        dataType:'xml',
+        success:function(xml){
+			$('#news-area > ul').empty();
+            $(xml).find('article').each(function() {
+                $('#news-area > ul').append('<li><a href="' + $(this).find('link').text() + '"><strong>' + $(this).find('date').text() + '</strong>' + $(this).find('message').text() + '</a></li>');
+            });
+        }
+    });
+});
+</script> 
+
+<!-- 20210216追加 share this --> 
+<script type="text/javascript" src="//javascript:;" async=""></script> 
+<!-- share this -->
+
+<title>Global Suzuki</title>
+<style type="text/css">.ensNotifyBanner {
+    background-color: #191b23;
+    color: #ededed;
+    opacity: 0.8;
+    width: 60%;
+    border-radius: 10px;
+    padding: 20px;
+    font-family: Roboto, Arial, sans-serif;
+    position: fixed;
+    bottom: 50px;
+    display: none;
+    z-index: 9999;
+}
+
+.ensButtons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+}
+
+.ensButtons .button {
+    display: inline-block;
+    position: relative;
+    padding: 8px 2px; /* Controls the button's height and width relative to its text content */
+    border-radius: 2px;
+    font-size: 0.9em;
+    white-space: nowrap; /* Prevents text from wrapping inside button */
+    overflow: hidden;    /* Ensures overflowing text doesn't spill out of the button */
+    background-color: #fff;
+    color: #646464;
+    margin-left: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.ensButtons .button.grey {
+    background-color: #eee;
+}
+
+.ensButtons .button.blue {
+    background-color: #2b5cac;
+    color: #fff;
+}
+
+.ensButtons .button.raised {
+    transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0.2s;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.ensButtons .button.raised:active {
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+    transition-delay: 0s;
+}
+
+.ensClear {
+    clear: both;
+}
+
+.ensModalLink {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.ensModalLink:hover {
+    color: #2b5cac;
+}
+</style><style type="text/css">.ensCenter {
+    text-align: center;
+}
+
+#ensModalWrapper {
+    border: 1px solid #333;
+    position: fixed;
+    max-width: 80%;
+    border: 1px solid #000;
+    display: none;
+    box-shadow: 5px 5px 5px grey;
+    background-color: #fff;
+    padding: 20px 0;
+    z-index: 9999;
+}
+
+.ensModal {
+    font-family: Roboto, Arial, sans-serif;
+}
+
+.ensModal input[type="checkbox"] {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap; /* added line */
+}
+
+.ensModal input[type="checkbox"]:checked ~ .toggle {
+    background: #fff;
+    left: 36px;
+    transition: 0.5s;
+}
+
+.ensModal input[type="checkbox"]:checked ~ .switch {
+    background: #43a047;
+    transition: 0.5s;
+}
+
+.ensModal .switch {
+    display: block;
+    width: 50px;
+    height: 15px;
+    background: #939393;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    transition: 0.5s;
+}
+
+.ensModal .toggle {
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    transition: 0.5s;
+}
+
+.ensModal .card {
+    display: inline-block;
+    margin: 9px;
+    margin: 5px;
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    position: relative;
+    float: right;
+}
+
+.ensModal {
+    font-size: 18px;
+    color: #333;
+    padding: 20px;
+}
+
+.ensToggleRow {
+    margin-bottom: 10px;
+}
+
+.ensToggleLabel {
+    margin-right: 5px;
+}
+
+.ensButtons {
+    clear: both;
+    margin-top: 15px;
+    float: right;
+}
+
+.ensButtons .button {
+    display: inline-block;
+    position: relative;
+    width: 120px;
+    height: 32px;
+    border-radius: 2px;
+    font-size: 0.9em;
+    background-color: #fff;
+    color: #646464;
+    margin-left: 20px;
+}
+
+.ensButtons .button.grey {
+    background-color: #eee;
+}
+
+.ensButtons .button.blue {
+    background-color: #2b5cac;
+    color: #fff;
+}
+
+.ensButtons .button.raised {
+    transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0.2s;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.ensButtons .button.raised:active {
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+    transition-delay: 0s;
+}
+
+.ensModal .ensTitle {
+    margin: 5px;
+    width: 95%;
+    color: #74736f;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    padding-left: 5%;
+    padding-top: 13px;
+    padding-bottom: 3px;
+    text-align: center;
+}
+
+.ensModal .consentDescription {
+    color: #333;
+    font-size: 14px;
+}
+
+.ensModal hr {
+    color: #c5c5c5;
+}
+
+.ensModal .description {
+    max-width: 600px;
+    font-size: 12px;
+    margin-top: 15px;
+    clear: both;
+}
+
+.ensToggleLabel.chevron::before {
+    border-style: solid;
+    border-width: 2px 2px 0 0;
+    content: "";
+    display: inline-block;
+    height: 8px;
+    margin: 0 5px 2px 0;
+    position: relative;
+    width: 8px;
+}
+
+.ensToggleLabel.chevron.right:before {
+    transform: rotate(45deg);
+}
+
+.ensToggleLabel.chevron.bottom:before {
+    margin-left: 2px;
+    margin-bottom: 3px;
+    transform: rotate(135deg);
+}
+
+.ensModal .ensTagsContent {
+    display: none;
+    padding: 0 0 0 20px;
+}
+
+.ensModal .tagContainer {
+    color: #676767;
+    padding: 7px 0 7px 7px;
+    font-size: 15px;
+}
+
+.contactInfoLink {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.ensToggleRowWrapper {
+    max-height: 400px;
+    overflow: auto;
+}
+</style></head>
+
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJ3T4L6"
+height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<article>
+    <header>
+        <h1><a href="/"><img src="/img/common/suzukiLogo.svg" alt="GLOBAL SUZUKI"></a></h1>
+        <nav>
+            <ul>
+                <li><a href="/corporate/">corporate</a></li>
+                <li><a href="/ir/">investor relations</a></li>
+				<li><a href="/sustainability/">sustainability</a></li>
+                <li><a href="/globallinks/"><img src="/img/common/icon_img.gif">global links</a></li>
+                <li><a href="/sitemap/">sitemap</a></li>
+            </ul>
+            <ul>
+                <li><a href="/automobile/">automobile</a></li>
+                <li><a href="/motorcycle/">motorcycle / ATV</a></li>
+                <li><a href="/marine/">marine</a></li>
+            </ul>
+            <ul class="sp">
+                <li><a href="/automobile/">automobile</a></li>
+                <li><a href="/motorcycle/">motorcycle / ATV</a></li>
+                <li><a href="/marine/">marine</a></li>
+                <li><a href="/corporate/">corporate</a></li>
+                <li><a href="/ir/">investor relations</a></li>
+				<li><a href="/sustainability/">sustainability</a></li>
+                <li><a href="/globallinks/">global links</a></li>
+                <li><a href="/sitemap/">sitemap</a></li>
+            </ul>
+            <p class="menu"><img src="/img/common/sp/menu_icon.gif" alt="open"></p>
+        </nav>
+    </header>
+    
+    <!-- 国別エリアここから -->
+    <section id="country-area">
+        <h1 class="pc"><img src="/img/top/country_icon_off.png" alt="suzuki in your country"></h1>
+        <section class="pc">
+            <h1><img src="https://www.globalsuzuki.com/images/global_links/19f8dd95068903a361b0488a69ee1c8020171113221648.gif" class="sp-image">Japan</h1>
+            <ul>
+                <li class="car"><a href="https://www.suzuki.co.jp/car/" target="_blank">SUZUKI MOTOR CORPORATION</a></li>
+                <li class="bike"><a href="https://www1.suzuki.co.jp/motor/" target="_blank">SUZUKI MOTOR CORPORATION</a></li>
+                <li class="ship"><a href="https://www1.suzuki.co.jp/marine/" target="_blank">SUZUKI MOTOR CORPORATION</a></li>
+            </ul>
+            <p><a href="/globallinks/">Change Location</a></p>
+            <p class="close-btn"><img src="/img/common/close_btn.png" alt="close"></p>
+        </section>
+        <h1 class="sp"><img src="/img/top/country_icon_off.png" alt="suzuki in your country"><img src="/img/common/sp/country_icon.png" alt="suzuki in your country" class="sp"><img src="/img/common/sp/close_btn.png" alt="close"></h1>
+        <section class="sp">
+            <h1><img src="https://www.globalsuzuki.com/images/global_links/19f8dd95068903a361b0488a69ee1c8020171113221648.gif" class="sp-image">Japan</h1>
+            <ul>
+                <li class="car"><a href="https://www.suzuki.co.jp/car/" target="_blank">SUZUKI MOTOR CORPORATION</a></li>
+                <li class="bike"><a href="https://www1.suzuki.co.jp/motor/" target="_blank">SUZUKI MOTOR CORPORATION</a></li>
+                <li class="ship"><a href="https://www1.suzuki.co.jp/marine/" target="_blank">SUZUKI MOTOR CORPORATION</a></li>
+            </ul>
+            <p><a href="/globallinks/">Change Location</a></p>
+        </section>
+    </section>
+    <!-- 国別エリアここまで --> 
+    
+    <!-- コンテンツここから --> 
+    <!-- スライドエリア -->
+    <div id="slider-pro" class="sp-horizontal" style="width: 100%; max-width: 1200px;">
+        
+        
+    <div class="sp-slides-container"><div class="sp-mask sp-grab" style="width: 1200px; height: 500px;"><ul class="sp-slides" style="transform: translate3d(-3630px, 0px, 0px);">
+            
+            
+            
+            
+            
+            
+            
+            
+        <li class="sp-slide sp-selected" data-index="0" data-init="true" data-loaded="true" style="width: 1200px; height: 500px; left: 3630px;"><div class="sp-image-container" style="width: 1200px; height: 500px;"><a href="/suzuki_family/"><img src="https://www.globalsuzuki.com/images/top_main/251bff26bc11b4d7eeb815172708968120210202165422.jpeg" class="sp-image" data-default="https://www.globalsuzuki.com/images/top_main/251bff26bc11b4d7eeb815172708968120210202165422.jpeg" style="width: 100%; height: auto; margin-left: 0px; margin-top: 0px;"></a></div></li><li class="sp-slide" data-index="1" data-init="true" data-loaded="true" style="width: 1200px; height: 500px; left: 4840px;"><div class="sp-image-container" style="width: 1200px; height: 500px;"><a href="/automobile/lineup/evitara/index.html"><img src="/images/top_main/evitara.jpg" class="sp-image" data-default="/images/top_main/evitara.jpg" style="width: 100%; height: auto; margin-left: 0px; margin-top: 0px;"></a></div></li><li class="sp-slide" data-index="2" data-init="true" style="width: 1200px; height: 500px; left: 6050px;"><div class="sp-image-container" style="width: 1200px; height: 500px;"><a href="/automobile/lineup/s-cross/index.html"><img src="/images/top_main/s-cross.jpg" class="sp-image" data-default="/images/top_main/s-cross.jpg" style="width: 100%; height: auto; margin-left: 0px; margin-top: 0px;"></a></div></li><li class="sp-slide" data-index="3" data-init="true" style="width: 1200px; height: 500px; left: 7260px;"><div class="sp-image-container" style="width: 1200px; height: 500px;"><a href="/automobile/lineup/swift/index.html"><img src="/images/top_main/swift.jpg" class="sp-image" data-default="/images/top_main/swift.jpg" style="width: 100%; height: auto; margin-left: 0px; margin-top: 0px;"></a></div></li><li class="sp-slide" data-index="4" data-init="true" style="width: 1200px; height: 500px; left: 8470px;"><div class="sp-image-container" style="width: 1200px; height: 500px;"><a href="/motorcycle/smgs/products/2026gsx-r1000r/"><img src="/images/top_main/GSX-R1000R.jpg" class="sp-image" data-default="/images/top_main/GSX-R1000R.jpg" style="width: 100%; height: auto; margin-left: 0px; margin-top: 0px;"></a></div></li><li class="sp-slide" data-index="5" data-init="true" style="width: 1200px; height: 500px; left: 0px;"><div class="sp-image-container" style="width: 1200px; height: 500px;"><a href="/motorcycle/smgs/products/2027sv-7gx/"><img src="/images/top_main/SV-7GX.jpg" class="sp-image" data-default="/images/top_main/SV-7GX.jpg" style="width: 100%; height: auto; margin-left: 0px; margin-top: 0px;"></a></div></li><li class="sp-slide" data-index="6" data-init="true" style="width: 1200px; height: 500px; left: 1210px;"><div class="sp-image-container" style="width: 1200px; height: 500px;"><a href="/marine/lineup/df350amd-300bmd/"><img src="/images/top_main/the_df350amd.jpg" class="sp-image" data-default="/images/top_main/the_df350amd.jpg" style="width: 100%; height: auto; margin-left: 0px; margin-top: 0px;"></a></div></li><li class="sp-slide" data-index="7" data-init="true" data-loaded="true" style="width: 1200px; height: 500px; left: 2420px;"><div class="sp-image-container" style="width: 1200px; height: 500px;"><a href="/marine/environment/"><img src="/images/top_main/cleanocean.jpg" class="sp-image" data-default="/images/top_main/cleanocean.jpg" style="width: 100%; height: auto; margin-left: 0px; margin-top: 0px;"></a></div></li></ul></div><div class="sp-arrows sp-fade-arrows"><div class="sp-arrow sp-previous-arrow"></div><div class="sp-arrow sp-next-arrow"></div></div></div><div class="sp-thumbnails-container sp-bottom-thumbnails" style="width: 1200px;"><ul id="thum-img" class="sp-thumbnails sp-grab" style="width: 1372px; height: 80px;">
+            
+            
+            
+            
+            
+            
+            
+            
+        <div class="sp-thumbnail-container sp-selected-thumbnail" data-loaded="true" style="width: 154px; height: 80px;"><li class="sp-thumbnail" data-index="0" data-init="true"><img src="https://www.globalsuzuki.com/images/top_main/251bff26bc11b4d7eeb815172708968120210202165422.jpeg"></li></div><div class="sp-thumbnail-container" data-loaded="true" style="width: 154px; height: 80px;"><li class="sp-thumbnail" data-index="1" data-init="true"><img src="/images/top_main/evitara.jpg"></li></div><div class="sp-thumbnail-container" data-loaded="true" style="width: 154px; height: 80px;"><li class="sp-thumbnail" data-index="2" data-init="true"><img src="/images/top_main/s-cross.jpg"></li></div><div class="sp-thumbnail-container" data-loaded="true" style="width: 154px; height: 80px;"><li class="sp-thumbnail" data-index="3" data-init="true"><img src="/images/top_main/swift.jpg"></li></div><div class="sp-thumbnail-container" data-loaded="true" style="width: 154px; height: 80px;"><li class="sp-thumbnail" data-index="4" data-init="true"><img src="/images/top_main/GSX-R1000R.jpg"></li></div><div class="sp-thumbnail-container" data-loaded="true" style="width: 154px; height: 80px;"><li class="sp-thumbnail" data-index="5" data-init="true"><img src="/images/top_main/SV-7GX.jpg"></li></div><div class="sp-thumbnail-container" data-loaded="true" style="width: 154px; height: 80px;"><li class="sp-thumbnail" data-index="6" data-init="true"><img src="/images/top_main/the_df350amd.jpg"></li></div><div class="sp-thumbnail-container" style="width: 154px; height: 80px;"><li class="sp-thumbnail" data-index="7" data-init="true"><img src="/images/top_main/cleanocean.jpg"></li></div></ul><div class="sp-thumbnail-arrows"><div class="sp-thumbnail-arrow sp-previous-thumbnail-arrow" style="display: none;"></div><div class="sp-thumbnail-arrow sp-next-thumbnail-arrow" style="display: block;"></div></div></div></div>
+    <!-- slider-pro END --> 
+    <!-- スライドエリア -->
+    
+    <section id="news-area">
+        <h1>NEWS</h1>
+        <ul id="news-list"><li><a href="/globalnews/2026/0410.html"><strong>April 10, 2026</strong>Notice regarding Change in Personnel</a></li><li><a href="/globalnews/2026/0403a.html"><strong>April 3, 2026</strong>Suzuki Holds FY2025 Commendation Ceremony</a></li><li><a href="/globalnews/2026/0403.html"><strong>April 3, 2026</strong>Suzuki Announces New Luxury Scooter BURGMAN STREET</a></li><li><a href="/globalnews/2026/0330.html"><strong>March 30, 2026</strong>Suzuki February 2026 Automobile Production, Sales, and Export Figures</a></li><li><a href="/globalnews/2026/0327.html"><strong>March 27, 2026</strong>Suzuki to Compete in the 2026 Suzuka 8 Hours and the All Japan Road Race Championship with “Team SUZUKI CN CHALLENGE”</a></li></ul>
+        <p class="moreBtn"><a href="/globalnews/index.html">MORE</a></p>
+    </section>
+	
+	<!-- お別れの会エリア -->
+	<section id="owakarenokai-area">
+		<p class="linkBtn"><a href="/corporate/owakarenokai/">About the "Memorial Ceremony for Osamu Suzuki"</a></p>
+	</section>
+	
+	<!-- お別れの会エリア END -->
+	
+	
+	
+    <section id="sns-area">
+        <div class="inner">
+            <h1>GALLERY</h1>
+            <ul class="js-masonry" style="position: relative; height: 453px; width: 1208px;">
+                <li class="item big" style="position: absolute; left: 0px; top: 0px;"><img src="/images/top_gallery/s-cross.jpg" class="inline2 cboxElement" href=".inline-content-gallery-0"></li>
+                <li class="item" style="position: absolute; left: 302px; top: 0px;"><img src="https://www.globalsuzuki.com/images/top_gallery/844683c0a265cf7ae4729ddf0d92123720171030155032.jpeg" class="inline2 cboxElement" href=".inline-content-gallery-1"></li>
+                <li class="item" style="position: absolute; left: 453px; top: 0px;"><img src="https://www.globalsuzuki.com/images/top_gallery/857ffb8dda774a2ed7a07ab02338083620190506135940.jpeg" class="inline2 cboxElement" href=".inline-content-gallery-2"></li>
+                <li class="item" style="position: absolute; left: 604px; top: 0px;"><img src="/images/top_gallery/top_gallery_02.jpg" class="inline2 cboxElement" href=".inline-content-gallery-3"></li>
+                <li class="item" style="position: absolute; left: 755px; top: 0px;"><img src="/images/top_gallery/top_gallery_03.jpg" class="inline2 cboxElement" href=".inline-content-gallery-4"></li>
+                <li class="item big" style="position: absolute; left: 906px; top: 0px;"><img src="/images/top_gallery/top_gallery_05.jpg" class="inline2 cboxElement" href=".inline-content-gallery-5"></li>
+                <li class="item" style="position: absolute; left: 302px; top: 151px;"><img src="https://www.globalsuzuki.com/images/top_gallery/f0c77a30f135a6f490047e255430b6cb20190506143624.jpeg" class="inline2 cboxElement" href=".inline-content-gallery-6"></li>
+                <li class="item big" style="position: absolute; left: 453px; top: 151px;"><img src="/images/top_gallery/top_gallery_01.jpg" class="inline2 cboxElement" href=".inline-content-gallery-7"></li>
+                <li class="item" style="position: absolute; left: 755px; top: 151px;"><img src="https://www.globalsuzuki.com/images/top_gallery/c3ebbbce1cf84efdf01b335fc7870a3620190506135913.jpeg" class="inline2 cboxElement" href=".inline-content-gallery-8"></li>
+                <li class="item" style="position: absolute; left: 0px; top: 302px;"><img src="/images/top_gallery/df350a.jpg" class="inline2 cboxElement" href=".inline-content-gallery-9"></li>
+                <li class="item" style="position: absolute; left: 151px; top: 302px;"><img src="/images/top_gallery/df350a-2.jpg" class="inline2 cboxElement" href=".inline-content-gallery-10"></li>
+                <li class="item" style="position: absolute; left: 302px; top: 302px;"><img src="https://www.globalsuzuki.com/images/top_gallery/96ef84c71e3aded5f012b049b618eea320180723165052.jpeg" class="inline2 cboxElement" href=".inline-content-gallery-11"></li>
+                <li class="item" style="position: absolute; left: 755px; top: 302px;"><img src="/images/top_gallery/df325a.jpg" class="inline2 cboxElement" href=".inline-content-gallery-12"></li>
+                <li class="item" style="position: absolute; left: 906px; top: 302px;"><img src="/images/top_gallery/df140bg.jpg" class="inline2 cboxElement" href=".inline-content-gallery-13"></li>
+                <li class="item" style="position: absolute; left: 1057px; top: 302px;"><img src="/images/top_gallery/top_gallery_04.jpg" class="inline2 cboxElement" href=".inline-content-gallery-14"></li>
+            </ul>
+            <div class="modal">
+                <div id="inline-content2" class="inline-content-gallery-0">
+                    <p><img src="/images/top_gallery/s-cross.jpg"></p>
+                    <p class="btn"><a href="/automobile/lineup/s-cross/index.html">more</a></p>
+                </div>
+            </div>
+            <div class="modal">
+                <div id="inline-content2" class="inline-content-gallery-1">
+                    <p><img src="https://www.globalsuzuki.com/images/top_gallery/844683c0a265cf7ae4729ddf0d92123720171030155032.jpeg"></p>
+                    <p class="btn"><a href="/marine/lineup/df350amd-300bmd/index.html">more</a></p>
+                </div>
+            </div>
+            <div class="modal">
+                <div id="inline-content2" class="inline-content-gallery-2">
+                    <p><img src="https://www.globalsuzuki.com/images/top_gallery/857ffb8dda774a2ed7a07ab02338083620190506135940.jpeg"></p>
+                    <p class="btn"><a href="https://www.globalsuzuki.com/automobile/lineup/vitara/">more</a></p>
+                </div>
+            </div>
+            <div class="modal">
+                <div id="inline-content2" class="inline-content-gallery-3">
+                    <p><img src="/images/top_gallery/top_gallery_02.jpg"></p>
+                    <p class="btn"><a href="https://www.globalsuzuki.com/motorcycle/smgs/products/2024gsx-8s/">more</a></p>
+                </div>
+            </div>
+            <div class="modal">
+                <div id="inline-content2" class="inline-content-gallery-4">
+                    <p><img src="/images/top_gallery/top_gallery_03.jpg"></p>
+                    <p class="btn"><a href="https://www.globalsuzuki.com/motorcycle/smgs/products/2024rm-z450/">more</a></p>
+                </div>
+            </div>
+            <div class="modal">
+                <div id="inline-content2" class="inline-content-gallery-5">
+                    <p><img src="/images/top_gallery/top_gallery_05.jpg"></p>
+                    <p class="btn"><a href="https://www.globalsuzuki.com/motorcycle/smgs/products/2024v-strom800/">more</a></p>
+                </div>
+            </div>
+            <div class="modal">
+                <div id="inline-content2" class="inline-content-gallery-6">
+                    <p><img src="https://www.globalsuzuki.com/images/top_gallery/f0c77a30f135a6f490047e255430b6cb20190506143624.jpeg"></p>
+                    <p class="btn"><a href="https://www.globalsuzuki.com/automobile/lineup/swiftsport/">more</a></p>
+                </div>
+            </div>
+            <div class="modal">
+                <div id="inline-content2" class="inline-content-gallery-7">
+                    <p><img src="/images/top_gallery/top_gallery_01.jpg"></p>
+                    <p class="btn"><a href="https://www.globalsuzuki.com/motorcycle/smgs/products/2024hayabusa_25thanniversary/">more</a></p>
+                </div>
+            </div>
+            <div class="modal">
+                <div id="inline-content2" class="inline-content-gallery-8">
+                    <p><img src="https://www.globalsuzuki.com/images/top_gallery/c3ebbbce1cf84efdf01b335fc7870a3620190506135913.jpeg"></p>
+                    <p class="btn"><a href="https://www.globalsuzuki.com/automobile/lineup/vitara/">more</a></p>
+                </div>
+            </div>
+            <div class="modal">
+                <div id="inline-content2" class="inline-content-gallery-9">
+                    <p><img src="/images/top_gallery/df350a.jpg"></p>
+                    <p class="btn"><a href="/marine/lineup/df350a-325a-300b/index.html">more</a></p>
+                </div>
+            </div>
+            <div class="modal">
+                <div id="inline-content2" class="inline-content-gallery-10">
+                    <p><img src="/images/top_gallery/df350a-2.jpg"></p>
+                    <p class="btn"><a href="/marine/lineup/df350a-325a-300b/index.html">more</a></p>
+                </div>
+            </div>
+            <div class="modal">
+                <div id="inline-content2" class="inline-content-gallery-11">
+                    <p><img src="https://www.globalsuzuki.com/images/top_gallery/96ef84c71e3aded5f012b049b618eea320180723165052.jpeg"></p>
+                    <p class="btn"><a href="https://www.globalsuzuki.com/automobile/lineup/jimny/index.html">more</a></p>
+                </div>
+            </div>
+            <div class="modal">
+                <div id="inline-content2" class="inline-content-gallery-12">
+                    <p><img src="/images/top_gallery/df325a.jpg"></p>
+                    <p class="btn"><a href="/marine/lineup/df350a-325a-300b/index.html">more</a></p>
+                </div>
+            </div>
+            <div class="modal">
+                <div id="inline-content2" class="inline-content-gallery-13">
+                    <p><img src="/images/top_gallery/df140bg.jpg"></p>
+                    <p class="btn"><a href="/marine/lineup/df140bg-115bg/">more</a></p>
+                </div>
+            </div>
+            <div class="modal">
+                <div id="inline-content2" class="inline-content-gallery-14">
+                    <p><img src="/images/top_gallery/top_gallery_04.jpg"></p>
+                    <p class="btn"><a href="https://www.globalsuzuki.com/motorcycle/smgs/products/2024burgman-street-125ex/">more</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- コンテンツエリアここまで -->
+    
+    <footer>
+        <div>
+            <dl>
+                <dt>follow us on</dt>
+                <dd id="facebook"><a href="https://www.facebook.com/SuzukiGlobalOfficial/" target="_blank"><img src="/img/common/sns_icon2_2.png"></a></dd>
+                <dd id="tube"><a href="https://www.youtube.com/user/GlobalSuzukiChannel" target="_blank"><img src="/img/common/sns_icon3_2.png"></a></dd>
+            </dl>
+            <p><small>© Suzuki Motor Corporation, 2026. All rights reserved.</small></p>
+            <p><a href="/foruse/">For use of this website</a></p>
+        </div>
+    </footer>
+</article><section><div id="ensNotifyBanner" class="ensNotifyBanner" role="dialog" aria-label="Consent Banner" aria-describedby="ensBannerDescription" data-nosnippet="true" tabindex="0" style="display: none; left: 273.5px;">
+    <div id="ensBannerDescription">Our website uses certain essential cookies to ensure it works effectively. You can click <a href="javascript:Bootstrapper.gateway.closeBanner();Bootstrapper.gateway.openModal();"><u><span style="font-family: 'SuzukiPROBold',sans-serif; color: RGB(0,0,0);">"Cookie Preferences"</span></u></a> to choose to enable cookies which provide social media features, allow us to analyse your use of our website and enable the display of advertising relevant to you. We share information about your use of our site with third parties for advertising and analytics purposes. You can select and change the types of cookies we use at any time, by clicking <a href="javascript:Bootstrapper.gateway.closeBanner();Bootstrapper.gateway.openModal();"><u><span style="font-family: 'SuzukiPROBold',sans-serif; color: RGB(0,0,0);">Cookie Preferences</span></u></a>. For more information, please check our <a href="/cookies/index.html#Cookies_and_Similar"><u><span style="font-family: 'SuzukiPROBold',sans-serif; color: RGB(0,0,0);">Cookie Policy</span></u></a>.</div>
+    <div class="ensButtons"><button id="ensCloseBanner" aria-label="Close" class="button raised grey">Close</button></div>
+    <div class="ensClear"></div>
+</div></section>
+
+
+<div id="cboxOverlay" style="display: none;"></div><dialog id="ensModalWrapper" role="dialog" aria-labelledby="ensTitle" aria-describedby="ensDescription" focusable="true" aria-modal="true"><div class="ensModal" aria-label="Consent Configuration" data-nosnippet="true">
+    <header class="ensTitle" id="ensTitle">Cookie Preferences</header>
+    <div class="consentDescription" id="ensDescription">Our website uses certain essential cookies to ensure it works effectively. We share information about your use of our site with third parties for advertising and analytics purposes. You can select and change the types of cookies we use at any time. For more information, please check our <a href="/cookies/index.html#Cookies_and_Similar"><u><span style="font-family: 'SuzukiPROBold',sans-serif; color: RGB(0,0,0);">Cookie Policy</span></u></a>.</div>
+    <hr>
+    <div class="ensToggleRowWrapper" role="list">
+    <div class="ensToggleRow" role="listitem"><label class="ensToggleLabel" for="Essential for the use of the siteSlide" role="heading" aria-level="1">Essential for the use of the site<div class="card"><input class="ensCheckbox" aria-describedby="Essential for the use of the sitedescription" id="Essential for the use of the siteSlide" type="checkbox" name="Essential for the use of the siteSlide" checked="" disabled="true"><span class="switch"></span><span class="toggle"></span></div></label><div class="description" id="Essential for the use of the sitedescription" role="definition">Necessary for us to configure parts of our sites without making wholesale changes and disruption to our sites. Should this kind of cookies be deleted, our Online Services will not be able to provide the full functionality.</div></div><hr><div class="ensToggleRow" role="listitem"><label class="ensToggleLabel" for="AnalyticsSlide" role="heading" aria-level="2">Analytics<div class="card"><input class="ensCheckbox" aria-describedby="Analyticsdescription" id="AnalyticsSlide" type="checkbox" name="AnalyticsSlide"><span class="switch"></span><span class="toggle"></span></div></label><div class="description" id="Analyticsdescription" role="definition">We use analytics cookies to collect information on how our sites are used and to report on our sites' usage statistics.</div></div><hr><div class="ensToggleRow" role="listitem"><label class="ensToggleLabel" for="Advertising CookiesSlide" role="heading" aria-level="3">Advertising Cookies<div class="card"><input class="ensCheckbox" aria-describedby="Advertising Cookiesdescription" id="Advertising CookiesSlide" type="checkbox" name="Advertising CookiesSlide"><span class="switch"></span><span class="toggle"></span></div></label><div class="description" id="Advertising Cookiesdescription" role="definition">We work with third party advertising networks that collect information using Cookies to help make the advertising you see on our Sites and elsewhere on the internet more relevant to you, and to measure the effectiveness of the advertising on the sites.</div></div><hr><div class="ensToggleRow" role="listitem"><label class="ensToggleLabel" for="Social MediaSlide" role="heading" aria-level="4">Social Media<div class="card"><input class="ensCheckbox" aria-describedby="Social Mediadescription" id="Social MediaSlide" type="checkbox" name="Social MediaSlide" checked=""><span class="switch"></span><span class="toggle"></span></div></label><div class="description" id="Social Mediadescription" role="definition">Our Sites use plugins to allow you to connect to social networking sites including Facebook and YouTube. These connections are activated when you click on the logos of these services on our sites.</div></div><hr></div>
+
+    
+    
+    
+
+    <div class="ensButtons"><button id="ensSave" tabindex="0" aria-label="Save" class="button raised blue"><div id="ensSaveText" class="ensCenter">Save</div></button><button id="ensCancel" tabindex="0" aria-label="Cancel" class="button raised grey"><div id="ensCancelText" class="ensCenter">Cancel</div></button></div>
+</div></dialog><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button type="button" id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div></body></html>
