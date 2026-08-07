@@ -1,0 +1,43 @@
+schema_version: 1
+context_version: "2026-08-02.24"
+component: "gamblock-ai-model"
+scope: repository
+source_of_truth: AGENTS.md
+
+shared_contracts:
+  proposal_authority: 1
+  privacy_boundary: 1
+
+canonical:
+  instructions: "AGENTS.md"
+  onboarding: "README.md"
+  ai_context: "docs/ai/README.md"
+
+providers:
+  claude: "CLAUDE.md"
+  codex: "AGENTS.md"
+  cursor: ".cursor/rules/gamblock-ai.mdc"
+  gemini: "GEMINI.md"
+  github_copilot: ".github/copilot-instructions.md"
+
+skills:
+  verify_change: ".agents/skills/verify-gamblock-change/SKILL.md"
+
+verification:
+  script: "scripts/verify-ai-context.sh"
+  authoring: "scripts/verify-ai-context.sh --allow-untracked"
+  default_lint: "scripts/verify-ai-context.sh"
+
+required_files:
+  - .gitattributes
+  - AGENTS.md
+  - README.md
+  - CLAUDE.md
+  - GEMINI.md
+  - .github/copilot-instructions.md
+  - .cursor/rules/gamblock-ai.mdc
+  - docs/ai/README.md
+  - docs/ai/manifest.yaml
+  - scripts/verify-ai-context.sh
+  - .agents/skills/verify-gamblock-change/SKILL.md
+  - .agents/skills/verify-gamblock-change/agents/openai.yaml
