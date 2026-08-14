@@ -2,7 +2,7 @@
 
 This repository contains the dataset, training pipelines, model artifacts, metadata, and evaluation reports for Gamblock-AI machine learning components. It must remain safe and understandable as a standalone clone; no parent workspace files are required. Read `docs/ai/README.md` and `context/pkm_proposal.md` for background, capability status, and research contracts.
 
-Context version: `2026-08-14.3`
+Context version: `2026-08-15.1`
 
 ## Start and finish
 
