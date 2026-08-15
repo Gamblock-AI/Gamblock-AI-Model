@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-EXPECTED_CONTEXT_VERSION="2026-08-15.1"
+EXPECTED_CONTEXT_VERSION="2026-08-16.1"
 ALLOW_UNTRACKED=false
 ERRORS=0
 
