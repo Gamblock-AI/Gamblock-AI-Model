@@ -1,0 +1,2364 @@
+<html lang="id"><head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="okGQnFiR1EqksWJzoxK0bWfmoYrLKgZ894h2j7Ak">
+        <link rel="icon" type="image/png" href="https://indokontraktor.com/images/favicon.png">
+        <title> - Indokontraktor.com</title>
+    <meta name="description" content="Indokontraktor.com adalah sebuah direktori atau listing perusahaan jasa konstruksi no 1 di indonesia.
+Indokontraktor.com juga menawarkan aplikasi project management yang canggih untuk mengelola proyek Anda. Coba Gratis">
+    
+    
+        <link rel="canonical" href="https://indokontraktor.com/business/profil-tidak-ditemukan">
+    
+    
+        
+    
+    <meta property="og:url" content="https://indokontraktor.com/business/profil-tidak-ditemukan?slug=pt-aria-jasa-konsultan">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content=" - Indokontraktor.com">
+    <meta property="og:description" content="Indokontraktor.com adalah sebuah direktori atau listing perusahaan jasa konstruksi no 1 di indonesia.
+Indokontraktor.com juga menawarkan aplikasi project management yang canggih untuk mengelola proyek Anda. Coba Gratis">
+    <meta property="og:image" content="https://indokontraktor.com/images/default-share.jpg">
+    
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content=" - Indokontraktor.com">
+    <meta name="twitter:description" content="Indokontraktor.com adalah sebuah direktori atau listing perusahaan jasa konstruksi no 1 di indonesia.
+Indokontraktor.com juga menawarkan aplikasi project management yang canggih untuk mengelola proyek Anda. Coba Gratis">
+    <meta name="twitter:image" content="https://indokontraktor.com/images/default-share.jpg">
+
+
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+    // Configuration for GSC-friendly canonical URLs
+    const contentParams = ['sort', 'filter', 'category', 'location', 'search']; // Parameters that create unique content
+    const trackingParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'ref', 'source', 'fbclid', 'gclid']; // Remove these
+    
+    // Function to build GSC-compliant canonical URL
+    function buildCanonicalUrl() {
+        const url = new URL(window.location.href);
+        const baseUrl = url.origin + url.pathname;
+        const params = new URLSearchParams();
+        const currentPage = url.searchParams.get('page');
+        
+        // Only include content-defining parameters
+        contentParams.forEach(param => {
+            const value = url.searchParams.get(param);
+            if (value && value.trim() !== '') {
+                params.set(param, value);
+            }
+        });
+        
+        // Handle pagination properly for GSC
+        if (currentPage && parseInt(currentPage) > 1) {
+            params.set('page', currentPage);
+        }
+        // Page 1 should NOT have ?page=1 in canonical
+        
+        const queryString = params.toString();
+        return queryString ? `${baseUrl}?${queryString}` : baseUrl;
+    }
+    
+    // Function to update pagination rel tags
+    function updatePaginationRels() {
+        const url = new URL(window.location.href);
+        const currentPage = parseInt(url.searchParams.get('page')) || 1;
+        
+        // Remove existing rel=prev/next tags
+        const existingPrev = document.querySelector('link[rel="prev"]');
+        const existingNext = document.querySelector('link[rel="next"]');
+        if (existingPrev) existingPrev.remove();
+        if (existingNext) existingNext.remove();
+        
+        // Build base URL for pagination
+        const baseUrl = url.origin + url.pathname;
+        const params = new URLSearchParams();
+        
+        contentParams.forEach(param => {
+            const value = url.searchParams.get(param);
+            if (value && value.trim() !== '') {
+                params.set(param, value);
+            }
+        });
+        
+        const baseQuery = params.toString();
+        const baseUrlWithQuery = baseQuery ? `${baseUrl}?${baseQuery}` : baseUrl;
+        
+        // Add rel=prev for pages > 1
+        if (currentPage > 1) {
+            const prevLink = document.createElement('link');
+            prevLink.rel = 'prev';
+            
+            if (currentPage === 2) {
+                // Page 2 prev should point to page 1 without ?page=1
+                prevLink.href = baseUrlWithQuery;
+            } else {
+                const prevParams = new URLSearchParams(params);
+                prevParams.set('page', currentPage - 1);
+                prevLink.href = `${baseUrl}?${prevParams.toString()}`;
+            }
+            
+            document.head.appendChild(prevLink);
+        }
+        
+        // Add rel=next (you might need to determine if there's a next page)
+        // This is a basic implementation - adjust based on your pagination logic
+        const hasNextPage = document.querySelector('.pagination .next:not(.disabled)') !== null;
+        if (hasNextPage) {
+            const nextLink = document.createElement('link');
+            nextLink.rel = 'next';
+            const nextParams = new URLSearchParams(params);
+            nextParams.set('page', currentPage + 1);
+            nextLink.href = `${baseUrl}?${nextParams.toString()}`;
+            document.head.appendChild(nextLink);
+        }
+    }
+    
+    // Function to update social share meta tags dynamically
+    function updateSocialMeta() {
+        const pageTitle = document.querySelector('title').textContent;
+        const metaDescription = document.querySelector('meta[name="description"]');
+        const description = metaDescription ? metaDescription.getAttribute('content') : '';
+        const currentUrl = window.location.href;
+        const canonicalUrl = buildCanonicalUrl();
+        
+        // Update Facebook meta
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        const ogDesc = document.querySelector('meta[property="og:description"]');
+        const ogUrl = document.querySelector('meta[property="og:url"]');
+        
+        if (ogTitle && !ogTitle.getAttribute('content').trim()) {
+            ogTitle.setAttribute('content', pageTitle);
+        }
+        if (ogDesc && !ogDesc.getAttribute('content').trim()) {
+            ogDesc.setAttribute('content', description);
+        }
+        if (ogUrl) {
+            ogUrl.setAttribute('content', currentUrl); // Use full URL for social sharing
+        }
+        
+        // Update Twitter meta
+        const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+        const twitterDesc = document.querySelector('meta[name="twitter:description"]');
+        
+        if (twitterTitle && !twitterTitle.getAttribute('content').trim()) {
+            twitterTitle.setAttribute('content', pageTitle);
+        }
+        if (twitterDesc && !twitterDesc.getAttribute('content').trim()) {
+            twitterDesc.setAttribute('content', description);
+        }
+        
+        // Update canonical URL
+        const canonical = document.querySelector('link[rel="canonical"]');
+        if (canonical) {
+            canonical.setAttribute('href', canonicalUrl);
+        }
+    }
+    
+    // Function to add noindex to deep pagination pages (optional SEO improvement)
+    function handleDeepPagination() {
+        const url = new URL(window.location.href);
+        const currentPage = parseInt(url.searchParams.get('page')) || 1;
+        
+        // Add noindex to pages beyond a certain threshold (e.g., page 10+)
+        if (currentPage > 10) {
+            const existingRobots = document.querySelector('meta[name="robots"]');
+            if (!existingRobots) {
+                const robotsMeta = document.createElement('meta');
+                robotsMeta.name = 'robots';
+                robotsMeta.content = 'noindex, follow';
+                document.head.appendChild(robotsMeta);
+            } else if (!existingRobots.content.includes('noindex')) {
+                existingRobots.content = 'noindex, follow';
+            }
+        }
+    }
+    
+    // Run on page load
+    updateSocialMeta();
+    updatePaginationRels();
+    handleDeepPagination();
+    
+    // Re-run when URL changes (for SPA-like behavior)
+    let currentUrl = window.location.href;
+    const observer = new MutationObserver(function() {
+        if (window.location.href !== currentUrl) {
+            currentUrl = window.location.href;
+            updateSocialMeta();
+            updatePaginationRels();
+            handleDeepPagination();
+        }
+    });
+    
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+    
+    // Also listen for popstate events (back/forward buttons)
+    window.addEventListener('popstate', function() {
+        updateSocialMeta();
+        updatePaginationRels();
+        handleDeepPagination();
+    });
+});
+
+// Enhanced function to create share URLs with current page data
+function getShareUrls() {
+    const pageTitle = document.querySelector('title').textContent;
+    const metaDescription = document.querySelector('meta[name="description"]');
+    const description = metaDescription ? metaDescription.getAttribute('content') : '';
+    const currentUrl = encodeURIComponent(window.location.href);
+    
+    return {
+        facebook: `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`,
+        twitter: `https://twitter.com/intent/tweet?url=${currentUrl}&text=${encodeURIComponent(pageTitle)}&via=IndoKontraktor`,
+        linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${currentUrl}`,
+        whatsapp: `https://wa.me/?text=${encodeURIComponent(pageTitle + ' ' + window.location.href)}`,
+        telegram: `https://t.me/share/url?url=${currentUrl}&text=${encodeURIComponent(pageTitle)}`
+    };
+}
+
+// Enhanced share function with better error handling
+function shareToSocial(platform) {
+    const shareUrls = getShareUrls();
+    if (shareUrls[platform]) {
+        const popup = window.open(shareUrls[platform], '_blank', 'width=600,height=400,scrollbars=yes,resizable=yes');
+        
+        // Check if popup was blocked
+        if (!popup || popup.closed || typeof popup.closed === 'undefined') {
+            // Fallback: try to navigate in the same window
+            window.location = shareUrls[platform];
+        }
+    } else {
+        console.warn(`Share platform '${platform}' not supported`);
+    }
+}
+
+// Utility function to get canonical URL (useful for other scripts)
+function getCanonicalUrl() {
+    const canonical = document.querySelector('link[rel="canonical"]');
+    return canonical ? canonical.getAttribute('href') : window.location.href;
+}
+</script>        <!-- Google tag (gtag.js) -->
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8JN2LEP5EE" type="text/javascript"></script>
+        <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-8JN2LEP5EE');</script>
+        <link href="https://indokontraktor.com/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
+        <link href="https://indokontraktor.com/libs/font-awesome/css/font-awesome.css" rel="stylesheet">
+        <link href="https://indokontraktor.com/libs/ionicons/css/ionicons.min.css" rel="stylesheet">
+        <link href="https://indokontraktor.com/libs/icofont/icofont.min.css" rel="stylesheet">
+        <link href="https://indokontraktor.com/css/app.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://indokontraktor.com/libs/daterange/daterangepicker.css">
+        <!-- Fonts -->
+        <link rel="dns-prefetch" href="//fonts.gstatic.com"><link rel="dns-prefetch" href="//s0.wp.com"><link rel="dns-prefetch" href="//fonts.googleapis.com"><link rel="dns-prefetch" href="//s.w.org"><link rel="dns-prefetch" href="//i1.wp.com"><link rel="dns-prefetch" href="//maps.googleapis.com"><link rel="dns-prefetch" href="//maps.gstatic.com"><link rel="dns-prefetch" href="//fonts.gstatic.com"><link rel="dns-prefetch" href="//ajax.googleapis.com"><link rel="dns-prefetch" href="//apis.google.com"><link rel="dns-prefetch" href="//google-analytics.com"><link rel="dns-prefetch" href="//www.google-analytics.com"><link rel="dns-prefetch" href="//ssl.google-analytics.com"><link rel="dns-prefetch" href="//youtube.com"><link rel="dns-prefetch" href="//api.pinterest.com"><link rel="dns-prefetch" href="//cdnjs.cloudflare.com"><link rel="dns-prefetch" href="//pixel.wp.com"><link rel="dns-prefetch" href="//connect.facebook.net"><link rel="dns-prefetch" href="//platform.twitter.com"><link rel="dns-prefetch" href="//syndication.twitter.com"><link rel="dns-prefetch" href="//platform.instagram.com"><link rel="dns-prefetch" href="//disqus.com"><link rel="dns-prefetch" href="//sitename.disqus.com"><link rel="dns-prefetch" href="//s7.addthis.com"><link rel="dns-prefetch" href="//platform.linkedin.com"><link rel="dns-prefetch" href="//w.sharethis.com"><link rel="dns-prefetch" href="//c0.wp.com"><link rel="dns-prefetch" href="//s.gravatar.com"><link rel="dns-prefetch" href="//stats.wp.com"><link rel="dns-prefetch" href="//www.googletagmanager.com"><link rel="dns-prefetch" href="//www.googletagservices.com"><link rel="dns-prefetch" href="//adservice.google.com"><link rel="dns-prefetch" href="//pagead2.googlesyndication.com"><link rel="dns-prefetch" href="//tpc.googlesyndication.com"><link rel="dns-prefetch" href="//bp.blogspot.com"><link rel="dns-prefetch" href="//1.bp.blogspot.com"><link rel="dns-prefetch" href="//2.bp.blogspot.com"><link rel="dns-prefetch" href="//3.bp.blogspot.com"><link rel="dns-prefetch" href="//4.bp.blogspot.com"><link rel="dns-prefetch" href="//ajax.microsoft.com"><link rel="dns-prefetch" href="//ajax.aspnetcdn.com"><link rel="dns-prefetch" href="//s3.amazonaws.com"><link rel="dns-prefetch" href="//code.jquery.com"><link rel="dns-prefetch" href="//stackpath.bootstrapcdn.com"><link rel="dns-prefetch" href="//use.fontawesome.com"><link rel="dns-prefetch" href="//player.vimeo.com"><link rel="dns-prefetch" href="//github.githubassets.com"><link rel="dns-prefetch" href="//referrer.disqus.com"><link rel="dns-prefetch" href="//c.disquscdn.com"><link rel="dns-prefetch" href="//0.gravatar.com"><link rel="dns-prefetch" href="//2.gravatar.com"><link rel="dns-prefetch" href="//1.gravatar.com"><link rel="dns-prefetch" href="//ad.doubleclick.net"><link rel="dns-prefetch" href="//googleads.g.doubleclick.net"><link rel="dns-prefetch" href="//stats.g.doubleclick.net"><link rel="dns-prefetch" href="//cm.g.doubleclick.net"><link rel="dns-prefetch" href="//stats.buysellads.com"><link rel="dns-prefetch" href="//s3.buysellads.com"><link rel="dns-prefetch" href="//sstatic1.histats.com"><link rel="dns-prefetch" href="//s10.histats.com"><link rel="dns-prefetch" href="//siki.lpjk.net"><link rel="dns-prefetch" href="//lpjk.net"><link rel="dns-prefetch" href="//www.gstatic.com"><link rel="dns-prefetch" href="//www.googletagmanager.com"><link rel="dns-prefetch" href="//pagead2.googlesyndication.com"><link rel="dns-prefetch" href="//highcharts.com"><link rel="dns-prefetch" href="//code.highcharts.com"><link rel="dns-prefetch" href="//e.dtscout.com"><link rel="dns-prefetch" href="//*.dtscout.com">        <style type="text/css">@font-face {font-family:Poppins;font-style:normal;font-weight:400;src:url(/cf-fonts/s/poppins/5.0.11/latin/400/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:400;src:url(/cf-fonts/s/poppins/5.0.11/devanagari/400/normal.woff2);unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:400;src:url(/cf-fonts/s/poppins/5.0.11/latin-ext/400/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:500;src:url(/cf-fonts/s/poppins/5.0.11/devanagari/500/normal.woff2);unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:500;src:url(/cf-fonts/s/poppins/5.0.11/latin-ext/500/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:500;src:url(/cf-fonts/s/poppins/5.0.11/latin/500/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:600;src:url(/cf-fonts/s/poppins/5.0.11/devanagari/600/normal.woff2);unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:600;src:url(/cf-fonts/s/poppins/5.0.11/latin/600/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:600;src:url(/cf-fonts/s/poppins/5.0.11/latin-ext/600/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}</style>
+                <style>
+            /* Anti AdBlock - Force Disable */
+            .ignielAdBlock {
+                background-color: rgba(0,0,0,.95);
+                position: fixed;
+                z-index: 999999999;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }
+            .ignielAdBlock * {
+                pointer-events: auto !important;
+            }
+            .ignielAdBlock svg {
+                height: 8rem;
+                width: 8rem;
+                animation: pulse 2s ease-in-out infinite;
+            }
+            .ignielAdBlock path {
+                fill: #ff3838;
+            }
+            .adblock-outer {
+                margin: auto;
+                max-height: 90vh;
+                max-width: 640px;
+                padding: 2rem;
+                position: absolute;
+            }
+            .adblock-inner {
+                background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+                border-radius: 20px;
+                overflow: auto;
+                padding: 2.5rem;
+                box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+                border: 2px solid #ff3838;
+                animation: shake 3s ease-in-out infinite;
+            }
+            .ignielAdBlock, .adblock-outer {
+                bottom: 0;
+                left: 0;
+                right: 0;
+                top: 0;
+            }
+            .adblock-outer, .adblock-inner {
+                align-items: center;
+                display: flex;
+                display: inline-flex;
+            }
+            .adblock-wrapper {
+                margin-left: 1rem;
+            }
+            .adblock-title {
+                font-size: 2rem;
+                font-weight: bolder;
+                line-height: 2.5rem;
+                color: #ff3838;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            }
+            .adblock-text {
+                margin-top: 1rem;
+                color: #333;
+                font-size: 1.1rem;
+                line-height: 1.6;
+            }
+            .adblock-text strong {
+                color: #ff3838;
+                font-weight: 600;
+            }
+            @keyframes  pulse {
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.1); }
+            }
+            @keyframes  shake {
+                0%, 100% { transform: translateX(0); }
+                10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+                20%, 40%, 60%, 80% { transform: translateX(2px); }
+            }
+            @keyframes  slideIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            @media  screen and (max-width: 640px) {
+                .adblock-outer {
+                    max-width: 90vw;
+                    padding: 1rem;
+                }
+                .ignielAdBlock svg {
+                    height: 5rem;
+                    width: 5rem;
+                }
+                .adblock-title {
+                    font-size: 1.75rem;
+                    line-height: 2rem;
+                }
+                .adblock-text {
+                    font-size: 1rem;
+                }
+                .adblock-inner {
+                    padding: 2rem 1.5rem;
+                }
+            }
+            @media  screen and (max-width: 480px) {
+                .adblock-inner {
+                    flex-direction: column;
+                }
+                .adblock-wrapper {
+                    margin-left: 0;
+                    margin-top: 1rem;
+                    text-align: center;
+                }
+            }
+            /* Blur website content when adblock detected */
+            body.adblock-detected .bravo_wrap {
+                filter: blur(20px);
+                pointer-events: none !important;
+                user-select: none !important;
+                -webkit-user-select: none !important;
+                -moz-user-select: none !important;
+                -ms-user-select: none !important;
+            }
+            body.adblock-detected .bravo_wrap::before {
+                content: "⚠️ ADBLOCK TERDETEKSI - NONAKTIFKAN UNTUK MELANJUTKAN";
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 2rem;
+                font-weight: bold;
+                color: rgba(255,56,56,0.3);
+                text-align: center;
+                z-index: 999999;
+                white-space: nowrap;
+                pointer-events: none;
+            }
+            body.adblock-detected * {
+                user-select: none !important;
+                -webkit-user-select: none !important;
+            }
+
+            /* Enhanced Grid Layout Styles */
+            .item-tour {
+                border: 1px solid #e9ecef;
+                border-radius: 8px;
+                overflow: hidden;
+                transition: all 0.3s ease;
+                background: #fff;
+                margin-bottom: 20px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+
+            .item-tour:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+                border-color: #007bff;
+            }
+
+            /* Verified Badge */
+            .verified-badge {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                z-index: 10;
+                background: rgba(40, 167, 69, 0.9);
+                color: white;
+                padding: 4px 6px;
+                border-radius: 50%;
+                font-size: 12px;
+            }
+
+            /* Status Badges */
+            .status-badges {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                z-index: 10;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .badge-sm {
+                font-size: 0.7rem;
+                padding: 0.2rem 0.5rem;
+            }
+
+            /* Featured Badge Enhancement */
+            .featured {
+                background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+                color: white;
+                padding: 5px 12px;
+                border-radius: 0 0 8px 0;
+                font-size: 0.8rem;
+                font-weight: bold;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 15;
+            }
+        </style>
+        <script type="text/javascript">
+            (function() {
+            'use strict';
+            let adBlockDetected = false;
+            let detectionMethods = 0;
+            let detectionCount = 0;
+            
+            // Cookie Helper Functions
+            function setCookie(name, value, days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                const expires = "expires=" + date.toUTCString();
+                document.cookie = name + "=" + value + ";" + expires + ";path=/;SameSite=Lax";
+                console.log('🍪 Cookie set: ' + name + '=' + value + ' (expires in ' + days + ' days)');
+            }
+            
+            function getCookie(name) {
+                const nameEQ = name + "=";
+                const ca = document.cookie.split(';');
+                for(let i = 0; i < ca.length; i++) {
+                    let c = ca[i];
+                    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+                }
+                return null;
+            }
+            
+            function deleteCookie(name) {
+                document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                console.log('🗑️ Cookie deleted: ' + name);
+            }
+            
+            // Check if AdBlock was previously disabled
+            const adblockStatus = getCookie('adblock_disabled');
+            if (adblockStatus === 'true') {
+                console.log('%c✅ AdBlock Status: Previously disabled (Cookie found)', 'color: #28a745; font-size: 14px; font-weight: bold;');
+                console.log('%c⏩ Skipping detection - User already disabled AdBlock', 'color: #2196F3; font-size: 12px;');
+                // Don't run detection, exit immediately
+                return;
+            } else {
+                console.log('%c🔍 AdBlock Status: Unknown (No cookie found)', 'color: #ff9800; font-size: 14px;');
+                console.log('%c▶️ Starting detection process...', 'color: #666; font-size: 12px;');
+            }
+            // Method 1: Check for common adblocker properties
+            function checkAdBlockerProperties() {
+            if (typeof window.canRunAds === 'undefined' || window.canRunAds === false) {
+            detectionCount++;
+            return true;
+            }
+            return false;
+            }
+
+            // Method 2: Create bait element - Multi-Blocker Detection
+            function createBaitElement() {
+            detectionMethods++;
+            
+            // Bait 1: AdBlock & AdBlock Plus signature
+            const bait1 = document.createElement('div');
+            bait1.className = 'adsbox pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links';
+            bait1.setAttribute('id', 'ads-google-banner');
+            bait1.style.cssText = 'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important;';
+            bait1.innerHTML = '&nbsp;';
+            document.body.appendChild(bait1);
+            
+            // Bait 2: uBlock Origin signature
+            const bait2 = document.createElement('div');
+            bait2.className = 'ad-placement ad-placeholder adbadge BannerAd sponsor-ads';
+            bait2.setAttribute('data-ad-slot', '1234567890');
+            bait2.style.cssText = 'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important;';
+            document.body.appendChild(bait2);
+            
+            // Bait 3: AdGuard signature
+            const bait3 = document.createElement('div');
+            bait3.className = 'advertisement ad-text adSense adBlock adContent adBanner';
+            bait3.setAttribute('id', 'ad-banner-top');
+            bait3.style.cssText = 'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important;';
+            document.body.appendChild(bait3);
+            
+            // Bait 4: Opera built-in blocker
+            const bait4 = document.createElement('div');
+            bait4.className = 'ads ad-container advert advertising-banner';
+            bait4.style.cssText = 'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important;';
+            document.body.appendChild(bait4);
+            
+            setTimeout(function() {
+            let blocked = false;
+            
+            // Check all baits
+            const baits = [bait1, bait2, bait3, bait4];
+            let blockedCount = 0;
+            
+            baits.forEach(function(bait) {
+                if (!bait || 
+                    bait.offsetHeight === 0 || 
+                    bait.offsetParent === null ||
+                    bait.clientHeight === 0 ||
+                    window.getComputedStyle(bait).display === 'none' ||
+                    window.getComputedStyle(bait).visibility === 'hidden' ||
+                    window.getComputedStyle(bait).opacity === '0') {
+                    blockedCount++;
+                }
+            });
+            
+            // If any bait is blocked, AdBlock detected
+            if (blockedCount > 0) {
+                detectionCount++;
+                adBlockDetected = true;
+                console.log('🚫 Bait Detection: ' + blockedCount + '/4 baits blocked');
+            }
+            
+            // Clean up
+            baits.forEach(function(bait) {
+                if (bait && bait.parentNode) {
+                    bait.remove();
+                }
+            });
+            
+            checkDetectionResults();
+            }, 150);
+            }
+
+            // Method 3: Check for blocked advertising scripts
+            function checkAdScripts() {
+            detectionMethods++;
+            const testAd = document.createElement('script');
+            testAd.type = 'text/javascript';
+            testAd.async = true;
+            testAd.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+            testAd.onerror = function() {
+            detectionCount++;
+            adBlockDetected = true;
+            checkDetectionResults();
+            };
+            testAd.onload = function() {
+            if (typeof window.adsbygoogle === 'undefined') {
+            detectionCount++;
+            adBlockDetected = true;
+            }
+            checkDetectionResults();
+            };
+            document.head.appendChild(testAd);
+            setTimeout(function() {
+            checkDetectionResults();
+            }, 1000);
+            }
+
+            // Method 4: Check for Google Analytics blocking
+            function checkGoogleAnalytics() {
+            detectionMethods++;
+            if (typeof window.ga === 'undefined' && typeof window.gtag === 'undefined') {
+            setTimeout(function() {
+            if (typeof window.ga === 'undefined' || typeof window.gtag === 'undefined') {
+            detectionCount++;
+            }
+            checkDetectionResults();
+            }, 500);
+            }
+            }
+
+            // Method 5: Check for fetch/XHR blocking
+            function checkFetchBlocking() {
+            detectionMethods++;
+            fetch('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', {
+            method: 'HEAD',
+                    mode: 'no-cors'
+            }).catch(function() {
+            detectionCount++;
+            adBlockDetected = true;
+            checkDetectionResults();
+            });
+            setTimeout(function() {
+            checkDetectionResults();
+            }, 800);
+            }
+
+            // Method 6: Create invisible ad frame
+            function checkAdFrame() {
+            detectionMethods++;
+            const adFrame = document.createElement('iframe');
+            adFrame.style.cssText = 'width: 1px; height: 1px; position: absolute; left: -10000px; top: -1000px;';
+            adFrame.src = 'https://googleads.g.doubleclick.net/pagead/ads';
+            adFrame.onload = function() {
+            if (adFrame.offsetHeight === 0) {
+            detectionCount++;
+            adBlockDetected = true;
+            }
+            };
+            adFrame.onerror = function() {
+            detectionCount++;
+            adBlockDetected = true;
+            };
+            document.body.appendChild(adFrame);
+            setTimeout(function() {
+            adFrame.remove();
+            checkDetectionResults();
+            }, 500);
+            }
+
+            // Method 7: Check for AdBlock Plus specific
+            function checkAdBlockPlus() {
+            detectionMethods++;
+            const img = document.createElement('img');
+            img.src = 'https://ad.doubleclick.net/favicon.ico';
+            img.style.cssText = 'width: 1px; height: 1px; position: absolute; left: -10000px;';
+            img.onerror = function() {
+            detectionCount++;
+            adBlockDetected = true;
+            checkDetectionResults();
+            };
+            document.body.appendChild(img);
+            setTimeout(function() {
+            img.remove();
+            checkDetectionResults();
+            }, 500);
+            }
+
+            // Method 8: Check for uBlock Origin & AdGuard
+            function checkUBlockOrigin() {
+            detectionMethods++;
+            
+            // Test multiple uBlock/AdGuard patterns
+            const test1 = document.createElement('div');
+            test1.className = 'ad-placement ad-placeholder adbadge BannerAd';
+            test1.style.cssText = 'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important;';
+            document.body.appendChild(test1);
+            
+            const test2 = document.createElement('div');
+            test2.className = 'sponsor-container ad-zone ad-unit';
+            test2.setAttribute('data-ad-client', 'test');
+            test2.style.cssText = 'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important;';
+            document.body.appendChild(test2);
+            
+            const test3 = document.createElement('ins');
+            test3.className = 'adsbygoogle';
+            test3.setAttribute('data-ad-client', 'ca-pub-test');
+            test3.style.cssText = 'display:block;width:1px;height:1px;position:absolute;left:-10000px;';
+            document.body.appendChild(test3);
+            
+            setTimeout(function() {
+            let blockedCount = 0;
+            const tests = [test1, test2, test3];
+            
+            tests.forEach(function(test) {
+                if (test.offsetHeight === 0 || 
+                    window.getComputedStyle(test).display === 'none' ||
+                    test.offsetParent === null) {
+                    blockedCount++;
+                }
+            });
+            
+            if (blockedCount > 0) {
+                detectionCount++;
+                adBlockDetected = true;
+                console.log('🚫 uBlock/AdGuard: ' + blockedCount + '/3 elements blocked');
+            }
+            
+            tests.forEach(function(test) {
+                if (test && test.parentNode) test.remove();
+            });
+            checkDetectionResults();
+            }, 100);
+            }
+            
+            // Method 8b: Check for Brave Shields
+            function checkBraveShields() {
+            detectionMethods++;
+            
+            // Brave specific detection
+            if (navigator.brave && typeof navigator.brave.isBrave === 'function') {
+                navigator.brave.isBrave().then(function(isBrave) {
+                    if (isBrave) {
+                        // Check if shields are up
+                        const testImg = document.createElement('img');
+                        testImg.src = 'https://pagead2.googlesyndication.com/pagead/show_ads.js';
+                        testImg.style.cssText = 'width:1px;height:1px;position:absolute;left:-10000px;';
+                        testImg.onerror = function() {
+                            detectionCount++;
+                            adBlockDetected = true;
+                            console.log('🚫 Brave Shields detected');
+                            checkDetectionResults();
+                        };
+                        testImg.onload = function() {
+                            checkDetectionResults();
+                        };
+                        document.body.appendChild(testImg);
+                        setTimeout(function() {
+                            if (testImg.parentNode) testImg.remove();
+                        }, 500);
+                    } else {
+                        checkDetectionResults();
+                    }
+                }).catch(function() {
+                    checkDetectionResults();
+                });
+            } else {
+                checkDetectionResults();
+            }
+            }
+
+            // Method 9: Check localStorage for adblocker flags
+            function checkLocalStorage() {
+            try {
+            if (localStorage.getItem('adblock') === 'true') {
+            detectionCount++;
+            adBlockDetected = true;
+            }
+            } catch (e) {}
+            }
+
+            // Method 10: Check for blocked ad resources via CSS
+            function checkCSSBlocking() {
+            detectionMethods++;
+            const testDiv = document.createElement('div');
+            testDiv.className = 'ad ads adsense';
+            testDiv.style.cssText = 'width: 100px; height: 100px; position: absolute; left: -10000px;';
+            testDiv.innerHTML = '<ins class="adsbygoogle"></ins>';
+            document.body.appendChild(testDiv);
+            setTimeout(function() {
+            const ins = testDiv.querySelector('.adsbygoogle');
+            if (ins && (ins.offsetHeight === 0 || window.getComputedStyle(ins).display === 'none')) {
+            detectionCount++;
+            adBlockDetected = true;
+            }
+            testDiv.remove();
+            checkDetectionResults();
+            }, 100);
+            }
+            
+            // Method 11: Opera Ad Blocker Detection
+            function checkOperaAdBlocker() {
+            detectionMethods++;
+            
+            // Check if it's Opera
+            const isOpera = (navigator.userAgent.indexOf('OPR') !== -1 || navigator.userAgent.indexOf('Opera') !== -1);
+            
+            if (isOpera) {
+                // Multiple Opera-specific tests
+                const operaTest1 = document.createElement('div');
+                operaTest1.className = 'advertising ads-banner';
+                operaTest1.setAttribute('id', 'ad-top-banner');
+                operaTest1.style.cssText = 'width: 1px; height: 1px; position: absolute; left: -10000px;';
+                document.body.appendChild(operaTest1);
+                
+                const operaTest2 = document.createElement('iframe');
+                operaTest2.src = 'about:blank';
+                operaTest2.className = 'ad-frame';
+                operaTest2.style.cssText = 'width: 1px; height: 1px; position: absolute; left: -10000px;';
+                document.body.appendChild(operaTest2);
+                
+                setTimeout(function() {
+                    let operaBlocked = false;
+                    
+                    if (operaTest1.offsetHeight === 0 || 
+                        window.getComputedStyle(operaTest1).display === 'none') {
+                        operaBlocked = true;
+                    }
+                    
+                    if (operaTest2.offsetHeight === 0 || 
+                        window.getComputedStyle(operaTest2).display === 'none') {
+                        operaBlocked = true;
+                    }
+                    
+                    if (operaBlocked) {
+                        detectionCount++;
+                        adBlockDetected = true;
+                        console.log('🚫 Opera Ad Blocker detected');
+                    }
+                    
+                    operaTest1.remove();
+                    operaTest2.remove();
+                    checkDetectionResults();
+                }, 150);
+            } else {
+                checkDetectionResults();
+            }
+            }
+            
+            // Method 12: Ghostery & Privacy Badger Detection
+            function checkPrivacyBlockers() {
+            detectionMethods++;
+            
+            // Check for tracking/analytics blocking
+            const trackTest = document.createElement('script');
+            trackTest.src = 'https://www.google-analytics.com/analytics.js';
+            trackTest.async = true;
+            
+            let testTimeout = setTimeout(function() {
+                // If script didn't load after timeout
+                detectionCount++;
+                adBlockDetected = true;
+                console.log('🚫 Privacy blocker (Ghostery/Privacy Badger) detected');
+                checkDetectionResults();
+            }, 2000);
+            
+            trackTest.onload = function() {
+                clearTimeout(testTimeout);
+                checkDetectionResults();
+            };
+            
+            trackTest.onerror = function() {
+                clearTimeout(testTimeout);
+                detectionCount++;
+                adBlockDetected = true;
+                console.log('🚫 Privacy blocker detected');
+                checkDetectionResults();
+            };
+            
+            document.head.appendChild(trackTest);
+            }
+
+            // Results checker
+            let resultsChecked = false;
+            function checkDetectionResults() {
+            if (resultsChecked) return;
+            // If 4 or more methods detect adblock, show warning (increased threshold to reduce false positives)
+            if (detectionCount >= 4) {
+            resultsChecked = true;
+            
+            console.log('%c⚠️ AdBlock DETECTED! (' + detectionCount + ' methods confirmed)', 'color: #f44336; font-size: 14px; font-weight: bold;');
+            
+            // Delete cookie if AdBlock is detected (user re-enabled it)
+            const existingCookie = getCookie('adblock_disabled');
+            if (existingCookie === 'true') {
+                deleteCookie('adblock_disabled');
+                console.log('%c⚠️ AdBlock re-enabled detected! Cookie removed.', 'color: #ff9800; font-weight: bold;');
+            }
+            
+            showAdBlockWarning();
+            try {
+            localStorage.setItem('adblock', 'true');
+            } catch (e) {}
+            }
+            }
+
+            // Show AdBlock warning - FORCED MODE
+            function showAdBlockWarning() {
+            // Add class to body to blur content
+            document.body.classList.add('adblock-detected');
+            
+            // Disable right-click globally
+            document.addEventListener('contextmenu', function(e) {
+                if (document.body.classList.contains('adblock-detected')) {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+            
+            // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+            document.addEventListener('keydown', function(e) {
+                if (document.body.classList.contains('adblock-detected')) {
+                    if (e.keyCode === 123 || // F12
+                        (e.ctrlKey && e.shiftKey && e.keyCode === 73) || // Ctrl+Shift+I
+                        (e.ctrlKey && e.shiftKey && e.keyCode === 74) || // Ctrl+Shift+J
+                        (e.ctrlKey && e.keyCode === 85)) { // Ctrl+U
+                        e.preventDefault();
+                        return false;
+                    }
+                }
+            });
+            
+            // Detect DevTools
+            const devToolsChecker = setInterval(function() {
+                if (document.body.classList.contains('adblock-detected')) {
+                    const widthThreshold = window.outerWidth - window.innerWidth > 160;
+                    const heightThreshold = window.outerHeight - window.innerHeight > 160;
+                    if (widthThreshold || heightThreshold) {
+                        console.clear();
+                    }
+                }
+            }, 1000);
+            
+            // Console warning message
+            console.clear();
+            console.log('%c⚠️ PERINGATAN ADBLOCK! ⚠️', 'color: #ff3838; font-size: 24px; font-weight: bold;');
+            console.log('%cWebsite ini memerlukan iklan untuk beroperasi.', 'color: #333; font-size: 16px;');
+            console.log('%cMohon nonaktifkan AdBlock untuk melanjutkan.', 'color: #333; font-size: 16px;');
+            console.log('%c\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', 'color: #ff3838;');
+            
+            // Prevent page refresh with Ctrl+R or F5
+            document.addEventListener('keydown', function(e) {
+                if (document.body.classList.contains('adblock-detected')) {
+                    if ((e.ctrlKey && e.keyCode === 82) || e.keyCode === 116) { // Ctrl+R or F5
+                        e.preventDefault();
+                        console.log('%c⛔ Refresh diblokir! Nonaktifkan AdBlock terlebih dahulu.', 'color: #ff3838; font-size: 14px; font-weight: bold;');
+                        return false;
+                    }
+                }
+            });
+            
+            const warningHTML = `
+                        <div class="ignielAdBlock" id="adblock-warning-overlay">
+                            <div class="adblock-outer">
+                                <div class="adblock-inner">
+                                    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"/>
+                                    </svg>
+                                    <div class="adblock-wrapper">
+                                        <div class="adblock-title">⚠️ AdBlock Terdeteksi!</div>
+                                        <div class="adblock-text">
+                                            <strong>Akses ke website ini diblokir!</strong>
+                                            <br><br>
+                                            Kami mendeteksi Anda menggunakan ekstensi AdBlock atau sejenisnya. Website ini bergantung pada iklan untuk tetap berjalan dan menyediakan konten <strong>GRATIS</strong> untuk Anda.
+                                            <br><br>
+                                            <div style="padding: 10px; background: rgba(255,152,0,0.1); border-radius: 6px; margin: 10px 0; font-size: 0.9em;">
+                                                <strong>🔍 Terdeteksi:</strong><br>
+                                                <small>AdBlock • AdBlock Plus • uBlock Origin • AdGuard<br>
+                                                Brave Shields • Opera Blocker • Ghostery • Privacy Badger</small>
+                                            </div>
+                                            <strong>Cara menonaktifkan AdBlock:</strong><br>
+                                            1️⃣ Klik icon AdBlock/Extension di browser Anda<br>
+                                            2️⃣ Pilih "Pause on this site" atau "Disable on this site"<br>
+                                            3️⃣ Halaman akan otomatis reload dalam beberapa detik<br>
+                                            <br>
+                                            Terima kasih atas pengertian dan dukungan Anda! 🙏
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+            document.body.insertAdjacentHTML('beforeend', warningHTML);
+            document.body.style.overflow = 'hidden';
+            
+            // Prevent all ways to close the warning
+            const overlay = document.getElementById('adblock-warning-overlay');
+            if (overlay) {
+                overlay.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                }, true);
+                
+                // Prevent escape key
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' || e.keyCode === 27) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                    }
+                }, true);
+                
+                // Prevent right click
+                overlay.addEventListener('contextmenu', function(e) {
+                    e.preventDefault();
+                }, true);
+            }
+            
+            // Advanced multi-layer check every 2 seconds - MUST pass minimum tests
+            let consecutivePassCount = 0;
+            const REQUIRED_PASSES = 2; // Must pass 2 consecutive checks (4 seconds total)
+            
+            const recheckInterval = setInterval(function() {
+                let testsCompleted = 0;
+                let testsPassed = 0;
+                const totalTests = 8; // Increased to 8 tests
+                
+                // Test 1: AdBlock/AdBlock Plus signature
+                const testElement1 = document.createElement('div');
+                testElement1.className = 'adsbox pub_300x250 textAd text-ad';
+                testElement1.setAttribute('id', 'google-ads');
+                testElement1.style.cssText = 'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important;';
+                document.body.appendChild(testElement1);
+                
+                setTimeout(function() {
+                    testsCompleted++;
+                    const style1 = window.getComputedStyle(testElement1);
+                    if (testElement1.offsetHeight > 0 && 
+                        testElement1.offsetParent !== null && 
+                        style1.display !== 'none' && 
+                        style1.visibility !== 'hidden' &&
+                        style1.opacity !== '0') {
+                        testsPassed++;
+                    }
+                    testElement1.remove();
+                    checkAllTestsComplete();
+                }, 100);
+                
+                // Test 2: uBlock Origin signature
+                const testElement2 = document.createElement('div');
+                testElement2.className = 'ad ads adsbygoogle ad-placeholder';
+                testElement2.setAttribute('data-ad-slot', 'test');
+                testElement2.style.cssText = 'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important;';
+                document.body.appendChild(testElement2);
+                
+                setTimeout(function() {
+                    testsCompleted++;
+                    const style2 = window.getComputedStyle(testElement2);
+                    if (testElement2.offsetHeight > 0 && 
+                        testElement2.offsetParent !== null &&
+                        style2.display !== 'none') {
+                        testsPassed++;
+                    }
+                    testElement2.remove();
+                    checkAllTestsComplete();
+                }, 150);
+                
+                // Test 3: AdGuard signature
+                const testElement3 = document.createElement('div');
+                testElement3.className = 'advertisement banner-ad sponsor-ads';
+                testElement3.style.cssText = 'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important;';
+                document.body.appendChild(testElement3);
+                
+                setTimeout(function() {
+                    testsCompleted++;
+                    if (testElement3.offsetHeight > 0 && 
+                        window.getComputedStyle(testElement3).display !== 'none') {
+                        testsPassed++;
+                    }
+                    testElement3.remove();
+                    checkAllTestsComplete();
+                }, 200);
+                
+                // Test 4: Banner element test (Opera)
+                const testBanner = document.createElement('div');
+                testBanner.className = 'ad-placement ad-banner advertising';
+                testBanner.setAttribute('id', 'ad-container-top');
+                testBanner.style.cssText = 'width: 1px; height: 1px; position: absolute; left: -10000px;';
+                document.body.appendChild(testBanner);
+                
+                setTimeout(function() {
+                    testsCompleted++;
+                    if (testBanner.offsetHeight > 0 && 
+                        testBanner.clientHeight > 0 &&
+                        window.getComputedStyle(testBanner).display !== 'none') {
+                        testsPassed++;
+                    }
+                    testBanner.remove();
+                    checkAllTestsComplete();
+                }, 250);
+                
+                // Test 5: INS element test (AdSense specific)
+                const insElement = document.createElement('ins');
+                insElement.className = 'adsbygoogle';
+                insElement.setAttribute('data-ad-client', 'test');
+                insElement.style.cssText = 'display:inline-block;width:1px;height:1px;position:absolute;left:-10000px;';
+                document.body.appendChild(insElement);
+                
+                setTimeout(function() {
+                    testsCompleted++;
+                    if (insElement.offsetHeight > 0 && 
+                        window.getComputedStyle(insElement).display !== 'none') {
+                        testsPassed++;
+                    }
+                    insElement.remove();
+                    checkAllTestsComplete();
+                }, 300);
+                
+                // Test 6: Sponsor/promoted content (Brave Shields)
+                const testSponsor = document.createElement('div');
+                testSponsor.className = 'sponsor-container promoted-content';
+                testSponsor.style.cssText = 'width: 1px; height: 1px; position: absolute; left: -10000px;';
+                document.body.appendChild(testSponsor);
+                
+                setTimeout(function() {
+                    testsCompleted++;
+                    if (testSponsor.offsetHeight > 0 && 
+                        window.getComputedStyle(testSponsor).display !== 'none') {
+                        testsPassed++;
+                    }
+                    testSponsor.remove();
+                    checkAllTestsComplete();
+                }, 350);
+                
+                // Test 7: Ad frame test
+                const testFrame = document.createElement('iframe');
+                testFrame.className = 'ad-frame';
+                testFrame.src = 'about:blank';
+                testFrame.style.cssText = 'width: 1px; height: 1px; position: absolute; left: -10000px;';
+                document.body.appendChild(testFrame);
+                
+                setTimeout(function() {
+                    testsCompleted++;
+                    if (testFrame.offsetHeight > 0 && 
+                        window.getComputedStyle(testFrame).display !== 'none') {
+                        testsPassed++;
+                    }
+                    testFrame.remove();
+                    checkAllTestsComplete();
+                }, 400);
+                
+                // Test 8: Check multiple ad-related scripts loaded
+                setTimeout(function() {
+                    testsCompleted++;
+                    // Check if ad scripts are accessible
+                    const hasAdScripts = document.querySelector('script[src*="adsbygoogle"]') !== null ||
+                                       document.querySelector('script[src*="doubleclick"]') !== null ||
+                                       typeof window.adsbygoogle !== 'undefined';
+                    if (hasAdScripts) {
+                        testsPassed++;
+                    }
+                    checkAllTestsComplete();
+                }, 450);
+                
+                // Evaluate all tests
+                function checkAllTestsComplete() {
+                    if (testsCompleted >= totalTests) {
+                        const passPercentage = Math.round((testsPassed / totalTests) * 100);
+                        console.log('🔍 AdBlock Re-Check: ' + testsPassed + '/' + totalTests + ' tests passed (' + passPercentage + '%)');
+                        
+                        // At least 6 out of 8 tests must pass (75%) for AdBlock to be considered disabled
+                        // This allows some tolerance for false positives
+                        const minPassRequired = 6;
+                        if (testsPassed >= minPassRequired) {
+                            consecutivePassCount++;
+                            console.log('%c✅ Pass Count: ' + consecutivePassCount + '/' + REQUIRED_PASSES + ' (AdBlock appears OFF - ' + passPercentage + '%)', 'color: #4CAF50; font-weight: bold;');
+                            
+                            // Must pass REQUIRED_PASSES consecutive times (total 6 seconds)
+                            if (consecutivePassCount >= REQUIRED_PASSES) {
+                                // AdBlock confirmed disabled
+                                const warning = document.querySelector('.ignielAdBlock');
+                                if (warning) {
+                                    warning.remove();
+                                    document.body.classList.remove('adblock-detected');
+                                    document.body.style.overflow = '';
+                                    clearInterval(recheckInterval);
+                                    localStorage.removeItem('adblock');
+                                    
+                                    // Set cookie for 30 days - User has disabled AdBlock
+                                    setCookie('adblock_disabled', 'true', 30);
+                                    
+                                    // Show success notification with countdown
+                                    const successMsg = document.createElement('div');
+                                    successMsg.innerHTML = `
+                                        <div id="success-notification" style="position: fixed; top: 20px; right: 20px; background: #28a745; color: white; padding: 15px 25px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 999999999; animation: slideIn 0.3s ease;">
+                                            ✅ Terima kasih! AdBlock telah dinonaktifkan.<br>
+                                            <small>Halaman akan reload dalam <span id="countdown">2</span> detik...</small>
+                                        </div>
+                                    `;
+                                    document.body.appendChild(successMsg);
+                                    
+                                    console.log('%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', 'color: #28a745;');
+                                    console.log('%c✅ AKSES DIBERIKAN!', 'color: #28a745; font-size: 20px; font-weight: bold;');
+                                    console.log('%cAdBlock berhasil dinonaktifkan. Halaman akan reload...', 'color: #28a745; font-size: 14px;');
+                                    console.log('%c🍪 Cookie saved: Status akan diingat selama 30 hari', 'color: #28a745; font-size: 12px;');
+                                    console.log('%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', 'color: #28a745;');
+                                    
+                                    // Countdown and auto reload
+                                    let countdown = 2;
+                                    const countdownElement = document.getElementById('countdown');
+                                    const countdownInterval = setInterval(function() {
+                                        countdown--;
+                                        if (countdownElement) {
+                                            countdownElement.textContent = countdown;
+                                        }
+                                        if (countdown <= 0) {
+                                            clearInterval(countdownInterval);
+                                            console.log('%c🔄 Reloading page...', 'color: #2196F3; font-size: 14px; font-weight: bold;');
+                                            window.location.reload();
+                                        }
+                                    }, 1000);
+                                }
+                            }
+                        } else {
+                            // Reset counter if not all tests passed
+                            consecutivePassCount = 0;
+                            const failedTests = totalTests - testsPassed;
+                            console.log('%c❌ AdBlock MASIH AKTIF - ' + failedTests + ' test(s) gagal', 'color: #f44336; font-weight: bold;');
+                            console.log('%c   Detected types: AdBlock/AdBlock Plus/uBlock/AdGuard/Opera/Brave', 'color: #ff9800; font-size: 11px;');
+                            
+                            if (testsPassed >= 4 && testsPassed < 6) {
+                                console.log('%c💡 Tips: Jika AdBlock sudah di-pause tapi popup masih muncul:', 'color: #2196F3; font-size: 11px;');
+                                console.log('%c   1. Pastikan refresh halaman setelah pause AdBlock', 'color: #666; font-size: 10px;');
+                                console.log('%c   2. Atau tunggu 4 detik, sistem akan auto-detect', 'color: #666; font-size: 10px;');
+                            }
+                        }
+                    }
+                }
+            }, 2000);
+            }
+
+            // Initialize all detection methods
+            function initDetection() {
+            console.log('%c🔍 Initializing Enhanced AdBlock Detection...', 'color: #ff9800; font-size: 14px; font-weight: bold;');
+            console.log('%c📋 Testing against: AdBlock, AdBlock Plus, uBlock Origin, AdGuard, Brave Shields, Opera Blocker, Ghostery, Privacy Badger', 'color: #666; font-size: 12px;');
+            console.log('%c⚙️ Threshold: 4/12 methods must detect to confirm AdBlock', 'color: #666; font-size: 11px;');
+            
+            // Run all detection methods
+            checkAdBlockerProperties();
+            createBaitElement();
+            checkAdScripts();
+            checkGoogleAnalytics();
+            checkFetchBlocking();
+            checkAdFrame();
+            checkAdBlockPlus();
+            checkUBlockOrigin();
+            checkBraveShields();
+            checkLocalStorage();
+            checkCSSBlocking();
+            checkOperaAdBlocker();
+            checkPrivacyBlockers();
+            
+            // Final check after 3 seconds to allow all async tests
+            setTimeout(function() {
+            checkDetectionResults();
+            const percentage = Math.round((detectionCount / detectionMethods) * 100);
+            if (detectionCount >= 4) {
+                console.log('%c✔️ Detection complete: ' + detectionCount + '/' + detectionMethods + ' methods detected (' + percentage + '%) - BLOCKED', 'color: #f44336; font-size: 12px; font-weight: bold;');
+            } else {
+                console.log('%c✔️ Detection complete: ' + detectionCount + '/' + detectionMethods + ' methods detected (' + percentage + '%) - ALLOWED', 'color: #28a745; font-size: 12px; font-weight: bold;');
+            }
+            }, 3000);
+            }
+
+            // Start detection when DOM is ready
+            if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initDetection);
+            } else {
+            initDetection();
+            }
+            })();
+        </script>
+        <script type="text/javascript">
+            var bookingCore = {
+            url:'https://indokontraktor.com',
+                    booking_decimals:0,
+                    thousand_separator:'.',
+                    decimal_separator:',',
+                    currency_position:'left',
+                    currency_symbol:'$',
+                    date_format:'MM/DD/YYYY',
+                    map_provider:'gmap',
+                    map_gmap_key:'AIzaSyAxC2fFbY43Q22ieD9g0wcCN7qjBhzFp7M',
+            };
+        </script>
+        <!-- Enhanced AdBlock Detection Script -->
+        
+        <script async="" src="https://analytics.ahrefs.com/analytics.js" data-key="QhaZvmJbDp5U46cwUQojfw" type="text/javascript"></script>
+        <!-- Google tag (gtag.js) -->
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-NJ9DHP4MYZ" type="text/javascript"></script>
+        <script type="text/javascript">
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-NJ9DHP4MYZ');</script>
+                <!-- Styles -->
+        <meta name="robots" content="noindex, follow">
+<title>Profil Kontraktor Tidak Ditemukan | Indokontraktor</title>
+<link rel="stylesheet" type="text/css" href="https://indokontraktor.com/module/tour/css/tour.css">
+<link rel="stylesheet" type="text/css" href="https://indokontraktor.com/module/tour/css/theme1.css">
+<link rel="stylesheet" type="text/css" href="https://indokontraktor.com/module/tour/css/box1.css">
+<style>
+.contractor-404 {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    padding: 3rem 0;
+}
+.contractor-404__card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,.08), 0 2px 8px rgba(0,0,0,.04);
+    overflow: hidden;
+    max-width: 720px;
+    margin: 0 auto;
+}
+.contractor-404__header {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 50%, #1e3a5f 100%);
+    color: #fff;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    position: relative;
+}
+.contractor-404__header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: .5;
+}
+.contractor-404__icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.25rem;
+    background: rgba(255,255,255,.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.25rem;
+    position: relative;
+    z-index: 1;
+}
+.contractor-404__code {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: .2em;
+    opacity: .9;
+    margin-bottom: .5rem;
+    position: relative;
+    z-index: 1;
+}
+.contractor-404__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+    position: relative;
+    z-index: 1;
+}
+.contractor-404__body {
+    padding: 2rem 2rem 2.5rem;
+}
+.contractor-404__msg {
+    color: #4a5568;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+.contractor-404__slug {
+    background: #f7fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: .75rem 1rem;
+    font-family: 'Monaco','Consolas',monospace;
+    font-size: .9rem;
+    color: #2d3748;
+    margin-bottom: 1.75rem;
+    word-break: break-all;
+}
+.contractor-404__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+    justify-content: center;
+    margin-bottom: 1.75rem;
+}
+.contractor-404__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .65rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: .95rem;
+    text-decoration: none;
+    transition: all .2s ease;
+}
+.contractor-404__btn--primary {
+    background: #1e3a5f;
+    color: #fff;
+    border: 2px solid #1e3a5f;
+}
+.contractor-404__btn--primary:hover {
+    background: #2d5a87;
+    border-color: #2d5a87;
+    color: #fff;
+    transform: translateY(-1px);
+}
+.contractor-404__btn--outline {
+    background: transparent;
+    color: #1e3a5f;
+    border: 2px solid #e2e8f0;
+}
+.contractor-404__btn--outline:hover {
+    border-color: #1e3a5f;
+    color: #1e3a5f;
+    background: #f8fafc;
+}
+.contractor-404__search {
+    border-top: 1px solid #e2e8f0;
+    padding-top: 1.75rem;
+    margin-top: .5rem;
+}
+.contractor-404__search-label {
+    font-size: .9rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: .75rem;
+    display: block;
+}
+.contractor-404__search .form-control {
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    padding: .6rem 1rem;
+}
+.contractor-404__search .btn-primary {
+    background: #1e3a5f;
+    border-color: #1e3a5f;
+    border-radius: 8px;
+    padding: .6rem 1.25rem;
+    font-weight: 600;
+}
+.contractor-404__search .btn-primary:hover {
+    background: #2d5a87;
+    border-color: #2d5a87;
+}
+</style>
+        
+        <style id="custom-css">
+    body{
+            }
+    a,
+    .bravo-news .btn-readmore,
+    .bravo_wrap .bravo_header .content .header-left .bravo-menu ul li:hover > a,
+    .bravo_wrap .bravo_search_tour .bravo_form_search .bravo_form .field-icon,
+    .bravo_wrap .bravo_search_tour .bravo_form_search .bravo_form .render,
+    .bravo_wrap .bravo_search_tour .bravo_form_search .bravo_form .field-detination #dropdown-destination .form-control,
+    .bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-content .btn-apply-price-range,
+    .bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-content .btn-more-item,
+    .input-number-group i,
+    .bravo_wrap .page-template-content .bravo-form-search-tour .bravo_form_search_tour .field-icon,
+    .bravo_wrap .page-template-content .bravo-form-search-tour .bravo_form_search_tour .field-detination #dropdown-destination .form-control,
+    .bravo_wrap .page-template-content .bravo-form-search-tour .bravo_form_search_tour .render
+    {
+        color:#5191FA
+    }
+    .bravo-pagination ul li.active a, .bravo-pagination ul li.active span
+    {
+        color:#5191FA!important;
+    }
+    .bravo-news .widget_category ul li span,
+    .bravo_wrap .bravo_search_tour .bravo_form_search .bravo_form .g-button-submit button,
+    .bravo_wrap .bravo_search_tour .bravo_filter .filter-title:before,
+    .bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-content .bravo-filter-price .irs--flat .irs-bar,
+    .bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-content .bravo-filter-price .irs--flat .irs-from, .bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-content .bravo-filter-price .irs--flat .irs-to, .bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-content .bravo-filter-price .irs--flat .irs-single,
+    .bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-content .bravo-filter-price .irs--flat .irs-handle>i:first-child,
+    .bravo-news .header .cate ul li,
+    .bravo_wrap .page-template-content .bravo-form-search-tour .bravo_form_search_tour .g-button-submit button,
+    .bravo_wrap .page-template-content .bravo-list-locations .list-item .destination-item .image .content .desc
+    {
+        background: #5191FA;
+    }
+    .bravo-pagination ul li.active a, .bravo-pagination ul li.active span
+    {
+        border-color:#5191FA!important;
+    }
+    .bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-content .bravo-filter-price .irs--flat .irs-from:before, .bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-content .bravo-filter-price .irs--flat .irs-to:before, .bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-content .bravo-filter-price .irs--flat .irs-single:before,
+    .bravo-reviews .review-form .form-wrapper,
+    .bravo_wrap .bravo_detail_tour .bravo_content .bravo_tour_book
+    {
+        border-top-color:#5191FA;
+    }
+
+    .bravo_wrap .bravo_footer .main-footer .nav-footer .context .contact{
+        border-left-color:#5191FA;
+    }
+
+    
+</style>
+        <link href="https://indokontraktor.com/libs/carousel-2/owl.carousel.css" rel="stylesheet">
+    <script type="text/javascript" async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script src="https://www.google-analytics.com/analytics.js" async=""></script><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9nrunKdU5m96PSN1XsSGr3qOP0lvPFUB2AiAylCDlN5DTl17uDFkpQuHj1AFtgWLxpLaiBZuhrtb2WOu7ofHwEAAACKeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A93bovR+QVXNx2/38qDbmeYYf1wdte9EO37K9eMq3r+541qo0byhYU899BhPB7Cv9QqD7wIbR1B6OAc9kEfYCA4AAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A1S5fojrAunSDrFbD8OfGmFHdRFZymSM/1ss3G+NEttCLfHkXvlcF6LGLH8Mo5PakLO1sCASXU1/gQf6XGuTBgwAAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"></head>
+    <body class="">
+        <div class="bravo_wrap">
+            
+            <div class="bravo_topbar">
+    <div class="container">
+        <div class="content">
+            <div class="topbar-left">
+                <a href="https://indokontraktor.com" class="bravo-logo">
+                                                            <img src="https://indokontraktor.com/uploads/0000/1/2020/04/04/logo-indokontraktor-long-xs.png" alt="Indokontraktor.com">
+                                    </a>
+            </div>
+            <div class="topbar-right">
+                <ul class="topbar-items">
+                                        <li class="login-item">
+                        <a href="#login" data-toggle="modal" data-target="#login" class="login">Login</a>
+                    </li>
+                    <li class="signup-item">
+                        <a href="#register" data-toggle="modal" data-target="#register" class="signup">Sign Up</a>
+                    </li>
+                                    </ul>
+            </div>
+        </div>
+    </div>
+</div>
+            <div class="bravo_header">
+    <div class="container">
+        <div class="content">
+            <div class="header-left">
+                <div class="bravo-menu">
+                    <ul class="main-menu menu-generated"><li class="        "><a target="" href="#">Tender <i class="fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class="  "><a target="" href="/tender/category/pekerjaan-konstruksi">Tender Pekerjaan Konstruksi</a></li><li class="       "><a target="" href="/tender/category/jasa-konsultansi-badan-usaha-konstruksi">Jasa Konsultansi Badan Usaha Konstruksi</a></li><li class=" "><a target="" href="/tender/category/jasa-konsultansi-badan-usaha-non-konstruksi">Jasa Konsultansi Badan Usaha Non Konstruksi</a></li><li class="  "><a target="" href="/tender/category/pekerjaan-konstruksi-terintegrasi">Pekerjaan Konstruksi Terintegrasi</a></li><li class="  "><a target="" href="/tender/category/jasa-lainnya">Tender Jasa Lainnya</a></li><li class="  "><a target="" href="/tender/category/pengadaan-barang">Tender Pengadaan Barang</a></li><li class="     "><a target="" href="/tender">Semua Tender</a></li></ul></li><li class="    "><a target="" href="#">Gedung <i class="fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" "><a target="" href="/business/bidang/BG001">Konstruksi Gedung Hunian</a></li><li class=" "><a target="" href="/business/bidang/BG002">Konstruksi Gedung Perkantoran</a></li><li class=" "><a target="" href="/business/bidang/BG003">Konstruksi Gedung Industri</a></li><li class=" "><a target="" href="/business/bidang/BG004">Konstruksi Gedung Perbelanjaan</a></li><li class=" "><a target="" href="/business/bidang/BG005">Konstruksi Gedung Kesehatan</a></li><li class=" "><a target="" href="/business/bidang/BG006">Konstruksi Gedung Pendidikan</a></li><li class=" "><a target="" href="/business/bidang/BG007">Konstruksi Gedung Penginapan</a></li><li class=" "><a target="" href="/business/bidang/BG008">Konstruksi Gedung Tempat Hiburan dan Olahraga</a></li><li class=" "><a target="" href="/business/bidang/BG009">Konstruksi Gedung Lainnya</a></li></ul></li><li class="    "><a target="" href="#">Sipil <i class="fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" "><a target="" href="/business/bidang/BS001">Bangunan Sipil Jalan</a></li><li class=" "><a target="" href="/business/bidang/BS002">Bangunan Sipil Jembatan, Jalan Layang, Fly Over, dan Underpass</a></li><li class=" "><a target="" href="/business/bidang/BS003">Konstruksi Jalan Rel</a></li><li class=" "><a target="" href="/business/bidang/BS004">Konstruksi Jaringan Irigasi dan Drainase</a></li><li class=" "><a target="" href="/business/bidang/BS005">Konstruksi Bangunan Sipil Pengolahan Air Bersih</a></li><li class=" "><a target="" href="/business/bidang/BS006">Konstruksi Bangunan Prasarana dan Sarana Sistem Pengolahan Limbah Padat, Cair, dan Gas</a></li><li class=" "><a target="" href="/business/bidang/BS007">Konstruksi Bangunan Sipil Elektrikal</a></li><li class=" "><a target="" href="/business/bidang/BS008">Konstruksi Bangunan Sipil Telekomunikasi untuk Prasarana Transportasi</a></li><li class=" "><a target="" href="/business/bidang/BS009">Konstruksi Sentral Telekomunikasi</a></li><li class=" "><a target="" href="/business/bidang/BS010">Konstruksi Bangunan Prasarana Sumber Daya Air</a></li><li class=" "><a target="" href="/business/bidang/BS011">Konstruksi Bangunan Pelabuhan Bukan Perikanan</a></li><li class=" "><a target="" href="/business/bidang/BS012">Konstruksi Bangunan Pelabuhan Perikanan</a></li><li class=" "><a target="" href="/business/bidang/BS013">Konstruksi Bangunan Sipil Minyak dan Gas Bumi</a></li><li class=" "><a target="" href="/business/bidang/BS014">Konstruksi Bangunan Sipil Pertambangan</a></li><li class=" "><a target="" href="/business/bidang/BS015">Konstruksi Bangunan Sipil Panas Bumi</a></li><li class=" "><a target="" href="/business/bidang/BS016">Konstruksi Bangunan Sipil Fasilitas Olah</a></li><li class=" "><a target="" href="/business/bidang/BS017">Konstruksi Bangunan Sipil Lainnya Ytdl</a></li><li class=" "><a target="" href="/business/bidang/BS018">Konstruksi Bangunan Sipil Fasilitas Pengolahan Produk Kimia, Petrokimia, Farmasi, dan Industri Lainnya</a></li><li class=" "><a target="" href="/business/bidang/BS019">Konstruksi Bangunan Sipil Fasilitas Militer dan Peluncuran Satelit</a></li><li class=" "><a target="" href="/business/bidang/BS020">Konstruksi Jaringan Irigasi, Komunikasi, dan Limbah Lainnya</a></li></ul></li><li class="    "><a target="" href="#">Instalasi <i class="fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" "><a target="" href="/business/bidang/IN001">Instalasi Mekanikal</a></li><li class=" "><a target="" href="/business/bidang/IN002">Instalasi Telekomunikasi</a></li><li class=" "><a target="" href="/business/bidang/IN003">Instalasi Peralatan Infrastruktur Pertambangan dan Manufaktur</a></li><li class=" "><a target="" href="/business/bidang/IN004">Instalasi Minyak dan Gas</a></li><li class=" "><a target="" href="/business/bidang/IN005">Instalasi Konstruksi Navigasi Laut, Sungai dan Udara</a></li><li class=" "><a target="" href="/business/bidang/IN006">Instalasi Elektronika</a></li><li class=" "><a target="" href="/business/bidang/IN007">Instalasi saluran air (plambing)</a></li><li class=" "><a target="" href="/business/bidang/IN008">Instalasi Pendingin Dan Ventilasi Udara</a></li><li class=" "><a target="" href="/business/bidang/IN009">Instalasi Pendingin Dan Ventilasi Udara (Perseorangan)</a></li><li class=" "><a target="" href="/business/bidang/IN010">Instalasi Pengolahan Air Untuk Pembangkit Listrik</a></li><li class=" "><a target="" href="/business/bidang/IN011">Instalasi Sinyal Dan Ramburambu Jalan Raya</a></li><li class=" "><a target="" href="/business/bidang/IN012">Instalasi Sinyal dan Telekomunikasi Kereta Api</a></li><li class=" "><a target="" href="/business/bidang/IN013">Instalasi Pemanas dan Geotermal</a></li><li class=" "><a target="" href="/business/bidang/IN014">Instalasi Meteorologi, Klimatologi dan Geofisika</a></li></ul></li><li class="    "><a target="" href="#">Elektrikal <i class="fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" "><a target="" href="/business/bidang/MK001">Konstruksi pemasangan pendingin udara (AC), pemanas dan ventilasi</a></li><li class=" "><a target="" href="/business/bidang/MK002">Pemasangan Pipa Air (Plumbing)</a></li><li class=" "><a target="" href="/business/bidang/MK003">Pemasangan Pipa Gas dalam Bangunan</a></li><li class=" "><a target="" href="/business/bidang/MK004">Insulasi dalam Bangunan</a></li><li class=" "><a target="" href="/business/bidang/MK005">Pemasangan Lift dan Tangga Berjalan</a></li><li class=" "><a target="" href="/business/bidang/MK006">Pertambangan dan Manufaktur</a></li><li class=" "><a target="" href="/business/bidang/MK007">Instalasi thermal, bertekanan, minyak, gas, geothermal (pekerjaan rekayasa)</a></li><li class=" "><a target="" href="/business/bidang/MK008">Instalasi alat angkut dan alat angkat</a></li><li class=" "><a target="" href="/business/bidang/MK009">Instalasi Perpipaan, Gas, Energi (Pekerjaan Rekayasa)</a></li><li class=" "><a target="" href="/business/bidang/MK010">Instalasi fasilitas produksi, penyimpanan minyak dan gas (pekerjaan rekayasa)</a></li></ul></li><li class="   "><a target="" href="#">Spesialis <i class="fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class="  "><a target="" href="https://indokontraktor.com/business/bidang/SP004">Gali Timbun Tanah (Cut&amp;Fill)</a></li><li class="    "><a target="" href="https://indokontraktor.com/business/bidang/SP008">Pengeboran Air Tanah</a></li><li class="  "><a target="" href="https://indokontraktor.com/business/bidang/SP001">Penyelidikan Lapangan</a></li><li class=" "><a target="" href="https://indokontraktor.com/business/bidang/SP002">Pekerjaan Pembongkaran</a></li><li class=" "><a target="" href="https://indokontraktor.com/business/bidang/SP003">Pematangan Tanah</a></li></ul></li><li class="  "><a target="" href="#">Perencana <i class="fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" "><a target="" href="/business/bidang/PR101">Perencanaan dan Perancangan Perkotaan</a></li><li class=" "><a target="" href="/business/bidang/PR102">Perencanaan Wilayah</a></li><li class=" "><a target="" href="/business/bidang/PR103">Perencanaan dan Perancangan lingkungan bangunan dan lansekap</a></li><li class=" "><a target="" href="/business/bidang/PR104">Pengembangan Pemanfaatan Ruang</a></li><li class=" "><a target="" href="/business/bidang/PR201">Pengawas dan Pengendali Penataan Ruang</a></li><li class=" "><a target="" href="/business/bidang/RK001">Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non hunian</a></li><li class=" "><a target="" href="/business/bidang/RK002">Jasa Rekayasa Pekerjaan Teknik Sipil Sumber Daya Air</a></li><li class=" "><a target="" href="/business/bidang/RK003">Jasa Rekayasa Pekerjaan Teknik Sipil Transportasi</a></li><li class=" "><a target="" href="/business/bidang/RK004">Jasa Rekayasa Pekerjaan Mekanikal Dalam Bangunan</a></li><li class=" "><a target="" href="/business/bidang/RK005">Jasa Rekayasa Lainnya</a></li></ul></li><li class="  "><a target="" href="">Pengawas <i class="fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" "><a target="" href="/business/bidang/AR201">Pengawas Administrasi Kontrak  </a></li><li class=" "><a target="" href="/business/bidang/RE201">Pengawas Pekerjaan Konstruksi Bangunan Gedung</a></li><li class=" "><a target="" href="/business/bidang/PR201">Pengawas Penataan Ruang</a></li></ul></li><li class="   "><a target="" href="#">Support <i class="fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" "><a target="" href="/klasifikasi-jasa-konstruksi">Klasifikasi Usaha Jasa Konstruksi</a></li><li class=" "><a target="" href="https://indokontraktor.com/page/adalah-izin-usaha-jasa-konstruksi-yang-diberikan-kepada-perusahaan-yang-seluruh-jumlah-sahamnya-100-dimiliki-oleh-saham-wni">Izin Usaha Jasa Konstruksi Nasional</a></li><li class=" "><a target="" href="/kbli">KBLI 2020</a></li><li class=" "><a target="" href="https://isocenter.id/sertifikasi/iso-9001-quality-management-systems">Sertifikasi ISO 9001</a></li><li class=" "><a target="" href="https://isocenter.id/sertifikasi/iso-14001">Sertifikasi ISO 14001</a></li><li class=" "><a target="" href="https://isocenter.id/sertifikasi/iso-45001-sistem-manajemen-kesehatan-dan-keselamatan-kerja">Sertifikasi ISO 45001</a></li><li class=" "><a target="" href="https://isocenter.id/sertifikasi/iso-37001-sistem-manajemen-anti-penyuapan-memahami-standar-internasional">Sertifikasi ISO 37001</a></li><li class=" "><a target="" href="/news">News</a></li></ul></li></ul>                </div>
+            </div>
+            <div class="header-right">
+                                <button class="bravo-more-menu">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="bravo-menu-mobile">
+        <div class="user-profile">
+            <div class="b-close"><i class="icofont-scroll-left"></i></div>
+            <div class="avatar">
+                                <i class="icofont-user-alt-2"></i>
+                            </div>
+            <ul>
+                                <li>
+                    <a href="#login" data-toggle="modal" data-target="#login" class="login">Login</a>
+                </li>
+                <li>
+                    <a href="#register" data-toggle="modal" data-target="#register" class="signup">Sign Up</a>
+                </li>
+                            </ul>
+        </div>
+        <div class="g-menu" style="max-height: 553px;">
+            <ul class="main-menu menu-generated"><li class="        "><a target="" href="#">Tender <i class="fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class="  "><a target="" href="/tender/category/pekerjaan-konstruksi">Tender Pekerjaan Konstruksi</a></li><li class="       "><a target="" href="/tender/category/jasa-konsultansi-badan-usaha-konstruksi">Jasa Konsultansi Badan Usaha Konstruksi</a></li><li class=" "><a target="" href="/tender/category/jasa-konsultansi-badan-usaha-non-konstruksi">Jasa Konsultansi Badan Usaha Non Konstruksi</a></li><li class="  "><a target="" href="/tender/category/pekerjaan-konstruksi-terintegrasi">Pekerjaan Konstruksi Terintegrasi</a></li><li class="  "><a target="" href="/tender/category/jasa-lainnya">Tender Jasa Lainnya</a></li><li class="  "><a target="" href="/tender/category/pengadaan-barang">Tender Pengadaan Barang</a></li><li class="     "><a target="" href="/tender">Semua Tender</a></li></ul></li><li class="    "><a target="" href="#">Gedung <i class="fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" "><a target="" href="/business/bidang/BG001">Konstruksi Gedung Hunian</a></li><li class=" "><a target="" href="/business/bidang/BG002">Konstruksi Gedung Perkantoran</a></li><li class=" "><a target="" href="/business/bidang/BG003">Konstruksi Gedung Industri</a></li><li class=" "><a target="" href="/business/bidang/BG004">Konstruksi Gedung Perbelanjaan</a></li><li class=" "><a target="" href="/business/bidang/BG005">Konstruksi Gedung Kesehatan</a></li><li class=" "><a target="" href="/business/bidang/BG006">Konstruksi Gedung Pendidikan</a></li><li class=" "><a target="" href="/business/bidang/BG007">Konstruksi Gedung Penginapan</a></li><li class=" "><a target="" href="/business/bidang/BG008">Konstruksi Gedung Tempat Hiburan dan Olahraga</a></li><li class=" "><a target="" href="/business/bidang/BG009">Konstruksi Gedung Lainnya</a></li></ul></li><li class="    "><a target="" href="#">Sipil <i class="fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" "><a target="" href="/business/bidang/BS001">Bangunan Sipil Jalan</a></li><li class=" "><a target="" href="/business/bidang/BS002">Bangunan Sipil Jembatan, Jalan Layang, Fly Over, dan Underpass</a></li><li class=" "><a target="" href="/business/bidang/BS003">Konstruksi Jalan Rel</a></li><li class=" "><a target="" href="/business/bidang/BS004">Konstruksi Jaringan Irigasi dan Drainase</a></li><li class=" "><a target="" href="/business/bidang/BS005">Konstruksi Bangunan Sipil Pengolahan Air Bersih</a></li><li class=" "><a target="" href="/business/bidang/BS006">Konstruksi Bangunan Prasarana dan Sarana Sistem Pengolahan Limbah Padat, Cair, dan Gas</a></li><li class=" "><a target="" href="/business/bidang/BS007">Konstruksi Bangunan Sipil Elektrikal</a></li><li class=" "><a target="" href="/business/bidang/BS008">Konstruksi Bangunan Sipil Telekomunikasi untuk Prasarana Transportasi</a></li><li class=" "><a target="" href="/business/bidang/BS009">Konstruksi Sentral Telekomunikasi</a></li><li class=" "><a target="" href="/business/bidang/BS010">Konstruksi Bangunan Prasarana Sumber Daya Air</a></li><li class=" "><a target="" href="/business/bidang/BS011">Konstruksi Bangunan Pelabuhan Bukan Perikanan</a></li><li class=" "><a target="" href="/business/bidang/BS012">Konstruksi Bangunan Pelabuhan Perikanan</a></li><li class=" "><a target="" href="/business/bidang/BS013">Konstruksi Bangunan Sipil Minyak dan Gas Bumi</a></li><li class=" "><a target="" href="/business/bidang/BS014">Konstruksi Bangunan Sipil Pertambangan</a></li><li class=" "><a target="" href="/business/bidang/BS015">Konstruksi Bangunan Sipil Panas Bumi</a></li><li class=" "><a target="" href="/business/bidang/BS016">Konstruksi Bangunan Sipil Fasilitas Olah</a></li><li class=" "><a target="" href="/business/bidang/BS017">Konstruksi Bangunan Sipil Lainnya Ytdl</a></li><li class=" "><a target="" href="/business/bidang/BS018">Konstruksi Bangunan Sipil Fasilitas Pengolahan Produk Kimia, Petrokimia, Farmasi, dan Industri Lainnya</a></li><li class=" "><a target="" href="/business/bidang/BS019">Konstruksi Bangunan Sipil Fasilitas Militer dan Peluncuran Satelit</a></li><li class=" "><a target="" href="/business/bidang/BS020">Konstruksi Jaringan Irigasi, Komunikasi, dan Limbah Lainnya</a></li></ul></li><li class="    "><a target="" href="#">Instalasi <i class="fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" "><a target="" href="/business/bidang/IN001">Instalasi Mekanikal</a></li><li class=" "><a target="" href="/business/bidang/IN002">Instalasi Telekomunikasi</a></li><li class=" "><a target="" href="/business/bidang/IN003">Instalasi Peralatan Infrastruktur Pertambangan dan Manufaktur</a></li><li class=" "><a target="" href="/business/bidang/IN004">Instalasi Minyak dan Gas</a></li><li class=" "><a target="" href="/business/bidang/IN005">Instalasi Konstruksi Navigasi Laut, Sungai dan Udara</a></li><li class=" "><a target="" href="/business/bidang/IN006">Instalasi Elektronika</a></li><li class=" "><a target="" href="/business/bidang/IN007">Instalasi saluran air (plambing)</a></li><li class=" "><a target="" href="/business/bidang/IN008">Instalasi Pendingin Dan Ventilasi Udara</a></li><li class=" "><a target="" href="/business/bidang/IN009">Instalasi Pendingin Dan Ventilasi Udara (Perseorangan)</a></li><li class=" "><a target="" href="/business/bidang/IN010">Instalasi Pengolahan Air Untuk Pembangkit Listrik</a></li><li class=" "><a target="" href="/business/bidang/IN011">Instalasi Sinyal Dan Ramburambu Jalan Raya</a></li><li class=" "><a target="" href="/business/bidang/IN012">Instalasi Sinyal dan Telekomunikasi Kereta Api</a></li><li class=" "><a target="" href="/business/bidang/IN013">Instalasi Pemanas dan Geotermal</a></li><li class=" "><a target="" href="/business/bidang/IN014">Instalasi Meteorologi, Klimatologi dan Geofisika</a></li></ul></li><li class="    "><a target="" href="#">Elektrikal <i class="fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" "><a target="" href="/business/bidang/MK001">Konstruksi pemasangan pendingin udara (AC), pemanas dan ventilasi</a></li><li class=" "><a target="" href="/business/bidang/MK002">Pemasangan Pipa Air (Plumbing)</a></li><li class=" "><a target="" href="/business/bidang/MK003">Pemasangan Pipa Gas dalam Bangunan</a></li><li class=" "><a target="" href="/business/bidang/MK004">Insulasi dalam Bangunan</a></li><li class=" "><a target="" href="/business/bidang/MK005">Pemasangan Lift dan Tangga Berjalan</a></li><li class=" "><a target="" href="/business/bidang/MK006">Pertambangan dan Manufaktur</a></li><li class=" "><a target="" href="/business/bidang/MK007">Instalasi thermal, bertekanan, minyak, gas, geothermal (pekerjaan rekayasa)</a></li><li class=" "><a target="" href="/business/bidang/MK008">Instalasi alat angkut dan alat angkat</a></li><li class=" "><a target="" href="/business/bidang/MK009">Instalasi Perpipaan, Gas, Energi (Pekerjaan Rekayasa)</a></li><li class=" "><a target="" href="/business/bidang/MK010">Instalasi fasilitas produksi, penyimpanan minyak dan gas (pekerjaan rekayasa)</a></li></ul></li><li class="   "><a target="" href="#">Spesialis <i class="fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class="  "><a target="" href="https://indokontraktor.com/business/bidang/SP004">Gali Timbun Tanah (Cut&amp;Fill)</a></li><li class="    "><a target="" href="https://indokontraktor.com/business/bidang/SP008">Pengeboran Air Tanah</a></li><li class="  "><a target="" href="https://indokontraktor.com/business/bidang/SP001">Penyelidikan Lapangan</a></li><li class=" "><a target="" href="https://indokontraktor.com/business/bidang/SP002">Pekerjaan Pembongkaran</a></li><li class=" "><a target="" href="https://indokontraktor.com/business/bidang/SP003">Pematangan Tanah</a></li></ul></li><li class="  "><a target="" href="#">Perencana <i class="fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" "><a target="" href="/business/bidang/PR101">Perencanaan dan Perancangan Perkotaan</a></li><li class=" "><a target="" href="/business/bidang/PR102">Perencanaan Wilayah</a></li><li class=" "><a target="" href="/business/bidang/PR103">Perencanaan dan Perancangan lingkungan bangunan dan lansekap</a></li><li class=" "><a target="" href="/business/bidang/PR104">Pengembangan Pemanfaatan Ruang</a></li><li class=" "><a target="" href="/business/bidang/PR201">Pengawas dan Pengendali Penataan Ruang</a></li><li class=" "><a target="" href="/business/bidang/RK001">Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non hunian</a></li><li class=" "><a target="" href="/business/bidang/RK002">Jasa Rekayasa Pekerjaan Teknik Sipil Sumber Daya Air</a></li><li class=" "><a target="" href="/business/bidang/RK003">Jasa Rekayasa Pekerjaan Teknik Sipil Transportasi</a></li><li class=" "><a target="" href="/business/bidang/RK004">Jasa Rekayasa Pekerjaan Mekanikal Dalam Bangunan</a></li><li class=" "><a target="" href="/business/bidang/RK005">Jasa Rekayasa Lainnya</a></li></ul></li><li class="  "><a target="" href="">Pengawas <i class="fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" "><a target="" href="/business/bidang/AR201">Pengawas Administrasi Kontrak  </a></li><li class=" "><a target="" href="/business/bidang/RE201">Pengawas Pekerjaan Konstruksi Bangunan Gedung</a></li><li class=" "><a target="" href="/business/bidang/PR201">Pengawas Penataan Ruang</a></li></ul></li><li class="   "><a target="" href="#">Support <i class="fa fa-angle-down"></i></a><ul class="children-menu menu-dropdown"><li class=" "><a target="" href="/klasifikasi-jasa-konstruksi">Klasifikasi Usaha Jasa Konstruksi</a></li><li class=" "><a target="" href="https://indokontraktor.com/page/adalah-izin-usaha-jasa-konstruksi-yang-diberikan-kepada-perusahaan-yang-seluruh-jumlah-sahamnya-100-dimiliki-oleh-saham-wni">Izin Usaha Jasa Konstruksi Nasional</a></li><li class=" "><a target="" href="/kbli">KBLI 2020</a></li><li class=" "><a target="" href="https://isocenter.id/sertifikasi/iso-9001-quality-management-systems">Sertifikasi ISO 9001</a></li><li class=" "><a target="" href="https://isocenter.id/sertifikasi/iso-14001">Sertifikasi ISO 14001</a></li><li class=" "><a target="" href="https://isocenter.id/sertifikasi/iso-45001-sistem-manajemen-kesehatan-dan-keselamatan-kerja">Sertifikasi ISO 45001</a></li><li class=" "><a target="" href="https://isocenter.id/sertifikasi/iso-37001-sistem-manajemen-anti-penyuapan-memahami-standar-internasional">Sertifikasi ISO 37001</a></li><li class=" "><a target="" href="/news">News</a></li></ul></li></ul>        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <!-- Just add this line to your layout -->
+                        <!-- resources/views/components/breadcrumbs.blade.php -->
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https:\/\/indokontraktor.com"},{"@type":"ListItem","position":2,"name":"Business","item":"https:\/\/indokontraktor.com\/business"},{"@type":"ListItem","position":3,"name":"Profil Tidak Ditemukan","item":"https:\/\/indokontraktor.com\/business\/profil-tidak-ditemukan"}]}</script>
+
+<!-- Visual Breadcrumbs -->
+<nav aria-label="breadcrumb" class="breadcrumb-nav">
+    <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">
+                    <a href="https://indokontraktor.com">Home</a>
+                </li>
+                                                <li class="breadcrumb-item">
+                    <a href="https://indokontraktor.com/business">Business</a>
+                </li>
+                                                <li class="breadcrumb-item active" aria-current="page">
+                    Profil Tidak Ditemukan
+                </li>
+                        </ol>
+</nav>
+
+<style>
+.breadcrumb-nav {
+    margin-bottom: 20px;
+}
+
+.breadcrumb {
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin-bottom: 0;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "›";
+    color: #6c757d;
+    font-weight: bold;
+}
+
+.breadcrumb-item a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+    color: #6c757d;
+    font-weight: 500;
+}
+</style>                    </div>
+    </div>
+</div>
+            <div class="bravo_search_tour">
+    <div class="container contractor-404">
+        <div class="contractor-404__card">
+            <div class="contractor-404__header">
+                <div class="contractor-404__icon">
+                    <i class="fa fa-hard-hat" aria-hidden="true"></i>
+                </div>
+                <p class="contractor-404__code">404</p>
+                <h1 class="contractor-404__title">Profil Kontraktor Tidak Ditemukan</h1>
+            </div>
+            <div class="contractor-404__body">
+                <p class="contractor-404__msg">
+                    Profil perusahaan konstruksi yang Anda cari tidak ada atau telah dihapus. 
+                    Anda dapat mencari kontraktor/konsultan lain, jelajahi menurut bidang, atau kembali ke beranda.
+                </p>
+                                <div class="contractor-404__slug">
+                    <i class="fa fa-link fa-fw text-muted"></i> pt-aria-jasa-konsultan
+                </div>
+                                <div class="contractor-404__actions">
+                    <a href="https://indokontraktor.com/business" class="contractor-404__btn contractor-404__btn--primary">
+                        <i class="fa fa-search"></i> Cari Kontraktor
+                    </a>
+                    <a href="https://indokontraktor.com" class="contractor-404__btn contractor-404__btn--outline">
+                        <i class="fa fa-home"></i> Beranda
+                    </a>
+                    <a href="https://indokontraktor.com/business/bidang" class="contractor-404__btn contractor-404__btn--outline">
+                        <i class="fa fa-layer-group"></i> Bidang SBU
+                    </a>
+                    <a href="https://indokontraktor.com/business/alphabet" class="contractor-404__btn contractor-404__btn--outline">
+                        <i class="fa fa-sort-alpha-down"></i> Indeks Alfabet
+                    </a>
+                </div>
+                <div class="contractor-404__search">
+                    <label class="contractor-404__search-label">Cari nama kontraktor atau konsultan</label>
+                    <form action="https://indokontraktor.com/business" method="get" class="row">
+                        <div class="col-md-8 col-sm-12 mb-2 mb-md-0">
+                            <input type="text" name="q" class="form-control" placeholder="Nama perusahaan, kota, atau bidang..." value="" autocomplete="off">
+                        </div>
+                        <div class="col-md-4 col-sm-12">
+                            <button type="submit" class="btn btn-primary btn-block" style="width:100%;">
+                                <i class="fa fa-search"></i> Cari
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <div class="bravo_footer">
+        <div class="main-footer">
+        <div class="container content-space-1">
+            <aside class="sponsored-hse-footer" aria-labelledby="sponsored-hse-footer-heading">
+            <!-- Heading -->
+            <div class="w-lg-65 text-center mx-lg-auto mb-5 mb-sm-7 mb-lg-10">
+                <h2 id="sponsored-hse-footer-heading">HSE Consulting — Pusat Pelatihan &amp; Sertifikasi K3 <span class="badge badge-secondary align-middle" style="font-size:0.5em;font-weight:600;vertical-align:middle;">Sponsor</span></h2>
+                <p class="small text-muted mb-2" role="note">Program berikut mengarah ke situs mitra; tautan ditandai sebagai sponsor.</p>
+                <p>Tingkatkan keahlian dan kredibilitas profesional Anda dengan program pelatihan K3 berkualitas yang diakui Kementerian Ketenagakerjaan RI.</p>
+            </div>
+            <!-- End Heading -->
+
+            <div class="row">
+                <div class="col-md-4 mb-5 mb-md-0">
+                    <!-- Icon Block -->
+                    <div class="text-center mx-md-3">
+                        <div class="mb-3">
+                            <i class="fa fa-shield fa-3x text-primary"></i>
+                        </div>
+                        <h5>Ahli K3 Umum</h5>
+                        <p>Dapatkan kompetensi komprehensif dalam mengidentifikasi bahaya, menilai risiko, dan menerapkan program K3 efektif di tempat kerja.</p>
+                        <span class="badge badge-success mb-3">Tersertifikasi KEMNAKER RI</span>
+                        <div>
+                            <a class="btn btn-sm btn-outline-primary" target="_blank" rel="sponsored noopener noreferrer" href="https://hse.co.id/pembinaan-sertifikasi/ahli-k3-umum-sertifikasi-kemnaker-ri?utm_source=indokontraktor&amp;utm_medium=sponsored&amp;utm_campaign=footer_hse">Lihat Detail</a>
+                        </div>
+                    </div>
+                    <!-- End Icon Block -->
+                </div>
+                <!-- End Col -->
+
+                <div class="col-md-4 mb-5 mb-md-0">
+                    <!-- Icon Block -->
+                    <div class="text-center mx-md-3">
+                        <div class="mb-3">
+                            <i class="fa fa-bolt fa-3x text-warning"></i>
+                        </div>
+                        <h5>Petugas K3 Listrik</h5>
+                        <p>Pelajari keterampilan untuk mengidentifikasi bahaya listrik dan menerapkan prosedur keselamatan dalam pekerjaan kelistrikan.</p>
+                        <span class="badge badge-success mb-3">Tersertifikasi KEMNAKER RI</span>
+                        <div>
+                            <a class="btn btn-sm btn-outline-primary" target="_blank" rel="sponsored noopener noreferrer" href="https://hse.co.id/pembinaan-sertifikasi/petugas-k3-listrik-sertifikasi-kemnaker-ri?utm_source=indokontraktor&amp;utm_medium=sponsored&amp;utm_campaign=footer_hse">Lihat Detail</a>
+                        </div>
+                    </div>
+                    <!-- End Icon Block -->
+                </div>
+                <!-- End Col -->
+
+                <div class="col-md-4">
+                    <!-- Icon Block -->
+                    <div class="text-center mx-md-3">
+                        <div class="mb-3">
+                            <i class="fa fa-fire fa-3x text-danger"></i>
+                        </div>
+                        <h5>TKBT Tingkat II</h5>
+                        <p>Tingkatkan keterampilan dalam penanganan dan keselamatan bahan berbahaya dan beracun di lingkungan kerja Anda.</p>
+                        <span class="badge badge-success mb-3">Tersertifikasi KEMNAKER RI</span>
+                        <div>
+                            <a class="btn btn-sm btn-outline-primary" target="_blank" rel="sponsored noopener noreferrer" href="https://hse.co.id/pembinaan-sertifikasi/tkbt-tingkat-ii-sertifikasi-kemnaker-ri?utm_source=indokontraktor&amp;utm_medium=sponsored&amp;utm_campaign=footer_hse">Lihat Detail</a>
+                        </div>
+                    </div>
+                    <!-- End Icon Block -->
+                </div>
+                <!-- End Col -->
+            </div>
+            <!-- End Row -->
+
+            <div class="row mt-5">
+                <div class="col-md-4 mb-5 mb-md-0">
+                    <!-- Icon Block -->
+                    <div class="text-center mx-md-3">
+                        <div class="mb-3">
+                            <i class="fa fa-tint fa-3x text-info"></i>
+                        </div>
+                        <h5>TKPK Tingkat II</h5>
+                        <p>Kuasai teknik pencegahan dan penanggulangan kebakaran untuk menjaga keselamatan tempat kerja dari risiko kebakaran.</p>
+                        <span class="badge badge-success mb-3">Tersertifikasi KEMNAKER RI</span>
+                        <div>
+                            <a class="btn btn-sm btn-outline-primary" target="_blank" rel="sponsored noopener noreferrer" href="https://hse.co.id/pembinaan-sertifikasi/tkpk-tingkat-ii-sertifikasi-kemnaker-ri?utm_source=indokontraktor&amp;utm_medium=sponsored&amp;utm_campaign=footer_hse">Lihat Detail</a>
+                        </div>
+                    </div>
+                    <!-- End Icon Block -->
+                </div>
+                <!-- End Col -->
+
+                <div class="col-md-4 mb-5 mb-md-0">
+                    <!-- Icon Block -->
+                    <div class="text-center mx-md-3">
+                        <div class="mb-3">
+                            <i class="fa fa-arrow-up fa-3x text-secondary"></i>
+                        </div>
+                        <h5>K3 Teknisi Lift</h5>
+                        <p>Pelajari aspek teknis dan keselamatan dalam pemasangan, pemeliharaan, dan perbaikan sistem lift di gedung.</p>
+                        <span class="badge badge-success mb-3">Tersertifikasi KEMNAKER RI</span>
+                        <div>
+                            <a class="btn btn-sm btn-outline-primary" target="_blank" rel="sponsored noopener noreferrer" href="https://hse.co.id/pembinaan-sertifikasi/k3-teknisi-lift-sertifikasi-kemnaker-ri?utm_source=indokontraktor&amp;utm_medium=sponsored&amp;utm_campaign=footer_hse">Lihat Detail</a>
+                        </div>
+                    </div>
+                    <!-- End Icon Block -->
+                </div>
+                <!-- End Col -->
+
+                <div class="col-md-4">
+                    <!-- Icon Block -->
+                    <div class="text-center mx-md-3">
+                        <div class="mb-3">
+                            <i class="fa fa-building fa-3x text-dark"></i>
+                        </div>
+                        <h5>Operator Lift</h5>
+                        <p>Dapatkan keterampilan untuk mengoperasikan lift dengan aman dan efisien sesuai dengan standar keselamatan kerja.</p>
+                        <span class="badge badge-success mb-3">Tersertifikasi KEMNAKER RI</span>
+                        <div>
+                            <a class="btn btn-sm btn-outline-primary" target="_blank" rel="sponsored noopener noreferrer" href="https://hse.co.id/pembinaan-sertifikasi/operator-lift-sertifikasi-kemnaker-ri?utm_source=indokontraktor&amp;utm_medium=sponsored&amp;utm_campaign=footer_hse">Lihat Detail</a>
+                        </div>
+                    </div>
+                    <!-- End Icon Block -->
+                </div>
+                <!-- End Col -->
+            </div>
+            <!-- End Row -->
+
+            <div class="row mt-5">
+                <div class="col-md-4 mb-5 mb-md-0">
+                    <!-- Icon Block -->
+                    <div class="text-center mx-md-3">
+                        <div class="mb-3">
+                            <i class="fa fa-truck fa-3x text-success"></i>
+                        </div>
+                        <h5>Operator Forklift</h5>
+                        <p>Kembangkan keterampilan dalam pengoperasian forklift secara aman dan efisien di lingkungan gudang dan industri.</p>
+                        <span class="badge badge-success mb-3">Tersertifikasi KEMNAKER RI</span>
+                        <div>
+                            <a class="btn btn-sm btn-outline-primary" target="_blank" rel="sponsored noopener noreferrer" href="https://hse.co.id/pembinaan-sertifikasi/operator-forklift-sertifikasi-kemnaker-ri?utm_source=indokontraktor&amp;utm_medium=sponsored&amp;utm_campaign=footer_hse">Lihat Detail</a>
+                        </div>
+                    </div>
+                    <!-- End Icon Block -->
+                </div>
+                <!-- End Col -->
+
+                <div class="col-md-4 mb-5 mb-md-0">
+                    <!-- Icon Block -->
+                    <div class="text-center mx-md-3">
+                        <div class="mb-3">
+                            <i class="fa fa-scissors fa-3x text-danger"></i>
+                        </div>
+                        <h5>Operator Boomlift, Manlift, Scissorlift</h5>
+                        <p>Pelajari teknik pengoperasian yang aman untuk peralatan ketinggian seperti boomlift, manlift, dan scissorlift.</p>
+                        <span class="badge badge-success mb-3">Tersertifikasi KEMNAKER RI</span>
+                        <div>
+                            <a class="btn btn-sm btn-outline-primary" target="_blank" rel="sponsored noopener noreferrer" href="https://hse.co.id/pembinaan-sertifikasi/operator-boomlift-manlift-scissorlift-sertifikasi-kemnaker-ri?utm_source=indokontraktor&amp;utm_medium=sponsored&amp;utm_campaign=footer_hse">Lihat Detail</a>
+                        </div>
+                    </div>
+                    <!-- End Icon Block -->
+                </div>
+                <!-- End Col -->
+
+                <div class="col-md-4">
+                    <!-- Icon Block -->
+                    <div class="text-center mx-md-3">
+                        <div class="mb-3">
+                            <i class="fa fa-refresh fa-3x text-primary"></i>
+                        </div>
+                        <h5>Operator Crane</h5>
+                        <p>Tingkatkan keahlian dalam pengoperasian crane dengan aman dan efektif sesuai dengan prosedur standar keselamatan.</p>
+                        <span class="badge badge-success mb-3">Tersertifikasi KEMNAKER RI</span>
+                        <div>
+                            <a class="btn btn-sm btn-outline-primary" target="_blank" rel="sponsored noopener noreferrer" href="https://hse.co.id/pembinaan-sertifikasi/operator-crane-sertifikasi-kemnaker-ri?utm_source=indokontraktor&amp;utm_medium=sponsored&amp;utm_campaign=footer_hse">Lihat Detail</a>
+                        </div>
+                    </div>
+                    <!-- End Icon Block -->
+                </div>
+                <!-- End Col -->
+            </div>
+            <!-- End Row -->
+
+            <div class="row mt-5">
+                <div class="col-md-4 mb-5 mb-md-0">
+                    <!-- Icon Block -->
+                    <div class="text-center mx-md-3">
+                        <div class="mb-3">
+                            <i class="fa fa-link fa-3x text-warning"></i>
+                        </div>
+                        <h5>Rigger/Juru Ikat</h5>
+                        <p>Kuasai teknik pengikatan dan pengangkatan beban yang aman dan sesuai dengan standar keselamatan kerja.</p>
+                        <span class="badge badge-success mb-3">Tersertifikasi KEMNAKER RI</span>
+                        <div>
+                            <a class="btn btn-sm btn-outline-primary" target="_blank" rel="sponsored noopener noreferrer" href="https://hse.co.id/pembinaan-sertifikasi/rigger-juru-ikat-sertifikasi-kemnaker-ri?utm_source=indokontraktor&amp;utm_medium=sponsored&amp;utm_campaign=footer_hse">Lihat Detail</a>
+                        </div>
+                    </div>
+                    <!-- End Icon Block -->
+                </div>
+                <!-- End Col -->
+
+                <div class="col-md-4 mb-5 mb-md-0">
+                    <!-- Icon Block -->
+                    <div class="text-center mx-md-3">
+                        <div class="mb-3">
+                            <i class="fa fa-heartbeat fa-3x text-danger"></i>
+                        </div>
+                        <h5>Petugas P3K</h5>
+                        <p>Dapatkan keterampilan pertolongan pertama yang sangat penting untuk menangani keadaan darurat di tempat kerja.</p>
+                        <span class="badge badge-success mb-3">Tersertifikasi KEMNAKER RI</span>
+                        <div>
+                            <a class="btn btn-sm btn-outline-primary" target="_blank" rel="sponsored noopener noreferrer" href="https://hse.co.id/pembinaan-sertifikasi/petugas-p3k-sertifikasi-kemnaker-ri?utm_source=indokontraktor&amp;utm_medium=sponsored&amp;utm_campaign=footer_hse">Lihat Detail</a>
+                        </div>
+                    </div>
+                    <!-- End Icon Block -->
+                </div>
+                <!-- End Col -->
+
+                <div class="col-md-4">
+                    <!-- Icon Block -->
+                    <div class="text-center mx-md-3">
+                        <div class="mb-3">
+                            <i class="fa fa-tree fa-3x text-success"></i>
+                        </div>
+                        <h5>Ahli Muda Lingkungan Kerja</h5>
+                        <p>Pelajari cara mengidentifikasi, mengukur, dan mengendalikan faktor risiko di lingkungan kerja untuk kesehatan karyawan.</p>
+                        <span class="badge badge-success mb-3">Tersertifikasi KEMNAKER RI</span>
+                        <div>
+                            <a class="btn btn-sm btn-outline-primary" target="_blank" rel="sponsored noopener noreferrer" href="https://hse.co.id/pembinaan-sertifikasi/ahli-muda-lingkungan-kerja-sertifikasi-kemnaker-ri?utm_source=indokontraktor&amp;utm_medium=sponsored&amp;utm_campaign=footer_hse">Lihat Detail</a>
+                        </div>
+                    </div>
+                    <!-- End Icon Block -->
+                </div>
+                <!-- End Col -->
+            </div>
+            <!-- End Row -->
+
+            <div class="row mt-5">
+                <div class="col-md-4 mx-auto">
+                    <!-- Icon Block -->
+                    <div class="text-center mx-md-3">
+                        <div class="mb-3">
+                            <i class="fa fa-cloud fa-3x text-info"></i>
+                        </div>
+                        <h5>Teknisi Deteksi Gas</h5>
+                        <p>Kuasai teknik penggunaan dan pemeliharaan alat deteksi gas untuk mencegah bahaya di area kerja berisiko tinggi.</p>
+                        <span class="badge badge-success mb-3">Tersertifikasi KEMNAKER RI</span>
+                        <div>
+                            <a class="btn btn-sm btn-outline-primary" target="_blank" rel="sponsored noopener noreferrer" href="https://hse.co.id/pembinaan-sertifikasi/teknisi-deteksi-gas-sertifikasi-kemnaker-ri?utm_source=indokontraktor&amp;utm_medium=sponsored&amp;utm_campaign=footer_hse">Lihat Detail</a>
+                        </div>
+                    </div>
+                    <!-- End Icon Block -->
+                </div>
+                <!-- End Col -->
+            </div>
+            <!-- End Row -->
+            </aside>
+        </div>
+
+        <!-- Custom styling to maintain spacing and aesthetics -->
+        <style>
+            .content-space-1 {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+
+            @media (min-width: 768px) {
+                .content-space-1 {
+                    padding-top: 5rem;
+                    padding-bottom: 5rem;
+                }
+            }
+
+            .mx-lg-auto {
+                margin-right: auto !important;
+                margin-left: auto !important;
+            }
+
+            .w-lg-65 {
+                width: 65% !important;
+            }
+
+            @media (max-width: 992px) {
+                .w-lg-65 {
+                    width: 100% !important;
+                }
+            }
+
+            .mb-sm-7 {
+                margin-bottom: 2.5rem;
+            }
+
+            .mb-lg-10 {
+                margin-bottom: 4rem;
+            }
+
+            .mt-7 {
+                margin-top: 3rem;
+            }
+
+            @media (min-width: 768px) {
+                .mt-md-7 {
+                    margin-top: 3rem;
+                }
+            }
+
+            .display-4 {
+                font-size: 2.5rem;
+            }
+        </style>
+    </div>
+    <div class="main-footer">
+        <div class="container">
+
+            <div class="row">
+                                                                <div class="col-lg-3 col-md-6">
+                    <div class="nav-footer">
+                        <div class="title">
+                            Konsultan Ilmiah dan Teknis
+                        </div>
+                        <div class="context">
+                            <ul><li><a href="/business/bidang/IT001">Jasa Pembuatan Prospektus Geologi dan Geofisika</a></li><li><a href="/business/bidang/IT002">Jasa Konsultansi Ilmiah dan Teknis Bawah Tanah</a></li><li><a href="/business/bidang/IT003">Jasa Konsultansi Ilmiah dan Teknis Permukaan Tanah dan Pembuatan Peta</a></li><li><a href="/business/bidang/IT004">Jasa Konsultasi Ilmiah dan Teknis Prasarana dan Sarana Umum</a></li><li><a href="/business/bidang/IT005">Jasa Konsultansi Ilmiah dan Teknis Konstruksi Sistem Kendali Lalu Lintas</a></li><li><a href="/business/bidang/IT006">Jasa Konsultansi Ilmiah dan Teknis Konstruksi Sistem Kendali Lalu Lintas</a></li><li><a href="/business/bidang/IT007">Jasa Konsultansi Ilmiah dan Teknis Hidrolika, Hidrologi dan Oceanography</a></li><li><a href="/business/bidang/IT008">Jasa Konsultansi Ilmiah dan Teknis Hidrolika, Hidrologi dan Oceanography</a></li></ul>
+                        </div>
+                    </div>
+                </div>
+                                <div class="col-lg-3 col-md-6">
+                    <div class="nav-footer">
+                        <div class="title">
+                            Konsultan Pengujian dan Analisa Teknis
+                        </div>
+                        <div class="context">
+                            <ul><li><a href="/business/bidang/AT001">Jasa Pengujian dan Analisis Teknis Geologi, Geofisika dan Geokimia</a></li><li><a href="/business/bidang/AT002">Jasa Pengujian dan Analisis Teknis Komposisi dan Tingkat Kemurnian</a></li><li><a href="/business/bidang/AT003">Jasa Pengujian Hasil Pekerjaan Konstruksi dan Fasilitas Laboratorium</a></li><li><a href="/business/bidang/AT004">Jasa Pengujian dan Analisis Teknis Parameter Fisikal</a></li><li><a href="/business/bidang/AT005">Jasa Pengujian dan Analisis Teknis Hidrolika, Hidrologi dan Oceanography</a></li><li><a href="/business/bidang/AT006">Jasa Pengujian dan Analisis Akustik dan vibrator Gedung Hunian dan Nonhunian</a></li><li><a href="/business/bidang/AT007">Jasa Commissioning Proses Industrial</a></li></ul>
+                        </div>
+                    </div>
+                </div>
+                                <div class="col-lg-3 col-md-6">
+                    <div class="nav-footer">
+                        <div class="title">
+                            Kontraktor Bangunan Gedung
+                        </div>
+                        <div class="context">
+                            <ul><li><a href="/business/bidang/BG001">Konstruksi Gedung Hunian</a></li><li><a href="/business/bidang/BG002">Konstruksi Gedung Perkantoran</a></li><li><a href="/business/bidang/BG003">Konstruksi Gedung Industri</a></li><li><a href="/business/bidang/BG004">Konstruksi Gedung Perbelanjaan</a></li><li><a href="/business/bidang/BG005">Konstruksi Gedung Kesehatan</a></li><li><a href="/business/bidang/BG006">Konstruksi Gedung Pendidikan</a></li><li><a href="/business/bidang/BG007">Konstruksi Gedung Penginapan</a></li><li><a href="/business/bidang/BG008">Konstruksi Gedung Tempat Hiburan dan Olahraga</a></li><li><a href="/business/bidang/BG009">Konstruksi Gedung Lainnya</a></li></ul>
+                        </div>
+                    </div>
+                </div>
+                                <div class="col-lg-3 col-md-6">
+                    <div class="nav-footer">
+                        <div class="title">
+                            Kontraktor Bangunan Sipil
+                        </div>
+                        <div class="context">
+                            <ul><li><a href="/business/bidang/BS001">Bangunan Sipil Jalan</a></li><li><a href="/business/bidang/BS002">Jembatan, Jalan Layang, Fly Over, dan Underpass</a></li><li><a href="/business/bidang/BS003">Konstruksi Jalan Rel</a></li><li><a href="/business/bidang/BS004">Konstruksi Jaringan Irigasi dan Drainase</a></li><li><a href="/business/bidang/BS005">Pengolahan Air Bersih</a></li><li><a href="/business/bidang/BS006">Prasarana dan Sarana Sistem Pengolahan Limbah Padat, Cair, dan Gas</a></li><li><a href="/business/bidang/BS007">Elektrikal</a></li><li><a href="/business/bidang/BS008">Telekomunikasi untuk Prasarana Transportasi</a></li><li><a href="/business/bidang/BS009">Konstruksi Sentral Telekomunikasi</a></li><li><a href="/business/bidang/BS010">Prasarana Sumber Daya Air</a></li><li><a href="/business/bidang/BS011">Pelabuhan Bukan Perikanan</a></li><li><a href="/business/bidang/BS012">Pelabuhan Perikanan</a></li><li><a href="/business/bidang/BS013">Minyak dan Gas Bumi</a></li><li><a href="/business/bidang/BS014">Pertambangan</a></li><li><a href="/business/bidang/BS015">Panas Bumi</a></li><li><a href="/business/bidang/BS016">Fasilitas Olah</a></li><li><a href="/business/bidang/BS017">Lainnya Ytdl</a></li><li><a href="/business/bidang/BS018">Fasilitas Pengolahan Produk Kimia, Petrokimia, Farmasi, dan Industri Lainnya</a></li><li><a href="/business/bidang/BS019">Fasilitas Militer dan Peluncuran Satelit</a></li><li><a href="/business/bidang/BS020">Konstruksi Jaringan Irigasi, Komunikasi, dan Limbah Lainnya</a></li></ul>
+                        </div>
+                    </div>
+                </div>
+                                <div class="col-lg-3 col-md-6">
+                    <div class="nav-footer">
+                        <div class="title">
+                            Kontraktor Persiapan
+                        </div>
+                        <div class="context">
+                            <ul><li><a href="/business/bidang/PL001">Pembongkaran Bangunan</a></li><li><a href="/business/bidang/PL002">Pengerukan</a></li><li><a href="/business/bidang/PL003">Penyiapan Lahan Konstruksi</a></li><li><a href="/business/bidang/PL004">Pekerjaan Tanah</a></li><li><a href="/business/bidang/PL005">Pembuatan/Pengeboran Sumur Air Tanah</a></li><li><a href="/business/bidang/PL006">Pelaksanaan Pekerjaan Utilitas</a></li><li><a href="/business/bidang/PL007">Survei Penyelidikan Lapangan</a></li><li><a href="/business/bidang/PL008">Pemasangan Perancah (Steiger)</a></li></ul>
+                        </div>
+                    </div>
+                </div>
+                                <div class="col-lg-3 col-md-6">
+                    <div class="nav-footer">
+                        <div class="title">
+                            Kontraktor Konstruksi Khusus
+                        </div>
+                        <div class="context">
+                            <ul><li><a href="/business/bidang/KK001">Pondasi Konstruksi</a></li><li><a href="/business/bidang/KK002">Konstruksi Reservoir Pembangkit Listrik Tenaga Air</a></li><li><a href="/business/bidang/KK003">Konstruksi Intake, Control Gate, Penstock dan Outflow Pembangkit Listrik Tenaga Air</a></li><li><a href="/business/bidang/KK004">Konstruksi Pelindung Pantai</a></li><li><a href="/business/bidang/KK005">Pekerjaan Lapis Perkerasan Beton (Rigid Pavement)</a></li><li><a href="/business/bidang/KK006">Pekerjaan Konstruksi Kedap Air, Minyak, dan Gas</a></li><li><a href="/business/bidang/KK007">Pekerjaan Konstruksi Kedap Suara</a></li><li><a href="/business/bidang/KK008">Perkerasan Aspal</a></li><li><a href="/business/bidang/KK009">Perkerasan Berbutir</a></li><li><a href="/business/bidang/KK010">Pengeboran dan Injeksi Semen Bertekanan (Drilling and Grouting)</a></li><li><a href="/business/bidang/KK011">Pemasangan Rangka dan Atap/Roofcovering</a></li><li><a href="/business/bidang/KK012">Pekerjaan Struktur Beton</a></li><li><a href="/business/bidang/KK013">Konstruksi Struktur Beton Pascatarik (Post Tensioned)</a></li><li><a href="/business/bidang/KK014">Konstruksi Terowongan</a></li><li><a href="/business/bidang/KK015">Pekerjaan Konstruksi Tahan Api (Tanur, Anneling, Flare, atau Incenerator)</a></li><li><a href="/business/bidang/KK016">Pemasangan Kerangka Baja</a></li></ul>
+                        </div>
+                    </div>
+                </div>
+                                <div class="col-lg-3 col-md-6">
+                    <div class="nav-footer">
+                        <div class="title">
+                            Kontraktor Instalasi
+                        </div>
+                        <div class="context">
+                            <ul><li><a href="/business/bidang/IN001">Instalasi Mekanikal</a></li><li><a href="/business/bidang/IN002">Instalasi Telekomunikasi</a></li><li><a href="/business/bidang/IN003">Instalasi Peralatan Infrastruktur Pertambangan dan Manufaktur</a></li><li><a href="/business/bidang/IN004">Instalasi Minyak dan Gas</a></li><li><a href="/business/bidang/IN005">Instalasi Konstruksi Navigasi Laut, Sungai dan Udara</a></li><li><a href="/business/bidang/IN006">Instalasi Elektronika</a></li><li><a href="/business/bidang/IN007">Instalasi saluran air (plambing)</a></li><li><a href="/business/bidang/IN008">Instalasi Pendingin Dan Ventilasi Udara</a></li><li><a href="/business/bidang/IN009">Instalasi Pendingin Dan Ventilasi Udara</a></li><li><a href="/business/bidang/IN010">Instalasi Pengolahan Air Untuk Pembangkit Listrik</a></li><li><a href="/business/bidang/IN011">Instalasi Sinyal Dan Ramburambu Jalan Raya</a></li><li><a href="/business/bidang/IN012">Instalasi Sinyal dan Telekomunikasi Kereta Api</a></li><li><a href="/business/bidang/IN013">Instalasi Pemanas dan Geotermal</a></li><li><a href="/business/bidang/IN014">Instalasi Meteorologi, Klimatologi dan Geofisika</a></li></ul>
+                        </div>
+                    </div>
+                </div>
+                                <div class="col-lg-3 col-md-6">
+                    <div class="nav-footer">
+                        <div class="title">
+                            Kontraktor Penyelesaian Bangunan
+                        </div>
+                        <div class="context">
+                            <ul><li><a href="/business/bidang/PB001">Pengerjaan Pemasangan Kaca Dan Alumunium</a></li><li><a href="/business/bidang/PB002">Pengerjaan Pemasangan Kaca Dan Alumunium</a></li><li><a href="/business/bidang/PB003">Pengerjaan Lantai, Dinding, Peralatan Saniter Dan Plafon</a></li><li><a href="/business/bidang/PB004">Dekorasi Interior</a></li><li><a href="/business/bidang/PB005">Pemasangan Ornamen dan Pekerjaan Seni</a></li><li><a href="/business/bidang/PB006">Pemasangan Ornamen dan Pekerjaan Seni</a></li><li><a href="/business/bidang/PB007">Pengecatan</a></li><li><a href="/business/bidang/PB008">Pengecatan</a></li><li><a href="/business/bidang/PB009">Pembersihan dan Perapihan Bangunan Gedung dan/atau Bangunan Sipil</a></li><li><a href="/business/bidang/PB010">Pekerjaan Lanskap, Pertamanan, dan Penanaman Vegetasi</a></li><li><a href="/business/bidang/PB011">Pemulihan Lahan Pekerjaan Konstruksi</a></li></ul>
+                        </div>
+                    </div>
+                </div>
+                                            </div>
+        </div>
+    </div>
+    <div class="main-footer">
+        <div class="container">
+            <div class="row">
+                                                                <div class="col-lg-3 col-md-6">
+                    <div class="nav-footer">
+                        <div class="title">
+                            PERATURAN
+                        </div>
+                        <div class="context">
+                            <ul>
+                                                    <li>
+                                <a href="/documents/category/undang-undang">Undang-undang</a>
+                            </li>
+                                                    <li>
+                                <a href="/documents/category/keputusan-kepala-bptsp">Keputusan Kepala BPTSP</a>
+                            </li>
+                                                    <li>
+                                <a href="/documents/category/peraturan-pemerintah">Peraturan Pemerintah</a>
+                            </li>
+                                                    <li>
+                                <a href="/documents/category/peraturan-presiden">Peraturan Presiden</a>
+                            </li>
+                                                    <li>
+                                <a href="/documents/category/peraturan-menteri">Peraturan Menteri</a>
+                            </li>
+                                                    <li>
+                                <a href="/documents/category/peraturan-oss-online-single-submission">Peraturan OSS (Online Single Submission)</a>
+                            </li>
+                                                    <li>
+                                <a href="/documents/category/peraturan-daerah-provinsi">Peraturan Daerah (Provinsi)</a>
+                            </li>
+                                                    <li>
+                                <a href="/documents/category/peraturan-gubernur">Peraturan Gubernur</a>
+                            </li>
+                                                    <li>
+                                <a href="/documents/category/surat-edaran">Surat Edaran</a>
+                            </li>
+                                                    <li>
+                                <a href="/documents/category/peraturan-ojk">Peraturan OJK</a>
+                            </li>
+                                                    <li>
+                                <a href="/documents/category/peraturan-bkpm">Peraturan BKPM</a>
+                            </li>
+                                            </ul>
+                        </div>
+                    </div>
+                </div>
+                                <div class="col-lg-3 col-md-6">
+                    <div class="nav-footer">
+                        <div class="title">
+                            Tender Support
+                        </div>
+                        <div class="context">
+                            <ul>
+<li><a href="https://indokontraktor.com/lsbu/skk-list">SKK Konstruksi</a></li>
+<li><a href="//sio.co.id">Konsultan SIO</a></li>
+<li><a href="//csms.co.id">Konsultan CSMS</a></li>
+<li><a href="//smk3pedia.com">Konsultan SMK3</a></li>
+<li><a href="//ijinkonstruksi.com">Ijin Konstruksi</a></li>
+<li><a href="//ijinalat.com">Surat Ijin Alat Berat</a></li>
+<li><a href="//sertifikasibadanusaha.com">SBU Jasa Konstruksi</a></li>
+<li><a href="//sbulistrik.co.id">SBU Listrik SBUJPTL</a></li>
+<li><a href="//suketk3.com">Suket K3 Alat</a></li>
+<li><a href="//sbu-konstruksi.com">SBU Konstruksi</a></li>
+<li><a href="//sbunonkonstruksi.com">SBU Non Konstruksi</a></li>
+<li><a href="//pbg.co.id">Konsultan PBG</a></li>
+<li><a href="//slf.co.id">Konsultan SLF</a></li>
+<li><a href="https://bimkonstruksi.com/">Konsultan BIM</a></li>
+<li><a href="https://bnsp.net/">Sertifikasi BNSP</a></li>
+</ul>
+                        </div>
+                    </div>
+                </div>
+                                <div class="col-lg-3 col-md-6">
+                    <div class="nav-footer">
+                        <div class="title">
+                            The Company
+                        </div>
+                        <div class="context">
+                            <ul>
+<li><a href="/page/disclaimer">Disclaimer</a></li>
+<li><a href="/page/terms-of-service">Term Of Service</a></li>
+<li><a href="/page/privacy-policy">Privacy Policy</a></li>
+<li><a href="/page/dmca">DMCA</a></li>
+<li><a href="/page/gdpr-privacy-policy">GDPR</a></li>
+<li><a href="/news">Community Blog</a></li>
+</ul>
+                        </div>
+                    </div>
+                </div>
+                                <div class="col-lg-3 col-md-6">
+                    <div class="nav-footer">
+                        <div class="title">
+                            INDOKONTRAKTOR.com
+                        </div>
+                        <div class="context">
+                            <p>
+Kami adalah perusahaan yang bergerak dalam media informasi bisnis, promosi, komunitas, untuk industri konstruksi serta industri pendukungnya.
+</p>
+<p>Email: indokontraktor.comATgmail.com</p>
+
+<strong>Head Office:</strong>
+<p>24-42 Harrison Ave, Eastwood, Sydney NSW 2122, Australia</p>
+                        </div>
+                    </div>
+                </div>
+                                            </div>
+        </div>
+    </div>
+    <div class="copy-right">
+        <div class="container context">
+            <div class="row">
+                <div class="col-md-12">
+                    
+
+
+
+
+<p><img class="img-fluid img-responsive" src="../../../../../uploads/0000/1/2020/04/04/logo-indokontraktor-long-xs.png"></p>
+<p>Indonesia No #1 Business Directory</p>
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;dd25951dcdf4486fa937927ce452c669&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+                    <div class="f-visa">
+                        
+
+
+
+
+<p>Supported By</p>
+<p><a href="https://wika.co.id" target="_blank" rel="noopener"><img src="../../../../../uploads/0000/1/2021/02/13/wika1-150.jpg" alt="" width="89" height="65"></a><a href="https://hutamakarya.com/id/" target="_blank" rel="noopener"><img src="../../../../../uploads/0000/1/2021/02/13/hk1-150.jpg" alt="" width="83" height="64"></a><a href="https://www.waskita.co.id/" target="_blank" rel="noopener"><img src="../../../../../uploads/0000/1/2021/02/13/waskita1-150.jpg" alt="" width="87" height="65"></a><a href="https://www.ptpp.co.id/" target="_blank" rel="noopener"><img src="../../../../../uploads/0000/1/2021/02/13/pp1-150.jpg" alt="" width="85" height="66"></a><a href="https://adhi.co.id/" target="_blank" rel="noopener"><img src="../../../../../uploads/0000/1/2021/02/13/adhi1-150.jpg" alt="" width="82" height="66"></a><a href="https://www.nindyakarya.co.id/" target="_blank" rel="noopener"><img src="../../../../../uploads/0000/1/2021/02/13/nindya1-150.jpg" alt="" width="90" height="66"></a></p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content relative">
+            <div class="modal-header">
+                <h4 class="modal-title">Log In</h4>
+                <span class="c-pointer" data-dismiss="modal" aria-label="Close">
+                    <i class="input-icon field-icon fa">
+                        <img src="https://indokontraktor.com/images/ico_close.svg" alt="close">
+                    </i>
+                </span>
+            </div>
+            <div class="modal-body relative">
+                <form class="bravo-form-login" method="POST" action="https://indokontraktor.com/login">
+    <input type="hidden" name="_token" value="okGQnFiR1EqksWJzoxK0bWfmoYrLKgZ894h2j7Ak">    <div class="form-group">
+        <input type="text" class="form-control" name="email" autocomplete="off" placeholder="Email address">
+        <i class="input-icon fa fa-envelope-o"></i>
+        <span class="invalid-feedback error error-email"></span>
+    </div>
+    <div class="form-group">
+        <input type="password" class="form-control" name="password" autocomplete="off" placeholder="Password">
+        <i class="input-icon fa fa-lock"></i>
+        <span class="invalid-feedback error error-password"></span>
+    </div>
+    <div class="form-group">
+        <div class="d-flex justify-content-between">
+            <label for="remember-me" class="mb0">
+                <input type="checkbox" name="remember" id="remember-me" value="1"> Remember me <span class="checkmark fcheckbox"></span>
+            </label>
+            <a href="https://indokontraktor.com/password/reset">Forgot Password?</a>
+        </div>
+    </div>
+        <div class="error message-error invalid-feedback"></div>
+    <div class="form-group">
+        <button class="btn btn-primary form-submit" type="submit">
+            Login
+            <span class="spinner-grow spinner-grow-sm icon-loading" role="status" aria-hidden="true"></span>
+        </button>
+    </div>
+        <div class="c-grey font-medium f14 text-center"> Do not have an account? <a href="" data-target="#register" data-toggle="modal">Sign Up</a>
+    </div>
+</form>            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="register" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content relative">
+            <div class="modal-header">
+                <h4 class="modal-title">Sign Up</h4>
+                <span class="c-pointer" data-dismiss="modal" aria-label="Close">
+                    <i class="input-icon field-icon fa">
+                        <img src="https://indokontraktor.com/images/ico_close.svg" alt="close">
+                    </i>
+                </span>
+            </div>
+            <div class="modal-body">
+                <form class="form bravo-form-register" method="post">
+    <input type="hidden" name="_token" value="okGQnFiR1EqksWJzoxK0bWfmoYrLKgZ894h2j7Ak">    <div class="row">
+        <div class="col-lg-6 col-md-12">
+            <div class="form-group">
+                <input type="text" class="form-control" name="first_name" autocomplete="off" placeholder="First Name">
+                <i class="input-icon field-icon fa"><img src="https://indokontraktor.com/images/ico_fullname_signup.svg"></i>
+                <span class="invalid-feedback error error-first_name"></span>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12">
+            <div class="form-group">
+                <input type="text" class="form-control" name="last_name" autocomplete="off" placeholder="Last Name">
+                <i class="input-icon field-icon fa"><img src="https://indokontraktor.com/images/ico_fullname_signup.svg"></i>
+                <span class="invalid-feedback error error-last_name"></span>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="email" class="form-control" name="email" autocomplete="off" placeholder="Email *">
+        <i class="input-icon field-icon fa"><img src="https://indokontraktor.com/images/ico_email_login_form.svg"></i>
+        <span class="invalid-feedback error error-email"></span>
+    </div>
+    <div class="form-group">
+        <input type="text" required="1" class="form-control" name="phone" autocomplete="off" placeholder="No Handphone, Misal 08131097XXX *">
+        <i class="input-icon field-icon fa"><img src="https://indokontraktor.com/images/ico_email_login_form.svg"></i>
+        <span class="invalid-feedback error error-phone"></span>
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" name="company" autocomplete="off" placeholder="Nama Perusahaan*">
+        <i class="input-icon field-icon fa"><img src="https://indokontraktor.com/images/ico_email_login_form.svg"></i>
+        <span class="invalid-feedback error error-company"></span>
+    </div>
+    <div class="form-group">
+        <select class="form-control" name="profile" required="1">
+            <option value="">-Profile-</option>
+            <option value="kontraktor">Kontraktor</option>
+            <option value="konsultan">Konsultan</option>
+            <option value="mahasiswa">Mahasiswa</option>
+            <option value="lain">Lainnya</option>
+        </select>
+        <i class="input-icon field-icon fa"><img src="https://indokontraktor.com/images/ico_email_login_form.svg"></i>
+        <span class="invalid-feedback error error-profile"></span>
+    </div>
+    <div class="form-group">
+        <input type="password" class="form-control" name="password" autocomplete="off" placeholder="Password *">
+        <i class="input-icon field-icon fa"><img src="https://indokontraktor.com/images/ico_pass_login_form.svg"></i>
+        <span class="invalid-feedback error error-password"></span>
+    </div>
+    <div class="form-group">
+        <label for="term">
+            <input id="term" type="checkbox" name="term" class="mr5">
+            I have read and accept the Terms and Privacy Policy
+            <span class="checkmark fcheckbox"></span>
+        </label>
+        <div><span class="invalid-feedback error error-term"></span></div>
+    </div>
+        <div class="form-group">
+        
+    </div>
+        <div class="error message-error invalid-feedback"></div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary form-submit">
+            Sign Up
+            <span class="spinner-grow spinner-grow-sm icon-loading" role="status" aria-hidden="true"></span>
+        </button>
+    </div>
+        <div class="c-grey f14 text-center">
+         Already have an account?
+        <a href="#" data-target="#login" data-toggle="modal">Log In</a>
+    </div>
+</form>            </div>
+        </div>
+    </div>
+</div><script type="text/javascript" src="https://indokontraktor.com/libs/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="https://indokontraktor.com/libs/vue/vue.js"></script>
+<script type="text/javascript" src="https://indokontraktor.com/libs/lazy-load/intersection-observer.js"></script>
+<script type="text/javascript" src="https://indokontraktor.com/libs/lazy-load/lazyload.min.js"></script>
+<script type="text/javascript" src="https://indokontraktor.com/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<script type="text/javascript">
+// Set the options to make LazyLoad self-initialize
+window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+    // ... more custom settings?
+};
+// Listen to the initialization event and get the instance of LazyLoad
+window.addEventListener('LazyLoad::Initialized', function (event) {
+    window.lazyLoadInstance = event.detail.instance;
+}, false);
+if (window.lazyLoadInstance) {
+    window.lazyLoadInstance.update();
+}
+</script>
+<script type="text/javascript" src="https://indokontraktor.com/libs/carousel-2/owl.carousel.min.js"></script>
+<script type="text/javascript" src="https://indokontraktor.com/libs/daterange/moment.min.js"></script>
+<script type="text/javascript" src="https://indokontraktor.com/libs/daterange/daterangepicker.min.js"></script>
+<script type="text/javascript" src="https://indokontraktor.com/js/functions.js"></script>
+<script type="text/javascript" src="https://indokontraktor.com/js/home.js"></script>
+<!-- Histats.com  START  (aync)-->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8JN2LEP5EE" type="text/javascript"></script>
+<script type="text/javascript">
+(adsbygoogle = window.adsbygoogle || []).onload = function () {
+    [].forEach.call(document.getElementsByClassName('adsbygoogle'), function () {
+        adsbygoogle.push({})
+    })
+}
+</script>
+        </div>
+    
+</body></html>

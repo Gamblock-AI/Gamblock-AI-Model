@@ -1,0 +1,955 @@
+<html lang="en" class="show--consent"><head>
+  <!-- Critical metadata -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#20292b">
+
+  <!-- Page metadata -->
+  <title>PlayCanvas | Open Source WebGL &amp; WebGPU Game Engine</title>
+  <meta name="description" content="Build stunning games, 3D visualizations, AR/VR experiences and playable ads with PlayCanvas, the open source JavaScript engine powered by WebGL and WebGPU.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://playcanvas.com/">
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/images/icons/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/icons/favicon.png">
+
+  <!-- Fonts -->
+  <link rel="preload" as="font" type="font/otf" href="/assets/fonts/ProximaNova-Reg.otf" crossorigin="">
+  <link rel="preload" as="font" type="font/otf" href="/assets/fonts/ProximaNova-Bold.otf" crossorigin="">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- JS -->
+  <script src="/js/bundle.js" defer=""></script>
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PlayCanvas | Open Source WebGL &amp; WebGPU Game Engine">
+  <meta property="og:description" content="Build stunning games, 3D visualizations, AR/VR experiences and playable ads with PlayCanvas, the open source JavaScript engine powered by WebGL and WebGPU.">
+  <meta property="og:image" content="https://playcanvas.com/assets/images/og/playcanvas.png">
+  <meta property="og:url" content="https://playcanvas.com/">
+  <meta property="og:site_name" content="PlayCanvas">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@playcanvas">
+  <meta name="twitter:title" content="PlayCanvas | Open Source WebGL &amp; WebGPU Game Engine">
+  <meta name="twitter:description" content="Build stunning games, 3D visualizations, AR/VR experiences and playable ads with PlayCanvas, the open source JavaScript engine powered by WebGL and WebGPU.">
+  <meta name="twitter:image" content="https://playcanvas.com/assets/images/og/playcanvas.png">
+  <meta name="twitter:image:alt" content="PlayCanvas | Open Source WebGL &amp; WebGPU Game Engine">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"PlayCanvas","url":"https://playcanvas.com","logo":"https://playcanvas.com/assets/images/icons/favicon.png","sameAs":["https://x.com/playcanvas","https://github.com/playcanvas","https://discord.gg/RSaMRzg"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"PlayCanvas","url":"https://playcanvas.com"}</script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'wait_for_update': 500
+    });
+
+    gtag('js', new Date());
+
+    gtag('config', "G-K7ELG8R4NS", {
+        'send_page_view': false,
+        'anonymize_ip': true
+    });
+
+    if (!document.querySelector("meta[name=fragment]")) {
+        gtag('event', 'page_view');
+    }
+</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-K7ELG8R4NS"></script>
+</head>
+<body id="home">
+  <header>
+    <div class="links-wrapper">
+      <a href="/">
+        <div class="logo">
+          <img src="/assets/images/logo/PlayCanvas-Logo-White.svg" alt="PlayCanvas Logo">
+        </div>
+      </a>
+      <nav>
+        <div class="nav-link products">
+          <span class="drop-link">Products</span>
+          <div class="dropdown products">
+              <a href="/products/engine"><div class="nav-link secondary">Engine</div></a>
+              <a href="/products/editor"><div class="nav-link secondary">Editor</div></a>
+              <a href="/products/supersplat"><div class="nav-link secondary">SuperSplat</div></a>
+              <a href="/products/viewer"><div class="nav-link secondary">Model Viewer</div></a>
+          </div>
+        </div>
+        <div class="nav-link industries">
+          <span class="drop-link">Industries</span>
+          <div class="dropdown industries">
+              <a href="/industries/games"><div class="nav-link secondary">Games</div></a>
+              <a href="/industries/ar"><div class="nav-link secondary">AR</div></a>
+              <a href="/industries/vr"><div class="nav-link secondary">VR</div></a>
+              <a href="/industries/configurators"><div class="nav-link secondary">Configurators</div></a>
+              <a href="/industries/advertising"><div class="nav-link secondary">Advertising</div></a>
+              <a href="/industries/gambling"><div class="nav-link secondary">Gambling</div></a>
+          </div>
+        </div>
+        <div class="nav-link explore">
+          <a href="/explore">Explore</a>
+          <div class="dropdown explore">
+          </div>
+        </div>
+        <div class="nav-link learn">
+          <a href="https://developer.playcanvas.com">Learn</a>
+          <div class="dropdown learn">
+          </div>
+        </div>
+        <div class="nav-link icon">
+          <a href="https://discord.gg/RSaMRzg" target="_blank" rel="noopener" aria-label="Discord"><svg viewBox="0 -28.5 256 256" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+  <path d="M216.856339 16.5966031 C200.285002 8.84328665 182.566144 3.2084988 164.041564 0 C161.766523 4.11318106 159.108624 9.64549908 157.276099 14.0464379 C137.583995 11.0849896 118.072967 11.0849896 98.7430163 14.0464379 C96.9108417 9.64549908 94.1925838 4.11318106 91.8971895 0 C73.3526068 3.2084988 55.6133949 8.86399117 39.0420583 16.6376612 C5.61752293 67.146514 -3.4433191 116.400813 1.08711069 164.955721 C23.2560196 181.510915 44.7403634 191.567697 65.8621325 198.148576 C71.0772151 190.971126 75.7283628 183.341335 79.7352139 175.300261 C72.104019 172.400575 64.7949724 168.822202 57.8887866 164.667963 C59.7209612 163.310589 61.5131304 161.891452 63.2445898 160.431257 C105.36741 180.133187 151.134928 180.133187 192.754523 160.431257 C194.506336 161.891452 196.298154 163.310589 198.110326 164.667963 C191.183787 168.842556 183.854737 172.420929 176.223542 175.320965 C180.230393 183.341335 184.861538 190.991831 190.096624 198.16893 C211.238746 191.588051 232.743023 181.531619 254.911949 164.955721 C260.227747 108.668201 245.831087 59.8662432 216.856339 16.5966031 Z M85.4738752 135.09489 C72.8290281 135.09489 62.4592217 123.290155 62.4592217 108.914901 C62.4592217 94.5396472 72.607595 82.7145587 85.4738752 82.7145587 C98.3405064 82.7145587 108.709962 94.5189427 108.488529 108.914901 C108.508531 123.290155 98.3405064 135.09489 85.4738752 135.09489 Z M170.525237 135.09489 C157.88039 135.09489 147.510584 123.290155 147.510584 108.914901 C147.510584 94.5396472 157.658606 82.7145587 170.525237 82.7145587 C183.391518 82.7145587 193.761324 94.5189427 193.539891 108.914901 C193.539891 123.290155 183.391518 135.09489 170.525237 135.09489 Z" fill="white" fill-rule="nonzero"></path>
+</svg>
+</a>
+        </div>
+        <div class="nav-link icon">
+          <a href="https://github.com/playcanvas" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path fill="white" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+</svg>
+</a>
+        </div>
+        <div class="nav-link login">
+          <a href="https://login.playcanvas.com/"><span class="button light">Log in</span></a>
+        </div>
+        <div class="nav-link signup">
+          <a href="https://login.playcanvas.com/signup"><span class="button call-to-action">Sign up</span></a>
+        </div>
+      </nav>
+      <button class="hamburger" aria-label="Open menu">
+        <svg width="27" height="23" viewBox="0 0 27 23" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+              <rect id="path-1" x="0" y="0" width="27" height="3"></rect>
+              <filter x="-370.4%" y="-2666.7%" width="840.7%" height="6766.7%" filterUnits="objectBoundingBox" id="filter-2">
+                  <feOffset dx="0" dy="20" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+                  <feGaussianBlur stdDeviation="30" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+                  <feColorMatrix values="0 0 0 0 0.0941176471   0 0 0 0 0.121568627   0 0 0 0 0.129411765  0 0 0 0.8 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+              </filter>
+              <rect id="path-3" x="0" y="10" width="27" height="3"></rect>
+              <filter x="-370.4%" y="-2666.7%" width="840.7%" height="6766.7%" filterUnits="objectBoundingBox" id="filter-4">
+                  <feOffset dx="0" dy="20" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+                  <feGaussianBlur stdDeviation="30" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+                  <feColorMatrix values="0 0 0 0 0.0941176471   0 0 0 0 0.121568627   0 0 0 0 0.129411765  0 0 0 0.8 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+              </filter>
+              <rect id="path-5" x="0" y="20" width="27" height="3"></rect>
+              <filter x="-370.4%" y="-2666.7%" width="840.7%" height="6766.7%" filterUnits="objectBoundingBox" id="filter-6">
+                  <feOffset dx="0" dy="20" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+                  <feGaussianBlur stdDeviation="30" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+                  <feColorMatrix values="0 0 0 0 0.0941176471   0 0 0 0 0.121568627   0 0 0 0 0.129411765  0 0 0 0.8 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+              </filter>
+          </defs>
+          <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g>
+                  <g>
+                      <g id="Rectangle-9">
+                          <use fill="black" fill-opacity="1" filter="url(#filter-2)" href="#path-1"></use>
+                          <use fill="#FFFFFF" fill-rule="evenodd" href="#path-1"></use>
+                      </g>
+                      <g id="Rectangle-9-Copy">
+                          <use fill="black" fill-opacity="1" filter="url(#filter-4)" href="#path-3"></use>
+                          <use fill="#FFFFFF" fill-rule="evenodd" href="#path-3"></use>
+                      </g>
+                      <g id="Rectangle-9-Copy-2">
+                          <use fill="black" fill-opacity="1" filter="url(#filter-6)" href="#path-5"></use>
+                          <use fill="#FFFFFF" fill-rule="evenodd" href="#path-5"></use>
+                      </g>
+                  </g>
+              </g>
+          </g>
+      </svg>
+    </button>
+    </div>
+    <div id="hamburger-menu">
+    <div class="links-wrapper">
+      <a href="/">
+        <div class="logo">
+          <img src="/assets/images/logo/PlayCanvas-Logo-White.svg" alt="PlayCanvas Logo">
+        </div>
+      </a>
+      <button class="close" aria-label="Close menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+        <path fill="#E05F2C" d="M54.8013319,9.19866815 C57.7373436,12.371455 60.0044315,15.9111902 61.6026637,19.81798 C63.2008959,23.7247698 64,27.7854025 64,32 C64,36.2145975 63.2008959,40.2752302 61.6026637,44.18202 C60.0044315,48.0888098 57.7373436,51.628545 54.8013319,54.8013319 C51.6759,57.8083761 48.1657612,60.0932219 44.2708102,61.6559378 C40.3758592,63.2186538 36.28563,64 32,64 C27.71437,64 23.6241408,63.2186538 19.7291898,61.6559378 C15.8342388,60.0932219 12.3241,57.8083761 9.19866815,54.8013319 C6.19162388,51.6759 3.90677807,48.1657612 2.34406215,44.2708102 C0.781346238,40.3758592 0,36.28563 0,32 C0,27.71437 0.781346238,23.6241408 2.34406215,19.7291898 C3.90677807,15.8342388 6.19162388,12.3241 9.19866815,9.19866815 C12.371455,6.26265643 15.9111902,3.99556848 19.81798,2.39733629 C23.7247698,0.799104107 27.7854025,0 32,0 C36.2145975,0 40.2752302,0.799104107 44.18202,2.39733629 C48.0888098,3.99556848 51.628545,6.26265643 54.8013319,9.19866815 Z M32,59.1698113 C36.9249229,59.1698113 41.4709374,57.9563569 45.6381798,55.5294118 C49.8054222,53.1024666 53.1024666,49.8054222 55.5294118,45.6381798 C57.9563569,41.4709374 59.1698113,36.9249229 59.1698113,32 C59.1698113,27.0750771 57.9563569,22.5290626 55.5294118,18.3618202 C53.1024666,14.1945778 49.8054222,10.8975334 45.6381798,8.47058824 C41.4709374,6.04364306 36.9249229,4.83018868 32,4.83018868 C27.0750771,4.83018868 22.5290626,6.04364306 18.3618202,8.47058824 C14.1945778,10.8975334 10.8975334,14.1945778 8.47058824,18.3618202 C6.04364306,22.5290626 4.83018868,27.0750771 4.83018868,32 C4.83018868,36.9249229 6.04364306,41.4709374 8.47058824,45.6381798 C10.8975334,49.8054222 14.1945778,53.1024666 18.3618202,55.5294118 C22.5290626,57.9563569 27.0750771,59.1698113 32,59.1698113 Z M43.4006659,38.7835738 L38.7835738,43.8978912 L32,37.0788013 L25.2164262,43.8978912 L20.1021088,38.7835738 L26.9211987,32 L20.1021088,25.2164262 L25.2164262,20.5993341 L32,27.1698113 L38.7835738,20.5993341 L43.4006659,25.2164262 L36.8657048,32 L43.4006659,38.7835738 Z"></path>
+      </svg>
+    </button>
+      <nav>
+          <div class="nav-link primary">
+            <button type="button" class="drop-link">Products <svg class="chevron" width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+            <div class="menu-section-children">
+                <div class="nav-link secondary"><a href="/products/engine">Engine</a></div>
+                <div class="nav-link secondary"><a href="/products/editor">Editor</a></div>
+                <div class="nav-link secondary"><a href="/products/supersplat">SuperSplat</a></div>
+                <div class="nav-link secondary"><a href="/products/viewer">Model Viewer</a></div>
+            </div>
+          </div>
+          <div class="nav-link primary">
+            <button type="button" class="drop-link">Industries <svg class="chevron" width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+            <div class="menu-section-children">
+                <div class="nav-link secondary"><a href="/industries/games">Games</a></div>
+                <div class="nav-link secondary"><a href="/industries/ar">AR</a></div>
+                <div class="nav-link secondary"><a href="/industries/vr">VR</a></div>
+                <div class="nav-link secondary"><a href="/industries/configurators">Configurators</a></div>
+                <div class="nav-link secondary"><a href="/industries/advertising">Advertising</a></div>
+                <div class="nav-link secondary"><a href="/industries/gambling">Gambling</a></div>
+            </div>
+          </div>
+          <div class="nav-link primary">
+            <a href="/explore">Explore</a>
+          </div>
+          <div class="nav-link primary">
+            <a href="https://developer.playcanvas.com">Learn</a>
+          </div>
+        <div class="icon-links">
+          <a href="https://discord.gg/RSaMRzg" target="_blank" rel="noopener" aria-label="Discord" class="icon-link"><svg viewBox="0 -28.5 256 256" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+  <path d="M216.856339 16.5966031 C200.285002 8.84328665 182.566144 3.2084988 164.041564 0 C161.766523 4.11318106 159.108624 9.64549908 157.276099 14.0464379 C137.583995 11.0849896 118.072967 11.0849896 98.7430163 14.0464379 C96.9108417 9.64549908 94.1925838 4.11318106 91.8971895 0 C73.3526068 3.2084988 55.6133949 8.86399117 39.0420583 16.6376612 C5.61752293 67.146514 -3.4433191 116.400813 1.08711069 164.955721 C23.2560196 181.510915 44.7403634 191.567697 65.8621325 198.148576 C71.0772151 190.971126 75.7283628 183.341335 79.7352139 175.300261 C72.104019 172.400575 64.7949724 168.822202 57.8887866 164.667963 C59.7209612 163.310589 61.5131304 161.891452 63.2445898 160.431257 C105.36741 180.133187 151.134928 180.133187 192.754523 160.431257 C194.506336 161.891452 196.298154 163.310589 198.110326 164.667963 C191.183787 168.842556 183.854737 172.420929 176.223542 175.320965 C180.230393 183.341335 184.861538 190.991831 190.096624 198.16893 C211.238746 191.588051 232.743023 181.531619 254.911949 164.955721 C260.227747 108.668201 245.831087 59.8662432 216.856339 16.5966031 Z M85.4738752 135.09489 C72.8290281 135.09489 62.4592217 123.290155 62.4592217 108.914901 C62.4592217 94.5396472 72.607595 82.7145587 85.4738752 82.7145587 C98.3405064 82.7145587 108.709962 94.5189427 108.488529 108.914901 C108.508531 123.290155 98.3405064 135.09489 85.4738752 135.09489 Z M170.525237 135.09489 C157.88039 135.09489 147.510584 123.290155 147.510584 108.914901 C147.510584 94.5396472 157.658606 82.7145587 170.525237 82.7145587 C183.391518 82.7145587 193.761324 94.5189427 193.539891 108.914901 C193.539891 123.290155 183.391518 135.09489 170.525237 135.09489 Z" fill="white" fill-rule="nonzero"></path>
+</svg>
+</a>
+          <a href="https://github.com/playcanvas" target="_blank" rel="noopener" aria-label="GitHub" class="icon-link"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path fill="white" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+</svg>
+</a>
+        </div>
+        <div class="login-buttons">
+          <a href="https://login.playcanvas.com/"><span class="button light">Log in</span></a>
+          <a href="https://login.playcanvas.com/signup"><span class="button call-to-action">Sign up</span></a>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+  <main>
+    <img id="home-logo-float" src="/assets/images/logo/PlayCanvas-Logo-White.svg" alt="" aria-hidden="true" style="opacity: 0;">
+
+<div class="background">
+  <div class="banner">
+    <div class="media-cover">
+      <div class="grad"></div>
+      <canvas id="hero-canvas" data-engine="PlayCanvas 2.17.2" width="1366" height="730"></canvas>
+      <script type="module" src="/js/hero-splat.js"></script>
+    </div>
+  </div>
+</div>
+
+<div class="popup" role="dialog" aria-modal="true" aria-label="Video showcase">
+  <button type="button" class="popup-close" aria-label="Close video">
+    <span class="popup-close-button">
+      <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+        <path fill="#E05F2C" d="M54.8013319,9.19866815 C57.7373436,12.371455 60.0044315,15.9111902 61.6026637,19.81798 C63.2008959,23.7247698 64,27.7854025 64,32 C64,36.2145975 63.2008959,40.2752302 61.6026637,44.18202 C60.0044315,48.0888098 57.7373436,51.628545 54.8013319,54.8013319 C51.6759,57.8083761 48.1657612,60.0932219 44.2708102,61.6559378 C40.3758592,63.2186538 36.28563,64 32,64 C27.71437,64 23.6241408,63.2186538 19.7291898,61.6559378 C15.8342388,60.0932219 12.3241,57.8083761 9.19866815,54.8013319 C6.19162388,51.6759 3.90677807,48.1657612 2.34406215,44.2708102 C0.781346238,40.3758592 0,36.28563 0,32 C0,27.71437 0.781346238,23.6241408 2.34406215,19.7291898 C3.90677807,15.8342388 6.19162388,12.3241 9.19866815,9.19866815 C12.371455,6.26265643 15.9111902,3.99556848 19.81798,2.39733629 C23.7247698,0.799104107 27.7854025,0 32,0 C36.2145975,0 40.2752302,0.799104107 44.18202,2.39733629 C48.0888098,3.99556848 51.628545,6.26265643 54.8013319,9.19866815 Z M32,59.1698113 C36.9249229,59.1698113 41.4709374,57.9563569 45.6381798,55.5294118 C49.8054222,53.1024666 53.1024666,49.8054222 55.5294118,45.6381798 C57.9563569,41.4709374 59.1698113,36.9249229 59.1698113,32 C59.1698113,27.0750771 57.9563569,22.5290626 55.5294118,18.3618202 C53.1024666,14.1945778 49.8054222,10.8975334 45.6381798,8.47058824 C41.4709374,6.04364306 36.9249229,4.83018868 32,4.83018868 C27.0750771,4.83018868 22.5290626,6.04364306 18.3618202,8.47058824 C14.1945778,10.8975334 10.8975334,14.1945778 8.47058824,18.3618202 C6.04364306,22.5290626 4.83018868,27.0750771 4.83018868,32 C4.83018868,36.9249229 6.04364306,41.4709374 8.47058824,45.6381798 C10.8975334,49.8054222 14.1945778,53.1024666 18.3618202,55.5294118 C22.5290626,57.9563569 27.0750771,59.1698113 32,59.1698113 Z M43.4006659,38.7835738 L38.7835738,43.8978912 L32,37.0788013 L25.2164262,43.8978912 L20.1021088,38.7835738 L26.9211987,32 L20.1021088,25.2164262 L25.2164262,20.5993341 L32,27.1698113 L38.7835738,20.5993341 L43.4006659,25.2164262 L36.8657048,32 L43.4006659,38.7835738 Z"></path>
+      </svg>
+    </span>
+  </button>
+  <div class="popup-contents">
+    <div class="media-cover">
+      <video class="no-auto-play-pause" loop="" controls="" playsinline="">
+        <source src="https://playcanvas.com/static-assets/videos/homepage/playcanvas-showcase-2022.mp4" type="video/mp4">
+        <source src="https://playcanvas.com/static-assets/videos/homepage/playcanvas-showcase-2022.webm" type="video/webm">
+      </video>
+    </div>
+  </div>
+</div>
+
+<section class="no-padding-vertical top">
+  <div class="headline-container">
+    <div class="headline animate-end">
+      <div class="text">
+        <img id="hero-logo" src="/assets/images/logo/PlayCanvas-Logo-White.svg" alt="" aria-hidden="true">
+        <h1 class="primary home-hero-title">Web Graphics Creation Platform</h1>
+        <h3 class="secondary">Open source engine and tools for building amazing 3D experiences</h3>
+      </div>
+      <button type="button" class="popup-open" aria-label="Play showcase video">
+        <div class="play-icon hide-on-mobile">
+          <img src="/assets/images/icons/icon--play.svg" alt="">
+        </div>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="latest-news no-padding-sides">
+  <h2 class="title">
+    Latest News
+  </h2>
+  <div class="news-strip-wrapper">
+    <button class="news-arrow news-arrow-left hidden" aria-label="Scroll left">
+      <svg xmlns="http://www.w3.org/2000/svg" width="21" height="32" viewBox="0 0 21 32">
+        <g fill="none" fill-rule="evenodd" transform="translate(-6)">
+          <polygon transform="matrix(-1 0 0 1 32.756 0)" points="26.756 15.901 6 32 6 0"></polygon>
+        </g>
+      </svg>
+    </button>
+    <div class="news-strip">
+      <a href="https://blog.playcanvas.com/new-in-supersplat-walk-mode-streamed-lod-and-easy-upload" target="_blank" rel="noopener" class="news-card">
+        <div class="news-card-image">
+          <img src="https://blog.playcanvas.com/assets/images/supersplat-viewer-voxels-62d4452ffb3fd531adc5345a03951233.jpg" alt="New in SuperSplat: Walk Mode, Streamed LOD and Easy Upload" loading="lazy">
+        </div>
+        <div class="news-card-body">
+          <span class="news-card-date">Mar 11, 2026</span>
+          <h4 class="news-card-title">New in SuperSplat: Walk Mode, Streamed LOD and Easy Upload</h4>
+          <p class="news-card-excerpt">Last month we launched SuperSplat Studio, giving creators the power to add annotations and cinematic post effects to their published splats....</p>
+        </div>
+      </a>
+      <a href="https://blog.playcanvas.com/build-gaussian-splat-experiences-with-supersplat-studio" target="_blank" rel="noopener" class="news-card">
+        <div class="news-card-body">
+          <span class="news-card-date">Feb 11, 2026</span>
+          <h4 class="news-card-title">Build Gaussian Splat Experiences with SuperSplat Studio</h4>
+          <p class="news-card-excerpt">Today, we are thrilled to announce the launch of SuperSplat Studio — a brand new application for authoring interactive Gaussian splat-based...</p>
+        </div>
+      </a>
+      <a href="https://blog.playcanvas.com/ai-powered-3dgs-product-visualization-developer-spotlight-on-voxelo" target="_blank" rel="noopener" class="news-card">
+        <div class="news-card-image">
+          <img src="https://blog.playcanvas.com/assets/images/voxelo-team-6b5aa12f7a7be82c0c1ca42682a3585e.png" alt="AI-Powered 3DGS Product Visualization - Developer Spotlight on Voxelo" loading="lazy">
+        </div>
+        <div class="news-card-body">
+          <span class="news-card-date">Jan 22, 2026</span>
+          <h4 class="news-card-title">AI-Powered 3DGS Product Visualization - Developer Spotlight on Voxelo</h4>
+          <p class="news-card-excerpt">Welcome to the sixth edition of Developer Spotlight, a series of blog articles where we talk to developers about how they use PlayCanvas and...</p>
+        </div>
+      </a>
+      <a href="https://blog.playcanvas.com/new-playcanvas-visual-studio-code-extension" target="_blank" rel="noopener" class="news-card">
+        <div class="news-card-image">
+          <img src="https://blog.playcanvas.com/assets/images/vscode-demo-7911ab7deebb2be9303879248a482d76.webp" alt="New PlayCanvas Visual Studio Extension" loading="lazy">
+        </div>
+        <div class="news-card-body">
+          <span class="news-card-date">Nov 25, 2025</span>
+          <h4 class="news-card-title">New PlayCanvas Visual Studio Extension</h4>
+          <p class="news-card-excerpt">Today we are unveiling our new PlayCanvas VSCode Extension!</p>
+        </div>
+      </a>
+    </div>
+    <button class="news-arrow news-arrow-right" aria-label="Scroll right">
+      <svg xmlns="http://www.w3.org/2000/svg" width="21" height="32" viewBox="0 0 21 32">
+        <g fill="none" fill-rule="evenodd" transform="translate(-6)">
+          <polygon points="26.756 15.901 6 32 6 0"></polygon>
+        </g>
+      </svg>
+    </button>
+  </div>
+  <a href="https://blog.playcanvas.com">
+    <span class="button call-to-action large">View all posts</span>
+  </a>
+</section>
+
+<section class="features">
+  <div class="editor-features">
+    <div class="feature-boxes">
+      <div class="pop-box stats animate-start">
+        <img src="/assets/images/icons/icon--feature-webgpu.svg" alt="WebGPU Ready">
+        <h4 class="description highlight">WebGPU Ready</h4>
+        <p>PlayCanvas is one of the first production 3D engines with full WebGPU support, including compute shaders, while maintaining WebGL2 compatibility.</p>
+      </div>
+      <div class="pop-box stats animate-start">
+        <img src="/assets/images/icons/icon--feature-render.svg" alt="3D Gaussian Splatting">
+        <h4 class="description highlight">3D Gaussian Splatting</h4>
+        <p>Industry-leading support for 3D Gaussian Splats with editing, optimization and rendering tools built right into the platform.</p>
+      </div>
+      <div class="pop-box stats animate-start">
+        <img src="/assets/images/icons/icon--feature-code_editor.svg" alt="Build It Your Way">
+        <h4 class="description highlight">Build It Your Way</h4>
+        <p>Use the visual Editor, code with the Engine via npm, build declaratively with React, or use HTML Web Components. Your workflow, your choice.</p>
+      </div>
+      <div class="pop-box stats animate-start">
+        <img src="/assets/images/icons/icon--feature-github.svg" alt="Open Source">
+        <h4 class="description highlight">Open Source</h4>
+        <p>The entire PlayCanvas platform is open sourced on GitHub under the MIT license.</p>
+        <a href="https://github.com/playcanvas" target="_blank" rel="noopener" class="button light">Fork on GitHub</a>
+      </div>
+    </div>
+    <a href="/products/editor">
+      <span class="button call-to-action large">View all features</span>
+    </a>
+  </div>
+</section>
+
+<section class="projects no-padding-sides dark">
+  <h2 class="title">
+    Featured PlayCanvas Projects
+  </h2>
+  <h4 class="sub-text">
+    PlayCanvas is used by studios large and small to make lightweight messenger games, online multiplayer games, extraordinary product configurators, architectural visualizations and more.
+  </h4>
+
+    <div class="projects-gallery">
+      <div class="grey-wipe animate-start"></div>
+      <div class="projects-wrapper animate-start">
+        <div class="featured-projects" style="transform: translateX(0px);">
+            <div class="featured-project" id="5-featured-project-full">
+          <div class="media-cover">
+            <video data-type="gallery" loop="" muted="" playsinline="">
+              <source src="https://playcanvas.com/static-assets/videos/explore-projects/PlayCanvas-Arthur-Robostorm-CBR4.mp4" type="video/mp4">
+              <source src="https://playcanvas.com/static-assets/videos/explore-projects/PlayCanvas-Arthur-Robostorm-CBR4.webm" type="video/webm">
+            </video>
+            <picture>
+              <source media="(max-width: 750px)" srcset="/assets/images/projects/banners/project--robostorm-mobile.jpg">
+              <source media="(min-width: 750px)" srcset="/assets/images/projects/banners/project--robostorm-desktop.jpg">
+              <img src="/assets/images/projects/banners/project--robostorm-desktop.jpg" alt="Robostorm">
+            </picture>
+          </div>
+          <div class="project-info-wrapper">
+            <div class="project-info">
+      <h2 class="title">
+        Robostorm
+      </h2>
+      <div class="description hide-on-mobile">
+        Robostorm is an online multiplayer robot battle game featuring an impressive array of weaponry to take out your opponents. Amazing particle effects, superb sound and frenetic action add up to a breathtaking game.
+      </div>
+      <div class="description hide-on-desktop">
+        Shells and bullets fly in this robotic battle royale!
+        
+      </div>
+        <a href="https://robostorm.io" target="_blank" rel="noopener">
+          <span class="button call-to-action">
+            Play
+          </span>
+        </a>
+    </div>
+  </div>
+        </div>
+        <div class="featured-project" id="2-featured-project-full">
+          <div class="media-cover">
+            <video data-type="gallery" loop="" muted="" playsinline="">
+              <source src="https://playcanvas.com/static-assets/videos/explore-projects/polaris-feature-CBR4.mp4" type="video/mp4">
+              <source src="https://playcanvas.com/static-assets/videos/explore-projects/polaris-feature-CBR4.webm" type="video/webm">
+            </video>
+            <picture>
+              <source media="(max-width: 750px)" srcset="/assets/images/projects/banners/project--polaris-mobile.jpg">
+              <source media="(min-width: 750px)" srcset="/assets/images/projects/banners/project--polaris-desktop.jpg">
+              <img src="/assets/images/projects/banners/project--polaris-desktop.jpg" alt="Polaris Vehicle Configurator">
+            </picture>
+          </div>
+          <div class="project-info-wrapper">
+            <div class="project-info">
+      <h2 class="title">
+        Polaris Vehicle Configurator
+      </h2>
+      <div class="description hide-on-mobile">
+        The Polaris vehicle configurator is the world's first to use real-time 3D graphics. It makes full use of the PlayCanvas physically based rendering engine to achieve stunningly realistic visuals which is critical for the automotive sector.
+      </div>
+      <div class="description hide-on-desktop">
+        The world's first vehicle configurator to use real-time 3D graphics
+        
+      </div>
+        <a href="https://rzr.polaris.com/" target="_blank" rel="noopener">
+          <span class="button call-to-action">
+            Play
+          </span>
+        </a>
+    </div>
+  </div>
+        </div>
+        <div class="featured-project" id="3-featured-project-full">
+          <div class="media-cover">
+            <picture>
+              <source media="(max-width: 750px)" srcset="/assets/images/projects/banners/venge-mobile.jpg">
+              <source media="(min-width: 750px)" srcset="/assets/images/projects/banners/venge-desktop.jpg">
+              <img src="/assets/images/projects/banners/venge-desktop.jpg" alt="Venge.io">
+            </picture>
+          </div>
+          <div class="project-info-wrapper">
+            <div class="project-info">
+      <h2 class="title">
+        Venge.io
+      </h2>
+      <div class="description hide-on-mobile">
+        Become champion of the arena in this objective-based multiplayer third-person shooter.
+      </div>
+      <div class="description hide-on-desktop">
+        Objective-based multiplayer third-person shooter.
+        
+      </div>
+        <a href="https://venge.io/" target="_blank" rel="noopener">
+          <span class="button call-to-action">
+            Play
+          </span>
+        </a>
+    </div>
+  </div>
+        </div>
+        <div class="featured-project" id="4-featured-project-full">
+          <div class="media-cover">
+            <video data-type="gallery" loop="" muted="" playsinline="">
+              <source src="https://playcanvas.com/static-assets/videos/explore-projects/project--aritelia.mp4" type="video/mp4">
+              <source src="https://playcanvas.com/static-assets/videos/explore-projects/project--aritelia.webm" type="video/webm">
+            </video>
+            <picture>
+              <source media="(max-width: 750px)" srcset="/assets/images/projects/banners/project--aritelia-mobile.jpg">
+              <source media="(min-width: 750px)" srcset="/assets/images/projects/banners/project--aritelia-desktop.jpg">
+              <img src="/assets/images/projects/banners/project--aritelia-desktop.jpg" alt="Aritelia">
+            </picture>
+          </div>
+          <div class="project-info-wrapper">
+            <div class="project-info">
+      <h2 class="title">
+        Aritelia
+      </h2>
+      <div class="description hide-on-mobile">
+        Aritelia is a procedurally generated persistent online Metaverse where you can explore trillions of islands. Features day and cycle with real-time lighting, animated avatars, building with physics and so much more. A fantastic example of experiences that can be shared in the browser.
+      </div>
+      <div class="description hide-on-desktop">
+        Aritelia is a procedurally generated persistent online world.
+        
+      </div>
+        <a href="https://aritelia.io/" target="_blank" rel="noopener">
+          <span class="button call-to-action">
+            Play
+          </span>
+        </a>
+    </div>
+  </div>
+        </div>
+    </div>
+        <div class="projects-list">
+            <div class="tile active" id="5-featured-project-thumb">
+          <button type="button" class="gallery-thumb-link" data-project-id="5" aria-label="View Robostorm">
+            <div class="front">
+              <div class="media-cover">
+                <img src="/assets/images/projects/thumbs/project--robostorm-thumb.jpg" alt="">
+              </div>
+              <div class="gradient-overlay"></div>
+              <div class="text">Robostorm</div>
+              <div class="progress-bar">
+                <div class="progress"></div>
+              </div>
+            </div>
+          </button>
+        </div>
+        <div class="tile inactive" id="2-featured-project-thumb">
+          <button type="button" class="gallery-thumb-link" data-project-id="2" aria-label="View Polaris Vehicle Configurator">
+            <div class="front">
+              <div class="media-cover">
+                <img src="/assets/images/projects/thumbs/project--polaris-thumb.jpg" alt="">
+              </div>
+              <div class="gradient-overlay"></div>
+              <div class="text">Polaris Vehicle Configurator</div>
+              <div class="progress-bar">
+                <div class="progress"></div>
+              </div>
+            </div>
+          </button>
+        </div>
+        <div class="tile inactive" id="3-featured-project-thumb">
+          <button type="button" class="gallery-thumb-link" data-project-id="3" aria-label="View Venge.io">
+            <div class="front">
+              <div class="media-cover">
+                <img src="/assets/images/projects/thumbs/venge.jpg" alt="">
+              </div>
+              <div class="gradient-overlay"></div>
+              <div class="text">Venge.io</div>
+              <div class="progress-bar">
+                <div class="progress"></div>
+              </div>
+            </div>
+          </button>
+        </div>
+        <div class="tile inactive" id="4-featured-project-thumb">
+          <button type="button" class="gallery-thumb-link" data-project-id="4" aria-label="View Aritelia">
+            <div class="front">
+              <div class="media-cover">
+                <img src="/assets/images/projects/thumbs/project--aritelia-thumb.jpg" alt="">
+              </div>
+              <div class="gradient-overlay"></div>
+              <div class="text">Aritelia</div>
+              <div class="progress-bar">
+                <div class="progress"></div>
+              </div>
+            </div>
+          </button>
+        </div>
+    </div>
+      </div>
+    </div>
+
+  <a href="/explore">
+    <span class="button call-to-action large">
+      View more projects
+    </span>
+  </a>
+</section>
+
+<section class="industry no-padding-right" id="industry-section">
+  <h2 class="title">
+    PlayCanvas in your industry
+  </h2>
+  <h4 class="sub-text">
+    PlayCanvas is incredibly diverse and not only for games, see how it works in your industry
+  </h4>
+  <div class="industry-gallery">
+    <div class="buttons hide-on-mobile">
+      <button id="games-button" class="button light active animate-start" data-industry="games">
+        <div class="icon">
+          <svg width="55" height="31" viewBox="0 0 55 31" version="1.1" xmlns="http://www.w3.org/2000/svg">
+              <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g transform="translate(-134.000000, -3526.000000)" fill-rule="nonzero" fill="#000000">
+                      <g transform="translate(0.000000, 3007.000000)">
+                          <g transform="translate(114.000000, 500.000000)">
+                              <g>
+                                  <path d="M63.3583333,26.0365208 L49.7916667,26.0365208 L49.7916667,19.0589687 L45.2083333,19.0589687 L45.2083333,26.0365208 L31.6416667,26.0365208 C25.2118229,26.0365208 20,31.2477708 20,37.6781875 C20,44.1086042 25.2118229,49.321 31.6416667,49.321 L63.3583333,49.321 C69.7876042,49.321 75,44.1080312 75,37.6781875 C75,31.2483437 69.7870312,26.0365208 63.3583333,26.0365208 Z M40.8639063,38.9557917 C40.8639063,39.2199062 40.6496354,39.43475 40.3849479,39.43475 L36.7944792,39.43475 L36.7944792,43.0252187 C36.7944792,43.2893333 36.5796354,43.5036042 36.3155208,43.5036042 L33.7620313,43.5036042 C33.4979167,43.5036042 33.2830729,43.2893333 33.2830729,43.0252187 L33.2830729,39.43475 L29.6926042,39.43475 C29.4279167,39.43475 29.2136458,39.2199062 29.2136458,38.9557917 L29.2136458,36.4023021 C29.2136458,36.1381875 29.4279167,35.9233437 29.6926042,35.9233437 L33.2830729,35.9233437 L33.2830729,32.332875 C33.2830729,32.0681875 33.4979167,31.8544896 33.7620313,31.8544896 L36.3155208,31.8544896 C36.5796354,31.8544896 36.7944792,32.0687604 36.7944792,32.332875 L36.7944792,35.9233437 L40.3849479,35.9233437 C40.6496354,35.9233437 40.8639063,36.1381875 40.8639063,36.4023021 L40.8639063,38.9557917 Z M56.4042708,38.8417812 C56.4042708,39.1488646 56.2014583,39.3975104 55.9499479,39.3975104 L53.4210937,39.3975104 C53.1701562,39.3975104 52.9667708,39.1488646 52.9667708,38.8417812 L52.9667708,36.5157396 C52.9667708,36.2086562 53.1695833,35.9600104 53.4210937,35.9600104 L55.9499479,35.9600104 C56.2008854,35.9600104 56.4042708,36.2086562 56.4042708,36.5157396 L56.4042708,38.8417812 Z M61.0947396,43.6342292 C61.0947396,43.8851667 60.8460938,44.0885521 60.5390104,44.0885521 L58.2123958,44.0885521 C57.9053125,44.0885521 57.6566667,43.8857396 57.6566667,43.6342292 L57.6566667,41.1048021 C57.6566667,40.8538646 57.9053125,40.6504792 58.2123958,40.6504792 L60.5390104,40.6504792 C60.8460938,40.6504792 61.0947396,40.8532917 61.0947396,41.1048021 L61.0947396,43.6342292 L61.0947396,43.6342292 Z M61.0947396,34.2527187 C61.0947396,34.5036562 60.8460938,34.7070417 60.5390104,34.7070417 L58.2123958,34.7070417 C57.9053125,34.7070417 57.6566667,34.5042292 57.6566667,34.2527187 L57.6566667,31.7238646 C57.6566667,31.4729271 57.9053125,31.2695417 58.2123958,31.2695417 L60.5390104,31.2695417 C60.8460938,31.2695417 61.0947396,31.4723542 61.0947396,31.7238646 L61.0947396,34.2527187 L61.0947396,34.2527187 Z M65.7857812,38.8417812 C65.7857812,39.1488646 65.5829687,39.3975104 65.3314583,39.3975104 L62.8026042,39.3975104 C62.5516667,39.3975104 62.3482812,39.1488646 62.3482812,38.8417812 L62.3482812,36.5157396 C62.3482812,36.2086562 62.5510937,35.9600104 62.8026042,35.9600104 L65.3314583,35.9600104 C65.5823958,35.9600104 65.7857812,36.2086562 65.7857812,36.5157396 L65.7857812,38.8417812 Z" id="icon--industry-games"></path>
+                              </g>
+                          </g>
+                      </g>
+                  </g>
+              </g>
+          </svg>        </div>
+        Games
+      </button>
+      <div class="button-line animate-start"></div>
+      <button id="ar-button" class="button light inactive animate-start" data-industry="ar">
+        <div class="icon">
+          <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+              <g fill-rule="nonzero" fill="#000000">
+                  <path d="m11.5 0h-7c-.825 0-1.5.675-1.5 1.5v13c0 .825.675 1.5 1.5 1.5h7c.825 0 1.5-.675 1.5-1.5v-13c0-.825-.675-1.5-1.5-1.5zm-3.5 15c-.553 0-1-.447-1-1s.447-1 1-1 1 .447 1 1-.447 1-1 1zm4-3h-8v-10h8z"></path>
+              </g>
+          </svg>        </div>
+        AR
+      </button>
+      <div class="button-line animate-start"></div>
+      <button id="vr-button" class="button light inactive animate-start" data-industry="vr">
+        <div class="icon">
+          <svg width="55" height="29" viewBox="0 0 55 29" version="1.1" xmlns="http://www.w3.org/2000/svg">
+              <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.5">
+                  <g transform="translate(-134.000000, -3618.000000)" fill-rule="nonzero" fill="#000000">
+                      <g transform="translate(0.000000, 3007.000000)">
+                          <g transform="translate(114.000000, 500.000000)">
+                              <g transform="translate(0.000000, 90.000000)">
+                                  <path d="M70.99875,21 L24.00125,21 C21.7929901,21.0037845 20.0037845,22.7929901 20,25.00125 L20,45.87375 C20.0037845,48.0820099 21.7929901,49.8712155 24.00125,49.875 L42.336875,49.875 C42.8254392,49.8797583 43.2770899,49.6156351 43.5125,49.1875 L46.2625,43.605 C46.4807567,43.1543564 46.9374099,42.8681312 47.438125,42.8681312 C47.9388401,42.8681312 48.3954933,43.1543564 48.61375,43.605 L51.233125,49.105 C51.4492974,49.5810253 51.9272582,49.8834638 52.45,49.875 L71.0125,49.875 C73.2153883,49.8636674 74.9962506,48.0766642 75,45.87375 L75,25.00125 C74.9962155,22.7929901 73.2070099,21.0037845 70.99875,21 Z M35.125,40.133125 C33.2239424,40.1414753 31.5054273,39.0027324 30.7721307,37.2487752 C30.0388342,35.4948179 30.435465,33.4717723 31.7767667,32.1245531 C33.1180684,30.7773339 35.1393484,30.3718014 36.8965166,31.0973699 C38.6536849,31.8229384 39.7999817,33.536424 39.8,35.4375 C39.8000249,38.0227888 37.7102639,40.1217694 35.125,40.133125 Z M59.875,40.133125 C57.9739424,40.1414753 56.2554273,39.0027324 55.5221307,37.2487752 C54.7888342,35.4948179 55.185465,33.4717723 56.5267667,32.1245531 C57.8680684,30.7773339 59.8893484,30.3718014 61.6465166,31.0973699 C63.4036849,31.8229384 64.5499817,33.536424 64.55,35.4375 C64.5500249,38.0227888 62.4602639,40.1217694 59.875,40.133125 Z" id="icon--industry-ARVR"></path>
+                              </g>
+                          </g>
+                      </g>
+                  </g>
+              </g>
+          </svg>        </div>
+        VR
+      </button>
+      <div class="button-line animate-start"></div>
+      <button id="configurators-button" class="button light inactive animate-start" data-industry="configurators">
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="41" viewBox="0 0 40 41">
+            <path fill="#B1B8BA" d="M60.7976285,38.0464427 C60.8770751,37.4108696 60.9565217,36.7355731 60.9565217,36.1 C60.9565217,35.4247036 60.8770751,34.7891304 60.7976285,34.1535573 L65.7233202,30.3003953 L65.2863636,29.5456522 L60.8373518,21.7996047 L55.037747,24.1432806 C54.0049407,23.3488142 52.8529644,22.6735178 51.6612648,22.1571146 L50.7873518,16 L49.9134387,16 L40.9756917,16 L40.1017787,22.1571146 C38.8703557,22.6735178 37.7183794,23.3488142 36.6855731,24.1432806 L30.8859684,21.7996047 L26.4369565,29.5456522 L26,30.3003953 L30.9256917,34.1535573 C30.8462451,34.7891304 30.7667984,35.4247036 30.7667984,36.1 C30.7667984,36.7752964 30.8462451,37.4108696 30.9256917,38.0464427 L26,41.8996047 L26.4369565,42.6543478 C26.4369565,42.6543478 30.8859684,50.4003953 30.8859684,50.4003953 L36.6855731,48.0567194 C37.7183794,48.8511858 38.8703557,49.5264822 40.1017787,50.0428854 L40.9756917,56.2 L49.9134387,56.2 L50.7873518,56.2 L51.6612648,50.0428854 C52.8926877,49.5264822 54.0049407,48.8511858 55.037747,48.0567194 L60.8373518,50.4003953 L65.2863636,42.6543478 L65.7233202,41.8996047 L60.7976285,38.0464427 Z M45.8616601,43.1310277 C41.9687747,43.1310277 38.8306324,39.9928854 38.8306324,36.1 C38.8306324,32.2071146 41.9687747,29.0689723 45.8616601,29.0689723 C49.7545455,29.0689723 52.8926877,32.2071146 52.8926877,36.1 C52.8926877,39.9928854 49.7545455,43.1310277 45.8616601,43.1310277 Z" transform="translate(-26 -16)"></path>
+          </svg>
+        </div>
+        Configurators
+      </button>
+      <div class="button-line animate-start"></div>
+      <button id="gambling-button" class="button light inactive animate-start" data-industry="gambling">
+        <div class="icon">
+          <svg width="37" height="39" viewBox="0 0 37 39" version="1.1" xmlns="http://www.w3.org/2000/svg">
+              <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.5">
+                  <g transform="translate(-144.000000, -3793.000000)" fill-rule="nonzero" fill="#000000">
+                      <g transform="translate(0.000000, 3007.000000)">
+                          <g transform="translate(114.000000, 500.000000)">
+                              <g transform="translate(0.000000, 270.000000)">
+                                  <g id="icon--industry-gambling" transform="translate(30.000000, 16.000000)">
+                                      <path d="M25.6042585,0.872032033 C24.4417999,-0.290677344 22.5574559,-0.290677344 21.3949972,0.872032033 L10.871844,11.3974549 C9.70938534,12.5601643 9.70938534,14.4449147 10.871844,15.6076241 L11.7440601,16.4800283 L17.5459344,16.4800283 C20.0077867,16.4800283 22.0112045,18.4838783 22.0112045,20.9462615 L22.0112045,26.5960465 C23.1513368,27.2555603 24.6293412,27.1111521 25.6042585,26.1360245 L36.1303886,15.6076241 C37.2898705,14.4449147 37.2898705,12.5601643 36.1303886,11.3974549 L25.6042585,0.872032033 Z M17.5459344,15.7356561 C16.3135198,15.7356561 15.3132993,14.7352199 15.3132993,13.5025395 C15.3132993,12.2698592 16.3135198,11.2694229 17.5459344,11.2694229 C18.778349,11.2694229 19.7785695,12.2698592 19.7785695,13.5025395 C19.7785695,14.7352199 18.778349,15.7356561 17.5459344,15.7356561 Z M23.4996279,15.7356561 C22.2672133,15.7356561 21.2669928,14.7352199 21.2669928,13.5025395 C21.2669928,12.2698592 22.2672133,11.2694229 23.4996279,11.2694229 C24.7320424,11.2694229 25.732263,12.2698592 25.732263,13.5025395 C25.732263,14.7352199 24.7320424,15.7356561 23.4996279,15.7356561 Z M29.4533214,15.7356561 C28.2209068,15.7356561 27.2206863,14.7352199 27.2206863,13.5025395 C27.2206863,12.2698592 28.2209068,11.2694229 29.4533214,11.2694229 C30.6857359,11.2694229 31.6859564,12.2698592 31.6859564,13.5025395 C31.6859564,14.7352199 30.6857359,15.7356561 29.4533214,15.7356561 Z"></path>
+                                      <path d="M18,18 L3,18 C1.3425,18 0,19.344 0,21 L0,36 C0,37.6575 1.344,39 3,39 L18,39 C19.656,39 21,37.6575 21,36 L21,21 C21,19.344 19.656,18 18,18 Z M6.75,34.5 C5.508,34.5 4.5,33.492 4.5,32.25 C4.5,31.008 5.508,30 6.75,30 C7.992,30 9,31.008 9,32.25 C9,33.492 7.992,34.5 6.75,34.5 Z M6.75,27 C5.508,27 4.5,25.992 4.5,24.75 C4.5,23.508 5.508,22.5 6.75,22.5 C7.992,22.5 9,23.508 9,24.75 C9,25.992 7.992,27 6.75,27 Z M14.25,34.5 C13.008,34.5 12,33.492 12,32.25 C12,31.008 13.008,30 14.25,30 C15.492,30 16.5,31.008 16.5,32.25 C16.5,33.492 15.492,34.5 14.25,34.5 Z M14.25,27 C13.008,27 12,25.992 12,24.75 C12,23.508 13.008,22.5 14.25,22.5 C15.492,22.5 16.5,23.508 16.5,24.75 C16.5,25.992 15.492,27 14.25,27 Z"></path>
+                                  </g>
+                              </g>
+                          </g>
+                      </g>
+                  </g>
+              </g>
+          </svg>        </div>
+        Gambling
+      </button>
+      <div class="button-line animate-start"></div>
+      <button id="advertising-button" class="button light inactive animate-start" data-industry="advertising">
+        <div class="icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg">
+              <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.5">
+                  <g transform="translate(-141.000000, -3884.000000)" fill-rule="nonzero" fill="#000000">
+                      <g transform="translate(0.000000, 3007.000000)">
+                          <g transform="translate(114.000000, 500.000000)">
+                              <g transform="translate(0.000000, 360.000000)">
+                                  <path d="M52,46.5 C52,47.35 51.35,48 50.5,48 C49.65,48 49,47.35 49,46.5 C49,45.65 49.65,45 50.5,45 C51.35,45 52,45.65 52,46.5 Z M63,18.7419355 L63,51.2580645 C63,52.2451613 62.2451613,53 61.2580645,53 L28.7419355,53 C27.7548387,53 27,52.2451613 27,51.2580645 L27,18.7419355 C27,17.7548387 27.7548387,17 28.7419355,17 L61.2580645,17 C62.2451613,17 63,17.7548387 63,18.7419355 Z M32,42 L59,42 L59,22 L32,22 L32,42 Z M59,47 C59,46.64 58.768,46.4 58.42,46.4 L53.142,46.4 C52.852,45.02 51.692,44 50.3,44 C48.908,44 47.748,45.02 47.458,46.4 L30.58,46.4 C30.232,46.4 30,46.64 30,47 C30,47.36 30.232,47.6 30.58,47.6 L47.458,47.6 C47.748,48.98 48.908,50 50.3,50 C51.692,50 52.852,48.98 53.142,47.6 L58.42,47.6 C58.768,47.6 59,47.36 59,47 Z M42,37 L50,32.5 L42,28 L42,37 Z" id="icon--industry-ads"></path>
+                              </g>
+                          </g>
+                      </g>
+                  </g>
+              </g>
+          </svg>        </div>
+        Ads
+      </button>
+      <div class="button-line animate-start"></div>
+    </div>
+    <div>
+      <div class="button-line animate-start"></div>
+        <div class="preview">
+            <div class="preview-image-wrapper">
+              <div class="grey-wipe animate-start"></div>
+              <div class="preview-image animate-start" style="transform: translateX(-100vw);">
+                <div class="test">
+                  <img id="advertising-preview" class="industry-image" src="/assets/images/homepage/industries/advertising.jpg" alt="Interactive Ads">
+                </div><div class="test current">
+                  <img id="games-preview" class="industry-image" src="/assets/images/homepage/industries/games.jpg" alt="Games">
+                </div>
+                <div class="test">
+                  <img id="ar-preview" class="industry-image" src="/assets/images/homepage/industries/ar.jpg" alt="Augmented Reality">
+                </div>
+                <div class="test">
+                  <img id="vr-preview" class="industry-image" src="/assets/images/homepage/industries/vr.jpg" alt="Virtual Reality">
+                </div>
+                <div class="test">
+                  <img id="configurators-preview" class="industry-image" src="/assets/images/homepage/industries/configurators.jpg" alt="Configurators">
+                </div>
+                <div class="test">
+                  <img id="gambling-preview" class="industry-image" src="/assets/images/homepage/industries/gambling.jpg" alt="Gambling">
+                </div>
+                <div class="test">
+                  <img id="advertising-preview" class="industry-image" src="/assets/images/homepage/industries/advertising.jpg" alt="Interactive Ads">
+                </div>
+              <div class="test current">
+                  <img id="games-preview" class="industry-image" src="/assets/images/homepage/industries/games.jpg" alt="Games">
+                </div></div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="industry-info">
+    <div class="pop-box animate-start">
+      <div class="info-carousel" style="height: 227px;">
+        <div class="back active">
+          <div class="title">
+            Games
+          </div>
+          <div class="description">
+            PlayCanvas powers some of the web's hottest browser games, delivering lightning fast load times, 60 frames a second gameplay and console-quality visuals
+          </div>
+          <div class="buttons">
+            <a href="/industries/games">
+              <span class="button call-to-action">
+                Learn More
+                <img src="/assets/images/icons/circle_outline_light-info.svg" alt="Info">
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="back inactive">
+          <div class="title">
+            Augmented Reality
+          </div>
+          <div class="description">
+            Build immersive web-based AR experiences with built-in WebXR support or with 8th Wall and Zappar integrations
+          </div>
+          <div class="buttons">
+            <a href="/industries/ar">
+              <span class="button call-to-action">
+                Learn More
+                <img src="/assets/images/icons/circle_outline_light-info.svg" alt="Info">
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="back inactive">
+          <div class="title">
+            Virtual Reality
+          </div>
+          <div class="description">
+            PlayCanvas is the easiest way to build WebXR VR experiences. And with built-in VR specific optimizations, you can successfully target a wide range of devices and headsets
+          </div>
+          <div class="buttons">
+            <a href="/industries/vr">
+              <span class="button call-to-action">
+                Learn More
+                <img src="/assets/images/icons/circle_outline_light-info.svg" alt="Info">
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="back inactive">
+          <div class="title">
+            Configurators
+          </div>
+          <div class="description">
+            PlayCanvas brings products to life in near-photorealistic 3D. Build interactive configurators quickly and easily with the PlayCanvas Editor
+          </div>
+          <div class="buttons">
+            <a href="/industries/configurators">
+              <span class="button call-to-action">
+                Learn More
+                <img src="/assets/images/icons/circle_outline_light-info.svg" alt="Info">
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="back inactive">
+          <div class="title">
+            Gambling
+          </div>
+          <div class="description">
+            Giants of the gaming industry like IGT and Aristocrat trust PlayCanvas for building the next generation of browser-based casino games
+          </div>
+          <div class="buttons">
+            <a href="/industries/gambling">
+              <span class="button call-to-action">
+                Learn More
+                <img src="/assets/images/icons/circle_outline_light-info.svg" alt="Info">
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="back inactive">
+          <div class="title">
+            Interactive Ads
+          </div>
+          <div class="description">
+            The advertising industry relies on HTML5 and WebGL for engaging, cross-platform ad experiences. PlayCanvas provides the perfect environment for building fast-loading, engaging advertisements that work great on any device
+          </div>
+          <div class="buttons">
+            <a href="/industries/advertising">
+              <span class="button call-to-action">
+                Learn More
+                <img src="/assets/images/icons/circle_outline_light-info.svg" alt="Info">
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <button class="left-arrow" aria-label="Previous industry">
+        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="32" viewBox="0 0 21 32">
+          <g fill="none" fill-rule="evenodd" transform="translate(-6)">
+            <polygon transform="matrix(-1 0 0 1 32.756 0)" points="26.756 15.901 6 32 6 0"></polygon>
+          </g>
+        </svg>
+      </button>
+      <button class="right-arrow" aria-label="Next industry">
+        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="32" viewBox="0 0 21 32">
+          <g fill="none" fill-rule="evenodd" transform="translate(-6)">
+            <polygon points="26.756 15.901 6 32 6 0"></polygon>
+          </g>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="brands no-padding-sides no-padding-bottom animate-end">
+  <h2 class="title">
+    Trusted by...
+  </h2>
+  <h4 class="sub-text">
+    PlayCanvas is trusted by some of the world's finest companies
+  </h4>
+  <img src="/assets/images/homepage/homepage--brands-full.png" alt="Brands">
+</section>
+
+<section class="get-started">
+  <h2 class="title">
+    Get started for free
+  </h2>
+  <h4 class="sub-text">
+    Free access to the full power of the PlayCanvas Engine, unlimited public projects and free hosting
+  </h4>
+  <div class="variable-order">
+    <div class="button-container">
+      <a href="https://login.playcanvas.com/signup" class="button light signup">
+        Sign up
+      </a>
+
+      <a href="https://login.playcanvas.com/signup" class="button light signup hide-on-mobile">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+      <g fill="none" fill-rule="evenodd">
+        <path fill="#EA4335" d="M9,3.48 C10.69,3.48 11.83,4.21 12.48,4.82 L15.02,2.34 C13.46,0.89 11.43,0 9,0 C5.48,0 2.44,2.02 0.96,4.96 L3.87,7.22 C4.6,5.05 6.62,3.48 9,3.48 L9,3.48 Z"></path>
+        <path fill="#4285F4" d="M17.64,9.2 C17.64,8.46 17.58,7.92 17.45,7.36 L9,7.36 L9,10.7 L13.96,10.7 C13.86,11.53 13.32,12.78 12.12,13.62 L14.96,15.82 C16.66,14.25 17.64,11.94 17.64,9.2 L17.64,9.2 Z"></path>
+        <path fill="#FBBC05" d="M3.88,10.78 C3.69,10.22 3.58,9.62 3.58,9 C3.58,8.38 3.69,7.78 3.87,7.22 L0.96,4.96 C0.35,6.18 0,7.55 0,9 C0,10.45 0.35,11.82 0.96,13.04 L3.88,10.78 L3.88,10.78 Z"></path>
+        <path fill="#34A853" d="M9,18 C11.43,18 13.47,17.2 14.96,15.82 L12.12,13.62 C11.36,14.15 10.34,14.52 9,14.52 C6.62,14.52 4.6,12.95 3.88,10.78 L0.97,13.04 C2.45,15.98 5.48,18 9,18 L9,18 Z"></path>
+      </g>
+    </svg>
+    Sign up with Google
+      </a>
+
+      <a href="https://login.playcanvas.com/signup" class="button light signup hide-on-mobile">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path fill="white" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+    </svg>
+    Sign up with GitHub
+      </a>
+    </div>    <div class="feature-checkboxes">
+      <div class="col3">
+        <span class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+            <g>
+              <path d="M16,32 C13.8465064,32 11.7843467,31.5747237 9.81345927,30.7241583 C7.84257181,29.8735929 6.13932241,28.7300722 4.70365998,27.2935617 C3.26799754,25.8570513 2.12515183,24.1527958 1.27508855,22.1807442 C0.425025266,20.2086926 0,18.145315 0,15.9905493 C0,13.8357837 0.425025266,11.772406 1.27508855,9.8003544 C2.12515183,7.8283028 3.26799754,6.12719754 4.70365998,4.6969876 C6.13932241,3.26677765 7.84257181,2.12640709 9.81345927,1.2758417 C11.7843467,0.425276314 13.8465064,0 16,0 C18.1534936,0 20.2156533,0.425276314 22.1865407,1.2758417 C24.1574282,2.12640709 25.8606776,3.26677765 27.29634,4.6969876 C28.7320025,6.12719754 29.8748482,7.8283028 30.7249115,9.8003544 C31.5749747,11.772406 32,13.8357837 32,15.9905493 C32,18.145315 31.5749747,20.2086926 30.7249115,22.1807442 C29.8748482,24.1527958 28.7320025,25.8570513 27.29634,27.2935617 C25.8606776,28.7300722 24.1574282,29.8735929 22.1865407,30.7241583 C20.2156533,31.5747237 18.1534936,32 16,32 Z M16,4.25280567 C14.3880281,4.25280567 12.8484922,4.56467497 11.3813459,5.18842292 C9.91419967,5.81217087 8.65171721,6.65012272 7.59386068,7.7023036 C6.53600416,8.75448449 5.69539863,10.0019617 5.07201889,11.4447726 C4.44863915,12.8875835 4.13695396,14.4028273 4.13695396,15.9905493 C4.13695396,18.145315 4.66587429,20.133088 5.72373081,21.9539279 C6.78158734,23.7747679 8.22037658,25.214407 10.0401417,26.2728884 C11.8599068,27.3313697 13.8465064,27.8606025 16,27.8606025 C17.5867848,27.8606025 19.1011341,27.5487332 20.5430933,26.9249852 C21.9850525,26.3012373 23.2317932,25.4601352 24.283353,24.4016539 C25.3349128,23.3431725 26.17237,22.0799443 26.7957497,20.6119315 C27.4191294,19.1439186 27.7308146,17.6034733 27.7308146,15.9905493 C27.7308146,14.4028273 27.4191294,12.8875835 26.7957497,11.4447726 C26.17237,10.0019617 25.3349128,8.75448449 24.283353,7.7023036 C23.2317932,6.65012272 21.9850525,5.81217087 20.5430933,5.18842292 C19.1011341,4.56467497 17.5867848,4.25280567 16,4.25280567 Z M22.3282172,9.03484938 L25.2939787,12.0023627 L13.6765053,23.6077968 L6.46044864,16.3874778 L9.42621015,13.4199646 L13.6765053,17.6727702 L22.3282172,9.03484938 Z"></path>
+            </g>
+          </svg>
+        </span>
+        <span class="text">
+          Unlimited Public Projects
+        </span>
+      </div>
+      <div class="col3">
+        <span class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+            <g>
+              <path d="M16,32 C13.8465064,32 11.7843467,31.5747237 9.81345927,30.7241583 C7.84257181,29.8735929 6.13932241,28.7300722 4.70365998,27.2935617 C3.26799754,25.8570513 2.12515183,24.1527958 1.27508855,22.1807442 C0.425025266,20.2086926 0,18.145315 0,15.9905493 C0,13.8357837 0.425025266,11.772406 1.27508855,9.8003544 C2.12515183,7.8283028 3.26799754,6.12719754 4.70365998,4.6969876 C6.13932241,3.26677765 7.84257181,2.12640709 9.81345927,1.2758417 C11.7843467,0.425276314 13.8465064,0 16,0 C18.1534936,0 20.2156533,0.425276314 22.1865407,1.2758417 C24.1574282,2.12640709 25.8606776,3.26677765 27.29634,4.6969876 C28.7320025,6.12719754 29.8748482,7.8283028 30.7249115,9.8003544 C31.5749747,11.772406 32,13.8357837 32,15.9905493 C32,18.145315 31.5749747,20.2086926 30.7249115,22.1807442 C29.8748482,24.1527958 28.7320025,25.8570513 27.29634,27.2935617 C25.8606776,28.7300722 24.1574282,29.8735929 22.1865407,30.7241583 C20.2156533,31.5747237 18.1534936,32 16,32 Z M16,4.25280567 C14.3880281,4.25280567 12.8484922,4.56467497 11.3813459,5.18842292 C9.91419967,5.81217087 8.65171721,6.65012272 7.59386068,7.7023036 C6.53600416,8.75448449 5.69539863,10.0019617 5.07201889,11.4447726 C4.44863915,12.8875835 4.13695396,14.4028273 4.13695396,15.9905493 C4.13695396,18.145315 4.66587429,20.133088 5.72373081,21.9539279 C6.78158734,23.7747679 8.22037658,25.214407 10.0401417,26.2728884 C11.8599068,27.3313697 13.8465064,27.8606025 16,27.8606025 C17.5867848,27.8606025 19.1011341,27.5487332 20.5430933,26.9249852 C21.9850525,26.3012373 23.2317932,25.4601352 24.283353,24.4016539 C25.3349128,23.3431725 26.17237,22.0799443 26.7957497,20.6119315 C27.4191294,19.1439186 27.7308146,17.6034733 27.7308146,15.9905493 C27.7308146,14.4028273 27.4191294,12.8875835 26.7957497,11.4447726 C26.17237,10.0019617 25.3349128,8.75448449 24.283353,7.7023036 C23.2317932,6.65012272 21.9850525,5.81217087 20.5430933,5.18842292 C19.1011341,4.56467497 17.5867848,4.25280567 16,4.25280567 Z M22.3282172,9.03484938 L25.2939787,12.0023627 L13.6765053,23.6077968 L6.46044864,16.3874778 L9.42621015,13.4199646 L13.6765053,17.6727702 L22.3282172,9.03484938 Z"></path>
+            </g>
+          </svg>
+        </span>
+        <span class="text">
+          1GB Storage
+        </span>
+      </div>
+      <div class="col3">
+        <span class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+            <g>
+              <path d="M16,32 C13.8465064,32 11.7843467,31.5747237 9.81345927,30.7241583 C7.84257181,29.8735929 6.13932241,28.7300722 4.70365998,27.2935617 C3.26799754,25.8570513 2.12515183,24.1527958 1.27508855,22.1807442 C0.425025266,20.2086926 0,18.145315 0,15.9905493 C0,13.8357837 0.425025266,11.772406 1.27508855,9.8003544 C2.12515183,7.8283028 3.26799754,6.12719754 4.70365998,4.6969876 C6.13932241,3.26677765 7.84257181,2.12640709 9.81345927,1.2758417 C11.7843467,0.425276314 13.8465064,0 16,0 C18.1534936,0 20.2156533,0.425276314 22.1865407,1.2758417 C24.1574282,2.12640709 25.8606776,3.26677765 27.29634,4.6969876 C28.7320025,6.12719754 29.8748482,7.8283028 30.7249115,9.8003544 C31.5749747,11.772406 32,13.8357837 32,15.9905493 C32,18.145315 31.5749747,20.2086926 30.7249115,22.1807442 C29.8748482,24.1527958 28.7320025,25.8570513 27.29634,27.2935617 C25.8606776,28.7300722 24.1574282,29.8735929 22.1865407,30.7241583 C20.2156533,31.5747237 18.1534936,32 16,32 Z M16,4.25280567 C14.3880281,4.25280567 12.8484922,4.56467497 11.3813459,5.18842292 C9.91419967,5.81217087 8.65171721,6.65012272 7.59386068,7.7023036 C6.53600416,8.75448449 5.69539863,10.0019617 5.07201889,11.4447726 C4.44863915,12.8875835 4.13695396,14.4028273 4.13695396,15.9905493 C4.13695396,18.145315 4.66587429,20.133088 5.72373081,21.9539279 C6.78158734,23.7747679 8.22037658,25.214407 10.0401417,26.2728884 C11.8599068,27.3313697 13.8465064,27.8606025 16,27.8606025 C17.5867848,27.8606025 19.1011341,27.5487332 20.5430933,26.9249852 C21.9850525,26.3012373 23.2317932,25.4601352 24.283353,24.4016539 C25.3349128,23.3431725 26.17237,22.0799443 26.7957497,20.6119315 C27.4191294,19.1439186 27.7308146,17.6034733 27.7308146,15.9905493 C27.7308146,14.4028273 27.4191294,12.8875835 26.7957497,11.4447726 C26.17237,10.0019617 25.3349128,8.75448449 24.283353,7.7023036 C23.2317932,6.65012272 21.9850525,5.81217087 20.5430933,5.18842292 C19.1011341,4.56467497 17.5867848,4.25280567 16,4.25280567 Z M22.3282172,9.03484938 L25.2939787,12.0023627 L13.6765053,23.6077968 L6.46044864,16.3874778 L9.42621015,13.4199646 L13.6765053,17.6727702 L22.3282172,9.03484938 Z"></path>
+            </g>
+          </svg>
+        </span>
+        <span class="text">
+          Free App Hosting
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <h2 class="title">
+    Contact Us
+  </h2>
+  <h4 class="sub-text">
+    Drop us a line at <a target="_blank" href="mailto:support@playcanvas.com">support@playcanvas.com</a>
+  </h4>
+</section>
+
+  </main>
+  <footer>
+    <nav>
+      <span class="nav-link"><a href="https://developer.playcanvas.com">Learn</a></span>
+      <span class="nav-link"><a href="https://blog.playcanvas.com/">Blog</a></span>
+      <span class="nav-link"><a href="/plans">Pricing</a></span>
+      <span class="nav-link"><a href="/contact">Contact</a></span>
+      <span class="nav-link"><a href="/privacy">Privacy Policy</a></span>
+      <span class="nav-link"><a href="/terms">Terms of Use</a></span>
+      <span class="nav-link"><a href="/cookies">Cookies</a></span>
+      <span class="nav-link">
+        <a href="#" data-action="cookie-preferences">Cookie Preferences</a>
+      </span>
+    </nav>
+  </footer>  <meta name="pc-consent-required" content="true">
+  <meta name="pc-consent-cookie-domain" content=".playcanvas.com">
+  <link rel="stylesheet" href="/static/platform/css/consent/cookieconsent.css">
+  <script defer="" src="/static/platform/js/consent/cookieconsent.umd.js"></script>
+  <script defer="" src="/static/platform/js/consent/cookie-consent-config.js"></script>
+
+
+<div id="cc-main" data-nosnippet=""><div class="cm-wrapper cc--anim"><div class="cm cm--box cm--inline cm--bottom cm--right" role="dialog" aria-modal="true" aria-hidden="false" aria-describedby="cm__desc" aria-labelledby="cm__title"><div tabindex="-1"></div><div class="cm__body"><div class="cm__texts"><h2 id="cm__title" class="cm__title">Cookie Preferences</h2><p id="cm__desc" class="cm__desc">We use cookies to improve your experience and analyse site traffic using Google Analytics. <a href="/cookies" target="_blank">Learn more</a>.</p></div><div class="cm__btns"><div class="cm__btn-group"><button type="button" class="cm__btn" data-role="all"><span>Accept All</span></button><button type="button" class="cm__btn" data-role="necessary"><span>Reject All</span></button></div><div class="cm__btn-group"><button type="button" class="cm__btn cm__btn--secondary" data-role="show"><span>Manage Preferences</span></button></div></div></div></div></div></div></body></html>

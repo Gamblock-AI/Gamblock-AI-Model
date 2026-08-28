@@ -1,0 +1,496 @@
+<html lang="en-US"><head itemscope="itemscope" itemtype="https://schema.org/WebSite"><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>(()=>{class RocketLazyLoadScripts{constructor(){this.v="1.2.5.1",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this.t.bind(this),this.touchStartHandler=this.i.bind(this),this.touchMoveHandler=this.o.bind(this),this.touchEndHandler=this.h.bind(this),this.clickHandler=this.u.bind(this),this.interceptedClicks=[],this.interceptedClickListeners=[],this.l(this),window.addEventListener("pageshow",(t=>{this.persisted=t.persisted,this.everythingLoaded&&this.m()})),document.addEventListener("DOMContentLoaded",(()=>{this.p()})),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}k(t){document.hidden?t.t():(this.triggerEvents.forEach((e=>window.addEventListener(e,t.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler))}_(){this.triggerEvents.forEach((t=>window.removeEventListener(t,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}i(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this.L(t.target,!0),this.M(t.target,"onclick","rocket-onclick"),this.C())}o(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this.L(t.target,!1),this.M(t.target,"rocket-onclick","onclick"),this.O()}h(){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}u(t){t.target.removeEventListener("click",this.clickHandler),this.L(t.target,!1),this.M(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this.O()}D(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))}))}l(t){EventTarget.prototype.addEventListenerBase=EventTarget.prototype.addEventListener,EventTarget.prototype.addEventListener=function(e,i,o){"click"!==e||t.windowLoaded||i===t.clickHandler||t.interceptedClickListeners.push({target:this,func:i,options:o}),(this||window).addEventListenerBase(e,i,o)}}L(t,e){this.interceptedClickListeners.forEach((i=>{i.target===t&&(e?t.removeEventListener("click",i.func,i.options):t.addEventListener("click",i.func,i.options))})),t.parentNode!==document.documentElement&&this.L(t.parentNode,e)}S(){return new Promise((t=>{this.T?this.O=t:t()}))}C(){this.T=!0}O(){this.T=!1}M(t,e,i){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(i,event.target.getAttribute(e)),event.target.removeAttribute(e))}t(){this._(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this.R.bind(this)):this.R()}p(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript][data-rocket-src]").forEach((e=>{let i=e.getAttribute("data-rocket-src");if(i&&0!==i.indexOf("data:")){0===i.indexOf("//")&&(i=location.protocol+i);try{const o=new URL(i).origin;o!==location.origin&&t.push({src:o,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(t){}}})),t=[...new Map(t.map((t=>[JSON.stringify(t),t]))).values()],this.j(t,"preconnect")}async R(){this.lastBreath=Date.now(),this.P(this),this.F(this),this.q(),this.A(),this.I(),await this.U(this.delayedScripts.normal),await this.U(this.delayedScripts.defer),await this.U(this.delayedScripts.async);try{await this.W(),await this.H(this),await this.J()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this.S().then((()=>{this.D()})),this.N()}A(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)}))}async B(t){if(await this.G(),!0!==t.noModule||!("noModule"in HTMLScriptElement.prototype))return new Promise((e=>{let i;function o(){(i||t).setAttribute("data-rocket-status","executed"),e()}try{if(navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)i=document.createElement("script"),[...t.attributes].forEach((t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),i.setAttribute(e,t.nodeValue))})),t.text&&(i.text=t.text),i.hasAttribute("src")?(i.addEventListener("load",o),i.addEventListener("error",(function(){i.setAttribute("data-rocket-status","failed"),e()})),setTimeout((()=>{i.isConnected||e()}),1)):(i.text=t.text,o()),t.parentNode.replaceChild(i,t);else{const i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",o),t.addEventListener("error",(function(){t.setAttribute("data-rocket-status","failed"),e()})),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}}catch(i){t.setAttribute("data-rocket-status","failed"),e()}}));t.setAttribute("data-rocket-status","skipped")}async U(t){const e=t.shift();return e&&e.isConnected?(await this.B(e),this.U(t)):Promise.resolve()}I(){this.j([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}j(t,e){var i=document.createDocumentFragment();t.forEach((t=>{const o=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(o){const n=document.createElement("link");n.href=o,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),i.appendChild(n),this.trash.push(n)}})),document.head.appendChild(i)}P(t){let e={};function i(i,o){return e[o].eventsToRewrite.indexOf(i)>=0&&!t.everythingLoaded?"rocket-"+i:i}function o(t,o){!function(t){e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=i(arguments[0],t),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=i(arguments[0],t),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(o)}function n(e,i){let o=e[i];e[i]=null,Object.defineProperty(e,i,{get:()=>o||function(){},set(n){t.everythingLoaded?o=n:e["rocket"+i]=o=n}})}o(document,"DOMContentLoaded"),o(window,"DOMContentLoaded"),o(window,"load"),o(window,"pageshow"),o(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}F(t){let e;function i(e){return t.everythingLoaded?e:e.split(" ").map((t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t)).join(" ")}function o(o){if(o&&o.fn&&!t.allJQueries.includes(o)){o.fn.ready=o.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(o):document.addEventListener("rocket-DOMContentLoaded",(()=>e.bind(document)(o))),o([])};const e=o.fn.on;o.fn.on=o.fn.init.prototype.on=function(){return this[0]===window&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{const e=arguments[0][t];delete arguments[0][t],arguments[0][i(t)]=e}))),e.apply(this,arguments),this},t.allJQueries.push(o)}e=o}o(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){o(t)}})}async H(t){const e=document.querySelector("script[data-webpack]");e&&(await async function(){return new Promise((t=>{e.addEventListener("load",t),e.addEventListener("error",t)}))}(),await t.K(),await t.H(t))}async W(){this.domReadyFired=!0,await this.G(),document.dispatchEvent(new Event("rocket-readystatechange")),await this.G(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.G(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this.G(),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}async J(){await this.G(),document.dispatchEvent(new Event("rocket-readystatechange")),await this.G(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.G(),window.dispatchEvent(new Event("rocket-load")),await this.G(),window.rocketonload&&window.rocketonload(),await this.G(),this.allJQueries.forEach((t=>t(window).trigger("rocket-jquery-load"))),await this.G();const t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this.G(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted}),this.windowLoaded=!0}m(){document.onreadystatechange&&document.onreadystatechange(),window.onload&&window.onload(),window.onpageshow&&window.onpageshow({persisted:this.persisted})}q(){const t=new Map;document.write=document.writeln=function(e){const i=document.currentScript;i||console.error("WPRocket unable to document.write this: "+e);const o=document.createRange(),n=i.parentElement;let s=t.get(i);void 0===s&&(s=i.nextSibling,t.set(i,s));const c=document.createDocumentFragment();o.setStart(c,0),c.appendChild(o.createContextualFragment(e)),n.insertBefore(c,s)}}async G(){Date.now()-this.lastBreath>45&&(await this.K(),this.lastBreath=Date.now())}async K(){return document.hidden?new Promise((t=>setTimeout(t))):new Promise((t=>requestAnimationFrame(t)))}N(){this.trash.forEach((t=>t.remove()))}static run(){const t=new RocketLazyLoadScripts;t.k(t)}}RocketLazyLoadScripts.run()})();</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<!-- This site is optimized with the Yoast SEO Premium plugin v20.2.1 (Yoast SEO v26.6) - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Perbedaan Antara RTP dan RTCP : Pahami dengan Baik</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Nunito%3Aregular%2C700%2C600%2C300%26amp%3Bsubset%3Dlatin%2C&amp;display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito%3Aregular%2C700%2C600%2C300%26amp%3Bsubset%3Dlatin%2C&amp;display=swap" media="all" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito%3Aregular%2C700%2C600%2C300%26amp%3Bsubset%3Dlatin%2C&#038;display=swap" /></noscript>
+	<meta name="description" content="Artikel ini menjelaskan perbedaan antara RTP dan RTCP, dua protokol yang digunakan dalam komunikasi multimedia baca untuk memahaminya.">
+	<link rel="canonical" href="https://www.empatpilar.com/perbedaan-antara-rtp-dan-rtcp/">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Perbedaan Antara RTP dan RTCP : Pahami dengan Baik">
+	<meta property="og:description" content="Artikel ini menjelaskan perbedaan antara RTP dan RTCP, dua protokol yang digunakan dalam komunikasi multimedia baca untuk memahaminya.">
+	<meta property="og:url" content="https://www.empatpilar.com/perbedaan-antara-rtp-dan-rtcp/">
+	<meta property="og:site_name" content="Empat Pilar">
+	<meta property="article:publisher" content="https://www.facebook.com/teknobgt">
+	<meta property="article:published_time" content="2026-02-06T08:22:49+00:00">
+	<meta property="og:image" content="https://www.empatpilar.com/wp-content/uploads/2023/05/Screenshot_9-10-jpg.webp">
+	<meta property="og:image:width" content="854">
+	<meta property="og:image:height" content="502">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta name="author" content="administrator">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:creator" content="@teknobgt">
+	<meta name="twitter:site" content="@teknobgt">
+	<meta name="twitter:label1" content="Written by">
+	<meta name="twitter:data1" content="administrator">
+	<meta name="twitter:label2" content="Est. reading time">
+	<meta name="twitter:data2" content="6 minutes">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://www.empatpilar.com/perbedaan-antara-rtp-dan-rtcp/#article","isPartOf":{"@id":"https://www.empatpilar.com/perbedaan-antara-rtp-dan-rtcp/"},"author":{"name":"administrator","@id":"https://www.empatpilar.com/#/schema/person/0ca87512634803a4045e40e8881d4391"},"headline":"Perbedaan Antara RTP dan RTCP : Pahami dengan Baik","datePublished":"2026-02-06T08:22:49+00:00","mainEntityOfPage":{"@id":"https://www.empatpilar.com/perbedaan-antara-rtp-dan-rtcp/"},"wordCount":1190,"commentCount":0,"publisher":{"@id":"https://www.empatpilar.com/#organization"},"image":{"@id":"https://www.empatpilar.com/perbedaan-antara-rtp-dan-rtcp/#primaryimage"},"thumbnailUrl":"https://www.empatpilar.com/wp-content/uploads/2023/05/Screenshot_9-10-jpg.webp","keywords":["RTP dan RTCP"],"articleSection":["Internet"],"inLanguage":"en-US","potentialAction":[{"@type":"CommentAction","name":"Comment","target":["https://www.empatpilar.com/perbedaan-antara-rtp-dan-rtcp/#respond"]}],"copyrightYear":"2026","copyrightHolder":{"@id":"https://www.empatpilar.com/#organization"}},{"@type":"WebPage","@id":"https://www.empatpilar.com/perbedaan-antara-rtp-dan-rtcp/","url":"https://www.empatpilar.com/perbedaan-antara-rtp-dan-rtcp/","name":"Perbedaan Antara RTP dan RTCP : Pahami dengan Baik","isPartOf":{"@id":"https://www.empatpilar.com/#website"},"primaryImageOfPage":{"@id":"https://www.empatpilar.com/perbedaan-antara-rtp-dan-rtcp/#primaryimage"},"image":{"@id":"https://www.empatpilar.com/perbedaan-antara-rtp-dan-rtcp/#primaryimage"},"thumbnailUrl":"https://www.empatpilar.com/wp-content/uploads/2023/05/Screenshot_9-10-jpg.webp","datePublished":"2026-02-06T08:22:49+00:00","description":"Artikel ini menjelaskan perbedaan antara RTP dan RTCP, dua protokol yang digunakan dalam komunikasi multimedia baca untuk memahaminya.","breadcrumb":{"@id":"https://www.empatpilar.com/perbedaan-antara-rtp-dan-rtcp/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.empatpilar.com/perbedaan-antara-rtp-dan-rtcp/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.empatpilar.com/perbedaan-antara-rtp-dan-rtcp/#primaryimage","url":"https://www.empatpilar.com/wp-content/uploads/2023/05/Screenshot_9-10-jpg.webp","contentUrl":"https://www.empatpilar.com/wp-content/uploads/2023/05/Screenshot_9-10-jpg.webp","width":854,"height":502,"caption":"Perbedaan Antara RTP dan RTCP"},{"@type":"BreadcrumbList","@id":"https://www.empatpilar.com/perbedaan-antara-rtp-dan-rtcp/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.empatpilar.com/"},{"@type":"ListItem","position":2,"name":"Perbedaan Antara RTP dan RTCP : Pahami dengan Baik"}]},{"@type":"WebSite","@id":"https://www.empatpilar.com/#website","url":"https://www.empatpilar.com/","name":"Empat Pilar","description":"Kumpulan Berita Terkini Seputar Teknologi, Otomotif dan Bisnis","publisher":{"@id":"https://www.empatpilar.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.empatpilar.com/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://www.empatpilar.com/#organization","name":"BLOGGING MENTORING","url":"https://www.empatpilar.com/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.empatpilar.com/#/schema/logo/image/","url":"http://www.empatpilar.com/wp-content/uploads/2020/07/gnews.png","contentUrl":"http://www.empatpilar.com/wp-content/uploads/2020/07/gnews.png","width":1964,"height":1105,"caption":"BLOGGING MENTORING"},"image":{"@id":"https://www.empatpilar.com/#/schema/logo/image/"},"sameAs":["https://www.facebook.com/teknobgt","https://x.com/teknobgt","https://www.instagram.com/teknobgt","https://www.youtube.com/channel/UCyOd3gz2NawdzJ_tPi4ctDw"]},{"@type":"Person","@id":"https://www.empatpilar.com/#/schema/person/0ca87512634803a4045e40e8881d4391","name":"administrator","image":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.empatpilar.com/#/schema/person/image/","url":"http://www.empatpilar.com/wp-content/uploads/2021/06/cropped-Empat-pilar-favicon-1-96x96.png","contentUrl":"http://www.empatpilar.com/wp-content/uploads/2021/06/cropped-Empat-pilar-favicon-1-96x96.png","caption":"administrator"}}]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect">
+<link rel="alternate" type="application/rss+xml" title="Empat Pilar » Feed" href="https://www.empatpilar.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Empat Pilar » Comments Feed" href="https://www.empatpilar.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Empat Pilar » Perbedaan Antara RTP dan RTCP : Pahami dengan Baik Comments Feed" href="https://www.empatpilar.com/perbedaan-antara-rtp-dan-rtcp/feed/">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www.empatpilar.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.empatpilar.com%2Fperbedaan-antara-rtp-dan-rtcp%2F">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www.empatpilar.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.empatpilar.com%2Fperbedaan-antara-rtp-dan-rtcp%2F&amp;format=xml">
+<!-- www.empatpilar.com is managing ads with Advanced Ads 2.0.14 – https://wpadvancedads.com/ --><!--noptimize--><script id="empat-ready" src="data:text/javascript;base64,CgkJCXdpbmRvdy5hZHZhbmNlZF9hZHNfcmVhZHk9ZnVuY3Rpb24oZSxhKXthPWF8fCJjb21wbGV0ZSI7dmFyIGQ9ZnVuY3Rpb24oZSl7cmV0dXJuImludGVyYWN0aXZlIj09PWE/ImxvYWRpbmciIT09ZToiY29tcGxldGUiPT09ZX07ZChkb2N1bWVudC5yZWFkeVN0YXRlKT9lKCk6ZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcigicmVhZHlzdGF0ZWNoYW5nZSIsKGZ1bmN0aW9uKGEpe2QoYS50YXJnZXQucmVhZHlTdGF0ZSkmJmUoKX0pLHtvbmNlOiJpbnRlcmFjdGl2ZSI9PT1hfSl9LHdpbmRvdy5hZHZhbmNlZF9hZHNfcmVhZHlfcXVldWU9d2luZG93LmFkdmFuY2VkX2Fkc19yZWFkeV9xdWV1ZXx8W107CQk=" data-rocket-status="executed">
+			window.advanced_ads_ready=function(e,a){a=a||"complete";var d=function(e){return"interactive"===a?"loading"!==e:"complete"===e};d(document.readyState)?e():document.addEventListener("readystatechange",(function(a){d(a.target.readyState)&&e()}),{once:"interactive"===a})},window.advanced_ads_ready_queue=window.advanced_ads_ready_queue||[];		</script>
+		<!--/noptimize--><style id="wp-img-auto-sizes-contain-inline-css" type="text/css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-emoji-styles-inline-css" type="text/css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<link data-minify="1" rel="stylesheet" id="idblog-core-css" href="https://www.empatpilar.com/wp-content/cache/min/1/wp-content/plugins/idblog-core/css/idblog-core.css?ver=1765816015" type="text/css" media="all">
+<style id="idblog-core-inline-css" type="text/css">
+.gmr-ab-authorname span.uname a{color:#222222 !important;}.gmr-ab-desc {color:#aaaaaa !important;}.gmr-ab-web a{color:#dddddd !important;}
+/*# sourceURL=idblog-core-inline-css */
+</style>
+<link data-minify="1" rel="stylesheet" id="widgetopts-styles-css" href="https://www.empatpilar.com/wp-content/cache/min/1/wp-content/plugins/widget-options/assets/css/widget-options.css?ver=1765816015" type="text/css" media="all">
+
+<link data-minify="1" rel="stylesheet" id="superfast-style-css" href="https://www.empatpilar.com/wp-content/cache/min/1/wp-content/themes/superfast/style.css?ver=1765816015" type="text/css" media="all">
+<style id="superfast-style-inline-css" type="text/css">
+body{color:#2c3e50;font-family:"Helvetica Neue",sans-serif;font-weight:500;font-size:16px;}kbd,a.button:hover,button:hover,.button:hover,button.button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,a.button:focus,button:focus,.button:focus,button.button:focus,input[type="button"]:focus,input[type="reset"]:focus,input[type="submit"]:focus,a.button:active,button:active,.button:active,button.button:active,input[type="button"]:active,input[type="reset"]:active,input[type="submit"]:active,.tagcloud a:hover,.tagcloud a:focus,.tagcloud a:active{background-color:#606060;}a,a:hover,a:focus,a:active{color:#606060;}ul.page-numbers li span.page-numbers,ul.page-numbers li a:hover,.page-links a .page-link-number:hover,a.button,button,.button,button.button,input[type="button"],input[type="reset"],input[type="submit"],.tagcloud a,.sticky .gmr-box-content,.gmr-theme div.sharedaddy h3.sd-title:before,.gmr-theme div.idblog-related-post h3.related-title:before,.idblog-social-share h3:before,.bypostauthor > .comment-body{border-color:#606060;}.site-header{background-size:auto;background-repeat:repeat;background-position:center top;background-attachment:scroll;background-color:#ffffff;}.site-title a{color:#000000;}.site-description{color:#999999;}.gmr-logo{margin-top:15px;}.gmr-menuwrap{background-color:#000000;}#gmr-responsive-menu,.gmr-mainmenu #primary-menu > li > a,.gmr-mainmenu #primary-menu > li > button{color:#ffffff;}.gmr-mainmenu #primary-menu > li.menu-border > a span,.gmr-mainmenu #primary-menu > li.page_item_has_children > a:after,.gmr-mainmenu #primary-menu > li.menu-item-has-children > a:after,.gmr-mainmenu #primary-menu .sub-menu > li.page_item_has_children > a:after,.gmr-mainmenu #primary-menu .sub-menu > li.menu-item-has-children > a:after,.gmr-mainmenu #primary-menu .children > li.page_item_has_children > a:after,.gmr-mainmenu #primary-menu .children > li.menu-item-has-children > a:after{border-color:#ffffff;}#gmr-responsive-menu:hover,.gmr-mainmenu #primary-menu > li:hover > a,.gmr-mainmenu #primary-menu > li.current-menu-item > a,.gmr-mainmenu #primary-menu > li.current-menu-ancestor > a,.gmr-mainmenu #primary-menu > li.current_page_item > a,.gmr-mainmenu #primary-menu > li.current_page_ancestor > a,.gmr-mainmenu #primary-menu > li > button:hover{color:#000000;}.gmr-mainmenu #primary-menu > li.menu-border:hover > a span,.gmr-mainmenu #primary-menu > li.menu-border.current-menu-item > a span,.gmr-mainmenu #primary-menu > li.menu-border.current-menu-ancestor > a span,.gmr-mainmenu #primary-menu > li.menu-border.current_page_item > a span,.gmr-mainmenu #primary-menu > li.menu-border.current_page_ancestor > a span,.gmr-mainmenu #primary-menu > li.page_item_has_children:hover > a:after,.gmr-mainmenu #primary-menu > li.menu-item-has-children:hover > a:after{border-color:#000000;}.gmr-mainmenu #primary-menu > li:hover > a,.gmr-mainmenu #primary-menu > li.current-menu-item > a,.gmr-mainmenu #primary-menu > li.current-menu-ancestor > a,.gmr-mainmenu #primary-menu > li.current_page_item > a,.gmr-mainmenu #primary-menu > li.current_page_ancestor > a{background-color:#ffffff;}.gmr-secondmenuwrap{background-color:#ffffff;}#gmr-secondaryresponsive-menu,.gmr-secondmenu #primary-menu > li > a,.gmr-social-icon ul > li > a{color:#333333;}.gmr-secondmenu #primary-menu > li.menu-border > a span,.gmr-secondmenu #primary-menu > li.page_item_has_children > a:after,.gmr-secondmenu #primary-menu > li.menu-item-has-children > a:after,.gmr-secondmenu #primary-menu .sub-menu > li.page_item_has_children > a:after,.gmr-secondmenu #primary-menu .sub-menu > li.menu-item-has-children > a:after,.gmr-secondmenu #primary-menu .children > li.page_item_has_children > a:after,.gmr-secondmenu #primary-menu .children > li.menu-item-has-children > a:after{border-color:#333333;}#gmr-secondaryresponsive-menu:hover,.gmr-secondmenu #primary-menu > li:hover > a,.gmr-secondmenu #primary-menu .current-menu-item > a,.gmr-secondmenu #primary-menu .current-menu-ancestor > a,.gmr-secondmenu #primary-menu .current_page_item > a,.gmr-secondmenu #primary-menu .current_page_ancestor > a,.gmr-social-icon ul > li > a:hover{color:#c9c9c9;}.gmr-secondmenu #primary-menu > li.menu-border:hover > a span,.gmr-secondmenu #primary-menu > li.menu-border.current-menu-item > a span,.gmr-secondmenu #primary-menu > li.menu-border.current-menu-ancestor > a span,.gmr-secondmenu #primary-menu > li.menu-border.current_page_item > a span,.gmr-secondmenu #primary-menu > li.menu-border.current_page_ancestor > a span,.gmr-secondmenu #primary-menu > li.page_item_has_children:hover > a:after,.gmr-secondmenu #primary-menu > li.menu-item-has-children:hover > a:after{border-color:#c9c9c9;}.gmr-content,.top-header{background-color:#fff;}h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,.site-title,#gmr-responsive-menu,#primary-menu > li > a{font-family:"Nunito","Helvetica", Arial;}h1{font-size:28px;}h2{font-size:26px;}h3{font-size:24px;}h4{font-size:22px;}h5{font-size:20px;}h6{font-size:18px;}.widget-footer{background-color:#3d566e;color:#ecf0f1;}.widget-footer a{color:#f39c12;}.widget-footer a:hover{color:#f1c40f;}.site-footer{background-color:#000000;color:#ffffff;}.site-footer a{color:#ecf0f1;}.site-footer a:hover{color:#bdc3c7;}
+/*# sourceURL=superfast-style-inline-css */
+</style>
+<link data-minify="1" rel="stylesheet" id="tablepress-default-css" href="https://www.empatpilar.com/wp-content/cache/min/1/wp-content/plugins/tablepress/css/build/default.css?ver=1765816015" type="text/css" media="all">
+<link rel="https://api.w.org/" href="https://www.empatpilar.com/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="https://www.empatpilar.com/wp-json/wp/v2/posts/8645"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.empatpilar.com/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.9.4">
+<link rel="shortlink" href="https://www.empatpilar.com/?p=8645">
+<meta name="google-site-verification" content="0eaeCTIdMIjPXsvObZmHXTJIt0ggjaAbCd5zt3ihrR0">
+<meta name="facebook-domain-verification" content="drqoz2ocyqcmpb5zo8fch3u6po04qh">
+
+<script type="rocketlazyloadscript" async="" data-rocket-src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8789491970357046" crossorigin="anonymous"></script><meta name="generator" content="performance-lab 4.0.0; plugins: ">
+<link rel="icon" href="https://www.empatpilar.com/wp-content/uploads/2021/06/cropped-Empat-pilar-favicon-32x32.png" sizes="32x32">
+<link rel="icon" href="https://www.empatpilar.com/wp-content/uploads/2021/06/cropped-Empat-pilar-favicon-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://www.empatpilar.com/wp-content/uploads/2021/06/cropped-Empat-pilar-favicon-180x180.png">
+<meta name="msapplication-TileImage" content="https://www.empatpilar.com/wp-content/uploads/2021/06/cropped-Empat-pilar-favicon-270x270.png">
+<style id="global-styles-inline-css" type="text/css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+<link rel="stylesheet" id="lwptoc-main-css" href="https://www.empatpilar.com/wp-content/plugins/luckywp-table-of-contents/front/assets/main.min.css?ver=2.1.14" type="text/css" media="all">
+
+<link href="https://pagead2.googlesyndication.com" rel="preconnect" crossorigin="anonymous"><link href="https://www.empatpilar.com/wp-content/cache/min/1/wp-content/themes/superfast/js/customscript.js?ver=1765816015" rel="preload" as="script"><link href="https://www.empatpilar.com/wp-content/cache/min/1/wp-content/plugins/advanced-ads/admin/assets/js/advertisement.js?ver=1765816015" rel="preload" as="script"><link href="https://www.empatpilar.com/wp-content/plugins/luckywp-table-of-contents/front/assets/main.min.js?ver=2.1.14" rel="preload" as="script"><link href="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8789491970357046" rel="preload" as="script" crossorigin="anonymous"><link href="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8789491970357046" rel="preload" as="script" crossorigin="anonymous"><link href="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8789491970357046" rel="preload" as="script" crossorigin="anonymous"><link href="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8789491970357046" rel="preload" as="script" crossorigin="anonymous"><link href="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8789491970357046" rel="preload" as="script" crossorigin="anonymous"><link href="https://www.empatpilar.com/wp-includes/js/comment-reply.min.js?ver=6.9.4" rel="preload" as="script"><script type="text/javascript" async="" src="//s10.histats.com/js15_as.js"></script></head>
+
+<body class="wp-singular post-template-default single single-post postid-8645 single-format-standard wp-theme-superfast gmr-theme idtheme kentooz gmr-sticky gmr-fullwidth-layout aa-prefix-empat-" itemscope="itemscope" itemtype="https://schema.org/WebPage">
+<div class="site inner-wrap" id="site-container">
+
+	<a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+
+	
+		
+		<header id="masthead" class="site-header" role="banner" itemscope="itemscope" itemtype="https://schema.org/WPHeader">
+							<div class="gmr-secondmenuwrap clearfix">
+					<div class="container">
+													<nav id="site-navigation" class="gmr-secondmenu" role="navigation" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
+								<ul id="primary-menu" class="menu"><li id="menu-item-9219" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-9219"><a href="http://www.empatpilar.com" itemprop="url"><span itemprop="name">Beranda</span></a></li>
+<li id="menu-item-94" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-94"><a href="https://www.empatpilar.com/hubungi-kami/" itemprop="url"><span itemprop="name">Hubungi Kami</span></a></li>
+<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="https://www.empatpilar.com/pedoman-media-siber/" itemprop="url"><span itemprop="name">Pedoman Media Siber</span></a></li>
+<li id="menu-item-58" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-58"><a rel="privacy-policy" href="https://www.empatpilar.com/privacy-policy/" itemprop="url"><span itemprop="name">Privacy Policy</span></a></li>
+<li id="menu-item-57" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-57"><a href="https://www.empatpilar.com/term-of-service/" itemprop="url"><span itemprop="name">TOS</span></a></li>
+</ul>							</nav><!-- #site-navigation -->
+													<nav id="site-navigation" class="gmr-social-icon" role="navigation" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
+							<ul class="pull-right">
+															</ul>
+						</nav><!-- #site-navigation -->
+					</div>
+				</div>
+			
+						<div class="container">
+					<div class="clearfix gmr-headwrapper">
+						<div class="gmr-logomobile"><div class="gmr-logo"><a href="https://www.empatpilar.com/" class="custom-logo-link" itemprop="url" title="Empat Pilar"><img src="http://www.empatpilar.com/wp-content/uploads/2023/05/Empatpilar.png" alt="Empat Pilar" title="Empat Pilar" itemprop="image"></a></div></div>					</div>
+				</div>
+					</header><!-- #masthead -->
+		<div class="top-header pos-stickymenu">
+							<div class="gmr-menuwrap clearfix">
+								<div class="container">
+															<div class="close-topnavmenu-wrap"><a id="close-topnavmenu-button" rel="nofollow" href="#"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M16 2C8.2 2 2 8.2 2 16s6.2 14 14 14s14-6.2 14-14S23.8 2 16 2zm0 26C9.4 28 4 22.6 4 16S9.4 4 16 4s12 5.4 12 12s-5.4 12-12 12z" fill="currentColor"></path><path d="M21.4 23L16 17.6L10.6 23L9 21.4l5.4-5.4L9 10.6L10.6 9l5.4 5.4L21.4 9l1.6 1.6l-5.4 5.4l5.4 5.4z" fill="currentColor"></path></svg></a></div>
+						<a id="gmr-responsive-menu" href="#menus" rel="nofollow">
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" fill="currentColor"></path></svg>MENU						</a>
+						<nav id="site-navigation" class="gmr-mainmenu" role="navigation" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
+							<ul id="primary-menu" class="menu"><li id="menu-item-2933" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-2933"><a href="http://www.empatpilar.com/" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-947" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-947"><a href="https://www.empatpilar.com/aplikasi/" itemprop="url"><span itemprop="name">Aplikasi</span></a></li>
+<li id="menu-item-5154" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5154"><a href="https://www.empatpilar.com/elektronik/" itemprop="url"><span itemprop="name">Elektronik</span></a></li>
+<li id="menu-item-3054" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3054"><a href="https://www.empatpilar.com/pengetahuan/" itemprop="url"><span itemprop="name">Pengetahuan</span></a></li>
+<li id="menu-item-5155" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5155"><a href="https://www.empatpilar.com/teknologi/" itemprop="url"><span itemprop="name">Teknologi</span></a></li>
+<li class="menu-item menu-item-type-search-btn gmr-search pull-right"><button class="search-button topnav-button" id="search-menu-button" title="Search"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></g></svg></button><div class="search-dropdown search" id="search-dropdown-container"><form method="get" class="gmr-searchform searchform" action="https://www.empatpilar.com/"><input type="text" name="s" id="s" placeholder="Search"></form></div></li></ul>						</nav><!-- #site-navigation -->
+									</div>
+			</div>
+		</div><!-- .top-header -->
+		
+			<div id="content" class="gmr-content">
+			
+			<div class="container"><div class="idblog-topbanner-aftermenu"><script type="rocketlazyloadscript" async="" data-rocket-src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8789491970357046" crossorigin="anonymous"></script>
+<!-- Header Empatpilar -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8789491970357046" data-ad-slot="9980694851" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script src="data:text/javascript;base64,CiAgICAgKGFkc2J5Z29vZ2xlID0gd2luZG93LmFkc2J5Z29vZ2xlIHx8IFtdKS5wdXNoKHt9KTsK" data-rocket-status="executed">
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div>			<div class="container">
+				<div class="row">
+								<div class="col-md-12">
+				<div class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList">
+																										<span class="first-cl" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+									<a itemscope="" itemtype="https://schema.org/WebPage" itemprop="item" itemid="https://www.empatpilar.com/" href="https://www.empatpilar.com/"><span itemprop="name">Homepage</span></a>
+									<span itemprop="position" content="1"></span>
+								</span>
+														<span class="separator">/</span>
+																																<span class="0-cl" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+									<a itemscope="" itemtype="https://schema.org/WebPage" itemprop="item" itemid="https://www.empatpilar.com/internet/" href="https://www.empatpilar.com/internet/"><span itemprop="name">Internet</span></a>
+									<span itemprop="position" content="2"></span>
+								</span>
+														<span class="separator">/</span>
+																								<span class="last-cl" itemscope="" itemtype="https://schema.org/ListItem">
+							<span itemprop="name">Perbedaan Antara RTP dan RTCP : Pahami dengan Baik</span>
+							<span itemprop="position" content="3"></span>
+							</span>
+															</div>
+			</div>
+				
+<div id="primary" class="content-area col-md-8">
+	<main id="main" class="site-main" role="main">
+
+	
+<article id="post-8645" class="post-8645 post type-post status-publish format-standard has-post-thumbnail hentry category-internet tag-rtp-dan-rtcp" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+
+	<div class="gmr-box-content gmr-single">
+				<figure class="wp-caption alignnone">
+				<img width="854" height="502" src="https://www.empatpilar.com/wp-content/uploads/2023/05/Screenshot_9-10-jpg.webp" class="attachment-full size-full wp-post-image" alt="Perbedaan Antara RTP dan RTCP" decoding="async" fetchpriority="high" srcset="https://www.empatpilar.com/wp-content/uploads/2023/05/Screenshot_9-10-jpg.webp 854w, https://www.empatpilar.com/wp-content/uploads/2023/05/Screenshot_9-10-300x176.webp 300w, https://www.empatpilar.com/wp-content/uploads/2023/05/Screenshot_9-10-150x88.webp 150w, https://www.empatpilar.com/wp-content/uploads/2023/05/Screenshot_9-10-768x451.webp 768w" sizes="(max-width: 854px) 100vw, 854px" title="Perbedaan Antara RTP dan RTCP">							</figure>
+			
+		<header class="entry-header">
+			<h1 class="entry-title" itemprop="headline">Perbedaan Antara RTP dan RTCP : Pahami dengan Baik</h1>			<span class="byline"> By <span class="entry-author vcard" itemprop="author" itemscope="itemscope" itemtype="https://schema.org/person"><a class="url fn n" href="https://www.empatpilar.com/author/administrator/" title="Permalink to: administrator" itemprop="url"><span itemprop="name">administrator</span></a></span></span><span class="posted-on">Posted on <time class="entry-date published updated" itemprop="dateModified" datetime="2026-02-06T15:22:49+07:00">February 6, 2026</time></span>		</header><!-- .entry-header -->
+
+		<div class="entry-content entry-content-single" itemprop="text">
+			<div class="idblog-banner-beforecontent idblog-center-ads"><script type="rocketlazyloadscript" async="" data-rocket-src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8789491970357046" crossorigin="anonymous"></script>
+<!-- B.Judul Empatpilar -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8789491970357046" data-ad-slot="2855215000" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script src="data:text/javascript;base64,CiAgICAgKGFkc2J5Z29vZ2xlID0gd2luZG93LmFkc2J5Z29vZ2xlIHx8IFtdKS5wdXNoKHt9KTsK" data-rocket-status="executed">
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><div class="lwptoc lwptoc-autoWidth lwptoc-baseItems lwptoc-light lwptoc-notInherit" data-smooth-scroll="1" data-smooth-scroll-offset="24"><div class="lwptoc_i">    <div class="lwptoc_header">
+        <b class="lwptoc_title">Baca Cepat</b>                    <span class="lwptoc_toggle">
+                <a href="#" class="lwptoc_toggle_label" data-label="Tutup">Buka</a>            </span>
+            </div>
+<div class="lwptoc_items" style="display:none;">
+    <div class="lwptoc_itemWrap"><div class="lwptoc_item">    <a href="#Pengertian_RTP_Real-Time_Transport_Protocol">
+                <span class="lwptoc_item_label">Pengertian RTP (Real-Time Transport Protocol)</span>
+    </a>
+    <div class="lwptoc_itemWrap"><div class="lwptoc_item">    <a href="#Format_RTP_Real-Time_Transport_Protocol">
+                <span class="lwptoc_item_label">Format RTP (Real-Time Transport Protocol)</span>
+    </a>
+    </div></div></div><div class="lwptoc_item">    <a href="#Pengertian_RTCP_Real-time_Transport_Control_Protocol">
+                <span class="lwptoc_item_label">Pengertian RTCP (Real-time Transport Control Protocol)</span>
+    </a>
+    <div class="lwptoc_itemWrap"><div class="lwptoc_item">    <a href="#Jenis_Paket_RTCP">
+                <span class="lwptoc_item_label">Jenis Paket RTCP</span>
+    </a>
+    </div></div></div><div class="lwptoc_item">    <a href="#Perbandingan_head-to-head_antara_RTP_dan_RTCP">
+                <span class="lwptoc_item_label">Perbandingan head-to-head antara RTP dan RTCP</span>
+    </a>
+    </div><div class="lwptoc_item">    <a href="#Perbedaan_Antara_RTP_dan_RTCP">
+                <span class="lwptoc_item_label">Perbedaan Antara RTP dan RTCP</span>
+    </a>
+    </div><div class="lwptoc_item">    <a href="#Kesimpulan">
+                <span class="lwptoc_item_label">Kesimpulan</span>
+    </a>
+    <div class="lwptoc_itemWrap"><div class="lwptoc_item">    <a href="#Share_this">
+                <span class="lwptoc_item_label">Share this:</span>
+    </a>
+    </div><div class="lwptoc_item">    <a href="#Related_posts">
+                <span class="lwptoc_item_label">Related posts:</span>
+    </a>
+    </div></div></div></div></div>
+</div></div><p><strong>Empat Pilar –</strong> <a href="https://www.empatpilar.com/">Perbedaan Antara RTP dan RTCP : Pahami dengan Baik</a>. Artikel ini menjelaskan perbedaan antara RTP dan RTCP, dua protokol yang digunakan dalam komunikasi multimedia. Baca untuk memahami perbedaan dan kegunaan masing-masing.
+</p><p>Teknologi komunikasi multimedia terus berkembang pesat seiring dengan kemajuan teknologi informasi dan komunikasi.</p><div class="idblog-banner-insidecontent idblog-center-ads"><script type="rocketlazyloadscript" async="" data-rocket-src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8789491970357046" crossorigin="anonymous"></script>
+<!-- In Artikel EP -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8789491970357046" data-ad-slot="4257488055" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script src="data:text/javascript;base64,CiAgICAgKGFkc2J5Z29vZ2xlID0gd2luZG93LmFkc2J5Z29vZ2xlIHx8IFtdKS5wdXNoKHt9KTsK" data-rocket-status="executed">
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p>Pada era digital ini, pengetahuan tentang protokol yang digunakan dalam komunikasi multimedia menjadi semakin penting. Salah satu topik yang sering menimbulkan kebingungan adalah Perbedaan Antara RTP dan RTCP.
+</p><p>Dalam artikel ini, kita akan menjelajahi perbedaan antara RTP dan RTCP, serta membahas bagaimana mereka bekerja bersama untuk mendukung komunikasi multimedia.
+</p><h2><span id="Pengertian_RTP_Real-Time_Transport_Protocol">Pengertian RTP (Real-Time Transport Protocol)</span></h2>
+<p>RTP (Real-Time Transport Protocol) beroperasi pada lapisan presentasi dan sesi model jaringan OSI.
+</p><p>Protokol ini umumnya digunakan untuk aplikasi real-time seperti radio internet, video-on-demand, musik-on-demand, dan konferensi video di mana VOIP digunakan. RTP menggunakan protokol UDP daripada TCP sehingga tidak menjamin pengiriman data yang tepat waktu.
+</p><p>Secara umum, protokol RTP bekerja dengan mengirimkan aplikasi multimedia seperti aliran audio, teks, dan video ke dalam perpustakaan RTP yang tersedia di ruang pengguna bersama dengan aplikasi lain.
+</p><p>Perpustakaan kemudian membuat salinan aliran dengan mengkodekannya menjadi paket RTP, yang kemudian dikemas dalam soket. Setelah itu, paket UDP dibuat di sisi sistem operasi soket untuk menyertakan paket RTP.
+</p><p>Paket UDP kemudian dikirimkan ke alamat IP dan ditransmisikan melalui tautan seperti ethernet.
+</p><p>Seluruh proses ini terjadi di ujung pengirim, sementara proses yang sama terjadi di ujung penerima. Inilah cara aplikasi multimedia pada akhirnya menerima data multimedia dari perpustakaan RTP.
+</p><h4><span id="Format_RTP_Real-Time_Transport_Protocol">Format RTP (Real-Time Transport Protocol)</span></h4>
+<p>Dalam aliran RTP, setiap paket yang dikirim diberi nomor yang lebih tinggi daripada nomor paket sebelumnya.
+</p><p>Penomoran ini membantu mengidentifikasi paket yang hilang. Meskipun paket hilang, aplikasi tujuan masih dapat mengambil tindakan yang tepat.
+</p><p>Namun, ketika paket yang hilang berisi data video, tindakan yang paling mungkin adalah menghindari bingkai video.
+</p><div style="clear:both; margin-top:0em; margin-bottom:1em;"><a href="https://www.empatpilar.com/pengertian-dynamic-dns/" target="_self" rel="dofollow" class="ua7e550ce3316c2edfc1ed787ab66e46f"><!-- INLINE RELATED POSTS 1/3 //--><style> .ua7e550ce3316c2edfc1ed787ab66e46f { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:#FFFFFF; border:0!important; border-left:4px solid #FFFFFF!important; text-decoration:none; } .ua7e550ce3316c2edfc1ed787ab66e46f:active, .ua7e550ce3316c2edfc1ed787ab66e46f:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .ua7e550ce3316c2edfc1ed787ab66e46f { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .ua7e550ce3316c2edfc1ed787ab66e46f .ctaText { font-weight:bold; color:#141414; text-decoration:none; font-size: 16px; } .ua7e550ce3316c2edfc1ed787ab66e46f .postTitle { color:#2980B9; text-decoration: underline!important; font-size: 16px; } .ua7e550ce3316c2edfc1ed787ab66e46f:hover .postTitle { text-decoration: underline!important; } </style><div style="padding-left:1em; padding-right:1em;"><span class="ctaText">Baca Juga :</span>&nbsp; <span class="postTitle">Pengertian Dynamic DNS : Cara Membuat dan Menggunakannya</span></div></a></div><p></p><p>Jika paket yang hilang berisi data audio, maka data yang hilang dapat diperkirakan. Meskipun demikian, transmisi ulang tidak praktis karena paket yang ditransmisikan ulang akan datang terlambat dan tidak berguna.
+</p><p>Oleh karena itu, RTP tidak menyediakan sarana untuk meminta pengiriman ulang dan pesan pengakuan.
+</p><p>Payload RTP dapat terdiri dari beberapa sampel dan dapat dikodekan dengan cara apa pun yang dibutuhkan oleh aplikasi.
+</p><p>Aplikasi real-time juga memerlukan timestamping, di mana setiap paket diberikan timestamp pada sampel pertama.
+</p><p>Timestamp membantu dalam meniadakan efek dari variasi penundaan jaringan dan memungkinkan sinkronisasi beberapa aliran satu sama lain.
+</p><h2><span id="Pengertian_RTCP_Real-time_Transport_Control_Protocol">Pengertian RTCP (Real-time Transport Control Protocol)</span></h2>
+<p>RTCP (Real-time Transport Control Protocol) adalah protokol yang bekerja bersama dengan protokol RTP (juga dikenal sebagai protokol saudara) dan didefinisikan bersama-sama dengan RTP.
+</p><p>RTCP adalah bagian integral dari protokol RTP yang menyediakan fungsionalitas kontrol yang diperlukan untuk RTP seperti umpan balik, sinkronisasi, dan antarmuka pengguna.
+</p><p>RTCP memungkinkan pengirim dan penerima untuk saling memberikan laporan yang berisi informasi tambahan tentang data yang ditransfer dan kinerja jaringan.
+</p><p>Pesan RTCP dienkapsulasi dalam paket UDP untuk transmisi dan dikirim dengan nomor protokol yang lebih besar dari nomor port aliran RTP yang terkait.
+</p><p>Dengan adanya umpan balik pada RTCP, proses encoding dapat ditingkatkan untuk meningkatkan kecepatan data saat jaringan beroperasi dengan baik, dan untuk mengurangi kecepatan data saat terjadi gangguan pada jaringan.
+</p><p>Bidang Payload pada RTCP memberikan informasi tentang algoritma pengkodean yang digunakan ke tujuan.
+</p><h4><span id="Jenis_Paket_RTCP">Jenis Paket RTCP</span></h4>
+<p>Sebelum memamahmi lebih lanjut Perbedaan Antara RTP dan RTCP, ada lima jenis paket protokol RTCP utama, yaitu RR, SR, SDES, BYE, dan APP, dengan penjelasan sebagai berikut:
+</p><p><strong>1. SR (Sender Report)</strong>
+</p><p>Pada interval yang telah ditentukan sebelumnya, pengirim aktif dalam konferensi mengirimkan laporan pengirim untuk melaporkan statistik pengiriman dan penerimaan untuk semua paket RTP yang dikirimkan selama periode waktu tersebut.
+</p><p>Laporan pengirim menyertakan stempel waktu absolut, yang menunjukkan berapa detik telah berlalu sejak tengah malam pada 1 Januari 1970.
+</p><p>Saat penerima menerima paket RTP, informasi tentang stempel waktu absolut ini membantu proses sinkronisasi. Ini rumit dalam transmisi audio-video untuk menentukan stempel waktu relatif.
+</p><p><strong>2. RR (Receiver Report)</strong>
+</p><p>Penerima tidak aktif membuat laporan penerima, yang berisi komentar kualitas penerimaan pengiriman data.
+</p><div style="clear:both; margin-top:0em; margin-bottom:1em;"><a href="https://www.empatpilar.com/pengertian-trademark-dan-contohnya/" target="_self" rel="dofollow" class="ud5d3e8a1eecbcbc3e3c748f91118be3e"><!-- INLINE RELATED POSTS 2/3 //--><style> .ud5d3e8a1eecbcbc3e3c748f91118be3e { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:#FFFFFF; border:0!important; border-left:4px solid #FFFFFF!important; text-decoration:none; } .ud5d3e8a1eecbcbc3e3c748f91118be3e:active, .ud5d3e8a1eecbcbc3e3c748f91118be3e:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .ud5d3e8a1eecbcbc3e3c748f91118be3e { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .ud5d3e8a1eecbcbc3e3c748f91118be3e .ctaText { font-weight:bold; color:#141414; text-decoration:none; font-size: 16px; } .ud5d3e8a1eecbcbc3e3c748f91118be3e .postTitle { color:#2980B9; text-decoration: underline!important; font-size: 16px; } .ud5d3e8a1eecbcbc3e3c748f91118be3e:hover .postTitle { text-decoration: underline!important; } </style><div style="padding-left:1em; padding-right:1em;"><span class="ctaText">Baca Juga :</span>&nbsp; <span class="postTitle">Pengertian Trademark dan Contohnya Yang Perlu Kalian Ketahui</span></div></a></div><p></p><p>Laporan ini menyimpan informasi seperti jumlah paket terbesar yang diterima, jitter antar-kedatangan, jumlah paket yang dijatuhkan, dan penundaan bolak-balik antara pengirim dan penerima menggunakan stempel waktu.
+</p><p><strong>3. SDES (Source Description Item)</strong>
+</p><p>Sumber mengirimkan pesan deskripsi sumber pada periode yang telah ditentukan untuk memberikan informasi lebih lanjut tentang dirinya.
+</p><p>Pesan ini mencakup informasi seperti identitas sumber, alamat email, nomor telepon, dan pengontrol sumber.
+</p><p><strong>4. BYE (Goodbye Message)</strong>
+</p><p>Untuk menghentikan aliran, sumber mengirimkan pesan yang dikenal sebagai pesan “Goodbye”.
+</p><p>Pesan ini mengumumkan niat sumber untuk meninggalkan konferensi dan menginformasikan sumber lain secara langsung tentang tidak adanya sumber. Pesan ini dapat digunakan untuk menggabungkan beberapa file media.
+</p><p><strong>5. APP (Application Specific Message)</strong>
+</p><p>Paket ini hanya digunakan untuk tujuan eksperimental dan fitur serta fungsi baru yang muncul.
+</p><h2><span id="Perbandingan_head-to-head_antara_RTP_dan_RTCP">Perbandingan head-to-head antara RTP dan RTCP</span></h2>
+<p>Nah sebelum kalian mengenal Perbedaan Antara RTP dan RTCP, di sini kalian akan mempelajari terlebih dahulu perbandingan head-to-head antara RTP dan RTCP. Perbedaan utama antara RTP dan RTCP adalah sebagai berikut :
+
+</p><table id="tablepress-617" class="tablepress tablepress-id-617">
+<thead>
+<tr class="row-1">
+	<th class="column-1"><strong>Fitur</strong></th><th class="column-2"><strong>RTP</strong></th><th class="column-3"><strong>RTCP</strong></th>
+</tr>
+</thead>
+<tbody class="row-striping row-hover">
+<tr class="row-2">
+	<td class="column-1"><strong>Wujud sempurna</strong></td><td class="column-2">RTP adalah singkatan dari Real-Time Transport Protocol.</td><td class="column-3">RTCP adalah singkatan dari Real-Time Transport Control Protocol.</td>
+</tr>
+<tr class="row-3">
+	<td class="column-1"><strong>Dasar</strong></td><td class="column-2">Ini terutama digunakan untuk menyimpan aliran media.</td><td class="column-3">Ini terutama digunakan untuk memantau statistik transmisi dan QoS.</td>
+</tr>
+<tr class="row-4">
+	<td class="column-1"><strong>Fitur yang Disediakan</strong></td><td class="column-2">Ini menawarkan interoperabilitas.</td><td class="column-3">Ini mengatur kinerja pertukaran data dengan menghasilkan umpan balik.</td>
+</tr>
+<tr class="row-5">
+	<td class="column-1"><strong>Pelabuhan</strong></td><td class="column-2">Ini menggunakan nomor port genap.</td><td class="column-3">Ini menggunakan nomor port ganjil.</td>
+</tr>
+<tr class="row-6">
+	<td class="column-1"><strong>Paket Berisi</strong></td><td class="column-2">Ini berisi jenis muatan, nomor urut, stempel waktu, dll.</td><td class="column-3">Ini berisi laporan pengirim dan penerima.</td>
+</tr>
+<tr class="row-7">
+	<td class="column-1"><strong>Hubungan</strong></td><td class="column-2">Ini mendefinisikan struktur paket untuk data real-time.</td><td class="column-3">Ini beroperasi bersama dengan RTP.</td>
+</tr>
+<tr class="row-8">
+	<td class="column-1"><strong>Identifikasi Sumber</strong></td><td class="column-2">Ini menggunakan pengidentifikasi 32-bit.</td><td class="column-3">Ini menggunakan informasi tekstual.</td>
+</tr>
+</tbody>
+</table>
+
+<h2><span id="Perbedaan_Antara_RTP_dan_RTCP">Perbedaan Antara RTP dan RTCP</span></h2>
+<p><img decoding="async" class="alignnone wp-image-8650 size-full" src="https://www.empatpilar.com/wp-content/uploads/2023/05/Screenshot_1-35-jpg.webp" alt="" width="876" height="479" srcset="https://www.empatpilar.com/wp-content/uploads/2023/05/Screenshot_1-35-jpg.webp 876w, https://www.empatpilar.com/wp-content/uploads/2023/05/Screenshot_1-35-300x164.webp 300w, https://www.empatpilar.com/wp-content/uploads/2023/05/Screenshot_1-35-150x82.webp 150w, https://www.empatpilar.com/wp-content/uploads/2023/05/Screenshot_1-35-768x420.webp 768w" sizes="(max-width: 876px) 100vw, 876px">
+</p><p>RTP dan RTCP adalah dua protokol yang berbeda yang digunakan untuk mentransfer data aplikasi waktu nyata. Ada beberapa Perbedaan Antara RTP dan RTCP, simak pembahasan lengkapnya di bawah ini :
+</p><ol>
+<li>RTP (Real-time Transport Protocol) adalah standar untuk mentransfer data aplikasi waktu nyata. Protokol ini digunakan untuk mengirim dan menerima audio, video, atau data real-time lainnya. Di sisi lain, RTCP (Real-time Transport Control Protocol) digunakan bersama dengan RTP untuk melacak statistik transmisi dan Kualitas layanan untuk transmisi yang dijamin.</li>
+<li>RTP menggunakan nomor port genap sedangkan RTCP menggunakan nomor port ganjil. Hal ini memungkinkan RTP dan RTCP untuk beroperasi secara terpisah dalam protokol yang sama.</li>
+<li>RTP membantu dalam mencapai lingkungan yang dapat dioperasikan dengan menangani transmisi data real-time. Sebaliknya, RTCP mengontrol kinerja pertukaran data dengan menghasilkan umpan balik. RTCP juga dapat digunakan untuk melakukan penyesuaian kualitas transmisi dan menyesuaikan bit rate, mengatur delay, dan melakukan pengukuran kestabilan jaringan.</li>
+<li>RTCP umumnya berisi laporan pengirim dan penerima yang digunakan untuk memonitor kinerja transmisi, termasuk jumlah paket yang hilang, jumlah paket yang diterima, dan kecepatan bit. Sedangkan RTP menyimpan bidang-bidang seperti jenis muatan, cap waktu, nomor urut, dan sebagainya.</li>
+<li>Identifikasi sumber dalam RTP dilakukan melalui pengidentifikasi acak 32-bit. Sebaliknya, dalam RTCP pengidentifikasi unik global digunakan yang juga dapat dipahami oleh manusia. Ini memudahkan administrator jaringan untuk melacak dan mengelola koneksi dan pengguna di jaringan.</li>
+</ol>
+<div style="clear:both; margin-top:0em; margin-bottom:1em;"><a href="https://www.empatpilar.com/apa-itu-jaringan-nirkabel/" target="_self" rel="dofollow" class="u91341ad7a848a6b0490018a67ff963d3"><!-- INLINE RELATED POSTS 3/3 //--><style> .u91341ad7a848a6b0490018a67ff963d3 { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:#FFFFFF; border:0!important; border-left:4px solid #FFFFFF!important; text-decoration:none; } .u91341ad7a848a6b0490018a67ff963d3:active, .u91341ad7a848a6b0490018a67ff963d3:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .u91341ad7a848a6b0490018a67ff963d3 { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .u91341ad7a848a6b0490018a67ff963d3 .ctaText { font-weight:bold; color:#141414; text-decoration:none; font-size: 16px; } .u91341ad7a848a6b0490018a67ff963d3 .postTitle { color:#2980B9; text-decoration: underline!important; font-size: 16px; } .u91341ad7a848a6b0490018a67ff963d3:hover .postTitle { text-decoration: underline!important; } </style><div style="padding-left:1em; padding-right:1em;"><span class="ctaText">Baca Juga :</span>&nbsp; <span class="postTitle">√ Apa Itu Jaringan Nirkabel? Pengertian, Jenis dan Fungsinya</span></div></a></div><h2><span id="Kesimpulan">Kesimpulan</span></h2>
+<p>Dalam penutupan ini, <strong><a href="https://www.empatpilar.com/">empatpilar.com</a></strong> telah membahas mengenai Perbedaan Antara RTP dan RTCP. Keduanya merupakan protokol yang penting dalam dunia teknologi komunikasi, terutama dalam pengiriman data multimedia secara real-time melalui jaringan IP.
+</p><p>RTP bertanggung jawab untuk mengatur pengiriman data multimedia secara efisien dan real-time, sedangkan RTCP berperan sebagai pengawas dan pengendali untuk menjaga kualitas komunikasi serta memberikan umpan balik terkait kinerja jaringan.
+</p><p>Keduanya saling melengkapi dan mendukung satu sama lain dalam menciptakan pengalaman komunikasi multimedia yang berkualitas dan lancar.
+</p><p>Dengan memahami perbedaan antara RTP dan RTCP, diharapkan kita dapat lebih mengapresiasi perkembangan teknologi komunikasi yang semakin canggih dan kompleks.
+</p><p>Selain itu, pemahaman ini juga dapat membantu kita dalam menghadapi tantangan serta mengoptimalkan kinerja sistem yang menggunakan protokol ini.
+</p><p>Semoga artikel ini memberikan wawasan yang bermanfaat mengenai perbedaan antara RTP dan RTCP serta pentingnya memahaminya dengan baik.
+</p><p>Teruslah menggali informasi dan belajar untuk memperkaya pengetahuan kita dalam dunia teknologi informasi dan komunikasi. Selamat belajar!
+</p><div class="idblog-social-share"><h3><span id="Share_this">Share this:</span></h3><ul class="idblog-socialicon-share"><li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.empatpilar.com%2Fperbedaan-antara-rtp-dan-rtcp%2F" class="gmr-share-facebook" rel="nofollow" title="Share this"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="0.49em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 486.037 1000"><path d="M124.074 1000V530.771H0V361.826h124.074V217.525C124.074 104.132 197.365 0 366.243 0C434.619 0 485.18 6.555 485.18 6.555l-3.984 157.766s-51.564-.502-107.833-.502c-60.9 0-70.657 28.065-70.657 74.646v123.361h183.331l-7.977 168.945H302.706V1000H124.074" fill="currentColor"></path></svg></a></li><li class="twitter"><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.empatpilar.com%2Fperbedaan-antara-rtp-dan-rtcp%2F&amp;text=Perbedaan%20Antara%20RTP%20dan%20RTCP%20%3A%20Pahami%20dengan%20Baik" class="gmr-share-twitter" rel="nofollow" title="Tweet this"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584l-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"></path></svg></a></li><li class="pinterest"><a href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.empatpilar.com%2Fperbedaan-antara-rtp-dan-rtcp%2F&amp;media=https://www.empatpilar.com/wp-content/uploads/2023/05/Screenshot_9-10-jpg.webp&amp;description=Perbedaan%20Antara%20RTP%20dan%20RTCP%20%3A%20Pahami%20dengan%20Baik" class="gmr-share-pinit" rel="nofollow" title="Pin this"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M16.75.406C10.337.406 4 4.681 4 11.6c0 4.4 2.475 6.9 3.975 6.9c.619 0 .975-1.725.975-2.212c0-.581-1.481-1.819-1.481-4.238c0-5.025 3.825-8.588 8.775-8.588c4.256 0 7.406 2.419 7.406 6.863c0 3.319-1.331 9.544-5.644 9.544c-1.556 0-2.888-1.125-2.888-2.737c0-2.363 1.65-4.65 1.65-7.088c0-4.137-5.869-3.387-5.869 1.613c0 1.05.131 2.212.6 3.169c-.863 3.713-2.625 9.244-2.625 13.069c0 1.181.169 2.344.281 3.525c.212.238.106.213.431.094c3.15-4.313 3.038-5.156 4.463-10.8c.769 1.463 2.756 2.25 4.331 2.25c6.637 0 9.619-6.469 9.619-12.3c0-6.206-5.363-10.256-11.25-10.256z" fill="currentColor"></path></svg></a></li><li class="telegram"><a href="https://t.me/share/url?url=https%3A%2F%2Fwww.empatpilar.com%2Fperbedaan-antara-rtp-dan-rtcp%2F&amp;text=Perbedaan%20Antara%20RTP%20dan%20RTCP%20%3A%20Pahami%20dengan%20Baik" target="_blank" rel="nofollow" title="Telegram Share"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 48 48"><path d="M41.42 7.309s3.885-1.515 3.56 2.164c-.107 1.515-1.078 6.818-1.834 12.553l-2.59 16.99s-.216 2.489-2.159 2.922c-1.942.432-4.856-1.515-5.396-1.948c-.432-.325-8.094-5.195-10.792-7.575c-.756-.65-1.62-1.948.108-3.463L33.648 18.13c1.295-1.298 2.59-4.328-2.806-.649l-15.11 10.28s-1.727 1.083-4.964.109l-7.016-2.165s-2.59-1.623 1.835-3.246c10.793-5.086 24.068-10.28 35.831-15.15z" fill="currentColor"></path></svg></a></li><li class="whatsapp"><a href="https://api.whatsapp.com/send?text=Perbedaan%20Antara%20RTP%20dan%20RTCP%20%3A%20Pahami%20dengan%20Baik%20https%3A%2F%2Fwww.empatpilar.com%2Fperbedaan-antara-rtp-dan-rtcp%2F" class="gmr-share-whatsapp" rel="nofollow" title="Whatsapp"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M15.271 13.21a7.014 7.014 0 0 1 1.543.7l-.031-.018c.529.235.986.51 1.403.833l-.015-.011c.02.061.032.13.032.203l-.001.032v-.001c-.015.429-.11.832-.271 1.199l.008-.021c-.231.463-.616.82-1.087 1.01l-.014.005a3.624 3.624 0 0 1-1.576.411h-.006a8.342 8.342 0 0 1-2.988-.982l.043.022a8.9 8.9 0 0 1-2.636-1.829l-.001-.001a20.473 20.473 0 0 1-2.248-2.794l-.047-.074a5.38 5.38 0 0 1-1.1-2.995l-.001-.013v-.124a3.422 3.422 0 0 1 1.144-2.447l.003-.003a1.17 1.17 0 0 1 .805-.341h.001c.101.003.198.011.292.025l-.013-.002c.087.013.188.021.292.023h.003a.642.642 0 0 1 .414.102l-.002-.001c.107.118.189.261.238.418l.002.008q.124.31.512 1.364c.135.314.267.701.373 1.099l.014.063a1.573 1.573 0 0 1-.533.889l-.003.002q-.535.566-.535.72a.436.436 0 0 0 .081.234l-.001-.001a7.03 7.03 0 0 0 1.576 2.119l.005.005a9.89 9.89 0 0 0 2.282 1.54l.059.026a.681.681 0 0 0 .339.109h.002q.233 0 .838-.752t.804-.752zm-3.147 8.216h.022a9.438 9.438 0 0 0 3.814-.799l-.061.024c2.356-.994 4.193-2.831 5.163-5.124l.024-.063c.49-1.113.775-2.411.775-3.775s-.285-2.662-.799-3.837l.024.062c-.994-2.356-2.831-4.193-5.124-5.163l-.063-.024c-1.113-.49-2.411-.775-3.775-.775s-2.662.285-3.837.799l.062-.024c-2.356.994-4.193 2.831-5.163 5.124l-.024.063a9.483 9.483 0 0 0-.775 3.787a9.6 9.6 0 0 0 1.879 5.72l-.019-.026l-1.225 3.613l3.752-1.194a9.45 9.45 0 0 0 5.305 1.612h.047zm0-21.426h.033c1.628 0 3.176.342 4.575.959L16.659.93c2.825 1.197 5.028 3.4 6.196 6.149l.029.076c.588 1.337.93 2.896.93 4.535s-.342 3.198-.959 4.609l.029-.074c-1.197 2.825-3.4 5.028-6.149 6.196l-.076.029c-1.327.588-2.875.93-4.503.93h-.034h.002h-.053c-2.059 0-3.992-.541-5.664-1.488l.057.03L-.001 24l2.109-6.279a11.505 11.505 0 0 1-1.674-6.01c0-1.646.342-3.212.959-4.631l-.029.075C2.561 4.33 4.764 2.127 7.513.959L7.589.93A11.178 11.178 0 0 1 12.092 0h.033h-.002z" fill="currentColor"></path></svg></a></li></ul></div><div class="idblog-related-post idblog-core"><h3 class="related-title"><span id="Related_posts">Related posts:</span></h3><ul><li><a href="https://www.empatpilar.com/kelebihan-dan-kekurangan-teknologi-digital/" itemprop="url" title="Permalink to: Kenali, Kelebihan dan Kekurangan Teknologi Digital Secara Lengkap" rel="bookmark"><img width="200" height="135" src="https://www.empatpilar.com/wp-content/uploads/2023/06/Screenshot_5-48-200x135.webp" class="attachment-medium size-medium wp-post-image" alt="Kelebihan dan Kekurangan Teknologi Digital" itemprop="image" title="Kelebihan dan Kekurangan Teknologi Digital"></a><p><a href="https://www.empatpilar.com/kelebihan-dan-kekurangan-teknologi-digital/" itemprop="url" title="Permalink to: Kenali, Kelebihan dan Kekurangan Teknologi Digital Secara Lengkap" rel="bookmark">Kenali, Kelebihan dan Kekurangan Teknologi Digital Secara Lengkap</a></p></li><li><a href="https://www.empatpilar.com/cara-mengatasi-gangguan-iconnet/" itemprop="url" title="Permalink to: ICONNET Mengalami Gangguan? Berikut Cara Mengatasi Gangguan Iconnet" rel="bookmark"><img width="200" height="135" src="https://www.empatpilar.com/wp-content/uploads/2023/06/Screenshot_5-19-200x135.webp" class="attachment-medium size-medium wp-post-image" alt="Cara Mengatasi Gangguan Iconnet" itemprop="image" title="Cara Mengatasi Gangguan Iconnet"></a><p><a href="https://www.empatpilar.com/cara-mengatasi-gangguan-iconnet/" itemprop="url" title="Permalink to: ICONNET Mengalami Gangguan? Berikut Cara Mengatasi Gangguan Iconnet" rel="bookmark">ICONNET Mengalami Gangguan? Berikut Cara Mengatasi Gangguan Iconnet</a></p></li><li><a href="https://www.empatpilar.com/cara-memperkuat-sinyal-xl-4g-lte/" itemprop="url" title="Permalink to: Cara Memperkuat Sinyal XL 4G LTE dengan Ampuh : Panduan Lengkap" rel="bookmark"><img width="200" height="135" src="https://www.empatpilar.com/wp-content/uploads/2023/06/Screenshot_5-17-200x135.webp" class="attachment-medium size-medium wp-post-image" alt="Cara Memperkuat Sinyal XL 4G LTE" itemprop="image" title="Cara Memperkuat Sinyal XL 4G LTE"></a><p><a href="https://www.empatpilar.com/cara-memperkuat-sinyal-xl-4g-lte/" itemprop="url" title="Permalink to: Cara Memperkuat Sinyal XL 4G LTE dengan Ampuh : Panduan Lengkap" rel="bookmark">Cara Memperkuat Sinyal XL 4G LTE dengan Ampuh : Panduan Lengkap</a></p></li></ul></div>		</div><!-- .entry-content -->
+
+		<footer class="entry-footer">
+			<span class="cat-links">Posted in <a href="https://www.empatpilar.com/internet/" rel="category tag">Internet</a></span><span class="tags-links">Tagged <a href="https://www.empatpilar.com/tag/rtp-dan-rtcp/" rel="tag">RTP dan RTCP</a></span>			
+	<nav class="navigation post-navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="https://www.empatpilar.com/perbedaan-anoda-dan-katoda/" rel="prev"><span>Previous post</span> Perbedaan Anoda dan Katoda Secara Lengkap : Pahami dengan Baik</a></div><div class="nav-next"><a href="https://www.empatpilar.com/bintang-laut-berkembang-biak-dengan-cara/" rel="next"><span>Next post</span> Bintang Laut Berkembang Biak Dengan Cara ? Simak Ulasannya</a></div></div>
+	</nav>		</footer><!-- .entry-footer -->
+
+	</div><!-- .gmr-box-content -->
+	</article><!-- #post-## -->
+
+<div class="gmr-box-content">
+
+	<div id="comments" class="comments-area">
+
+	
+			<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/perbedaan-antara-rtp-dan-rtcp/#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://www.empatpilar.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message">Required fields are marked <span class="required">*</span></span></p><p class="comment-form-comment"><label for="comment" class="gmr-hidden">Comment</label><textarea id="comment" name="comment" cols="45" rows="4" placeholder="Comment" aria-required="true"></textarea></p><p class="comment-form-author"><input id="author" name="author" type="text" value="" placeholder="Name*" size="30" aria-required="true"></p>
+<p class="comment-form-email"><input id="email" name="email" type="text" value="" placeholder="Email*" size="30" aria-required="true"></p>
+<p class="comment-form-url"><input id="url" name="url" type="text" value="" placeholder="Website" size="30"></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="8645" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p></form>	</div><!-- #respond -->
+	
+	</div><!-- #comments -->
+
+</div><!-- .gmr-box-content -->
+
+	</main><!-- #main -->
+</div><!-- #primary -->
+
+
+<aside id="secondary" class="widget-area col-md-4 pos-sticky" role="complementary">
+	<div id="idblog-rp-3" class="widget idblog-form"><h3 class="widget-title">Postingan Terbaru</h3>
+			<div class="idblog-rp-widget">
+				<div class="idblog-rp">
+					<ul>
+						<li id="listpost">							<div class="idblog-rp-link clearfix">
+								<a href="https://www.empatpilar.com/cara-kerja-switch-otomatis-pompa/" style="color:#3f3f3f" itemprop="url" title="Permalink to: Cara Kerja Switch Otomatis Pompa Air : Pengertian, Manfaat dan Cara Memasang">
+									
+									<span class="idblog-rp-title">
+										Cara Kerja Switch Otomatis Pompa Air : Pengertian,…									</span>
+								</a>
+															</div>
+							</li><li id="listpost">							<div class="idblog-rp-link clearfix">
+								<a href="https://www.empatpilar.com/apa-itu-tumbler/" style="color:#3f3f3f" itemprop="url" title="Permalink to: Apa Itu Tumbler : Pengertian, Manfaat dan Macam-Macamnya">
+									
+									<span class="idblog-rp-title">
+										Apa Itu Tumbler : Pengertian, Manfaat dan Macam-Ma…									</span>
+								</a>
+															</div>
+							</li><li id="listpost">							<div class="idblog-rp-link clearfix">
+								<a href="https://www.empatpilar.com/resiko-gadai-bpkb-motor/" style="color:#3f3f3f" itemprop="url" title="Permalink to: Apa Saja Resiko Gadai BPKB Motor? : Berikut Beberapa Diantaranya">
+									
+									<span class="idblog-rp-title">
+										Apa Saja Resiko Gadai BPKB Motor? : Berikut Bebera…									</span>
+								</a>
+															</div>
+							</li><li id="listpost">							<div class="idblog-rp-link clearfix">
+								<a href="https://www.empatpilar.com/cara-ngecas-kipas-angin-mini/" style="color:#3f3f3f" itemprop="url" title="Permalink to: Cara Ngecas Kipas Angin Mini : Panduan Mudah Pemula">
+									
+									<span class="idblog-rp-title">
+										Cara Ngecas Kipas Angin Mini : Panduan Mudah Pemul…									</span>
+								</a>
+															</div>
+							</li><li id="listpost">							<div class="idblog-rp-link clearfix">
+								<a href="https://www.empatpilar.com/kelebihan-dan-kekurangan-kipas-angin-portable/" style="color:#3f3f3f" itemprop="url" title="Permalink to: Review, Kelebihan dan Kekurangan Kipas Angin Portable">
+									
+									<span class="idblog-rp-title">
+										Review, Kelebihan dan Kekurangan Kipas Angin Porta…									</span>
+								</a>
+															</div>
+							</li><li id="listpost">							<div class="idblog-rp-link clearfix">
+								<a href="https://www.empatpilar.com/alat-ukur-hidrolik-adalah/" style="color:#3f3f3f" itemprop="url" title="Permalink to: Alat Ukur Hidrolik Adalah : Penjelasan Secara Lengkap">
+									
+									<span class="idblog-rp-title">
+										Alat Ukur Hidrolik Adalah : Penjelasan Secara Leng…									</span>
+								</a>
+															</div>
+							</li><li id="listpost">							<div class="idblog-rp-link clearfix">
+								<a href="https://www.empatpilar.com/contoh-listrik-dinamis/" style="color:#3f3f3f" itemprop="url" title="Permalink to: Kenali, Contoh Listrik Dinamis Dalam Kehidupan Sehari-hari : Lengkap">
+									
+									<span class="idblog-rp-title">
+										Kenali, Contoh Listrik Dinamis Dalam Kehidupan Seh…									</span>
+								</a>
+															</div>
+							</li><li id="listpost">							<div class="idblog-rp-link clearfix">
+								<a href="https://www.empatpilar.com/gong-dimainkan-dengan-cara/" style="color:#3f3f3f" itemprop="url" title="Permalink to: Gong Dimainkan dengan Cara? Berikut Langkah-Langkahnya">
+									
+									<span class="idblog-rp-title">
+										Gong Dimainkan dengan Cara? Berikut Langkah-Langka…									</span>
+								</a>
+															</div>
+							</li><li id="listpost">							<div class="idblog-rp-link clearfix">
+								<a href="https://www.empatpilar.com/pengertian-safety-device/" style="color:#3f3f3f" itemprop="url" title="Permalink to: √ Pengertian Safety Device : Fungsi, Tujuan dan Jenis Lengkap">
+									
+									<span class="idblog-rp-title">
+										√ Pengertian Safety Device : Fungsi, Tujuan dan Je…									</span>
+								</a>
+															</div>
+							</li><li id="listpost">							<div class="idblog-rp-link clearfix">
+								<a href="https://www.empatpilar.com/pengertian-kertas-kalkir/" style="color:#3f3f3f" itemprop="url" title="Permalink to: Pengertian Kertas Kalkir : Fungsi dan Jenis Secara Lengkap">
+									
+									<span class="idblog-rp-title">
+										Pengertian Kertas Kalkir : Fungsi dan Jenis Secara…									</span>
+								</a>
+															</div>
+							</li>					</ul>
+				</div>
+			</div>
+
+		</div></aside><!-- #secondary -->
+					</div><!-- .row -->
+			</div><!-- .container -->
+			<div id="stop-container"></div>
+			<div class="container"><div class="idblog-footerbanner"><script type="rocketlazyloadscript" async="" data-rocket-src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8789491970357046" crossorigin="anonymous"></script>
+<!-- Footer Empatpilar Ok -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8789491970357046" data-ad-slot="5831902485" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script src="data:text/javascript;base64,CiAgICAgKGFkc2J5Z29vZ2xlID0gd2luZG93LmFkc2J5Z29vZ2xlIHx8IFtdKS5wdXNoKHt9KTsK" data-rocket-status="executed">
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div>		</div><!-- .gmr-content -->
+	
+</div><!-- #site-container -->
+
+	<div id="footer-container">
+		<div class="gmr-bgstripes">
+			<span class="gmr-bgstripe gmr-color1"></span><span class="gmr-bgstripe gmr-color2"></span>
+			<span class="gmr-bgstripe gmr-color3"></span><span class="gmr-bgstripe gmr-color4"></span>
+			<span class="gmr-bgstripe gmr-color5"></span><span class="gmr-bgstripe gmr-color6"></span>
+			<span class="gmr-bgstripe gmr-color7"></span><span class="gmr-bgstripe gmr-color8"></span>
+			<span class="gmr-bgstripe gmr-color9"></span><span class="gmr-bgstripe gmr-color10"></span>
+			<span class="gmr-bgstripe gmr-color11"></span><span class="gmr-bgstripe gmr-color12"></span>
+			<span class="gmr-bgstripe gmr-color13"></span><span class="gmr-bgstripe gmr-color14"></span>
+			<span class="gmr-bgstripe gmr-color15"></span><span class="gmr-bgstripe gmr-color16"></span>
+			<span class="gmr-bgstripe gmr-color17"></span><span class="gmr-bgstripe gmr-color18"></span>
+			<span class="gmr-bgstripe gmr-color19"></span><span class="gmr-bgstripe gmr-color20"></span>
+		</div>
+
+		
+		<footer id="colophon" class="site-footer" role="contentinfo">
+			<div class="container">
+				<div class="site-info">
+				© 2023 <a href="http://www.empatpilar.com/"> empatpilar.com. </a> All rights reserved.				</div><!-- .site-info -->
+			</div><!-- .container -->
+		</footer><!-- #colophon -->
+
+	
+</div><!-- #footer-container -->
+<div class="gmr-ontop gmr-hide"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none"><path d="M12 22V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5 14l7-7l7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3 2h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g></svg></div>
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/superfast/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<!-- Histats.com  START  (aync)-->
+<script type="text/javascript" src="data:text/javascript;base64,dmFyIF9IYXN5bmM9IF9IYXN5bmN8fCBbXTsKX0hhc3luYy5wdXNoKFsnSGlzdGF0cy5zdGFydCcsICcxLDQ1NTg2OTMsNCwwLDAsMCwwMDAxMDAwMCddKTsKX0hhc3luYy5wdXNoKFsnSGlzdGF0cy5mYXNpJywgJzEnXSk7Cl9IYXN5bmMucHVzaChbJ0hpc3RhdHMudHJhY2tfaGl0cycsICcnXSk7CihmdW5jdGlvbigpIHsKdmFyIGhzID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnc2NyaXB0Jyk7IGhzLnR5cGUgPSAndGV4dC9qYXZhc2NyaXB0JzsgaHMuYXN5bmMgPSB0cnVlOwpocy5zcmMgPSAoJy8vczEwLmhpc3RhdHMuY29tL2pzMTVfYXMuanMnKTsKKGRvY3VtZW50LmdldEVsZW1lbnRzQnlUYWdOYW1lKCdoZWFkJylbMF0gfHwgZG9jdW1lbnQuZ2V0RWxlbWVudHNCeVRhZ05hbWUoJ2JvZHknKVswXSkuYXBwZW5kQ2hpbGQoaHMpOwp9KSgpOw==" data-rocket-status="executed">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4558693,4,0,0,0,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4558693&101" alt="hit counter script" border="0"></a></noscript>
+<!-- Histats.com  END  --><script type="text/javascript" data-minify="1" id="superfast-customscript-js" defer="" src="https://www.empatpilar.com/wp-content/cache/min/1/wp-content/themes/superfast/js/customscript.js?ver=1765816015"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.empatpilar.com/wp-includes/js/comment-reply.min.js?ver=6.9.4" id="comment-reply-js" async="async" data-wp-strategy="async" fetchpriority="low"></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.empatpilar.com/wp-content/cache/min/1/wp-content/plugins/advanced-ads/admin/assets/js/advertisement.js?ver=1765816015" id="advanced-ads-find-adblocker-js" defer=""></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.empatpilar.com/wp-content/plugins/luckywp-table-of-contents/front/assets/main.min.js?ver=2.1.14" id="lwptoc-main-js" defer=""></script>
+<!--noptimize--><script src="data:text/javascript;base64,IWZ1bmN0aW9uKCl7d2luZG93LmFkdmFuY2VkX2Fkc19yZWFkeV9xdWV1ZT13aW5kb3cuYWR2YW5jZWRfYWRzX3JlYWR5X3F1ZXVlfHxbXSxhZHZhbmNlZF9hZHNfcmVhZHlfcXVldWUucHVzaD13aW5kb3cuYWR2YW5jZWRfYWRzX3JlYWR5O2Zvcih2YXIgZD0wLGE9YWR2YW5jZWRfYWRzX3JlYWR5X3F1ZXVlLmxlbmd0aDtkPGE7ZCsrKWFkdmFuY2VkX2Fkc19yZWFkeShhZHZhbmNlZF9hZHNfcmVhZHlfcXVldWVbZF0pfSgpOw==" data-rocket-status="executed">!function(){window.advanced_ads_ready_queue=window.advanced_ads_ready_queue||[],advanced_ads_ready_queue.push=window.advanced_ads_ready;for(var d=0,a=advanced_ads_ready_queue.length;d<a;d++)advanced_ads_ready(advanced_ads_ready_queue[d])}();</script><!--/noptimize-->
+
+
+
+</body></html>

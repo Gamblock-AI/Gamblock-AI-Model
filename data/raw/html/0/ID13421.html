@@ -1,0 +1,1114 @@
+<html lang="en"><head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Open Graph -->
+        <meta property="og:title" content="Paris Saint-Germain on BeReal">
+        <meta property="og:description" content="Check out Paris Saint-Germain's BeReal profile!">
+        <meta property="og:type" content="profile">
+        <meta property="og:site_name" content="BeReal">
+        <meta property="og:url" content="https://bere.al/psg">
+        <meta property="og:image" content="https://bere.al/og-image?url=https%3A%2F%2Fcdn-us1.bereal.network%2FPhotos%2FXHIqp06cbq1qwRL-HnKEj%2Fprofile%2FZ0qcz1-d3rFMFnRSUce8c.webp">
+        <meta property="og:image:secure_url" content="https://bere.al/og-image?url=https%3A%2F%2Fcdn-us1.bereal.network%2FPhotos%2FXHIqp06cbq1qwRL-HnKEj%2Fprofile%2FZ0qcz1-d3rFMFnRSUce8c.webp">
+        <meta property="og:image:type" content="image/jpeg">
+        <meta property="og:image:width" content="1000">
+        <meta property="og:image:height" content="1000">
+        <meta property="og:locale" content="en_US">
+        
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@BeReal_App">
+        <meta name="twitter:title" content="Paris Saint-Germain on BeReal">
+        <meta name="twitter:description" content="Check out Paris Saint-Germain's BeReal profile!">
+        <meta name="twitter:image" content="https://bere.al/og-image?url=https%3A%2F%2Fcdn-us1.bereal.network%2FPhotos%2FXHIqp06cbq1qwRL-HnKEj%2Fprofile%2FZ0qcz1-d3rFMFnRSUce8c.webp">
+        <meta name="twitter:image:alt" content="Paris Saint-Germain's BeReal profile picture">
+        
+        <!-- iOS App -->
+        <meta name="apple-itunes-app" content="app-id=1459645446, app-argument=bereal://profile/psg">
+        
+        <title>Paris Saint-Germain on BeReal.</title>
+
+        <style>
+          * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+          }
+
+          :root {
+              --background-color: #000000;
+              --text-color: #FFFFFF;
+              --text-secondary: #99999C;
+              --button-bg: #FFFFFF;
+              --button-text: #000000;
+              --card-bg: #1a1a1a;
+          }
+
+          body {
+              background-color: var(--background-color);
+              color: var(--text-color);
+              font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+              margin: 0;
+              padding: 0;
+              min-height: 100vh;
+              display: flex;
+              flex-direction: column;
+              overflow-x: hidden;
+          }
+
+          .container {
+              display: flex;
+              flex-direction: column;
+              padding: 0 1.5rem;
+              max-width: 100%;
+              margin: 0 auto;
+              width: 100%;
+          }
+
+          .header {
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              padding: 1rem 0;
+              width: 100%;
+          }
+
+          .logo {
+              font-size: 1.5rem;
+              font-weight: 700;
+          }
+
+          /* Layout visibility - Mobile first */
+          .mobile-layout {
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+              height: 100vh;
+              height: 100dvh;
+              overflow: hidden;
+          }
+
+          .desktop-layout {
+              display: none;
+          }
+
+          .phone-mockup {
+              position: relative;
+              width: 400px;
+              height: 392px;
+              border-radius: 24px;
+              box-shadow: 0 8.28px 41.38px rgba(0, 0, 0, 0.4), 0 4px 20px rgba(255, 255, 255, 0.4);
+          }
+
+          .phone-screen {
+              width: 100%;
+              height: 100%;
+              background-color: #000;
+              border-radius: 24px;
+              position: relative;
+              overflow: hidden;
+              box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.1);
+          }
+
+          .phone-image {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+          }
+
+          .phone-image-placeholder {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background: #A87E00;
+              color: white;
+              font-size: 4rem;
+              font-weight: 700;
+          }
+
+          .phone-profile-top-overlay {
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              height: 20%;
+              background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, transparent 100%);
+          }
+
+          .phone-profile-overlay {
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, transparent 100%);
+              padding: 1.5rem;
+              padding-top: 33%;
+          }
+
+          .phone-reaction-count {
+              display: inline-flex;
+              align-items: center;
+              gap: 0.25rem;
+              margin-bottom: 0.5rem;
+              padding: 6px 14.5px 6px 10px;
+              font-size: 29px;
+              font-weight: 600;
+              color: #fff;
+              background: rgba(60, 60, 67, 0.6);
+              border-radius: 999px;
+              width: fit-content;
+              backdrop-filter: blur(8px);
+          }
+
+          .mobile-streak-pill svg,
+          .phone-reaction-count svg {
+              vertical-align: middle;
+              flex-shrink: 0;
+          }
+
+          .phone-profile-name {
+              font-size: 42px;
+              font-weight: 700;
+              margin-bottom: 0.2rem;
+              color: #fff;
+              -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+              paint-order: stroke fill;
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+          }
+
+          .phone-profile-name svg {
+              flex-shrink: 0;
+              vertical-align: middle;
+              margin-top: -4px;
+          }
+
+          .phone-profile-username {
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              font-size: 25px;
+              font-weight: 600;
+              color: #fff;
+              -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+              paint-order: stroke fill;
+          }
+
+          .desktop-right-section {
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: flex-start;
+              padding: 2rem;
+              text-align: left;
+          }
+
+          .desktop-header {
+              display: none;
+              position: absolute;
+              top: 2rem;
+              left: 2.5rem;
+          }
+
+          .desktop-header-logo {
+              font-size: 1.5rem;
+              font-weight: 700;
+              color: #fff;
+          }
+
+          .desktop-content {
+              display: flex;
+              align-items: flex-end;
+              justify-content: center;
+              gap: 1rem;
+              width: 100%;
+              height: 100%;
+          }
+
+          .desktop-invitation-title {
+              font-size: 58px;
+              font-weight: 700;
+              margin-bottom: 0.5rem;
+              color: var(--text-color);
+              line-height: 1.05;
+              letter-spacing: -0.02em;
+          }
+
+          .desktop-invitation-subtitle {
+              font-size: 22px;
+              font-weight: 400;
+              color: var(--text-secondary);
+              margin-bottom: 1.25rem;
+              line-height: 1.35;
+          }
+
+          .qr-card {
+              background: white;
+              border-radius: 40px;
+              padding: 1.5rem 2rem 1.25rem 2rem;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 1.25rem;
+              width: 280px;
+              margin-left: -0.5rem;
+          }
+
+          .qr-code-wrapper {
+              width: 150px;
+              height: 150px;
+          }
+
+          .qr-code-wrapper canvas {
+              width: 100%;
+              height: 100%;
+          }
+
+          .app-store-buttons {
+              display: flex;
+              flex-direction: row;
+              gap: 0.5rem;
+              justify-content: center;
+              align-items: center;
+          }
+
+          .app-store-button {
+              display: block;
+              height: 36px;
+          }
+
+          .app-store-button img {
+              height: 100%;
+              width: auto;
+          }
+
+          /* Mobile Profile Section */
+          .mobile-profile-section {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              flex: 1;
+              min-height: 0;
+              width: 100%;
+              padding: 0 24px;
+          }
+
+          .mobile-profile-card {
+              width: 100%;
+              max-width: 400px;
+              border-radius: 12px;
+              overflow: visible;
+              position: relative;
+              z-index: 2;
+          }
+
+          .mobile-profile-image-container {
+              position: relative;
+              width: 100%;
+              aspect-ratio: 1 / 1;
+              max-height: calc(100vh - 280px);
+              max-height: calc(100dvh - 280px);
+              background-color: #2a2a2a;
+              border-radius: 12px;
+              overflow: hidden;
+          }
+
+          .mobile-profile-image-container::after {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              border-radius: 12px;
+              box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+              pointer-events: none;
+          }
+
+          .mobile-profile-image {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+          }
+
+          .mobile-profile-image-placeholder {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background: #A87E00;
+              color: white;
+              font-size: 3rem;
+              font-weight: 700;
+          }
+
+          .mobile-profile-top-overlay {
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              height: 20%;
+              background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, transparent 100%);
+          }
+
+          .mobile-profile-overlay {
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              padding: 0.75rem;
+              background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, transparent 100%);
+              padding-top: 33%;
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              border-bottom-left-radius: 12px;
+              border-bottom-right-radius: 12px;
+          }
+
+          .mobile-streak-pill {
+              display: inline-flex;
+              align-items: center;
+              gap: 0.1rem;
+              padding: 3px 7px 3px 5px;
+              font-size: 14px;
+              font-weight: 600;
+              color: #FFFFFF;
+              background: rgba(60, 60, 67, 0.6);
+              border-radius: 999px;
+              margin-bottom: 0.3rem;
+          }
+
+          .mobile-profile-name {
+              font-size: 20px;
+              font-weight: 700;
+              color: #FFFFFF;
+              margin-bottom: 0.25rem;
+              -webkit-text-stroke: 1px rgba(0, 0, 0, 0.2);
+              paint-order: stroke fill;
+              display: flex;
+              align-items: center;
+              gap: 0.4rem;
+          }
+
+          .mobile-profile-name svg {
+              flex-shrink: 0;
+              vertical-align: middle;
+              margin-top: -2px;
+          }
+
+          .mobile-profile-username {
+              font-size: 12px;
+              font-weight: 600;
+              color: #FFFFFF;
+              -webkit-text-stroke: 1px rgba(0, 0, 0, 0.2);
+              paint-order: stroke fill;
+          }
+
+          .mobile-profile-stats {
+              margin-top: -26px;
+              text-align: center;
+              background-color: #121214;
+              padding: 0 1rem;
+              padding-top: 32px;
+              height: 58px;
+              border-radius: 12px;
+              display: flex;
+              align-items: baseline;
+              justify-content: center;
+              padding-bottom: 6px;
+              width: 100%;
+              max-width: 400px;
+              box-sizing: border-box;
+              box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+              white-space: nowrap;
+              overflow: hidden;
+              position: relative;
+              z-index: 1;
+          }
+
+          .mobile-profile-stats .stat-number {
+              font-size: 15px;
+              font-weight: 400;
+              color: #FFFFFF;
+              margin-right: 0.35rem;
+          }
+
+          .mobile-profile-stats .stat-label {
+              font-size: 12px;
+              font-weight: 400;
+              color: #d0d0d0;
+          }
+
+          .stat-posts-short {
+              display: none;
+          }
+
+          .mobile-profile-stats .stat-separator {
+              font-size: 12px;
+              font-weight: 510;
+              color: #FFFFFF;
+              margin: 0 0.4rem;
+          }
+
+          .mobile-invitation-section {
+              text-align: center;
+              padding: 0 0.5rem;
+              margin-bottom: 2.5rem;
+          }
+
+          .mobile-invitation-title {
+              font-size: 28px;
+              font-weight: 700;
+              color: #FFFFFF;
+              margin-bottom: 0.35rem;
+              font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, sans-serif;
+          }
+
+          .mobile-invitation-subtitle {
+              font-size: 15px;
+              font-weight: 400;
+              color: #99999C;
+              line-height: 1.4;
+              max-width: 100%;
+              margin: 0 auto;
+              font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, sans-serif;
+          }
+
+          .mobile-button-container {
+              flex-shrink: 0;
+              padding: 1rem 1rem;
+              padding-bottom: calc(1.5rem + env(safe-area-inset-bottom, 16px));
+              padding-top: 1rem;
+          }
+
+          .mobile-accept-button {
+              background-color: var(--button-bg);
+              color: var(--button-text);
+              border: none;
+              border-radius: 16px;
+              padding: 0 24px;
+              height: 56px;
+              font-size: 17px;
+              font-weight: 600;
+              width: 100%;
+              max-width: 380px;
+              margin: 0 auto;
+              display: block;
+              cursor: pointer;
+              transition: opacity 0.2s;
+              font-family: inherit;
+          }
+
+          .mobile-accept-button:active {
+              opacity: 0.8;
+          }
+
+          /* Small width screens - smaller fonts and more padding */
+          @media screen and (max-width: 400px) {
+              .mobile-profile-section {
+                  padding: 0 28px;
+              }
+
+              .mobile-invitation-title {
+                  font-size: 24px;
+              }
+
+              .mobile-invitation-subtitle {
+                  font-size: 13px;
+              }
+
+              .mobile-profile-name {
+                  font-size: 18px;
+              }
+
+              .mobile-profile-username {
+                  font-size: 11px;
+              }
+
+              .mobile-profile-stats .stat-label {
+                  font-size: 11px;
+              }
+
+              .mobile-profile-stats .stat-number {
+                  font-size: 13px;
+              }
+
+              .mobile-profile-stats {
+                  height: 52px;
+                  padding-top: 30px;
+              }
+
+              .mobile-accept-button {
+                  font-size: 16px;
+                  height: 52px;
+                  border-radius: 14px;
+              }
+          }
+
+          @media screen and (max-width: 380px) {
+              .stat-bereal {
+                  display: none;
+              }
+
+              .stat-posts-short {
+                  display: inline;
+              }
+          }
+
+          @media screen and (max-width: 340px) {
+              .stat-since {
+                  display: none;
+              }
+          }
+
+          @media screen and (max-width: 360px) {
+              .mobile-profile-section {
+                  padding: 0 36px;
+              }
+
+              .mobile-invitation-title {
+                  font-size: 22px;
+              }
+
+              .mobile-invitation-subtitle {
+                  font-size: 12px;
+              }
+
+              .mobile-profile-name {
+                  font-size: 16px;
+              }
+
+              .mobile-profile-username {
+                  font-size: 10px;
+              }
+
+              .mobile-profile-stats .stat-label {
+                  font-size: 10px;
+              }
+
+              .mobile-profile-stats .stat-number {
+                  font-size: 12px;
+              }
+
+              .mobile-accept-button {
+                  font-size: 15px;
+                  height: 50px;
+              }
+
+              .header .logo {
+                  font-size: 1.25rem;
+              }
+          }
+
+          @media screen and (max-width: 320px) {
+              .mobile-profile-section {
+                  padding: 0 44px;
+              }
+
+              .mobile-invitation-title {
+                  font-size: 20px;
+              }
+
+              .mobile-invitation-subtitle {
+                  font-size: 11px;
+              }
+
+              .mobile-profile-name {
+                  font-size: 14px;
+              }
+
+              .mobile-profile-stats .stat-label {
+                  font-size: 9px;
+              }
+
+              .mobile-profile-stats .stat-number {
+                  font-size: 11px;
+              }
+
+              .mobile-profile-stats .stat-separator {
+                  margin: 0 0.25rem;
+              }
+
+              .mobile-accept-button {
+                  font-size: 14px;
+                  height: 46px;
+                  border-radius: 12px;
+              }
+          }
+
+          /* Mobile-first responsive design */
+          @media screen and (min-width: 480px) {
+              .container {
+                  padding: 2rem;
+                  max-width: 420px;
+              }
+
+              .profile-card {
+                  margin: 1.5rem 0;
+              }
+
+              .logo {
+                  font-size: 1.75rem;
+              }
+          }
+
+          /* Desktop Layout */
+          @media screen and (min-width: 768px) {
+              .container {
+                  max-width: 100%;
+                  padding: 0;
+                  flex-direction: row;
+                  align-items: center;
+                  justify-content: center;
+                  min-height: 100vh;
+              }
+
+              .mobile-layout {
+                  display: none;
+              }
+
+              .desktop-layout {
+                  display: flex;
+                  position: relative;
+                  width: 100%;
+                  min-height: 100vh;
+                  align-items: center;
+                  justify-content: center;
+              }
+
+              .desktop-header {
+                  display: block;
+                  position: fixed;
+                  top: 2rem;
+                  left: 2.5rem;
+                  z-index: 100;
+              }
+
+              .desktop-header-logo {
+                  font-size: 1.5rem;
+              }
+
+              .desktop-content {
+                  display: flex;
+                  align-items: flex-end;
+                  justify-content: center;
+                  gap: 1.5rem;
+                  max-width: 1000px;
+                  padding: 2rem;
+              }
+
+              .desktop-left-section {
+                  flex: 0 0 auto;
+                  display: flex;
+                  justify-content: flex-end;
+                  align-items: center;
+              }
+
+              .phone-mockup {
+                  width: 420px;
+                  height: 412px;
+              }
+
+              .desktop-right-section {
+                  flex: 0 0 auto;
+                  padding: 0;
+                  max-width: 400px;
+                  height: 412px;
+                  justify-content: flex-end;
+              }
+
+              .desktop-invitation-title {
+                  font-size: 42px;
+              }
+
+              .desktop-invitation-subtitle {
+                  font-size: 18px;
+              }
+
+              .qr-code-wrapper {
+                  width: 140px;
+                  height: 140px;
+              }
+
+              .qr-card {
+                  width: 320px;
+                  border-radius: 32px;
+              }
+          }
+
+          @media screen and (min-width: 1024px) {
+              .desktop-content {
+                  gap: 1.75rem;
+                  max-width: 1100px;
+              }
+
+              .phone-mockup {
+                  width: 530px;
+                  height: 520px;
+              }
+
+              .desktop-right-section {
+                  max-width: 480px;
+                  height: 520px;
+              }
+
+              .desktop-invitation-title {
+                  font-size: 58px;
+              }
+
+              .desktop-invitation-subtitle {
+                  font-size: 22px;
+              }
+
+              .qr-code-wrapper {
+                  width: 180px;
+                  height: 180px;
+              }
+
+              .qr-card {
+                  width: 445px;
+                  height: auto;
+                  min-height: 300px;
+                  padding: 2rem 2.5rem 1.5rem 2.5rem;
+                  border-radius: 40px;
+              }
+
+              .desktop-header-logo {
+                  font-size: 2rem;
+              }
+          }
+        </style>
+      <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script></head>
+      <body>
+        <div class="container">
+          <!-- Mobile Layout -->
+          <div class="mobile-layout">
+            <div class="header">
+              <div class="logo">BeReal.</div>
+            </div>
+
+            <div class="mobile-profile-section">
+              <div class="mobile-profile-card">
+                <div class="mobile-profile-image-container">
+                  <img src="https://cdn-us1.bereal.network/Photos/XHIqp06cbq1qwRL-HnKEj/profile/Z0qcz1-d3rFMFnRSUce8c.webp" alt="Paris Saint-Germain" class="mobile-profile-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                  <div class="mobile-profile-image-placeholder" style="display:none;">
+                    P
+                  </div>
+                  <div class="mobile-profile-top-overlay"></div>
+                  <div class="mobile-profile-overlay">
+                    
+                    <div class="mobile-profile-name">Paris Saint-Germain <svg width="28" height="28" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55516 2.72033C6.46046 2.80533 6.36132 2.88524 6.25816 2.95973C6.07935 3.07973 5.87835 3.16253 5.66714 3.20453C5.57534 3.22253 5.47934 3.23033 5.28793 3.24533C4.80732 3.28373 4.56671 3.30293 4.36631 3.37372C4.1371 3.45451 3.92891 3.58565 3.75707 3.75749C3.58522 3.92933 3.45407 4.13751 3.37328 4.36671C3.30248 4.5671 3.28328 4.8077 3.24488 5.28829C3.23799 5.41532 3.22437 5.5419 3.20408 5.66749C3.16208 5.87868 3.07928 6.07968 2.95927 6.25848C2.90707 6.33648 2.84467 6.40967 2.71987 6.55547C2.40726 6.92267 2.25066 7.10626 2.15885 7.29826C1.94705 7.74225 1.94705 8.25824 2.15885 8.70224C2.25066 8.89423 2.40726 9.07783 2.71987 9.44502C2.84467 9.59082 2.90707 9.66402 2.95927 9.74202C3.07928 9.92082 3.16208 10.1218 3.20408 10.333C3.22208 10.4248 3.22988 10.5208 3.24488 10.7122C3.28328 11.1928 3.30248 11.4334 3.37328 11.6338C3.45407 11.863 3.58522 12.0712 3.75707 12.243C3.92891 12.4148 4.1371 12.546 4.36631 12.6268C4.56671 12.6976 4.80732 12.7168 5.28793 12.7552C5.47934 12.7702 5.57534 12.778 5.66714 12.796C5.87835 12.838 6.07935 12.9214 6.25816 13.0408C6.33616 13.093 6.40936 13.1554 6.55516 13.2802C6.92237 13.5928 7.10598 13.7494 7.29798 13.8412C7.74199 14.0529 8.25801 14.0529 8.70202 13.8412C8.89402 13.7494 9.07763 13.5928 9.44484 13.2802C9.59064 13.1554 9.66384 13.093 9.74184 13.0408C9.92065 12.9208 10.1217 12.838 10.3329 12.796C10.4247 12.778 10.5207 12.7702 10.7121 12.7552C11.1927 12.7168 11.4333 12.6976 11.6337 12.6268C11.8629 12.546 12.0711 12.4148 12.2429 12.243C12.4148 12.0712 12.5459 11.863 12.6267 11.6338C12.6975 11.4334 12.7167 11.1928 12.7551 10.7122C12.7701 10.5208 12.7779 10.4248 12.7959 10.333C12.8379 10.1218 12.9213 9.92082 13.0407 9.74202C13.0929 9.66402 13.1553 9.59082 13.2801 9.44502C13.5927 9.07783 13.7493 8.89423 13.8411 8.70224C14.053 8.25824 14.053 7.74225 13.8411 7.29826C13.7493 7.10626 13.5927 6.92267 13.2801 6.55547C13.1951 6.46077 13.1152 6.36164 13.0407 6.25848C12.9207 6.07971 12.8374 5.8788 12.7959 5.66749C12.7756 5.5419 12.762 5.41532 12.7551 5.28829C12.7167 4.8077 12.6975 4.5671 12.6267 4.36671C12.5459 4.13751 12.4148 3.92933 12.2429 3.75749C12.0711 3.58565 11.8629 3.45451 11.6337 3.37372C11.4333 3.30293 11.1927 3.28373 10.7121 3.24533C10.585 3.23844 10.4585 3.22482 10.3329 3.20453C10.1215 3.16302 9.92062 3.0798 9.74184 2.95973C9.63868 2.88524 9.53954 2.80533 9.44484 2.72033C9.07763 2.40774 8.89402 2.25114 8.70202 2.15934C8.48286 2.05445 8.24297 2 8 2C7.75703 2 7.51714 2.05445 7.29798 2.15934C7.10598 2.25114 6.92237 2.40774 6.55516 2.72033Z" fill="#007AFF"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M10.6241 6.71821C10.7089 6.6254 10.7547 6.50346 10.7518 6.37777C10.749 6.25209 10.6978 6.13233 10.6089 6.04344C10.52 5.95454 10.4002 5.90335 10.2745 5.90051C10.1488 5.89768 10.0269 5.94342 9.93409 6.02822L7.02401 8.93818L6.06639 7.98119C5.97357 7.89639 5.85163 7.85065 5.72594 7.85348C5.60025 7.85632 5.48049 7.90751 5.39159 7.99641C5.30269 8.0853 5.25149 8.20505 5.24866 8.33074C5.24583 8.45643 5.29157 8.57837 5.37637 8.67118L6.67841 9.97316C6.76997 10.0645 6.89405 10.1159 7.02341 10.1159C7.15278 10.1159 7.27686 10.0645 7.36842 9.97316L10.6241 6.71821Z" fill="#007AFF"></path><path d="M10.6241 6.71821C10.7089 6.6254 10.7547 6.50346 10.7518 6.37777C10.749 6.25209 10.6978 6.13233 10.6089 6.04344C10.52 5.95454 10.4002 5.90335 10.2745 5.90051C10.1488 5.89768 10.0269 5.94342 9.93409 6.02822L7.02401 8.93818L6.06639 7.98119C5.97357 7.89639 5.85163 7.85065 5.72594 7.85348C5.60025 7.85632 5.48049 7.90751 5.39159 7.99641C5.30269 8.0853 5.25149 8.20505 5.24866 8.33074C5.24583 8.45643 5.29157 8.57837 5.37637 8.67118L6.67841 9.97316C6.76997 10.0645 6.89405 10.1159 7.02341 10.1159C7.15278 10.1159 7.27686 10.0645 7.36842 9.97316L10.6241 6.71821Z" fill="white"></path></svg></div>
+                    <div class="mobile-profile-username">@psg</div>
+                  </div>
+                </div>
+              </div>
+              <div class="mobile-profile-stats"><span class="stat-number">1567453</span> <span class="stat-label">Followers</span><span class="stat-separator">·</span><span class="stat-number">265</span> <span class="stat-label"><span class="stat-bereal">BeReal posts</span><span class="stat-posts-short">Posts</span><span class="stat-since"> since 2024</span></span></div>
+            </div>
+
+            <div class="mobile-button-container">
+              <div class="mobile-invitation-section">
+                <div class="mobile-invitation-title">Paris Invited You!</div>
+                <div class="mobile-invitation-subtitle">Download the app to see what Paris is<br>up to on BeReal.</div>
+              </div>
+              <button class="mobile-accept-button" id="acceptButton">Follow on BeReal</button>
+            </div>
+          </div>
+
+          <!-- Desktop Layout -->
+          <div class="desktop-layout">
+            <div class="desktop-header">
+              <div class="desktop-header-logo">BeReal.</div>
+            </div>
+            <div class="desktop-content">
+              <div class="desktop-left-section">
+                <div class="phone-mockup">
+                  <div class="phone-screen">
+                    <img src="https://cdn-us1.bereal.network/Photos/XHIqp06cbq1qwRL-HnKEj/profile/Z0qcz1-d3rFMFnRSUce8c.webp" alt="Paris Saint-Germain" class="phone-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="phone-image-placeholder" style="display:none;">
+                      P
+                    </div>
+                    <div class="phone-profile-top-overlay"></div>
+                    <div class="phone-profile-overlay">
+                      
+                      <div class="phone-profile-name">Paris Saint-Germain <svg width="54" height="54" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55516 2.72033C6.46046 2.80533 6.36132 2.88524 6.25816 2.95973C6.07935 3.07973 5.87835 3.16253 5.66714 3.20453C5.57534 3.22253 5.47934 3.23033 5.28793 3.24533C4.80732 3.28373 4.56671 3.30293 4.36631 3.37372C4.1371 3.45451 3.92891 3.58565 3.75707 3.75749C3.58522 3.92933 3.45407 4.13751 3.37328 4.36671C3.30248 4.5671 3.28328 4.8077 3.24488 5.28829C3.23799 5.41532 3.22437 5.5419 3.20408 5.66749C3.16208 5.87868 3.07928 6.07968 2.95927 6.25848C2.90707 6.33648 2.84467 6.40967 2.71987 6.55547C2.40726 6.92267 2.25066 7.10626 2.15885 7.29826C1.94705 7.74225 1.94705 8.25824 2.15885 8.70224C2.25066 8.89423 2.40726 9.07783 2.71987 9.44502C2.84467 9.59082 2.90707 9.66402 2.95927 9.74202C3.07928 9.92082 3.16208 10.1218 3.20408 10.333C3.22208 10.4248 3.22988 10.5208 3.24488 10.7122C3.28328 11.1928 3.30248 11.4334 3.37328 11.6338C3.45407 11.863 3.58522 12.0712 3.75707 12.243C3.92891 12.4148 4.1371 12.546 4.36631 12.6268C4.56671 12.6976 4.80732 12.7168 5.28793 12.7552C5.47934 12.7702 5.57534 12.778 5.66714 12.796C5.87835 12.838 6.07935 12.9214 6.25816 13.0408C6.33616 13.093 6.40936 13.1554 6.55516 13.2802C6.92237 13.5928 7.10598 13.7494 7.29798 13.8412C7.74199 14.0529 8.25801 14.0529 8.70202 13.8412C8.89402 13.7494 9.07763 13.5928 9.44484 13.2802C9.59064 13.1554 9.66384 13.093 9.74184 13.0408C9.92065 12.9208 10.1217 12.838 10.3329 12.796C10.4247 12.778 10.5207 12.7702 10.7121 12.7552C11.1927 12.7168 11.4333 12.6976 11.6337 12.6268C11.8629 12.546 12.0711 12.4148 12.2429 12.243C12.4148 12.0712 12.5459 11.863 12.6267 11.6338C12.6975 11.4334 12.7167 11.1928 12.7551 10.7122C12.7701 10.5208 12.7779 10.4248 12.7959 10.333C12.8379 10.1218 12.9213 9.92082 13.0407 9.74202C13.0929 9.66402 13.1553 9.59082 13.2801 9.44502C13.5927 9.07783 13.7493 8.89423 13.8411 8.70224C14.053 8.25824 14.053 7.74225 13.8411 7.29826C13.7493 7.10626 13.5927 6.92267 13.2801 6.55547C13.1951 6.46077 13.1152 6.36164 13.0407 6.25848C12.9207 6.07971 12.8374 5.8788 12.7959 5.66749C12.7756 5.5419 12.762 5.41532 12.7551 5.28829C12.7167 4.8077 12.6975 4.5671 12.6267 4.36671C12.5459 4.13751 12.4148 3.92933 12.2429 3.75749C12.0711 3.58565 11.8629 3.45451 11.6337 3.37372C11.4333 3.30293 11.1927 3.28373 10.7121 3.24533C10.585 3.23844 10.4585 3.22482 10.3329 3.20453C10.1215 3.16302 9.92062 3.0798 9.74184 2.95973C9.63868 2.88524 9.53954 2.80533 9.44484 2.72033C9.07763 2.40774 8.89402 2.25114 8.70202 2.15934C8.48286 2.05445 8.24297 2 8 2C7.75703 2 7.51714 2.05445 7.29798 2.15934C7.10598 2.25114 6.92237 2.40774 6.55516 2.72033Z" fill="#007AFF"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M10.6241 6.71821C10.7089 6.6254 10.7547 6.50346 10.7518 6.37777C10.749 6.25209 10.6978 6.13233 10.6089 6.04344C10.52 5.95454 10.4002 5.90335 10.2745 5.90051C10.1488 5.89768 10.0269 5.94342 9.93409 6.02822L7.02401 8.93818L6.06639 7.98119C5.97357 7.89639 5.85163 7.85065 5.72594 7.85348C5.60025 7.85632 5.48049 7.90751 5.39159 7.99641C5.30269 8.0853 5.25149 8.20505 5.24866 8.33074C5.24583 8.45643 5.29157 8.57837 5.37637 8.67118L6.67841 9.97316C6.76997 10.0645 6.89405 10.1159 7.02341 10.1159C7.15278 10.1159 7.27686 10.0645 7.36842 9.97316L10.6241 6.71821Z" fill="#007AFF"></path><path d="M10.6241 6.71821C10.7089 6.6254 10.7547 6.50346 10.7518 6.37777C10.749 6.25209 10.6978 6.13233 10.6089 6.04344C10.52 5.95454 10.4002 5.90335 10.2745 5.90051C10.1488 5.89768 10.0269 5.94342 9.93409 6.02822L7.02401 8.93818L6.06639 7.98119C5.97357 7.89639 5.85163 7.85065 5.72594 7.85348C5.60025 7.85632 5.48049 7.90751 5.39159 7.99641C5.30269 8.0853 5.25149 8.20505 5.24866 8.33074C5.24583 8.45643 5.29157 8.57837 5.37637 8.67118L6.67841 9.97316C6.76997 10.0645 6.89405 10.1159 7.02341 10.1159C7.15278 10.1159 7.27686 10.0645 7.36842 9.97316L10.6241 6.71821Z" fill="white"></path></svg></div>
+                      <div class="phone-profile-username">
+                        @psg
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="desktop-right-section">
+                <div class="desktop-invitation-title">Paris Invited<br>you to BeReal.</div>
+                <div class="desktop-invitation-subtitle">Scan the code to see what Paris<br>is up to on BeReal.</div>
+
+                <div class="qr-card">
+                  <div class="qr-code-wrapper">
+                    <canvas id="qrCanvas" width="300" height="300"></canvas>
+                  </div>
+
+                  <div class="app-store-buttons">
+                    <a href="https://apps.apple.com/us/app/bereal-uncontrollable-photos/id1459645446?pt=117262097&amp;ct=Landing&amp;mt=8" class="app-store-button" aria-label="Download on the App Store">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store">
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.bereal.ft&amp;referrer=utm_source%3Dlanding%26utm_medium%3Dwebsite%26utm_campaign%3Dlanding" class="app-store-button" aria-label="Get it on Google Play">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
+                    </a>
+                  </div>
+                </div>
+              </div>
+          </div>
+          </div>
+        </div>
+
+        <script>
+          (function() {
+            const app = 'bereal://profile/psg';
+            const iOSStoreUrl = 'itms-apps://apps.apple.com/us/app/bereal-your-friends-for-real/id1459645446';
+            const androidStoreUrl = 'market://details?id=com.bereal.ft';
+            const iOSStoreWebUrl = 'https://apps.apple.com/us/app/bereal-your-friends-for-real/id1459645446';
+            const androidStoreWebUrl = 'https://play.google.com/store/apps/details?id=com.bereal.ft';
+
+            // Detect platform client-side
+            const isAppleDevice = /iPad|iPhone|iPod/i.test(navigator.userAgent);
+            const isAndroidDevice = /Android/i.test(navigator.userAgent);
+            const isMobile = isAppleDevice || isAndroidDevice;
+
+            // Choose the right store URL
+            const store = isAppleDevice ? iOSStoreUrl : androidStoreUrl;
+
+            const acceptButton = document.getElementById('acceptButton');
+
+            // Only attach event listener if button exists
+            if (acceptButton) {
+              acceptButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (isMobile) {
+                  // On mobile: try deep link silently using iframe, fallback to app store
+                  var iframe = document.createElement('iframe');
+                  iframe.style.display = 'none';
+                  iframe.src = app;
+                  document.body.appendChild(iframe);
+
+                  setTimeout(function() {
+                    document.body.removeChild(iframe);
+                    // If we're still here, the app didn't open - go to store
+                    window.location = store;
+                  }, 1000);
+                } else {
+                  // On desktop: always go to App Store
+                  window.location = iOSStoreWebUrl;
+                }
+              });
+            }
+
+            // Handle Instagram and Line special cases
+            const isInstagram = /Instagram/i.test(navigator.userAgent);
+            const isLine = /Line/i.test(navigator.userAgent);
+            if (isInstagram || isLine) {
+              window.location = app;
+              setTimeout(function() {
+                window.location = store;
+              }, 500);
+            }
+
+            // Custom QR Code Generator matching Swift implementation
+            const QR_CONSTANTS = {
+              FINDER_PATTERN_SIZE: 7,
+              FINDER_CLEARANCE_SIZE: 8,
+              FINDER_OFFSET_FROM_EDGE: 1,
+              CENTER_LOGO_SIZE_RATIO: 0.28,
+              CENTER_LOGO_RENDER_RATIO: 0.20,
+              DOT_BASE_RATIO: 0.55,
+              DOT_VARIATION_RATIO: 0.12
+            };
+
+            // Load QR code library and generate
+            function loadQRLibrary(callback) {
+              const script = document.createElement('script');
+              script.src = 'https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js';
+              script.onload = callback;
+              document.head.appendChild(script);
+            }
+
+            function generateQRMatrix(data) {
+              // Use qrcode-generator library
+              const qr = qrcode(0, 'H'); // Auto version, High error correction
+              qr.addData(data);
+              qr.make();
+
+              const moduleCount = qr.getModuleCount();
+              const matrix = [];
+
+              for (let y = 0; y < moduleCount; y++) {
+                matrix[y] = [];
+                for (let x = 0; x < moduleCount; x++) {
+                  matrix[y][x] = qr.isDark(y, x);
+                }
+              }
+
+              return matrix;
+            }
+
+            function renderCustomQR(canvas, data) {
+              const ctx = canvas.getContext('2d');
+              const size = canvas.width;
+              const matrix = generateQRMatrix(data);
+              const modules = matrix.length;
+              const moduleSize = size / modules;
+
+              // Fill white background
+              ctx.fillStyle = '#FFFFFF';
+              ctx.fillRect(0, 0, size, size);
+
+              // Calculate finder patterns positions
+              const finderPatterns = [
+                { x: 0, y: 0 },
+                { x: modules - QR_CONSTANTS.FINDER_PATTERN_SIZE, y: 0 },
+                { x: 0, y: modules - QR_CONSTANTS.FINDER_PATTERN_SIZE }
+              ];
+
+              // Draw circular dots
+              ctx.fillStyle = '#000000';
+              for (let y = 0; y < modules; y++) {
+                for (let x = 0; x < modules; x++) {
+                  if (!matrix[y][x]) continue;
+                  if (isInFinderArea(x, y, finderPatterns, modules)) continue;
+                  if (isInCenterArea(x, y, modules)) continue;
+
+                  const dotSize = calculateDotSize(x, y, moduleSize);
+                  const centerX = x * moduleSize + moduleSize / 2;
+                  const centerY = y * moduleSize + moduleSize / 2;
+
+                  ctx.beginPath();
+                  ctx.arc(centerX, centerY, dotSize / 2, 0, Math.PI * 2);
+                  ctx.fill();
+                }
+              }
+
+              // Draw custom finder patterns (rounded squares) at exact QR positions
+              finderPatterns.forEach(finder => {
+                const finderSize = moduleSize * QR_CONSTANTS.FINDER_PATTERN_SIZE;
+                const px = finder.x * moduleSize;
+                const py = finder.y * moduleSize;
+
+                drawFinderPattern(ctx, px, py, finderSize);
+              });
+
+              // Draw center logo
+              drawCenterLogo(ctx, size);
+            }
+
+            function isInFinderArea(x, y, patterns, modules) {
+              return patterns.some(finder => {
+                const startX = Math.max(0, finder.x - 1);
+                const startY = Math.max(0, finder.y - 1);
+                const endX = Math.min(modules, finder.x + QR_CONSTANTS.FINDER_CLEARANCE_SIZE);
+                const endY = Math.min(modules, finder.y + QR_CONSTANTS.FINDER_CLEARANCE_SIZE);
+                return x >= startX && x < endX && y >= startY && y < endY;
+              });
+            }
+
+            function isInCenterArea(x, y, modules) {
+              const centerSize = Math.round(modules * QR_CONSTANTS.CENTER_LOGO_SIZE_RATIO);
+              const startX = Math.floor((modules - centerSize) / 2);
+              const startY = Math.floor((modules - centerSize) / 2);
+              return x >= startX && x < startX + centerSize && y >= startY && y < startY + centerSize;
+            }
+
+            function calculateDotSize(x, y, moduleSize) {
+              // Deterministic pseudo-random variation matching Swift
+              let seed = (x * 73856093) ^ (y * 19349663);
+              seed = (seed + 0x9E3779B9) >>> 0;
+              seed = Math.imul(seed, 1664525) + 1013904223;
+              const variation = (Math.abs(seed) % 1000) / 1000;
+
+              const baseSize = moduleSize * QR_CONSTANTS.DOT_BASE_RATIO;
+              const sizeRange = moduleSize * QR_CONSTANTS.DOT_VARIATION_RATIO;
+              return baseSize + (variation * sizeRange);
+            }
+
+            function drawFinderPattern(ctx, x, y, size) {
+              // QR-spec compliant proportions with very rounded corners and thinner border
+              const moduleSize = size / 7; // Finder is 7x7 modules
+              const outerRadius = moduleSize * 3.0; // Very rounded outer
+              const innerRadius = moduleSize * 2.4; // Rounded inner
+              const centerRadius = moduleSize * 0.8; // Less rounded center
+
+              // Outer black square (7x7 modules)
+              ctx.fillStyle = '#000000';
+              roundedRect(ctx, x, y, size, size, outerRadius);
+              ctx.fill();
+
+              // White square - larger margin for thinner border
+              const whiteMargin = moduleSize * 0.7;
+              const whiteSize = size - (whiteMargin * 2);
+              ctx.fillStyle = '#FFFFFF';
+              roundedRect(ctx, x + whiteMargin, y + whiteMargin, whiteSize, whiteSize, innerRadius);
+              ctx.fill();
+
+              // Center black square - smaller center
+              const centerMargin = moduleSize * 2.1;
+              const centerSize = size - (centerMargin * 2);
+              ctx.fillStyle = '#000000';
+              roundedRect(ctx, x + centerMargin, y + centerMargin, centerSize, centerSize, centerRadius);
+              ctx.fill();
+            }
+
+            function roundedRect(ctx, x, y, width, height, radius) {
+              ctx.beginPath();
+              ctx.moveTo(x + radius, y);
+              ctx.lineTo(x + width - radius, y);
+              ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+              ctx.lineTo(x + width, y + height - radius);
+              ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+              ctx.lineTo(x + radius, y + height);
+              ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+              ctx.lineTo(x, y + radius);
+              ctx.quadraticCurveTo(x, y, x + radius, y);
+              ctx.closePath();
+            }
+
+            function drawCenterLogo(ctx, size) {
+              const logoSize = size * QR_CONSTANTS.CENTER_LOGO_RENDER_RATIO;
+              const x = (size - logoSize) / 2;
+              const y = (size - logoSize) / 2;
+              const radius = logoSize * 0.2;
+
+              // Black rounded rectangle background
+              ctx.fillStyle = '#000000';
+              roundedRect(ctx, x, y, logoSize, logoSize, radius);
+              ctx.fill();
+
+              // BeReal. text
+              ctx.fillStyle = '#FFFFFF';
+              ctx.font = 'bold ' + (logoSize * 0.22) + 'px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+              ctx.textAlign = 'center';
+              ctx.textBaseline = 'middle';
+              ctx.fillText('BeReal.', size / 2, size / 2);
+            }
+
+            // Initialize QR code on load
+            const qrCanvas = document.getElementById('qrCanvas');
+            if (qrCanvas) {
+              loadQRLibrary(function() {
+                // Use web URL instead of deep link so QR code works when app is not installed
+                // iOS Universal Links will redirect to the app if installed,
+                // otherwise the web page will show with store redirect buttons
+                renderCustomQR(qrCanvas, 'https://bere.al/psg');
+              });
+            }
+          })();
+        </script>
+      <script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;f678462195104f2b8dcc03f9807ff2d1&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+  
+</body></html>

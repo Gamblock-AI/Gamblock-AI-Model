@@ -1,0 +1,124 @@
+<html lang=""><!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations --><head>
+<title>Canada Lottery</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<script src="../layout/scripts/index.js"></script>
+</head>
+<body id="top" onload="getTogelData('prev')">
+<div class="wrapper row1">
+</div>
+<!-- Top Background Image Wrapper -->
+<div class="bgded" style="background-color: #FFFFFF ;"> 
+  <div class="wrapper row2">
+      <nav id="mainav" style="background-color: #626262; "> 
+        <div>
+          <div class="navleft">
+            <img src="../images/logo.png">
+          </div>
+          <div class="navright">
+          <ul class="clear">
+            
+            <li><a href="about-us.html">ABOUT US</a></li>
+            <!--<li><a href="support.html">SUPPORT</a></li>-->
+            <li><a href="live-draw.html">LIVE DRAW</a></li>
+            <li class="active"><a href="result.html">RESULT</a></li>
+            <li><a href="../index.html">HOME</a></li>
+          </ul>
+          </div>
+        </div>
+      </nav>
+  </div>
+  <div class="wrapper overlay">
+    <article id="pageintro" class="result">
+      <div class="bgded" style="background-color: rgb(0 0 128 / 59%);">
+        <h3 style="text-align: center; margin-left: 10px; font-size: 30px;">Result</h3>
+        <div style="position: relative;overflow: auto;">
+          <div id="loading-table" class="is-loading active">Please Wait ...</div>
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>&nbsp;</th>
+                <th>Date</th>
+                <th>Prize 1</th>
+                <th>Prize 2</th>
+                <th>Prize 3</th>
+                <th>Full Details</th>
+              </tr>
+            </thead>
+            <tbody id="data">
+
+            </tbody>
+          </table>
+        </div>
+        <div class="row" style="padding-bottom: 3rem;">
+          <button id="btnPrevPage" class="d-block" style="float: left;cursor: pointer; border: none;margin-left: 1rem; background-color: brown; color: white; padding: 10px; margin-bottom: 1rem;" type="submit" value="submit" onclick="getTogelData('prev')">Prev
+          </button>
+          <button id="btnNextPage" class="d-none" style="float: right;cursor: pointer; border: none;margin-left: 1rem; background-color: brown; color: white; padding: 10px; margin-bottom: 1rem;" type="submit" value="submit" onclick="getTogelData('next')">Next
+          </button>
+        </div>
+      </div>
+    </article>
+  </div>
+</div>
+
+<div class="modal backdrop" id="modal-togel">
+  <div class="modal-wrapper">
+    <div class="modal-header">
+      <button class="close" onclick="destroyModalTogel()">x</button>
+    </div>
+    <div class="modal-body">
+      <div class="title">
+        <h1 style="color: white;">Canada Lottery Result</h1>
+        <h2 style="font-size: 18px; color: white;" id="togel-date"></h2>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="prize" style="margin-top: 1rem;">
+        <h3 style="text-align: center; color: white;">Prize 1</h3>
+        <div id="prize-1"></div>
+
+        <div class="two-column">
+          <div class="col">
+            <h3 style="text-align: center; color: white;">Prize 2</h3>
+            <div id="prize-2"></div>
+          </div>
+          <div class="col">
+            <h3 style="text-align: center; color: white;">Prize 3</h3>
+            <div id="prize-3"></div>
+          </div>
+        </div>
+
+        <div class="two-column">
+          <div class="col">
+            <h4 style="text-align: center;font-size: 20px; color: white; margin-top: 2rem;">Starter</h4>
+            <div id="starter-list"></div>
+          </div>
+          <div class="col">
+            <h4 style="text-align: center;font-size: 20px; color: white; margin-top: 2rem;">Consolation</h4>
+            <div id="consolation-list"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+
+    </div>
+  </div>
+  
+</div>
+<!-- End Top Background Image Wrapper -->
+<div class="wrapper row5" style="background-color: rgba(0, 0, 0, 0.6);">
+  <div id="copyright" class=" clear"> 
+      <p align="center">Copyright - Canada Gaming Comission ™ 2019</p>
+    </div> 
+</div>
+
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="layout/scripts/jquery.min.js"></script>
+<script src="layout/scripts/jquery.backtotop.js"></script>
+<script src="layout/scripts/jquery.mobilemenu.js"></script>
+
+</body></html>

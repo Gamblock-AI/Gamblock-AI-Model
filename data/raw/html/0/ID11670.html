@@ -1,0 +1,262 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="origin">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>Game Center</title>
+    <style>
+        body{margin:0;padding:0;background:#f4f4f4;}
+        #page-content {width: 400px;margin: 0 auto;background:#fff;}
+        .nav-bar{border-bottom: 1px solid rgb(239, 239, 239);width: 100%;height: 45px;line-height: 45px;text-align: center;color: #000;font-size: 18px;font-weight: 500;}
+        .top-tips-content{margin-top: 10px;margin-bottom: 10px;width: 90%;margin-left: 5%;height: 22px;background-color: #f6f6f6;padding: 5px 0;line-height: 22px;color: #999;font-size: 12px;text-align:center;border-radius: 5px;}
+        .banner{width: 90%;margin-left: 5%;}
+        .banner img{width: 100%;border-radius: 5px;}
+        .split-line{width: 100%;margin-top: 10px;background-color: #f4f4f4;height: 10px;}
+        .game-center{width: 100%;min-height: 600px;}
+        .game-item{width: 90%;margin-left: 5%;display: flex;flex-direction: row;align-items: center;justify-content: center;}
+        .game-icon{margin-left:10px;width: 55px;height: 55px;border-radius: 8px;background-color: #f4f4f4;}
+        .game-wrapper{display: flex;flex: 1;flex-direction: row;align-items: center;justify-content: center;margin-left: 15px;border-bottom-width: 1px;border-bottom-style: solid;border-bottom-color: #eee;padding: 20px 0;}
+        .game-info{display: flex;flex: 1;flex-direction: column;}
+        .game-title{color: #333;font-size: 14px;line-height: 16px;font-style: normal;font-weight: 500;}
+        .subtitle{color: #999;font-size: 12px;line-height: 14px;margin-top: 6px;}
+        .game-data{display: flex;flex-direction: row;margin-top: 5px;}
+        .hot-icon{width: 14px;height: 14px;}
+        .hot-count{color: #999;font-size: 12px;margin-left: 4px;font-style: normal;}
+        .play{display: flex;background-color: #ff4545;border-radius: 15px;width: 60px;height: 30px;margin-left: 10px;align-items: center;justify-content: center;color: #fff;font-size: 14px;text-decoration: none;}
+        .license-games-title{margin-left: 6%;margin-top: 20px;color: #333;font-size: 16px;font-weight: 500;}
+        /* 手机端CSS适配 */
+        @media only screen and (max-width:500px){
+            #page-content{width:100%;margin:0;}
+        }
+        ins.adsbygoogle[data-ad-status="unfilled"] {display: none !important;}
+        #toon-adsense-ads{display: block;}
+        .ads-bg {display: flex;width: 100%;justify-content: center;align-items: center;}
+    </style>
+<meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9nrunKdU5m96PSN1XsSGr3qOP0lvPFUB2AiAylCDlN5DTl17uDFkpQuHj1AFtgWLxpLaiBZuhrtb2WOu7ofHwEAAACKeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A93bovR+QVXNx2/38qDbmeYYf1wdte9EO37K9eMq3r+541qo0byhYU899BhPB7Cv9QqD7wIbR1B6OAc9kEfYCA4AAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A1S5fojrAunSDrFbD8OfGmFHdRFZymSM/1ss3G+NEttCLfHkXvlcF6LGLH8Mo5PakLO1sCASXU1/gQf6XGuTBgwAAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><script async="" src="https://fundingchoicesmessages.google.com/i/ca-pub-6287658185530498?href=https%3A%2F%2Fgametoon.mobi&amp;ers=2"></script><script async="" src="https://fundingchoicesmessages.google.com/f/AGSKWxW4BzIHqDd-78A-Yia-MQUPYwOQduAa15j81rvYTLB1wY7ERIn8R5whrmTyccd_dTmnhoNKSUhh9YfzO1RdeTPSbGUVwu7t4CCL2hSnx4Id1Xda7C0dX6_UOVpPuCCDDLSJJgYaLA==?fccs=W251bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLFsxNzc1OTQyNjQ4LDU0ODAwMDAwMF0sbnVsbCxudWxsLG51bGwsW251bGwsWzddXSwiaHR0cHM6Ly9nYW1ldG9vbi5tb2JpLyIsbnVsbCxbWzgsIlh6NFRlM1RxZlQ4Il0sWzksImlkIl0sWzE4LCJbW1tudWxsLDc5Nl1dXSJdLFsyMywiMTc3NTk0MjY0OCJdLFszNSwiMTc3NTk0MjY0OCJdLFsxOSwiMiJdLFsxNywiWzBdIl0sWzI0LCIiXSxbMjksInRydWUiXV1d"></script><script async="" src="https://fundingchoicesmessages.google.com/f/AGSKWxV-2oZmjYEQJDeKkJffwFLUUiELNP8uxYwltkuJKa1n23sD4uADJSCe5GCeZmbVxAj3bOy1ks-DpSoFJOQQjm28Zmawr9ymZPOEoCs7ZwNh1UDMnZdwmClAWt0wtL-UY3ER8i8X0g==?fccs=W251bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLFsxNzc1OTQyNjQ4LDU4MTAwMDAwMF0sbnVsbCxudWxsLG51bGwsW251bGwsWzcsOV0sbnVsbCwyLG51bGwsImVuIl0sImh0dHBzOi8vZ2FtZXRvb24ubW9iaS8iLG51bGwsW1s4LCJYejRUZTNUcWZUOCJdLFs5LCJpZCJdLFsxOCwiW1tbbnVsbCw3OTZdXV0iXSxbMjMsIjE3NzU5NDI2NDgiXSxbMzUsIjE3NzU5NDI2NDgiXSxbMTksIjIiXSxbMTcsIlswXSJdLFsyNCwiIl0sWzI5LCJ0cnVlIl1dXQ"></script><script async="" src="https://fundingchoicesmessages.google.com/f/AGSKWxX5LJfWto61sZOfnnj-3KWyyPBo_FJaaTjg-YumqfuQ9-UJYkPul1X9OFHejrFjCRNve-HWN-WpQViWxrrj5lxL61rT44oWzVksJ1s2mzALLRound5J9TQ57a33gdG2xS8qNEgTJQ==?fccs=W251bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLFsxNzc1OTQyNjQ5LDM0NTAwMDAwMF0sbnVsbCxudWxsLG51bGwsW251bGwsWzcsOSw2XSxudWxsLDIsbnVsbCwiZW4iLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCwxXSwiaHR0cHM6Ly9nYW1ldG9vbi5tb2JpLyIsbnVsbCxbWzgsIlh6NFRlM1RxZlQ4Il0sWzksImlkIl0sWzE4LCJbW1tudWxsLDc5Nl1dXSJdLFsyMywiMTc3NTk0MjY0OCJdLFszNSwiMTc3NTk0MjY0OCJdLFsxOSwiMiJdLFsxNywiWzBdIl0sWzI0LCIiXSxbMjksInRydWUiXV1d"></script></head>
+<body>
+<div id="page-content">
+    <script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202604070101/show_ads_impl_fy2021.js"></script><script src="https://cn-e-pic.itoon.org/toon-js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="https://cn-e-pic.itoon.org/toon-js/mangatoon.js" type="text/javascript"></script>
+    <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6287658185530498" crossorigin="anonymous" data-checked-head="true"></script>
+    <div id="toon-adsense-ads"><div class="ads-bg"><ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6287658185530498" data-ad-slot="6820586491" data-adsbygoogle-status="done" data-ad-status="unfilled"><div id="aswift_1_host" style="border: none; height: 250px; width: 300px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:300px;height:250px;min-height:auto;max-height:none;min-width:auto;max-width:none;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-6287658185530498&amp;output=html&amp;h=250&amp;slotname=6820586491&amp;adk=1720477073&amp;adf=2364485132&amp;pi=t.ma~as.6820586491&amp;w=300&amp;lmt=1736474977&amp;format=300x250&amp;url=https%3A%2F%2Fgametoon.mobi%2F&amp;uach=WyJXaW5kb3dzIiwiMTAuMCIsIng4NiIsIiIsIjE0NS4wLjc2MzIuNiIsbnVsbCwwLG51bGwsIjY0IixbWyJOb3Q6QS1CcmFuZCIsIjk5LjAuMC4wIl0sWyJIZWFkbGVzc0Nocm9tZSIsIjE0NS4wLjc2MzIuNiJdLFsiQ2hyb21pdW0iLCIxNDUuMC43NjMyLjYiXV0sMF0.&amp;abgtt=6&amp;dt=1775942648211&amp;bpp=2&amp;bdt=100&amp;idt=61&amp;shv=r20260408&amp;mjsv=m202604070101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie_enabled=1&amp;eoidce=1&amp;prev_fmts=0x0&amp;nras=1&amp;correlator=4806866446070&amp;frm=20&amp;pv=1&amp;u_tz=0&amp;u_his=2&amp;u_h=768&amp;u_w=1366&amp;u_ah=768&amp;u_aw=1366&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=533&amp;ady=0&amp;biw=1366&amp;bih=768&amp;scr_x=0&amp;scr_y=0&amp;eid=42532523%2C95384087%2C95387625%2C95372615%2C95388298&amp;oid=2&amp;pvsid=7853278045175917&amp;tmod=1133775415&amp;uas=0&amp;nvt=1&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1366%2C0%2C1366%2C768%2C1366%2C768&amp;vis=1&amp;rsz=%7C%7CeE%7C&amp;abl=CS&amp;pfx=0&amp;fu=0&amp;bc=31&amp;plas=430x688_l%7C430x688_r&amp;bz=1&amp;ifi=2&amp;uci=a!2&amp;fsb=1&amp;dtd=68" data-google-container-id="a!2" tabindex="0" title="Advertisement" aria-label="Advertisement" data-google-query-id="CKahyfXd5pMDFWdTnQkdtsMXIA" data-load-complete="true"></iframe></div></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></div>
+    <script>
+        let aphonePageName = { // 安卓客户端包名对应的Adsense广告单元
+            'mobi.mangatoon.comics.aphone': '5965867499',
+            'mobi.mangatoon.comics.aphone.spanish': '6644524341',
+            'mobi.mangatoon.comics.aphone.portuguese': '2705279332',
+            'mobi.mangatoon.novel': '9079115994',
+            'mobi.mangatoon.novel.portuguese': '8478412395',
+            'com.mangatoon.novel': '7027667726',
+            'com.mangatoon.ios': '7330920055',
+        }
+        let baseAdUnit = '6820586491' // 只固定上面的5个包独立广告单元，其他的包名默认都使用这个
+
+        // 根据包名获取对应的广告单元
+        if (window.mangatoon && window.mangatoon.getDeviceInfo) {
+            window.mangatoon.getDeviceInfo({
+                success:function(result){
+                    let packageName = result.packageName
+                    let adUnit = baseAdUnit
+                    if (aphonePageName[packageName]) {
+                        adUnit = aphonePageName[packageName]
+                    }
+                    console.log('adUnit:', adUnit)
+                    addAdsenseAd(adUnit)
+                },
+                fail:function(result){ //失败回调
+                    addAdsenseAd(baseAdUnit)
+                }
+            })
+        } else {
+            addAdsenseAd(baseAdUnit)
+        }
+
+        let isLoadedAds = false
+        // 客户端调用通知显示广告
+        !(function (W) {
+            W.showAdsenseAds = function() {
+                if (isLoadedAds) {
+                    $('#toon-adsense-ads').show()
+                }
+                return isLoadedAds
+            }
+        })(window.mangatoon);
+
+        /**
+         * 添加Adsense广告并且监听广告是否有填充
+         * @param adUnit
+         */
+        function addAdsenseAd(adUnit) {
+            let html = '<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-6287658185530498" data-ad-slot="' + adUnit + '"><\/ins>';
+            html += '<script>';
+            html += '(adsbygoogle = window.adsbygoogle || []).push({});';
+            html += '<\/script>';
+            $('.ads-bg').html(html);
+
+            // Adsense广告填充监听
+            let time = 0
+            let interval = setInterval(function() {
+                let adElement = $('.adsbygoogle')
+                let fixAdStatus = adElement.data('ad-status')
+                let adsByGoogleStatus = adElement.data('data-adsbygoogle-status')
+                if (fixAdStatus === 'filled') {
+                    clearInterval(interval);
+                    console.log('adsense filled');
+                    window.mangatoon.notifyAdLoadResult({
+                        status: 'success',
+                        advertisers: 'adsense',
+                        error_message: 'adsense filled',
+                        error_code: 0,
+                        ad_width: parseInt(adElement.width()),
+                        ad_height: parseInt(adElement.height()),
+                    })
+                    isLoadedAds = true
+                } else if (fixAdStatus === 'unfilled' || (adsByGoogleStatus === 'done' && time > 30000)) { // 广告未填充
+                    clearInterval(interval);
+                    console.log('adsense unfilled');
+                    window.mangatoon.notifyAdLoadResult({
+                        status: 'error',
+                        error_message: 'adsense unfilled',
+                        error_code: -1,
+                    })
+                }
+                time += 100
+            }, 100);
+        }
+    </script>
+    <div class="nav-bar">Game Center</div>
+    <div class="top-tips-content">Playing in a non-wifi will consume a lot of data</div>
+    <div class="banner">
+        <a href="https://gametoon.mobi/fruitDart/web/index.html">
+            <img src="https://cn-e-pic.mangatoon.mobi/game-center/6b957f00ce6985a150803f0b57367aa8.webp" alt="Game Center">
+        </a>
+    </div>
+    <div class="split-line"></div>
+    <div class="game-center">
+        <div class="license-games-title">GameToon Shop</div>
+        <!--狗狗游戏-->
+        <div class="game-item">
+            <img class="game-icon" src="https://cn-e-pic.mangatoon.mobi/game-center/02c3cd16d26a1c986d07e69fcdc24cf2.webp" alt="">
+            <div class="game-wrapper">
+                <div class="game-info">
+                    <div class="game-title">Protect the Doggy</div>
+                    <div class="subtitle">Protect the Doggy!!!</div>
+                    <div class="game-data">
+                        <img class="hot-icon" src="https://cn-e-pic.mangatoon.mobi/icons/hot.png" alt="hot icon">
+                        <span class="hot-count">555018</span>
+                    </div>
+                </div>
+                <a class="play" href="https://gametoon.mobi/dog6/index.html">play</a>
+            </div>
+        </div>
+        <!--水果三消游戏-->
+        <div class="game-item">
+            <img class="game-icon" src="https://cn-e-pic.mangatoon.mobi/game-center/b675c994bc6345b4fd9458cd5cea9673.png" alt="">
+            <div class="game-wrapper">
+                <div class="game-info">
+                    <div class="game-title">Fruit Hero</div>
+                    <div class="subtitle">Eliminate worries and heal the soul</div>
+                    <div class="game-data">
+                        <img class="hot-icon" src="https://cn-e-pic.mangatoon.mobi/icons/hot.png" alt="hot icon">
+                        <span class="hot-count">514577</span>
+                    </div>
+                </div>
+                <a class="play" href="https://gametoon.mobi/fruithero4/web-mobile/index.html">play</a>
+            </div>
+        </div>
+        <!--跑酷游戏-->
+        <div class="game-item">
+            <img class="game-icon" src="https://cn-e-pic.mangatoon.mobi/game-center/cf2a2e98dbb7426b4ed8757c3678ead3.webp" alt="">
+            <div class="game-wrapper">
+                <div class="game-info">
+                    <div class="game-title">Princess Run</div>
+                    <div class="subtitle">Jump and win new dresses</div>
+                    <div class="game-data">
+                        <img class="hot-icon" src="https://cn-e-pic.mangatoon.mobi/icons/hot.png" alt="hot icon">
+                        <span class="hot-count">238782</span>
+                    </div>
+                </div>
+                <a class="play" href="https://gametoon.mobi/runPrincess3/index.html">play</a>
+            </div>
+        </div>
+        <!--飞刀游戏-->
+        <div class="game-item">
+            <img class="game-icon" src="https://cn-e-pic.mangatoon.mobi/game-center/00e9a94b149fa3e09dbe491edf92a964.webp" alt="">
+            <div class="game-wrapper">
+                <div class="game-info">
+                    <div class="game-title">Fruit Dart</div>
+                    <div class="subtitle">Become a fruit cutting master</div>
+                    <div class="game-data">
+                        <img class="hot-icon" src="https://cn-e-pic.mangatoon.mobi/icons/hot.png" alt="hot icon">
+                        <span class="hot-count">514577</span>
+                    </div>
+                </div>
+                <a class="play" href="https://gametoon.mobi/fruitDart/web/index.html">play</a>
+            </div>
+        </div>
+        <!--棋盘游戏-->
+        <div class="game-item">
+            <img class="game-icon" src="https://cn-e-pic.mangatoon.mobi/game-center/c62d3e5c2f34ba8529063ba2314f752a.jpg" alt="">
+            <div class="game-wrapper">
+                <div class="game-info">
+                    <div class="game-title">Ludo Master</div>
+                    <div class="subtitle">A competitive game in ancient India, play with multiple friends or against highly intelligent computer players</div>
+                    <div class="game-data">
+                        <img class="hot-icon" src="https://cn-e-pic.mangatoon.mobi/icons/hot.png" alt="hot icon">
+                        <span class="hot-count">650806</span>
+                    </div>
+                </div>
+                <a class="play" href="https://gametoon.mobi/LudoMaster/index.html">play</a>
+            </div>
+        </div>
+        <div class="license-games-title">License Games</div>
+        <!--Lucky-->
+        <div class="game-item">
+            <img class="game-icon" src="https://cn-e-pic.mangatoon.mobi/game-center/f4e1137575e74fa3473136a61d668929.png" alt="">
+            <div class="game-wrapper">
+                <div class="game-info">
+                    <div class="game-title">Flappy Lucky</div>
+                    <div class="subtitle">Control Lucky to fly over obstacles</div>
+                    <div class="game-data">
+                        <img class="hot-icon" src="https://cn-e-pic.mangatoon.mobi/icons/hot.png" alt="hot icon">
+                        <span class="hot-count">463879</span>
+                    </div>
+                </div>
+                <a class="play" href="https://game.mangatoon.mobi">play</a>
+            </div>
+        </div>
+        <!--地铁跑酷-->
+        <div class="game-item">
+            <img class="game-icon" src="https://cn-e-pic.mangatoon.mobi/game-center/602c9ca4d2971f9bf52738f9ae7b9267.png" alt="">
+            <div class="game-wrapper">
+                <div class="game-info">
+                    <div class="game-title">Subway Surfers</div>
+                    <div class="subtitle">Help the graffiti boy escape the hunt</div>
+                    <div class="game-data">
+                        <img class="hot-icon" src="https://cn-e-pic.mangatoon.mobi/icons/hot.png" alt="hot icon">
+                        <span class="hot-count">6463879</span>
+                    </div>
+                </div>
+                <a class="play" href="https://fun.123rabbitrun.com/toon/subway-surfers1_4/clothes/index.html">play</a>
+            </div>
+        </div>
+        <!--水果飞刀-->
+        <div class="game-item">
+            <img class="game-icon" src="https://cn-e-pic.mangatoon.mobi/game-center/1863e3331b788e14767190f0e011a645.jpg" alt="">
+            <div class="game-wrapper">
+                <div class="game-info">
+                    <div class="game-title">Fruit Master</div>
+                    <div class="subtitle">Let's cut the fruit together!</div>
+                    <div class="game-data">
+                        <img class="hot-icon" src="https://cn-e-pic.mangatoon.mobi/icons/hot.png" alt="hot icon">
+                        <span class="hot-count">75272</span>
+                    </div>
+                </div>
+                <a class="play" href="https://fun.123rabbitrun.com/toon/fruit-master/clothes/index.html">play</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ins class="adsbygoogle adsbygoogle-noablate" data-ad-hi="true" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><div id="aswift_0_host" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;min-height:auto;max-height:none;min-width:auto;max-width:none;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-6287658185530498&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;lmt=1736474977&amp;plat=9%3A32776%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1081344%2C32%3A32%2C41%3A32%2C42%3A32%2C43%3A32&amp;format=0x0&amp;url=https%3A%2F%2Fgametoon.mobi%2F&amp;pra=5&amp;aiof=9&amp;asro=0&amp;aiapmd=0.0001&amp;aiapmid=0.0001&amp;aiactd=0&amp;aicctd=0&amp;ailctd=0&amp;aimartd=4&amp;uach=WyJXaW5kb3dzIiwiMTAuMCIsIng4NiIsIiIsIjE0NS4wLjc2MzIuNiIsbnVsbCwwLG51bGwsIjY0IixbWyJOb3Q6QS1CcmFuZCIsIjk5LjAuMC4wIl0sWyJIZWFkbGVzc0Nocm9tZSIsIjE0NS4wLjc2MzIuNiJdLFsiQ2hyb21pdW0iLCIxNDUuMC43NjMyLjYiXV0sMF0.&amp;abgtt=6&amp;dt=1775942648190&amp;bpp=21&amp;bdt=79&amp;idt=49&amp;shv=r20260408&amp;mjsv=m202604070101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie_enabled=1&amp;eoidce=1&amp;nras=1&amp;correlator=4806866446070&amp;frm=20&amp;pv=2&amp;u_tz=0&amp;u_his=2&amp;u_h=768&amp;u_w=1366&amp;u_ah=768&amp;u_aw=1366&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=1366&amp;bih=768&amp;scr_x=0&amp;scr_y=0&amp;eid=42532523%2C95384087%2C95387625%2C95372615%2C95388298&amp;oid=2&amp;pvsid=7853278045175917&amp;tmod=1133775415&amp;uas=0&amp;nvt=1&amp;fsapi=1&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1366%2C0%2C1366%2C768%2C1366%2C768&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=32768&amp;bc=31&amp;plas=430x688_l%7C430x688_r&amp;bz=1&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=76" data-google-container-id="a!1" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true"></iframe></div></ins><iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><div class="google-auto-placed" style="width: 100%; height: auto; clear: both; text-align: center;"><ins data-ad-format="auto" class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-6287658185530498" data-adsbygoogle-status="done" style="display: block; margin: 10px auto; background-color: transparent; height: 0px;" data-ad-status="unfilled"><div id="aswift_2_host" style="border: none; height: 0px; width: 1200px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: hidden; opacity: 0;"><iframe id="aswift_2" name="aswift_2" style="left: 0px; position: absolute; top: 0px; border: 0px; width: 1200px; height: 0px; min-height: auto; max-height: none; min-width: auto; max-width: none;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="1200" height="0" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="https://googleads.g.doubleclick.net/pagead/ads?gdpr=0&amp;client=ca-pub-6287658185530498&amp;output=html&amp;h=280&amp;adk=3809598800&amp;adf=1839787983&amp;pi=t.aa~a.1182920990~rp.3&amp;w=1200&amp;fwrn=4&amp;fwrnh=100&amp;lmt=1736474977&amp;rafmt=1&amp;to=qs&amp;pwprc=8039596320&amp;format=1200x280&amp;url=https%3A%2F%2Fgametoon.mobi%2F&amp;fwr=0&amp;pra=3&amp;rpe=1&amp;resp_fmts=3&amp;fa=40&amp;uach=WyJXaW5kb3dzIiwiMTAuMCIsIng4NiIsIiIsIjE0NS4wLjc2MzIuNiIsbnVsbCwwLG51bGwsIjY0IixbWyJOb3Q6QS1CcmFuZCIsIjk5LjAuMC4wIl0sWyJIZWFkbGVzc0Nocm9tZSIsIjE0NS4wLjc2MzIuNiJdLFsiQ2hyb21pdW0iLCIxNDUuMC43NjMyLjYiXV0sMF0.&amp;abgtt=6&amp;dt=1775942648466&amp;bpp=2&amp;bdt=355&amp;idt=2&amp;shv=r20260408&amp;mjsv=m202604070101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie=ID%3Dad28e2479021f8c2%3AT%3D1775942648%3ART%3D1775942648%3AS%3DALNI_MYKsPGVrQdFb6Lb0WiO1OjZ2DYhTQ&amp;gpic=UID%3D0000124c1a93228c%3AT%3D1775942648%3ART%3D1775942648%3AS%3DALNI_MYNw50R2HZ4bYEjN10IFe8grplq-Q&amp;eo_id_str=ID%3Dd4a0dabdbb200eb8%3AT%3D1775942648%3ART%3D1775942648%3AS%3DAA-AfjYZU_d9xNfoaBvS-GnMrF0n&amp;prev_fmts=0x0%2C300x250&amp;nras=2&amp;correlator=4806866446070&amp;frm=20&amp;pv=1&amp;u_tz=0&amp;u_his=2&amp;u_h=768&amp;u_w=1366&amp;u_ah=768&amp;u_aw=1366&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=83&amp;ady=1382&amp;biw=1366&amp;bih=768&amp;scr_x=0&amp;scr_y=0&amp;eid=42532523%2C95384087%2C95387625%2C95372615%2C95388298&amp;oid=2&amp;pvsid=7853278045175917&amp;tmod=1133775415&amp;uas=0&amp;nvt=1&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1366%2C0%2C1366%2C768%2C1366%2C768&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=128&amp;bc=31&amp;plas=430x688_l%7C430x688_r&amp;bz=1&amp;ifi=3&amp;uci=a!3&amp;btvi=1&amp;fsb=1&amp;dtd=85" data-google-container-id="a!3" tabindex="0" title="Advertisement" aria-label="Advertisement" data-google-query-id="CI_Z1vXd5pMDFV1unQkdTL4o1Q" data-load-complete="true"></iframe></div></ins></div><iframe name="__tcfapiLocator" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcInactive" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcLoaded" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe src="https://www.google.com/recaptcha/api2/aframe" width="0" height="0" style="display: none;"></iframe></body><iframe id="google_esf" name="google_esf" src="https://googleads.g.doubleclick.net/pagead/html/r20260408/r20190131/zrt_lookup_fy2021.html" style="display: none;"></iframe></html>

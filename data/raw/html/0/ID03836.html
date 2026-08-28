@@ -1,0 +1,656 @@
+<html lang="en-us"><head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<link rel="preload" href="/assets/logo/pn.svg" as="image">
+
+<link rel="icon" type="image/x-icon" href="/assets/logo/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/logo/favicon-16x16.png">
+<link rel="mask-icon" href="/assets/logo/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/logo/favicon.ico">
+<meta name="msapplication-TileColor" content="#000066">
+<meta name="msapplication-config" content="/assets/logo/browserconfig.xml">
+
+<link rel="manifest" href="/assets/manifest.json">
+<meta name="theme-color" content="#000066">
+
+    <link rel="stylesheet" href="/styles/vanilla.min.css">
+
+    <script type="text/javascript">var angularBaseHref = '/app';</script>
+
+    
+    <!-- Google analytics G4 (gtag.js) -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-T72J3G0B7W"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-T72J3G0B7W');
+    </script>
+
+      <title>Christian song chords &amp; lyrics | Psalmnote</title>
+      <meta name="description" content="Psalmnote is a place where you can find your favourite christian songs lyric and transposable chords. Discover our features such as songlist, song request, and pick a random song.">
+      <meta property="og:site_name" content="Psalmnote | Christian song chords &amp; lyrics">
+<meta property="og:title" content="Psalmnote | Christian song chords &amp; lyrics">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.psalmnote.com">
+<meta property="og:image" itemprop="image" content="https://www.psalmnote.com/assets/logo/pn_60.png">
+<meta property="og:locale" content="en_GB">
+  </head>
+  <body>
+    
+    <div class="homepage-brand">
+  <div class="container">
+    <div class="hero-header">
+  <a href="/app" class="site-header-logo-link">
+    <img alt="Psalmnote logo" width="35" height="35" src="/assets/logo/pn.svg">
+    <span class="color-white">Psalmnote</span>
+  </a>
+  <div style="position:relative;">
+    <span class="d-flex d-md-none cursor-pointer" id="toggleMobileNavigation">
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 448 512"><path fill="white" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg>
+    </span>
+
+    <div class="hero-header--navigation" id="mobileNavigation">
+      <a href="/" class="active">Home</a>
+            <a href="/app/songeditor/create">Add a new song</a>
+      
+      <a href="/app/user/login" id="loginLink">Login</a>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  const jwt = localStorage.getItem('jwt');
+  const isLoggedIn = jwt && jwt.length;
+
+  if (isLoggedIn) {
+    document.getElementById('loginLink').outerHTML = '';
+  }
+  else {
+    document.getElementById('profileLink').outerHTML = '';
+  }
+
+  document.getElementById('toggleMobileNavigation').addEventListener('click', (event) => {
+    document.getElementById('mobileNavigation').classList.toggle('hero-header--navigation__mobile-toggled');
+  });
+</script>
+
+    <div class="homepage-brand--search-container">
+      <div>
+        <h1 class="h2 color-white mb-3 mt-0">
+          Find and transpose christian songs chord on Psalmnote:
+        </h1>
+        <form id="searchForm" class="search-form" autocomplete="off">
+  <div id="autoCompleteContainer">
+    <input id="autoComplete" class="input input-autocomplete" placeholder="Search song..." type="search"><div id="autoComplete_list" class="autocomplete-results"></div>
+  </div>
+  <button type="submit" class="btn-maroon search-form--submit" aria-label="search song">
+    <svg width="25" height="25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      <path fill="#FFF" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path>
+    </svg>
+  </button>
+</form>
+
+<script src="/assets/@tarekraafat/autocomplete.js/dist/js/autoComplete.min.js"></script>
+<script type="text/javascript">
+  (function() {
+    const $autoCompleteInput = document.querySelector('#autoComplete');
+
+    function search(searchString) {
+      if (searchString && searchString.length > 0) {
+        window.location.href = `${angularBaseHref}/?searchString=${searchString}`;
+      }
+    }
+
+    function goToSongPage(alias) {
+      if (alias && alias.length > 0) {
+        window.location.href = `${angularBaseHref}/song/${alias}`;
+      }
+    }
+
+    document.getElementById('searchForm').addEventListener('submit', (eventt) => {
+      event.preventDefault();
+      search($autoCompleteInput.value);
+    });
+
+    const highlightString = (text, search) => {
+      // // These codes will highlight per words match
+      // // ------------------------------------------
+      // // For example: search = "I love you". will do:
+      // // <span class="highlight">I love you</span> and <span class="highlight">I</span> miss you
+      // let pattern = search.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&');
+      // pattern = pattern.split(' ').filter((t) => {
+      //   return t.length > 0;
+      // }).join('|');
+      // let regex = new RegExp(pattern, 'gi');
+      // return search ? text.replace(regex, (match) => `<span class="highlight">${match}</span>`) : text;
+
+      // These codes will highlight per exact word matches
+      // -------------------------------------------------
+      const escapedString = search.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+      let regex = new RegExp(escapedString, 'gi');
+      return search ? text.replace(regex, (match) => `<span class="highlight">${match}</span>`) : text;
+    }
+
+    const minSearchLength = 2;
+    new autoComplete({
+      data: { // Data src [Array, Function, Async] | (REQUIRED)
+        src: async () => {
+          const query = $autoCompleteInput.value;
+          // Prevent api call if input length is less than minSearchLength
+          if (query?.length <= minSearchLength) {
+            return [];
+          }
+          const source = await fetch(`/api/song/autocomplete?searchString=${query}`);
+          return await source.json();
+        },
+        key: ['title'],
+        cache: false
+      },
+      sort: (a, b) => {
+        // if (a.match < b.match) return -1;
+        // if (a.match > b.match) return 1;
+        return 0;
+      },
+      placeHolder: 'Search song...',
+      selector: '#autoComplete',
+      threshold: minSearchLength,
+      debounce: 300,
+      searchEngine: (query, record) => {
+        // console.log({query, record});
+        return record;
+      },
+      resultsList: {
+        render: true,
+        container: source => {
+          source.setAttribute('class', 'autocomplete-results');
+        },
+        destination: $autoCompleteInput,
+        position: 'afterend',
+        element: 'div'
+      },
+      maxResults: Infinity,
+      highlight: true,
+      resultItem: {
+        content: (data, source) => {
+          const extraResultItems = ['artist'];
+          let resultItem = data.match;
+          resultItem += extraResultItems.map(r => data.value[r] ? ` - ${data.value[r]}` : '').join('');
+
+          const searchString = $autoCompleteInput.value;
+          source.innerHTML = highlightString(resultItem, searchString);
+        },
+        element: 'div'
+      },
+      noResults: () => {
+        /**/
+      },
+      onSelection: feedback => {
+        $autoCompleteInput.value = feedback.selection.value.title;
+        goToSongPage(feedback.selection.value.alias);
+      }
+    });
+
+  })();
+</script>      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="container">
+  <h2 class="mt-4 mb-3">Recently added songs</h2>
+      <div class="row">
+          <div class="col-md-6 col-xxl-4">
+        <div class="song-block">
+  <a href="/app/song/clap-your-hands-chords-integrity-kids" aria-label="Go to song Clap Your Hands">
+    <img src="https://www.psalmnote.com/album-image/integrity-kids/gods-not-dead.jpeg" class="song-block--album-img" alt="Sing-A-Long Praise: Shout Sing Clap!">
+  </a>
+  <div>
+    <h3><a href="/song/clap-your-hands-chords-integrity-kids">Clap Your Hands</a></h3>
+          by <a href="/artist/integrity-kids">Integrity Kids</a>
+    
+          on album <a href="/album/singalong-praise-shout-sing-clap-by-integrity-kids">Sing-A-Long Praise: Shout Sing Clap!</a>
+    
+    <div class="song-block--language">
+      <div class="language-code">eng</div>
+    </div>
+  </div>
+</div>
+      </div>
+          <div class="col-md-6 col-xxl-4">
+        <div class="song-block">
+  <a href="/app/song/more-precious-than-silver-chords-integrity-kids" aria-label="Go to song More Precious Than Silver">
+    <img src="https://www.psalmnote.com/album-image/integrity-kids/gods-not-dead.jpeg" class="song-block--album-img" alt="Sing-A-Long Praise: Shout Sing Clap!">
+  </a>
+  <div>
+    <h3><a href="/song/more-precious-than-silver-chords-integrity-kids">More Precious Than Silver</a></h3>
+          by <a href="/artist/integrity-kids">Integrity Kids</a>
+    
+          on album <a href="/album/singalong-praise-shout-sing-clap-by-integrity-kids">Sing-A-Long Praise: Shout Sing Clap!</a>
+    
+    <div class="song-block--language">
+      <div class="language-code">eng</div>
+    </div>
+  </div>
+</div>
+      </div>
+          <div class="col-md-6 col-xxl-4">
+        <div class="song-block">
+  <a href="/app/song/i-love-to-praise-him-chords-integrity-kids" aria-label="Go to song I Love to Praise Him">
+    <img src="https://www.psalmnote.com/album-image/integrity-kids/gods-not-dead.jpeg" class="song-block--album-img" alt="Sing-A-Long Praise: Shout Sing Clap!">
+  </a>
+  <div>
+    <h3><a href="/song/i-love-to-praise-him-chords-integrity-kids">I Love to Praise Him</a></h3>
+          by <a href="/artist/integrity-kids">Integrity Kids</a>
+    
+          on album <a href="/album/singalong-praise-shout-sing-clap-by-integrity-kids">Sing-A-Long Praise: Shout Sing Clap!</a>
+    
+    <div class="song-block--language">
+      <div class="language-code">eng</div>
+    </div>
+  </div>
+</div>
+      </div>
+          <div class="col-md-6 col-xxl-4">
+        <div class="song-block">
+  <a href="/app/song/shout-sing-clap-chords-integrity-kids" aria-label="Go to song Shout Sing Clap">
+    <img src="https://www.psalmnote.com/album-image/integrity-kids/gods-not-dead.jpeg" class="song-block--album-img" alt="Sing-A-Long Praise: Shout Sing Clap!">
+  </a>
+  <div>
+    <h3><a href="/song/shout-sing-clap-chords-integrity-kids">Shout Sing Clap</a></h3>
+          by <a href="/artist/integrity-kids">Integrity Kids</a>
+    
+          on album <a href="/album/singalong-praise-shout-sing-clap-by-integrity-kids">Sing-A-Long Praise: Shout Sing Clap!</a>
+    
+    <div class="song-block--language">
+      <div class="language-code">eng</div>
+    </div>
+  </div>
+</div>
+      </div>
+          <div class="col-md-6 col-xxl-4">
+        <div class="song-block">
+  <a href="/app/song/this-is-the-day-chords-integrity-kids" aria-label="Go to song This Is The Day">
+    <img src="https://www.psalmnote.com/album-image/integrity-kids/gods-not-dead.jpeg" class="song-block--album-img" alt="Sing-A-Long Praise: Shout Sing Clap!">
+  </a>
+  <div>
+    <h3><a href="/song/this-is-the-day-chords-integrity-kids">This Is The Day</a></h3>
+          by <a href="/artist/integrity-kids">Integrity Kids</a>
+    
+          on album <a href="/album/singalong-praise-shout-sing-clap-by-integrity-kids">Sing-A-Long Praise: Shout Sing Clap!</a>
+    
+    <div class="song-block--language">
+      <div class="language-code">eng</div>
+    </div>
+  </div>
+</div>
+      </div>
+          <div class="col-md-6 col-xxl-4">
+        <div class="song-block">
+  <a href="/app/song/gods-not-dead-chords-sarang-community-church" aria-label="Go to song God's Not Dead">
+    <img src="https://www.psalmnote.com/album-image/integrity-kids/gods-not-dead.jpeg" class="song-block--album-img" alt="Sing-A-Long Praise: Shout Sing Clap!">
+  </a>
+  <div>
+    <h3><a href="/song/gods-not-dead-chords-sarang-community-church">God's Not Dead</a></h3>
+          by <a href="/artist/integrity-kids">Integrity Kids</a>
+    
+          on album <a href="/album/singalong-praise-shout-sing-clap-by-integrity-kids">Sing-A-Long Praise: Shout Sing Clap!</a>
+    
+    <div class="song-block--language">
+      <div class="language-code">eng</div>
+    </div>
+  </div>
+</div>
+      </div>
+          <div class="col-md-6 col-xxl-4">
+        <div class="song-block">
+  <a href="/app/song/kota-pujian-chords-harvest-praise-ministry" aria-label="Go to song Kota Pujian">
+    <img src="https://www.psalmnote.com/album-image/harvest-praise-ministry/kota-pujian.jpeg" class="song-block--album-img" alt="Kota Pujian">
+  </a>
+  <div>
+    <h3><a href="/song/kota-pujian-chords-harvest-praise-ministry">Kota Pujian</a></h3>
+          by <a href="/artist/harvest-praise-ministry">Harvest Praise Ministry</a>
+    
+          on album <a href="/album/kota-pujian-by-harvest-praise-ministry">Kota Pujian</a>
+    
+    <div class="song-block--language">
+      <div class="language-code">ind</div>
+    </div>
+  </div>
+</div>
+      </div>
+          <div class="col-md-6 col-xxl-4">
+        <div class="song-block">
+  <a href="/app/song/langit-bersaksi-tentang-kasihmu-chords-puji-worship" aria-label="Go to song Langit Bersaksi Tentang KasihMu">
+    <img src="https://www.psalmnote.com/album-image/puji-worship/langit-bersaksi-tentang-kasihmu.jpeg" class="song-block--album-img" alt="Langit Bersaksi Tentang KasihMu">
+  </a>
+  <div>
+    <h3><a href="/song/langit-bersaksi-tentang-kasihmu-chords-puji-worship">Langit Bersaksi Tentang KasihMu</a></h3>
+          by <a href="/artist/puji-worship">Puji Worship</a>
+    
+          on album <a href="/album/langit-bersaksi-tentang-kasihmu-by-puji-worship">Langit Bersaksi Tentang KasihMu</a>
+    
+    <div class="song-block--language">
+      <div class="language-code">ind</div>
+    </div>
+  </div>
+</div>
+      </div>
+          <div class="col-md-6 col-xxl-4">
+        <div class="song-block">
+  <a href="/app/song/langkah-di-jejakmu-chords-nada-sion-project" aria-label="Go to song Langkah di Jejak-Mu">
+    <img src="https://www.psalmnote.com/album-image/nada-sion-project/devotion.jpg" class="song-block--album-img" alt="Devotion">
+  </a>
+  <div>
+    <h3><a href="/song/langkah-di-jejakmu-chords-nada-sion-project">Langkah di Jejak-Mu</a></h3>
+          by <a href="/artist/nada-sion-project">Nada Sion Project</a>
+    
+          on album <a href="/album/devotion-by-nada-sion-project">Devotion</a>
+    
+    <div class="song-block--language">
+      <div class="language-code">ind</div>
+    </div>
+  </div>
+</div>
+      </div>
+          <div class="col-md-6 col-xxl-4">
+        <div class="song-block">
+  <a href="/app/song/ku-yakin-chords-lydiawati-sugiarto-swie-lie" aria-label="Go to song Ku Yakin">
+    <img src="https://www.psalmnote.com/album-image/lydiawati-sugiarto-swie-lie/syukur.jpg" class="song-block--album-img" alt="Syukur">
+  </a>
+  <div>
+    <h3><a href="/song/ku-yakin-chords-lydiawati-sugiarto-swie-lie">Ku Yakin</a></h3>
+          by <a href="/artist/lydiawati-sugiarto-swie-lie">Lydiawati Sugiarto (Swie Lie)</a>
+    
+          on album <a href="/album/syukur-by-lydiawati-sugiarto-swie-lie">Syukur</a>
+    
+    <div class="song-block--language">
+      <div class="language-code">ind</div>
+    </div>
+  </div>
+</div>
+      </div>
+          <div class="col-md-6 col-xxl-4">
+        <div class="song-block">
+  <a href="/app/song/sbab-dia-hidup-chords-gms-sunday-sevice" aria-label="Go to song Sbab Dia Hidup">
+    <img src="/assets/img/image-fallback/album-image.jpg" class="song-block--album-img" alt="Album containing the song Sbab Dia Hidup">
+  </a>
+  <div>
+    <h3><a href="/song/sbab-dia-hidup-chords-gms-sunday-sevice">Sbab Dia Hidup</a></h3>
+           by GMS Sunday Sevice     
+              
+    <div class="song-block--language">
+      <div class="language-code">ind</div>
+    </div>
+  </div>
+</div>
+      </div>
+          <div class="col-md-6 col-xxl-4">
+        <div class="song-block">
+  <a href="/app/song/yesuslah-jawaban-bagi-dunia-chords-pdt-ade-manuhutu" aria-label="Go to song Yesuslah Jawaban Bagi Dunia">
+    <img src="https://www.psalmnote.com/album-image/pdt-ade-manuhutu-various-artists/yesuslah-jawaban-bagi-dunia.jpeg" class="song-block--album-img" alt="Yesuslah Jawaban Bagi Dunia">
+  </a>
+  <div>
+    <h3><a href="/song/yesuslah-jawaban-bagi-dunia-chords-pdt-ade-manuhutu">Yesuslah Jawaban Bagi Dunia</a></h3>
+          by <a href="/artist/pdt-ade-manuhutu">Pdt. Ade Manuhutu</a>
+    
+          on album <a href="/album/yesuslah-jawaban-bagi-dunia-by-pdt-ade-manuhutu-various-artists">Yesuslah Jawaban Bagi Dunia</a>
+    
+    <div class="song-block--language">
+      <div class="language-code">ind</div>
+    </div>
+  </div>
+</div>
+      </div>
+          <div class="col-md-6 col-xxl-4">
+        <div class="song-block">
+  <a href="/app/song/i-am-happy-chords-jcc-kids" aria-label="Go to song I Am Happy">
+    <img src="/assets/img/image-fallback/album-image.jpg" class="song-block--album-img" alt="Album containing the song I Am Happy">
+  </a>
+  <div>
+    <h3><a href="/song/i-am-happy-chords-jcc-kids">I Am Happy</a></h3>
+           by JCC Kids     
+              
+    <div class="song-block--language">
+      <div class="language-code">ind</div>
+    </div>
+  </div>
+</div>
+      </div>
+          <div class="col-md-6 col-xxl-4">
+        <div class="song-block">
+  <a href="/app/song/kaulah-segalanya-yesus-kristus-tuhan-doa-kami-satulah-indonesia-live-chords-sari-simorangkir" aria-label="Go to song Kaulah Segalanya, Yesus Kristus Tuhan,  Doa Kami, Satulah Indonesia - Live">
+    <img src="https://www.psalmnote.com/album-image/sari-simorangkir/psalm-of-gratitude-35year-journey-of-sari.jpeg" class="song-block--album-img" alt="Psalm of Gratitude (35-Year Journey  of Sari)">
+  </a>
+  <div>
+    <h3><a href="/song/kaulah-segalanya-yesus-kristus-tuhan-doa-kami-satulah-indonesia-live-chords-sari-simorangkir">Kaulah Segalanya, Yesus Kristus Tuhan,  Doa Kami, Satulah Indonesia - Live</a></h3>
+          by <a href="/artist/sari-simorangkir">Sari Simorangkir</a>
+    
+          on album <a href="/album/psalm-of-gratitude-35year-journey-of-sari-by-sari-simorangkir">Psalm of Gratitude (35-Year Journey  of Sari)</a>
+    
+    <div class="song-block--language">
+      <div class="language-code">ind</div>
+    </div>
+  </div>
+</div>
+      </div>
+          <div class="col-md-6 col-xxl-4">
+        <div class="song-block">
+  <a href="/app/song/overture-live-chords-sari-simorangkir" aria-label="Go to song Overture - Live">
+    <img src="https://www.psalmnote.com/album-image/sari-simorangkir/psalm-of-gratitude-35year-journey-of-sari.jpeg" class="song-block--album-img" alt="Psalm of Gratitude (35-Year Journey  of Sari)">
+  </a>
+  <div>
+    <h3><a href="/song/overture-live-chords-sari-simorangkir">Overture - Live</a></h3>
+          by <a href="/artist/sari-simorangkir">Sari Simorangkir</a>
+    
+          on album <a href="/album/psalm-of-gratitude-35year-journey-of-sari-by-sari-simorangkir">Psalm of Gratitude (35-Year Journey  of Sari)</a>
+    
+    <div class="song-block--language">
+      <div class="language-code">ind</div>
+    </div>
+  </div>
+</div>
+      </div>
+          <div class="col-md-6 col-xxl-4">
+        <div class="song-block">
+  <a href="/app/song/nyanyi-bagi-dia-bersorak-sukacita-sorga-live-chords-sari-simorangkir" aria-label="Go to song Nyanyi Bagi Dia,  Bersorak,  Sukacita Sorga  - Live">
+    <img src="https://www.psalmnote.com/album-image/sari-simorangkir/psalm-of-gratitude-35year-journey-of-sari.jpeg" class="song-block--album-img" alt="Psalm of Gratitude (35-Year Journey  of Sari)">
+  </a>
+  <div>
+    <h3><a href="/song/nyanyi-bagi-dia-bersorak-sukacita-sorga-live-chords-sari-simorangkir">Nyanyi Bagi Dia,  Bersorak,  Sukacita Sorga  - Live</a></h3>
+          by <a href="/artist/sari-simorangkir">Sari Simorangkir</a>
+    
+          on album <a href="/album/psalm-of-gratitude-35year-journey-of-sari-by-sari-simorangkir">Psalm of Gratitude (35-Year Journey  of Sari)</a>
+    
+    <div class="song-block--language">
+      <div class="language-code">ind</div>
+    </div>
+  </div>
+</div>
+      </div>
+          <div class="col-md-6 col-xxl-4">
+        <div class="song-block">
+  <a href="/app/song/ikaw-ako-mahal-ni-kristo-chords" aria-label="Go to song Ikaw, Ako Mahal Ni Kristo">
+    <img src="/assets/img/image-fallback/album-image.jpg" class="song-block--album-img" alt="Album containing the song Ikaw, Ako Mahal Ni Kristo">
+  </a>
+  <div>
+    <h3><a href="/song/ikaw-ako-mahal-ni-kristo-chords">Ikaw, Ako Mahal Ni Kristo</a></h3>
+              
+              
+    <div class="song-block--language">
+      <div class="language-code">tgl</div>
+    </div>
+  </div>
+</div>
+      </div>
+          <div class="col-md-6 col-xxl-4">
+        <div class="song-block">
+  <a href="/app/song/besar-cinta-yesus-chords-baitani-matani-gmim" aria-label="Go to song Besar Cinta Yesus">
+    <img src="/assets/img/image-fallback/album-image.jpg" class="song-block--album-img" alt="Album containing the song Besar Cinta Yesus">
+  </a>
+  <div>
+    <h3><a href="/song/besar-cinta-yesus-chords-baitani-matani-gmim">Besar Cinta Yesus</a></h3>
+           by Baitani Matani GMIM     
+              
+    <div class="song-block--language">
+      <div class="language-code">ind</div>
+    </div>
+  </div>
+</div>
+      </div>
+          <div class="col-md-6 col-xxl-4">
+        <div class="song-block">
+  <a href="/app/song/ku-bersukacita-chords-elvis-bangsa" aria-label="Go to song Ku Bersukacita">
+    <img src="/assets/img/image-fallback/album-image.jpg" class="song-block--album-img" alt="Album containing the song Ku Bersukacita">
+  </a>
+  <div>
+    <h3><a href="/song/ku-bersukacita-chords-elvis-bangsa">Ku Bersukacita</a></h3>
+           by Elvis Bangsa     
+              
+    <div class="song-block--language">
+      <div class="language-code">ind</div>
+    </div>
+  </div>
+</div>
+      </div>
+          <div class="col-md-6 col-xxl-4">
+        <div class="song-block">
+  <a href="/app/song/yesusku-sumber-pengharapan-chords-gaby-betay" aria-label="Go to song Yesusku Sumber Pengharapan">
+    <img src="https://www.psalmnote.com/album-image/gaby-bettay/yesusku-sumber-pengharapan.jpeg" class="song-block--album-img" alt="Yesusku Sumber Pengharapan">
+  </a>
+  <div>
+    <h3><a href="/song/yesusku-sumber-pengharapan-chords-gaby-betay">Yesusku Sumber Pengharapan</a></h3>
+          by <a href="/artist/gaby-bettay">Gaby Bettay</a>
+    
+          on album <a href="/album/yesusku-sumber-pengharapan-by-gaby-bettay">Yesusku Sumber Pengharapan</a>
+    
+    <div class="song-block--language">
+      <div class="language-code">ind</div>
+    </div>
+  </div>
+</div>
+      </div>
+          <div class="col-md-6 col-xxl-4">
+        <div class="song-block">
+  <a href="/app/song/kasih-yesus-tak-terbatas-chords-nada-sion-project" aria-label="Go to song Kasih Yesus Tak Terbatas">
+    <img src="https://www.psalmnote.com/album-image/nada-sion-project/devotion.jpg" class="song-block--album-img" alt="Devotion">
+  </a>
+  <div>
+    <h3><a href="/song/kasih-yesus-tak-terbatas-chords-nada-sion-project">Kasih Yesus Tak Terbatas</a></h3>
+          by <a href="/artist/nada-sion-project">Nada Sion Project</a>
+    
+          on album <a href="/album/devotion-by-nada-sion-project">Devotion</a>
+    
+    <div class="song-block--language">
+      <div class="language-code">ind</div>
+    </div>
+  </div>
+</div>
+      </div>
+          <div class="col-md-6 col-xxl-4">
+        <div class="song-block">
+  <a href="/app/song/lay-it-down-chords-matt-maher" aria-label="Go to song Lay It Down">
+    <img src="https://www.psalmnote.com/album-image/matt-maher/empty-and-beautiful.jpeg" class="song-block--album-img" alt="Empty And Beautiful">
+  </a>
+  <div>
+    <h3><a href="/song/lay-it-down-chords-matt-maher">Lay It Down</a></h3>
+          by <a href="/artist/matt-maher">Matt Maher</a>
+    
+          on album <a href="/album/empty-and-beautiful-by-matt-maher">Empty And Beautiful</a>
+    
+    <div class="song-block--language">
+      <div class="language-code">eng</div>
+    </div>
+  </div>
+</div>
+      </div>
+          <div class="col-md-6 col-xxl-4">
+        <div class="song-block">
+  <a href="/app/song/shine-like-the-son-chords-matt-maher" aria-label="Go to song Shine Like The Son">
+    <img src="https://www.psalmnote.com/album-image/matt-maher/empty-and-beautiful.jpeg" class="song-block--album-img" alt="Empty And Beautiful">
+  </a>
+  <div>
+    <h3><a href="/song/shine-like-the-son-chords-matt-maher">Shine Like The Son</a></h3>
+          by <a href="/artist/matt-maher">Matt Maher</a>
+    
+          on album <a href="/album/empty-and-beautiful-by-matt-maher">Empty And Beautiful</a>
+    
+    <div class="song-block--language">
+      <div class="language-code">eng</div>
+    </div>
+  </div>
+</div>
+      </div>
+          <div class="col-md-6 col-xxl-4">
+        <div class="song-block">
+  <a href="/app/song/unwavering-chords-matt-maher" aria-label="Go to song Unwavering">
+    <img src="https://www.psalmnote.com/album-image/matt-maher/empty-and-beautiful.jpeg" class="song-block--album-img" alt="Empty And Beautiful">
+  </a>
+  <div>
+    <h3><a href="/song/unwavering-chords-matt-maher">Unwavering</a></h3>
+          by <a href="/artist/matt-maher">Matt Maher</a>
+    
+          on album <a href="/album/empty-and-beautiful-by-matt-maher">Empty And Beautiful</a>
+    
+    <div class="song-block--language">
+      <div class="language-code">eng</div>
+    </div>
+  </div>
+</div>
+      </div>
+        </div>
+  
+  <div class="text-center mt-4">
+    <a href="/app/songs" class="btn-cta btn-md">show all songs</a>
+  </div>
+</div>
+
+    <footer class="site-footer no-print">
+  <div class="container">
+    <h2 class="fw-light"><strong class="fw-bold">Psalmnote</strong> is a platform that lists christian songs with lyrics and transposable chords.</h2>
+
+    <div class="my-5">
+      <h3 class="color-white mb-3">Download Psalmnote mobile apps:</h3>
+      <div class="d-flex gap-2 align-items-center justify-content-center">
+        <a href="https://apps.apple.com/app/psalmnote/id6448075630?ct=site-footer-vanilla&amp;mt=8" target="_blank">
+          <img src="/assets/img/app-store.png" class="logo-app-store" alt="Download Psalmnote App on Apple App store">
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.psalmnote.app&amp;referrer=site-footer-vanilla" target="_blank">
+          <img src="/assets/img/play-store.png" class="logo-play-store" alt="Download Psalmnote App on Google Play store">
+        </a>
+      </div>
+    </div>
+
+    <div>
+  <a href="https://www.facebook.com/psalmnote/" target="_blank">Facebook</a>
+  |
+  <a href="/app/about/privacy-policy">Privacy policy</a>
+  |
+  <a href="/app/about/donation">Donation</a>
+
+</div>
+
+<div>
+  ©2026 Psalmnote.com
+  Hilversum, The Netherlands
+</div>
+  </div>
+</footer>
+
+    <script>
+      window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) }; ga.l = +new Date;
+      ga('create', 'UA-92242608-1', 'auto');
+      // Replace the following lines with the plugins you want to use.
+      ga('require', 'eventTracker'); ga('require', 'outboundLinkTracker'); ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <noscript>Please enable JavaScript to continue using this application.</noscript>
+
+      
+
+</body></html>

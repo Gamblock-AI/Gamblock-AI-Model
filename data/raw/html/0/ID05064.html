@@ -1,0 +1,376 @@
+<html lang="en"><head>
+    <!-- # block head (placeholder in theme.html) -->
+        <!-- # block head (content inherited from layout.html) -->
+    <title>
+      Oracle VirtualBox
+    </title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--[if IE]><script>
+        if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+        </script><![endif]-->
+
+    <link rel="search" href="/search">
+    <link rel="help" href="/wiki/TracGuide">
+    <link rel="alternate" href="/wiki/WikiStart?format=txt" title="Plain Text" type="text/x-trac-wiki">
+    <link rel="start" href="/wiki">
+    <link rel="stylesheet" href="/chrome/common/css/trac.css" type="text/css">
+    <link rel="stylesheet" href="/chrome/common/css/wiki.css" type="text/css">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <noscript>
+      <style>
+        .trac-noscript { display: none !important }
+      </style>     </noscript>
+    <link type="application/opensearchdescription+xml" rel="search" href="/search/opensearch" title="Search Oracle VirtualBox">
+    <script src="/chrome/common/js/jquery.js"></script>
+    <script src="/chrome/common/js/jquery-migrate.js"></script>
+    <script src="/chrome/common/js/babel.js"></script>
+    <script src="/chrome/common/js/trac.js"></script>
+    <script src="/chrome/common/js/search.js"></script>
+    <script src="/chrome/common/js/folding.js"></script>
+    <script src="/chrome/common/js/wiki.js"></script>
+    <script>
+      jQuery(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        if ($.ui) { /* is jquery-ui added? */
+          $(".trac-datepicker:not([readonly])")
+            .prop("autocomplete", "off").datepicker();
+          // Input current date when today is pressed.
+          var _goToToday = $.datepicker._gotoToday;
+          $.datepicker._gotoToday = function(id) {
+            _goToToday.call(this, id);
+            this._selectDate(id)
+          };
+          $(".trac-datetimepicker:not([readonly])")
+            .prop("autocomplete", "off").datetimepicker();
+          $("#main").addClass("trac-nodatetimehint");
+        }
+        $(".trac-disable").disableSubmit(".trac-disable-determinant");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <!--   # include 'site_head.html' (layout.html) -->
+
+<link rel="stylesheet" type="text/css" href="/chrome/site/style.css">
+
+<script>
+  jQuery(function($) {
+    var $ntg = $("#newticketguide");
+    if ($ntg.length)
+      $("#propertyform").prepend($ntg.detach());
+  });
+
+</script>
+
+<script>
+  jQuery(function($) {
+        var $content = $("#content");
+        var $opener = $("#opener");
+        if ($("#opener").length) $content.toggleClass('narrow');
+  });
+</script>    <!--   end of site_head.html -->
+    <!-- # endblock head (content inherited from layout.html) -->
+
+
+    <script>
+      jQuery(function($) {
+        wikiColumn($("#wikipage"));
+      });
+    </script>
+    <!-- # endblock head (placeholder in theme.html) -->
+  </head> 
+  <body>
+    <!-- # block body (content inherited from theme.html) -->
+    <!--   # include 'site_header.html' (theme.html) -->
+
+  <!-- Add site-specific header -->
+  <div id="vboxstring">
+    <img src="/graphics/vboxlogodown.png" alt="VirtualBox">
+  </div>
+
+  <div id="center">    <!--   end of site_header.html -->
+
+    <div id="banner">
+      <form id="search" action="/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="">
+          <input type="submit" value="Search">
+        </div>
+      </form>
+    </div>
+        <div id="mainnav" class="nav">
+    </div>
+
+
+    <div id="main">
+
+<div id="pagepath" class="noprint">
+<a class="pathentry first" title="View WikiStart" href="/wiki">wiki:</a><a href="/wiki/WikiStart" title="View WikiStart" class="pathentry">WikiStart</a></div>      <div id="ctxtnav">
+        <li>
+          <a id="logo" href="https://www.virtualbox.org/"><img alt="Oracle VirtualBox" src="/graphics/vbox-new-logo.png"></a>
+        </li>
+        <ul>
+          <li><a href="https://www.virtualbox.org/">Home</a></li>
+          <li><a href="/wiki/Downloads">Download</a></li>
+          <li><a href="/wiki/Documentation">Documentation</a></li>
+          <li><a href="/wiki/Community">Community</a></li>
+          <li class="first">
+            <a id="profile" href="/login"><img src="/graphics/user.png" alt="User profile icon"></a>
+          </li>
+            <form style="text-align: right" action="/search" method="get">
+              <div>
+                <input id="vboxsearch" type="text" name="q" size="10" accesskey="f" value="Search:" onblur="if(this.value=='') this.value='Search:';" onfocus="if(this.value=='Search:') this.value='';">
+                <input type="hidden" name="wiki" value="on">
+                <input type="hidden" name="changeset" value="on">
+                <input type="hidden" name="ticket" value="on">
+              </div>
+            </form>
+          
+        </ul>
+      </div>
+
+      
+
+      
+
+      <!-- # block content (placeholder in theme.html) -->
+    <div id="content" class="wiki">
+
+      <div class="wikipage searchable">
+        <div id="wikipage" class="trac-content borderless"><span id="trac-wiki-expander"></span><h1 class="section" id="WelcometoVirtualBox.org">Welcome to VirtualBox.org!<a class="anchor" href="#WelcometoVirtualBox.org" title="Link to this section"> ¶</a></h1>
+<div class="flexboxes_vertical">
+  <div class="flexboxes" id="opener">
+    <div class="intro">
+      Powerful open source virtualization
+      <p>For personal and enterprise use</p>
+      <p>VirtualBox is a general-purpose full virtualization software for x86_64 hardware (with version 7.1 additionally for macOS/Arm and with version 7.2 also for Windows/Arm), targeted at laptop, desktop, server and embedded use.</p>
+    </div>
+    <div style="width: 30%" class="flexboxes">
+      <div class="light box">
+        <li>Get Started</li>
+        <a href="wiki/Downloads" class="button">Download</a>
+        <p>Download VirtualBox binaries and platform packages</p>
+      </div>
+    </div>
+  </div>
+  <div class="flexboxes" id="dark_background">
+    <a href="wiki/Community" class="dark box">
+      <li>Community</li>
+      <p>Become a part of the VirtualBox community. Discuss and solve problems in the forums, access test builds, and more. </p>
+      <img src="/graphics/community.png" alt="Community icon">
+    </a>
+    <a href="wiki/Documentation" class="dark box">
+      <li>Documentation</li>
+      <p>Learn from a variety of resources including user manuals, end-user and technical documentation, the source code repository timeline, or the changelog.</p>
+      <img src="/graphics/user-manual.png" alt="Documentation icon">
+    </a>
+    <a href="https://www.oracle.com/goto/virtualboxlearning" target="”_blank”" class="dark box">
+      <li>Training</li>
+      <p>Access labs, tutorials, and videos to learn how to use VirtualBox. Quizzes are available to test your learning.</p>
+      <img src="/graphics/training.png" alt="Training icon">
+    </a>
+  </div>
+</div>
+<div class="flexboxes" id="updates">
+  <div class="intro">
+    Join the VirtualBox community
+    <p>Millions of users actively use VirtualBox</p>
+    <p>VirtualBox is a community effort backed by Oracle. Everyone is encouraged to contribute. Oracle helps ensure the product meets professional quality criteria and offers support resources for users.</p>
+    <div id="contributors">
+      <div class="contributor">
+        <a href="wiki/Contributor_information" class="button">How to Contribute</a>
+      </div>
+      <div class="contributor">
+        <a href="wiki/Contributions" class="button">Past Contributions</a>
+      </div>
+      <div class="contributor">
+        <a href="https://shop.oracle.com/apex/f?p=DSTORE:6::::6:P6_LPI,P6_PROD_HIER_ID:114347640102492137513432,4510278280861805728469" class="button" target="”_blank”">Oracle Support</a>
+      </div>
+    </div>
+  </div>
+<div class="newsflash">
+<h3>Recent releases</h3>
+
+<ul>
+
+<li>
+<b><span style="background: #B00; color: #ffd; font-family: WarpSans, Arial; padding: 1px 3px">New</span>
+January 20th, 2026<br>VirtualBox 7.2.6</b><br>
+Oracle today released a 7.2 maintenance release which improves stability and fixes regressions. See the
+<a href="https://www.virtualbox.org/wiki/Changelog-7.2#v06">Changelog</a> for details.
+</li>
+<li>
+<b><span style="background: #B00; color: #ffd; font-family: WarpSans, Arial; padding: 1px 3px">New</span>
+January 20th, 2026<br>VirtualBox 7.1.16</b><br>
+Oracle today released a 7.1 maintenance release which improves stability and fixes regressions. See the
+<a href="https://www.virtualbox.org/wiki/Changelog-7.1#v16">Changelog</a> for details.
+</li>
+<li>
+<b><span style="background: #B00; color: #ffd; font-family: WarpSans, Arial; padding: 1px 3px">New</span>
+October 21st, 2025<br>VirtualBox 7.2.4</b><br>
+Oracle today released a 7.2 maintenance release which improves stability and fixes regressions. See the
+<a href="https://www.virtualbox.org/wiki/Changelog-7.2#v04">Changelog</a> for details.
+</li>
+<li>
+<b><span style="background: #B00; color: #ffd; font-family: WarpSans, Arial; padding: 1px 3px">New</span>
+October 21st, 2025<br>VirtualBox 7.1.14</b><br>
+Oracle today released a 7.1 maintenance release which improves stability and fixes regressions. See the
+<a href="https://www.virtualbox.org/wiki/Changelog-7.1#v14">Changelog</a> for details.
+</li>
+<li>
+<b><span style="background: #B00; color: #ffd; font-family: WarpSans, Arial; padding: 1px 3px">New</span>
+September 10th, 2025<br>VirtualBox 7.2.2</b><br>
+Oracle today released a 7.2 maintenance release which improves stability and fixes regressions. See the
+<a href="https://www.virtualbox.org/wiki/Changelog-7.2#v02">Changelog</a> for details.
+</li>
+<li>
+<b><span style="background: #B00; color: #ffd; font-family: WarpSans, Arial; padding: 1px 3px">New</span>
+August 14th, 2025<br>VirtualBox 7.2.0</b><br>
+Oracle today released a significant new version of Oracle VirtualBox, its high performance, cross-platform virtualization software. See the
+<a href="https://www.virtualbox.org/wiki/Changelog-7.2#v00">Changelog</a> for details.
+</li>
+<li>
+<b><span style="background: #B00; color: #ffd; font-family: WarpSans, Arial; padding: 1px 3px">New</span>
+July 15th, 2025<br>VirtualBox 7.1.12</b><br>
+Oracle today released a 7.1 maintenance release which improves stability and fixes regressions. See the
+<a href="https://www.virtualbox.org/wiki/Changelog-7.1#v12">Changelog</a> for details.
+</li>
+<li>
+<b><span style="background: #B00; color: #ffd; font-family: WarpSans, Arial; padding: 1px 3px">New</span>
+June 3rd, 2025<br>VirtualBox 7.1.10</b><br>
+Oracle today released a 7.1 maintenance release which improves stability and fixes regressions. See the
+<a href="https://www.virtualbox.org/wiki/Changelog-7.1#v10">Changelog</a> for details.
+</li>
+<li>
+<b><span style="background: #B00; color: #ffd; font-family: WarpSans, Arial; padding: 1px 3px">New</span>
+April 15th, 2025<br>VirtualBox 7.1.8</b><br>
+Oracle today released a 7.1 maintenance release which improves stability and fixes regressions. See the
+<a href="https://www.virtualbox.org/wiki/Changelog-7.1#v08">Changelog</a> for details.
+</li>
+<li>
+<b><span style="background: #B00; color: #ffd; font-family: WarpSans, Arial; padding: 1px 3px">New</span>
+January 21st, 2025<br>VirtualBox 7.1.6</b><br>
+Oracle today released a 7.1 maintenance release which improves stability and fixes regressions. See the
+<a href="https://www.virtualbox.org/wiki/Changelog-7.1#v06">Changelog</a> for details.
+</li>
+<li>
+<b><span style="background: #B00; color: #ffd; font-family: WarpSans, Arial; padding: 1px 3px">New</span>
+January 21st, 2025<br>VirtualBox 7.0.24</b><br>
+Oracle today released a 7.0 maintenance release which improves stability and fixes regressions. See the
+<a href="https://www.virtualbox.org/wiki/Changelog-7.0#v24">Changelog</a> for details.
+</li>
+<li>
+<b><span style="background: #B00; color: #ffd; font-family: WarpSans, Arial; padding: 1px 3px">New</span>
+October 15th, 2024<br>VirtualBox 7.1.4</b><br>
+Oracle today released a 7.1 maintenance release which improves stability and fixes regressions. See the
+<a href="https://www.virtualbox.org/wiki/Changelog-7.1#v04">Changelog</a> for details.
+</li>
+<li>
+<b><span style="background: #B00; color: #ffd; font-family: WarpSans, Arial; padding: 1px 3px">New</span>
+October 15th, 2024<br>VirtualBox 7.0.22</b><br>
+Oracle today released a 7.0 maintenance release which improves stability and fixes regressions. See the
+<a href="https://www.virtualbox.org/wiki/Changelog-7.0#v22">Changelog</a> for details.
+</li>
+<li>
+<b><span style="background: #B00; color: #ffd; font-family: WarpSans, Arial; padding: 1px 3px">New</span>
+September 27th, 2024<br>VirtualBox 7.1.2</b><br>
+Oracle today released a 7.1 maintenance release which improves stability and fixes regressions. See the
+<a href="https://www.virtualbox.org/wiki/Changelog-7.1#v02">Changelog</a> for details.
+</li>
+<li>
+<b><span style="background: #B00; color: #ffd; font-family: WarpSans, Arial; padding: 1px 3px">New</span>
+September 11th, 2024<br>VirtualBox 7.1.0</b><br>
+Oracle today released a significant new version of Oracle VirtualBox, its high performance, cross-platform virtualization software. See the
+<a href="https://www.virtualbox.org/wiki/Changelog-7.1#v00">Changelog</a> for details.
+</li>
+<li>
+<b><span style="background: #B00; color: #ffd; font-family: WarpSans, Arial; padding: 1px 3px">New</span>
+July 16th, 2024<br>VirtualBox 7.0.20</b><br>
+Oracle today released a 7.0 maintenance release which improves stability and fixes regressions. See the
+<a href="https://www.virtualbox.org/wiki/Changelog-7.0#v20">Changelog</a> for details.
+</li>
+<li>
+<b><span style="background: #B00; color: #ffd; font-family: WarpSans, Arial; padding: 1px 3px">New</span>
+May 3rd, 2024<br>VirtualBox 7.0.18</b><br>
+Oracle today released a 7.0 maintenance release which improves stability and fixes regressions. See the
+<a href="https://www.virtualbox.org/wiki/Changelog-7.0#v18">Changelog</a> for details.
+</li>
+<li>
+<b><span style="background: #B00; color: #ffd; font-family: WarpSans, Arial; padding: 1px 3px">New</span>
+April 16th, 2024<br>VirtualBox 7.0.16</b><br>
+Oracle today released a 7.0 maintenance release which improves stability and fixes regressions. See the
+<a href="https://www.virtualbox.org/wiki/Changelog-7.0#v16">Changelog</a> for details.
+</li>
+
+</ul>
+<a href="/wiki/News" class="button">Read More</a>
+</div>
+</div>
+        <div class="trac-modifiedby" style="">
+          <span>
+            <a href="/wiki/WikiStart?action=diff&amp;version=504" title="Version 504 by galitsyn">Last modified</a>
+ <a class="timeline" href="/timeline?from=2026-01-28T17%3A43%3A06Z&amp;precision=second" title="See timeline at 01/28/2026 05:43:06 PM">2 months ago</a>          </span>
+          <span class="trac-print">
+            Last modified on 01/28/2026 05:43:06 PM
+          </span>
+        </div>
+      </div>
+
+
+
+
+
+<div class="trac-help">
+  <strong>Note:</strong>
+ See   <a href="/wiki/TracWiki">TracWiki</a>
+ for help on using the wiki.
+</div>
+    </div>
+        <!-- # block content (content inherited from layout.html) -->
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="last first">
+          <a rel="nofollow" href="/wiki/WikiStart?format=txt" class="">
+            Plain Text</a>
+        </li>
+      </ul>
+    </div>
+    <!-- # endblock content (content inherited from layout.html) -->
+
+      <!-- # endblock content (placeholder in theme.html) -->
+    </div>
+
+    <div id="footer"><hr>
+      <a id="tracpowered" href="https://trac.edgewall.org/"><img src="/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered"></a>
+      <p class="left">
+Powered by         <a href="/about"><strong>Trac 1.4.3.2</strong></a>
+        <br>
+ By         <a href="http://www.edgewall.org/">Edgewall Software</a>
+.      </p>
+      <p class="right"></p>
+    </div>
+    <!--   # include 'site_footer.html' (theme.html) -->
+
+</div><!-- center -->
+<div id="vboxfooter">
+  <p style="text-align:center">
+    <a href="https://www.oracle.com"><span style="background-image: url(/graphics/oracle-logo-new.svg); width: 100px; height: 24px; background-repeat: no-repeat; background-position: 0 11px; background-size: 100% 100%; display: inline-block"></span> © 2025 Oracle</a>
+    <a href="https://www.oracle.com/virtualization/virtualbox/#rc30category-support-services">Support</a>
+    <a href="https://www.oracle.com/html/privacy.html">Privacy </a>
+    /
+    <a href="https://www.oracle.com/legal/privacy/privacy-choices.html"> Do Not Sell My Info</a>
+    <a href="https://www.oracle.com/html/terms.html">Terms of Use</a>
+    <a href="https://www.oracle.com/legal/trademarks.html">Trademark Policy</a>
+    <a href="/wiki/AutomatedAccessEtiquette">Automated Access Etiquette</a>
+  </p>
+</div>
+
+    <!--   end of site_footer.html -->
+    <!-- # endblock body (content inherited from theme.html) -->
+   </div></body></html>

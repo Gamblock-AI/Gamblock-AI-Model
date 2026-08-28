@@ -1,0 +1,608 @@
+<html lang="en"><head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+
+    <link rel="icon" href="assets/images/favicon.ico">
+    <title>Viva Career</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/templatemo-woox-travel.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+
+    <!-- SELECT2 -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> -->
+    <link href="assets/css/select2.min.css" rel="stylesheet">
+
+    <!-- BOOTSTRAP -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+<!--
+
+TemplateMo 580 Woox Travel
+
+https://templatemo.com/tm-580-woox-travel
+
+-->
+
+<style>
+  @media (max-width: 768px) {
+      #recipeCarousel .carousel-inner .carousel-item > div {
+          display: none;
+      }
+      #recipeCarousel .carousel-inner .carousel-item > div:first-child {
+          display: block;
+      }
+  }
+
+  #recipeCarousel .carousel-inner .carousel-item.active,
+  #recipeCarousel .carousel-inner .carousel-item-next,
+  #recipeCarousel .carousel-inner .carousel-item-prev {
+      display: flex;
+  }
+
+  /* display 3 */
+  @media (min-width: 768px) {
+      
+      #recipeCarousel .carousel-inner .carousel-item-right.active,
+      #recipeCarousel .carousel-inner .carousel-item-next {
+        transform: translateX(33.333%);
+      }
+      
+      #recipeCarousel .carousel-inner .carousel-item-left.active, 
+      #recipeCarousel .carousel-inner .carousel-item-prev {
+        transform: translateX(-33.333%);
+      }
+  }
+
+  #recipeCarousel .carousel-inner .carousel-item-right,
+  #recipeCarousel .carousel-inner .carousel-item-left{ 
+    transform: translateX(0);
+  }
+
+  .card_karir {
+    border-radius: 12px;
+    min-height: min-content;
+  }
+
+  .card_karir:hover {
+    box-shadow: 0 3px 10px 0 rgb(0 0 0 / 25%);
+  }
+
+  .card_karir span {
+    color: #383737;
+  }
+
+  .card_karir:hover .card-underline {
+    text-decoration: underline;
+  }
+
+  .sp-kategori {
+    background-color: #f9a044;
+    border-radius: 20px;
+    padding: 7px;
+    font-weight: bold;
+  }
+
+  .btn-kategori {
+    background-color: transparent;
+    color: #ad331f;
+    border-radius: 5px;
+    border: 1px solid #ad331f;
+    height: 40px;
+    padding: 10px 12px;
+  }
+
+  .btn-kategori:hover {
+    background-color: #ad331f;
+    color: white;
+    border-color: #ad331f;
+    border-radius: 5px;
+  }
+
+  .btn_trans {
+    border: none;
+    background-color: #fff;
+  }
+
+  .select2-container--default .select2-selection--single{
+    background-color:#fff;
+    border:1px solid #ced4da;
+    border-radius:17px;
+  }
+
+  .reservation-form {
+    margin: 50px 0px;
+  }
+
+  .reservation-form #reservation-form {
+    background-color: transparent;
+  }
+</style>
+
+</head>
+
+<body>
+  <style>
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px!important; 
+  }
+  .sticky .main-nav .menu-trigger {
+    top: 0;
+  }
+  .main-nav ul li {
+    list-style: none; 
+    width: fit-content!important;
+    background: transparent!important;
+    margin-right: 20px;
+    border-bottom: none!important;
+  }
+  .phone_li {
+    margin-top: -32px;
+  }
+  .header-area .main-nav .nav li a {
+    background: transparent!important;
+  }
+  .header-area .main-nav .nav .phone_li a.active::after {
+    left: 0px;
+  }
+
+  .header-area-comp .main-nav .nav {
+    flex-basis: 75%;
+  }
+</style>
+
+<header class="header-area header-area-comp background-header" id="myHeader" style="height: 70px;">
+  <div class="container" style="display: flex;">
+    <div style="margin-left: -100px;" class="col-2">
+      <a href="https://vivacosmetic.com"><img src="assets/images/logo/viva.png" height="30px" style="margin-top: 12px;"></a>
+      <a href="https://vivacosmetic.com"><img src="assets/images/logo/queen.png" height="30px" style="margin-top: 12px;"></a>
+      <a href="https://vivacosmetic.com"><img src="assets/images/logo/white.png" height="30px" style="margin-top: 12px;"></a>
+      <a href="https://myred-a.com"><img src="assets/images/logo/red-a.png" height="30px" style="margin-top: 12px;"></a>
+    </div>
+    <div class="row">
+        <div class="col-11">
+            <nav class="main-nav" style="display: flex;">
+                <div id="pengumuman" class="col-md-9">
+                  <div style="padding-top: 8px; padding-bottom: 10px; text-align: center;">
+                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i> 
+                    <span style="padding-top: 100px; font-size: 12px;">PT. Vitapharm tidak memungut biaya apapun untuk proses seleksi yang dilakukan. <br> Informasi mengenai proses seleksi melalui nomor WhatsApp 089643388813 atau <br>email hrd@vivacosmetic.com (pastikan penyimpanan email tidak penuh dan cek folder Spam)</span>
+                  </div>
+                </div>
+                <ul class="nav col-md-3" style="display: flex; justify-content: center;">
+                    <li style="list-style: none;"><a href="index.php"><i class="fa-solid fa-house"></i></a></li>
+                    <li style="list-style: none;"><a href="karir.php">Karir</a></li>
+                                        <li style="list-style: none;"><a href="masuk.php">Masuk/Daftar</a></li>
+                                    </ul> 
+            </nav>
+        </div>
+    </div>
+  </div>
+</header>
+
+<script src="vendor/jquery/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $(".header-area .main-nav .menu-trigger span").css({top: 28});
+  
+  $(".container .row .col-12 nav.main-nav ul.nav li a").each(function() {
+    var url = window.location.href;
+    var array = url.split('/');
+    // console.log(array[array.length-1]);
+    // console.log($(this).attr("href"));
+    var text = array[array.length-1];
+    var href = $(this).attr("href").substring(0,5);
+    if(text.includes(href)){
+      // $(this).parent().parent().parent().parent().parent().attr("class","nav-item menu-open");
+      // $(this).parent().parent().parent().attr("class","nav-item menu-open");
+      $(this).attr("class","active");
+    }
+    // else if($(this).attr("href") == "lamar.php" && array[array.length-1] == "riwayat-lamaran.php") {
+    //     $(this).attr("class","active");
+    // }
+  });
+});
+</script>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+      } else {
+    header.classList.remove("sticky");
+      }
+}
+</script>
+    <section id="section-1">
+      <div class="content-slider">
+      <input type="radio" id="banner1" class="sec-1-input" name="banner" checked="">
+      <div class="slider">
+        <div id="top-banner-1" class="banner">
+          <div class="banner-inner-wrapper header-text">
+            <video autoplay="" muted="" loop="" id="myVideo">
+                            <source src="assets/videos/Viva1.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+            <!-- <div class="main-logo" >
+              <a href="https://vivacosmetic.com"><img src='assets/images/viva-glow.webp' height="50px" style="margin-top: 12px;"></a>
+              <a href="https://myred-a.com"><img src='assets/images/reda.webp' height="70px" style="margin-top: 12px;"></a>
+            </div> -->
+            <div class="main-caption">
+                              
+                              <div class="div-caption">
+                  <h2 style="font-size: 26px;"><b>Kembangkan karirmu bersama Viva</b></h2>
+                  <!-- <h2>Cari Pekerjaan</h2> -->
+                  <form method="post" class="form-inline justify-content-center">
+                    <div class="row justify-content-md-center form" style="display: flex;">
+                      <!-- <div class="col-md-4"> -->
+                        <input type="text" class="form-control" name="posisi" placeholder="Cari" style="width: 60%; display: block; margin-bottom: 10px">&nbsp;&nbsp;
+                      <!-- </div> -->
+                      <!-- <div class="col-md-1"> -->
+                        <button type="submit" class="btn btn-red" name="cari" style="float: left; width: 7%; margin-bottom: 10px"><i class="fas fa-search"></i></button>
+                      <!-- </div> -->
+                    </div>
+                  </form>
+                </div>
+                            <!-- <button id="myBtn" onclick="myFunction()">Pause</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ***** Main Banner Area End ***** -->
+
+  <div class="visit-country" id="section-2">
+    <div class="container">
+      
+      <!-- <h3 class="font-weight-light text-center">Lowongan Pekerjaan Terbaru</h3><br> -->
+      <div class="row" style="margin-top: 10px;">
+        <div id="recipeCarousel" class="carousel slide w-100 pointer-event" data-ride="carousel">
+            <div class="carousel-inner w-100 mh-100" role="listbox">
+              <div class="card-deck">
+                <div class="carousel-item active"><div class="col-md-4"><div class="card card_karir flex-fill" style="margin-bottom: 10px; padding: 10px 10px; margin-left: 10px; background-color: #f9f9f9;"><a href="detail-loker.php?posisi=trade_marketing"><div class="card-header" style="background-color: transparent;"><span style="color: #ad331f;font-size: 15px"><b>Pemasaran</b></span></div><div class="card-body" style="padding: 10px 10px;"><p class="card-text card-underline" style="font-size: 14px; color: #383737;">Trade Marketing</p><p style="color: #383737; font-size: 13px"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;Surabaya</p></div></a></div></div><div class="col-md-4"><div class="card card_karir flex-fill" style="margin-bottom: 10px; padding: 10px 10px; margin-left: 10px; background-color: #f9f9f9;"><a href="detail-loker.php?posisi=staf_internal_audit_"><div class="card-header" style="background-color: transparent;"><span style="color: #ad331f;font-size: 15px"><b>Internal Audit</b></span></div><div class="card-body" style="padding: 10px 10px;"><p class="card-text card-underline" style="font-size: 14px; color: #383737;">Staf Internal Audit </p><p style="color: #383737; font-size: 13px"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;Surabaya</p></div></a></div></div><div class="col-md-4"><div class="card card_karir flex-fill" style="margin-bottom: 10px; padding: 10px 10px; margin-left: 10px; background-color: #f9f9f9;"><a href="detail-loker.php?posisi=staf_informatika"><div class="card-header" style="background-color: transparent;"><span style="color: #ad331f;font-size: 15px"><b>Informatika</b></span></div><div class="card-body" style="padding: 10px 10px;"><p class="card-text card-underline" style="font-size: 14px; color: #383737;">Staf Informatika</p><p style="color: #383737; font-size: 13px"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;Surabaya</p></div></a></div></div></div><div class="carousel-item"><div class="col-md-4"><div class="card card_karir flex-fill" style="margin-bottom: 10px; padding: 10px 10px; margin-left: 10px; background-color: #f9f9f9;"><a href="detail-loker.php?posisi=staf_teknik"><div class="card-header" style="background-color: transparent;"><span style="color: #ad331f;font-size: 15px"><b>Produksi</b></span></div><div class="card-body" style="padding: 10px 10px;"><p class="card-text card-underline" style="font-size: 14px; color: #383737;">Staf Teknik</p><p style="color: #383737; font-size: 13px"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;Surabaya</p></div></a></div></div><div class="col-md-4"><div class="card card_karir flex-fill" style="margin-bottom: 10px; padding: 10px 10px; margin-left: 10px; background-color: #f9f9f9;"><a href="detail-loker.php?posisi=kol_specialist"><div class="card-header" style="background-color: transparent;"><span style="color: #ad331f;font-size: 15px"><b>Pemasaran</b></span></div><div class="card-body" style="padding: 10px 10px;"><p class="card-text card-underline" style="font-size: 14px; color: #383737;">KOL Specialist</p><p style="color: #383737; font-size: 13px"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;Surabaya</p></div></a></div></div><div class="col-md-4"><div class="card card_karir flex-fill" style="margin-bottom: 10px; padding: 10px 10px; margin-left: 10px; background-color: #f9f9f9;"><a href="detail-loker.php?posisi=staf_produksi"><div class="card-header" style="background-color: transparent;"><span style="color: #ad331f;font-size: 15px"><b>Produksi</b></span></div><div class="card-body" style="padding: 10px 10px;"><p class="card-text card-underline" style="font-size: 14px; color: #383737;">Staf Produksi</p><p style="color: #383737; font-size: 13px"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;Surabaya</p></div></a></div></div></div>              </div>
+            </div>
+            <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button" data-slide="prev">
+              <span style="color: #383737;"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"></path></svg></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next w-auto" href="#recipeCarousel" role="button" data-slide="next">
+              <span style="color: #383737;"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"></path></svg></span>
+              <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <div class="text-center" style="margin-top: 10px;">
+          <a href="karir.php" class="btn-kategori" style="width: fit-content;">Lihat semua</a>
+        </div>
+      </div>
+
+      <br><br><br><br>
+      <div class="row" style="display: flex;">
+        <h3 class="font-weight-light" style="text-align: right; width: 55%">Kategori</h3><span style="width: 45%;">          <button id="btn_kategori1" class="btn_trans" style="display: none;"><i class="nav-icon fa-solid fas fa-angle-up" style="margin: 0;"></i></button>
+          <button id="btn_kategori2" class="btn_trans"><i class="nav-icon fa-solid fas fa-angle-down"></i></button>
+        </span>
+      </div><br>
+      <div class="row"><div class="col-md-3"><a href="karir.php?kat=2"><div class="card card_karir flex-fill" style="margin-bottom: 10px; background-color: #f9f9f9;"><div class="card-body align-items-center" style="display:flex; padding: 10px 12px;"><div class="col-md-2" style="text-align: center;margin-right: 5px;"><img src="assets/images/pemasaran.webp" style="width: 100%;"></div><div class="col-md-10"><p class="card-title card-underline" style="margin: 0;color: #383737; font-size: 13px;">Pemasaran (5)</p></div></div></div></a></div><div class="col-md-3"><a href="karir.php?kat=1"><div class="card card_karir flex-fill" style="margin-bottom: 10px; background-color: #f9f9f9;"><div class="card-body align-items-center" style="display:flex; padding: 10px 12px;"><div class="col-md-2" style="text-align: center;margin-right: 5px;"><img src="assets/images/produksi.webp" style="width: 100%;"></div><div class="col-md-10"><p class="card-title card-underline" style="margin: 0;color: #383737; font-size: 13px;">Produksi (2)</p></div></div></div></a></div><div class="col-md-3"><a href="karir.php?kat=4"><div class="card card_karir flex-fill" style="margin-bottom: 10px; background-color: #f9f9f9;"><div class="card-body align-items-center" style="display:flex; padding: 10px 12px;"><div class="col-md-2" style="text-align: center;margin-right: 5px;"><img src="assets/images/rnd.webp" style="width: 100%;"></div><div class="col-md-10"><p class="card-title card-underline" style="margin: 0;color: #383737; font-size: 13px;">Research &amp; Development (2)</p></div></div></div></a></div><div class="col-md-3"><a href="karir.php?kat=9"><div class="card card_karir flex-fill" style="margin-bottom: 10px; background-color: #f9f9f9;"><div class="card-body align-items-center" style="display:flex; padding: 10px 12px;"><div class="col-md-2" style="text-align: center;margin-right: 5px;"><img src="assets/images/admin.webp" style="width: 100%;"></div><div class="col-md-10"><p class="card-title card-underline" style="margin: 0;color: #383737; font-size: 13px;">Administrasi (1)</p></div></div></div></a></div></div><div class="row kategori" style="display: none;"><div class="col-md-3"><a href="karir.php?kat=8"><div class="card card_karir flex-fill" style="margin-bottom: 10px; background-color: #f9f9f9;"><div class="card-body align-items-center" style="display:flex; padding: 10px 12px;"><div class="col-md-2" style="text-align: center;margin-right: 5px;"><img src="assets/images/it.webp" style="width: 100%;"></div><div class="col-md-10"><p class="card-title card-underline" style="margin: 0;color: #383737; font-size: 13px;">Informatika (1)</p></div></div></div></a></div><div class="col-md-3"><a href="karir.php?kat=7"><div class="card card_karir flex-fill" style="margin-bottom: 10px; background-color: #f9f9f9;"><div class="card-body align-items-center" style="display:flex; padding: 10px 12px;"><div class="col-md-2" style="text-align: center;margin-right: 5px;"><img src="assets/images/audit.webp" style="width: 100%;"></div><div class="col-md-10"><p class="card-title card-underline" style="margin: 0;color: #383737; font-size: 13px;">Internal Audit (1)</p></div></div></div></a></div><div class="col-md-3"><a href="karir.php?kat=6"><div class="card card_karir flex-fill" style="margin-bottom: 10px; background-color: #f9f9f9;"><div class="card-body align-items-center" style="display:flex; padding: 10px 12px;"><div class="col-md-2" style="text-align: center;margin-right: 5px;"><img src="assets/images/keuangan.webp" style="width: 100%;"></div><div class="col-md-10"><p class="card-title card-underline" style="margin: 0;color: #383737; font-size: 13px;">Keuangan (1)</p></div></div></div></a></div><div class="col-md-3"><a href="karir.php?kat=3"><div class="card card_karir flex-fill" style="margin-bottom: 10px; background-color: #f9f9f9;"><div class="card-body align-items-center" style="display:flex; padding: 10px 12px;"><div class="col-md-2" style="text-align: center;margin-right: 5px;"><img src="assets/images/hrd.webp" style="width: 100%;"></div><div class="col-md-10"><p class="card-title card-underline" style="margin: 0;color: #383737; font-size: 13px;">Human Resource  (1)</p></div></div></div></a></div></div><div class="row kategori" style="display: none;"><div class="col-md-3"><a href="karir.php?kat=5"><div class="card card_karir flex-fill" style="margin-bottom: 10px; background-color: #f9f9f9;"><div class="card-body align-items-center" style="display:flex; padding: 10px 12px;"><div class="col-md-2" style="text-align: center;margin-right: 5px;"><img src="assets/images/qa.webp" style="width: 100%;"></div><div class="col-md-10"><p class="card-title card-underline" style="margin: 0;color: #383737; font-size: 13px;">Quality Assurance (0)</p></div></div></div></a></div><div class="col-md-3"><a href="karir.php?kat=10"><div class="card card_karir flex-fill" style="margin-bottom: 10px; background-color: #f9f9f9;"><div class="card-body align-items-center" style="display:flex; padding: 10px 12px;"><div class="col-md-2" style="text-align: center;margin-right: 5px;"><img src="assets/images/ga.webp" style="width: 100%;"></div><div class="col-md-10"><p class="card-title card-underline" style="margin: 0;color: #383737; font-size: 13px;">General Affair (0)</p></div></div></div></a></div></div>
+      <br><br><br>
+      <div class="row" style="height: 90px;">
+        <!-- <h3 class="font-weight-light text-center">Testimoni</h3><br><br> -->
+        <div class="col-md-2"></div>
+        <div id="myCarousel" class="carousel slide carousel-fade col-md-8 text-center pointer-event" data-ride="carousel">
+          <!-- Indicators -->
+          <!-- <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol> -->
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="carousel-item active"><p class="text-center" style="color: #383737;">
+                    <i> “ Ketertarikan pada kosmetik menjadi awal mula mengapa saya bergabung dengan <br>PT Vitapharm ”</i>
+                  </p></div><div class="carousel-item"><p class="text-center" style="color: #383737;">
+                    <i> “ Banyak pengalaman baru yang seru dan tak terlupakan. Bertemu dan bekerjasama dengan teman baru menjadi pendorong semangat dalam bekerja ”</i>
+                  </p></div><div class="carousel-item"><p class="text-center" style="color: #383737;">
+                    <i> “ Tugas utama saya adalah memahami dan mengantipasi kebutuhan konsumen. Sehingga produk yang dipasarkan dapat diterima dengan baik oleh penggunanya ”</i>
+                  </p></div><div class="carousel-item"><p class="text-center" style="color: #383737;">
+                    <i> “ PT Vitapharm menjadi pilihan utama karena telah memiliki sejarah yang sangat panjang dan memproduksi kosmetik dengan brand yang sangat terkenal : Viva Cosmetics ”</i>
+                  </p></div><div class="carousel-item"><p class="text-center" style="color: #383737;">
+                    <i> “ Bersyukur rekan-rekan kerja di sini sangat suportif, sehingga tanggungjawab pekerjaan yang semakin kompleks bisa saya selesaikan dengan baik karena suasana dan lingkungan kerja yang nyaman ”</i>
+                  </p></div><div class="carousel-item"><p class="text-center" style="color: #383737;">
+                    <i> “ Saya ditantang untuk keluar dari zona nyaman dengan diberikan tanggungjawab baru. Ini justru kesempatan yang diberikan perusahaan untuk mengasah, meningkatkan dan membuktikan kemampuan yang saya miliki ”</i>
+                  </p></div><div class="carousel-item"><p class="text-center" style="color: #383737;">
+                    <i> “ Berbekal ilmu, pengalaman, dan kepercayaan yang telah diberikan, saya berusaha semaksimal mungkin merancang dan menjalankan sistem pemeriksaan kualitas hasil produksi untuk menjamin konsumen mendapatkan produk-produk yang berkualitas tinggi sesuai standar mutu yang telah ditetapkan ”</i>
+                  </p></div>          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    <div class="reservation-form" style="background-image: url(assets/images/kapal.webp);background-repeat:no-repeat; background-size:contain; background-position: 0px -70px; width: 100%">
+      <div class="container">
+      <div class="row" id="reservation-form" style="border-radius: 12px 12px 0px 0px;">
+        <div class="col-md-7 align-middle" style="margin: auto;">
+          <h1 style="color:#ad331f">PT. VITAPHARM</h1><br>
+          <span>Satu-satunya perusahaan kosmetik di Indonesia yang telah berkiprah lebih dari 60 tahun dan sejak awal dengan bangga menyatakan <i>“Made In Indonesia”</i></span><br>
+        </div>
+        <div class="col-md-4" style="text-align: center;">
+        </div>
+      </div>
+
+      <div class="row" id="reservation-form">
+                  <div class="col-md-4">
+            <img src="assets/images/collaboration.webp" class="img-fluid" style="margin-top: 5px; max-width: 100%; height: auto;">
+          </div>
+          <div class="col-md-8 align-middle" style="margin: auto;">
+            <h1 style="color:#ad331f">COLLABORATION</h1><br>
+            <span>Setiap  individu memiliki kesempatan yang setara untuk berperan sesuai kompetensi yang dimilikinya. Secara proaktif dan penuh semangat untuk saling mendukung, saling percaya, saling menghargai, saling memahami, saling berkontribusi terhadap keberhasilan rekan kerja dan dengan sukarela menekan ego pribadi/kelompok untuk bersama-sama berjuang meraih tujuan bersama, yaitu memberikan yang terbaik bagi konsumen. <br>“Kami Ada Karena Anda Percaya”</span><br>
+          </div>
+              </div>
+
+      <div class="row" id="reservation-form">
+        <div class="col-md-8 align-middle" style="margin: auto;">
+          <h1 style="color:#ad331f">CARING</h1><br>
+          <span>Salah satu misi kami adalah menyediakan produk dan jasa perawatan yang sesuai dan mudah terjangkau. Pemilihan bahan, efisiensi kerja dan penentuan kemasan yang efektif melindungi kualitas produk sekaligus menarik dan ekonomis selalu menjadi prioritas utama kami. Sehingga setiap produk yang dipasarkan akan mudah digunakan, mudah ditemukan dengan harga terjangkau dan sesuai kebutuhan penggunanya.</span><br>
+        </div>
+        <div class="col-md-4">
+          <img src="assets/images/caring.webp" class="img-fluid" style="margin-top: 5px; max-width: 100%; height: 230px;">
+        </div>
+      </div>
+
+      <div class="row" id="reservation-form">
+                  <div class="col-md-4">
+            <img src="assets/images/innovation.webp" class="img-fluid" style="margin-top: 5px; max-width: 100%; height: auto;">
+          </div>
+          <div class="col-md-8 align-middle" style="margin: auto;">
+            <h1 style="color:#ad331f">INNOVATION</h1><br>
+            <span>Visi kami adalah “Menjadi perusahaan kosmetik tropis terkemuka dan produknya dipercaya oleh masyarakat global”. Inovasi tanpa henti menjadi gaya hidup kami untuk selalu menciptakan ide-ide baru dan cara-cara baru dalam bekerja dan menghasilkan produk</span><br>
+          </div>
+              </div>
+
+      <div class="row" id="reservation-form" style="border-radius: 0px 0px 12px 12px;">
+        <div class="col-md-8 align-middle" style="margin: auto;">
+          <h1 style="color:#ad331f">CAREER</h1><br>
+          <span>Karir anda merupakan bagian dari perjalanan hidup yang sangat penting. Mulailah perjalanan karir anda untuk mengembangkan diri di bidang yang sesuai dengan kompetensi dan passion anda bersama kami. <br><i>“Choose a job you love, and you will never have to work a day in your life”</i></span><br>
+        </div>
+        <div class="col-md-4" style="text-align: center;">
+          <img src="assets/images/karir.webp" class="img-fluid" style="margin-top: 5px; max-width: 100%; height: 230px;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <style>
+  .container .row .col-md-4 a {
+    color: white;
+  }
+  .container .row .col-md-4 a:hover {
+    color: #ffd9d9;
+  }
+  .footer span {
+    color: white;
+  }
+</style>
+<div class="container" style="font-size: 13px; margin-top: 90px;">
+  <div class="row" style="color: white; text-align: left;">
+    <div class="col-md-4">
+      <h1 style="color: white">PT. VITAPHARM</h1><br>
+    </div>
+    <div class="col-md-4 footer">
+      <!-- <h5 style="color: white">INFORMATION</h5><br>
+      <a href="https://vivacosmetic.com/en/location">Where to Buy</a><br><br>
+      <a href="https://vivacosmetic.com/en/content/10-how-to-                                                                   use-gift-voucher">How to Use Gift Voucher</a><br><br>
+      <a href="https://vivacosmetic.com/en/contact-us">Contact us</a><br><br>
+      <a href="https://beliviva.com/">Dropshipper</a><br><br>
+      <a href="https://vivacosmetic.com/en/help">Terms and conditions</a><br><br> -->
+      <span>Address: <br>Jl. Panjang Jiwo No.42, Tenggilis Mejoyo, <br>Surabaya 60299</span><br><br>
+      <span>Phone: 031 8435657</span><br>
+      <span>Whatsapp: 089643388813</span><br>
+      <span>Email: hrd@vivacosmetic.com</span><br><br>
+    </div>
+    
+    <div class="col-md-4">
+      <h5 style="color: white">SOCIAL</h5>
+      <a href="https://www.facebook.com/VivaCosmetics/"><i class="fa-brands fa-facebook-f"></i></a>&nbsp;&nbsp;
+      <a href="https://twitter.com/VivaCosmetics"><i class="fa-brands fa-twitter"></i></a>&nbsp;&nbsp;
+      <a href="https://www.tiktok.com/@vivacosmetics"><i class="fa-brands fa-tiktok"></i></a>&nbsp;&nbsp;
+      <a href="https://www.youtube.com/user/VivaCosmetic"><i class="fa-brands fa-youtube"></i></a>&nbsp;&nbsp;
+      <a href="https://www.instagram.com/viva.cosmetics/"><i class="fa-brands fa-instagram"></i></a>&nbsp;&nbsp;
+      <br>
+      <a href="https://www.facebook.com/RedACosmetics"><i class="fa-brands fa-facebook-f"></i></a>&nbsp;&nbsp;
+      <a href="https://twitter.com/myRed_A"><i class="fa-brands fa-twitter"></i></a>&nbsp;&nbsp;
+      <a href="https://www.tiktok.com/@myred_a"><i class="fa-brands fa-tiktok"></i></a>&nbsp;&nbsp;
+      <a href="https://www.youtube.com/user/RedACosmetics"><i class="fa-brands fa-youtube"></i></a>&nbsp;&nbsp;
+      <a href="https://www.instagram.com/myred_a/"><i class="fa-brands fa-instagram"></i></a>&nbsp;&nbsp;
+    </div>
+    <!-- <div class="col-md-4">
+      <h5 style="color: white">SOCIAL</h5><br>
+      <a href="https://www.facebook.com/VivaCosmetics/">Facebook</a><br><br>
+      <a href="https://twitter.com/VivaCosmetics">Twitter</a><br><br>
+      <a href="https://www.youtube.com/user/VivaCosmetic">Youtube</a><br><br>
+      <a href="https://www.instagram.com/viva.cosmetics/">Instagram</a><br><br>
+      <a href="https://www.tiktok.com/@vivacosmetics">TikTok</a><br><br>
+    </div> -->
+  </div><br><br>
+  <div class="row">
+    <div class="col-lg-12">
+      <p>© Copyright 2023 @ Viva Cosmetics</p>
+      <!-- <br>Design: <a href="https://templatemo.com" target="_blank" title="free CSS templates">TemplateMo</a> Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a></p> -->
+    </div>
+  </div>
+</div>  </footer>
+
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/wow.js"></script>
+  <script src="assets/js/tabs.js"></script>
+  <script src="assets/js/popup.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+  <script>
+    $(".option").click(function(){
+      $(".option").removeClass("active");
+      $(this).addClass("active"); 
+    });
+    
+    var video = document.getElementById("myVideo");
+    var btn = document.getElementById("myBtn");
+
+    // function myFunction() {
+    //   if (video.paused) {
+    //     video.play();
+    //     btn.innerHTML = "Pause";
+    //   } else {
+    //     video.pause();
+    //     btn.innerHTML = "Play";
+    //   }
+    // }
+  </script>
+
+  <!-- BOOTSTRAP -->
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <!-- SELECT2 -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> -->
+  <script src="assets/js/select2.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      header = document.getElementById("myHeader");
+      sticky = header.offsetTop;
+
+      myFunction();
+    
+      $(".select2biasa").select2({
+        minimumResultsForSearch: -1
+      });
+      $('.select2cari').select2({
+        
+      });
+      $('.select2super').select2({
+        tags: true
+      });
+      $("#selectkota").select2({
+        placeholder: "Semua Lokasi",
+        allowClear: true
+      });
+      $("#selectpengalaman").select2({
+        placeholder: "Semua Pengalaman",
+        allowClear: true
+      });
+      $("#selectkategori").select2({
+        placeholder: "Semua Kategori",
+        allowClear: true
+      });
+      $("#selectposisi").select2({
+        placeholder: "Semua Posisi",
+        allowClear: true
+      });
+      $("#sembunyikanFilter").hide();
+      $("#filter2").hide();
+
+      $("#tampilkanFilter").click(function() {
+        $(this).hide();
+        $("#sembunyikanFilter").show();
+        $("#filter2").show();
+      });
+      $("#sembunyikanFilter").click(function() {
+        $(this).hide();
+        $("#tampilkanFilter").show();
+        $("#filter2").hide();
+      });
+
+      $("#btn_kategori1").hide();
+      $(".kategori").hide();
+      $("#btn_kategori1").click(function() {
+        $(this).hide();
+        $(".kategori").hide();
+        $("#btn_kategori2").show();
+      });
+      $("#btn_kategori2").click(function() {
+        $(this).hide();
+        $(".kategori").show();
+        $("#btn_kategori1").show();
+      });
+    });
+  </script>
+
+    <!-- KALO MAU HEADER STICKY SETELAH BANNER SELESAI -->
+  <!-- <script>
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+      var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        document.getElementById("pengumuman").style.top = "0";
+      } else {
+        document.getElementById("pengumuman").style.top = "-50px";
+      }
+      prevScrollpos = currentScrollPos;
+    }
+  </script> -->
+
+  <script>
+    $(function() {
+      $('#myCarousel').carousel({
+        interval: 20000
+      });
+
+      $('#recipeCarousel').carousel({
+        interval: 10000
+      });
+
+      $('#recipeCarousel .carousel .carousel-item').each(function(){
+        var minPerSlide = 3;
+        var next = $(this).next();
+        if (!next.length) {
+        next = $(this).siblings(':first');
+        }
+        next.children(':first-child').clone().appendTo($(this));
+        
+        for (var i=0;i<minPerSlide;i++) {
+          next=next.next();
+          if (!next.length) {
+            next = $(this).siblings(':first');
+          }
+          
+          next.children(':first-child').clone().appendTo($(this));
+        }
+      });
+    });
+  </script>
+
+  <script>
+  $(document).ready(function(){
+      
+          $('#section-1').show();
+          $('#section-2').show();
+          });
+  </script>
+
+  
+
+
+</body></html>

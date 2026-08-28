@@ -1,0 +1,700 @@
+<html lang="en-us"><head>
+<meta name="description" content="SCImago Media Rankings is a classification of media. Check our ranking for more information !">
+<title>SCImago Media Rankings</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/dropdown.css?10">
+<link rel="stylesheet" href="css/style.css?v=14">
+<link rel="stylesheet" href="multisitebar/multisite.css?v=1">
+<script src="js/graphica.1.0.46.js?2" type="text/javascript"></script>
+<script src="js/menu.js?1"></script>
+<script src="js/dropdown.js?7" type="text/javascript"></script>
+<script src="js/search.js?3" type="text/javascript"></script>
+<script src="js/slider.js?1" type="text/javascript"></script>
+<!--<link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">-->
+
+<!--<link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-new.png">-->
+<link rel="icon" type="image/png" sizes="512x575" href="./img/android-chrome-512x512.png">
+
+
+<link rel="manifest" href="./img/site.webmanifest">
+
+<script src="./js/countries_cookie.js"></script>
+<script src="./js/cookieconsent.js?1"></script>
+<!-- To check analytics or marketing or both cookies -->
+<script src="./js/checkcookiescategories.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-D0RZQFZB0R"></script>
+<script>
+  if( !is_black_list_region(current_country) || (is_black_list_region(current_country) && window.CookieConsent.config.categories['analytics']['wanted'] )  ){
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-D0RZQFZB0R');
+  }
+
+
+  window.addEventListener("load", prevent_link_cookie_settings, true); 
+     
+  function prevent_link_cookie_settings(){
+    let link_to_cookie_settings = [...document.querySelectorAll(".nav-link.ccb__edit")];
+    if(link_to_cookie_settings )
+      link_to_cookie_settings.forEach(el=>{
+        
+        el.addEventListener("click", (event)=>{           
+          event.preventDefault();
+        }, false);
+      });
+  }
+
+</script>
+
+
+
+
+
+<script type="text/javascript">
+  
+  main(function () {
+   // getLastPosts('https://m.scimagomedia.com/wp-json/wp/v2/posts?categories=3&_embed&per_page=8','sliderHome1');
+    getLastPosts('https://blog.scimagomedia.com/wp-json/wp/v2/posts?categories=3&_embed&per_page=8','sliderHome2');  
+
+  });
+
+</script>
+<script type="text/javascript" src="js/head_slider.js"></script>
+</head>
+<body class="homePage">
+   
+<aside class="multisitebar">
+	<div class="multisitebar_central">
+		<div class="siteslinks">
+			<a href="https://www.scimagojr.com" class="sjrlink"><img src="./multisitebar/sjr-sitebar-128.png" alt="SCImago Journal &amp; Country Rank"><span class="multisite_tooltip">SCImago Journal Country &amp; Rank</span></a>
+			<a href="https://www.scimagoir.com" class="scimagoirlink"><img src="./multisitebar/sir.png" alt="SCImago Institutions Rankings"><span class="multisite_tooltip">SCImago Institutions Rankings</span></a>
+			<a href="https://www.scimagomedia.com" class="scimagomedialink currentsite"><img src="./multisitebar/logo-white-128.png" alt="SCImago Media Rankings"><span class="multisite_tooltip">SCImago Media Rankings</span></a>
+			<a href="https://www.scimagoiber.com" class="siriberlink"><img src="./multisitebar/siriber2.png" alt="SCImago Iber"><span class="multisite_tooltip">SCImago Iber</span></a>
+			
+			<!--<a href="https://www.scimagorc.com" class="srcrlink"><img src="./multisitebar/srcr.png" alt="SCImago Research Centers Ranking" /><span class="multisite_tooltip">SCImago Research Centers Ranking</span></a>-->
+			<a href="https://www.scimagoarab.com" class="sarablink"><img src="./multisitebar/sarab2.png" alt="SCImago Arab"><span class="multisite_tooltip">SCImago Arab</span></a>
+			
+			<a href="https://www.scimagoiris.com" class="irislink"><img src="./multisitebar/iris-sitebar-128.png" alt="Integrity Risk Indicators by SCImago"><span class="multisite_tooltip">Integrity Risk Indicators by SCImago</span></a>
+			<a href="https://www.graphica.app" class="graphicalink"><img src="./multisitebar/graphica.png" alt="SCImago Graphica"><span class="multisite_tooltip">SCImago Graphica</span></a>
+			<a href="https://www.scimagoepi.com" class="epilink"><img src="./multisitebar/epi.png" alt="Ediciones Profesionales de la Información "><span class="multisite_tooltip">Ediciones Profesionales de la Información</span></a>
+		</div>
+		<div id="multisitebar_scimagolablink">
+			<a href="https://www.scimagolab.com"><img src="./multisitebar/scimagolab-mobile.svg" alt="SCImago Lab" class="multisitebar_scimagolablink_mobile"><img class="multisitebar_scimagolablink_desktop" src="./multisitebar/scimagolab-white.svg" alt="SCImago Lab"></a>
+		</div>
+	</div>
+</aside>
+
+
+<div class="header">
+    <div class="topheader">
+      <!-- quitar al final
+      <div class="column">
+        <input type="text" id="search" placeholder="enter media name ..." spellcheck="false" autocomplete="off">
+      </div>
+       -->
+    </div>
+    <div class="menuheader">
+      <div class="column headf">
+        <div class="logo">
+                    <!--<img src="./img/logo.png" alt="SCImago Media Ranks" />-->
+          <img src="./img/brand-logo-2x.png" alt="SCImago Media Ranks">
+                  </div>
+        
+        <div class="button-icon-menu">
+          <img id="close_menu" src="./img/close-menu-icon.png" alt="Close menu" style="cursor: pointer;">  
+          <img id="open_menu" src="./img/menu-icon.png" alt="Open menu" style="cursor: pointer;">
+      </div>
+        <div class="menu">
+          <ul>
+            <!--<li class="homeItem "><a href="index.php" class='selected'></li>-->
+            <li><a href="rankings.php">Rankings</a></li>
+            <li id="viztool" class="hassubmenu slideup">
+              <div class="parentItem"><span class=" ">Viz tool</span><img src="./img/arrow-chevron-2x.png"></div>
+              <ul id="viztoolsubmenu">                
+                <li><a href="visualizations.php">Ranking overview </a></li>
+                <li><a href="evolution.php">Ranking evolution</a></li>
+              </ul>
+              <!--<a href="visualizations.php" id="viztools" class='hassubmenu '>Viz tool <img src="./img/arrow-chevron-2x.png" /></a>-->
+            </li>
+             <!-- <ul class="submenu">
+                <li class="submenuitem"><a href="visualizations.php">Ranking overview</a></li>
+                <li class="submenuitem"><a href="evolution.php">Ranking evolution</a></li>                
+              </ul>-->
+            <li><a href="methodology.php">Methodology</a></li>
+            <li><a href="aboutus.php">About us</a></li>
+           <!-- <li><a href="https://m.scimagomedia.com/category/news/">News</a></li>-->
+
+            <li id="blog" class="hassubmenu slideup">
+              <div class="parentItem"><span class=" ">Blog</span><img src="./img/arrow-chevron-2x.png"></div>
+              <ul class="submenu">                
+                <li><a href="https://blog.scimagomedia.com/category/news/">News </a></li>
+                <!--<li><a href="https://blog.media.scimago.es/category/news/" >News </a></li>-->
+                <!--<li><a href="https://m.scimagomedia.com/category/reports/">Reports</a></li>-->
+              </ul>
+              
+            </li>
+           
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="column intro headerHome">
+    <div id="head-full" class="home-head-container">
+      <!--<div id="home-txt">
+          <div>Find media brands, evaluate the data and personalize your view</div>
+         
+          <div class="primarybutton btBrand" id="bt-link-rankings"><a href="./rankings.php" class="arrow">Explore Our Media Rankings</a></div>
+     </div>-->
+      <!--<video id="videoHeadHome"  loop="true" autoplay="autoplay" muted>
+        <source src="./img/Home_SCImago.mp4"  type="video/mp4">
+                            
+      </video>-->
+
+  <div id="header-home-images">
+      <div id="home-txt-left">
+          <h1 class="header-title">Find media brands, evaluate the data and personalize your view</h1>
+
+         
+          <div class="primarybutton btBrand" id="bt-link-rankings"><a href="./rankings.php" class="arrow">Explore Our Media Rankings</a></div>
+      </div>
+      <div id="home-header-right">
+          <div class="header-home-images-rank header-first headerHomeSlides headerSlide1" style="display: none;">
+            <a href="./rankings.php" alt="Go to Rankings" title="Go to Rankings">
+            <img src="./img/table-rank4.png" id="home-head-img1">
+            <img src="./img/media-graph2.png" id="home-head-img2">
+            <img src="./img/rank-detail5.png" id="home-head-img3">
+            </a>       
+          </div>
+          <div class="header-home-images-rank header-one headerHomeSlides headerSlide2 fade currentElem" style="display: flex;">
+            <a href="./visualizations.php" alt="Go to Rankings Overview" title="Go to Rankings Overview">
+             <img src="./img/number-media.png" id="number-media"></a>
+             <div class="homeHeadertxt txt1 fadeTxt1">Compare Overall Media</div><!-- Or global-->
+             <div class="homeHeadertxt txt2 fadeTxt2" style="bottom: 76px; opacity: 1; transition: 0.5s;">Check The SCImago Media Indicators</div>
+
+             
+          </div>
+          <div class="header-home-images-rank header-two headerHomeSlides headerSlide3 fade" style="display: none;">
+             <a href="./methodology.php" alt="Go to Methodology" title="Go to Methodology">
+             <img src="./img/home-header-map.png" id="home-header-map">
+             <div class="homeHeadertxt txt3"><span>Media Rankings Around The World</span></div></a>
+             
+          </div>
+
+
+          <div class="header-home-images-rank header-three headerHomeSlides headerSlide4 fade" style="display: none;">
+             <a href="./evolution.php" alt="Go to Rankings Evolution" title="Go to Rankings Evolution">
+             <img src="./img/evo.png" id="home-header-evo">
+             <div class="homeHeadertxt txt4"><span>Track media progress</span></div></a>
+             
+          </div>
+
+      <!-- The dots/circles -->
+      <div id="headerDots">
+        <div class="dots"><span class=" dot" data-dotid="headerSlide1" style="cursor: pointer;"></span><span class=" dot" data-dotid="headerSlide2" style="cursor: pointer;"></span><span class=" dot" data-dotid="headerSlide3" style="cursor: pointer;"></span><span class=" dot" data-dotid="headerSlide4" style="cursor: pointer;"></span></div>
+      </div>
+      </div>
+
+
+  </div>
+    
+    <!-- construir dinamicamente al final -->
+   
+    <!--<div class="dots" >
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>-->
+      
+      
+    </div>
+    
+  </div>
+
+  <div class="column intro works">
+      <div class="column intro">
+            <div class="title-sub">
+                  <h2 class="title"><span>What We Deliver</span></h2>
+                  <div class="subTitleH">Open access tools and insights to research and make strategic decisions</div>
+            </div>
+            
+        </div>
+
+
+      <div id="block-steps">
+
+          <div class="block-step">
+            <div class="numstep">01.</div>            
+            <div class="step-title">Up-to-date, global rankings</div>
+            <div class="step-content">
+                <p>Select your sample, research competitors or make informed comparisons of media outlets</p>
+            </div> 
+
+          </div>
+          <div class="block-step">
+            <div class="numstep">02.</div>            
+            <div class="step-title">Downloadable datasets</div>
+            <div class="step-content">
+                <p>Use the information we gather to understand how journalistic firms perform in terms of digital development</p>
+            </div>         
+
+
+          </div>
+          <div class="block-step">
+            <div class="numstep">03.</div>            
+            <div class="step-title">Consultancy services</div>
+            <div class="step-content">
+                <p>Make strategic decisions that strengthen your organization’s digital reputation and market positioning</p>
+            </div>            
+
+          </div>
+
+          <div class="block-step">
+            <div class="numstep">04.</div>            
+            <div class="step-title">2026 Update Schedule</div>
+            <div class="step-content">
+                <p>
+                  The Scimago Media Ranking is updated <strong>three times a year</strong>:
+                  </p><ul>
+                    <li>Spring Wave – April</li>
+
+                    <li>Summer Wave – July</li>
+
+                    <li>Winter Wave – December</li>
+
+                   <!-- <li>Next update: Wednesday, April 29</li>-->
+                  </ul>
+
+Each wave reflects the <strong>latest available data</strong> and methodological refinements to ensure accuracy, transparency, and reliability.
+
+Stay tuned for the upcoming release.
+                <p></p>
+            </div>            
+
+          </div>
+
+      </div>
+  </div>
+
+  <div class="column methodOverview">
+        <div class="column intro">
+            <div class="title-sub">
+                  <h2 class="title">Our Impact</h2>
+                  <div class="subTitleH">We are constantly going global, and this is what we have achieved so far</div>
+            </div>
+            
+        </div>
+        <div class="content">            
+               
+                    <div class="blocks">
+                      <div class="block-left blocks-type2">
+                       
+                         <div class="block-step type2 type3">                                    
+                          <div class="step-title textBlack64">4,500+</div>
+                          <div class="step-content">
+                              media outlets evaluated
+                          </div>
+
+                        </div>
+                        <div class="block-step type2 type3">                          
+                          <div class="step-title textBlack64">70+</div>
+                          <div class="step-content">
+                              languages in which analyzed websites are published
+                          </div>                          
+
+                        </div>
+                        <div class="block-step type2 type3">                          
+                          <div class="step-title textBlack64">190+</div>
+                          <div class="step-content">
+                             countries are represented
+                          </div>
+                        </div>   
+                        <div class="block-step type2 type3">                          
+                          <div class="step-title textBlack64">12+</div>
+                          <div class="step-content">
+                             reports and research papers published
+                          </div>
+                        </div>                                                                     
+
+                      </div>
+                      <div class="contentVideo">
+                        
+                        <video id="videoMethod" height="656" loop="true" autoplay="autoplay" muted="">
+                          <source src="./img/scimagoAE.mp4" type="video/mp4">
+                                              
+                        </video>
+                      </div>
+                    </div>              
+
+        </div>
+  </div>
+
+ <!-- <div class="column methodOverview team">
+        <div class="column intro" >
+            <div class="title-sub">
+                  <h2 class="title"><span>A glance at our latest report</span></h2>
+                  <div class="subTitleH">We leverage data to provide useful understanding of today’s media landscape</div>
+            </div>
+            <div class="block100 textBlack">
+<span class="textBlack24 gray">SEO and Social Media for Journalists</span>
+“Data reveals that visual and video-led platforms including TikTok, Instagram, and YouTube are all growing in importance. According to professor Ramón Salaverría, this is an atempt to create a more immersive storytelling”
+             <div class="primarybutton btBrand fitinline">
+            <a href="" class="arrow">Explore the report</a>
+            </div>
+            </div>
+
+        </div>
+  </div>-->
+  <!--<div class="column methodOverview" >
+        <div class="column intro" >
+            <div class="title-sub">
+                  <h2 class="title"><span>SCImago Media Reports</span></h2>
+                  <div class="subTitleH">Our carefully crafted insights to promote useful journalism in society</div>
+            </div>
+            
+            
+          <div class="wrap-slider">
+            <div class="slider-note inversePrimaryColor">
+                <div>
+                  <div class="textBlack24">Discover our latest publications</div>
+                  <p>Specialized content for researchers and practitioners</p>
+                </div>
+                <div class="primarybutton btBrand fitinline">
+                  <a href="" class="arrow">All reports</a>
+                </div>
+            </div> 
+            <div class="slider" id="sliderHome1">            
+            </div>
+          </div>
+
+        </div>
+
+  </div>-->
+
+  <div class="column methodOverview" id="papers">
+        <div class="column intro">
+          <div class="title-sub">
+                  <h2 class="title"><span>Our latest research papers</span></h2>
+                  <!--<div class="subTitleH"></div>-->
+          </div>
+
+          <div class="wrap-papers">
+
+            <div class="paper">
+              <div class="content-paper">
+                <div class="img-revista"><a href="./papers/SMR_situacion_and_evolution_IRD.pdf" target="_blank"><img src="./img/cover_issue_4054_es_ES.jpg" alt="Profesional De La información, 32(5)"></a></div>
+                <div class="paper-authors">
+                  Trillo-Domínguez, M., Salaverría, R.,<br> Codina, L., &amp; De-Moya-Anegón, F. (2023).
+                </div>
+                <div class="paper-title"><a href="./papers/SMR_situacion_and_evolution_IRD.pdf" target="_blank">SCImago Media Rankings (SMR): situation and evolution of the digital reputation of the media worldwide</a></div>
+                <div class="paper-journal"> Profesional De La información, 32(5).</div>
+
+              </div>
+              
+            </div>
+            <div class="paper">
+              <div class="content-paper">
+                <div class="img-revista"><a href="./papers/1_2024_ART_JOURNALISM_Digital_Reputation_Indicator.pdf" target="_blank"><img src="./img/joua_25_6.largecover.png" alt="Journalism, 0(0)"></a></div>
+                <div class="paper-authors">
+                  Trillo-Domínguez, M., Salaverría, R.,<br> Codina, L., &amp; De Moya-Anegón, F. (2024).
+                </div>
+                <div class="paper-title"><a href="./papers/1_2024_ART_JOURNALISM_Digital_Reputation_Indicator.pdf" target="_blank">Digital reputation indicator: A webometric approach for a global ranking of digital media</a></div>
+                <div class="paper-journal">Journalism, 0(0).</div>
+
+              </div>
+            </div>
+
+
+            
+          </div>
+
+        </div>
+  </div>
+
+    <div class="column methodOverview dataSources">
+        <div class="column intro">
+            <div class="title-sub">
+                  <h2 class="title">The big picture</h2>
+                  <div class="subTitleH">Distilled highlights from Scimago Media Rankings’ current data</div>
+            </div>            
+            
+        </div>
+        <div class="content">            
+               
+                  <div class="blocks">
+                      <div class="source">
+                        <a href="./rankings.php">
+                        <div class="content-source">
+                        <div class="sourceInfo">
+                          <div class="sourceName">
+                            <div class="title24">Top media in the ranking</div>
+                            <div class="title16">The New York Times holds the #1 spot for 2024</div>                            
+                          </div>
+
+                        </div>
+                        <div class="sourceLink"><img src="./img/arrow-corner-2x.png"></div>
+                      </div></a>
+
+                      </div>    
+                      <div class="source">
+                        <a href="./visualizations.php">
+                         <div class="content-source"> 
+                        <div class="sourceInfo">
+                          <div class="sourceName">
+                            <div class="title24">Countries represented in top 10</div>
+                            <div class="title16">United States, Spain, India and United Kingdom</div>
+                          </div>                          
+ 
+                        </div>
+                        <div class="sourceLink"><img src="./img/arrow-corner-2x.png"></div>
+                        </div></a>
+
+                      </div> 
+                       <div class="source">
+                        <a href="./evolution.php">
+                          <div class="content-source">
+                        <div class="sourceInfo">
+                          <div class="sourceName">
+                            <div class="title24">Most improved media outlet</div>
+                            <div class="title16">The Indian Express shows a ten-position increase since 2023</div>
+                          </div>
+
+                        </div>
+                        <div class="sourceLink"><img src="./img/arrow-corner-2x.png"></div>
+                      </div></a>
+
+                      </div>                          
+
+                       <div class="source">
+                        <a href="./rankings.php?typology=Finance">
+                         <div class="content-source">  
+                        <div class="sourceInfo">
+                          <div class="sourceName">
+                            <div class="title24">Top media outlet in Finance and Sports</div>
+                            <div class="title16">Forbes and As lead the way in these critical sectors</div>
+                          </div>  
+
+                        </div>
+                        <div class="sourceLink"><img src="./img/arrow-corner-2x.png"></div>
+                      </div></a>
+
+                      </div>                          
+                                                 
+
+                  </div>              
+
+        </div>
+  </div>
+
+  <div class="column methology">
+    <div class="methology-content">
+      <div class="title-metho">
+            <h2 class="title"><span>A trusted methodology</span></h2>
+            <div class="title-description">This is how we collect and analyze data to develop solid solutions</div>
+      </div>
+          <div class="blocks">
+          <div class="block-left block-gray">
+            <div class="blockup">
+              <h3>Transparent data collection and rigorous analysis</h3>
+              <div class="block-list">
+                <ul>
+                <li>— Open access: all indicators are available</li>
+                <li>— Objectivity: unbiased criteria avoid conflict of interest</li>
+                <li>— Going global: we are constantly increasing the sample</li>
+              </ul>
+              </div>
+            </div>
+            <div class="primarybutton btBrand" id="btAboutMeth"><a href="./methodology.php" class="arrow">More about our method</a></div>
+          </div>
+          <div class="block-right"><img src="./img/pattern.png"></div>
+          </div>
+    </div>
+  </div>
+
+
+  <div class="column methodOverview" id="News">
+        <div class="column intro">
+            <div class="title-sub">
+                  <h2 class="title"><span>Latest Updates and News</span></h2>
+                  <div class="subTitleH">A chronicle of what we have been doing recently</div>
+            </div>
+            
+
+            <!--<h1>Blog News</h1>-->
+            
+          <div class="wrap-slider">
+            <div class="slider-note inversePrimaryColor">
+                <div>
+                  <div class="textBlack24">Read about our recent activities</div>
+                  <p>And stay tuned for what is next</p>
+                </div>
+                <div class="primarybutton btBrand fitinline">
+                  <a href="https://blog.scimagomedia.com/category/news/" class="arrow">All news</a>
+                </div>
+            </div> 
+
+            <div class="slider" id="sliderHome2"><div class="container">
+	<div class="slider-controls">
+        <div class="btsPrevNext">
+          <a class="prev disabled left-slider-control" style="cursor: pointer; pointer-events: none;"><img src="./img/arrow-next-2x.png"></a>
+          <a class="next right-slider-control" style="cursor: pointer; pointer-events: visible;"><img src="./img/arrow-next-2x.png"></a>
+        </div>
+    </div>
+    <div class="slideshow-container" style="margin-left: 0px;">
+      	<div class="toSlide">
+    	<div class=" mySlides"><div class=" slideContent"><div class=" textSlides"><div class=" content_title_date"><div class=" title"><a class=" postlink" href="https://blog.scimagomedia.com/new-smr-wave-the-sample-reaches-6649-media-outlets-with-the-inclusion-of-radio/">New SMR Wave: the Sample Reaches 6,649 Media Outlets with the Inclusion of Radio</a></div><div class=" date">Dec 20, 2025</div></div><div class=" author">Trillo Domínguez, Magdalena</div></div></div></div><div class=" mySlides"><div class=" slideContent"><div class=" textSlides"><div class=" content_title_date"><div class=" title"><a class=" postlink" href="https://blog.scimagomedia.com/scimago-media-ranking-publishes-its-new-summer-2025-edition-more-than-6000-media-organizations-under-the-microscope/">SCImago Media Ranking Summer 2025 Edition: More Than 6,000 Media Organizations Under the Microscope</a></div><div class=" date">Jul 04, 2025</div></div><div class=" author">Paula Maria Escalona Doña</div></div></div></div><div class=" mySlides"><div class=" slideContent"><a href="https://blog.scimagomedia.com/lluis-codinas-quick-guide-to-leveraging-the-scimago-media-ranking/"><div class=" imgContainer"><img src="https://blog.scimagomedia.com/wp-content/uploads/2025/07/foto-guia-2-1-300x228.png" draggable="false"></div></a><div class=" textSlides"><div class=" content_title_date"><div class=" title"><a class=" postlink" href="https://blog.scimagomedia.com/lluis-codinas-quick-guide-to-leveraging-the-scimago-media-ranking/">Lluís Codina’s Quick Guide to Leveraging the SCImago Media Ranking</a></div><div class=" date">Jul 02, 2025</div></div><div class=" author">Paula Maria Escalona Doña</div></div></div></div><div class=" mySlides"><div class=" slideContent"><div class=" textSlides"><div class=" content_title_date"><div class=" title"><a class=" postlink" href="https://blog.scimagomedia.com/felix-de-moya-founder-of-scimago-special-award-from-the-chair-of-entrepreneurship-at-the-university-of-valencia/">Félix de Moya, Founder of SCImago, Special Award from the Chair of Entrepreneurship at the University of Valencia</a></div><div class=" date">May 02, 2025</div></div><div class=" author">Trillo Domínguez, Magdalena</div></div></div></div><div class=" mySlides"><div class=" slideContent"><div class=" textSlides"><div class=" content_title_date"><div class=" title"><a class=" postlink" href="https://blog.scimagomedia.com/scimagos-latest-innovation-felix-de-moya-to-present-a-new-social-impact-metric-at-codi-2025/">SCImago’s Latest Innovation: Félix de Moya to present a new social impact metric at CoDi 2025</a></div><div class=" date">Feb 23, 2025</div></div><div class=" author">Trillo Domínguez, Magdalena</div></div></div></div><div class=" mySlides"><div class=" slideContent"><div class=" textSlides"><div class=" content_title_date"><div class=" title"><a class=" postlink" href="https://blog.scimagomedia.com/scimago-media-rankings-smr-as-a-methodological-source-for-media-research/">SCImago Media Rankings (SMR) as a Methodological Source for Media Research</a></div><div class=" date">Jul 30, 2024</div></div><div class=" author">Trillo Domínguez, Magdalena</div></div></div></div><div class=" mySlides"><div class=" slideContent"><div class=" textSlides"><div class=" content_title_date"><div class=" title"><a class=" postlink" href="https://blog.scimagomedia.com/which-media-outlets-lead-the-digital-reputation-ranking-in-ibero-america/">Which Media Outlets Lead the Digital Reputation Ranking (SMR) in Ibero-America?</a></div><div class=" date">Jul 10, 2024</div></div><div class=" author">Trillo Domínguez, Magdalena</div></div></div></div><div class=" mySlides"><div class=" slideContent"><div class=" textSlides"><div class=" content_title_date"><div class=" title"><a class=" postlink" href="https://blog.scimagomedia.com/scimago-media-ranking-platform-the-main-feature-of-the-cuvicom-conference-on-media-innovation/">SCImago Media Ranking platform, the main feature of the CUVICOM conference on Media Innovation</a></div><div class=" date">Jul 03, 2024</div></div><div class=" author">Trillo Domínguez, Magdalena</div></div></div></div></div>
+    </div>
+	</div></div>
+          </div>
+
+        </div>
+
+  </div>
+
+
+  <div class="column methodOverview audience">
+        <div class="column intro">
+            <div class="title-sub">
+                  <h2 class="title">Partners</h2>
+                  <div class="subTitleH">SCImago Media Rankings collaborates with leading institutions and international research projects to empower journalists, managers, professors, students and media supporters</div>
+            </div>            
+        </div>      
+        
+        <div class="content">
+    <div class="">
+      <div class="colablogos">
+        <div class="clogo">
+        <img src="./img/Cuvicom-t.png">
+        <img src="./img/financiados-cuvicom.jpg">
+        </div>
+        <div class="clogo">
+          <img src="./img/iberifier-2024_1024.png">
+        </div>
+        <div class="clogo">
+          <img src="./img/U-CHASS-t.png">          
+        </div>
+
+      </div>
+    </div>
+  </div>        
+  </div>
+
+
+  <div class="column videoHome">
+     <div id="home-video-txt">
+          
+          <div class="home-txt1" style="">
+            <!--Interactive charts and filters to look more deeply at the results. <br/>-->
+            Inspect and compare the metrics that matter to you.
+          </div>
+         
+          <div class="primarybutton btBrand" id="bt-link-rankings"><a href="./rankings.php" class="arrow">SCImago Media Rankings</a></div>
+     </div>
+      <video id="videoHeadHome" loop="true" autoplay="autoplay" muted="">
+        <source src="./img/Home_SCImago.mp4" type="video/mp4">
+                            
+      </video>
+  </div>
+
+  
+  
+<div class="footer">
+    <div class="column">
+      <div class="footercontent">
+        <div class="wrap-footer">
+          <div class="block">
+            <img src="./img/logo-footer-2x.png" class="logo_footer">
+            <!--<p>SCImago Media is a product created by <a href="https://www.scimagolab.com">SCImago Lab</a></p>
+            <p>2022 Copyright</p>-->
+          </div>
+
+          <div class="cols3">
+            <div class="block">
+              <h2 class="footertitle">Services</h2>
+              <!--<p><span style="opacity: 0.5;">Contact</span><br />contact@scimago.es</p>-->
+              <!--<p><a href="contact.php">Contact Us</a></p>-->
+              <!--<p><span style="opacity: 0.5;">Follow us</span><br /><a href="https://twitter.com/scimago" target="_blank">@scimago</a></p>-->
+              <ul>
+                <li><a href="./rankings.php">Rankings</a></li>                
+                <li><a href="./visualizations.php">Overview</a></li>
+                <li><a href="./evolution.php">Ranking evolution</a></li>
+                <!--<li><a href="https://m.scimagomedia.com/category/reports/">Reports</a></li>-->
+              </ul>
+              
+            </div>
+            <div class="block">
+               <h2 class="footertitle">About us</h2>
+                <ul>
+                
+                <li><a href="https://www.scimagomedia.com/">Certifications</a></li>                
+                <li><a href="https://www.scimagomedia.com/aboutus.php">Who we are</a></li>
+                <li><a href="">Partners and collaborators</a></li>
+                <li><a href="contact.php">Contact Us</a></li>
+
+               
+              </ul>
+            </div>
+            <div class="block">
+              <h2 class="footertitle">SCImago’s products</h2>
+              <ul>
+                <li><a href="https://www.scimagojr.com/">SCImago Journal Country &amp; Rank</a></li>
+                <li><a href="https://www.scimagoir.com/">SCImago Institutions Ranking</a></li>
+                <li><a href="https://www.scimagoiber.com/">SCImago Iber</a></li>
+				  <li><a href="https://www.scimagoarab.com/">SCImago Arab</a></li>
+                <!--<li><a href="https://www.scimagorc.com/mena/index.php">SCImago Research Centers Ranking</a></li>-->
+                <li><a href="https://www.graphica.app/">SCImago Graphica</a></li>
+                <li><a href="https://www.scimagoepi.com/">Ediciones Profesionales de la Información</a></li>
+              </ul>
+            </div>
+          </div>
+
+
+        </div> 
+
+        
+    </div>
+    <div class="howtocite" style="background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgb(141 141 141 / 15%);
+    border-radius: 8px;
+    padding: 20px 24px;
+    font-family: RiformaLLWeb-Regular;
+    font-size: 14px;
+    line-height: 22px;
+    color: #EBEBEB;
+    width: calc(100% - 24px * 2);">
+      All the information shown in the SCImago Media Rankings website can be used for non-commercial purposes as long as it is cited.<br>
+      <span style="display: block;
+    font-family: RiformaLLWeb-Medium;
+    font-weight: 500;
+    font-size: 15px;
+    color: #ffffff;
+    margin-top: 8px;
+    margin-bottom: 4px;">How to cite:</span>
+
+      SCImago, (n.d.). SCImago Media Rankings [Portal]. Retrieved (Date), from <a href="https://www.scimagomedia.com/" style="text-decoration: underline;">https://www.scimagomedia.com/</a>
+    </div>
+    <div id="footerfoot">
+        <div id="copy">© 2026 SCImago Media Rankings</div>
+        <div id="legal">
+          <ul>
+             <li><a class="nav-link ccb__edit" href="#">Cookies</a></li>
+              <li><a class="" href="./legal-notice.php">Legal</a></li>
+              <li><a class="" href="./privacy-policy.php">Privacy policy</a></li>
+          </ul>
+        </div>
+    </div>
+
+    </div>
+  </div>
+</body></html>

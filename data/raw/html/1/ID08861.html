@@ -1,0 +1,3938 @@
+<html lang="id" translate="no"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0">
+    
+    <!-- 🔒 Mencegah translate otomatis browser -->
+    <meta name="google" content="notranslate">
+    <meta http-equiv="Content-Language" content="id">
+    
+    <!-- 🚫 Mencegah indexing oleh Google -->
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    
+    <title>LiveChat - Admin User</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="/static/css/lazy-loading.css" rel="stylesheet">
+    <link href="/static/css/network-monitor.css" rel="stylesheet">
+
+    <style>
+        /* 🔒 Mencegah translate dengan CSS */
+        html {
+            translate: no !important;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            /* ? MOBILE ZOOM SUPPORT */
+            touch-action: manipulation;
+            -webkit-user-select: text;
+            user-select: text;
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+        .chat-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .chat-container {
+                margin: 20px 10px;
+                border-radius: 15px;
+            }
+
+          /* biarkan flex yang ngatur tinggi, bukan height calc() */
+          .chat-body,
+          #chatInterface {
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+            height: auto;
+          }
+
+          .chat-messages {
+              padding-bottom: 150px; /* kira-kira setinggi input sticky */
+            }
+
+            /* input sticky + bayangan tipis */
+            .chat-input {
+              position: sticky;
+              bottom: 0;
+              z-index: 10;
+              padding: 12px 14px;
+              background: #fff;
+              border-top: 1px solid #dee2e6;
+              box-shadow: 0 -6px 16px rgba(0,0,0,.06);
+            }
+
+            /* susun ulang komponen: tools (emoji+file) -> input -> send */
+            .chat-input .input-group {
+              display: flex;
+              flex-wrap: wrap;
+                gap: 10px;
+              align-items: center;
+            }
+
+            /* baris 1: ikon kecil berdampingan */
+            .chat-input .file-upload { order: 1; }
+            .chat-input .btn-outline-secondary { order: 2; }
+
+            /* jadikan ikon berbentuk kotak kecil */
+            .chat-input .file-upload label,
+            .chat-input .btn-outline-secondary {
+              width: 42px;
+              height: 42px;
+              padding: 0;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 10px;
+              margin: 0;            /* override margin-right default label */
+            }
+
+            /* baris 2: kolom input besar penuh */
+            .chat-input .form-control {
+                order: 3;
+              flex: 1 0 100%;
+              height: 48px;         /* bikin lebih tinggi */
+              font-size: 16px;
+              padding: 10px 12px;
+              border-radius: 12px;
+              min-width: 0;         /* biar tidak mepet */
+            }
+
+            /* baris 3: tombol kirim penuh */
+            .chat-input .btn.btn-primary {
+              order: 4;
+              flex: 1 0 100%;
+              height: 46px;
+              border-radius: 12px;
+            }
+
+            /* posisi popup emoji tepat di atas input sticky */
+            .emoji-picker {
+              right: 12px;
+              bottom: calc(100% + 8px);
+            }
+          }
+        .chat-header{
+          position:relative;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color:#fff;
+          padding:16px 18px;
+          display:grid;
+          grid-template-columns: 1fr auto;  /* kiri: judul, kanan: controls */
+          grid-template-rows: auto auto;    /* baris 1: judul+controls, baris 2: status */
+          align-items:center;
+          gap:8px 12px;
+          text-align:left;                  /* judul rata kiri */
+        }
+        .chat-header h2{
+          grid-column:1/2; grid-row:1;
+          margin:0;
+          display:flex; align-items:center; gap:10px;
+          font-weight:700; font-size:clamp(18px,2.4vw,22px);
+        }
+        .chat-header .status{
+          grid-column:1/3; grid-row:2;      /* status melebar penuh di bawah */
+          justify-self:start;
+          display:inline-flex; align-items:center; gap:8px;
+          background: rgba(255,255,255,0.18);
+          padding:6px 12px;
+          border-radius:999px;
+          font-size:13px;
+        }
+        .customer-controls{
+          grid-column:2/3; grid-row:1;
+          position:static !important;       /* <-- jangan absolute lagi */
+          display:flex; gap:8px;
+        }
+        .customer-controls .btn{
+          font-size:12px; padding:6px 12px; border-radius:999px;
+          font-weight:600; border:none;
+          box-shadow:0 2px 8px rgba(0,0,0,.08);
+          transition:transform .15s ease, box-shadow .15s ease;
+        }
+        .customer-controls .btn:hover{ transform:translateY(-1px); box-shadow:0 4px 12px rgba(0,0,0,.15); }
+        @media (max-width:768px){
+          .chat-header{
+            grid-template-columns:1fr;
+            grid-template-rows:auto auto auto;
+          }
+          .customer-controls{ grid-column:1/2; grid-row:2; justify-self:start; }
+          .chat-header .status{ grid-row:3; }
+        }
+        
+        .chat-header {
+            position: relative;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        .chat-body {
+            height: 600px; /* Reduced from 500px to eliminate excess space */
+            display: flex;
+            flex-direction: column;
+        }
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 50px; /* Reduced from 20px */
+            background: #f8f9fa;
+            min-height: 0; /* Important for flexbox */
+            scroll-behavior: smooth; /* Smooth scrolling */
+            max-height: calc(100% - 160px); /* Reduced from 200px for better space usage */
+        }
+        
+        /* Custom scrollbar styling */
+        .chat-messages::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .chat-messages::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 4px;
+        }
+        
+        .chat-messages::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
+        }
+        
+        /* Scroll to bottom button */
+        .scroll-to-bottom-btn {
+            position: absolute;
+            bottom: 80px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: #007bff;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .scroll-to-bottom-btn:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        #chatInterface {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .chat-input {
+            padding: 15px 20px; /* Reduced top/bottom padding from 20px to 15px */
+            border-top: 1px solid #dee2e6;
+            background: white;
+            flex-shrink: 0; /* Prevent input area from shrinking */
+            position: sticky;
+            bottom: 0;
+        }
+        .message {
+            margin-bottom: 10px; /* Reduced from 15px */
+            padding: 10px 15px; /* Reduced from 12px 18px */
+            border-radius: 20px;
+            max-width: 80%;
+            word-wrap: break-word;
+            position: relative;
+        }
+        .message.customer {
+            background: #007bff;
+            color: white;
+            margin-left: auto;
+            border-bottom-right-radius: 5px;
+        }
+        .message.agent {
+            background: #e9ecef;
+            color: #333;
+            margin-right: auto;
+            border-bottom-left-radius: 5px;
+        }
+        .message.system {
+            background: #ffc107;
+            color: #333;
+            text-align: center;
+            margin: 10px auto; /* Reduced from 15px */
+            font-size: 13px;
+            max-width: 90%;
+        }
+        .message .time {
+            font-size: 11px;
+            opacity: 0.7;
+            margin-top: 5px;
+            display: block;
+        }
+        .chat-input {
+            padding: 20px;
+            border-top: 1px solid #dee2e6;
+            background: white;
+        }
+        
+        /* Enhanced textarea styling for chat input */
+        .chat-input textarea {
+            min-height: 40px;
+            max-height: 200px;
+            resize: vertical;
+            font-family: inherit;
+            line-height: 1.4;
+            overflow-y: auto;
+            transition: all 0.2s ease;
+            padding: 8px 12px;
+        }
+        
+        .chat-input textarea:focus {
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+            border-color: #80bdff;
+        }
+        
+        /* Message display with line breaks preserved */
+        .message {
+            white-space: pre-line !important;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        .message.customer,
+        .message.agent,
+        .message.user,
+        .message.system {
+            white-space: pre-line !important;
+        }
+        
+        /* Hide empty message bodies to prevent extra spacing */
+        .msg-body:empty {
+            display: none !important;
+        }
+        
+        /* Hide message bodies that only contain whitespace */
+        .msg-body:blank {
+            display: none !important;
+        }
+        
+        .typing-indicator {
+            padding: 8px 20px; /* Reduced from 10px */
+            color: #6c757d;
+            font-style: italic;
+            font-size: 14px;
+            display: none;
+            flex-shrink: 0; /* Prevent typing indicator from shrinking */
+            background: white;
+            border-top: 1px solid #f0f0f0;
+        }
+        .file-upload {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            flex-shrink: 0; /* Prevent file upload from shrinking */
+        }
+        .input-group {
+            flex-wrap: nowrap; /* Prevent input group from wrapping */
+        }
+        .input-group .form-control {
+            flex: 1;
+            min-width: 0; /* Allow input to shrink */
+        }
+        .file-upload input[type=file] {
+            position: absolute;
+            left: -9999px;
+        }
+        .file-upload label {
+            cursor: pointer;
+            padding: 8px 15px;
+        }
+        
+        /* ? FILE PREVIEW STYLING */
+        .file-preview-container {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        
+        .file-preview-header h6 {
+            margin: 0 0 10px 0;
+            color: #495057;
+            font-size: 14px;
+        }
+        
+        .file-preview-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            transition: all 0.2s ease;
+        }
+        
+        .file-preview-item:hover {
+            border-color: #007bff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .file-preview-item i {
+            font-size: 20px;
+            color: #6c757d;
+            margin-right: 12px;
+            width: 24px;
+            text-align: center;
+        }
+        
+        .file-info {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .file-name {
+            font-weight: 500;
+            color: #495057;
+            font-size: 14px;
+            margin-bottom: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .file-size {
+            font-size: 12px;
+            color: #6c757d;
+        }
+        
+        .file-preview-item button {
+            margin-left: 8px;
+            padding: 4px 8px;
+            font-size: 12px;
+        }
+        
+        /* ? UPLOAD BUTTONS STYLING */
+        #uploadFilesSection {
+            text-align: center;
+        }
+        
+        #uploadFilesSection .btn {
+            margin: 0 5px;
+        }
+        
+        /* ? FILE THUMBNAIL STYLING FOR CUSTOMER CHAT */
+        .message-file {
+            margin: 10px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+        }
+        
+        .file-thumbnail {
+            max-width: 200px;
+            max-height: 150px;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        
+        .file-thumbnail:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Message Image Display (matching dashboard) */
+        .message-image {
+            max-width: 200px;
+            max-height: 200px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            border: 2px solid transparent;
+        }
+
+        .message-image:hover {
+            transform: scale(1.05);
+            border-color: #0d6efd;
+        }
+        
+        .message-image-container {
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        
+        .image-caption {
+            font-size: 12px;
+            color: #6c757d;
+            margin-top: 4px;
+        }
+        
+        /* Message Video Display (matching dashboard) */
+        .message-video {
+            max-width: 200px;
+            max-height: 200px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        
+        .message-video-container {
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        
+        .video-caption {
+            font-size: 12px;
+            color: #6c757d;
+            margin-top: 4px;
+        }
+        
+        .file-caption {
+            padding: 8px 12px;
+            background: white;
+            border-top: 1px solid #e9ecef;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: #6c757d;
+        }
+        
+        .file-caption i {
+            font-size: 14px;
+        }
+        
+        .file-name {
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .file-icon {
+            width: 60px;
+            height: 60px;
+            background: #e9ecef;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        
+        .file-icon:hover {
+            background: #dee2e6;
+        }
+        
+        .file-icon i {
+            font-size: 24px;
+            color: #6c757d;
+        }
+        
+        .message-text {
+            margin-bottom: 10px;
+        }
+        
+        /* ? VIDEO THUMBNAIL ENHANCEMENTS */
+        .video-thumbnail-container {
+            position: relative;
+            cursor: pointer;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .video-thumbnail-container:hover .video-overlay {
+            opacity: 1;
+        }
+        
+        .video-overlay i {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        
+        .video-overlay span {
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        /* ? VIDEO PLAY INDICATOR */
+        .video-play-indicator {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 5;
+        }
+        
+        .video-play-indicator i {
+            color: white;
+            font-size: 24px;
+        }
+        
+        .video-thumbnail-container:hover .video-play-indicator {
+            background: rgba(102, 126, 234, 0.9);
+            transform: translate(-50%, -50%) scale(1.1);
+            transition: all 0.3s ease;
+        }
+        
+        /* Ensure video controls don't interfere with click */
+        .video-thumbnail-container video {
+            pointer-events: auto;
+        }
+        
+        /* ? MOBILE VIDEO AND MODAL ENHANCEMENTS */
+        @media (max-width: 768px) {
+            /* Mobile modal fullscreen */
+            .modal-fullscreen-sm-down {
+                max-width: 100%;
+                margin: 0;
+                height: 100%;
+            }
+            
+            .modal-fullscreen-sm-down .modal-content {
+                height: 100%;
+                border-radius: 0;
+            }
+            
+            .modal-fullscreen-sm-down .modal-body {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+            }
+            
+            /* Mobile video controls */
+            video {
+                max-width: 100% !important;
+                max-height: 80vh !important;
+                width: 100%;
+                height: auto;
+            }
+            
+            /* Mobile touch-friendly buttons */
+            .btn {
+                min-height: 44px;
+                padding: 12px 20px;
+                font-size: 16px;
+            }
+            
+            /* Mobile file thumbnails */
+            .file-thumbnail {
+                max-width: 150px !important;
+                max-height: 120px !important;
+            }
+            
+            .video-thumbnail-container {
+                max-width: 150px;
+                max-height: 120px;
+            }
+        }
+        
+        /* ? TOUCH AND ZOOM SUPPORT */
+        .modal-body img,
+        .modal-body video {
+            touch-action: manipulation;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+        
+        /* ? NEW FEATURE: Styling for clickable links in messages */
+        .message-link {
+            color: #8B4513; /* Coklat muda */
+            text-decoration: none;
+            border-bottom: 1px solid #8B4513;
+            transition: all 0.3s ease;
+            word-break: break-all;
+        }
+        
+        .message-link:hover {
+            color: #A0522D; /* Coklat lebih gelap saat hover */
+            border-bottom-color: #A0522D;
+            text-decoration: none;
+        }
+        
+        .message-link:active {
+            color: #654321; /* Coklat gelap saat diklik */
+            border-bottom-color: #654321;
+        }
+
+        /* ? NEW FEATURE: Message Edit Indicator */
+        .message-edited {
+            font-size: 11px;
+            color: #6c757d;
+            font-style: italic;
+            margin-top: 4px;
+        }
+        
+        /* Mobile link styling */
+        @media (max-width: 768px) {
+            .message-link {
+                padding: 2px 4px;
+                border-radius: 4px;
+                background-color: rgba(139, 69, 19, 0.1); /* Coklat muda transparan */
+            }
+            
+            .message-link:hover {
+                background-color: rgba(139, 69, 19, 0.2); /* Coklat muda lebih gelap saat hover */
+            }
+        }
+        
+        /* ? ENHANCED MODAL LAYOUT FOR BETTER FILE DISPLAY */
+        .file-viewer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+            width: 100%;
+        }
+        
+        /* ? FORCE VERTICAL LAYOUT - IMAGE ON TOP, DOWNLOAD BELOW */
+        .file-viewer-content img,
+        .file-viewer-content video {
+            order: 1;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            max-height: 70vh;
+            object-fit: contain;
+            margin-bottom: 0; /* ? HILANGKAN JARAK YANG TIDAK PERLU */
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .file-viewer-content img:hover,
+        .file-viewer-content video:hover {
+            transform: scale(1.02);
+        }
+        
+        .file-download-section {
+            order: 2;
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            border: 1px solid #dee2e6;
+            margin-top: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .file-download-section .btn {
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+            transition: all 0.3s ease;
+            min-width: 200px;
+        }
+        
+        .file-download-section .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+            background: linear-gradient(135deg, #0056b3 0%, #004085 100%);
+        }
+        
+        .file-download-section .btn:active {
+            transform: translateY(0);
+        }
+        
+        .file-info {
+            margin-bottom: 15px;
+            color: #6c757d;
+            font-size: 14px;
+        }
+        
+        /* ? RESPONSIVE DESIGN FOR MOBILE */
+        @media (max-width: 768px) {
+            .file-viewer-content {
+                gap: 0;
+                padding: 0;
+                min-height: 45vh;
+            }
+            
+            .file-viewer-content img,
+            .file-viewer-content video {
+                order: 1;
+                width: 100%;
+                height: auto;
+                max-height: 85vh; /* Gambar lebih besar di mobile */
+                object-fit: contain;
+                margin-bottom: 0; /* ? HILANGKAN JARAK YANG TIDAK PERLU */
+                border-radius: 16px;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            }
+            
+            .file-download-section {
+                order: 2;
+                width: 100%;
+                margin-top: 0;
+                padding: 25px 20px;
+                border-radius: 20px;
+                background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+                border: 2px solid #e9ecef;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            }
+            
+            .file-download-section .btn {
+                padding: 20px 35px;
+                font-size: 18px;
+                min-width: 250px;
+                border-radius: 35px;
+                font-weight: 700;
+                letter-spacing: 0.5px;
+            }
+            
+            .file-info {
+                font-size: 16px;
+                margin-bottom: 25px;
+                padding: 0 15px;
+            }
+            
+            .file-info strong {
+                font-size: 18px;
+                display: block;
+                margin-bottom: 8px;
+            }
+            
+            .file-info small {
+                font-size: 14px;
+                opacity: 0.8;
+            }
+            
+            /* ? MOBILE MODAL OPTIMIZATION - FULLSCREEN */
+            .modal-content {
+                margin: 0;
+                border-radius: 0;
+                max-height: 100vh;
+                height: 100vh;
+                width: 100vw;
+            }
+            
+            .modal-header {
+                padding: 20px;
+                background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+                color: white;
+                border-bottom: none;
+            }
+            
+            .modal-title {
+                color: white;
+                font-size: 18px;
+                font-weight: 700;
+            }
+            
+            .modal-body {
+                padding: 0;
+                max-height: calc(100vh - 100px);
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .btn-close {
+                filter: invert(1);
+                opacity: 0.9;
+                font-size: 20px;
+            }
+        }
+        
+        /* ? ENHANCED ANIMATIONS */
+        .file-viewer-content img,
+        .file-viewer-content video {
+            animation: fadeInScale 0.3s ease-out;
+        }
+        
+        .file-download-section {
+            animation: slideInUp 0.4s ease-out;
+        }
+        
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* ? VIDEO PLAYBACK ENHANCEMENTS */
+        video::-webkit-media-controls {
+            display: flex !important;
+        }
+        
+        video::-webkit-media-controls-panel {
+            display: flex !important;
+        }
+        
+        video::-webkit-media-controls-play-button {
+            display: flex !important;
+        }
+        
+        /* ? VIDEO CONTROLS OVERLAY STYLING */
+        .video-player-container {
+            position: relative;
+            display: inline-block;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .video-controls-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+        
+        .video-controls-overlay .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .video-controls-overlay .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        .video-controls-overlay .btn:active {
+            transform: translateY(0);
+        }
+        
+        /* ? LOADING SPINNER STYLING */
+        .spinner-border {
+            width: 3rem;
+            height: 3rem;
+        }
+        
+        /* ? MOBILE VIDEO ENHANCEMENTS */
+        @media (max-width: 768px) {
+            .video-controls-overlay .btn {
+                padding: 20px 40px;
+                font-size: 18px;
+                min-height: 60px;
+            }
+            
+            .video-player-container {
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            #modalVideo {
+                width: 100%;
+                height: auto;
+                max-height: 60vh;
+            }
+        }
+        
+        .file-upload label {
+            background: #6c757d;
+            color: white;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .file-upload label:hover {
+            background: #5a6268;
+        }
+        .emoji-picker {
+            position: absolute;
+            bottom: 100%;
+            right: 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            display: none;
+            z-index: 1000;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .emoji-grid {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 5px;
+        }
+        .emoji-item {
+            cursor: pointer;
+            padding: 5px;
+            text-align: center;
+            border-radius: 5px;
+            transition: background 0.2s;
+        }
+        .emoji-item:hover {
+            background: #f8f9fa;
+        }
+        
+        /* Form Styling */
+        #initialForm {
+            background: #f8f9fa;
+            border-radius: 15px;
+            margin: 15px; /* Reduced from 20px */
+        }
+        
+        #initialForm h4 {
+            color: #495057;
+            font-weight: 600;
+        }
+        
+        #initialForm .form-label {
+            font-weight: 600;
+            color: #495057;
+        }
+        
+        #initialForm .form-control,
+        #initialForm .form-select {
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+        
+        #initialForm .form-control:focus,
+        #initialForm .form-select:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+        }
+        
+        #initialForm .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 10px;
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        #initialForm .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        #initialForm .btn-primary:disabled {
+            opacity: 0.7;
+            transform: none;
+        }
+        
+        .form-text {
+            color: #6c757d;
+            font-size: 12px;
+        }
+    </style>
+<style>
+            #network-offline-indicator {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                background: linear-gradient(135deg, #ff4757, #ff3838);
+                color: white;
+                z-index: 10000;
+                padding: 15px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+                transform: translateY(-100%);
+                transition: transform 0.5s ease;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            }
+            
+            #network-offline-indicator.show {
+                transform: translateY(0);
+            }
+            
+            .offline-content {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 15px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            
+            .offline-icon {
+                font-size: 24px;
+                animation: pulse 2s infinite;
+            }
+            
+            .offline-text h4 {
+                margin: 0 0 5px 0;
+                font-size: 16px;
+                font-weight: 600;
+            }
+            
+            .offline-text p {
+                margin: 0 0 10px 0;
+                font-size: 14px;
+                opacity: 0.9;
+            }
+            
+            .offline-actions {
+                display: flex;
+                gap: 10px;
+            }
+            
+            .btn-retry {
+                background: rgba(255,255,255,0.2);
+                border: 1px solid rgba(255,255,255,0.3);
+                color: white;
+                padding: 8px 16px;
+                border-radius: 20px;
+                cursor: pointer;
+                font-size: 14px;
+                transition: all 0.3s ease;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+            
+            .btn-retry:hover {
+                background: rgba(255,255,255,0.3);
+                border-color: rgba(255,255,255,0.5);
+            }
+            
+            .btn-retry:active {
+                transform: scale(0.95);
+            }
+            
+            .offline-timer {
+                font-size: 12px;
+                opacity: 0.8;
+                white-space: nowrap;
+            }
+            
+            @keyframes pulse {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0.6; }
+            }
+            
+            /* Refresh prompt styles */
+            .refresh-prompt {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: white;
+                padding: 30px;
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+                z-index: 10001;
+                text-align: center;
+                max-width: 400px;
+                width: 90%;
+            }
+            
+            .refresh-prompt h3 {
+                color: #28a745;
+                margin: 0 0 15px 0;
+                font-size: 20px;
+            }
+            
+            .refresh-prompt p {
+                color: #666;
+                margin: 0 0 20px 0;
+                line-height: 1.5;
+            }
+            
+            .refresh-prompt .actions {
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+            }
+            
+            .refresh-prompt button {
+                padding: 10px 20px;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                font-weight: 500;
+                transition: all 0.3s ease;
+            }
+            
+            .refresh-prompt .btn-primary {
+                background: #007bff;
+                color: white;
+            }
+            
+            .refresh-prompt .btn-secondary {
+                background: #f8f9fa;
+                color: #666;
+            }
+            
+            .refresh-prompt button:hover {
+                transform: translateY(-2px);
+            }
+            
+            .overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0,0,0,0.5);
+                z-index: 10000;
+            }
+            
+            @media (max-width: 768px) {
+                .offline-content {
+                    flex-direction: column;
+                    text-align: center;
+                    gap: 10px;
+                }
+                
+                .offline-text h4 {
+                    font-size: 14px;
+                }
+                
+                .offline-text p {
+                    font-size: 12px;
+                }
+            }
+        </style></head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2><i class="fas fa-headset me-2"></i>Admin User</h2>
+            <div class="status" id="agentStatus">
+                <i class="fas fa-circle me-1" id="statusIcon"></i>
+                <span id="statusText">
+                    
+                        Online - Ready to help
+                    
+                </span>
+            </div>
+            
+            <!-- Customer Control Buttons -->
+            <div class="customer-controls" id="customer-controls" style="display: none;">
+                <button class="btn btn-warning btn-sm me-2" onclick="customerResolveSession()">
+                    <i class="fas fa-check-circle me-1"></i>Resolve
+                </button>
+                <button class="btn btn-danger btn-sm" onclick="customerCloseSession()">
+                    <i class="fas fa-times-circle me-1"></i>Close
+                </button>
+            </div>
+        </div>
+        
+        <div class="chat-body">
+            <!-- Blocked Notice -->
+            <div id="blockedNotice" class="alert alert-warning mx-3 mt-3" style="display:none;">
+              <i class="fas fa-lock me-2"></i>
+              Untuk sementara Anda tidak bisa kirim pesan.
+              <small class="ms-2" id="blockedUntilText"></small>
+            </div>
+            
+            <!-- Initial Form -->
+            <div id="initialForm" class="p-4" style="display: block;">
+                <div class="text-center mb-4">
+                    <h4><i class="fas fa-user-circle me-2"></i>Mulai Chat</h4>
+                    <p class="text-muted">Silakan isi form berikut untuk memulai chat</p>
+                </div>
+                
+                <form id="chatForm" onsubmit="startChatWithForm(event)">
+                    <div class="mb-3">
+                        <label for="userId" class="form-label">
+                            <i class="fas fa-user me-1"></i>User ID <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" class="form-control" id="userId" placeholder="Masukkan User ID Anda" required="">
+                        <div class="form-text">User ID Anda akan digunakan sebagai nama session</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="kendala" class="form-label">
+                            <i class="fas fa-exclamation-triangle me-1"></i>Kendala <span class="text-danger">*</span>
+                        </label>
+                        <select class="form-select" id="kendala" required="">
+                            <option value="">Pilih jenis kendala</option>
+                            <option value="DEPOSIT">DEPOSIT</option>
+                            <option value="WITHDRAW">WITHDRAW</option>
+                            <option value="RESET PASS &amp; LUPA ID">RESET PASS &amp; LUPA ID</option>
+                            <option value="KENDALA LAINNYA">KENDALA LAINNYA</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="message" class="form-label">
+                            <i class="fas fa-comment me-1"></i>Pesan Awal
+                        </label>
+                        <textarea class="form-control" id="message" rows="3" placeholder="Jelaskan kendala Anda secara detail..."></textarea>
+                    </div>
+                    
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-play me-2"></i>Mulai Chat
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Chat Interface (Hidden initially) -->
+            <div id="chatInterface" style="display: none;">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message system">
+                        <i class="fas fa-info-circle me-1"></i>
+                        Selamat Datang Admin User! Ada yang bisa dibantu bosku?
+                    </div>
+                </div>
+                
+                <!-- Scroll to bottom button -->
+                <div id="scrollToBottomBtn" class="scroll-to-bottom-btn" onclick="forceScrollToBottom()" style="display: none;">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                
+                <div class="typing-indicator" id="typingIndicator">
+                    <i class="fas fa-ellipsis-h me-1"></i>
+                    Admin User is typing...
+                </div>
+                
+                <div class="chat-input">
+                    <div class="input-group">
+                        <div class="file-upload">
+                            <input type="file" id="fileInput" accept="image/*,video/*,.pdf,.doc,.docx,.txt,.zip,.rar">
+                            <label for="fileInput" title="Upload Images, Videos, Documents">
+                                <i class="fas fa-paperclip"></i>
+                            </label>
+                        </div>
+                        
+                        <button class="btn btn-outline-secondary" type="button" onclick="toggleEmojiPicker()">
+                            <i class="fas fa-smile"></i>
+                        </button>
+                        
+                        <textarea class="form-control" id="messageInput" placeholder="Type your message here..." maxlength="1000" style="resize: vertical; min-height: 40px;"></textarea>
+                        
+                        <button class="btn btn-primary" type="button" onclick="sendMessage()">
+                            <i class="fas fa-paper-plane me-1"></i>
+                            Send
+                        </button>
+                    </div>
+                    
+                    <div class="emoji-picker" id="emojiPicker">
+                        <div class="emoji-grid" id="emojiGrid"><div class="emoji-item">😀</div><div class="emoji-item">😃</div><div class="emoji-item">😄</div><div class="emoji-item">😁</div><div class="emoji-item">😆</div><div class="emoji-item">😅</div><div class="emoji-item">😂</div><div class="emoji-item">🤣</div><div class="emoji-item">😊</div><div class="emoji-item">😇</div><div class="emoji-item">🙂</div><div class="emoji-item">🙃</div><div class="emoji-item">😉</div><div class="emoji-item">😌</div><div class="emoji-item">😍</div><div class="emoji-item">🥰</div><div class="emoji-item">😘</div><div class="emoji-item">😗</div><div class="emoji-item">😙</div><div class="emoji-item">😚</div><div class="emoji-item">😋</div><div class="emoji-item">😛</div><div class="emoji-item">😝</div><div class="emoji-item">😜</div><div class="emoji-item">🤪</div><div class="emoji-item">🤨</div><div class="emoji-item">🧐</div><div class="emoji-item">🤓</div><div class="emoji-item">😎</div><div class="emoji-item">🤩</div><div class="emoji-item">🥳</div><div class="emoji-item">😏</div><div class="emoji-item">😒</div><div class="emoji-item">😞</div><div class="emoji-item">😔</div><div class="emoji-item">😟</div><div class="emoji-item">😕</div><div class="emoji-item">🙁</div><div class="emoji-item">☹</div><div class="emoji-item">😣</div><div class="emoji-item">😖</div><div class="emoji-item">😫</div><div class="emoji-item">😩</div><div class="emoji-item">🥺</div><div class="emoji-item">😢</div><div class="emoji-item">😭</div><div class="emoji-item">😤</div><div class="emoji-item">😠</div><div class="emoji-item">😡</div><div class="emoji-item">🤬</div><div class="emoji-item">🤯</div><div class="emoji-item">😳</div><div class="emoji-item">🥵</div><div class="emoji-item">🥶</div><div class="emoji-item">😱</div><div class="emoji-item">😨</div><div class="emoji-item">😰</div><div class="emoji-item">😥</div><div class="emoji-item">😓</div><div class="emoji-item">🤗</div></div>
+                    </div>
+                    
+                    <!-- ? FILE PREVIEW CONTAINER -->
+                    <div id="filePreviewContainer" class="file-preview-container" style="display: none;">
+                        <!-- File previews will be shown here -->
+                    </div>
+                    
+                    <!-- ? UPLOAD FILES BUTTON -->
+                    <div class="mt-2" id="uploadFilesSection" style="display: none;">
+                        <button type="button" class="btn btn-success btn-sm" id="uploadFilesBtn" onclick="sendMessageWithFiles()">
+                            <i class="fas fa-upload me-1"></i>
+                            Upload Files
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary btn-sm ms-2" onclick="clearFiles()">
+                            <i class="fas fa-times me-1"></i>
+                            Clear
+                        </button>
+                    </div>
+                    
+                    <div class="mt-2">
+                        <small class="text-muted">
+                            <i class="fas fa-info-circle me-1"></i>
+                            Your chat will be saved and you can continue later
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
+    <script src="/static/js/lazy-loading.js"></script>
+    <script src="/static/js/network-monitor.js"></script>
+    
+    <script>
+      // Paksa semua pemanggilan io() menggunakan WebSocket only untuk 12 worker
+      (function(){
+        const DEFAULTS = { path: "/socket.io/", transports: ["websocket"], withCredentials: true };
+        const rawIo = window.io;
+        window.io = function(urlOrOpts, opts){
+          if (typeof urlOrOpts === "object" && !opts) { opts = urlOrOpts; urlOrOpts = undefined; }
+          const merged = Object.assign({}, DEFAULTS, opts || {});
+          return rawIo(urlOrOpts, merged);
+        };
+      })();
+    </script>
+    
+    <script>
+        // Global variables
+        let sessionId = null;
+        let customerId = null;
+        let customerName = '';
+        let socket = null;
+        let typingTimer = null;
+        let agentJoinedMessageShown = false; // Flag to prevent duplicate agent joined messages
+        
+        
+        // Initialize chat
+        function initChat() {
+            // Initialize WebSocket
+            initWebSocket();
+            
+            // Load emojis
+            loadEmojis();
+            
+            // ? CRITICAL FIX: Check for existing active session before showing form
+            checkExistingSession();
+        }
+        
+        // ? NEW FUNCTION: Check for existing active session
+        async function checkExistingSession() {
+            try {
+                console.log('?? Checking for existing active session...');
+                
+                // ? COOKIE-BASED SYSTEM: No need to generate fingerprint - backend handles it via cookie
+                console.log('?? Using cookie-based browser ID system');
+                
+                // ? CRITICAL FIX: Get User ID from localStorage or form
+                const userId = localStorage.getItem('lastUserId') || '';
+                console.log('?? Using User ID:', userId);
+                
+                // Check if there's an existing active session for this browser
+                const response = await fetch('/livechat/direktur/api/check-existing-session', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        user_id: userId  // ? Send User ID for more reliable session matching
+                    })
+                    // ? NO NEED TO SEND FINGERPRINT - backend reads cookie automatically
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    
+                    if (data.has_active_session) {
+                        console.log('? Found existing session:', data.session_id, 'Status:', data.status);
+                        
+                        // ? CRITICAL FIX: Check if session needs reactivation
+                        if (data.needs_reactivation) {
+                            console.log('?? Session needs reactivation - showing form');
+                            // Don't auto-reconnect, show form instead
+            resetSessionState();
+                            return;
+                        }
+                        
+                        // ? Session is ACTIVE - auto-reconnect
+                        console.log('? Session is ACTIVE - auto-reconnecting');
+                        sessionId = data.session_id;
+                        customerId = data.customer_name;
+                        customerName = data.customer_name;
+                        
+                        // Show chat interface instead of form
+                        showChatInterface();
+                        
+                        // Load message history
+                        if (data.message_history && data.message_history.length > 0) {
+                            console.log('?? Loading message history:', data.message_history.length, 'messages');
+                            
+                            // Clear existing messages
+                            const chatMessages = document.querySelector('.chat-messages');
+                            chatMessages.innerHTML = '';
+                            
+                            // Add reconnection message
+                            addMessageToChat('system', `?? <strong>Reconnected to existing session!</strong><br>User ID: <strong>${data.customer_name}</strong><br>Kendala: <strong>${data.subject}</strong><br>Session created: ${new Date(data.session_created_at).toLocaleString()}`, data.session_created_at, true);
+                            
+                            // Load all existing messages
+                            data.message_history.forEach((msg, index) => {
+                                // ? NEW: Skip deleted messages in customer chat
+                                if (msg.is_deleted) {
+                                    console.log(`?? Skipping deleted message ${index + 1}:`, {
+                                        message_id: msg.id,
+                                        content: msg.content.substring(0, 50) + '...',
+                                        deleted_at: msg.deleted_at,
+                                        is_deleted: msg.is_deleted
+                                    });
+                                    return; // Skip this message
+                                }
+                                
+                                const historyMessageData = {
+                                    id: msg.id || msg.message_id,     // ? ambil ID dari backend
+                                    content: msg.content,
+                                    timestamp: msg.timestamp,
+                                    files: msg.files || []
+                                };
+
+                                // kirim sebagai OBJEK ke addMessageToChat, bukan string
+                                addMessageToChat(
+                                    msg.sender_type,
+                                    historyMessageData,
+                                    historyMessageData.timestamp,
+                                    true,
+                                    historyMessageData.files
+                                );
+                            });
+                        }
+                        
+                        // Connect to WebSocket room
+                        if (typeof socket !== 'undefined' && socket.connected) {
+                            console.log('?? Joining existing session via WebSocket:', sessionId);
+                            socket.emit('join_session', { session_id: sessionId });
+                            console.log('?? Joined existing session via WebSocket');
+                        }
+                        
+                        // Jika backend memberi tanda blokir, kunci UI sekarang
+                        if (data.is_blocked) {
+                          showBlockedMessage({ blocked_until: data.blocked_until });
+                        } else {
+                          hideBlockedMessage();
+                        }
+                        
+                        return; // Don't show form
+                    }
+                }
+                
+                // No active session found, show form
+                console.log('?? No active session found - showing form');
+                resetSessionState();
+                
+            } catch (error) {
+                console.error('? Error checking existing session:', error);
+                // Fallback: show form
+                resetSessionState();
+            }
+        }
+        
+        // ? COOKIE-BASED BROWSER ID SYSTEM: No need to generate fingerprint - backend handles it
+        // Function removed - backend now uses cookie-based browser ID system
+        
+        // ? ENSURE COOKIE IS SET BEFORE REQUEST:
+        // This is now handled automatically by backend when visiting /open_chat
+        
+        // Start chat session with form data
+        // Form submission tracking to prevent duplicates
+        let isFormSubmitting = false;
+        
+        async function startChatWithForm(event) {
+            event.preventDefault();
+            
+            if (isBlocked) {
+              showBlockedMessage({ blocked_until: blockedUntil });
+              return; // cegah submit
+            }
+            
+            // Prevent duplicate form submission
+            if (isFormSubmitting) {
+                console.log('?? Form already submitting, ignoring duplicate click');
+                return;
+            }
+            
+            // Get form data
+            const userId = document.getElementById('userId').value.trim();
+            const kendala = document.getElementById('kendala').value;
+            const message = document.getElementById('message').value.trim();
+            
+            // Validate required fields
+            if (!userId) {
+                alert('User ID wajib diisi!');
+                return;
+            }
+            if (!kendala) {
+                alert('Pilih jenis kendala!');
+                return;
+            }
+            
+            // Set submitting flag
+            isFormSubmitting = true;
+            
+            // Set customer data from form
+            customerId = userId;
+            customerName = userId; // Use User ID as customer name
+            
+            // ? CRITICAL FIX: Save User ID to localStorage for session persistence
+            localStorage.setItem('lastUserId', userId);
+            console.log('?? Saved User ID to localStorage:', userId);
+            
+            // Show loading state
+            const submitBtn = event.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Memulai Chat...';
+            submitBtn.disabled = true;
+            
+            try {
+                console.log('?? Starting chat session with form data...');
+                console.log('User ID:', userId);
+                console.log('Kendala:', kendala);
+                console.log('Message:', message);
+                
+                // ? COOKIE-BASED SYSTEM: No need to send fingerprint headers - backend reads cookie automatically
+                console.log('?? Using cookie-based browser ID system - no headers needed');
+                
+                const response = await fetch('/livechat/direktur/api/start-session', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        customer_id: userId,
+                        name: userId, // Use User ID as name
+                        email: '',
+                        phone: '',
+                        subject: kendala, // Use kendala as subject
+                        message: message || `Saya mengalami kendala: ${kendala}` // Use form message or default
+                    })
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    sessionId = data.session_id;
+                    console.log('? Chat session response:', data);
+                    
+                    // Check if this is a reconnection to existing session
+                    if (data.reconnected) {
+                        console.log('?? Reconnected to existing session:', sessionId);
+                        
+                        // Check if customer ID was updated (User ID changed)
+                        if (data.customer_id_updated) {
+                            console.log('?? Customer ID updated - showing update message');
+                            addMessageToChat('system', `?? <strong>Reconnected to existing session!</strong><br>User ID updated to: <strong>${userId}</strong><br>Original Kendala: <strong>${data.original_subject}</strong><br>Session created: ${new Date(data.session_created_at).toLocaleString()}`, data.session_created_at, true); // ? true = history message, use session_created_at
+                        } else {
+                            console.log('?? Standard reconnection - showing normal message');
+                            addMessageToChat('system', `?? <strong>Reconnected to existing session!</strong><br>User ID: <strong>${userId}</strong><br>Kendala: <strong>${kendala}</strong><br>Session created: ${new Date(data.session_created_at).toLocaleString()}`, data.session_created_at, true); // ? true = history message, use session_created_at
+                        }
+                        
+                        // Check if new form was submitted
+                        if (data.new_form_submitted) {
+                            console.log('?? New form submitted - form message will be loaded from history');
+                            console.log('?? Message history count:', data.message_history ? data.message_history.length : 0);
+                            
+                            // Debug: Check first few messages for timestamp issues
+                            if (data.message_history && data.message_history.length > 0) {
+                                console.log('?? Debug first 3 messages:');
+                                data.message_history.slice(0, 3).forEach((msg, idx) => {
+                                    console.log(`  Message ${idx + 1}:`, {
+                                        id: msg.id,
+                                        sender_type: msg.sender_type,
+                                        content_length: msg.content ? msg.content.length : 0,
+                                        timestamp: msg.timestamp,
+                                        timestamp_type: typeof msg.timestamp,
+                                        has_timestamp: !!msg.timestamp,
+                                        timestamp_length: msg.timestamp ? msg.timestamp.length : 0
+                                    });
+                                });
+                                
+                                // CRITICAL: Check if form message is in history
+                                const formMessages = data.message_history.filter(msg => 
+                                    msg.content && msg.content.includes('FORM BARU DIAJUKAN')
+                                );
+                                console.log(`?? Form messages found in history: ${formMessages.length}`);
+                                formMessages.forEach((msg, idx) => {
+                                    console.log(`  Form ${idx + 1}:`, {
+                                        id: msg.id,
+                                        timestamp: msg.timestamp,
+                                        content: msg.content.substring(0, 50) + '...'
+                                    });
+                                });
+                            }
+                            
+                            // Don't add duplicate form message - it will be loaded from message_history
+                        }
+                        
+                        // Load existing message history
+                        if (data.message_history && data.message_history.length > 0) {
+                            console.log('?? Loading message history:', data.message_history.length, 'messages');
+                            console.log('?? TEST LOG - History messages found!');
+                            console.log('?? TEST LOG - Data received:', data.message_history);
+                            
+                            // Clear existing messages
+                            const chatMessages = document.querySelector('.chat-messages');
+                            chatMessages.innerHTML = '';
+                            
+                            // Add reconnection message first
+                            if (data.customer_id_updated) {
+                                addMessageToChat('system', `?? <strong>Reconnected to existing session!</strong><br>User ID updated to: <strong>${userId}</strong><br>Original Kendala: <strong>${data.original_subject}</strong><br>Session created: ${new Date(data.session_created_at).toLocaleString()}`, data.session_created_at, true); // ? true = history message, use session_created_at
+                            } else {
+                                addMessageToChat('system', `?? <strong>Reconnected to existing session!</strong><br>User ID: <strong>${userId}</strong><br>Kendala: <strong>${kendala}</strong><br>Session created: ${new Date(data.session_created_at).toLocaleString()}`, data.session_created_at, true); // ? true = history message, use session_created_at
+                            }
+                            
+                            // Load all existing messages with preserved timestamps
+                            data.message_history.forEach((msg, index) => {
+                                // ? CRITICAL FIX: Validate data integrity before processing
+                                console.log(`?? DATA INTEGRITY CHECK - Message ${index + 1}:`, {
+                                    message_id: msg.id,
+                                    raw_message: msg,
+                                    timestamp_field: msg.timestamp,
+                                    timestamp_type: typeof msg.timestamp,
+                                    timestamp_truthy: !!msg.timestamp,
+                                    message_keys: Object.keys(msg),
+                                    message_values: Object.values(msg)
+                                });
+                                
+                                // ? AUTO-FIX: Ensure message has required fields
+                                if (!msg.id || !msg.sender_type || !msg.content) {
+                                    console.error(`? CRITICAL: Message ${index + 1} missing required fields:`, msg);
+                                    return; // Skip invalid message
+                                }
+                                
+                                // ? AUTO-FIX: Ensure timestamp is valid
+                                if (!msg.timestamp || msg.timestamp === null || msg.timestamp === '') {
+                                    console.error(`? CRITICAL: Message ${index + 1} has invalid timestamp:`, {
+                                        message_id: msg.id,
+                                        timestamp: msg.timestamp,
+                                        content: msg.content.substring(0, 50) + '...'
+                                    });
+                                    
+                                    // ? AUTO-FIX: Use session creation time as fallback for invalid timestamps
+                                    if (data.session_created_at) {
+                                        msg.timestamp = data.session_created_at;
+                                        console.log(`?? AUTO-FIX: Using session_created_at as fallback timestamp:`, msg.timestamp);
+                                    } else {
+                                        console.error(`? Cannot fix: No session_created_at available`);
+                                        return; // Skip this message
+                                    }
+                                }
+                                // CRITICAL: Log raw message data to see what frontend actually receives
+                                console.log(`?? RAW MESSAGE DATA ${index + 1}:`, {
+                                    message_id: msg.id,
+                                    message_id_type: typeof msg.id,
+                                    message_id_truthy: !!msg.id,
+                                    message_keys: Object.keys(msg),
+                                    message_values: Object.values(msg),
+                                    raw_message: msg,
+                                    raw_message_type: typeof msg
+                                });
+                                
+                                // CRITICAL: Log timestamp analysis for message 57 specifically
+                                if (index === 56) { // Message 57 (0-indexed)
+                                    console.log(`?? CRITICAL: Message 57 timestamp analysis:`, {
+                                        message_id: msg.id,
+                                        timestamp_field: msg.timestamp,
+                                        timestamp_type: typeof msg.timestamp,
+                                        timestamp_truthy: !!msg.timestamp,
+                                        timestamp_length: msg.timestamp ? msg.timestamp.length : 0,
+                                        raw_timestamp: JSON.stringify(msg.timestamp),
+                                        message_keys: Object.keys(msg),
+                                        message_values: Object.values(msg)
+                                    });
+                                }
+                                
+                                // Validate timestamp before processing
+                                const hasValidTimestamp = msg.timestamp && 
+                                                       msg.timestamp !== '' && 
+                                                       !isNaN(new Date(msg.timestamp).getTime());
+                                
+                                console.log(`?? Loading message ${index + 1}:`, {
+                                    sender_type: msg.sender_type,
+                                    content: msg.content.substring(0, 50) + '...',
+                                    timestamp: msg.timestamp,
+                                    parsed_date: msg.timestamp ? new Date(msg.timestamp) : 'NULL',
+                                    is_valid: hasValidTimestamp,
+                                    timestamp_type: typeof msg.timestamp,
+                                    timestamp_length: msg.timestamp ? msg.timestamp.length : 0,
+                                    raw_timestamp: JSON.stringify(msg.timestamp)
+                                });
+                                
+                                if (!hasValidTimestamp) {
+                                    console.error(`? Message ${index + 1} has invalid timestamp:`, {
+                                        timestamp: msg.timestamp,
+                                        content: msg.content.substring(0, 50) + '...'
+                                    });
+                                }
+                                
+                                // ? NEW: Skip deleted messages in customer chat
+                                if (msg.is_deleted) {
+                                    console.log(`?? Skipping deleted message ${index + 1}:`, {
+                                        message_id: msg.id,
+                                        content: msg.content.substring(0, 50) + '...',
+                                        deleted_at: msg.deleted_at,
+                                        is_deleted: msg.is_deleted
+                                    });
+                                    return; // Skip this message
+                                }
+                                
+                                // ? DEBUG: Log message data to verify fields
+                                console.log(`?? Message ${index + 1} data:`, {
+                                    id: msg.id,
+                                    content: msg.content.substring(0, 30) + '...',
+                                    is_deleted: msg.is_deleted,
+                                    deleted_at: msg.deleted_at
+                                });
+                                
+                                // CRITICAL: Log before calling addMessageToChat
+                                console.log(`?? BEFORE addMessageToChat - Message ${index + 1}:`, {
+                                    sender_type: msg.sender_type,
+                                    content: msg.content.substring(0, 30) + '...',
+                                    timestamp: msg.timestamp,
+                                    isHistoryMessage: true,
+                                    timestamp_parsed: msg.timestamp ? new Date(msg.timestamp).toISOString() : 'NULL'
+                                });
+                                
+                                // CRITICAL: Log exact parameters being passed to addMessageToChat
+                                console.log(`?? EXACT PARAMETERS for addMessageToChat - Message ${index + 1}:`, {
+                                    param1_sender_type: msg.sender_type,
+                                    param2_content: msg.content,
+                                    param3_timestamp: msg.timestamp,
+                                    param4_isHistoryMessage: true,
+                                    param3_timestamp_type: typeof msg.timestamp,
+                                    param3_timestamp_value: msg.timestamp,
+                                    param3_timestamp_truthy: !!msg.timestamp
+                                });
+                                
+                                // ? CRITICAL FIX: Validate timestamp before calling addMessageToChat
+                                let messageTimestamp = msg.timestamp;
+                                let messageIsHistory = true;
+                                
+                                // Check if timestamp is valid
+                                if (!msg.timestamp || msg.timestamp === null || msg.timestamp === '') {
+                                    console.error(`? CRITICAL: History message ${index + 1} has invalid timestamp:`, {
+                                        message_id: msg.id,
+                                        timestamp: msg.timestamp,
+                                        content: msg.content.substring(0, 50) + '...'
+                                    });
+                                    
+                                    // ? AUTO-FIX: Use session creation time as fallback for invalid timestamps
+                                    if (data.session_created_at) {
+                                        messageTimestamp = data.session_created_at;
+                                        console.log(`?? AUTO-FIX: Using session_created_at as fallback timestamp:`, messageTimestamp);
+                                    } else {
+                                        console.error(`? Cannot fix: No session_created_at available`);
+                                        // Skip this message by not calling addMessageToChat
+                                        console.log(`?? Skipping message ${index + 1} due to invalid timestamp`);
+                                        return; // Return from forEach callback
+                                    }
+                                }
+                                
+                                // ? CRITICAL FIX: Always pass isHistoryMessage = true for history messages
+                                // This prevents fallback to current time and preserves original timestamps
+                                
+                                // ? CRITICAL FIX: Pass message data object with ID for history messages
+                                const historyMessageData = {
+                                    content: msg.content,
+                                    id: msg.id,  // Use the ID from backend
+                                    timestamp: messageTimestamp,
+                                    files: msg.files || []
+                                };
+                                
+                                // ?? CRITICAL DEBUG: Log raw message data from backend
+                                console.log(`?? CRITICAL DEBUG - Raw message from backend:`, {
+                                    raw_msg: msg,
+                                    msg_keys: Object.keys(msg),
+                                    msg_id: msg.id,
+                                    msg_id_type: typeof msg.id,
+                                    msg_id_truthy: !!msg.id,
+                                    historyMessageData: historyMessageData
+                                });
+                                
+                                console.log(`?? History message data for addMessageToChat:`, historyMessageData);
+                                console.log(`?? CRITICAL DEBUG - Message ID check:`, {
+                                    msg_id: msg.id,
+                                    msg_id_type: typeof msg.id,
+                                    msg_id_truthy: !!msg.id,
+                                    history_data_id: historyMessageData.id,
+                                    history_data_id_type: typeof historyMessageData.id,
+                                    history_data_id_truthy: !!historyMessageData.id
+                                });
+                                addMessageToChat(
+                                  msg.sender_type,
+                                  historyMessageData,
+                                  messageTimestamp,
+                                  messageIsHistory,
+                                  (historyMessageData.files || msg.files || [])
+                                );
+                                
+                                // CRITICAL: Log after calling addMessageToChat
+                                console.log(`? AFTER addMessageToChat - Message ${index + 1} processed`);
+                            });
+                            
+                            // Scroll to bottom to show latest messages
+                            scrollToBottom();
+                            
+                            // Check if session is blocked by admin (maintenance)
+                            if (data.session_status === 'blocked') {
+                                console.log('?? Session is blocked by admin, showing blocked message');
+                                showBlockedMessageAdmin({ reason: 'Session blocked by admin for maintenance' });
+                            }
+                        }
+                    } else {
+                        console.log('?? New chat session created:', sessionId);
+                        
+                        // Add initial message from form
+                        if (message) {
+                            addMessageToChat('customer', message, new Date().toISOString(), false); // ? false = new message, use current timestamp
+                        } else {
+                            addMessageToChat('customer', `Saya mengalami kendala: ${kendala}`, new Date().toISOString(), false); // ? false = new message, use current timestamp
+                        }
+                        
+                        // Add system message showing User ID and Kendala
+                        const currentTimestamp = new Date().toISOString();
+                        console.log('?? System message timestamp check:', {
+                            timestamp: currentTimestamp,
+                            timestamp_type: typeof currentTimestamp,
+                            timestamp_truthy: !!currentTimestamp
+                        });
+                        addMessageToChat('system', `Chat dimulai untuk User ID: <strong>${userId}</strong><br>Jenis Kendala: <strong>${kendala}</strong>`, currentTimestamp, false); // ? false = new message, use current timestamp
+                        
+                        // Reset session state for new session
+                        resetSessionState();
+                    }
+                    
+                    // Hide form and show chat interface
+                    const initialForm = document.getElementById('initialForm');
+                    const chatInterface = document.getElementById('chatInterface');
+                    const customerControls = document.getElementById('customer-controls');
+                    
+                    if (initialForm && chatInterface && customerControls) {
+                        initialForm.style.display = 'none';
+                        chatInterface.style.display = 'block';
+                        customerControls.style.display = 'block';
+                        console.log('? UI elements updated successfully');
+                    } else {
+                        console.error('? Required UI elements not found:', {
+                            initialForm: !!initialForm,
+                            chatInterface: !!chatInterface,
+                            customerControls: !!customerControls
+                        });
+                        throw new Error('Required UI elements not found');
+                    }
+                    
+                    // Join WebSocket room if socket is connected
+                    if (socket && socket.connected) {
+                        // Join session room now that we have sessionId
+                        console.log('?? Customer joining session room:', sessionId);
+                        socket.emit('join_session', { session_id: sessionId });
+                        console.log('?? Customer joined session room:', sessionId);
+                    } else {
+                        console.log('? Socket not ready, will join when connected');
+                    }
+                    
+                    // Reset submitting flag on success
+                    isFormSubmitting = false;
+                } else {
+                    // Check if response has error details
+                    let errorMessage = 'Failed to start chat session';
+                    try {
+                        const errorText = await response.text();
+                        console.error('? Response error:', response.status, errorText);
+                        
+                        try {
+                            const errorData = JSON.parse(errorText);
+                            errorMessage = errorData.error || errorMessage;
+                        } catch (parseError) {
+                            errorMessage = `HTTP ${response.status}: ${errorText}`;
+                        }
+                    } catch (textError) {
+                        errorMessage = `HTTP ${response.status}: Response error`;
+                    }
+                    
+                    throw new Error(errorMessage);
+                }
+            } catch (error) {
+                console.error('? Error starting chat session:', error);
+                alert(`Error memulai chat session: ${error.message}`);
+                
+                // Reset button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                
+                // Reset submitting flag
+                isFormSubmitting = false;
+            }
+        }
+        
+        // Customer control functions
+        function customerResolveSession() {
+            if (!sessionId) return;
+            
+            fetch(`/livechat/direktur/api/session/${sessionId}/customer-resolve`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Show form requirement
+                    showFormRequirement();
+                    
+                    // Update UI
+                    document.getElementById('customer-controls').style.display = 'none';
+                    
+                    // Add system message
+                    const resolveTimestamp = new Date().toISOString();
+                    console.log('?? Resolve message timestamp check:', {
+                        timestamp: resolveTimestamp,
+                        timestamp_type: typeof resolveTimestamp,
+                        timestamp_truthy: !!resolveTimestamp
+                    });
+                    addMessageToChat('system', '? Anda telah menyelesaikan sesi ini. Silakan isi form untuk chat baru.', resolveTimestamp, false);
+                    
+                    // Show form again
+                    document.getElementById('initialForm').style.display = 'block';
+                    document.getElementById('chatInterface').style.display = 'none';
+                }
+            })
+            .catch(error => {
+                console.error('Error resolving session:', error);
+                alert('Error menyelesaikan sesi. Silakan coba lagi.');
+            });
+        }
+        
+        function customerCloseSession() {
+            if (!sessionId) return;
+            
+            fetch(`/livechat/direktur/api/session/${sessionId}/customer-close`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Show form requirement
+                    showFormRequirement();
+                    
+                    // Update UI
+                    document.getElementById('customer-controls').style.display = 'none';
+                    
+                    // Add system message
+                    const closeTimestamp = new Date().toISOString();
+                    console.log('?? Close message timestamp check:', {
+                        timestamp: closeTimestamp,
+                        timestamp_type: typeof closeTimestamp,
+                        timestamp_truthy: !!closeTimestamp
+                    });
+                    addMessageToChat('system', '?? Anda telah menutup sesi ini. Silakan isi form untuk chat baru.', closeTimestamp, false);
+                    
+                    // Show form again
+                    document.getElementById('initialForm').style.display = 'block';
+                    document.getElementById('chatInterface').style.display = 'none';
+                }
+            })
+            .catch(error => {
+                console.error('Error closing session:', error);
+                alert('Error menutup sesi. Silakan coba lagi.');
+            });
+        }
+        
+        function showFormRequirement() {
+            // Reset form
+            const chatForm = document.getElementById('chatForm');
+            if (chatForm) {
+                chatForm.reset();
+            }
+            
+            // Update form instruction
+            const formInstruction = document.querySelector('#initialForm p.text-muted');
+            if (formInstruction) {
+                formInstruction.textContent = 'Sesi sebelumnya telah selesai. Silakan isi form untuk chat baru.';
+            }
+        }
+        
+        // Check if form is required based on session status
+        function checkFormRequirement() {
+            if (!sessionId) return true; // Always require form for new sessions
+            
+            // Check session status and inactivity
+            const now = new Date();
+            const lastActivity = new Date(sessionId.last_message_at || sessionId.created_at);
+            const hoursSinceActivity = (now - lastActivity) / (1000 * 60 * 60);
+            
+            // Require form if:
+            // 1. Status is RESOLVED or CLOSED
+            // 2. Status is ACTIVE but inactive for > 12 hours
+            const requiresForm = (
+                sessionId.status === 'RESOLVED' ||
+                sessionId.status === 'CLOSED' ||
+                (sessionId.status === 'ACTIVE' && hoursSinceActivity > 12)
+            );
+            
+            console.log('Form requirement check:', {
+                status: sessionId.status,
+                hoursSinceActivity: hoursSinceActivity,
+                requiresForm: requiresForm
+            });
+            
+            return requiresForm;
+        }
+        
+        // Initialize WebSocket
+        function initWebSocket() {
+            // WebSocket connection untuk 12 worker dengan Redis MQ
+            socket = io("/", {
+                transports: ["websocket", "polling"],
+                upgrade: true,
+                reconnection: true,
+                withCredentials: true
+            });
+            
+            socket.on('connect', function() {
+                console.log('? Customer WebSocket connected');
+                // Join session room after session is created
+                if (sessionId) {
+                    console.log('?? Customer joining session room on connect:', sessionId);
+                    socket.emit('join_session', { session_id: sessionId });
+                    console.log('?? Customer joined session room on connect:', sessionId);
+                } else {
+                    console.log('? Waiting for session ID to join room...');
+                }
+            });
+            
+            socket.on('joined_session', function(data) {
+                console.log('? Session joined confirmation:', data);
+                console.log('? Successfully joined session:', data.session_id);
+            });
+            
+            // Handle session status updates (auto-close notifications)
+            socket.on('session_status_update', function(data) {
+                console.log('?? Session status update received:', data);
+                
+                if (data.status === 'closed' && data.reason === 'auto_close_inactive') {
+                    // Show notification that session was auto-closed
+                    showNotification('Session Closed', data.message, 'warning');
+                    
+                    // Update UI to show session is closed
+                    updateSessionStatus('closed');
+                    
+                    // Optionally redirect to form page
+                    setTimeout(() => {
+                        if (confirm('Your session has been closed due to inactivity. Would you like to start a new session?')) {
+                            window.location.href = '/livechat/president/';
+                        }
+                    }, 2000);
+                }
+            });
+            
+            socket.on('room_joined', function(data) {
+                console.log('? Room joined confirmation:', data);
+                console.log('? Successfully joined room:', data.session_id);
+            });
+            
+            socket.on('disconnect', function() {
+                console.log('? Customer WebSocket disconnected');
+            });
+            
+            socket.on('connect_error', function(error) {
+                console.error('? Customer WebSocket connection error:', error);
+            });
+            
+            // Handle session blocking events
+            socket.on('session_blocked', (data)=>{
+              if (data && data.session_id === sessionId) {
+                showBlockedMessage({ blocked_until: data.blocked_until });
+              }
+            });
+            
+            socket.on('session_unblocked', (data)=>{
+              if (data && data.session_id === sessionId) {
+                hideBlockedMessage();
+              }
+            });
+            
+            // Handle incoming messages
+            socket.on('new_message', function(data) {
+                console.log('?? Customer received message:', data);
+                console.log('?? Files in message:', {
+                    files: data.files,
+                    files_count: data.files ? data.files.length : 0,
+                    has_files: !!(data.files && data.files.length > 0)
+                });
+                
+                // DEBUG: Log detailed file information
+                if (data.files && data.files.length > 0) {
+                    console.log('?? DEBUG: File details:', data.files);
+                    data.files.forEach((file, index) => {
+                        console.log(`?? File ${index}:`, {
+                            filename: file.filename,
+                            file_url: file.file_url,
+                            is_image: file.is_image,
+                            is_video: file.is_video,
+                            stored_filename: file.stored_filename
+                        });
+                    });
+                }
+                
+                // Only process messages for current session
+                if (data.session_id === sessionId) {
+                    if (data.sender_type === 'agent') {
+                        console.log('????? Agent message received:', data.content);
+                        // ? CRITICAL FIX: Check if this message already exists to prevent duplicate
+                        if (!isMessageAlreadyDisplayed(data.content, data.timestamp)) {
+                            // ? CRITICAL FIX: Use current time if WebSocket timestamp is null
+                            const messageTimestamp = data.timestamp || new Date().toISOString();
+                            console.log('????? Agent message WebSocket timestamp check:', {
+                                original_timestamp: data.timestamp,
+                                final_timestamp: messageTimestamp,
+                                timestamp_is_null: data.timestamp === null
+                            });
+                                                    // ? CRITICAL DEBUG: Log the exact data received
+                        console.log('?? Agent message data received:', {
+                            content: data.content,
+                            id: data.id,
+                            id_type: typeof data.id,
+                            id_truthy: !!data.id,
+                            timestamp: messageTimestamp,
+                            files: data.files || []
+                        });
+                        
+                        // ? FIXED: Pass message data object with ID for edit/delete support
+                        const messageData = {
+                            content: data.content,
+                            id: data.id,
+                            timestamp: messageTimestamp,
+                            files: data.files || []
+                        };
+                        addMessageToChat('agent', messageData, messageTimestamp, false, data.files || []);
+                        } else {
+                            console.log('?? Agent message already displayed, skipping duplicate');
+                        }
+                        hideTypingIndicator();
+                    } else if (data.sender_type === 'customer') {
+                        // Handle customer messages (including form messages)
+                        if (data.sender_id === customerId) {
+                            console.log('?? Own customer message received:', data.content);
+                            // ? CRITICAL FIX: Check if this message already exists to prevent duplicate
+                            if (!isMessageAlreadyDisplayed(data.content, data.timestamp)) {
+                                // ? CRITICAL FIX: Use current time if WebSocket timestamp is null
+                                const messageTimestamp = data.timestamp || new Date().toISOString();
+                                console.log('?? Customer message WebSocket timestamp check:', {
+                                    original_timestamp: data.timestamp,
+                                    final_timestamp: messageTimestamp,
+                                    timestamp_is_null: data.timestamp === null
+                                });
+                                
+                                // Check if this is a form message
+                                if (data.content.includes('FORM BARU DIAJUKAN')) {
+                                    console.log('?? Form message received via WebSocket - displaying in chat');
+                                    addMessageToChat('customer', data.content, messageTimestamp, false, data.files || []); // false = not history
+                                } else {
+                                    console.log('?? Regular customer message received - displaying in chat');
+                                    addMessageToChat('customer', data.content, messageTimestamp, false, data.files || []); // false = not history
+                                }
+                            } else {
+                                console.log('?? Customer message already displayed, skipping duplicate');
+                            }
+                        } else {
+                        // Another customer message (shouldn't happen in single customer chat)
+                        console.log('?? Other customer message:', data.content);
+                        }
+                    }
+                } else {
+                    console.log('?? Message for different session, ignoring:', data.session_id);
+                }
+            });
+            
+            // Handle agent joined event
+            socket.on('agent_joined', function(data) {
+                console.log('????? Agent joined event received:', data);
+                if (!agentJoinedMessageShown) {
+                    console.log('????? First time agent joined - showing message');
+                    const agentJoinedTimestamp = new Date().toISOString();
+                    console.log('?? Agent joined message timestamp check:', {
+                        timestamp: agentJoinedTimestamp,
+                        timestamp_type: typeof agentJoinedTimestamp,
+                        timestamp_truthy: !!agentJoinedTimestamp
+                    });
+                    addMessageToChat('system', 'Admin kami sudah berada di room chat. Ada yang bisa dibantu??', agentJoinedTimestamp, false); // ? false = new message, use current timestamp
+                    agentJoinedMessageShown = true; // Mark as shown
+                } else {
+                    console.log('????? Agent already joined, not showing duplicate message');
+                }
+            });
+            
+            socket.on('typing_start', function(data) {
+                console.log('?? Typing started:', data);
+                if (data.sender_id !== customerId) {
+                    showTypingIndicator();
+                }
+            });
+            
+            socket.on('typing_stop', function(data) {
+                console.log('?? Typing stopped:', data);
+                if (data.sender_id !== customerId) {
+                    hideTypingIndicator();
+                }
+            });
+            
+            socket.on('agent_status_update', function(data) {
+                console.log('?? Agent status update:', data);
+                updateAgentStatus(data.status);
+            });
+
+            // ? FIXED: Handle message edit events with proper session checking
+            socket.on('message_updated', function(data) {
+                console.log('?? Message updated received:', data);
+                console.log('?? Current sessionId:', sessionId);
+                console.log('?? Data session_id:', data.session_id);
+                console.log('?? Session match:', data.session_id === sessionId);
+                if (data.session_id === sessionId) {
+                    console.log('?? Processing message update for session:', sessionId);
+                    updateMessageInCustomerChat(data.message_id, data.new_content);
+                } else {
+                    console.log('?? Ignoring message update - session mismatch');
+                }
+            });
+
+            // ? FIXED: Handle message delete events with proper session checking
+            socket.on('message_deleted', function(data) {
+                console.log('??? Message deleted received:', data);
+                if (data.session_id === sessionId) {
+                    removeMessageFromCustomerChat(data.message_id);
+                }
+            });
+            
+            socket.on('session_status_update', function(data) {
+                console.log('?? Session status update:', data);
+                if (data.session_id === sessionId) {
+                    // Update status display for customer
+                    if (data.status === 'active') {
+                        updateAgentStatus('online'); // Show agent as online when session becomes active
+                        
+                        // Only show agent joined message once
+                        if (!agentJoinedMessageShown) {
+                            console.log('????? First time agent joined - showing message');
+                            const agentJoinedTimestamp2 = new Date().toISOString();
+                            console.log('?? Agent joined message 2 timestamp check:', {
+                                timestamp: agentJoinedTimestamp2,
+                                timestamp_type: typeof agentJoinedTimestamp2,
+                                timestamp_truthy: !!agentJoinedTimestamp2
+                            });
+                            addMessageToChat('system', 'Admin kami sudah berada di room chat. Ada yang bisa dibantu??', agentJoinedTimestamp2, false); // ? false = new message, use current timestamp
+                            agentJoinedMessageShown = true; // Mark as shown
+                        } else {
+                            console.log('????? Agent already joined before - skipping duplicate message');
+                        }
+                    }
+                    
+                    // ?? Handle session resolved/closed by agent
+                    if (data.status === 'resolved' || data.status === 'closed') {
+                        console.log(`?? Session ${data.status} by agent, showing form`);
+                        
+                        // Show system message
+                        const statusMessage = data.status === 'resolved' ? 
+                            'Session telah diselesaikan oleh agent. Silakan buat chat baru jika ada pertanyaan lain.' :
+                            'Session telah ditutup oleh agent. Silakan buat chat baru jika ada pertanyaan lain.';
+                        
+                        addMessageToChat('system', statusMessage, new Date().toISOString(), false);
+                        
+                        // Show form after 2 seconds
+                        setTimeout(() => {
+                            showNewChatForm();
+                        }, 2000);
+                    }
+                }
+            });
+        }
+        
+        // Update agent status display
+        function updateAgentStatus(status) {
+            const statusText = document.getElementById('statusText');
+            const statusIcon = document.getElementById('statusIcon');
+            const agentStatus = document.getElementById('agentStatus');
+            
+            if (status === 'online') {
+                statusText.textContent = 'Online - Ready to help';
+                statusIcon.style.color = '#28a745';
+                agentStatus.style.background = 'rgba(40, 167, 69, 0.2)';
+            } else {
+                statusText.textContent = 'Offline - Leave a message';
+                statusIcon.style.color = '#dc3545';
+                agentStatus.style.background = 'rgba(220, 53, 69, 0.2)';
+            }
+            
+            console.log(`? Agent status updated to: ${status}`);
+        }
+        
+        // ? ENHANCED SEND MESSAGE WITH FILE SUPPORT
+        async function sendMessage() {
+            if (isBlocked) {
+              showBlockedMessage({ blocked_until: blockedUntil });
+              return;
+            }
+            
+            const input = document.getElementById('messageInput');
+            const message = input.value.trim();
+            
+            // Check if we have files to upload
+            if (window.selectedFiles && window.selectedFiles.length > 0) {
+                await sendMessageWithFiles(message);
+                return;
+            }
+            
+            // Regular text message
+            if (!message || !sessionId) return;
+            
+            try {
+                const response = await fetch('/livechat/direktur/api/send-message', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        session_id: sessionId,
+                        message: message,
+                        sender_type: 'customer',
+                        sender_id: customerId
+                    })
+                });
+                
+                if (response.ok) {
+                    // Don't add message manually - it will come via WebSocket
+                    // This prevents duplicate messages in customer chat
+                    input.value = '';
+                    
+                    // Emit typing stop
+                    if (socket) {
+                        socket.emit('typing_stop', {
+                            session_id: sessionId,
+                            sender_id: customerId
+                        });
+                    }
+                } else {
+                    throw new Error('Failed to send message');
+                }
+            } catch (error) {
+                console.error('Error sending message:', error);
+                const errorTimestamp = new Date().toISOString();
+                console.log('?? Error message timestamp check:', {
+                    timestamp: errorTimestamp,
+                    timestamp_type: typeof errorTimestamp,
+                    timestamp_truthy: !!errorTimestamp
+                });
+                addMessageToChat('system', 'Error sending message. Please try again.', errorTimestamp, false);
+            }
+        }
+        
+        // ? SEND MESSAGE WITH FILES FUNCTION
+        async function sendMessageWithFiles(message = '') {
+            if (isBlocked) {
+              showBlockedMessage({ blocked_until: blockedUntil });
+              return;
+            }
+            
+            if (!window.selectedFiles || window.selectedFiles.length === 0) return;
+            
+            try {
+                const formData = new FormData();
+                formData.append('session_id', sessionId);
+                formData.append('message', message);
+                formData.append('sender_type', 'customer');
+                formData.append('sender_id', customerId);
+                
+                // Add all selected files
+                window.selectedFiles.forEach((file, index) => {
+                    formData.append('files[]', file);
+                });
+                
+                const response = await fetch('/livechat/direktur/api/send-message-with-files', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (response.ok) {
+                    const result = await response.json();
+                    console.log('? Files uploaded successfully:', result);
+                    
+                    // Clear input and files
+                    document.getElementById('messageInput').value = '';
+                    hideFilePreview();
+                    hideUploadButton();
+                    window.selectedFiles = [];
+                    
+                    // Emit typing stop
+                    if (socket) {
+                        socket.emit('typing_stop', {
+                            session_id: sessionId,
+                            sender_id: customerId
+                        });
+                    }
+                    
+                    // Show success message
+                    const successTimestamp = new Date().toISOString();
+                    addMessageToChat('system', `? ${result.files_uploaded} file(s) uploaded successfully!`, successTimestamp, false);
+                    
+                } else {
+                    throw new Error('Failed to upload files');
+                }
+            } catch (error) {
+                console.error('Error uploading files:', error);
+                const errorTimestamp = new Date().toISOString();
+                addMessageToChat('system', '? Error uploading files. Please try again.', errorTimestamp, false);
+            }
+        }
+        
+        // GMT+7 Time Helper Functions - FIXED VERSION
+        function formatTimeGMT7(timestamp, isHistoryMessage = false) {
+            // CRITICAL: Log input parameters
+            console.log(`?? formatTimeGMT7 called with:`, {
+                timestamp: timestamp,
+                isHistoryMessage: isHistoryMessage,
+                timestamp_type: typeof timestamp,
+                timestamp_length: timestamp ? timestamp.length : 0,
+                raw_timestamp: JSON.stringify(timestamp)
+            });
+            
+            // Handle null/undefined/empty timestamps
+            if (!timestamp || timestamp === null || timestamp === undefined || timestamp === '') {
+                if (isHistoryMessage) {
+                    console.error('? CRITICAL: History message missing timestamp!', {
+                        timestamp: timestamp,
+                        type: typeof timestamp,
+                        length: timestamp ? timestamp.length : 0
+                    });
+                    return 'Missing timestamp';
+                } else {
+                    console.warn('?? Missing timestamp for new message, using current time');
+                    const now = new Date();
+                    return now.toLocaleTimeString('en-US', {
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        hour12: true
+                    });
+                }
+            }
+            
+            try {
+                // Enhanced timestamp parsing for backend timestamps
+                let date;
+                
+                // Backend sends: "2025-08-23T22:22:19.084203+07:00" (with timezone offset)
+                if (typeof timestamp === 'string' && timestamp.includes('T')) {
+                    if (timestamp.includes('+') && !timestamp.includes('Z')) {
+                        // Timestamp with timezone offset (e.g., +07:00) - JavaScript can parse this directly
+                        date = new Date(timestamp);
+                        console.log('?? Parsing timestamp with timezone offset:', timestamp, '?', date);
+                    } else if (!timestamp.includes('+') && !timestamp.includes('Z')) {
+                        // Naive timestamp from backend - assume it's already GMT+7
+                        date = new Date(timestamp);
+                        console.log('?? Parsing naive timestamp (assume GMT+7):', timestamp, '?', date);
+                    } else {
+                        // Regular timestamp parsing (with Z or other formats)
+                        date = new Date(timestamp);
+                        console.log('?? Parsing regular timestamp:', timestamp, '?', date);
+                    }
+                } else {
+                    // Regular timestamp parsing
+                    date = new Date(timestamp);
+                    console.log('?? Parsing regular timestamp:', timestamp, '?', date);
+                }
+                
+                if (isNaN(date.getTime())) {
+                    if (isHistoryMessage) {
+                        console.error('? CRITICAL: History message invalid timestamp!', {
+                            timestamp: timestamp,
+                            parsed_date: date,
+                            is_nan: isNaN(date.getTime())
+                        });
+                        return 'Invalid timestamp';
+                    } else {
+                        console.warn('?? Invalid timestamp format for new message:', timestamp);
+                        const now = new Date();
+                        return now.toLocaleTimeString('en-US', {
+                            hour: '2-digit',
+                            minute: '2-digit',
+                            hour12: true
+                        });
+                    }
+                }
+                
+                // ? Use new user-friendly timestamp format
+                const formatted = formatTimestampUserFriendly(timestamp);
+                
+                if (isHistoryMessage) {
+                    console.log('? History timestamp formatted:', timestamp, '?', formatted);
+                }
+                
+                return formatted;
+            } catch (e) {
+                if (isHistoryMessage) {
+                    console.error('? CRITICAL: History message timestamp error!', {
+                        timestamp: timestamp,
+                        error: e.message,
+                        stack: e.stack
+                    });
+                    return 'Error timestamp';
+                } else {
+                    console.warn('?? Error formatting new message timestamp:', timestamp, e);
+                    const now = new Date();
+                    return now.toLocaleTimeString('en-US', {
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        hour12: true
+                    });
+                }
+            }
+        }
+        
+        // Add message to chat
+        function addMessage(senderType, content, timestamp = null, isHistoryMessage = false, files = []) {
+            const chatMessages = document.getElementById('chatMessages');
+            
+            if (!chatMessages) {
+                console.error('? chatMessages element not found!');
+                return;
+            }
+            
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${senderType}`;
+            
+            // CRITICAL: Store parameters to prevent modification
+            const originalTimestamp = timestamp;
+            const originalIsHistory = isHistoryMessage;
+            
+            // CRITICAL: Log detailed parameters received in addMessage
+            console.log(`?? addMessage received parameters:`, {
+                param1_senderType: {
+                    value: senderType,
+                    type: typeof senderType,
+                    truthy: !!senderType
+                },
+                param2_content: {
+                    value: typeof content === 'object' ? 'OBJECT' : (content ? content.substring(0, 30) + '...' : 'NULL'),
+                    type: typeof content,
+                    truthy: !!content,
+                    length: typeof content === 'string' ? content.length : (content && content.content ? content.content.length : 0)
+                },
+                param3_timestamp: {
+                    value: timestamp,
+                    type: typeof timestamp,
+                    truthy: !!timestamp,
+                    length: timestamp ? timestamp.length : 0,
+                    raw: JSON.stringify(timestamp)
+                },
+                param4_isHistoryMessage: {
+                    value: isHistoryMessage,
+                    type: typeof isHistoryMessage,
+                    truthy: !!isHistoryMessage
+                }
+            });
+            
+            // CRITICAL: Log before calling formatTimeGMT7
+            console.log(`?? addMessage calling formatTimeGMT7:`, {
+                timestamp: originalTimestamp,
+                isHistoryMessage: originalIsHistory,
+                timestamp_type: typeof originalTimestamp
+            });
+            
+            // ? CRITICAL FIX: Use formatTimeGMT7 with history flag
+            // This ensures history messages preserve original timestamps
+            const timeString = formatTimeGMT7(originalTimestamp, originalIsHistory);
+            
+            // CRITICAL: Log the result
+            console.log(`? formatTimeGMT7 result:`, {
+                input_timestamp: originalTimestamp,
+                output_time: timeString,
+                isHistoryMessage: originalIsHistory
+            });
+            
+            // ? ENHANCED: Check if message contains files and display them
+            let displayContent = content;
+            
+            // Handle both string content and message data object
+            let contentString = content;
+            if (typeof content === 'object' && content.content) {
+                contentString = content.content;
+                displayContent = content.content;
+            }
+            
+            // Check if this is a file message (contains file emojis) OR has files array from backend
+            console.log('?? Checking file message conditions:', {
+                contentString: contentString,
+                hasFiles: !!(files && files.length > 0),
+                filesCount: files ? files.length : 0,
+                includesFiles: contentString.includes('Files:'),
+                includesImage: contentString.includes('???'),
+                includesVideo: contentString.includes('??'),
+                includesDoc: contentString.includes('??')
+            });
+            
+            if (typeof contentString === 'string' && (contentString.includes('???') || contentString.includes('??') || contentString.includes('??') || contentString.includes('Files:')) || (files && files.length > 0)) {
+                console.log('?? Calling renderFileMessage with:', { contentString, files });
+                displayContent = renderFileMessage(contentString, files);
+                console.log('?? renderFileMessage returned:', displayContent);
+            }
+            
+            // ? NEW FEATURE: Convert URLs to clickable links (only for plain text, not HTML)
+            if (displayContent === contentString) {
+                // Only convert URLs if content hasn't been processed by renderFileMessage
+                displayContent = convertUrlsToLinks(displayContent);
+            }
+            
+            // ? CRITICAL DEBUG: Log the exact content parameter
+            console.log('?? addMessage content parameter:', {
+                content: content,
+                content_type: typeof content,
+                content_id: content && content.id,
+                content_id_type: content && content.id ? typeof content.id : 'N/A',
+                content_id_truthy: content && content.id ? !!content.id : 'N/A'
+            });
+            
+            // ? FIXED: Add data-message-id for ALL messages to support edit/delete
+            let messageId;
+            console.log(`?? DEBUG addMessage - Content analysis:`, {
+                content: content,
+                content_type: typeof content,
+                content_id: content && content.id,
+                content_id_type: content && content.id ? typeof content.id : 'N/A',
+                content_id_truthy: content && content.id ? !!content.id : 'N/A',
+                sender_type: senderType
+            });
+            
+            if (typeof content === 'object' && content.id) {
+                // This is a message data object from WebSocket or history
+                messageId = content.id;
+                console.log('? Using message ID from data:', messageId);
+            } else {
+                // This is plain string content, generate unique ID
+                messageId = `msg_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+                console.log('?? Generated random message ID:', messageId);
+            }
+            messageDiv.setAttribute('data-message-id', messageId);
+            console.log(`? Added data-message-id for ${senderType} message:`, messageId);
+            
+            // ? FIXED: Only render msg-body if content exists and not empty
+            let messageHTML = '';
+            if (displayContent && displayContent.trim() !== '') {
+                messageHTML += `<span class="msg-body">${displayContent}</span>`;
+            }
+            
+            messageHTML += `<span class="time">${timeString}</span>`;
+            
+            messageDiv.innerHTML = messageHTML;
+            
+            chatMessages.appendChild(messageDiv);
+            
+            // Initialize lazy loading for new message
+            setTimeout(() => {
+                if (window.lazyLoadingManager) {
+                    window.lazyLoadingManager.loadVisibleMedia(chatMessages);
+                }
+            }, 100);
+            
+            scrollToBottom();
+        }
+        
+        // Add message to chat with duplicate prevention
+        function addMessageToChat(senderType, content, timestamp = null, isHistoryMessage = false, files = []) {
+            // Handle both string content and message data object
+            let contentString = content;
+            if (typeof content === 'object' && content.content) {
+                contentString = content.content;
+            }
+            
+            // Use current time if timestamp is null
+            if (!timestamp) {
+                timestamp = new Date().toISOString();
+            }
+            
+            // Check if message already exists
+            if (!isMessageAlreadyDisplayed(contentString, timestamp)) {
+                addMessage(senderType, content, timestamp, isHistoryMessage, files);
+            }
+        }
+        
+        // Simple duplicate prevention function
+        function isMessageAlreadyDisplayed(content, timestamp) {
+            return false; // Always allow messages for now
+        }
+        
+        // ?? Show new chat form when session ends
+        function showNewChatForm() {
+            console.log('?? Showing new chat form');
+            
+            // Hide chat interface
+            const chatInterface = document.getElementById('chatInterface');
+            const customerControls = document.getElementById('customer-controls');
+            
+            if (chatInterface) chatInterface.style.display = 'none';
+            if (customerControls) customerControls.style.display = 'none';
+            
+            // Show initial form
+            const initialForm = document.getElementById('initialForm');
+            if (initialForm) {
+                initialForm.style.display = 'block';
+                
+                // Reset form
+                const form = initialForm.querySelector('form');
+                if (form) form.reset();
+                
+                // Reset session state
+                sessionId = null;
+                customerId = null;
+                agentJoinedMessageShown = false;
+                
+                console.log('? New chat form shown, session reset');
+            }
+        }
+        
+        // Helper function to show notifications
+        function showNotification(title, message, type = 'info') {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `alert alert-${type === 'warning' ? 'warning' : 'info'} alert-dismissible fade show`;
+            notification.innerHTML = `
+                <strong>${title}:</strong> ${message}
+                <button type="warning" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            
+            // Add to page
+            const container = document.querySelector('.container') || document.body;
+            container.insertBefore(notification, container.firstChild);
+            
+            // Auto-remove after 10 seconds
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.remove();
+                }
+            }, 10000);
+        }
+        
+        // Helper function to update session status in UI
+        function updateSessionStatus(status) {
+            const statusElement = document.getElementById('sessionStatus');
+            if (statusElement) {
+                statusElement.textContent = `Status: ${status.toUpperCase()}`;
+                statusElement.className = `badge bg-${status === 'closed' ? 'danger' : 'success'}`;
+            }
+            
+            // Update chat container
+            const chatContainer = document.getElementById('chatContainer');
+            if (chatContainer) {
+                if (status === 'closed') {
+                    chatContainer.classList.add('session-closed');
+                    chatContainer.innerHTML += `
+                        <div class="alert alert-warning text-center">
+                            <strong>Session Closed</strong><br>
+                            This session has been automatically closed due to inactivity.<br>
+                            <a href="/livechat/president/" class="btn btn-primary mt-2">Start New Session</a>
+                        </div>
+                    `;
+                }
+            }
+        }
+        
+        // Helper function to parse display time (HH:MM AM/PM) back to Date object
+        function parseDisplayTimeToDate(timeString) {
+            try {
+                // timeString format: "06:06 PM" or "18:06"
+                const now = new Date();
+                const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+                
+                // Handle AM/PM format
+                if (timeString.includes('AM') || timeString.includes('PM')) {
+                    const [time, period] = timeString.split(' ');
+                    const [hours, minutes] = time.split(':').map(Number);
+                    
+                    let hour24 = hours;
+                    if (period === 'PM' && hours !== 12) {
+                        hour24 += 12;
+                    } else if (period === 'AM' && hours === 12) {
+                        hour24 = 0;
+                    }
+                    
+                    return new Date(today.getTime() + (hour24 * 60 + minutes) * 60 * 1000);
+                } else {
+                    // Handle 24-hour format
+                    const [hours, minutes] = timeString.split(':').map(Number);
+                    return new Date(today.getTime() + (hours * 60 + minutes) * 60 * 1000);
+                }
+            } catch (e) {
+                console.error('Error parsing display time:', timeString, e);
+                return null;
+            }
+        }
+        
+        // Show typing indicator
+        function showTypingIndicator() {
+            document.getElementById('typingIndicator').style.display = 'block';
+        }
+        
+        // Hide typing indicator
+        function hideTypingIndicator() {
+            document.getElementById('typingIndicator').style.display = 'none';
+        }
+        
+        // Auto scroll to bottom
+        function scrollToBottom() {
+            const messagesDiv = document.getElementById('chatMessages');
+            if (messagesDiv) {
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            }
+        }
+        
+        // Force scroll to bottom (more reliable)
+        function forceScrollToBottom() {
+            const messagesDiv = document.getElementById('chatMessages');
+            if (messagesDiv) {
+                // Multiple attempts to ensure scroll works
+                setTimeout(() => {
+                    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+                }, 50);
+                setTimeout(() => {
+                    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+                }, 100);
+                setTimeout(() => {
+                    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+                }, 200);
+            }
+        }
+        
+        // ? NEW FEATURE: Helper functions for message edit/delete
+        function updateMessageInCustomerChat(messageId, newContent) {
+            console.log('?? updateMessageInCustomerChat called with:', { messageId, newContent });
+            const messageElement = document.querySelector(`[data-message-id="${messageId}"]`);
+            console.log('?? Message element found:', !!messageElement);
+            if (!messageElement) {
+                console.log('?? Message element not found for update:', messageId);
+                console.log('?? Available message elements:', document.querySelectorAll('[data-message-id]'));
+                return;
+            }
+            
+            // Look for .msg-body (customer chat uses this class)
+            const messageContent = messageElement.querySelector('.msg-body');
+            console.log('?? Message content element found:', !!messageContent);
+            if (messageContent) {
+                console.log('?? Old content:', messageContent.innerHTML);
+                // Convert URLs to links
+                const contentWithLinks = convertUrlsToLinks(newContent);
+                messageContent.innerHTML = contentWithLinks;
+                console.log('?? New content:', messageContent.innerHTML);
+                
+                // Add edited indicator
+                let editedIndicator = messageElement.querySelector('.message-edited');
+                if (!editedIndicator) {
+                    editedIndicator = document.createElement('div');
+                    editedIndicator.className = 'message-edited';
+                    editedIndicator.style.fontSize = '11px';
+                    editedIndicator.style.color = '#6c757d';
+                    editedIndicator.style.fontStyle = 'italic';
+                    editedIndicator.style.marginTop = '4px';
+                    messageElement.appendChild(editedIndicator);
+                }
+                editedIndicator.textContent = '(edited)';
+                
+                console.log('? Message updated in customer chat:', messageId);
+            } else {
+                console.log('?? Message content element not found for update:', messageId);
+                console.log('?? Message element HTML:', messageElement.outerHTML);
+            }
+        }
+
+        function removeMessageFromCustomerChat(messageId) {
+            const messageElement = document.querySelector(`[data-message-id="${messageId}"]`);
+            if (messageElement) {
+                messageElement.remove();
+                console.log('? Message removed from customer chat:', messageId);
+            } else {
+                console.log('?? Message element not found for removal:', messageId);
+            }
+        }
+
+        // ? NEW FUNCTION: Show chat interface (hide form, show chat)
+        function showChatInterface() {
+            console.log('?? Showing chat interface...');
+            
+            const initialForm = document.getElementById('initialForm');
+            const chatInterface = document.getElementById('chatInterface');
+            const customerControls = document.getElementById('customer-controls');
+            
+            if (initialForm && chatInterface && customerControls) {
+                initialForm.style.display = 'none';
+                chatInterface.style.display = 'block';
+                customerControls.style.display = 'block';
+                console.log('? Chat interface shown successfully');
+            } else {
+                console.error('? Required UI elements not found:', {
+                    initialForm: !!initialForm,
+                    chatInterface: !!chatInterface,
+                    customerControls: !!customerControls
+                });
+            }
+        }
+        
+        // ? FIXED FUNCTION: Reset session state (show form, hide chat)
+        function resetSessionState() {
+            console.log('?? Resetting session state - showing form...');
+            
+            // Reset agent joined message flag
+            agentJoinedMessageShown = false;
+            
+            // Show form, hide chat interface
+            const initialForm = document.getElementById('initialForm');
+            const chatInterface = document.getElementById('chatInterface');
+            const customerControls = document.getElementById('customer-controls');
+            
+            if (initialForm && chatInterface && customerControls) {
+                initialForm.style.display = 'block';
+                chatInterface.style.display = 'none';
+                customerControls.style.display = 'none';
+                console.log('? Form shown successfully');
+            } else {
+                console.error('? Required UI elements not found:', {
+                    initialForm: !!initialForm,
+                    chatInterface: !!chatInterface,
+                    customerControls: !!customerControls
+                });
+            }
+        }
+        
+        // Handle typing
+        function handleTyping() {
+            if (typingTimer) {
+                clearTimeout(typingTimer);
+            }
+            
+            if (socket && sessionId) {
+                socket.emit('typing_start', {
+                    session_id: sessionId,
+                    sender_id: customerId
+                });
+            }
+            
+            typingTimer = setTimeout(() => {
+                if (socket && sessionId) {
+                    socket.emit('typing_stop', {
+                        session_id: sessionId,
+                        sender_id: customerId
+                    });
+                }
+            }, 1000);
+        }
+        
+        // Load emojis
+        function loadEmojis() {
+         // Gunakan code point ? selalu aman walau file tidak UTF-8
+         const emojiHex = [
+           '1F600','1F603','1F604','1F601','1F606','1F605','1F602','1F923','1F60A','1F607',
+           '1F642','1F643','1F609','1F60C','1F60D','1F970','1F618','1F617','1F619','1F61A',
+           '1F60B','1F61B','1F61D','1F61C','1F92A','1F928','1F9D0','1F913','1F60E','1F929',
+           '1F973','1F60F','1F612','1F61E','1F614','1F61F','1F615','1F641','2639','1F623',
+           '1F616','1F62B','1F629','1F97A','1F622','1F62D','1F624','1F620','1F621','1F92C',
+           '1F92F','1F633','1F975','1F976','1F631','1F628','1F630','1F625','1F613','1F917',
+           // …lanjutkan sesuai kebutuhanmu (bisa copy dari daftar lama, ubah ke hex)
+         ];
+         const emojis = emojiHex.map(h => String.fromCodePoint(parseInt(h, 16)));
+
+         const emojiGrid = document.getElementById('emojiGrid');
+         emojiGrid.innerHTML = '';
+         emojis.forEach(emoji => {
+           const d = document.createElement('div');
+           d.className = 'emoji-item';
+           d.textContent = emoji;
+           d.onclick = () => insertEmoji(emoji);
+           emojiGrid.appendChild(d);
+         });
+       }        
+        // Insert emoji
+        function insertEmoji(emoji) {
+            const input = document.getElementById('messageInput');
+            input.value += emoji;
+            input.focus();
+            toggleEmojiPicker();
+        }
+        
+        // Toggle emoji picker
+        function toggleEmojiPicker() {
+            const picker = document.getElementById('emojiPicker');
+            picker.style.display = picker.style.display === 'none' ? 'block' : 'none';
+        }
+        
+        // ? ENHANCED FILE UPLOAD HANDLING
+        document.getElementById('fileInput').addEventListener('change', function(e) {
+            const files = e.target.files;
+            if (files && files.length > 0) {
+                // Show file preview
+                showFilePreview(files);
+                
+                // Store files for upload
+                window.selectedFiles = Array.from(files);
+                
+                // Show upload button
+                showUploadButton();
+            }
+        });
+        
+        // ? FILE PREVIEW FUNCTION
+        function showFilePreview(files) {
+            const previewContainer = document.getElementById('filePreviewContainer');
+            if (!previewContainer) return;
+            
+            let previewHTML = '<div class="file-preview-header"><h6>?? Files Selected:</h6></div>';
+            
+            Array.from(files).forEach((file, index) => {
+                const fileIcon = getFileIcon(file.name);
+                const fileSize = formatFileSize(file.size);
+                
+                previewHTML += `
+                    <div class="file-preview-item">
+                        <i class="${fileIcon}"></i>
+                        <div class="file-info">
+                            <div class="file-name">${file.name}</div>
+                            <div class="file-size">${fileSize}</div>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-outline-danger" onclick="removeFile(${index})">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                `;
+            });
+            
+            previewContainer.innerHTML = previewHTML;
+            previewContainer.style.display = 'block';
+        }
+        
+        // ? REMOVE FILE FUNCTION
+        function removeFile(index) {
+            if (window.selectedFiles && window.selectedFiles[index]) {
+                window.selectedFiles.splice(index, 1);
+                
+                if (window.selectedFiles.length === 0) {
+                    hideFilePreview();
+                    hideUploadButton();
+                } else {
+                    showFilePreview(window.selectedFiles);
+                }
+            }
+        }
+        
+        // ? SHOW/HIDE UPLOAD BUTTON
+        function showUploadButton() {
+            const uploadSection = document.getElementById('uploadFilesSection');
+            if (uploadSection) uploadSection.style.display = 'block';
+        }
+        
+        function hideUploadButton() {
+            const uploadSection = document.getElementById('uploadFilesSection');
+            if (uploadSection) uploadSection.style.display = 'none';
+        }
+        
+        // ? CLEAR FILES FUNCTION
+        function clearFiles() {
+            window.selectedFiles = [];
+            hideFilePreview();
+            hideUploadButton();
+            
+            // Clear file input
+            const fileInput = document.getElementById('fileInput');
+            if (fileInput) fileInput.value = '';
+        }
+        
+        // ? HIDE FILE PREVIEW
+        function hideFilePreview() {
+            const previewContainer = document.getElementById('filePreviewContainer');
+            if (previewContainer) {
+                previewContainer.style.display = 'none';
+                previewContainer.innerHTML = '';
+            }
+        }
+        
+        // ? GET FILE ICON
+        function getFileIcon(filename) {
+            const ext = filename.split('.').pop().toLowerCase();
+            const iconMap = {
+                'jpg': 'fas fa-file-image',
+                'jpeg': 'fas fa-file-image',
+                'png': 'fas fa-file-image',
+                'gif': 'fas fa-file-image',
+                'bmp': 'fas fa-file-image',
+                'webp': 'fas fa-file-image',
+                'mp4': 'fas fa-file-video',
+                'avi': 'fas fa-file-video',
+                'mov': 'fas fa-file-video',
+                'wmv': 'fas fa-file-video',
+                'flv': 'fas fa-file-video',
+                'webm': 'fas fa-file-video',
+                'mkv': 'fas fa-file-video',
+                'pdf': 'fas fa-file-pdf',
+                'doc': 'fas fa-file-word',
+                'docx': 'fas fa-file-word',
+                'txt': 'fas fa-file-alt',
+                'zip': 'fas fa-file-archive',
+                'rar': 'fas fa-file-archive'
+            };
+            return iconMap[ext] || 'fas fa-file';
+        }
+        
+        // ? FORMAT FILE SIZE
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+        
+        // ? RENDER FILE MESSAGE WITH THUMBNAILS
+        function renderFileMessage(content, files = []) {
+            let fileHTML = '';
+            
+            // Debug: Check sessionId availability
+            console.log('?? renderFileMessage - sessionId:', sessionId, 'type:', typeof sessionId);
+            console.log('?? renderFileMessage - files:', files);
+            
+            // If we have files data from backend, use it directly
+            if (files && files.length > 0) {
+                console.log('?? Using backend files data:', files);
+                files.forEach(file => {
+                    if (file && file.filename) {
+                        // Clean filename from non-printable characters
+                        const cleanFilename = file.filename.replace(/[\x00-\x1F\x7F-\x9F]/g, '').trim();
+                        const cleanStoredFilename = (file.stored_filename || file.filename).replace(/[\x00-\x1F\x7F-\x9F]/g, '').trim();
+                        
+                        const fileUrl = file.file_url || `/livechat/uploads/livechat/${sessionId}/${encodeURIComponent(cleanStoredFilename)}`;
+                        const isImage = !!file.is_image;
+                        const isVideo = !!file.is_video;
+                        
+                        console.log('?? Rendering file:', {
+                            originalFilename: file.filename,
+                            cleanFilename: cleanFilename,
+                            cleanStoredFilename: cleanStoredFilename,
+                            fileUrl: fileUrl,
+                            isImage: isImage,
+                            isVideo: isVideo,
+                            file: file
+                        });
+                        
+                        const thumbnailHTML = renderFileThumbnail('', cleanFilename, fileUrl, isImage, isVideo, cleanStoredFilename);
+                        console.log('?? Generated thumbnail HTML:', thumbnailHTML);
+                        fileHTML += thumbnailHTML;
+                    }
+                });
+                
+                // Extract text content (remove file lines)
+                const fileRegex = /(Files:)\s*([^\n\r]+)/gu;
+                let textContent = content.replace(fileRegex, '').trim();
+                if (textContent) {
+                    fileHTML += `<div class="message-text">${textContent}</div>`;
+                }
+            } else {
+                // Fallback: Parse file information from message content using regex
+                const fileRegex = /(Files:)\s*([^\n\r]+)/gu;
+                let match;
+                
+                // Extract text content (remove file lines)
+                let textContent = content.replace(fileRegex, '').trim();
+                if (textContent) {
+                    fileHTML += `<div class="message-text">${textContent}</div>`;
+                }
+                
+                // Extract and display files
+                const fileRegex2 = /(Files:)\s*([^\n\r]+)/gu;
+                while ((match = fileRegex2.exec(content)) !== null) {
+                    const icon = match[1];
+                    const filename = match[2].trim();
+                    
+                    if (filename) {
+                        // Clean filename from non-printable characters
+                        const cleanFilename = filename.replace(/[\x00-\x1F\x7F-\x9F]/g, '').trim();
+                        const fileUrl = `/livechat/uploads/livechat/${sessionId}/${encodeURIComponent(cleanFilename)}`;
+                        fileHTML += renderFileThumbnail(icon, cleanFilename, fileUrl, false, false);
+                    }
+                }
+            }
+            
+            return fileHTML;
+        }
+        
+        // ? RENDER FILE THUMBNAIL
+        function renderFileThumbnail(icon, filename, fileUrl = null, isImageFromBackend = false, isVideoFromBackend = false, storedFilename = null) {
+            const fileExt = filename.split('.').pop().toLowerCase();
+            const isImageByExt = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp'].includes(fileExt);
+            const isVideoByExt = ['mp4', 'avi', 'mov', 'wmv', 'flv', 'webm', 'mkv'].includes(fileExt);
+            
+            // Use backend data if available, fallback to extension detection
+            const isImage = isImageFromBackend || isImageByExt;
+            const isVideo = isVideoFromBackend || isVideoByExt;
+            
+            let thumbnailHTML = '';
+            
+            if (isImage) {
+                // Use lazy loading for images - always use stored_filename for fallback
+                const finalFileUrl = fileUrl || `/livechat/uploads/livechat/${sessionId}/${encodeURIComponent(storedFilename || filename)}`;
+                if (window.lazyLoadingManager) {
+                    const lazyContainer = window.lazyLoadingManager.createLazyImage(
+                        finalFileUrl,
+                        filename,
+                        'message-image lazy-media'
+                    );
+                    // Let lazy loading manager handle the click
+                    thumbnailHTML = lazyContainer.outerHTML;
+                } else {
+                    // Fallback to regular image
+                    thumbnailHTML = `
+                        <div class="message-image" onclick="openFileViewer('${finalFileUrl}','${filename}', 0, 'image')">
+                            <img src="${finalFileUrl}" alt="${filename}" style="max-width: 200px; max-height: 150px; border-radius: 8px; cursor: pointer;">
+                        </div>`;
+                }
+            } else if (isVideo) {
+                // Use lazy loading for videos - always use stored_filename for fallback
+                const finalFileUrl = fileUrl || `/livechat/uploads/livechat/${sessionId}/${encodeURIComponent(storedFilename || filename)}`;
+                if (window.lazyLoadingManager) {
+                    const lazyContainer = window.lazyLoadingManager.createLazyVideo(
+                        finalFileUrl,
+                        '',
+                        'message-video lazy-media'
+                    );
+                    // Let lazy loading manager handle the click
+                    thumbnailHTML = lazyContainer.outerHTML;
+                } else {
+                    // Fallback to regular video
+                    thumbnailHTML = `
+                        <div class="message-video" onclick="openFileViewer('${finalFileUrl}','${filename}', 0, 'video')">
+                            <video controls style="max-width: 200px; max-height: 150px; border-radius: 8px; cursor: pointer;">
+                                <source src="${finalFileUrl}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>`;
+                }
+            } else {
+                // For other files, show icon - always use stored_filename for fallback
+                const fileIcon = getFileIcon(filename);
+                const finalFileUrl = fileUrl || `/livechat/uploads/livechat/${sessionId}/${encodeURIComponent(storedFilename || filename)}`;
+                thumbnailHTML = `
+                    <div class="message-file" onclick="openFileViewer('${finalFileUrl}', '${filename}', 0, 'file')">
+                        <i class="${fileIcon}"></i> ${filename}
+                    </div>
+                `;
+            }
+            
+            return thumbnailHTML;
+        }
+        
+        // ? OPEN FILE VIEWER (UNIVERSAL)
+        function openFileViewer(fileSrc, fileName, fileSize, fileType) {
+            const modal = document.getElementById('fileViewerModal');
+            if (!modal) {
+                // Create modal if it doesn't exist
+                createFileViewerModal();
+            }
+            
+            const modalInstance = document.getElementById('fileViewerModal');
+            const modalTitle = modalInstance.querySelector('.modal-title');
+            const modalBody = modalInstance.querySelector('.modal-body');
+            
+            modalTitle.textContent = fileName;
+            
+            let contentHTML = '';
+            
+            if (fileType === 'image' && fileSrc) {
+                contentHTML = `
+                    <div class="file-viewer-content">
+                        <img src="${fileSrc}" alt="${fileName}" class="img-fluid" style="max-width: 100%; max-height: 70vh;">
+                    </div>
+                `;
+            } else if (fileType === 'video' && fileSrc) {
+                contentHTML = `
+                    <div class="file-viewer-content">
+                        <div class="video-player-container">
+                            <video id="modalVideo" controls preload="metadata" 
+                                   class="img-fluid" style="max-width: 100%; max-height: 70vh;"
+                                   playsinline webkit-playsinline>
+                                <source src="${fileSrc}" type="video/mp4">
+                                <source src="${fileSrc}" type="video/webm">
+                                <source src="${fileSrc}" type="video/ogg">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="video-controls-overlay" id="videoControlsOverlay">
+                                <button class="btn btn-primary btn-lg" onclick="startVideo()">
+                                    <i class="fas fa-play me-2"></i>Start Video
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <small class="text-muted">
+                                <i class="fas fa-info-circle me-1"></i>
+                                Klik tombol Start Video untuk memulai playback
+                            </small>
+                        </div>
+                    </div>
+                `;
+            } else {
+                contentHTML = `
+                    <div class="file-viewer-content">
+                        <i class="fas fa-file fa-5x text-muted mb-3"></i>
+                        <p class="text-muted">${fileName}</p>
+                    </div>
+                `;
+            }
+            
+            // Add download button with enhanced styling
+            if (fileSrc) {
+                contentHTML += `
+                    <div class="file-download-section">
+                        <div class="file-info">
+                            <i class="fas fa-file me-2"></i>
+                            <strong>${fileName}</strong>
+                            ${fileSize ? `<br><small>Ukuran: ${formatFileSize(fileSize)}</small>` : ''}
+                        </div>
+                        <a href="${fileSrc}" download="${fileName}" class="btn btn-primary">
+                            <i class="fas fa-download me-2"></i>Download File
+                        </a>
+                    </div>
+                `;
+            }
+            
+            modalBody.innerHTML = contentHTML;
+            
+            // ? ENHANCED: Add video event listeners after modal content is set
+            if (fileType === 'video' && fileSrc) {
+                setTimeout(() => {
+                    const video = document.getElementById('modalVideo');
+                    if (video) {
+                        console.log('?? Setting up video event listeners');
+                        
+                        // Add comprehensive event listeners
+                        video.addEventListener('loadstart', () => console.log('?? Video loadstart'));
+                        video.addEventListener('loadedmetadata', () => console.log('?? Video loadedmetadata'));
+                        video.addEventListener('canplay', () => console.log('?? Video canplay'));
+                        video.addEventListener('canplaythrough', () => console.log('?? Video canplaythrough'));
+                        video.addEventListener('error', (e) => {
+                            console.error('? Video error event:', e);
+                            console.error('? Video error details:', video.error);
+                        });
+                        
+                        // Log video state
+                        console.log('?? Video initial state:', {
+                            src: video.src,
+                            readyState: video.readyState,
+                            networkState: video.networkState,
+                            paused: video.paused,
+                            ended: video.ended,
+                            currentTime: video.currentTime,
+                            duration: video.duration
+                        });
+                    }
+                }, 100);
+            }
+            
+            // Show modal using Bootstrap
+            const bootstrapModal = new bootstrap.Modal(modalInstance);
+            bootstrapModal.show();
+        }
+        
+        // ? START VIDEO FUNCTION
+        function startVideo() {
+            console.log('?? startVideo() called');
+            
+            const video = document.getElementById('modalVideo');
+            const overlay = document.getElementById('videoControlsOverlay');
+            
+            console.log('?? Video element:', video);
+            console.log('?? Overlay element:', overlay);
+            
+            if (video && overlay) {
+                console.log('? Both elements found, attempting to play video');
+                console.log('?? Video src:', video.src);
+                console.log('?? Video readyState:', video.readyState);
+                console.log('?? Video networkState:', video.networkState);
+                
+                try {
+                    // Ensure video is loaded
+                    if (video.readyState < 2) {
+                        console.log('?? Video not ready, waiting for load...');
+                        video.addEventListener('loadeddata', () => {
+                            console.log('? Video loaded, now attempting to play');
+                            attemptVideoPlay(video, overlay);
+                        });
+                    } else {
+                        console.log('? Video ready, attempting to play immediately');
+                        attemptVideoPlay(video, overlay);
+                    }
+                } catch (error) {
+                    console.error('? Error in startVideo:', error);
+                    showVideoError(overlay, 'Error in startVideo: ' + error.message);
+                }
+            } else {
+                console.error('? Video or overlay element not found');
+                if (!video) console.error('? Video element missing');
+                if (!overlay) console.error('? Overlay element missing');
+            }
+        }
+        
+        // ? ATTEMPT VIDEO PLAY WITH RETRY
+        function attemptVideoPlay(video, overlay) {
+            console.log('?? attemptVideoPlay() called');
+            
+            // Try to play video
+            const playPromise = video.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    console.log('? Video started successfully');
+                    // Hide overlay after video starts
+                    overlay.style.display = 'none';
+                    // Show success message briefly
+                    showVideoSuccess(overlay);
+                }).catch(error => {
+                    console.error('? Error starting video:', error);
+                    console.error('? Error details:', {
+                        name: error.name,
+                        message: error.message,
+                        code: error.code
+                    });
+                    
+                    // Handle specific error types
+                    if (error.name === 'NotAllowedError') {
+                        showVideoError(overlay, 'Browser memblokir autoplay. Silakan klik manual.');
+                    } else if (error.name === 'NotSupportedError') {
+                        showVideoError(overlay, 'Format video tidak didukung.');
+                    } else {
+                        showVideoError(overlay, 'Video tidak bisa di-start: ' + error.message);
+                    }
+                });
+            } else {
+                console.log('?? Video play() returned undefined');
+                showVideoError(overlay, 'Video play() tidak tersedia');
+            }
+        }
+        
+        // ? SHOW VIDEO SUCCESS
+        function showVideoSuccess(overlay) {
+            overlay.innerHTML = `
+                <div class="text-center text-success">
+                    <i class="fas fa-check-circle fa-2x mb-2"></i>
+                    <p>Video berhasil dimulai!</p>
+                </div>
+            `;
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 2000);
+        }
+        
+        // ? SHOW VIDEO ERROR
+        function showVideoError(overlay, message) {
+            overlay.innerHTML = `
+                <div class="text-center">
+                    <p class="text-danger mb-2">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        ${message}
+                    </p>
+                    <div class="btn-group" role="group">
+                        <button class="btn btn-outline-primary" onclick="manualStartVideo()">
+                            <i class="fas fa-hand-pointer me-2"></i>Klik Manual
+                        </button>
+                        <button class="btn btn-outline-secondary" onclick="reloadVideo()">
+                            <i class="fas fa-redo me-2"></i>Reload Video
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // ? MANUAL VIDEO START (fallback)
+        function manualStartVideo() {
+            console.log('?? manualStartVideo() called');
+            const video = document.getElementById('modalVideo');
+            const overlay = document.getElementById('videoControlsOverlay');
+            
+            if (video && overlay) {
+                console.log('?? Attempting manual video start');
+                
+                // Try different approaches
+                try {
+                    // Method 1: Direct play
+                    video.play();
+                    console.log('? Manual play() called');
+                    
+                    // Method 2: Force load and play
+                    setTimeout(() => {
+                        if (video.paused) {
+                            console.log('?? Video still paused, trying force play');
+                            video.load();
+                            video.play();
+                        }
+                    }, 100);
+                    
+                    // Hide overlay after attempt
+                    setTimeout(() => {
+                        if (!video.paused) {
+                            overlay.style.display = 'none';
+                            console.log('? Video started manually');
+                        }
+                    }, 500);
+                    
+                } catch (error) {
+                    console.error('? Error in manualStartVideo:', error);
+                    showVideoError(overlay, 'Manual start gagal: ' + error.message);
+                }
+            }
+        }
+        
+        // ? RELOAD VIDEO
+        function reloadVideo() {
+            console.log('?? reloadVideo() called');
+            const video = document.getElementById('modalVideo');
+            const overlay = document.getElementById('videoControlsOverlay');
+            
+            if (video && overlay) {
+                console.log('?? Reloading video...');
+                
+                // Reset overlay to loading state
+                overlay.innerHTML = `
+                    <div class="text-center">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <p class="mt-2">Reloading video...</p>
+                    </div>
+                `;
+                
+                // Reload video
+                video.load();
+                
+                // Wait for video to load then try to play
+                video.addEventListener('loadeddata', () => {
+                    console.log('? Video reloaded, attempting to play');
+                    attemptVideoPlay(video, overlay);
+                }, { once: true });
+                
+                // Timeout fallback
+                setTimeout(() => {
+                    if (video.readyState < 2) {
+                        console.log('?? Video reload timeout, showing error');
+                        showVideoError(overlay, 'Video reload timeout. Silakan coba lagi.');
+                    }
+                }, 10000);
+            }
+        }
+        
+        // ? CREATE FILE VIEWER MODAL
+        function createFileViewerModal() {
+            const modalHTML = `
+                <div class="modal fade" id="fileViewerModal" tabindex="-1" aria-labelledby="fileViewerModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-fullscreen-sm-down">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="fileViewerModalLabel">File Viewer</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- File content will be displayed here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.insertAdjacentHTML('beforeend', modalHTML);
+        }
+        
+        // ? CUSTOMER CHAT: Enter selalu membuat baris baru, bukan kirim pesan
+        document.getElementById('messageInput').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                // ? Enter selalu membuat baris baru (tidak kirim pesan)
+                // ? Shift+Enter juga membuat baris baru
+                // ? Alt+Enter juga membuat baris baru
+                // ? Hanya tombol Send yang mengirim pesan
+                return; // Allow default behavior (new line)
+            } else {
+                handleTyping();
+            }
+        });
+        
+        // Close emoji picker when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('#emojiPicker') && !e.target.closest('button[onclick="toggleEmojiPicker()"]')) {
+                document.getElementById('emojiPicker').style.display = 'none';
+            }
+        });
+        
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('?? TEST LOG - DOM Content Loaded!');
+            console.log('?? TEST LOG - Customer chat script loaded!');
+            initChat();
+            
+            // Initialize lazy loading manager
+            if (window.LazyLoadingManager) {
+                window.lazyLoadingManager = new window.LazyLoadingManager();
+                window.lazyLoadingManager.init();
+                console.log('? Lazy Loading Manager initialized');
+            } else {
+                console.warn('⚠️ LazyLoadingManager not found, lazy loading disabled');
+            }
+        });
+        
+        // Add scroll event listener for manual scroll detection
+        document.addEventListener('DOMContentLoaded', function() {
+            const messagesDiv = document.getElementById('chatMessages');
+            if (messagesDiv) {
+                let userScrolled = false;
+                
+                messagesDiv.addEventListener('scroll', function() {
+                    // Check if user manually scrolled up
+                    const isAtBottom = messagesDiv.scrollTop + messagesDiv.clientHeight >= messagesDiv.scrollHeight - 10;
+                    userScrolled = !isAtBottom;
+                    
+                    // Show/hide scroll to bottom button
+                    const scrollBtn = document.getElementById('scrollToBottomBtn');
+                    if (scrollBtn) {
+                        if (userScrolled) {
+                            scrollBtn.style.display = 'flex';
+                        } else {
+                            scrollBtn.style.display = 'none';
+                        }
+                    }
+                });
+                
+                // Auto-scroll when new messages arrive (only if user is at bottom)
+                const originalAddMessage = window.addMessage;
+                window.addMessage = function(senderType, content, timestamp = null, isHistoryMessage = false) {
+                  originalAddMessage(senderType, content, timestamp, isHistoryMessage);
+                    if (!userScrolled) {
+                    setTimeout(() => { messagesDiv.scrollTop = messagesDiv.scrollHeight; }, 100);
+                    }
+                };
+            }
+        });
+        
+        // Initialize mobile keyboard handling
+        document.addEventListener('DOMContentLoaded', function() {
+            handleMobileKeyboard();
+        });
+        
+        // === BLOCK/UNBLOCK FUNCTIONS ===
+        let isBlocked = false;
+        let blockedUntil = null;
+
+        function disableChatInput(){
+          const ta = document.getElementById('messageInput');
+          const btn = document.getElementById('sendButton');
+          const fileIn = document.getElementById('fileInput');
+          if (ta) { ta.disabled = true; ta.placeholder = 'Untuk sementara Anda tidak bisa kirim pesan.'; }
+          if (btn) btn.disabled = true;
+          if (fileIn) fileIn.disabled = true;
+        }
+        
+        function enableChatInput(){
+          const ta = document.getElementById('messageInput');
+          const btn = document.getElementById('sendButton');
+          const fileIn = document.getElementById('fileInput');
+          if (ta) { ta.disabled = false; ta.placeholder = 'Ketik pesan'; }
+          if (btn) btn.disabled = false;
+          if (fileIn) fileIn.disabled = false;
+        }
+        
+        function showBlockedMessage(info){
+          const box = document.getElementById('blockedNotice');
+          const until = document.getElementById('blockedUntilText');
+          isBlocked = true;
+          blockedUntil = info?.blocked_until || null;
+          if (box){
+            box.style.display = 'block';
+            until.textContent = blockedUntil ? `(hingga ${new Date(blockedUntil).toLocaleString()})` : '';
+          }
+          disableChatInput();
+        }
+        
+        function hideBlockedMessage(){
+          isBlocked = false; blockedUntil = null;
+          const box = document.getElementById('blockedNotice');
+          if (box) box.style.display = 'none';
+          enableChatInput();
+        }
+        
+        // ? NEW FEATURE: Convert URLs to clickable links
+        function convertUrlsToLinks(text) {
+            if (!text || typeof text !== 'string') return text;
+            
+            // Skip if text already contains HTML tags (like <img>, <video>, etc.)
+            if (text.includes('<') && text.includes('>')) {
+                return text;
+            }
+            
+            // URL regex pattern - matches http/https, www, and common TLDs
+            const urlRegex = /((?:https?:\/\/|\/)[^\s<]+)/g;
+            
+            return text.replace(urlRegex, function(match) {
+                let url = match;
+                
+                // Add protocol if missing
+                if (!url.startsWith('http://') && !url.startsWith('https://')) {
+                    url = 'https://' + url;
+                }
+                
+                // Validate URL format
+                try {
+                    new URL(url);
+                    return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="message-link">${match}</a>`;
+                } catch (e) {
+                    // If not a valid URL, return original text
+                    return match;
+                }
+            });
+        }
+        
+        // ?? SESSION BLOCKING FUNCTIONS (Admin Maintenance)
+        function showBlockedMessageAdmin(blockInfo) {
+            const chatMessages = document.querySelector('.chat-messages');
+            if (chatMessages) {
+                const blockedMessage = document.createElement('div');
+                blockedMessage.className = 'message system blocked-message';
+                blockedMessage.innerHTML = `
+                    <div class="text-center">
+                        <i class="fas fa-ban fa-2x text-danger mb-2"></i>
+                        <h5 class="text-danger">Session Diblokir</h5>
+                        <p class="mb-2">Chat session ini sedang diblokir oleh admin untuk maintenance.</p>
+                        <p class="text-muted small">${blockInfo.reason || 'No reason provided'}</p>
+                        <div class="alert alert-warning mt-3">
+                            <i class="fas fa-info-circle me-2"></i>
+                            Anda masih dapat melihat chat history, tetapi tidak dapat mengirim pesan baru.
+                        </div>
+                    </div>
+                `;
+                chatMessages.appendChild(blockedMessage);
+                scrollToBottom();
+            }
+            
+            // CRITICAL: Also disable chat input for admin blocking
+            showBlockedMessage({ blocked_until: null, reason: blockInfo.reason });
+        }
+        
+        function hideChatInput() {
+            const chatInput = document.querySelector('.chat-input');
+            const customerControls = document.getElementById('customer-controls');
+            if (chatInput) chatInput.style.display = 'none';
+            if (customerControls) customerControls.style.display = 'none';
+        }
+        
+        function showChatInput() {
+            const chatInput = document.querySelector('.chat-input');
+            const customerControls = document.getElementById('customer-controls');
+            if (chatInput) chatInput.style.display = 'block';
+            if (customerControls) customerControls.style.display = 'block';
+        }
+        
+        // ?? TIMESTAMP FORMATTING FUNCTION
+        function formatTimestampUserFriendly(timestamp) {
+            if (!timestamp) return '';
+            
+            try {
+                const date = new Date(timestamp);
+                if (isNaN(date.getTime())) {
+                    console.warn('?? Invalid timestamp:', timestamp);
+                    return 'Invalid timestamp';
+                }
+
+                // Force all formatting based on Asia/Jakarta (WIB) regardless of device timezone
+                const TZ = 'Asia/Jakarta';
+                const ymdInTz = (d) =>
+                    new Intl.DateTimeFormat('en-CA', { timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit' }).format(d); // YYYY-MM-DD
+                const ddmmyyyyInTz = (d) =>
+                    new Intl.DateTimeFormat('en-GB', { timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit' }).format(d); // DD/MM/YYYY
+                const ymdMinusDays = (ymd, days) => {
+                    const t = Date.parse(`${ymd}T00:00:00Z`) - days * 86400000;
+                    return new Date(t).toISOString().slice(0, 10);
+                };
+
+                const nowYMD = ymdInTz(new Date());
+                const msgYMD = ymdInTz(date);
+                const yesterdayYMD = ymdMinusDays(nowYMD, 1);
+
+                const timeStr = date.toLocaleTimeString('en-US', {
+                    timeZone: TZ,
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    hour12: true
+                });
+                
+                if (msgYMD === nowYMD) {
+                    return `Today ${timeStr}`;
+                }
+                
+                if (msgYMD === yesterdayYMD) {
+                    return `Yesterday ${timeStr}`;
+                }
+                
+                return `${ddmmyyyyInTz(date)} ${timeStr}`;
+                
+            } catch (e) {
+                console.error('? Error formatting timestamp:', e);
+                return 'Invalid timestamp';
+            }
+        }
+    </script>
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;ba3a1171513a444481a76842cfbf3ae2&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+<div id="network-offline-indicator">
+            <div class="offline-content">
+                <div class="offline-icon">
+                    <i class="fas fa-wifi-slash"></i>
+                </div>
+                <div class="offline-text">
+                    <h4>Tidak Ada Koneksi Internet</h4>
+                    <p>Koneksi internet Anda terputus. Chat tidak akan terupdate secara real-time.</p>
+                    <div class="offline-actions">
+                        <button onclick="networkMonitor.checkConnection()" class="btn-retry">
+                            <i class="fas fa-sync-alt"></i> Coba Lagi
+                        </button>
+                    </div>
+                </div>
+                <div class="offline-timer">
+                    Offline sejak: <span id="offline-timer">--:--</span>
+                </div>
+            </div>
+        </div></body></html>

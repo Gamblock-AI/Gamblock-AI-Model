@@ -1,0 +1,69 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>App Installation</title>
+
+  <style>
+    * {
+      font-family: 'Arial';
+    }
+    body {
+      text-align: center;
+      padding-top: 32px;
+    }
+  </style>
+
+  <script>
+    var ready = function() {
+      var androidLink = 'market://launch?id=ru.gate31.android';
+      var iosLink = 'https://itunes.apple.com/app/id6755520992?mt=8';
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      var notice = '';
+      if (/android/i.test(userAgent)) {
+        if (androidLink) {
+          document.location.href = androidLink;
+          return;
+        } else {
+          notice = 'Additional setup is required.<br/>To setup an Android app link, please contact your product manager at <a href="https://imshop.ai">IMSHOP.AI</a>';
+        }
+      }
+
+      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        if (iosLink) {
+          document.location.href = iosLink;
+          return;
+        } else {
+          notice = 'Additional setup is required.<br/>To setup an iOS app link, please contact your product manager at <a href="https://imshop.ai">IMSHOP.AI</a>';
+        }
+      }
+      if (!androidLink && !iosLink && !notice) {
+        notice = 'Additional setup is required.<br/>To setup an app link, please contact your product manager at <a href="https://imshop.ai">IMSHOP.AI</a>';
+      }
+      if (!notice) {
+        document.querySelector('#code img').setAttribute('src', 'https://eu1.imshop.io/barcodes/generate?type=qr&w=300&h=300&value=' + encodeURIComponent(document.location.href));
+
+        document.getElementById('storelinks').innerHTML =
+          (iosLink ? 'Direct App Store link: <a href="https://itunes.apple.com/app/id6755520992?mt=8">https://itunes.apple.com/app/id6755520992?mt=8</a><br/>' : '') +
+          (androidLink ? 'Direct Google Play link: <a href="market://launch?id=ru.gate31.android">market://launch?id=ru.gate31.android</a>' : '');
+      } else {
+        document.getElementById('weblinks').innerHTML = '';
+        document.getElementById('storelinks').innerHTML = '';
+      }
+      document.getElementById('notice').innerHTML = notice || 'Scan this QR code with your phone to install the app:';
+    }
+
+    document.addEventListener("DOMContentLoaded", ready);
+  </script>
+</head>
+
+<body>
+  <p id="notice">Scan this QR code with your phone to install the app:</p>
+  <p id="code">
+    <img src="https://eu1.imshop.io/barcodes/generate?type=qr&amp;w=300&amp;h=300&amp;value=https%3A%2F%2Fto.imshop.io%2Finstall%2Fgate31" alt="">
+  </p>
+  <p id="weblinks"></p>
+  <p id="storelinks">Direct App Store link: <a href="https://itunes.apple.com/app/id6755520992?mt=8">https://itunes.apple.com/app/id6755520992?mt=8</a><br>Direct Google Play link: <a href="market://launch?id=ru.gate31.android">market://launch?id=ru.gate31.android</a></p>
+
+
+</body></html>

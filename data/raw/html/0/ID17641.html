@@ -1,0 +1,2617 @@
+<html lang="es" dir="ltr" style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <script src="https://www.gamezfull.com/wp-content/themes/MystiqueR3/modernizr.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <link rel="shortcut icon" href="https://www.gamezfull.com/wp-content/themes/MystiqueR3/favicon_gf.ico">
+  <link href="https://www.gamezfull.com/wp-content/themes/MystiqueR3/css/reset.css" rel="stylesheet">
+  <link href="https://www.gamezfull.com/wp-content/themes/MystiqueR3/style1.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.gamezfull.com/wp-content/themes/MystiqueR3/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link href="https://www.gamezfull.com/wp-content/themes/MystiqueR3/navigation.css" rel="stylesheet">
+  
+  <script>
+  /* Compat para plugins antiguos que esperan $.event.props (eliminado en jQuery 3.x) */
+  (function($){
+    $.event = $.event || {};
+    $.event.props = $.event.props || [];
+  })(jQuery);
+  </script>
+
+  <script>
+  // aseguramos que jQuery existe antes de correr
+  jQuery(function($){
+
+    // Polyfills de plugins viejos para que no rompan
+    $.fn.fadeLinks         = $.fn.fadeLinks         || function(){ return this; };
+    $.fn.nudgeLinks        = $.fn.nudgeLinks        || function(){ return this; };
+    $.fn.goTopControl      = $.fn.goTopControl      || function(){ return this; };
+    $.fn.superfish         = $.fn.superfish         || function(){ return this; };
+    $.fn.webShots          = $.fn.webShots          || function(){ return this; };
+    $.fn.Collapsible       = $.fn.Collapsible       || function(){ return this; };
+    $.fn.CollapsibleMenu   = $.fn.CollapsibleMenu   || function(){ return this; }; // parche adicional
+    $.fn.toggleVisibility  = $.fn.toggleVisibility  || function(){ return this; };
+    $.fn.bubble            = $.fn.bubble            || function(){ return this; };
+    $.fn.commentControls   = $.fn.commentControls   || function(){ return this; };
+    $.fn.clearField        = $.fn.clearField        || function(){ return this; };
+    $.fn.tabs              = $.fn.tabs              || function(){ return this; };
+    $.fn.imageSlider       = $.fn.imageSlider       || function(){ return this; };
+
+    function atom_init(){
+      $('body').removeClass('no-fx');
+
+      $('.fadeThis').fadeLinks();
+      $('.nudge').nudgeLinks();
+      $('a.go-top').goTopControl();
+
+      $('.nav ul.menu').superfish();
+      $('.screenshot').webShots();
+      $('.accordion, .collapsible').Collapsible();
+      $('.toggle').toggleVisibility();
+      $('a.tt').bubble();
+      $('#comments').commentControls();
+
+      $('.clearField').clearField();
+
+      $("form").submit(function(){
+        $('.clearField', this).each(function(){
+          return true;
+        });
+      });
+
+      $("form").each(function(){
+        $('a.submit', this).click(function(){
+          /* ... */
+        });
+      });
+
+      $('.tabs').tabs();
+      $('.iSlider').imageSlider();
+    }
+
+    atom_init();
+  });
+  </script>
+
+  <script>
+  /* Evita romper si falta el plugin fadeLinks */
+  (function($){
+    if (!$.fn.fadeLinks) { $.fn.fadeLinks = function(){ return this; }; }
+  })(jQuery);
+  </script>
+
+  <script src="https://www.gamezfull.com/wp-content/themes/MystiqueR3/navigation.js"></script>
+  <script src="https://www.gamezfull.com/wp-content/themes/MystiqueR3/main.js"></script>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var b = document.getElementById('btnReload');
+    if (b) b.addEventListener('click', function (e) {
+      e.preventDefault();
+      location.reload();
+    });
+  });
+  </script>
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<!-- This site is optimized with the Yoast SEO Premium plugin v22.7 (Yoast SEO v27.3) - https://yoast.com/product/yoast-seo-premium-wordpress/ -->
+	<title>Gamezfull | Descargar juegos gratis para PC Full en Español</title>
+	<meta name="description" content="Descargar Gratis Juegos para PC y PSP de Altos bajos requisitos por mega, mediafire y google drive completamente full en Español.">
+	<link rel="canonical" href="https://www.gamezfull.com/">
+	<link rel="next" href="https://www.gamezfull.com/page/2/">
+	<meta property="og:locale" content="es_MX">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="GamezFull">
+	<meta property="og:description" content="Descargar Juegos PC gratis / PSP de Altos bajos requisitos por mega y google drive.">
+	<meta property="og:url" content="https://www.gamezfull.com/">
+	<meta property="og:site_name" content="Gamezfull">
+	<meta property="og:image" content="https://www.gamezfull.com/wp-content/uploads/2019/03/gamezfulllogo.png">
+	<meta property="og:image:width" content="40">
+	<meta property="og:image:height" content="40">
+	<meta property="og:image:type" content="image/png">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@gamez_full">
+	<meta name="msvalidate.01" content="EAE3FE16D8FAB3BFBC9002DEDDB82B91">
+	<meta name="google-site-verification" content="eMQjLt_ki1-WW9806uggFs3dtFOu0zRHqGK4oeNS3ts">
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel="preload" href="https://www.gamezfull.com/wp-content/themes/MystiqueR3/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0" as="font" type="font/woff2" crossorigin=""><style id="wp-img-auto-sizes-contain-inline-css" type="text/css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+
+<link rel="stylesheet" id="MystiqueR3-extend-core-css" href="https://www.gamezfull.com/wp-content/themes/MystiqueR3/css/core.css" media="all">
+<link rel="stylesheet" id="MystiqueR3-extend-style-css" href="https://www.gamezfull.com/wp-content/themes/MystiqueR3/css/style-green.css" media="all">
+<link rel="stylesheet" id="MystiqueR3-extend-css" href="https://www.gamezfull.com/wp-content/themes/MystiqueR3-extend/style.css" media="all">
+<link data-no-async="1" data-no-optimize="1" rel="stylesheet" id="owl-carousel-css" href="https://www.gamezfull.com/wp-content/themes/MystiqueR3/owl-carousel/owl.carousel.css" media="all">
+<link data-no-async="1" data-no-optimize="1" rel="stylesheet" id="owl-theme-css" href="https://www.gamezfull.com/wp-content/themes/MystiqueR3/owl-carousel/owl.theme.css" media="all">
+<style id="classic-theme-styles-inline-css" type="text/css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+<style id="ega-related-posts-inline-css" type="text/css">
+
+    .ega-rp {
+        margin-top: 32px;
+        text-align: center;
+    }
+    .ega-rp h3 {
+        font-family: 'Orbitron', sans-serif;
+        color: #ff6600;
+        text-shadow: 0 0 8px #ff4500;
+        margin-bottom: 18px;
+        font-size: 1.9em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .ega-rp-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(178px, 1fr));
+        gap: 18px;
+        justify-items: center;
+    }
+    .ega-rp-item {
+        width: 141px;
+        height: 204px;
+        background: rgba(20,20,20,0.7);
+        border-radius: 0;
+        overflow: hidden;
+        transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .ega-rp-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 15px rgba(255,100,0,.4);
+    }
+    .ega-rp-item a img {
+        display: block;
+        width: 141px !important;
+        height: 204px !important;
+        border-radius: 0 !important;
+        object-fit: cover;
+        box-shadow: none;
+        transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .ega-rp-item a:hover img {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(255,100,0,.4);
+    }
+    @media (max-width:480px){
+        .ega-rp h3 { font-size:1.5em; }
+        .ega-rp-grid {
+            gap:12px;
+            grid-template-columns:repeat(auto-fill,minmax(120px,1fr));
+        }
+        .ega-rp-item {
+            width:120px;
+            height:174px;
+        }
+        .ega-rp-item a img {
+            width:120px !important;
+            height:174px !important;
+        }
+    }
+/*# sourceURL=ega-related-posts-inline-css */
+</style>
+<link rel="stylesheet" id="custom-login-styles-css" href="https://www.gamezfull.com/wp-content/themes/MystiqueR3-extend/custom-login-styles.css" media="all">
+<link rel="stylesheet" id="plugin-styles-css" href="https://www.gamezfull.com/wp-content/themes/MystiqueR3-extend/css/plugin-style.css" media="all">
+<script src="https://www.gamezfull.com/wp-includes/js/jquery/jquery.min.js" id="jquery-core-js"></script>
+<script src="https://www.gamezfull.com/wp-includes/js/jquery/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<script id="jquery-migrate-js-after">
+/* <![CDATA[ */
+(function($){
+  if (!$.fn.fadeLinks)  { $.fn.fadeLinks  = function(){ return this; }; }
+  if (!$.fn.nudgeLinks) { $.fn.nudgeLinks = function(){ return this; }; }
+})(jQuery);
+//# sourceURL=jquery-migrate-js-after
+/* ]]> */
+</script>
+<script data-no-defer="1" data-no-optimize="1" src="https://www.gamezfull.com/wp-content/themes/MystiqueR3/js/custom-post.js" id="custom-post-js"></script>
+<script data-no-defer="1" data-no-optimize="1" src="https://www.gamezfull.com/wp-content/themes/MystiqueR3/js/lightbox.min.js" id="light-min-js"></script>
+<link rel="https://api.w.org/" href="https://www.gamezfull.com/wp-json/">
+
+<style>
+
+.gf-wheel-container{
+    text-align:center;
+    background:linear-gradient(145deg,#0e0e0e,#1b1b1b);
+    border:2px solid #ff6a00;
+    padding:20px 15px;
+    border-radius:14px;
+    box-shadow:0 0 20px rgba(255,106,0,.35);
+    color:#fff;
+    max-width:100%;
+    overflow:hidden;
+}
+
+.gf-wheel-title{
+    color:#ff6a00;
+    font-weight:700;
+    font-size:18px;
+    margin-bottom:14px;
+    line-height:1.2;
+}
+
+.gf-wheel-wrap{
+    position:relative;
+    width:170px;
+    margin:0 auto 14px auto;
+}
+
+.gf-wheel-pointer{
+    position:absolute;
+    top:-6px;
+    left:50%;
+    transform:translateX(-50%);
+    width:0;
+    height:0;
+    border-left:12px solid transparent;
+    border-right:12px solid transparent;
+    border-top:0;
+    border-bottom:18px solid #ff6a00;
+    z-index:5;
+    filter:drop-shadow(0 0 6px rgba(255,106,0,.6));
+}
+
+.gf-wheel{
+    position:relative;
+    width:170px;
+    height:170px;
+    margin:0 auto;
+}
+
+.gf-wheel-inner{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    border:4px solid #ff6a00;
+    box-shadow:
+        0 0 12px rgba(255,106,0,.35),
+        inset 0 0 14px rgba(0,0,0,.45);
+    background:
+        conic-gradient(
+            #ff6a00 0deg 45deg,
+            #1a1a1a 45deg 90deg,
+            #ff8c2a 90deg 135deg,
+            #111111 135deg 180deg,
+            #ff6a00 180deg 225deg,
+            #1a1a1a 225deg 270deg,
+            #ff8c2a 270deg 315deg,
+            #111111 315deg 360deg
+        );
+    transition:transform 2.4s cubic-bezier(.17,.67,.26,1.15);
+    will-change:transform;
+}
+
+.gf-wheel-inner::after{
+    content:"";
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:46px;
+    height:46px;
+    transform:translate(-50%,-50%);
+    border-radius:50%;
+    background:radial-gradient(circle,#2a2a2a 0%,#111 70%);
+    border:2px solid #ff6a00;
+    box-shadow:0 0 10px rgba(255,106,0,.25);
+}
+
+.gf-wheel-text{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    z-index:4;
+    width:88px;
+    text-align:center;
+    pointer-events:auto;
+}
+
+.gf-wheel-text a{
+    text-decoration:none;
+}
+
+#gfWheelText{
+    display:block;
+    color:#ffffff;
+    font-size:24px;
+    font-weight:800;
+    line-height:1.05;
+    text-shadow:0 0 8px rgba(0,0,0,.45);
+    word-break:break-word;
+}
+
+.gf-wheel-desc{
+    font-size:14px;
+    color:#d0d0d0;
+    line-height:1.5;
+    min-height:42px;
+}
+
+.gf-wheel-btn{
+    background:linear-gradient(180deg,#ff7a12,#ff6a00);
+    border:none;
+    padding:10px 18px;
+    border-radius:9px;
+    color:#fff;
+    font-weight:700;
+    cursor:pointer;
+    transition:all .25s ease;
+    box-shadow:0 4px 12px rgba(255,106,0,.28);
+}
+
+.gf-wheel-btn:hover{
+    background:linear-gradient(180deg,#ff8f34,#ff6a00);
+    transform:translateY(-1px) scale(1.03);
+}
+
+.gf-wheel-btn:active{
+    transform:scale(.98);
+}
+
+@media (max-width:480px){
+    .gf-wheel-wrap{
+        width:150px;
+    }
+
+    .gf-wheel{
+        width:150px;
+        height:150px;
+    }
+
+    #gfWheelText{
+        font-size:21px;
+    }
+}
+
+</style>
+
+	<style>
+	.peliculas{
+		background-color: #141414;
+	}
+	.pelisrip{
+		background-color: #350000;
+	}
+	.pelis720{
+		background-color: #5E345E;
+	}
+	.series{
+		background-color: #E74C3C;
+	}
+	.progs{
+		background-color: #AAAAAA;
+	}
+	.juegos{
+		background-color: #8EB021;
+	}
+	</style>
+	
+
+<script type="application/ld+json" class="saswp-schema-markup-output">
+[{"@context":"https:\/\/schema.org\/","@type":"WebSite","@id":"https:\/\/www.gamezfull.com#website","headline":"Gamezfull","name":"Gamezfull","url":"https:\/\/www.gamezfull.com","description":"Descargar Gratis Juegos para PC y PSP de Altos bajos requisitos por mega, mediafire y google drive completamente full en Espa\u00f1ol.","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.gamezfull.com?s={search_term_string}","query-input":"required name=search_term_string"}}]
+</script>
+
+<link rel="icon" href="https://www.gamezfull.com/wp-content/uploads/2019/01/logogamezfull-1-144x144.jpg" sizes="32x32">
+<link rel="icon" href="https://www.gamezfull.com/wp-content/uploads/2019/01/logogamezfull-1.jpg" sizes="192x192">
+<link rel="apple-touch-icon" href="https://www.gamezfull.com/wp-content/uploads/2019/01/logogamezfull-1.jpg">
+<meta name="msapplication-TileImage" content="https://www.gamezfull.com/wp-content/uploads/2019/01/logogamezfull-1.jpg">
+<style>
+.fixed.c2right #primary-content{width:640px;left:320px}
+.fixed.c2right #sidebar{width:320px;left:320px}
+.fixed.c2right #mask-1{right:320px}.social-media a{background: transparent url("https://www.gamezfull.com/wp-content/uploads/MystiqueR3-extend_media_icons.png") no-repeat center top !important;}
+</style>
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><script id="wpacu-preload-async-css-fallback">
+/*! LoadCSS. [c]2020 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/
+(function(w){"use strict";var wpacuLoadCSS=function(href,before,media,attributes){var doc=w.document;var ss=doc.createElement('link');var ref;if(before){ref=before}else{var refs=(doc.body||doc.getElementsByTagName('head')[0]).childNodes;ref=refs[refs.length-1]}
+var sheets=doc.styleSheets;if(attributes){for(var attributeName in attributes){if(attributes.hasOwnProperty(attributeName)){ss.setAttribute(attributeName,attributes[attributeName])}}}
+ss.rel="stylesheet";ss.href=href;ss.media="only x";function ready(cb){if(doc.body){return cb()}
+setTimeout(function(){ready(cb)})}
+ready(function(){ref.parentNode.insertBefore(ss,(before?ref:ref.nextSibling))});var onwpaculoadcssdefined=function(cb){var resolvedHref=ss.href;var i=sheets.length;while(i--){if(sheets[i].href===resolvedHref){return cb()}}
+setTimeout(function(){onwpaculoadcssdefined(cb)})};function wpacuLoadCB(){if(ss.addEventListener){ss.removeEventListener("load",wpacuLoadCB)}
+ss.media=media||"all"}
+if(ss.addEventListener){ss.addEventListener("load",wpacuLoadCB)}
+ss.onwpaculoadcssdefined=onwpaculoadcssdefined;onwpaculoadcssdefined(wpacuLoadCB);return ss};if(typeof exports!=="undefined"){exports.wpacuLoadCSS=wpacuLoadCSS}else{w.wpacuLoadCSS=wpacuLoadCSS}}(typeof global!=="undefined"?global:this))
+</script>
+  <style>
+  
+/* Ocultar top-bar-bg en móviles */
+@media (max-width: 768px) {
+    .top-bar-bg {
+        display: none !important;
+    }
+}
+
+  #mask-3 {
+  border: 1px solid #ff780030;
+  border-radius: 5px;
+}
+  li {
+    margin:5px;
+    margin-left:5px;
+  }
+
+    /* Centrar el footer dentro del ancho principal del sitio */
+#footer_background {
+  max-width: 1200px;      /* o el mismo ancho que tu contenido principal */
+  margin: 0 auto;         /* centra horizontalmente */
+  text-align: center;     /* centra texto e inline-blocks internos */
+  padding: 20px 15px;     /* espacio interno */
+  box-sizing: border-box; /* asegura que padding no rompa el ancho */
+}
+  </style>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-122SZ879V7"></script></head>
+
+<body class="home blog wp-theme-MystiqueR3 wp-child-theme-MystiqueR3-extend c2right fixed browser-unknown">
+      <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      
+  <!-- ==== TOP BAR (logo / search / cuenta) ==== -->
+  <div class="top-bar-bg">
+    <div class="row align-items-md-center">
+      <div class="top-bar-nav">
+
+        <div class="logo col-3">
+          <div class="d-none d-lg-block">
+            <a href="/">
+              <img src="https://www.gamezfull.com/wp-content/uploads/2025/01/headergz2024.png" width="297" height="55" alt="logo" class="img-fluid lazyloaded" data-ll-status="loaded"><noscript><img src="https://www.gamezfull.com/wp-content/uploads/2025/01/headergz2024.png" width="297" height="55" alt="logo" class="img-fluid"></noscript>
+            </a>
+          </div>
+        </div>
+
+        <div class="header-search col-12 col-lg d-none d-lg-block">
+          <div class="site-search">
+            <form role="search" id="simpleSearch" action="https://www.gamezfull.com" method="get" name="simpleSearch" class="ae-form">
+              <svg width="20" height="20" viewBox="0 0 20 20">
+                <path fill="#000" fill-rule="evenodd" d="M20 18.5L18.5 20 14 15.5l1.5-1.5 4.5 4.5zM8 14c-3.308 0-6-2.691-6-6 0-3.308 2.692-6 6-6s6 2.692 6 6c0 3.309-2.692 6-6 6zM8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0z"></path>
+              </svg>
+              <div class="input-group">
+                <input class="form-control search-field" type="search" name="s" value="" placeholder="Buscar aquí ...">
+                <div class="input-group-append">
+                  <button type="submit" class="btn btn-primary ae-button" data-ae-blurbtype="button" data-ae-form-field="true">Buscar</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="header-options col-3 col-lg-auto">
+
+          <div class="header-trade-ins d-none d-lg-block">
+            <a href="#" id="btnReload">
+              <svg class="icon trade-in ae-img" xmlns="http://www.w3.org/2000/svg" width="14" height="19" viewBox="0 0 14 19">
+                <path fill="#DA362C" fill-rule="evenodd" d="M14 10.091v4.71c0 .743-.627 1.346-1.4 1.346H2.945c-.312 0-.468.361-.247.573l1.177 1.132a.655.655 0 0 1 0 .951.722.722 0 0 1-.99 0L.41 16.424a1.308 1.308 0 0 1 0-1.902l2.475-2.379a.722.722 0 0 1 .99 0 .656.656 0 0 1 0 .952l-1.177 1.132c-.22.211-.065.574.247.574H11.9c.386 0 .7-.302.7-.673V10.09c0-.371.314-.673.7-.673.386 0 .7.302.7.673M0 8.91V4.2c0-.742.627-1.507 1.4-1.507h9.655c.312 0 .468-.282.247-.494L10.125 1.15a.656.656 0 0 1 0-.952.72.72 0 0 1 .99 0c.387.371 2.092 2.01 2.475 2.376a1.306 1.306 0 0 1 0 1.9l-2.475 2.374a.722.722 0 0 1-.99-.01.68.68 0 0 1 0-.972l1.177-1.172c.22-.212.065-.656-.247-.656H2.1c-.386 0-.7.464-.7.836v4.036a.687.687 0 0 1-.7.673c-.386 0-.7-.3-.7-.673"></path>
+              </svg>
+              <span class="d-block">Actualizar</span>
+            </a>
+          </div>
+
+          
+          <div class="header-account-options">
+            <div class="user">
+              <a href="#" id="openModalButton">
+                <svg class="icon account ae-img" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                  <path fill="#fff" fill-rule="evenodd" d="M14.906 16.2H3.094c-.635 0-1.105-.627-.865-1.204C3.34 12.328 5.955 10.8 8.999 10.8c3.046 0 5.66 1.528 6.773 4.196.24.577-.23 1.204-.866 1.204M5.325 5.4c0-1.985 1.65-3.6 3.675-3.6 2.027 0 3.675 1.615 3.675 3.6S11.027 9 9 9C6.974 9 5.325 7.385 5.325 5.4M17.96 15.872c-.668-3.023-2.757-5.254-5.507-6.266 1.457-1.15 2.307-3.008 1.995-5.043C14.086 2.203 12.08.313 9.66.038 6.321-.342 3.488 2.204 3.488 5.4c0 1.701.804 3.217 2.06 4.206C2.796 10.618.707 12.849.04 15.872-.203 16.972.7 18 1.849 18H16.15c1.149 0 2.053-1.029 1.81-2.128"></path>
+                </svg>
+                <span class="user-message">
+                  <b>
+                    Acceder                  </b>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Modal de Inicio de Sesión -->
+          <div id="loginModal" class="custom-modal" style="display: none;">
+            <div class="custom-modal-content">
+              <span class="custom-close-button" id="closeModalButton">×</span>
+              <h2>Iniciar Sesión</h2>
+              <form action="https://www.gamezfull.com/wp-login.php" method="post">
+                <div>
+                  <label for="username">Usuario</label>
+                  <input type="text" id="username" name="log" required="">
+                </div>
+                <div>
+                  <label for="password">Contraseña</label>
+                  <input type="password" id="password" name="pwd" required="">
+                </div>
+                <button type="submit">Iniciar Sesión</button>
+              </form>
+              <p>No tienes cuenta?
+                <a href="#" id="openRegisterModal">Regístrate aquí</a>
+              </p>
+            </div>
+          </div>
+
+          <!-- Modal de Registro -->
+          <div id="registerModal" class="custom-modal" style="display: none;">
+            <div class="custom-modal-content">
+              <span class="custom-close-button" id="closeRegisterModalButton">×</span>
+              <h2>Registro</h2>
+              <form action="https://www.gamezfull.com/wp-register.php" method="post">
+                <div>
+                  <label for="reg-username">Nombre de usuario</label>
+                  <input type="text" id="reg-username" name="user_login" required="">
+                </div>
+                <div>
+                  <label for="reg-email">Correo</label>
+                  <input type="email" id="reg-email" name="user_email" required="">
+                </div>
+                <div>
+                  <label for="reg-password">Contraseña</label>
+                  <input type="password" id="reg-password" name="user_pass" required="">
+                </div>
+                <button type="submit">Completar Registro</button>
+              </form>
+            </div>
+          </div>
+
+        </div><!-- /.header-options -->
+      </div><!-- /.top-bar-nav -->
+    </div><!-- /.row -->
+  </div><!-- /.top-bar-bg -->
+
+  <!-- ==== HEADER MOBILE (logo pequeño + triggers hamburguesa/buscar) ==== -->
+<header class="cd-main-header">
+  <div class="d-block d-lg-none">
+
+    
+      <h1 class="cd-logo" style="margin:0;">
+        <a href="https://www.gamezfull.com/" aria-label="GamezFull">
+          <img src="https://www.gamezfull.com/wp-content/themes/MystiqueR3/images/headergz2024.png" alt="Gamezfull" class="img-fluid" width="155" height="44" decoding="async" loading="eager" fetchpriority="high" style="object-fit:contain; display:block;">
+        </a>
+      </h1>
+
+    
+  </div>
+
+  <nav class="cd-nav">
+    <ul id="cd-primary-nav" class="cd-primary-nav is-fixed">
+      <li><a href="/">Inicio</a></li>
+
+      <li class="has-children">
+        <a>Juegos PC</a>
+        <ul class="cd-secondary-nav is-hidden">
+          <li class="go-back"><a href="#0">Volver</a></li>
+          <li class="see-all"><a href="/category/pc/">Juegos PC</a></li>
+
+          <li class="has-children">
+            <a>Género</a>
+            <ul class="is-hidden">
+              <li class="go-back"><a href="#0">Volver</a></li>
+              <li class="see-all"><a href="#">Categorías PC</a></li>
+              <li><a href="/category/accion/">Acción</a></li>
+              <li><a href="/category/aventuras/">Aventura</a></li>
+              <li><a href="/category/carreras/">Conducción</a></li>
+              <li><a href="/category/deportes-2/">Deportivos</a></li>
+              <li><a href="/category/pc/shooter/">Disparo</a></li>
+              <li><a href="/category/horror/">Horror</a></li>
+              <li><a href="/category/estrategia/">Estrategia</a></li>
+              <li><a href="/category/plataformas/">Plataformas</a></li>
+              <li><a href="/category/pc/rpg-y-rol/">Rol y RPG</a></li>
+              <li><a href="/category/simulacion/">Simulación</a></li>
+              <li><a href="/category/supervivencia/">Supervivencia</a></li>
+            </ul>
+          </li>
+
+          <li class="has-children">
+            <a>Por Año</a>
+            <ul class="is-hidden">
+              <li class="go-back"><a href="#0">Ir atrás</a></li>
+              <li class="see-all"><a href="#">Por Año</a></li>
+
+              <li class="has-children">
+                <a>2000-2009</a>
+                <ul class="is-hidden">
+                  <li class="go-back"><a href="#0">Go Back</a></li>
+                  <li><a href="/tag/2000/"><span>2000</span></a></li>
+                  <li><a href="/tag/2001/"><span>2001</span></a></li>
+                  <li><a href="/tag/2002/"><span>2002</span></a></li>
+                  <li><a href="/tag/2003/"><span>2003</span></a></li>
+                  <li><a href="/tag/2004/"><span>2004</span></a></li>
+                  <li><a href="/tag/2005/"><span>2005</span></a></li>
+                  <li><a href="/tag/2006/"><span>2006</span></a></li>
+                  <li><a href="/tag/2007/"><span>2007</span></a></li>
+                  <li><a href="/tag/2008/"><span>2008</span></a></li>
+                  <li><a href="/tag/2009/"><span>2009</span></a></li>
+                </ul>
+              </li>
+
+              <li><a href="/tag/2010/"><span>2010</span></a></li>
+              <li><a href="/tag/2011/"><span>2011</span></a></li>
+              <li><a href="/tag/2012/"><span>2012</span></a></li>
+              <li><a href="/tag/2013/"><span>2013</span></a></li>
+              <li><a href="/tag/2014/"><span>2014</span></a></li>
+              <li><a href="/tag/2015/"><span>2015</span></a></li>
+              <li><a href="/tag/2016/"><span>2016</span></a></li>
+              <li><a href="/tag/2017/"><span>2017</span></a></li>
+              <li><a href="/tag/2018/"><span>2018</span></a></li>
+              <li><a href="/tag/2019/"><span>2019</span></a></li>
+              <li><a href="/tag/2020/"><span>2020</span></a></li>
+              <li><a href="/tag/2021/"><span>2021</span></a></li>
+              <li><a href="/tag/2022/"><span>2022</span></a></li>
+              <li><a href="/tag/2023/"><span>2023</span></a></li>
+              <li><a href="/tag/2024/"><span>2024</span></a></li>
+              <li><a href="/tag/2025/"><span>2025</span></a></li>
+              <li><a href="/tag/2026/"><span>2026</span></a></li>
+            </ul>
+          </li>
+
+          <li class="has-children">
+            <a>Categorías Destacadas</a>
+            <ul class="is-hidden">
+              <li class="go-back"><a>Volver</a></li>
+              <li class="see-all"><a>Consolas Playstation</a></li>
+              <li><a href="/category/pc/altos-requisitos/"><span>Altos Requisitos</span></a></li>
+              <li><a href="/category/pc/medios-requisitos/"><span>Medios Requisitos</span></a></li>
+              <li><a href="/category/pocos-requisitos/"><span>Bajos Requisitos</span></a></li>
+              <hr>
+              <li><a href="/category/pc/acceso-anticipado/"><span>Acceso anticipado</span></a></li>
+              <li><a href="/category/pantalla-dividida/"><span>Pantalla Dividida</span></a></li>
+              <li><a href="/lista-de-juegos/"><span>Lista de Juegos</span></a></li>
+              <li><a href="/collection/"><span>Colecciones</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      
+ <li class="has-children">
+        <a>Consolas</a>
+        <ul class="cd-nav-gallery is-hidden">
+          <li class="go-back"><a>Volver</a></li>
+          <li class="see-all"><a>Juegos de consolas</a></li>
+          <li>
+            <a class="cd-nav-item" href="/category/juegos-psp/">
+              <img src="https://www.gamezfull.com/wp-content/themes/MystiqueR3/images/psp.png" alt="Juegos PSP" title="Juegos PSP" width="131" height="27" decoding="async" style="display:block;object-fit:contain" class="lazyloaded" data-ll-status="loaded"><noscript><img
+                src="https://www.gamezfull.com/wp-content/themes/MystiqueR3/images/psp.png"
+                alt="Juegos PSP"
+                title="Juegos PSP"
+                width="131"
+                height="27"
+                decoding="async"
+                loading="lazy"
+                style="display:block;object-fit:contain"
+              ></noscript>
+            </a>
+          </li>
+          <li>
+            <a class="cd-nav-item" href="/category/playstation-2/">
+              <img src="https://www.gamezfull.com/wp-content/uploads/2019/11/ps2.png" alt="Juegos PS2" title="Juegos PS2" width="131" height="27" decoding="async" style="display:block;object-fit:contain" class="lazyloaded" data-ll-status="loaded"><noscript><img
+                src="https://www.gamezfull.com/wp-content/uploads/2019/11/ps2.png"
+                alt="Juegos PS2"
+                title="Juegos PS2"
+                width="131"
+                height="27"
+                decoding="async"
+                loading="lazy"
+                style="display:block;object-fit:contain"
+              ></noscript>
+            </a>
+          </li>
+          <li>
+            <a class="cd-nav-item" href="/nintendo-64-roms-europa-japon-usa/">
+              <img src="https://www.gamezfull.com/wp-content/themes/MystiqueR3/images/n64.png" alt="Nintendo 64" width="137" height="40" decoding="async" style="display:block;object-fit:contain" class="lazyloaded" data-ll-status="loaded"><noscript><img
+                src="https://www.gamezfull.com/wp-content/themes/MystiqueR3/images/n64.png"
+                alt="Nintendo 64"
+                width="137"
+                height="40"
+                decoding="async"
+                loading="lazy"
+                style="display:block;object-fit:contain"
+              ></noscript>
+            </a>
+          </li>
+          <li>
+            <a class="cd-nav-item" href="/lista-de-juegos-nintendo-ds/">
+              <img src="https://www.gamezfull.com/wp-content/themes/MystiqueR3/images/dsgames.png" alt="Nintendo DS" title="Nintendo DS" width="137" height="40" decoding="async" style="display:block;object-fit:contain" class="lazyloaded" data-ll-status="loaded"><noscript><img
+                src="https://www.gamezfull.com/wp-content/themes/MystiqueR3/images/dsgames.png"
+                alt="Nintendo DS"
+                title="Nintendo DS"
+                width="137"
+                height="40"
+                decoding="async"
+                loading="lazy"
+                style="display:block;object-fit:contain"
+              ></noscript>
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="has-children">
+        <a>🔥Destacados</a>
+        <ul class="cd-nav-gallery is-hidden">
+          <li class="go-back"><a>Volver</a></li>
+          <li class="see-all"><a>Mas Contenido GF</a></li>
+          <li>
+            <a class="cd-nav-item" href="/video-galery/">
+              <img src="https://www.gamezfull.com/wp-content/themes/MystiqueR3/images/gamestrailer.jpg" alt="Trailers" title="Juegos PC Trailers" width="270" height="54" decoding="async" style="display:block;object-fit:contain" class="lazyloaded" data-ll-status="loaded"><noscript><img
+                src="https://www.gamezfull.com/wp-content/themes/MystiqueR3/images/gamestrailer.jpg"
+                alt="Trailers"
+                title="Juegos PC Trailers"
+                width="270"
+                height="54"
+                decoding="async"
+                loading="lazy"
+                style="display:block;object-fit:contain"
+              ></noscript>
+            </a>
+          </li>
+          <li>
+            <a class="cd-nav-item" href="/resubidas-pendientes/">
+              <img src="https://www.gamezfull.com/wp-content/themes/MystiqueR3/images/resubidas2.webp" alt="Juegos Pendientes" title="Juegos Pendientes" width="200" height="55" decoding="async" style="display:block;object-fit:contain" class="lazyloaded" data-ll-status="loaded"><noscript><img
+                src="https://www.gamezfull.com/wp-content/themes/MystiqueR3/images/resubidas2.webp"
+                alt="Juegos Pendientes"
+                title="Juegos Pendientes"
+                width="200"
+                height="55"
+                decoding="async"
+                loading="lazy"
+                style="display:block;object-fit:contain"
+              ></noscript>
+            </a>
+          </li>
+          <li>
+            <a class="cd-nav-item" href="/aniversariogf/">
+              <img src="https://www.gamezfull.com/wp-content/themes/MystiqueR3/images/anivgf.webp" alt="Aniversarios GF" width="150" height="45" decoding="async" style="display:block;object-fit:contain" class="lazyloaded" data-ll-status="loaded"><noscript><img
+                src="https://www.gamezfull.com/wp-content/themes/MystiqueR3/images/anivgf.webp"
+                alt="Aniversarios GF"
+                width="150"
+                height="45"
+                decoding="async"
+                loading="lazy"
+                style="display:block;object-fit:contain"
+              ></noscript>
+            </a>
+          </li>
+          <li>
+            <a class="cd-nav-item" href="/zona/">
+              <img src="https://www.gamezfull.com/wp-content/themes/MystiqueR3/images/zonasgf.webp" alt="Zonas de juegos" title="Zonas" width="130" height="35" decoding="async" style="display:block;object-fit:contain" class="lazyloaded" data-ll-status="loaded"><noscript><img
+                src="https://www.gamezfull.com/wp-content/themes/MystiqueR3/images/zonasgf.webp"
+                alt="Zonas de juegos"
+                title="Zonas"
+                width="130"
+                height="35"
+                decoding="async"
+                loading="lazy"
+                style="display:block;object-fit:contain"
+              ></noscript>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="/collection/">Colecciones</a></li>
+      <li><a href="/proximos-lanzamientos/">Próximos</a></li>
+      <li><a href="/actualizaciones/">Actualizaciones</a></li>
+      <li><a href="/ayuda/">Ayuda</a></li>
+      <li>
+        <a href="/clandlan/" id="menuRegisterLink">
+          Clandlan        </a>
+      </li>
+    </ul><!-- /#cd-primary-nav -->
+  </nav><ul class="cd-header-buttons">
+    <li><a class="cd-search-trigger" href="#cd-search"><span></span></a></li>
+    <li><a class="cd-nav-trigger" href="#cd-primary-nav"><span></span></a></li>
+  </ul>
+</header>
+
+  <!-- overlay + off-canvas nav (tu menú responsive estilo "cd-") -->
+  <main class="cd-main-content">
+    <div class="cd-overlay"></div>
+  </main>
+
+  <!-- /.cd-nav -->
+
+  <div id="cd-search" class="cd-search">
+    <form action="https://www.gamezfull.com">
+      <input type="search" placeholder="Buscar..." name="s" value="">
+    </form>
+  </div>
+
+  <!-- ==== MENÚ MOBILE ANTIGUO (oculto por ahora, lo mantengo porque lo tenías) ==== -->
+  <div class="mobile-header-area" style="display:none">
+    <header>
+      <div class="nav-bar">
+        <div class="menu-bar">
+          <a href=""><i class="fa fa-bars"></i><span></span></a>
+        </div>
+        <div class="mobile-logo">
+          <a class="sm-logo" href="https://www.gamezfull.com" title="Gamezfull - ">
+            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20155%2028'%3E%3C/svg%3E" alt="GamezFull" width="155" height="28" data-lazy-src="https://www.gamezfull.com/wp-content/themes/MystiqueR3/images/headergz2024.png"><noscript><img src="https://www.gamezfull.com/wp-content/themes/MystiqueR3/images/headergz2024.png" alt="GamezFull" width="155" height="28"></noscript>
+          </a>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li class="active"><a href="/"><span><i class="fa fa-fw fa-home"></i><b> Inicio</b></span></a></li>
+          <li class="sub-menu"><a href="#"><span><i class="fa fa-fw fa-desktop"></i><b> Juegos PC <i class="fa fa-angle-down"></i></b></span></a>
+            <ul class="children">
+              <li><a href="/category/accion/"><span>Acción</span></a></li>
+              <li><a href="/category/aventuras/"><span>Aventura</span></a></li>
+              <li><a href="/category/carreras/"><span>Conducción</span></a></li>
+              <li><a href="/category/deportes-2/"><span>Deportivos</span></a></li>
+              <li><a href="/category/horror/">Horror</a></li>
+              <li><a href="/category/pc/shooter/"><span>Disparo</span></a></li>
+              <li><a href="/category/estrategia/"><span>Estrategia</span></a></li>
+              <li><a href="/category/plataformas/"><span>Plataformas</span></a></li>
+              <li><a href="/category/pc/rpg-y-rol/"><span>Rol y RPG</span></a></li>
+              <li><a href="/category/simulacion/"><span>Simulación</span></a></li>
+              <li><a href="/category/supervivencia/">Supervivencia</a></li>
+            </ul>
+          </li>
+
+          <li class="sub-menu"><a href="#"><span><i class="fa fa-fw fa-reddit-alien"></i><b> Por Año <i class="fa fa-angle-down"></i></b></span></a>
+            <ul class="children">
+              <li class="sub-menu"><a href="#"><span>2000-2009 <i class="fa fa-angle-down"></i></span></a>
+                <ul class="children">
+                  <li><a href="/tag/2000/"><span>2000</span></a></li>
+                  <li><a href="/tag/2001/"><span>2001</span></a></li>
+                  <li><a href="/tag/2002/"><span>2002</span></a></li>
+                  <li><a href="/tag/2003/"><span>2003</span></a></li>
+                  <li><a href="/tag/2004/"><span>2004</span></a></li>
+                  <li><a href="/tag/2005/"><span>2005</span></a></li>
+                  <li><a href="/tag/2006/"><span>2006</span></a></li>
+                  <li><a href="/tag/2007/"><span>2007</span></a></li>
+                  <li><a href="/tag/2008/"><span>2008</span></a></li>
+                  <li><a href="/tag/2009/"><span>2009</span></a></li>
+                </ul>
+              </li>
+
+              <li><a href="/tag/2010/"><span>2010</span></a></li>
+              <li><a href="/tag/2011/"><span>2011</span></a></li>
+              <li><a href="/tag/2012/"><span>2012</span></a></li>
+              <li><a href="/tag/2013/"><span>2013</span></a></li>
+              <li><a href="/tag/2014/"><span>2014</span></a></li>
+              <li><a href="/tag/2015/"><span>2015</span></a></li>
+              <li><a href="/tag/2016/"><span>2016</span></a></li>
+              <li><a href="/tag/2017/"><span>2017</span></a></li>
+              <li><a href="/tag/2018/"><span>2018</span></a></li>
+              <li><a href="/tag/2019/"><span>2019</span></a></li>
+              <li><a href="/tag/2020/"><span>2020</span></a></li>
+              <li><a href="/tag/2021/"><span>2021</span></a></li>
+              <li><a href="/tag/2022/"><span>2022</span></a></li>
+              <li><a href="/tag/2023/"><span>2023</span></a></li>
+              <li><a href="/tag/2024/"><span>2024</span></a></li>
+              <li><a href="/tag/2025/"><span>2025</span></a></li>
+              <li><a href="/tag/2026/"><span>2026</span></a></li>
+            </ul>
+          </li>
+
+          <li class="sub-menu"><a href="#"><span><i class="fa fa-fw fa-gamepad"></i><b> Categorías Destacadas <i class="fa fa-angle-down"></i></b></span></a>
+            <ul class="children">
+              <li><a href="#"><span>Altos Requisitos</span></a></li>
+              <li><a href="/category/pc/medios-requisitos/"><span>Medios Requisitos</span></a></li>
+              <li><a href="/category/pocos-requisitos/"><span>Bajos Requisitos</span></a></li>
+              <li><a href="/category/pc/acceso-anticipado/"><span>Acceso anticipado</span></a></li>
+              <li><a href="/category/pantalla-dividida/"><span>Pantalla Dividida</span></a></li>
+              <li><a href="/lista-de-juegos/"><span>Lista de Juegos</span></a></li>
+              <li><a href="/collection/"><span>Colecciones</span></a></li>
+            </ul>
+          </li>
+
+          <li><a href="/pedidos-de-juegos/"><span><i class="fa fa-fw fa-commenting-o"></i> <b>Solicitar!</b></span></a></li>
+          <li><a href="/contactanos/"><span><i class="fa fa-fw fa-info"></i><b>Ayuda-FAQ!</b></span></a></li>
+
+          <li><a href="#"><span><i class="fa fa-fw fa-user-plus"></i><b>Iniciar Sesion</b></span></a></li>        </ul>
+      </nav>
+    </header>
+
+    <div class="search aera">
+      <img class="aligncenter" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20365%209'%3E%3C/svg%3E" width="365" height="9" data-lazy-src="/postimages/606C7D9FC.png"><noscript><img class="aligncenter" src="/postimages/606C7D9FC.png" width="365" height="9" /></noscript>
+<!-- search form -->
+<div class="search-form" role="search">
+  <form method="get" class="search-form clear-block" action="https://www.gamezfull.com/">
+    <!-- <div class="fadeThis"><a href="#" class="submit">Buscar en el Sitio</a></div> -->
+    <div class="fadeThis"><button type="submit" class="submit search-button-area">Buscar en el Sitio</button></div>
+    <fieldset>
+       <input type="text" name="s" placeholder="Ingresar nombre y presionar GO" data-default="Buscar en el Sitio" class="text alignleft clearField suggestTerms" value="">
+       <input type="hidden" value="submit">
+    </fieldset>
+ </form>
+</div>
+<!-- /search form -->    </div>
+  </div><!-- /.mobile-header-area -->
+
+<script> document.body.className = document.body.className.replace('no-js',''); </script>
+
+<!-- page -->
+<div id="page">
+
+  
+  <div id="page-ext">
+
+    <!-- HEADER VISUAL (banner grande + menú principal naranja) -->
+    <div class="">
+      <!-- Banner GamezFull -->
+      <div class="headerbanner">
+        <center>
+          <a href="/">
+            <img src="https://www.gamezfull.com/wp-content/themes/MystiqueR3/images/gfcomb.webp" alt="GamezFull" width="1199" height="219" title="GamezFull" decoding="async" class="lazyloaded" data-ll-status="loaded"><noscript><img
+              src="https://www.gamezfull.com/wp-content/themes/MystiqueR3/images/gfcomb.webp"
+              alt="GamezFull"
+              width="1199"
+              height="219"
+              title="GamezFull"
+              decoding="async"
+            ></noscript>
+          </a>
+        </center>
+      </div>
+
+      <!-- Menú estilo #cssmenu -->
+      <div id="cssmenu" style="text-align:center">
+        <ul>
+          <li class="active">
+            <a href="/"><span><i class="fa fa-fw fa-home"></i><b> Inicio</b></span></a>
+          </li>
+
+          <li class="has-sub">
+            <a href="#"><span><i class="fa fa-fw fa-desktop"></i><b> Juegos PC</b></span></a>
+            <ul>
+              <li><a href="/category/accion/"><span>Acción</span></a></li>
+              <li><a href="/category/aventuras/"><span>Aventura</span></a></li>
+              <li><a href="/category/carreras/"><span>Conducción</span></a></li>
+              <li><a href="/category/deportes-2/"><span>Deportivos</span></a></li>
+              <li><a href="/category/pc/shooter/"><span>Disparo</span></a></li>
+              <li><a href="/category/estrategia/"><span>Estrategia</span></a></li>
+              <li><a href="/category/plataformas/"><span>Plataformas</span></a></li>
+              <li><a href="/category/pc/rpg-y-rol/"><span>Rol y RPG</span></a></li>
+              <li><a href="/category/simulacion/"><span>Simulación</span></a></li>
+            </ul>
+          </li>
+
+          <li class="has-sub">
+            <a href="#"><span><i class="fa fa-fw fa-reddit-alien"></i><b> Por Año</b></span></a>
+            <ul>
+              <li class="has-sub">
+                <a href="#"><span>2000-2010</span></a>
+                <ul>
+                  <li><a href="/tag/2000/"><span>2000</span></a></li>
+                  <li><a href="/tag/2001/"><span>2001</span></a></li>
+                  <li><a href="/tag/2002/"><span>2002</span></a></li>
+                  <li><a href="/tag/2003/"><span>2003</span></a></li>
+                  <li><a href="/tag/2004/"><span>2004</span></a></li>
+                  <li><a href="/tag/2005/"><span>2005</span></a></li>
+                  <li><a href="/tag/2006/"><span>2006</span></a></li>
+                  <li><a href="/tag/2007/"><span>2007</span></a></li>
+                  <li><a href="/tag/2008/"><span>2008</span></a></li>
+                  <li><a href="/tag/2009/"><span>2009</span></a></li>
+                  <li><a href="/tag/2010/"><span>2010</span></a></li>
+                  <li><a href="/tag/2011/"><span>2011</span></a></li>
+                  <li><a href="/tag/2012/"><span>2012</span></a></li>
+                  <li><a href="/tag/2013/"><span>2013</span></a></li>
+                  <li><a href="/tag/2014/"><span>2014</span></a></li>
+                </ul>
+              </li>
+
+              <li><a href="/tag/2015/"><span>2015</span></a></li>
+              <li><a href="/tag/2016/"><span>2016</span></a></li>
+              <li><a href="/tag/2017/"><span>2017</span></a></li>
+              <li><a href="/tag/2018/"><span>2018</span></a></li>
+              <li><a href="/tag/2019/"><span>2019</span></a></li>
+              <li><a href="/tag/2020/"><span>2020</span></a></li>
+              <li><a href="/tag/2021/"><span>2021</span></a></li>
+              <li><a href="/tag/2022/"><span>2022</span></a></li>
+              <li><a href="/tag/2023/"><span>2023</span></a></li>
+              <li><a href="/tag/2024/"><span>2024</span></a></li>
+              <li><a href="/tag/2025/"><span>2025</span></a></li>
+              <li><a href="/tag/2026/"><span>2026</span></a></li>
+            </ul>
+          </li>
+
+          <li class="has-sub">
+            <a href="#"><span><i class="fa fa-fw fa-gamepad"></i><b> Categorías Destacadas </b></span></a>
+            <ul>
+              <li><a href="#"><span>Altos Requisitos</span></a></li>
+              <li><a href="/category/pc/medios-requisitos/"><span>Medios Requisitos</span></a></li>
+              <li><a href="/category/pocos-requisitos/"><span>Bajos Requisitos</span></a></li>
+              <li><a href="/category/pc/acceso-anticipado/"><span>Acceso anticipado</span></a></li>
+              <li><a href="/category/pantalla-dividida/"><span>Pantalla Dividida</span></a></li>
+              <li><a href="/lista-de-juegos/"><span>Lista de Juegos</span></a></li>
+              <li><a href="/collection/"><span>Colecciones</span></a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="/donar-a-gamezfull/">
+              <span class="blink_me"><i class="fa fa-fw fa-bitcoin"></i> <b>Donar</b></span>
+            </a>
+          </li>
+
+          <li>
+            <a href="/pedidos-de-juegos/"><span><i class="fa fa-fw fa-commenting-o"></i> <b>Solicitar!</b></span></a>
+          </li>
+
+          <li>
+            <a href="/contactanos/"><span><i class="fa fa-fw fa-info"></i><b>Ayuda-FAQ!</b></span></a>
+          </li>
+
+          
+              <li><a href="#"><span><i class="fa fa-fw fa-user-plus"></i><b>Iniciar Sesion</b></span></a></li>
+                    </ul>
+      </div><!-- /#cssmenu -->
+
+    </div><!-- / header visual -->
+
+    
+    <!-- main -->
+    <div id="main" class="page-content">
+      <div id="main-ext" class="clear-block">
+          <!-- El resto del theme continúa aquí (single-custom.php o index etc.) -->
+<style>
+
+@media (max-width: 768px) {
+  .fixed.c2right #primary-content {
+    width: auto;
+    left: 320px;
+  }
+   .home-box.pelis720 img, .home-box.pelisrip img, .home.blog img.imagenc.wp-post-image {
+    height: 145px;
+    width: 107px;
+    margin: 5px;
+  }
+  .pelisrip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.home-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.sticky-posts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+}
+
+/* El contenedor no debe recortar el ancho */
+#owl-demo {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Cada tarjeta */
+#owl-demo .item {
+  display: block;
+  text-align: center;
+  padding: 0; /* el gap real lo da .owl-item */
+}
+
+/* Forzar que la imagen se adapte al ancho del item
+   (anula el width=141 que viene en el HTML) */
+#owl-demo .item img {
+  width: 100% !important;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Espacio entre items controlado por Owl: usa padding pequeño */
+#owl-demo .owl-item { padding: 0 1px; }
+
+@media (max-width: 480px) {
+  #owl-demo .owl-item { padding: 0; }
+}
+
+.slick-slide {
+  height: auto !important;
+}
+
+/* En móviles, cambia SOLO el ancho; el alto se ajusta por el ratio */
+@media (max-width:767px){
+  .home-box.peliculas .imagenc { width:150px; }    /* 150 x (150*300/211≈213) */
+}
+@media (max-width:414px){
+  .home-box.peliculas .imagenc { width:119px; }
+}
+@media (max-width:390px){
+  .home-box.peliculas .imagenc { width:113px; }
+}
+@media (max-width:385px){
+  .home-box.peliculas .imagenc { width:111px; }
+}
+@media (max-width:360px){
+  .home-box.peliculas .imagenc { width:100px; }
+}
+
+/* Efecto zoom en imágenes dentro del enlace */
+a.post-thumb img,
+a > img.imagenc {
+    width:124px;  
+    transition: transform 0.3s ease-in-out;
+    display: block;
+    height: auto;
+    aspect-ratio: 211 / 300;
+    box-shadow:0 8px 10px rgba(0,0,0,.2);
+    background:#b40404;
+    box-sizing:border-box;
+}
+
+a.post-thumb:hover img,
+a:hover > img.imagenc {
+    transform: scale(1.1); /* Zoom al pasar el cursor */
+}
+
+/* Desactivar en responsive */
+@media (max-width: 768px) {
+    a.post-thumb img,
+    a > img.imagenc {
+        transform: none !important;
+    }
+    a.post-thumb:hover img,
+    a:hover > img.imagenc {
+        transform: none !important;
+    }
+}
+#owl-demo img {
+  transition: transform .25s ease;
+}
+#owl-demo img:hover {
+  transform: scale(1.05);
+}
+
+.home-box.peliculas a .imagenc{
+  transition: transform .25s ease;
+  will-change: transform;
+}
+.home-box.peliculas a:hover .imagenc{ transform: scale(1.05); }
+</style>
+<div class="notranslate">
+<div id="cssmenuba">
+  <ul>
+	  <li class="active"><a href=""><i class="fa fa-spinner"></i><b> Release:</b></a></li>
+     <li><a href="/category/pc/?tag=elamigos/"><i class="fa fa-gamepad"></i> ElAmigos</a></li>
+     <li><a href="/category/pc/?tag=plaza/"><i class="fa fa-gamepad"></i> PLAZA</a></li>
+     <li><a href="/category/pc/?tag=codex/"><i class="fa fa-gamepad"></i> CODEX</a></li>
+     <li><a href="/category/pc/?tag=gog/"><i class="fa fa-gamepad"></i> GOG</a></li>
+     <li><a href="/category/pc/?tag=prophet/"><i class="fa fa-gamepad"></i> PROPHET</a></li>
+     <li><a href="/category/pc/?tag=tenoke/"><i class="fa fa-gamepad"></i> TENOKE</a></li> 
+     <li><a href="/category/pc/?tag=masterega/"><i class="fa fa-gamepad"></i> MasterEGA</a></li>
+
+  </ul>
+</div></div>
+<div class="barra-post">
+    <div id="owl-demo" class="owl-carousel owl-theme" style="opacity: 1; display: block;">
+                    
+<div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 2394px; left: 0px; display: block;"><div class="owl-item" style="width: 171px;"><div class="item">
+ <a href="https://www.gamezfull.com/descargardescargar-terraria-pc-full-mega/">
+<img data-no-lazy="1" class="fade" src="https://www.gamezfull.com/wp-content/uploads/2019/01/Terraria-pc-descargar-full-211x300.webp" width="141" height="204" title="Terraria PC Full Español v1.4.5.5" alt="Terraria PC Full Español v1.4.5.5"></a><span class="num_serie"></span></div></div><div class="owl-item" style="width: 171px;"><div class="item">
+ <a href="https://www.gamezfull.com/death-stranding-2-on-the-beach-pc-full-espanol-up1/">
+<img data-no-lazy="1" class="fade" src="https://www.gamezfull.com/wp-content/uploads/2026/03/death-stranding-2-pc-descargar-full-211x300.webp" width="141" height="204" title="Death Stranding 2 On the Beach PC Español v1.0.49" alt="Death Stranding 2 On the Beach PC Español v1.0.49"></a><span class="num_serie"></span></div></div><div class="owl-item" style="width: 171px;"><div class="item">
+ <a href="https://www.gamezfull.com/gears-of-war-reloaded-2025-pc-full-espanol/">
+<img data-no-lazy="1" class="fade" src="https://www.gamezfull.com/wp-content/uploads/2025/08/Gears-of-War-Reloaded-2025-pc-descargar-211x300.webp" width="141" height="204" title="Gears of War Reloaded 2025 PC Full Español" alt="Gears of War Reloaded 2025 PC Full Español"></a><span class="num_serie"></span></div></div><div class="owl-item" style="width: 171px;"><div class="item">
+ <a href="https://www.gamezfull.com/legacy-of-kain-defiance-remastered-pc-espanol/">
+<img data-no-lazy="1" class="fade" src="https://www.gamezfull.com/wp-content/uploads/2026/03/Legacy-of-Kain-Defiance-Remastered-pc-descargar-211x300.webp" width="141" height="204" title="Legacy of Kain Defiance Remastered PC Full Español" alt="Legacy of Kain Defiance Remastered PC Full Español"></a><span class="num_serie"></span></div></div><div class="owl-item" style="width: 171px;"><div class="item">
+ <a href="https://www.gamezfull.com/nioh-3-deluxe-edition-pc-full-espanol-v1-03/">
+<img data-no-lazy="1" class="fade" src="https://www.gamezfull.com/wp-content/uploads/2026/02/Nioh-3-pc-descargar-211x300.webp" width="141" height="204" title="Nioh 3 Deluxe Edition PC Full Español v1.03" alt="Nioh 3 Deluxe Edition PC Full Español v1.03"></a><span class="num_serie"></span></div></div><div class="owl-item" style="width: 171px;"><div class="item">
+ <a href="https://www.gamezfull.com/hollow-knight-silksong-pc-espanol-v1-0-28324/">
+<img data-no-lazy="1" class="fade" src="https://www.gamezfull.com/wp-content/uploads/2025/09/Hollow-Knight-Silksong-pc-descargar-211x300.webp" width="141" height="204" title="Hollow Knight Silksong PC Full Español v1.0.29315" alt="Hollow Knight Silksong PC Full Español v1.0.29315"></a><span class="num_serie"></span></div></div><div class="owl-item" style="width: 171px;"><div class="item">
+ <a href="https://www.gamezfull.com/the-sims-4-deluxe-edition-pc-full-mega-espanol/">
+<img data-no-lazy="1" class="fade" src="https://www.gamezfull.com/wp-content/uploads/2019/07/Los-Sims-4-pc-descargar-full-211x300.webp" width="141" height="204" title="Los Sims 4 Digital Deluxe Edition PC Full Español" alt="Los Sims 4 Digital Deluxe Edition PC Full Español"></a><span class="num_serie"></span></div></div></div></div>
+
+
+
+
+
+
+    <div class="owl-controls clickable" style="display: none;"><div class="owl-buttons"><div class="owl-prev">‹</div><div class="owl-next">›</div></div></div></div>
+</div>
+
+
+  <!-- main content (masks): primary + sidebar(s) -->
+  <div id="mask-3" class="clear-block">
+   <div id="mask-2">
+    <div id="mask-1">
+
+      <!-- primary content -->
+      <div id="primary-content">
+       <div class="blocks clear-block">
+
+        
+<section id="content" role="main">
+
+<style>
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+.blurry-div {
+  width: 100%;
+  background-color: transparent;
+  pointer-events: none;
+}
+
+ul {
+  list-style-type: none;
+}
+.top-comments-widget {
+  background: #111;
+  border-radius: 8px;
+}
+
+.gf-top-week {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gf-top-week li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  margin-bottom: 8px;
+  background: #0d0d0d;
+  border-radius: 8px;
+  border-left: 3px solid #ff6a00;
+  transition: all 0.2s ease;
+}
+
+.gf-top-week li:hover {
+  transform: scale(1.03);
+  background: #161616;
+}
+
+.gf-top-week img {
+  border-radius: 50%;
+  width: 78px;
+  height: 78px !important;
+  object-fit: cover;
+}
+
+.gf-top-week a {
+  color: #fff;
+  font-size: 13px;
+  text-decoration: none;
+  flex: 1;
+}
+
+.gf-top-week a:hover {
+  color: #ff6a00;
+}
+
+.gf-top-week .rank {
+  width: 25px;
+  text-align: center;
+  font-weight: bold;
+  color: #ff6a00;
+  font-size: 16px;
+}
+
+.gf-top-week .comments {
+  font-size: 11px;
+  color: #ffaa00;
+}
+/* CONTENEDOR */
+.gf-updates-box {
+    background: linear-gradient(145deg, #1e010191, #111);
+    border: 1px solid #ff6a00;
+    border-radius: 14px;
+    padding: 15px;
+    box-shadow: 0 0 25px rgba(255, 106, 0, 0.15);
+    margin: 2px 2px 20px !important;
+}
+
+/* HEADER */
+.gf-updates-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.gf-updates-header span {
+    color: #ff6a00;
+    animation: pulseGlow 2s infinite;
+}
+
+/* LISTA */
+.gf-updates-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* ITEM */
+.gf-update-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    border-radius: 10px;
+    transition: all .3s ease;
+    border: 1px solid transparent;
+}
+
+.gf-update-item:hover {
+    background: rgba(255,106,0,0.08);
+    border: 1px solid rgba(255,106,0,0.4);
+    transform: translateX(4px);
+}
+
+/* ICONO */
+.gf-update-icon span {
+    color: #ff6a00;
+    font-size: 16px;
+}
+
+/* CONTENIDO */
+.gf-update-content a {
+    color: #eaeaea;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.gf-update-content a:hover {
+    color: #ff6a00;
+}
+
+/* TAG */
+.gf-update-tag {
+    display: inline-block;
+    margin-left: 8px;
+    background: #ff6a00;
+    color: #000;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* VER MÁS */
+.gf-update-more {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.gf-update-more a {
+    display: inline-block;
+    padding: 8px 12px;
+    background: linear-gradient(90deg, #ff6a00, #ff8c00);
+    color: #000;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all .3s;
+}
+
+.gf-update-more a:hover {
+    transform: scale(1.05);
+}
+
+/* ANIMACIÓN */
+@keyframes pulseGlow {
+    0% { text-shadow: 0 0 5px #ff6a00; }
+    50% { text-shadow: 0 0 15px #ff6a00; }
+    100% { text-shadow: 0 0 5px #ff6a00; }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .gf-update-item {
+        padding: 8px;
+    }
+
+    .gf-update-content a {
+        font-size: 13px;
+    }
+}
+section {
+  display: grid !important;
+}
+
+/* 🔥 AISLAR TODO EL BLOQUE */
+.gf-updates-box,
+.gf-updates-box * {
+    box-sizing: border-box;
+}
+
+/* 🔥 RESET SOLO DENTRO DEL BLOQUE */
+.gf-updates-box h2 {
+    all: unset;
+}
+
+.gf-updates-box ul {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.gf-updates-box li {
+    list-style: none !important;
+}
+
+/* 🔥 FORZAR ESTILOS DEL HEADER */
+.gf-updates-header h2 {
+    all: unset;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* 🔥 EVITAR QUE .home-box AFECTE */
+.home-box .gf-updates-box {
+    background: none !important;
+    border: none !important;
+}
+</style> 
+<div class="gf-updates-box">
+
+
+<div class="gf-updates-header">
+    <span class="fa fa-bolt"></span>
+    <h2>Últimas Actualizaciones</h2>
+</div>
+
+<ul class="gf-updates-list">
+
+
+<li class="gf-update-item">
+
+    <div class="gf-update-icon">
+        <span class="fa fa-gamepad"></span>
+    </div>
+
+    <div class="gf-update-content">
+        <a href="https://www.gamezfull.com/retro-rewind-video-store-simulator-pc-espanol-v2095/">
+            Retro Rewind Video Store Simulator PC Español v2095        </a>
+
+        <span class="gf-update-tag">
+            Nuevo        </span>
+    </div>
+
+</li>
+
+
+<li class="gf-update-item">
+
+    <div class="gf-update-icon">
+        <span class="fa fa-gamepad"></span>
+    </div>
+
+    <div class="gf-update-content">
+        <a href="https://www.gamezfull.com/hozy-pc-full-espanol-2026/">
+            Hozy PC Full Español 2026        </a>
+
+        <span class="gf-update-tag">
+            Nuevo        </span>
+    </div>
+
+</li>
+
+
+<li class="gf-update-item">
+
+    <div class="gf-update-icon">
+        <span class="fa fa-gamepad"></span>
+    </div>
+
+    <div class="gf-update-content">
+        <a href="https://www.gamezfull.com/barotrauma-pc-full-espanol/">
+            Barotrauma PC Full Español        </a>
+
+        <span class="gf-update-tag">
+            Agregado        </span>
+    </div>
+
+</li>
+
+
+<li class="gf-update-item">
+
+    <div class="gf-update-icon">
+        <span class="fa fa-gamepad"></span>
+    </div>
+
+    <div class="gf-update-content">
+        <a href="https://www.gamezfull.com/my-friend-peppa-pig-2021-pc-full-espanol/">
+            My Friend Peppa Pig (2021) PC Full Español        </a>
+
+        <span class="gf-update-tag">
+            Resubido        </span>
+    </div>
+
+</li>
+
+
+<li class="gf-update-item">
+
+    <div class="gf-update-icon">
+        <span class="fa fa-gamepad"></span>
+    </div>
+
+    <div class="gf-update-content">
+        <a href="https://www.gamezfull.com/my-memory-of-us-pc-full-espanol-mega/">
+            My Memory of Us PC Full Español [MEGA]        </a>
+
+        <span class="gf-update-tag">
+                    </span>
+    </div>
+
+</li>
+
+
+<li class="gf-update-item">
+
+    <div class="gf-update-icon">
+        <span class="fa fa-gamepad"></span>
+    </div>
+
+    <div class="gf-update-content">
+        <a href="https://www.gamezfull.com/mr-prepper-2021-pc-full-espanol-mega-fx1/">
+            Mr Prepper PC Full Español v1.42b        </a>
+
+        <span class="gf-update-tag">
+            v1.42b        </span>
+    </div>
+
+</li>
+
+
+<li class="gf-update-item">
+
+    <div class="gf-update-icon">
+        <span class="fa fa-gamepad"></span>
+    </div>
+
+    <div class="gf-update-content">
+        <a href="https://www.gamezfull.com/ns-ultimate-ninja-storm-3-full-burst-hd-pc-espanol-mega/">
+            NS Ultimate Ninja STORM 3 Full Burst HD PC Español [MEGA]        </a>
+
+        <span class="gf-update-tag">
+            Resubido        </span>
+    </div>
+
+</li>
+
+
+<li class="gf-update-item">
+
+    <div class="gf-update-icon">
+        <span class="fa fa-gamepad"></span>
+    </div>
+
+    <div class="gf-update-content">
+        <a href="https://www.gamezfull.com/bo-path-of-the-teal-lotus-pc-full-espanol/">
+            Bo: Path of the Teal Lotus PC Full Español v1.2.6        </a>
+
+        <span class="gf-update-tag">
+            v1.2.6        </span>
+    </div>
+
+</li>
+
+
+<li class="gf-update-item">
+
+    <div class="gf-update-icon">
+        <span class="fa fa-gamepad"></span>
+    </div>
+
+    <div class="gf-update-content">
+        <a href="https://www.gamezfull.com/dead-cells-pc-full-descargar-mega/">
+            Dead Cells PC Full Español + DLC v19.08.2024.        </a>
+
+        <span class="gf-update-tag">
+            Resubido        </span>
+    </div>
+
+</li>
+
+
+<li class="gf-update-item">
+
+    <div class="gf-update-icon">
+        <span class="fa fa-gamepad"></span>
+    </div>
+
+    <div class="gf-update-content">
+        <a href="https://www.gamezfull.com/transformers-the-game-pc-full-espanol-mega/">
+            Transformers The Game PC Full Español [MEGA]        </a>
+
+        <span class="gf-update-tag">
+            Resubido        </span>
+    </div>
+
+</li>
+
+
+<li class="gf-update-more">
+    <a href="/actualizaciones/">
+        <span class="fa fa-fire"></span> Ver últimas 100 actualizaciones
+    </a>
+</li>
+
+</ul>
+
+
+</div>
+<!--Modulo 1-->
+<div class="home-box peliculas">
+<div class="sticky-posts">
+     <h2><center><div class="titulohome"><span class="fa-solid fa-joystick"></span> Agregados Recientemente (PC)</div></center></h2>
+	  
+    <a href="https://www.gamezfull.com/samson-a-tyndalston-story-pc-full-espanol/" title="Samson A Tyndalston Story PC Full Español">
+		<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="imagenc wp-post-image" alt="Samson A Tyndalston Story PC Full Español" title="Samson A Tyndalston Story PC Full Español" data-lazy-src="https://www.gamezfull.com/wp-content/uploads/2026/04/Samson-pc-descargar-211x300.webp"><noscript><img src="https://www.gamezfull.com/wp-content/uploads/2026/04/Samson-pc-descargar-211x300.webp" class="imagenc wp-post-image" alt="Samson A Tyndalston Story PC Full Español" title="Samson A Tyndalston Story PC Full Español" /></noscript>                
+			
+	</a>    <a href="https://www.gamezfull.com/shinobi-art-of-vengeance-pc-full-espanol-2025/" title="Shinobi Art of Vengeance PC Full Español 2025">
+		<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="imagenc wp-post-image" alt="Shinobi Art of Vengeance PC Full Español 2025" title="Shinobi Art of Vengeance PC Full Español 2025" data-lazy-src="https://www.gamezfull.com/wp-content/uploads/2026/04/Shinobi-Art-of-Vengeance-pc-descargar-211x300.webp"><noscript><img src="https://www.gamezfull.com/wp-content/uploads/2026/04/Shinobi-Art-of-Vengeance-pc-descargar-211x300.webp" class="imagenc wp-post-image" alt="Shinobi Art of Vengeance PC Full Español 2025" title="Shinobi Art of Vengeance PC Full Español 2025" /></noscript>                
+			
+	</a>    <a href="https://www.gamezfull.com/sonic-superstars-deluxe-edition-pc-full-espanol/" title="Sonic Superstars Deluxe Edition PC Full Español">
+		<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="imagenc wp-post-image" alt="Sonic Superstars Deluxe Edition PC Full Español" title="Sonic Superstars Deluxe Edition PC Full Español" data-lazy-src="https://www.gamezfull.com/wp-content/uploads/2026/04/Sonic-Superstars-pc-descargar-211x300.webp"><noscript><img src="https://www.gamezfull.com/wp-content/uploads/2026/04/Sonic-Superstars-pc-descargar-211x300.webp" class="imagenc wp-post-image" alt="Sonic Superstars Deluxe Edition PC Full Español" title="Sonic Superstars Deluxe Edition PC Full Español" /></noscript>                
+			
+	</a><a href="https://www.gamezfull.com/retro-rewind-video-store-simulator-pc-espanol-v2095/" title="Retro Rewind Video Store Simulator PC Español v2095">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20211%20300'%3E%3C/svg%3E" class="imagenc wp-post-image" alt="Retro Rewind Video Store Simulator PC Español v2095" title="Retro Rewind Video Store Simulator PC Español v2095" width="211" height="300" decoding="async" data-lazy-src="https://www.gamezfull.com/wp-content/uploads/2026/04/Retro-Rewind-Video-Store-Simulator-pc-descargar-211x300.webp"><noscript><img src="https://www.gamezfull.com/wp-content/uploads/2026/04/Retro-Rewind-Video-Store-Simulator-pc-descargar-211x300.webp" class="imagenc wp-post-image" alt="Retro Rewind Video Store Simulator PC Español v2095" title="Retro Rewind Video Store Simulator PC Español v2095" width="211" height="300" loading="lazy" decoding="async" /></noscript></a><a href="https://www.gamezfull.com/hozy-pc-full-espanol-2026/" title="Hozy PC Full Español 2026">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20211%20300'%3E%3C/svg%3E" class="imagenc wp-post-image" alt="Hozy PC Full Español 2026" title="Hozy PC Full Español 2026" width="211" height="300" decoding="async" data-lazy-src="https://www.gamezfull.com/wp-content/uploads/2026/04/Hozy-pc-descargar-211x300.webp"><noscript><img src="https://www.gamezfull.com/wp-content/uploads/2026/04/Hozy-pc-descargar-211x300.webp" class="imagenc wp-post-image" alt="Hozy PC Full Español 2026" title="Hozy PC Full Español 2026" width="211" height="300" loading="lazy" decoding="async" /></noscript></a><a href="https://www.gamezfull.com/barotrauma-pc-full-espanol/" title="Barotrauma PC Full Español">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20211%20300'%3E%3C/svg%3E" class="imagenc wp-post-image" alt="Barotrauma PC Full Español" title="Barotrauma PC Full Español" width="211" height="300" decoding="async" data-lazy-src="https://www.gamezfull.com/wp-content/uploads/2026/04/Barotrauma-pc-descargar-211x300.webp"><noscript><img src="https://www.gamezfull.com/wp-content/uploads/2026/04/Barotrauma-pc-descargar-211x300.webp" class="imagenc wp-post-image" alt="Barotrauma PC Full Español" title="Barotrauma PC Full Español" width="211" height="300" loading="lazy" decoding="async" /></noscript></a><div class="more-items">
+  <a href="https://www.gamezfull.com/category/pc/" class="view-more-post">VER MAS <span class="fa fa-plus"></span></a>
+ </div>
+			
+</div>
+</div>
+<!--Modulo 2-->
+<div class="home-box pelisrip">
+
+ 	  
+    <h2><center><div class="titulohome"><span class="fa-solid fa-joystick"></span> Medios Requisitos</div></center></h2>
+	  
+	 <a href="https://www.gamezfull.com/contrast-collectors-edition-pc-full-espanol/" title="Contrast Collector’s Edition PC Full Español">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20211%20300'%3E%3C/svg%3E" class="imagenc wp-post-image" alt="Contrast Collector’s Edition PC Full Español" title="Contrast Collector’s Edition PC Full Español" width="211" height="300" decoding="async" data-lazy-src="https://www.gamezfull.com/wp-content/uploads/2026/03/Contrast-pc-descargar-211x300.webp"><noscript><img src="https://www.gamezfull.com/wp-content/uploads/2026/03/Contrast-pc-descargar-211x300.webp" class="imagenc wp-post-image" alt="Contrast Collector’s Edition PC Full Español" title="Contrast Collector’s Edition PC Full Español" width="211" height="300" loading="lazy" decoding="async" /></noscript></a><a href="https://www.gamezfull.com/the-crew-2-gold-edition-pc-espanol-2018/" title="The Crew 2 Gold Edition PC Español 2018">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20211%20300'%3E%3C/svg%3E" class="imagenc wp-post-image" alt="The Crew 2 Gold Edition PC Español 2018" title="The Crew 2 Gold Edition PC Español 2018" width="211" height="300" decoding="async" data-lazy-src="https://www.gamezfull.com/wp-content/uploads/2025/10/The-Crew-2-pc-descargar-211x300.webp"><noscript><img src="https://www.gamezfull.com/wp-content/uploads/2025/10/The-Crew-2-pc-descargar-211x300.webp" class="imagenc wp-post-image" alt="The Crew 2 Gold Edition PC Español 2018" title="The Crew 2 Gold Edition PC Español 2018" width="211" height="300" loading="lazy" decoding="async" /></noscript></a><a href="https://www.gamezfull.com/hard-west-pc-full-espanol-v1-5/" title="Hard West PC Full Español v1.5">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20211%20300'%3E%3C/svg%3E" class="imagenc wp-post-image" alt="Hard West PC Full Español v1.5" title="Hard West PC Full Español v1.5" width="211" height="300" decoding="async" data-lazy-src="https://www.gamezfull.com/wp-content/uploads/2025/10/Hard-West-pc-descargar-211x300.webp"><noscript><img src="https://www.gamezfull.com/wp-content/uploads/2025/10/Hard-West-pc-descargar-211x300.webp" class="imagenc wp-post-image" alt="Hard West PC Full Español v1.5" title="Hard West PC Full Español v1.5" width="211" height="300" loading="lazy" decoding="async" /></noscript></a><a href="https://www.gamezfull.com/watch-over-christmas-pc-full-espanol/" title="Watch Over Christmas PC Full Español">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20211%20300'%3E%3C/svg%3E" class="imagenc wp-post-image" alt="Watch Over Christmas PC Full Español" title="Watch Over Christmas PC Full Español" width="211" height="300" decoding="async" data-lazy-src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsDLTJ4DkNX9H_g84TB8fnI_OB4G0CEbkKw2vFVdyMdx_gwDkbT2JqAyUXDlENbcYtAvstzOyH4BzDHwnrAtVqFrsBpIE-POamIRMq8Pqu6DI4Zww8r2Ma0K8_CsAqruJhaBDj5_gi8p4eLlBJK42qYiH9LHVas2Gkmf5oudzRcdPNLdEtIeLGc940DbY/s180/Watch%20Over%20Christmas%20pc%20descargar.webp"><noscript><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsDLTJ4DkNX9H_g84TB8fnI_OB4G0CEbkKw2vFVdyMdx_gwDkbT2JqAyUXDlENbcYtAvstzOyH4BzDHwnrAtVqFrsBpIE-POamIRMq8Pqu6DI4Zww8r2Ma0K8_CsAqruJhaBDj5_gi8p4eLlBJK42qYiH9LHVas2Gkmf5oudzRcdPNLdEtIeLGc940DbY/s180/Watch%20Over%20Christmas%20pc%20descargar.webp" class="imagenc wp-post-image" alt="Watch Over Christmas PC Full Español" title="Watch Over Christmas PC Full Español" width="211" height="300" loading="lazy" decoding="async" /></noscript></a><a href="https://www.gamezfull.com/rise-of-the-triad-2013-pc-full-v2-5-0-23/" title="Rise of the Triad (2013) PC Full v2.5.0.23">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20211%20300'%3E%3C/svg%3E" class="imagenc wp-post-image" alt="Rise of the Triad (2013) PC Full v2.5.0.23" title="Rise of the Triad (2013) PC Full v2.5.0.23" width="211" height="300" decoding="async" data-lazy-src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiCfGICoG37kQmMFfatlK98lylBd2KRELt01-J6qbr4eMpd1Ue16AesXBE6OI1s_828pB6dT45fjEconJwotkR1TO9mGPwmIzXUggadP1tq6cOmLkUYUPp7JH7TcmJEoxoOxk7wqnP22qwuhdepdo7A7mtV2chf6gMRXxWXihz4C3R8XVAy4boM17T_xYM/s180/Rise%20of%20the%20Triad%20pc%20descargar.webp"><noscript><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiCfGICoG37kQmMFfatlK98lylBd2KRELt01-J6qbr4eMpd1Ue16AesXBE6OI1s_828pB6dT45fjEconJwotkR1TO9mGPwmIzXUggadP1tq6cOmLkUYUPp7JH7TcmJEoxoOxk7wqnP22qwuhdepdo7A7mtV2chf6gMRXxWXihz4C3R8XVAy4boM17T_xYM/s180/Rise%20of%20the%20Triad%20pc%20descargar.webp" class="imagenc wp-post-image" alt="Rise of the Triad (2013) PC Full v2.5.0.23" title="Rise of the Triad (2013) PC Full v2.5.0.23" width="211" height="300" loading="lazy" decoding="async" /></noscript></a><a href="https://www.gamezfull.com/jurassic-park-classic-games-collection-pc-full-espanol/" title="Jurassic Park Classic Games Collection PC Full Español">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20211%20300'%3E%3C/svg%3E" class="imagenc wp-post-image" alt="Jurassic Park Classic Games Collection PC Full Español" title="Jurassic Park Classic Games Collection PC Full Español" width="211" height="300" decoding="async" data-lazy-src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgKJjtZC_T9_IauHl2ggit4LeSUHI8LUtZS9kREPufW2ef1-gHhkP6eEiAEBmRUpTg82Eit4eFAwMJ0_OGjnNWIO65Ua_egvyLyyG3xo5a0uEixg3qkwBCe7o22f3jxBTlaR_D_DfKaQ8eRh5rHJQSrgJlMmxxLEX8FgTzrfuqtyXfpwI2x3TJ_65pTpE4/s180/Jurassic%20Park%20Classic%20Games%20Collection%20pc%20descargar.webp"><noscript><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgKJjtZC_T9_IauHl2ggit4LeSUHI8LUtZS9kREPufW2ef1-gHhkP6eEiAEBmRUpTg82Eit4eFAwMJ0_OGjnNWIO65Ua_egvyLyyG3xo5a0uEixg3qkwBCe7o22f3jxBTlaR_D_DfKaQ8eRh5rHJQSrgJlMmxxLEX8FgTzrfuqtyXfpwI2x3TJ_65pTpE4/s180/Jurassic%20Park%20Classic%20Games%20Collection%20pc%20descargar.webp" class="imagenc wp-post-image" alt="Jurassic Park Classic Games Collection PC Full Español" title="Jurassic Park Classic Games Collection PC Full Español" width="211" height="300" loading="lazy" decoding="async" /></noscript></a> <div class="more-items">
+  <a href="https://www.gamezfull.com/category/pc/medios-requisitos/">VER MAS <i class="fa fa-plus"></i></a>
+ </div>
+			
+
+</div>
+
+<!--Modulo 3-->
+<div class="home-box pelis720">
+
+ 	  
+    <h2><center><div class="titulohome"><span class="fa-solid fa-joystick"></span> Bajos Requisitos</div></center></h2>
+	  
+	 <a href="https://www.gamezfull.com/rome-total-war-collection-pc-full-espanol-2004/" title="Rome Total War Collection PC Full Español 2004">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20211%20300'%3E%3C/svg%3E" class="imagenc wp-post-image" alt="Rome Total War Collection PC Full Español 2004" title="Rome Total War Collection PC Full Español 2004" width="211" height="300" decoding="async" data-lazy-src="https://www.gamezfull.com/wp-content/uploads/2026/04/Rome-Total-War-pc-descargar-211x300.webp"><noscript><img src="https://www.gamezfull.com/wp-content/uploads/2026/04/Rome-Total-War-pc-descargar-211x300.webp" class="imagenc wp-post-image" alt="Rome Total War Collection PC Full Español 2004" title="Rome Total War Collection PC Full Español 2004" width="211" height="300" loading="lazy" decoding="async" /></noscript></a><a href="https://www.gamezfull.com/battlefield-1942-expansiones-pc-full-espanol-iso/" title="Battlefield 1942 Complete Collection PC Full Español">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20211%20300'%3E%3C/svg%3E" class="imagenc wp-post-image" alt="Battlefield 1942 Complete Collection PC Full Español" title="Battlefield 1942 Complete Collection PC Full Español" width="211" height="300" decoding="async" data-lazy-src="https://www.gamezfull.com/wp-content/uploads/2026/03/Battlefield-1942-Complete-Collection-pc-descargar-211x300.webp"><noscript><img src="https://www.gamezfull.com/wp-content/uploads/2026/03/Battlefield-1942-Complete-Collection-pc-descargar-211x300.webp" class="imagenc wp-post-image" alt="Battlefield 1942 Complete Collection PC Full Español" title="Battlefield 1942 Complete Collection PC Full Español" width="211" height="300" loading="lazy" decoding="async" /></noscript></a><a href="https://www.gamezfull.com/shark-tale-espantatiburones-pc-full-espanol/" title="Shark Tale (Espantatiburones) PC Full Español">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20211%20300'%3E%3C/svg%3E" class="imagenc wp-post-image" alt="Shark Tale (Espantatiburones) PC Full Español" title="Shark Tale (Espantatiburones) PC Full Español" width="211" height="300" decoding="async" data-lazy-src="https://www.gamezfull.com/wp-content/uploads/2026/03/Shark-Tale-pc-game-descargar-211x300.webp"><noscript><img src="https://www.gamezfull.com/wp-content/uploads/2026/03/Shark-Tale-pc-game-descargar-211x300.webp" class="imagenc wp-post-image" alt="Shark Tale (Espantatiburones) PC Full Español" title="Shark Tale (Espantatiburones) PC Full Español" width="211" height="300" loading="lazy" decoding="async" /></noscript></a><a href="https://www.gamezfull.com/shrek-superslam-2005-pc-full-espanol/" title="Shrek SuperSlam 2005 PC Full Español">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20211%20300'%3E%3C/svg%3E" class="imagenc wp-post-image" alt="Shrek SuperSlam 2005 PC Full Español" title="Shrek SuperSlam 2005 PC Full Español" width="211" height="300" decoding="async" data-lazy-src="https://www.gamezfull.com/wp-content/uploads/2026/03/Shrek-SuperSlam-pc-descargar-211x300.webp"><noscript><img src="https://www.gamezfull.com/wp-content/uploads/2026/03/Shrek-SuperSlam-pc-descargar-211x300.webp" class="imagenc wp-post-image" alt="Shrek SuperSlam 2005 PC Full Español" title="Shrek SuperSlam 2005 PC Full Español" width="211" height="300" loading="lazy" decoding="async" /></noscript></a><a href="https://www.gamezfull.com/ice-age-4-continental-drift-arctic-games-pc-espanol/" title="Ice Age 4 Continental Drift – Arctic Games PC Español">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20211%20300'%3E%3C/svg%3E" class="imagenc wp-post-image" alt="Ice Age 4 Continental Drift – Arctic Games PC Español" title="Ice Age 4 Continental Drift – Arctic Games PC Español" width="211" height="300" decoding="async" data-lazy-src="https://www.gamezfull.com/wp-content/uploads/2026/03/La-Era-de-Hielo-La-Deriva-Continental-juego-pc-descargar-211x300.webp"><noscript><img src="https://www.gamezfull.com/wp-content/uploads/2026/03/La-Era-de-Hielo-La-Deriva-Continental-juego-pc-descargar-211x300.webp" class="imagenc wp-post-image" alt="Ice Age 4 Continental Drift &#8211; Arctic Games PC Español" title="Ice Age 4 Continental Drift &#8211; Arctic Games PC Español" width="211" height="300" loading="lazy" decoding="async" /></noscript></a><a href="https://www.gamezfull.com/the-legend-of-zelda-ocarina-of-time-pc-full-mega-up1/" title="The Legend of Zelda: Ocarina of Time PC Full [MEGA]">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20211%20300'%3E%3C/svg%3E" class="imagenc wp-post-image" alt="The Legend of Zelda: Ocarina of Time PC Full [MEGA]" title="The Legend of Zelda: Ocarina of Time PC Full [MEGA]" width="211" height="300" decoding="async" data-lazy-src="https://www.gamezfull.com/wp-content/uploads/2025/11/Ocarina-of-Time-pc-gratis-descargar.webp"><noscript><img src="https://www.gamezfull.com/wp-content/uploads/2025/11/Ocarina-of-Time-pc-gratis-descargar.webp" class="imagenc wp-post-image" alt="The Legend of Zelda: Ocarina of Time PC Full [MEGA]" title="The Legend of Zelda: Ocarina of Time PC Full [MEGA]" width="211" height="300" loading="lazy" decoding="async" /></noscript></a> <div class="more-items">
+  <a href="https://www.gamezfull.com/category/pocos-requisitos/">VER MAS <i class="fa fa-plus"></i></a>
+ </div>
+				
+
+
+</div>
+
+<!--Modulo 5-->
+<!--Modulo 6-->
+</section>
+<br>
+
+        
+        
+       </div>
+      </div>
+      <!-- /primary content -->
+
+      
+
+  <!-- 1st sidebar -->
+  <div id="sidebar">
+      <ul class="blocks count-4">
+      <li class="block"><div class="block-content block-text clear-block" id="instance-atom-text-16"><div class="title"><h3>Redes Sociales</h3><div class="bl"></div><div class="br"></div></div><div class="i"></div>
+    <div class="box textwidget redessociales"><br>
+<div class="widget_social_apps">
+<div class="app_social facebook">
+<a rel="nofollow" href="https://www.facebook.com/profile.php?id=61574600556790" target="_blank">
+<span class="app_icon"><i class="fa fa-facebook"></i></span>
+<span class="app_count">29,500</span> <span class="app_type">Fans</span> </a></div>
+<div class="app_social twitter">
+<a rel="nofollow" href="https://t.me/gamezfullcom" target="_blank">
+<span class="app_icon"><i class="fa fa-telegram"></i></span>
+<span class="app_count">240</span>
+<span class="app_type">Followers</span>
+</a></div>
+<div class="app_social pinterest">
+<a rel="nofollow" href="https://www.youtube.com/channel/xx" target="_blank">
+<span class="app_icon"><i class="fa fa-youtube"></i></span>
+<span class="app_count">336</span> <span class="app_type">Suscriptores</span> </a></div>
+<div class="app_social twitter">
+<a rel="nofollow" href="https://twitter.com/search?q=gamezfull&amp;src=typed_query&amp;f=live" target="_blank">
+<span class="app_icon"><i class="fa fa-twitter"></i></span>
+<span class="app_count">Twitter</span> <span class="app_type">Menciones</span> </a></div>
+</div></div>
+    </div></li><li class="block"><div class="block-content block-text clear-block" id="instance-atom-text-17"><div class="title"><h3>Top Categorías</h3><div class="bl"></div><div class="br"></div></div><div class="i"></div>
+    <div class="box textwidget topcategoras"><div class="box textwidget topcategorias"><section id="con-enlaces">
+    <div class="scroll" style="height:300px">
+        <ul>
+            <li class="cat-item cat-item-105"><a href="/category/1-link/"><i class="fa fa-link"></i> Juegos en 1 Link</a></li>
+            <li class="cat-item cat-item-105"><a href="/category/accion"><i class="fa fa-bolt"></i> Acción</a></li>
+            <li class="cat-item cat-item-685"><a href="/category/aventuras"><i class="fa fa-compass"></i> Aventura</a></li>
+            <li class="cat-item cat-item-670"><a href="/category/carreras"><i class="fa fa-car"></i> Conducción</a></li>
+            <li class="cat-item cat-item-316"><a href="/category/estrategia"><i class="fa fa-gamepad"></i> Estrategia</a></li> <!-- Alternativa para Estrategia -->
+            <li class="cat-item cat-item-806"><a href="/category/horror"><i class="fa fa-warning"></i> Horror</a></li> <!-- Alternativa para Horror -->
+            <li class="cat-item cat-item-1333"><a href="/category/plataformas"><i class="fa fa-cubes"></i> Plataformas</a></li> <!-- Alternativa para Plataformas -->
+            <li class="cat-item cat-item-801"><a href="/category/pc/rpg-y-rol/"><i class="fa fa-magic"></i> Rol y RPG</a></li> <!-- Alternativa para Rol y RPG -->
+            <li class="cat-item cat-item-737"><a href="/category/simulacion"><i class="fa fa-cogs"></i> Simulador</a></li>
+            <li class="cat-item cat-item-737"><a href="/category/shooter"><i class="fa fa-crosshairs"></i> FPS-Shooter</a></li>
+            <li class="cat-item cat-item-128"><a href="/category/supervivencia"><i class="fa fa-heartbeat"></i> Supervivencia</a></li>
+        </ul>
+    </div>
+</section>
+</div></div>
+    </div></li><li class="block"><div class="block-content block-text clear-block" id="instance-atom-text-19"><div class="title"><h3>Glosario Gamer</h3><div class="bl"></div><div class="br"></div></div><div class="i"></div>
+    <div class="box textwidget glosariogamer"><br>
+
+<div class="gf-wheel-container">
+
+    <div class="gf-wheel-title">
+        🎮 Vocabulario Gamer
+    </div>
+
+    <div class="gf-wheel-wrap">
+        <div class="gf-wheel-pointer"></div>
+
+        <div class="gf-wheel">
+            <div class="gf-wheel-inner"></div>
+
+            <div class="gf-wheel-text">
+                <a id="gfWheelLink" href="https://www.gamezfull.com/clandlan/gamingterms/" target="_blank" rel="noopener">
+                    <span id="gfWheelText">RNG</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="gf-wheel-desc" id="gfMeaning">Random Number Generator. Suerte o aleatoriedad del juego.</div>
+
+    <button type="button" onclick="gfSpinWheel()" class="gf-wheel-btn">
+        🎲 Girar Ruleta
+    </button>
+
+</div>
+
+<script>
+const gfWords = [
+{word:"GG", meaning:"Good Game. Se usa al terminar una partida."},
+
+{word:"Noob", meaning:"Jugador nuevo o inexperto."},
+
+{word:"Camper", meaning:"Jugador que se queda escondido esperando enemigos."},
+
+{word:"Nerf", meaning:"Reducir el poder de un personaje o arma."},
+
+{word:"Buff", meaning:"Mejorar el poder de algo en el juego."},
+
+{word:"Loot", meaning:"Objetos o recompensas que obtienes."},
+
+{word:"AFK", meaning:"Away From Keyboard. Jugador ausente."},
+
+{word:"PvP", meaning:"Player vs Player. Jugador contra jugador."},
+
+{word:"NPC", meaning:"Personaje controlado por el juego."},
+
+{word:"Lag", meaning:"Retraso en la conexión del juego."},
+
+{word:"Respawn", meaning:"Volver a aparecer después de morir."},
+
+{word:"Hitbox", meaning:"Área invisible donde se detectan impactos."},
+
+{word:"DPS", meaning:"Damage Per Second. Daño por segundo."},
+
+{word:"Tank", meaning:"Personaje que recibe mucho daño para proteger al equipo."},
+
+{word:"Healer", meaning:"Personaje que cura a otros jugadores."},
+
+{word:"Meta", meaning:"Estrategia o táctica más efectiva del momento."},
+
+{word:"RNG", meaning:"Random Number Generator. Suerte o aleatoriedad del juego."},
+
+{word:"Open World", meaning:"Juego de mundo abierto con libertad de exploración."},
+
+{word:"Skill", meaning:"Habilidad del jugador."},
+
+{word:"Cooldown", meaning:"Tiempo de espera para volver a usar una habilidad."},
+
+{word:"Spawn", meaning:"Lugar donde aparecen jugadores o enemigos."},
+
+{word:"Clutch", meaning:"Jugada decisiva en un momento crítico."},
+
+{word:"Farm", meaning:"Recolectar recursos repetidamente."}
+
+];
+
+let currentRotation = 0;
+let gfSpinning = false;
+
+function gfSpinWheel() {
+    if (gfSpinning) return;
+    gfSpinning = true;
+
+    const wheel = document.querySelector(".gf-wheel-inner");
+    const wordBox = document.getElementById("gfWheelText");
+    const meaningBox = document.getElementById("gfMeaning");
+
+    if (!wheel || !wordBox || !meaningBox) {
+        gfSpinning = false;
+        return;
+    }
+
+    const randomIndex = Math.floor(Math.random() * gfWords.length);
+
+    const extraSpins = 1080; // 3 vueltas completas
+    const randomStop = Math.floor(Math.random() * 360);
+    const finalSpin = extraSpins + randomStop;
+
+    currentRotation += finalSpin;
+
+    wheel.style.transform = "rotate(" + currentRotation + "deg)";
+
+    setTimeout(function() {
+        wordBox.textContent = gfWords[randomIndex].word;
+        meaningBox.textContent = gfWords[randomIndex].meaning;
+        gfSpinning = false;
+    }, 2400);
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    const wordBox = document.getElementById("gfWheelText");
+    const meaningBox = document.getElementById("gfMeaning");
+
+    if (wordBox && meaningBox && gfWords.length) {
+        const first = Math.floor(Math.random() * gfWords.length);
+        wordBox.textContent = gfWords[first].word;
+        meaningBox.textContent = gfWords[first].meaning;
+    }
+});
+</script>
+
+</div>
+    </div></li><li class="block"><div class="block-content block-widget_block clear-block" id="instance-block-7"><div class="title"><h3>🔥 Top de la Semana</h3></div>
+<div class="top-comments-widget">
+  <ol class="gf-top-week"><li><span class="rank">1</span><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Samson A Tyndalston Story PC Full Español" decoding="async" data-lazy-src="https://www.gamezfull.com/wp-content/uploads/2026/04/Samson-pc-descargar-211x300.webp"><noscript><img src="https://www.gamezfull.com/wp-content/uploads/2026/04/Samson-pc-descargar-211x300.webp" alt="Samson A Tyndalston Story PC Full Español" loading="lazy" decoding="async"></noscript><a href="https://www.gamezfull.com/samson-a-tyndalston-story-pc-full-espanol/">Samson A Tyndalston Story PC Full Español</a><span class="comments">🔥 4</span></li><li><span class="rank">2</span><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Sonic Superstars Deluxe Edition PC Full Español" decoding="async" data-lazy-src="https://www.gamezfull.com/wp-content/uploads/2026/04/Sonic-Superstars-pc-descargar-211x300.webp"><noscript><img src="https://www.gamezfull.com/wp-content/uploads/2026/04/Sonic-Superstars-pc-descargar-211x300.webp" alt="Sonic Superstars Deluxe Edition PC Full Español" loading="lazy" decoding="async"></noscript><a href="https://www.gamezfull.com/sonic-superstars-deluxe-edition-pc-full-espanol/">Sonic Superstars Deluxe Edition PC Full Español</a><span class="comments">🔥 3</span></li><li><span class="rank">3</span><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Shark Tale (Espantatiburones) PC Full Español" decoding="async" data-lazy-src="https://www.gamezfull.com/wp-content/uploads/2026/03/Shark-Tale-pc-game-descargar-211x300.webp"><noscript><img src="https://www.gamezfull.com/wp-content/uploads/2026/03/Shark-Tale-pc-game-descargar-211x300.webp" alt="Shark Tale (Espantatiburones) PC Full Español" loading="lazy" decoding="async"></noscript><a href="https://www.gamezfull.com/shark-tale-espantatiburones-pc-full-espanol/">Shark Tale (Espantatiburones) PC Full Español</a><span class="comments">🔥 3</span></li><li><span class="rank">4</span><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="NS Ultimate Ninja STORM 3 Full Burst HD PC Español..." decoding="async" data-lazy-src="https://www.gamezfull.com/wp-content/uploads/2017/08/NS-Ultimate-Ninja-STORM-3-Full-Burst-HD-pc-descargar-211x300.webp"><noscript><img src="https://www.gamezfull.com/wp-content/uploads/2017/08/NS-Ultimate-Ninja-STORM-3-Full-Burst-HD-pc-descargar-211x300.webp" alt="NS Ultimate Ninja STORM 3 Full Burst HD PC Español..." loading="lazy" decoding="async"></noscript><a href="https://www.gamezfull.com/ns-ultimate-ninja-storm-3-full-burst-hd-pc-espanol-mega/">NS Ultimate Ninja STORM 3 Full Burst HD PC Español...</a><span class="comments">🔥 3</span></li><li><span class="rank">5</span><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Call Of Duty 4 Modern Warfare PC [Full] Español [M..." decoding="async" data-lazy-src="https://4.bp.blogspot.com/-wTynxDWzZZY/WihHMMWUzjI/AAAAAAAAnto/gox-3z17O7gUAMv5PYpq6NXs5ALn3mjfQCLcBGAs/s100/cover-pc.jpg"><noscript><img src="https://4.bp.blogspot.com/-wTynxDWzZZY/WihHMMWUzjI/AAAAAAAAnto/gox-3z17O7gUAMv5PYpq6NXs5ALn3mjfQCLcBGAs/s100/cover-pc.jpg" alt="Call Of Duty 4 Modern Warfare PC [Full] Español [M..." loading="lazy" decoding="async"></noscript><a href="https://www.gamezfull.com/call-of-duty-4-modern-warfare-pc-full-espanol-mega/">Call Of Duty 4 Modern Warfare PC [Full] Español [M...</a><span class="comments">🔥 1</span></li></ol>
+</div></div></li>   </ul>
+     </div>
+  <!-- /1st sidebar -->
+
+  
+
+    </div>
+   </div>
+</div>
+  <!-- /main content -->
+  
+
+    <style> 
+  
+        /* Apply css properties to h1 element */ 
+        h1 { 
+            text-align: center; 
+        } 
+  
+        /* Create a container using CSS properties */ 
+        .container { 
+            top: 30%; 
+            left: 50%; 
+            position: absolute; 
+            text-align: center; 
+            transform: translate(-50%, -50%); 
+        } 
+  
+        /* Apply CSS properties to ui-widgets class */ 
+.ui-widgets {
+  position: relative;
+  display: inline-block;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 9rem;
+  margin: 1.5rem;
+  border: 5.2rem solid #f2eded;
+    border-top-color: rgb(242, 237, 237);
+    border-right-color: rgb(242, 237, 237);
+    border-bottom-color: rgb(242, 237, 237);
+    border-left-color: rgb(242, 237, 237);
+  border-top-color: palegreen;
+  border-right-color: palegreen;
+  border-bottom-color: palegreen;
+  border-left-color: palegreen;
+  box-shadow: inset 0 0 7px grey;
+  border-left-color: #fbc298;
+  border-top-color: #ff6c00;
+  border-right-color: #641c00;
+  border-bottom-color: #eee5e5;
+  text-align: center;
+  box-sizing: border-box;
+}
+  
+        /*  Apply css properties to the second  
+            child of ui-widgets class */ 
+        .ui-widgets:nth-child(2) { 
+            border-top-color: chartreuse; 
+            border-right-color: white; 
+            border-left-color: palegreen; 
+            border-bottom-color: white; 
+        } 
+  
+        /*  Apply css properties to ui-widgets class  
+            and ui-values class*/ 
+        .ui-widgets .ui-values { 
+            top: 40px; 
+            position: absolute; 
+            left: 4px;
+            right: 0; 
+            font-weight: 700; 
+            font-size: 2.0rem; 
+  
+        } 
+  
+        /*  Apply css properties to ui-widgets  
+            class and ui-labels class*/ 
+.ui-widgets .ui-labels {
+  left: 0;
+  bottom: -28px;
+  text-shadow: 0 0 4px grey;
+  color: black;
+  position: absolute;
+  width: 100%;
+  font-size: 18px;
+}
+        
+        #footer_destacado {
+  display: inline-table !important;
+}
+    </style> 
+
+<style>
+.gf-stats {
+  background: linear-gradient(180deg, #292727, #1e1d1d);
+  padding: 20px 20px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.gf-title {
+  text-align: center;
+  color: #fff;
+  font-size: 26px;
+  margin-bottom: 40px;
+  text-shadow: 0 0 15px #ff6600;
+}
+
+.gf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+/* Card */
+.gf-card {
+  background: #111;
+  border-radius: 15px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+  border: 1px solid #222;
+}
+
+.gf-card:hover {
+  transform: translateY(-8px) scale(1.03);
+}
+
+/* Glow */
+.gf-card.pc:hover { box-shadow: 0 0 20px #00ff66; }
+.gf-card.psp:hover { box-shadow: 0 0 20px #ff9933; }
+.gf-card.ps2:hover { box-shadow: 0 0 20px #3399ff; }
+.gf-card.total:hover { box-shadow: 0 0 20px #ff6600; }
+
+/* Header */
+.gf-card h4 {
+  color: #ccc;
+  font-size: 14px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+/* Number */
+.gf-number {
+  font-size: 32px;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Progress bar */
+.gf-bar {
+  margin-top: 15px;
+  height: 6px;
+  background: #222;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.gf-bar span {
+  display: block;
+  height: 100%;
+  width: 0%;
+  transition: width 1.5s ease;
+}
+
+/* Colors */
+.pc span { background: #00ff66; }
+.psp span { background: #ff9933; }
+.ps2 span { background: #3399ff; }
+.total span { background: #ff6600; }
+</style>
+<div id="footer_destacado"></div>
+<div class="gf-stats">
+
+  <div class="gf-grid">
+
+    <div class="gf-card total">
+      <h4>🔥 TOTAL JUEGOS</h4>
+      <div class="gf-number" data-count="4034">4034</div>
+      <div class="gf-bar"><span data-width="100%" style="width: 100%;"></span></div>
+    </div>
+
+    <div class="gf-card pc">
+      <h4>💻 PC</h4>
+      <div class="gf-number" data-count="3835">3835</div>
+      <div class="gf-bar"><span data-width="95.066931085771%" style="width: 95.0669%;"></span></div>
+    </div>
+
+    <div class="gf-card psp">
+      <h4>🎮 PSP</h4>
+      <div class="gf-number" data-count="183">183</div>
+      <div class="gf-bar"><span data-width="4.5364402578086%" style="width: 4.53644%;"></span></div>
+    </div>
+
+    <div class="gf-card ps2">
+      <h4>🕹️ PS2</h4>
+      <div class="gf-number" data-count="11">11</div>
+      <div class="gf-bar"><span data-width="0.27268220128904%" style="width: 0.272682%;"></span></div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// Contador animado
+document.querySelectorAll('.gf-number').forEach(el => {
+  let target = +el.getAttribute('data-count');
+  let count = 0;
+  let step = target / 50;
+
+  let interval = setInterval(() => {
+    count += step;
+    if (count >= target) {
+      el.innerText = target;
+      clearInterval(interval);
+    } else {
+      el.innerText = Math.floor(count);
+    }
+  }, 20);
+});
+
+// Barras animadas
+setTimeout(() => {
+  document.querySelectorAll('.gf-bar span').forEach(bar => {
+    bar.style.width = bar.getAttribute('data-width');
+  });
+}, 300);
+</script>
+<script>
+    // var element = $('.sticky-posts a');
+    //     element.each(function(index, element){
+    //         if($(element).hasClass('view-more-post')){
+    //             // return true;
+    //         }
+
+    //         if(index > 5){
+    //             if(! $(element).hasClass('view-more-post')){
+    //                 //element.remove();
+    //             }
+    //         }
+    //     });
+</script>
+
+        </div><!-- /#main-ext (clear-block) -->
+      </div><!-- /#main.page-content -->
+
+    
+        <!-- Footer destacado -->
+<!-- FOOTER MODERNO GAMEZFULL -->
+<div class="gf-footer">
+
+  <div class="gf-footer-container">
+
+    <!-- LOGO / DESCRIPCIÓN -->
+    <div class="gf-footer-col">
+      <h3 class="gf-logo">🎮 GamezFull</h3>
+      <p class="gf-desc">
+        Descargas de juegos, programas y contenido premium actualizado.
+        Tu portal gamer confiable.
+      </p>
+
+      <!-- REDES -->
+      <div class="gf-social">
+        <a href="https://whatsapp.com/channel/0029VaL0l6QCRs1wkAlgsO3h" target="_blank" class="whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+        <a href="https://t.me/gamezfullcom" target="_blank" class="telegram"><i class="fa fa-telegram" aria-hidden="true"></i></a>
+        <a href="https://x.com/" target="_blank" class="twitter">𝕏</a>
+      </div>
+    </div>
+
+    <!-- ENLACES -->
+    <div class="gf-footer-col">
+      <h4>📂 Navegación</h4>
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/contacto/">Contacto</a></li>
+        <li><a href="/sitemap_index.xml">Sitemap</a></li>
+        <li><a href="/ayuda/">Ayuda</a></li>
+      </ul>
+    </div>
+
+    <!-- CATEGORÍAS -->
+    <div class="gf-footer-col">
+      <h4>🔥 Categorías</h4>
+      <ul>
+        <li><a href="/category/juegos-pc/">Juegos PC</a></li>
+        <li><a href="/collection/">Colecciones</a></li>
+        <li><a href="/category/juegos-psp/">Juegos PSP</a></li>
+        <li><a href="/clandlan/">Traducciones</a></li>
+      </ul>
+    </div>
+
+    <!-- LEGAL -->
+    <div class="gf-footer-col">
+      <h4>⚖️ Legal</h4>
+      <p class="gf-legal">
+        GamezFull.com no aloja archivos en sus servidores.
+        Todo el contenido es compartido por terceros.
+      </p>
+      <a href="/terminos-y-condiciones/" class="gf-btn">Ver términos</a>
+    </div>
+
+  </div>
+
+  <!-- COPYRIGHT -->
+  <div class="gf-footer-bottom">
+    © 2026 GamezFull - Todos los derechos reservados
+  </div>
+
+</div>
+
+    <script>
+
+  /*<![CDATA[*/
+  var blog_url = 'https://www.gamezfull.com/';
+
+  jQuery(document).ready(function($){
+
+    var atom_init = function(){
+
+     
+      $('.nav ul.menu').superfish();
+      $('a.screenshot').webShots();
+      $('.accordion, .collapsible').CollapsibleMenu();
+      $('.toggle').toggleVisibility();
+      $('a.tt').bubble();
+      
+      $('.clearField').clearField();
+
+      $('form').submit(function(){
+        $('.clearField', this).each(function(){ $(this).clearFieldCheck(); });
+        return true;
+      });
+
+      $('form').each(function(){
+        $('a.submit', this).click(function(){ $(this).parents('form').submit(); });
+      });
+
+     
+     $('.tabs').tabs();
+
+     $('.iSlider').imageSlider();
+
+     
+
+          $('#related-posts').delegate('a.post-related', 'click', function(event){
+       event.preventDefault();
+
+       var related = $(this).parents('#related-posts');
+
+       $.ajax({
+         url: blog_url,
+         type: 'GET',
+         context: this,
+         data: ({
+           atom: 'more_related_posts',
+           post_id: $(this).data('post'),
+           offset: $(this).data('offset'),
+         }),
+         beforeSend: function(){
+            $(this).text('Cargando...');
+         },
+         success: function(data){
+            $(data).find('li').appendTo('#related-posts ol');
+            $(this).parents('.sections').height($('#related-posts ol').height() + 15);
+            $(this).remove();
+
+          }
+       });
+     });
+
+
+
+
+     
+          $('.page-navi.single a').click(function(event){
+       event.preventDefault();
+       $.ajax({
+         url: $(this).attr('href'),
+         type: 'GET',
+         context: this,
+         beforeSend: function(){
+            $(this).addClass('loading');
+         },
+         success: function(data){
+            $(data).find('.posts .hentry').hide().appendTo($('.posts')).fadeIn(333);
+            var new_page = $(data).find('.page-navi.single a').attr('href');
+            if(new_page) $(this).attr('href', new_page).removeClass('loading'); else $(this).remove();
+          }
+       });
+     });
+
+
+          $('span.no-img.regen').livequery(function(){
+        var id = $(this).attr('id').split(/-/g).slice(1);
+        $(this).removeClass("regen");
+        $.ajax({
+          url: blog_url,
+          type: "GET",
+          context: this,
+          data: ({
+            atom: 'update_thumb',
+            attachment_size: $(this).data('size'),
+            post_id: id[0],
+            thumb_id: id[1]
+            }),
+          beforeSend: function() { $(this).addClass('loading'); },
+          success: function(data) {
+            if(data != '') $(this).replaceWith(data); else $(this).removeClass('loading');
+          }
+    	});
+     });
+     
+
+     
+     
+    };
+
+    atom_init();
+
+  });
+
+
+
+
+  /* ]]> */</script>
+    <a class="go-top" href="#page">Ir Arriba</a>
+
+  </div><!-- /#page (lo abrimos en header.php, lo cerramos aquí) -->
+
+  <!-- Menú móvil y submenú -->
+  <script>
+    jQuery(function($){
+      var open = false;
+      $(".nav-bar .menu-bar a").on("click", function(e){
+        e.preventDefault();
+        $("header nav").animate({ left: open ? "-100%" : "0" });
+        open = !open;
+      });
+      $(".sub-menu").on("click", function(){
+        $(this).children(".children").slideToggle();
+      });
+    });
+  </script>
+
+  <!-- Scroll a responder comentario -->
+  <script>
+    jQuery(function($){
+      $(document).on('click', '.comment-reply-link', function(e){
+        e.preventDefault();
+        var $r = $('#respond');
+        if (!$r.length) return;
+        var offset = $r.offset().top - 70;
+        $('html, body').animate({ scrollTop: offset }, 700);
+      });
+    });
+  </script>
+
+  <script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/MystiqueR3-extend/*","/wp-content/themes/MystiqueR3/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script src="https://www.gamezfull.com/wp-content/themes/MystiqueR3/js/jquery.atom.min.js" id="MystiqueR3-extend-js"></script>
+<script data-no-defer="1" data-no-optimize="1" src="https://www.gamezfull.com/wp-content/themes/MystiqueR3/owl-carousel/owl.carousel.min.js" id="owl-carousel-js"></script>
+<script data-no-defer="1" data-no-optimize="1" id="owl-carousel-js-after">
+/* <![CDATA[ */
+(function($){
+  function bootOwl(){
+    var $c = $('.owl-carousel, #owl-demo');
+    if (!$c.length || !$.fn.owlCarousel) return;
+
+    $c.each(function(){
+      var $el = $(this);
+      if ($el.hasClass('owl-loaded') || $el.data('owl-initialized')) return;
+
+      // Detección simple de Owl v2: existe Constructor
+      var isV2 = !!$.fn.owlCarousel.Constructor;
+
+      if (isV2) {
+        // ==== OWL v2 ====
+        $el.owlCarousel({
+          items: 7,                 // base desktop
+          loop: true,
+          nav: true,
+          dots: false,
+          margin: 20,
+          stagePadding: 0,
+          navText: ['‹','›'],
+          responsive: {
+            0:    { items: 2, margin: 8,  stagePadding: 0 },
+            480:  { items: 2, margin: 10, stagePadding: 0 },
+            640:  { items: 3, margin: 12, stagePadding: 6 },
+            768:  { items: 4, margin: 16, stagePadding: 8 },
+            1024: { items: 5, margin: 20, stagePadding: 10 },
+            1280: { items: 7, margin: 24, stagePadding: 12 }
+          }
+        });
+      } else {
+        // ==== OWL v1 ====
+        $el.owlCarousel({
+          items: 7,
+          navigation: true,
+          pagination: false,
+          navigationText: ['‹','›'],
+          // Breakpoints v1
+          itemsDesktop:      [1280, 7],
+          itemsDesktopSmall: [1024, 5],
+          itemsTablet:       [768,  4],
+          itemsTabletSmall:  [640,  3],
+          itemsMobile:       [0,    2],   // << ¡2 items en móvil!
+          slideSpeed: 300,
+          paginationSpeed: 400,
+          autoHeight: false
+        });
+      }
+
+      $el.data('owl-initialized', true);
+    });
+  }
+  $(bootOwl);
+  $(window).on('load', bootOwl);
+})(jQuery);
+//# sourceURL=owl-carousel-js-after
+/* ]]> */
+</script>
+    <script>
+    jQuery(window).on('load', function($){
+        var $el = jQuery('#owl-demo');
+        if (!$el.length) return;
+
+        // Detectar versión de Owl (v1 o v2)
+        var isV2 = !!(jQuery.fn.owlCarousel && jQuery.fn.owlCarousel.Constructor && jQuery.fn.owlCarousel.Constructor.Defaults);
+
+        if (isV2) {
+            // ---- OWL v2 ----
+            $el.owlCarousel({
+                loop: false,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                dots: false,
+                nav: false,
+                responsive: {
+                    0: { items: 2 },
+                    600: { items: 3 },
+                    900: { items: 4 },
+                    1200: { items: 8 }
+                }
+            });
+        } else {
+            // ---- OWL v1 ----
+            $el.owlCarousel({
+                autoPlay: 3000,
+                items: 8,
+                itemsDesktop: [1000,5],
+                itemsDesktopSmall: [900,3],
+                itemsTablet: [600,2],
+                itemsMobile: false
+            });
+        }
+    });
+    </script>
+    <script>window.lazyLoadOptions = [{
+                elements_selector: "img[data-lazy-src],.rocket-lazyload",
+                data_src: "lazy-src",
+                data_srcset: "lazy-srcset",
+                data_sizes: "lazy-sizes",
+                class_loading: "lazyloading",
+                class_loaded: "lazyloaded",
+                threshold: 300,
+                callback_loaded: function(element) {
+                    if ( element.tagName === "IFRAME" && element.dataset.rocketLazyload == "fitvidscompatible" ) {
+                        if (element.classList.contains("lazyloaded") ) {
+                            if (typeof window.jQuery != "undefined") {
+                                if (jQuery.fn.fitVids) {
+                                    jQuery(element).parent().fitVids();
+                                }
+                            }
+                        }
+                    }
+                }},{
+				elements_selector: ".rocket-lazyload",
+				data_src: "lazy-src",
+				data_srcset: "lazy-srcset",
+				data_sizes: "lazy-sizes",
+				class_loading: "lazyloading",
+				class_loaded: "lazyloaded",
+				threshold: 300,
+			}];
+        window.addEventListener('LazyLoad::Initialized', function (e) {
+            var lazyLoadInstance = e.detail.instance;
+
+            if (window.MutationObserver) {
+                var observer = new MutationObserver(function(mutations) {
+                    var image_count = 0;
+                    var iframe_count = 0;
+                    var rocketlazy_count = 0;
+
+                    mutations.forEach(function(mutation) {
+                        for (var i = 0; i < mutation.addedNodes.length; i++) {
+                            if (typeof mutation.addedNodes[i].getElementsByTagName !== 'function') {
+                                continue;
+                            }
+
+                            if (typeof mutation.addedNodes[i].getElementsByClassName !== 'function') {
+                                continue;
+                            }
+
+                            images = mutation.addedNodes[i].getElementsByTagName('img');
+                            is_image = mutation.addedNodes[i].tagName == "IMG";
+                            iframes = mutation.addedNodes[i].getElementsByTagName('iframe');
+                            is_iframe = mutation.addedNodes[i].tagName == "IFRAME";
+                            rocket_lazy = mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');
+
+                            image_count += images.length;
+			                iframe_count += iframes.length;
+			                rocketlazy_count += rocket_lazy.length;
+
+                            if(is_image){
+                                image_count += 1;
+                            }
+
+                            if(is_iframe){
+                                iframe_count += 1;
+                            }
+                        }
+                    } );
+
+                    if(image_count > 0 || iframe_count > 0 || rocketlazy_count > 0){
+                        lazyLoadInstance.update();
+                    }
+                } );
+
+                var b      = document.getElementsByTagName("body")[0];
+                var config = { childList: true, subtree: true };
+
+                observer.observe(b, config);
+            }
+        }, false);</script><script data-no-minify="1" async="" src="https://www.gamezfull.com/wp-content/plugins/rocket-lazy-load/assets/js/16.1/lazyload.min.js"></script>
+  <!-- GA4: carga tras interacción + fallback -->
+  <script>
+    (function(){
+      var fired = false;
+      function loadGA(){
+        if (fired) return; fired = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-122SZ879V7';
+        document.head.appendChild(s);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        window.gtag = gtag;
+
+        gtag('js', new Date());
+        gtag('config', 'G-122SZ879V7', {
+          transport_type: 'beacon',
+          anonymize_ip: true
+          // ,send_page_view: false
+        });
+      }
+      ['click','scroll','keydown','mousemove','touchstart'].forEach(function(ev){
+        window.addEventListener(ev, loadGA, { once:true, passive:true });
+      });
+      setTimeout(loadGA, 5000);
+    })();
+  </script>
+
+  <script>
+    new PerformanceObserver((list) => {
+      for (const entry of list.getEntries()) {
+        if (!entry.hadRecentInput) {
+          console.group('CLS shift');
+          console.log('score+', entry.value, 'at', entry.startTime.toFixed(0)+'ms');
+          entry.sources.forEach((src, i) => {
+            const n = src.node;
+            try {
+              const sel = n
+                ? (n.id
+                    ? '#'+n.id
+                    : n.className
+                      ? '.'+String(n.className).split(' ').join('.')
+                      : n.nodeName)
+                : '(no node)';
+              console.log(i+1+'.', sel, 'moved from', src.previousRect, 'to', src.currentRect);
+              console.log('outerHTML:', (n && n.outerHTML ? n.outerHTML.slice(0,300)+'…' : n ? n.nodeName : 'n/a'));
+            } catch(e){}
+          });
+          console.groupEnd();
+        }
+      }
+    }).observe({type: 'layout-shift', buffered: true});
+  </script>
+<script>
+document.querySelectorAll('.gf-video').forEach(function(el){
+
+el.addEventListener('click',function(){
+
+var id = this.dataset.id;
+
+this.innerHTML = '<iframe width="700" height="420" src="https://www.youtube.com/embed/'+id+'?autoplay=1" frameborder="0" allowfullscreen></iframe>';
+
+});
+
+});
+</script>
+
+
+
+
+</div><div id="lightboxOverlay" tabindex="-1" class="lightboxOverlay" style="display: none;"></div><div id="lightbox" tabindex="-1" class="lightbox" style="display: none;"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt=""><div class="lb-nav"><a class="lb-prev" role="button" tabindex="0" aria-label="Previous image" href=""></a><a class="lb-next" role="button" tabindex="0" aria-label="Next image" href=""></a></div><div class="lb-loader"><a class="lb-cancel" role="button" tabindex="0"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close" role="button" tabindex="0"></a></div></div></div></div><div id="fb-tmp"></div><div id="fb-loading"></div><div id="fb-overlay"></div><div id="fb-wrap" class="fb-ie"><div id="fb-outer"><div id="fb-content"></div><div id="fb-title"></div><div id="fb-left"><a>prev</a></div><div id="fb-right"><a>next</a></div></div></div></body></html>

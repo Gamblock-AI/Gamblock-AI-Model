@@ -1,0 +1,2152 @@
+<html lang="ko"><head>
+
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="keywords" content="전북대학교, 전북대, 전대, JBNU">
+<meta name="author" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="_csrf" content="6713282f-2a23-48aa-8af8-f64275e3a6c4">
+<meta name="_csrf_header" content="X-CSRF-TOKEN">
+
+<meta name="google" content="notranslate">
+
+<!-- 페이스북, 밴드, 구글, 카카오스토리 동일 meta -->
+<meta property="og:image" content="https://www.jbnu.ac.kr/resources/img/ogimage3.jpg">
+<!-- 이미지 url -->
+<meta property="og:title" content="Jeonbuk National University">
+<!-- 제목 -->
+<meta property="og:type" content="website">
+<meta property="og:description" content="">
+<!-- 내용 -->
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="400">
+<meta property="og:image:type" content="image/jpeg">
+<!-- 트위터 meta -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.jbnu.ac.kr/resources/img/ogimage3.jpg">
+<!-- 이미지 url -->
+<meta name="twitter:title" content="Jeonbuk National University">
+<meta name="twitter:description" content="">
+
+<title>Jeonbuk National University</title>
+
+<!--[if lt IE 9]>
+<script>
+//IE8 이하 브라우저 업그레이드 권고
+alert("브라우저의 버전이 너무 낮습니다.\n보안을 위해 브라우저의 버전을 업그레이드 해야합니다.");
+location.href="/no_IELess9.jsp";
+</script>
+<![endif]-->
+
+
+<!-- FAVICONS -->
+<link rel="shortcut icon" href="https://www.jbnu.ac.kr/resources/favicon.ico" type="image/x-icon">
+<link rel="icon" href="https://www.jbnu.ac.kr/resources/favicon.ico" type="image/x-icon">
+
+
+<!-- CSS적용 -->
+<link href="/resources/publish/_EN/css/common.css?0.100" type="text/css" rel="stylesheet">
+			<link href="/resources/publish/_EN/css/main.css?0.320" type="text/css" rel="stylesheet">
+			<link href="/resources/publish/_EN/css/basic.css?0.030" type="text/css" rel="stylesheet">
+			<link href="/resources/publish/_EN/css/layout.css?0.170" type="text/css" rel="stylesheet">
+			<link href="/resources/publish/_EN/css/customboard.css?0.180" type="text/css" rel="stylesheet">
+			<link type="text/css" rel="stylesheet" href="/resources/api/jquery-ui/1.12.1/jquery-ui.min.css">
+<!-- 게시판 공지 캘린더 css -->
+<link type="text/css" rel="stylesheet" href="/resources/user/css/default.css">
+
+
+<link rel="stylesheet" href="/resources/user/eng/library/css/swiper-bundle.min.css">
+<link rel="stylesheet" href="/resources/api/xeicon/xeicon.min.css"><script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js" integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI=" crossorigin="anonymous"></script>
+
+
+<!-- 클립보드 복사 -->
+<script type="text/javascript" src="/resources/api/clipboard/clipboard.min.js"></script>
+
+<!-- validation -->
+<script type="text/javascript" src="/resources/common/js/validation/jquery.validate.js"></script>
+<script type="text/javascript" src="/resources/common/js/common/html5shiv-printshiv.js"></script>
+<!-- <script type="text/javascript" src="/resources/common/js/common/slick.js"></script> -->
+<script type="text/javascript" src="/resources/common/js/common/respond.min.js"></script>
+<script type="text/javascript" src="/resources/common/js/common/cf_function.js"></script>
+<script type="text/javascript" src="/resources/common/js/common/common.js"></script>
+
+<script type="text/javascript" src="/resources/api/bxslider/jquery.bxslider.js"></script>
+<script type="text/javascript" src="/resources/common/js/common/swiper.js"></script>
+<script src="https://www.jbnu.ac.kr/resources/api/imagemap/imageMapResizer.min.js"></script>
+<!-- JS적용 -->
+<script src="/resources/publish/_EN/js/common.js?0.030"></script>
+        <script src="/resources/publish/_EN/js/main.js?0.010"></script>
+        <script src="/resources/user/eng/library/js/swiper-bundle.min.js"></script><script>  
+$(function () {
+
+   var hash = window.location.hash; 
+
+        if (hash && hash.indexOf('tab') > -1) { 
+            var targetClass = hash.replace('#', '.'); 
+            
+            setTimeout(function() {
+                var $targetTab = $('.com-tab-list-07 ' + targetClass + ' a');
+                if ($targetTab.length > 0) {
+                    $targetTab.trigger('click');
+                }
+            }, 100); 
+        }
+});
+
+</script><script>
+
+    var token = $("meta[name='_csrf']").attr("content");
+
+
+    
+    var sessionFailUrl = '/user/member/login.do?tiles=' + 'en'
+    
+
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-Token': token,
+            'AJAX': true
+        },
+        statusCode: {
+            401: function () {
+                location.href = sessionFailUrl;
+            },
+            403: function () {
+                location.href = sessionFailUrl;
+            }
+        }
+    });
+
+
+    /**
+     * 로그인 체크
+     * @returns
+     */
+    function cf_checkLogin() {
+
+        var check = false;
+
+        $.ajax({
+            type: "get",
+            url: "/common/member/checkLogin.do",
+            async: false,
+            success: function (data) {
+                if (data == 'N') {
+                    if (confirm('로그인이 필요합니다. 로그인 하시겠습니까?')) {
+                        cf_login('currentPage');
+                    }
+                } else {
+                    check = true;
+                }
+            },
+            error: function (jqXHR, exception) {
+                alert('error')
+            }
+        });
+
+        return check;
+    }
+
+    function cf_confirmLogin(encData) {
+        if (confirm('로그인이 필요합니다. 로그인 하시겠습니까?')) {
+            cf_login('enc', encData);
+        }
+        return false;
+    }
+
+
+    /**
+     * 로그인
+     */
+
+    function cf_login(type, encData) {
+        var loginUrl = '/user/member/login.do?tiles=en&returnPageType=' + type;
+        if (type == 'enc') {
+            loginUrl += '&returnPageData=' + encData;
+        }
+
+        location.href = loginUrl;
+    }
+
+</script>
+<script type="text/javascript" async="" src="https://ssl.pstatic.net/melona/libs/gfp-nac-module/synchronizer.js"></script></head>
+<body>
+	
+  
+	<script src="/resources/api/ios-orientationchange-fix/ios-orientationchange-fix.min.js"></script>
+
+<style type="text/css">
+    /* =========================================
+       1. 팝업 레이아웃 (공통)
+       ========================================= */
+    .popUpWrap_01 {
+        position: absolute;
+        top: calc(50% - 185px);
+        left: calc(50% - 150px);
+        z-index: 110;
+        width: 300px;
+        display: none;
+        /* border-radius: 12px;  <- 팝업 모서리 둥글게 하려면 주석 해제 */
+        /* overflow: hidden;     <- 둥근 모서리 적용 시 주석 해제 */
+    }
+
+    /* 내용 박스: 헤더 공간 삭제하고 이미지를 다시 꽉 채움 */
+    .popUpWrap_01 .contentsBox {
+        overflow-y: hidden;
+        overflow-x: hidden;
+        position: relative;
+        padding-top: 0 !important; /* 위쪽 여백 삭제 */
+        font-size: 0; /* 이미지 하단 미세 공백 제거 */
+    }
+
+    .popUpWrap_01 .contentsBox > a { text-decoration: none; display: block; }
+    .popUpWrap_01 .contentsBox img { width: 100%; vertical-align: top; }
+
+
+    /* =========================================
+       2. 컨트롤 버튼 그룹 (평소엔 숨김 -> 호버시 등장)
+       ========================================= */
+    .popup-controls {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        z-index: 50;
+
+        /* 버튼 그룹 디자인: 알약 모양의 반투명 검정 배경 */
+        display: flex;
+        gap: 8px;
+        padding: 6px 10px; /* 버튼 주변 여백 */
+        background-color: rgba(0, 0, 0, 0.6); /* 배경 부활 (반투명 검정) */
+        border-radius: 30px; /* 둥근 알약 모양 */
+        backdrop-filter: blur(4px); /* (선택) 배경 흐림 효과 */
+
+        /* 핵심: 투명도 애니메이션 */
+        opacity: 0; /* 평소엔 안 보임 */
+        transition: opacity 0.3s ease; /* 부드럽게 나타남 */
+    }
+
+    /* 팝업 전체(popUpWrap_01)에 마우스가 올라가면 컨트롤 패널 보이기, 키보드 포커스가 들어갔을 때(focus-within) 보이게 함 */
+    .popUpWrap_01:hover .popup-controls,
+    .popup-controls:focus-within {
+        opacity: 1;
+    }
+
+    /* 키보드 포커스 시 시각적 표시 (접근성) */
+    .btn-icon:focus {
+        outline: 2px solid #fff; /* 포커스 링(테두리) 표시 */
+        outline-offset: 2px;
+        opacity: 1;
+        background-color: rgba(0,0,0,0.8); /* 포커스 되면 배경 진하게 */
+    }
+
+    /* 아이콘 버튼 스타일 */
+    .btn-icon {
+        background: transparent;
+        border: none;
+        width: 28px;
+        height: 28px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        opacity: 0.7;
+        transition: transform 0.2s, opacity 0.2s;
+    }
+
+    /* 버튼 개별 호버 효과 */
+    .btn-icon:hover {
+        transform: scale(1.1); /* 커짐 */
+        opacity: 1; /* 선명해짐 */
+    }
+
+    /* 텍스트 폰트 조정 */
+    .btn-hide-24h span { font-size: 11px; font-weight: 700; letter-spacing: -0.5px; }
+    .btn-close-popup span { font-size: 17px; font-weight: 300; }
+
+    /* 툴팁 (말풍선) */
+    .btn-tooltip {
+        visibility: hidden;
+        background-color: rgba(0, 0, 0, 0.9);
+        color: #fff;
+        text-align: center;
+        border-radius: 4px;
+        padding: 5px 8px;
+        position: absolute;
+        top: 45px; /* 컨트롤 박스 아래로 */
+        right: 0;
+        white-space: nowrap;
+
+        font-family: 'Pretendard', 'Malgun Gothic', sans-serif !important;
+        font-size: 12px !important;  
+        font-weight: 400 !important;  
+        line-height: 1.4 !important;  
+        letter-spacing: -0.5px !important;
+
+        opacity: 0;
+        transition: opacity 0.2s;
+        pointer-events: none;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    /* 마우스 올리면 보이기 */
+    .btn-icon:hover .btn-tooltip {
+        visibility: visible;
+        opacity: 1;
+    }
+
+
+    /* =========================================
+       3. 모바일 팝업 레이아웃 (layerPopup)
+       ========================================= */
+    .layerPopup {
+        position: fixed;
+        top: 0 !important; /* 화면 상단에 배치 */
+        left: 50% !important;
+        transform: translateX(-50%) !important; /* 좌우 중앙 정렬만 */
+        width: 90% !important;
+        max-width: 500px !important; /* 최대 너비 제한 */
+        z-index: 30000 !important;
+        box-shadow: 0 0 0 2000px rgba(0,0,0,0.6);
+    }
+
+    .layerPopup .popup_area {
+        overflow: hidden;
+        position: relative;
+        padding-top: 0 !important;
+    }
+
+	/* 부모 영역 (틀) */
+	.layerPopup .popup_area .popup_image {
+		max-height: 80vh;
+		display: flex;       
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+	}
+
+	/* 실제 이미지 (내용물) */
+	.layerPopup .popup_area .popup_image img {
+		max-height: 100%;
+		max-width: 100%;
+		width: auto;
+		height: auto;
+		object-fit: contain;
+	}
+
+    /* =========================================
+       4. 모바일 예외 처리 (모바일은 항상 보임)
+       ========================================= */
+    @media all and (max-width:850px){
+        /* 모바일 팝업 크기 */
+        .popUpWrap_01 {
+            width: 90% !important;
+            left: 5% !important;
+            top: 15% !important;
+            box-shadow: 0 0 0 2000px rgba(0,0,0,0.6);
+            z-index: 30000 !important; /* PC용도 동일하게 */
+        }
+
+        /* 모바일은 마우스 호버가 없으므로 항상 보이게 강제 설정 */
+        .popup-controls {
+            opacity: 1 !important;
+            top: 10px; right: 10px;
+            padding: 5px 8px;
+        }
+
+        /* 모바일 이미지 영역 */
+        .layerPopup .popup_area { padding-top: 0 !important; }
+        .img_css { width: 100%; }
+    }
+
+
+    /* =========================================
+       4. 기타 요소 숨김
+       ========================================= */
+    .popUpWrap_01 .bottomBox { display: none !important; }
+    .popUpWrap_01 .btnCloseBox { display: none !important; }
+    .layerPopup .popup_close { display: none !important; }
+</style>
+<div id="layerPopupMask" style="display: none;"></div>
+<div class="popUpWrap_01 ui-draggable ui-draggable-handle" id="pop142" data-top="200" data-left="1300" style="top: 350px; left: 935px; width: 415px; display: block;">
+		        <div class="contentsBox" style="position: relative;">
+
+		        	<!-- 우측 상단 컨트롤 버튼 -->
+		        	<div class="popup-controls">
+		        		<button class="btn-icon btn-hide-24h" onclick="pf_closePop_W('142','Y');" aria-label="오늘 하루 보지 않기">
+		        			<span style="font-size: 11px;">24h</span>
+		        			<span class="btn-tooltip">오늘 하루 보지 않기</span>
+		        		</button>
+		        		<button class="btn-icon btn-close-popup" onclick="pf_closePop_W('142','N');" aria-label="닫기">
+		        			<span style="font-size: 18px;">✕</span>
+		        			<span class="btn-tooltip">창 닫기</span>
+		        		</button>
+		        	</div>
+
+		        	<!-- 팝업창 메인 이미지 -->
+				     <div style="width: 100%;height: 100%;">
+					     <a href="https://ioffice.jbnu.ac.kr/ioffice/32603/subview.do " target="_blank" title="Scholarships, New Departments, Language Requirements 새 창 열림">
+					    	      <img style="max-width:100%;" src="/common/file.do?file=GeujsQ2wvI9zY/FAFO4XTfQoBZwp58PCZl1Xvu06hNZqu6g0ihJmPc4FOFpEB4uhhumcU5NdIuEmi/wXxhDddw==" class="img_css" alt="">
+				                </a>
+		                    </div>
+				     </div>
+		        <div class="bottomBox" style="height: 50px;">
+		        	<button type="button" class="pc_btn_01" onclick="pf_closePop_W('142','Y');">오늘 하루 보지 않기</button>
+		        	<button type="button" class="pc_btn_02" onclick="pf_closePop_W('142','N');">닫기</button>
+		        </div>
+		    </div>
+		<script>
+$(function(){
+	$(document).ready(function(e) {
+		if($('map').length > 0){
+	     	$('map').imageMapResize();
+		}
+	});
+});
+
+// 배너 토글 이후 팝업 위치 재조정
+$(document).on('click', '.hd-top-toggle-btn', function () {
+    setTimeout(function() {
+        if (typeof pf_checkDraggable === 'function') {
+            pf_checkDraggable();
+        }
+    }, 100);
+});
+
+</script>
+
+
+<script>
+    var popupCookieW = new Array();
+    var cookieKeys = ''
+
+    $(document).ready(function () {
+        popupCookieW.push(cookieKeys)
+
+        
+        pf_checkDraggable();
+        $(window).resize(pf_checkDraggable);
+        
+
+        $(".popUpWrap_01").show();
+
+        /*  $(".layerPopup").each(function(){
+        $(this).center();
+    }); */
+
+    });
+
+    jQuery.fn.center = function () {
+        this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 3) + $(window).scrollTop()) + "px");
+        this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + $(window).scrollLeft()) + "px");
+        return this;
+    }
+
+
+    var currentPopupDraggableStatus = false;
+
+    // 배너 높이 계산 (팝업 위치 보정용)
+    function pf_getTopBannerOffset() {
+        var $slideWrap = $('.hd-top-slide-wrap');
+        if ($slideWrap.length && $slideWrap.hasClass('active') && $slideWrap.is(':visible')) {
+            return $slideWrap.outerHeight() || 0;
+        }
+        return 0;
+    }
+
+    function pf_checkDraggable() {
+
+        // 뷰포트 크기를 확인(실제 영역만)
+        var viewportWidth = $(window).width();
+        var viewportHeight = $(window).height();
+        var safeMargin = 16;
+        var bannerOffset = pf_getTopBannerOffset(); // 배너 높이 반영
+
+        $('.popUpWrap_01').each(function () {
+            var $popup = $(this);
+
+            // 초기화 값 저장
+            if (!$popup.data('originWidth')) {
+                $popup.data('originWidth', $popup.outerWidth());
+            }
+            if (!$popup.data('baseTop')) {
+                $popup.data('baseTop', Number($popup.attr('data-top')) || 0);
+                $popup.data('baseLeft', Number($popup.attr('data-left')) || 0);
+            }
+
+            // 화면이 작아지면 팝업 폭을 자동으로 조절
+            var maxWidth = Math.max(120, viewportWidth - safeMargin * 2);
+            var targetWidth = Math.min($popup.data('originWidth'), maxWidth);
+            if ($popup.outerWidth() !== targetWidth) $popup.css('width', targetWidth);
+
+
+            // 팝업 크기를 다시 측정하고
+            var popupWidth = $popup.outerWidth();
+            var popupHeight = $popup.outerHeight();
+
+            // 드래그 여부에 따라 위치 계산 기준을 다르게 함
+            var isDragged = $popup.data('dragged') === true;
+            var top = isDragged ? $popup.data('currentTop') : $popup.data('baseTop');
+            var left = isDragged ? $popup.data('currentLeft') : $popup.data('baseLeft');
+
+            // 기본값이 0이거나 없는 경우에는 중앙에 배치
+            if (top === 0 || typeof top === 'undefined') top = (viewportHeight - popupHeight) / 2;
+            if (left === 0 || typeof left === 'undefined') left = (viewportWidth - popupWidth) / 2;
+
+            // 화면 밖으로 나가지 않도록 보정
+            left = Math.max(safeMargin, Math.min(left, viewportWidth - popupWidth - safeMargin));
+            top = Math.max(safeMargin, Math.min(top, viewportHeight - popupHeight - safeMargin));
+
+            $popup.data('currentTop', top);  // 배너 없는 순수 위치만 저장
+            $popup.data('currentLeft', left);
+
+            // 화면에 표시할 때만 배너 높이 더함
+            var displayTop = top + bannerOffset;
+            $popup.css({ top: displayTop, left: left });
+        });
+
+        if (viewportWidth >= 1000) {
+            if (!currentPopupDraggableStatus) {
+                $('.popUpWrap_01').draggable({
+                    containment: 'window',
+                    scroll: false,
+                    stop: function (_e, ui) {
+                        $(this).data('dragged', true);
+                        // 드래그 완료 시 배너 offset을 빼고 저장 (순수 위치만)
+                        var bannerOffset = pf_getTopBannerOffset();
+                        $(this).data('currentTop', ui.position.top - bannerOffset);
+                        $(this).data('currentLeft', ui.position.left);
+                    }
+                });
+                currentPopupDraggableStatus = true;
+            }
+        } else if (currentPopupDraggableStatus) {
+            $('.popUpWrap_01').draggable('destroy');
+            currentPopupDraggableStatus = false;
+        }
+    }
+
+    //팝업창 닫을 때 체크박스 여부에 따른 처리
+    function pf_closePop_W(key, AlldayYN) {
+        if (AlldayYN == 'Y') {
+            popupCookieW.push(key)
+            cf_setCookieAt00("popup_w", popupCookieW, 1);
+        }
+        $('#pop' + key).hide();
+
+    }
+
+    //팝업창 닫을 때 체크박스 여부에 따른 처리
+    function pf_closeMobliePop_W(key, AlldayYN) {
+        if (AlldayYN == 'Y') {
+            popupCookieW.push(key)
+            cf_setCookieAt00("popup_w", popupCookieW, 1);
+        }
+
+        $('#pop' + key).hide();
+        if ($('.layerPopup:visible').length < 1) {
+            $('#layerPopupMask').hide();
+        }
+
+    }
+
+
+</script>
+
+<link rel="stylesheet" href="/resources/api/xeicon/xeicon.min.css">
+
+
+<script>console.log('bannerViewType', 'B')</script>
+<style>
+
+
+            .hd-top-slide-wrap {
+                width: 100%;
+                height: 150px;
+                margin-left: auto;
+                background: #424242;
+                display: flex;
+                align-items: center;
+                gap: 50px;
+                display: none;
+                position: relative;
+            }
+
+            .hd-top-slide-wrap.active {
+                display: flex;
+                justify-content: center;
+
+            }
+
+            .hd-top-slide {
+                width: 100%;
+                max-width: 1500px;
+
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+
+            /* .hd-top-slide .swiper-slide {max-width: calc(100% / 3);} */
+            .hd-top-btn-box {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                right: 20px;
+
+            }
+
+            .hd-top-btn-box button {
+                width: 40px;
+                height: 40px;
+                background: #636363 url(/resources/user/web/img/icon/icon_hdTop_arrow.svg) no-repeat center;
+                background-size: 60%;
+                border-radius: 50%;
+            }
+
+            .hd-top-btn-box button:hover {
+                background: #333 url(/resources/user/web/img/icon/icon_hdTop_arrow.svg) no-repeat center;
+            }
+
+            .hd-top-btn-box button.prev-btn {
+                transform: rotate(180deg);
+            }
+
+            .hd-top-btn-box .play-btn-wrap {
+                position: relative;
+                width: 40px;
+                height: 40px;
+            }
+
+            .hd-top-btn-box .play-btn-wrap button {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-size: ;
+            }
+
+            .hd-top-btn-box .play-btn-wrap button.play-btn {
+                background: #636363 url(/resources/user/web/img/icon/icon_main_play_btn.svg) no-repeat center;
+                display: none;
+            }
+
+            .hd-top-btn-box .play-btn-wrap button.pause-btn {
+                background: #636363 url(/resources/user/web/img/icon/icon_main_pause_btn.svg) no-repeat center;
+            }
+
+
+            @media screen and (min-width: 2000px) {
+                .hd-top-btn-box {
+                    position: absolute;
+                }
+            }
+
+            @media screen and (max-width: 1560px) {
+                .hd-top-slide-wrap {
+                    padding: 10px 20px;
+                }
+
+                .hd-top-btn-box {
+                    padding-right: 0;
+                }
+            }
+
+            @media screen and (max-width: 1300px) {
+
+
+                .hd-top-slide-wrap {
+                    width: 100%;
+                }
+            }
+
+            @media screen and (max-width: 1080px) {
+                .hd-top-btn-box button {
+                    width: 30px;
+                    height: 30px;
+                }
+
+                .hd-top-slide .swiper-slide {
+                    max-width: calc(100% / 2);
+                }
+            }
+
+            @media screen and (max-width: 768px) {
+                .hd-top-slide-wrap.active{
+                  padding-bottom: 30px;
+                  box-sizing: border-box;
+                }
+                .popup-delete-btn{
+                  bottom: 8px;
+                }
+            }
+
+            @media screen and (max-width: 480px) {
+
+
+                .hd-top-slide li img {
+                    margin: 0 auto;
+                }
+
+                .hd-top-btn-box {
+                    display: none;
+                }
+
+                .hd-top-slide .swiper-slide {
+                    max-width: 100%;
+                }
+            }
+
+            #hd .hd-top-toggle-btn-box {
+                height: 100%;
+                background: #424242;
+                padding: 0 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            #hd .hd-top-toggle-btn {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 5px;
+            }
+
+            #hd .hd-top-toggle-btn::after {
+                content: '';
+                display: block;
+                width: 15px;
+                height: 12px;
+                background: url(/resources/user/web/img/icon/icon_hdTop_toggle_arrow.svg) no-repeat center;
+                background-size: contain;
+            }
+
+            #hd .hd-top-toggle-btn-box {
+                height: 100%;
+                background: #424242;
+                padding: 0 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            #hd .hd-top-toggle-btn.active::after {
+                transform: rotate(180deg);
+            }
+
+            #hd.sub .hd-top-toggle-btn-box {
+                height: 100%;
+                padding: 0 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+
+            @media screen and (max-width: 768px) {
+                #hd .hd-top-toggle-btn-box {
+                    padding: 8px 15px;
+                    border-radius: 30px;
+                }
+
+                #hd .hd-top-toggle-btn {
+                    font-size: 14px;
+                  padding: 5px 0;
+                }
+
+                #hd .hd-top-toggle-btn::after {
+                    width: 12px;
+                }
+            }
+
+            .swiper-wrapper.justify-center {
+                justify-content: center !important;
+            }
+
+            /* 250409 ......... 팝업 추가 */
+
+            /* 팝업 쿠키 삭제 추가 250409 */
+            .popup-delete-btn {
+                position: absolute;
+                z-index: 10;
+                bottom: 5px;
+                right: 0;
+            }
+
+            .popup-delete-btn input[type="checkbox"] {
+                display: none;
+            }
+
+            .popup-delete-btn input[type="checkbox"] + label {
+                color: #fff;
+                font-size: 14px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 5px;
+                padding: 5px 15px;
+            }
+
+            .popup-delete-btn input[type="checkbox"] + label::before {
+                content: '';
+                display: inline-block;
+                width: 18px;
+                height: 18px;
+                border-radius: 3px;
+                border: 1px solid #ccc;
+            }
+
+            .popup-delete-btn input[type="checkbox"]:checked + label::before {
+                content: '';
+                display: flex;
+                border-radius: 3px;
+                columns: #3edfdf;
+                background: #ecf6fc3f url(/resources/user/web/img/icon/icon_white_check.svg) no-repeat center;
+                background-size: 12px;
+            }
+
+            /* // 팝업 쿠키 삭제 추가 250409 */
+        </style>
+
+        <!-- 250408 ...... ..�상단 팝업 추가 -->
+        <div class="hd-top-slide-wrap active">
+            <div class="hd-top-slide swiper swiper-initialized swiper-horizontal swiper-backface-hidden">
+                <ul class="swiper-wrapper justify-center" id="swiper-wrapper-c0102e5f32c33abaa" aria-live="off">
+                    
+                    <li class="swiper-slide swiper-slide-active" role="group" aria-label="2 / 2" data-swiper-slide-index="1" style="width: 442px;">
+                            <a href="/en/Board/210889/detailView.do">
+                                <img src="/common/file.do?file=GeujsQ2wvI9zY/FAFO4XTWF1Q6u6GCQ4QEQqtHeQYvrofGjmPqEWF0dOcmNzHbblxp8NOBhfRYlbsC4+GetA4g==" alt="[Graduate] Admission for Fall semester, 2026" style="visibility: visible;">
+                            </a>
+                        </li>
+                    <li class="swiper-slide swiper-slide-next" role="group" aria-label="1 / 2" data-swiper-slide-index="0" style="width: 442px;">
+                            <a href="/en/Board/210871/detailView.do">
+                                <img src="/common/file.do?file=GeujsQ2wvI9zY/FAFO4XTYtMpPMOjsY8Q1YK9H83PzYHegDA5/89Nq4RYFekirbpPNFeq+5bh8sskzb24rjO0w==" alt="[Undergraduate] Admission for Fall semester, 2026" style="visibility: visible;">
+                            </a>
+                        </li></ul>
+            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+            <div class="hd-top-btn-box" style="display:none;">
+                <button type="button" class="prev-btn swiper-button-lock" title="이전 슬라이드" tabindex="0" aria-label="Previous slide" aria-controls="swiper-wrapper-c0102e5f32c33abaa"></button>
+                <button type="button" class="next-btn swiper-button-lock" title="다음 슬라이드" tabindex="0" aria-label="Next slide" aria-controls="swiper-wrapper-c0102e5f32c33abaa"></button>
+                <div class="play-btn-wrap">
+                    <button type="button" class="pause-btn" title="멈춤"></button>
+                    <button type="button" class="play-btn" title="재생"></button>
+                </div>
+            </div>
+
+            <div class="popup-delete-btn">
+                <input type="checkbox" name="chkboxTopBanner" id="popupDelete" class="popupDelete"><label for="popupDelete">Don't show this again today</label>
+            </div>
+
+        </div>
+        <!-- // 250408 ...... ..�상단 팝업 추가 -->
+
+
+        <script>
+            var hdTopSlide;
+
+            $(function () {
+
+                pf_topBannerSlide();
+
+                $('.swiper-slide img').css('visibility', 'visible');
+
+
+                hdTopSlide.on('resize', function () {
+                    pf_slideBtnBox(hdTopSlide.params.slidesPerView)
+                });
+                pf_slideBtnBox(hdTopSlide.params.slidesPerView)
+
+                function pf_slideBtnBox(currentSlidesPerView) {
+                    const length = 2;
+                    if (length > currentSlidesPerView && currentSlidesPerView != 1) {
+                        $(".hd-top-btn-box").show();
+                    } else {
+                        $(".hd-top-btn-box").hide();
+                    }
+                    if (length >= currentSlidesPerView) {
+                        document.querySelector('.hd-top-slide .swiper-wrapper').classList.remove('justify-center');
+                    } else {
+                        document.querySelector('.hd-top-slide .swiper-wrapper').classList.add('justify-center');
+                    }
+
+                }
+
+
+                $(".hd-top-btn-box .play-btn").on("click", function () {
+                    hdTopSlide.autoplay.start();
+                    hdTopSlide.slideNext();
+                    $(".hd-top-btn-box .play-btn").hide();
+                    $(".hd-top-btn-box .pause-btn").show();
+                });
+
+                $(".hd-top-btn-box .pause-btn").on("click", function () {
+                    hdTopSlide.autoplay.stop();
+                    $(".hd-top-btn-box .pause-btn").hide();
+                    $(".hd-top-btn-box .play-btn").show();
+                });
+
+            })
+
+            function pf_topBannerSlide() {
+                hdTopSlide = new Swiper('.hd-top-slide', {
+                    loop: true,
+                    slidesPerView: 1,
+                    watchOverflow: true,
+                    navigation: {
+                        prevEl: '.hd-top-btn-box .prev-btn',
+                        nextEl: '.hd-top-btn-box .next-btn',
+                    },
+                    speed: 1000,
+                    autoplay: {
+                        delay: 2000,
+                        disableOnInteraction: false,
+                    },
+                    breakpoints: {
+                        480: {
+                            slidesPerView: 1,
+                            spaceBetween: 0,
+                            centerdSlides: true
+                        },
+                        481: {
+                            slidesPerView: 2,
+                            spaceBetween: 0,
+                            centerdSlides: false,
+                        },
+                        1080: {
+                            slidesPerView: 3,
+                            spaceBetween: 0,
+                            centerdSlides: true
+                        },
+                    }
+                });
+            }
+        </script>
+    <script>
+
+var bannerOpenStatus = true;
+
+    $(function () {
+
+      	$('input[name=chkboxTopBanner]').on('change', function () {
+            if ($(this).is(':checked')) {
+                // 쿠키만 설정하고 배너는 닫지 않음
+                // Close Popup 버튼으로 배너를 닫을 때 쿠키 상태가 유지됨
+                var popupCookieB = new Array();
+                popupCookieB.push('TopBanner')
+                cf_setCookieAt00("popup_b", popupCookieB, 1);
+              
+              // 모바일에서 체크시 자동으로 배너 닫기
+             if ($(window).width() <= 768) {
+                    $('.hd-top-slide-wrap, #hdTopBanner').removeClass('active');
+                    adjustResearchElementsPosition(false);
+                }
+            } else {
+                // 체크 해제하면 쿠키 삭제
+                cf_clearCookie("popup_b");
+            }
+        });
+
+
+        // 헤더 최상단 팝업 닫기
+        $(".hd-top-toggle-btn").click(function () {
+
+            bannerOpenStatus = !bannerOpenStatus;
+
+            let $hdTop = $(".hd-top-slide-wrap, #hdTopBanner");
+
+           if (bannerOpenStatus) {
+                // 배너 보이기
+                $hdTop.addClass('active');
+                $(this).removeClass('active');
+                $(this).text("Close Popup");
+
+                // 연구자 정보 및 팝업 위치 조정
+                adjustResearchElementsPosition(true);
+            } else {
+                // 배너 숨기기
+                $hdTop.removeClass('active');
+                $(this).addClass('active');
+                $(this).text("Open Popup");
+
+                // 연구자 정보 및 팝업 위치 조정
+                adjustResearchElementsPosition(false);
+            }
+        });
+    })
+
+  
+  // 연구자 정보 버튼과 Research Excellence 박스의 위치를 조정
+    function adjustResearchElementsPosition(isBannerOpen) {
+        var bannerHeight = 150; 
+        // var $researchElements = $('.btn-researcher-info, .research-excellence-box');
+        var $researchElements = $('.btn-researcher-info, .jbnu-on-ai-box');
+
+        if ($researchElements.length === 0) {
+            return; 
+        }
+
+        $researchElements.each(function() {
+            var $elem = $(this);
+
+            // transition 설정
+            $elem.css('transition', 'top 0.4s ease');
+
+            // 현재 top 값 가져오기
+            var currentTop = parseInt($elem.css('top')) || 0;
+            var newTop;
+
+            if (isBannerOpen) {
+                // 배너가 열릴 때: 아래로 이동 (배너 높이만큼 더하기)
+                newTop = currentTop + bannerHeight;
+            } else {
+                // 배너가 닫힐 때: 위로 이동 (배너 높이만큼 빼기)
+                newTop = currentTop - bannerHeight;
+            }
+
+            $elem.css('top', newTop + 'px');
+        });
+    }
+</script>
+
+
+<div id="wrap">	
+ 
+  <div id="gb-popup-menu">
+            <div class="cls-box">
+                <button type="button" class="btn-cls"><i class="xi-close"></i></button>
+            </div>
+
+            <ul class="etc-list">
+              <li><a href="/user/member/login.do?tiles=web&amp;returnPageType=currentPage">LOGIN</a></li>
+                                <li><a href="/en/sitemap.do">SITEMAP</a></li>
+              <li><a href="/web/index.do">KOR</a></li>
+              	<!--
+                <li>
+                    <a href="javascript:;" class="btn-lang-toggle">ENG <i class="xi-angle-down"></i></a>
+                    <ul class="lang-list">
+                        <li><a href="/web/index.do">한국어</a></li>
+                        <li><a href="/china/index.do">中國語</a></li>
+                    </ul>
+                </li>
+-->
+            </ul>
+  
+				<!-- 통합검색 기능 -->
+            <div class="srch-box">
+                <div class="input-box">
+                    <input type="text" placeholder="Search...">
+                    <button type="button" class="btn-srch"><img src="/resources/user/eng/img/icon/icon_srch_blue.svg" alt=""></button>
+                </div>
+            </div>
+
+<!-- 상단 햄버거 바 메뉴 -->
+<div class="menu-list">
+<ul class="dep-list-01">
+			 	<li>
+							<a class="dep-01 " href="javascript:;">ABOUT JBNU<i class="xi-plus"></i><i class="xi-minus"></i></a>
+								<ul class="dep-list-02">
+										<li>
+														<a class="dep-02 " href="javascript:;">President`s Office<i class="xi-plus"></i><i class="xi-minus"></i></a> 
+														<ul class="dep-list-03">
+															<li><a href="/en/about/president/message.do" target="_self" title="Message" class="dep-03">Message</a></li>
+																<li><a href="/en/about/president/curiculum.do" target="_self" title="Curriculum Vitae" class="dep-03">Curriculum Vitae</a></li>
+																<li><a href="/en/about/president/history.do" target="_self" title="History of the Office" class="dep-03">History of the Office</a></li>
+																</ul>
+								                        </li>
+													<li>
+														<a class="dep-02 " href="javascript:;">Overview<i class="xi-plus"></i><i class="xi-minus"></i></a> 
+														<ul class="dep-list-03">
+															<li><a href="/en/about/overview/vision.do" target="_self" title="VISION 2030 Plus" class="dep-03">VISION 2030 Plus</a></li>
+																<li><a href="/en/about/overview/glocal.do" target="_self" title="GLOCAL UNIVERSITY 30 VISION" class="dep-03">GLOCAL UNIVERSITY 30 VISION</a></li>
+																<li><a href="/en/about/overview/history.do" target="_self" title="History" class="dep-03">History</a></li>
+																<li><a href="/en/about/overview/org.do" target="_self" title="Organization Chart" class="dep-03">Organization Chart</a></li>
+																<li><a href="/en/about/overview/symbols.do" target="_self" title="University Symbols" class="dep-03">University Symbols</a></li>
+																</ul>
+								                        </li>
+													<li>
+														<a class="dep-02 " href="javascript:;">JBNU Campus<i class="xi-plus"></i><i class="xi-minus"></i></a> 
+														<ul class="dep-list-03">
+															<li><a href="/en/about/campus/jeoju.do" target="_self" title="Jeonju Campus" class="dep-03">Jeonju Campus</a></li>
+																<li><a href="/en/about/campus/iksan.do" target="_self" title="Iksan Campus" class="dep-03">Iksan Campus</a></li>
+																<li><a href="/en/about/campus/gochang.do" target="_self" title="Gochang Campus" class="dep-03">Gochang Campus</a></li>
+																<li><a href="/en/about/campus/saemangem.do" target="_self" title="Saemangem Frontier Campus" class="dep-03">Saemangem Frontier Campus</a></li>
+																<li><a href="/en/about/campus/asc.do" target="_self" title="Advanced Science Campus" class="dep-03">Advanced Science Campus</a></li>
+																</ul>
+								                        </li>
+													<li>
+														<a class="dep-02 " href="javascript:;">Multimedia<i class="xi-plus"></i><i class="xi-minus"></i></a> 
+														<ul class="dep-list-03">
+															<li><a href="/en/about/multimedia/videos.do" target="_self" title="Videos" class="dep-03">Videos</a></li>
+																<li><a href="/en/about/multimedia/gallery.do" target="_self" title="Gallery" class="dep-03">Gallery</a></li>
+																</ul>
+								                        </li>
+													<li>
+														<a class="dep-02 " href="javascript:;">Campus Tour<i class="xi-plus"></i><i class="xi-minus"></i></a> 
+														<ul class="dep-list-03">
+															<li><a href="/en/about/tour/group.do" target="_self" title="Group Tours" class="dep-03">Group Tours</a></li>
+																</ul>
+								                        </li>
+													<li><a href="/en/about/ls.do" target="_self" title="Location &amp; Surroundings" class="dep-02">Location &amp; Surroundings</a></li>
+															</ul>
+								</li>
+					<li>
+							<a class="dep-01 " href="javascript:;">ACADEMICS<i class="xi-plus"></i><i class="xi-minus"></i></a>
+								<ul class="dep-list-02">
+										<li>
+														<a class="dep-02 " href="javascript:;">Programs<i class="xi-plus"></i><i class="xi-minus"></i></a> 
+														<ul class="dep-list-03">
+															<li><a href="/en/academics/programs/university.do" target="_self" title="Undergraduate" class="dep-03">Undergraduate</a></li>
+																<li><a href="/en/academics/programs/graduate.do" target="_self" title="Graduate" class="dep-03">Graduate</a></li>
+																<li><a href="/en/academics/programs/professional.do" target="_self" title="Professional Graduate Schools" class="dep-03">Professional Graduate Schools</a></li>
+																</ul>
+								                        </li>
+													<li>
+														<a class="dep-02 " href="javascript:;">Curriculum<i class="xi-plus"></i><i class="xi-minus"></i></a> 
+														<ul class="dep-list-03">
+															<li><a href="/en/academics/curriculum/undergraduate.do" target="_self" title="Undergraduate Programs" class="dep-03">Undergraduate Programs</a></li>
+																<li><a href="/en/academics/curriculum/graduate.do" target="_self" title="Graduate Programs" class="dep-03">Graduate Programs</a></li>
+																<li><a href="/en/academics/curriculum/03.do" target="_self" title="Courses Taught in English" class="dep-03">Courses Taught in English</a></li>
+																</ul>
+								                        </li>
+													<li>
+														<a class="dep-02 " href="javascript:;">Academic Resources<i class="xi-plus"></i><i class="xi-minus"></i></a> 
+														<ul class="dep-list-03">
+															<li><a href="/en/academics/resources/calendar.do" target="_self" title="Academic Calendar" class="dep-03">Academic Calendar</a></li>
+																<li><a href="/en/academics/resources/registration.do" target="_self" title="Registration" class="dep-03">Registration</a></li>
+																<li><a href="/en/academics/resources/scholarships.do" target="_self" title="Scholarships" class="dep-03">Scholarships</a></li>
+																<li><a href="https://oasis.jbnu.ac.kr/jbnu/sugang/index.html?lang=eng" target="_blank" title="Application for Classes" class="dep-03" rel="noopener noreferrer">Application for Classes</a></li>
+																</ul>
+								                        </li>
+													<li>
+														<a class="dep-02 " href="javascript:;">Academic Records<i class="xi-plus"></i><i class="xi-minus"></i></a> 
+														<ul class="dep-list-03">
+															<li><a href="/en/academics/records/cerificates.do" target="_self" title="Certificates" class="dep-03">Certificates</a></li>
+																<li><a href="http://jeonbuk.certpia.com/" target="_blank" title="Certificates Request" class="dep-03" rel="noopener noreferrer">Certificates Request</a></li>
+																</ul>
+								                        </li>
+													</ul>
+								</li>
+					<li>
+							<a class="dep-01 " href="javascript:;">ADMISSIONS<i class="xi-plus"></i><i class="xi-minus"></i></a>
+								<ul class="dep-list-02">
+										<li>
+														<a class="dep-02 " href="javascript:;">Overview<i class="xi-plus"></i><i class="xi-minus"></i></a> 
+														<ul class="dep-list-03">
+															<li><a href="/en/admission/overview/schedule.do" target="_self" title="Schedule" class="dep-03">Schedule</a></li>
+																<li><a href="/en/admission/overview/announcements.do" target="_self" title="Announcements" class="dep-03">Announcements</a></li>
+																<li><a href="/en/admission/overview/form.do" target="_self" title="Forms &amp; Downloads" class="dep-03">Forms &amp; Downloads</a></li>
+																</ul>
+								                        </li>
+													<li>
+														<a class="dep-02 " href="javascript:;">Undergraduate<i class="xi-plus"></i><i class="xi-minus"></i></a> 
+														<ul class="dep-list-03">
+															<li><a href="/en/admission/undergradute/application.do" target="_self" title="Application" class="dep-03">Application</a></li>
+																<li><a href="/en/admission/undergradute/tuition.do" target="_self" title="Tuition" class="dep-03">Tuition</a></li>
+																<li><a href="/en/admission/undergradute/scholarships.do" target="_self" title="Scholarships" class="dep-03">Scholarships</a></li>
+																</ul>
+								                        </li>
+													<li>
+														<a class="dep-02 " href="javascript:;">Graduate<i class="xi-plus"></i><i class="xi-minus"></i></a> 
+														<ul class="dep-list-03">
+															<li><a href="/en/admission/graduate/application.do" target="_self" title="Application" class="dep-03">Application</a></li>
+																<li><a href="/en/admission/graduate/tuition.do" target="_self" title="Tuition" class="dep-03">Tuition</a></li>
+																<li><a href="/en/admission/graduate/scholarships.do" target="_self" title="Scholarships" class="dep-03">Scholarships</a></li>
+																</ul>
+								                        </li>
+													<li><a href="/en/admission/exchange.do" target="_self" title="Exchange Programs" class="dep-02">Exchange Programs</a></li>
+															<li><a href="/en/admission/feeling.do" target="_self" title="The Feeling Korea" class="dep-02">The Feeling Korea</a></li>
+															<li><a href="/en/admission/klec.do" target="_self" title="Korean Language Education Center" class="dep-02">Korean Language Education Center</a></li>
+															<li>
+														<a class="dep-02 " href="javascript:;">Student Support<i class="xi-plus"></i><i class="xi-minus"></i></a> 
+														<ul class="dep-list-03">
+															<li><a href="/en/admission/student/new.do" target="_self" title="New Student Adjustment Support Program" class="dep-03">New Student Adjustment Support Program</a></li>
+																<li><a href="/en/admission/student/life.do" target="_self" title="Life Support Program" class="dep-03">Life Support Program</a></li>
+																<li><a href="/en/admission/student/academic.do" target="_self" title="Academic Support Program" class="dep-03">Academic Support Program</a></li>
+																<li><a href="/en/admission/student/career.do" target="_self" title="Career Support Program" class="dep-03">Career Support Program</a></li>
+																</ul>
+								                        </li>
+													</ul>
+								</li>
+					<li>
+							<a class="dep-01 " href="javascript:;">RESEARCH<i class="xi-plus"></i><i class="xi-minus"></i></a>
+								<ul class="dep-list-02">
+										<li><a href="/en/research/highlights.do" target="_self" title="Research Highlights" class="dep-02">Research Highlights</a></li>
+															<li><a href="/en/research/archivements.do" target="_self" title="Research Excellence" class="dep-02">Research Excellence</a></li>
+															<li><a href="/en/research/stats.do" target="_self" title="Stats &amp; Report" class="dep-02">Stats &amp; Report</a></li>
+															<li><a href="/en/research/units.do" target="_self" title="Research Units" class="dep-02">Research Units</a></li>
+															<li><a href="/en/research/support.do" target="_self" title="Research Support" class="dep-02">Research Support</a></li>
+															</ul>
+								</li>
+					<li>
+							<a class="dep-01 " href="javascript:;">CAMPUS LIFE<i class="xi-plus"></i><i class="xi-minus"></i></a>
+								<ul class="dep-list-02">
+										<li><a href="/en/campus/lib.do" target="_self" title="Libraries and Learning Facilities" class="dep-02">Libraries and Learning Facilities</a></li>
+															<li><a href="/en/campus/dormitory.do" target="_self" title="Dormitory Guide" class="dep-02">Dormitory Guide</a></li>
+															<li><a href="/en/campus/medical.do" target="_self" title="Student Medical Mutual Aid" class="dep-02">Student Medical Mutual Aid</a></li>
+															<li><a href="/en/campus/foods.do" target="_self" title="Foods &amp; Cafeterias" class="dep-02">Foods &amp; Cafeterias</a></li>
+															<li><a href="/en/campus/visa.do" target="_self" title="Visa" class="dep-02">Visa</a></li>
+															<li><a href="/en/campus/health.do" target="_self" title="Health Insurance" class="dep-02">Health Insurance</a></li>
+															<li><a href="https://ioffice.jbnu.ac.kr" target="_blank" title="International Student Orientation" class="dep-02" rel="noopener noreferrer">International Student Orientation</a></li>
+															<li><a href="/en/campus/healthcare.do" target="_self" title="JBNU Health Clinic" class="dep-02">JBNU Health Clinic</a></li>
+															<li><a href="/en/campus/aicampus.do" target="_self" title="JBNU ON AI" class="dep-02">JBNU ON AI</a></li>
+															<li><a href="/en/campus/studenttown.do" target="_self" title="Student Town" class="dep-02">Student Town</a></li>
+															</ul>
+								</li>
+					<li>
+							<a class="dep-01 " href="javascript:;">COMMUNITY<i class="xi-plus"></i><i class="xi-minus"></i></a>
+								<ul class="dep-list-02">
+										<li><a href="/en/community/notice.do" target="_self" title="Notice" class="dep-02">Notice</a></li>
+															<li><a href="/en/community/news.do" target="_self" title="News" class="dep-02">News</a></li>
+															<li><a href="/en/community/seminar.do" target="_self" title="Seminar" class="dep-02">Seminar</a></li>
+															</ul>
+								</li>
+					</ul>
+
+	</div>
+<!-- div 시작부분은 subTop에 있음 -->
+</div><main>
+	<!-- 메인화면 -->
+      <section id="main-section-01">
+          <header id="hd" class="main">
+                    <div id="hd-top" class="com-pdlr-20">
+                        <div class="inner com-inner-1780">
+                            <ul class="util-list">
+                                <li><a href="/user/member/login.do?tiles=web&amp;returnPageType=currentPage">LOGIN</a></li>
+                                <li><a href="/en/sitemap.do">SITEMAP</a></li>
+                              <li>
+                                    <a href="/web/index.do">
+                                        <img class="icon-lang" src="/resources/user/eng/img/icon/icon_language.svg" alt="">
+                                        KOR
+                                    </a>
+                                </li>
+                               <!--
+                                <li>
+                                    <a href="javascript:;" class="btn-change-lang">
+                                        <img class="icon-lang" src="/resources/user/eng/img/icon/icon_language.svg" alt="">
+                                        ENG
+                                        <img class="icon-arrow" src="/resources/user/eng/img/icon/icon_arrow_down_01.svg" alt="">
+                                    </a>
+                                    <ul class="lang-list">
+                                        <li><a class="dep-01" href="/web/index.do">한국어</a></li>
+                                        <li><a class="dep-01" href="/en/index.do">ENGLISH</a></li>
+                                    </ul>
+                                </li>
+-->
+                            </ul>
+        				 
+                            <div class="srch-box">
+                              <!-- a href="https://gpt.jbnu.ai" class="ai-link-btn" target="_blank"><img src="/resources/img/sub/ai_banner_img_en.png" alt="JBNU Multi-LLM Generative AI Service"></a -->
+                               <input type="text" id="main-search-input" placeholder="SEARCH" onkeydown="if(event.keyCode == 13) cf_search('main-search-input');">
+                               <button type="button" class="btn-srch" onclick="cf_search('main-search-input');"><img class="icon-srch" src="/resources/user/web/img/icon/icon_search_white.svg" alt="검색버튼 아이콘"></button>
+                            </div>
+                          
+                            <div class="hd-top-toggle-btn-box">
+                                <button type="button" class="hd-top-toggle-btn  ">Close Popup</button>
+                            </div>
+                            </div>
+                    </div>
+        
+                    <div id="hd-bot" class="com-pdlr-20">
+                        <div class="inner com-inner-1780">
+                            <a href="/en/index.do" class="logo">
+                                <img class="img-logo-white" src="/resources/user/web/img/icon/icon_logo_eng_white.svg" alt="">
+                                <img class="img-logo-blue" src="/resources/user/web/img/icon/icon_logo_eng_blue.svg" alt="">
+                            </a>
+                            
+                            <ul class="dep-list-01 engTest">
+ 	<li>
+				<a class="dep-01 " href="javascript:;" title="ABOUT JBNU">ABOUT JBNU</a>
+					<div class="menu-box">
+							<div class="dep-01-txt">ABOUT JBNU</div>
+                                <div class="menu-sub-list">
+							<div class="dep-box-02">
+										<a class="dep-02" href="/en/about/president/message.do" target="_self" title="President`s Office">President`s Office</a> 
+											<ul class="dep-list-03">
+												<li><a href="/en/about/president/message.do" target="_self" title="Message" class="dep-03">Message</a></li>
+													<li><a href="/en/about/president/curiculum.do" target="_self" title="Curriculum Vitae" class="dep-03">Curriculum Vitae</a></li>
+													<li><a href="/en/about/president/history.do" target="_self" title="History of the Office" class="dep-03">History of the Office</a></li>
+													</ul>
+										</div>
+								<div class="dep-box-02">
+										<a class="dep-02" href="/en/about/overview/vision.do" target="_self" title="Overview">Overview</a> 
+											<ul class="dep-list-03">
+												<li><a href="/en/about/overview/vision.do" target="_self" title="VISION 2030 Plus" class="dep-03">VISION 2030 Plus</a></li>
+													<li><a href="/en/about/overview/glocal.do" target="_self" title="GLOCAL UNIVERSITY 30 VISION" class="dep-03">GLOCAL UNIVERSITY 30 VISION</a></li>
+													<li><a href="/en/about/overview/history.do" target="_self" title="History" class="dep-03">History</a></li>
+													<li><a href="/en/about/overview/org.do" target="_self" title="Organization Chart" class="dep-03">Organization Chart</a></li>
+													<li><a href="/en/about/overview/symbols.do" target="_self" title="University Symbols" class="dep-03">University Symbols</a></li>
+													</ul>
+										</div>
+								<div class="dep-box-02">
+										<a class="dep-02" href="/en/about/campus/jeoju.do" target="_self" title="JBNU Campus">JBNU Campus</a> 
+											<ul class="dep-list-03">
+												<li><a href="/en/about/campus/jeoju.do" target="_self" title="Jeonju Campus" class="dep-03">Jeonju Campus</a></li>
+													<li><a href="/en/about/campus/iksan.do" target="_self" title="Iksan Campus" class="dep-03">Iksan Campus</a></li>
+													<li><a href="/en/about/campus/gochang.do" target="_self" title="Gochang Campus" class="dep-03">Gochang Campus</a></li>
+													<li><a href="/en/about/campus/saemangem.do" target="_self" title="Saemangem Frontier Campus" class="dep-03">Saemangem Frontier Campus</a></li>
+													<li><a href="/en/about/campus/asc.do" target="_self" title="Advanced Science Campus" class="dep-03">Advanced Science Campus</a></li>
+													</ul>
+										</div>
+								<div class="dep-box-02">
+										<a class="dep-02" href="/en/about/multimedia/videos.do" target="_self" title="Multimedia">Multimedia</a> 
+											<ul class="dep-list-03">
+												<li><a href="/en/about/multimedia/videos.do" target="_self" title="Videos" class="dep-03">Videos</a></li>
+													<li><a href="/en/about/multimedia/gallery.do" target="_self" title="Gallery" class="dep-03">Gallery</a></li>
+													</ul>
+										</div>
+								<div class="dep-box-02">
+										<a class="dep-02" href="/en/about/tour/group.do" target="_self" title="Campus Tour">Campus Tour</a> 
+											<ul class="dep-list-03">
+												<li><a href="/en/about/tour/group.do" target="_self" title="Group Tours" class="dep-03">Group Tours</a></li>
+													</ul>
+										</div>
+								<div class="dep-box-02">
+										<a href="/en/about/ls.do" target="_self" title="Location &amp; Surroundings" class="dep-02">Location &amp; Surroundings</a>
+												</div>
+								</div>
+						</div>
+					</li>
+		<li>
+				<a class="dep-01 " href="javascript:;" title="ACADEMICS">ACADEMICS</a>
+					<div class="menu-box">
+							<div class="dep-01-txt">ACADEMICS</div>
+                                <div class="menu-sub-list">
+							<div class="dep-box-02">
+										<a class="dep-02" href="/en/academics/programs/university.do" target="_self" title="Programs">Programs</a> 
+											<ul class="dep-list-03">
+												<li><a href="/en/academics/programs/university.do" target="_self" title="Undergraduate" class="dep-03">Undergraduate</a></li>
+													<li><a href="/en/academics/programs/graduate.do" target="_self" title="Graduate" class="dep-03">Graduate</a></li>
+													<li><a href="/en/academics/programs/professional.do" target="_self" title="Professional Graduate Schools" class="dep-03">Professional Graduate Schools</a></li>
+													</ul>
+										</div>
+								<div class="dep-box-02">
+										<a class="dep-02" href="/en/academics/curriculum/undergraduate.do" target="_self" title="Curriculum">Curriculum</a> 
+											<ul class="dep-list-03">
+												<li><a href="/en/academics/curriculum/undergraduate.do" target="_self" title="Undergraduate Programs" class="dep-03">Undergraduate Programs</a></li>
+													<li><a href="/en/academics/curriculum/graduate.do" target="_self" title="Graduate Programs" class="dep-03">Graduate Programs</a></li>
+													<li><a href="/en/academics/curriculum/03.do" target="_self" title="Courses Taught in English" class="dep-03">Courses Taught in English</a></li>
+													</ul>
+										</div>
+								<div class="dep-box-02">
+										<a class="dep-02" href="/en/academics/resources/calendar.do" target="_self" title="Academic Resources">Academic Resources</a> 
+											<ul class="dep-list-03">
+												<li><a href="/en/academics/resources/calendar.do" target="_self" title="Academic Calendar" class="dep-03">Academic Calendar</a></li>
+													<li><a href="/en/academics/resources/registration.do" target="_self" title="Registration" class="dep-03">Registration</a></li>
+													<li><a href="/en/academics/resources/scholarships.do" target="_self" title="Scholarships" class="dep-03">Scholarships</a></li>
+													<li><a href="https://oasis.jbnu.ac.kr/jbnu/sugang/index.html?lang=eng" target="_blank" title="Application for Classes" class="dep-03">Application for Classes</a></li>
+													</ul>
+										</div>
+								<div class="dep-box-02">
+										<a class="dep-02" href="/en/academics/records/cerificates.do" target="_self" title="Academic Records">Academic Records</a> 
+											<ul class="dep-list-03">
+												<li><a href="/en/academics/records/cerificates.do" target="_self" title="Certificates" class="dep-03">Certificates</a></li>
+													<li><a href="http://jeonbuk.certpia.com/" target="_blank" title="Certificates Request" class="dep-03">Certificates Request</a></li>
+													</ul>
+										</div>
+								</div>
+						</div>
+					</li>
+		<li>
+				<a class="dep-01 " href="javascript:;" title="ADMISSIONS">ADMISSIONS</a>
+					<div class="menu-box">
+							<div class="dep-01-txt">ADMISSIONS</div>
+                                <div class="menu-sub-list">
+							<div class="dep-box-02">
+										<a class="dep-02" href="/en/admission/overview/schedule.do" target="_self" title="Overview">Overview</a> 
+											<ul class="dep-list-03">
+												<li><a href="/en/admission/overview/schedule.do" target="_self" title="Schedule" class="dep-03">Schedule</a></li>
+													<li><a href="/en/admission/overview/announcements.do" target="_self" title="Announcements" class="dep-03">Announcements</a></li>
+													<li><a href="/en/admission/overview/form.do" target="_self" title="Forms &amp; Downloads" class="dep-03">Forms &amp; Downloads</a></li>
+													</ul>
+										</div>
+								<div class="dep-box-02">
+										<a class="dep-02" href="/en/admission/undergradute/application.do" target="_self" title="Undergraduate">Undergraduate</a> 
+											<ul class="dep-list-03">
+												<li><a href="/en/admission/undergradute/application.do" target="_self" title="Application" class="dep-03">Application</a></li>
+													<li><a href="/en/admission/undergradute/tuition.do" target="_self" title="Tuition" class="dep-03">Tuition</a></li>
+													<li><a href="/en/admission/undergradute/scholarships.do" target="_self" title="Scholarships" class="dep-03">Scholarships</a></li>
+													</ul>
+										</div>
+								<div class="dep-box-02">
+										<a class="dep-02" href="/en/admission/graduate/application.do" target="_self" title="Graduate">Graduate</a> 
+											<ul class="dep-list-03">
+												<li><a href="/en/admission/graduate/application.do" target="_self" title="Application" class="dep-03">Application</a></li>
+													<li><a href="/en/admission/graduate/tuition.do" target="_self" title="Tuition" class="dep-03">Tuition</a></li>
+													<li><a href="/en/admission/graduate/scholarships.do" target="_self" title="Scholarships" class="dep-03">Scholarships</a></li>
+													</ul>
+										</div>
+								<div class="dep-box-02">
+										<a href="/en/admission/exchange.do" target="_self" title="Exchange Programs" class="dep-02">Exchange Programs</a>
+												</div>
+								<div class="dep-box-02">
+										<a href="/en/admission/feeling.do" target="_self" title="The Feeling Korea" class="dep-02">The Feeling Korea</a>
+												</div>
+								<div class="dep-box-02">
+										<a href="/en/admission/klec.do" target="_self" title="Korean Language Education Center" class="dep-02">Korean Language Education Center</a>
+												</div>
+								<div class="dep-box-02">
+										<a class="dep-02" href="/en/admission/student/new.do" target="_self" title="Student Support">Student Support</a> 
+											<ul class="dep-list-03">
+												<li><a href="/en/admission/student/new.do" target="_self" title="New Student Adjustment Support Program" class="dep-03">New Student Adjustment Support Program</a></li>
+													<li><a href="/en/admission/student/life.do" target="_self" title="Life Support Program" class="dep-03">Life Support Program</a></li>
+													<li><a href="/en/admission/student/academic.do" target="_self" title="Academic Support Program" class="dep-03">Academic Support Program</a></li>
+													<li><a href="/en/admission/student/career.do" target="_self" title="Career Support Program" class="dep-03">Career Support Program</a></li>
+													</ul>
+										</div>
+								</div>
+						</div>
+					</li>
+		<li>
+				<a class="dep-01 " href="javascript:;" title="RESEARCH">RESEARCH</a>
+					<div class="menu-box">
+							<div class="dep-01-txt">RESEARCH</div>
+                                <div class="menu-sub-list">
+							<div class="dep-box-02">
+										<a href="/en/research/highlights.do" target="_self" title="Research Highlights" class="dep-02">Research Highlights</a>
+												</div>
+								<div class="dep-box-02">
+										<a href="/en/research/archivements.do" target="_self" title="Research Excellence" class="dep-02">Research Excellence</a>
+												</div>
+								<div class="dep-box-02">
+										<a href="/en/research/stats.do" target="_self" title="Stats &amp; Report" class="dep-02">Stats &amp; Report</a>
+												</div>
+								<div class="dep-box-02">
+										<a href="/en/research/units.do" target="_self" title="Research Units" class="dep-02">Research Units</a>
+												</div>
+								<div class="dep-box-02">
+										<a href="/en/research/support.do" target="_self" title="Research Support" class="dep-02">Research Support</a>
+												</div>
+								</div>
+						</div>
+					</li>
+		<li>
+				<a class="dep-01 " href="javascript:;" title="CAMPUS LIFE">CAMPUS LIFE</a>
+					<div class="menu-box">
+							<div class="dep-01-txt">CAMPUS LIFE</div>
+                                <div class="menu-sub-list">
+							<div class="dep-box-02">
+										<a href="/en/campus/lib.do" target="_self" title="Libraries and Learning Facilities" class="dep-02">Libraries and Learning Facilities</a>
+												</div>
+								<div class="dep-box-02">
+										<a href="/en/campus/dormitory.do" target="_self" title="Dormitory Guide" class="dep-02">Dormitory Guide</a>
+												</div>
+								<div class="dep-box-02">
+										<a href="/en/campus/medical.do" target="_self" title="Student Medical Mutual Aid" class="dep-02">Student Medical Mutual Aid</a>
+												</div>
+								<div class="dep-box-02">
+										<a href="/en/campus/foods.do" target="_self" title="Foods &amp; Cafeterias" class="dep-02">Foods &amp; Cafeterias</a>
+												</div>
+								<div class="dep-box-02">
+										<a href="/en/campus/visa.do" target="_self" title="Visa" class="dep-02">Visa</a>
+												</div>
+								<div class="dep-box-02">
+										<a href="/en/campus/health.do" target="_self" title="Health Insurance" class="dep-02">Health Insurance</a>
+												</div>
+								<div class="dep-box-02">
+										<a href="https://ioffice.jbnu.ac.kr" target="_blank" title="International Student Orientation" class="dep-02">International Student Orientation</a>
+												</div>
+								<div class="dep-box-02">
+										<a href="/en/campus/healthcare.do" target="_self" title="JBNU Health Clinic" class="dep-02">JBNU Health Clinic</a>
+												</div>
+								<div class="dep-box-02">
+										<a href="/en/campus/aicampus.do" target="_self" title="JBNU ON AI" class="dep-02">JBNU ON AI</a>
+												</div>
+								<div class="dep-box-02">
+										<a href="/en/campus/studenttown.do" target="_self" title="Student Town" class="dep-02">Student Town</a>
+												</div>
+								</div>
+						</div>
+					</li>
+		<li>
+				<a class="dep-01 " href="javascript:;" title="COMMUNITY">COMMUNITY</a>
+					<div class="menu-box">
+							<div class="dep-01-txt">COMMUNITY</div>
+                                <div class="menu-sub-list">
+							<div class="dep-box-02">
+										<a href="/en/community/notice.do" target="_self" title="Notice" class="dep-02">Notice</a>
+												</div>
+								<div class="dep-box-02">
+										<a href="/en/community/news.do" target="_self" title="News" class="dep-02">News</a>
+												</div>
+								<div class="dep-box-02">
+										<a href="/en/community/seminar.do" target="_self" title="Seminar" class="dep-02">Seminar</a>
+												</div>
+								</div>
+						</div>
+					</li>
+		</ul><button type="button" class="btn-toggle-menu">
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                            </button>
+                        </div>
+                    </div>
+                </header><script>
+    $('header').addClass('main');
+</script>
+<div class="main-intro-box com-pdlr-20">
+    <div class="inner com-inner-1500">
+        <!-- div class="txt-box">
+            <h2>
+                Welcome to
+                <div class="font-large">Jeonbuk National <br> University</div>
+            </h2>
+            <p>
+              Experience the essence of <br>Korean culture at Jeonbuk National University!
+			<br>You will gain a deeper connection to Korea through <br>Korean language classes and cultural experiences.
+            </p>
+            <a href="/en/admission/feeling.do" class="com-btn-more-01">Read More <i class="xi-plus"></i></a>
+        </div -->
+
+        <div class="ctrl-box">
+            <div class="swiper-pagination"></div>
+            <button type="button" class="swiper-button-prev"><i class="xi-angle-left"></i></button>
+
+            <button type="button" class="swiper-button-next"><i class="xi-angle-right"></i></button>
+        </div>
+    </div>
+</div>
+
+<!-- 메인 팝업 -->
+          <video autoplay="" loop="" muted="" playsinline="" aria-label="배경으로 사용되는 전북대학교 교내 전경 비디오입니다." poster="https://www.jbnu.ac.kr/file/introvideo/jbnu_intro_eng.jpg"> 
+       <source src="https://www.jbnu.ac.kr/file/introvideo/jbnu_intro_eng.mp4" type="video/mp4"> 
+      </video>
+<!-- <div class="swiper">
+       <div class="swiper-wrapper">
+	  	<div class="swiper-slide">
+					<img src="/common/file.do?file=NC4nS2r1Iv+ZxSR71avSSg1wDA4LKgNlyx1suqel+iYvVR/VWUmtHZusvXe7tswbJCICbMz7wbvuHe2c3aRF6cn1JxNbI0cFSXAWqza+HGg=" 
+						alt="" title="배너 없음 4">
+				</div>
+	    <div class="swiper-slide">
+					<img src="/common/file.do?file=NC4nS2r1Iv+ZxSR71avSSg1wDA4LKgNlyx1suqel+iZu5fX1Tfk5J5inP2Sqwoky/maMwHu0EIXir1J0k9ITxSk2g+ZHDlQZRa33JiooXwo=" 
+						alt="" title="배너 없음 3">
+				</div>
+	    <div class="swiper-slide">
+					<img src="/common/file.do?file=NC4nS2r1Iv+ZxSR71avSSg1wDA4LKgNlyx1suqel+iay+Y+jSX34bJS96fniQ3a769/QYndhIW6xPniTCsrCpu590rR8THE9SujnV/hXpzM=" 
+						alt="" title="배너 없음 2">
+				</div>
+	    <div class="swiper-slide">
+					<img src="/common/file.do?file=NC4nS2r1Iv+ZxSR71avSSg1wDA4LKgNlyx1suqel+ibtm0ewPkLn5NiQ9pNT8HHUZFOAWFWiwxfPr2FfYNKhaXBerjbHIjcnwSggwm3Q/5Y=" 
+						alt="" title="배너 없음 1">
+				</div>
+	    </div>
+</div>
+
+<script type="text/javascript">
+	$(function() {
+		$('#sample').bxSlider({
+			auto: true,
+			speed: 1000,
+			pause: 4000,
+			mode: 'fade',
+			autoControls: true,
+			pager: true,
+			touchEnabled : (navigator.maxTouchPoints > 0),
+			captions: true
+		});
+	});
+</script>
+-->
+
+<!-- JBNU ON AI 이미지맵 -->
+<div class="jbnu-on-ai-box" aria-label="JBNU ON AI" style="opacity: 1; transition: none !important; position: absolute; top: 185px; left: 20px; transform: none;">
+    <img src="/resources/user/web/img/sub/jbnu_on_ai_eng.png" width="401" height="571" border="0" usemap="#jbnuOnAiMapEng" alt="JBNU ON AI">
+    <map name="jbnuOnAiMapEng">
+        <area shape="rect" coords="20,102,375,177" href="/en/campus/aicampus.do" target="_self" alt="JUMP with AI">
+        <area shape="rect" coords="20,179,375,245" href="javascript:alert('This website is currently under preparation.');" onfocus="this.blur()" alt="JUIC">
+        <area shape="rect" coords="20,247,375,319" href="https://lms.jbnu.ac.kr" target="_blank" alt="AI TUTOR">
+        <area shape="rect" coords="20,321,375,397" href="https://aijob.jbnu.ac.kr" target="_blank" alt="AI JOB">
+        <area shape="rect" coords="20,399,375,468" href="/en/campus/aicampus.do#tab3" target="_self" alt="AI SPACE">
+        <area shape="rect" coords="20,470,375,539" href="https://gpt.jbnu.ai/" target="_blank" alt="Multi LLM">
+    </map>
+</div>
+</section>
+
+
+<section id="main-section-02">
+    <div class="quick-menu com-pdlr-20">
+        <div class="inner com-inner-1500">
+            <ul class="list">
+               <li> 
+                    <a href="https://all.jbnu.ac.kr/jbnu/oasis/index.html"> 
+                        <div class="img-box"> 
+                            <img class="img-black" src="/resources/user/web/img/icon/icon_quick_service_light_02.svg" alt=""> 
+                            <img class="img-white" src="/resources/user/web/img/icon/icon_quick_service_dark_02.svg" alt=""> 
+                        </div>
+                        <div class="txt-box">OASIS</div>
+                    </a> 
+                </li> 
+               <li> 
+                    <a href="http://mail.jbnu.ac.kr/"> 
+                        <div class="img-box"> 
+                            <img class="img-black" src="/resources/user/web/img/icon/icon_quick_service_light_01.svg" alt=""> 
+                            <img class="img-white" src="/resources/user/web/img/icon/icon_quick_service_dark_01.svg" alt=""> 
+                        </div> 
+                        <div class="txt-box">WebMail</div>
+                    </a> 
+                </li> 
+               
+                <li> 
+                    <a href="https://lms.jbnu.ac.kr/login/index.php"> 
+                        <div class="img-box"> 
+                            <img class="img-black" src="/resources/user/web/img/icon/icon_quick_service_light_03.svg" alt=""> 
+                            <img class="img-white" src="/resources/user/web/img/icon/icon_quick_service_dark_03.svg" alt=""> 
+                        </div>
+                        <div class="txt-box">LMS</div>
+                    </a> 
+                </li> 
+                <li>
+                    <a href="/en/about/campus/jeoju.do">
+                        <div class="img-box">
+                            <img class="img-black" src="/resources/user/eng/img/icon/icon_eng_quick_menu_01.svg" alt="">
+                            <img class="img-white" src="/resources/user/eng/img/icon/icon_eng_quick_menu_white_01.svg" alt="">
+                        </div>
+                        <div class="txt-box">How to <br> Get to JBNU</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://dl.jbnu.ac.kr/en" target="_blank">
+                        <div class="img-box">
+                            <img class="img-black" src="/resources/user/eng/img/icon/icon_eng_quick_menu_02.svg" alt="">
+                            <img class="img-white" src="/resources/user/eng/img/icon/icon_eng_quick_menu_white_02.svg" alt="">
+                        </div>
+                        <div class="txt-box">Central <br> Library</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://ioffice.jbnu.ac.kr" target="_blank">
+                        <div class="img-box">
+                            <img class="img-black" src="/resources/user/eng/img/icon/icon_eng_quick_menu_03.svg" alt="">
+                            <img class="img-white" src="/resources/user/eng/img/icon/icon_eng_quick_menu_white_03.svg" alt="">
+                        </div>
+                        <div class="txt-box">Office  <br> International <br> Affairs </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://wz3.jbnu.ac.kr/sites/english_koreaneng/index..do" target="_blank">
+                        <div class="img-box">
+                            <img class="img-black" src="/resources/user/eng/img/icon/icon_eng_quick_menu_04.svg" alt="">
+                            <img class="img-white" src="/resources/user/eng/img/icon/icon_eng_quick_menu_white_04.svg" alt="">
+                        </div>
+                        <div class="txt-box">Foreign Language <br> Education <br> Center</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://ioffice.jbnu.ac.kr/ioffice/21401/subview.do" target="_blank">
+                        <div class="img-box">
+                            <img class="img-black" src="/resources/user/eng/img/icon/icon_eng_quick_menu_05.svg" alt="">
+                            <img class="img-white" src="/resources/user/eng/img/icon/icon_eng_quick_menu_white_05.svg" alt="">
+                        </div>
+                        <div class="txt-box">International <br> Partnership</div>
+                    </a>
+                </li>
+               <li>
+                    <a href="/en/academics/programs/university.do" target="_blank">
+                        <div class="img-box">
+                            <img class="img-black" src="/resources/user/eng/img/icon/icon_eng_quick_menu_07.svg" alt="">
+                            <img class="img-white" src="/resources/user/eng/img/icon/icon_eng_quick_menu_white_07.svg" alt="">
+                        </div>
+                        <div class="txt-box">Undergraduate <br> School</div>
+                    </a>
+                </li>
+               <li>
+                    <a href="https://graduate.jbnu.ac.kr/?lang=english" target="_blank">
+                        <div class="img-box">
+                            <img class="img-black" src="/resources/user/eng/img/icon/icon_eng_quick_menu_08.svg" alt="">
+                            <img class="img-white" src="/resources/user/eng/img/icon/icon_eng_quick_menu_white_08.svg" alt="">
+                        </div>
+                        <div class="txt-box">Graduate <br> School</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.jbuh.co.kr/cuh/english/" target="_blank">
+                        <div class="img-box">
+                            <img class="img-black" src="/resources/user/eng/img/icon/icon_eng_quick_menu_06.svg" alt="">
+                            <img class="img-white" src="/resources/user/eng/img/icon/icon_eng_quick_menu_white_06.svg" alt="">
+                        </div>
+                        <div class="txt-box">University <br> Hospital</div>
+                    </a>
+                </li>
+            </ul>
+				
+        </div>
+    </div>
+
+
+    <div class="notice-box">
+        <div class="hd-box com-pdlr-20">
+            <div class="inner com-inner-1500">
+                <h2 class="com-title-01">
+                    <div class="small">JBNU</div>
+                    Announcements &amp; Applications
+                </h2>
+                
+                <div class="ctrl-box">
+                    <button type="button" class="btn-prev com-btn-01 type-02"><i class="xi-angle-left-min"></i></button>
+                    <button type="button" class="btn-play com-btn-01 type-02"><i class="xi-play"></i></button>
+                    <button type="button" class="btn-pause active com-btn-01 type-02"><i class="xi-pause"></i></button>
+                    <button type="button" class="btn-next com-btn-01 type-02"><i class="xi-angle-right-min"></i></button>
+                    <button type="button" class="btn-more com-btn-01 type-02" onclick="location.href='/en/admission/overview/announcements.do'"><i class="xi-plus"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper active swiper-initialized swiper-horizontal swiper-backface-hidden" data-index="1">
+          
+
+           <div class="swiper-wrapper" id="swiper-wrapper-ef43428eb109e549d" aria-live="off">
+                <div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 10" data-swiper-slide-index="0" style="width: 305.25px; margin-right: 35px;">
+        	<a href="/en/Board/210889/detailView.do" title="[Graduate] 2026 Fall Semester Graduate School Admission Guide">
+                 <p class="title">[Graduate] 2026 Fall Semester Graduate School Admission Guide</p>
+                  <p class="ctt">Notice of Application Guidelines for the 2026 Fall Semester Graduate School Special Admission for International Students We hereby announce the application guidelines for the 2026 Fall Semester Graduate School Special Admission for International Students. For more detailed information, please refer to the attached application guidelines. ■ Online Application:https://ipsi2.uwayapply.com/2026/foreign/jbnugrad/?CHA=5﻿ Orhttp://uwayapply.com- Search for Jeonbuk National University - Intl Student - Click on Jeonbuk National University-Graduate (Foreign Students). This application website isonly available during the application period. ■ ContactGraduate Admissions, Office of International AffairsTel: +82-63-270-4382Email: admissiong@jbnu.ac.kr ■Schedule Steps Schedule (KST) Remarks Round 1 Round 2 Application 2026.4.1.(Wed) 9:00~2026.4.15.(Wed) 17:00 2026.5.18.(Mon) 9:00~2026.5.29.(Fri) 17:00 - Fee : 80,000KRW- It is required to submit an application form and other documents after online registration Submission of Documents 2026. 4. 22.(Wed) 2026. 6. 5.(Fri) - Send all documents by post to the Office of Intl. Affairs- If you come to JBNU, please submit to the Office of Intl. Affairs-If you don’t submit all documents by the deadline,you will not be eligible to take the interview and willbe disqualified.*If it is impossible to submit the documents by the deadline,the scanned docs must be submitted by email in advance.(admissiong@jbnu.ac.kr)-Deadline of submission of documents for those whosubmit scanned documents :2026.8.21.(Fri) Notification of Interview Schedule 2026. 4. 30.(Thu) 2026. 6. 12.(Fri) - Announced to applicant’s email and JBNU webpage (www.jbnu.ac.kr) Interview 2026. 5. 7.(Thu)~2026. 5. 8.(Fri) 2026. 6. 16.(Tue)~2026. 6. 17.(Wed) - Interview will be conducted by each departments- Phone / Online interview for applicants- Students in Korea : In-person interview* Some department can conduct phone/online interview.- Students in overseas : Phone/Online Interview-The applicant will be disqualified if he/she misses the interview.- College of Arts applicants may undergo performance tests(Music, Korean Music, etc) Admission Announcement 2026. 5. 22.(Fri) 2026. 7. 3.(Fri) - Announced to applicant’s email and JBNU webpage (www.jbnu.ac.kr) Submission ofProof of funds To be determined(Successful Applicants Only) - Original Document submission- KRW 16,000,000 or more (approximately USD 13,000 or more)1) Those in Korea: Only successful applicants need to submit•Only a Korean account in your name is acceptable•Issuance date: Within 30 days of the visa application date•KRW​​8,000,000 or more for those who received a degree from a university in Korea (including D-4 Language Trainee)2) Those in overseas: Can be submitted during application or after acceptance•Student’s or his/her parents account (overseas account)•Issuance date: Within 30 days of the submission date•If not submitted at the time of application, submit before making visa application Submission ofAdditional Documents Until 2026. 8. 21.(Fri) - Those who have not submitted the following documents and have supplementary documents⦁Degree-related documents for prospective graduates(Original)*China:Graduation and Degree Certificate, Degree Verification or Apostille*Other countries:Original of Apostilled orConsular-confirmed Degree Certificate⦁Certificate of Completion of JBNU Language School⦁The final language score of the person who submitted the test receipt before-Failure to submit other documents in advance will result in disqualification. Issuance of Admission Letter To be determined -The admission letter can be issued after paying the tuition fee and submitting all the required documents-According to the regulation by the Ministry of Justice, admission letter will not be handed to the applicant if she/he fail to submit the degree-related documents by the deadline Payment ofTuition Fee To be determined -Payment schedule will be announced in a timely manner- Applicants may make a payment at a designated bank Term Begin 2026. 9. 1.(Tue) - Fall 2026 Semester </p>
+                  <p class="date">2026-03-25 14:39:46</p>
+              </a>
+        </div>
+    <div class="swiper-slide swiper-slide-next" role="group" aria-label="2 / 10" data-swiper-slide-index="1" style="width: 305.25px; margin-right: 35px;">
+        	<a href="/en/Board/210871/detailView.do" title="2026 Fall Semester Undergraduate Admission Guide">
+                 <p class="title">2026 Fall Semester Undergraduate Admission Guide</p>
+                  <p class="ctt">Notice on2026 Fall Semester Undergraduate International Student Admission We are pleased to announce the2026 Fall Semester Undergraduate International Student Admission.We encourage all interested applicants to apply. For detailed information, please refer to the attached admission guide.- Application Schedule (Online Application)·1st Round: 26. April. 1. (Wed) 09:00 am ~ April. 15. (Wed) 17:00 pm KST ·2nd Round: 26. May. 18. (Wed) 09:00 am ~ May. 29. (Wed) 17:00 pm KST ■ Online Application:https://ipsi2.uwayapply.com/2026/foreign/jbnu/?CHA=4 Or visithttp://uwayapply.com→ Search forJeonbuk National University→ SelectIntl Student – Jeonbuk National University-Undergraduate(Be careful not to apply for the graduate school!)* The detailed application link will be updated soon. This application website isonly available during the application period. Applicants must carefully fill in their contact information.Failure to do so may result in missing the interview and not receiving further communication. ■No Personal Statement or Study Plan is required. ■Document Submission Methods:By postal mail or in-person submission to the Office of International Affairs Address:Office of International Affairs, 3rd Floor, JBNU International Center567 Baekje-daero, Deokjin-gu, Jeonju-si, Jeollabuk-do, Republic of Korea (Postal Code: 54896) Phone:+82-63-270-4653 ■Inquiries: Undergraduate Admissions Officer, Office of International Affairs Phone:+82-63-270-4653 Email:admissionu@jbnu.ac.kr </p>
+                  <p class="date">2026-03-25 11:15:13</p>
+              </a>
+        </div>
+    <div class="swiper-slide" role="group" aria-label="3 / 10" data-swiper-slide-index="2" style="width: 305.25px; margin-right: 35px;">
+        	<a href="/en/Board/198772/detailView.do" title="[Graduate] Admission Result for 2026 Spring Semester (3rd round)">
+                 <p class="title">[Graduate] Admission Result for 2026 Spring Semester (3rd round)</p>
+                  <p class="ctt">[JBNU]Announcement of 3rd Round Resultfor Spring2026Graduate Admission■ Admission Result :2026. 01. 21.(Tue) 9:00 ~https://all.jbnu.ac.kr//jbnu/exam/egrd/fngrGrdPass.html-Visit above website and click "전기모집 특별전형(3차)" from Application period section.-Visit above website and fill outthe Application NumberandDate of Birth(YYMMDD)-YourKorean NameandStudent ID No.can be found on the same website andthey MUST be known to print out the bill for tuition fee later.- Transfer students can check the result from the attached file named "편입학 결과조회Transfer-Admission results"■Notice▶Newly accepted students MUST go over and be learned the Checklist!!-Visit above website and click "Checklist for Accepted Students"1. Submission for Missing Documents-By 2026. 2.20.(Fri):Applicants who submitted scanned documents before, Degree-related documents for prospective graduates, Certificate of Completion of JBNU Language School,Final language score of the person who submitted the test receipt before＊Please, be aware that if you do not submit the missing documents by the deadline, YOUR ADMISSION WILL BE CANCELLED.2. Bank Statement: All of the accepted students MUST submit the bank statement with amount of more than 16,000,000 KRW or 13,000 USD※8,000,000 KRW or more for those who received a degree from a university in Korea(including D-4 Language Trainee)- Students in Korea : The bank statement must be issued after 1 January 2026 and under a students name from one of Korean banks- Students in Overseas : The bank statement must be issued within 30 days before the submission and under a student or parents name from one of home countrys banks3. Admission Letter : Issued ONLY for those who submit all the required documents and paid the tuition fee- Students in Korea : Visit the Office of International Affairs to pick up the letter- Students in Overseas : by air mail4. Tuition fee payment* Visit thehttps://fees.jbnu.ac.kr/fees/index.doduring the payment period and print out the tuition fee bill with your i) application number, ii) Korean name and iii) date of birth.* Payment periods of tuition fee will be informed via email later.You can checkyour Korean nameon the same website for the result announcement.</p>
+                  <p class="date">2026-01-22 09:32:58</p>
+              </a>
+        </div>
+    <div class="swiper-slide" role="group" aria-label="4 / 10" data-swiper-slide-index="3" style="width: 305.25px; margin-right: 35px;">
+        	<a href="/en/Board/198317/detailView.do" title="[Undergraduate] Admission Result for 2026 Spring Semester (3rd round)">
+                 <p class="title">[Undergraduate] Admission Result for 2026 Spring Semester (3rd round)</p>
+                  <p class="ctt">■Admission results for Undergraduate 2026 Spring semesterYou can check the result after16th(Fri)9:00am KST, January 2026▶Check admission results forFreshman 클릭 Click﻿https://trs03.uwayapply.com/052NJOBV2FJ1EM0000T41D﻿- Go to the above website link and fill out yourApplication numberanddate of birth(6 digits)(YYMMDD).-Successful students should check the notice for successful students (Attachment on the result webpage) carefully.- The result check is available from 16. Jan to 28. Feb 2026.The reason for failure is not disclosed according to the admission policy.Thank you everyone who applied for the JBNU 2026 Spring Admissions.* 문의 : 063-270-4653, admissionu@jbnu.ac.kr</p>
+                  <p class="date">2026-01-15 11:31:57</p>
+              </a>
+        </div>
+    <div class="swiper-slide" role="group" aria-label="5 / 10" data-swiper-slide-index="4" style="width: 305.25px; margin-right: 35px;">
+        	<a href="/en/Board/197727/detailView.do" title="[대학원 Graduate] Graduate School Interview Schedule – Spring 2026 Admission (3rd Round)">
+                 <p class="title">[대학원 Graduate] Graduate School Interview Schedule – Spring 2026 Admission (3rd Round)</p>
+                  <p class="ctt">[Jeonbuk National University Graduate School Interview Schedule – Spring2026Admission (3rdRound)] Dear Applicant, We are pleased to inform you of the interview schedule for the2026Spring Semester Graduate School Admission (Round 3). Please refer to the attached files to confirm whether you have been selected for an interview and participate in the interview as scheduled.For departments without a confirmed interview schedule, further details will be announced later. Interview Period:January 6 (Tue) – January 8 (Thu), 2026 Interview Schedule: The interview time and location vary depending on the department. All interview times are based onKorea Standard Time (KST). Pleasedownload the attached fileto check your detailed interview schedule. Applicants are requested to set their Zoom display name as their application number and full name when joining the Zoom meeting. Important Notes: For in-person interviews: Applicants mustarrive at least 20 minutes beforethe scheduled time andbring either their Alien Registration Card or Passportfor identification. If someone else attends the interview on your behalf,your application will be disqualified immediately. Any suspected use of unauthorized programs during the Zoom interview may result in disqualification. Failure to attend the interview will result inautomatic disqualification. If youfail to connect more than three timesvia video/phone, you will be disqualified.(For online interviews, it is necessary to prepare and check the interview environment in advance, including internet connection, video, and audio andparticipants are also requested to set ID to appplicants application number or full name) If you miss the interview due to incorrect contact information or failure to read the notice,you will be disqualified. The applicant is fully responsible for keeping their contact details up to date and checking all notifications. </p>
+                  <p class="date">2026-01-05 20:05:05</p>
+              </a>
+        </div>
+    <div class="swiper-slide" role="group" aria-label="6 / 10" data-swiper-slide-index="5" style="width: 305.25px; margin-right: 35px;">
+        	<a href="/en/Board/197547/detailView.do" title="Undergraduate Interview Information for 2026 Spring Admission (3rd Round)">
+                 <p class="title">Undergraduate Interview Information for 2026 Spring Admission (3rd Round)</p>
+                  <p class="ctt">Here is the interview schedule for the 3rd round of the 2026 Spring Undergraduate Admissions for international students.* Detailed interview information is announced through the applicants email.2. Interview Schedule:- The interview schedule, including time and location, varies by department.- All interview times are based on Korea Standard Time (KST).- Pleasedownload the attached filefor detailed information.3. Important Notes:- Any attempt to have someone else participate in the interview on your behalf will result in immediate disqualification.- Failure to attend the interview will be considered an automatic withdrawal.- Applicants who fail to connect to the interview more than three times will be disqualified.- Missing the interview due to incorrect contact information or failure to read the notice will result in rejection.Applicants are responsible for ensuring their contact information is accurate and for checking all notices carefully.4. Inquiries:Office of International AffairsPhone: 063-270-4653Email: admissionu@jbnu.ac.kr</p>
+                  <p class="date">2026-01-02 10:25:27</p>
+              </a>
+        </div>
+    <div class="swiper-slide" role="group" aria-label="7 / 10" data-swiper-slide-index="6" style="width: 305.25px; margin-right: 35px;">
+        	<a href="/en/Board/197395/detailView.do" title="[Graduate] Admission Result for 2026 Spring Semester (2nd round)">
+                 <p class="title">[Graduate] Admission Result for 2026 Spring Semester (2nd round)</p>
+                  <p class="ctt">[JBNU]Announcement of 2ndRound Resultfor Spring2026Graduate Admission■ Admission Result : 2025. 12. 29.(Mon) 9:00 ~ 2026. 1. 15.(Thu)18:00https://all.jbnu.ac.kr//jbnu/exam/egrd/fngrGrdPass.html-Visit above website and click "전기모집 특별전형(추가)" from Application period section.-Visit above website and fill outthe Application NumberandDate of Birth(YYMMDD)-YourKorean NameandStudent ID No.can be found on the same website andthey MUST be known to print out the bill for tuition fee later.- Transfer students can check the result from the attached file named "편입학 결과조회Transfer-Admission results"■Notice▶Newly accepted students MUST go over and be learned the Checklist!!-Visit above website and click "Checklist for Accepted Students"1. Submission for Missing Documents-By 2026. 2.20.(Fri):Applicants who submitted scanned documents before, Degree-related documents for prospective graduates, Certificate of Completion of JBNU Language School,Final language score of the person who submitted the test receipt before＊Please, be aware that if you do not submit the missing documents by the deadline, YOUR ADMISSION WILL BE CANCELLED.2. Bank Statement: All of the accepted students MUST submit the bank statement with amount of more than 16,000,000 KRW or 13,000 USD※8,000,000 KRW or more for those who received a degree from a university in Korea(including D-4 Language Trainee)- Students in Korea : The bank statement must be issued after 1 January 2026 and under a students name from one of Korean banks- Students in Overseas : The bank statement must be issued within 30 days before the submission and under a student or parents name from one of home countrys banks3. Admission Letter : Issued ONLY for those who submit all the required documents and paid the tuition fee- Students in Korea : Visit the Office of International Affairs to pick up the letter- Students in Overseas : by air mail4. Tuition fee payment* Visit thehttps://fees.jbnu.ac.kr/fees/index.doduring the payment period and print out the tuition fee bill with your i) application number, ii) Korean name and iii) date of birth.* Payment periods of tuition fee will be informed via email later.You can checkyour Korean nameon the same website for the result announcement.</p>
+                  <p class="date">2025-12-29 23:43:43</p>
+              </a>
+        </div>
+    <div class="swiper-slide" role="group" aria-label="8 / 10" data-swiper-slide-index="7" style="width: 305.25px; margin-right: 35px;">
+        	<a href="/en/Board/197371/detailView.do" title="[Undergraduate] Admission Result for 2026 Spring Semester (2nd Round)">
+                 <p class="title">[Undergraduate] Admission Result for 2026 Spring Semester (2nd Round)</p>
+                  <p class="ctt">■Admission results for Undergraduate 2026 Spring semesterYou can check the result after29th(Mon)9:00am KST, December 2025▶Check admission results forFreshman 클릭 Clickhttps://trs03.uwayapply.com/052NJOBV2FJ1EM0000T41D﻿▶Check admission results forTransfer 클릭 Click﻿https://trs03.uwayapply.com/052OJOBV2FJ1ELVVVURMFD- Go to the above website link and fill out yourApplication numberanddate of birth(6 digits)(YYMMDD).-If your result is successful,pleasecheck and do not forget your student ID-Successful students should check the notice for successful students (Attachment on the result webpage) carefully.- The result check is available from 29. Dec to 28. Feb 2026.The reason for failure is not disclosed according to the admission policy.Thank you everyone who applied for the JBNU 2026 Spring Admissions.* 문의 : 063-270-4653, admissionu@jbnu.ac.kr</p>
+                  <p class="date">2025-12-29 14:30:10</p>
+              </a>
+        </div>
+    <div class="swiper-slide" role="group" aria-label="9 / 10" data-swiper-slide-index="8" style="width: 305.25px; margin-right: 35px;">
+        	<a href="/en/Board/195963/detailView.do" title="[Graduate] 2026 Spring Semester 3rd Round Graduate School Admission Guide">
+                 <p class="title">[Graduate] 2026 Spring Semester 3rd Round Graduate School Admission Guide</p>
+                  <p class="ctt">Notice of Application Guidelines for the 2026 Spring Semester 3rd RoundGraduate School Special Admission for International Students We hereby announce the application guidelines for the 2026 Spring Semester 3rd Round Graduate School Special Admission for International Students ■ Changes ﻿ 🎓 Freshman ScholarshipMaster Course : 80% tuition waiver (1st semester)Doctoral Course : Full tuition waiver (1 year)(For the Ph.D. program, the amount of the scholarship may vary depending on the student’s research performance) ■Online Application The application site is only available during the application period. https://ipsi2.uwayapply.com/2026/foreign/jbnugrad/?CHA=4 ■Document Submission Method: Mail and In-Person - Address: 3rd Floor, Office of International Affairs, JBNU International Center, 567 Baekje-daero, Deokjin-gu, Jeonju-si, Jeollabuk-do (54896) * If you are visiting Jeonbuk National University, please submit your documents to the Office of International Affairs, 3rd Floor, JBNU International Center. ■Schedule Steps Schedule (KST) Remarks Round 3 Application ‘25.12.24.(Wed) 9:00~12.31.(Wed) 17:00 - Fee : 80,000KRW- It is required to submit an application form and other documents after online registration Submission of Documents ‘25. 12. 31.(Wed) - Send all documents by post to the Office of Intl. Affairs- If you come to JBNU, please submit to the Intl. Affairs-If you don’t submit all documents by the deadline,you will not be eligible to take the interview and willbe disqualified.*If it is impossible to submit the documents by the deadline,the scanned docs must be submitted by email in advance.(admissiong@jbnu.ac.kr)- Deadline of submission of documents for those who submit scanned documents :2026.2.20.(Fri) Notification of Interview Schedule ‘26. 1. 2.(Fri) - Announced to applicant’s email and JBNU webpage (www.jbnu.ac.kr) Interview ‘26. 1. 6.(Tue)~ 1. 7.(Wed) - Interview will be conducted by each departments- Phone / Online interview for applicants- Students in Korea : In-person interview* Some department can conduct phone/online interview.- Students in overseas : Phone/Online Interview-The applicant who misses interview will be disqualified.- College of Arts applicants may undergo performance tests(Music, Korean Music, etc) Admission Announcement ‘26. 1. 16.(Fri) - Announced to applicant’s email and JBNU webpage (www.jbnu.ac.kr) Submission ofProof of funds To be determined(Successful Applicants Only) - Original Bank Statement submission- KRW 16,000,000 or more (approximately USD 13,000 or more)1) Those in Korea: Only successful applicants need to submit•Only a Korean account in your name is acceptable•Issuance date: Within 30 days of the visa application date•KRW​​8,000,000 or more for those who received a degree from a university in Korea (including D-4 Language Trainee)2) Those in overseas: Can be submitted during application or after acceptance•Student’s or his/her parents account (overseas account)•Issuance date: Within 30 days of the submission date•If not submitted at the time of application, submit before making visa application- Possible Substitute documents for bank balance certificate •Financial Sponsorship Certificate (Ministry of Justice form)•Jeonbuk National University Scholarship Certificate (can be issued for department-recommended applicants) Submission ofAdditional Documents Until 2026. 2. 20.(Fri) - Those who have not submitted the following documents and have supplementary documents⦁Degree-related documents for prospective graduates(Original)*China:Graduation and Degree Certificate, Degree Verification*Other countries:Original of Apostilled or Consular-confirmed Degree Certificate⦁Certificate of Completion of JBNU Language School⦁JBNU Language Test Transcript⦁The final language score of the person who submitted the test receipt before-Failure to submit other documents in advance will result in disqualification. Issuance of Admission Letter To be determined -The admission letter can be issued after paying the tuition fee and submitting all the required documents-According to the regulation by the Ministry of Justice, admission letter will not be handed to the applicant if she/he fail to submit the degree-related documents by the deadline Payment ofTuition Fee To be determined -Payment schedule will be announced in a timely manner- Applicants may make a payment at a designated bank Term Begin 2026. 3. 3.(Tue) - Spring 2026 Semester ■Inquires -Phone:+82-63-270-4382 - Email: admissiong@jbnu.ac.kr </p>
+                  <p class="date">2025-12-05 13:40:15</p>
+              </a>
+        </div>
+    <div class="swiper-slide" role="group" aria-label="10 / 10" data-swiper-slide-index="9" style="width: 305.25px; margin-right: 35px;">
+        	<a href="/en/Board/195908/detailView.do" title="[Undergraduate] Interview Information for 2026 Spring Admission (2nd Round)">
+                 <p class="title">[Undergraduate] Interview Information for 2026 Spring Admission (2nd Round)</p>
+                  <p class="ctt">Here is the interview schedule for the 2nd round of the 2026 Spring Undergraduate Admissions for international students.1. Interview Schedule: Dec. 9(Tue) 2025 ~ Dec. 10 (Wed) 2025* Detailed interview information is announced through the applicants email.2. Interview Schedule:- The interview schedule, including time and location, varies by department.- All interview times are based on Korea Standard Time (KST).- Pleasedownload the attached filefor detailed information.3. Important Notes:- In-Person Interviews: Applicants must arrive at the interview location at least 20 minutes before their scheduled time.Please bring your Alien Registration Card or Passport for identification.- Any attempt to have someone else participate in the interview on your behalf will result in immediate disqualification.- Failure to attend the interview will be considered an automatic withdrawal.- Applicants who fail to connect to the interview more than three times will be disqualified.- Missing the interview due to incorrect contact information or failure to read the notice will result in rejection.Applicants are responsible for ensuring their contact information is accurate and for checking all notices carefully.4. Inquiries:Office of International AffairsPhone: 063-270-4653Email: admissionu@jbnu.ac.kr</p>
+                  <p class="date">2025-12-04 13:41:43</p>
+              </a>
+        </div>
+    </div>
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+    </div>
+
+
+</section>
+
+<section id="main-section-03" class="com-pdlr-20">
+    <div class="inner com-inner-1500">
+        <div class="lb">
+            <h2 class="com-title-01">
+                <div class="small">GREETING</div>
+               Research Highlights
+            </h2>
+            <p class="txt-01">The most Korean global prestigious university, <br>Jeonbuk National University</p>
+            <p class="txt-02">
+               World-class research infrastructure
+              <br>Research achievements that surprised the world
+                
+            </p>
+
+            <a href="/en/research/highlights.do" class="com-btn-more-01">More <i class="xi-plus"></i></a>
+        </div>
+
+        <div class="rb">
+                <div class="swiper research-highlights-swiper swiper-initialized swiper-horizontal swiper-backface-hidden">
+    <ul class="swiper-wrapper people-list" style="display: flex; margin: 0px !important; transition-duration: 300ms; transform: translate3d(-698px, 0px, 0px);" id="swiper-wrapper-9d844e6bf8c49467" aria-live="off">
+        <li class="swiper-slide swiper-slide-prev" style="width: 628px; margin-right: 70px;" role="group" aria-label="1 / 10" data-swiper-slide-index="0">
+                    <a href="https://pubs-acs-org.proxy.jbnu.ac.kr/doi/10.1021/acsnano.5c13526" title="Scalable Integration of Single-Crystalline Ag Nanosheets for Threshold Voltage Engineering in Oxide Thin-Film Transistors" target="_blank">
+                        <div class="img-box">
+                            <img src="/common/file.do?file=HAWt0ci6JpdJ9EVqbJwf9/dv/LdNPFESGdJ4eX0tLnLzYvX7zRo/d9FS4riSIm8mZ7yP9wNCL+zggfJd01CNyQ==" alt="Scalable Integration of Single-Crystalline Ag Nanosheets for Threshold Voltage Engineering in Oxide Thin-Film Transistors" style="visibility: visible;">
+                        </div>
+                        <div class="txt-box">
+                            Scalable Integration of Single-Crystalline Ag Nanosheets for Threshold Voltage Engineering in Oxide Thin-Film Transistors</div>
+                    </a>
+                </li>
+        <li class="swiper-slide swiper-slide-active" style="width: 628px; margin-right: 70px;" role="group" aria-label="2 / 10" data-swiper-slide-index="1">
+                    <a href="https://www.sciencedirect.com/science/article/pii/S0925400525003429" title="Low-temperature solution-processed flexible NH3 gas sensors based on porous CuBr films derived from 2D Cu nanosheets" target="_blank">
+                        <div class="img-box">
+                            <img src="/common/file.do?file=HAWt0ci6JpdJ9EVqbJwf93BURrUrkv2FiRCeh/aJBHmEXu5x62tGP4Ny6jcV+lie" alt="Low-temperature solution-processed flexible NH3 gas sensors based on porous CuBr films derived from 2D Cu nanosheets" style="visibility: visible;">
+                        </div>
+                        <div class="txt-box">
+                            Low-temperature solution-processed flexible NH3 gas sensors based on porous CuBr films derived from 2D Cu nanosheets</div>
+                    </a>
+                </li>
+        <li class="swiper-slide swiper-slide-next" style="width: 628px; margin-right: 70px;" role="group" aria-label="3 / 10" data-swiper-slide-index="2">
+                    <a href="https://advanced-onlinelibrary-wiley-com.proxy.jbnu.ac.kr/doi/full/10.1002/adma.202501632" title="Omni-Directional Assembly of 2D Single-Crystalline Metal Nanosheets" target="_blank">
+                        <div class="img-box">
+                            <img src="/common/file.do?file=HAWt0ci6JpdJ9EVqbJwf9yC14fZE6pCCSr5SsCI+j55UZqU8LB1HRp+QENpQggka" alt="Omni-Directional Assembly of 2D Single-Crystalline Metal Nanosheets" style="visibility: visible;">
+                        </div>
+                        <div class="txt-box">
+                            Omni-Directional Assembly of 2D Single-Crystalline Metal Nanosheets</div>
+                    </a>
+                </li>
+        <li class="swiper-slide" style="width: 628px; margin-right: 70px;" role="group" aria-label="4 / 10" data-swiper-slide-index="3">
+                    <a href="https://advanced-onlinelibrary-wiley-com.proxy.jbnu.ac.kr/doi/full/10.1002/adma.202516002" title="2D Silver Nanosheet Assembly for an Isotropic, Stretchable, and Highly Conductive Nanomembrane" target="_blank">
+                        <div class="img-box">
+                            <img src="/common/file.do?file=M32BkCoG5jABMa6J8CKnQi4SnzPuHsdYd/qJ9G3jQ5FtjMx3NgHeNDgsExG9TxdU" alt="2D Silver Nanosheet Assembly for an Isotropic, Stretchable, and Highly Conductive Nanomembrane" style="visibility: visible;">
+                        </div>
+                        <div class="txt-box">
+                            2D Silver Nanosheet Assembly for an Isotropic, Stretchable, and Highly Conductive Nanomembrane</div>
+                    </a>
+                </li>
+        <li class="swiper-slide" style="width: 628px; margin-right: 70px;" role="group" aria-label="5 / 10" data-swiper-slide-index="4">
+                    <a href="https://www.sciencedirect.com/science/article/pii/S0196890425012245" title="Conceptual design and 4E analysis of an ammonia synthesis process integrating methane thermal decomposition and dual chemical looping" target="_blank">
+                        <div class="img-box">
+                            <img src="/common/file.do?file=XptXMtrTOz67hlE7yYuhz9DyRPgwNHDnbXDo9H76WoPrSOueY1c9FXk560HfXrP1" alt="Conceptual design and 4E analysis of an ammonia synthesis process integrating methane thermal decomposition and dual chemical looping" style="visibility: visible;">
+                        </div>
+                        <div class="txt-box">
+                            Conceptual design and 4E analysis of an ammonia synthesis process integrating methane thermal decomposition and dual chemical looping</div>
+                    </a>
+                </li>
+        <li class="swiper-slide" style="width: 628px; margin-right: 70px;" role="group" aria-label="6 / 10" data-swiper-slide-index="5">
+                    <a href="https://advanced.onlinelibrary.wiley.com/doi/full/10.1002/adma.202515466" title="Reconfiguring Hierarchical Porous Architecture of 2D Metal Nanosheets for Multifunctional Triboelectric Nanogenerators" target="_blank">
+                        <div class="img-box">
+                            <img src="/common/file.do?file=XptXMtrTOz67hlE7yYuhz+ZoEOpaMsqzhdlTO3LlIxuXml1Qyj7jJQf7WyTfvcCN" alt="Reconfiguring Hierarchical Porous Architecture of 2D Metal Nanosheets for Multifunctional Triboelectric Nanogenerators" style="visibility: visible;">
+                        </div>
+                        <div class="txt-box">
+                            Reconfiguring Hierarchical Porous Architecture of 2D Metal Nanosheets for Multifunctional Triboelectric Nanogenerators</div>
+                    </a>
+                </li>
+        <li class="swiper-slide" style="width: 628px; margin-right: 70px;" role="group" aria-label="7 / 10" data-swiper-slide-index="6">
+                    <a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2024WR039744" title="Large-Scale Drought Forecasting in the U.S. Southern Plains Through a Hybrid Cluster-Based Wavelet-Machine Learning Approach" target="_blank">
+                        <div class="img-box">
+                            <img src="/common/file.do?file=XptXMtrTOz67hlE7yYuhzy8/nLJucTRtytCmV3Z0d7Ywo9JevokCM52cyfj4uaZs" alt="Large-Scale Drought Forecasting in the U.S. Southern Plains Through a Hybrid Cluster-Based Wavelet-Machine Learning Approach" style="visibility: visible;">
+                        </div>
+                        <div class="txt-box">
+                            Large-Scale Drought Forecasting in the U.S. Southern Plains Through a Hybrid Cluster-Based Wavelet-Machine Learning Approach</div>
+                    </a>
+                </li>
+        <li class="swiper-slide" style="width: 628px; margin-right: 70px;" role="group" aria-label="8 / 10" data-swiper-slide-index="7">
+                    <a href="https://www.sciencedirect.com/science/article/pii/S0960148125022396" title="Recent innovations in chemical looping: Fluidized bed design and oxygen carrier performance" target="_blank">
+                        <div class="img-box">
+                            <img src="/common/file.do?file=XptXMtrTOz67hlE7yYuhz6UcVQNRr0vd6chcUp5SU+XlEI0V2xqEnlN1Epqbm8T2" alt="Recent innovations in chemical looping: Fluidized bed design and oxygen carrier performance" style="visibility: visible;">
+                        </div>
+                        <div class="txt-box">
+                            Recent innovations in chemical looping: Fluidized bed design and oxygen carrier performance</div>
+                    </a>
+                </li>
+        <li class="swiper-slide" style="width: 628px; margin-right: 70px;" role="group" aria-label="9 / 10" data-swiper-slide-index="8">
+                    <a href="https://www.sciencedirect.com/science/article/pii/S0010938X25006912" title="High-temperature oxidation resistance of alumina-forming ferritic alloys in a steam-containing atmosphere" target="_blank">
+                        <div class="img-box">
+                            <img src="/common/file.do?file=XptXMtrTOz67hlE7yYuhzyEQcHAKBVZOADpNJIkSGblL35rsJDfFgScXsR7p2cJm" alt="High-temperature oxidation resistance of alumina-forming ferritic alloys in a steam-containing atmosphere" style="visibility: visible;">
+                        </div>
+                        <div class="txt-box">
+                            High-temperature oxidation resistance of alumina-forming ferritic alloys in a steam-containing atmosphere</div>
+                    </a>
+                </li>
+        <li class="swiper-slide" style="width: 628px; margin-right: 70px;" role="group" aria-label="10 / 10" data-swiper-slide-index="9">
+                    <a href="https://www.sciencedirect.com/science/article/pii/S2214790X25000863" title="What Explains Variants in Resource Nationalism in Latin America’s Lithium Industry?" target="_blank">
+                        <div class="img-box">
+                            <img src="/common/file.do?file=7ZlACgjyJExNMhzM0iwJDCEvLfhYZKlzM+hJ6k9GoE1ZnTKOgMCXJ0xZAX2EqyZC" alt="What Explains Variants in Resource Nationalism in Latin America’s Lithium Industry?" style="visibility: visible;">
+                        </div>
+                        <div class="txt-box">
+                            What Explains Variants in Resource Nationalism in Latin America’s Lithium Industry?</div>
+                    </a>
+                </li>
+        </ul>
+<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+
+<script>
+
+    // Research Highlights Swiper 초기화
+    const researchSwiper = new Swiper('.research-highlights-swiper', {
+        slidesPerView:1,   // 한 화면에 보이는 슬라이드 개수
+        
+        loop: true,         // 무한 반복
+        autoplay: {         // 자동 슬라이드
+            delay: 3000,    // 3초마다 전환
+            disableOnInteraction: false
+        },
+      breakpoints: {
+        900: { 
+          slidesPerView: 2,
+          spaceBetween: 70,   // 슬라이드 간격(px)
+        },
+      },
+    });
+</script></div>
+    </div>
+</section>
+
+<div id="main-section-05" class="com-pdlr-20">
+    <div class="inner com-inner-1500">
+        <div class="hd-box">
+            <h2 class="com-title-01">
+                JBNU <span class="com-color-main-01">#SNS</span>
+            </h2>
+            <ul class="icon-list">
+                <li><a href="https://www.facebook.com/jbnu1947" target="_blank" title="새창열림"><img src="/resources/user/eng/img/icon/icon_facebook.svg" alt=""></a></li>
+                <li><a href="https://www.instagram.com/jbnu1947" target="_blank" title="새창열림"><img src="/resources/user/eng/img/icon/icon_instagram.svg" alt=""></a></li>
+                <li><a href="https://www.youtube.com/jbnu1947" target="_blank" title="새창열림"><img src="/resources/user/eng/img/icon/icon_youtube.svg" alt=""></a></li>
+            </ul>
+        </div>
+
+        <div class="ctt-box" id="sns-vid-box"><div class="vid-box">    <iframe src="https://www.youtube.com/embed/rEvhYwiD8do?si=nCa94YUrBs5g370j" title="전북대 중앙도서관 3층 리모델링 미리보기 고서를 보관하는 고한적실 여러 책이 준비된 인기도서코너 편안한 휴식이 가능한 ..." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">    </iframe></div><div class="vid-box">    <iframe src="https://www.youtube.com/embed/2DH4OgW7fts?si=nCa94YUrBs5g370j" title="누가 아침밥 안 먹어?!“ 전북대학교 천원의 아침밥으로 저렴하고 맛있게 꼭꼭 챙겨먹기!! 후생관 식당에서 오전 8시 ~ 9시 30분 운영 ..." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">    </iframe></div></div>
+    </div>
+</div>
+</main>
+
+
+
+<script>
+
+    $(function () {
+        const youtubeDataList = [];
+
+        
+        youtubeDataList.push({
+            'snsPstId': 'JM_xj-vvPNk',
+            'snsPstCaption': '헤어지자고? 우리 지금 AI스페이스 왔는데?   새롭게 리뉴얼된 전북대학교 AI SPACE에 다녀왔습니다!  ✨ 미래 도시가 눈앞에 ...'
+        })
+        
+        youtubeDataList.push({
+            'snsPstId': 'rEvhYwiD8do',
+            'snsPstCaption': '전북대 중앙도서관 3층 리모델링 미리보기 고서를 보관하는 고한적실 여러 책이 준비된 인기도서코너 편안한 휴식이 가능한 ...'
+        })
+        
+        youtubeDataList.push({
+            'snsPstId': 'XgKMT9PkY4E',
+            'snsPstCaption': '안녕하세요! 전북대학교 홍보대사 &#039;✨전율✨&#039; 입니다. 개강을 맞이해 전북대학교의 활기찬 분위기를 담은 개강 릴레이 캠퍼스 영상을 ...'
+        })
+        
+        youtubeDataList.push({
+            'snsPstId': '2DH4OgW7fts',
+            'snsPstCaption': '누가 아침밥 안 먹어?!“ 전북대학교 천원의 아침밥으로 저렴하고 맛있게 꼭꼭 챙겨먹기!! 후생관 식당에서 오전 8시 ~ 9시 30분 운영 ...'
+        })
+        
+        youtubeDataList.push({
+            'snsPstId': 'OqXrUqmTawo',
+            'snsPstCaption': '전북대학교를 더 가까이에서 전할, 26기 학생 홍보대사 &#039;전율&#039;을 소개합니다.✨ 앞으로 &#039;전율&#039;이 전하는 전북대학교의 순간들을 기대 ...'
+        })
+        
+        youtubeDataList.push({
+            'snsPstId': 'JsLraN9PoFs',
+            'snsPstCaption': '선후배 간 경험과 정보를 나누며 함께 성장하는 2026학년도 취업진로지원과 멘토링 프로그램을 운영합니다. 멘토링 유형 · 신입생 ...'
+        })
+        
+        youtubeDataList.push({
+            'snsPstId': 'B0PYUdBoIvo',
+            'snsPstCaption': '[학년별 룩북.zip ] 중앙도서관에서 볼 수 있는 전북대 학년별 룩북 모음 1학년의 설렘부터 4학년의 취준 룩까지 전북대학교 중앙 ...'
+        })
+        
+        youtubeDataList.push({
+            'snsPstId': 'ZQANfCFcKHc',
+            'snsPstCaption': '2026학년도 1학기 개강을 맞아 전북대학교에서 개강맞이 간식 나눔행사가 진행되었습니다. 총장님께서 직접 학생들에게 간식을 전달 ...'
+        })
+        
+        youtubeDataList.push({
+            'snsPstId': 'GNoT_zwKm70',
+            'snsPstCaption': '2026년 2월 23일, 전북대학교 2025학년도 전기 학위수여식이 개최되었습니다. 학문의 여정을 성실히 마무리한 졸업생 여러분의 노력 ...'
+        })
+        
+        youtubeDataList.push({
+            'snsPstId': 'PCTxR5QWDcw',
+            'snsPstCaption': '2026학년도 1학기 개강 D-5!!!   3월 3일에 개강을 맞이하는 전북대학교 학생들을 응원합니다! 설레고 새로운 마음으로 이번 학기도 ...'
+        })
+        
+
+        let finalList;
+
+        if (youtubeDataList.length <= 2) {
+            finalList = youtubeDataList;
+        } else {
+            const shuffled = [...youtubeDataList].sort(() => Math.random() - 0.5);
+            finalList = shuffled.slice(0, 2);
+        }
+
+        let html = '';
+        finalList.forEach(function (item, index) {
+
+            html += '<div class="vid-box">';
+            html += '    <iframe';
+            html += '            src="https://www.youtube.com/embed/' + item.snsPstId + '?si=nCa94YUrBs5g370j"';
+            html += '            title="' + item.snsPstCaption + '"';
+            html += '            frameborder="0"';
+            html += '            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"';
+            html += '            referrerpolicy="strict-origin-when-cross-origin"';
+            html += '            allowfullscreen>';
+            html += '    </iframe>';
+          //  html += '    <p class="info">' + item.snsPstCaption + '</p>';
+            html += '</div>';
+        })
+        $('#sns-vid-box').html(html);
+
+    })
+  
+  
+    // JBNU ON AI 이미지맵 위치 (로고 기준)
+       function setResearchElementsPositionFromLogo() {
+        var $logo = $('#hd-bot .logo');
+        if ($logo.length === 0) return false;
+        var logoOffset = $logo.offset();
+        if (!logoOffset) return false;
+        var isMobile = window.innerWidth <= 768;
+        // 세로 중앙 계산
+        var sectionHeight = $('#main-section-01').height();
+        var headerHeight = $('#hd').outerHeight();
+        var boxHeight = $('.jbnu-on-ai-box').outerHeight();
+        var boxTop = headerHeight + (sectionHeight - headerHeight - boxHeight) / 2;
+        var cssObj = {
+            position: 'absolute',
+            top: boxTop + 'px',
+            opacity: '1'
+        };
+        if (isMobile) {
+            cssObj.left = '50%';
+            cssObj.transform = 'translateX(-50%)';
+        } else {
+            cssObj.left = logoOffset.left + 'px';
+            cssObj.transform = 'none';
+        }
+        $('.jbnu-on-ai-box').css(cssObj);
+        return true;
+    }
+  
+    function initResearchElementsPosition() {
+        var retryCount = 0;
+        var maxRetries = 10;
+        (function attempt() {
+            if (!setResearchElementsPositionFromLogo() && retryCount++ < maxRetries) {
+                setTimeout(attempt, 100);
+            }
+        })();
+    }
+    // 팝업 스킨에서 호출
+    function adjustResearchElementsPosition(isBannerOpen) {
+        setTimeout(setResearchElementsPositionFromLogo, 400);
+    }
+    $(document).ready(function() { setTimeout(initResearchElementsPosition, 50); });
+    $(window).on('load', function() { setTimeout(initResearchElementsPosition, 100); });
+    var resizeTimer;
+    $(window).on('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(setResearchElementsPositionFromLogo, 250);
+    });
+</script>
+</div>
+      
+
+	<footer id="ft">
+            <div id="ft-top">
+                <div class="inner com-inner-1500">
+                    <ul class="list">
+                        <li><a href="https://all.jbnu.ac.kr/jbnu/oasis/index.html" target="_blank" title="새창열림" rel="noopener noreferrer">OASIS</a></li>
+                        <li><a href="http://mail.jbnu.ac.kr" target="_blank" title="새창열림">WEBMAIL</a></li>
+                         <li><a href="https://oasis.jbnu.ac.kr/jbnu/sugang/index.html?lang=eng" target="_blank" title="새창열림" rel="noopener noreferrer">Application for Classes</a></li>
+                         <li><a href="https://www.jbnu.ac.kr/en/academics/programs/university.do" target="_blank" title="새창열림" rel="noopener noreferrer"> Academic DB</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="ft-bot" class="com-pdlr-20">
+                <div class="inner com-inner-1500">
+                    <img class="img-logo" src="/resources/user/eng/img/icon/icon_eng_footer_logo.svg" alt="">
+                    <div class="txt-box">
+                        <ul class="list">
+                            <li>
+                                <a href="/web/index.do" target="_blank" title="새창열림">Main Campus</a>
+                                <p>567 Baekje-daero, Deokjin-gu, Jeonju-si, Jeonbuk-do, 54896 Republic of Korea <span class="tel">TEL <b>+82-(0)63-270-2114</b></span></p>
+                            </li>
+                            <li>
+                                <a href="/web/intro/campus/sub04.do?tab=1" target="_blank" title="새창열림">Specialized Campus</a>
+                                <p>79 Gobong-ro, Iksan-si, Jeonbuk-do, 54596 Republic of Korea <span class="tel">TEL <b>+82-(0)63-270-4114</b></span></p>
+                            </li>
+                            <li>
+                                <a href="https://gochang.jbnu.ac.kr" target="_blank" title="새창열림" rel="noopener noreferrer">Gochang Campus</a>
+                                <p>361 Taebong-ro, Gochang-eup, Gochang-gun, Jeonbuk-do, 54596 Republic of Korea <span class="tel">TEL <b>+82-(0)63-562-2621</b></span></p>
+                            </li>
+                            <li>
+                                <a href="/web/intro/campus/sub04.do?tab=3" target="_blank" title="새창열림">Saemangeum Frontier Campus</a>
+                                <p>177 Sandannambuk-ro, Gunsan-si, Jeonbuk-do, 54001 Republic of Korea <span class="tel">TEL <b>+82-(0)63-472-2893</b></span></p>
+                            </li>
+                            <li>
+                                <a href="https://jeongeup.chonbuk.ac.kr/jeongeub/index.do" target="_blank" title="새창열림" rel="noopener noreferrer">Advance Science Campus</a>
+                                <p>9, Cheomdan-ro, Jeongeup-si, Jeonbuk-do, 56212 Republic of Korea <span class="tel">TEL <b>+82-(0)63-530-7600</b></span></p>
+                            </li>
+                        </ul>
+                        <p class="copyright">Copyright ⓒ 1998-2024 Jeonbuk National University. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+	<div class="loading_box">
+      <div class="wrapper">
+        <div class="cube">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <span>Loading</span>
+      </div>
+    </div>
+<script type="text/javascript" src="//wcs.pstatic.net/wcslog.js"></script>
+<script type="text/javascript">
+if(!wcs_add) var wcs_add = {};
+wcs_add["wa"] = "e570df634c4af8";
+if(window.wcs) {
+  wcs_do();
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+</body></html>

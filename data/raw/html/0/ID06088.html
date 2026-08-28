@@ -1,0 +1,806 @@
+<html prefix="og: http://ogp.me/ns#" lang="en"><head><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-JD73TMP2E6&amp;cx=c&amp;gtm=4e6481h1"></script><script type="text/javascript" async="" src="https://web.cmp.usercentrics.eu/ui/loader.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-KJG3H4L"></script><script type="text/javascript" charset="UTF-8" async="" src="https://consent.cookiebot.com/da52fc49-8e48-42b7-9ad3-c219404f6f92/cc.js?renew=false&amp;referer=docs.cpanel.net&amp;dnt=false&amp;init=false"></script><script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="da52fc49-8e48-42b7-9ad3-c219404f6f92" async="" type="text/javascript"></script>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title itemprop="name">How to Clear Your DNS Cache | cPanel &amp; WHM Documentation</title>
+<meta property="og:title" content="How to Clear Your DNS Cache | cPanel &amp; WHM Documentation">
+<meta name="twitter:title" content="How to Clear Your DNS Cache | cPanel &amp; WHM Documentation">
+<meta itemprop="name" content="How to Clear Your DNS Cache | cPanel &amp; WHM Documentation">
+<meta name="application-name" content="How to Clear Your DNS Cache | cPanel &amp; WHM Documentation">
+<meta property="og:site_name" content="cPanel &amp; WHM Documentation">
+
+<meta name="description" content="This document explains how to clear the DNS cache from various operating systems.">
+<meta itemprop="description" content="This document explains how to clear the DNS cache from various operating systems.">
+<meta property="og:description" content="This document explains how to clear the DNS cache from various operating systems.">
+<meta name="twitter:description" content="This document explains how to clear the DNS cache from various operating systems.">
+
+<base href="https://docs.cpanel.net/knowledge-base/dns/how-to-clear-your-dns-cache/">
+<link rel="canonical" href="https://docs.cpanel.net/knowledge-base/dns/how-to-clear-your-dns-cache/" itemprop="url">
+<meta name="url" content="https://docs.cpanel.net/knowledge-base/dns/how-to-clear-your-dns-cache/">
+<meta name="twitter:url" content="https://docs.cpanel.net/knowledge-base/dns/how-to-clear-your-dns-cache/">
+<meta property="og:url" content="https://docs.cpanel.net/knowledge-base/dns/how-to-clear-your-dns-cache/">
+
+<meta property="og:locale" content="en">
+<meta name="language" content="English">
+<link rel="alternate" hreflang="en" href="https://docs.cpanel.net/knowledge-base/dns/how-to-clear-your-dns-cache/" title="English">
+
+<link rel="sitemap" type="application/xml" title="Sitemap" href="https://docs.cpanel.net/sitemap.xml">
+
+<meta name="zd-site-verification" content="omx4b55ohxsvqm2bah5y1d">
+
+
+
+
+
+
+  
+  
+  
+
+  <meta property="og:type" content="article">
+
+  
+    <meta name="news_keywords" content="[dns]">
+    <meta property="article:section" content="[dns]">
+  
+
+  <script defer="" type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Article",
+      "headline": "How to Clear Your DNS Cache",
+      "author": {
+        "@type": "Person",
+        "name": ""
+      },
+      "datePublished": "0001-01-01",
+      "description": "This document explains how to clear the DNS cache from various operating systems.",
+      "wordCount":  518 ,
+      "mainEntityOfPage": "True",
+      "dateModified": "2024-09-19",
+      "image": {
+        "@type": "imageObject",
+        "url": ""
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "cPanel \u0026 WHM Documentation",
+        "logo": {
+          "@type": "imageObject",
+          "url": "https://www.example.com/images/brand/favicon.png"
+        }
+      }
+    }
+  </script>
+
+
+    <link rel="icon" href="https://docs.cpanel.net/img/favicon.png">
+    
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,800|Open+Sans:400,700,800" rel="stylesheet">
+    
+    <link href="https://docs.cpanel.net/css/fontawesome_all.min.css" rel="stylesheet">
+    
+    
+    <link rel="stylesheet" href="https://docs.cpanel.net/css/bootstrap-css/bootstrap.min.css">
+    
+    
+    
+    <link rel="stylesheet" href="https://docs.cpanel.net/css/prism_dark.min.css">
+    
+    
+    
+    <link rel="stylesheet" href="https://docs.cpanel.net/sass/main.min.css">
+
+    
+    
+    <script data-cookieconsent="ignore" src="https://docs.cpanel.net/js/jquery-3.4.1.min.js"></script><style type="text/css" id="CookieConsentStateDisplayStyles">.cookieconsent-optin-preferences,.cookieconsent-optin-statistics,.cookieconsent-optin-marketing,.cookieconsent-optin{display:none;}.cookieconsent-optout-preferences,.cookieconsent-optout-statistics,.cookieconsent-optout-marketing,.cookieconsent-optout{display:block;display:initial;}</style>
+    
+    
+    <script src="https://docs.cpanel.net/js/popper-1.16.0.min.js"></script>
+    
+    <script src="https://docs.cpanel.net/js/bootstrap-js/bootstrap.bundle.min.js"></script>
+    
+    
+    
+    
+
+    <script src="https://docs.cpanel.net/js/search.js"></script>
+    <script src="https://docs.cpanel.net/js/prism.min.js"></script>
+
+    
+    
+    
+    <script src="https://docs.cpanel.net/js/wasThisHelpful.min.js"></script>
+<link href="https://web.cmp.usercentrics.eu/ui/v/3.112.0/WebSdk.lib.f9924d53.js" rel="preload" as="script"><script async="" type="text/javascript" src="https://web.cmp.usercentrics.eu/ui/v/3.112.0/WebSdk.lib.f9924d53.js"></script><link href="https://web.cmp.usercentrics.eu/ui/v/3.112.0/GdprCmpController.98dde46a.js" rel="preload" as="script"><script async="" type="text/javascript" src="https://web.cmp.usercentrics.eu/ui/v/3.112.0/GdprCmpController.98dde46a.js"></script><link href="https://web.cmp.usercentrics.eu/ui/TvGdprCmpView.f8e69ac0.js" rel="preload" as="script"><script async="" type="text/javascript" src="https://web.cmp.usercentrics.eu/ui/TvGdprCmpView.f8e69ac0.js"></script><link href="https://web.cmp.usercentrics.eu/ui/v/3.112.0/UcGdprCmpView.c071ab9b.js" rel="preload" as="script"><script async="" type="text/javascript" src="https://web.cmp.usercentrics.eu/ui/v/3.112.0/UcGdprCmpView.c071ab9b.js"></script><link href="https://web.cmp.usercentrics.eu/ui/v/3.112.0/sections.c79e0e02.js" rel="preload" as="script"><script async="" type="text/javascript" src="https://web.cmp.usercentrics.eu/ui/v/3.112.0/sections.c79e0e02.js"></script><link href="https://web.cmp.usercentrics.eu/ui/v/3.112.0/secondLayer.b796d0f0.js" rel="preload" as="script"><script async="" type="text/javascript" src="https://web.cmp.usercentrics.eu/ui/v/3.112.0/secondLayer.b796d0f0.js"></script><link href="https://web.cmp.usercentrics.eu/ui/v/3.112.0/getToastifyStyle.4f0a73d7.js" rel="preload" as="script"><script async="" type="text/javascript" src="https://web.cmp.usercentrics.eu/ui/v/3.112.0/getToastifyStyle.4f0a73d7.js"></script></head><body>
+<nav class="navbar navbar-expand-lg navbar-light cpanel-navbar">
+<a href="#main-content" class="skip">Skip to main content</a>
+    <div class="container">
+        <a class="navbar-brand" href="https://docs.cpanel.net/">
+            
+            
+            <img src="https://docs.cpanel.net/img/docs-logo.min.svg" alt="cPanel logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon "></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                
+                
+                    <li class=" nav-item">
+                        <a class="nav-link" href="https://docs.cpanel.net/release-notes/">Release Notes</a>
+                    </li>
+                
+                    <li class=" nav-item">
+                        <a class="nav-link" href="https://docs.cpanel.net/changelogs/">Change Logs</a>
+                    </li>
+                
+                
+                
+                    <li class=" nav-item">
+                        <a class="nav-link" href="https://forums.cpanel.net/" target="_blank" rel="noopener">Forums</a>
+                    </li>
+                
+                    <li class=" nav-item">
+                        <a class="nav-link" href="https://tickets.cpanel.net/review/login.cgi" target="_blank" rel="noopener">Support Ticket</a>
+                    </li>
+                
+                <li class="nav-item">
+                    <a class="btn btn-secondary" href="https://cpanel.net/products/trial/" target="_blank" rel="noopener">Try Demo</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav> <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-KJG3H4L');</script>
+
+
+<div id="content">
+    <div class="article-container container-fluid"><search>
+<form id="search-form" name="search-form">
+    <select class="custom-select d-md-none mt-4 mb-3">
+        <option value="all" selected="">All</option>
+        <option value="cpanel">cPanel</option>
+        <option value="whm">WHM</option>
+        <option value="ea4">EA4</option>
+        <option value="knowledge-base">Knowledge Base</option>
+        <option value="manage2">Manage2</option>
+        <option value="webmail">Webmail</option>
+        <option value="api">API</option>
+    </select>
+    <div class="input-group">
+        <div class="input-group-append d-none d-md-inline">
+            <select name="product" class="custom-select">
+                <option value="all" selected="">All</option>
+                <option value="cpanel">cPanel</option>
+                <option value="whm">WHM</option>
+                <option value="ea4">EA4</option>
+                <option value="knowledge-base">Knowledge Base</option>
+                <option value="manage2">Manage2</option>
+                <option value="webmail">Webmail</option>
+                
+            </select>
+        </div>
+        <input id="search-query" name="q" type="text" class="form-control" placeholder="Enter search terms" aria-label="Default" aria-describedby="inputGroup-sizing-default" required="">
+        <div class="input-group-append" id="search-btn-container">
+            <input type="submit" formaction="https://docs.cpanel.net//search" value="Search" class="input-group-text" id="submit-search-btn">
+        </div>
+    </div>
+</form>
+</search>
+<ol class="d-none d-md-flex breadcrumb">
+    
+    
+        
+    
+        
+    
+        
+    
+
+    
+        <li class="breadcrumb-item">
+            <a href="https://docs.cpanel.net/">cPanel &amp; WHM Documentation</a>
+        </li>
+    
+
+
+    
+
+    
+        <li class="breadcrumb-item">
+            <a href="https://docs.cpanel.net/knowledge-base/">cPanel Knowledge Base</a>
+        </li>
+    
+
+
+    
+
+    
+        <li class="breadcrumb-item">
+            <a href="https://docs.cpanel.net/knowledge-base/dns/">DNS</a>
+        </li>
+    
+
+
+    
+
+    
+        <li class="breadcrumb-item active" aria-current="page">
+            How to Clear Your DNS Cache
+        </li>
+    
+
+
+</ol>
+
+
+ 
+<div class="tags">
+    
+        
+        
+            <a href="https://docs.cpanel.net/tags/dns/" class="badge badge-primary">dns</a>
+        
+    
+</div><div class="row">
+            <div class="d-none d-md-block col-md-3">
+              <aside>
+                <a name="main-content" tabindex="-1"> </a>
+              </aside>
+                <aside class="side-nav sticky">
+                    <h4 class="mt-1">Table of Contents</h4>
+
+
+
+
+
+<div class="table-of-contents-wrapper">
+    <ul class="toc-list">
+        
+            
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+		            
+                
+                
+                    <a class="bigger-TOC" href="https://docs.cpanel.net/knowledge-base/dns/how-to-clear-your-dns-cache/#overview">
+                        <li>Overview</li>
+                    </a>
+                    <hr>
+                
+            
+        
+            
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+		            
+                
+                
+                    <a class="bigger-TOC" href="https://docs.cpanel.net/knowledge-base/dns/how-to-clear-your-dns-cache/#how-to-clear-your-dns-cache">
+                        <li>How to clear your DNS cache</li>
+                    </a>
+                    <hr>
+                
+            
+        
+            
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+		            
+                
+                
+                    <a class="smaller-TOC" href="https://docs.cpanel.net/knowledge-base/dns/how-to-clear-your-dns-cache/#windows">
+                        <li>Windows®</li>
+                    </a>
+                    <hr>
+                
+            
+        
+            
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+		            
+                
+                
+                    <a class="smaller-TOC" href="https://docs.cpanel.net/knowledge-base/dns/how-to-clear-your-dns-cache/#macos">
+                        <li>macOS®</li>
+                    </a>
+                    <hr>
+                
+            
+        
+            
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+		            
+                
+                
+                    <a class="smaller-TOC" href="https://docs.cpanel.net/knowledge-base/dns/how-to-clear-your-dns-cache/#chromeos">
+                        <li>ChromeOS</li>
+                    </a>
+                    <hr>
+                
+            
+        
+            
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+		            
+                
+                
+                    <a class="smaller-TOC" href="https://docs.cpanel.net/knowledge-base/dns/how-to-clear-your-dns-cache/#ubuntu">
+                        <li>Ubuntu®</li>
+                    </a>
+                    <hr>
+                
+            
+        
+            
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+		            
+                
+                
+                    <a class="smaller-TOC" href="https://docs.cpanel.net/knowledge-base/dns/how-to-clear-your-dns-cache/#non-ubuntu-linux">
+                        <li>Non-Ubuntu Linux®</li>
+                    </a>
+                    <hr>
+                
+            
+        
+            
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+		            
+                
+                
+                    <a class="bigger-TOC" href="https://docs.cpanel.net/knowledge-base/dns/how-to-clear-your-dns-cache/#how-to-edit-your-etchosts-file">
+                        <li>How to edit your /etc/hosts file</li>
+                    </a>
+                    <hr>
+                
+            
+        
+        
+    </ul>
+</div>
+<button id="feedbackButton" class="feedback-btn">Was this helpful? <i aria-hidden="true" class="fas fa-thumbs-up"></i></button>
+</aside>
+                          </div>
+            <div class="d-xs-block d-md-none col-md-3">
+                <aside class="side-nav sticky">
+                    <a class="link" data-toggle="collapse" href="#table-of-contents-toggle" role="button" aria-expanded="false" aria-controls="table-of-contents-toggle">
+                        <h4 class="mt-1">Table of Contents</h4>
+                    </a>
+                    <div class="collapse" id="table-of-contents-toggle">
+
+
+
+
+
+<div class="table-of-contents-wrapper">
+    <ul class="toc-list">
+        
+            
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+		            
+                
+                
+                    <a class="bigger-TOC" href="https://docs.cpanel.net/knowledge-base/dns/how-to-clear-your-dns-cache/#overview">
+                        <li>Overview</li>
+                    </a>
+                    <hr>
+                
+            
+        
+            
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+		            
+                
+                
+                    <a class="bigger-TOC" href="https://docs.cpanel.net/knowledge-base/dns/how-to-clear-your-dns-cache/#how-to-clear-your-dns-cache">
+                        <li>How to clear your DNS cache</li>
+                    </a>
+                    <hr>
+                
+            
+        
+            
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+		            
+                
+                
+                    <a class="smaller-TOC" href="https://docs.cpanel.net/knowledge-base/dns/how-to-clear-your-dns-cache/#windows">
+                        <li>Windows®</li>
+                    </a>
+                    <hr>
+                
+            
+        
+            
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+		            
+                
+                
+                    <a class="smaller-TOC" href="https://docs.cpanel.net/knowledge-base/dns/how-to-clear-your-dns-cache/#macos">
+                        <li>macOS®</li>
+                    </a>
+                    <hr>
+                
+            
+        
+            
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+		            
+                
+                
+                    <a class="smaller-TOC" href="https://docs.cpanel.net/knowledge-base/dns/how-to-clear-your-dns-cache/#chromeos">
+                        <li>ChromeOS</li>
+                    </a>
+                    <hr>
+                
+            
+        
+            
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+		            
+                
+                
+                    <a class="smaller-TOC" href="https://docs.cpanel.net/knowledge-base/dns/how-to-clear-your-dns-cache/#ubuntu">
+                        <li>Ubuntu®</li>
+                    </a>
+                    <hr>
+                
+            
+        
+            
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+		            
+                
+                
+                    <a class="smaller-TOC" href="https://docs.cpanel.net/knowledge-base/dns/how-to-clear-your-dns-cache/#non-ubuntu-linux">
+                        <li>Non-Ubuntu Linux®</li>
+                    </a>
+                    <hr>
+                
+            
+        
+            
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+		            
+                
+                
+                    <a class="bigger-TOC" href="https://docs.cpanel.net/knowledge-base/dns/how-to-clear-your-dns-cache/#how-to-edit-your-etchosts-file">
+                        <li>How to edit your /etc/hosts file</li>
+                    </a>
+                    <hr>
+                
+            
+        
+        
+    </ul>
+</div>
+</div>
+                </aside>
+
+            </div>
+                <div class="col-md-9">
+                <div class="flex-column flex-md-row article-header">
+                    
+                        <div style="display:flex;align-items:center;padding-bottom:10px"><h2 style="padding-right:10px;">How to Clear Your DNS Cache</h2></div>
+                    
+                </div>
+
+                <p>Last modified: <em>2024 September 19</em></p>
+                <hr>
+                
+                
+                <h2 id="overview">Overview</h2>
+<p>Your DNS cache stores the locations (IP addresses) of web servers that contain web pages which you have recently viewed. If the IP address of a web server that stores a web page changes, you will not be able to access that web page again until your DNS cache updates.</p>
+<p>Your DNS cache updates automatically. However, if you encounter a large number of <a href="https://docs.cpanel.net/knowledge-base/web-services/http-error-codes-and-quick-fixes/">HTML 404 error codes</a>, you may need to clear your DNS cache manually. After you clear your DNS cache, your computer will automatically query all new <a href="https://docs.cpanel.net/knowledge-base/cpanel-product/cpanel-glossary/#nameserver"><abbr title="Physical computers that contains a list of domain names and their IP addresses. These computers allow visitors to access a domain through its IP address. Nameserver software gathers data about domains over time. Because of this, changes to DNS records may require 48 hours or more to reach all of the nameservers on the internet. Several types of nameserver exist.">nameservers</abbr></a> you interact with for the IP addresses of their web servers, then cache the new information.</p>
+<h2 id="how-to-clear-your-dns-cache">How to clear your DNS cache</h2>
+<h3 id="windows">Windows®</h3>
+<p>To clear your DNS cache if you use Windows, perform the following steps:</p>
+<ol>
+<li>Click <em>Start</em> or the <em>Windows</em> icon.</li>
+<li>In the search text box, enter <code>cmd</code>.</li>
+<li>Right-click <em>Command Prompt</em> and select <em>Run as Administrator</em>.</li>
+<li>Run the following command: <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;" class=" language-perl"><code class=" language-perl" data-lang="perl">ipconfig <span class="token operator">/</span>flushdns</code></pre></div></li>
+</ol>
+<p>If the command succeeds, the system returns the following message:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;" class=" language-perl"><code class=" language-perl" data-lang="perl">Windows IP configuration successfully flushed the DNS Resolver Cache<span class="token operator">.</span></code></pre></div>
+<p>For more information about the <code>ipconfig</code> command, read Microsoft’s <a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/ipconfig" target="_blank"><code>ipconfig</code></a> documentation.</p>
+<h3 id="macos">macOS®</h3>
+<p>To clear your DNS cache if you use macOS X version 10.10.4 or above, perform the following steps:</p>
+
+
+
+<div class="callout callout-danger">
+    <div class="callout-heading">Warning:</div>
+    <div class="callout-content">
+        <p>To run this command, you <strong>must</strong> know the computer’s administrator account password.</p>
+
+    </div>
+</div>
+<ol>
+<li>Click <em>Applications</em>.</li>
+<li>Click <em>Utilities</em>.</li>
+<li>Click <em>Terminal</em>.</li>
+<li>Run the following command:
+ <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;" class=" language-perl"><code class=" language-perl" data-lang="perl">sudo killall <span class="token operator">-</span>HUP mDNSResponder</code></pre></div>
+</li>
+</ol>
+<p>If the command succeeds, the system does <strong>not</strong> return any output.</p>
+<h3 id="chromeos">ChromeOS</h3>
+<p>To clear your DNS cache if you use ChromeOS, perform the following steps:</p>
+<ol>
+<li>Open a new Chrome tab.</li>
+<li>Enter the following address:
+ <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;" class=" language-perl"><code class=" language-perl" data-lang="perl">chrome<span class="token punctuation">:</span><span class="token operator">//</span>net<span class="token operator">-</span>internals</code></pre></div>
+</li>
+<li>Hit the <em>Enter</em> key.</li>
+<li>From the menu, select <em>DNS</em>.</li>
+<li>Click the <em>Clear host cache</em> button.</li>
+</ol>
+<p>If the command succeeds, the system will perform any DNS lookups again.</p>
+<h3 id="ubuntu">Ubuntu®</h3>
+<p>To clear your DNS cache if you use Ubuntu, run the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;" class=" language-perl"><code class=" language-perl" data-lang="perl">sudo resolvectl flush<span class="token operator">-</span>caches</code></pre></div>
+<p>If the command succeeds, it will return results with an empty cache.</p>
+<h3 id="non-ubuntu-linux">Non-Ubuntu Linux®</h3>
+<p>To clear your DNS cache if you use a Linux-based operating system that is not Ubuntu (for example, CloudLinux™ or AlmaLinux OS), run the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;" class=" language-perl"><code class=" language-perl" data-lang="perl">systemctl restart nscd</code></pre></div>
+<p>If the command succeeds, the system does <strong>not</strong> return any output.</p>
+<h2 id="how-to-edit-your-etchosts-file">How to edit your /etc/hosts file</h2>
+<p>Some server development environments, like <a href="https://www.mamp.info/en/mac/" target="_blank">MAMP</a>, can cause DNS conflicts by <strong>preventing</strong> you from clearing addresses in your operating system’s <code>/etc/hosts</code> file. If you experience a DNS caching error while using one of these environments, you <strong>must</strong> delete the conflicting IP address’ line from your <code>/etc/hosts</code> file manually.</p>
+<p>To manually edit your <code>/etc/hosts</code> file, perform the following steps:</p>
+
+
+
+<div class="callout callout-info">
+    <div class="callout-heading">Note:</div>
+    <div class="callout-content">
+        <ul>
+<li>If you are using Windows, you <strong>must</strong> perform these steps with administrator privileges.</li>
+<li>If you are using macOS, you <strong>must</strong> know the computer’s administrator account password.</li>
+</ul>
+
+    </div>
+</div>
+<ol>
+<li>
+<p>Open the <code>/etc/hosts</code> file with your preferred text editor. Your file will resemble the following example, where <code>192.0.2.0</code> is the IP address your system tries to access when you type <code>example.com</code> into your web browser’s address bar: </p><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;" class=" language-perl"><code class=" language-perl" data-lang="perl"><span class="token vstring string">10.0.0.0</span> localhost
+<span class="token vstring string">192.0.2.0</span> example<span class="token operator">.</span>com
+<span class="token vstring string">8.8.8.8</span> google<span class="token operator">.</span>com</code></pre></div><p></p>
+</li>
+<li>
+<p>Delete the lines that contain outdated or malfunctioning IP addresses.</p>
+</li>
+<li>
+<p>Save the file.</p>
+</li>
+<li>
+<p>Clear the <a href="#how-to-clear-your-dns-cache">DNS cache</a> to apply the changes.</p>
+</li>
+</ol>
+
+            </div>
+        </div>
+        
+            
+
+
+<section class="mt-5">
+    <h4>Additional Documentation</h4>
+    <hr>
+    <div class="additional-documentation">
+        <ul>
+            
+                <li>
+                    <a href="https://docs.cpanel.net/whm/dns-functions/add-a-dns-zone/">Add a DNS Zone</a>
+                </li>
+            
+                <li>
+                    <a href="https://docs.cpanel.net/whm/dns-functions/add-an-a-entry-for-your-hostname/">Add an A Entry for Your Hostname</a>
+                </li>
+            
+                <li>
+                    <a href="https://docs.cpanel.net/whm/clusters/dns-cluster/">DNS Cluster</a>
+                </li>
+            
+                <li>
+                    <a href="https://docs.cpanel.net/whm/dns-functions/dns-zone-manager/">DNS Zone Manager</a>
+                </li>
+            
+                <li>
+                    <a href="https://docs.cpanel.net/knowledge-base/dns/how-to-rotate-a-dnssec-key/">How to Rotate a DNSSEC Key</a>
+                </li>
+            
+                <li>
+                    <a href="https://docs.cpanel.net/knowledge-base/cpanel-product/cpanel-glossary/">The cPanel Glossary</a>
+                </li>
+        </ul>
+    </div>
+</section>
+
+        
+
+        
+    </div>
+
+        </div> 
+<footer class="text-center mt-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1">
+                <a href="//cpanel.com" title="WebPros International, LLC" class="center-block cPanel-logo">
+                    
+                    
+                    <img src="https://docs.cpanel.net/img/cpanel-logo.min.svg" title="WebPros International, LLC">
+                </a>
+            </div>
+            <div class="col-md-11 legal">
+                <p class="small">
+                    © 2026 All Rights Reserved / <a href="//cpanel.com/legal-notices.html" target="_blank" rel="noopener" title="Legal Notices">Legal Notices</a> / <a href="//cpanel.com/privacy-policy.html" target="_blank" rel="noopener" title="Privacy Policy">Privacy Policy</a> / <a href="//cpanel.com/transparency-report.html" target="_blank" rel="noopener" title="Transparency Report">Transparency Report</a>
+                </p>
+              </div>
+        </div>
+    </div>
+
+    <div class="container-fluid trademark">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <small>cPanel, WebHost Manager, and WHM are registered trademarks of WebPros International, LLC for providing its computer software that facilitates the management and configuration of internet web servers.</small>
+            </div>
+        </div>
+    </div>
+    
+</footer>
+<div id="feedbackModal" class="modal">
+            <div class="modal-content">
+              <span id="closeModal" class="close">×</span>
+              <iframe id="typeformEmbed" frameborder="0" style="width: 100%; height: 500px;" allow="camera; microphone; autoplay; encrypted-media;"></iframe>
+            </div>
+          </div>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ea984500c9bf4ec',t:'MTc3NTkwNTUzMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe name="__uspapiLocator" tabindex="-1" role="presentation" aria-hidden="true" title="Blank" style="display: none; position: absolute; width: 1px; height: 1px; top: -9999px;"></iframe>
+
+<iframe tabindex="-1" role="presentation" aria-hidden="true" title="Blank" src="https://consentcdn.cookiebot.com/sdk/bc-v4.min.html" style="position: absolute; width: 1px; height: 1px; top: -9999px;"></iframe><iframe id="uc-cross-domain-consent-sharing-bridge" src="https://web.cmp.usercentrics.eu/cdcs/v/1.0.0/index.html" style="display: none;"></iframe><aside id="usercentrics-cmp-ui" data-nosnippet="1" keyboard-events="true"></aside></body></html>

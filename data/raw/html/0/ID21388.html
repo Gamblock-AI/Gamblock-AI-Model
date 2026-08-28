@@ -1,0 +1,963 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta content="IE=edge" http-equiv="X-UA-Compatible"><title>
+  Archive-It - 
+  
+		  Explore Archived Content
+	  </title><link type="text/css" rel="stylesheet" href="/static/css/global2.css"><link type="text/css" rel="stylesheet" href="/static/css/960_12_col.css"><script src="/static/js/thirdparty/jquery-1.11.2.min.js" type="text/javascript"></script><script src="/static/js/thirdparty/jquery-migrate-1.2.1.min.js" type="text/javascript"></script><script async="async" src="https://partner.archive-it.org/static/AIT_Analytics.js" type="text/javascript"></script><script>
+  function focusOutline(obj){
+    $(obj).on("focusin focusout", function(){
+      $(this).toggleClass("inFocus");
+    })
+  }
+  $(function(){
+    focusOutline(".logo");
+  });
+</script><script src="/static/js/thirdparty/jquery.tools.min.js" type="text/javascript"></script><script src="/static/js/thirdparty/json2.js" type="text/javascript"></script><script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.2/jquery.cookie.min.js" type="text/javascript"></script><script src="/static/js/thirdparty/history/amplify.store.js" type="text/javascript"></script><div style="display: none;"></div><script src="/static/js/thirdparty/history/history.adapter.jquery.js" type="text/javascript"></script><script src="/static/js/thirdparty/history/history.js" type="text/javascript"></script><script src="/static/js/thirdparty/history/history.html4.js" type="text/javascript"></script><script src="/static/js/agora.js" type="text/javascript"></script><link type="text/css" rel="stylesheet" href="/static/css/thirdparty/ui-lightness/jquery-ui-1.11.4.custom.min.css"><script src="/static/js/thirdparty/jquery-ui-1.11.4.custom.min.js" type="text/javascript"></script><script type="text/javascript">
+//
+  var contextPath = "";
+  var origURI = "/explore";
+  var origQuery = "";
+  var origQueryTerms = "";
+  
+  function init()
+  {
+    agora.init(contextPath, origURI, origQuery, origQueryTerms, 
+        "#search-textbox", "#curr-tab", "#all-search-results", 500);
+  }
+  
+  function autoSelect()
+  {
+	return function(event, ui) {
+		//$("#search-form").submit();
+		return true;
+	}
+  }
+  
+  $(init);
+  //</script></head><body><a class="hiddenObj" href="#aitMainContent">Skip Navigation</a><div class="container_12 logo-wrapper"><h1 class="logo"><a title="Archive-It Home" href="/">
+        Archive-It
+      </a></h1></div><div class="container_12 mini-header"><div style="padding-left: 770px; width: 170px"><a href="https://www.facebook.com/ArchiveIt" title="facebook"><img title="Friend us on Facebook" alt="Facebook icon" src="/static/images/facebook.png"></a><a href="https://twitter.com/archiveitorg" title="twitter"><img title="Follow us on Twitter" alt="Twitter icon" src="/static/images/twitter.png"></a><a href="http://blog.archive-it.org" title="wordpress"><img title="Read our Blog" alt="Wordpress icon" height="24" width="24" src="/static/images/wordpress-icon.png"></a><a title="Login to your account" class="link-login" href="https://partner.archive-it.org/archiveit">Login</a></div></div><div class="container_12 page-header pear"><div class="grid_6 prefix_1"><ul class="navigation"><li><a href="/">HOME</a></li><li><a href="/explore">EXPLORE</a></li><li><a href="/learn-more">LEARN MORE</a></li><li><a href="/contact-us">CONTACT US</a></li></ul></div><div style="margin-right: 0px" class="grid_5"><a style="float: right; margin-top: 20px" href="//archive.org/"><img title="The Internet Archive" src="/static/icons/logo_IA.png" alt="Internet Archive"></a><div class="tagline"><h3><span>The leading web archiving service </span><span>for collecting and accessing </span><span>cultural heritage on the web </span></h3><p>Built at the <a title="Visit the Internet Archive" href="//archive.org/">Internet Archive</a></p></div></div><div class="clear"></div><div class="grid_11  prefix_1 page-header-elements"></div></div><div class="container_12 page-body"><div class="grid_12 entity-detail-panel"></div><div id="all-search-results"><div class="grid_12"><div class="grid_4 alpha"><div class="facet-list-panel "><h2>Narrow Your Results</h2><div alpha="false" id="organizationType" class="facet"><p style="float: left; display: inline"><strong>Type of Collecting Organization</strong></p><span style="float: right; font-size: smaller; padding-top: 15px; font-weight: bold" class="facetSort sorter"><p>Sort By:</p><ul><li class="active"><a name="count" href="?falpha=f_organizationType%3Atrue">Count</a></li><li class=""><a name="alpha" href="?falpha=f_organizationType%3Atrue">(A-Z)</a></li></ul></span><div class="clearfix"></div><ul id="facet-list"><li><span><a href="?fc=organizationType%3AcollegesAndUniversities" class="add-facet-link">Colleges &amp; Universities</a></span></li><li><span><a href="?fc=organizationType%3Ak12ProjectSchools" class="add-facet-link">K-12 Program Schools</a></span></li><li><span><a href="?fc=organizationType%3AlawLibraries" class="add-facet-link">Law Libraries</a></span></li><li><span><a href="?fc=organizationType%3AmuseumsAndArtLibraries" class="add-facet-link">Museums &amp; Art Libraries</a></span></li><li><span><a href="?fc=organizationType%3AnationalInstitutions" class="add-facet-link">National Institutions</a></span></li><li><span><a href="?fc=organizationType%3Angos" class="add-facet-link">NGOs</a></span></li><li><span><a href="?fc=organizationType%3AotherInstitutions" class="add-facet-link">Other Institutions</a></span></li><li><span><a href="?fc=organizationType%3ApublicLibrariesAndLocalGovernments" class="add-facet-link">Public Libraries &amp; Local Governments</a></span></li><li><span><a href="?fc=organizationType%3AstateArchivesAndLibraries" class="add-facet-link">State Archives &amp; Libraries</a></span></li></ul></div></div></div><div class="grid_8 omega"><div id="search-bar"><h2>Explore All Archives</h2><p>Items in the archive are listed below. Narrow your results at left, or enter a search query below to find a collecting organization, 
+		      collection, site, specific URL or to search the text of archived webpages.</p><form action="" method="get" id="search-form"><input value="" name="show" id="curr-tab" type="hidden"><label class="hiddenObj" for="search-textbox">Search Terms:</label><input value="" name="q" placeholder="Enter search terms here" class="search-field ui-autocomplete-input" id="search-textbox" type="text" autocomplete="off"><button onclick="return agora.updateSearch($(this).prev(), '#all-search-results')" type="submit">Search</button><a onclick="return agora.clearSearch(this)" title="Clear your search query" id="clear-all-link" href="?">Clear</a></form><ul class="constrained-facets"></ul></div><div class="grid_7"><div class="view-chooser-panel"><ul class="tabs"><li><a class="current" href="?show=Organizations">Collecting Organizations</a></li><li><a class="" href="?show=Collections">Collections</a></li><li><a class="" href="?show=Sites">Sites</a></li><li><a class="" href="?show=ArchivedPages">Search Page Text</a></li></ul></div></div><div style="display:none" id="ajax-status-message" class="grid_1 omega"><img alt="Loading Results..." src="/static/images/ajax-loader.gif"></div><div style="float:left;" class="results-viewer-panel grid_8 alpha" id="entity-results-container"><div class="highlight-box" id="entity-results"><script type="text/javascript">
+  //
+  if (agora) {
+      agora.setState({ 
+          url: "?",
+          query: "",
+          page : 1,
+          sort : "f_name.asc",
+          tab : "Organizations",
+          rootUrl : "",
+          waybackAccessPoint : "all",
+          fc: "[]"
+      });
+  }
+  //</script><script type="text/javascript">
+    //
+    new FeaturedItem("/", "Organizations", "").init("#search-textbox");
+    //</script><div class="paginator"><p>Page 1 of 15  (1.422 Total Results)<a href="?page=2&amp;totalResultCount=1422" id="pageNext">Next Page ►</a></p></div><div class="sorter"><p><strong>Sort By:</strong></p><ul><li>Name (A-Z)</li><li><a href="?totalResultCount=1422&amp;sort=f_name.desc">Name (Z-A)</a></li></ul><div class="clearfix"></div></div><a name="aitMainContent" id="aitMainContent"></a><div class="search-results" id="search-results"><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/565"> 100,000 Poets </a></h3><p>
+      Archive-It Partner Since:
+      Jul, 2011</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:ngos">NGOs</a></p><p class="url">
+      Organization URL: 
+      <a href="https://lib.fsu.edu/"> https://lib.fsu.edu/ </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/532"> 1000 Memories </a></h3><p>
+      Archive-It Partner Since:
+      Jun, 2011</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:otherInstitutions">Other Institutions</a></p><p class="url">
+      Organization URL: 
+      <a href="http://www.1000memories.com"> http://www.1000memories.com </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/775"> 2014 Congressional Election Cycle  </a></h3><p>
+      Archive-It Partner Since:
+      Jan, 2014</p><p class="url">
+      Organization URL: 
+      <a href="http://www.house.gov/"> http://www.house.gov/ </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+A collaborative project to archive the websites of 2014 Congressional Candidate. Collaborators include  Stanford University and University of California Berkeley.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/2856"> 227th Assault Helicopter Battalion Archive </a></h3><p>
+      Archive-It Partner Since:
+      Mar, 2025</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:otherInstitutions">Other Institutions</a></p><p class="url">
+      Organization URL: 
+      <a href="http://227ahb.org"> http://227ahb.org </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+Historical archive of the 227th Assault Helicopter Battalion, 1st Cavalry Division, Vietnam, 1965 - 1971</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/4455"> 309 Punk Project </a></h3><p>
+      Archive-It Partner Since:
+      Mei, 2025</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:ngos">NGOs</a></p><p class="url">
+      Organization URL: 
+      <a href="https://www.309punkproject.org/"> https://www.309punkproject.org/ </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+​​309 Punk Project is the only artist-run nonprofit organization in the South committed solely to archiving the creative efforts of our region's punk/DIY culture. Our primary goal is to serve the local and regional community as an archive, residency, and venue for divergent practices in DIY culture and contemporary art that critically examines the sociopolitical cultural moment shaping our lives.
+</p>
+
+<p class="seamTextPara">
+The 309 Punk Archive plays a crucial role in preserving our collective histories, serving as a rich resource to inspire research and creative practice. We also utilize the archive to curate traveling exhibitions, raising awareness of our vibrant creative culture and diversifying our voice in the punk community. ​</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/4561"> 904ward </a></h3><p>
+      Archive-It Partner Since:
+      Mar, 2026</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:ngos">NGOs</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+904WARD creates racial healing and equity through deep conversations and learning, trusting relationships, and collective action. Among 904WARD’s programs are Race Cards, Little Free Diverse Libraries, and the Jacksonville Community Remembrance Project (<q>JCRP</q>) - a project to remember the legacy of racial terror lynchings in our city. Through these and other programs, 904WARD's goals are to acknowledge the truth about our racial history and its current impacts. An inclusive community begins with understanding each other better.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/1491"> 99 Antennas </a></h3><p>
+      Archive-It Partner Since:
+      Nov, 2018</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:otherInstitutions">Other Institutions</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/1980"> ART | library deco </a></h3><p>
+      Archive-It Partner Since:
+      Apr, 2021</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:museumsAndArtLibraries">Museums &amp; Art Libraries</a></p><p class="url">
+      Organization URL: 
+      <a href="https://artlibrarydeco.space"> https://artlibrarydeco.space </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+An online collection of web pages documenting African American art by Black artists in Texas.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/2119"> Aanischaaukamikw Cree Cultural Institute </a></h3><p>
+      Archive-It Partner Since:
+      Sep, 2021</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:otherInstitutions">Other Institutions</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/1488"> Abilene Christian University </a></h3><p>
+      Archive-It Partner Since:
+      Mei, 2019</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:collegesAndUniversities">Colleges &amp; Universities</a></p><p class="url">
+      Organization URL: 
+      <a href="https://www.acu.edu/"> https://www.acu.edu/ </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+A four-year private Christian university, Abilene Christian University provides exceptional academics in a Christ-centered community. It includes the colleges of Arts and Sciences, Biblical Studies, Business Administration, Education and Human Services, Graduate and Professional Studies, and Honors; the Graduate School of Theology; and the schools of Information Technology and Computing, Nursing, and Social Work. ACU is affiliated with the Churches of Christ and is one of the largest private universities in the Southwest.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/2110"> Abilene Public Library </a></h3><p>
+      Archive-It Partner Since:
+      Sep, 2021</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:publicLibrariesAndLocalGovernments">Public Libraries &amp; Local Governments</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/824"> Academy of Motion Picture Arts and Sciences, Margaret Herrick Library </a></h3><p>
+      Archive-It Partner Since:
+      Okt, 2014</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:otherInstitutions">Other Institutions</a></p><p class="url">
+      Organization URL: 
+      <a href="http://www.oscars.org/library/"> http://www.oscars.org/library/ </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/4538"> Adirondack Architectural Heritage </a></h3><p>
+      Archive-It Partner Since:
+      Feb, 2026</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:ngos">NGOs</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+Adirondack Architectural Heritage (AARCH) is the nonprofit historic preservation organization for New York State’s Adirondack region. AARCH was formed in 1990 with a mission to promote public understanding, appreciation, and stewardship of the Adirondacks’ architectural heritage and unique communities through education, advocacy, technical assistance, and direct action.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/2151"> Advance Democracy, Inc. </a></h3><p>
+      Archive-It Partner Since:
+      Okt, 2021</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:ngos">NGOs</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/2075"> African Historical Graphics Archive </a></h3><p>
+      Archive-It Partner Since:
+      Sep, 2021</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:otherInstitutions">Other Institutions</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/749"> Africana Librarians Council </a></h3><p>
+      Archive-It Partner Since:
+      Sep, 2013</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:collegesAndUniversities">Colleges &amp; Universities</a></p><p class="url">
+      Organization URL: 
+      <a href="http://www.library.upenn.edu/collections/africa/ALC/"> http://www.library.upenn.edu/collections/africa/ALC/ </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/2089"> Age of Sail Museum and Archives </a></h3><p>
+      Archive-It Partner Since:
+      Sep, 2021</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:museumsAndArtLibraries">Museums &amp; Art Libraries</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/1415"> AICPA </a></h3><p>
+      Archive-It Partner Since:
+      Jul, 2018</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:otherInstitutions">Other Institutions</a></p><p class="url">
+      Organization URL: 
+      <a href="https://www.aicpa.org"> https://www.aicpa.org </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">We are the American Institute of CPAs, the world’s largest member association representing the accounting profession. Our history of serving the public interest stretches back to 1887. Today, you'll find our 431,000+ members in 137 countries and territories, representing many areas of practice, including business and industry, public practice, government, education and consulting.</p>
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/2109"> Ajax Public Library </a></h3><p>
+      Archive-It Partner Since:
+      Sep, 2021</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:publicLibrariesAndLocalGovernments">Public Libraries &amp; Local Governments</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/1435"> Akevoth Society for history and genealogy of Dutch Jewry </a></h3><p>
+      Archive-It Partner Since:
+      Jun, 2018</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:otherInstitutions">Other Institutions</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/2053"> Alabama A&amp;M University </a></h3><p>
+      Archive-It Partner Since:
+      Apr, 2021</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:collegesAndUniversities">Colleges &amp; Universities</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/62"> Alabama State Archives </a></h3><p>
+      Archive-It Partner Since:
+      Okt, 2005</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:stateArchivesAndLibraries">State Archives &amp; Libraries</a></p><p class="url">
+      Organization URL: 
+      <a href="http://www.archives.state.al.us/"> http://www.archives.state.al.us/ </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+The Alabama Department of Archives and History tells the story of the people of Alabama by preserving records and artifacts of historical value and by promoting a better understanding of Alabama history.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/1978"> Alamogordo Public Library </a></h3><p>
+      Archive-It Partner Since:
+      Apr, 2021</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:publicLibrariesAndLocalGovernments">Public Libraries &amp; Local Governments</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/305"> Alaska State Library </a></h3><p>
+      Archive-It Partner Since:
+      Mei, 2008</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:stateArchivesAndLibraries">State Archives &amp; Libraries</a></p><p class="url">
+      Organization URL: 
+      <a href="http://library.alaska.gov"> http://library.alaska.gov </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+The Alaska State Library promotes and coordinates library services to the community of Alaskan libraries, serves as the primary research library for state government, and collects, preserves, and makes accessible Alaska-related materials, including State of Alaska publications.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/762"> Albert Wisner Public Library </a></h3><p>
+      Archive-It Partner Since:
+      Nov, 2013</p><p class="url">
+      Organization URL: 
+      <a href="http://www.albertwisnerlibrary.org/‎"> http://www.albertwisnerlibrary.org/‎ </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/2522"> Alexandria Library </a></h3><p>
+      Archive-It Partner Since:
+      Sep, 2022</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:publicLibrariesAndLocalGovernments">Public Libraries &amp; Local Governments</a></p><p class="url">
+      Organization URL: 
+      <a href="https://alexlibraryva.org/"> https://alexlibraryva.org/ </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+Founded as a subscription library in 1794 and serving as the public library of Alexandria, VA since 1937 – Alexandria Library has a long legacy of supporting early literacy and lifelong learning in our diverse community. The Alexandria Library builds community through its six locations by providing opportunities to learn, explore, create, and connect. The Library’s Local History / Special Collections stewards many valuable resources documenting the history and culture of Alexandria and Virginia from the colonial period to the present.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/1612"> Algoma University </a></h3><p>
+      Archive-It Partner Since:
+      Jul, 2019</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:collegesAndUniversities">Colleges &amp; Universities</a></p><p class="url">
+      Organization URL: 
+      <a href="http://algomau.ca"> http://algomau.ca </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+Algoma University  is an undergraduate  public university with its main campus in Sault Ste. Marie, Ontario, Canada. Algoma is the smallest undergraduate-only university in Ontario. With a particular focus on the needs of Northern Ontario, Algoma U is a teaching-focused and student-centred post-secondary institution, specializing in liberal arts, sciences, and professional degree programs.
+</p>
+
+<p class="seamTextPara">
+Managed by the University Archives the Algoma University web archives is focused on capturing university and university-affiliated websites and content which relates to the unique cultural and regional history of Algoma and Northern Ontario.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/1979"> Amelia Island Museum of History </a></h3><p>
+      Archive-It Partner Since:
+      Apr, 2021</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:museumsAndArtLibraries">Museums &amp; Art Libraries</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/1243"> American Academy of Pediatrics </a></h3><p>
+      Archive-It Partner Since:
+      Jan, 2021</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:nationalInstitutions">National Institutions</a></p><p class="url">
+      Organization URL: 
+      <a href="https://www.aap.org/"> https://www.aap.org/ </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+The American Academy of Pediatrics (AAP) is an organization of 67,000 pediatricians committed to the optimal physical, mental, and social health and well-being for all infants, children, adolescents, and young adults.​
+</p>
+
+<p class="seamTextPara">
+This web archive preserves selected content produced by the AAP. This collection augments the collection holdings at the Gartner Pediatric History Center.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/759"> American Assembly - Columbia University  </a></h3><p>
+      Archive-It Partner Since:
+      Okt, 2013</p><p class="url">
+      Organization URL: 
+      <a href="http://americanassembly.org/"> http://americanassembly.org/ </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/369"> American Civil Liberties Union (ACLU) </a></h3><p>
+      Archive-It Partner Since:
+      Nov, 2009</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:ngos">NGOs</a></p><p class="url">
+      Organization URL: 
+      <a href="http://www.aclu.org/"> http://www.aclu.org/ </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/2049"> American College of Surgeons </a></h3><p>
+      Archive-It Partner Since:
+      Jun, 2021</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:ngos">NGOs</a></p><p class="url">
+      Organization URL: 
+      <a href="http://www.facs.org"> http://www.facs.org </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+The American College of Surgeons (ACS) is a scientific and educational association of surgeons that was founded in 1913 to improve the quality of care for the surgical patient by setting high standards for surgical education and practice.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/428"> American Federation of State, County &amp; Municipal Employees (AFSCME) </a></h3><p>
+      Archive-It Partner Since:
+      Jun, 2020</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:nationalInstitutions">National Institutions</a></p><p class="url">
+      Organization URL: 
+      <a href="http://www.reuther.wayne.edu/"> http://www.reuther.wayne.edu/ </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/2773"> American Institute of Physics </a></h3><p>
+      Archive-It Partner Since:
+      Feb, 2025</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:ngos">NGOs</a></p><p class="url">
+      Organization URL: 
+      <a href="https://www.aip.org/"> https://www.aip.org/ </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+The mission of the American Institute of Physics is to advance, promote, and serve the physical sciences for the benefit of humanity. The websites, pages, and other content archived in AIP's collections seek to reflect this mission in documenting transformation, advancement, and routine activities in the structure and content of physical sciences on the web. Particularly prevalent is AIP's own webpages which document the overall work of the organization.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/2783"> American International University </a></h3><p>
+      Archive-It Partner Since:
+      Agu, 2024</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:collegesAndUniversities">Colleges &amp; Universities</a></p><p class="url">
+      Organization URL: 
+      <a href="https://www.aiu.edu.kw"> https://www.aiu.edu.kw </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+Become a creator, not just a consumer.
+American International University provides the people of Kuwait with a high-quality, internationally-proven American education.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/699"> American Jewish Archives  </a></h3><p>
+      Archive-It Partner Since:
+      Feb, 2013</p><p class="url">
+      Organization URL: 
+      <a href="http://americanjewisharchives.org"> http://americanjewisharchives.org </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+The Jacob Rader Marcus Center of the American Jewish Archives (AJA), located on the historic Cincinnati campus of Hebrew Union College-Jewish Institute of Religion, was established in 1947 by renowned historian, Dr. Jacob Rader Marcus to collect, preserve, and make available for research, materials on the history of Jews and Jewish communities in the Western Hemisphere, including data of a political, economic, social, cultural, and religious nature. Today the AJA houses over ten million pages of documentation. It contains nearly 8,000 linear feet of archives, manuscripts, nearprint materials, photographs, audio and video tape, microfilm, and genealogical materials. The AJA exists to preserve the continuity of Jewish life and learning for future generations and aspires to serve scholars, educators, students, and researchers of all backgrounds and beliefs.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/1077"> American Legion </a></h3><p>
+      Archive-It Partner Since:
+      Jan, 2017</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:ngos">NGOs</a></p><p class="url">
+      Organization URL: 
+      <a href="http://www.legion.org/"> http://www.legion.org/ </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+The American Legion was founded in 1919 by World War I veterans to help meet the needs of veterans and their family in communities across the nation.  This collection contains websites, videos and documents primarily created by the American Legion National Headquarters. The Library and Museum at the American Legion is charged to collect, maintain, and make available the historical documents and artifacts relating to The American Legion National Organization.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/1857"> American Museum of Natural History </a></h3><p>
+      Archive-It Partner Since:
+      Nov, 2020</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:museumsAndArtLibraries">Museums &amp; Art Libraries</a></p><p class="url">
+      Organization URL: 
+      <a href="https://www.amnh.org/"> https://www.amnh.org/ </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/323"> American University </a></h3><p>
+      Archive-It Partner Since:
+      Okt, 2008</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:collegesAndUniversities">Colleges &amp; Universities</a></p><p class="url">
+      Organization URL: 
+      <a href="http://american.edu/"> http://american.edu/ </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/351"> American University in Cairo </a></h3><p>
+      Archive-It Partner Since:
+      Mar, 2009</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:collegesAndUniversities">Colleges &amp; Universities</a></p><p class="url">
+      Organization URL: 
+      <a href="http://library.aucegypt.edu/rbscl/"> http://library.aucegypt.edu/rbscl/ </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+The American University in Cairo Web Archive collects, preserves, and provides access to the internet presence of the university,&nbsp;and documents websites related to contemporary Egypt and exploration of its past. Maintained by the Rare Books and Special Collections Library, the archive includes official and non-official websites for AUC, as well as websites reflecting Egypt's arts and culture, architecture, business, travel and leisure, politics (including the 2011 Revolution), and society (such as religious and ethnic communities and gender issues).</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/331"> Ames High School </a></h3><p>
+      Archive-It Partner Since:
+      Okt, 2008</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:k12ProjectSchools">K-12 Program Schools</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/375"> Ames Middle School </a></h3><p>
+      Archive-It Partner Since:
+      Okt, 2009</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:k12ProjectSchools">K-12 Program Schools</a></p><p class="url">
+      Organization URL: 
+      <a href="http://www.ames.k12.ia.us/"> http://www.ames.k12.ia.us/ </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/866"> Amherst College </a></h3><p>
+      Archive-It Partner Since:
+      Sep, 2014</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:collegesAndUniversities">Colleges &amp; Universities</a></p><p class="url">
+      Organization URL: 
+      <a href="https://www.amherst.edu/"> https://www.amherst.edu/ </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/2157"> Amir Lavie </a></h3><p>
+      Archive-It Partner Since:
+      Okt, 2021</p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/2759"> Amistad Research Center </a></h3><p>
+      Archive-It Partner Since:
+      Apr, 2024</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:ngos">NGOs</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/1679"> Amsab-Institute of Social History </a></h3><p>
+      Archive-It Partner Since:
+      Jan, 2022</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:ngos">NGOs</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/869"> Andrea Mills </a></h3><p>
+      Archive-It Partner Since:
+      Sep, 2014</p><p class="url">
+      Organization URL: 
+      <a href="http://andrea@archive.org"> http://andrea@archive.org </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/880"> Andrew W. Mellon Foundation </a></h3><p>
+      Archive-It Partner Since:
+      Okt, 2014</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:ngos">NGOs</a></p><p class="url">
+      Organization URL: 
+      <a href="http://www.mellon.org/"> http://www.mellon.org/ </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/1010"> Andrews University </a></h3><p>
+      Archive-It Partner Since:
+      Feb, 2025</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:collegesAndUniversities">Colleges &amp; Universities</a></p><p class="url">
+      Organization URL: 
+      <a href="https://www.andrews.edu/"> https://www.andrews.edu/ </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+Andrews University’s mandate to collect local and Adventist history provides a unique perspective on Michigan’s past. Our collections capture the experiences of a religious minority while also preserving the stories of neighbors and communities connected to our schools, churches, and hospitals.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/2806"> Anglican Diocese of Toronto Archives </a></h3><p>
+      Archive-It Partner Since:
+      Okt, 2024</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:otherInstitutions">Other Institutions</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+The Anglican Diocese of Toronto Archives collects and preserves the records of Synod, its officials, clergy, parishes and organizations. The Diocese is committed to the preservation of its history and the history of the parishes within the boundaries of the Diocese of Toronto, which extends over 26,000 square kilometers, stretching from Mississauga to Brighton and north to Haliburton and Penetanguishene.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/801"> Annenberg School for Communication Library Archives </a></h3><p>
+      Archive-It Partner Since:
+      Nov, 2021</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:collegesAndUniversities">Colleges &amp; Universities</a></p><p class="url">
+      Organization URL: 
+      <a href="https://ascla.asc.upenn.edu/"> https://ascla.asc.upenn.edu/ </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+The Annenberg School for Communication Library Archives (ASCLA) collects, describes, preserves, and makes available materials pertinent to the interdisciplinary field of communication and its history.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/701"> Anvil Academic Publishing </a></h3><p>
+      Archive-It Partner Since:
+      Mar, 2013</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:ngos">NGOs</a></p><p class="url">
+      Organization URL: 
+      <a href="http://anvilacademic.org/"> http://anvilacademic.org/ </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/512"> Arab American National Museum </a></h3><p>
+      Archive-It Partner Since:
+      Nov, 2010</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:museumsAndArtLibraries">Museums &amp; Art Libraries</a></p><p class="url">
+      Organization URL: 
+      <a href="http://www.arabamericanmuseum.org/"> http://www.arabamericanmuseum.org/ </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+The Arab American National Museum's mission is to document, preserve, celebrate, and educate the public on the history, life, culture and contributions of Arab Americans.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/480"> Archive-It Web Archives </a></h3><p>
+      Archive-It Partner Since:
+      Sep, 2010</p><p class="url">
+      Organization URL: 
+      <a href="http://www.archive-it.org"> http://www.archive-it.org </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+Archive-It's blog and social media</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/1796"> Archives Unleashed </a></h3><p>
+      Archive-It Partner Since:
+      </p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/1087"> Archives Unleashed Hackathon </a></h3><p>
+      Archive-It Partner Since:
+      Feb, 2016</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:otherInstitutions">Other Institutions</a></p><p class="url">
+      Organization URL: 
+      <a href="https://web.archive.org/web/20160223155310/https://artsweb.uwaterloo.ca/archivesunleashed/"> https://web.archive.org/web/20160223155310/https://artsweb.uwaterloo.ca/archivesunleashed/ </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+Account for the Archives Unleashed Web Archive Hackathon, March 3-5, 2016, Toronto, Canada</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/1963"> Archives of Ontario </a></h3><p>
+      Archive-It Partner Since:
+      Jul, 2020</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:stateArchivesAndLibraries">State Archives &amp; Libraries</a></p><p class="url">
+      Organization URL: 
+      <a href="http://www.archives.gov.on.ca/"> http://www.archives.gov.on.ca/ </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+The Archives of Ontario (AO) is one of Canada’s largest provincial archives, and a premier source of information about the history of the land we now call Ontario and its people. Our collections document the decisions, functions and activities of the Government of Ontario as well as individuals, businesses, and organizations whose records carry enduring provincial significance. Since the web sphere is a key venue for interactions between the province’s government and its citizens, the goal of the AO’s web archives collection is to preserve provincially significant web-based information resources and make them available for current and future generations. We began collecting in early 2021.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/2793"> Archivo La Esquina </a></h3><p>
+      Archive-It Partner Since:
+      Sep, 2024</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:ngos">NGOs</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+Preservación digital bilingüe y diseño web para archivos y colecciones / Bilingual Digital Preservation &amp; Archive and collections to Web Design</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/4479"> Arctic Research Consortium of the U.S. </a></h3><p>
+      Archive-It Partner Since:
+      Agu, 2025</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:ngos">NGOs</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+The Arctic Research Consortium of the United States (ARCUS) was a nonprofit organization that connected researchers, educators, policymakers, and communities to advance Arctic science. Founded in 1988, ARCUS worked for nearly four decades to strengthen understanding of the Arctic by supporting collaborative research, sharing knowledge, and building partnerships across disciplines and sectors. ARCUS organized national conferences and workshops, managed major research programs, and created opportunities for educators and the public to engage directly with science through initiatives like PolarTREC.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/2730"> Aristos </a></h3><p>
+      Archive-It Partner Since:
+      Nov, 2023</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:otherInstitutions">Other Institutions</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+Aristos was a journal of the arts that advocated objective standards in scholarship and criticism. Rejecting the inventions of both modernism and postmodernism, it championed contemporary work that, like the great art of past centuries, is concerned with fundamental human values, and is both intelligible and well crafted. Though staunchly independent, the editorial viewpoint of Aristos owed much to ideas on the essential nature of art offered by the philosopher-novelist Ayn Rand (1905-1982), as analyzed in the co-editors’ book What Art Is: The Esthetic Theory of Ayn Rand.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/152"> Arizona State Library, Archives, and Public Records </a></h3><p>
+      Archive-It Partner Since:
+      Apr, 2007</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:stateArchivesAndLibraries">State Archives &amp; Libraries</a></p><p class="url">
+      Organization URL: 
+      <a href="http://www.azlibrary.gov/"> http://www.azlibrary.gov/ </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+The Arizona State Library, Archives and Public Records ensures that the Arizona Legislature and Arizonans have access to the information they need today, and the history of Arizona for tomorrow, through partnerships with all types of cultural and public information institutions.
+</p>
+
+<p class="seamTextPara">
+The agency provides access to unique historical and contemporary resources in the areas of law, government, genealogy and Arizoniana. The agency includes the official archives of the state, a state and federal publications depository library, the state law library, the Capitol Museum, and a genealogy and maps collection. The agency also offers special services for the visually and physically impaired, services to public libraries, and the public records management program.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/1455"> Arizona State University </a></h3><p>
+      Archive-It Partner Since:
+      Feb, 2019</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:collegesAndUniversities">Colleges &amp; Universities</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/574"> Arizona State University Law Library </a></h3><p>
+      Archive-It Partner Since:
+      Agu, 2011</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:lawLibraries">Law Libraries</a></p><p class="url">
+      Organization URL: 
+      <a href="http://www.law.asu.edu/"> http://www.law.asu.edu/ </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/2056"> Armenian Heritage Archives </a></h3><p>
+      Archive-It Partner Since:
+      Jul, 2021</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:ngos">NGOs</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/1075"> Art Gallery of Ontario </a></h3><p>
+      Archive-It Partner Since:
+      Jul, 2019</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:museumsAndArtLibraries">Museums &amp; Art Libraries</a></p><p class="url">
+      Organization URL: 
+      <a href="https://ago.ca/research/library-and-archives"> https://ago.ca/research/library-and-archives </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+The Edward P. Taylor Library &amp; Archives is a leading Canadian centre for research in art.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/1550"> Art Institute of Chicago </a></h3><p>
+      Archive-It Partner Since:
+      Des, 2019</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:museumsAndArtLibraries">Museums &amp; Art Libraries</a></p><p class="url">
+      Organization URL: 
+      <a href="http://www.artic.edu"> http://www.artic.edu </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/1883"> Art Practical </a></h3><p>
+      Archive-It Partner Since:
+      Des, 2020</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:ngos">NGOs</a></p><p class="url">
+      Organization URL: 
+      <a href="https://www.artpractical.com/"> https://www.artpractical.com/ </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+Art Practical was founded in 2009 as an online arts publication based in San Francisco. In 2020, Art Practical described itself as a visual arts publishing organization that was people-forward and equitable. The organization published with passion, rigor, and integrity through initiatives that included online arts discourse, podcasts, books, educational programs, and public events. As a platform, Art Practical embraced these many forms to connect diverse regional voices and amplify underrepresented perspectives from the Bay Area and broader West Coast. Art Practical was founded by Patricia  Maloney, who served as its director through 2016. Michele Carlson was director from 2016–2019. Christina Linden took up the directorship in the fall of 2019. The content published by Art Practical and Daily Serving, a sister publication that was published by Art Practical from 2013 through 2017 (when the two merged) represents hundreds of artists, galleries, arts institutions, and projects in the voices of over 450 writers and contributors. From 2014 to 2020, Art Practical was published through California College of the Arts (CCA) in San Francisco.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/2681"> ArtBridges </a></h3><p>
+      Archive-It Partner Since:
+      Mei, 2023</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:ngos">NGOs</a></p><p class="url">
+      Organization URL: 
+      <a href="http://artbridges.ca/"> http://artbridges.ca/ </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/2768"> Arts in a Changing America </a></h3><p>
+      Archive-It Partner Since:
+      Apr, 2024</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:ngos">NGOs</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/1981"> Asbury Park Public Library </a></h3><p>
+      Archive-It Partner Since:
+      Apr, 2021</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:publicLibrariesAndLocalGovernments">Public Libraries &amp; Local Governments</a></p><p class="url">
+      Organization URL: 
+      <a href="https://asbury.ent.sirsi.net/client/en_US/default"> https://asbury.ent.sirsi.net/client/en_US/default </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+The mission of the Asbury Park Public Library is to provide quality, cost-effective services, and lifelong learning opportunities, through books and a variety of other formats, to meet the informational, educational, cultural and recreational needs and interests of its diverse population.
+</p>
+
+<p class="seamTextPara">
+ 
+</p>
+
+<p class="seamTextPara">
+The library acquires, organizes and provides books and other relevant materials, ensures access to information sources throughout the nation and the world, serves the public with expert and caring assistance, and reaches out to all members of the community.
+The library especially recognizes the responsibility to serve as a place for children to discover the joy of reading, the importance of literacy, and the value of libraries.
+</p>
+
+<p class="seamTextPara">
+ The library is a forum for all points of views and adheres to the principles of the intellectual freedom as stated in the Library Bill of Rights promulgated by the American Library Association.
+</p>
+
+<p class="seamTextPara">
+PLEASE NOTE: If you DO NOT see your website and would like it archived, please email us. If you DO see your website and would not like it archived, please email us and we will take it down. We have done our best to find all of the local businesses, but some websites cannot be archived due to size or format and we apologize for that. Please email with any other questions or concerns about the Archive-It program.   
+Thank you.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/2107"> Ashland City Library </a></h3><p>
+      Archive-It Partner Since:
+      Sep, 2021</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:publicLibrariesAndLocalGovernments">Public Libraries &amp; Local Governments</a></p><p class="url">
+      Organization URL: 
+      <a href="http://ashlandlibrary.info"> http://ashlandlibrary.info </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+The mission of the Ashland Library is to provide resources and services necessary to meet the evolving educational, recreational, and informational needs and interests of the community.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/1044"> Asia Art Archive </a></h3><p>
+      Archive-It Partner Since:
+      Des, 2015</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:museumsAndArtLibraries">Museums &amp; Art Libraries</a></p><p class="url">
+      Organization URL: 
+      <a href="http://www.aaa.org.hk/"> http://www.aaa.org.hk/ </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/4487"> Asotin County Library </a></h3><p>
+      Archive-It Partner Since:
+      Agu, 2025</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:publicLibrariesAndLocalGovernments">Public Libraries &amp; Local Governments</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+Asotin County Library is a public library serving a population of 22,500 people in southeastern Washington State. Asotin County Library responds, as needs arise, to patrons, school districts, local
+government, national trends, and community partners through programs, collections,
+staff enrichment, facilities, and fiscal responsibility. The Library strives for sustainability in our practices, facilities, and human and financial resources.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/2152"> Associació Memòria i Història de Manresa </a></h3><p>
+      Archive-It Partner Since:
+      Okt, 2021</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:otherInstitutions">Other Institutions</a></p><p class="url">
+      Organization URL: 
+      <a href="https://www.memoria.cat/"> https://www.memoria.cat/ </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+L'Associació Memòria i Història de Manresa és una entitat sense ànim de lucre formada per un grup d'estudiosos de la Catalunya central, dedicada sobretot a investigar l'etapa de la República, la Guerra Civil i el franquisme a la ciutat de Manresa.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/2687"> Associated Universities, Inc. for the National Radio Astronomy Observatory </a></h3><p>
+      Archive-It Partner Since:
+      Jun, 2023</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:otherInstitutions">Other Institutions</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/2721"> Association of Canadian Archivists </a></h3><p>
+      Archive-It Partner Since:
+      Okt, 2023</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:ngos">NGOs</a></p><p class="url">
+      Organization URL: 
+      <a href="https://archivists.ca/"> https://archivists.ca/ </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+Founded in 1975 and incorporated in 1978, the Association of Canadian Archivists (ACA) is a non-profit organization that represents the needs and interests of archives and records professionals throughout Canada. The ACA provides members with opportunities to network with archives and records professionals across the country, develop professional skills and expertise, and participate in national and international advocacy initiatives. The ACA is governed by its members and supported by staff. Offices are located in Canada’s capital city, Ottawa, Ontario. We acknowledge that the ACA Office and its employees work on the unceded, unsurrendered Territory of the Anishinaabe Algonquin Nation whose presence here reaches back to time immemorial.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/4576"> Athens County Independent </a></h3><p>
+      Archive-It Partner Since:
+      Mar, 2026</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:otherInstitutions">Other Institutions</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/1319"> Athens Regional Library System </a></h3><p>
+      Archive-It Partner Since:
+      Okt, 2017</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:publicLibrariesAndLocalGovernments">Public Libraries &amp; Local Governments</a></p><p class="url">
+      Organization URL: 
+      <a href="http://www.athenslibrary.org/index.php"> http://www.athenslibrary.org/index.php </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+Athens Regional Library System serves the counties of Athens-Clarke, Madison, Oconee, Oglethorpe, and Franklin, Georgia. It consists of 11 branches throughout the area.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/1977"> Atlanta History Center </a></h3><p>
+      Archive-It Partner Since:
+      Apr, 2021</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:museumsAndArtLibraries">Museums &amp; Art Libraries</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/2111"> Auburn Avenue Research Library on African American Culture and History </a></h3><p>
+      Archive-It Partner Since:
+      Sep, 2021</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:publicLibrariesAndLocalGovernments">Public Libraries &amp; Local Governments</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/1136"> Augustana College </a></h3><p>
+      Archive-It Partner Since:
+      Sep, 2017</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:collegesAndUniversities">Colleges &amp; Universities</a></p><p class="url">
+      Organization URL: 
+      <a href="http://www.augustana.edu/"> http://www.augustana.edu/ </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/2048"> Augustana University Mikkelsen Library </a></h3><p>
+      Archive-It Partner Since:
+      Jul, 2021</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:collegesAndUniversities">Colleges &amp; Universities</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/1200"> Auraria Library </a></h3><p>
+      Archive-It Partner Since:
+      Okt, 2016</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:collegesAndUniversities">Colleges &amp; Universities</a></p><p class="url">
+      Organization URL: 
+      <a href="http://library.auraria.edu/"> http://library.auraria.edu/ </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/2819"> Auraria Student Activism Archive </a></h3><p>
+      Archive-It Partner Since:
+      Des, 2024</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:collegesAndUniversities">Colleges &amp; Universities</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/1848"> Ausglass (The Australian Association of Glass Artists) </a></h3><p>
+      Archive-It Partner Since:
+      Okt, 2020</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:otherInstitutions">Other Institutions</a></p><p class="url">
+      Organization URL: 
+      <a href="https://ausglass.org"> https://ausglass.org </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+Ausglass (The Australian Association of Glass Artists) Limited is a not-for-profit members organization that encourages diversity, dialogue and excellence in Australian contemporary glass through biennial conferences and a program o national glass awards, prizes, exhibitions and select activitities.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/2071"> Austen Riggs Center </a></h3><p>
+      Archive-It Partner Since:
+      Agu, 2021</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:ngos">NGOs</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/874"> Austin Presbyterian Theological Seminary </a></h3><p>
+      Archive-It Partner Since:
+      Apr, 2015</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:otherInstitutions">Other Institutions</a></p><p class="url">
+      Organization URL: 
+      <a href="http://austinseminary.edu/archives"> http://austinseminary.edu/archives </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+The Austin Seminary Archives at the Wright Learning and Information Center serves as the repository for the documentation of the Seminary's administrative activities and educational programs, its publications, memorabilia, photographic records, and the occasional memoirs and personal papers of the Seminary's faculty. In addition, the Archives collects materials on the activities of the Presbyterian Church in Texas, Oklahoma, Arkansas, and Louisiana, encompassing all forms of the Presbyterian and Reformed traditions.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/1969"> Australian Off Road </a></h3><p>
+      Archive-It Partner Since:
+      Mar, 2021</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:otherInstitutions">Other Institutions</a></p><p class="url">
+      Organization URL: 
+      <a href="https://www.australianoffroad.com.au/"> https://www.australianoffroad.com.au/ </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/2042"> Australian Parliamentary Library </a></h3><p>
+      Archive-It Partner Since:
+      Jun, 2021</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:nationalInstitutions">National Institutions</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/2831"> Avalon Free Public Library &amp; History Center </a></h3><p>
+      Archive-It Partner Since:
+      Jan, 2025</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:publicLibrariesAndLocalGovernments">Public Libraries &amp; Local Governments</a></p><p class="url">
+      Organization URL: 
+      <a href="https://www.avalonfreelibrary.org/ahc"> https://www.avalonfreelibrary.org/ahc </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/1366"> Ball State University </a></h3><p>
+      Archive-It Partner Since:
+      Agu, 2018</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:collegesAndUniversities">Colleges &amp; Universities</a></p><p class="url">
+      Organization URL: 
+      <a href="https://www.bsu.edu/academics/libraries/research/archives-special-collections"> https://www.bsu.edu/academics/libraries/research/archives-special-collections </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/969"> Barnard College </a></h3><p>
+      Archive-It Partner Since:
+      Apr, 2015</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:collegesAndUniversities">Colleges &amp; Universities</a></p><p class="url">
+      Organization URL: 
+      <a href="http://archives.barnard.edu"> http://archives.barnard.edu </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+The Barnard Archives and Special Collections collects and makes accessible materials that document campus and academic life at Barnard, as well as histories of feminism and dance.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/2749"> Barry Sharples </a></h3><p>
+      Archive-It Partner Since:
+      Jan, 2024</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:otherInstitutions">Other Institutions</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/1982"> Bartholomew County Public Library </a></h3><p>
+      Archive-It Partner Since:
+      Apr, 2021</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:publicLibrariesAndLocalGovernments">Public Libraries &amp; Local Governments</a></p><p class="url">
+      Organization URL: 
+      <a href="http://mybcpl.org"> http://mybcpl.org </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/962"> Baruch College </a></h3><p>
+      Archive-It Partner Since:
+      Apr, 2015</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:collegesAndUniversities">Colleges &amp; Universities</a></p><p class="url">
+      Organization URL: 
+      <a href="http://www.baruch.cuny.edu/library/alumni/archives.html"> http://www.baruch.cuny.edu/library/alumni/archives.html </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/772"> Bates College </a></h3><p>
+      Archive-It Partner Since:
+      Des, 2013</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:collegesAndUniversities">Colleges &amp; Universities</a></p><p class="url">
+      Organization URL: 
+      <a href="http://bates.edu"> http://bates.edu </a>&nbsp;&nbsp;
+      </p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/298"> Baton Rouge Magnet High School </a></h3><p>
+      Archive-It Partner Since:
+      Mar, 2008</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:k12ProjectSchools">K-12 Program Schools</a></p><p class="url">
+      Organization URL: 
+      <a href="http://brmhs.ebrschools.org/"> http://brmhs.ebrschools.org/ </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+ Baton Rouge Magnet High School, one of the designated historical sites in the National Register of Historic Places, serves multicultural populations of high achieving students.
+</p>
+
+<p class="seamTextPara">
+It is an academic and visual and performing arts magnet, offering a college preparatory curriculum that includes many honors and advanced placement courses.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/4508"> Bay Area Action Archives </a></h3><p>
+      Archive-It Partner Since:
+      Sep, 2025</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:ngos">NGOs</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+Bay Area Action (BAA) was a pioneering environmental group in the San Francisco Bay Area from 1990 to 2000. The BAA History Project is ensuring the projects, accomplishments, and stories of BAA are made part of the historical record by archiving them on the Internet for perpetuity.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/671"> Baylor University, The Texas Collection </a></h3><p>
+      Archive-It Partner Since:
+      Des, 2012</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:collegesAndUniversities">Colleges &amp; Universities</a></p><p class="url">
+      Organization URL: 
+      <a href="http://www.baylor.edu/lib/texas/"> http://www.baylor.edu/lib/texas/ </a>&nbsp;&nbsp;
+      </p><p style="display: inline">
+        Description: </p><p class="seamTextPara">
+The University Archives at The Texas Collection serves as the secure repository for Baylor University records. Its principal function is to collect, preserve, and provide appropriate access to records of enduring value related to the history of Baylor University.</p>
+
+      <p></p></div></div></div><div class="result-item"><div class="entity-organization"><div class=""><h3><a href="/organizations/1983"> Bedford Public Library System </a></h3><p>
+      Archive-It Partner Since:
+      Apr, 2021</p><p>
+        Organization Type:
+        <a href="/explore?fc=organizationType:publicLibrariesAndLocalGovernments">Public Libraries &amp; Local Governments</a></p><p class="url">
+      Organization URL: 
+      <a href="">  </a>&nbsp;&nbsp;
+      </p></div></div></div></div><script type="text/javascript">
+  //
+  	agora.updateWaybackLinks(".waybackCaptureInfo", "all", "");
+  	agora.updateVideoLinks(".videoInfo", "https://partner.archive-it.org/api/partner_video/", "");
+  	agora.loadPageVideos("#pageVideoList", "https://partner.archive-it.org/api/partner_video/", "");
+  	agora.loadSeedVideos("#seedVideoList", "https://partner.archive-it.org/api/partner_video/", "");
+  //</script><div class="paginator"><p>Page 1 of 15  (1.422 Total Results)<a href="?page=2&amp;totalResultCount=1422" id="pageNext">Next Page ►</a></p></div></div></div></div></div></div></div><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-1" tabindex="0" style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span><div class="container_12 page-footer banana"><div style="position:relative;" class="grid_12"><div class="footer-box"><a class="footer-logo" href="//archive-it.org">Archive It</a><div class="info-box"><h4>Archive-It </h4><p><em>Built at the <a title="Visit the Internet Archive" href="//archive.org/">Internet Archive</a></em></p><span class="copyright">2014 Archive-It<br><script> 
+          /*⚄ 4.9-SNAPSHOT-prod-2024-05-20T18:52:56Z*/ 
+         </script></span><span class="footer-slogan">The leading web archiving service <br>for collecting and accessing <br> cultural heritage on the web <br></span></div></div><ul class="footer-nav"><li><a href="/">Home</a></li><li><a href="/learn-more">Learn More</a><ul><li><a href="/learn-more">About Archive-It</a></li><li><a href="/press">News/Press</a></li><li><a href="/team">Meet the Team</a></li><li><a href="/publications">Publications</a></li></ul></li><li><a href="/contact-us">Contact Us</a></li></ul><div class="footer-out"><a href="http://blog.archive-it.org" title="wordpress"><img title="Read our Blog" alt="Wordpress icon" height="24" width="24" src="/static/images/wordpress-icon.png"></a><a href="https://twitter.com/archiveitorg" title="twitter"><img title="Follow us on Twitter" alt="Twitter icon" src="/static/images/twitter.png"></a><a href="https://www.facebook.com/ArchiveIt" title="facebook"><img title="Friend us on Facebook" alt="Facebook icon" src="/static/images/facebook.png"></a></div></div></div></body></html>

@@ -1,0 +1,1791 @@
+<html lang="en" data-pc-mode="1"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="x5-fullscreen" content="true">
+    <link rel="icon" type="image/x-icon" href="//www.iqiyi.com/favicon.ico">
+    <link rel="stylesheet" href="//static-help.iqiyi.com/helpcenter/mobile/20260204000038/css/h5_help_new.css">
+    <title>Bantuan dan feedback</title>
+    <!-- <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/vConsole/3.9.0/vconsole.min.js"></script>
+    <script>
+      var vConsole = new VConsole();
+      window.onerror = function(msg, url, line, col, error){
+        console.log(msg, url, line, col, error)
+      }
+    </script> -->
+    <style type="text/css">
+    </style>
+</head>
+<body>
+    <div class="">
+<style type="text/css">
+  @media only screen and (min-width: 681px) and (max-width: 2732px) {
+    html[data-hpad-mode="1"] {
+      font-size: 26.66667vw;
+    }
+  }
+
+  @media only screen and (orientation: landscape) {
+    html[data-hpad-mode="1"] {
+      font-size: 150px;
+    }
+  }
+</style>
+<script async="" src="//static-s.iqiyi.com/js/common/pingback/1.1.0-202101/pingback-sdk-javascript.min.js"></script><script>
+  if (navigator.platform && navigator.platform.toUpperCase().indexOf('MAC')>=0) {
+    window['cservice_platform'] = 'pcw';
+  }
+  (function() {
+    var _getSearchValue = function(key) {
+      var matches = location.search.match(new RegExp(key + '=([^&]*)'));
+      return matches ? matches[1] : null;
+    };
+    var _isDarkMode = function() {
+      if(_getSearchValue('darkMode') === '1'){
+        window.__darkMode = 'dark'
+        return 'dark';  // 如果地址直接传darkMode，则认为是暗黑模式
+      }
+      var mode = 'light';
+      var userAgent = navigator.userAgent;
+      var matchRes = userAgent.match(/QYStyleModel\/\((\w+)\)/);
+      if(matchRes && matchRes[1] && matchRes[1] === 'dark'){
+        mode = 'dark';
+      }
+      if (typeof window !== 'undefined' && window) {
+        window.__darkMode = mode;
+      }
+      return mode;
+    }
+    if(_isDarkMode() == 'dark'){
+      //替换自助工具图片
+      var selfToolDom = document.getElementsByClassName("hook-href-action-self-tool")
+      if(selfToolDom && selfToolDom.length !== 0) {
+        for(var index=0; index < selfToolDom.length; index++){
+          var dom = selfToolDom[index];
+          var darkModeImgUrl = null;
+          var imgDom = dom.firstElementChild;
+          if(dom.dataset){
+            darkModeImgUrl = dom.dataset.dmIconUrl;
+          }else{
+            darkModeImgUrl = dom.getAttribute('data-method');
+          }
+          if(darkModeImgUrl && imgDom){
+            imgDom.style = "background-image:url('"+ darkModeImgUrl +"')"
+          }
+        }
+      }
+      // 标记dark
+      document.getElementsByTagName('html')[0].setAttribute('data-theme', 'dark')
+    }
+  })();
+
+  (function(){
+      var head = document.getElementsByTagName('HEAD')[0]; 
+      //根据不同入口，设置对应的style
+      var isRedSkinEntry = function(){
+        var matched = false;
+        var entry = "";
+        console.log('entry',entry);
+        if(entry === "iqiyi-suike-app-v2-help" || entry === "iqiyi-suike-vip-cashier-app-v2-help"){
+          matched = true;
+        };
+        return matched;
+      };
+      if(isRedSkinEntry()){
+        var redSkinDom = document.createElement('style');
+        var resSkinCssHTML  = '';
+        resSkinCssHTML += '.faqDetails a{'
+        resSkinCssHTML +=    'color: #FE0200 !important;'
+        resSkinCssHTML += '}'
+        resSkinCssHTML += '.m-faq-detail a{'
+        resSkinCssHTML +=    'color: #FE0200 !important;'
+        resSkinCssHTML += '}'
+        resSkinCssHTML += '.m-help-tab .c-link.selected{'
+        resSkinCssHTML +=    'color: #FE0200 !important;'
+        resSkinCssHTML += '}'
+        resSkinCssHTML += '.m-help-tab .c-link.selected::before{'
+        resSkinCssHTML +=    'background: #FE0200 !important;'
+        resSkinCssHTML += '}'
+        resSkinCssHTML += '.faqDetails a:active{'
+        resSkinCssHTML +=    'color: #FE0200 !important;'
+        resSkinCssHTML += '}'
+        resSkinCssHTML += '.m-faq-detail a:active{'
+        resSkinCssHTML +=    'color: #FE0200 !important;'
+        resSkinCssHTML += '}'
+        resSkinCssHTML += '.faq-evaluate .useful.selected{'
+        resSkinCssHTML +=    'color: #FE0200 !important;'
+        resSkinCssHTML +=    'border-color: #FE0200 !important;'
+        resSkinCssHTML += '}'
+        resSkinCssHTML += '.faq-evaluate .useful.selected i{'
+        resSkinCssHTML +=    'filter: invert(20%) sepia(100%) saturate(6718%) hue-rotate(2deg) brightness(93%) contrast(118%);'
+        resSkinCssHTML += '}'
+        resSkinCssHTML += '.faq-evaluate .useless.selected{'
+        resSkinCssHTML +=    'color: #FE0200 !important;'
+        resSkinCssHTML +=    'border-color: #FE0200 !important;'
+        resSkinCssHTML += '}'
+        resSkinCssHTML += '.faq-evaluate .useless.selected i{'
+        resSkinCssHTML +=    'filter: invert(20%) sepia(100%) saturate(6718%) hue-rotate(2deg) brightness(93%) contrast(118%);'
+        resSkinCssHTML += '}'
+        redSkinDom.innerHTML = resSkinCssHTML;
+        document.head.appendChild(redSkinDom);
+      }
+  })();
+
+  (function() {
+    var themeColor = "#040f26";
+    var themeColorFilter = "";
+    var startGradientColor = "";
+    var middleGradientColor = "";
+    var endGradientColor = "";
+    var themeColorType = "0";
+    if (!startGradientColor) {
+      startGradientColor = themeColor;
+    }
+    if (!middleGradientColor) {
+      middleGradientColor = themeColor;
+    }
+    if (!endGradientColor) {
+      endGradientColor = themeColor;
+    }
+    if (themeColor && themeColorType == '1') {
+      var redSkinDom = document.createElement('style');
+      var resSkinCssHTML  = '';
+      resSkinCssHTML += '.faqDetails a{'
+      resSkinCssHTML +=    'color: ' + themeColor + ' !important;'
+      resSkinCssHTML += '}'
+
+      resSkinCssHTML += '.m-faq-detail a{'
+      resSkinCssHTML +=    'color: ' + themeColor + ' !important;'
+      resSkinCssHTML += '}'
+
+      resSkinCssHTML += '.m-help-searchHandle .search-input .search-bar{'
+      resSkinCssHTML +=    'caret-color: ' + themeColor + ' !important;'
+      resSkinCssHTML += '}'
+
+      resSkinCssHTML += '.m-faqList .c-title em {'
+      resSkinCssHTML += '    color: ' + themeColor + ' !important;'
+      resSkinCssHTML += '}'
+
+      resSkinCssHTML += '.m-help-searchHandle .search-result .info dt em {'
+      resSkinCssHTML += '    color: ' + themeColor + ' !important;'
+      resSkinCssHTML += '}'
+
+      resSkinCssHTML += '.m-help-tab .c-link.selected {'
+      resSkinCssHTML += '    color: ' + themeColor + ' !important;'
+      resSkinCssHTML += '}'
+
+      resSkinCssHTML += '.m-help-tab .c-link.selected::before{'
+      resSkinCssHTML +=    'background: ' + themeColor + ' !important;'
+      resSkinCssHTML += '}'
+      resSkinCssHTML += '.m-help-tab .c-link .selected-flag {'
+      resSkinCssHTML +=    'background-color: ' + themeColor + ' !important;'
+      resSkinCssHTML += '}'
+      resSkinCssHTML += '.faqDetails a:active{'
+      resSkinCssHTML +=    'color: ' + themeColor + ' !important;'
+      resSkinCssHTML += '}'
+      resSkinCssHTML += '.m-faq-detail a:active{'
+      resSkinCssHTML +=    'color: ' + themeColor + ' !important;'
+      resSkinCssHTML += '}'
+      resSkinCssHTML += '.faq-evaluate .useful.selected{'
+      resSkinCssHTML +=    'color: ' + themeColor + ' !important;'
+      resSkinCssHTML +=    'border-color: ' + themeColor + ' !important;'
+      resSkinCssHTML += '}'
+      resSkinCssHTML += '.faq-evaluate .useful.selected i{'
+      resSkinCssHTML +=    'filter: ' + themeColorFilter + ' !important;'
+      resSkinCssHTML += '}'
+      resSkinCssHTML += '.faq-evaluate .useless.selected{'
+      resSkinCssHTML +=    'color: ' + themeColor + ' !important;'
+      resSkinCssHTML +=    'border-color: ' + themeColor + ' !important;'
+      resSkinCssHTML += '}'
+      resSkinCssHTML += '.faq-evaluate .useless.selected i{'
+      resSkinCssHTML +=    'filter: ' + themeColorFilter + ' !important;'
+      resSkinCssHTML += '}'
+      //resSkinCssHTML += '.m-help-footerBtn .c-link:not(:last-child){'
+      //resSkinCssHTML +=    'color: ' + themeColor + ' !important;'
+      //resSkinCssHTML += '}'
+      resSkinCssHTML += '.m-help-footerBtn .c-link:not(:last-child)::before{'
+      resSkinCssHTML +=    'background-image: none !important;'
+      resSkinCssHTML +=    'border: .01rem solid ' + themeColor + ' !important;'
+      resSkinCssHTML +=    'border-radius: .04rem !important;'
+      resSkinCssHTML += '}'
+      //resSkinCssHTML += '.m-help-footerBtn .c-link:last-child{'
+      //resSkinCssHTML +=    'background-image: linear-gradient(90deg, ' + startGradientColor +' 0%, ' + middleGradientColor + ' 50%, ' + endGradientColor + ' 99%) !important;'
+      //resSkinCssHTML +=    'background-image: -webkit-linear-gradient(90deg, ' + startGradientColor +' 0%, ' + middleGradientColor + ' 50%, ' + endGradientColor + ' 99%) !important;'
+      //resSkinCssHTML += '}'
+      redSkinDom.innerHTML = resSkinCssHTML;
+      document.head.appendChild(redSkinDom);
+    }
+  })();
+
+  (function() {
+    var getIsIphoneX = function() {
+      // X XS, XS Max, XR
+      var xSeriesConfig = [
+        {
+          devicePixelRatio: 3,
+          width: 375,
+          height: 812,
+        },
+        {
+          devicePixelRatio: 3,
+          width: 414,
+          height: 896,
+        },
+        {
+          devicePixelRatio: 2,
+          width: 414,
+          height: 896,
+        },
+        {
+          devicePixelRatio: 3,
+          width: 390,
+          height: 844,
+        },
+        {
+          devicePixelRatio: 3.25,
+          width: 388,
+          height: 837,
+        },
+      ];
+      // h5
+      if (typeof window !== 'undefined' && window) {
+        var isIOS = /iphone/gi.test(window.navigator.userAgent.toUpperCase());
+        var isHarmonyDevice = /ARKWEB/gi.test(window.navigator.userAgent.toUpperCase());
+        if (!isIOS && !isHarmonyDevice) return false;
+        var devicePixelRatio = window.devicePixelRatio;
+        var width = window.screen.width;
+        var height = window.screen.height;
+        var isIphoneX = false;
+        xSeriesConfig.forEach(function(item, index) {
+          if (item.devicePixelRatio === devicePixelRatio
+            && item.width === width
+            && item.height === height) {
+            isIphoneX = true;
+          }
+        });
+        return isIphoneX;
+      }
+      return false;
+    };
+    if (getIsIphoneX()) {
+      document.getElementsByTagName('html')[0].setAttribute('data-is-iphone-x', '1');
+    }
+  })();
+
+  (function() {
+    var isRtl = '0';
+    if (isRtl === '1') {
+      document.getElementsByTagName('html')[0].setAttribute('data-rtl-mode', '1');
+    }
+  })();
+
+  (function() {
+    if (navigator.appVersion.indexOf("Win") != -1 || navigator.appVersion.indexOf("Mac") != -1 || navigator.appVersion.indexOf("iPad") != -1 || navigator.appVersion.indexOf("gpad") != -1) {
+      document.getElementsByTagName('html')[0].setAttribute('data-pc-mode', '1');
+    }
+    if (navigator.appVersion.indexOf("ArkWeb") >= 0 && navigator.appVersion.indexOf("Tablet") >= 0) {
+      document.getElementsByTagName('html')[0].setAttribute('data-hpad-mode', '1');
+    }
+  })();
+
+  // 检测是否为移动端设备
+  (function() {
+    var isMobileDevice = function() {
+      var userAgent = navigator.userAgent.toLowerCase();
+      var mobileKeywords = ['mobile', 'android', 'iphone', 'ipad', 'ipod'];
+      // 检查UA中是否包含移动设备关键词
+      for (var i = 0; i < mobileKeywords.length; i++) {
+        if (userAgent.indexOf(mobileKeywords[i]) !== -1) {
+          return true;
+        }
+      }
+      return false;
+    };
+    
+    if(isMobileDevice()){
+      window.__isMobileDevice = true
+      document.documentElement.setAttribute('data-is-mob', '1');
+    }
+  })();
+</script>
+<div id="main" data-templateid="29897">
+    <!-- 新结构遍历 -->
+                    <div class="hide-in-search-block">
+        <!-- 自助服务 -->
+        
+        <!--猜你想问 + 知识分类 -->
+                                                                        <!--热门问题 -->
+                                        <section class="m-help-wrap">
+                        <div class="m-title">
+                                                            <a class="hook-href-action" data-needparam="true" data-position="1" data-block="bt_qacategorys_1227075" data-target-id="" data-target-name="Lebih banyak" data-target-type="link" data-source-id="1227075" data-source-name="Tentang Akun" data-source-type="qa-category" data-href="/m/v2/pc/questionCategory/1227075?cs_pb_s2=helpcenter-mainpage&amp;cs_pb_s3=bt_qacategorys_1227075&amp;cs_pb_s4=more-link">
+                                    <h3 class="title-des">Tentang Akun</h3>
+                                    <span class="c-link">
+                                        <span>Lebih banyak</span>
+                                        <i class="arrow-icon"></i>
+                                    </span>
+                                </a>
+                                                    </div>
+                        <div class="splitLine"></div>
+                        <div class="m-faqList">
+                            <ul class="list-items">
+                                                                                                                                            <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="1" data-block="bt_qacategorys_1227075" data-target-id="21236" data-target-name="Bagaimana cara mengikatkan email/nomor ponsel?" data-target-type="knowledge" data-rseat="1" data-source-id="1227075" data-source-name="Tentang Akun" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/21236.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227075&amp;cs_pb_s4=1">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Bagaimana cara mengikatkan email/nomor ponsel?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">Demi keamanan akun Anda, silakan ikatkan dengan email atau nomor ponsel yang biasa Anda gunakan. Anda dapat mengikat email/nomor ponsel Anda melalui cara berikut:</p>
+<p style="overflow: inherit;">1. APP iQIYI Ponsel: Masuk ke APP Ponsel iQIYI, setelah login, klik [Saya] - [Pengaturan] - [Akun dan Keamanan] untuk mengatur email dan nomor ponsel Anda.</p>
+<p style="overflow: inherit;">2. Situs Web iQIYI PC (iq.com): Kunjungi https://www.iq.com/ di komputer Anda, login ke akun iQIYI Anda, klik [Profil] - [Pengaturan Pribadi] untuk mengatur email dan nomor ponsel Anda.</p>
+<p style="overflow: inherit;">*Perhatian: Jika Anda perlu menggunakan nomor ponsel/email + kata sandi yang terikat untuk login, Anda dapat mengatur kata sandi akun terlebih dahulu lewat cara berikut: Klik untuk masuk ke iQIYI, login ke akun Anda - Klik [Pengaturan] - Pilih [Akun dan Keamanan] - Atur Nomor Ponsel/Email - [Manajemen kata sandi].</p>
+                                            </div>
+                                        </li>
+                                                                                                                                                                                        <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="1" data-block="bt_qacategorys_1227075" data-target-id="21361" data-target-name="Di mana saya dapat melihat UID akun?" data-target-type="knowledge" data-rseat="2" data-source-id="1227075" data-source-name="Tentang Akun" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/21361.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227075&amp;cs_pb_s4=2">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Di mana saya dapat melihat UID akun?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">Anda dapat mengklik "Saya" di aplikasi seluler, dan mengklik gambar profil setelah login ke akun Anda untuk melihat "Akun UID" Anda di bagian bawah halaman.</p>
+                                            </div>
+                                        </li>
+                                                                                                                                                                                        <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="1" data-block="bt_qacategorys_1227075" data-target-id="21362" data-target-name="Bagaimana cara mengubah kata sandi akun?" data-target-type="knowledge" data-rseat="3" data-source-id="1227075" data-source-name="Tentang Akun" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/21362.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227075&amp;cs_pb_s4=3">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Bagaimana cara mengubah kata sandi akun?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">1. Jika Anda lupa kata sandi, silakan klik [Pencarian Kata Sandi] pada halaman login, cari kembali kata<br>sandi melalui e-mail/nomor ponsel yang terikat.<br>2. Jika Anda perlu mengubah kata sandi setelah masuk ke akun Anda, Anda dapat mengubahnya dengan cara berikut:<br>&nbsp; Terminal seluler iQIYI: Silakan login ke akun Anda dan klik "Saya" - [Pengaturan] - [Akun dan Keamanan] - [Manajemen Kata Sandi] untuk mengubah kata sandi akun Anda.<br>&nbsp; Terminal web iQIYI (iq.com): Silakan masuk ke akun Anda dan klik avatar- [Pengaturan Pribadi] untuk mengubah kata sandi akun Anda.</p>
+                                            </div>
+                                        </li>
+                                                                                                                                                                                        <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="1" data-block="bt_qacategorys_1227075" data-target-id="21359" data-target-name="Bagaimana cara menggantikan e-mail/nomor ponsel yang telah diikatkan?" data-target-type="knowledge" data-rseat="4" data-source-id="1227075" data-source-name="Tentang Akun" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/21359.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227075&amp;cs_pb_s4=4">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Bagaimana cara menggantikan e-mail/nomor ponsel yang telah diikatkan?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">1. Terminal seluler iQIYI: Masuk ke aplikasi seluler iQIYI, login ke akun Anda dan klik Beranda<br>Saya-Pengaturan-Akun dan Keamanan untuk mengelola e-mail dan nomor ponsel<br>Anda.<br>2. Halaman web iQIYI (iq.com): Kunjungi https://www.iq.com/ di komputer Anda. Login ke akun iQIYI Anda, klik gambar profil-Pengaturan pribadi untuk mengelola e-mail dan nomor ponsel Anda.</p>
+                                            </div>
+                                        </li>
+                                                                                                                                                                                        <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="1" data-block="bt_qacategorys_1227075" data-target-id="27209" data-target-name="Akun tidak bisa login?" data-target-type="knowledge" data-rseat="5" data-source-id="1227075" data-source-name="Tentang Akun" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/27209.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227075&amp;cs_pb_s4=5">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Akun tidak bisa login?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">1. Lupa kata sandi/kata sandi salah: Silakan klik [Pencarian Kata Sandi] pada halaman login dan login<br>ulang.<br>2. Lupa nomor akun: Silakan kirimkan [Umpan Balik] di APP, staf layanan pelanggan akan membalas Anda melalui e-mail.<br>3. Masalah jaringan: Pastikan kestabilan jaringan dan login ulang.<br>4. Halaman login tidak merespon: Mohon konfirmasi bahwa browser tidak berfungsi dan dinonaktifkan, kemudian kosongkan cache browser, restart browser dan coba lagi.</p>
+                                            </div>
+                                        </li>
+                                                                                                                                        </ul>
+                        </div>
+                    </section>
+                    <div class="splitRange"></div>
+                                                        <!--热门问题 -->
+                                        <section class="m-help-wrap">
+                        <div class="m-title">
+                                                            <a class="hook-href-action" data-needparam="true" data-position="2" data-block="bt_qacategorys_1227089" data-target-id="" data-target-name="Lebih banyak" data-target-type="link" data-source-id="1227089" data-source-name="Tentang Pembayaran" data-source-type="qa-category" data-href="/m/v2/pc/questionCategory/1227089?cs_pb_s2=helpcenter-mainpage&amp;cs_pb_s3=bt_qacategorys_1227089&amp;cs_pb_s4=more-link">
+                                    <h3 class="title-des">Tentang Pembayaran</h3>
+                                    <span class="c-link">
+                                        <span>Lebih banyak</span>
+                                        <i class="arrow-icon"></i>
+                                    </span>
+                                </a>
+                                                    </div>
+                        <div class="splitLine"></div>
+                        <div class="m-faqList">
+                            <ul class="list-items">
+                                                                                                                                            <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="2" data-block="bt_qacategorys_1227089" data-target-id="21232" data-target-name="Metode pembayaran apa saja yang didukung saat membeli VIP?" data-target-type="knowledge" data-rseat="1" data-source-id="1227089" data-source-name="Tentang Pembayaran" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/21232.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227089&amp;cs_pb_s4=1">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Metode pembayaran apa saja yang didukung saat membeli VIP?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">Saat ini iQIYI mendukung pembayaran melalui rekening bank/Google/Apple, dan masih sedang mengembangkan metode pembayaran lain, silakan pantau terus!</p>
+<p style="overflow: inherit;"><br>1. APP Ponsel mendukung pembayaran melalui Google（Android）/Apple（iOS）. Metode pembayaran yang didukung oleh Google/Apple ditentukan oleh Google/Apple Store.</p>
+<p style="overflow: inherit;"><br>2. Situs Web PC mendukung pembayaran melalui rekening bank.<br>Metode pembayaran spesifik yang didukung, silakan merujuk ke tampilan saat pembelian di wilayah Anda.</p>
+<p style="overflow: inherit;"><br>3. APP TV:</p>
+<p>Jika Anda mengakses melalui Apple TV, ikuti langkah-langkah yang diberikan dan gunakan akun Apple yang Anda pakai login untuk melakukan pembelian.</p>
+<p style="overflow: inherit;">Jika Anda mengakses melalui Android TV, ikuti langkah-langkah yang diberikan dan gunakan akun Google yang Anda pakai login untuk melakukan pembelian.</p>
+<p style="overflow: inherit;">Jika Anda mengakses melalui Roku TV, Roku Pay adalah satu-satunya metode pembayaran di Roku TV.</p>
+                                            </div>
+                                        </li>
+                                                                                                                                                                                        <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="2" data-block="bt_qacategorys_1227089" data-target-id="21350" data-target-name="Bagaimana cara membeli VIP?" data-target-type="knowledge" data-rseat="2" data-source-id="1227089" data-source-name="Tentang Pembayaran" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/21350.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227089&amp;cs_pb_s4=2">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Bagaimana cara membeli VIP?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;"><strong>APP Ponsel:</strong><br>Ada dua cara untuk mengakses halaman VIP:<br>Klik ikon [VIP] emas di bagian petunjuk atas atau Anda dapat memeriksa Hak VIP di kolom VIP di Halaman Utama dan klik [Join Sekarang] dan pilih jenis VIP yang Anda butuhkan.<br>APP Ponsel mendukung pembayaran melalui Google（Android）/Apple（iOS）. Metode pembayaran yang didukung oleh Google/Apple ditentukan oleh Google/Apple Store.</p>
+<p style="overflow: inherit;"><br><strong>Situs Web PC (iq.com):</strong><br>Silakan klik ikon [VIP] emas di bagian petunjuk di sudut kanan atas, dan lakukan pembelian sesuai dengan petunjuk jendela pop-up.<br>Situs Web PC mendukung pembayaran lewat rekening bank.<br>Metode pembayaran spesifik yang didukung, silakan merujuk ke tampilan saat pembelian di wilayah Anda.</p>
+<p style="overflow: inherit;">&nbsp;</p>
+<p style="overflow: inherit;"><strong>APP TV:</strong><br>Jika Anda mengakses melalui Apple TV dan Android TV, gunakan remote control untuk mengeluarkan bilah samping dan klik [Saya] - [Keanggotaan Saya], Anda dapat memilih jenis VIP di dalamnya. Silakan ikuti langkah-langkah yang diberikan, gunakan akun Apple/Google yang Anda pakai login untuk melakukan pembelian.</p>
+<p style="overflow: inherit;">Jika Anda mengakses melalui Roku TV, gunakan remote untuk menarik bilah samping dan geser ke "Saya", Anda akan melihat pilihan "VIP". Silakan klik [VIP], Anda akan melihat jenis VIP yang didukung oleh Roku TV. Ikuti petunjuk di layar TV dan gunakan Roku Pay untuk menyelesaikan pembelian Anda.</p>
+<p style="overflow: inherit;">Perhatian: Langganan VIP dikaitkan dengan akun login Anda saat pembelian dan tidak dapat dialihkan setelah pembelian.</p>
+                                            </div>
+                                        </li>
+                                                                                                                                                                                        <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="2" data-block="bt_qacategorys_1227089" data-target-id="21351" data-target-name="Bagaimana jika ketika mengaktifkan VIP, muncul keterangan pembayaran gagal/tidak dapat membayar?" data-target-type="knowledge" data-rseat="3" data-source-id="1227089" data-source-name="Tentang Pembayaran" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/21351.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227089&amp;cs_pb_s4=3">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Bagaimana jika ketika mengaktifkan VIP, muncul keterangan pembayaran gagal/tidak dapat membayar?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">Silakan pastikan apakah saldo rekening pembayaran Anda mencukupi.</p>
+<p style="overflow: inherit;"><br>Google/Apple：<br>1. Jika tidak dapat melompat ke halaman pembayaran, silakan update versi Google/Apple Store dan coba lagi. Jika masih bermasalah, silakan kirimkan [Feedback] di dalam APP dan tinggalkan alamat email Anda, kami akan membalas Anda melalui email.<br>2. Jika Anda tidak dapat menyelesaikan pembayaran di halaman pembayaran, silakan hubungi layanan pelanggan Google/Apple.</p>
+<p style="overflow: inherit;"><br>Pembayaran melalui rekening bank:<br>1. Pastikan informasi rekening bank Anda sudah benar. Apakah rekening bank Anda telah diaktifkan pembatasan pembayaran internasional.<br>2. Jika muncul peringatan transaksi berisiko saat membeli, mungkin Anda telah mencoba pembayaran terlalu banyak hari ini, silakan coba lagi setelah 24 jam.</p>
+<p style="overflow: inherit;"><br>Jika pembayaran masih gagal, silakan kirimkan masalah Anda di [Feedback] dan sertakan tangkapan layar kegagalan pembayaran.</p>
+                                            </div>
+                                        </li>
+                                                                                                                                                                                        <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="2" data-block="bt_qacategorys_1227089" data-target-id="27250" data-target-name="Bagaimana cara menukarkan Kode Voucher VIP?" data-target-type="knowledge" data-rseat="4" data-source-id="1227089" data-source-name="Tentang Pembayaran" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/27250.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227089&amp;cs_pb_s4=4">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Bagaimana cara menukarkan Kode Voucher VIP?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">1. Situs web: Kunjungi https://www.iQ.com/vip/codekey melalui browser ponsel, laptop/desktop.</p>
+<p style="overflow: inherit;">2. Anda harus login ke akun iQIYI Anda sebelum penukaran untuk memastikan hak VIP ditukarkan ke akun yang ditentukan.</p>
+<p style="overflow: inherit;">3. Harap baca petunjuk di halaman penukaran secara ssksama. Jika masih ada pertanyaan lain, silakan hubungi layanan pelanggan dan kami senang untuk melayani Anda.</p>
+<p style="overflow: inherit;">Mohon perhatikan: Saat memasukkan kode aktivasi, tidak perlu menyertakan tanda hubung ("-"), dan &nbsp;pastikan masukkan huruf kecil dan besar sesuai yang tertera di voucher kode.</p>
+                                            </div>
+                                        </li>
+                                                                                                                                                                                        <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="2" data-block="bt_qacategorys_1227089" data-target-id="31686" data-target-name="Bagaimana menggunakan kode penukaran?" data-target-type="knowledge" data-rseat="5" data-source-id="1227089" data-source-name="Tentang Pembayaran" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/31686.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227089&amp;cs_pb_s4=5">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Bagaimana menggunakan kode penukaran?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">Jika Anda mendapatkan kode penukaran melalui kegiatan, Anda dapat menukarkan kupon dengan cara berikut:</p>
+<p class="MsoNormal" data-mce-fragment="1"><span lang="EN-US" style="font-family: '微软雅黑',sans-serif;" data-mce-fragment="1">Website（iq.com）</span></p>
+<p class="MsoNormal" data-mce-fragment="1"><span lang="EN-US" style="font-family: '微软雅黑',sans-serif;" data-mce-fragment="1">1. Silakan klik icon VIP di pojok kanan atas untuk masuk ke Kasir</span></p>
+<p class="MsoNormal" data-mce-fragment="1"><span lang="EN-US" style="font-family: '微软雅黑',sans-serif;" data-mce-fragment="1">2. Klik "Tukar Kupon (redeem Coupon)"</span></p>
+<p style="overflow: inherit;"><span lang="EN-US" style="font-size: 10.5pt; mso-bidi-font-size: 11.0pt; font-family: '微软雅黑',sans-serif; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi; mso-font-kerning: 1.0pt; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA;" data-mce-fragment="1">3. Masukkan kode kupon (coupon code ) dan klik Tukar"</span></p>
+<p style="overflow: inherit;"><br>Setelah menukar, Anda dapat melihat aturan penggunaan di Mobile App [Saya] - [Kupon]. Anda dapat menggunakan kupon di saat membeli produk yang sesuai.</p>
+                                            </div>
+                                        </li>
+                                                                                                                                        </ul>
+                        </div>
+                    </section>
+                    <div class="splitRange"></div>
+                                                        <!--热门问题 -->
+                                        <section class="m-help-wrap">
+                        <div class="m-title">
+                                                            <h3 class="title-des">Perpanjangan otomatis</h3>
+                                                    </div>
+                        <div class="splitLine"></div>
+                        <div class="m-faqList">
+                            <ul class="list-items">
+                                                                                                                                            <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="3" data-block="bt_qacategorys_1227103" data-target-id="21234" data-target-name="Mengapa akun melakukan pemotongan otomatis?" data-target-type="knowledge" data-rseat="1" data-source-id="1227103" data-source-name="Perpanjangan otomatis" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/21234.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227103&amp;cs_pb_s4=1">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Mengapa akun melakukan pemotongan otomatis?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">Jika Anda memilih layanan perpanjangan otomatis atau memilih paket layanan perpanjangan otomatis saat membeli VIP, maka akun VIP Anda akan mencakup layanan berlangganan perpanjangan otomatis.<br>Karena Anda tidak mematikan layanan perpanjangan otomatis, maka akan dilakukan pemotongan biaya 24 jam sebelum tanggal perpanjangan yang sesuai setiap minggu/bulan/kuartal/tahun.</p>
+                                            </div>
+                                        </li>
+                                                                                                                                                                                        <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="3" data-block="bt_qacategorys_1227103" data-target-id="21354" data-target-name="Bagaimana cara membatalkan perpanjangan otomatis?" data-target-type="knowledge" data-rseat="2" data-source-id="1227103" data-source-name="Perpanjangan otomatis" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/21354.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227103&amp;cs_pb_s4=2">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Bagaimana cara membatalkan perpanjangan otomatis?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">[Pembayaran melalui rekening bank]</p>
+<p style="overflow: inherit;">(1) Situs Web PC:</p>
+<p style="overflow: inherit;">1. Silakan kunjungi https://www.iq.com/ dan login ke akun VIP Anda.</p>
+<p style="overflow: inherit;">2. Klik profil di sudut kanan atas - [Pengaturan Pribadi] - Tarik halaman ke bawah dan klik [Ubah] di sisi kanan [Manajemen perpanjangan otomatis] - masuk ke [Manajemen perpanjangan otomatis] untuk mengatur status perpanjangan otomatis Anda.</p>
+<p style="overflow: inherit;">(2) APP Ponsel:</p>
+<p style="overflow: inherit;">1. Anda dapat mangatur perpanjangan otomatis pada akun Anda dengan cara berikut: Klik [Saya] - [Feedback] - [Layanan mandiri - Manajemen perpanjangan].</p>
+<p style="overflow: inherit;">&nbsp;</p>
+<p style="overflow: inherit;">[Pembayaran melalui Apple]</p>
+<p style="overflow: inherit;">Method 1. Silakan pilih [Pengaturan] di perangkat iOS - buka [Pengaturan] dan klik [ID Apple] - [Langganan] - klik opsi yang Anda perlukan untuk membatalkan perpanjangan otomatis.</p>
+<p style="overflow: inherit;">Method 2. [App Store] klik [Apple ID] di bagian atas layar - di bawah [Langganan], klik [Kelola] - batalkan layanan berlangganan.</p>
+<p style="overflow: inherit;">Jika Anda tidak dapat membatalkan secara langsung, silakan hubungi layanan pelanggan Apple untuk membantu Anda membatalkannya.</p>
+<p style="overflow: inherit;">&nbsp;</p>
+<p style="overflow: inherit;">[Pembayaran melalui Google Play]</p>
+<p style="overflow: inherit;">1. Buka [Play Store] di ponsel Android Anda, login ke akun Google saat membeli.</p>
+<p style="overflow: inherit;">2. Klik pojok kiri atas layar utama atau profil untuk membuka menu lengkap.</p>
+<p style="overflow: inherit;">3. Anda dapat melihat semua item langganan di [Pembayaran dan Langganan] - [Langganan], klik [Manajemen] di sudut kanan bawah item langganan - Pilih [Batalkan Langganan].</p>
+<p style="overflow: inherit;">4. Muncul tanggal penghentian layanan, klik [Batalkan Langganan] untuk menyelesaikan pembatalan.</p>
+<p style="overflow: inherit;">Jika Anda tidak dapat membatalkan secara langsung, silakan hubungi layanan pelanggan Google Play untuk membantu Anda membatalkannya.</p>
+<p style="overflow: inherit;">&nbsp;</p>
+<p style="overflow: inherit;">[Pembelian di platform pihak ketiga]</p>
+<p style="overflow: inherit;">Jika Anda membeli VIP di platform pihak ketiga, silakan hubungi platform pihak ketiga untuk membatalkannya.</p>
+<p style="overflow: inherit;">&nbsp;</p>
+<p style="overflow: inherit;">Perhatian: Silakan batalkan setidaknya 24 jam sebelum tanggal perpanjangan, jika tidak, langganan Anda mungkin diperpanjang.</p>
+                                            </div>
+                                        </li>
+                                                                                                                                                                                        <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="3" data-block="bt_qacategorys_1227103" data-target-id="21355" data-target-name="After automatic renewal, the page shows that my membership expires." data-target-type="knowledge" data-rseat="3" data-source-id="1227103" data-source-name="Perpanjangan otomatis" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/21355.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227103&amp;cs_pb_s4=3">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        After automatic renewal, the page shows that my membership expires.
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">1. Pembayaran gagal: Anda disarankan untuk memastikan apakah pemotongan biaya pada akun anda berhasil dilakukan.<br>2. Keterlambatan jaringan internet dapat menyebabkan pengaktifan VIP tertunda, Anda disarankan untuk menunggu beberapa saat dan mencoba login kembali.<br>3. Anda disarankan untuk melakukan konfirmasi apakah telah login dengan akun VIP yang benar.<br>Jika Anda tidak termasuk kondisi-kondisi di atas, Anda disarankan untuk memberikan feedback pada bagian [Feedback] di dalam aplikasi, customer service akan memberikan balasan untuk Anda melalui email.</p>
+                                            </div>
+                                        </li>
+                                                                                                                                                                                        <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="3" data-block="bt_qacategorys_1227103" data-target-id="21356" data-target-name="Setelah membatalkan perpanjangan otomatis, apakah saya masih termasuk VIP?&nbsp;" data-target-type="knowledge" data-rseat="4" data-source-id="1227103" data-source-name="Perpanjangan otomatis" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/21356.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227103&amp;cs_pb_s4=4">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Setelah membatalkan perpanjangan otomatis, apakah saya masih termasuk VIP?&nbsp;
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">Jika Anda berhasil membatalkan layanan perpanjangan otomatis, layanan VIP Anda yang aktif saat ini dapat digunakan secara normal hingga masa berlakunya berakhir. Setelah VIP berakhir, sistem tidak akan memperpanjang langganan Anda lagi. Anda bukan VIP lagi dan tidak bisa dapat menerima hak eksklusif VIP, tetapi tidak mengganggu Anda dalam menonton semua konten gratis kami.</p>
+<p style="overflow: inherit;">&nbsp;</p>
+<p style="overflow: inherit;">Kami sangat menyarankan Anda untuk bergabung kembali dengan kami untuk mulai menikmati konten VIP, skip iklan, dan lebih banyak hak eksklusif lainnya.&nbsp;</p>
+                                            </div>
+                                        </li>
+                                                                                                                                        </ul>
+                        </div>
+                    </section>
+                    <div class="splitRange"></div>
+                                                        <!--热门问题 -->
+                                        <section class="m-help-wrap">
+                        <div class="m-title">
+                                                            <a class="hook-href-action" data-needparam="true" data-position="4" data-block="bt_qacategorys_1227117" data-target-id="" data-target-name="Lebih banyak" data-target-type="link" data-source-id="1227117" data-source-name="Tentang Keistimewaan Anggota" data-source-type="qa-category" data-href="/m/v2/pc/questionCategory/1227117?cs_pb_s2=helpcenter-mainpage&amp;cs_pb_s3=bt_qacategorys_1227117&amp;cs_pb_s4=more-link">
+                                    <h3 class="title-des">Tentang Keistimewaan Anggota</h3>
+                                    <span class="c-link">
+                                        <span>Lebih banyak</span>
+                                        <i class="arrow-icon"></i>
+                                    </span>
+                                </a>
+                                                    </div>
+                        <div class="splitLine"></div>
+                        <div class="m-faqList">
+                            <ul class="list-items">
+                                                                                                                                            <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="4" data-block="bt_qacategorys_1227117" data-target-id="44118" data-target-name="Bagaimana cara menghitung periode validitas keanggotaan?" data-target-type="knowledge" data-rseat="1" data-source-id="1227117" data-source-name="Tentang Keistimewaan Anggota" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/44118.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227117&amp;cs_pb_s4=1">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Bagaimana cara menghitung periode validitas keanggotaan?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">Durasi langganan bulanan, triwulanan, dan tahunan bukan langganan otomatis iQIYI (termasuk kartu hadiah) didasarkan pada bulan kalender, triwulanan, dan tahun.</p>
+<p style="overflow: inherit;">Langganan bulanan, triwulanan, dan tahunan berulang yang diperpanjang otomatis dibebankan berdasarkan bulan kalender, triwulanan, dan tahun, dengan masa berlaku setiap periode disesuaikan dengan siklus penagihan.</p>
+                                            </div>
+                                        </li>
+                                                                                                                                                                                        <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="4" data-block="bt_qacategorys_1227117" data-target-id="21233" data-target-name="Telah membeli VIP, sistem menampilkan bukan VIP?" data-target-type="knowledge" data-rseat="2" data-source-id="1227117" data-source-name="Tentang Keistimewaan Anggota" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/21233.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227117&amp;cs_pb_s4=2">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Telah membeli VIP, sistem menampilkan bukan VIP?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">1. Harap konfirmasi apakah Anda telah masuk dengan akun VIP yang benar.<br>2. Silakan Anda periksa apakah pembayaran telah berhasil.<br>3. Karena ada sela waktu antara Google Pay/Apple Pay dan pengaktifan VIP, harap Anda tunggu beberapa saat dan login untuk memeriksanya kembali.<br>4. Jika Anda adalah pengguna Apple, harap konfirmasi apakah Anda membeli VIP pada saat belum masuk akun.<br>Jika Anda masih tidak memperoleh benefit VIP, Anda disarankan untuk memberikan feedback dan screenshot riwayat pembelian melalui perangkat yang digunakan untuk membeli VIP, customer service kami akan membantu Anda untuk memeriksanya berdasarkan informasi yang Anda berikan.</p>
+                                            </div>
+                                        </li>
+                                                                                                                                                                                        <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="4" data-block="bt_qacategorys_1227117" data-target-id="21352" data-target-name="Mengapa masa berlaku VIP berakhir?" data-target-type="knowledge" data-rseat="3" data-source-id="1227117" data-source-name="Tentang Keistimewaan Anggota" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/21352.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227117&amp;cs_pb_s4=3">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Mengapa masa berlaku VIP berakhir?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">Silakan periksa apakah Anda memenuhi kondisi berikut:</p>
+<p style="overflow: inherit;">1. Masa berlaku VIP berakhir secara normal. Silakan periksa jenis paket VIP yang Anda beli. Jika Anda bukan membeli paket langganan, VIP Anda tidak akan diperpanjang secara otomatis saat masa berlakunya habis.</p>
+<p style="overflow: inherit;">2. Mengajukan pengembalian dana setelah VIP diaktifkan sehingga VIP berakhir. Silakan periksa detail transaksi Anda. Jika Anda mengajukan pengembalian dana untuk pesanan sebelumnya, status VIP Anda akan berubah menjadi kedaluwarsa.</p>
+<p style="overflow: inherit;">3. Pastikan Anda masuk dengan akun VIP yang benar.</p>
+<p style="overflow: inherit;">4. Masalah jaringan yang menyebabkan keterlambatan waktu masuknya VIP. Silakan coba lagi setelah beberapa saat.</p>
+<p style="overflow: inherit;">&nbsp;</p>
+<p>Jika tidak satu pun dari situasi di atas yang Anda alami, harap masuk ke akun Anda dan kirimkan laporan ke [Feedback] dalam aplikasi iQIYI. Kami membantu Anda sebaik-baiknya.&nbsp;<br>Berikut adalah cara mengirimkan umpan balik pada platform yang berbeda:</p>
+<p style="overflow: inherit;">Aplikasi Seluler: [Saya] - [Feedback]<br>Web Browser: Di bagian bawah halaman, klik [Dukungan &amp; Bantuan] - [Feedback]<br>Aplikasi TV: [Pengaturan] - [Feedback] atau [Saya] - [Dukungan Pelanggan]</p>
+                                            </div>
+                                        </li>
+                                                                                                                                                                                        <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="4" data-block="bt_qacategorys_1227117" data-target-id="27254" data-target-name="Apa hak spesial dari [VIP Standar] dan [VIP Premium]? Apa perbedaannya?" data-target-type="knowledge" data-rseat="4" data-source-id="1227117" data-source-name="Tentang Keistimewaan Anggota" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/27254.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227117&amp;cs_pb_s4=4">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Apa hak spesial dari [VIP Standar] dan [VIP Premium]? Apa perbedaannya?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">[VIP Standar]: 1. Jumlah perangkat menonton bersamaan: 2; 2. Nonton di banyak klien; 3. Iklan skip VIP; 4. 1080P; 5. Dolby Atmos; 6. Unduh VIP; 7. Tonton Duluan Film Baru; 8. Drama eksklusif; 9. Banyak konten menarik.</p>
+<p style="overflow: inherit;">&nbsp;</p>
+<p style="overflow: inherit;">[VIP Premium]: 1. Jumlah perangkat menonton bersamaan: 4; 2. Nonton di banyak klien; 3. Iklan skip VIP; 4. 1080P/4K; 5. Dolby Atmos; 6. Unduh VIP; 7. Paket Ekspres; 8. Drama eksklusif; 9. Banyak konten menarik.</p>
+<p style="overflow: inherit;">&nbsp;</p>
+<p style="overflow: inherit;">VIP Standard/Premium iQIYI dapat melewatkan iklan yang memengaruhi pemutaran, menikmati Dolby, 1080P, konten eksklusif VIP, login multi perangkat, dan manfaat lainnya. Detail jenis dan manfaat keanggotaan lainnya ada di aplikasi atau iQ.com.</p>
+<p style="overflow: inherit;">VIP Premium &nbsp;dapat menikmati hak istimewa Paket Ekspres, memungkinkan Anda menonton episode final lebih awal, dan nikmati di hingga 4 device secara bersamaan dengan kualitas yang lebih tinggi.</p>
+<p style="overflow: inherit;">Anda dapat melihat hak dan manfaat VIP secara spesifik di APP Ponsel iQIYI - halaman eksklusif VIP atau kunjungi halaman web iQIYI https://www.iq.com/, dan klik ikon [VIP] di sudut kanan atas halaman web.</p>
+                                            </div>
+                                        </li>
+                                                                                                                                                                                        <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="4" data-block="bt_qacategorys_1227117" data-target-id="21353" data-target-name="Pemotongan biaya di Apple ID berhasil, namun sistem menunjukkan saya bukan VIP?" data-target-type="knowledge" data-rseat="5" data-source-id="1227117" data-source-name="Tentang Keistimewaan Anggota" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/21353.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227117&amp;cs_pb_s4=5">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Pemotongan biaya di Apple ID berhasil, namun sistem menunjukkan saya bukan VIP?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">1. Kami menyarankan agar Anda memastikan kembali apakah Anda telah masuk pada akun member yang benar.</p>
+<p style="overflow: inherit;">2. Mohon dipastikan apakah Anda melakukan pembelian member dalam kondisi belum login. Jika Anda telah memastikan bahwa Anda telah melakukan pembelian member dalam kondisi belum login ke iQIYI, pada aplikasi tekanlah Halaman Utama Pengguna “Saya”- "Feedback" . Pilihlah jenis bantuan yang sesuai untuk melaporkan masalah yang Anda hadapi. Sertakan juga bukti pembayaran dan nomor ponsel Anda yang belum didaftarkan/ditambahkan. Staf pelayanan pelanggan akan memeriksa berdasarkan informasi yang Anda berikan.</p>
+<p style="overflow: inherit;">Anda dapat menemukan riwayat pembayaran dengan mengikuti langkah-langkah berikut:</p>
+<p style="overflow: inherit;">Langkah 1: App Store - Klik ikon profil di pojok kanan atas - Klik ID Apple Anda - Riwayat Pembelian - Total Tagihan.</p>
+<p style="overflow: inherit;">Langkah 2: Pengaturan - Klik ID Apple Anda - Media &amp; Pembelian - Lihat Akun - Riwayat Pembelian - Total Tagihan.</p>
+                                            </div>
+                                        </li>
+                                                                                                                                        </ul>
+                        </div>
+                    </section>
+                    <div class="splitRange"></div>
+                                                        <!--热门问题 -->
+                                        <section class="m-help-wrap">
+                        <div class="m-title">
+                                                            <h3 class="title-des">Tentang Aktivitas</h3>
+                                                    </div>
+                        <div class="splitLine"></div>
+                        <div class="m-faqList">
+                            <ul class="list-items">
+                                                                                                                                            <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="5" data-block="bt_qacategorys_1227131" data-target-id="48319" data-target-name="Promo Membership VIP" data-target-type="knowledge" data-rseat="1" data-source-id="1227131" data-source-name="Tentang Aktivitas" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/48319.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227131&amp;cs_pb_s4=1">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Promo Membership VIP
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <div data-page-id="CWuzd6UcBojVEZxrBjvc4NYXnkg" data-lark-html-role="root" data-docx-has-block-data="false">
+<p class="ace-line ace-line old-record-id-QaFgdoEUzo1CbvxJfKhcPikxnAg" style="overflow: inherit;">Harap merujuk pada tampilan real-time di aplikasi iQIYI untuk acara promosi VIP.</p>
+<ul class="list-bullet1">
+<li class="ace-line ace-line old-record-id-OLuxdGR2OoCkdSxUYx0cOE8hnFf" data-list="bullet">
+<p>Beberapa promosi mungkin hanya berlaku untuk pengguna baru atau periode tertentu. Harap baca dengan cermat harga paket VIP promosi dan ketentuan perpanjangan sebelum berlangganan.</p>
+</li>
+</ul>
+<p class="ace-line ace-line old-record-id-V6Xzdf13Ao3sJvxtw7McbsAKnQc">&nbsp;</p>
+<p class="ace-line ace-line old-record-id-R0sldJZyYo1BBHxJYxDcDuEbnnd"><strong>FAQ</strong></p>
+<p><strong>1. Apakah paket VIP promosi </strong><strong>ini</strong><strong> termasuk layanan perpanjangan otomatis?</strong></p>
+<p class="ace-line ace-line old-record-id-KPWDdBKpIoT4koxDDAxctJWxnTg">Ketika Anda membeli VIP, paket VIP yang Anda pilih akan menunjukkan apakah termasuk layanan perpanjangan otomatis dan aturan perpanjangan otomatisnya.</p>
+<p class="ace-line ace-line old-record-id-NvqSduGFAoe8ytxjzuTcqmPKnhd">&nbsp;</p>
+<p><strong>2. Bagaimana status periode VIP dan perpanjangan otomatis saya jika membeli paket promosi saat keanggotaan VIP masih aktif？</strong></p>
+<p class="ace-line ace-line old-record-id-Mf8EdaBQooYT1UxkV44cqqCLnGh" style="overflow: inherit;">① Dengan akun yang sama, jika Anda membeli keanggotaan saat VIP Anda masih berlaku, sisa VIP akan diperpanjang secara otomatis. Saat Anda memiliki beberapa jenis VIP secara bersamaan, tingkat VIP yang lebih tinggi akan diprioritaskan dan akan digunakan terlebih dahulu.&nbsp;</p>
+<p class="ace-line ace-line old-record-id-Mf8EdaBQooYT1UxkV44cqqCLnGh" style="overflow: inherit;">（*Karena batasan sistem metode pembayaran tertentu (seperti Apple/Google), pembelian berulang mungkin diproses otomatis sesuai kebijakan platform. Harap periksa konfirmasi pembayaran aktual.）</p>
+<p class="ace-line ace-line old-record-id-C421dwl0conbTWx400gcG3NOnIc" style="overflow: inherit;">② Meskipun membeli paket VIP promosi baru, perpanjangan otomatis sebelumnya tidak akan mati secara otomatis. Jika tidak membatalkan perpanjangan otomatis yang diaktifkan sebelumnya, Anda akan tetap dikenai biaya.</p>
+<p class="ace-line ace-line old-record-id-JTmmdwiZyo7XBIx9fZkcru3Inud">③ Walaupun paket VIP promosi yang Anda beli mencakup layanan perpanjangan otomatis, hal ini tidak akan memengaruhi layanan perpanjangan otomatis apa pun yang sebelumnya telah diaktifkan dan masih berlaku.</p>
+<p class="ace-line ace-line old-record-id-Ezwsd6WAHoRJRzxFdBUcK5wmnTe">④ Jika Anda mengaktifkan beberapa layanan perpanjangan otomatis di akun iQIYI menggunakan metode pembayaran berbeda, layanan VIP Anda mungkin akan diperpanjang secara otomatis untuk siklus penagihan yang berbeda melalui masing-masing metode pembayaran.</p>
+<p class="ace-line ace-line old-record-id-CXbadpASKoi0bNxlKjJcP0Xxn6b">Untuk menghindari hal ini, silakan periksa dan kelola perpanjangan otomatis di Aplikasi iQIYI sebagai berikut:</p>
+<p class="ace-line ace-line old-record-id-ZG0TdOsEZoqPt2xF71TcYQsEn1e">Klik [Saya] - [Feedback] - [Layanan mandiri - Manajemen perpanjangan]</p>
+<p class="ace-line ace-line old-record-id-BFTKdhBVLovve4xtSkPcnHgAnTg">&nbsp;</p>
+<p><strong>3. Mengapa harga promosi VIP yang saya lihat berbeda di situs web/aplikasi TV/aplikasi ponsel？</strong></p>
+<p class="ace-line ace-line old-record-id-MR2adgy0noefJtx6Upscgsoonjh">Penawaran promosi dapat bervariasi di berbagai platform, oleh karena itu Anda mungkin melihat harga promosi yang berbeda. Silakan merujuk pada informasi yang ditampilkan di iQIYI.</p>
+<p class="ace-line ace-line old-record-id-GaezdKCDro0XAIxOKx5cWKPJnub">&nbsp;</p>
+<p><strong>4. Saya sudah memilih paket VIP promosi, tapi mengapa masih muncul harga penuh saat pembayaran?</strong></p>
+<p class="ace-line ace-line old-record-id-Y9BxdEbJForHlAxXuwQcLQ1onYb">Karena pembatasan pada beberapa metode pembayaran, Anda mungkin tidak dapat berpartisipasi dalam promosi. Anda dapat mencoba beralih ke situs web iQIYI (https://www.iq.com/) atau menggunakan metode pembayaran lain untuk melakukan pembelian. Kami sarankan untuk memeriksa harga pesanan sebelum mengonfirmasi pembayaran. Harap merujuk pada pembayaran aktual untuk harga spesifik.</p>
+</div>
+                                            </div>
+                                        </li>
+                                                                                                                                                                                        <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="5" data-block="bt_qacategorys_1227131" data-target-id="33480" data-target-name="Saya membeli paket promosi, mengapa ada pemotongan biaya lagi?" data-target-type="knowledge" data-rseat="2" data-source-id="1227131" data-source-name="Tentang Aktivitas" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/33480.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227131&amp;cs_pb_s4=2">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Saya membeli paket promosi, mengapa ada pemotongan biaya lagi?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">Paket promosi yang Anda beli tidak akan memengaruhi langganan perpanjangan otomatis yang diaktifkan sebelumnya.</p>
+<p style="overflow: inherit;">Bila Anda telah membeli paket promosi namun belum menonaktifkan perpanjangan otomatis sebelumnya, Anda tetap akan dikenakan biaya dalam waktu 24 jam sebelum tanggal perpanjangan.</p>
+<p style="overflow: inherit;">Pengaturan perpanjangan otomatis, silakan lihat FAQ【Bagaimana cara membatalkan perpanjangan otomatis?】</p>
+                                            </div>
+                                        </li>
+                                                                                                                                                                                        <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="5" data-block="bt_qacategorys_1227131" data-target-id="33481" data-target-name="Jika membeli paket promosi, apa yang akan terjadi pada VIP yang telah saya beli sebelumnya?" data-target-type="knowledge" data-rseat="3" data-source-id="1227131" data-source-name="Tentang Aktivitas" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/33481.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227131&amp;cs_pb_s4=3">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Jika membeli paket promosi, apa yang akan terjadi pada VIP yang telah saya beli sebelumnya?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p><span lang="EN-US">Jangan khawatir，</span></p>
+<p style="overflow: inherit;">Dengan akun yang sama, jika Anda membeli keanggotaan saat keanggotaan Anda masih berlaku, sisa keanggotaan akan diperpanjang secara otomatis. Saat Anda memiliki beberapa jenis keanggotaan secara bersamaan, tingkat keanggotaan yang lebih tinggi akan diprioritaskan dan akan digunakan terlebih dahulu.</p>
+                                            </div>
+                                        </li>
+                                                                                                                                        </ul>
+                        </div>
+                    </section>
+                    <div class="splitRange"></div>
+                                                        <!--热门问题 -->
+                                        <section class="m-help-wrap">
+                        <div class="m-title">
+                                                            <a class="hook-href-action" data-needparam="true" data-position="6" data-block="bt_qacategorys_1227145" data-target-id="" data-target-name="Lebih banyak" data-target-type="link" data-source-id="1227145" data-source-name="Tentang Pemutaran" data-source-type="qa-category" data-href="/m/v2/pc/questionCategory/1227145?cs_pb_s2=helpcenter-mainpage&amp;cs_pb_s3=bt_qacategorys_1227145&amp;cs_pb_s4=more-link">
+                                    <h3 class="title-des">Tentang Pemutaran</h3>
+                                    <span class="c-link">
+                                        <span>Lebih banyak</span>
+                                        <i class="arrow-icon"></i>
+                                    </span>
+                                </a>
+                                                    </div>
+                        <div class="splitLine"></div>
+                        <div class="m-faqList">
+                            <ul class="list-items">
+                                                                                                                                            <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="6" data-block="bt_qacategorys_1227145" data-target-id="24092" data-target-name="Halaman klien macet/tidak dapat dimuat?" data-target-type="knowledge" data-rseat="1" data-source-id="1227145" data-source-name="Tentang Pemutaran" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/24092.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227145&amp;cs_pb_s4=1">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Halaman klien macet/tidak dapat dimuat?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">1. Jaringan bermasalah: Anda disarankan untuk mengubah jaringan yang lebih stabil, lalu me-restart aplikasi dan membuka kembali halaman tersebut.<br>2. Unduhan bermasalah: Anda disarankan untuk mengunduh versi terbaru aplikasi melalui Google Play atau Apple Store.</p>
+                                            </div>
+                                        </li>
+                                                                                                                                                                                        <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="6" data-block="bt_qacategorys_1227145" data-target-id="21369" data-target-name="Apa yang harus dilakukan jika video menunjukkan keterangan kesalahan pemutaran?" data-target-type="knowledge" data-rseat="2" data-source-id="1227145" data-source-name="Tentang Pemutaran" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/21369.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227145&amp;cs_pb_s4=2">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Apa yang harus dilakukan jika video menunjukkan keterangan kesalahan pemutaran?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">Silakan hapus cache, setelah buka ulang halaman pemutaran, pastikan jaringan stabil dan coba putar lagi. Jika masih tidak bisa, silakan kirimkan feedback pada halaman pemutaran, dan berikan judul, episode, dan tangkapan layar dari video yang bermasalah.</p>
+<p>Berikut adalah cara mengirimkan umpan balik pada platform yang berbeda:</p>
+<p style="overflow: inherit;">Aplikasi Seluler: [Saya] - [Feedback]<br>Web Browser: Di bagian bawah halaman, klik [Dukungan &amp; Bantuan] - [Feedback]<br>Aplikasi TV: [Pengaturan] - [Feedback] atau [Saya] - [Dukungan Pelanggan]</p>
+                                            </div>
+                                        </li>
+                                                                                                                                                                                        <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="6" data-block="bt_qacategorys_1227145" data-target-id="27259" data-target-name="Bagaimana cara mengkoleksi film?" data-target-type="knowledge" data-rseat="3" data-source-id="1227145" data-source-name="Tentang Pemutaran" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/27259.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227145&amp;cs_pb_s4=3">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Bagaimana cara mengkoleksi film?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">Jika Anda sangat menikmati film tersebut, Anda dapat mengklik untuk menonton video, lalu klik ikon [koleksi] di bawah pengantar video, maka Anda dapat mengkoleksi film tersebut. Selain itu, Anda dapat melihat semua koleksi video Anda di halaman [Saya] - [List Saya].</p>
+                                            </div>
+                                        </li>
+                                                                                                                                                                                        <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="6" data-block="bt_qacategorys_1227145" data-target-id="24097" data-target-name="Mengapa video yang bisa ditonton sebelumnya tidak ditemukan sekarang?" data-target-type="knowledge" data-rseat="4" data-source-id="1227145" data-source-name="Tentang Pemutaran" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/24097.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227145&amp;cs_pb_s4=4">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Mengapa video yang bisa ditonton sebelumnya tidak ditemukan sekarang?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">&nbsp;1. Masalah hak cipta: Pastikan Anda menggunakan jaringan di wilayah tempat tinggal Anda dengan benar, tidak menggunakan VIP apa pun.</p>
+<p style="overflow: inherit;">Jika Anda masih mengalami masalah, kami menyarankan Anda mengirimkan judul dan episode film terkait beserta tempat tinggal Anda saat ini lewat feedback yang terdapat halaman tontonan;</p>
+<p style="overflow: inherit;">2. Masalah nama film: Silakan Anda mencari film menggunakan judul lengkap atau judul bahasa Inggris di kolom pencarian di atas.</p>
+<p style="overflow: inherit;">&nbsp;</p>
+<p>Berikut adalah cara mengirimkan umpan balik pada platform yang berbeda:</p>
+<p style="overflow: inherit;">Aplikasi Seluler: [Saya] - [Feedback]<br>Web Browser: Di bagian bawah halaman, klik [Dukungan &amp; Bantuan] - [Feedback]<br>Aplikasi TV: [Pengaturan] - [Feedback] atau [Saya] - [Dukungan Pelanggan]</p>
+                                            </div>
+                                        </li>
+                                                                                                                                                                                        <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="6" data-block="bt_qacategorys_1227145" data-target-id="24102" data-target-name="Bagaimana mengatur skip otomatis intro penutup?" data-target-type="knowledge" data-rseat="5" data-source-id="1227145" data-source-name="Tentang Pemutaran" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/24102.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227145&amp;cs_pb_s4=5">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Bagaimana mengatur skip otomatis intro penutup?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">iQIYI menyediakan fitur Skip otomatis intro penutup saat menonton video. Fitur ini tidak perlu diatur per episode atau per video. Akan tetap berfungsi setelah berhasil diaktifkan.<br>(1) Situs Web PC:<br>Pada halaman pemutaran, klik tombol sebelah kiri [Resolusi], aktifkan fitur [Skip otomatis intro penutup].</p>
+<p style="overflow: hidden;"><img style="margin-left: auto; margin-right: auto; height: auto; display: block;" src="https://cserver.iqiyi.com/qichuan3/bj.oss.qiyi.storage/80/ul-ugc-qichuan/material/ugc_openapi_iqiyi_online_service_file/20220521/ca/96/6502de44f387435d8631923e091d1d25.png"></p>
+<p style="overflow: inherit;">(2) APP Ponsel:<br>Anda dapat mengaktifkan fitur [Lewati Intro/Outro] dengan mengeklik ikon […] di pojok kanan atas halaman pemutaran layar penuh;</p>
+<p>(3) APP TV:<br>Coba klik [Pengaturan] - [Tampilan Pemutaran] - [Skip otomatis intro penutup] - [Aktifkan].</p>
+<p style="overflow: inherit;">（Harap perhatikan bahwa untuk beberapa film, karena beberapa alasan tertentu, intro atau outro tidak dapat dilewati. Oleh karena itu, ketersediaan fitur [Lewati Intro/Outro] tergantung pada film tertentu yang Anda tonton。）</p>
+                                            </div>
+                                        </li>
+                                                                                                                                        </ul>
+                        </div>
+                    </section>
+                    <div class="splitRange"></div>
+                                                        <!--热门问题 -->
+                                        <section class="m-help-wrap">
+                        <div class="m-title">
+                                                            <a class="hook-href-action" data-needparam="true" data-position="7" data-block="bt_qacategorys_1227159" data-target-id="" data-target-name="Lebih banyak" data-target-type="link" data-source-id="1227159" data-source-name="Tentang Unduh" data-source-type="qa-category" data-href="/m/v2/pc/questionCategory/1227159?cs_pb_s2=helpcenter-mainpage&amp;cs_pb_s3=bt_qacategorys_1227159&amp;cs_pb_s4=more-link">
+                                    <h3 class="title-des">Tentang Unduh</h3>
+                                    <span class="c-link">
+                                        <span>Lebih banyak</span>
+                                        <i class="arrow-icon"></i>
+                                    </span>
+                                </a>
+                                                    </div>
+                        <div class="splitLine"></div>
+                        <div class="m-faqList">
+                            <ul class="list-items">
+                                                                                                                                            <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="7" data-block="bt_qacategorys_1227159" data-target-id="21375" data-target-name=" Bagaimana jika video yang diunduh tidak dapat diputar?" data-target-type="knowledge" data-rseat="1" data-source-id="1227159" data-source-name="Tentang Unduh" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/21375.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227159&amp;cs_pb_s4=1">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                         Bagaimana jika video yang diunduh tidak dapat diputar?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">1. Muncul peringatan terjadi kesalahan saat proses pemutaran: Anda disarankan untuk restart aplikasi.Setelah menghapus cache video, coba untuk mengunduh ulang dengan menggunakan WIFI. Apabila masalah tetap ada, mohon informasikan judul film, episode bermasalah yang terkait, sertakan screenshot, dan kirimkan lewat Feedback di aplikasi.<br>2. VIP telah berakhir: Karena kebijakan perlindungan hak cipta, video VIP yang telah Anda unduh hanya dapat ditonton menggunakan akun VIP Anda. Video VIP yang telah diunduh tidak dapat diputar jika keanggotaan Anda telah kedaluwarsa.</p>
+                                            </div>
+                                        </li>
+                                                                                                                                                                                        <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="7" data-block="bt_qacategorys_1227159" data-target-id="21376" data-target-name="Bagaimana jika video yang diunduh tidak ada subtitle?" data-target-type="knowledge" data-rseat="2" data-source-id="1227159" data-source-name="Tentang Unduh" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/21376.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227159&amp;cs_pb_s4=2">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Bagaimana jika video yang diunduh tidak ada subtitle?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">Anda dapat mengganti subtitle di bagian bawah halaman pemutaran layar penuh video.</p>
+<p style="overflow: inherit;">Jika masih tidak ada subtitle yang tersedia, kami menyarankan Anda menghapus video yang diunduh sebelumnya dan gunakan Wi-Fi untuk mengunduh kembali.</p>
+<p style="overflow: inherit;">Apabila masalah tetap ada, mohon informasikan judul film, episode bermasalah yang terkait, sertakan screenshot, dan kirimkan lewat Feedback di aplikasi.</p>
+                                            </div>
+                                        </li>
+                                                                                                                                                                                        <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="7" data-block="bt_qacategorys_1227159" data-target-id="21383" data-target-name="Mengapa video tidak dapat diunduh?" data-target-type="knowledge" data-rseat="3" data-source-id="1227159" data-source-name="Tentang Unduh" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/21383.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227159&amp;cs_pb_s4=3">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Mengapa video tidak dapat diunduh?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">1. Masalah hak cipta: Beberapa video tidak dapat diunduh karena masalah hak cipta. Silakan tonton secara online.<br>2. Video VIP: Beberapa film dibatasi oleh hak cipta dan hanya dapat diunduh oleh VIP Standar/Premium. Kami menyarankan Anda berlangganan VIP untuk menikmati fitur ini.<br>3. Resolusi 1080P: Kualitas video 1080P tersedia untuk diunduh bagi VIP Standar/Premium. Kami menyarankan Anda berlangganan VIP untuk menikmati fitur ini.<br>4. APP TV/Situs Web PC: Untuk sementara tidak dapat mengunduh video. Silakan tonton secara online.</p>
+                                            </div>
+                                        </li>
+                                                                                                                                                                                        <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="7" data-block="bt_qacategorys_1227159" data-target-id="24107" data-target-name="Di mana saya dapat melihat video yang sudah diunduh?" data-target-type="knowledge" data-rseat="4" data-source-id="1227159" data-source-name="Tentang Unduh" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/24107.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227159&amp;cs_pb_s4=4">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Di mana saya dapat melihat video yang sudah diunduh?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">Film yang telah Anda unduh dalam iQIYI hanya akan disimpan dalam aplikasi iQIYI.</p>
+<p style="overflow: inherit;">Anda bisa memeriksa daftar &nbsp;video yang Anda unduh melalui menu di bagian bawah aplikasi - &nbsp;"Unduh". Jika keterangannya tidak sesuai, silakan lakukan pembaruan &nbsp;dengan versi terbaru dan cobalah ulangi lagi.</p>
+                                            </div>
+                                        </li>
+                                                                                                                                                                                        <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="7" data-block="bt_qacategorys_1227159" data-target-id="24108" data-target-name="Jika VIP telah berakhir, apakah video VIP yang sudah diunduh tetap dapat ditonton?" data-target-type="knowledge" data-rseat="5" data-source-id="1227159" data-source-name="Tentang Unduh" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/24108.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227159&amp;cs_pb_s4=5">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Jika VIP telah berakhir, apakah video VIP yang sudah diunduh tetap dapat ditonton?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">Halo, jika Anda mengunduh video VIP dalam periode VIP masih berlaku, setelah VIP berakhir, video VIP yang sudah diunduh tidak dapat ditonton lagi.</p>
+                                            </div>
+                                        </li>
+                                                                                                                                        </ul>
+                        </div>
+                    </section>
+                    <div class="splitRange"></div>
+                                                        <!--热门问题 -->
+                                        <section class="m-help-wrap">
+                        <div class="m-title">
+                                                            <h3 class="title-des">Tentang Subjudul</h3>
+                                                    </div>
+                        <div class="splitLine"></div>
+                        <div class="m-faqList">
+                            <ul class="list-items">
+                                                                                                                                            <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="8" data-block="bt_qacategorys_1227173" data-target-id="21380" data-target-name="Bagaimana cara mengganti bahasa subtitle?" data-target-type="knowledge" data-rseat="1" data-source-id="1227173" data-source-name="Tentang Subjudul" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/21380.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227173&amp;cs_pb_s4=1">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Bagaimana cara mengganti bahasa subtitle?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">Anda dapat mengganti bahasa subtitle yang Anda inginkan di [Subtitle] di bagian bawah halaman pemutaran layar penuh.&nbsp;</p>
+<p style="overflow: inherit;">Jika tidak tersedia pilihan subtitle bahasa yang diinginkan, kami sarankan untuk merujuk ke bagian pertanyaan umum terkait subtitle: [Setelah saya memilih subtitle tertentu, mengapa tidak ada subtitle yang ditampilkan?] dan [Mengapa tidak ada subtitle yang saya inginkan?].</p>
+                                            </div>
+                                        </li>
+                                                                                                                                                                                        <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="8" data-block="bt_qacategorys_1227173" data-target-id="21381" data-target-name="Mengapa ketika saya memilih subtitle, tidak muncul subtitle yang telah dipilih?" data-target-type="knowledge" data-rseat="2" data-source-id="1227173" data-source-name="Tentang Subjudul" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/21381.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227173&amp;cs_pb_s4=2">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Mengapa ketika saya memilih subtitle, tidak muncul subtitle yang telah dipilih?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">Anda dapat mengganti bahasa subtitle yang Anda inginkan di [Subtitle] di bagian bawah halaman pemutaran layar penuh.</p>
+<p style="overflow: inherit;">Jika subtitle yang telah dipilih tidak tampil dalam video, silakan kirimkan feedback di halaman pemutaran, Mohon informasikan judul film dan episode yang bermasalah, juga sertakan screenshot.</p>
+                                            </div>
+                                        </li>
+                                                                                                                                                                                        <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="8" data-block="bt_qacategorys_1227173" data-target-id="21382" data-target-name="Kenapa ada beberapa variety show  yang tidak ada subtitle?" data-target-type="knowledge" data-rseat="3" data-source-id="1227173" data-source-name="Tentang Subjudul" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/21382.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227173&amp;cs_pb_s4=3">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Kenapa ada beberapa variety show  yang tidak ada subtitle?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">Beberapa variety show tidak dapat menggunakan terjemahan AI, jadi subtitle-nya untuk sementara tidak tersedia. Kami sedang bekerja keras untuk mengatasi hal ini. Maaf atas ketidaknyamanannya yang ditimbulkan. Silakan tonton konten lain terlebih dahulu dan anda dapat memberikan feedback kepada kami dengan menyertakan judul variety show yang tidak memiliki subtitle tersebut. Kami akan segera mengatasinya.</p>
+                                            </div>
+                                        </li>
+                                                                                                                                                                                        <li>
+                                            <a class="link-item hook-href-action" data-showtype="currentPage" data-needparam="true" data-position="8" data-block="bt_qacategorys_1227173" data-target-id="31684" data-target-name="Mengapa tidak ada subtitle yang saya inginkan?" data-target-type="knowledge" data-rseat="4" data-source-id="1227173" data-source-name="Tentang Subjudul" data-source-type="qa-category" data-strategy="manual" data-href="/m/v2/pc/questionInfo/31684.html?cs_pb_s2=helpcenter-mainpage&amp;cs_strategy=manual&amp;cs_pb_s3=bt_qacategorys_1227173&amp;cs_pb_s4=4">
+                                                <div class="faq">
+                                                    <div class="c-title">
+                                                        Mengapa tidak ada subtitle yang saya inginkan?
+                                                    </div>
+                                                                                                    </div>
+                                                                                                    <div class="expand-operate">
+                                                        <i class="arrow-icon"></i>
+                                                    </div>
+                                                                                            </a>
+                                            <div class="m-faq-detail dn">
+                                                <p style="overflow: inherit;">Anda dapat mengganti bahasa subtitle yang Anda inginkan di [Subtitle] di bagian bawah halaman pemutaran layar penuh. Jika tidak tersedia pilihan subtitle yang diinginkan, mungkin karena subtitle masih diterjemahkan atau film yang sedang Anda tonton tidak mendukung subtitle bahasa yang diinginkan saat ini.</p>
+<p style="overflow: inherit;">Anda dapat mengirim permintaan Anda lewat feedbak. Kami sangat mementingkan pendapat pengguna, dan akan menyampaikan pendapat Anda ke departemen terkait.</p>
+                                            </div>
+                                        </li>
+                                                                                                                                        </ul>
+                        </div>
+                    </section>
+                    <div class="splitRange"></div>
+                                                                    
+        <!-- 视频解说 -->
+        
+        <!--通栏图 -->
+        
+        <!--全局按钮 -->
+                </div>
+                    <div class="hide-in-search-block">
+        <!-- 自助服务 -->
+        
+        <!--猜你想问 + 知识分类 -->
+        
+        <!-- 视频解说 -->
+        
+        <!--通栏图 -->
+        
+        <!--全局按钮 -->
+                                            <div class="">
+                <!-- 竖版工具 -->
+                                                                    <!-- 横版工具 -->
+                            </div>
+
+                </div>
+    
+</div>
+    <!-- loading -->
+<div id="loadingImg" class="icon-fd-loading dn">
+	<img src="http://www.iqiyipic.com/common/fix/h5_os_images/icon-fd-loading.gif" alt="">
+	<span>Sedang dimuat</span>
+</div>
+            <!-- toast -->
+<div class="osToast dn" id="search-toast">
+    <div class="osToast-inner">
+        <p class="ospText">请输入文字进行搜索</p>
+    </div>
+</div>
+<div class="osToast dn" id="knowledgeSearch-network-error-toast">
+    <div class="osToast-inner">
+        <p class="ospText">网络异常</p>
+    </div>
+</div>
+<div class="osToast dn" id="knowledgeSearch-server-error-toast">
+    <div class="osToast-inner">
+        <p class="ospText">服务端异常</p>
+    </div>
+</div>
+<div class="osToast dn" id="clipboard-success-toast">
+    <div class="osToast-inner">
+        <p class="ospText">Berhasil salin</p>
+    </div>
+</div>    <script>
+
+  (function() {
+    var _isDarkMode = document.getElementsByTagName('html')[0].getAttribute('data-theme');
+    if(_isDarkMode == 'dark'){
+      //替换自助工具图片
+      var selfToolDom = document.getElementsByClassName("hook-href-action-self-tool")
+      if(selfToolDom && selfToolDom.length !== 0) {
+        for(var index=0; index < selfToolDom.length; index++){
+          var dom = selfToolDom[index];
+          var darkModeImgUrl = null;
+          var imgDom = dom.firstElementChild;
+          if(dom.dataset){
+            darkModeImgUrl = dom.dataset.dmIconUrl;
+          }else{
+            darkModeImgUrl = dom.getAttribute('data-dm-icon-url');
+          }
+          if(darkModeImgUrl && imgDom){
+            imgDom.style = "background-image:url('"+ darkModeImgUrl +"')"
+          }
+        }
+      }
+    }
+  })();
+</script></div>
+
+<script type="text/javascript">
+    window['__entry'] = 'pc';
+    window['__configCode'] = 'pc';
+    window['__templateId'] = '29897';
+    window['__hotSearch'] = '""';
+    window['__knowledgeShowGuessYouWant'] = false;
+
+    /*
+     * 知识分类 - 横版
+     * tab初始化 以及 页面刷新时的状态还原
+     */
+    (function() {
+        window['__cservice__helpcenter__knowledge_tab_render'] = function(isGuessYouWantRemoved) {
+            var tabDOM = document.getElementsByClassName('m-help-tab')[0];
+            var knowledgeWrapperDOM = document.getElementsByClassName('hook-knowledge-wrapper')[0];
+
+            if (!tabDOM || !knowledgeWrapperDOM) {
+              return;
+            }
+
+            var mainDOM = document.getElementById('main');
+            var hideInSearchDom = document.getElementsByClassName('hide-in-search-block');
+            var tabItemDOMs = tabDOM.getElementsByClassName('c-link');
+            var listItemDOMs = knowledgeWrapperDOM.getElementsByClassName('list-items');
+            knowledgeWrapperDOM.style.width = listItemDOMs.length * 100 + '%';
+            setTimeout(function() {
+                document.getElementById('m-help-knowledge-list-wrapper').style.visibility = 'visible';
+            }, 10);
+
+            var getParamsUrl = function() {
+              var myObj = {};
+              window.location.hash.substring(1).split('&').forEach(function(item, index){
+                if (item) {
+                  var kvItem = item.split('=');
+                  if (kvItem[0].indexOf('_qy_') >= 0) {
+                    myObj[kvItem[0]] = kvItem[1];
+                  }
+                }
+              });
+              return myObj;
+            };
+            var getHashValue = function(key) {
+              var matches = location.hash.match(new RegExp(key + '=([^&]*)'));
+              return matches ? matches[1] : null;
+            };
+            var addClass = function(el, cls) {
+              if (el.classList) {
+                el.classList.add(cls)
+              }
+              else {
+                var cur = ' ' + (el.getAttribute('class') || '') + ' '
+                if (cur.indexOf(' ' + cls + ' ') < 0) {
+                  el.setAttribute('class', (cur + cls).trim())
+                }
+              }
+            };
+            var getLocalData = function(key) {
+                var storage = window.localStorage;
+                if (storage) {
+                    return storage.getItem(key);
+                } else {
+                    return "";
+                }
+            };
+            var removeClass = function (el, cls) {
+                if (el.classList) {
+                    el.classList.remove(cls)
+                } else {
+                    var cur = ' ' + (el.getAttribute('class') || '') + ' '
+                    var tar = ' ' + cls + ' '
+                    while (cur.indexOf(tar) >= 0) {
+                        cur = cur.replace(tar, ' ')
+                    }
+                    el.setAttribute('class', cur.trim())
+                }
+                if (!el.className) {
+                    el.removeAttribute('class')
+                }
+            };
+
+            var hashSearchWord = getHashValue('searchWord');
+            // 配置化帮助中心中 搜索框在mainDOM结构内部，所以不能直接对mainDOM隐藏
+            if (hashSearchWord && hideInSearchDom && hideInSearchDom.length > 0) {
+              for(var index = 0; index < hideInSearchDom.length; index++){
+                hideInSearchDom[index].style.display = 'none';
+              }
+              //mainDOM.style.display = 'none';
+              //document.getElementById('m-help-footerBtn').style.display = 'none';
+            }
+
+            var paramsObj = getParamsUrl();
+            if (paramsObj._qy_tabLeft) {
+              tabDOM.scrollLeft = paramsObj._qy_tabLeft;
+            }
+            paramsObj._qy_tabIndex = parseInt(paramsObj._qy_tabIndex !== undefined ? paramsObj._qy_tabIndex : 0);
+            window['_qy_tabIndex'] = paramsObj._qy_tabIndex;
+
+            for (var i=0;i<tabItemDOMs.length;i++) {
+                removeClass(tabItemDOMs[i], 'selected');
+            }
+            if (window['__knowledgeShowGuessYouWant'] && getLocalData("isGuessYouWantRemoved")) {
+                if (isGuessYouWantRemoved) {
+                    paramsObj._qy_tabIndex = window['_qy_tabIndex'];
+                }
+                else if (paramsObj._qy_tabIndex === 0) {
+                    paramsObj._qy_tabIndex = window['_qy_tabIndex'];
+                }
+                else {
+                    paramsObj._qy_tabIndex = window['_qy_tabIndex'] + 1;
+                }
+            }
+            if (window['__knowledgeShowGuessYouWant'] && !getLocalData("isGuessYouWantRemoved")) {
+                if (isGuessYouWantRemoved) {
+                    paramsObj._qy_tabIndex = window['_qy_tabIndex'] - 1;
+                }
+                else {
+                    paramsObj._qy_tabIndex = window['_qy_tabIndex'];
+                }
+            }
+            if (paramsObj._qy_tabIndex && paramsObj._qy_tabIndex > -1 && tabItemDOMs.length > paramsObj._qy_tabIndex) {
+              addClass(tabItemDOMs[paramsObj._qy_tabIndex], 'selected');
+              knowledgeWrapperDOM.style.transitionDuration = 'unset';
+              knowledgeWrapperDOM.style.transform = 'translateX(-' + (paramsObj._qy_tabIndex * window.innerWidth) + 'px)';
+            }
+            else if (tabItemDOMs.length > 0) {
+              addClass(tabItemDOMs[0], 'selected');
+              knowledgeWrapperDOM.style.transitionDuration = 'unset';
+              knowledgeWrapperDOM.style.transform = 'translateX(0px)';
+            }
+
+            if (paramsObj._qy_scrollTop) {
+              if (mainDOM.style.display !== 'none') {
+                mainDOM.style.visibility = 'hidden';
+                setTimeout(function() {
+                  mainDOM.style.visibility = 'visible';
+                }, 0);
+              }
+              document.body.scrollTop = paramsObj._qy_scrollTop;
+            }
+        };
+        window['__cservice__helpcenter__knowledge_tab_render'](false);
+    })();
+
+    /*
+     * 猜你想问，AI二次渲染
+     */
+    ;(function() {
+        var _isContentDisplayed = false;
+        var _timeoutTime = 2000;
+        var _curTime = new Date().getTime();
+        var ulGuessYouWant = document.querySelector('#list-items-guess-you-want');
+        var containerGuessYouWant = document.querySelector('#containerGuessYouWant');
+
+        if (!ulGuessYouWant) {
+            return;
+        }
+
+        setTimeout(function(){//客户端渲染的兜底方案
+            _displayClientSideContent();
+        }, _timeoutTime);
+
+        var setLocalData = function(key, val) {
+            var storage = window.localStorage;
+            if (storage) {
+                storage.setItem(key, val);
+            } else {
+                return "";
+            }
+        };
+
+        var addItem = function(ul, opts) {
+            /**/
+            var newli = document.createElement('li');
+            var newA = document.createElement('a');
+            var cs_strategy = opts.label === 1 ? 'hot' : 'recommend'; // 1表示热门知识，否则是算法推荐的知识
+            newA.setAttribute('data-href', opts.url + '?cs_pb_s2=helpcenter-mainpage&cs_pb_s3=bt_qacategorys_ai_recommend&cs_pb_s4=' + opts.rowIndex + '&cs_strategy=' + cs_strategy);
+            newA.setAttribute('class', 'link-item hook-href-action');
+            newA.setAttribute('data-showType', 'currentPage');
+            newA.setAttribute('data-needParam', "true");
+            newA.setAttribute('data-block', 'bt_qacategorys_ai_recommend');
+            newA.setAttribute('data-target-id', opts.id);
+            newA.setAttribute('data-target-name', opts.question);
+            newA.setAttribute('data-target-type', "knowledge");
+            newA.setAttribute('data-rseat', opts.rowIndex);
+            newA.setAttribute('data-source-id', "");
+            newA.setAttribute('data-source-name', "Pertanyaan yang mungkin ingin Anda tanyakan");
+            newA.setAttribute('data-source-type', "ai-recommend");
+            newA.setAttribute('data-strategy', cs_strategy);
+            var newHTML = "<div class='faq'><div class='c-title'>" + opts.question + "</div></div>";
+                            newHTML += "<div class='expand-operate'><i class='arrow-icon'></i></div>";
+                        newA.innerHTML = newHTML;
+            newli.appendChild(newA);
+            var newDetailDiv = document.createElement('div');
+            newDetailDiv.setAttribute('class', 'm-faq-detail dn');
+            newDetailDiv.innerHTML = opts.answer;
+            newli.appendChild(newDetailDiv);
+            ul.appendChild(newli);
+        };
+
+        var _displayClientSideContent = function(data) {//客户端渲染猜你想问
+            if (_isContentDisplayed) {
+                return;
+            }
+
+            // 隐藏骨架屏
+            var loadingItems = ulGuessYouWant.querySelectorAll('.link-item-guess-you-want-loading');
+            for(var index=0; index< loadingItems.length; index++){
+                loadingItems[index].style.display = 'none';
+            }
+            // 渲染猜你想问
+            if (data && data.length > 0) {
+                for (var i = 0; i < data.length; i++) {
+                    var hotQuestionItem = data[i];
+                    addItem(ulGuessYouWant, {
+                        url: hotQuestionItem.url,
+                        id: hotQuestionItem.id,
+                        question: hotQuestionItem.question,
+                        rowIndex: i + 1,
+                        answer: hotQuestionItem.answer,
+                        label: hotQuestionItem.label
+                    }, i);
+                }
+                if (window["_qy_help_center_knowledge_category_track"]) {
+                    window["_qy_help_center_knowledge_category_track"]();
+                }
+                setLocalData("isGuessYouWantRemoved", '');
+                if (window["_qy_help_center_knowledge_category_init"]) {
+                    window["_qy_help_center_knowledge_category_init"](false);
+                }
+            }
+            else {
+                ulGuessYouWant.parentNode.removeChild(ulGuessYouWant);
+                containerGuessYouWant.parentNode.removeChild(containerGuessYouWant);
+                window['__cservice__helpcenter__knowledge_tab_render'](true);
+                /*
+                 * 猜你想问接口异常，导致去掉猜你想问相关dom，
+                 * 需要 重新初始化知识分类tab
+                 */
+                if (window["_qy_help_center_knowledge_category_init"]) {
+                    window["_qy_help_center_knowledge_category_init"](true);
+                }
+                if (window["_qy_help_center_knowledge_category_track"]) {
+                    window["_qy_help_center_knowledge_category_track"]();
+                }
+                setLocalData("isGuessYouWantRemoved", '1');
+            }
+
+            _isContentDisplayed = true;
+            window['__cservice__helpcenter__guess_you_want_render__duration_time'] = new Date().getTime() - _curTime;
+        };
+
+        window['__cservice__helpcenter__displayClientSideContent'] = _displayClientSideContent;
+
+        window['__cservice__helpcenter__guess_you_want_render'] = function (data) {//渲染猜你想问
+            window['__cservice__helpcenter__guess_you_want_render__func_call_time'] = new Date().getTime() - _curTime;
+            if (_isContentDisplayed) {
+                return;
+            }
+            _displayClientSideContent(data);
+        };
+    })();
+
+    /*
+     * 自助服务，分端分版本 客户端二次渲染
+     */
+    ;(function(){
+        var _displaySelfTools = function() {//客户端渲染自助工具
+            var _getSearchValue = function(key) {
+              var matches = location.search.match(new RegExp(key + '=([^&]*)'));
+              return matches ? matches[1] : null;
+            };
+            var _getAppVersion = function() {
+                var ua = navigator.userAgent;
+                var matches = ua.match(/IqiyiVersion\/(\d*).(\d*).(\d*)/);
+                if (matches && matches.length === 4) {
+                    return [
+                        matches[1],
+                        matches[2],
+                        matches[3]
+                    ];
+                }
+
+                var appV = _getSearchValue("app_v");
+                if (appV) {
+                    return appV.split('.');
+                }
+
+                appV = _getSearchValue("appV");
+                if (appV) {
+                    return appV.split('.');
+                }
+                return null;
+            };
+
+            var _compareAppVersion = function(ver1, ver2) {
+                function toNum(ver) {
+                    var num_place = ['0000', '000', '00', '0', ''];
+                    for (var i = 0; i < ver.length; i++) {
+                        var len = (ver[i] + '').length;
+                        ver[i] = num_place[len] + ver[i];
+                    }
+                    return parseInt(ver.join(''));
+                }
+                return toNum(ver1) - toNum(ver2);
+            };
+
+            var _getIsPad = function() {
+                var userAgent = navigator.userAgent;
+                var isAndroidPad = function() {
+                    return userAgent.match(/Android.*Tablet/);
+                };
+                var isHarmonyPad = function() {
+                    return userAgent.match(/Tablet.*ARKWEB/);
+                };
+                var isApplePad = function() {
+                    return userAgent.match(/iPad.*Mac/);
+                };
+                if (isAndroidPad() || isApplePad() || isHarmonyPad()) {
+                    return true;
+                }
+                return false;
+            };
+
+            var alias = '';
+            var c = navigator.userAgent.toUpperCase();
+            var isInMobileDevice = /(IPHONE)|(PHONE)|(TABLET)|(IPOD)|(IPAD)|(ANDROID)/.test(c);
+            var isIphoneDevice = c.indexOf("IPHONE") >= 0 || c.indexOf("IPOD") >= 0 || c.indexOf("IPAD") >= 0;
+            var isHarmonyDevice = c.indexOf("ARKWEB") >= 0;
+            var isPad = _getIsPad();
+            //判断是在iqiyi app中
+            var isIqiyiVideoApp = /(IQIYIAPP\/IQIYI )|(IQIYIAPP\/PPS )|(IQIYIAPP_GC\/IQIYI )|(COM\.IQIYI\.I18N)/.test(c);
+            if(isInMobileDevice || isHarmonyDevice){
+                if(isIqiyiVideoApp){
+                    if (isIphoneDevice) {
+                        alias = 'app_ios';
+                        if (isPad) {
+                            alias = 'app_ipad';
+                        }
+                    }
+                    else if (isHarmonyDevice) {
+                        alias = 'app_harmony';
+                        if (isPad) {
+                            alias = 'app_hpad';
+                        }
+                    }
+                    else {
+                        alias = 'app_android';
+                        if (isPad) {
+                            alias = 'app_gpad';
+                        }
+                    }
+                }else{
+                    //不是iqiyi app中，则都算作h5
+                    alias = 'h5'
+                }
+            }else{
+                //不在移动设备中，计入pc_web
+                alias = 'pc_web'
+            }
+
+            var version = '';
+            if (isIqiyiVideoApp) {
+                version = _getAppVersion();
+            }
+
+            // 根据端版本信息，判断是否有自助工具
+            var selfTools = document.querySelectorAll('.m-selfService .hook-href-action-self-tool');
+            var selfToolsContainer = document.querySelectorAll('.hook-href-action-self-tool-container');
+            var hasSelfTool = false;
+            for(var i=0; i<selfTools.length; i++){
+                var selfTool = selfTools[i];
+                var selfToolContainer = selfToolsContainer[i];
+                var toolContent = selfTool.getAttribute('data-tool-content');
+                if (!toolContent) {
+                    selfTool.parentNode.style.display = 'block';
+                    hasSelfTool = true;
+                    continue;
+                }
+                toolContent = JSON.parse(toolContent);
+                for( var index=0; index< toolContent.length; index++){
+                    var toolItem = toolContent[index];
+                    if (toolItem.alias !== alias) { //端匹配
+                        continue;
+                    }
+                    if (!toolItem.scope) {
+                        selfTool.setAttribute('href', toolItem.link);
+                        selfTool.parentNode.style.display = 'block';
+                        hasSelfTool = true;
+                        continue;
+                    }
+                    if (toolItem.scope === 'up' && toolItem.version && version && _compareAppVersion(version, toolItem.version.split('.')) >= 0) {
+                        selfTool.setAttribute('href', toolItem.link);
+                        selfTool.parentNode.style.display = 'block';
+                        hasSelfTool = true;
+                        continue;
+                    }
+                    if (toolItem.scope === 'down' && toolItem.version && version && _compareAppVersion(version, toolItem.version.split('.')) < 0) {
+                        selfTool.setAttribute('href', toolItem.link);
+                        selfTool.parentNode.style.display = 'block';
+                        hasSelfTool = true;
+                        continue;
+                    }
+                }
+                if(selfToolContainer.style.display === 'none'){
+                    var liContainerDom = selfToolContainer.parentNode;
+                    liContainerDom.removeChild(selfToolContainer);
+                }
+            }
+            if (hasSelfTool) {
+                document.querySelector('#mHelpToolsContainer').style.display = 'block';
+            }
+        }
+        _displaySelfTools();
+        //如果剩余自助工具是奇数个，需要最后增加个空的li，以出现分割线
+        if (document.querySelector) {
+            var ul = document.querySelector('#hook-m-selfService');
+            var lis = document.querySelectorAll('#hook-m-selfService li');
+            if (lis && lis.length && lis.length % 2 === 1) {
+                var newli = document.createElement('li')
+                ul.appendChild(newli);
+            }
+        }
+    })();
+
+    /*
+     * 全局按钮，PCW端，支持 粘性定位
+    */
+    ;(function(){
+        if (window["___global_isInPCW"]) {
+            var footerBtnDOM = document.querySelector('.m-help-footerBtn-fixed');
+            if (footerBtnDOM && footerBtnDOM.parentNode) {
+                footerBtnDOM.parentNode.style.position = 'sticky';
+                footerBtnDOM.parentNode.style.bottom = 0;
+                footerBtnDOM.style.borderTop = '1px solid #f2f5fa';
+            }
+        }
+    })();
+
+    /*
+     * 动态获取用户信息（头像、昵称）（用户信息模块已删除不展示，下面代码已废弃不会调用）
+     */
+    ;(function() {
+        var userIconElement = document.getElementById('userIconHook');
+        var userNicknameElement = document.getElementById('userNickname');
+        var lblWelcome1Element = document.getElementById('lblWelcome1');
+        
+        if (!lblWelcome1Element) {
+            return;
+        }
+
+        var getCookie = function(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        };
+
+        var getUserInfoFromCookie = function() {
+            try {
+                var cookieValue = getCookie('P00002');
+                if (!cookieValue) {
+                    console.log('[用户信息] P00002 cookie不存在');
+                    return {
+                        isLogin: false,
+                        nickname: 'Pelanggan yang terhormat',
+                    };
+                }
+
+                var decodedValue = decodeURIComponent(cookieValue);
+                console.log('[用户信息] Cookie解码后:', decodedValue);
+
+                var userInfo = JSON.parse(decodedValue);
+                
+                if (userInfo && userInfo.nickname) {
+                    console.log('[用户信息] 从cookie获取到昵称:', userInfo.nickname);
+                    return {
+                        isLogin: true,
+                        nickname: userInfo.nickname,
+                    };
+                }
+
+                return {
+                    isLogin: false,
+                    nickname: 'Pelanggan yang terhormat',
+                };
+                
+            } catch (e) {
+                console.error('[用户信息] 解析cookie失败:', e);
+                return {
+                    isLogin: false,
+                    nickname: 'Pelanggan yang terhormat',
+                };
+            }
+        };
+
+        var fetchUserInfo = function() {
+            var param = '';
+            if (location.search.indexOf('?') > -1) {
+                param = location.search.substr(location.search.indexOf('?') + 1, location.search.length - 1);
+            }
+            
+            var tempScript = document.createElement('script');
+            var src = "//cdn-help-v2.iqiyi.com/api/user/info";
+            src = src + '?callback=__cservice__helpcenter__user_info_render&_t=' + new Date().getTime();
+            if (param) {
+                src += '&' + param;
+            }
+            
+            tempScript.setAttribute('src', src);
+            tempScript.setAttribute('async', "async");
+            tempScript.onerror = function() {
+                console.error('[用户信息] JSONP请求失败');
+                _showDefaultUserInfo();
+            };
+            
+            document.documentElement.append(tempScript);
+            
+            // 设置超时处理，10秒后如果还没有响应就显示默认信息
+            setTimeout(function() {
+                if (!window['__user_info_loaded']) {
+                    console.warn('[用户信息] 请求超时，显示默认信息');
+                    _showDefaultUserInfo();
+                }
+            }, 10000);
+        };
+
+        var _showDefaultUserInfo = function() {
+            updateUserInfo({
+                isLogin: false,
+                nickname: '',
+                avatar: '//www.iqiyipic.com/common/fix/headicons/male-130.png'
+            });
+            window['__user_info_loaded'] = true;
+        };
+
+        window['__cservice__helpcenter__user_info_render'] = function(response) {
+            window['__user_info_loaded'] = true;
+            
+            if (response && response.success) {
+                updateUserInfo(response);
+                console.log('[用户信息] 获取成功:', {
+                    isLogin: response.isLogin,
+                    nickname: response.nickname,
+                    uid: response.uid
+                });
+            } else {
+                console.error('[用户信息] 获取失败:', response ? response.error : '未知错误');
+                _showDefaultUserInfo();
+            }
+        };
+
+        var updateUserInfo = function(userInfo) {
+            try {
+                if (userInfo.avatar && userIconElement) {
+                    userIconElement.src = userInfo.avatar;
+                }
+
+                if (userInfo.nickname) {
+                    if (lblWelcome1Element) {
+                        lblWelcome1Element.textContent = userInfo.nickname;
+                        lblWelcome1Element.style.display = 'inline';
+                    }
+                    if (userNicknameElement) {
+                        userNicknameElement.style.display = 'none';
+                    }
+                } else {
+                    // 未登录状态，显示默认欢迎语
+                    if (userNicknameElement) {
+                        userNicknameElement.style.display = 'none';
+                    }
+                    if (lblWelcome1Element) {
+                        lblWelcome1Element.style.display = 'inline';
+                    }
+                }
+                
+                console.log('[用户信息] 更新完成:', {
+                    isLogin: userInfo.isLogin,
+                    nickname: userInfo.nickname,
+                    uid: userInfo.uid
+                });
+            } catch (e) {
+                console.error('[用户信息] 更新显示失败:', e);
+            }
+        };
+
+        var initUserInfo = function() {
+            // 首先尝试从cookie获取用户信息
+            var cookieUserInfo = getUserInfoFromCookie();
+            if (cookieUserInfo) {
+                // 从cookie成功获取到用户信息，直接更新显示
+                updateUserInfo(cookieUserInfo);
+                window['__user_info_loaded'] = true;
+                console.log('[用户信息] 使用cookie数据');
+            }
+
+            // cookie中没有用户信息，使用JSONP方式获取
+            console.log('[用户信息] 尝试JSONP方式');
+            fetchUserInfo();
+        };
+
+        initUserInfo();
+
+        window.refreshUserInfo = function() {
+            window['__user_info_loaded'] = false;
+            initUserInfo();
+        };
+    })();
+
+</script>
+    
+<script src="//static-help.iqiyi.com/helpcenter/mobile/js/zepto.min.lib.js" defer=""></script>
+<script src="//static-help.iqiyi.com/helpcenter/mobile/js/hammer.min.js" defer=""></script>
+<script src="//static.iqiyi.com/js/common/iqiyiJsBridge-2.10.10-min.js" defer=""></script>
+<script src="//static-help.iqiyi.com/helpcenter/mobile/20260204000038/js/feedBackIndexNew.js" defer=""></script>
+
+</body></html>

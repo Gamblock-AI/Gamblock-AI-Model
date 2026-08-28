@@ -1,0 +1,854 @@
+<html lang="id" style="overflow: hidden;" class=" js no-touch cssanimations csstransitions"><head><style type="text/css">.swal-icon--error{border-color:#f27474;-webkit-animation:animateErrorIcon .5s;animation:animateErrorIcon .5s}.swal-icon--error__x-mark{position:relative;display:block;-webkit-animation:animateXMark .5s;animation:animateXMark .5s}.swal-icon--error__line{position:absolute;height:5px;width:47px;background-color:#f27474;display:block;top:37px;border-radius:2px}.swal-icon--error__line--left{-webkit-transform:rotate(45deg);transform:rotate(45deg);left:17px}.swal-icon--error__line--right{-webkit-transform:rotate(-45deg);transform:rotate(-45deg);right:16px}@-webkit-keyframes animateErrorIcon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}to{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);opacity:1}}@keyframes animateErrorIcon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}to{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);opacity:1}}@-webkit-keyframes animateXMark{0%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}50%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}80%{-webkit-transform:scale(1.15);transform:scale(1.15);margin-top:-6px}to{-webkit-transform:scale(1);transform:scale(1);margin-top:0;opacity:1}}@keyframes animateXMark{0%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}50%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}80%{-webkit-transform:scale(1.15);transform:scale(1.15);margin-top:-6px}to{-webkit-transform:scale(1);transform:scale(1);margin-top:0;opacity:1}}.swal-icon--warning{border-color:#f8bb86;-webkit-animation:pulseWarning .75s infinite alternate;animation:pulseWarning .75s infinite alternate}.swal-icon--warning__body{width:5px;height:47px;top:10px;border-radius:2px;margin-left:-2px}.swal-icon--warning__body,.swal-icon--warning__dot{position:absolute;left:50%;background-color:#f8bb86}.swal-icon--warning__dot{width:7px;height:7px;border-radius:50%;margin-left:-4px;bottom:-11px}@-webkit-keyframes pulseWarning{0%{border-color:#f8d486}to{border-color:#f8bb86}}@keyframes pulseWarning{0%{border-color:#f8d486}to{border-color:#f8bb86}}.swal-icon--success{border-color:#a5dc86}.swal-icon--success:after,.swal-icon--success:before{content:"";border-radius:50%;position:absolute;width:60px;height:120px;background:#fff;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.swal-icon--success:before{border-radius:120px 0 0 120px;top:-7px;left:-33px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:60px 60px;transform-origin:60px 60px}.swal-icon--success:after{border-radius:0 120px 120px 0;top:-11px;left:30px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:0 60px;transform-origin:0 60px;-webkit-animation:rotatePlaceholder 4.25s ease-in;animation:rotatePlaceholder 4.25s ease-in}.swal-icon--success__ring{width:80px;height:80px;border:4px solid hsla(98,55%,69%,.2);border-radius:50%;box-sizing:content-box;position:absolute;left:-4px;top:-4px;z-index:2}.swal-icon--success__hide-corners{width:5px;height:90px;background-color:#fff;position:absolute;left:28px;top:8px;z-index:1;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}.swal-icon--success__line{height:5px;background-color:#a5dc86;display:block;border-radius:2px;position:absolute;z-index:2}.swal-icon--success__line--tip{width:25px;left:14px;top:46px;-webkit-transform:rotate(45deg);transform:rotate(45deg);-webkit-animation:animateSuccessTip .75s;animation:animateSuccessTip .75s}.swal-icon--success__line--long{width:47px;right:8px;top:38px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-animation:animateSuccessLong .75s;animation:animateSuccessLong .75s}@-webkit-keyframes rotatePlaceholder{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}to{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@keyframes rotatePlaceholder{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}to{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@-webkit-keyframes animateSuccessTip{0%{width:0;left:1px;top:19px}54%{width:0;left:1px;top:19px}70%{width:50px;left:-8px;top:37px}84%{width:17px;left:21px;top:48px}to{width:25px;left:14px;top:45px}}@keyframes animateSuccessTip{0%{width:0;left:1px;top:19px}54%{width:0;left:1px;top:19px}70%{width:50px;left:-8px;top:37px}84%{width:17px;left:21px;top:48px}to{width:25px;left:14px;top:45px}}@-webkit-keyframes animateSuccessLong{0%{width:0;right:46px;top:54px}65%{width:0;right:46px;top:54px}84%{width:55px;right:0;top:35px}to{width:47px;right:8px;top:38px}}@keyframes animateSuccessLong{0%{width:0;right:46px;top:54px}65%{width:0;right:46px;top:54px}84%{width:55px;right:0;top:35px}to{width:47px;right:8px;top:38px}}.swal-icon--info{border-color:#c9dae1}.swal-icon--info:before{width:5px;height:29px;bottom:17px;border-radius:2px;margin-left:-2px}.swal-icon--info:after,.swal-icon--info:before{content:"";position:absolute;left:50%;background-color:#c9dae1}.swal-icon--info:after{width:7px;height:7px;border-radius:50%;margin-left:-3px;top:19px}.swal-icon{width:80px;height:80px;border-width:4px;border-style:solid;border-radius:50%;padding:0;position:relative;box-sizing:content-box;margin:20px auto}.swal-icon:first-child{margin-top:32px}.swal-icon--custom{width:auto;height:auto;max-width:100%;border:none;border-radius:0}.swal-icon img{max-width:100%;max-height:100%}.swal-title{color:rgba(0,0,0,.65);font-weight:600;text-transform:none;position:relative;display:block;padding:13px 16px;font-size:27px;line-height:normal;text-align:center;margin-bottom:0}.swal-title:first-child{margin-top:26px}.swal-title:not(:first-child){padding-bottom:0}.swal-title:not(:last-child){margin-bottom:13px}.swal-text{font-size:16px;position:relative;float:none;line-height:normal;vertical-align:top;text-align:left;display:inline-block;margin:0;padding:0 10px;font-weight:400;color:rgba(0,0,0,.64);max-width:calc(100% - 20px);overflow-wrap:break-word;box-sizing:border-box}.swal-text:first-child{margin-top:45px}.swal-text:last-child{margin-bottom:45px}.swal-footer{text-align:right;padding-top:13px;margin-top:13px;padding:13px 16px;border-radius:inherit;border-top-left-radius:0;border-top-right-radius:0}.swal-button-container{margin:5px;display:inline-block;position:relative}.swal-button{background-color:#7cd1f9;color:#fff;border:none;box-shadow:none;border-radius:5px;font-weight:600;font-size:14px;padding:10px 24px;margin:0;cursor:pointer}.swal-button[not:disabled]:hover{background-color:#78cbf2}.swal-button:active{background-color:#70bce0}.swal-button:focus{outline:none;box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(43,114,165,.29)}.swal-button[disabled]{opacity:.5;cursor:default}.swal-button::-moz-focus-inner{border:0}.swal-button--cancel{color:#555;background-color:#efefef}.swal-button--cancel[not:disabled]:hover{background-color:#e8e8e8}.swal-button--cancel:active{background-color:#d7d7d7}.swal-button--cancel:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(116,136,150,.29)}.swal-button--danger{background-color:#e64942}.swal-button--danger[not:disabled]:hover{background-color:#df4740}.swal-button--danger:active{background-color:#cf423b}.swal-button--danger:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(165,43,43,.29)}.swal-content{padding:0 20px;margin-top:20px;font-size:medium}.swal-content:last-child{margin-bottom:20px}.swal-content__input,.swal-content__textarea{-webkit-appearance:none;background-color:#fff;border:none;font-size:14px;display:block;box-sizing:border-box;width:100%;border:1px solid rgba(0,0,0,.14);padding:10px 13px;border-radius:2px;transition:border-color .2s}.swal-content__input:focus,.swal-content__textarea:focus{outline:none;border-color:#6db8ff}.swal-content__textarea{resize:vertical}.swal-button--loading{color:transparent}.swal-button--loading~.swal-button__loader{opacity:1}.swal-button__loader{position:absolute;height:auto;width:43px;z-index:2;left:50%;top:50%;-webkit-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%);text-align:center;pointer-events:none;opacity:0}.swal-button__loader div{display:inline-block;float:none;vertical-align:baseline;width:9px;height:9px;padding:0;border:none;margin:2px;opacity:.4;border-radius:7px;background-color:hsla(0,0%,100%,.9);transition:background .2s;-webkit-animation:swal-loading-anim 1s infinite;animation:swal-loading-anim 1s infinite}.swal-button__loader div:nth-child(3n+2){-webkit-animation-delay:.15s;animation-delay:.15s}.swal-button__loader div:nth-child(3n+3){-webkit-animation-delay:.3s;animation-delay:.3s}@-webkit-keyframes swal-loading-anim{0%{opacity:.4}20%{opacity:.4}50%{opacity:1}to{opacity:.4}}@keyframes swal-loading-anim{0%{opacity:.4}20%{opacity:.4}50%{opacity:1}to{opacity:.4}}.swal-overlay{position:fixed;top:0;bottom:0;left:0;right:0;text-align:center;font-size:0;overflow-y:scroll;background-color:rgba(0,0,0,.4);z-index:10000;pointer-events:none;opacity:0;transition:opacity .3s}.swal-overlay:before{content:" ";display:inline-block;vertical-align:middle;height:100%}.swal-overlay--show-modal{opacity:1;pointer-events:auto}.swal-overlay--show-modal .swal-modal{opacity:1;pointer-events:auto;box-sizing:border-box;-webkit-animation:showSweetAlert .3s;animation:showSweetAlert .3s;will-change:transform}.swal-modal{width:478px;opacity:0;pointer-events:none;background-color:#fff;text-align:center;border-radius:5px;position:static;margin:20px auto;display:inline-block;vertical-align:middle;-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:50% 50%;transform-origin:50% 50%;z-index:10001;transition:opacity .2s,-webkit-transform .3s;transition:transform .3s,opacity .2s;transition:transform .3s,opacity .2s,-webkit-transform .3s}@media (max-width:500px){.swal-modal{width:calc(100% - 20px)}}@-webkit-keyframes showSweetAlert{0%{-webkit-transform:scale(1);transform:scale(1)}1%{-webkit-transform:scale(.5);transform:scale(.5)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}to{-webkit-transform:scale(1);transform:scale(1)}}@keyframes showSweetAlert{0%{-webkit-transform:scale(1);transform:scale(1)}1%{-webkit-transform:scale(.5);transform:scale(.5)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}to{-webkit-transform:scale(1);transform:scale(1)}}</style><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>HNI - Halal Network International</title>
+    <meta name="author" content="Developed by IT Dept HPA Indonesia Copyright © 2014 ">
+   
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js" nonce="Z3kizKOz"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-LR0KFGED19&amp;cx=c&amp;gtm=4e6481" nonce="Z3kizKOz"></script><script src="https://connect.facebook.net/id_ID/bundle/sdk.js/" async="" crossorigin="anonymous"></script><script src="https://hni.net/public/front/js/modernizr.custom.65274.js"></script>
+    <link rel="shortcut icon" type="image/png" href="https://hni.net/public/front/img/favicon-hni-2024.ico">
+    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">-->
+    <link href="https://hni.net/public/front/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="https://hni.net/public/front/css/font-awesome-4.min.css" rel="stylesheet" type="text/css">
+    <link href="https://hni.net/public/front/css/dl-menu.css" rel="stylesheet" type="text/css">
+    <link href="https://hni.net/public/front/css/magnific-popup.css" rel="stylesheet" type="text/css">
+    <link href="https://hni.net/public/front/css/superfish.css" rel="stylesheet" type="text/css">
+    <link href="https://hni.net/public/front/css/metcreative.audio/nouislider.fox.css" rel="stylesheet" type="text/css">
+    <link href="https://hni.net/public/front/css/metcreative.audio/nouislider.space.css" rel="stylesheet" type="text/css">
+    <link href="https://hni.net/public/front/css/custom.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://hni.net/public/css/font.css">
+        <meta name="description" content="HNI - Halal Network International Menjadi pemimpin industri halal kelas dunia">
+    <meta property="og:image" content="https://hni.net/public/front/img/logo.png">
+    <meta property="og:title" content="HALAL NETWORK INTERNATIONAL">
+    <meta name="keywords" content="HNI, HPAI, HNI-HPAI ,Halal Network International">
+    <meta property="og:description" content="HNI - Halal Network International Menjadi pemimpin industri halal kelas dunia">
+    <meta property="og:url" content="https://hni.net">
+    <meta property="og:site_name" content="HALAL NETWORK INTERNATIONAL">
+    <meta property="og:type" content="website">
+    
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-52847956-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-52847956-3');
+    </script>
+    <!--<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/1e80dde36550f06759ee22650/9782e530cfa7e976deda55687.js");</script>-->
+    <!--<script async defer crossorigin="anonymous" src="https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v15.0&appId=421306029056557&autoLogAppEvents=1" nonce="QGjLtBB0"></script>-->
+    <script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/id_ID/sdk.js#xfbml=1&amp;version=v19.0&amp;appId=421595882525103" nonce="Z3kizKOz"></script>
+<style type="text/css" data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0px;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:lucida grande,tahoma,verdana,arial,sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:400;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{0%{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+
+.fb_dialog{background:#525252b3;position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://connect.facebook.net/rsrc.php/v4/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://connect.facebook.net/rsrc.php/v4/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://connect.facebook.net/rsrc.php/v4/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:700;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://connect.facebook.net/rsrc.php/v4/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://connect.facebook.net/rsrc.php/v4/ya/r/3rhSv5V8j3o.gif) #fff no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:#0006;inset:0;min-height:100%;position:absolute;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba),to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:#fff 0 1px 1px -1px inset;color:#fff;font:700 14px Helvetica,sans-serif;text-overflow:ellipsis;text-shadow:rgba(0,30,84,.296875) 0px -1px 0px;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2),to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:700 12px Helvetica,sans-serif;margin:2px -12px;padding:2px 6px 3px;text-shadow:rgba(0,30,84,.296875) 0px -1px 0px}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:700;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://connect.facebook.net/rsrc.php/v4/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4A4A4A;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4A4A4A;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://connect.facebook.net/rsrc.php/v4/y2/r/onuUJj0tCqE.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0)}to{transform:rotate(360deg)}}
+
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}
+</style></head>
+<body class="clearfix" data-smooth-scrolling="1">
+    <div class="met_page_wrapper">
+        <style>
+    .btn-login{border:none;padding: 8px; background-color: #3fab0f; color: #fff; text-transform: uppercase; font-weight: bold;}
+    .text-box{
+        /*border:none!important;*/
+        background-color: #fff!important; 
+        color: #666!important;
+        width: 150px;
+        height: 32px!important;
+        border-radius: 0px!important;
+        margin-right: 3px;
+        margin-top: -3px;
+    }
+    .modal-open .modal {overflow: hidden;}
+    .showlogin{display: block!important;}
+    .modal-login,.modal-forgot{display: none; padding: 40px; border: 1px solid #eee; border-radius: 5px; background: #fff; position: fixed; z-index: 9999;}
+    .lang{
+        width: 100px;
+    }
+   
+    @media(min-width: 360px) and (max-width: 413px){
+        .lang{
+            margin-left: 195px;
+            margin-top: -103px;
+        }
+        .dropdown-menu{
+            left: -45px;
+        }
+    }
+    @media(min-width: 414px) and (max-width: 440px){
+        .lang{
+            margin-left: 240px;
+            margin-top: -103px;
+        }
+        .dropdown-menu{
+            left: -45px;
+        }
+    }
+    @media(min-width: 768px) and (max-width: 832px){
+        .lang{
+            margin-left: 565px;
+            margin-top: -103px;
+        }
+        .dropdown-menu{
+            left: -45px;
+        }
+    }
+    @media(min-width: 834px) and (max-width: 1023px){
+       .lang{
+            margin-left: 624px;
+            margin-top: -101px;
+        }
+        .dropdown-menu{
+            left: -45px;
+        }
+    }
+    @media(min-width: 1024px){
+        .lang{
+
+            margin-left: 792px;
+            margin-top: -88px
+        }
+        .dropdown-menu{
+            left: -45px;
+        }
+    }
+    @media (max-width: 440px) {
+        .margintoploginavo {margin-top: 20px;}
+    }
+
+    @media (min-width: 1170px) and (max-width: 1199px){
+        .margintoploginavo {display: none}
+    }
+
+    @media (min-width: 680px) and (max-width: 777px) {
+        .met_page_header ul {
+            margin: 19px 30px 19px 0;
+        }
+    }
+</style>
+<header class="met_content">
+    <div class="row-fluid">
+        <div class="col-md-12">
+            <div>
+                <a href="https://hni.net" class="met_logo" style="margin-top: 50px;">
+                    <img src="https://hni.net/public/front/img/29-01-24-7Q031VFpmcQu.png" loading="lazy" class="img-responsive hidden-xs hidden-sm" width="250">
+                    <img src="https://hni.net/public/front/img/29-01-24-xzo5475vUEnn.png" loading="lazy" class="img-responsive hidden-md hidden-lg" width="200" style="padding: 0px;">
+                </a>
+            </div>
+            <aside class="clearfix">    
+                
+                
+                <input type="hidden" id="token" value="Tmv3Qf9C5Pzr4beZ2bUdfcZ7PNe2qSs8gV8ihWX7">
+                <div class="dropdown" style="margin-left:-160px; width: 100px;top: -38px;left: 408px;">
+                  <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="padding: 6px; background: #fff; border: none; border-radius: 3px; height: 32px; width: 150px; margin-top: -10px!important;">
+                                        Pilih Bahasa
+                                        <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="#" class="locale" data-value="id"><img src="https://hni.net/public/front/img/Indonesia.png" loading="lazy" width="20" alt=""> Indonesia</a></li>
+                    <li><a href="#" class="locale" data-value="en"><img src="https://hni.net/public/front/img/eng.png" loading="lazy" width="20" alt=""> English</a></li>
+                    <li><a href="#" class="locale" data-value="th"><img src="https://hni.net/public/front/img/th.png" loading="lazy" width="20" alt=""> Thailand</a></li>
+                    <li><a href="#" class="locale" data-value="ar"><img src="https://hni.net/public/front/img/ar.png" loading="lazy" width="20" alt=""> Arabic</a></li>
+                    <li><a href="#" class="locale" data-value="hk"><img src="https://hni.net/public/front/img/hk.png" loading="lazy" width="20" alt=""> Hongkong</a></li>
+                  </ul>
+                </div>
+                
+                <nav style="margin-top: -50px;">
+                    <span style="color: #3fab0f;"><b>AVO LOGIN</b></span>
+                    <form method="post" action="https://avo.hni.net/login/masuk">
+                        <ul>
+                            <li><input type="text" name="username" id="username" maxlength="9" placeholder="ID Agen" class="form-control text-box cumangka"></li>
+                            <li><input type="password" name="password" id="password" maxlength="20" placeholder="Password" class="form-control text-box"></li>
+                            <li><button class="btn-login" id="btn-submit" style="margin-top: -3px;">masuk</button></li>
+                        </ul>
+                        <input type="hidden" name="logsrc" value="web" id="logsrc">
+                         <input type="hidden" name="location" value="UNKNOWN" id="location">
+                    </form>
+                    
+                    <small><a href="https://avo.hni.net/forgot_password" style="color: #3fab0f; float: right; margin-right: 55px;">Lupa Password</a></small>
+                </nav>
+            </aside>
+            <div class="hidden-lg">
+                <input type="hidden" id="token" value="Tmv3Qf9C5Pzr4beZ2bUdfcZ7PNe2qSs8gV8ihWX7">
+                <div class="dropdown lang">
+                  <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="padding: 6px; background: #fff; border: none; border-radius: 3px; height: 32px; width: 150px; margin-top: -10px!important;">
+                                        Pilih Bahasa
+                                        <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="#" class="locale" data-value="id"><img src="https://hni.net/public/front/img/Indonesia.png" loading="lazy" width="20" alt=""> Indonesia</a></li>
+                    <li><a href="#" class="locale" data-value="en"><img src="https://hni.net/public/front/img/eng.png" loading="lazy" width="20" alt=""> English</a></li>
+                    <li><a href="#" class="locale" data-value="th"><img src="https://hni.net/public/front/img/th.png" loading="lazy" width="20" alt=""> Thailand</a></li>
+                    <li><a href="#" class="locale" data-value="ar"><img src="https://hni.net/public/front/img/ar.png" loading="lazy" width="20" alt=""> Arabic</a></li>
+                    <li><a href="#" class="locale" data-value="hk"><img src="https://hni.net/public/front/img/hk.png" loading="lazy" width="20" alt=""> Hongkong</a></li>
+                  </ul>
+                </div>
+            </div>
+            <div id="dl-menu" class="dl-menuwrapper">
+                <button class="met_bgcolor met_bgcolor_transition2" type="button" id="menu-btn-collapse" data-init="0">MENU</button>
+                <ul class="dl-menu met_bgcolor7" aria-hidden="true" id="dd-menu">
+                    <li><a href="https://hni.net">Beranda</a></li>
+                    <li>
+                        <a href="https://hni.net/profile">Profil</a>
+                    </li>
+                    <li>
+                        <a href="https://hni.net/products">Produk <i class="fa fa-arrow-right"></i></a>
+                        <ul class="dl-submenu">
+                                                        <li><a href="https://hni.net/products/kategori/herbal-products">Herbal Products</a></li>
+                                                        <li><a href="https://hni.net/products/kategori/food-&amp;-beverages">Food &amp; Beverages</a></li>
+                                                        <li><a href="https://hni.net/products/kategori/cosmetics-&amp;-home-care">Cosmetics &amp; Home Care</a></li>
+                                                    </ul>
+                    </li>
+                    <li>    
+                        <a href="https://hni.net/success-plan">Success Plan <i class="fa fa-arrow-right"></i></a>
+                        <ul class="dl-submenu">
+                                                        <li><a href="https://hni.net/success-plan/keuntungan-langsung">Keuntungan Langsung</a></li>
+                                                        <li><a href="https://hni.net/success-plan/peringkat-mitra">Peringkat Mitra</a></li>
+                                                        <li><a href="https://hni.net/success-plan/komisi">Komisi</a></li>
+                                                        <li><a href="https://hni.net/success-plan/bonus-royalti">Bonus Royalti</a></li>
+                                                    </ul>
+                    </li>
+                    
+                    <li><a href="https://hni.net/events">Agenda</a></li>
+                    <li><a href="https://hni.net/promotions">Promosi</a></li>
+                    <li><a href="https://hni.net/gallery">Galeri</a></li>
+                    <li><a href="https://hni.net/download">Majalah</a></li>
+                </ul>
+            </div>
+            <!-- /dl-menuwrapper -->
+        </div>
+    </div>
+</header>
+
+<div class="met_content hidden-lg" id="panel-login-btn">
+    <div class="row-fluid">
+        <div class="margintoploginavo" style="padding: 0px;">
+            <a class="btn btn-primary btn-block modallogin" id="btn-login-popup" data-init="0" role="button" aria-label="AVO LOGIN">AVO LOGIN</a>
+        </div>
+    </div>
+</div>
+<div class="modal-login col-xs-12 hidden-md hidden-lg" aria-labelledby="modalTitle" id="login-modal" aria-hidden="true" style="top: 0">
+    <div class="met_content">
+        <div class="content-modal">
+            <div class="header-modal">
+                <a class="btn-close pull-right"><i class="fa fa-close"></i></a>
+            </div>
+            <div class="body-modal">
+                <h3>AVO LOGIN</h3>
+                <form class="form-horizontal" method="post" action="https://avo.hni.net/login/masuk">
+                  <div class="form-group">
+                    <label for="username">ID Agen</label>
+                    <input type="text" name="username" id="m-username" maxlength="9" class="text-box cumangka" style="width: 100%;">
+                  </div>
+                  <div class="form-group">
+                    <label for="pwd">Password</label>
+                    <input type="password" name="password" id="m-password" maxlength="20" class="text-box" style="width: 100%;">
+                  </div>
+                  <div class="form-group">
+                    <button class="btn-login" id="m-btn-submit" style="padding: 10px 20px;">masuk</button>
+                    <a href="https://avo.hni.net/forgot_password" class="btn-default" style="padding: 10px 20px;font-size: 12px;color: #888">Lupa Password</a>
+                  </div>
+                  <input type="hidden" name="logsrc" value="web">
+                  <input type="hidden" name="location" value="UNKNOWN" id="m-location">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal-forgot col-xs-12 hidden-md hidden-lg">
+    <div class="met_content">
+        <div class="content-modal">
+            <div class="header-modal">
+                <a class="btn-close pull-right"><i class="fa fa-close"></i></a>
+            </div>
+            <div class="body-modal">
+                <h3>FORGOT PASSWORD</h3>
+                <form action="#" class="form-horizontal">
+                  <div class="form-group">
+                    <label for="email">Email address:</label>
+                    <input type="email" class="text-box" style="width: 100%;">
+                  </div>
+                  <div class="form-group">
+                    <label for="pwd">New Password:</label>
+                    <input type="password" class="text-box" style="width: 100%;">
+                  </div>
+                  <div class="form-group">
+                    <button class="btn-login" style="padding: 10px 20px;">Submit</button>
+                  </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header Ends  -->
+<nav class="met_content met_main_nav met_bgcolor3 clearfix" data-fixed="1" style="z-index: 1; left: 0px; width: 1170px;" data-fixed-width="1170px" data-fixed-left="98px">
+    <ul class="sf-js-enabled sf-arrows">
+        <li class="met_bgcolor_transition2 ) met_menu_home "><a href="https://hni.net" style="font-size: 25px; padding: 0px 19px;"><i class="icon-home"></i></a></li>
+        <li class="met_bgcolor_transition2 ">
+            <a class="active" href="https://hni.net/profile">Profil</a>
+        </li>
+        <li class="met_bgcolor_transition2">
+            <a href="https://hni.net/products" class="sf-with-ul">Produk</a>
+            <ul style="display: none;">
+                                <li><a href="https://hni.net/products/kategori/herbal-products">Herbal Products</a></li>
+                                <li><a href="https://hni.net/products/kategori/food-&amp;-beverages">Food &amp; Beverages</a></li>
+                                <li><a href="https://hni.net/products/kategori/cosmetics-&amp;-home-care">Cosmetics &amp; Home Care</a></li>
+                            </ul>
+        </li>
+        <li class="met_bgcolor_transition2">    
+            <a href="https://hni.net/success-plan" class="sf-with-ul">Success Plan</a>
+            <ul style="display: none;">
+                                <li><a href="https://hni.net/success-plan/keuntungan-langsung">Keuntungan Langsung</a></li>
+                                <li><a href="https://hni.net/success-plan/peringkat-mitra">Peringkat Mitra</a></li>
+                                <li><a href="https://hni.net/success-plan/komisi">Komisi</a></li>
+                                <li><a href="https://hni.net/success-plan/bonus-royalti">Bonus Royalti</a></li>
+                            </ul>
+        </li>
+        <li class="met_bgcolor_transition2 "><a href="https://hni.net/events">Agenda</a></li>
+        <li class="met_bgcolor_transition2 "><a href="https://hni.net/promotions">Promosi</a></li>
+        <li class="met_bgcolor_transition2 "><a href="https://hni.net/gallery">Galeri</a></li>
+        <li class="met_bgcolor_transition2 "><a href="https://hni.net/download">Majalah</a></li>
+    </ul>
+    <div class="pull-right met_bgcolor met_menu_search_wrapper">
+        <form class="met_menu_search" method="POST" action="https://hni.net/search">
+            <input type="hidden" name="_token" value="Tmv3Qf9C5Pzr4beZ2bUdfcZ7PNe2qSs8gV8ihWX7">
+            <input type="text" name="search" class="met_menu_search_text" required="" placeholder="cari produk">
+            <button class="met_menu_search_submit met_bgcolor" style="border: none;"><i class="icon-search"></i></button>
+        </form>
+    </div>
+</nav>
+
+<script>
+    document.getElementById('btn-login-popup').addEventListener('click', function () {
+        document.getElementById('login-modal').focus();
+        document.getElementById('login-modal').setAttribute('aria-hidden', false);
+    });
+
+    document.getElementById('menu-btn-collapse').addEventListener('click', function () {
+        if (this.getAttribute('data-init') == 1) {
+            this.setAttribute('data-init', 0);
+            document.getElementById('btn-login-popup').setAttribute('aria-hidden', false);
+            document.getElementById('dd-menu').setAttribute('aria-hidden', true);
+            document.getElementById('panel-login-btn').style.zIndex = 0;
+        } else {
+            this.setAttribute('data-init', 1);
+            document.getElementById('btn-login-popup').setAttribute('aria-hidden', true);
+            document.getElementById('dd-menu').setAttribute('aria-hidden', false);
+            document.getElementById('panel-login-btn').style.zIndex = '-1';
+        }
+    });
+</script>
+<!-- Menu Ends  -->        <div class="met_content" style="z-index: -1;">
+            <style>
+    .caroufredsel_wrapper > .met_thumbnail_slider_1_images,.img-slid{width: 100%!important;}
+    .caroufredsel_wrapper{width: 100%!important;}
+    .caroufredsel_wrapper{height: 200px!important;}
+    .met_thumbnail_slider_1_wrap{padding: 0px;}
+    @media (min-width: 768px) {
+        .coba {margin-bottom: -70px;}
+        .caroufredsel_wrapper{height: 612px!important;}
+    }
+
+    @media (min-width: 376px) and (max-width: 467px) {
+        .met_img_with_text {height: 136px;}
+        .met_img_with_text article {height: 136px;}
+        div.met_img_with_text img.img-responsive {height: 136px;}
+        .met_img_with_text article div {padding: 5px 8px 8px 8px}
+    }
+
+    @media (min-width: 468px) {
+        .met_img_with_text {height: 200px;}
+        .met_img_with_text article {height: 200px;}
+        div.met_img_with_text img.img-responsive {height: 200px;}
+    }
+    
+    @media (min-width: 690px) and (max-width: 776px) {
+        img.imgkonten {
+            width: 90%;
+        }
+    }
+
+    @media (max-width: 375px) {
+        .met_img_with_text {height: 124px;}
+        .met_img_with_text article {height: 124px;}
+        div.met_img_with_text img.img-responsive {height: 124px;}
+        .met_img_with_text article div {padding: 5px 8px 8px 8px}
+        h3.met_title_stack {line-height: 21px;}
+    }
+
+    /* YOUR CSS simplified */  
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+        display: block;
+        height: auto;
+        width: 100%;
+        line-height: 1;
+    }
+.carousel-fade .carousel-inner .item {
+  opacity: 0;
+  transition-property: opacity;
+}    
+.carousel-fade .carousel-inner .active {
+  opacity: 1;
+}    
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}    
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}    
+.carousel-fade .carousel-control {
+  z-index: 2;
+}
+
+@media  all and (transform-3d), (-webkit-transform-3d) {
+    .carousel-fade .carousel-inner > .item.next,
+    .carousel-fade .carousel-inner > .item.active.right {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.prev,
+    .carousel-fade .carousel-inner > .item.active.left {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.next.left,
+    .carousel-fade .carousel-inner > .item.prev.right,
+    .carousel-fade .carousel-inner > .item.active {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+}
+</style>
+<div class="row-fluid coba">
+    
+    <div class="span12" style="margin-bottom:20px;">
+        <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+          <div class="carousel-inner">
+                        <div class="item  active ">
+                <a href="/product/detail/mhs-extra-hot-roll-on"><img src="https://hni.net/public/front/img/slider/19-03-26-jprNAxHwHIzr.jpg" loading="lazy" alt="19-03-26-jprNAxHwHIzr.jpg" style="width: 100%;"></a>
+            </div>
+                        <div class="item ">
+                <a href="/product/detail/minyak-herba-sinergi-(mhs)"><img src="https://hni.net/public/front/img/slider/19-03-26-iqyVtl7Gtswj.png" loading="lazy" alt="19-03-26-iqyVtl7Gtswj.png" style="width: 100%;"></a>
+            </div>
+                        <div class="item ">
+                <a href="/product/detail/earl-grey-bergamot-tea"><img src="https://hni.net/public/front/img/slider/19-03-26-Yz2Afhxm7JbK.jpg" loading="lazy" alt="19-03-26-Yz2Afhxm7JbK.jpg" style="width: 100%;"></a>
+            </div>
+                        <div class="item ">
+                <a href="/product/detail/mee-&amp;-me-rasa-seblak"><img src="https://hni.net/public/front/img/slider/19-03-26-X8wFpjCtytNL.png" loading="lazy" alt="19-03-26-X8wFpjCtytNL.png" style="width: 100%;"></a>
+            </div>
+                        <div class="item ">
+                <a href="/product/detail/mee-&amp;-me-rasa-pedas-korea"><img src="https://hni.net/public/front/img/slider/19-03-26-t40IvMHWkqpL.png" loading="lazy" alt="19-03-26-t40IvMHWkqpL.png" style="width: 100%;"></a>
+            </div>
+                        <div class="item ">
+                <a href="/product/detail/herbal-mouthwash"><img src="https://hni.net/public/front/img/slider/19-03-26-aIVN9TBFTPlV.jpg" loading="lazy" alt="19-03-26-aIVN9TBFTPlV.jpg" style="width: 100%;"></a>
+            </div>
+                        <div class="item ">
+                <a href="/product/detail/sweetevi"><img src="https://hni.net/public/front/img/slider/19-03-26-kkPy9qZe6Hs7.jpg" loading="lazy" alt="19-03-26-kkPy9qZe6Hs7.jpg" style="width: 100%;"></a>
+            </div>
+                        <div class="item ">
+                <a href="/promotions/hmp-2026"><img src="https://hni.net/public/front/img/slider/19-03-26-7SZRqwscDwdk.png" loading="lazy" alt="19-03-26-7SZRqwscDwdk.png" style="width: 100%;"></a>
+            </div>
+                        <div class="item ">
+                <a href="/promotions/promo-hni-2026"><img src="https://hni.net/public/front/img/slider/19-03-26-nXLi9RSL5Bp5.png" loading="lazy" alt="19-03-26-nXLi9RSL5Bp5.png" style="width: 100%;"></a>
+            </div>
+                      </div>
+        </div>
+    </div>
+</div>
+<br class="hidden-xs"><br class="hidden-xs"><br class="hidden-xs">
+<!-- Slider Ends  -->
+<div class="row-fluid">
+        <div class="span6">
+        <div class="met_img_with_text clearfix" style="margin-bottom: 10px;">
+            <div class=" col-xs-6 col-md-6" style="padding-right: 0px;">
+                <img src="https://hni.net/public/front/img/content/03-10-25-rTW8ApEwyB7I.jpg" loading="lazy" class="img-responsive imgkonten" style="margin: 0px;">
+            </div>
+            <article class="met_bgcolor6 met_color2 col-xs-6 col-md-6" style="padding: 0px!important;">
+                <div>
+                    <h3 class="met_title_stack met_bold_one hidden-md hidden-lg" style="color: #fff; font-size: 15px;">Biidznillah, Everyt...</h3>
+                    <h4 class="met_title_stack met_bold_one hidden-sm hidden-xs" style="color: #fff; line-height: 0px; font-size: 18px;">Biidznillah, Everyt...</h4>
+                    <p class="met_title_stack">Wisnu Wijaya Adi Putra, LCED (BOSS 2025)</p>
+                    <div class="hidden-xs" style="padding: 0px;"><p>Wisnu Wijaya Adi Putra, anak tunggal dari ....</p></div>
+                    <a href="https://hni.net/story/72" class="btn btn-success" style="padding: 8px; font-size: 12px; margin-top: 5px;">Selengkapnya</a>
+                </div>
+            </article>
+        </div>
+    </div>
+        <div class="span6">
+        <div class="met_img_with_text clearfix" style="margin-bottom: 10px;">
+            <div class=" col-xs-6 col-md-6" style="padding-right: 0px;">
+                <img src="https://hni.net/public/front/img/content/03-10-25-c7JyZkn9kYhG.jpg" loading="lazy" class="img-responsive imgkonten" style="margin: 0px;">
+            </div>
+            <article class="met_bgcolor6 met_color2 col-xs-6 col-md-6" style="padding: 0px!important;">
+                <div>
+                    <h3 class="met_title_stack met_bold_one hidden-md hidden-lg" style="color: #fff; font-size: 15px;">Dari Daftar Mimpi S...</h3>
+                    <h4 class="met_title_stack met_bold_one hidden-sm hidden-xs" style="color: #fff; line-height: 0px; font-size: 18px;">Dari Daftar Mimpi S...</h4>
+                    <p class="met_title_stack">Zulchaidir B. Firly, LCED (Runner Up 1 BOSS&nbsp;2025)</p>
+                    <div class="hidden-xs" style="padding: 0px;"><p>Zulchaidir Berliana Firly Ramly, atau yang....</p></div>
+                    <a href="https://hni.net/story/71" class="btn btn-success" style="padding: 8px; font-size: 12px; margin-top: 5px;">Selengkapnya</a>
+                </div>
+            </article>
+        </div>
+    </div>
+    </div>
+<!-- Image with Texts Ends  -->
+<div class="row-fluid">
+    <div class="span6">
+        <div class="met_icon_tabs">
+            <nav class="met_bgcolor6 clearfix"> 
+                <a href="#tab_html5" class="met_active_tab"><img src="https://hni.net/public/front/img/led-color.png" width="30"></a>
+                <a href="#tab_css3"><img src="https://hni.net/public/front/img/bonus.png" loading="lazy" width="30"></a>
+                <a href="#tab_responsive"><img src="https://hni.net/public/front/img/rekrut.png" loading="lazy" width="30"></a>
+                <a href="#tab_documentation"><img src="https://hni.net/public/front/img/busines.png" loading="lazy" width="30"></a>
+                <a href="#tab_support"><img src="https://hni.net/public/front/img/agen.png" loading="lazy" width="30"></a>
+            </nav>
+            <div class="met_icon_tabs_descrs">
+                <article id="tab_html5" class="met_open_tab">
+                    <h2 class="met_color"><b>TOP S-E-P LEADER</b></h2>
+                                        <span class="met_color3" style="font-size: 24px;">
+                        Februari 2026
+                    </span>
+                    <br><br>
+                                            <div class="span12" style="height: 145px;">
+                            <span class="badge met_bgcolor6">1</span>
+                            <img src="https://hni.net/public/front/img/achiv/10-03-26-SZ3aVcgeCBUY.png" loading="lazy" alt="RATU IRA RAHMAWATI, LCED" class="img-responsive" style="width: 100px; height: 100px;">
+                            <div class="pull-right" style=" margin-top: -100px; ">
+                                <h3 class="text-right">RATU IRA RAHMAWATI, LCED</h3>
+                                <h3 class="text-right">00113072</h3>
+                            </div>
+                        </div>
+                                            <div class="span12" style="height: 145px;">
+                            <span class="badge met_bgcolor6">2</span>
+                            <img src="https://hni.net/public/front/img/achiv/10-03-26-PAUcPYZkfHld.png" loading="lazy" alt="ZULCHAIDIR BERLIANA FIRLY, LCED" class="img-responsive" style="width: 100px; height: 100px;">
+                            <div class="pull-right" style=" margin-top: -100px; margin-left:100px; ">
+                                <h3 class="text-right">ZULCHAIDIR BERLIANA FIRLY, LCED</h3>
+                                <h3 class="text-right">00073075</h3>
+                            </div>
+                        </div>
+                                            <div class="span12" style="height: 145px;">
+                            <span class="badge met_bgcolor6">3</span>
+                            <img src="https://hni.net/public/front/img/achiv/10-03-26-kCjSFwlOZsCu.png" loading="lazy" alt="BASIT SUGIYANTO, LCED" class="img-responsive" style="width: 100px; height: 100px;">
+                            <div class="pull-right" style=" margin-top: -100px; margin-left:100px; ">
+                                <h3 class="text-right">BASIT SUGIYANTO, LCED</h3>
+                                <h3 class="text-right">00011942</h3>
+                            </div>
+                        </div>
+                                        <div class="clearfix"></div>
+                    <br>
+                    <a class="pull-right met_color3" href="https://hni.net/top-achievers/sep_leaders"><b>Selengkapnya</b></a>
+                </article>
+                <article id="tab_css3">
+                    <h2 class="met_color"><b>TOP BONUS</b></h2>
+                    <span class="met_color3" style="font-size: 24px;">
+                        Februari 2026
+                    </span>
+                    <br><br>
+                                        <div class="clearfix"></div>
+                    <br>
+                    <a class="pull-right met_color3" href="https://hni.net/top-achievers/bonus"><b>Selengkapnya</b></a>
+                </article>
+                <article id="tab_responsive">
+                    <h2 class="met_color"><b>TOP RECRUITER</b></h2>
+                    <span class="met_color3" style="font-size: 24px;">
+                        Februari 2026
+                    </span>
+                    <br><br>
+                    <div class="span12" style="height: 115px;">
+                        <div class="table-responsive">
+                            <table class="table">
+                                                            </table>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <br>
+                    <a class="pull-right met_color3" href="https://hni.net/top-achievers/recruiters"><b>Selengkapnya</b></a>
+                </article>
+                <article id="tab_documentation">
+                    <h2 class="met_color"><b>TOP BUSINESS CENTER</b></h2>
+                    <span class="met_color3" style="font-size: 24px;">
+                        Februari 2026
+                    </span>
+                    <br><br>
+                    <div class="span12" style="height: 145px;">
+                        <div class="table-responsive">
+                            <table class="table">
+                                                            </table>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <br>
+                    <a class="pull-right met_color3" href="https://hni.net/top-achievers/business"><b>Selengkapnya</b></a>
+                </article>
+                <article id="tab_support">
+                    <h2 class="met_color"><b>TOP AGENSTOK</b></h2>
+                    <span class="met_color3" style="font-size: 24px;">
+                        Februari 2026
+                    </span>
+                    <br><br>
+                    <div class="span12">
+                        <div class="table-responsive">
+                            <table class="table">
+                                                            </table>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <br>
+                    <a class="pull-right met_color3" href="https://hni.net/top-achievers/agen"><b>Selengkapnya</b></a>
+                </article>
+            </div>
+        </div>
+    </div>
+    <!-- Tab Content Ends -->
+    <div class="span3">
+        <div class="met_twitter_widget met_color2 met_bgcolor clearfix">
+            <h2 class="met_title_stack">FACEBOOK TERAKHIR</h2>
+            <div class="met_twitter_wrapper" style="margin-top:10px">
+                <div class="fb-page fb_iframe_widget" data-href="https://www.facebook.com/HNIOfficialPage" data-tabs="timeline" data-width="" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="adapt_container_width=true&amp;app_id=421595882525103&amp;container_width=210&amp;hide_cover=true&amp;href=https%3A%2F%2Fwww.facebook.com%2FHNIOfficialPage&amp;locale=id_ID&amp;sdk=joey&amp;show_facepile=false&amp;small_header=true&amp;tabs=timeline&amp;width="><span style="vertical-align: bottom; width: 210px; height: 271px;"><iframe name="f74b3a69d00bfe2ad" width="1000px" height="1000px" data-testid="fb:page Facebook Social Plugin" title="fb:page Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v19.0/plugins/page.php?adapt_container_width=true&amp;app_id=421595882525103&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df4544354a2be33cde%26domain%3Dhni.net%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fhni.net%252Ff593e0926909d560c%26relation%3Dparent.parent&amp;container_width=210&amp;hide_cover=true&amp;href=https%3A%2F%2Fwww.facebook.com%2FHNIOfficialPage&amp;locale=id_ID&amp;sdk=joey&amp;show_facepile=false&amp;small_header=true&amp;tabs=timeline&amp;width=" style="border: none; visibility: visible; width: 210px; height: 271px;" class=""></iframe></span></div>
+                <!--<iframe style="border: none;" src="https://hni.net/ig-hni/index.php" width="100%" height="540px"></iframe>-->
+                <!--<a class="twitter-timeline" data-height="540" data-theme="light" data-link-color="#aacc05" href="https://twitter.com/pthpai?ref_src=twsrc%5Etfw">Tweets by pthpai</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+            </div>
+        </div>
+    </div>
+    <div class="span3">
+        <h2 class="met_bold_one met_color3 met_title_with_pager met_clear_margin_top clearfix">
+            GALERI
+            <nav class="met_recent_works_pages"></nav>
+        </h2>
+        <div class="met_recent_works clearfix">
+                        <div class="met_recent_work_item">
+                <a href="https://hni.net/gallery/detail/inaugurasi-kick-off-2026" class="met_recent_work_image">
+                    <img src="https://hni.net/public/front/img/gallery/DSC02241_1600x901_20-01-26_.JPG" loading="lazy" alt="INAUGURASI KICK OFF 2026">
+                </a>
+                <div class="met_recent_work_overbox met_bgcolor">
+                    <a href="https://hni.net/gallery/detail/inaugurasi-kick-off-2026">
+                        <span class="met_color2">INAUGURASI KICK OFF 2026</span>
+                        <i class="icon-plus met_color2"></i>
+                    </a>
+                </div>
+            </div>
+                        <div class="met_recent_work_item">
+                <a href="https://hni.net/gallery/detail/grand-giat-makassar-2025" class="met_recent_work_image">
+                    <img src="https://hni.net/public/front/img/gallery/DSCF8718_1280x720_17-12-25_.JPG" loading="lazy" alt="GRAND GIAT MAKASSAR 2025">
+                </a>
+                <div class="met_recent_work_overbox met_bgcolor">
+                    <a href="https://hni.net/gallery/detail/grand-giat-makassar-2025">
+                        <span class="met_color2">GRAND GIAT MAKASSAR 2025</span>
+                        <i class="icon-plus met_color2"></i>
+                    </a>
+                </div>
+            </div>
+                        <div class="met_recent_work_item">
+                <a href="https://hni.net/gallery/detail/grand-giat-jakarta-2025" class="met_recent_work_image">
+                    <img src="https://hni.net/public/front/img/gallery/DSC03624_1280x721_15-12-25_.JPG" loading="lazy" alt="GRAND GIAT JAKARTA 2025">
+                </a>
+                <div class="met_recent_work_overbox met_bgcolor">
+                    <a href="https://hni.net/gallery/detail/grand-giat-jakarta-2025">
+                        <span class="met_color2">GRAND GIAT JAKARTA 2025</span>
+                        <i class="icon-plus met_color2"></i>
+                    </a>
+                </div>
+            </div>
+                        <div class="met_recent_work_item">
+                <a href="https://hni.net/gallery/detail/grand-giat-purbalingga-2025" class="met_recent_work_image">
+                    <img src="https://hni.net/public/front/img/gallery/ADSC07890_1200x800_08-12-25_.JPG" loading="lazy" alt="GRAND GIAT PURBALINGGA 2025">
+                </a>
+                <div class="met_recent_work_overbox met_bgcolor">
+                    <a href="https://hni.net/gallery/detail/grand-giat-purbalingga-2025">
+                        <span class="met_color2">GRAND GIAT PURBALINGGA 2025</span>
+                        <i class="icon-plus met_color2"></i>
+                    </a>
+                </div>
+            </div>
+                        <div class="met_recent_work_item">
+                <a href="https://hni.net/gallery/detail/grand-giat-lampung-2025" class="met_recent_work_image">
+                    <img src="https://hni.net/public/front/img/gallery/IMG_1755_1200x800_05-12-25_.jpg" loading="lazy" alt="GRAND GIAT LAMPUNG 2025">
+                </a>
+                <div class="met_recent_work_overbox met_bgcolor">
+                    <a href="https://hni.net/gallery/detail/grand-giat-lampung-2025">
+                        <span class="met_color2">GRAND GIAT LAMPUNG 2025</span>
+                        <i class="icon-plus met_color2"></i>
+                    </a>
+                </div>
+            </div>
+                        <div class="met_recent_work_item">
+                <a href="https://hni.net/gallery/detail/grand-giat-palu-2025" class="met_recent_work_image">
+                    <img src="https://hni.net/public/front/img/gallery/IMG_6476_1067x800_28-11-25_.jpg" loading="lazy" alt="GRAND GIAT PALU 2025">
+                </a>
+                <div class="met_recent_work_overbox met_bgcolor">
+                    <a href="https://hni.net/gallery/detail/grand-giat-palu-2025">
+                        <span class="met_color2">GRAND GIAT PALU 2025</span>
+                        <i class="icon-plus met_color2"></i>
+                    </a>
+                </div>
+            </div>
+                    </div>
+    </div>
+</div>
+        </div>
+        <style>
+    .span3 > p > a{color: #666;}
+    .span6 > a{margin-right: 10px; background-color: #333; border-radius: 100%; padding: 6px 10px;}
+    .span6 > a > i{color: #fff;}
+</style>
+<div style="z-index: -9999!important; position: relative;">
+    <img src="https://hni.net/public/front/img/list.jpg" class="img-responsive" style="width: 100%;">
+</div>
+
+    <div class="met_content" style="z-index: -9999!important;">
+        <div class="row-fluid" style="margin-top: 50px;">
+            <div class="span6">
+                
+                
+                <p><b>PT HPAI - Halal Network International (HNI)</b></p>
+                <p><strong>Head Office</strong><br>
+HNI PLAZA, Jl. Raya Kalimalang - Billy Moon, RT 03 RW 10, Pondok Kelapa, Duren Sawit, Jakarta Timur 13450<br> 
+<br>
+<strong>Leaders Office</strong><br>
+Komplek Sentra Kota Jatibening Blok F1-F5 RT001/RW003, Jatibening Baru, Pondok Gede, Kota Bekasi, Jawa Barat 17412<br></p>
+                <p>Telp : 021-8690-9600</p>
+                <p>Fax&nbsp;&nbsp; : 021-8690-6645</p>
+                <br>
+                                    <p><b>Ikuti Kami:</b></p>
+                    <br>
+                                        <a href="https://www.facebook.com/pthpai?ref=hl" target="_blank" class="met_color3 met_color_transition"><i class="fa fa-facebook"></i></a>
+                                                            <a href="https://twitter.com/pthpai" target="_blank" class="met_color3 met_color_transition"><i class="fa fa-twitter"></i></a>
+                                                            <a href="https://www.instagram.com/pthpai/?hl=en" target="_blank" class="met_color3 met_color_transition"><i class="fa fa-instagram"></i></a>
+                                                </div>
+            <div class="span3">
+                <p><b>Layanan HALO HNI</b></p>
+                <p><b><i>Tlp: Senin - Jum'at 08.00 - 17.00</i></b></p>
+                                <p><i class="fa fa-phone"></i> <a href="tel:021-8690-9600">021-8690-9600</a></p>
+                                                <p><i class="fa fa-mobile"></i> <a href="tel:+62 878-8641-6000">+62 878-8641-6000</a></p>
+                                                <p>&nbsp; <a href="tel:+62 857-7401-7000">+62 857-7401-7000</a></p>
+                                                <p>&nbsp; <a href="tel:+62 822-9930-5000">+62 822-9930-5000</a></p>
+                                <p><b><i>Email &amp; Telegram: 24 jam</i></b><br></p>
+                                <p><i class="fa fa-whatsapp"></i> <a href="https://wa.me/6285174438456" target="blank">+62 851-7443-8456</a></p>
+                                                <p><i class="fa fa-envelope"></i> <a href="mailto:crm@hni.net">crm@hni.net</a></p>
+                                                <p><a href="https://t.me/halohnibot"><i class="fa fa-telegram"></i> Telegram : halohnibot</a></p><p></p>
+                                                <p><i class="fa fa-facebook"></i> Fanpage : pthpai</p>
+                            </div>
+            <div class="span3">
+                <p><b>Menu Lainnya</b></p>
+                <ul class="menu-footer">
+                    <li><a href="https://hni.net/code-of-conduct">Kode Etik</a></li>
+                    <li><a href="https://hni.net/kht-special">KHT Spesial</a></li>
+                    <li><a href="https://hni.net/bussines-center-list">Daftar BC</a></li>
+                    <li><a href="https://hni.net/successplan3">Corporate Speaker HNI</a></li>
+                    <li><a href="https://hni.net/klasterleaderc">Klaster Leader Club</a></li>
+                    <li><a href="https://hni.net/sitemap">Sitemap</a></li>
+                </ul>
+                <p style="padding-top: 15px;font-weight: bold;">TERDAFTAR</p>
+                <ul class="menu-footer">
+                    <li><a href="https://www.apli.or.id/anggota/APLI-000041" target="_blank"><img src="https://www.apli.or.id/assets/images/img-logo-apli.svg" width="40%"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    </div>
+    <script src="https://hni.net/public/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+    <script src="https://hni.net/public/assets/global/plugins/jquery.alphanum.js" type="text/javascript"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://hni.net/public/front/js/retina.js"></script>
+    <script src="https://hni.net/public/front/js/hoverIntent.js"></script>
+    <script src="https://hni.net/public/front/js/superfish.js"></script>
+    <script src="https://hni.net/public/front/js/bootstrap.js"></script>
+    <script src="https://hni.net/public/front/js/caroufredsel.js"></script>
+    <script src="https://hni.net/public/front/js/fullscreenr.js"></script>
+    <script src="https://hni.net/public/front/js/jquery.nouislider.min.js"></script>
+    <script src="https://hni.net/public/front/js/metcreative.html5audio.js"></script>
+    <script src="https://hni.net/public/front/js/nicescroll.js"></script>
+    <script src="https://hni.net/public/front/js/jquery.dlmenu.js"></script>
+    <script src="https://hni.net/public/front/js/jquery.knob.js"></script>
+    <script src="https://hni.net/public/front/js/mobile_detector.js"></script>
+    <script src="https://hni.net/public/front/js/jquery.easing.js"></script>
+    <script src="https://hni.net/public/front/js/jquery.magnific-popup.min.js"></script>
+    
+    <script src="https://hni.net/public/js/custom.js"></script>
+    <script>
+        $('.modallogin').click(function(){
+            $('.modal-login').addClass('showlogin');
+        });
+        $('.btn-close').click(function(){
+            $('.modal-login').removeClass('showlogin');
+        });
+        $('.forgot').click(function(){
+            $('.modal-forgot').addClass('showlogin');
+        });
+        $('.btn-close').click(function(){
+            $('.modal-forgot').removeClass('showlogin');
+        });
+        $(".cumangka").numeric();
+    </script>
+    <script src="https://hni.net/public/js/sweetalert.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.locale').click(function(){
+                var locale  = $(this).data('value');
+                var token   = $("#token").val();
+
+                $.ajax({
+                    url : "https://hni.net/language",
+                    type : 'POST',
+                    data :{locale:locale, _token:token},
+                    dataType : 'JSON',
+                    success: function(data){},
+                    error: function(data){},
+                    beforeSend: function(){},
+                    complete: function(data){
+                        window.location.reload(true);
+                    },
+                });
+            });
+        });
+        $('.dropdown').click(function(){
+            $('.dropdown-menu').toggle();
+        });
+        if ('loading' in HTMLImageElement.prototype) {
+            const images = document.querySelectorAll("img.lazyload");
+            images.forEach(img => {
+              img.src = img.dataset.src;
+          });
+        } else {
+          let script = document.createElement("script");
+          script.async = true;
+          script.src ="https://hni.net/public/front/js/lazysizes.min.js";
+          document.body.appendChild(script);
+        }
+        function getLocation() {
+            if (navigator.geolocation) {
+                return new Promise((resolve, reject) => {
+                    navigator.geolocation.getCurrentPosition(function (position) {
+                        resolve([position.coords.latitude, position.coords.longitude]);
+                    }, function () {
+                        resolve('UNKNOWN');
+                    });
+                })
+            }
+            return 'UNKNOWN';
+        }
+
+        getLocation()
+            .then(res => {
+                document.getElementById('location').value = (Array.isArray(res) ? res.join(', ') : res)
+                 document.getElementById('m-location').value = (Array.isArray(res) ? res.join(', ') : res)
+            });
+
+    </script>
+    <!--<script src="https://hni.net/public/js/sweetalert.js"></script>-->
+<script>
+    </script>    
+
+<div id="ascrail2000" style="width: 12px; z-index: 9000; position: fixed; top: 0px; height: 100%; right: 0px;"><div style="position: relative; top: 0px; float: right; width: 10px; height: 277px; background-color: rgb(24, 173, 182); border: 1px solid rgb(126, 138, 150); background-clip: padding-box; border-radius: 10px;"></div></div><div id="ascrail2000-hr" style="height: 13px; z-index: 9000; position: fixed; left: 0px; width: 100%; bottom: 0px; display: none;"><div style="position: relative; top: 0px; height: 10px; width: 1366px; background-color: rgb(24, 173, 182); border: 1px solid rgb(126, 138, 150); background-clip: padding-box; border-radius: 10px;"></div></div><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div></body></html>

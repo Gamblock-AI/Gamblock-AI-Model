@@ -19,11 +19,27 @@ Gamblock-AI uses a **Hybrid Analysis** detection method combining:
 - **Rule-Based System (Rule Weight = 0.25)**: Evaluates explicit keyword patterns using `gambling_keywords.json`.
 - **Hybrid Decision Threshold**: `hybrid_score = (0.75 * ml_probability) + (0.25 * rule_score)`. If `hybrid_score >= 0.4`, the site is classified as gambling (`judi`), triggering local blocking and Pattern Interrupt interventions.
 
+Client authorities add an evidence gate after calculating the artifact score:
+explicit URL/content rules remain decisive, while model-only blocking requires
+committed page content whose text-only score is independently suspicious. URL
+shape features alone are supporting evidence and must not block opaque links.
+
 Serialized artifacts:
 - `models/gamblock_logistic_regression.onnx`: Exported ONNX model for on-device inference on Android and Windows clients.
 - `models/gamblock_logistic_regression.pkl`: Python Scikit-Learn pipeline for training and offline validation.
 - `models/gambling_keywords.json`: Keyword ruleset for the rule-based component.
 - `models/gamblock_hybrid_metadata.json`: Canonical parameters, feature columns, weights, thresholds, and benchmark metrics.
+- `models/gamblock_training_metadata.json`: Metadata emitted by the training notebook.
+
+## Repository layout
+
+- `notebooks/hybrid_model_training.ipynb`: Reproducible authoring notebook.
+- `data/raw/`: Source CSV files and captured HTML/images grouped by label.
+- `data/processed/`: Clean dataset and `splits/` train/test outputs.
+- `models/`: Stable deployment artifacts and model metadata.
+- `reports/evaluation/`: Classification report, confusion matrix, and predictions.
+- `reports/tuning/`: Hyperparameter and hybrid threshold search outputs.
+- `docs/integration/`: Client integration contract.
 
 ## Privacy Boundary
 

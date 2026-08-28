@@ -1,0 +1,583 @@
+<html><head>
+    <title>Lucky Spin Berhadiah PAJAKTOTO Lucky Spin</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <meta name="description" content="Lucky Spin Berhadiah">
+    <link rel="icon" class="icon-favicon" href="https://pajaktotospin.now/icons/LOGO-APK-apkpajak.png">
+
+    <link rel="stylesheet" href="https://pajaktotospin.now/guest/maxcdn/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://pajaktotospin.now/guest/webfonts/all.css">
+    <link rel="stylesheet" type="text/css" href="https://pajaktotospin.now/guest/css/website.css">
+
+    <script src="https://pajaktotospin.now/guest/js/jquery.min.js"></script>
+    <script src="https://pajaktotospin.now/guest/maxcdn/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="https://pajaktotospin.now/guest/js/Winwheel.js"></script>
+    <script src="https://pajaktotospin.now/guest/js/TweenMax.min.js"></script>
+</head>
+
+<body class="baca_bg" style="background-position: 10% 33%; background-size: cover; background-repeat: no-repeat; background-color: black;"><img class="background_desktop" style="width: 100%; height: 100vh; position: fixed;" src="https://pajaktotospin.now/icons/BACKGROUND PAJAKTOTO.jpg"><div class="row"><div class="col-md-6"><div class="container_spinner"><canvas class="inner" style="width: 440px; height: 440px;" id="canvas" width="620" height="620"><p style="color: white" align="center">Sorry, your browser doesn't support canvas. Please try another.</p></canvas><img id="lingkaran" class="inner" style="width: 420px; margin-bottom:0px" src="https://pajaktotospin.now/icons/LUCKY WHEEL ASSET.png"></div></div><div class="col-md-6"><table class="main"><tbody><tr><td align="center" valign="center"><div class="margin-box"><img class="logo-web" src="https://pajaktotospin.now/icons/PAJAXSPIN.PNG"><h2 style="color: white; margin: 27px;"><b>Masukkan Kode Tiket</b></h2><input type="text" name="voucher" placeholder="Kode Tiket"><small id="error_message_voucher" class="text-warning form-label"></small><div class="row"><div class="col-md-12" style="margin-top: 20px;"><button type="submit" name="start" class="submit" onclick="startSpin()"><b>MULAI</b></button></div></div><div class="row"><div class="col-md-12" style="margin-top: 20px;"><button type="submit" name="start" class="submit" onclick="daftar()"><b>LOGIN &amp; DAFTAR</b></button></div></div><div class="row"><div class="col-md-12" style="margin-top: 20px;"><button type="button" name="start" class="submit" onclick="liveChat()"><b>LIVECHAT</b></button></div></div></div></td></tr></tbody></table></div></div>
+<script>
+    window._lc = window._lc || {};
+    window.__lc.license = 17323275;
+    (function (n, t, c) {
+        function i(n) {
+            return e.h ? e._h.apply(null, n) : e._q.push(n)
+        }
+
+        var e = {
+            _q: [],
+            _h: null,
+            _v: "2.0",
+            on: function () {
+                i(["on", c.call(arguments)])
+            },
+            once: function () {
+                i(["once", c.call(arguments)])
+            },
+            off: function () {
+                i(["off", c.call(arguments)])
+            },
+            get: function () {
+                if (!e._h) throw new Error("[LiveChatWidget] You can't use getters before load.");
+                return i(["get", c.call(arguments)])
+            },
+            call: function () {
+                i(["call", c.call(arguments)])
+            },
+            init: function () {
+                var n = t.createElement("script");
+                n.async = !0, n.type = "text/javascript", n.src = "https://cdn.livechatinc.com/tracking.js", t.head.appendChild(n)
+            }
+        };
+        !n._lc.asyncInit && e.init(), n.LiveChatWidget = n.LiveChatWidget || e
+    }(window, document, [].slice))
+</script>
+
+<canvas id="my-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: none;"></canvas>
+<section class="container">
+    <div id="popup-container-ads" class="popup-container">
+        <div id="popup-body" class="popup-body popup-container-ads" style="width: 300px; height: 72px;">
+            <div class="popup-close" onclick="close_popup_start()">
+                <center><b>x</b></center>
+            </div>
+            <h6 style="text-align: center; padding: 15px;">SELAMAT DATANG LUCKY SPIN <br> SPESIAL &amp; TERBESAR DI INDONESIA</h6>
+        </div>
+    </div>
+
+    <div id="popup-container-win" class="popup-container" style="display: none;">
+        <div id="popup-body" class="popup-body" style="height: 563px; background: none;">
+            <div class="popup-close" onclick="location.reload()">
+                <center><b>x</b></center>
+            </div>
+            <div id="popup-header" class="popup-header" style="background: none;">
+                <center>
+                    <h5 id="title-popup-win" style="padding: 10px;"><b>Anda Mendapatkan!!!</b></h5>
+                </center>
+            </div>
+
+            <div style="height: 91.5%;width: 100%; padding: 20px 0px;">
+                <table style="width: 100%;">
+                    <tbody><tr>
+                        <td align="center" style="padding: 20px 0px;">
+                            <img id="item-image" src="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" style="color: #f8df03;">
+                            <h3 id="item-value">IDR 18.000,00</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" style="padding: 15px 30px; color: #f8df03;">
+                            <h6 id="item-description" style="color: white; margin-bottom: 10px;">Selamat anda
+                                mendapatkan hadiah gadget ipad pro. Silahkan anda Screenshot sebagai bukti
+                                kemenangan anda!</h6>
+
+                            <h6 style="margin: 0;">USERNAME : <span id="voucher-username">jojo_cornor</span></h6>
+                            <h6 style="margin: 0;">KODE TIKET : <span id="voucher-code">101010</span></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" style="padding: 10px 0px;">
+                            <a id="link_claim" target="_blank" class="claimed"><b>KLAIM SEKARANG</b></a>
+                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup-container-history" class="popup-container" style="display: none;">
+        <div id="popup-body" class="popup-body" style="height: 563px;">
+            <div class="popup-close" onclick="close_popup_history()">
+                <center><b>x</b></center>
+            </div>
+            <div id="popup-header" class="popup-header">
+                <center>
+                    <h6 id="title-popup-win" style="padding: 10px;"><b>60 Daftar Riwayat Spin Terakhir</b></h6>
+                </center>
+            </div>
+
+            <div style="overflow-y: scroll;height: 91.5%;width: 100%;">
+                <div style="padding: 5px;">
+                    <table style="width: 100%;">
+                        <thead>
+                        <tr>
+                            <th align="center" valign="center" style="width: 10%; text-align: center;">NO</th>
+                            <th align="center" valign="center" style="width: 50%;">USERNAME</th>
+                            <th align="center" valign="center" style="width: 40%; text-align: center;">WINNER
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody id="history-container">
+                        <tr>
+                            <td style="width: 10%; padding: 5px; text-align: center;">1</td>
+                            <td style="width: 50%; padding: 5px;">Username</td>
+                            <td style="width: 40%; padding: 5px; text-align: center;">IDR 18.000,00</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://pajaktotospin.now/guest/js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://pajaktotospin.now/guest/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://pajaktotospin.now/guest/js/website.js"></script>
+<!-- Importing generator -->
+<script type="text/javascript" src="https://pajaktotospin.now/vendors/confetti-js/dist/index.min.js"></script>
+<!-- Starting site logic -->
+<script type="text/javascript" src="https://pajaktotospin.now/vendors/confetti-js/site/site.js"></script>
+
+<script>
+    var data_winner = null,
+        theWheel, claim_message = 'Halo bossku, saya dengan ID username_ini dan dengan voucher voucher_ini ingin klaim hadiah item_ini item_value bossku';
+    let audio;
+    let segments;
+    let lengthWinner;
+
+    $(document).ready(function () {
+        taikbabi();
+    });
+
+    segments = [
+        {
+            "text": "1.000.000",
+            "image": "/hadiah/wheel-ItemImage1-20220917180236.png",
+            "fillStyle": "#fdc147"
+        },
+        {
+            "text": "50.000",
+            "image": "/hadiah/wheel-ItemImage2-20220917180236.png",
+            "fillStyle": "#ffffff"
+        },
+        {
+            "text": "500.000",
+            "image": "/hadiah/wheel-ItemImage3-20220917180236.png",
+            "fillStyle": "#fdc147"
+        },
+        {
+            "text": "Zonk",
+            "image": "/hadiah/asdf.png",
+            "fillStyle": "#ffffff"
+        },
+        {
+            "text": "10.000",
+            "image": "/hadiah/wheel-ItemImage5-20220917180236.png",
+            "fillStyle": "#fdc147"
+        },
+        {
+            "text": "100.000",
+            "image": "/hadiah/wheel-ItemImage6-20220917180236.png",
+            "fillStyle": "#ffffff"
+        },
+        {
+            "text": "20.000",
+            "image": "/hadiah/wheel-ItemImage7-20220917180236.png",
+            "fillStyle": "#fdc147"
+        },
+        {
+            "text": "IP 14 PRO MAX",
+            "image": "/hadiah/whee-ItemImage8-20220917180236.png",
+            "fillStyle": "#ffffff"
+        },
+        {
+            "text": "EARBUDS",
+            "image": "/hadiah/earbuds (1).png",
+            "fillStyle": "#fdc147"
+        },
+        {
+            "text": "EMAS ANTAM",
+            "image": "/hadiah/ANTAM.png",
+            "fillStyle": "#ffffff"
+        }
+    ];
+
+
+    async function taikbabi() {
+        try {
+            const response = await $.ajax({
+                url: `/api/prize/getspinner`,
+                method: 'GET',
+                dataType: 'JSON',
+            });
+
+            if (response) {
+                segments = response.data;
+                lengthWinner = response.data.length;
+            }
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    }
+
+    $(document).ready(function () {
+        $.ajax({
+            url: '/api/user/loadIcons',
+            type: 'GET',
+            cache: true,
+            success: function (response) {
+                $('body').css('background-image', 'url(' + response.data.bg + ')')
+                $('img.background_desktop').attr('src', response.data.bg)
+                $('img.logo-mobile').attr('src', response.data.icon);
+                $('img.logo-web').attr('src', response.data.icon);
+                $('img#lingkaran').attr('src', response.data.lingkaran);
+                $('.icon-favicon').attr('href', response.data.favicon);
+                audio = new Audio(response.data.music);
+                // $('.icon-favicon').attr('href', response.data.icon);
+            }
+        })
+    });
+
+    // 		console.log(segments);
+
+
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        console.log("ajg2");
+        var v_mobile = '<table style="margin-left: 0px;">' +
+            '<tr>' +
+            '<td align="center" valign="center">' +
+            '<img class="logo-mobile">' +
+            '</td>' +
+            '</tr>' +
+            '<tr>' +
+            '<td align="center" valign="center">' +
+            '<div class="container_spinner_mobile">' +
+            '<canvas class="inner"style="width: 100%;" id="canvas" width="620" height="620">' +
+            '<p style="color: white" align="center">Sorry, your browser doesn\'t support canvas. Please try another.</p>' +
+            '</canvas>' +
+            '<img id="lingkaran" class="inner" style="width: 97%; z-index:999">' +
+            '</div>' +
+            '</td>' +
+            '</tr>' +
+            '<tr>' +
+            '<td align="center" valign="center">' +
+            '<div class="margin-box_mobile">' +
+            '<h2 style="color: white; margin: 7px;font-size: 23px;"><b>Masukkan Kode Tiket</b></h2>' +
+            '<input type="text" name="voucher" placeholder="Kode Tiket">' +
+            '<small id="error_message_voucher" class="text-warning form-label"></small>' +
+            '<div class="row">' +
+            '<div class="col-md-6" style="margin-top: 20px;">' +
+            '<button type="submit" name="start" class="submit" onclick="startSpin()"><b>MULAI</b></button>' +
+            '</div>' +
+            // '<div class="col-md-6" style="margin-top: 20px;">' +
+            // '<button type="submit" name="history" class="submit" onclick="getHistory()"><b>RIWAYAT</b></button>' +
+            // '</div>' +
+            '</div>' +
+            '<div class="row">' +
+            '<div class="col-md-12" style="margin-top: 20px;">' +
+            '<button type="submit" name="start" class="submit" onclick="daftar()"><b>LOGIN & DAFTAR</b></button>' +
+            '</div>' +
+            '</div>' +
+            '<div class="row">' +
+            '<div class="col-md-12" style="margin-top: 20px;">' +
+            '<button type="button" name="start" class="submit" onclick="liveChat()"><b>LIVECHAT</b></button>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</td>' +
+            '</tr>' +
+            '</table>';
+        $("body").prepend(v_mobile);
+        setSpinner();
+    } else {
+        var v_desktop = '<img class="background_desktop" style="width: 100%; height: 100vh; position: fixed;"/>' +
+            '<div class="row">' +
+            '<div class="col-md-6">' +
+            '<div class="container_spinner">' +
+            '<canvas class="inner"style="width: 440px; height: 440px;" id="canvas" width="620" height="620">' +
+            '<p style="color: white" align="center">Sorry, your browser doesn\'t support canvas. Please try another.</p>' +
+            '</canvas>' +
+            '<img id="lingkaran" class="inner" style="width: 420px; margin-bottom:0px">' +
+            '</div>' +
+            '</div>' +
+            '<div class="col-md-6">' +
+            '<table class="main">' +
+            '<tr>' +
+            '<td align="center" valign="center">' +
+            '<div class="margin-box">' +
+            '<img class="logo-web">' +
+            '<h2 style="color: white; margin: 27px;"><b>Masukkan Kode Tiket</b></h2>' +
+            '<input type="text" name="voucher" placeholder="Kode Tiket">' +
+            '<small id="error_message_voucher" class="text-warning form-label"></small>' +
+            '<div class="row">' +
+            '<div class="col-md-12" style="margin-top: 20px;">' +
+            '<button type="submit" name="start" class="submit" onclick="startSpin()"><b>MULAI</b></button>' +
+            '</div>' +
+            '</div>' +
+            '<div class="row">' +
+            '<div class="col-md-12" style="margin-top: 20px;">' +
+            '<button type="submit" name="start" class="submit" onclick="daftar()"><b>LOGIN & DAFTAR</b></button>' +
+            '</div>' +
+            '</div>' +
+            '<div class="row">' +
+            '<div class="col-md-12" style="margin-top: 20px;">' +
+            '<button type="button" name="start" class="submit" onclick="liveChat()"><b>LIVECHAT</b></button>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</td>' +
+            '</tr>' +
+            '</table>' +
+            '</div>' +
+            '</div>';
+
+        $("body").prepend(v_desktop);
+        setSpinner();
+    }
+
+
+    async function setSpinner() {
+        await taikbabi();
+        theWheel = new Winwheel({
+            'numSegments': segments.length,
+
+            'drawMode': 'image',
+            'drawText': false,
+            'textFontSize': 16,
+            'textOrientation': 'curved',
+            'textAlignment': 'inner',
+            'textMargin': 90,
+            'textFontFamily': 'monospace',
+            'textStrokeStyle': 'black',
+            'textLineWidth': 3,
+            'textFillStyle': 'white',
+            'pointerAngle': 2,
+            'drawMode': 'segmentImage',
+            'segments': segments,
+
+
+            // 'outerRadius': 230,
+            // 'drawText': true,
+            // 'textFontSize':15,
+            // 'textMargin': 30,
+            // 'textFontFamily': 'arial',
+            // 'strokeStyle': 'transparent',
+            // 'textLineWidth': 0,
+            // 'textFillStyle': 'white',
+            // 'textAlignment'  : 'center',
+            // 'pointerAngle': 2,
+            // 'segments': segments,
+            'animation': {
+                'type': 'spinToStop',
+                'duration': 7,
+                'spins': 8,
+                'callbackSound': playSound,
+                'callbackFinished': dialodWinner
+            }
+        });
+    }
+
+    function startSpin() {
+        var voucher_val = $("input[name=voucher]").val();
+        if (voucher_val.length <= 0) {
+            $("#error_message_voucher").html("Kode Tiket tidak boleh kosong!");
+            return;
+        }
+
+        $("button[name=start]").attr('disabled', 'disabled');
+        $("button[name=history]").attr('disabled', 'disabled');
+        $("#error_message_voucher").html('sedang memeriksa kode tiket..');
+        $.ajax({
+            url: '/api/reward/getbytoken/' + voucher_val,
+            type: 'get',
+            contentType: 'application/json',
+            success: function (data, textStatus, jQxhr) {
+                var data = data['data'];
+                $("#error_message_voucher").html(data['message']);
+
+                if (data['status_code'] == 200) {
+                    data_winner = data;
+
+                    setTimeout(function () {
+                        theWheel.stopAnimation(false);
+                        theWheel.rotationAngle = 0;
+                        theWheel.draw();
+
+                        theWheel.animation.spins = 10;
+                        theWheel.animation.stopAngle = theWheel.getRandomForSegment(data['ordered_prize_id']);
+
+                        theWheel.startAnimation();
+                    }, 200);
+                } else {
+                    $("#error_message_voucher").html(data['message']);
+                    $("button[name=start]").removeAttr('disabled');
+                    $("button[name=history]").removeAttr('disabled');
+                }
+            },
+            error: function (jqXhr, textStatus, errorThrown) {
+                console.log(errorThrown);
+            }
+        });
+    }
+
+    function liveChat() {
+        window.open('https://direct.lc.chat/12463959');
+    }
+
+    function daftar() {
+        window.open('https://pajaktotoslot.com/?content=register');
+    }
+
+    function dialodWinner(indicatedSegment) {
+        if (data_winner != null) {
+
+            $("#item-image").attr("src", "https://pajaktotospin.now/hadiah" + "/" + data_winner['prize_image']);
+            $("#item-value").html(data_winner['prize_name']);
+            $("#voucher-username").html(data_winner['username']);
+            $("#voucher-code").html(data_winner['code']);
+            $("#item-description").html(data_winner['prize_description']);
+
+            claim_message = claim_message.replaceAll('username_ini', data_winner['username']);
+            claim_message = claim_message.replaceAll('voucher_ini', data_winner['code']);
+            claim_message = claim_message.replaceAll('item_ini', data_winner['prize_name']);
+            claim_message = claim_message.replaceAll('item_value', data_winner['prize_name']);
+
+
+            var link_claim = "https://wa.me/+6283879844955";
+            $("#link_claim").attr('href', link_claim);
+
+            var confettiElement = document.getElementById('my-canvas');
+            var confettiSettings = {
+                target: confettiElement
+            };
+            var confetti = new ConfettiGenerator(confettiSettings);
+            confetti.render();
+
+            $("#my-canvas").css("display", "block");
+            $("#popup-container-win").fadeIn(1000);
+        } else {
+        }
+    }
+
+    function getHistory() {
+        $("#error_message_voucher").html("Mohon Tunggu...");
+
+        $("button[name=history]").attr('disabled', 'disabled');
+        $.ajax({
+            url: '/api/reward/history',
+            type: 'get',
+            contentType: 'application/json',
+            success: function (data, textStatus, jQxhr) {
+                var data = data["data"];
+                $("#error_message_voucher").html("");
+                $("#history-container").html("");
+
+                var str = '';
+                var no = 0;
+                for (var i = 0; i < data.length; i++) {
+                    no += 1;
+                    str += '<tr>' +
+                        '<td style="width: 10%; padding: 5px; text-align: center;">' + no + '</td>' +
+                        '<td style="width: 50%; padding: 5px;">' + data[i]['username'] + '</td>' +
+                        '<td style="width: 40%; padding: 5px; text-align: center;">' + data[i]['prize_name'] + '</td>' +
+                        '</tr>';
+                }
+
+                $("#history-container").html(str);
+                $("#popup-container-history").fadeIn(1000);
+            },
+            error: function (jqXhr, textStatus, errorThrown) {
+                console.log(errorThrown);
+            }
+        });
+    }
+
+    function playSound() {
+        audio.pause();
+        audio.currentTime = 0;
+        audio.loop = false;
+        audio.play();
+    }
+
+    function close_popup_winner() {
+        // data_winner = null;
+        // audio.src = "https://www.luckygems.cc/assets-website/musik.mp3";
+        // audio.loop = true;
+        // audio.play();
+
+        $("#error_message_voucher").html("");
+        $("input[name=voucher]").val("");
+        $("button[name=start]").removeAttr('disabled');
+        $("button[name=history]").removeAttr('disabled');
+        $("#popup-container-win").fadeOut(500);
+        $("#my-canvas").css("display", "none");
+
+        theWheel.animation.spins = 2;
+        theWheel.animation.stopAngle = 15;
+
+        theWheel.startAnimation();
+    }
+
+    function close_popup_history() {
+        $("button[name=start]").removeAttr('disabled');
+        $("button[name=history]").removeAttr('disabled');
+        $("#popup-container-history").fadeOut(200);
+    }
+
+    function close_popup_start() {
+        $("#popup-container-ads").fadeOut(500);
+
+        theWheel.animation.spins = 2;
+        theWheel.animation.stopAngle = 15;
+
+        theWheel.startAnimation();
+    }
+
+    // function testing() {
+    // 	var stopAt = theWheel.getRandomForSegment(5);
+    // 	setTimeout(function () {
+    // 		theWheel.stopAnimation(false);
+    // 		theWheel.rotationAngle = 0;
+    // 		theWheel.draw();
+
+    // 		theWheel.animation.spins = 10;
+    // 		theWheel.animation.stopAngle = stopAt;
+
+    // 		theWheel.startAnimation();
+    // 	}, 200);
+
+    // }
+
+    // function bacaHasil(){
+    // 	var link_claim = "https://wa.me/6281287883514?text=" + claim_message;
+    // 		$("#link_claim").attr('href', link_claim);
+
+    // 		var confettiElement = document.getElementById('my-canvas');
+    // 		var confettiSettings = { target: confettiElement };
+    // 		var confetti = new ConfettiGenerator(confettiSettings);
+    // 		confetti.render();
+
+    // 		$("#my-canvas").css("display", "block");
+    // 		$("#popup-container-win").fadeIn(1000);
+    // }
+</script>
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;2cd61f2f0034408abebf46d053fedb6c&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+</body></html>

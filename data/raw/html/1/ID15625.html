@@ -1,0 +1,888 @@
+<html lang="en" style="font-size: 100px;"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+    <title></title>
+        <link rel="stylesheet" href="../css/swiper-4.2.2.min.css">
+    <link rel="stylesheet" href="../css/date.select.css">
+    <link rel="stylesheet" href="../css/kefu/index.1.0.1.css?20260412033308">
+<style type="text/css">
+    @font-face {
+        font-family: 'Eras';     /* 杩欎釜鍚嶅瓧鍙互鑷繁瀹氫箟 */
+        src:url('../css/kefu/Eras-Bold-ITC.ttf')  format('truetype'); /* Safari, Android, iOS */
+        font-weight: bold;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Eras-Bold';
+        src: url('../css/kefu/Eras-Bold-ITC.ttf') format('truetype'); /* Safari, Android, iOS */
+        font-weight: bold;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'NewEras';
+        src: url('../css/kefu/NewEras.ttf') format('truetype'); /* Safari, Android, iOS */
+        font-weight: bold;
+        font-style: normal;
+    }
+
+    .text{
+        background-image:url('../images/kefu/icon.png'); background-repeat: no-repeat;
+    }
+    .list-top{
+        background-image:url('../images/kefu/list-top.png'); background-repeat: no-repeat; opacity: .5;
+    }
+    .item{
+        background-image:url('../images/kefu/list-item.png'); background-repeat: no-repeat;
+    }
+
+    .swiper-pagination-bullet{
+        background-image:url('../images/kefu/swiper-page.png'); background-repeat: no-repeat;
+    }
+
+    .swiper-pagination-bullet-active{
+        background-image:url('../images/kefu/swiper-page-active.png'); background-repeat: no-repeat;
+    }
+
+    .form_01{
+        background-image:url('../images/kefu/form_01.png'); background-repeat: no-repeat;
+    }
+    .upload{
+        background-image:url('../images/kefu/form_02.png'); background-repeat: no-repeat;
+    }
+
+    .form_03_value{
+        background-image:url('../images/kefu/form_01.png'); background-repeat: no-repeat;
+    }
+    .form_06_value{
+        background-image:url('../images/kefu/form_01.png'); background-repeat: no-repeat;
+    }
+
+    .form_03_value::after{
+        background-image:url('../images/kefu/select-icon.png'); background-repeat: no-repeat;
+    }
+    .form_06_value::after{
+        background-image:url('../images/kefu/select-icon.png'); background-repeat: no-repeat;
+    }
+    .form_04{
+        background-image:url('../images/kefu/form_04.png'); background-repeat: no-repeat;
+    }
+    .form_05{
+        background-image:url('../images/kefu/form_03.png'); background-repeat: no-repeat;
+    }
+    .form_07{
+        background-image:url('../images/kefu/form_03.png'); background-repeat: no-repeat;
+    }
+    .feedback-text{
+        background-image:url('../images/kefu/shadow-02.png'); background-repeat: no-repeat;
+    }
+    .feedback-text2{
+        background-image:url('../images/kefu/shadow.png'); background-repeat: no-repeat;
+    }
+    .radio{
+        background-image:url('../images/kefu/form_04.png'); background-repeat: no-repeat;
+    }
+
+    .container {
+        min-height: 13.59rem;
+        overflow-x: hidden;
+    }
+
+    .main {
+        margin: .1rem auto;
+        width: 6.96rem;
+        height: 95%;
+    }
+    .main .container{
+        width: 100%;
+        height: 98%;
+        background: url(../images/kefu/new2024/bg_index.png) no-repeat;
+        background-size: 100% 100%;
+    }
+    .feedback > div {
+        margin-top: 0;
+    }
+    .tab-top{
+        position: relative;
+        top: .02rem;
+        left: .02rem;
+        z-index: 2;
+    }
+
+    .tab-top ul {
+        height: .66rem;
+    }
+
+    .tab-top ul li {
+        width: 3.45rem;
+        height: .73rem;
+        color: #9f693e;
+        line-height: .64rem;
+        -webkit-text-shadow: 0 .02rem 0 #FCF7A7;
+        text-shadow: 0 .02rem 0 #FCF7A7;
+        background: url("../images/kefu/new2024/bg_tab_top.png") no-repeat;
+        background-size: 100% 100%;
+    }
+    .tab-top ul li:last-of-type{
+        margin-left: .02rem;
+        background-image: url("../images/kefu/new2024/bg_tab_top_02.png")
+    }
+
+    .tab-top ul li.idle {
+        color: #a55c1c;
+        -webkit-text-shadow: 0 .02rem 0 #FFFF5F;
+        text-shadow: 0 .02rem 0 #FFFF5F;
+        background-image: url("../images/kefu/new2024/bg_tab_top_active.png");
+    }
+
+    .index_01, .index_02 {
+        position: relative;
+        margin: .55rem auto;
+        width: 4.24rem;
+        height: 4.03rem;
+    }
+    .index_01{
+        margin-top: 30%;
+    }
+
+    .index_02 .tag {
+        position: absolute;
+        top: -.05rem;
+        right: -.02rem;
+        width: 1.12rem;
+        height: 1.22rem;
+        background: url("../images/kefu/new2024/ico_vip.png") no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .index_02 .tag_en {
+        position: absolute;
+        top: -.05rem;
+        right: -.02rem;
+        width: 1.12rem;
+        height: 1.22rem;
+        background: url("../images/kefu/new2024/ico_vip_en.png") no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .index_02 .online-time {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        font-size: .24rem;
+        font-weight: bold;
+        color: #814f0e;
+        -webkit-text-shadow: 0 .01rem 0 #FFDB49;
+        text-shadow: 0 .01rem 0 #FFDB49;
+    }
+
+    .text {
+        background: none
+    }
+
+    .upload-item .btn-close {
+        position: absolute;
+        top: .1rem;
+        right: .1rem;
+        width: .28rem;
+        height: .28rem;
+        background: url("../images/kefu/deletedImageNew.png") no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .feedback .feedback-text {
+        display: flex;
+        display: -moz-flex;
+        margin: .1rem auto;
+        padding: 0 .3rem;
+        width: 6.85rem;
+        height: 1.4rem;
+        background-image: url("../images/kefu/shadow-02_v2.png");
+        -webkit-flex-flow: column;
+        flex-flow: column;
+        -webkit-justify-content: center;
+        justify-content: center;
+        font-size: .22rem;
+        box-sizing: border-box;
+    }
+
+    .form_content {
+        margin: 0 auto;
+        padding: .15rem .25rem;
+        width: 6.23rem;
+        height: 8.45rem;
+        background: url("../images/kefu/bg_form.png") no-repeat;
+        background-size: 100% 100%;
+        box-sizing: border-box;
+    }
+
+    .feedback span.title {
+        display: block;
+        width: 100%;
+        font-size: .2rem;
+        color: #b86d49;
+        margin-right: .1rem;
+        padding-left: .2rem;
+        vertical-align: middle;
+        text-align: left;
+        background: url("../images/kefu/ico_title.png") no-repeat left center;
+        background-size: .15rem .15rem;
+    }
+
+    .thickdiv {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        border: 0 none;
+        opacity: .5;
+        filter: alpha(opacity=50);
+        z-index: 105
+    }
+
+    .form_01,
+    .form_03,
+    .form_06,
+    .form_07,
+    .form_05 {
+        margin-top: .05rem;
+        width: 100%;
+        height: .7rem;
+        background: #E6C89F;
+        box-shadow: 0 .05rem 0 #DDB98C inset;
+        -webkit-border-radius: .16rem;
+        border-radius: .16rem;
+        color: #A96631;
+    }
+
+    .upload-content {
+        display: flex;
+        display: -webkit-flex;
+        margin-top: .05rem;
+    }
+
+    .upload-item {
+        margin-right: .1rem;
+        width: 49%;
+    }
+
+    .upload-item .upload {
+        position: relative;
+        width: 2.8rem;
+        height: 1.05rem;
+        background: #E6C89F url("../images/kefu/form_02_v2.png") no-repeat center .1rem;
+        background-size: .64rem .64rem;
+        box-shadow: 0 .05rem 0 #DDB98C inset;
+        -webkit-border-radius: .1rem;
+        border-radius: .1rem;
+    }
+
+    .upload-item .tips-text {
+        position: absolute;
+        bottom: .1rem;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        color: #a96631;
+    }
+
+    .feedback div.right-box {
+        margin-top: .1rem;
+        float: none;
+        width: 100%;
+        text-align: center;
+        color: #429784;
+        font-size: .26rem;
+        text-decoration: underline;
+    }
+
+    .feedback .form_content > div {
+        position: relative;
+        margin-top: .1rem;
+    }
+
+    .form_03_value,
+    .form_06_value {
+        background: none;
+        width: 100%;
+        height: 100%;
+        line-height: .7rem;
+        color: #A96631;
+    }
+
+    .form_06_item {
+        display: flex;
+        display: -webkit-flex;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+    }
+
+    .form_06_item .form_06:first-of-type {
+        width: 68%;
+    }
+
+    .form_06_item .form_06:last-of-type {
+        width: 30%;
+    }
+
+    .form_06_value {
+        padding: 0 .2rem;
+        text-align: left;
+        box-sizing: border-box;
+    }
+
+    .form_03_value::after,
+    .form_06_value::after {
+        top: .03rem;
+        right: .03rem;
+        width: .64rem;
+        height: .64rem;
+        background: url("../images/kefu/select-icon_v2.png") no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .feedback-text2,
+    .feedback .feedback-text2 {
+        margin-top: .2rem;
+        width: 6.85rem;
+        height: .87rem;
+        background-image: url("../images/kefu/shadow_v2.png")
+    }
+
+    .warning {
+        position: absolute;
+        top: 50%;
+        right: .2rem;
+        padding: 0;
+        width: .45rem;
+        height: .45rem;
+        background: url("../images/kefu/ico_error.png") no-repeat;
+        background-size: 100% 100%;
+        -webkit-transform: translateY(-20%);
+        transform: translateY(-20%);
+    }
+
+    .warning span {
+        position: absolute;
+        top: -.7rem;
+        left: -2.7rem;
+        width: 3.5rem;
+        height: .63rem;
+        background: url("../images/kefu/bg_erroe_msg.png") no-repeat;
+        text-align: center;
+        line-height: .5rem;
+        font-size: .24rem;
+        color: #f3644f;
+        white-space: nowrap;
+        background-size: 100% 100%;
+    }
+
+    .pup-inquiry {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 5.6rem;
+        height: 4.25rem;
+        background: url("../images/kefu/new2024/bg_tips.png") no-repeat;
+        background-size: 100% 100%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        border: none;
+        z-index: 106;
+    }
+
+    .pup-inquiry .btn-close {
+        position: absolute;
+        top: -0;
+        right: -.1rem;
+        width: .54rem;
+        height: .55rem;
+        background: url("../images/kefu/new2024/btn_close.png") no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .pup-inquiry .text-content {
+        display: flex;
+        display: -webkit-flex;
+        height: 1.8rem;
+        justify-content: center;
+        -webkit-justify-content: center;
+        align-items: center;
+        -webkit-align-items: center;
+        color: #eda845;
+        font-size: .26rem;
+        padding: 0 .5rem;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .pup-inquiry .btn-list {
+        display: flex;
+        display: -webkit-flex;
+        -webkit-justify-content: center;
+        justify-content: center;
+    }
+
+    .pa {
+        position: absolute
+    }
+
+    .pr {
+        position: relative
+    }
+
+    .btn-green,
+    .btn-yellow {
+        margin: 0 -.05rem;
+        width: 2.28rem;
+        height: .81rem;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        font-family: 'Eras-Bold';
+        color: #2D8C09;
+        font-size: .38rem;
+        text-align: center;
+        line-height: .7rem;
+        -webkit-transform: scale(.85);
+        transform: scale(.85);
+    }
+
+    .btn-green {
+        background-image: url("../images/kefu/new2024/btn_green.png");
+    }
+
+    .btn-green span {
+        left: 0;
+        width: 100%;
+        text-align: center;
+        color: transparent;
+        background: linear-gradient(to bottom,#FFFFF6 5%,#F3FFC4 40%,#C7FF94);
+        -webkit-background-clip: text;
+    }
+
+    .btn-green label {
+        font-size: .38rem;
+        color: transparent;
+        -webkit-text-shadow: 0 .03rem .02rem rgba(0,0,0,.3);
+        text-shadow: 0 .03rem .02rem rgba(0,0,0,.3);
+    }
+
+
+    .btn-yellow {
+        background-image: url("../images/kefu/new2024/btn_yellow.png");
+    }
+
+    .btn-yellow span {
+        left: 0;
+        width: 100%;
+        text-align: center;
+        color: transparent;
+        background: linear-gradient(to bottom,#FFFFE7 5%,#FFF2C6 40%,#FFE677);
+        -webkit-background-clip: text;
+    }
+
+    .btn-yellow label {
+        font-size: .38rem;
+        color: transparent;
+        -webkit-text-shadow: 0 .03rem .02rem #B44700;
+        text-shadow: 0 .03rem .02rem #B44700;
+    }
+
+    .pup-inquiry .text-tips {
+        position: relative;
+        display: flex;
+        display: -webkit-flex;
+        margin-top: .2rem;
+        padding: .15rem 0;
+        width: 100%;
+        text-align: center;
+        font-size: .22rem;
+        color: #efc789;
+        text-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+    }
+
+    .pup-inquiry .text-tips::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -2.5rem;
+        width: 5.03rem;
+        height: .03rem;
+        background: url("../images/kefu/pup_line.png") no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .pup-inquiry .text-tips .ico-check {
+        position: relative;
+        margin-right: .1rem;
+    }
+
+    .pup-inquiry .text-tips .ico-check i {
+        display: block;
+        width: .32rem;
+        height: .32rem;
+        background: url("../images/kefu/ico_tips_check.png") no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .pup-inquiry .text-tips .ico-check input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: .32rem;
+        height: .32rem;
+        opacity: 0;
+    }
+
+    .pup-inquiry .text-tips input[type="checkbox"]:checked + i {
+        background: url("../images/kefu/ico_tips_check_on.png")
+    }
+
+    .feedback .form_content .feedback-btn {
+        margin-top: .5rem;
+    }
+
+</style>    <script defer="" type="text/javascript">
+        (function (dw, dh) {
+            function setFontSize() {
+                var docEle = document.documentElement;
+                var cw = docEle.clientWidth || document.body.clientWidth;
+                var ch = docEle.clientHeight || document.body.clientHeight;
+                var h = dw / 2;
+                cw = cw > dw ? dw : cw;
+                var fz = cw / h * 50;
+                docEle.style.fontSize = fz + 'px';
+                var realfz = ~~(+window.getComputedStyle(document.getElementsByTagName("html")[0]).fontSize.replace(
+                    'px', '') * 10000) / 10000;
+                if (fz !== realfz) {
+                    docEle.style.fontSize = fz * (fz / realfz) + 'px';
+                }
+            }
+
+            setFontSize();
+            window.addEventListener('resize', function () {
+                setFontSize();
+            }, 300);
+        })(720);
+    </script>
+</head>
+
+<body>
+<div class="container">
+    <input type="hidden" id="feedbackUserId" value="0">
+    <input type="hidden" id="vip" value="0">
+    <input type="hidden" id="vipLeve" value="3">
+    <input type="hidden" id="globalVipLeve" value="7">
+    <input type="hidden" id="userLevel" value="1">
+    <input type="hidden" id="language" value="id">
+    <input type="hidden" id="agentId" value="0">
+    <input type="hidden" id="zoneId" value="1">
+    <input type="hidden" id="resourceUrl" value="..">
+    <input type="hidden" id="requestUrl" value="https://ikf.f2z7ly.com">
+    <input type="hidden" id="userName" value="default">
+    <input type="hidden" id="showFlag" value="0">
+    <input type="hidden" id="versionLimit" value="0">
+    <input type="hidden" id="currentVersion" value="2.10">
+    <input type="hidden" id="paidItems" value="2000,3000,5000,6500,7000,10000,13000,15000,20000,30000,32500,40000,60000,65000,100000,125000,200000,250000,325000,500000">
+    <input type="hidden" id="paymentItems" value="1|Google,2|App Store/IOS,3|E-Wallet,4|SMS,5|Lainnya(Indomaret/Alfamart/ATM)">
+
+    <input type="hidden" id="ifDiversion" value="1">
+    <input type="hidden" id="diversionTail" value="0,1,2,3,4,5,6,7,8,9">
+    <input type="hidden" id="globalIfDiversion" value="1">
+    <input type="hidden" id="globalDiversionTail" value="1,2,3,4,5,6,7,8,9,0">
+    <input type="hidden" id="ifDiversionRobot" value="1">
+    <input type="hidden" id="qcKefuUrl" value="https://kfply.higgshk.com/index">
+    <div id="main" class="main">
+        <div class="tab-top">
+            <ul>
+                <li onclick="home11.checkTab('1')" dynamic-language="true">Feedback</li>
+                <li class="idle" id="logDiv" onclick="home11.checkTab('2')" dynamic-language="true">Hasil</li>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="tab-content">
+                <div class="block-content home" style="display: block;">
+                    <div id="feedBackDiv" class="index_01" onclick="home11.toFeedback()">
+                        <a>
+                                <img src="../images/kefu/new2024/index_01_v3.png" alt="">
+                        </a>
+                    </div>
+                    <div class="index_02">
+                        <img src="../images/kefu/new2024/index_03_v3.png" alt="" onclick="home11.toRobot()">
+                            <p class="pa online-time">08:00-20:00 WIB</p>
+                    </div>
+
+                    <div class="text">
+                        <p dynamic-language="true">Live Chat akan dimulai dengan FAQ untuk menerima balasan instan!</p>
+                    </div>
+
+                </div>
+                <div class="block-content deal-list" style="display: none;">
+                        <div class="noData">
+                                <img src="../images/kefu/new2024/noDate_v2.png" alt="">
+
+                        </div>
+                    <input type="hidden" id="showFlag" value="0">
+                </div>
+            </div>
+            <div class="block-content feedback" style="display: none;">
+                <div class="feedback-text">
+                        <p>Pemain Yang Terhormat:</p>
+                        <p>Kami mohon maaf atas <span class="underline">"Top Up Tidak Masuk"</span>yang Anda hadapi. Silakan isi informasi yang dibutuhkan agar kami dapat mengatasi masalah tersebut untuk Anda. </p>
+                </div>
+                <div class="form_content">
+                    <div>
+                        <span class="title" dynamic-language="true">ID Anda</span>
+                        <input class="form_01" type="text" name="" id="offerUserId" onclick="$('#warnId').hide()" onkeyup="value=value.replace(/[^(\d)]/g, '')" maxlength="10">
+                        <p class="warning" id="warnId" style="display: none;"><span dynamic-language="true">Silakan masukkan ID Anda</span>
+                        </p>
+                    </div>
+                    <div>
+                        <span class="title" dynamic-language="true">Pembayaran</span>
+                        <div class="form_03">
+                            <div class="form_03_value payChannel" onclick="home11.slidedown('1')">
+                                <p style="margin-left: -0.3rem">Google</p>
+                            </div>
+                            <ul class="select-list select-list1" id="paymentItem" style="display: none;"><li id="defaultLi" onclick="home11.select_active(this, 1)">Google</li><li onclick="home11.select_active(this, 2)">App Store/IOS</li><li onclick="home11.select_active(this, 3)">E-Wallet</li><li onclick="home11.select_active(this, 4)">SMS</li><li onclick="home11.select_active(this, 5)">Lainnya(Indomaret/Alfamart/ATM)</li></ul>
+                            <input type="hidden" id="chargeChannel" value="1">
+                        </div>
+                    </div>
+                    <div class="upload-content upload-content-one" id="uploadImage">
+                        <div class="upload-item">
+                            <span class="title" dynamic-language="true">Screenshot Pesanan</span>
+                            <div class="upload">
+                                <input class="form_02" type="file" onchange="home11.uploadMore(this,1)" readonly="" name="chargeImg01" id="chargeImg01">
+                                <a class="pa btn-close delImage" onclick="home11.deleteImgMore(1)" style="display:none"></a>
+                                <p class="tips-text" dynamic-language="true">Ukuran gambar &lt; 2M</p>
+                            </div>
+                            <div class="right-box">
+                                <a href="javascript:;" id="image01Tipe" onclick="home11.openSwiper()" style="color: #429784;font-size:.3rem;" dynamic-language="true">Contoh</a>
+                            </div>
+                            <p class="warning" id="warnPic01" style="display: none;" dynamic-language="true"><span>Silakan unggah screenshot</span></p>
+
+                        </div>
+                        <div class="upload-item" style="display: none" id="offlinePayments">
+                            <span class="title" dynamic-language="true">Screenshot Top Up Berhasil</span>
+                            <p class="warning" id="warnPic02" style="display: none;"><span dynamic-language="true">Silakan unggah screenshot</span>
+                            </p>
+                            <div class="upload">
+                                <input class="form_02" type="file" onchange="home11.uploadMore(this,2)" readonly="" name="" id="chargeImg02">
+                                <a class="pa btn-close delImage" onclick="home11.deleteImgMore(2)" style="display:none"></a>
+                                <p class="tips-text" dynamic-language="true">Ukuran gambar &lt; 2M</p>
+                            </div>
+                            <div class="right-box">
+                                <a href="javascript:;" onclick="home11.openShow('order')" style="color: #429784;font-size:.3rem;" dynamic-language="true">Contoh</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="title" dynamic-language="true">Waktu Top Up</span>
+                        <div class="form_06_item">
+                            <div class="form_06">
+                                <input class="form_06_value" type="text" id="chargeTime" data-options="{'type':'DD/MM/YYYY hh:mm','beginYear':2010,'endYear':2088}">
+                            </div>
+                            <div class="form_06">
+                                <div class="form_06_value" onclick="home11.slidedown('2')">WIB</div>
+                                <ul class="select-list select-list2" style="display: none;">
+                                        <li id="defaultLi" onclick="home11.select_active2(this, 1)">WIB</li>
+                                        <li onclick="home11.select_active2(this, 2)">WIT</li>
+                                        <li onclick="home11.select_active2(this, 3)">WITA</li>
+                                </ul>
+                                <input type="hidden" id="chargeArea" value="1">
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div>
+                        <span class="title" dynamic-language="true">Harga Top Up</span>
+                        <div class="form_03">
+                            <div class="form_03_value coin" onclick="home11.slidedown('3')">
+                                <p style="margin-left: -0.3rem">2,000</p>
+                            </div>
+                            <ul class="select-list select-list3" id="paidItemUl" style="display: none"><li onclick="home11.selectCoin(this, 2000)">2,000</li><li onclick="home11.selectCoin(this, 3000)">3,000</li><li onclick="home11.selectCoin(this, 5000)">5,000</li><li onclick="home11.selectCoin(this, 6500)">6,500</li><li onclick="home11.selectCoin(this, 7000)">7,000</li><li onclick="home11.selectCoin(this, 10000)">10,000</li><li onclick="home11.selectCoin(this, 13000)">13,000</li><li onclick="home11.selectCoin(this, 15000)">15,000</li><li onclick="home11.selectCoin(this, 20000)">20,000</li><li onclick="home11.selectCoin(this, 30000)">30,000</li><li onclick="home11.selectCoin(this, 32500)">32,500</li><li onclick="home11.selectCoin(this, 40000)">40,000</li><li onclick="home11.selectCoin(this, 60000)">60,000</li><li onclick="home11.selectCoin(this, 65000)">65,000</li><li onclick="home11.selectCoin(this, 100000)">100,000</li><li onclick="home11.selectCoin(this, 125000)">125,000</li><li onclick="home11.selectCoin(this, 200000)">200,000</li><li onclick="home11.selectCoin(this, 250000)">250,000</li><li onclick="home11.selectCoin(this, 325000)">325,000</li><li onclick="home11.selectCoin(this, 500000)">500,000</li></ul>
+                            <input type="hidden" id="chargeMoney" value="2000">
+                        </div>
+                    </div>
+
+
+                    <div class="feedback-btn" style="position:relative">
+                            <img onclick="KeFu.submit()" src="../images/kefu/new2024/btn_01.png" alt="">
+                        <a href="javascript:;" onclick="home11.openShow('swiper2')" style="color: #429784;font-size:.3rem;position: absolute;right: -1.2rem;top: 0.3rem; text-decoration: underline;" dynamic-language="true">Contoh</a>
+                    </div>
+                </div>
+
+                <div class="feedback-text2" dynamic-language="true">Kami akan segera proses masalah Anda setelah
+                    menerima
+                    pesan. Terima kasih atas kesabaran Anda.</div>
+
+            </div>
+
+            <div class="block-content feedback-result feedback-success" style="display: none;">
+                    <img class="success" src="../images/kefu/new2024/success_v2.png" alt="">
+                <div class="feedback-text2">
+                    <div class="success-text">
+                        <p dynamic-language="true">Kami akan segera proses masalah Anda setelah menerima pesan. Terima
+                            kasih
+                            atas kesabaran Anda.</p>
+                    </div>
+                        <img onclick="home11.tohome()" class="btn_02" src="../images/kefu/new2024/btn_02.png" alt="">
+                </div>
+            </div>
+
+            <div class="block-content feedback-result feedback-error" style="display: none;">
+                    <img class="error" src="../images/kefu/new2024/error_v2.png" alt="">
+                <div class="feedback-text2">
+                    <div class="error-text">
+                        <p dynamic-language="true">Kami akan segera proses menghubungi Anda setelah menerima pesan.
+                            Terima
+                            kasih atas kesabaran Anda.</p>
+                    </div>
+                        <img onclick="home11.tohome()" src="../images/kefu/new2024/btn_02.png" class="btn_02" alt="">
+                </div>
+
+            </div>
+
+            <div class="block-content swiper" id="swiper1" style="display: none;">
+                <div class="swiper-container" id="swiper-container1">
+                    <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <p><img src="../images/kefu/1.png" alt="">Google Play</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <p><img src="../images/kefu/2.png" alt="">SMS</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <p><img src="../images/kefu/3.png" alt="">App Store / IOS</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <p><img src="../images/kefu/4.png" alt="">E-Wallet</p>
+                            </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination" style="display:none;"></div>
+
+
+            </div>
+
+            <div class="block-content swiper" id="swiper2" style="display: none;">
+                <div class="swiper-container" id="swiper-container2-swiper2">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                                <img src="../images/kefu/show.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block-content swiper" id="order" style="display: none;">
+                <div class="swiper-container" id="swiper-container2-order">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="../images/kefu/order.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block-content swiper" id="orderSuccess" style="display: none;">
+                <div class="swiper-container" id="swiper-container2-orderSuccess">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="../images/kefu/ordersuccess.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="block-content mask" style="display: none;" onclick="home11.closeSwiper()"></div>
+        <div class="block-content mask2" style="display: none;" onclick="home11.closeImg()"></div>
+        <div class="uploadImg"><img src="" alt=""></div>
+
+        <div class="loading" id="load" style="display: none;"><img src="../images/kefu/loading.gif" alt=""></div>
+        <div class="thickdiv" style="display: none;" id="idInstruction"></div>
+        <div class="pa pup pup-inquiry" id="photoAuthTip" style="display: none;">
+            <a class="btn-close" href="javascript:home11.tipHide('photoAuthTip')"></a>
+            <div class="text-content" dynamic-language="true">Izinkan untuk mengakses album?</div>
+            <div class="btn-list">
+                <a class="pr btn-yellow" href="javascript:home11.tipHide('photoAuthTip')">
+                    <span class="pa" dynamic-language="true">Tidak</span>
+                    <label dynamic-language="true">Tidak</label>
+                </a>
+                <a class="pr btn-green" href="javascript:home11.allowPhotoAuth('photoAuthTip')">
+                    <span class="pa" dynamic-language="true">Tentukan</span>
+                    <label dynamic-language="true">Tentukan</label>
+                </a>
+            </div>
+            <div class="text-tips">
+                <p class="ico-check">
+                    <input type="checkbox" name="checkPhotoAuthSaveLocalStorage">
+                    <i></i>
+                </p>
+                <span dynamic-language="true">Izinkan kali ini. Jangan ingatkan lagi.</span>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var UrlParams = {
+        resourceUrl: '..',
+        interfaceUrl: 'http://interface.dominotest.pook.com.cn',
+        kefuUrl : 'https://ikf.toptoppartner.com',
+        websiteUrl : 'https://www.rzzjd.com'
+    };
+</script><script>
+    var languageTemp = 'id';
+    var commonLanguageType = 2;
+    if (languageTemp == 'en-us') {
+        commonLanguageType = 1
+    } else {
+        commonLanguageType = 2
+    }
+    var staticResourceUrl = '..';
+</script>
+<script type="text/javascript" src="../js/kefu/i18n.js"></script>
+<script type="text/javascript" src="../js/iscroll5.0.js"></script>
+<script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../js/swiper-4.2.2.min.js"></script>
+<script type="text/javascript" src="../js/kefu/kefu.1.0.0.js?20260412033308"></script>
+<script type="text/javascript" src="../js/kefu/chat/log.1.0.0.js?20260412033308"></script>
+<script type="text/javascript" src="../js/kefu/home.1.0.1.js?20260412033308"></script>
+<script type="text/javascript" src="../js/kefu/kefu_request.1.0.0.js?20260412033308"></script>
+<script type="text/javascript" src="../js/date.select.1.2.js"></script><div id="date-wrapper" style="padding-bottom: 1rem;"><h3>Options</h3><div id="d-content"><div id="d-tit"><div class="t1" dynamic-language="true">Tahun</div><div class="t2" dynamic-language="true">Bulan</div><div class="t3" dynamic-language="true">Tanggal</div><div class="t4" dynamic-language="true">Jam</div><div class="t5" dynamic-language="true">Menit</div><div class="t6">S</div></div><div id="d-bg"><ol id="d-year"></ol><ol id="d-month"><li></li><li><span>01</span></li><li><span>02</span></li><li><span>03</span></li><li><span>04</span></li><li><span>05</span></li><li><span>06</span></li><li><span>07</span></li><li><span>08</span></li><li><span>09</span></li><li><span>10</span></li><li><span>11</span></li><li><span>12</span></li><li></li></ol><ol id="d-day"><li></li><li><span>01</span></li><li><span>02</span></li><li><span>03</span></li><li><span>04</span></li><li><span>05</span></li><li><span>06</span></li><li><span>07</span></li><li><span>08</span></li><li><span>09</span></li><li><span>10</span></li><li><span>11</span></li><li><span>12</span></li><li><span>13</span></li><li><span>14</span></li><li><span>15</span></li><li><span>16</span></li><li><span>17</span></li><li><span>18</span></li><li><span>19</span></li><li><span>20</span></li><li><span>21</span></li><li><span>22</span></li><li><span>23</span></li><li><span>24</span></li><li><span>25</span></li><li><span>26</span></li><li><span>27</span></li><li><span>28</span></li><li><span>29</span></li><li><span>30</span></li><li></li></ol><ol id="d-hours"><li></li><li><span>00</span></li><li><span>01</span></li><li><span>02</span></li><li><span>03</span></li><li><span>04</span></li><li><span>05</span></li><li><span>06</span></li><li><span>07</span></li><li><span>08</span></li><li><span>09</span></li><li><span>10</span></li><li><span>11</span></li><li><span>12</span></li><li><span>13</span></li><li><span>14</span></li><li><span>15</span></li><li><span>16</span></li><li><span>17</span></li><li><span>18</span></li><li><span>19</span></li><li><span>20</span></li><li><span>21</span></li><li><span>22</span></li><li><span>23</span></li><li></li></ol><ol id="d-minutes"><li></li><li><span>00</span></li><li><span>01</span></li><li><span>02</span></li><li><span>03</span></li><li><span>04</span></li><li><span>05</span></li><li><span>06</span></li><li><span>07</span></li><li><span>08</span></li><li><span>09</span></li><li><span>10</span></li><li><span>11</span></li><li><span>12</span></li><li><span>13</span></li><li><span>14</span></li><li><span>15</span></li><li><span>16</span></li><li><span>17</span></li><li><span>18</span></li><li><span>19</span></li><li><span>20</span></li><li><span>21</span></li><li><span>22</span></li><li><span>23</span></li><li><span>24</span></li><li><span>25</span></li><li><span>26</span></li><li><span>27</span></li><li><span>28</span></li><li><span>29</span></li><li><span>30</span></li><li><span>31</span></li><li><span>32</span></li><li><span>33</span></li><li><span>34</span></li><li><span>35</span></li><li><span>36</span></li><li><span>37</span></li><li><span>38</span></li><li><span>39</span></li><li><span>40</span></li><li><span>41</span></li><li><span>42</span></li><li><span>43</span></li><li><span>44</span></li><li><span>45</span></li><li><span>46</span></li><li><span>47</span></li><li><span>48</span></li><li><span>49</span></li><li><span>50</span></li><li><span>51</span></li><li><span>52</span></li><li><span>53</span></li><li><span>54</span></li><li><span>55</span></li><li><span>56</span></li><li><span>57</span></li><li><span>58</span></li><li><span>59</span></li><li></li></ol><ol id="d-seconds"><li></li><li><span>00</span></li><li><span>01</span></li><li><span>02</span></li><li><span>03</span></li><li><span>04</span></li><li><span>05</span></li><li><span>06</span></li><li><span>07</span></li><li><span>08</span></li><li><span>09</span></li><li><span>10</span></li><li><span>11</span></li><li><span>12</span></li><li><span>13</span></li><li><span>14</span></li><li><span>15</span></li><li><span>16</span></li><li><span>17</span></li><li><span>18</span></li><li><span>19</span></li><li><span>20</span></li><li><span>21</span></li><li><span>22</span></li><li><span>23</span></li><li><span>24</span></li><li><span>25</span></li><li><span>26</span></li><li><span>27</span></li><li><span>28</span></li><li><span>29</span></li><li><span>30</span></li><li><span>31</span></li><li><span>32</span></li><li><span>33</span></li><li><span>34</span></li><li><span>35</span></li><li><span>36</span></li><li><span>37</span></li><li><span>38</span></li><li><span>39</span></li><li><span>40</span></li><li><span>41</span></li><li><span>42</span></li><li><span>43</span></li><li><span>44</span></li><li><span>45</span></li><li><span>46</span></li><li><span>47</span></li><li><span>48</span></li><li><span>49</span></li><li><span>50</span></li><li><span>51</span></li><li><span>52</span></li><li><span>53</span></li><li><span>54</span></li><li><span>55</span></li><li><span>56</span></li><li><span>57</span></li><li><span>58</span></li><li><span>59</span></li><li></li></ol></div></div><a id="d-cancel" href="javascript:">cancel</a><a id="d-confirm" href="javascript:">confirm</a></div><div id="d-mask"></div>
+<script>
+    $.date('#chargeTime');
+
+    function onCompletion() {
+        setTimeout(function () {
+            if (myScroll) {
+                myScroll.refresh();
+                onclockRef();
+            }
+        }, 300);
+    };
+
+    function onclockRef() {
+        setInterval(function () {
+            if (myScroll) {
+                myScroll.refresh();
+            }
+        }, 700);
+    }
+
+    document.addEventListener("DOMContentLoaded", I18N.loadDynamicLanguage());
+
+</script>
+
+<script type="text/javascript" src="../js/dominoUi.js"></script>
+</body></html>

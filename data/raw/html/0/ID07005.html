@@ -1,0 +1,1616 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head>
+<title>DNSSEC Debugger - bnn.go.id</title>
+<meta name="description" content="The DNSSEC Debugger from VeriSign Labs is an on-line tool to assist with diagnosing problems with DNSSEC-signed names and zones.">
+<meta name="keywords" content="dns dnssec test testing debug debugger validate">
+<style type="text/css">
+<!--/* <![CDATA[ */
+/* DEBUGGER CSS */
+TABLE.T1 {border-collapse:collapse; }
+TABLE.T1 tr td {border:1px solid black; padding:0.3em 1em;}
+TABLE.T1 tr td.T1L {text-align:center;}
+TABLE.T2 {text-align:left; border-style:none; border-collapse:separate;}
+TABLE.T2 tr td {border-style:none; padding:0px 0.2em; }
+tr.L0 {background-color:#ffffff;}
+tr.L1 {background-color:#dfdfdf;}
+tr.L2 {background-color:#bfbfbf;}
+tr.L3 {background-color:#9f9f9f;}
+body {background-color:#ffffff;}
+body {font-family: Arial, Helvetica, sans-serif;}
+span.keytag { font-size:75%; }
+A.adv {text-decoration:none;}
+.adv P {}
+/* circles */
+.circle { display:block; width:1em; height:1em; -moz-border-radius:0.6em; -webkit-border-radius:0.6em; }
+.red { background:red; }
+.green { background:green; }
+.yellow { background:yellow; }
+/* Verisign CSS */
+body {
+  font-family:Verdana, sans-serif;
+  font-size:11px; line-height:1.55;
+  color:#676767;
+  margin:0; padding:0 15px;
+}
+.header {
+  background:#fff;
+  margin:0 0 25px;
+}
+.logo {
+  float:left;
+  margin:17px 33px;
+  border:none;
+}
+.back {
+  float:right;
+  height:26px; width:262px;
+  margin:68px 0 0;
+  text-align:center;
+  color:#fff;
+  font-weight:bold;
+  line-height:26px;
+  text-decoration:none;
+  background:#4796D0 url('/btn_bg.png') center top;
+}
+.stripe {
+  clear:both;
+  height:26px; width:100%;
+  border-top:1px solid #83B0D1;
+  border-bottom:1px solid #83B0D1;
+  background:#0661A3;
+}
+.stripe img {
+  float:right;
+  position:relative;
+  top:-1px;
+}
+.footer {
+  border-top:2px dotted #ccc;
+  padding:22px 0 0;
+}
+.footer a {
+  color:#676767;
+  padding:0px 15px;
+  text-decoration:none;
+}
+.footer a:hover, .header a:active {
+  color:#7CB307;
+}
+
+
+/* ]]> */-->
+</style>
+<script type="text/javascript">//<![CDATA[
+/**
+ * getElements(classname, tagname, root):
+ * Return an array of DOM elements that are members of the specified class,
+ * have the specified tagname, and are descendants of the specified root.
+ * 
+ * If no classname is specified, elements are returned regardless of class.
+ * If no tagname is specified, elements are returned regardless of tagname.
+ * If no root is specified, the document object is used.  If the specified
+ * root is a string, it is an element id, and the root
+ * element is looked up using getElementsById()
+ */
+function getElements(classname, tagname, root) {
+    // If no root was specified, use the entire document
+    // If a string was specified, look it up
+    if (!root) root = document;
+    else if (typeof root == "string") root = document.getElementById(root);
+    // if no tagname was specified, use all tags
+    if (!tagname) tagname = "*";
+    // Find all descendants of the specified root with the specified tagname
+    var all = root.getElementsByTagName(tagname);
+    // If no classname was specified, we return all tags
+    if (!classname) return all;
+    // Otherwise, we filter the element by classname
+    var elements = [];  // Start with an emtpy array
+    for(var i = 0; i < all.length; i++) {
+	var element = all[i];
+	if (isMember(element, classname)) // isMember() is defined below
+	    elements.push(element);       // Add class members to our array
+    }
+    // Note that we always return an array, even if it is empty
+    return elements;
+    // Determine whether the specified element is a member of the specified
+    // class.  This function is optimized for the common case in which the 
+    // className property contains only a single classname.  But it also 
+    // handles the case in which it is a list of whitespace-separated classes.
+    function isMember(element, classname) {
+	var classes = element.className;  // Get the list of classes
+	if (!classes) return false;             // No classes defined
+	if (classes == classname) return true;  // Exact match
+	// We didn't match exactly, so if there is no whitespace, then 
+	// this element is not a member of the class
+	var whitespace = /\s+/;
+	if (!whitespace.test(classes)) return false;
+	// If we get here, the element is a member of more than one class and
+	// we've got to check them individually.
+	var c = classes.split(whitespace);  // Split with whitespace delimiter
+	for(var i = 0; i < c.length; i++) { // Loop through classes
+	    if (c[i] == classname) return true;  // and check for matches
+	}
+	return false;  // None of the classes matched
+    }
+}
+function submitenter(myfield,e) {
+	var keycode;
+	if (window.event) keycode = window.event.keyCode;
+	else if (e) keycode = e.which;
+	else return true;
+	if (keycode == 13) {
+		myfield.form.submit();
+   		return false;
+	}
+	return true;
+}
+function xToggleDisplay(d) {
+	if (document.getElementById(d).style.display == "")
+		document.getElementById(d).style.display = "none";  
+	else
+		document.getElementById(d).style.display = "";
+}
+function toggleByClass(c) {
+	var e = getElements(c, 0, document);
+	for (j=0; j<e.length; j++) {
+		if (e[j].style.display == "")
+			e[j].style.display = "none";
+		else
+			e[j].style.display = "";
+	}
+}
+
+//]]></script>
+<script type="text/javascript">//<![CDATA[
+var dbg_lvl = 0;
+function rowsDisplay() {
+	for (l=0; l<4; l++) {
+		var d = l <= dbg_lvl ? "" : "none";
+		var c = "L"+l;
+		var rows = getElements(c, "TR", document);
+		for (j=0; j<rows.length; j++)
+			rows[j].style.display=d;
+	}
+}
+function debugMore() {
+	if (dbg_lvl < 3) dbg_lvl++;
+	rowsDisplay();
+}
+function debugLess() {
+	if (dbg_lvl > 0) dbg_lvl--;
+	rowsDisplay();
+}
+function detectEvent(e) {
+	var evt = e || window.event;
+	if (43 == evt.charCode) debugMore();
+	if (45 == evt.charCode) debugLess();
+}
+document.onkeypress = detectEvent;
+
+//]]></script>
+<script type="text/javascript">//<![CDATA[
+// From http://sandbox.leigeber.com/tooltip/
+//
+var tooltip=function(){
+	var id = 'tt';
+	var maxw = 400;
+	var speed = 10;
+	var timer = 20;
+	var endalpha = 100;
+	var alpha = 0;
+	var tt,h;
+	var ie = document.all ? true : false;
+	return{
+		show:function(v,w){
+			var bw = Geometry.getViewportWidth();
+			var bh = Geometry.getViewportHeight();
+			var bx = Geometry.getHorizontalScroll();
+			var by = Geometry.getVerticalScroll();
+			if (tt == null) {
+				tt = document.createElement('div');
+				tt.setAttribute('id',id);
+				document.body.appendChild(tt);
+				tt.style.opacity = 0;
+				tt.style.filter = 'alpha(opacity=0)';
+				//document.onmousemove = this.pos;
+			}
+			tt.style.display = 'block';
+			tt.innerHTML = v;
+			var tw = bw;
+			do {
+				tw -= 10;
+				tt.style.width = tw + 'px';
+				tt.style.height = 'auto';
+				h = parseInt(tt.offsetHeight);
+				w = parseInt(tt.offsetWidth);
+			} while ((w/h) > (bw/bh));
+			tt.style.top = by + ((bh - h) / 2) + 'px';
+			tt.style.left = bx + ((bw - w) / 2) + 'px';
+			clearInterval(tt.timer);
+			tt.timer = setInterval(function(){tooltip.fade(1)},timer);
+		},
+		pos:function(e){
+			// not used when "onmousemove" above commented out
+			var u = ie ? event.clientY + document.documentElement.scrollTop : e.pageY;
+			var l = ie ? event.clientX + document.documentElement.scrollLeft : e.pageX;
+			tt.style.top = (u - h) + 'px';
+			tt.style.left = (l + left) + 'px';
+		},
+		fade:function(d){
+			var a = alpha;
+			if((a != endalpha && d == 1) || (a != 0 && d == -1)){
+				var i = speed;
+				if(endalpha - a < speed && d == 1){
+					i = endalpha - a;
+				}else if(alpha < speed && d == -1){
+					i = a;
+				}
+				alpha = a + (i * d);
+				tt.style.opacity = alpha * .01;
+				tt.style.filter = 'alpha(opacity=' + alpha + ')';
+			}else{
+				clearInterval(tt.timer);
+				if(d == -1){tt.style.display = 'none'}
+			}
+		},
+		hide:function(){
+			clearInterval(tt.timer);
+			tt.timer = setInterval(function(){tooltip.fade(-1)},timer);
+		}
+	};
+}();
+
+//]]></script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body>
+<script type="text/javascript">//<![CDATA[
+/*
+ * From http://www.davidflanagan.com/javascript5/display.php?n=14-2&f=14/Geometry.js
+ * This code is from the book JavaScript: The Definitive Guide, 5th Edition,
+ * by David Flanagan. Copyright 2006 O'Reilly Media, Inc. (ISBN #0596101996)
+ */
+/**
+ * Geometry.js: portable functions for querying window and document geometry
+ *
+ * This module defines functions for querying window and document geometry.
+ * 
+ * getWindowX/Y(): return the position of the window on the screen
+ * getViewportWidth/Height(): return the size of the browser viewport area
+ * getDocumentWidth/Height(): return the size of the document.
+ * getHorizontalScroll(): return the position of the horizontal scrollbar
+ * getVerticalScroll(): return the position of the vertical scrollbar
+ *
+ * Note that there is no portable way to query the overall size of the 
+ * browser window, so there are no getWindowWidth/Height() functions.
+ * 
+ * IMPORTANT: This module must be included in the <body> of a document
+ *            instead of the <head> of the document.
+ */
+var Geometry = {};
+
+if (window.screenLeft) { // IE and others
+    Geometry.getWindowX = function() { return window.screenLeft; };
+    Geometry.getWindowY = function() { return window.screenTop; };
+}
+else if (window.screenX) { // Firefox and others
+    Geometry.getWindowX = function() { return window.screenX; };
+    Geometry.getWindowY = function() { return window.screenY; };
+}
+
+if (window.innerWidth) { // All browsers but IE
+    Geometry.getViewportWidth = function() { return window.innerWidth; };
+    Geometry.getViewportHeight = function() { return window.innerHeight; };
+    Geometry.getHorizontalScroll = function() { return window.pageXOffset; };
+    Geometry.getVerticalScroll = function() { return window.pageYOffset; };
+}
+else if (document.documentElement && document.documentElement.clientWidth) {
+    // These functions are for IE6 when there is a DOCTYPE
+    Geometry.getViewportWidth =
+	function() { return document.documentElement.clientWidth; };
+    Geometry.getViewportHeight = 
+	function() { return document.documentElement.clientHeight; };
+    Geometry.getHorizontalScroll = 
+	function() { return document.documentElement.scrollLeft; };
+    Geometry.getVerticalScroll = 
+	function() { return document.documentElement.scrollTop; };
+}
+else if (document.body.clientWidth) {
+    // These are for IE4, IE5, and IE6 without a DOCTYPE
+    Geometry.getViewportWidth =
+	function() { return document.body.clientWidth; };
+    Geometry.getViewportHeight =
+	function() { return document.body.clientHeight; };
+    Geometry.getHorizontalScroll =
+	function() { return document.body.scrollLeft; };
+    Geometry.getVerticalScroll = 
+	function() { return document.body.scrollTop; };
+}
+
+// These functions return the size of the document.  They are not window 
+// related, but they are useful to have here anyway.
+if (document.documentElement && document.documentElement.scrollWidth) {
+    Geometry.getDocumentWidth =
+	function() { return document.documentElement.scrollWidth; };
+    Geometry.getDocumentHeight =
+	function() { return document.documentElement.scrollHeight; };
+}
+else if (document.body.scrollWidth) {
+    Geometry.getDocumentWidth =
+	function() { return document.body.scrollWidth; };
+    Geometry.getDocumentHeight =
+	function() { return document.body.scrollHeight; };
+}
+//]]</script>
+<form method="post" action="/bnn.go.id" enctype="multipart/form-data">  <div class="header">
+  <a href="http://www.verisign.com/en_US/innovation/verisign-labs/index.xhtml"><img src="/logo.png" width="285" height="62" alt="Verisign Inc | Labs" class="logo"></a>
+  <a href="http://www.verisign.com/en_US/innovation/verisign-labs/internet-security-tools/index.xhtml" class="back">Back to Verisign Labs Tools</a>
+  <div class="stripe"><img src="/nav_end.png" width="11" height="28" alt=" "></div>
+  <div style="clear:both"></div>
+<table class="hdr" width="100%"><tbody><tr><td style="text-align:left; width:40%;">Domain Name: <input type="text" name="q" value="bnn.go.id" onkeypress="return submitenter(this,event)"></td> <td style="text-align:center; width:auto;">Detail: <a href="javascript:debugMore();">more(+)</a> / <a href="javascript:debugLess();">less(-)</a></td> <td style="text-align:right; width:40%;">Time: 2026-04-11 12:33:01 UTC</td></tr></tbody></table><h2>Analyzing DNSSEC problems for <a href="/bnn.go.id">bnn.go.id</a></h2><table class="T1"><tbody><tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td>DS<span class="keytag">=20326/SHA-256</span> is now in the chain-of-trust</td>
+</tr>
+<tr>
+<td class="T1L">.</td>
+<td>
+<table class="T2">
+<tbody><tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td>Checking DS between Trust Anchor and .</td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td><code>.	IN	DS	( 20326 8 2
+	e06d44b80b8f1d39a95c0b0d7c65d08458e880409bbc683457104237c7f8ec8d )</code></td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Query to j.root-servers.net for ./DNSKEY</td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Received 1139 bytes from 192.58.128.30</td>
+</tr>
+<tr class="L3" style="display:none;">
+<td>&nbsp;</td>
+<td><pre>;; Response received from [192.58.128.30] 1139 octets
+;; HEADER SECTION
+;;	id = 39476
+;;	qr = 1	aa = 1	tc = 0	rd = 0	opcode = QUERY
+;;	ra = 0	z  = 0	ad = 0	cd = 0	rcode  = NOERROR
+;;	do = 1	co = 0
+;;	qdcount = 1	ancount = 4
+;;	nscount = 0	arcount = 1
+
+;; {	"EDNS-VERSION":	0,
+;;	"FLAGS":	"8000",
+;;	"RCODE":	0,
+;;	"UDPSIZE":	1472,
+;;	"OPTIONS":	[ ]
+;;	}
+
+;; QUESTION SECTION (1 record)
+;; .	IN	DNSKEY
+
+;; ANSWER SECTION (4 records)
+.	172800	IN	DNSKEY	( 256 3 8
+	AwEAAb5dDYffpgAJ8VUGLwQtWXPlQWsjIFJtCM00/XaKU+8ln+ofah3q2KxEIjvzQg+nqdxRj+8e
+	mtPne1mtYcbFWP4Q9E+DniOJLK09R05FuzvGbrG7DDdRDUX/cedFdV7O8pFEAYpJqYNR9BCTIAV9
+	73DO2biauKSA31b7I2lK/woxoR1tf5cqJ4SMbJUviuHicAEoUi2ATswloZNWd5T5thmEFZnxFx7D
+	5UgKCY7oflS7+GU7dNJwEtmFnWYVETHN0kHXVz6aguouaAZp706YXNIoR/iTgQhmsR7XX+wL0Z8Q
+	M2LxQIyU6vRZ06IyuJMGRMiwkSuGElbumyBt12JZbrU= ) ; keytag 54393
+.	172800	IN	DNSKEY	( 257 3 8
+	AwEAAaz/tAm8yTn4Mfeh5eyI96WSVexTBAvkMgJzkKTOiW1vkIbzxeF3+/4RgWOq7HrxRixHlFlE
+	xOLAJr5emLvN7SWXgnLh4+B5xQlNVz8Og8kvArMtNROxVQuCaSnIDdD5LKyWbRd2n9WGe2R8PzgC
+	mr3EgVLrjyBxWezF0jLHwVN8efS3rCj/EWgvIWgb9tarpVUDK/b58Da+sqqls3eNbuv7pr+eoZG+
+	SrDK6nWeL3c6H5Apxz7LjVc1uTIdsIXxuOLYA4/ilBmSVIzuDWfdRUfhHdY6+cn8HFRm+2hM8AnX
+	GXws9555KrUB5qihylGa8subX2Nn6UwNR1AkUTV74bU= ) ; keytag 20326
+.	172800	IN	DNSKEY	( 257 3 8
+	AwEAAa96jeuknZlaeSrvyAJj6ZHv28hhOKkx3rLGXVaC6rXTsDc449/cidltpkyGwCJNnOAlFNKF
+	2jBosZBU5eeHspaQWOmOElZsjICMQMC3aeHbGiShvZsx4wMYSjH8e7Vrhbu6irwCzVBApESjbUdp
+	WWmEnhathWu1jo+siFUiRAAxm9qyJNg/wOZqqzL/dL/q8PkcRU5oUKEpUge71M3ej2/7CPqpdVwu
+	MoTvoB+ZOT4YeGyxMvHmbrxlFzGOHOijtzN+u1TQNatX2XBuzZNQ1K+s2CXkPIZo7s6JgZyvaBev
+	YtxPvYLw4z9mR7K2vaF18UYH9Z9GNUUeayffKC73PYc= ) ; keytag 38696
+.	172800	IN	RRSIG	( DNSKEY 8 0 172800
+	20260502000000 20260411000000 20326 .
+	ldfPZ7Q9Ca8GfxnsJcPAMMy9Dt1qfL2guvByLtN9kRcMMn8g3ukazjrv5Bj/KOLEXV++Zp8g8UpL
+	/80NUKP4ZA1Yq3gmEE2hyEG7M964fUrTaB9w9leATi8UK176zklnB7trP81yL6TIZmaCImUMWVkU
+	n8uGeIJUaVz2XpboM5PGo2gEQH2mVAavFammRoDbj4gnMJvXgOMIZtLIIGcOaxuY5sFQo1MDQnoQ
+	OYMAHVqdUu4Ld+Jq29ktutAXUK6hobUBss0me2y+xlu3fmZ5JiKSJOPDiBQBqjUAhueBKEZpamt/
+	gr8NtHLe0QLKs2h3XhsGNHE7Ksr3WwiCCFHP0A== )
+
+;; AUTHORITY SECTION (0 records)
+
+;; ADDITIONAL SECTION (1 record)
+;; {	"EDNS-VERSION": 0 }
+
+</pre></td>
+</tr>
+<tr class="L0" style="">
+<td><img style="width:1em;" src="/green.png"></td>
+<td>Found 3 DNSKEY records for .</td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td><code>.	172800	IN	DNSKEY	( 256 3 8
+	AwEAAb5dDYffpgAJ8VUGLwQtWXPlQWsjIFJtCM00/XaKU+8ln+ofah3q2KxEIjvzQg+nqdxRj+8e
+	mtPne1mtYcbFWP4Q9E+DniOJLK09R05FuzvGbrG7DDdRDUX/cedFdV7O8pFEAYpJqYNR9BCTIAV9
+	73DO2biauKSA31b7I2lK/woxoR1tf5cqJ4SMbJUviuHicAEoUi2ATswloZNWd5T5thmEFZnxFx7D
+	5UgKCY7oflS7+GU7dNJwEtmFnWYVETHN0kHXVz6aguouaAZp706YXNIoR/iTgQhmsR7XX+wL0Z8Q
+	M2LxQIyU6vRZ06IyuJMGRMiwkSuGElbumyBt12JZbrU= ) ; keytag 54393</code></td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td><code>.	172800	IN	DNSKEY	( 257 3 8
+	AwEAAaz/tAm8yTn4Mfeh5eyI96WSVexTBAvkMgJzkKTOiW1vkIbzxeF3+/4RgWOq7HrxRixHlFlE
+	xOLAJr5emLvN7SWXgnLh4+B5xQlNVz8Og8kvArMtNROxVQuCaSnIDdD5LKyWbRd2n9WGe2R8PzgC
+	mr3EgVLrjyBxWezF0jLHwVN8efS3rCj/EWgvIWgb9tarpVUDK/b58Da+sqqls3eNbuv7pr+eoZG+
+	SrDK6nWeL3c6H5Apxz7LjVc1uTIdsIXxuOLYA4/ilBmSVIzuDWfdRUfhHdY6+cn8HFRm+2hM8AnX
+	GXws9555KrUB5qihylGa8subX2Nn6UwNR1AkUTV74bU= ) ; keytag 20326</code></td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td><code>.	172800	IN	DNSKEY	( 257 3 8
+	AwEAAa96jeuknZlaeSrvyAJj6ZHv28hhOKkx3rLGXVaC6rXTsDc449/cidltpkyGwCJNnOAlFNKF
+	2jBosZBU5eeHspaQWOmOElZsjICMQMC3aeHbGiShvZsx4wMYSjH8e7Vrhbu6irwCzVBApESjbUdp
+	WWmEnhathWu1jo+siFUiRAAxm9qyJNg/wOZqqzL/dL/q8PkcRU5oUKEpUge71M3ej2/7CPqpdVwu
+	MoTvoB+ZOT4YeGyxMvHmbrxlFzGOHOijtzN+u1TQNatX2XBuzZNQ1K+s2CXkPIZo7s6JgZyvaBev
+	YtxPvYLw4z9mR7K2vaF18UYH9Z9GNUUeayffKC73PYc= ) ; keytag 38696</code></td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td>DNSKEY<span class="keytag">=20326/SEP</span> is now in the chain-of-trust</td>
+</tr>
+<tr class="L0" style="">
+<td><img style="width:1em;" src="/green.png"></td>
+<td>DS<span class="keytag">=20326/SHA-256</span> verifies DNSKEY<span class="keytag">=20326/SEP</span></td>
+</tr>
+<tr class="L0" style="">
+<td><img style="width:1em;" src="/green.png"></td>
+<td>Found 1 RRSIGs over DNSKEY RRset</td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td><code>.	172800	IN	RRSIG	( DNSKEY 8 0 172800
+	20260502000000 20260411000000 20326 .
+	ldfPZ7Q9Ca8GfxnsJcPAMMy9Dt1qfL2guvByLtN9kRcMMn8g3ukazjrv5Bj/KOLEXV++Zp8g8UpL
+	/80NUKP4ZA1Yq3gmEE2hyEG7M964fUrTaB9w9leATi8UK176zklnB7trP81yL6TIZmaCImUMWVkU
+	n8uGeIJUaVz2XpboM5PGo2gEQH2mVAavFammRoDbj4gnMJvXgOMIZtLIIGcOaxuY5sFQo1MDQnoQ
+	OYMAHVqdUu4Ld+Jq29ktutAXUK6hobUBss0me2y+xlu3fmZ5JiKSJOPDiBQBqjUAhueBKEZpamt/
+	gr8NtHLe0QLKs2h3XhsGNHE7Ksr3WwiCCFHP0A== )</code></td>
+</tr>
+<tr class="L0" style="">
+<td><img style="width:1em;" src="/green.png"></td>
+<td>RRSIG<span class="keytag">=20326</span> and DNSKEY<span class="keytag">=20326/SEP</span> verifies the DNSKEY RRset</td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td>DNSKEY<span class="keytag">=54393</span> is now in the chain-of-trust</td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td>DNSKEY<span class="keytag">=38696/SEP</span> is now in the chain-of-trust</td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Query to i.root-servers.net for bnn.go.id/A</td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Received 688 bytes from 192.36.148.17</td>
+</tr>
+<tr class="L3" style="display:none;">
+<td>&nbsp;</td>
+<td><pre>;; Response received from [192.36.148.17] 688 octets
+;; HEADER SECTION
+;;	id = 27567
+;;	qr = 1	aa = 0	tc = 0	rd = 0	opcode = QUERY
+;;	ra = 0	z  = 0	ad = 0	cd = 0	rcode  = NOERROR
+;;	do = 1	co = 0
+;;	qdcount = 1	ancount = 0
+;;	nscount = 7	arcount = 11
+
+;; {	"EDNS-VERSION":	0,
+;;	"FLAGS":	"8000",
+;;	"RCODE":	0,
+;;	"UDPSIZE":	1232,
+;;	"OPTIONS":	[ ]
+;;	}
+
+;; QUESTION SECTION (1 record)
+;; bnn.go.id.	IN	A
+
+;; ANSWER SECTION (0 records)
+
+;; AUTHORITY SECTION (7 records)
+id.	172800	IN	NS	e.dns.id.
+id.	172800	IN	NS	ns4.apnic.net.
+id.	172800	IN	NS	b.dns.id.
+id.	172800	IN	NS	c.dns.id.
+id.	172800	IN	NS	d.dns.id.
+id.	86400	IN	DS	( 26887 8 2
+	28be22003a1afb1ed9a7bb82482274e2db5f09a6c50702c731e040d2257347ea )
+id.	86400	IN	RRSIG	( DS 8 1 86400
+	20260424050000 20260411040000 54393 .
+	jGYsXMJnDfJBsQzfavbtGqSVJY0yo15yuyOYJDf9P6+T1LsQ1jnJ90SR7BhwkaBfo3rtsThTe2Ey
+	1cOxuZj9rQy5S7gVyJC1/GnmxbtLYDUeApyEG6chsutkRmza4fP10Bk+jDNCDr7BqcQ/DAADnxY6
+	hKkgrENOBJtvurj2BaG5eAvexzaZkBIybemM53Ikk7OyxpU1CiATrnk5sOvAZ2l/luZ/1En/fW/I
+	0ZXs7SZHV4FLQiatFKakKC1qYQunAgYSU1ceDLIuRtDNoGAxs/Hhc+Zs9y8L90nYkdQkbVh01FMc
+	vdWNE/IFL89+5z7Vg+/1/knlY6RLY0HyFlGbMA== )
+
+;; ADDITIONAL SECTION (11 records)
+b.dns.id.	172800	IN	A	103.19.179.179
+c.dns.id.	172800	IN	A	103.19.178.178
+d.dns.id.	172800	IN	A	45.126.57.57
+e.dns.id.	172800	IN	A	103.19.177.177
+ns4.apnic.net.	172800	IN	A	202.12.31.53
+b.dns.id.	172800	IN	AAAA	2402:ee80:b::b
+c.dns.id.	172800	IN	AAAA	2402:ee80:c::c
+d.dns.id.	172800	IN	AAAA	2402:ee80:d::d
+e.dns.id.	172800	IN	AAAA	2001:df5:4000:4::4
+ns4.apnic.net.	172800	IN	AAAA	2001:dd8:12::53
+;; {	"EDNS-VERSION": 0 }
+
+</pre></td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Query to g.root-servers.net for id/DNSKEY</td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Received 683 bytes from 192.112.36.4</td>
+</tr>
+<tr class="L3" style="display:none;">
+<td>&nbsp;</td>
+<td><pre>;; Response received from [192.112.36.4] 683 octets
+;; HEADER SECTION
+;;	id = 62502
+;;	qr = 1	aa = 0	tc = 0	rd = 0	opcode = QUERY
+;;	ra = 0	z  = 0	ad = 0	cd = 0	rcode  = NOERROR
+;;	do = 1	co = 0
+;;	qdcount = 1	ancount = 0
+;;	nscount = 7	arcount = 11
+
+;; {	"EDNS-VERSION":	0,
+;;	"FLAGS":	"8000",
+;;	"RCODE":	0,
+;;	"UDPSIZE":	1232,
+;;	"OPTIONS":	[ ]
+;;	}
+
+;; QUESTION SECTION (1 record)
+;; id.	IN	DNSKEY
+
+;; ANSWER SECTION (0 records)
+
+;; AUTHORITY SECTION (7 records)
+id.	172800	IN	NS	c.dns.id.
+id.	172800	IN	NS	ns4.apnic.net.
+id.	172800	IN	NS	b.dns.id.
+id.	172800	IN	NS	d.dns.id.
+id.	172800	IN	NS	e.dns.id.
+id.	86400	IN	DS	( 26887 8 2
+	28be22003a1afb1ed9a7bb82482274e2db5f09a6c50702c731e040d2257347ea )
+id.	86400	IN	RRSIG	( DS 8 1 86400
+	20260424050000 20260411040000 54393 .
+	jGYsXMJnDfJBsQzfavbtGqSVJY0yo15yuyOYJDf9P6+T1LsQ1jnJ90SR7BhwkaBfo3rtsThTe2Ey
+	1cOxuZj9rQy5S7gVyJC1/GnmxbtLYDUeApyEG6chsutkRmza4fP10Bk+jDNCDr7BqcQ/DAADnxY6
+	hKkgrENOBJtvurj2BaG5eAvexzaZkBIybemM53Ikk7OyxpU1CiATrnk5sOvAZ2l/luZ/1En/fW/I
+	0ZXs7SZHV4FLQiatFKakKC1qYQunAgYSU1ceDLIuRtDNoGAxs/Hhc+Zs9y8L90nYkdQkbVh01FMc
+	vdWNE/IFL89+5z7Vg+/1/knlY6RLY0HyFlGbMA== )
+
+;; ADDITIONAL SECTION (11 records)
+ns4.apnic.net.	172800	IN	A	202.12.31.53
+e.dns.id.	172800	IN	A	103.19.177.177
+d.dns.id.	172800	IN	A	45.126.57.57
+c.dns.id.	172800	IN	A	103.19.178.178
+b.dns.id.	172800	IN	A	103.19.179.179
+ns4.apnic.net.	172800	IN	AAAA	2001:dd8:12::53
+e.dns.id.	172800	IN	AAAA	2001:df5:4000:4::4
+d.dns.id.	172800	IN	AAAA	2402:ee80:d::d
+c.dns.id.	172800	IN	AAAA	2402:ee80:c::c
+b.dns.id.	172800	IN	AAAA	2402:ee80:b::b
+;; {	"EDNS-VERSION": 0 }
+
+</pre></td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td>Found child zone id</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr>
+<td class="T1L">id</td>
+<td>
+<table class="T2">
+<tbody><tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td>Checking DS between . and id</td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Query to b.root-servers.net for id/DS</td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Received 366 bytes from 170.247.170.2</td>
+</tr>
+<tr class="L3" style="display:none;">
+<td>&nbsp;</td>
+<td><pre>;; Response received from [170.247.170.2] 366 octets
+;; HEADER SECTION
+;;	id = 11194
+;;	qr = 1	aa = 1	tc = 0	rd = 0	opcode = QUERY
+;;	ra = 0	z  = 0	ad = 0	cd = 0	rcode  = NOERROR
+;;	do = 1	co = 0
+;;	qdcount = 1	ancount = 2
+;;	nscount = 0	arcount = 1
+
+;; {	"EDNS-VERSION":	0,
+;;	"FLAGS":	"8000",
+;;	"RCODE":	0,
+;;	"UDPSIZE":	1232,
+;;	"OPTIONS":	[ ]
+;;	}
+
+;; QUESTION SECTION (1 record)
+;; id.	IN	DS
+
+;; ANSWER SECTION (2 records)
+id.	86400	IN	DS	( 26887 8 2
+	28be22003a1afb1ed9a7bb82482274e2db5f09a6c50702c731e040d2257347ea )
+id.	86400	IN	RRSIG	( DS 8 1 86400
+	20260424050000 20260411040000 54393 .
+	jGYsXMJnDfJBsQzfavbtGqSVJY0yo15yuyOYJDf9P6+T1LsQ1jnJ90SR7BhwkaBfo3rtsThTe2Ey
+	1cOxuZj9rQy5S7gVyJC1/GnmxbtLYDUeApyEG6chsutkRmza4fP10Bk+jDNCDr7BqcQ/DAADnxY6
+	hKkgrENOBJtvurj2BaG5eAvexzaZkBIybemM53Ikk7OyxpU1CiATrnk5sOvAZ2l/luZ/1En/fW/I
+	0ZXs7SZHV4FLQiatFKakKC1qYQunAgYSU1ceDLIuRtDNoGAxs/Hhc+Zs9y8L90nYkdQkbVh01FMc
+	vdWNE/IFL89+5z7Vg+/1/knlY6RLY0HyFlGbMA== )
+
+;; AUTHORITY SECTION (0 records)
+
+;; ADDITIONAL SECTION (1 record)
+;; {	"EDNS-VERSION": 0 }
+
+</pre></td>
+</tr>
+<tr class="L0" style="">
+<td><img style="width:1em;" src="/green.png"></td>
+<td>Found 1 DS records for id in the . zone</td>
+</tr>
+<tr class="L0" style="">
+<td><img style="width:1em;" src="/green.png"></td>
+<td>DS<span class="keytag">=26887/SHA-256</span> has algorithm RSASHA256</td>
+</tr>
+<tr class="L0" style="">
+<td><img style="width:1em;" src="/green.png"></td>
+<td>Found 1 RRSIGs over DS RRset</td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td><code>id.	86400	IN	RRSIG	( DS 8 1 86400
+	20260424050000 20260411040000 54393 .
+	jGYsXMJnDfJBsQzfavbtGqSVJY0yo15yuyOYJDf9P6+T1LsQ1jnJ90SR7BhwkaBfo3rtsThTe2Ey
+	1cOxuZj9rQy5S7gVyJC1/GnmxbtLYDUeApyEG6chsutkRmza4fP10Bk+jDNCDr7BqcQ/DAADnxY6
+	hKkgrENOBJtvurj2BaG5eAvexzaZkBIybemM53Ikk7OyxpU1CiATrnk5sOvAZ2l/luZ/1En/fW/I
+	0ZXs7SZHV4FLQiatFKakKC1qYQunAgYSU1ceDLIuRtDNoGAxs/Hhc+Zs9y8L90nYkdQkbVh01FMc
+	vdWNE/IFL89+5z7Vg+/1/knlY6RLY0HyFlGbMA== )</code></td>
+</tr>
+<tr class="L0" style="">
+<td><img style="width:1em;" src="/green.png"></td>
+<td>RRSIG<span class="keytag">=54393</span> and DNSKEY<span class="keytag">=54393</span> verifies the DS RRset</td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td>DS<span class="keytag">=26887/SHA-256</span> is now in the chain-of-trust</td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td><code>id.	86400	IN	DS	( 26887 8 2
+	28be22003a1afb1ed9a7bb82482274e2db5f09a6c50702c731e040d2257347ea )</code></td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Query to ns4.apnic.net for id/DNSKEY</td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Received 873 bytes from 202.12.31.53</td>
+</tr>
+<tr class="L3" style="display:none;">
+<td>&nbsp;</td>
+<td><pre>;; Response received from [202.12.31.53] 873 octets
+;; HEADER SECTION
+;;	id = 40821
+;;	qr = 1	aa = 1	tc = 0	rd = 0	opcode = QUERY
+;;	ra = 0	z  = 0	ad = 0	cd = 0	rcode  = NOERROR
+;;	do = 1	co = 0
+;;	qdcount = 1	ancount = 3
+;;	nscount = 0	arcount = 1
+
+;; {	"EDNS-VERSION":	0,
+;;	"FLAGS":	"8000",
+;;	"RCODE":	0,
+;;	"UDPSIZE":	1232,
+;;	"OPTIONS":	[ ]
+;;	}
+
+;; QUESTION SECTION (1 record)
+;; id.	IN	DNSKEY
+
+;; ANSWER SECTION (3 records)
+id.	86400	IN	DNSKEY	( 256 3 8
+	AwEAAckf2f45NrA7QrZhdbbrBV1ku04QvQWGBqF3gPQ1fe473tV8OVztNzshC4sai1hQDVQ0b5Q1
+	AWb3u6I6MEtDIvWA2EJU69IRAFj3FcuJoEbMXCKk9xeusPrgnAyu8zOn7Ur2krJ0AVn6nBNjsINA
+	O8UMEC3nT1Loot0GW0Wo98L8gAYwfUofHXCsUlAeOM2m7j2zKu5sVWH+H+/7H4+dEDMDaUj0exqx
+	FVxhsMVsmgqtslmdS7wPWUa5ZB6fm9dybE8aZlSwyeyIRyso6khHRFX7csxbECjfrmUJ9YKMH9td
+	5/gHVT+HQNQeIJ1khIS21SvWt/GHqcGqDxvS/fTQuRU= ) ; keytag 22449
+id.	86400	IN	DNSKEY	( 257 3 8
+	AwEAAcTe9z3F7RaSKwc6BUrfOAZTKl2uV+VfcYu3+/L5n2AmmqRnep4tUvLLp6awc0/G0sqADalq
+	iLwossfpihHwyXzpD7/DwkUNKtJpbfafeKKqoO7PK10T/tnEyjC6TQLenZIpzVEQIH9Qd0OGr6xb
+	C+whZBfLWwKl8QpdrqcQ6gpH5KpRvvSmo6hJ50SEOqTbJLOtvA4MtBP8k1yKSXDbXTGMniW/wRZf
+	C3bMJGtK2xMY2wPOXsYM9u+MOWaqdhOKdxzG0je9ztz+F97LJa5dke48KcNmHicwDnIHtLm+8Xnm
+	qn/MAPJHnB1NWMWXiMZR8ugrFoPXSkw5IoemtNMjxeM= ) ; keytag 26887
+id.	86400	IN	RRSIG	( DNSKEY 8 1 86400
+	20260421191246 20260322190424 26887 id.
+	v4WvJJkcKH69arTjvzu5bP4ee6GsUwRJquRdeHAfEx34Ir5Z6to5+FuD//2o0C4+HVSUKwFp2gBQ
+	5DKMjIBnAPybX7rKahtZdod65tLxByFgbWsnvhDo6dkbkT20crN0wASjGWgMCpLUWGGkXMu62Oxu
+	VMrKJMOXULBq6A/tU1EKcna5dbOZss0elOZt0rtlA2XAq/C+8ISEnyTFC2iYOd/pBbdVDcyqKdK+
+	76XemCOUPrZRg4CS8eSvTE5/GmUEGsX/ael4iMhf0xzzojVdiqDqvTmzQxI9B1DrQaOznY4fEQS8
+	sDAoYeSadFICf3GXr2fJv1/+Z/IcQcPx3RwbpQ== )
+
+;; AUTHORITY SECTION (0 records)
+
+;; ADDITIONAL SECTION (1 record)
+;; {	"EDNS-VERSION": 0 }
+
+</pre></td>
+</tr>
+<tr class="L0" style="">
+<td><img style="width:1em;" src="/green.png"></td>
+<td>Found 2 DNSKEY records for id</td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td><code>id.	86400	IN	DNSKEY	( 256 3 8
+	AwEAAckf2f45NrA7QrZhdbbrBV1ku04QvQWGBqF3gPQ1fe473tV8OVztNzshC4sai1hQDVQ0b5Q1
+	AWb3u6I6MEtDIvWA2EJU69IRAFj3FcuJoEbMXCKk9xeusPrgnAyu8zOn7Ur2krJ0AVn6nBNjsINA
+	O8UMEC3nT1Loot0GW0Wo98L8gAYwfUofHXCsUlAeOM2m7j2zKu5sVWH+H+/7H4+dEDMDaUj0exqx
+	FVxhsMVsmgqtslmdS7wPWUa5ZB6fm9dybE8aZlSwyeyIRyso6khHRFX7csxbECjfrmUJ9YKMH9td
+	5/gHVT+HQNQeIJ1khIS21SvWt/GHqcGqDxvS/fTQuRU= ) ; keytag 22449</code></td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td><code>id.	86400	IN	DNSKEY	( 257 3 8
+	AwEAAcTe9z3F7RaSKwc6BUrfOAZTKl2uV+VfcYu3+/L5n2AmmqRnep4tUvLLp6awc0/G0sqADalq
+	iLwossfpihHwyXzpD7/DwkUNKtJpbfafeKKqoO7PK10T/tnEyjC6TQLenZIpzVEQIH9Qd0OGr6xb
+	C+whZBfLWwKl8QpdrqcQ6gpH5KpRvvSmo6hJ50SEOqTbJLOtvA4MtBP8k1yKSXDbXTGMniW/wRZf
+	C3bMJGtK2xMY2wPOXsYM9u+MOWaqdhOKdxzG0je9ztz+F97LJa5dke48KcNmHicwDnIHtLm+8Xnm
+	qn/MAPJHnB1NWMWXiMZR8ugrFoPXSkw5IoemtNMjxeM= ) ; keytag 26887</code></td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td>DNSKEY<span class="keytag">=26887/SEP</span> is now in the chain-of-trust</td>
+</tr>
+<tr class="L0" style="">
+<td><img style="width:1em;" src="/green.png"></td>
+<td>DS<span class="keytag">=26887/SHA-256</span> verifies DNSKEY<span class="keytag">=26887/SEP</span></td>
+</tr>
+<tr class="L0" style="">
+<td><img style="width:1em;" src="/green.png"></td>
+<td>Found 1 RRSIGs over DNSKEY RRset</td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td><code>id.	86400	IN	RRSIG	( DNSKEY 8 1 86400
+	20260421191246 20260322190424 26887 id.
+	v4WvJJkcKH69arTjvzu5bP4ee6GsUwRJquRdeHAfEx34Ir5Z6to5+FuD//2o0C4+HVSUKwFp2gBQ
+	5DKMjIBnAPybX7rKahtZdod65tLxByFgbWsnvhDo6dkbkT20crN0wASjGWgMCpLUWGGkXMu62Oxu
+	VMrKJMOXULBq6A/tU1EKcna5dbOZss0elOZt0rtlA2XAq/C+8ISEnyTFC2iYOd/pBbdVDcyqKdK+
+	76XemCOUPrZRg4CS8eSvTE5/GmUEGsX/ael4iMhf0xzzojVdiqDqvTmzQxI9B1DrQaOznY4fEQS8
+	sDAoYeSadFICf3GXr2fJv1/+Z/IcQcPx3RwbpQ== )</code></td>
+</tr>
+<tr class="L0" style="">
+<td><img style="width:1em;" src="/green.png"></td>
+<td>RRSIG<span class="keytag">=26887</span> and DNSKEY<span class="keytag">=26887/SEP</span> verifies the DNSKEY RRset</td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td>DNSKEY<span class="keytag">=22449</span> is now in the chain-of-trust</td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Query to e.dns.id for bnn.go.id/A</td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Timeout querying e.dns.id/103.19.177.177 for bnn.go.id/A</td>
+</tr>
+<tr class="L0" style="" id="query-timeout-id">
+<td><img style="width:1em;" src="/yellow.png" onmouseover="tooltip.show('&lt;p&gt;This query timed out or could not be sent to the referenced nameserver.&lt;/p&gt; &lt;p&gt;If you are responsible for this nameserver, please ensure that it is running and externally reachable.&lt;/p&gt; ')" onmouseout="tooltip.hide()"></td>
+<td>All Queries to e.dns.id for bnn.go.id/A timed out or failed</td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Query to d.dns.id for bnn.go.id/A</td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Received 311 bytes from 45.126.57.57</td>
+</tr>
+<tr class="L3" style="display:none;">
+<td>&nbsp;</td>
+<td><pre>;; Response received from [45.126.57.57] 311 octets
+;; HEADER SECTION
+;;	id = 44331
+;;	qr = 1	aa = 0	tc = 0	rd = 0	opcode = QUERY
+;;	ra = 0	z  = 0	ad = 0	cd = 0	rcode  = NOERROR
+;;	do = 1	co = 0
+;;	qdcount = 1	ancount = 0
+;;	nscount = 4	arcount = 5
+
+;; {	"EDNS-VERSION":	0,
+;;	"FLAGS":	"8000",
+;;	"RCODE":	0,
+;;	"UDPSIZE":	1232,
+;;	"OPTIONS":	[ ]
+;;	}
+
+;; QUESTION SECTION (1 record)
+;; bnn.go.id.	IN	A
+
+;; ANSWER SECTION (0 records)
+
+;; AUTHORITY SECTION (4 records)
+bnn.go.id.	3600	IN	NS	nx1.bnn.go.id.
+bnn.go.id.	3600	IN	NS	nx2.bnn.go.id.
+bnn.go.id.	3600	IN	DS	( 46157 13 2
+	55c9968fb9ddfe855d9743b069f404b8ed972983acb7753c5b456414b8dfbcee )
+bnn.go.id.	3600	IN	RRSIG	( DS 13 3 3600
+	20260507171658 20260407170039 6358 go.id.
+	O4x4wFs9rWNfmIDPuv8o7M7WaIaKiF7fHj5V1ZM0LVsA+8AuLKWySHkjOqVLBv1Qj1P0NKmpU7OS
+	4cxTpgUEQQ== )
+
+;; ADDITIONAL SECTION (5 records)
+nx2.bnn.go.id.	3600	IN	A	103.112.223.1
+nx1.bnn.go.id.	3600	IN	A	103.3.70.1
+nx2.bnn.go.id.	3600	IN	AAAA	2001:df4:bd00::990:1
+nx1.bnn.go.id.	3600	IN	AAAA	2001:df5:3600::903:1
+;; {	"EDNS-VERSION": 0 }
+
+</pre></td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Query to c.dns.id for go.id/DNSKEY</td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Received 295 bytes from 103.19.178.178</td>
+</tr>
+<tr class="L3" style="display:none;">
+<td>&nbsp;</td>
+<td><pre>;; Response received from [103.19.178.178] 295 octets
+;; HEADER SECTION
+;;	id = 21484
+;;	qr = 1	aa = 1	tc = 0	rd = 0	opcode = QUERY
+;;	ra = 0	z  = 0	ad = 0	cd = 0	rcode  = NOERROR
+;;	do = 1	co = 0
+;;	qdcount = 1	ancount = 3
+;;	nscount = 0	arcount = 1
+
+;; {	"EDNS-VERSION":	0,
+;;	"FLAGS":	"8000",
+;;	"RCODE":	0,
+;;	"UDPSIZE":	1232,
+;;	"OPTIONS":	[ ]
+;;	}
+
+;; QUESTION SECTION (1 record)
+;; go.id.	IN	DNSKEY
+
+;; ANSWER SECTION (3 records)
+go.id.	86400	IN	DNSKEY	( 256 3 13
+	yRodYKsowKIljuA/kF1TW/eox2wJW+8bnoCMt6cFKdMAUQOYv80ZMTcoSTmUtI6ANOYbDsGzLoUU
+	XRxDlwGdEA== ) ; keytag 6358
+go.id.	86400	IN	DNSKEY	( 257 3 13
+	T3w2iw97ZKUCGLQkTWrO6juUU9uaYMoTw7CgHQAI3S81FEx3v6euK7tfaGBD4Meh9FlZvRFxw32d
+	yfiPvjgzbg== ) ; keytag 53081
+go.id.	86400	IN	RRSIG	( DNSKEY 13 2 86400
+	20260430223605 20260331214603 53081 go.id.
+	xqa0hzkElbFKT1vFO9/gkNyn3PEgE3QWYRIRd/xMXeNDxCEUHJkJPTlSjyBeVHBjqM8oPnLSZZye
+	G46Y98rR4g== )
+
+;; AUTHORITY SECTION (0 records)
+
+;; ADDITIONAL SECTION (1 record)
+;; {	"EDNS-VERSION": 0 }
+
+</pre></td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td>Found child zone go.id</td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td>Attempting to learn nameservers for go.id</td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Query to c.dns.id for go.id/NS</td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Received 203 bytes from 103.19.178.178</td>
+</tr>
+<tr class="L3" style="display:none;">
+<td>&nbsp;</td>
+<td><pre>;; Response received from [103.19.178.178] 203 octets
+;; HEADER SECTION
+;;	id = 28405
+;;	qr = 1	aa = 1	tc = 0	rd = 0	opcode = QUERY
+;;	ra = 0	z  = 0	ad = 0	cd = 0	rcode  = NOERROR
+;;	do = 1	co = 0
+;;	qdcount = 1	ancount = 5
+;;	nscount = 0	arcount = 1
+
+;; {	"EDNS-VERSION":	0,
+;;	"FLAGS":	"8000",
+;;	"RCODE":	0,
+;;	"UDPSIZE":	1232,
+;;	"OPTIONS":	[ ]
+;;	}
+
+;; QUESTION SECTION (1 record)
+;; go.id.	IN	NS
+
+;; ANSWER SECTION (5 records)
+go.id.	86400	IN	NS	b.dns.id.
+go.id.	86400	IN	NS	c.dns.id.
+go.id.	86400	IN	NS	d.dns.id.
+go.id.	86400	IN	NS	e.dns.id.
+go.id.	86400	IN	RRSIG	( NS 13 2 86400
+	20260427002039 20260327232245 6358 go.id.
+	Rd26d/iRJK93nuUPucWUzfB8UtMIBI+O4K53C4JFeZdZN1zvtqzCEOsuiZV6TRxv9l8+IPS7kQ1J
+	NndA+mKpiw== )
+
+;; AUTHORITY SECTION (0 records)
+
+;; ADDITIONAL SECTION (1 record)
+;; {	"EDNS-VERSION": 0 }
+
+</pre></td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td>Found go.id nameservers: b.dns.id, c.dns.id, d.dns.id, e.dns.id</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr>
+<td class="T1L">go.id</td>
+<td>
+<table class="T2">
+<tbody><tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td>Checking DS between id and go.id</td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Query to d.dns.id for go.id/DS</td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Received 372 bytes from 45.126.57.57</td>
+</tr>
+<tr class="L3" style="display:none;">
+<td>&nbsp;</td>
+<td><pre>;; Response received from [45.126.57.57] 372 octets
+;; HEADER SECTION
+;;	id = 15248
+;;	qr = 1	aa = 1	tc = 0	rd = 0	opcode = QUERY
+;;	ra = 0	z  = 0	ad = 0	cd = 0	rcode  = NOERROR
+;;	do = 1	co = 0
+;;	qdcount = 1	ancount = 2
+;;	nscount = 0	arcount = 1
+
+;; {	"EDNS-VERSION":	0,
+;;	"FLAGS":	"8000",
+;;	"RCODE":	0,
+;;	"UDPSIZE":	1232,
+;;	"OPTIONS":	[ ]
+;;	}
+
+;; QUESTION SECTION (1 record)
+;; go.id.	IN	DS
+
+;; ANSWER SECTION (2 records)
+go.id.	13300	IN	DS	( 53081 13 2
+	a90380c64104a5a74e4bfee814ed4604e48276b5f06b14d3ff88874d7ced2872 )
+go.id.	13300	IN	RRSIG	( DS 8 2 13300
+	20260425233329 20260326230635 22449 id.
+	Q2LjvaDNHD0EnKXsd5LXR8ZSX/bBp/deqRICFiHQKewfszv1nmYWRQ33+Nd8qqQ/28PQHS18ReHW
+	HYWyRqnXV998QMVg4o/oOMMEbkLol7OOW6UlCcW2a/al7OG6piMVyAKcPR2Gkz9wVZHchk7wLfLb
+	HZtO3Tk0FXVfPU0u+cZXa4nvxXZPccZPUp+7vvnEK+YdmcMTYd8tdmyxfGIZ6CSu/7lrisc/QgZH
+	EXRmqSuJL3Kxl+uPJ0kMmg9KnJT4waGkKiVmv1FkIWzK+SxlTjAM1ictIT6vmQhlegBppUtmLEVv
+	ptGI3U9oivsQz+pOj6hfuHk2ANcwjBiVRNUuGw== )
+
+;; AUTHORITY SECTION (0 records)
+
+;; ADDITIONAL SECTION (1 record)
+;; {	"EDNS-VERSION": 0 }
+
+</pre></td>
+</tr>
+<tr class="L0" style="">
+<td><img style="width:1em;" src="/green.png"></td>
+<td>Found 1 DS records for go.id in the id zone</td>
+</tr>
+<tr class="L0" style="">
+<td><img style="width:1em;" src="/green.png"></td>
+<td>DS<span class="keytag">=53081/SHA-256</span> has algorithm ECDSAP256SHA256</td>
+</tr>
+<tr class="L0" style="">
+<td><img style="width:1em;" src="/green.png"></td>
+<td>Found 1 RRSIGs over DS RRset</td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td><code>go.id.	13300	IN	RRSIG	( DS 8 2 13300
+	20260425233329 20260326230635 22449 id.
+	Q2LjvaDNHD0EnKXsd5LXR8ZSX/bBp/deqRICFiHQKewfszv1nmYWRQ33+Nd8qqQ/28PQHS18ReHW
+	HYWyRqnXV998QMVg4o/oOMMEbkLol7OOW6UlCcW2a/al7OG6piMVyAKcPR2Gkz9wVZHchk7wLfLb
+	HZtO3Tk0FXVfPU0u+cZXa4nvxXZPccZPUp+7vvnEK+YdmcMTYd8tdmyxfGIZ6CSu/7lrisc/QgZH
+	EXRmqSuJL3Kxl+uPJ0kMmg9KnJT4waGkKiVmv1FkIWzK+SxlTjAM1ictIT6vmQhlegBppUtmLEVv
+	ptGI3U9oivsQz+pOj6hfuHk2ANcwjBiVRNUuGw== )</code></td>
+</tr>
+<tr class="L0" style="">
+<td><img style="width:1em;" src="/green.png"></td>
+<td>RRSIG<span class="keytag">=22449</span> and DNSKEY<span class="keytag">=22449</span> verifies the DS RRset</td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td>DS<span class="keytag">=53081/SHA-256</span> is now in the chain-of-trust</td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td><code>go.id.	13300	IN	DS	( 53081 13 2
+	a90380c64104a5a74e4bfee814ed4604e48276b5f06b14d3ff88874d7ced2872 )</code></td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Query to c.dns.id for go.id/DNSKEY</td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Received 295 bytes from 103.19.178.178</td>
+</tr>
+<tr class="L3" style="display:none;">
+<td>&nbsp;</td>
+<td><pre>;; Response received from [103.19.178.178] 295 octets
+;; HEADER SECTION
+;;	id = 50712
+;;	qr = 1	aa = 1	tc = 0	rd = 0	opcode = QUERY
+;;	ra = 0	z  = 0	ad = 0	cd = 0	rcode  = NOERROR
+;;	do = 1	co = 0
+;;	qdcount = 1	ancount = 3
+;;	nscount = 0	arcount = 1
+
+;; {	"EDNS-VERSION":	0,
+;;	"FLAGS":	"8000",
+;;	"RCODE":	0,
+;;	"UDPSIZE":	1232,
+;;	"OPTIONS":	[ ]
+;;	}
+
+;; QUESTION SECTION (1 record)
+;; go.id.	IN	DNSKEY
+
+;; ANSWER SECTION (3 records)
+go.id.	86400	IN	DNSKEY	( 256 3 13
+	yRodYKsowKIljuA/kF1TW/eox2wJW+8bnoCMt6cFKdMAUQOYv80ZMTcoSTmUtI6ANOYbDsGzLoUU
+	XRxDlwGdEA== ) ; keytag 6358
+go.id.	86400	IN	DNSKEY	( 257 3 13
+	T3w2iw97ZKUCGLQkTWrO6juUU9uaYMoTw7CgHQAI3S81FEx3v6euK7tfaGBD4Meh9FlZvRFxw32d
+	yfiPvjgzbg== ) ; keytag 53081
+go.id.	86400	IN	RRSIG	( DNSKEY 13 2 86400
+	20260430223605 20260331214603 53081 go.id.
+	xqa0hzkElbFKT1vFO9/gkNyn3PEgE3QWYRIRd/xMXeNDxCEUHJkJPTlSjyBeVHBjqM8oPnLSZZye
+	G46Y98rR4g== )
+
+;; AUTHORITY SECTION (0 records)
+
+;; ADDITIONAL SECTION (1 record)
+;; {	"EDNS-VERSION": 0 }
+
+</pre></td>
+</tr>
+<tr class="L0" style="">
+<td><img style="width:1em;" src="/green.png"></td>
+<td>Found 2 DNSKEY records for go.id</td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td><code>go.id.	86400	IN	DNSKEY	( 256 3 13
+	yRodYKsowKIljuA/kF1TW/eox2wJW+8bnoCMt6cFKdMAUQOYv80ZMTcoSTmUtI6ANOYbDsGzLoUU
+	XRxDlwGdEA== ) ; keytag 6358</code></td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td><code>go.id.	86400	IN	DNSKEY	( 257 3 13
+	T3w2iw97ZKUCGLQkTWrO6juUU9uaYMoTw7CgHQAI3S81FEx3v6euK7tfaGBD4Meh9FlZvRFxw32d
+	yfiPvjgzbg== ) ; keytag 53081</code></td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td>DNSKEY<span class="keytag">=53081/SEP</span> is now in the chain-of-trust</td>
+</tr>
+<tr class="L0" style="">
+<td><img style="width:1em;" src="/green.png"></td>
+<td>DS<span class="keytag">=53081/SHA-256</span> verifies DNSKEY<span class="keytag">=53081/SEP</span></td>
+</tr>
+<tr class="L0" style="">
+<td><img style="width:1em;" src="/green.png"></td>
+<td>Found 1 RRSIGs over DNSKEY RRset</td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td><code>go.id.	86400	IN	RRSIG	( DNSKEY 13 2 86400
+	20260430223605 20260331214603 53081 go.id.
+	xqa0hzkElbFKT1vFO9/gkNyn3PEgE3QWYRIRd/xMXeNDxCEUHJkJPTlSjyBeVHBjqM8oPnLSZZye
+	G46Y98rR4g== )</code></td>
+</tr>
+<tr class="L0" style="">
+<td><img style="width:1em;" src="/green.png"></td>
+<td>RRSIG<span class="keytag">=53081</span> and DNSKEY<span class="keytag">=53081/SEP</span> verifies the DNSKEY RRset</td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td>DNSKEY<span class="keytag">=6358</span> is now in the chain-of-trust</td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Query to c.dns.id for bnn.go.id/A</td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Received 311 bytes from 103.19.178.178</td>
+</tr>
+<tr class="L3" style="display:none;">
+<td>&nbsp;</td>
+<td><pre>;; Response received from [103.19.178.178] 311 octets
+;; HEADER SECTION
+;;	id = 34673
+;;	qr = 1	aa = 0	tc = 0	rd = 0	opcode = QUERY
+;;	ra = 0	z  = 0	ad = 0	cd = 0	rcode  = NOERROR
+;;	do = 1	co = 0
+;;	qdcount = 1	ancount = 0
+;;	nscount = 4	arcount = 5
+
+;; {	"EDNS-VERSION":	0,
+;;	"FLAGS":	"8000",
+;;	"RCODE":	0,
+;;	"UDPSIZE":	1232,
+;;	"OPTIONS":	[ ]
+;;	}
+
+;; QUESTION SECTION (1 record)
+;; bnn.go.id.	IN	A
+
+;; ANSWER SECTION (0 records)
+
+;; AUTHORITY SECTION (4 records)
+bnn.go.id.	3600	IN	NS	nx1.bnn.go.id.
+bnn.go.id.	3600	IN	NS	nx2.bnn.go.id.
+bnn.go.id.	3600	IN	DS	( 46157 13 2
+	55c9968fb9ddfe855d9743b069f404b8ed972983acb7753c5b456414b8dfbcee )
+bnn.go.id.	3600	IN	RRSIG	( DS 13 3 3600
+	20260507171658 20260407170039 6358 go.id.
+	O4x4wFs9rWNfmIDPuv8o7M7WaIaKiF7fHj5V1ZM0LVsA+8AuLKWySHkjOqVLBv1Qj1P0NKmpU7OS
+	4cxTpgUEQQ== )
+
+;; ADDITIONAL SECTION (5 records)
+nx1.bnn.go.id.	3600	IN	A	103.3.70.1
+nx2.bnn.go.id.	3600	IN	A	103.112.223.1
+nx1.bnn.go.id.	3600	IN	AAAA	2001:df5:3600::903:1
+nx2.bnn.go.id.	3600	IN	AAAA	2001:df4:bd00::990:1
+;; {	"EDNS-VERSION": 0 }
+
+</pre></td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Query to b.dns.id for bnn.go.id/DNSKEY</td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Received 311 bytes from 103.19.179.179</td>
+</tr>
+<tr class="L3" style="display:none;">
+<td>&nbsp;</td>
+<td><pre>;; Response received from [103.19.179.179] 311 octets
+;; HEADER SECTION
+;;	id = 15586
+;;	qr = 1	aa = 0	tc = 0	rd = 0	opcode = QUERY
+;;	ra = 0	z  = 0	ad = 0	cd = 0	rcode  = NOERROR
+;;	do = 1	co = 0
+;;	qdcount = 1	ancount = 0
+;;	nscount = 4	arcount = 5
+
+;; {	"EDNS-VERSION":	0,
+;;	"FLAGS":	"8000",
+;;	"RCODE":	0,
+;;	"UDPSIZE":	1232,
+;;	"OPTIONS":	[ ]
+;;	}
+
+;; QUESTION SECTION (1 record)
+;; bnn.go.id.	IN	DNSKEY
+
+;; ANSWER SECTION (0 records)
+
+;; AUTHORITY SECTION (4 records)
+bnn.go.id.	3600	IN	NS	nx1.bnn.go.id.
+bnn.go.id.	3600	IN	NS	nx2.bnn.go.id.
+bnn.go.id.	3600	IN	DS	( 46157 13 2
+	55c9968fb9ddfe855d9743b069f404b8ed972983acb7753c5b456414b8dfbcee )
+bnn.go.id.	3600	IN	RRSIG	( DS 13 3 3600
+	20260507171658 20260407170039 6358 go.id.
+	O4x4wFs9rWNfmIDPuv8o7M7WaIaKiF7fHj5V1ZM0LVsA+8AuLKWySHkjOqVLBv1Qj1P0NKmpU7OS
+	4cxTpgUEQQ== )
+
+;; ADDITIONAL SECTION (5 records)
+nx1.bnn.go.id.	3600	IN	A	103.3.70.1
+nx1.bnn.go.id.	3600	IN	AAAA	2001:df5:3600::903:1
+nx2.bnn.go.id.	3600	IN	A	103.112.223.1
+nx2.bnn.go.id.	3600	IN	AAAA	2001:df4:bd00::990:1
+;; {	"EDNS-VERSION": 0 }
+
+</pre></td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td>Found child zone bnn.go.id</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr>
+<td class="T1L">bnn.go.id</td>
+<td>
+<table class="T2">
+<tbody><tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td>Checking DS between go.id and bnn.go.id</td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Query to b.dns.id for bnn.go.id/DS</td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Received 187 bytes from 103.19.179.179</td>
+</tr>
+<tr class="L3" style="display:none;">
+<td>&nbsp;</td>
+<td><pre>;; Response received from [103.19.179.179] 187 octets
+;; HEADER SECTION
+;;	id = 52059
+;;	qr = 1	aa = 1	tc = 0	rd = 0	opcode = QUERY
+;;	ra = 0	z  = 0	ad = 0	cd = 0	rcode  = NOERROR
+;;	do = 1	co = 0
+;;	qdcount = 1	ancount = 2
+;;	nscount = 0	arcount = 1
+
+;; {	"EDNS-VERSION":	0,
+;;	"FLAGS":	"8000",
+;;	"RCODE":	0,
+;;	"UDPSIZE":	1232,
+;;	"OPTIONS":	[ ]
+;;	}
+
+;; QUESTION SECTION (1 record)
+;; bnn.go.id.	IN	DS
+
+;; ANSWER SECTION (2 records)
+bnn.go.id.	3600	IN	DS	( 46157 13 2
+	55c9968fb9ddfe855d9743b069f404b8ed972983acb7753c5b456414b8dfbcee )
+bnn.go.id.	3600	IN	RRSIG	( DS 13 3 3600
+	20260507171658 20260407170039 6358 go.id.
+	O4x4wFs9rWNfmIDPuv8o7M7WaIaKiF7fHj5V1ZM0LVsA+8AuLKWySHkjOqVLBv1Qj1P0NKmpU7OS
+	4cxTpgUEQQ== )
+
+;; AUTHORITY SECTION (0 records)
+
+;; ADDITIONAL SECTION (1 record)
+;; {	"EDNS-VERSION": 0 }
+
+</pre></td>
+</tr>
+<tr class="L0" style="">
+<td><img style="width:1em;" src="/green.png"></td>
+<td>Found 1 DS records for bnn.go.id in the go.id zone</td>
+</tr>
+<tr class="L0" style="">
+<td><img style="width:1em;" src="/green.png"></td>
+<td>DS<span class="keytag">=46157/SHA-256</span> has algorithm ECDSAP256SHA256</td>
+</tr>
+<tr class="L0" style="">
+<td><img style="width:1em;" src="/green.png"></td>
+<td>Found 1 RRSIGs over DS RRset</td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td><code>bnn.go.id.	3600	IN	RRSIG	( DS 13 3 3600
+	20260507171658 20260407170039 6358 go.id.
+	O4x4wFs9rWNfmIDPuv8o7M7WaIaKiF7fHj5V1ZM0LVsA+8AuLKWySHkjOqVLBv1Qj1P0NKmpU7OS
+	4cxTpgUEQQ== )</code></td>
+</tr>
+<tr class="L0" style="">
+<td><img style="width:1em;" src="/green.png"></td>
+<td>RRSIG<span class="keytag">=6358</span> and DNSKEY<span class="keytag">=6358</span> verifies the DS RRset</td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td>DS<span class="keytag">=46157/SHA-256</span> is now in the chain-of-trust</td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td><code>bnn.go.id.	3600	IN	DS	( 46157 13 2
+	55c9968fb9ddfe855d9743b069f404b8ed972983acb7753c5b456414b8dfbcee )</code></td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Query to nx1.bnn.go.id for bnn.go.id/DNSKEY</td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Received 408 bytes from 103.3.70.1</td>
+</tr>
+<tr class="L3" style="display:none;">
+<td>&nbsp;</td>
+<td><pre>;; Response received from [103.3.70.1] 408 octets
+;; HEADER SECTION
+;;	id = 3696
+;;	qr = 1	aa = 1	tc = 0	rd = 0	opcode = QUERY
+;;	ra = 0	z  = 0	ad = 0	cd = 0	rcode  = NOERROR
+;;	do = 1	co = 0
+;;	qdcount = 1	ancount = 4
+;;	nscount = 0	arcount = 1
+
+;; {	"EDNS-VERSION":	0,
+;;	"FLAGS":	"8000",
+;;	"RCODE":	0,
+;;	"UDPSIZE":	1232,
+;;	"OPTIONS":	[ ]
+;;	}
+
+;; QUESTION SECTION (1 record)
+;; bnn.go.id.	IN	DNSKEY
+
+;; ANSWER SECTION (4 records)
+bnn.go.id.	86400	IN	DNSKEY	( 256 3 13
+	dIh9hSajKYMRP0QIu/90rRkBNr0JU5Ic3U3yGsATq+3uWxgdaUl1N+JiO4hVQTTZnK6PY4vt10U3
+	h6a8KXwWRA== ) ; keytag 11543
+bnn.go.id.	86400	IN	DNSKEY	( 257 3 13
+	i3zcmpwmgQf6/LUpN5bJ2i4Dj7Iv/dDXfB5oD93irb5leGwVUCsRexnkH7NP461TlqcZM0CaoHXY
+	onuY8TgKpw== ) ; keytag 46157
+bnn.go.id.	86400	IN	RRSIG	( DNSKEY 13 3 86400
+	20260510160013 20260410160013 11543 bnn.go.id.
+	kqRjf/Ueppu9zVGI6wYiDI6Exmuf/SmFoxFjzGLJNS0SZGn7UoOYUg/gUxArkSYt6lXVXk+aKWr8
+	obYmjy3uOQ== )
+bnn.go.id.	86400	IN	RRSIG	( DNSKEY 13 3 86400
+	20260510160013 20260410160013 46157 bnn.go.id.
+	PA9pEgyqQkGpf6ofbDY1eihtGI0xZ0lp/v/LX3OJVhIYi5EugS7BjMpzdK82XIx+XZKcz39jDajD
+	ZRkpjU9TXA== )
+
+;; AUTHORITY SECTION (0 records)
+
+;; ADDITIONAL SECTION (1 record)
+;; {	"EDNS-VERSION": 0 }
+
+</pre></td>
+</tr>
+<tr class="L0" style="">
+<td><img style="width:1em;" src="/green.png"></td>
+<td>Found 2 DNSKEY records for bnn.go.id</td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td><code>bnn.go.id.	86400	IN	DNSKEY	( 256 3 13
+	dIh9hSajKYMRP0QIu/90rRkBNr0JU5Ic3U3yGsATq+3uWxgdaUl1N+JiO4hVQTTZnK6PY4vt10U3
+	h6a8KXwWRA== ) ; keytag 11543</code></td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td><code>bnn.go.id.	86400	IN	DNSKEY	( 257 3 13
+	i3zcmpwmgQf6/LUpN5bJ2i4Dj7Iv/dDXfB5oD93irb5leGwVUCsRexnkH7NP461TlqcZM0CaoHXY
+	onuY8TgKpw== ) ; keytag 46157</code></td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td>DNSKEY<span class="keytag">=46157/SEP</span> is now in the chain-of-trust</td>
+</tr>
+<tr class="L0" style="">
+<td><img style="width:1em;" src="/green.png"></td>
+<td>DS<span class="keytag">=46157/SHA-256</span> verifies DNSKEY<span class="keytag">=46157/SEP</span></td>
+</tr>
+<tr class="L0" style="">
+<td><img style="width:1em;" src="/green.png"></td>
+<td>Found 2 RRSIGs over DNSKEY RRset</td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td><code>bnn.go.id.	86400	IN	RRSIG	( DNSKEY 13 3 86400
+	20260510160013 20260410160013 11543 bnn.go.id.
+	kqRjf/Ueppu9zVGI6wYiDI6Exmuf/SmFoxFjzGLJNS0SZGn7UoOYUg/gUxArkSYt6lXVXk+aKWr8
+	obYmjy3uOQ== )</code></td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td><code>bnn.go.id.	86400	IN	RRSIG	( DNSKEY 13 3 86400
+	20260510160013 20260410160013 46157 bnn.go.id.
+	PA9pEgyqQkGpf6ofbDY1eihtGI0xZ0lp/v/LX3OJVhIYi5EugS7BjMpzdK82XIx+XZKcz39jDajD
+	ZRkpjU9TXA== )</code></td>
+</tr>
+<tr class="L0" style="">
+<td><img style="width:1em;" src="/green.png"></td>
+<td>RRSIG<span class="keytag">=11543</span> and DNSKEY<span class="keytag">=11543</span> verifies the DNSKEY RRset</td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td>RRSIG<span class="keytag">=46157</span> and DNSKEY<span class="keytag">=46157/SEP</span> verifies the DNSKEY RRset</td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td>DNSKEY<span class="keytag">=11543</span> is now in the chain-of-trust</td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Query to nx2.bnn.go.id for bnn.go.id/A</td>
+</tr>
+<tr class="L0" style="" id="bad-rcode-bnn.go.id">
+<td><img style="width:1em;" src="/red.png" onmouseover="tooltip.show('&lt;p&gt;We received an unexpected response code, which is most likely not a DNSSEC problem.&lt;/p&gt; &lt;p&gt;An NXDOMAIN response code means that the referenced domain name does not exist.&lt;/p&gt; &lt;p&gt;A SERVFAIL response code usually means that a secondary/slave nameserver does not have current data from the master.&lt;/p&gt; &lt;p&gt;A REFUSED response code means that the nameserver is configured to refuse this query.&lt;/p&gt; ')" onmouseout="tooltip.hide()"></td>
+<td>nx2.bnn.go.id returns REFUSED for bnn.go.id/A</td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Query to nx1.bnn.go.id for bnn.go.id/A</td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Received 159 bytes from 103.3.70.1</td>
+</tr>
+<tr class="L3" style="display:none;">
+<td>&nbsp;</td>
+<td><pre>;; Response received from [103.3.70.1] 159 octets
+;; HEADER SECTION
+;;	id = 2430
+;;	qr = 1	aa = 1	tc = 0	rd = 0	opcode = QUERY
+;;	ra = 0	z  = 0	ad = 0	cd = 0	rcode  = NOERROR
+;;	do = 1	co = 0
+;;	qdcount = 1	ancount = 2
+;;	nscount = 0	arcount = 1
+
+;; {	"EDNS-VERSION":	0,
+;;	"FLAGS":	"8000",
+;;	"RCODE":	0,
+;;	"UDPSIZE":	1232,
+;;	"OPTIONS":	[ ]
+;;	}
+
+;; QUESTION SECTION (1 record)
+;; bnn.go.id.	IN	A
+
+;; ANSWER SECTION (2 records)
+bnn.go.id.	86400	IN	A	103.3.70.14
+bnn.go.id.	86400	IN	RRSIG	( A 13 3 86400
+	20260510160013 20260410160013 11543 bnn.go.id.
+	62Nb/ZHMsOk8svB/duj6kGnofSAvK4CtNO8g9myagUNmYvo4vsgvo5iNtkiD9bAP7urn17iIysln
+	KJqM6NvA5g== )
+
+;; AUTHORITY SECTION (0 records)
+
+;; ADDITIONAL SECTION (1 record)
+;; {	"EDNS-VERSION": 0 }
+
+</pre></td>
+</tr>
+<tr class="L0" style="">
+<td><img style="width:1em;" src="/green.png"></td>
+<td>nx1.bnn.go.id is authoritative for bnn.go.id</td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Found RRSIG signed by bnn.go.id zone</td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Query to nx1.bnn.go.id for bnn.go.id/A</td>
+</tr>
+<tr class="L2" style="display:none;">
+<td>&nbsp;</td>
+<td>Received 159 bytes from 103.3.70.1</td>
+</tr>
+<tr class="L3" style="display:none;">
+<td>&nbsp;</td>
+<td><pre>;; Response received from [103.3.70.1] 159 octets
+;; HEADER SECTION
+;;	id = 35726
+;;	qr = 1	aa = 1	tc = 0	rd = 0	opcode = QUERY
+;;	ra = 0	z  = 0	ad = 0	cd = 0	rcode  = NOERROR
+;;	do = 1	co = 0
+;;	qdcount = 1	ancount = 2
+;;	nscount = 0	arcount = 1
+
+;; {	"EDNS-VERSION":	0,
+;;	"FLAGS":	"8000",
+;;	"RCODE":	0,
+;;	"UDPSIZE":	1232,
+;;	"OPTIONS":	[ ]
+;;	}
+
+;; QUESTION SECTION (1 record)
+;; bnn.go.id.	IN	A
+
+;; ANSWER SECTION (2 records)
+bnn.go.id.	86400	IN	A	103.3.70.14
+bnn.go.id.	86400	IN	RRSIG	( A 13 3 86400
+	20260510160013 20260410160013 11543 bnn.go.id.
+	62Nb/ZHMsOk8svB/duj6kGnofSAvK4CtNO8g9myagUNmYvo4vsgvo5iNtkiD9bAP7urn17iIysln
+	KJqM6NvA5g== )
+
+;; AUTHORITY SECTION (0 records)
+
+;; ADDITIONAL SECTION (1 record)
+;; {	"EDNS-VERSION": 0 }
+
+</pre></td>
+</tr>
+<tr class="L0" style="">
+<td><img style="width:1em;" src="/green.png"></td>
+<td>bnn.go.id A RR has value 103.3.70.14</td>
+</tr>
+<tr class="L0" style="">
+<td><img style="width:1em;" src="/green.png"></td>
+<td>Found 1 RRSIGs over A RRset</td>
+</tr>
+<tr class="L1" style="display:none;">
+<td>&nbsp;</td>
+<td><code>bnn.go.id.	86400	IN	RRSIG	( A 13 3 86400
+	20260510160013 20260410160013 11543 bnn.go.id.
+	62Nb/ZHMsOk8svB/duj6kGnofSAvK4CtNO8g9myagUNmYvo4vsgvo5iNtkiD9bAP7urn17iIysln
+	KJqM6NvA5g== )</code></td>
+</tr>
+<tr class="L0" style="">
+<td><img style="width:1em;" src="/green.png"></td>
+<td>RRSIG<span class="keytag">=11543</span> and DNSKEY<span class="keytag">=11543</span> verifies the A RRset</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr>
+<td class="T1L">bnn.go.id</td>
+<td>
+<table class="T2">
+<tbody><tr class="L0" style="" id="no-nameserver-response-bnn.go.id">
+<td><img style="width:1em;" src="/red.png" onmouseover="tooltip.show('&lt;p&gt;None of the nameservers for the &lt;u&gt;bnn.go.id&lt;/u&gt; zone are currently responding to our queries.&lt;/p&gt; &lt;p&gt;Perhaps the nameservers are down or unreachable due to a network outage&lt;/p&gt;. ')" onmouseout="tooltip.hide()"></td>
+<td>No response from bnn.go.id nameservers</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table><p>Move your mouse over any <img src="/red.png" style="width:1em;"> or <img src="/yellow.png" style="width:1em;"> symbols for remediation hints.</p><p>Want a second opinion? Test bnn.go.id at <a href="http://dnsviz.net/d/bnn.go.id/dnssec/">dnsviz.net</a>.</p><table class="tlr" width="100%"><tbody><tr><td style="text-align:left; width:30em;"></td> <td style="text-align:center; width:15em;"></td> <td style="text-align:right; width:30em;">DNSSEC Debugger</td></tr></tbody></table><p><a class="adv" href="#" onclick="javascript:toggleByClass('adv');">↓ Advanced options</a> <a class="adv" href="#" onclick="javascript:toggleByClass('adv');" style="display:none;">↑ Advanced options</a></p><div class="adv" style="display:none;"><table><tbody><tr><td>Trust Anchor: </td> <td><input type="text" name="a" onkeypress="return submitenter(this,event)" style="width:70em"></td></tr><tr><td>Name Servers:</td> <td><input type="text" name="n" size="40" onkeypress="return submitenter(this,event)"></td></tr></tbody></table><p>Paste a DS or DNSKEY record into the field above to use a Trust Anchor that is not published in the DNS. Validation will begin at the owner name of the DS/DNSKEY record.</p><p>You may also supply alternative starting name servers, separated by whitespace or commas. The given name servers must be authoritative for the same zone as the Trust Anchor.</p></div>  <div class="footer">
+  <div class="links">
+  <a href="http://www.verisign.com/en_US/legal-notices/index.xhtml">Legal Notices</a>//<a href="http://www.verisign.com/en_US/privacy/index.xhtml">Privacy</a>//<a href="http://www.verisign.com/en_US/verisign-repository/index.xhtml">Repository</a>//<a href="http://www.verisign.com/en_US/contact-us/index.xhtml">Contact Us</a>//<a href="http://www.verisign.com/en_US/site-map/index.xhtml">Site Map</a>
+  </div>
+  <br><br>
+  © 2011-2026
+  VeriSign, Inc. All rights reserved.<br>VERISIGN, the VERISIGN logo, and other trademarks, service marks, and designs are registered or unregistered trademarks of VeriSign, Inc. and its subsidiaries in the United States and in foreign countries. All other trademarks are property of their respective owners.
+  </div>
+</div></form></body></html>

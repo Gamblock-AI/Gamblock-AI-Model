@@ -1,0 +1,211 @@
+<html class="js"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" href="http://www.gdbtutorial.com/themes/business_responsive_theme/favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="next" href="/tutorial/what-gdb">
+<link rel="shortlink" href="/node/1">
+<meta name="Generator" content="Drupal 7 (http://drupal.org)">
+<link rel="canonical" href="/tutorial">
+<title>Tutorial | GDB Tutorial</title>
+<style type="text/css" media="all">
+@import url("http://www.gdbtutorial.com/modules/system/system.base.css?p9s2if");
+@import url("http://www.gdbtutorial.com/modules/system/system.menus.css?p9s2if");
+@import url("http://www.gdbtutorial.com/modules/system/system.messages.css?p9s2if");
+@import url("http://www.gdbtutorial.com/modules/system/system.theme.css?p9s2if");
+</style>
+<style type="text/css" media="all">
+@import url("http://www.gdbtutorial.com/modules/book/book.css?p9s2if");
+@import url("http://www.gdbtutorial.com/modules/comment/comment.css?p9s2if");
+@import url("http://www.gdbtutorial.com/modules/field/theme/field.css?p9s2if");
+@import url("http://www.gdbtutorial.com/modules/node/node.css?p9s2if");
+@import url("http://www.gdbtutorial.com/modules/search/search.css?p9s2if");
+@import url("http://www.gdbtutorial.com/modules/user/user.css?p9s2if");
+</style>
+<style type="text/css" media="all">
+@import url("http://www.gdbtutorial.com/themes/business_responsive_theme/style.css?p9s2if");
+@import url("http://www.gdbtutorial.com/themes/business_responsive_theme/media.css?p9s2if");
+</style>
+<script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202604080101/show_ads_impl_fy2021.js?bust=31097754"></script><script type="text/javascript" src="http://www.gdbtutorial.com/misc/jquery.js?v=1.4.4"></script>
+<script type="text/javascript" src="http://www.gdbtutorial.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="http://www.gdbtutorial.com/misc/drupal.js?p9s2if"></script>
+<script type="text/javascript" src="http://www.gdbtutorial.com/themes/business_responsive_theme/js/custom.js?p9s2if"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"business_responsive_theme","theme_token":"Q0tJWqZSXB8VKz2wIfdssTMtfbqA7MyBfgVeRd-HcvE","js":{"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"themes\/business_responsive_theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/book\/book.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"themes\/business_responsive_theme\/style.css":1,"themes\/business_responsive_theme\/media.css":1}},"urlIsAjaxTrusted":{"\/":true}});
+//--><!]]>
+</script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9nrunKdU5m96PSN1XsSGr3qOP0lvPFUB2AiAylCDlN5DTl17uDFkpQuHj1AFtgWLxpLaiBZuhrtb2WOu7ofHwEAAACKeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A93bovR+QVXNx2/38qDbmeYYf1wdte9EO37K9eMq3r+541qo0byhYU899BhPB7Cv9QqD7wIbR1B6OAc9kEfYCA4AAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A1S5fojrAunSDrFbD8OfGmFHdRFZymSM/1ss3G+NEttCLfHkXvlcF6LGLH8Mo5PakLO1sCASXU1/gQf6XGuTBgwAAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"></head>
+<body class="html front not-logged-in one-sidebar sidebar-first page-node page-node- page-node-1 node-type-book">
+    
+<div id="header_wrapper">
+  <div id="inner_header_wrapper">
+
+    <header id="header" role="banner">
+            <div id="logo"><a href="/" title="Home"><img src="http://www.gdbtutorial.com/themes/business_responsive_theme/logo.png"></a></div>
+            <h1 id="site-title">
+        <a href="/" title="Home">GDB Tutorial</a>
+        <div id="site-description">Guide to use GDB and learn debugging techniques</div>
+      </h1>
+      
+    <div class="clear"></div>
+    </header>
+
+    <div class="menu_wrapper">
+      <nav id="main-menu" role="navigation">
+        <a class="nav-toggle" href="#">Menu</a>
+        <div class="menu-navigation-container">
+          <ul class="menu"><li class="first leaf"><a href="/" title="" class="active">GDB Tutorial</a></li>
+<li class="leaf"><a href="/gdb_commands" title="List of GDB commands">GDB commands</a></li>
+<li class="leaf"><a href="http://www.onlinegdb.com/" title="Online gdb debugger  | debug code online using gdb">GDB Online</a></li>
+<li class="last leaf"><a href="/contact" title="Contact Us">Contact</a></li>
+</ul>        </div>
+        <div class="clear"></div>
+      </nav><!-- end main-menu -->
+    </div>
+  </div>
+</div>
+  
+  <div id="container">
+
+             <!-- Banner -->
+
+     
+    
+    
+    <div class="content-sidebar-wrap">
+
+    <div id="content">
+            <section id="post-content" role="main">
+                                <h1 class="page-title">Tutorial</h1>                                        <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+      
+  <div class="content">
+                          <span property="dc:title" content="Tutorial" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>  
+      
+    
+  <div class="content node-book">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p><strong>GDB Tutorial</strong> is&nbsp;comprehensive guide to learn gdb in easy steps. This tutorial covers instroduction of gdb, how to install it and explains how to use gdb and gdb commands with example. This tutorial is best for beginner level programmer, who are new to gdb and debugging environment.</p>
+<div><strong><br>Contents of GDB Tutorial</strong></div>
+</div></div></div>  <div id="book-navigation-1" class="book-navigation">
+    <ul class="menu"><li class="first leaf"><a href="/tutorial/what-gdb">What is GDB?</a></li>
+<li class="leaf"><a href="/tutorial/how-install-gdb">How to Install GDB?</a></li>
+<li class="leaf"><a href="/tutorial/commands">Commands</a></li>
+<li class="leaf"><a href="/tutorial/how-use-gdb">How to use GDB?</a></li>
+<li class="leaf"><a href="/tutorial/how-use-gdb-example">How to use GDB? (Example)</a></li>
+<li class="leaf"><a href="/tutorial/resources">Resources</a></li>
+<li class="last leaf"><a href="/tutorial/summary">Summary</a></li>
+</ul>
+        <div class="page-links clearfix">
+                          <a href="/tutorial/what-gdb" class="page-next" title="Go to next page">What is GDB? ›</a>
+          </div>
+    
+  </div>
+  </div>
+
+      <footer>
+          </footer>
+  
+    </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </section> <!-- /#main -->
+    </div>
+  
+          <aside id="sidebar-first" role="complementary">
+        <div class="region region-sidebar-first">
+  <div id="block-search-form" class="block block-search">
+
+        <h2>Search</h2>
+    
+  <div class="content">
+    <form action="/" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-nsPdZXN9w6cdsq-dVghbEJjFpcTA9xTK4yGMxoCtKyw">
+<input type="hidden" name="form_id" value="search_block_form">
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+<div id="block-book-navigation" class="block block-book">
+
+        <h2>Contents</h2>
+    
+  <div class="content">
+      <div id="book-block-menu-1" class="book-block-menu">
+    <ul class="menu"><li class="first last expanded active-trail"><a href="/tutorial" class="active-trail active">Tutorial</a><ul class="menu"><li class="first leaf"><a href="/tutorial/what-gdb">What is GDB?</a></li>
+<li class="leaf"><a href="/tutorial/how-install-gdb">How to Install GDB?</a></li>
+<li class="leaf"><a href="/tutorial/commands">Commands</a></li>
+<li class="leaf"><a href="/tutorial/how-use-gdb">How to use GDB?</a></li>
+<li class="leaf"><a href="/tutorial/how-use-gdb-example">How to use GDB? (Example)</a></li>
+<li class="leaf"><a href="/tutorial/resources">Resources</a></li>
+<li class="last leaf"><a href="/tutorial/summary">Summary</a></li>
+</ul></li>
+</ul>  </div>
+  <div id="book-block-menu-6" class="book-block-menu">
+    <ul class="menu"><li class="first last leaf"><a href="/gdb_commands">GDB commands</a></li>
+</ul>  </div>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </aside>  <!-- /#sidebar-first -->
+      
+    </div>
+
+      
+</div>
+
+<div id="footer">
+  <div id="footer_wrapper">
+      </div>
+  <div class="footer_credit">
+    <div class="footer_inner_credit">
+           <div id="foot">
+        <div class="region region-footer">
+  <div id="block-block-1" class="block block-block">
+
+      
+  <div class="content">
+    <!--<p><script type="text/javascript">// <![CDATA[
+var infolinks_pid = 2875088;
+var infolinks_wsid = 0;
+// ]]></script><script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js"></script></p><p><script type="text/javascript">// <![CDATA[
+(function(w) {
+if(navigator.userAgent.match(/iPhone|iPod|iPad|Android/i)==null)return;
+var d=document,h=d.getElementsByTagName('head')[0],s=d.createElement('style'),j=d.createElement('script'),k=d.createElement('script');
+s.setAttribute('rel','mw-page-block');s.innerHTML='body > * {display:none !important}';
+j.setAttribute('src','//cdn.adsoptimal.com/advertisement/settings/47037.js');
+k.setAttribute('src','//cdn.adsoptimal.com/advertisement/dispatcher.js');
+j.onerror=k.onerror=function(){h.removeChild(s);h.removeChild(j);h.removeChild(k);};
+h.appendChild(s);h.appendChild(j);h.appendChild(k);
+})(window);
+// ]]></script></p> --><script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script type="text/javascript">// <![CDATA[
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9040419628477177",
+    enable_page_level_ads: true
+  });
+// ]]></script>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+      </div>
+         
+    <div id="copyright">
+     <p class="copyright">Copyright © 2026, GDB Tutorial </p> <p class="credits"> Designed by  <!--<a href="http://www.zymphonies.com">-->Zymphonies<!--</a>--></p>
+    <div class="clear"></div>
+    </div>
+  </div>
+  </div>
+</div><ins class="adsbygoogle adsbygoogle-noablate" data-ad-hi="true" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><div id="aswift_0_host" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;min-height:auto;max-height:none;min-width:auto;max-width:none;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-9040419628477177&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;lmt=1775943108&amp;plat=9%3A32776%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1081344%2C32%3A32%2C41%3A32%2C42%3A32%2C43%3A32&amp;format=0x0&amp;url=http%3A%2F%2Fwww.gdbtutorial.com%2F&amp;pra=5&amp;aiof=9&amp;asro=0&amp;aiapmd=0.0001&amp;aiapmid=1&amp;aiactd=0&amp;aicctd=0&amp;ailctd=0&amp;aimartd=4&amp;aieuf=1&amp;aicrs=1&amp;abgtt=1&amp;dt=1775943108002&amp;bpp=5&amp;bdt=1253&amp;idt=43&amp;shv=r20260408&amp;mjsv=m202604080101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie_enabled=1&amp;eoidce=1&amp;nras=1&amp;correlator=257246227345&amp;frm=20&amp;pv=2&amp;u_tz=0&amp;u_his=2&amp;u_h=768&amp;u_w=1366&amp;u_ah=768&amp;u_aw=1366&amp;u_cd=24&amp;u_sd=1&amp;adx=-12245933&amp;ady=-12245933&amp;biw=1366&amp;bih=768&amp;scr_x=0&amp;scr_y=0&amp;eid=31097489%2C42531706%2C42532524%2C95385799%2C95386178%2C31097754%2C95387623%2C95386362%2C95386955&amp;oid=2&amp;pvsid=8273980743464463&amp;tmod=811055803&amp;uas=0&amp;nvt=1&amp;fsapi=1&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1366%2C0%2C1366%2C768%2C1366%2C768&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=32768&amp;bc=23&amp;plas=163x516_l%7C163x516_r&amp;bz=1&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=71" data-google-container-id="a!1" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true"></iframe></div></ins>
+  <script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;2e2866f348884b449bbc2d837900a1be&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+<iframe src="https://www.google.com/recaptcha/api2/aframe" width="0" height="0" style="display: none;"></iframe></body><iframe id="google_esf" name="google_esf" src="https://googleads.g.doubleclick.net/pagead/html/r20260408/r20190131/zrt_lookup_fy2021.html" style="display: none;"></iframe></html>

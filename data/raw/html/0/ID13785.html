@@ -1,0 +1,249 @@
+<html><head>
+        <title>Sci-Net</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <style type="text/css">
+
+            html { font-size: 18px }
+
+            body {margin: 0; padding: 0; width: 100vw; font-family: monospace;}
+
+            .login { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
+            .form {margin-top: 1.6rem; font-size: 1.2rem; font-weight: bold;}
+            .form input { display: block; margin-top: 0.1rem; padding: 0.4rem; border: 0; border-bottom: dashed 0.1rem #aaa; text-align: center; font-size: 1.3rem; width: 15.3rem }
+            .form input#pass {border:none }
+            .form form { display: flex; align-items: top; }
+
+            input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus { -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important; }
+
+            button { margin-left: 1.85rem; width: 4.4rem; aspect-ratio: 1; border-radius: 50%; border: solid 0.2rem #127622; font-size: 1.65rem; background-color: #127622; color: white; font-weight: bold; cursor: pointer; }
+            button:hover {color: #127622; background-color: white; font-size: 1.8rem;}
+
+            .new { margin-top: 2.33rem; text-align: center; color: #888; font-size: 1.08rem; font-weight: normal; }
+            .new span { display: inline-block; border-radius: 50%; border: solid 1px #ccc; width: 1.2rem; aspect-ratio: 1; }
+            .new a { color: #888; }
+
+            .error { font-size: 0.8rem; color: darkcyan; margin-top: 0.9rem; text-align: center; }
+
+
+            .header {display: flex; align-items: center; color: #127622; margin-top: 3.3rem;}
+            .header .logo { font-size: 9.4rem; line-height: 9.4rem; font-weight: bold; font-family: monospace; white-space: nowrap; }
+            .header .desc { font-size: 2.75rem; font-weight: bold; margin-left: 6.1rem; font-family: sans-serif; }
+            .header .point { font-family: serif; margin-left: 1.65rem; }
+            .header .brace { font-size: 16.65rem; margin: 0 0 4.4rem 4.4rem; font-family: sans-serif; }
+
+            .columns {display: flex; align-items: center; margin: 1.1rem auto; max-width: 60rem;}
+
+            .problem { color: #127622; font-size: 1.1rem; font-weight: bold; margin: 0 4.4rem 0 5.4rem; text-align: justify;}
+
+            .definition { margin-top: 8rem; align-items: flex-start; }
+
+            .definition .label { margin: 0 4rem 0 2rem; white-space: nowrap; }
+
+            .definition p {font-size: 1.1rem; color: black; margin-top: 2rem; text-align: justify; }
+
+            .definition .label,
+            .definition p.statement { font-weight: bold; font-size: 1.65rem; color: #127622 }
+
+            .definition p.statement { margin: 0 }
+
+            .theorem { margin-top: 5.55rem; color: #127622; }
+            .theorem .xy { font-size: 4.56rem; line-height: 4.95rem;  white-space: nowrap; margin: 0 6rem 0 5.55rem; }
+            .theorem .formulation { font-weight: bold; font-size: 1.65rem; color: #127622 }
+
+
+            .proof { margin-top: 5.55rem; color: #127622; align-items: flex-start; }
+            .proof .label { font-weight: bold; font-size: 1.88rem; color: #127622; margin: 0 6rem 0 7rem; }
+            .proof p { font-size: 1.1rem; color: black; text-align: justify; margin: 0 }
+
+            .figure { width: 100%; background-color: #1e6a39; font-size: 1rem; color: white; border-radius: 1rem; padding: 3rem; margin-top: 5rem }
+            .figure .caption { font-weight: bold; margin: 2rem 8rem 0 7rem }
+            .figure .caption .desc { font-weight: normal; }
+            .figure .image { border-radius: 2rem; background-color: white; padding: 1rem; text-align: center; }
+            .figure .image img { width: 30rem }
+
+            .anonymity { margin-top: 5.55rem; color: #127622; align-items: flex-start; }
+            .anonymity .func { font-weight: bold; font-size: 1.88rem; color: #127622; margin: 0 6rem 0 7rem; }
+            .anonymity p { font-size: 1.1rem; color: black; text-align: justify; margin: 0 0 1rem 0; max-width: 26rem; }
+
+            .points { margin-top: 2rem }
+            .points .header { color: #127622; font-size: 1.55rem; font-weight:bold; display: block }
+            .points .big { font-size: 1.88rem; }
+            .points p { font-size: 1.1rem; color: black }
+            .points .picture { margin-left: 1rem }
+            .points .picture img { width: 36rem }
+
+            .sci-hub { margin-top: 8rem }
+            .sci-hub p { font-size: 1.1rem; color: black; text-align: justify; margin: 0 2rem 8rem 10rem }
+            .sci-hub p.header { color: #127622; font-size: 1.88rem; font-weight: bold; margin-bottom: 2rem }
+            .sci-hub .picture img { width: 12.88rem; margin-left: 4rem }
+            .sci-hub .foundation { width: 88%; margin: -7.8rem 0 0 0;  height: 7rem; background-color: #127622; border: solid 1px #1e6a39; border-radius: 0 1rem 1rem 0; }
+
+            .crypto { margin: 6rem auto 0 auto; max-width: 40rem; }
+            .crypto p { font-size: 1.1rem; color: black; text-align: justify }
+            .crypto .meme { margin: 3rem 0; color: #127622; font-size: 1.55rem; font-weight: bold; }
+            .crypto .matrix div { margin: 0 0.5rem }
+            .crypto .matrix .border { font-size: 7rem; font-weight: normal; margin: 0 }
+
+            .crypto { padding-bottom: 8rem }
+
+        </style>
+
+        <script>
+
+            function validate()
+            {
+                let user = document.getElementsByName('user')[0].value.trim();
+                let pass = document.getElementsByName('pass')[0].value.trim();
+
+                if (user.length < 4 ||
+                    pass.length < 8 )
+                    return false;
+
+                return true;
+            }
+
+        </script>
+
+        <div class="header columns">
+            <div class="logo">
+                sci <br>
+                net<span class="point">.</span>
+            </div>
+        
+            <div class="desc">scientific<br>communication<br>support<br>network</div>
+
+            <div class="brace">}</div>
+        </div>        
+
+        <div class="columns">
+
+            <div class="login">
+
+                <div class="form">
+                    <form method="POST" onsubmit="return validate()">
+
+                        <div class="input">
+                            <input type="text" name="user" placeholder="username" maxlength="16">
+                            <input type="password" id="pass" name="pass" placeholder="password" maxlength="128">
+                            <input type="hidden" name="action" value="login">
+
+                            <div class="error">
+                                
+                            </div>
+
+                            <div class="new">No account yet? <a href="/join">Join</a></div>
+                        </div>
+
+                        <div>
+                            <button class="round" type="submit()">&gt;</button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            <div class="problem">Open communication has always been a cornerstone of science. However, in the past 50 years it has been largely obstructed by high prices that prevent free flow of information and exchange of ideas, effectively blocking and preventing new groundbreaking discoveries in science and medicine.</div>
+
+        </div>
+
+        <div class="columns definition">
+            <div class="label">Definition 1.1</div>
+            <div>
+
+                <p class="statement">Let Sci-Net be a new social network that will provide solution to that problem</p>
+
+                <p>When someone struggles to access paywalled research article, they can post a request on Sci-Net. The other member who have access through university subscription will solve the request by uploading a PDF file.</p>
+            </div>
+        </div>
+
+        <div class="columns theorem">
+            <div class="xy">
+                x +<br>
+                y =
+            </div>
+            <div class="formulation">
+                <p>Theorem 1.1</p>
+                <p>Sci-Net provides the best approach for sharing and requesting research papers</p>
+            </div>
+        </div>
+
+
+        <div class="columns proof">
+            <div class="label">Proof.</div>
+            <div><p>Sci-Net has numerous advantages when compared to sharing articles on social media or other similar platforms. The most straightforward is convenience: just enter the DOI, and Sci-Net will automatically check if requested paper is available in open access databases and repositories such as arXiv and of course — Sci-Hub.</p></div>
+        </div>
+
+        <div class="columns figure">
+            <div class="caption">
+                <p>Figure 1.1</p>
+                <p>Number of research articles available in public domain grows with Sci-Net usage.</p>
+                <p class="desc">Once the requested article has been uploaded, it will remain in the public domain forever, accessible to anyone for free and without registration.</p>
+            </div>
+            <div class="image">
+                <img src="/images/figure1.svg">
+            </div>
+        </div>
+
+        <div class="columns anonymity">
+            <div class="func">F(x) = ?</div>
+            <div>
+                <p>Sci-Net provides true anonymity for uploaders: it does not ask for mobile phone number, or even email to register, and does not require to install an application.</p>
+                <p>Furthermore, it implements a range of algorithms to clear watermarks from uploaded PDF files, that can carry information about university or IP address that was used to download article fulltext.</p>
+            </div>
+        </div>
+
+
+        <div class="columns points">
+            <div>
+                <p class="header">
+                    <span class="big">Decentralized</span><br>
+                    reward points
+                </p>
+                <p>Unlike traditional paper-exchange platforms that rely on member rating or direct payments, Sci-Net implements a new mechanism that employs decentralized tokens to reward uploaders.</p><p>The tokens can be exchanged from the platform and withdrawn, thus providing freedom for the uploader.</p><p>Tokens act as a protection layer to ensure that articles uploaded by users remain high-quality. Uploader will only receive tokens as a reward after the article was verified by user who requested it.</p>
+            </div>
+            <div class="picture">
+                <img src="/images/tokens.svg">
+            </div>
+        </div>
+
+        <div class="sci-hub">
+            <div class="columns">
+                <div class="picture">
+                    <img src="/images/sci-hub.svg">
+                </div>
+                <div>
+                    <p class="header">Supporting<br>Sci-Hub</p>
+                    <p>Sci-Net continues the tradition of Sci-Hub project in providing free, unsrestricted access to scientific knowledge.</p>
+                </div>
+            </div>
+            <div class="foundation">
+            </div>
+        </div>
+
+        <div class="crypto">
+            <div>
+                <p>Just like Sci-Hub, it will always remain censorship-resistant and clean, with no ads and no banners.</p>
+                <p>Instead of advertisements, Sci-Hub project has always been supported by user donations, and became the first project to adopt crypto currencies for funding of scientific projects. The largest one came previous year, when Sci-Hub received a meme coin named after it as a donation.</p>
+            </div>
+            <div class="columns meme">
+                <div>Sci-Net employs Sci-Hub meme coins to reward knowledge sharing</div>
+                <div class="columns matrix">
+                    <div class="border">[</div>
+                    <div>a d g</div>
+                    <div>b e j</div>
+                    <div>c f i</div>
+                    <div class="border">]</div>
+                </div>
+            </div>
+            <div><p>Sci-Net builds upon Sci-Hub meme coin foundation to create a new knowledge economy. Join now and take part in creating the new world where knowledge is open to everyone!</p></div>
+        </div>
+
+    
+</body></html>

@@ -1,0 +1,2756 @@
+<html lang="en"><head>
+  <meta charset="UTF-8"><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"0ba796adcc","applicationID":"1078250290","transactionName":"bgEAZ0VTCxdSBRZaXVdLJEZZURENXAhNUkJJF0xQWEAASl4PBldeXBMDQVIcFQVUAz1QU1oMBwlnUwIBcAcBW1d0DQZXW1cSBUED","queueTime":0,"applicationTime":7,"agent":""};
+(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:[]},session_trace:{sampling_rate:0.0,mode:"FIXED_RATE",enabled:true,error_sampling_rate:0.0},feature_flags:["soft_nav"],performance:{capture_marks:false,capture_detail:false,capture_measures:true},browser_consent_mode:{enabled:false},distributed_tracing:{enabled:true}};(window.NREUM||(NREUM={})).loader_config={agentID:"1134656292",accountID:"512953",trustKey:"512953",xpid:"UQcFWFNQGwIAU1lQAgEFX1Q=",licenseKey:"0ba796adcc",applicationID:"1078250290",browserID:"1134656292"};;/*! For license information please see nr-loader-spa-1.312.1.min.js.LICENSE.txt */
+(()=>{var e,t,r={384:(e,t,r)=>{"use strict";r.d(t,{NT:()=>a,Zm:()=>c,bQ:()=>u,dV:()=>d,pV:()=>l});var n=r(6154),i=r(1863),s=r(944),o=r(1910);const a={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function c(){return n.gm.NREUM||(n.gm.NREUM={}),void 0===n.gm.newrelic&&(n.gm.newrelic=n.gm.NREUM),n.gm.NREUM}function d(){let e=c();return e.o||(e.o={ST:n.gm.setTimeout,SI:n.gm.setImmediate||n.gm.setInterval,CT:n.gm.clearTimeout,XHR:n.gm.XMLHttpRequest,REQ:n.gm.Request,EV:n.gm.Event,PR:n.gm.Promise,MO:n.gm.MutationObserver,FETCH:n.gm.fetch,WS:n.gm.WebSocket},(0,o.i)(...Object.values(e.o))),e}function u(e,t){let r=c();r.initializedAgents??={},t.initializedAt={ms:(0,i.t)(),date:new Date},r.initializedAgents[e]=t,2===Object.keys(r.initializedAgents).length&&(0,s.R)(69)}function l(){return function(){let e=c();const t=e.info||{};e.info={beacon:a.beacon,errorBeacon:a.errorBeacon,...t}}(),function(){let e=c();const t=e.init||{};e.init={...t}}(),d(),function(){let e=c();const t=e.loader_config||{};e.loader_config={...t}}(),c()}},782:(e,t,r)=>{"use strict";r.d(t,{T:()=>n});const n=r(860).K7.pageViewTiming},860:(e,t,r)=>{"use strict";r.d(t,{$J:()=>u,K7:()=>c,P3:()=>d,XX:()=>i,Yy:()=>a,df:()=>s,qY:()=>n,v4:()=>o});const n="events",i="jserrors",s="browser/blobs",o="rum",a="browser/logs",c={ajax:"ajax",genericEvents:"generic_events",jserrors:i,logging:"logging",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrace:"session_trace",softNav:"soft_navigations"},d={[c.pageViewEvent]:1,[c.pageViewTiming]:2,[c.metrics]:3,[c.jserrors]:4,[c.softNav]:5,[c.ajax]:6,[c.sessionTrace]:7,[c.sessionReplay]:8,[c.logging]:9,[c.genericEvents]:10},u={[c.pageViewEvent]:o,[c.pageViewTiming]:n,[c.ajax]:n,[c.softNav]:n,[c.metrics]:i,[c.jserrors]:i,[c.sessionTrace]:s,[c.sessionReplay]:s,[c.logging]:a,[c.genericEvents]:"ins"}},944:(e,t,r)=>{"use strict";r.d(t,{R:()=>i});var n=r(3241);function i(e,t){"function"==typeof console.debug&&(console.debug("New Relic Warning: https://github.com/newrelic/newrelic-browser-agent/blob/main/docs/warning-codes.md#".concat(e),t),(0,n.W)({drained:null,type:"data",name:"warn",feature:"warn",data:{code:e,secondary:t}}))}},993:(e,t,r)=>{"use strict";r.d(t,{A$:()=>s,ET:()=>o,TZ:()=>a,p_:()=>i});var n=r(860);const i={ERROR:"ERROR",WARN:"WARN",INFO:"INFO",DEBUG:"DEBUG",TRACE:"TRACE"},s={OFF:0,ERROR:1,WARN:2,INFO:3,DEBUG:4,TRACE:5},o="log",a=n.K7.logging},1541:(e,t,r)=>{"use strict";r.d(t,{$5:()=>d,B5:()=>c,Ux:()=>o,YA:()=>a,fQ:()=>i});var n=r(5871);const i={MFE:"MFE",BA:"BA"};function s(e,t){if(!e||!t?.init.api.allow_registered_children)return[];const r=t.runtime.registeredEntities;return r?.filter(t=>t.metadata.timings?.asset?.endsWith(e)).map(e=>e.metadata.target)||[]}function o(e,t){if(!u(t))return{};const r=t.agentRef.runtime.appMetadata.agents[0].entityGuid;return e?e.attributes:{"entity.guid":r,appId:t.agentRef.info.applicationID}}function a(e,t){return c(e,t)?{"child.id":e.id,"child.type":e.type,...o(void 0,t)}:{}}function c(e,t){return!!e&&!!u(t)&&t.agentRef.init.api.duplicate_registered_data}function d(e){if(!e?.init.api.allow_registered_children)return[void 0];const t=[];try{var r=(0,n.AZ)((0,n.QL)());let i=r.length-1;for(;r[i];)t.push(...s(r[i--],e))}catch(e){}return t.length||t.push(void 0),t}function u(e){return 2===e?.harvestEndpointVersion}},1687:(e,t,r)=>{"use strict";r.d(t,{Ak:()=>a,Ze:()=>d,x3:()=>c});var n=r(3241),i=r(3606),s=r(860),o=r(2646);function a(e,t){if(!e)return;const r={staged:!1,priority:s.P3[t]||0};e.runtime.drainRegistry.get(t)||e.runtime.drainRegistry.set(t,r)}function c(e,t){if(!e)return;const r=e.runtime.drainRegistry;r&&(r.get(t)&&r.delete(t),l(e,t,!1),r.size&&u(e))}function d(e,t="feature",r=!1){if(e){if(!e.runtime.drainRegistry.get(t)||r)return l(e,t);e.runtime.drainRegistry.get(t).staged=!0,u(e)}}function u(e){if(!e)return;const t=Array.from(e.runtime.drainRegistry);t.every(([e,t])=>t.staged)&&(t.sort((e,t)=>e[1].priority-t[1].priority),t.forEach(([t])=>{e.runtime.drainRegistry.delete(t),l(e,t)}))}function l(e,t,r=!0){if(!e)return;const s=e.ee,a=i.i.handlers;if(s&&!s.aborted&&s.backlog&&a){if((0,n.W)({type:"lifecycle",name:"drain",feature:t}),r){const e=s.backlog[t],r=a[t];if(r){for(let t=0;e&&t<e.length;++t)f(e[t],r);Object.entries(r).forEach(([e,t])=>{Object.values(t||{}).forEach(t=>{t[0]?.on&&t[0].context()instanceof o.y&&!t[0].listeners(e).includes(t[1])&&t[0].on(e,t[1])})})}}s.isolatedBacklog||delete a[t],s.backlog[t]=null,s.emit("drain-"+t,[])}}function f(e,t){var r=e[1];Object.values(t[r]||{}).forEach(t=>{var r=e[0];if(t[0]===r){var n=t[1],i=e[3],s=e[2];n.apply(i,s)}})}},1738:(e,t,r)=>{"use strict";r.d(t,{U:()=>f,Y:()=>l});var n=r(3241),i=r(9908),s=r(1863),o=r(944),a=r(3969),c=r(8362),d=r(860),u=r(4261);function l(e,t,r,s){const l=s||r;!l||l[e]&&l[e]!==c.d.prototype[e]||(l[e]=function(){(0,i.p)(a.xV,["API/"+e+"/called"],void 0,d.K7.metrics,r.ee),(0,n.W)({drained:!!r.runtime?.activatedFeatures,type:"data",name:"api",feature:u.Pl+e,data:{}});try{return t.apply(this,arguments)}catch(e){(0,o.R)(23,e)}})}function f(e,t,r,n,o){const a=e.info;null===r?delete a.jsAttributes[t]:a.jsAttributes[t]=r,(o||null===r)&&(0,i.p)(u.Pl+n,[(0,s.t)(),t,r],void 0,"session",e.ee)}},1741:(e,t,r)=>{"use strict";r.d(t,{W:()=>s});var n=r(944),i=r(4261);class s{#e(e,...t){if(this[e]!==s.prototype[e])return this[e](...t);(0,n.R)(35,e)}addPageAction(e,t){return this.#e(i.hG,e,t)}register(e){return this.#e(i.eY,e)}recordCustomEvent(e,t){return this.#e(i.fF,e,t)}setPageViewName(e,t){return this.#e(i.Fw,e,t)}setCustomAttribute(e,t,r){return this.#e(i.cD,e,t,r)}noticeError(e,t){return this.#e(i.o5,e,t)}setUserId(e,t=!1){return this.#e(i.Dl,e,t)}setApplicationVersion(e){return this.#e(i.nb,e)}setErrorHandler(e){return this.#e(i.bt,e)}addRelease(e,t){return this.#e(i.k6,e,t)}log(e,t){return this.#e(i.$9,e,t)}start(){return this.#e(i.d3)}finished(e){return this.#e(i.BL,e)}recordReplay(){return this.#e(i.CH)}pauseReplay(){return this.#e(i.Tb)}addToTrace(e){return this.#e(i.U2,e)}setCurrentRouteName(e){return this.#e(i.PA,e)}interaction(e){return this.#e(i.dT,e)}wrapLogger(e,t,r){return this.#e(i.Wb,e,t,r)}measure(e,t){return this.#e(i.V1,e,t)}consent(e){return this.#e(i.Pv,e)}}},1863:(e,t,r)=>{"use strict";function n(){return Math.floor(performance.now())}r.d(t,{t:()=>n})},1910:(e,t,r)=>{"use strict";r.d(t,{i:()=>s});var n=r(944);const i=new Map;function s(...e){return e.every(e=>{if(i.has(e))return i.get(e);const t="function"==typeof e?e.toString():"",r=t.includes("[native code]"),s=t.includes("nrWrapper");return r||s||(0,n.R)(64,e?.name||t),i.set(e,r),r})}},2555:(e,t,r)=>{"use strict";r.d(t,{D:()=>a,f:()=>o});var n=r(384),i=r(8122);const s={beacon:n.NT.beacon,errorBeacon:n.NT.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0};function o(e){try{return!!e.licenseKey&&!!e.errorBeacon&&!!e.applicationID}catch(e){return!1}}const a=e=>(0,i.a)(e,s)},2614:(e,t,r)=>{"use strict";r.d(t,{BB:()=>o,H3:()=>n,g:()=>d,iL:()=>c,tS:()=>a,uh:()=>i,wk:()=>s});const n="NRBA",i="SESSION",s=144e5,o=18e5,a={STARTED:"session-started",PAUSE:"session-pause",RESET:"session-reset",RESUME:"session-resume",UPDATE:"session-update"},c={SAME_TAB:"same-tab",CROSS_TAB:"cross-tab"},d={OFF:0,FULL:1,ERROR:2}},2646:(e,t,r)=>{"use strict";r.d(t,{y:()=>n});class n{constructor(e){this.contextId=e}}},2843:(e,t,r)=>{"use strict";r.d(t,{G:()=>s,u:()=>i});var n=r(3878);function i(e,t=!1,r,i){(0,n.DD)("visibilitychange",function(){if(t)return void("hidden"===document.visibilityState&&e());e(document.visibilityState)},r,i)}function s(e,t,r){(0,n.sp)("pagehide",e,t,r)}},3241:(e,t,r)=>{"use strict";r.d(t,{W:()=>s});var n=r(6154);const i="newrelic";function s(e={}){try{n.gm.dispatchEvent(new CustomEvent(i,{detail:e}))}catch(e){}}},3304:(e,t,r)=>{"use strict";r.d(t,{A:()=>s});var n=r(7836);const i=()=>{const e=new WeakSet;return(t,r)=>{if("object"==typeof r&&null!==r){if(e.has(r))return;e.add(r)}return r}};function s(e){try{return JSON.stringify(e,i())??""}catch(e){try{n.ee.emit("internal-error",[e])}catch(e){}return""}}},3333:(e,t,r)=>{"use strict";r.d(t,{$v:()=>u,TZ:()=>n,Xh:()=>c,Zp:()=>i,kd:()=>d,mq:()=>a,nf:()=>o,qN:()=>s});const n=r(860).K7.genericEvents,i=["auxclick","click","copy","keydown","paste","scrollend"],s=["focus","blur"],o=4,a=1e3,c=2e3,d=["PageAction","UserAction","BrowserPerformance"],u={RESOURCES:"experimental.resources",REGISTER:"register"}},3434:(e,t,r)=>{"use strict";r.d(t,{Jt:()=>o,YM:()=>u});var n=r(7836),i=r(5607),s=r(1541);const o="nr@original:".concat(i.W),a=50;var c=Object.prototype.hasOwnProperty,d=!1;function u(e,t,r){return e||(e=n.ee),i.inPlace=function(e,t,r,n,s,o){r||(r="");const a="-"===r.charAt(0);for(let c=0;c<t.length;c++){const d=t[c],u=e[d];f(u)||(e[d]=i(u,a?d+r:r,n,d,s,o))}},i.flag=o,i;function i(t,n,i,d,h,p){return f(t)?t:(n||(n=""),nrWrapper[o]=t,function(e,t,r){if(Object.defineProperty&&Object.keys)try{return Object.keys(e).forEach(function(r){Object.defineProperty(t,r,{get:function(){return e[r]},set:function(t){return e[r]=t,t}})}),t}catch(e){l([e],r)}for(var n in e)c.call(e,n)&&(t[n]=e[n])}(t,nrWrapper,e),nrWrapper);function nrWrapper(){var o,c,f,g;let m,v;try{c=this,o=[...arguments],v=p?(0,s.$5)(r):[void 0],f="function"==typeof i?i(o,c):i||{}}catch(t){l([t,"",[o,c,d],f],e)}u(n+"start",[o,c,d,v],f,h);const y=performance.now();let b;try{return g=t.apply(c,o),b=performance.now(),g}catch(e){throw b=performance.now(),u(n+"err",[o,c,e,v],f,h),m=e,m}finally{const e=b-y,t={start:y,end:b,duration:e,isLongTask:e>=a,methodName:d,thrownError:m};t.isLongTask&&u("long-task",[t,c,v],f,h),u(n+"end",[o,c,g,v],f,h)}}}function u(r,n,i,s){if(!d||t){var o=d;d=!0;try{e.emit(r,n,i,t,s)}catch(t){l([t,r,n,i],e)}d=o}}}function l(e,t){t||(t=n.ee);try{t.emit("internal-error",e)}catch(e){}}function f(e){return!(e&&"function"==typeof e&&e.apply&&!e[o])}},3606:(e,t,r)=>{"use strict";r.d(t,{i:()=>s});var n=r(9908);s.on=o;var i=s.handlers={};function s(e,t,r,s){o(s||n.d,i,e,t,r)}function o(e,t,r,i,s){s||(s="feature"),e||(e=n.d);var o=t[s]=t[s]||{};(o[r]=o[r]||[]).push([e,i])}},3738:(e,t,r)=>{"use strict";r.d(t,{He:()=>i,Kp:()=>a,Lc:()=>d,Rz:()=>u,TZ:()=>n,bD:()=>s,d3:()=>o,jx:()=>l,sl:()=>f,uP:()=>c});const n=r(860).K7.sessionTrace,i="bstResource",s="resource",o="-start",a="-end",c="fn"+o,d="fn"+a,u="pushState",l=1e3,f=3e4},3785:(e,t,r)=>{"use strict";r.d(t,{R:()=>c,b:()=>d});var n=r(9908),i=r(1863),s=r(860),o=r(3969),a=r(993);function c(e,t,r={},c=a.p_.INFO,d=!0,u,l=(0,i.t)()){(0,n.p)(o.xV,["API/logging/".concat(c.toLowerCase(),"/called")],void 0,s.K7.metrics,e),(0,n.p)(a.ET,[l,t,r,c,d,u],void 0,s.K7.logging,e)}function d(e){return"string"==typeof e&&Object.values(a.p_).some(t=>t===e.toUpperCase().trim())}},3878:(e,t,r)=>{"use strict";function n(e,t){return{capture:e,passive:!1,signal:t}}function i(e,t,r=!1,i){window.addEventListener(e,t,n(r,i))}function s(e,t,r=!1,i){document.addEventListener(e,t,n(r,i))}r.d(t,{DD:()=>s,jT:()=>n,sp:()=>i})},3962:(e,t,r)=>{"use strict";r.d(t,{AM:()=>o,O2:()=>l,OV:()=>s,Qu:()=>f,TZ:()=>c,ih:()=>h,pP:()=>a,t1:()=>u,tC:()=>i,wD:()=>d});var n=r(860);const i=["click","keydown","submit"],s="popstate",o="api",a="initialPageLoad",c=n.K7.softNav,d=5e3,u=500,l={INITIAL_PAGE_LOAD:"",ROUTE_CHANGE:1,UNSPECIFIED:2},f={INTERACTION:1,AJAX:2,CUSTOM_END:3,CUSTOM_TRACER:4},h={IP:"in progress",PF:"pending finish",FIN:"finished",CAN:"cancelled"}},3969:(e,t,r)=>{"use strict";r.d(t,{TZ:()=>n,XG:()=>a,rs:()=>i,xV:()=>o,z_:()=>s});const n=r(860).K7.metrics,i="sm",s="cm",o="storeSupportabilityMetrics",a="storeEventMetrics"},4234:(e,t,r)=>{"use strict";r.d(t,{W:()=>i});var n=r(1687);class i{constructor(e,t){this.agentRef=e,this.ee=e?.ee,this.featureName=t,this.blocked=!1}deregisterDrain(){(0,n.x3)(this.agentRef,this.featureName)}}},4261:(e,t,r)=>{"use strict";r.d(t,{$9:()=>u,BL:()=>c,CH:()=>p,Dl:()=>R,Fw:()=>w,PA:()=>v,Pl:()=>n,Pv:()=>x,Tb:()=>f,U2:()=>o,V1:()=>A,Wb:()=>T,bt:()=>b,cD:()=>y,d3:()=>E,dT:()=>d,eY:()=>g,fF:()=>h,hG:()=>s,hw:()=>i,k6:()=>a,nb:()=>m,o5:()=>l});const n="api-",i=n+"ixn-",s="addPageAction",o="addToTrace",a="addRelease",c="finished",d="interaction",u="log",l="noticeError",f="pauseReplay",h="recordCustomEvent",p="recordReplay",g="register",m="setApplicationVersion",v="setCurrentRouteName",y="setCustomAttribute",b="setErrorHandler",w="setPageViewName",R="setUserId",E="start",T="wrapLogger",A="measure",x="consent"},5205:(e,t,r)=>{"use strict";r.d(t,{j:()=>x});var n=r(384),i=r(1741);var s=r(2555),o=r(3333);const a=e=>{if(!e||"string"!=typeof e)return!1;try{document.createDocumentFragment().querySelector(e)}catch{return!1}return!0};var c=r(2614),d=r(944),u=r(8122);const l="[data-nr-mask]",f=e=>(0,u.a)(e,(()=>{const e={feature_flags:[],experimental:{allow_registered_children:!1,resources:!1},mask_selector:"*",block_selector:"[data-nr-block]",mask_input_options:{color:!1,date:!1,"datetime-local":!1,email:!1,month:!1,number:!1,range:!1,search:!1,tel:!1,text:!1,time:!1,url:!1,week:!1,textarea:!1,select:!1,password:!0}};return{ajax:{deny_list:void 0,block_internal:!0,enabled:!0,autoStart:!0},api:{get allow_registered_children(){return e.feature_flags.includes(o.$v.REGISTER)||e.experimental.allow_registered_children},set allow_registered_children(t){e.experimental.allow_registered_children=t},duplicate_registered_data:!1},browser_consent_mode:{enabled:!1},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},get feature_flags(){return e.feature_flags},set feature_flags(t){e.feature_flags=t},generic_events:{enabled:!0,autoStart:!0},harvest:{interval:30},jserrors:{enabled:!0,autoStart:!0},logging:{enabled:!0,autoStart:!0},metrics:{enabled:!0,autoStart:!0},obfuscate:void 0,page_action:{enabled:!0},page_view_event:{enabled:!0,autoStart:!0},page_view_timing:{enabled:!0,autoStart:!0},performance:{capture_marks:!1,capture_measures:!1,capture_detail:!0,resources:{get enabled(){return e.feature_flags.includes(o.$v.RESOURCES)||e.experimental.resources},set enabled(t){e.experimental.resources=t},asset_types:[],first_party_domains:[],ignore_newrelic:!0}},privacy:{cookies_enabled:!0},proxy:{assets:void 0,beacon:void 0},session:{expiresMs:c.wk,inactiveMs:c.BB},session_replay:{autoStart:!0,enabled:!1,preload:!1,sampling_rate:10,error_sampling_rate:100,collect_fonts:!1,inline_images:!1,fix_stylesheets:!0,mask_all_inputs:!0,get mask_text_selector(){return e.mask_selector},set mask_text_selector(t){a(t)?e.mask_selector="".concat(t,",").concat(l):""===t||null===t?e.mask_selector=l:(0,d.R)(5,t)},get block_class(){return"nr-block"},get ignore_class(){return"nr-ignore"},get mask_text_class(){return"nr-mask"},get block_selector(){return e.block_selector},set block_selector(t){a(t)?e.block_selector+=",".concat(t):""!==t&&(0,d.R)(6,t)},get mask_input_options(){return e.mask_input_options},set mask_input_options(t){t&&"object"==typeof t?e.mask_input_options={...t,password:!0}:(0,d.R)(7,t)}},session_trace:{enabled:!0,autoStart:!0},soft_navigations:{enabled:!0,autoStart:!0},ssl:void 0,user_actions:{enabled:!0,elementAttributes:["id","className","tagName","type"]}}})());var h=r(6154),p=r(9324);let g=0;const m={buildEnv:p.F3,distMethod:p.Xs,version:p.xv,originTime:h.WN},v={consented:!1},y={activatedFeatures:void 0,appMetadata:{},configured:!1,get consented(){return this.session?.state?.consent||v.consented},set consented(e){v.consented=e},customTransaction:void 0,denyList:[],disabled:!1,drainRegistry:new Map,harvester:void 0,isolatedBacklog:!1,isRecording:!1,loaderType:void 0,maxBytes:3e4,obfuscator:void 0,onerror:void 0,ptid:void 0,releaseIds:{},session:void 0,timeKeeper:void 0,registeredEntities:[],jsAttributesMetadata:{bytes:0},get harvestCount(){return++g}},b=e=>{const t=(0,u.a)(e,y),r=Object.keys(m).reduce((e,t)=>(e[t]={value:m[t],writable:!1,configurable:!0,enumerable:!0},e),{});return Object.defineProperties(t,r)},w=e=>{const t=e.startsWith("http");e+="/",r.p=t?e:"https://"+e};var R=r(7836),E=r(3241);const T={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0},A=e=>(0,u.a)(e,T);function x(e,t={},r,o){let{init:a,info:c,loader_config:d,runtime:u={},exposed:l=!0}=t;if(!c){const e=(0,n.pV)();a=e.init,c=e.info,d=e.loader_config}e.init=f(a||{}),e.loader_config=A(d||{}),c.jsAttributes??={},h.bv&&(c.jsAttributes.isWorker=!0),e.info=(0,s.D)(c);const p=e.init;e.runtime??=b(u),p.proxy.assets&&w(p.proxy.assets),e.runtime.configured||(Object.defineProperty(e,"beacons",{get:()=>[e.info.beacon,e.info.errorBeacon,e.init.proxy.assets,e.init.proxy.beacon].filter(Boolean)}),Object.defineProperty(e.runtime,"denyList",{get:()=>[...e.init.ajax.deny_list||[],...e.init.ajax.block_internal?e.beacons:[]]}),e.runtime.ptid=e.agentIdentifier,function(e){const t=(0,n.pV)();Object.getOwnPropertyNames(i.W.prototype).forEach(r=>{const n=i.W.prototype[r];if("function"!=typeof n||"constructor"===n)return;let s=t[r];e[r]&&!1!==e.exposed&&"micro-agent"!==e.runtime?.loaderType&&(t[r]=(...t)=>{const n=e[r](...t);return s?s(...t):n})})}(e),e.runtime.loaderType=r,e.ee=R.ee.get(e.agentIdentifier),e.exposed=l,(0,E.W)({drained:!!e.runtime.activatedFeatures,type:"lifecycle",name:"initialize",feature:void 0,data:e.config}),e.runtime.configured=!0)}},5270:(e,t,r)=>{"use strict";r.d(t,{Aw:()=>o,SR:()=>s,rF:()=>a});var n=r(384),i=r(7767);function s(e){return!!(0,n.dV)().o.MO&&(0,i.V)(e)&&!0===e?.session_trace.enabled}function o(e){return!0===e?.session_replay.preload&&s(e)}function a(e,t){try{if("string"==typeof t?.type){if("password"===t.type.toLowerCase())return"*".repeat(e?.length||0);if(void 0!==t?.dataset?.nrUnmask||t?.classList?.contains("nr-unmask"))return e}}catch(e){}return"string"==typeof e?e.replace(/[\S]/g,"*"):"*".repeat(e?.length||0)}},5289:(e,t,r)=>{"use strict";r.d(t,{GG:()=>o,Qr:()=>c,sB:()=>a});var n=r(3878),i=r(6389);function s(){return"undefined"==typeof document||"complete"===document.readyState}function o(e,t){if(s())return e();const r=(0,i.J)(e),o=setInterval(()=>{s()&&(clearInterval(o),r())},500);(0,n.sp)("load",r,t)}function a(e){if(s())return e();(0,n.DD)("DOMContentLoaded",e)}function c(e){if(s())return e();(0,n.sp)("popstate",e)}},5607:(e,t,r)=>{"use strict";r.d(t,{W:()=>n});const n=(0,r(9566).bz)()},5871:(e,t,r)=>{"use strict";r.d(t,{AZ:()=>u,QL:()=>l,Qr:()=>f});var n=r(6154),i=r(1863),s=r(9119),o=r(7866);let a;try{a=u(l())[0]}catch(e){a=u(e)[0]}const c=new Set;let d=[];if(n.gm.PerformanceObserver?.supportedEntryTypes.includes("resource")){new PerformanceObserver(e=>{e.getEntries().forEach(e=>{if((e=>"script"===e.initiatorType||["link","fetch"].includes(e.initiatorType)&&e.name.endsWith(".js"))(e)){c.size>250&&c.delete(c.values().next().value),c.add(e);const t=[];d.forEach(({test:r,addedAt:n},s)=>{(r(e)||(0,i.t)()-n>1e4)&&t.push(s)}),d=d.filter((e,r)=>!t.includes(r))}})}).observe({type:"resource",buffered:!0})}function u(e){if(!e||"string"!=typeof e)return[];const t=new Set,r=e.split("\n");for(const e of r){const r=e.match(o.cn)||e.match(o.hB)||e.match(o.fL);if(r&&r[2])t.add((0,s.L)(r[2]));else{const r=e.match(/\(([^)]+\.js):\d+:\d+\)/)||e.match(/^\s+at\s+([^\s(]+\.js):\d+:\d+/);r&&r[1]&&t.add((0,s.L)(r[1]))}}return[...t]}function l(){let e;try{const t=Error.stackTraceLimit;Error.stackTraceLimit=50,e=(new Error).stack,Error.stackTraceLimit=t}catch(t){e=(new Error).stack}return e}function f(){const e={registeredAt:(0,i.t)(),reportedAt:void 0,fetchStart:0,fetchEnd:0,asset:void 0,type:"unknown"},t=l();if(!t)return e;const r=n.gm.performance?.getEntriesByType("navigation")?.[0]?.name||"";try{const o=u(t),f=(o.length>1?o.filter(e=>!a.endsWith(e)&&!e.endsWith(a)):o)[0];if(!f)return e;if(r.includes(f))return e.asset=(0,s.L)(r),e.type="inline",e;const h=performance.getEntriesByType("resource").find(p)||[...c].find(p);function p(e){const t=(0,s.L)(e.name);return t.endsWith(f)||f.endsWith(t)}function g(t){e.fetchStart=Math.floor(t.startTime),e.fetchEnd=Math.floor(t.responseEnd),e.asset=t.name,e.type=t.initiatorType}h?g(h):function(e){if(!e||!n.gm.document)return!1;try{const t=n.gm.document.querySelectorAll('link[rel="preload"][as="script"]');for(const r of t)if((0,s.L)(r.href)===e)return!0}catch(e){}return!1}(f)&&(e.asset=f,e.type="preload",d.push({addedAt:(0,i.t)(),test:e=>!!p(e)&&(g(e),!0)}))}catch(m){}return e}},6154:(e,t,r)=>{"use strict";r.d(t,{OF:()=>d,RI:()=>i,WN:()=>f,bv:()=>s,gm:()=>o,lR:()=>l,m:()=>c,mw:()=>a,sb:()=>u,zk:()=>h});var n=r(1863);const i="undefined"!=typeof window&&!!window.document,s="undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),o=i?window:"undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),a=Boolean("hidden"===o?.document?.visibilityState),c=""+o?.location,d=/iPad|iPhone|iPod/.test(o.navigator?.userAgent),u=d&&"undefined"==typeof SharedWorker,l=(()=>{const e=o.navigator?.userAgent?.match(/Firefox[/\s](\d+\.\d+)/);return Array.isArray(e)&&e.length>=2?+e[1]:0})(),f=Date.now()-(0,n.t)(),h=()=>{const e=o?.performance?.getEntriesByType?.("navigation")?.[0];if(e&&e.responseStart>0&&e.responseStart<o.performance.now())return e}},6344:(e,t,r)=>{"use strict";r.d(t,{BB:()=>u,Qb:()=>l,TZ:()=>i,Ug:()=>o,Vh:()=>s,_s:()=>a,bc:()=>d,yP:()=>c});var n=r(2614);const i=r(860).K7.sessionReplay,s="errorDuringReplay",o=.12,a={DomContentLoaded:0,Load:1,FullSnapshot:2,IncrementalSnapshot:3,Meta:4,Custom:5},c={[n.g.ERROR]:15e3,[n.g.FULL]:3e5,[n.g.OFF]:0},d={RESET:{message:"Session was reset",sm:"Reset"},IMPORT:{message:"Recorder failed to import",sm:"Import"},TOO_MANY:{message:"429: Too Many Requests",sm:"Too-Many"},TOO_BIG:{message:"Payload was too large",sm:"Too-Big"},CROSS_TAB:{message:"Session Entity was set to OFF on another tab",sm:"Cross-Tab"},ENTITLEMENTS:{message:"Session Replay is not allowed and will not be started",sm:"Entitlement"}},u=5e3,l={API:"api",RESUME:"resume",SWITCH_TO_FULL:"switchToFull",INITIALIZE:"initialize",PRELOAD:"preload"}},6389:(e,t,r)=>{"use strict";function n(e,t=500,r={}){const n=r?.leading||!1;let i;return(...r)=>{n&&void 0===i&&(e.apply(this,r),i=setTimeout(()=>{i=clearTimeout(i)},t)),n||(clearTimeout(i),i=setTimeout(()=>{e.apply(this,r)},t))}}function i(e){let t=!1;return(...r)=>{t||(t=!0,e.apply(this,r))}}r.d(t,{J:()=>i,s:()=>n})},6630:(e,t,r)=>{"use strict";r.d(t,{T:()=>n});const n=r(860).K7.pageViewEvent},6774:(e,t,r)=>{"use strict";r.d(t,{T:()=>n});const n=r(860).K7.jserrors},7295:(e,t,r)=>{"use strict";r.d(t,{Xv:()=>o,gX:()=>i,iW:()=>s});var n=[];function i(e){if(!e||s(e))return!1;if(0===n.length)return!0;if("*"===n[0].hostname)return!1;for(var t=0;t<n.length;t++){var r=n[t];if(r.hostname.test(e.hostname)&&r.pathname.test(e.pathname))return!1}return!0}function s(e){return void 0===e.hostname}function o(e){if(n=[],e&&e.length)for(var t=0;t<e.length;t++){let r=e[t];if(!r)continue;if("*"===r)return void(n=[{hostname:"*"}]);0===r.indexOf("http://")?r=r.substring(7):0===r.indexOf("https://")&&(r=r.substring(8));const i=r.indexOf("/");let s,o;i>0?(s=r.substring(0,i),o=r.substring(i)):(s=r,o="*");let[c]=s.split(":");n.push({hostname:a(c),pathname:a(o,!0)})}}function a(e,t=!1){const r=e.replace(/[.+?^${}()|[\]\\]/g,e=>"\\"+e).replace(/\*/g,".*?");return new RegExp((t?"^":"")+r+"$")}},7485:(e,t,r)=>{"use strict";r.d(t,{D:()=>i});var n=r(6154);function i(e){if(0===(e||"").indexOf("data:"))return{protocol:"data"};try{const t=new URL(e,location.href),r={port:t.port,hostname:t.hostname,pathname:t.pathname,search:t.search,protocol:t.protocol.slice(0,t.protocol.indexOf(":")),sameOrigin:t.protocol===n.gm?.location?.protocol&&t.host===n.gm?.location?.host};return r.port&&""!==r.port||("http:"===t.protocol&&(r.port="80"),"https:"===t.protocol&&(r.port="443")),r.pathname&&""!==r.pathname?r.pathname.startsWith("/")||(r.pathname="/".concat(r.pathname)):r.pathname="/",r}catch(e){return{}}}},7699:(e,t,r)=>{"use strict";r.d(t,{It:()=>s,KC:()=>a,No:()=>i,qh:()=>o});var n=r(860);const i=16e3,s=1e6,o="SESSION_ERROR",a={[n.K7.logging]:!0,[n.K7.genericEvents]:!0,[n.K7.jserrors]:!0,[n.K7.ajax]:!0}},7767:(e,t,r)=>{"use strict";r.d(t,{V:()=>i});var n=r(6154);const i=e=>n.RI&&!0===e?.privacy.cookies_enabled},7836:(e,t,r)=>{"use strict";r.d(t,{P:()=>a,ee:()=>c});var n=r(384),i=r(8990),s=r(2646),o=r(5607);const a="nr@context:".concat(o.W),c=function e(t,r){var n={},o={},u={},l=!1;try{l=16===r.length&&d.initializedAgents?.[r]?.runtime.isolatedBacklog}catch(e){}var f={on:p,addEventListener:p,removeEventListener:function(e,t){var r=n[e];if(!r)return;for(var i=0;i<r.length;i++)r[i]===t&&r.splice(i,1)},emit:function(e,r,n,i,s){!1!==s&&(s=!0);if(c.aborted&&!i)return;t&&s&&t.emit(e,r,n);var a=h(n);g(e).forEach(e=>{e.apply(a,r)});var d=v()[o[e]];d&&d.push([f,e,r,a]);return a},get:m,listeners:g,context:h,buffer:function(e,t){const r=v();if(t=t||"feature",f.aborted)return;Object.entries(e||{}).forEach(([e,n])=>{o[n]=t,t in r||(r[t]=[])})},abort:function(){f._aborted=!0,Object.keys(f.backlog).forEach(e=>{delete f.backlog[e]})},isBuffering:function(e){return!!v()[o[e]]},debugId:r,backlog:l?{}:t&&"object"==typeof t.backlog?t.backlog:{},isolatedBacklog:l};return Object.defineProperty(f,"aborted",{get:()=>{let e=f._aborted||!1;return e||(t&&(e=t.aborted),e)}}),f;function h(e){return e&&e instanceof s.y?e:e?(0,i.I)(e,a,()=>new s.y(a)):new s.y(a)}function p(e,t){n[e]=g(e).concat(t)}function g(e){return n[e]||[]}function m(t){return u[t]=u[t]||e(f,t)}function v(){return f.backlog}}(void 0,"globalEE"),d=(0,n.Zm)();d.ee||(d.ee=c)},7866:(e,t,r)=>{"use strict";r.d(t,{Nc:()=>s,cn:()=>a,fL:()=>i,h3:()=>n,hB:()=>o});const n=/function (.+?)\s*\(/,i=/^\s*at .+ \(eval at \S+ \((?:(?:file|http|https):[^)]+)?\)(?:, [^:]*:\d+:\d+)?\)$/i,s=/^\s*at Function code \(Function code:\d+:\d+\)\s*/i,o=/^\s*at (?:((?:\[object object\])?(?:[^(]*\([^)]*\))*[^()]*(?: \[as \S+\])?) )?\(?((?:file|http|https|chrome-extension):.*?)?:(\d+)(?::(\d+))?\)?\s*$/i,a=/^\s*(?:([^@]*)(?:\(.*?\))?@)?((?:file|http|https|chrome|safari-extension).*?):(\d+)(?::(\d+))?\s*$/i},8122:(e,t,r)=>{"use strict";r.d(t,{a:()=>i});var n=r(944);function i(e,t){try{if(!e||"object"!=typeof e)return(0,n.R)(3);if(!t||"object"!=typeof t)return(0,n.R)(4);const r=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),s=0===Object.keys(r).length?e:r;for(let o in s)if(void 0!==e[o])try{if(null===e[o]){r[o]=null;continue}Array.isArray(e[o])&&Array.isArray(t[o])?r[o]=Array.from(new Set([...e[o],...t[o]])):e[o]instanceof Map||e[o]instanceof Set||e[o]instanceof Date||e[o]instanceof RegExp?r[o]=e[o]:"object"==typeof e[o]&&"object"==typeof t[o]?r[o]=i(e[o],t[o]):r[o]=e[o]}catch(e){r[o]||(0,n.R)(1,e)}return r}catch(e){(0,n.R)(2,e)}}},8139:(e,t,r)=>{"use strict";r.d(t,{u:()=>f});var n=r(7836),i=r(3434),s=r(8990),o=r(6154);const a={},c=o.gm.XMLHttpRequest,d="addEventListener",u="removeEventListener",l="nr@wrapped:".concat(n.P);function f(e){var t=function(e){return(e||n.ee).get("events")}(e);if(a[t.debugId]++)return t;a[t.debugId]=1;var r=(0,i.YM)(t,!0);function f(e){r.inPlace(e,[d,u],"-",p)}function p(e,t){return e[1]}return"getPrototypeOf"in Object&&(o.RI&&h(document,f),c&&h(c.prototype,f),h(o.gm,f)),t.on(d+"-start",function(e,t){var n=e[1];if(null!==n&&("function"==typeof n||"object"==typeof n)&&"newrelic"!==e[0]){var i=(0,s.I)(n,l,function(){var e={object:function(){if("function"!=typeof n.handleEvent)return;return n.handleEvent.apply(n,arguments)},function:n}[typeof n];return e?r(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=e[1]=i}}),t.on(u+"-start",function(e){e[1]=this.wrapped||e[1]}),t}function h(e,t,...r){let n=e;for(;"object"==typeof n&&!Object.prototype.hasOwnProperty.call(n,d);)n=Object.getPrototypeOf(n);n&&t(n,...r)}},8362:(e,t,r)=>{"use strict";r.d(t,{d:()=>s});var n=r(9566),i=r(1741);class s extends i.W{agentIdentifier=(0,n.LA)(16)}},8374:(e,t,r)=>{r.nc=(()=>{try{return document?.currentScript?.nonce}catch(e){}return""})()},8990:(e,t,r)=>{"use strict";r.d(t,{I:()=>i});var n=Object.prototype.hasOwnProperty;function i(e,t,r){if(n.call(e,t))return e[t];var i=r();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:i,writable:!0,enumerable:!1}),i}catch(e){}return e[t]=i,i}},9119:(e,t,r)=>{"use strict";r.d(t,{L:()=>s});var n=/([^?#]*)[^#]*(#[^?]*|$).*/,i=/([^?#]*)().*/;function s(e,t){return e?e.replace(t?n:i,"$1$2"):e}},9300:(e,t,r)=>{"use strict";r.d(t,{T:()=>n});const n=r(860).K7.ajax},9324:(e,t,r)=>{"use strict";r.d(t,{AJ:()=>o,F3:()=>i,Xs:()=>s,Yq:()=>a,xv:()=>n});const n="1.312.1",i="PROD",s="CDN",o="@newrelic/rrweb",a="1.1.0"},9566:(e,t,r)=>{"use strict";r.d(t,{LA:()=>a,ZF:()=>c,bz:()=>o,el:()=>d});var n=r(6154);const i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx";function s(e,t){return e?15&e[t]:16*Math.random()|0}function o(){const e=n.gm?.crypto||n.gm?.msCrypto;let t,r=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(30))),i.split("").map(e=>"x"===e?s(t,r++).toString(16):"y"===e?(3&s()|8).toString(16):e).join("")}function a(e){const t=n.gm?.crypto||n.gm?.msCrypto;let r,i=0;t&&t.getRandomValues&&(r=t.getRandomValues(new Uint8Array(e)));const o=[];for(var a=0;a<e;a++)o.push(s(r,i++).toString(16));return o.join("")}function c(){return a(16)}function d(){return a(32)}},9908:(e,t,r)=>{"use strict";r.d(t,{d:()=>n,p:()=>i});var n=r(7836).ee.get("handle");function i(e,t,r,i,s){s?(s.buffer([e],i),s.emit(e,t,r)):(n.buffer([e],i),n.emit(e,t,r))}}},n={};function i(e){var t=n[e];if(void 0!==t)return t.exports;var s=n[e]={exports:{}};return r[e](s,s.exports,i),s.exports}i.m=r,i.d=(e,t)=>{for(var r in t)i.o(t,r)&&!i.o(e,r)&&Object.defineProperty(e,r,{enumerable:!0,get:t[r]})},i.f={},i.e=e=>Promise.all(Object.keys(i.f).reduce((t,r)=>(i.f[r](e,t),t),[])),i.u=e=>({212:"nr-spa-compressor",249:"nr-spa-recorder",478:"nr-spa"}[e]+"-1.312.1.min.js"),i.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),e={},t="NRBA-1.312.1.PROD:",i.l=(r,n,s,o)=>{if(e[r])e[r].push(n);else{var a,c;if(void 0!==s)for(var d=document.getElementsByTagName("script"),u=0;u<d.length;u++){var l=d[u];if(l.getAttribute("src")==r||l.getAttribute("data-webpack")==t+s){a=l;break}}if(!a){c=!0;var f={478:"sha512-dZhtzLTOyIsYHGHWAipD4+6jjzEIycTqL1F9NwinUiYL8cf0kIXf7WUbskVMB7p/nhDF+zJ9Bfd6LU9PMn0Yhw==",249:"sha512-SJV3E/3SdEyaahYm8FHEFwhJvDQy/nRJJV/o+18MgXENJWR/8tfvIKfc4LE1xV9RniczXT7eQLcZi2G99UlugA==",212:"sha512-dRFaJY5mEo/nxzPqxS/sHnvU66fpkTff91nWUFOafyPR61R+r2GZiy81lT47BWA4MouemCj4tvhHmn8Ofh/UOg=="};(a=document.createElement("script")).charset="utf-8",i.nc&&a.setAttribute("nonce",i.nc),a.setAttribute("data-webpack",t+s),a.src=r,0!==a.src.indexOf(window.location.origin+"/")&&(a.crossOrigin="anonymous"),f[o]&&(a.integrity=f[o])}e[r]=[n];var h=(t,n)=>{a.onerror=a.onload=null,clearTimeout(p);var i=e[r];if(delete e[r],a.parentNode&&a.parentNode.removeChild(a),i&&i.forEach(e=>e(n)),t)return t(n)},p=setTimeout(h.bind(null,void 0,{type:"timeout",target:a}),12e4);a.onerror=h.bind(null,a.onerror),a.onload=h.bind(null,a.onload),c&&document.head.appendChild(a)}},i.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.p="https://js-agent.newrelic.com/",(()=>{var e={38:0,788:0};i.f.j=(t,r)=>{var n=i.o(e,t)?e[t]:void 0;if(0!==n)if(n)r.push(n[2]);else{var s=new Promise((r,i)=>n=e[t]=[r,i]);r.push(n[2]=s);var o=i.p+i.u(t),a=new Error;i.l(o,r=>{if(i.o(e,t)&&(0!==(n=e[t])&&(e[t]=void 0),n)){var s=r&&("load"===r.type?"missing":r.type),o=r&&r.target&&r.target.src;a.message="Loading chunk "+t+" failed: ("+s+": "+o+")",a.name="ChunkLoadError",a.type=s,a.request=o,n[1](a)}},"chunk-"+t,t)}};var t=(t,r)=>{var n,s,[o,a,c]=r,d=0;if(o.some(t=>0!==e[t])){for(n in a)i.o(a,n)&&(i.m[n]=a[n]);if(c)c(i)}for(t&&t(r);d<o.length;d++)s=o[d],i.o(e,s)&&e[s]&&e[s][0](),e[s]=0},r=self["webpackChunk:NRBA-1.312.1.PROD"]=self["webpackChunk:NRBA-1.312.1.PROD"]||[];r.forEach(t.bind(null,0)),r.push=t.bind(null,r.push.bind(r))})(),(()=>{"use strict";i(8374);var e=i(8362),t=i(860);const r=Object.values(t.K7);var n=i(5205);var s=i(9908),o=i(1863),a=i(4261),c=i(1738);var d=i(1687),u=i(4234),l=i(5289),f=i(6154),h=i(944),p=i(5270),g=i(7767),m=i(6389),v=i(7699);class y extends u.W{constructor(e,t){super(e,t),this.abortHandler=void 0,this.featAggregate=void 0,this.loadedSuccessfully=void 0,this.onAggregateImported=new Promise(e=>{this.loadedSuccessfully=e}),this.deferred=Promise.resolve(),!1===e.init[this.featureName].autoStart?this.deferred=new Promise((t,r)=>{this.ee.on("manual-start-all",(0,m.J)(()=>{(0,d.Ak)(e,this.featureName),t()}))}):(0,d.Ak)(e,t)}importAggregator(e,t,r={}){if(this.featAggregate)return;const n=async()=>{let n;await this.deferred;try{if((0,g.V)(e.init)){const{setupAgentSession:t}=await i.e(478).then(i.bind(i,8766));n=t(e)}}catch(e){(0,h.R)(20,e),this.ee.emit("internal-error",[e]),(0,s.p)(v.qh,[e],void 0,this.featureName,this.ee)}try{if(!this.#t(this.featureName,n,e.init))return(0,d.Ze)(this.agentRef,this.featureName),void this.loadedSuccessfully(!1);const{Aggregate:i}=await t();this.featAggregate=new i(e,r),e.runtime.harvester.initializedAggregates.push(this.featAggregate),this.loadedSuccessfully(!0)}catch(e){(0,h.R)(34,e),this.abortHandler?.(),(0,d.Ze)(this.agentRef,this.featureName,!0),this.loadedSuccessfully(!1),this.ee&&this.ee.abort()}};f.RI?(0,l.GG)(()=>n(),!0):n()}#t(e,r,n){if(this.blocked)return!1;switch(e){case t.K7.sessionReplay:return(0,p.SR)(n)&&!!r;case t.K7.sessionTrace:return!!r;default:return!0}}}var b=i(6630),w=i(2614),R=i(3241);class E extends y{static featureName=b.T;constructor(e){var t;super(e,b.T),this.setupInspectionEvents(),t=e,(0,c.Y)(a.Fw,function(e,r){"string"==typeof e&&("/"!==e.charAt(0)&&(e="/"+e),t.runtime.customTransaction=(r||"http://custom.transaction")+e,(0,s.p)(a.Pl+a.Fw,[(0,o.t)()],void 0,void 0,t.ee))},t),this.importAggregator(e,()=>i.e(478).then(i.bind(i,5839)))}setupInspectionEvents(){const e=(e,t)=>{e&&(0,R.W)({timeStamp:e.timeStamp,loaded:"complete"===e.target.readyState,type:"window",name:t,data:e.target.location+""})};(0,l.sB)(t=>{e(t,"DOMContentLoaded")}),(0,l.GG)(t=>{e(t,"load")}),(0,l.Qr)(t=>{e(t,"navigate")}),this.ee.on(w.tS.UPDATE,(e,t)=>{(0,R.W)({type:"lifecycle",name:"session",data:t})})}}var T=i(384);class A extends e.d{constructor(e){var t;(super(),f.gm)?(this.features={},(0,T.bQ)(this.agentIdentifier,this),this.desiredFeatures=new Set(e.features||[]),this.desiredFeatures.add(E),(0,n.j)(this,e,e.loaderType||"agent"),t=this,(0,c.Y)(a.cD,function(e,r,n=!1){if("string"==typeof e){if(["string","number","boolean"].includes(typeof r)||null===r)return(0,c.U)(t,e,r,a.cD,n);(0,h.R)(40,typeof r)}else(0,h.R)(39,typeof e)},t),function(e){(0,c.Y)(a.Dl,function(t,r=!1){if("string"!=typeof t&&null!==t)return void(0,h.R)(41,typeof t);const n=e.info.jsAttributes["enduser.id"];r&&null!=n&&n!==t?(0,s.p)(a.Pl+"setUserIdAndResetSession",[t],void 0,"session",e.ee):(0,c.U)(e,"enduser.id",t,a.Dl,!0)},e)}(this),function(e){(0,c.Y)(a.nb,function(t){if("string"==typeof t||null===t)return(0,c.U)(e,"application.version",t,a.nb,!1);(0,h.R)(42,typeof t)},e)}(this),function(e){(0,c.Y)(a.d3,function(){e.ee.emit("manual-start-all")},e)}(this),function(e){(0,c.Y)(a.Pv,function(t=!0){if("boolean"==typeof t){if((0,s.p)(a.Pl+a.Pv,[t],void 0,"session",e.ee),e.runtime.consented=t,t){const t=e.features.page_view_event;t.onAggregateImported.then(e=>{const r=t.featAggregate;e&&!r.sentRum&&r.sendRum()})}}else(0,h.R)(65,typeof t)},e)}(this),this.run()):(0,h.R)(21)}get config(){return{info:this.info,init:this.init,loader_config:this.loader_config,runtime:this.runtime}}get api(){return this}run(){try{const e=function(e){const t={};return r.forEach(r=>{t[r]=!!e[r]?.enabled}),t}(this.init),n=[...this.desiredFeatures];n.sort((e,r)=>t.P3[e.featureName]-t.P3[r.featureName]),n.forEach(r=>{if(!e[r.featureName]&&r.featureName!==t.K7.pageViewEvent)return;const n=function(e){switch(e){case t.K7.ajax:return[t.K7.jserrors];case t.K7.sessionTrace:return[t.K7.ajax,t.K7.pageViewEvent];case t.K7.sessionReplay:return[t.K7.sessionTrace];case t.K7.pageViewTiming:return[t.K7.pageViewEvent];default:return[]}}(r.featureName).filter(e=>!(e in this.features));n.length>0&&(0,h.R)(36,{targetFeature:r.featureName,missingDependencies:n}),this.features[r.featureName]=new r(this)})}catch(e){(0,h.R)(22,e);for(const e in this.features)this.features[e].abortHandler?.();const t=(0,T.Zm)();delete t.initializedAgents[this.agentIdentifier]?.features,delete this.sharedAggregator;return t.ee.get(this.agentIdentifier).abort(),!1}}}var x=i(2843),S=i(782);class _ extends y{static featureName=S.T;constructor(e){super(e,S.T),f.RI&&((0,x.u)(()=>(0,s.p)("docHidden",[(0,o.t)()],void 0,S.T,this.ee),!0),(0,x.G)(()=>(0,s.p)("winPagehide",[(0,o.t)()],void 0,S.T,this.ee)),this.importAggregator(e,()=>i.e(478).then(i.bind(i,9917))))}}var O=i(3969);class P extends y{static featureName=O.TZ;constructor(e){super(e,O.TZ),f.RI&&document.addEventListener("securitypolicyviolation",e=>{(0,s.p)(O.xV,["Generic/CSPViolation/Detected"],void 0,this.featureName,this.ee)}),this.importAggregator(e,()=>i.e(478).then(i.bind(i,6555)))}}var k=i(6774),N=i(3878),D=i(3304);class j{constructor(e,t,r,n,i){this.name="UncaughtError",this.message="string"==typeof e?e:(0,D.A)(e),this.sourceURL=t,this.line=r,this.column=n,this.__newrelic=i}}function C(e){return M(e)?e:new j(void 0!==e?.message?e.message:e,e?.filename||e?.sourceURL,e?.lineno||e?.line,e?.colno||e?.col,e?.__newrelic,e?.cause)}function L(e){const t="Unhandled Promise Rejection: ";if(!e?.reason)return;if(M(e.reason)){try{e.reason.message.startsWith(t)||(e.reason.message=t+e.reason.message)}catch(e){}return C(e.reason)}const r=C(e.reason);return(r.message||"").startsWith(t)||(r.message=t+r.message),r}function I(e){if(e.error instanceof SyntaxError&&!/:\d+$/.test(e.error.stack?.trim())){const t=new j(e.message,e.filename,e.lineno,e.colno,e.error.__newrelic,e.cause);return t.name=SyntaxError.name,t}return M(e.error)?e.error:C(e)}function M(e){return e instanceof Error&&!!e.stack}function B(e,r,n,i,a=(0,o.t)()){"string"==typeof e&&(e=new Error(e)),(0,s.p)("err",[e,a,!1,r,n.runtime.isRecording,void 0,i],void 0,t.K7.jserrors,n.ee),(0,s.p)("uaErr",[],void 0,t.K7.genericEvents,n.ee)}var H=i(1541),W=i(993),K=i(3785);function F(e,{customAttributes:t={},level:r=W.p_.INFO}={},n,i,s=(0,o.t)()){(0,K.R)(n.ee,e,t,r,!1,i,s)}function U(e,r,n,i,c=(0,o.t)()){(0,s.p)(a.Pl+a.hG,[c,e,r,i],void 0,t.K7.genericEvents,n.ee)}function V(e,r,n,i,c=(0,o.t)()){const{start:d,end:u,customAttributes:l}=r||{},f={customAttributes:l||{}};if("object"!=typeof f.customAttributes||"string"!=typeof e||0===e.length)return void(0,h.R)(57);const p=(e,t)=>null==e?t:"number"==typeof e?e:e instanceof PerformanceMark?e.startTime:Number.NaN;if(f.start=p(d,0),f.end=p(u,c),Number.isNaN(f.start)||Number.isNaN(f.end))(0,h.R)(57);else{if(f.duration=f.end-f.start,!(f.duration<0))return(0,s.p)(a.Pl+a.V1,[f,e,i],void 0,t.K7.genericEvents,n.ee),f;(0,h.R)(58)}}function G(e,r={},n,i,c=(0,o.t)()){(0,s.p)(a.Pl+a.fF,[c,e,r,i],void 0,t.K7.genericEvents,n.ee)}var z=i(5871),Y=i(9566);const Z=["name","id","type"];function q(e){(0,c.Y)(a.eY,function(t){return X(e,t)},e)}function X(e,r,n){(0,h.R)(54,"newrelic.register"),r||={},r.instance=(0,Y.LA)(8),r.type=H.fQ.MFE,r.licenseKey||=e.info.licenseKey,r.blocked=!1,("object"!=typeof r.tags||null===r.tags||Array.isArray(r.tags))&&(r.tags={}),r.parent=n||{get id(){return e.runtime.appMetadata.agents[0].entityGuid},type:H.fQ.BA};const i=(0,z.Qr)(),a={};Object.defineProperty(r,"attributes",{get:()=>({...a,"source.id":r.id,"source.name":r.name,"source.type":r.type,"parent.type":r.parent?.type||H.fQ.BA,"parent.id":r.parent?.id})}),Object.entries(r.tags).forEach(([e,t])=>{Z.includes(e)||(a["source.".concat(e)]=t)}),r.isolated??=!0;let c=()=>{};const d=e.runtime.registeredEntities;if(!r.isolated){const e=d.find(({metadata:{target:{id:e}}})=>e===r.id&&!r.isolated);if(e)return e}const u=e=>{r.blocked=!0,c=e};function l(e){return"string"==typeof e&&!!e.trim()&&e.trim().length<501}e.init.api.allow_registered_children||u((0,m.J)(()=>(0,h.R)(55))),l(r.id)&&l(r.name)||u((0,m.J)(()=>(0,h.R)(48,r)));const f={addPageAction:(t,n={})=>y(U,[t,{...a,...n},e],r),deregister:()=>{g(),u((0,m.J)(()=>(0,h.R)(68)))},log:(t,n={})=>y(F,[t,{...n,customAttributes:{...a,...n.customAttributes||{}}},e],r),measure:(t,n={})=>y(V,[t,{...n,customAttributes:{...a,...n.customAttributes||{}}},e],r),noticeError:(t,n={})=>y(B,[t,{...a,...n},e],r),register:(t={})=>y(X,[e,t],f.metadata.target),recordCustomEvent:(t,n={})=>y(G,[t,{...a,...n},e],r),setApplicationVersion:e=>v("application.version",e),setCustomAttribute:(e,t)=>v(e,t),setUserId:e=>v("enduser.id",e),metadata:{get customAttributes(){return a},target:r,timings:i}},p=()=>(r.blocked&&c(),r.blocked);function g(){i.reportedAt||(i.reportedAt=(0,o.t)(),f.recordCustomEvent("MicroFrontEndTiming",{assetUrl:i.asset,assetType:i.type,timeToLoad:i.registeredAt-i.fetchStart,timeToBeRequested:i.fetchStart,timeToFetch:i.fetchEnd-i.fetchStart,timeToRegister:i.registeredAt-i.fetchEnd,timeAlive:i.reportedAt-i.registeredAt}))}p()||(d.push(f),(0,x.G)(g));const v=(e,t)=>{p()||(a[e]=t)},y=(r,n,i)=>{if(p()&&r!==X)return;const a=(0,o.t)();(0,s.p)(O.xV,["API/register/".concat(r.name,"/called")],void 0,t.K7.metrics,e.ee);try{return r(...n,i,a)}catch(e){(0,h.R)(50,e)}};return f}class Q extends y{static featureName=k.T;constructor(e){var t;super(e,k.T),t=e,(0,c.Y)(a.o5,(e,r)=>B(e,r,t),t),function(e){(0,c.Y)(a.bt,function(t){e.runtime.onerror=t},e)}(e),function(e){let t=0;(0,c.Y)(a.k6,function(e,r){++t>10||(this.runtime.releaseIds[e.slice(-200)]=(""+r).slice(-200))},e)}(e),q(e);try{this.removeOnAbort=new AbortController}catch(e){}this.ee.on("internal-error",(t,r)=>{this.abortHandler&&(0,s.p)("ierr",[C(t),(0,o.t)(),!0,{},e.runtime.isRecording,r],void 0,this.featureName,this.ee)}),f.gm.addEventListener("unhandledrejection",t=>{this.abortHandler&&(0,s.p)("err",[L(t),(0,o.t)(),!1,{unhandledPromiseRejection:1},e.runtime.isRecording],void 0,this.featureName,this.ee)},(0,N.jT)(!1,this.removeOnAbort?.signal)),f.gm.addEventListener("error",t=>{this.abortHandler&&(0,s.p)("err",[I(t),(0,o.t)(),!1,{},e.runtime.isRecording],void 0,this.featureName,this.ee)},(0,N.jT)(!1,this.removeOnAbort?.signal)),this.abortHandler=this.#r,this.importAggregator(e,()=>i.e(478).then(i.bind(i,2176)))}#r(){this.removeOnAbort?.abort(),this.abortHandler=void 0}}var J=i(8990);let ee=1;function te(e){const t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===f.gm?0:(0,J.I)(e,"nr@id",function(){return ee++})}function re(e){if("string"==typeof e&&e.length)return e.length;if("object"==typeof e){if("undefined"!=typeof ArrayBuffer&&e instanceof ArrayBuffer&&e.byteLength)return e.byteLength;if("undefined"!=typeof Blob&&e instanceof Blob&&e.size)return e.size;if(!("undefined"!=typeof FormData&&e instanceof FormData))try{return(0,D.A)(e).length}catch(e){return}}}var ne=i(8139),ie=i(7836),se=i(3434);const oe={},ae=["open","send"];function ce(e,t){var r=e||ie.ee;const n=function(e){return(e||ie.ee).get("xhr")}(r);if(void 0===f.gm.XMLHttpRequest)return n;if(oe[n.debugId]++)return n;oe[n.debugId]=1,(0,ne.u)(r);var i=(0,se.YM)(n),s=f.gm.XMLHttpRequest,o=f.gm.MutationObserver,a=f.gm.Promise,c=f.gm.setInterval,d="readystatechange",u=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],l=[],p=f.gm.XMLHttpRequest=function(e){const r=new s(e),o=n.context(r);o.targets=(0,H.$5)(t);try{n.emit("new-xhr",[r],o),r.addEventListener(d,(a=o,function(){var e=this;e.readyState>3&&!a.resolved&&(a.resolved=!0,n.emit("xhr-resolved",[],e)),i.inPlace(e,u,"fn-",w)}),(0,N.jT)(!1))}catch(e){(0,h.R)(15,e);try{n.emit("internal-error",[e])}catch(e){}}var a;return r};function g(e,t){i.inPlace(t,["onreadystatechange"],"fn-",w)}if(function(e,t){for(var r in e)t[r]=e[r]}(s,p),p.prototype=s.prototype,i.inPlace(p.prototype,ae,"-xhr-",w),n.on("send-xhr-start",function(e,t){g(e,t),function(e){l.push(e),o&&(m?m.then(b):c?c(b):(v=-v,y.data=v))}(t)}),n.on("open-xhr-start",g),o){var m=a&&a.resolve();if(!c&&!a){var v=1,y=document.createTextNode(v);new o(b).observe(y,{characterData:!0})}}else r.on("fn-end",function(e){e[0]&&e[0].type===d||b()});function b(){for(var e=0;e<l.length;e++)g(0,l[e]);l.length&&(l=[])}function w(e,t){return t}return n}var de="fetch-",ue=de+"body-",le=["arrayBuffer","blob","json","text","formData"],fe=f.gm.Request,he=f.gm.Response,pe="prototype";const ge={};function me(e,t){const r=function(e){return(e||ie.ee).get("fetch")}(e);if(!(fe&&he&&f.gm.fetch))return r;if(ge[r.debugId]++)return r;function n(e,n,i){var s=e[n];"function"==typeof s&&(e[n]=function(){var e=[...arguments];const n={},o=(0,H.$5)(t);var a;r.emit(i+"before-start",[e],n),n[ie.P]&&n[ie.P].dt&&(a=n[ie.P].dt);var c=s.apply(this,e);return r.emit(i+"start",[e,a],c),c.then(function(e){return r.emit(i+"end",[null,e,o],c),e},function(e){throw r.emit(i+"end",[e,void 0,o],c),e})})}return ge[r.debugId]=1,le.forEach(e=>{n(fe[pe],e,ue),n(he[pe],e,ue)}),n(f.gm,"fetch",de),r.on(de+"end",function(e,t,n){var i=this;if(i.targets=n||[void 0],t){var s=t.headers.get("content-length");null!==s&&(i.rxSize=s),r.emit(de+"done",[null,t],i)}else r.emit(de+"done",[e],i)}),r}var ve=i(7485);class ye{constructor(e){this.agentRef=e}generateTracePayload(e){const t=this.agentRef.loader_config;if(!this.shouldGenerateTrace(e)||!t)return null;var r=(t.accountID||"").toString()||null,n=(t.agentID||"").toString()||null,i=(t.trustKey||"").toString()||null;if(!r||!n)return null;var s=(0,Y.ZF)(),o=(0,Y.el)(),a=Date.now(),c={spanId:s,traceId:o,timestamp:a};return(e.sameOrigin||this.isAllowedOrigin(e)&&this.useTraceContextHeadersForCors())&&(c.traceContextParentHeader=this.generateTraceContextParentHeader(s,o),c.traceContextStateHeader=this.generateTraceContextStateHeader(s,a,r,n,i)),(e.sameOrigin&&!this.excludeNewrelicHeader()||!e.sameOrigin&&this.isAllowedOrigin(e)&&this.useNewrelicHeaderForCors())&&(c.newrelicHeader=this.generateTraceHeader(s,o,a,r,n,i)),c}generateTraceContextParentHeader(e,t){return"00-"+t+"-"+e+"-01"}generateTraceContextStateHeader(e,t,r,n,i){return i+"@nr=0-1-"+r+"-"+n+"-"+e+"----"+t}generateTraceHeader(e,t,r,n,i,s){if(!("function"==typeof f.gm?.btoa))return null;var o={v:[0,1],d:{ty:"Browser",ac:n,ap:i,id:e,tr:t,ti:r}};return s&&n!==s&&(o.d.tk=s),btoa((0,D.A)(o))}shouldGenerateTrace(e){return this.agentRef.init?.distributed_tracing?.enabled&&this.isAllowedOrigin(e)}isAllowedOrigin(e){var t=!1;const r=this.agentRef.init?.distributed_tracing;if(e.sameOrigin)t=!0;else if(r?.allowed_origins instanceof Array)for(var n=0;n<r.allowed_origins.length;n++){var i=(0,ve.D)(r.allowed_origins[n]);if(e.hostname===i.hostname&&e.protocol===i.protocol&&e.port===i.port){t=!0;break}}return t}excludeNewrelicHeader(){var e=this.agentRef.init?.distributed_tracing;return!!e&&!!e.exclude_newrelic_header}useNewrelicHeaderForCors(){var e=this.agentRef.init?.distributed_tracing;return!!e&&!1!==e.cors_use_newrelic_header}useTraceContextHeadersForCors(){var e=this.agentRef.init?.distributed_tracing;return!!e&&!!e.cors_use_tracecontext_headers}}var be=i(9300),we=i(7295);function Re(e){return"string"==typeof e?e:e instanceof(0,T.dV)().o.REQ?e.url:f.gm?.URL&&e instanceof URL?e.href:void 0}var Ee=["load","error","abort","timeout"],Te=Ee.length,Ae=(0,T.dV)().o.REQ,xe=(0,T.dV)().o.XHR;const Se="X-NewRelic-App-Data";class _e extends y{static featureName=be.T;constructor(e){super(e,be.T),this.dt=new ye(e),this.handler=(e,t,r,n)=>(0,s.p)(e,t,r,n,this.ee);try{const e={xmlhttprequest:"xhr",fetch:"fetch",beacon:"beacon"};f.gm?.performance?.getEntriesByType("resource").forEach(r=>{if(r.initiatorType in e&&0!==r.responseStatus){const n={status:r.responseStatus},i={rxSize:r.transferSize,duration:Math.floor(r.duration),cbTime:0};Oe(n,r.name),this.handler("xhr",[n,i,r.startTime,r.responseEnd,e[r.initiatorType]],void 0,t.K7.ajax)}})}catch(e){}me(this.ee,e),ce(this.ee,e),function(e,r,n,i){function a(e){var t=this;t.totalCbs=0,t.called=0,t.cbTime=0,t.end=T,t.ended=!1,t.xhrGuids={},t.lastSize=null,t.loadCaptureCalled=!1,t.params=this.params||{},t.metrics=this.metrics||{},t.latestLongtaskEnd=0,e.addEventListener("load",function(r){x(t,e)},(0,N.jT)(!1)),f.lR||e.addEventListener("progress",function(e){t.lastSize=e.loaded},(0,N.jT)(!1))}function c(e){this.params={method:e[0]},Oe(this,e[1]),this.metrics={}}function d(t,r){e.loader_config.xpid&&this.sameOrigin&&r.setRequestHeader("X-NewRelic-ID",e.loader_config.xpid);var n=i.generateTracePayload(this.parsedOrigin);if(n){var s=!1;n.newrelicHeader&&(r.setRequestHeader("newrelic",n.newrelicHeader),s=!0),n.traceContextParentHeader&&(r.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&r.setRequestHeader("tracestate",n.traceContextStateHeader),s=!0),s&&(this.dt=n)}}function u(e,t){var n=this.metrics,i=e[0],s=this;if(n&&i){var a=re(i);a&&(n.txSize=a)}this.startTime=(0,o.t)(),this.body=i,this.listener=function(e){try{"abort"!==e.type||s.loadCaptureCalled||(s.params.aborted=!0),("load"!==e.type||s.called===s.totalCbs&&(s.onloadCalled||"function"!=typeof t.onload)&&"function"==typeof s.end)&&s.end(t)}catch(e){try{r.emit("internal-error",[e])}catch(e){}}};for(var c=0;c<Te;c++)t.addEventListener(Ee[c],this.listener,(0,N.jT)(!1))}function l(e,t,r){this.cbTime+=e,t?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof r.onload||"function"!=typeof this.end||this.end(r)}function h(e,t){var r=""+te(e)+!!t;this.xhrGuids&&!this.xhrGuids[r]&&(this.xhrGuids[r]=!0,this.totalCbs+=1)}function p(e,t){var r=""+te(e)+!!t;this.xhrGuids&&this.xhrGuids[r]&&(delete this.xhrGuids[r],this.totalCbs-=1)}function g(){this.endTime=(0,o.t)()}function m(e,t){t instanceof xe&&"load"===e[0]&&r.emit("xhr-load-added",[e[1],e[2]],t)}function v(e,t){t instanceof xe&&"load"===e[0]&&r.emit("xhr-load-removed",[e[1],e[2]],t)}function y(e,t,r){t instanceof xe&&("onload"===r&&(this.onload=!0),("load"===(e[0]&&e[0].type)||this.onload)&&(this.xhrCbStart=(0,o.t)()))}function b(e,t){this.xhrCbStart&&r.emit("xhr-cb-time",[(0,o.t)()-this.xhrCbStart,this.onload,t],t)}function w(e){var t,r=e[1]||{};if("string"==typeof e[0]?0===(t=e[0]).length&&f.RI&&(t=""+f.gm.location.href):e[0]&&e[0].url?t=e[0].url:f.gm?.URL&&e[0]&&e[0]instanceof URL?t=e[0].href:"function"==typeof e[0].toString&&(t=e[0].toString()),"string"==typeof t&&0!==t.length){t&&(this.parsedOrigin=(0,ve.D)(t),this.sameOrigin=this.parsedOrigin.sameOrigin);var n=i.generateTracePayload(this.parsedOrigin);if(n&&(n.newrelicHeader||n.traceContextParentHeader))if(e[0]&&e[0].headers)a(e[0].headers,n)&&(this.dt=n);else{var s={};for(var o in r)s[o]=r[o];s.headers=new Headers(r.headers||{}),a(s.headers,n)&&(this.dt=n),e.length>1?e[1]=s:e.push(s)}}function a(e,t){var r=!1;return t.newrelicHeader&&(e.set("newrelic",t.newrelicHeader),r=!0),t.traceContextParentHeader&&(e.set("traceparent",t.traceContextParentHeader),t.traceContextStateHeader&&e.set("tracestate",t.traceContextStateHeader),r=!0),r}}function R(e,t){this.params={},this.metrics={},this.startTime=(0,o.t)(),this.dt=t;let[r,n={}]=e;Oe(this,Re(r));const i=(""+(r&&r instanceof Ae&&r.method||n.method||"GET")).toUpperCase();this.params.method=i,this.body=n.body,this.txSize=re(n.body)||0}function E(e,t){if(this.endTime=(0,o.t)(),this.params||(this.params={}),(0,we.iW)(this.params))return;let r;this.params.status=t?t.status:0,"string"==typeof this.rxSize&&this.rxSize.length>0&&(r=+this.rxSize);const n={txSize:this.txSize,rxSize:r,duration:(0,o.t)()-this.startTime},i=[this.params,n,this.startTime,this.endTime,"fetch"];this.targets.forEach(e=>A(i,this,e))}function T(e){const t=this.params,r=this.metrics;if(this.ended)return;this.ended=!0;for(let t=0;t<Te;t++)e.removeEventListener(Ee[t],this.listener,!1);if(t.aborted)return;if((0,we.iW)(t))return;r.duration=(0,o.t)()-this.startTime,this.loadCaptureCalled||4!==e.readyState?null==t.status&&(t.status=0):x(this,e),r.cbTime=this.cbTime;const n=[t,r,this.startTime,this.endTime,"xhr"];this.targets.forEach(e=>A(n,this,e))}function A(e,r,i){n("xhr",[...e,i],r,t.K7.ajax)}function x(e,n){e.params.status=n.status;var i=function(e,t){var r=e.responseType;return"json"===r&&null!==t?t:"arraybuffer"===r||"blob"===r||"json"===r?re(e.response):"text"===r||""===r||void 0===r?re(e.responseText):void 0}(n,e.lastSize);if(i&&(e.metrics.rxSize=i),e.sameOrigin&&n.getAllResponseHeaders().indexOf(Se)>=0){var o=n.getResponseHeader(Se);o&&((0,s.p)(O.rs,["Ajax/CrossApplicationTracing/Header/Seen"],void 0,t.K7.metrics,r),e.params.cat=o.split(", ").pop())}e.loadCaptureCalled=!0}r.on("new-xhr",a),r.on("open-xhr-start",c),r.on("open-xhr-end",d),r.on("send-xhr-start",u),r.on("xhr-cb-time",l),r.on("xhr-load-added",h),r.on("xhr-load-removed",p),r.on("xhr-resolved",g),r.on("addEventListener-end",m),r.on("removeEventListener-end",v),r.on("fn-end",b),r.on("fetch-before-start",w),r.on("fetch-start",R),r.on("fn-start",y),r.on("fetch-done",E)}(e,this.ee,this.handler,this.dt),this.importAggregator(e,()=>i.e(478).then(i.bind(i,3845)))}}function Oe(e,t){var r=(0,ve.D)(t),n=e.params||e;n.hostname=r.hostname,n.port=r.port,n.protocol=r.protocol,n.host=r.hostname+":"+r.port,n.pathname=r.pathname,e.parsedOrigin=r,e.sameOrigin=r.sameOrigin}const Pe={},ke=["pushState","replaceState"];function Ne(e){const t=function(e){return(e||ie.ee).get("history")}(e);return!f.RI||Pe[t.debugId]++||(Pe[t.debugId]=1,(0,se.YM)(t).inPlace(window.history,ke,"-")),t}var De=i(3738);function je(e){(0,c.Y)(a.BL,function(r=Date.now()){const n=r-f.WN;n<0&&(0,h.R)(62,r),(0,s.p)(O.XG,[a.BL,{time:n}],void 0,t.K7.metrics,e.ee),e.addToTrace({name:a.BL,start:r,origin:"nr"}),(0,s.p)(a.Pl+a.hG,[n,a.BL],void 0,t.K7.genericEvents,e.ee)},e)}const{He:Ce,bD:Le,d3:Ie,Kp:Me,TZ:Be,Lc:He,uP:We,Rz:Ke}=De;class Fe extends y{static featureName=Be;constructor(e){var r;super(e,Be),r=e,(0,c.Y)(a.U2,function(e){if(!(e&&"object"==typeof e&&e.name&&e.start))return;const n={n:e.name,s:e.start-f.WN,e:(e.end||e.start)-f.WN,o:e.origin||"",t:"api"};n.s<0||n.e<0||n.e<n.s?(0,h.R)(61,{start:n.s,end:n.e}):(0,s.p)("bstApi",[n],void 0,t.K7.sessionTrace,r.ee)},r),je(e);if(!(0,g.V)(e.init))return void this.deregisterDrain();const n=this.ee;let d;Ne(n),this.eventsEE=(0,ne.u)(n),this.eventsEE.on(We,function(e,t){this.bstStart=(0,o.t)()}),this.eventsEE.on(He,function(e,r){(0,s.p)("bst",[e[0],r,this.bstStart,(0,o.t)()],void 0,t.K7.sessionTrace,n)}),n.on(Ke+Ie,function(e){this.time=(0,o.t)(),this.startPath=location.pathname+location.hash}),n.on(Ke+Me,function(e){(0,s.p)("bstHist",[location.pathname+location.hash,this.startPath,this.time],void 0,t.K7.sessionTrace,n)});try{d=new PerformanceObserver(e=>{const r=e.getEntries();(0,s.p)(Ce,[r],void 0,t.K7.sessionTrace,n)}),d.observe({type:Le,buffered:!0})}catch(e){}this.importAggregator(e,()=>i.e(478).then(i.bind(i,6974)),{resourceObserver:d})}}var Ue=i(6344);class Ve extends y{static featureName=Ue.TZ;#n;recorder;constructor(e){var r;let n;super(e,Ue.TZ),r=e,(0,c.Y)(a.CH,function(){(0,s.p)(a.CH,[],void 0,t.K7.sessionReplay,r.ee)},r),function(e){(0,c.Y)(a.Tb,function(){(0,s.p)(a.Tb,[],void 0,t.K7.sessionReplay,e.ee)},e)}(e);try{n=JSON.parse(localStorage.getItem("".concat(w.H3,"_").concat(w.uh)))}catch(e){}(0,p.SR)(e.init)&&this.ee.on(a.CH,()=>this.#i()),this.#s(n)&&this.importRecorder().then(e=>{e.startRecording(Ue.Qb.PRELOAD,n?.sessionReplayMode)}),this.importAggregator(this.agentRef,()=>i.e(478).then(i.bind(i,6167)),this),this.ee.on("err",e=>{this.blocked||this.agentRef.runtime.isRecording&&(this.errorNoticed=!0,(0,s.p)(Ue.Vh,[e],void 0,this.featureName,this.ee))})}#s(e){return e&&(e.sessionReplayMode===w.g.FULL||e.sessionReplayMode===w.g.ERROR)||(0,p.Aw)(this.agentRef.init)}importRecorder(){return this.recorder?Promise.resolve(this.recorder):(this.#n??=Promise.all([i.e(478),i.e(249)]).then(i.bind(i,4866)).then(({Recorder:e})=>(this.recorder=new e(this),this.recorder)).catch(e=>{throw this.ee.emit("internal-error",[e]),this.blocked=!0,e}),this.#n)}#i(){this.blocked||(this.featAggregate?this.featAggregate.mode!==w.g.FULL&&this.featAggregate.initializeRecording(w.g.FULL,!0,Ue.Qb.API):this.importRecorder().then(()=>{this.recorder.startRecording(Ue.Qb.API,w.g.FULL)}))}}var Ge=i(3962);class ze extends y{static featureName=Ge.TZ;constructor(e){if(super(e,Ge.TZ),function(e){const r=e.ee.get("tracer");function n(){}(0,c.Y)(a.dT,function(e){return(new n).get("object"==typeof e?e:{})},e);const i=n.prototype={createTracer:function(n,i){var a={},c=this,d="function"==typeof i;return(0,s.p)(O.xV,["API/createTracer/called"],void 0,t.K7.metrics,e.ee),function(){if(r.emit((d?"":"no-")+"fn-start",[(0,o.t)(),c,d],a),d)try{return i.apply(this,arguments)}catch(e){const t="string"==typeof e?new Error(e):e;throw r.emit("fn-err",[arguments,this,t],a),t}finally{r.emit("fn-end",[(0,o.t)()],a)}}}};["actionText","setName","setAttribute","save","ignore","onEnd","getContext","end","get"].forEach(r=>{c.Y.apply(this,[r,function(){return(0,s.p)(a.hw+r,[performance.now(),...arguments],this,t.K7.softNav,e.ee),this},e,i])}),(0,c.Y)(a.PA,function(){(0,s.p)(a.hw+"routeName",[performance.now(),...arguments],void 0,t.K7.softNav,e.ee)},e)}(e),!f.RI||!(0,T.dV)().o.MO)return;const r=Ne(this.ee);try{this.removeOnAbort=new AbortController}catch(e){}Ge.tC.forEach(e=>{(0,N.sp)(e,e=>{l(e)},!0,this.removeOnAbort?.signal)});const n=()=>(0,s.p)("newURL",[(0,o.t)(),""+window.location],void 0,this.featureName,this.ee);r.on("pushState-end",n),r.on("replaceState-end",n),(0,N.sp)(Ge.OV,e=>{l(e),(0,s.p)("newURL",[e.timeStamp,""+window.location],void 0,this.featureName,this.ee)},!0,this.removeOnAbort?.signal);let d=!1;const u=new((0,T.dV)().o.MO)((e,t)=>{d||(d=!0,requestAnimationFrame(()=>{(0,s.p)("newDom",[(0,o.t)()],void 0,this.featureName,this.ee),d=!1}))}),l=(0,m.s)(e=>{"loading"!==document.readyState&&((0,s.p)("newUIEvent",[e],void 0,this.featureName,this.ee),u.observe(document.body,{attributes:!0,childList:!0,subtree:!0,characterData:!0}))},100,{leading:!0});this.abortHandler=function(){this.removeOnAbort?.abort(),u.disconnect(),this.abortHandler=void 0},this.importAggregator(e,()=>i.e(478).then(i.bind(i,4393)),{domObserver:u})}}var Ye=i(3333),Ze=i(9119);const qe={},Xe=new Set;function $e(e){return"string"==typeof e?{type:"string",size:(new TextEncoder).encode(e).length}:e instanceof ArrayBuffer?{type:"ArrayBuffer",size:e.byteLength}:e instanceof Blob?{type:"Blob",size:e.size}:e instanceof DataView?{type:"DataView",size:e.byteLength}:ArrayBuffer.isView(e)?{type:"TypedArray",size:e.byteLength}:{type:"unknown",size:0}}class Qe{constructor(e,t){this.timestamp=(0,o.t)(),this.currentUrl=(0,Ze.L)(window.location.href),this.socketId=(0,Y.LA)(8),this.requestedUrl=(0,Ze.L)(e),this.requestedProtocols=Array.isArray(t)?t.join(","):t||"",this.openedAt=void 0,this.protocol=void 0,this.extensions=void 0,this.binaryType=void 0,this.messageOrigin=void 0,this.messageCount=0,this.messageBytes=0,this.messageBytesMin=0,this.messageBytesMax=0,this.messageTypes=void 0,this.sendCount=0,this.sendBytes=0,this.sendBytesMin=0,this.sendBytesMax=0,this.sendTypes=void 0,this.closedAt=void 0,this.closeCode=void 0,this.closeReason="unknown",this.closeWasClean=void 0,this.connectedDuration=0,this.hasErrors=void 0}}class Je extends y{static featureName=Ye.TZ;constructor(e){super(e,Ye.TZ);const r=e.init.feature_flags.includes("websockets"),n=[e.init.page_action.enabled,e.init.performance.capture_marks,e.init.performance.capture_measures,e.init.performance.resources.enabled,e.init.user_actions.enabled,r];var d;let u,l;if(d=e,(0,c.Y)(a.hG,(e,t)=>U(e,t,d),d),function(e){(0,c.Y)(a.fF,(t,r)=>G(t,r,e),e)}(e),je(e),q(e),function(e){(0,c.Y)(a.V1,(t,r)=>V(t,r,e),e)}(e),r&&(l=function(e){if(!(0,T.dV)().o.WS)return e;const t=e.get("websockets");if(qe[t.debugId]++)return t;qe[t.debugId]=1,(0,x.G)(()=>{const e=(0,o.t)();Xe.forEach(r=>{r.nrData.closedAt=e,r.nrData.closeCode=1001,r.nrData.closeReason="Page navigating away",r.nrData.closeWasClean=!1,r.nrData.openedAt&&(r.nrData.connectedDuration=e-r.nrData.openedAt),t.emit("ws",[r.nrData],r)})});class r extends WebSocket{static name="WebSocket";static toString(){return"function WebSocket() { [native code] }"}toString(){return"[object WebSocket]"}get[Symbol.toStringTag](){return r.name}#o(e){(e.__newrelic??={}).socketId=this.nrData.socketId,this.nrData.hasErrors??=!0}constructor(...e){super(...e),this.nrData=new Qe(e[0],e[1]),this.addEventListener("open",()=>{this.nrData.openedAt=(0,o.t)(),["protocol","extensions","binaryType"].forEach(e=>{this.nrData[e]=this[e]}),Xe.add(this)}),this.addEventListener("message",e=>{const{type:t,size:r}=$e(e.data);this.nrData.messageOrigin??=(0,Ze.L)(e.origin),this.nrData.messageCount++,this.nrData.messageBytes+=r,this.nrData.messageBytesMin=Math.min(this.nrData.messageBytesMin||1/0,r),this.nrData.messageBytesMax=Math.max(this.nrData.messageBytesMax,r),(this.nrData.messageTypes??"").includes(t)||(this.nrData.messageTypes=this.nrData.messageTypes?"".concat(this.nrData.messageTypes,",").concat(t):t)}),this.addEventListener("close",e=>{this.nrData.closedAt=(0,o.t)(),this.nrData.closeCode=e.code,e.reason&&(this.nrData.closeReason=e.reason),this.nrData.closeWasClean=e.wasClean,this.nrData.connectedDuration=this.nrData.closedAt-this.nrData.openedAt,Xe.delete(this),t.emit("ws",[this.nrData],this)})}addEventListener(e,t,...r){const n=this,i="function"==typeof t?function(...e){try{return t.apply(this,e)}catch(e){throw n.#o(e),e}}:t?.handleEvent?{handleEvent:function(...e){try{return t.handleEvent.apply(t,e)}catch(e){throw n.#o(e),e}}}:t;return super.addEventListener(e,i,...r)}send(e){if(this.readyState===WebSocket.OPEN){const{type:t,size:r}=$e(e);this.nrData.sendCount++,this.nrData.sendBytes+=r,this.nrData.sendBytesMin=Math.min(this.nrData.sendBytesMin||1/0,r),this.nrData.sendBytesMax=Math.max(this.nrData.sendBytesMax,r),(this.nrData.sendTypes??"").includes(t)||(this.nrData.sendTypes=this.nrData.sendTypes?"".concat(this.nrData.sendTypes,",").concat(t):t)}try{return super.send(e)}catch(e){throw this.#o(e),e}}close(...e){try{super.close(...e)}catch(e){throw this.#o(e),e}}}return f.gm.WebSocket=r,t}(this.ee)),f.RI){if(me(this.ee,e),ce(this.ee,e),u=Ne(this.ee),e.init.user_actions.enabled){function h(t){const r=(0,ve.D)(t);return e.beacons.includes(r.hostname+":"+r.port)}function p(){u.emit("navChange")}Ye.Zp.forEach(e=>(0,N.sp)(e,e=>(0,s.p)("ua",[e],void 0,this.featureName,this.ee),!0)),Ye.qN.forEach(e=>{const t=(0,m.s)(e=>{(0,s.p)("ua",[e],void 0,this.featureName,this.ee)},500,{leading:!0});(0,N.sp)(e,t)}),f.gm.addEventListener("error",()=>{(0,s.p)("uaErr",[],void 0,t.K7.genericEvents,this.ee)},(0,N.jT)(!1,this.removeOnAbort?.signal)),this.ee.on("open-xhr-start",(e,r)=>{h(e[1])||r.addEventListener("readystatechange",()=>{2===r.readyState&&(0,s.p)("uaXhr",[],void 0,t.K7.genericEvents,this.ee)})}),this.ee.on("fetch-start",e=>{e.length>=1&&!h(Re(e[0]))&&(0,s.p)("uaXhr",[],void 0,t.K7.genericEvents,this.ee)}),u.on("pushState-end",p),u.on("replaceState-end",p),window.addEventListener("hashchange",p,(0,N.jT)(!0,this.removeOnAbort?.signal)),window.addEventListener("popstate",p,(0,N.jT)(!0,this.removeOnAbort?.signal))}if(e.init.performance.resources.enabled&&f.gm.PerformanceObserver?.supportedEntryTypes.includes("resource")){new PerformanceObserver(e=>{e.getEntries().forEach(e=>{(0,s.p)("browserPerformance.resource",[e],void 0,this.featureName,this.ee)})}).observe({type:"resource",buffered:!0})}}r&&l.on("ws",e=>{(0,s.p)("ws-complete",[e],void 0,this.featureName,this.ee)});try{this.removeOnAbort=new AbortController}catch(g){}this.abortHandler=()=>{this.removeOnAbort?.abort(),this.abortHandler=void 0},n.some(e=>e)?this.importAggregator(e,()=>i.e(478).then(i.bind(i,8019))):this.deregisterDrain()}}var et=i(2646);const tt=new Map;function rt(e,t,r,n,i=!0,s){if("object"!=typeof t||!t||"string"!=typeof r||!r||"function"!=typeof t[r])return(0,h.R)(29);const o=function(e){return(e||ie.ee).get("logger")}(e),a=(0,se.YM)(o,void 0,s),c=new et.y(ie.P);c.level=n.level,c.customAttributes=n.customAttributes,c.autoCaptured=i;const d=t[r]?.[se.Jt]||t[r];return tt.set(d,c),a.inPlace(t,[r],"wrap-logger-",()=>tt.get(d),void 0,!0),o}var nt=i(1910);class it extends y{static featureName=W.TZ;constructor(e){var t;super(e,W.TZ),t=e,(0,c.Y)(a.$9,(e,r)=>F(e,r,t),t),function(e){(0,c.Y)(a.Wb,(t,r,{customAttributes:n={},level:i=W.p_.INFO}={})=>{rt(e.ee,t,r,{customAttributes:n,level:i},!1,e)},e)}(e),q(e);const r=this.ee;["log","error","warn","info","debug","trace"].forEach(t=>{(0,nt.i)(f.gm.console[t]),rt(r,f.gm.console,t,{level:"log"===t?"info":t},void 0,e)}),this.ee.on("wrap-logger-end",function([e],t,n,i=[]){const{level:s,customAttributes:o,autoCaptured:a}=this;i.forEach(t=>{(0,K.R)(r,e,o,s,a,t)})}),this.importAggregator(e,()=>i.e(478).then(i.bind(i,5288)))}}new A({features:[_e,E,_,Fe,Ve,P,Q,Je,it,ze],loaderType:"spa"})})()})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="monetag" content="7189480d8ee46e7fafc73e84adf113fc">
+  <title>Old versions of Windows, Mac and Linux Software, Apps &amp; Abandonware Games - Download at OldVersion.com
+</title>
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+    
+  
+
+
+
+<meta name="description" content="Download old versions of software for Windows. Because newer isn't always better.">
+
+
+<link rel="canonical" href="https://oldversion.com/">
+
+
+
+
+
+
+
+  
+    
+      <link rel="alternate" hreflang="en" href="https://oldversion.com/">
+      
+      
+        <link rel="alternate" hreflang="x-default" href="https://oldversion.com/">
+      
+    
+  
+    
+      <link rel="alternate" hreflang="zh" href="https://oldversion.cn/">
+      
+      
+    
+  
+    
+      <link rel="alternate" hreflang="de" href="https://oldversion.com.de/">
+      
+      
+    
+  
+    
+      <link rel="alternate" hreflang="ru" href="https://oldversion.com.ru/">
+      
+      
+    
+  
+    
+      <link rel="alternate" hreflang="fr" href="https://oldversion.fr/">
+      
+      
+    
+  
+    
+      <link rel="alternate" hreflang="ja" href="https://oldversion.jp/">
+      
+      
+    
+  
+    
+      <link rel="alternate" hreflang="ro" href="https://oldversion.ro/">
+      
+      
+    
+  
+    
+      <link rel="alternate" hreflang="ar" href="https://ar.oldversion.com/">
+      
+      
+    
+  
+    
+      <link rel="alternate" hreflang="es" href="https://es.oldversion.com/">
+      
+      
+    
+  
+    
+      <link rel="alternate" hreflang="tr" href="https://tr.oldversion.com/">
+      
+      
+    
+  
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="OldVersion - Download Old Versions of Your Favorite Software!">
+<meta property="og:description" content="Download old versions of software for Windows. Because newer isn't always better.">
+<meta property="og:url" content="https://oldversion.com/">
+<meta property="og:image" content="https://oldversion-prod-storage.nyc3.digitaloceanspaces.com/app_assets/themes/shared/images/default-icon.2e3ccb63487e.jpg">
+<meta property="og:site_name" content="OldVersion">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OldVersion - Download Old Versions of Your Favorite Software!">
+<meta name="twitter:description" content="Download old versions of software for Windows. Because newer isn't always better.">
+<meta name="twitter:image" content="https://oldversion-prod-storage.nyc3.digitaloceanspaces.com/app_assets/themes/shared/images/default-icon.2e3ccb63487e.jpg">
+
+
+
+
+
+
+
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="https://oldversion-prod-storage.nyc3.digitaloceanspaces.com/app_assets/themes/shared/images/favicon.20ee24b6e02a.ico">
+  
+  <!-- Preconnect to third-party origins for faster loading -->
+  
+  <link rel="preconnect" href="https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com" crossorigin="">
+  <link rel="preconnect" href="https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com">
+  
+  <link rel="preconnect" href="https://static.xx.fbcdn.net" crossorigin="">
+  
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="">
+  
+  
+  
+  
+  
+  
+  <!-- Critical CSS (inline): colors + base + typography + layout -->
+  
+  
+
+
+<style>
+:root{--breakpoint-mobile:575px;--breakpoint-mobile-large:767px;--breakpoint-tablet:991px;--breakpoint-desktop-small:1199px}*{box-sizing:border-box}body{margin:0;padding:0;font-weight:400;line-height:1.6}.page-content{max-width:1200px;margin:0 auto;padding:20px}.page-content-head-table{border-collapse:separate;table-layout:fixed;width:100%}.page-content-head-table>tbody>tr>td{vertical-align:top;width:50%}.page-content-head-table>tbody>tr>td:first-child:not(:only-child){padding-right:10px}.page-content-head-table>tbody>tr>td:last-child:not(:only-child){padding-left:10px}.page-content-head-table>tbody>tr>td:only-child{width:100%}.table{border-collapse:collapse;width:100%}.table th{text-align:left;padding:8px}.table td{border:1px solid var(--color-border,silver);padding:8px}.os-button{cursor:pointer;font-family:var(--font-family-primary,Arial, sans-serif);border:2px outset var(--color-button-border,#fff);background-color:var(--color-button-bg,silver);color:var(--color-button-text,#000);padding:2px 5px;font-size:12px;font-weight:700;text-decoration:none;display:inline-block}.os-button:hover,.os-button:active{border-style:inset}.os-button:hover{background-color:var(--color-button-hover,#d0d0d0)}.retro-form input[type=text],.retro-form input[type=email],.retro-form textarea{border:1px solid var(--color-form-border,#000);background-color:var(--color-form-bg,#fff);width:100%;height:20px;font-family:var(--font-family-primary,Arial, sans-serif);padding:2px;font-size:12px}.retro-form textarea{resize:none;height:120px}.retro-form select{border:1px solid var(--color-form-border,#000);background-color:var(--color-form-bg,#fff);width:100%;height:24px;font-family:var(--font-family-primary,Arial, sans-serif);box-sizing:border-box;padding:2px 5px;font-size:14px}.retro-form input[type=submit]{border:2px outset var(--color-button-border,silver);border-top-color:var(--color-button-border-light,#fff);border-left-color:var(--color-button-border-light,#fff);border-right-color:var(--color-button-border-dark,gray);border-bottom-color:var(--color-button-border-dark,gray);background-color:var(--color-button-bg,silver);height:24px;font-family:var(--font-family-primary,Arial, sans-serif);cursor:pointer;box-shadow:1px 1px 0 var(--color-shadow,#000);margin:0;font-size:14px;font-weight:700}.retro-form input[type=submit]:active{border-style:inset;border-top-color:var(--color-button-border-dark,gray);border-left-color:var(--color-button-border-dark,gray);border-right-color:var(--color-button-border-light,#fff);border-bottom-color:var(--color-button-border-light,#fff);box-shadow:none}.alert{border:2px solid var(--color-border,#000);margin-bottom:20px;padding:15px}.alert-success{background-color:var(--color-success-bg,#90ee90);border-color:var(--color-success,green)}.alert-danger{background-color:var(--color-danger-bg,#ffb6c1);border-color:var(--color-danger,red)}.alert-warning{background-color:var(--color-warning-bg,gold);border-color:var(--color-warning,orange)}.alert-info{background-color:var(--color-info-bg,#87ceeb);border-color:var(--color-info,#00f)}.new-badge{background-color:var(--color-badge-bg,red);color:var(--color-badge-text,#fff);border-radius:2px;margin-left:5px;padding:2px 4px;font-size:9px;animation:1s linear infinite blinker;display:inline-block}.version-badge,.os-badge{color:#fff;text-shadow:0 1px 1px #0000004d;white-space:nowrap;cursor:default;pointer-events:none;border:1px solid;border-radius:4px;margin-right:5px;padding:4px 10px;font-size:10px;font-weight:700;text-decoration:none;display:inline-block;box-shadow:0 1px 2px #0003,inset 0 1px #ffffff4d}.version-badge:hover,.os-badge:hover{opacity:.9;cursor:default;text-decoration:none}.os-badge{background:linear-gradient(#90ee90 0%,#6ca000 50%,#5a8a00 100%);border-color:#5a8a00;margin:2px 4px 2px 0}.os-badge.windows{color:#fff;background:linear-gradient(#4da6ff 0%,#06c 50%,#004080 100%);border-color:#004080}.os-badge.mac,.os-badge.macos{color:#fff;background:linear-gradient(#c9f 0%,#96c 50%,purple 100%);border-color:purple}.os-badge.linux{color:#000;background:linear-gradient(gold 0%,#f90 50%,#c60 100%);border-color:#c60}.os-badge.dos{color:#fff;background:linear-gradient(#b3b3b3 0%,gray 50%,#666 100%);border-color:#666}.os-badge.android{color:#fff;background:linear-gradient(#90ee90 0%,#6c9 50%,#093 100%);border-color:#093}.os-badge.ios{color:#fff;background:linear-gradient(#9cf 0%,#69f 50%,#06c 100%);border-color:#06c}.os-badge-group{margin-left:8px;display:inline}.version-badge{background:linear-gradient(#4dd0e1 0%,#26c6da 50%,#00acc1 100%);border-color:#00acc1;margin:2px 4px 2px 0}.os-filter-indicator{background:#fff;border:1px solid silver;width:100%;margin:10px 0;padding:1px;display:block}.os-filter-indicator .inner{color:#4c4c4c;background:#e7f6c7;align-items:center;gap:10px;padding:10px;font-size:12px;display:flex}.os-filter-indicator .os-badge{margin-left:0}.os-filter-indicator .show-all-link{color:#856404;font-weight:700;text-decoration:underline}.os-filter-indicator .show-all-link:hover{color:#856404;text-decoration:underline}@keyframes blinker{50%{opacity:0}}@keyframes ticker{0%{transform:translate(100%)}to{transform:translate(-100%)}}.software-icon{width:32px;height:32px}.software-icon-large{width:64px;height:64px}.text-center{text-align:center}.text-left{text-align:left}.text-right{text-align:right}.mb-0{margin-bottom:0}.mt-0{margin-top:0}.p-0{padding:0}.mb-1{margin-bottom:5px}.mt-1{margin-top:5px}.p-1{padding:5px}.mb-2{margin-bottom:10px}.mt-2{margin-top:10px}.p-2{padding:10px}.mb-3{margin-bottom:15px}.mt-3{margin-top:15px}.p-3{padding:15px}.mb-4{margin-bottom:20px}.mt-4{margin-top:20px}.p-4{padding:20px}.mb-5{margin-bottom:30px}.mt-5{margin-top:30px}.p-5{padding:30px}@media (max-width:767px){.page-content{padding:10px}.page-content-head-table>tbody>tr>td:last-child:not(:only-child){width:100%;padding-top:10px;padding-left:0}}.dmca-notice{background-color:#fff3cd;border:2px solid #ffc107;border-radius:4px;margin:20px 0;padding:20px}.dmca-notice h3{color:#856404;margin-top:0}.dmca-notice p{color:#856404;margin-bottom:0}.dmca-notice p+p{margin-top:15px}.dmca-notice a{color:#856404;text-decoration:underline}.dmca-address{border-left:3px solid var(--color-primary,navy);background-color:#f5f5f5;margin:15px 0;padding:12px 15px;font-size:14px;font-style:normal;font-weight:400;display:inline-block}:root{--color-primary:#00548f;--color-secondary:#292929;--color-background:#fff;--color-text:#000;--color-white:#fff;--color-black:#000;--color-accent:#ff6b35;--color-success:#6ca000;--color-warning:orange;--color-danger:red;--color-info:#3e4e9c;--color-yellow:#ffe718;--color-button-bg:#f0f0f0;--color-button-text:#000;--color-button-border:#ccc;--color-button-hover:#e0e0e0;--color-form-bg:#fff;--color-form-border:#ccc;--color-form-text:#000;--color-link:#00548f;--color-link-hover:#3e4e9c;--color-link-visited:purple;--color-link-active:#6ca000;--color-border:#ccc;--color-border-light:#fff;--color-border-dark:#999;--color-bg-primary:#f5f5f5;--color-bg-secondary:#fff;--color-bg-header:#fff;--color-bg-footer:#00548f;--color-bg-card:#fff;--color-bg-table-header:#f0f0f0;--color-bg-table-row-even:#f9f9f9;--color-bg-sidebar:#fff;--color-text-primary:#000;--color-text-secondary:#2a2a2a;--color-text-tertiary:#4c4c4c;--color-text-inverse:#fff;--color-text-muted:#666;--color-text-small:#666;--color-success-bg:#d4edda;--color-danger-bg:#f8d7da;--color-warning-bg:#fff3cd;--color-info-bg:#d1ecf1;--color-badge-bg:red;--color-badge-text:#fff;--color-shadow:#000;--color-shadow-light:#0000001a;--color-stats-bg:#f0f0f0;--color-category-bg:#fff;--color-category-border:#ccc;--color-download-box:#e7f6c7;--color-border-silver:silver;--color-nav-bg:#292929;--color-nav-text:#fff;--color-nav-hover:#00548f;--color-nav-active:#00548f;--color-widget-bg:#fff;--color-widget-border:#ccc;--color-widget-header-bg:#000;--color-widget-header-text:#fff;--color-footer-bg:#00548f;--color-footer-text:#fff;--color-footer-link:#fff;--color-footer-link-hover:#ccc}body{color:var(--color-text-primary);background-color:#fff;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1.4}h1,h2,h3,h4,h5,h6{color:var(--color-text-primary);overflow-wrap:break-word;margin:0 0 10px;font-family:Arial,Helvetica,sans-serif;font-weight:700}h1{font-size:24px;line-height:1.2}h2{font-size:18px;line-height:1.3}h3{font-size:14px;line-height:1.4}h4{font-size:13px;line-height:1.4}h5{font-size:12px;line-height:1.4}h6{font-size:11px;line-height:1.4}h4{font-weight:400}h5{color:var(--color-text-secondary);font-weight:400}h6{color:var(--color-text-muted);font-weight:400}p{color:var(--color-text-primary);margin:0 0 10px;font-size:12px;line-height:1.4}a{color:var(--color-link);text-decoration:none}a:hover{color:var(--color-link-hover);text-decoration:underline}a:visited{color:var(--color-link-visited)}a:active{color:var(--color-link-active)}a:focus-visible{outline:2px solid var(--color-link);outline-offset:2px}strong,b{font-weight:700}em,i{font-style:italic}ul,ol{margin:0 0 10px;padding:0 0 0 20px;font-size:12px;line-height:1.4}li{margin:0 0 5px;font-size:12px;line-height:1.4}dl{margin:0 0 10px;font-size:12px;line-height:1.4}dt{color:var(--color-text-primary);overflow-wrap:break-word;margin:0 0 5px;font-weight:700}dd{color:var(--color-text-secondary);overflow-wrap:break-word;margin:0 0 10px 20px}small,.small{color:var(--color-text-muted);font-size:11px}.muted{color:var(--color-text-muted)}.secondary{color:var(--color-text-secondary)}code,pre{background:var(--color-bg-tertiary,#f5f5f5);border:1px solid var(--color-border);font-family:Courier New,Courier,monospace;font-size:11px}code{padding:2px 4px}pre{white-space:pre;padding:10px;overflow-x:auto}blockquote{background:var(--color-bg-tertiary,#f5f5f5);border-left:3px solid var(--color-border);color:var(--color-text-secondary);margin:0 0 10px 20px;padding:10px;font-style:italic}hr{border:none;border-top:1px solid var(--color-border);margin:20px 0}.text-justify{text-align:justify}.text-uppercase{text-transform:uppercase}.text-lowercase{text-transform:lowercase}.text-capitalize{text-transform:capitalize}.font-normal{font-weight:400}.font-bold{font-weight:700}.font-bolder{font-weight:bolder}.font-lighter{font-weight:lighter}.font-xs{font-size:10px}.font-sm{font-size:11px}.font-base{font-size:12px}.font-lg{font-size:14px}.font-xl{font-size:16px}.font-2xl{font-size:18px}.font-3xl{font-size:24px}.leading-tight{line-height:1.2}.leading-normal{line-height:1.4}.leading-relaxed{line-height:1.6}.leading-loose{line-height:1.8}.category-title{color:var(--color-text-primary);border-bottom:1px solid var(--color-border);margin:0 0 10px;padding-bottom:5px;font-size:14px;font-weight:700}.category-title a{color:var(--color-text-primary);text-decoration:none}.category-title a:hover{color:var(--color-link-hover)}.heading1{color:var(--color-text-primary);border-bottom:2px solid var(--color-border);margin:0 0 15px;padding-bottom:5px;font-size:16px;font-weight:700}.heading1 .inner{color:var(--color-text-secondary)}.heading2{color:var(--color-text-primary);margin:0 0 10px;font-size:14px;font-weight:700}.stats{color:var(--color-text-secondary);font-size:12px}.stats .inner{color:var(--color-text-primary);font-weight:700}.downloads{color:var(--color-text-secondary);font-size:11px;font-weight:700}.rating{color:var(--color-text-secondary);font-size:11px}.votes{color:var(--color-text-muted);font-size:11px}.meta-data{color:var(--color-text-secondary);font-size:11px}.meta-data li{margin:0 0 5px;font-size:11px}.meta-data span{color:var(--color-text-primary);font-weight:700}@media (max-width:991px){h1{font-size:20px}h2{font-size:16px}h3{font-size:14px}.category-title{font-size:13px}.heading1{font-size:15px}small,.small,.downloads,.rating,.votes,.meta-data,.meta-data li{font-size:12px}}.skip-link{color:#fff;z-index:9999;background:#00548f;padding:8px 16px;font-size:12px;text-decoration:none;position:absolute;top:-100%;left:0}.skip-link:focus{top:0}*{box-sizing:border-box;margin:0;padding:0}body{font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1.4}#container{background:#fff;width:100%;max-width:978px;min-height:100vh;margin:0 auto}#header{z-index:100;background:#fff;border-bottom:1px solid #ccc;position:relative;overflow:visible}#header .main-header{justify-content:space-between;align-items:center;padding:15px 20px;display:flex;position:relative}.mobile-menu-toggle{cursor:pointer;z-index:1001;background:0 0;border:none;flex-direction:column;justify-content:space-around;align-items:center;min-width:44px;min-height:44px;padding:7px;display:none;position:absolute;top:50%;right:20px;transform:translateY(-50%)}.mobile-menu-toggle span{background-color:#00548f;border-radius:3px;width:25px;height:3px;transition:all .3s;display:block}.mobile-menu-toggle[aria-expanded=true] span:first-child{transform:rotate(45deg)translate(8px,8px)}.mobile-menu-toggle[aria-expanded=true] span:nth-child(2){opacity:0}.mobile-menu-toggle[aria-expanded=true] span:nth-child(3){transform:rotate(-45deg)translate(7px,-7px)}.logo{flex:none}.logo h1{color:#00548f;margin:0;font-size:28px;font-weight:700;line-height:1}.logo h1 a{color:#00548f;text-decoration:none}.logo .tagline{color:#666;margin-top:2px;font-size:12px;font-style:italic}#search-form{flex:1;max-width:400px;height:auto;min-height:0;margin:0 30px;position:relative;overflow:visible}#search-form form{width:395px;position:relative}#search-form input[type=text]{color:#4e4e4e;background:0 0;border:none;outline:none;flex:1;height:30px;padding:0 10px 0 35px;font-size:14px}#search-form input[type=submit]{color:#fff;cursor:pointer;background:#00548f;border:1px solid #00548f;border-radius:4px;margin-left:5px;padding:8px 15px;font-size:12px;font-weight:700}#search-form input[type=submit]:hover{background:#003d6b;border-color:#003d6b}.search-container{background:#fff;border:3px solid #d5d5d5;border-radius:8px;align-items:center;padding:5px;display:flex;position:relative}.search-icon{color:#666;z-index:1;font-size:16px;position:absolute;left:12px}.search-results-dropdown{z-index:1000;background:#fff;border:3px solid #d5d5d5;border-top:none;border-radius:0 0 8px 8px;max-height:400px;margin-top:0;position:absolute;top:100%;left:0;right:0;overflow-y:auto}.search-result-item{cursor:pointer;border-bottom:1px solid #eee;padding:12px 15px}.search-result-item:last-child{border-bottom:none}.search-result-item:hover,.search-result-item.active{background:#f0f0f0}.result-header{align-items:center;gap:8px;margin-bottom:4px;display:flex}.result-icon{object-fit:contain;flex-shrink:0;width:32px;height:32px}.result-type-badge{color:#fff;text-shadow:0 1px 1px #0000004d;white-space:nowrap;cursor:default;pointer-events:none;text-transform:uppercase;margin-right:5px;padding:4px 10px;font-size:10px;font-weight:700;text-decoration:none;display:inline-block;box-shadow:0 1px 2px #0003,inset 0 1px #ffffff4d}.result-type-badge.software{color:#fff;background:linear-gradient(#ff6b6b 0%,#ee5a6f 50%,#c92a2a 100%);border:1px solid #c92a2a}.result-type-badge.version{color:#fff;background:linear-gradient(#4dd0e1 0%,#26c6da 50%,#00acc1 100%);border:1px solid #00acc1}.result-type-badge:hover{opacity:.9;cursor:default;text-decoration:none}.result-name{color:#4e4e4e;flex:1;font-weight:700}.search-highlight{background:#fffacd;font-weight:700}.result-version{color:#666;font-size:12px;font-style:italic}.result-meta{color:#888;margin-top:4px;font-size:12px}.result-vendor{color:#666}.search-view-more{text-align:center;background:#f9f9f9;border-top:1px solid #d5d5d5;padding:10px 15px}.search-view-more a{color:#00548f;font-weight:700;text-decoration:none}.search-view-more a:hover{text-decoration:underline}.search-loading,.search-empty,.search-error{text-align:center;color:#666;padding:20px}.search-error{color:#d32f2f}.user-area{text-align:right;flex:none}.user-area span{color:#4e4e4e;margin-right:5px;font-size:14px}.user-area a{color:#00548f;margin:0 2px;font-size:14px;text-decoration:none}.user-area a:hover{text-decoration:underline}.user-area .support-cta__button{color:#fff}.user-area .support-cta__button:hover{color:#fff;text-decoration:none}.user-area .user-area__bottom{justify-content:flex-end;align-items:center;gap:10px;margin-top:5px;display:flex}.social-icons{gap:8px;display:flex}.social-icons a{justify-content:center;align-items:center;padding:8px;text-decoration:none;transition:opacity .2s;display:inline-flex}.social-icons a:hover{opacity:.7}.social-icons img{width:16px;height:16px;display:block}.support-cta{text-align:right;margin-top:4px}.support-cta__button{padding:2px 8px;font-size:11px}.support-cta__perks{color:#666;margin-top:2px;font-size:10px;display:block}.support-cta__perks a{color:#00548f;font-size:10px;text-decoration:none}.support-cta__perks a:hover{text-decoration:underline}#main-navigation{background:#292929;justify-content:space-between;align-items:center;height:32px;padding:0 20px;display:flex;position:relative}#main-navigation .os-tabs{align-items:center;margin:0;padding:0;list-style:none;display:flex}#main-navigation .os-tabs li{margin:0;padding:0}#main-navigation .os-tabs li a{color:#fff;background:#292929;align-items:center;height:32px;padding:0 15px;font-size:12px;font-weight:700;text-decoration:none;display:flex}#main-navigation .os-tabs li a:hover,#main-navigation .os-tabs li a.active{color:#fff;background:#00548f}#main-navigation .right-nav{gap:6px;margin:0;padding:0;list-style:none;display:flex}#main-navigation .right-nav li{margin:0;padding:0}#main-navigation .right-nav li a{color:#fff;align-items:center;height:32px;padding:0 8px;font-size:12px;font-weight:700;text-decoration:none;display:flex}#main-navigation .right-nav li a:hover{color:#ccc}#main-navigation .right-nav li a.upload-btn{color:#ffe718;background:0 0;border:none;align-items:center;height:32px;margin:0;padding:0 8px;font-size:12px;font-weight:700;text-decoration:none;display:flex}#main-navigation .right-nav li a.upload-btn:before{content:"";background-image:url(data:image/gif;base64,R0lGODlhBwAKAJEAAFRPJv/nGCkpKQAAACH5BAAAAAAALAAAAAAHAAoAAAISlGMZq8sODQggiVkTtltT/gkFADs=);background-position:50%;background-repeat:no-repeat;background-size:contain;width:12px;height:12px;margin-right:4px;display:inline-block}#main-navigation .right-nav li a.upload-btn:hover{color:#ccc}#main-navigation .mobile-os-categories,#main-navigation .mobile-search-form,#main-navigation .mobile-user-auth,#main-navigation .mobile-support-cta{display:none}.os-tabs .divider,.right-nav .divider{background-image:url(data:image/gif;base64,R0lGODlhAwAHAJEAAJmZmV1dXSkpKQAAACH5BAAAAAAALAAAAAADAAcAAAIHlAOBYS27CgA7);background-position:50%;background-repeat:no-repeat;background-size:contain;width:3px;height:32px;margin:0 10px;list-style:none}.mobile-os-categories,.mobile-search-form,.mobile-user-auth,.mobile-support-cta{display:none}#content{background:#fff;min-height:500px;padding-top:15px}#content .wrapper{box-sizing:border-box;gap:25px;width:978px;margin:0 auto;padding:0;display:flex}#content .heading{margin-bottom:10px;padding-left:5px}#main{box-sizing:border-box;flex:1}#sidebar{box-sizing:border-box;flex:0 0 225px;width:225px;margin-bottom:160px}.heading{align-items:center;gap:20px;margin-bottom:10px;padding-left:5px;display:flex}.heading h2{color:#767676;flex:1;margin:0;font-size:16px;font-style:italic;font-weight:400;line-height:22px}.heading h2 .inner{color:#2a2a2a}.heading h2 .query-text{color:#093}.stats{flex:none}.stats p{color:#767676;margin:0;font-size:16px;line-height:24px}.stats p img{vertical-align:baseline;margin-right:7px;display:inline-block}.stats p .inner{color:#292929;font-weight:400;display:inline-block}.widget{box-shadow:none;background:#fff;border:none;margin-bottom:10px;margin-left:0;margin-right:0;padding-left:0;padding-right:0}.widget .content{padding:0}#footer{background:#00548f;position:relative}#footer .wrapper{padding:10px;position:relative}#footer p{color:#d9e9f4;clear:left;margin-bottom:20px;font-size:13px;line-height:18px}#footer .logo{float:left;width:260px}#footer .logo h1 a{background:url(https://oldversion-prod-storage.nyc3.digitaloceanspaces.com/app_assets/dist/logo_blue_background.8f894ba9867e.jpg) 0 0 no-repeat;width:262px;height:0;padding-top:35px;display:block;position:relative;overflow:hidden}#footer .logo span.facebook{width:150px;margin-top:15px;display:block}#footer #footer-navigation{text-align:left}#footer #footer-navigation ul{padding-left:0}#footer #footer-navigation ul li{color:#fff;margin-right:3px;padding-right:6px;display:inline}#footer #footer-navigation ul li.copyright,#footer #footer-navigation ul li.last{background:0 0}#footer #footer-navigation ul li a{color:#fff}#footer .section{float:left;margin:0 25px 15px 0;overflow:hidden}#footer .section.last{width:220px;margin:0 25px 15px 10px}#footer .section h2{color:#abd4f0;margin-bottom:10px;font-size:120%;font-weight:400}#footer ul.sociable{margin:0;padding:0}#footer ul.sociable li{float:left;margin-right:4px;list-style:none}#footer ul.sociable li a{width:46px;height:48px;text-decoration:none;display:block}#footer ul.sociable li a:hover{text-decoration:none}#footer ul.sociable li a.rss{background:url(https://oldversion-prod-storage.nyc3.digitaloceanspaces.com/app_assets/dist/sociable.89d2e66fac05.gif) 0 0 no-repeat}#footer ul.sociable li a.rss:hover{background:url(https://oldversion-prod-storage.nyc3.digitaloceanspaces.com/app_assets/dist/sociable.89d2e66fac05.gif) 0 100% no-repeat}#footer ul.sociable li a.facebook{background:url(https://oldversion-prod-storage.nyc3.digitaloceanspaces.com/app_assets/dist/sociable.89d2e66fac05.gif) -47px 0 no-repeat}#footer ul.sociable li a.facebook:hover{background:url(https://oldversion-prod-storage.nyc3.digitaloceanspaces.com/app_assets/dist/sociable.89d2e66fac05.gif) -47px bottom no-repeat}#footer ul.sociable li a.twitter{background:url(https://oldversion-prod-storage.nyc3.digitaloceanspaces.com/app_assets/dist/sociable.89d2e66fac05.gif) -97px 0 no-repeat}#footer ul.sociable li a.twitter:hover{background:url(https://oldversion-prod-storage.nyc3.digitaloceanspaces.com/app_assets/dist/sociable.89d2e66fac05.gif) -97px bottom no-repeat}#footer ul.sociable li a.youtube{background:url(https://oldversion-prod-storage.nyc3.digitaloceanspaces.com/app_assets/dist/sociable.89d2e66fac05.gif) 100% 0 no-repeat}#footer ul.sociable li a.youtube:hover{background:url(https://oldversion-prod-storage.nyc3.digitaloceanspaces.com/app_assets/dist/sociable.89d2e66fac05.gif) 100% 100% no-repeat}#footer img.image{float:right;width:150px;height:273px;position:absolute;top:-180px;right:0}.clearfix:after{content:"";clear:both;display:table}.content-header{background:#f9f9f9;border-bottom:1px solid #d5d5d5;margin-bottom:15px;padding:10px 20px}.content-header h1{color:#4e4e4e;margin:0 0 5px;font-size:16px}.search-query-display{color:#666;margin:5px 0;font-size:12px}.result-count{color:#888;margin:5px 0;font-size:11px}.search-page-content{gap:20px;padding:0 20px 20px;display:flex}.search-filters{background:#f9f9f9;border:1px solid #d5d5d5;flex:0 0 250px;height:-moz-fit-content;height:fit-content;padding:20px;position:sticky;top:20px}.search-filters h2{color:#4e4e4e;border-bottom:1px solid #d5d5d5;margin:0 0 20px;padding-bottom:10px;font-size:14px;font-weight:700}.filter-group{margin-bottom:20px}.filter-group h3{color:#666;margin:0 0 10px;font-size:12px;font-weight:700}.filter-checkbox{cursor:pointer;padding:8px 0;display:block}.filter-checkbox input[type=checkbox]{margin-right:8px}.filter-select{border:1px solid #d5d5d5;width:100%;padding:5px;font-size:12px}.filter-actions{flex-direction:column;gap:10px;margin-top:20px;display:flex}.btn-apply-filters,.btn-clear-filters{text-align:center;padding:5px 10px;font-size:12px;font-weight:700;text-decoration:none}.btn-apply-filters{color:#fff;cursor:pointer;background:#00548f;border:none}.btn-apply-filters:hover{background:#003d6b}.btn-clear-filters{color:#666;background:#f0f0f0;border:1px solid #d5d5d5}.btn-clear-filters:hover{background:#e0e0e0}.search-results{flex:1}.search-error-message{color:#d32f2f;background:#ffebee;border:1px solid #d32f2f;padding:10px;font-size:12px}.search-empty-state{text-align:center;color:#666;padding:40px 20px}.search-empty-state ul{text-align:left;margin-top:10px;display:inline-block}.search-results-list{flex-direction:column;gap:15px;display:flex}.search-result-card{background:#fff;border:1px solid #d5d5d5;padding:20px}.result-card-header{align-items:center;gap:10px;margin-bottom:10px;display:flex}.result-title{flex:1;margin:0}.result-title a{color:#00548f;font-size:14px;font-weight:700;text-decoration:none}.result-title a:hover{text-decoration:underline}.result-version-badge{color:#666;margin-left:8px;font-size:11px;font-weight:400}.result-vendor{color:#666;margin:5px 0;font-size:12px}.result-description{color:#4e4e4e;margin:10px 0;font-size:12px;line-height:1.4}.result-footer{border-top:1px solid #eee;margin-top:15px;padding-top:15px}.btn-view-details{color:#00548f;font-weight:700;text-decoration:none}.btn-view-details:hover{text-decoration:underline}.search-pagination{text-align:center;border-top:1px solid #c2c2c2;margin-top:20px;padding:10px}.pagination-link{color:#fff;background:#00548f;border:1px solid #00548f;margin:0 3px;padding:3px 8px;font-size:12px;text-decoration:none;display:inline-block}.pagination-link:hover{background:#003d6b;border-color:#003d6b}.pagination-info{color:#666;margin:0 3px;padding:3px 8px;font-size:12px;display:inline-block}@media (max-width:991px){#container{width:100%;padding:0 10px}#content .wrapper{box-sizing:border-box;max-width:100%;width:100%!important}.heading{flex-direction:column;align-items:flex-start;gap:10px}.heading h2{word-wrap:break-word;overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}.heading .stats{display:none!important}.stats,.category-section{width:100%}}@media (max-width:767px){#header .main-header{align-items:center;gap:10px;padding:10px 15px 10px 50px;position:relative;flex-direction:row!important}.mobile-menu-toggle{display:flex}.logo{flex:1;min-width:0}.logo h1{font-size:20px;line-height:1.2}.logo .tagline{font-size:10px}#search-form,.user-area{display:none}#main-navigation{z-index:10000;background:#292929;width:100%;height:auto;max-height:calc(100vh - 62px);margin:0;padding:0;left:0;right:0;overflow-y:auto;box-shadow:0 4px 6px #0000001a;display:none!important;position:fixed!important;top:62px!important}#main-navigation.mobile-nav-open{max-height:600px;overflow-y:auto;display:block!important}#main-navigation.mobile-nav-closed{max-height:0;overflow:hidden;display:none!important}#main-navigation .os-tabs,#main-navigation .right-nav{display:none}#main-navigation .mobile-os-categories{display:flex}#main-navigation .mobile-search-form,#main-navigation .mobile-user-auth,#main-navigation .mobile-support-cta{display:block}#main-navigation .mobile-os-categories{flex-direction:column;align-items:center;gap:8px;width:100%;padding:15px}#main-navigation .mobile-os-categories a{text-align:center;color:#292929;text-transform:uppercase;text-indent:-9999px;box-sizing:border-box;background-position:0 0;background-repeat:no-repeat;background-size:cover;border:1px solid #ccc;width:221px;height:49px;margin-bottom:8px;font-size:14px;font-weight:700;line-height:49px;text-decoration:none;display:block;position:relative}#main-navigation .mobile-os-categories a.windows{background-image:url(https://oldversion-prod-storage.nyc3.digitaloceanspaces.com/app_assets/dist/menu_windows.fdd38f560942.jpg)}#main-navigation .mobile-os-categories a.mac{background-image:url(https://oldversion-prod-storage.nyc3.digitaloceanspaces.com/app_assets/dist/menu_mac.fd7288cd9e23.jpg)}#main-navigation .mobile-os-categories a.linux{background-image:url(https://oldversion-prod-storage.nyc3.digitaloceanspaces.com/app_assets/dist/menu_linux.14e86331d360.jpg)}#main-navigation .mobile-os-categories a.games{background-image:url(https://oldversion-prod-storage.nyc3.digitaloceanspaces.com/app_assets/dist/menu_games.3513677bddf5.jpg)}#main-navigation .mobile-os-categories a.android{background-image:url(https://oldversion-prod-storage.nyc3.digitaloceanspaces.com/app_assets/dist/menu_android.e3d949ff99fd.png)}#main-navigation .mobile-os-categories a:hover{border-color:#000;text-decoration:none}#main-navigation .mobile-os-categories a.active{background-position:0 -51px;border-color:#0095ff}#main-navigation .mobile-search-form{background:#f5f5f5;border-top:1px solid #eee;border-bottom:1px solid #eee;padding:15px}#main-navigation .mobile-search-form .search-container{box-sizing:border-box;background:#fff;border:3px solid #d5d5d5;border-radius:8px;align-items:center;width:100%;padding:5px;display:flex;position:relative}#main-navigation .mobile-search-form .search-icon{color:#666;z-index:1;font-size:16px;position:absolute;left:12px}#main-navigation .mobile-search-form input[type=text]{color:#4e4e4e;background:0 0;border:none;outline:none;flex:1;min-width:0;height:30px;padding:0 10px 0 35px;font-size:14px}#main-navigation .mobile-search-form input[type=submit]{color:#fff;cursor:pointer;white-space:nowrap;background:#00548f;border:1px solid #00548f;border-radius:4px;margin-left:5px;padding:8px 15px;font-size:12px;font-weight:700}#main-navigation .mobile-search-form input[type=submit]:hover{background:#003d6b;border-color:#003d6b}#main-navigation .mobile-user-auth{text-align:center;background:#fff;border-bottom:1px solid #eee;padding:15px;font-size:14px}#main-navigation .mobile-user-auth .welcome-text{color:#292929;margin-right:8px;font-weight:700}#main-navigation .mobile-user-auth a{color:#00548f;font-weight:700;text-decoration:none}#main-navigation .mobile-user-auth a:hover{text-decoration:underline}#main-navigation .mobile-user-auth .divider-text{color:#666;margin:0 8px}#main-navigation .mobile-support-cta{text-align:center;background:#fff;border-bottom:1px solid #eee;padding:15px}#main-navigation .mobile-support-cta .support-cta__button{color:#fff;background:#00548f;border:1px solid #003d6b;padding:4px 12px;font-size:12px;font-weight:700;text-decoration:none;display:inline-block}#main-navigation .mobile-support-cta .support-cta__button:hover{background:#003d6b;border-color:#003d6b;text-decoration:none}#main-navigation .mobile-support-cta .support-cta__perks{color:#666;margin-top:5px;font-size:11px;font-weight:400;display:block}#main-navigation .mobile-support-cta .support-cta__perks a{color:#00548f;font-size:11px;font-weight:700;text-decoration:none}#main-navigation .mobile-support-cta .support-cta__perks a:hover{text-decoration:underline}#content{padding-top:10px}#content .wrapper{flex-direction:column;gap:10px}#content .heading{margin-bottom:15px;padding-left:0}#main{width:100%}#sidebar{width:100%;margin-bottom:40px}.heading .stats{display:none!important}.heading h2{word-wrap:break-word;overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto;font-size:14px;line-height:1.4}#footer .wrapper{flex-direction:column;padding:15px 10px;display:flex}#footer .section{float:none;width:100%;margin:0 0 25px}#footer .section.last{width:100%;margin:0 0 25px}#footer .section h2{margin-bottom:12px;font-size:16px}#footer .section ul.list2{grid-template-columns:repeat(2,1fr);gap:8px 15px;margin:0;padding:0;list-style:none;display:grid}#footer .section ul.list2 li{margin:0;padding:0}#footer .section ul.list2 li a{color:#d9e9f4;padding:4px 0;font-size:12px;text-decoration:none;display:block}#footer .section ul.list2 li a:hover{text-decoration:underline}#footer .logo{float:none;order:-1;width:100%;margin-bottom:20px}#footer img.image{float:none;width:150px;max-width:150px;height:273px;margin:0 auto 20px;display:block;position:static}#footer #footer-navigation{text-align:center}#footer #footer-navigation ul li{margin:0 8px 8px 0;padding:0;display:inline-block}}@media (max-width:575px){#container{padding:0 5px}#header .main-header{padding:10px 5px}.logo h1{font-size:20px}.logo .tagline{font-size:11px}#search-form input[type=submit]{padding:6px 12px;font-size:11px}#main-navigation{padding:8px 5px}#main-navigation .os-tabs li a,#main-navigation .right-nav li a{padding:6px 10px;font-size:11px}#content{padding-top:5px}#content .heading{margin-bottom:10px}.heading h2,.stats p{font-size:14px}#footer .wrapper{padding:10px 5px}#footer p{font-size:12px}}@media (max-width:767px){.search-page-content{flex-direction:column}.search-filters{flex:1;position:static}}
+</style>
+
+  
+  
+  
+
+  <!-- Theme CSS - async (non-render-blocking); critical CSS covers above-fold -->
+  
+  <link rel="stylesheet" href="https://oldversion-prod-storage.nyc3.digitaloceanspaces.com/app_assets/dist/classic.7837d6d7574d.css" as="style" onload="this.onload=null;this.rel='stylesheet'" data-theme-css="">
+  <noscript><link rel="stylesheet" href="https://oldversion-prod-storage.nyc3.digitaloceanspaces.com/app_assets/dist/classic.7837d6d7574d.css" data-theme-css></noscript>
+  
+
+  
+
+
+<style>
+[data-ad-placement]{box-sizing:border-box;position:relative}.ad-slot .ad-loading{color:#999;justify-content:center;align-items:center;height:100%;font-size:12px;display:flex}.ad-slot .ad-loading-text{color:#ccc;font-size:12px}.ad-slot .ad-label{color:#999;text-transform:uppercase;margin-bottom:4px;font-size:10px;font-weight:600}.ad-slot .ad-content{box-sizing:border-box;transition:opacity .3s ease-in-out}.ad-slot .ad-content img{max-width:100%;height:auto}@media (max-width:767px){.ad-slot{margin-left:auto!important;margin-right:auto!important}}.ad-slot .ad-content.ad-refreshed{animation:.5s ease-in adFadeIn}@keyframes adFadeIn{0%{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+</style>
+
+
+  
+  
+  
+  
+  
+<!-- Google Analytics 4 - async loading -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-K5SPG71NMT"></script>
+<script>
+  // Minimal setup - just initialize dataLayer (non-blocking)
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+</script>
+
+
+  
+  
+</head>
+<body class="theme-classic">
+  
+  
+  
+<a href="#main" class="skip-link">Skip to main content</a>
+<div id="container">
+  <!-- Header -->
+  <div id="header">
+    <!-- Main Header -->
+    <div class="main-header">
+      <!-- Logo -->
+      <div class="logo">
+        <h1><a href="/">OLDVERSION.COM</a></h1>
+        <div class="tagline">BECAUSE NEWER IS NOT ALWAYS BETTER!</div>
+      </div>
+      
+      <!-- Search Form -->
+      <div id="search-form">
+        <form method="get" action="/software/search/" autocomplete="off">
+          <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input type="text" name="query" id="searchquery" placeholder="Which old version are you looking for?" aria-label="Search for software">
+            <input type="submit" value="Find It!">
+          </div>
+        </form>
+      </div>
+      
+      <!-- User Area -->
+      <div class="user-area">
+        
+        
+        <span>Welcome Guest,</span>
+        <a href="/users/login/">Login</a> |
+        <a href="/users/register/">Register</a>
+        
+        
+        <div class="user-area__bottom">
+          <div class="social-icons">
+            
+            <a href="http://www.facebook.com/OVCOM" title="OldVersion on Facebook">
+              <img src="https://oldversion-prod-storage.nyc3.digitaloceanspaces.com/app_assets/themes/shared/images/facebook.8c89ef8ab45d.png" alt="Facebook" width="16" height="16">
+            </a>
+            <a href="http://twitter.com/oldversion" title="@OldVersion on Twitter">
+              <img src="https://oldversion-prod-storage.nyc3.digitaloceanspaces.com/app_assets/themes/shared/images/twitter.6352d995b0c2.png" alt="Twitter" width="16" height="16">
+            </a>
+          </div>
+          
+          
+          <div class="support-cta">
+            <a href="https://ko-fi.com/oldversion" rel="nofollow" target="_blank" class="btn-submit support-cta__button" onclick="if(typeof gtag==='function'){gtag('event','support_us_click',{'event_category':'engagement','event_label':'desktop_nav'});}">Support us</a>
+            <span class="support-cta__perks"><a href="/supporters/">Supporters get perks</a></span>
+          </div>
+          
+          
+        </div>
+      </div>
+      
+      <!-- Mobile Menu Toggle - on the right -->
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    
+    <!-- Main Navigation - inside header for proper positioning -->
+    <div id="main-navigation" class="mobile-nav-closed">
+    <!-- OS Tabs (desktop) -->
+    <ul class="os-tabs">
+      
+        
+        <li class="active">
+          
+            <a href="/">Windows</a>
+          
+        </li>
+      
+        <li class="divider"></li>
+        <li class="">
+          
+            <a href="/featured/mac/">Mac</a>
+          
+        </li>
+      
+        <li class="divider"></li>
+        <li class="">
+          
+            <a href="/featured/linux/">Linux</a>
+          
+        </li>
+      
+        <li class="divider"></li>
+        <li class="">
+          
+            <a href="/featured/android/">Android</a>
+          
+        </li>
+      
+        <li class="divider"></li>
+        <li class="">
+          
+            <a href="/featured/games/">Games</a>
+          
+        </li>
+      
+    </ul>
+    
+    <!-- Mobile Search Form -->
+    <div class="mobile-search-form">
+      <form method="get" action="/software/search/" autocomplete="off">
+        <div class="search-container">
+          <span class="search-icon">🔍</span>
+          <input type="text" name="query" id="mobile-searchquery" placeholder="Which old version are you looking for?" aria-label="Search for software">
+          <input type="submit" value="Find It!">
+        </div>
+      </form>
+    </div>
+
+    <!-- OS Category Buttons (mobile only - like sidebar) -->
+    <div class="mobile-os-categories">
+      
+        <a class="windows active" href="/">
+          WINDOWS
+        </a>
+      
+        <a class="mac " href="/featured/mac/">
+          MAC
+        </a>
+      
+        <a class="linux " href="/featured/linux/">
+          LINUX
+        </a>
+      
+        <a class="android " href="/featured/android/">
+          ANDROID
+        </a>
+      
+        <a class="games " href="/featured/games/">
+          GAMES
+        </a>
+      
+    </div>
+    
+    <!-- Mobile User Authentication -->
+    
+    <div class="mobile-user-auth">
+      
+        <a href="/users/login/">Login</a>
+        <span class="divider-text">|</span>
+        <a href="/users/register/">Register</a>
+      
+    </div>
+    
+    
+    
+    <div class="mobile-support-cta">
+      <a href="https://ko-fi.com/oldversion" rel="nofollow" target="_blank" class="btn-submit support-cta__button" onclick="if(typeof gtag==='function'){gtag('event','support_us_click',{'event_category':'engagement','event_label':'mobile_nav'});}">Support us</a>
+      <span class="support-cta__perks"><a href="/supporters/">Supporters get perks</a></span>
+    </div>
+    
+    
+    
+    <!-- Right Navigation -->
+    <ul class="right-nav">
+      
+      
+      
+      
+      
+      
+      <li><a href="http://legacy.oldversion.com/" rel="nofollow" onclick="if(typeof gtag==='function'){gtag('event','legacy_site_click',{'event_category':'navigation','event_label':'classic_nav'});}">Legacy Site</a></li>
+      <li class="divider"></li>
+      
+      
+      <li>
+        <div class="languages">
+          
+            <a href="#" rel="nofollow" class="language-current">English<span class="i-language i-language_en"></span></a>
+          
+          <ul>
+            
+              <li class="selected">
+                
+                  <a href="https://oldversion.com/" rel="alternate" hreflang="en-us" class="language-link">
+                    <span class="i-language i-language_en"></span>English
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="https://oldversion.cn/" rel="alternate" hreflang="zh-cn" class="language-link">
+                    <span class="i-language i-language_zh"></span>简体中文
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="https://oldversion.com.de/" rel="alternate" hreflang="de-de" class="language-link">
+                    <span class="i-language i-language_de"></span>Deutsch
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="https://oldversion.com.ru/" rel="alternate" hreflang="ru-ru" class="language-link">
+                    <span class="i-language i-language_ru"></span>Русский
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="https://oldversion.fr/" rel="alternate" hreflang="fr-fr" class="language-link">
+                    <span class="i-language i-language_fr"></span>Français
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="https://oldversion.jp/" rel="alternate" hreflang="ja-jp" class="language-link">
+                    <span class="i-language i-language_ja"></span>日本語
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="https://oldversion.ro/" rel="alternate" hreflang="ro-ro" class="language-link">
+                    <span class="i-language i-language_ro"></span>Română
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="https://ar.oldversion.com/" rel="alternate" hreflang="ar-sa" class="language-link">
+                    <span class="i-language i-language_ar"></span>العربية
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="https://es.oldversion.com/" rel="alternate" hreflang="es-es" class="language-link">
+                    <span class="i-language i-language_es"></span>Español
+                  </a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href="https://tr.oldversion.com/" rel="alternate" hreflang="tr-tr" class="language-link">
+                    <span class="i-language i-language_tr"></span>Türkçe
+                  </a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+  
+  <!-- Content -->
+  <div id="content">
+    <!-- Full-width heading section -->
+    
+
+
+
+
+<!-- Heading Section -->
+<div class="heading">
+  <h2>
+    <span class="inner">Pick a software title...</span>to downgrade to the version you love!
+  </h2>
+  <div class="stats">
+    <p>
+      <img alt="stats" src="https://oldversion-prod-storage.nyc3.digitaloceanspaces.com/app_assets/themes/classic/images/stats.bd83c5d78ba5.gif" width="17" height="16">
+      <span class="inner">Stats:&nbsp;</span>29,377 versions of 1,949 programs
+    </p>
+  </div>
+</div>
+
+
+    
+    <div class="wrapper">
+      <!-- Main Content -->
+      <div id="main">
+        
+
+
+
+
+<!-- Tabbed Selectors -->
+
+
+
+
+<!-- Tabbed Selectors - EXACTLY like original -->
+<div class="tabs">
+  <ul class="tabstrips2 clearfix">
+    <li class="active">
+      <a rel="nofollow" href="#popular" onclick="changesoftwareorder('popular')">
+        <span class="tab-icon">🔥</span>
+        <span class="tab-text">Popular Downloads</span>
+      </a>
+    </li>
+    <li>
+      <a rel="nofollow" href="#recently-added" onclick="changesoftwareorder('recent')">
+        <span class="tab-icon">🆕</span>
+        <span class="tab-text">Recently Added</span>
+      </a>
+    </li>
+    <li>
+      <a rel="nofollow" href="#editors-choice" onclick="changesoftwareorder('editor')">
+        <span class="tab-icon">⭐</span>
+        <span class="tab-text">Editors Choice!</span>
+      </a>
+    </li>
+    <li>
+      <a rel="nofollow" href="#top-rated" onclick="changesoftwareorder('top')">
+        <span class="tab-icon">🏆</span>
+        <span class="tab-text">Top Rated</span>
+      </a>
+    </li>
+    <li>
+      <a rel="nofollow" href="#read-more" onclick="changesoftwareorder('read')">
+        <span class="tab-icon">📖</span>
+        <span class="tab-text">Read More</span>
+      </a>
+    </li>
+  </ul>
+  <div class="tab-content2">
+    <div id="popular" class="tab-pane active">
+      <!-- Popular Downloads - Two column layout like original -->
+      
+        <div class="software-list-columns">
+          <div class="column-left">
+            
+              
+                <div class="software-item">
+                  
+                    <img src="https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com/software_assets/icons/_skype-icon.png" alt="Skype" class="software-icon">
+                  
+                  <div class="software-info">
+                    <h3>
+                      <a href="/windows/skype/skype-3-8-0-188/">
+                        Skype 3.8.0.188
+                      </a>
+                    </h3>
+                    <span class="downloads">1,905,356 Downloads</span>
+                  </div>
+                </div>
+              
+            
+              
+            
+              
+                <div class="software-item">
+                  
+                    <img src="https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com/software_assets/icons/_manycam_icon.png" alt="ManyCam" class="software-icon">
+                  
+                  <div class="software-info">
+                    <h3>
+                      <a href="/windows/manycam/manycam-2-6-1/">
+                        ManyCam 2.6.1
+                      </a>
+                    </h3>
+                    <span class="downloads">1,166,607 Downloads</span>
+                  </div>
+                </div>
+              
+            
+              
+            
+              
+                <div class="software-item">
+                  
+                    <img src="https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com/software_assets/icons/_directx.png" alt="DirectX" class="software-icon">
+                  
+                  <div class="software-info">
+                    <h3>
+                      <a href="/windows/directx/directx-8-1/">
+                        DirectX 8.1
+                      </a>
+                    </h3>
+                    <span class="downloads">1,032,572 Downloads</span>
+                  </div>
+                </div>
+              
+            
+              
+            
+              
+                <div class="software-item">
+                  
+                    <img src="https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com/software_assets/icons/_bearshare-icon.png" alt="Bearshare" class="software-icon">
+                  
+                  <div class="software-info">
+                    <h3>
+                      <a href="/windows/bearshare/bearshare-lite-5-2-5/">
+                        Bearshare Lite 5.2.5
+                      </a>
+                    </h3>
+                    <span class="downloads">1,007,607 Downloads</span>
+                  </div>
+                </div>
+              
+            
+              
+            
+              
+                <div class="software-item">
+                  
+                    <img src="https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com/software_assets/icons/_msn-icon.png" alt="MSN Messenger" class="software-icon">
+                  
+                  <div class="software-info">
+                    <h3>
+                      <a href="/windows/msn-messenger/msn-messenger-8-5-1235/">
+                        MSN Messenger 8.5.1235
+                      </a>
+                    </h3>
+                    <span class="downloads">973,235 Downloads</span>
+                  </div>
+                </div>
+              
+            
+              
+            
+          </div>
+          <div class="column-right">
+            
+              
+            
+              
+                <div class="software-item">
+                  
+                    <img src="https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com/software_assets/icons/_utorrent-icon.png" alt="uTorrent" class="software-icon">
+                  
+                  <div class="software-info">
+                    <h3>
+                      <a href="/windows/utorrent/utorrent-2-2-1-2/">
+                        uTorrent 2.2.1
+                      </a>
+                    </h3>
+                    <span class="downloads">1,828,665 Downloads</span>
+                  </div>
+                </div>
+              
+            
+              
+            
+              
+                <div class="software-item">
+                  
+                    <img src="https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com/software_assets/icons/_yahoo-messenger-icon.png" alt="Yahoo Messenger" class="software-icon">
+                  
+                  <div class="software-info">
+                    <h3>
+                      <a href="/windows/yahoo-messenger/yahoo-messenger-7-0/">
+                        Yahoo Messenger 7.0
+                      </a>
+                    </h3>
+                    <span class="downloads">1,162,201 Downloads</span>
+                  </div>
+                </div>
+              
+            
+              
+            
+              
+                <div class="software-item">
+                  
+                    <img src="https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com/software_assets/icons/_directx.png" alt="DirectX" class="software-icon">
+                  
+                  <div class="software-info">
+                    <h3>
+                      <a href="/windows/directx/directx-7-0/">
+                        DirectX 7.0
+                      </a>
+                    </h3>
+                    <span class="downloads">1,009,430 Downloads</span>
+                  </div>
+                </div>
+              
+            
+              
+            
+              
+                <div class="software-item">
+                  
+                    <img src="https://oldversion-prod-storage.nyc3.digitaloceanspaces.com/app_assets/themes/shared/images/default-icon.2e3ccb63487e.jpg" alt="X-Lite" class="software-icon">
+                  
+                  <div class="software-info">
+                    <h3>
+                      <a href="/windows/x-lite/x-lite-3-0/">
+                        X-Lite 3.0
+                      </a>
+                    </h3>
+                    <span class="downloads">989,571 Downloads</span>
+                  </div>
+                </div>
+              
+            
+              
+            
+              
+                <div class="software-item">
+                  
+                    <img src="https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com/software_assets/icons/_msn-icon.png" alt="MSN Messenger" class="software-icon">
+                  
+                  <div class="software-info">
+                    <h3>
+                      <a href="/windows/msn-messenger/msn-messenger-7-5/">
+                        MSN Messenger 7.5
+                      </a>
+                    </h3>
+                    <span class="downloads">888,327 Downloads</span>
+                  </div>
+                </div>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div id="recently-added" class="tab-pane">
+      <!-- Recently Added - Two column layout like original -->
+      
+        <div class="software-list-columns">
+          <div class="column-left">
+            
+              
+                <div class="software-item">
+                  
+                    <img src="https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com/software_assets/icons/_mozilla-firefox-icon.png" alt="Mozilla Firefox" class="software-icon">
+                  
+                  <div class="software-info">
+                    <h3>
+                      <a href="/windows/mozilla-firefox/mozilla-firefox-46-0-1-0/">
+                        Mozilla Firefox 46.0.1.0
+                      </a>
+                    </h3>
+                    <span class="downloads">154,986 Downloads</span>
+                  </div>
+                </div>
+              
+            
+              
+            
+              
+                <div class="software-item">
+                  
+                    <img src="https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com/software_assets/icons/_976__virtualbox.gif" alt="VirtualBox" class="software-icon">
+                  
+                  <div class="software-info">
+                    <h3>
+                      <a href="/windows/virtualbox/virtualbox-4-2-18/">
+                        VirtualBox 4.2.18
+                      </a>
+                    </h3>
+                    <span class="downloads">18,859 Downloads</span>
+                  </div>
+                </div>
+              
+            
+              
+            
+              
+                <div class="software-item">
+                  
+                    <img src="https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com/software_assets/icons/_winrar-icon.png" alt="WinRAR" class="software-icon">
+                  
+                  <div class="software-info">
+                    <h3>
+                      <a href="/windows/winrar/winrar-5-50-beta-1-x64/">
+                        WinRAR 5.50 beta 1 (x64)
+                      </a>
+                    </h3>
+                    <span class="downloads">33,853 Downloads</span>
+                  </div>
+                </div>
+              
+            
+              
+            
+              
+                <div class="software-item">
+                  
+                    <img src="https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com/software_assets/icons/_mozilla-firefox-icon.png" alt="Mozilla Firefox" class="software-icon">
+                  
+                  <div class="software-info">
+                    <h3>
+                      <a href="/windows/mozilla-firefox/mozilla-firefox-45-0-1/">
+                        Mozilla Firefox 45.0.1
+                      </a>
+                    </h3>
+                    <span class="downloads">501,811 Downloads</span>
+                  </div>
+                </div>
+              
+            
+              
+            
+              
+                <div class="software-item">
+                  
+                    <img src="https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com/software_assets/icons/_painticon1.png" alt="Microsoft Paint" class="software-icon">
+                  
+                  <div class="software-info">
+                    <h3>
+                      <a href="/windows/microsoft-paint/microsoft-paint-windows-98/">
+                        Microsoft Paint Windows 98
+                      </a>
+                    </h3>
+                    <span class="downloads">50,142 Downloads</span>
+                  </div>
+                </div>
+              
+            
+              
+            
+          </div>
+          <div class="column-right">
+            
+              
+            
+              
+                <div class="software-item">
+                  
+                    <img src="https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com/software_assets/icons/_mozilla-firefox-icon.png" alt="Mozilla Firefox" class="software-icon">
+                  
+                  <div class="software-info">
+                    <h3>
+                      <a href="/windows/mozilla-firefox/mozilla-firefox-46/">
+                        Mozilla Firefox 46
+                      </a>
+                    </h3>
+                    <span class="downloads">190,444 Downloads</span>
+                  </div>
+                </div>
+              
+            
+              
+            
+              
+                <div class="software-item">
+                  
+                    <img src="https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com/software_assets/icons/_7zip-icon.png" alt="7 Zip" class="software-icon">
+                  
+                  <div class="software-info">
+                    <h3>
+                      <a href="/windows/7-zip/7-zip-19-00-x64/">
+                        7 Zip 19.00 (x64)
+                      </a>
+                    </h3>
+                    <span class="downloads">12,271 Downloads</span>
+                  </div>
+                </div>
+              
+            
+              
+            
+              
+                <div class="software-item">
+                  
+                    <img src="https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com/software_assets/icons/_winrar-icon.png" alt="WinRAR" class="software-icon">
+                  
+                  <div class="software-info">
+                    <h3>
+                      <a href="/windows/winrar/winrar-5-50-beta-1-x86/">
+                        WinRAR 5.50 beta 1 (x86)
+                      </a>
+                    </h3>
+                    <span class="downloads">148,132 Downloads</span>
+                  </div>
+                </div>
+              
+            
+              
+            
+              
+                <div class="software-item">
+                  
+                    <img src="https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com/software_assets/icons/_ccleaner-icon.png" alt="CCleaner" class="software-icon">
+                  
+                  <div class="software-info">
+                    <h3>
+                      <a href="/windows/ccleaner/ccleaner-4-14/">
+                        CCleaner 4.14
+                      </a>
+                    </h3>
+                    <span class="downloads">35,781 Downloads</span>
+                  </div>
+                </div>
+              
+            
+              
+            
+              
+                <div class="software-item">
+                  
+                    <img src="https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com/software_assets/icons/_daemon-tools-icon.png" alt="Daemon Tools" class="software-icon">
+                  
+                  <div class="software-info">
+                    <h3>
+                      <a href="/windows/daemon-tools/daemon-tools-lite-5-0-1/">
+                        Daemon Tools Lite 5.0.1
+                      </a>
+                    </h3>
+                    <span class="downloads">326,909 Downloads</span>
+                  </div>
+                </div>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div id="editors-choice" class="tab-pane">
+      <!-- Editors Choice - Coming Soon -->
+      <div class="coming-soon">
+        <div class="coming-soon-badge">Coming Soon</div>
+        <p class="coming-soon-text">Editors choice software will be available soon...</p>
+      </div>
+    </div>
+    <div id="top-rated" class="tab-pane">
+      <!-- Top Rated - Two column layout like original -->
+      
+        <div class="software-list-columns">
+          <div class="column-left">
+            
+              
+                <div class="software-item">
+                  
+                    <img src="https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com/software_assets/icons/_camfrog-icon.png" alt="Camfrog" class="software-icon">
+                  
+                  <div class="software-info">
+                    <h3>
+                      <a href="/windows/camfrog/camfrog-3-91/">
+                        Camfrog 3.91
+                      </a>
+                    </h3>
+                    <span class="downloads">31,144 Downloads</span>
+                  </div>
+                </div>
+              
+            
+              
+            
+              
+                <div class="software-item">
+                  
+                    <img src="https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com/software_assets/icons/_msn-icon.png" alt="MSN Messenger" class="software-icon">
+                  
+                  <div class="software-info">
+                    <h3>
+                      <a href="/windows/msn-messenger/msn-messenger-7-5/">
+                        MSN Messenger 7.5
+                      </a>
+                    </h3>
+                    <span class="downloads">888,327 Downloads</span>
+                  </div>
+                </div>
+              
+            
+              
+            
+              
+                <div class="software-item">
+                  
+                    <img src="https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com/software_assets/icons/_msn-icon.png" alt="MSN Messenger" class="software-icon">
+                  
+                  <div class="software-info">
+                    <h3>
+                      <a href="/windows/msn-messenger/msn-messenger-8-5-1235/">
+                        MSN Messenger 8.5.1235
+                      </a>
+                    </h3>
+                    <span class="downloads">973,235 Downloads</span>
+                  </div>
+                </div>
+              
+            
+              
+            
+              
+                <div class="software-item">
+                  
+                    <img src="https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com/software_assets/icons/_skype-icon.png" alt="Skype" class="software-icon">
+                  
+                  <div class="software-info">
+                    <h3>
+                      <a href="/windows/skype/skype-2-5-0-130/">
+                        Skype 2.5.0.130
+                      </a>
+                    </h3>
+                    <span class="downloads">16,190 Downloads</span>
+                  </div>
+                </div>
+              
+            
+              
+            
+              
+                <div class="software-item">
+                  
+                    <img src="https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com/software_assets/icons/_skype-icon.png" alt="Skype" class="software-icon">
+                  
+                  <div class="software-info">
+                    <h3>
+                      <a href="/windows/skype/skype-4-2-0-169/">
+                        Skype 4.2.0.169
+                      </a>
+                    </h3>
+                    <span class="downloads">40,257 Downloads</span>
+                  </div>
+                </div>
+              
+            
+              
+            
+          </div>
+          <div class="column-right">
+            
+              
+            
+              
+                <div class="software-item">
+                  
+                    <img src="https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com/software_assets/icons/_manycam_icon.png" alt="ManyCam" class="software-icon">
+                  
+                  <div class="software-info">
+                    <h3>
+                      <a href="/windows/manycam/manycam-2-2-75/">
+                        ManyCam 2.2.75
+                      </a>
+                    </h3>
+                    <span class="downloads">19,700 Downloads</span>
+                  </div>
+                </div>
+              
+            
+              
+            
+              
+                <div class="software-item">
+                  
+                    <img src="https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com/software_assets/icons/_msn-icon.png" alt="MSN Messenger" class="software-icon">
+                  
+                  <div class="software-info">
+                    <h3>
+                      <a href="/windows/msn-messenger/msn-messenger-8-0-0812/">
+                        MSN Messenger 8.0.0812
+                      </a>
+                    </h3>
+                    <span class="downloads">809,706 Downloads</span>
+                  </div>
+                </div>
+              
+            
+              
+            
+              
+                <div class="software-item">
+                  
+                    <img src="https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com/software_assets/icons/_skype-icon.png" alt="Skype" class="software-icon">
+                  
+                  <div class="software-info">
+                    <h3>
+                      <a href="/windows/skype/skype-1-2-0-41/">
+                        Skype 1.2.0.41
+                      </a>
+                    </h3>
+                    <span class="downloads">18,783 Downloads</span>
+                  </div>
+                </div>
+              
+            
+              
+            
+              
+                <div class="software-item">
+                  
+                    <img src="https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com/software_assets/icons/_skype-icon.png" alt="Skype" class="software-icon">
+                  
+                  <div class="software-info">
+                    <h3>
+                      <a href="/windows/skype/skype-4-0-0-150/">
+                        Skype 4.0.0.150
+                      </a>
+                    </h3>
+                    <span class="downloads">19,757 Downloads</span>
+                  </div>
+                </div>
+              
+            
+              
+            
+              
+                <div class="software-item">
+                  
+                    <img src="https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com/software_assets/icons/_skype-icon.png" alt="Skype" class="software-icon">
+                  
+                  <div class="software-info">
+                    <h3>
+                      <a href="/windows/skype/skype-5-6-0-105-beta/">
+                        Skype 5.6.0.105 (Beta)
+                      </a>
+                    </h3>
+                    <span class="downloads">14,493 Downloads</span>
+                  </div>
+                </div>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div id="read-more" class="tab-pane">
+      <!-- Read More - OS/Category-specific content -->
+      <div class="read-more-content">
+        
+          <h2>Download full software for Windows</h2>
+          <p>Looking to download free software for Windows? Oldversion.com is a free software downloads site that comprises of old versions of games, drivers and programs. We enable online users to install the most well-known versions of computer games and programs, without paying a fee.</p>
+          <p>Our mission is to assist computer users who are unable to continually upgrade their computer systems and provide a historical archive of software. Hence, our online platform consists of programs that date back to the '90s.</p>
+          <p>In addition, all program downloads are 100 % legal and swift. They are also free from viruses and spyware and other threats. Easy to use, oldversion.com is a hassle free source for downloading programs.</p>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Category Grid -->
+
+  
+
+
+
+<!-- Category Grid - EXACTLY like original boxes -->
+<div class="post clearfix">
+  
+    
+    <div class="section ">
+      <h2 class="category-title">
+        <a href="/categories/utilities/?os=windows">
+          <span class="i-category-gray i-category-gray_utilities"></span>
+          <span>Utilities</span>
+        </a>
+      </h2>
+      <ul class="list3">
+        
+          
+            <li>
+              <a href="/windows/winrar/" title="WinRAR">
+                WinRAR
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/nero/" title="Nero">
+                Nero
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/winzip/" title="WinZip">
+                WinZip
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/daemon-tools/" title="Daemon Tools">
+                Daemon Tools
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/total-commander/" title="Total Commander">
+                Total Commander
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/powerarchiver/" title="PowerArchiver">
+                PowerArchiver
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/google-earth/" title="Google Earth">
+                Google Earth
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/roboform/" title="RoboForm">
+                RoboForm
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/net-framework/" title=".Net Framework">
+                .Net Framework
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/7-zip/" title="7 Zip">
+                7 Zip
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/flashget/" title="FlashGet">
+                FlashGet
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/cpu-z/" title="CPU Z">
+                CPU Z
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/cdburnerxp-pro/" title="CDBurnerXP Pro">
+                CDBurnerXP Pro
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/clonecd/" title="CloneCD">
+                CloneCD
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/download-accelerator/" title="Download Accelerator">
+                Download Accelerator
+              </a>
+            </li>
+          
+        
+      </ul>
+      
+        <a class="viewmore clickable" href="/categories/utilities/?os=windows">
+          »View More&nbsp; <span>(147)</span>
+        </a>
+      
+    </div>
+    
+    
+  
+    
+    <div class="section ">
+      <h2 class="category-title">
+        <a href="/categories/security/?os=windows">
+          <span class="i-category-gray i-category-gray_security"></span>
+          <span>Security</span>
+        </a>
+      </h2>
+      <ul class="list3">
+        
+          
+            <li>
+              <a href="/windows/avg-anti-virus/" title="AVG Anti Virus">
+                AVG Anti Virus
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/ccleaner/" title="CCleaner">
+                CCleaner
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/avira-antivir/" title="Avira AntiVir">
+                Avira AntiVir
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/ad-aware/" title="Ad aware">
+                Ad aware
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/zonealarm/" title="ZoneAlarm">
+                ZoneAlarm
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/avast-free-antivirus/" title="Avast Free Antivirus">
+                Avast Free Antivirus
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/wireshark/" title="Wireshark">
+                Wireshark
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/winpatrol/" title="WinPatrol">
+                WinPatrol
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/keepass-password-safe/" title="KeePass Password Safe">
+                KeePass Password Safe
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/superantispyware/" title="SUPERAntiSpyware">
+                SUPERAntiSpyware
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/kaspersky-antivirus/" title="Kaspersky Antivirus">
+                Kaspersky Antivirus
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/norton-antivirus/" title="Norton AntiVirus">
+                Norton AntiVirus
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/spybot/" title="Spybot">
+                Spybot
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/spyware-terminator/" title="Spyware Terminator">
+                Spyware Terminator
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/comodo-internet-security/" title="Comodo Internet Security">
+                Comodo Internet Security
+              </a>
+            </li>
+          
+        
+      </ul>
+      
+        <a class="viewmore clickable" href="/categories/security/?os=windows">
+          »View More&nbsp; <span>(40)</span>
+        </a>
+      
+    </div>
+    
+    
+  
+    
+    <div class="section ">
+      <h2 class="category-title">
+        <a href="/categories/office/?os=windows">
+          <span class="i-category-gray i-category-gray_office"></span>
+          <span>Office</span>
+        </a>
+      </h2>
+      <ul class="list3">
+        
+          
+            <li>
+              <a href="/windows/acrobat-reader/" title="Acrobat Reader">
+                Acrobat Reader
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/foxit-pdf-reader/" title="Foxit PDF Reader">
+                Foxit PDF Reader
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/openoffice-org/" title="OpenOffice.org">
+                OpenOffice.org
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/feed-demon/" title="Feed Demon">
+                Feed Demon
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/pdfcreator/" title="PDFCreator">
+                PDFCreator
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/abiword/" title="Abiword">
+                Abiword
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/evernote/" title="Evernote">
+                Evernote
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/dopdf/" title="doPDF">
+                doPDF
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/feedreader/" title="FeedReader">
+                FeedReader
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/quicken/" title="Quicken">
+                Quicken
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/libreoffice/" title="LibreOffice">
+                LibreOffice
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/cutepdf-writer/" title="CutePDF Writer">
+                CutePDF Writer
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/scribus/" title="Scribus">
+                Scribus
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/primopdf/" title="PrimoPDF">
+                PrimoPDF
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/revolver-office/" title="Revolver Office">
+                Revolver Office
+              </a>
+            </li>
+          
+        
+      </ul>
+      
+        <a class="viewmore clickable" href="/categories/office/?os=windows">
+          »View More&nbsp; <span>(21)</span>
+        </a>
+      
+    </div>
+    
+    
+  
+    
+    <div class="section outermost">
+      <h2 class="category-title">
+        <a href="/categories/networking/?os=windows">
+          <span class="i-category-gray i-category-gray_networking"></span>
+          <span>Networking</span>
+        </a>
+      </h2>
+      <ul class="list3">
+        
+          
+            <li>
+              <a href="/windows/hamachi/" title="Hamachi">
+                Hamachi
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/teamviewer/" title="TeamViewer">
+                TeamViewer
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/ultravnc/" title="UltraVNC">
+                UltraVNC
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/putty/" title="PuTTY">
+                PuTTY
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/tightvnc/" title="TightVNC">
+                TightVNC
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/realvnc/" title="RealVNC">
+                RealVNC
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/crossloop/" title="CrossLoop">
+                CrossLoop
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/tera-term-pro/" title="Tera Term Pro">
+                Tera Term Pro
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/tunngle/" title="Tunngle">
+                Tunngle
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/hyperterminal-private-edition/" title="Hyperterminal Private Edition">
+                Hyperterminal Private Edition
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/kies/" title="Kies">
+                Kies
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/bwmeter/" title="BWMeter">
+                BWMeter
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/ultrasurf/" title="UltraSurf">
+                UltraSurf
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/speedcommander/" title="SpeedCommander">
+                SpeedCommander
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/netspeed-monitor/" title="NetSpeed Monitor">
+                NetSpeed Monitor
+              </a>
+            </li>
+          
+        
+      </ul>
+      
+        <a class="viewmore clickable" href="/categories/networking/?os=windows">
+          »View More&nbsp; <span>(7)</span>
+        </a>
+      
+    </div>
+    
+      <br class="clear">
+    
+    
+  
+    
+    <div class="section ">
+      <h2 class="category-title">
+        <a href="/categories/multimedia/?os=windows">
+          <span class="i-category-gray i-category-gray_multimedia"></span>
+          <span>Multimedia</span>
+        </a>
+      </h2>
+      <ul class="list3">
+        
+          
+            <li>
+              <a href="/windows/winamp/" title="Winamp">
+                Winamp
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/itunes/" title="iTunes">
+                iTunes
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/realplayer/" title="RealPlayer">
+                RealPlayer
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/macromedia-flash-player/" title="Macromedia Flash Player">
+                Macromedia Flash Player
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/k-lite-codec-pack/" title="K Lite Codec Pack">
+                K Lite Codec Pack
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/windows-media-player/" title="Windows Media Player">
+                Windows Media Player
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/quicktime/" title="QuickTime">
+                QuickTime
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/vlc-media-player/" title="VLC Media Player">
+                VLC Media Player
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/divx/" title="DivX">
+                DivX
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/macromedia-flash/" title="Macromedia Flash">
+                Macromedia Flash
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/foobar2000/" title="Foobar2000">
+                Foobar2000
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/anydvd/" title="AnyDVD">
+                AnyDVD
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/musicmatch-jukebox/" title="MusicMatch Jukebox">
+                MusicMatch Jukebox
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/powerdvd/" title="PowerDVD">
+                PowerDVD
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/bsplayer/" title="BSplayer">
+                BSplayer
+              </a>
+            </li>
+          
+        
+      </ul>
+      
+        <a class="viewmore clickable" href="/categories/multimedia/?os=windows">
+          »View More&nbsp; <span>(77)</span>
+        </a>
+      
+    </div>
+    
+    
+  
+    
+    <div class="section ">
+      <h2 class="category-title">
+        <a href="/categories/internet/?os=windows">
+          <span class="i-category-gray i-category-gray_internet"></span>
+          <span>Internet</span>
+        </a>
+      </h2>
+      <ul class="list3">
+        
+          
+            <li>
+              <a href="/windows/mozilla-firefox/" title="Mozilla Firefox">
+                Mozilla Firefox
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/google-chrome/" title="Google Chrome">
+                Google Chrome
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/internet-explorer/" title="Internet Explorer">
+                Internet Explorer
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/opera/" title="Opera">
+                Opera
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/maxthon/" title="Maxthon">
+                Maxthon
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/avant-browser/" title="Avant Browser">
+                Avant Browser
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/seamonkey/" title="SeaMonkey">
+                SeaMonkey
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/america-online/" title="America Online">
+                America Online
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/netscape/" title="Netscape">
+                Netscape
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/internet-download-manager/" title="Internet Download Manager">
+                Internet Download Manager
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/getright/" title="GetRight">
+                GetRight
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/adobe-air/" title="Adobe Air">
+                Adobe Air
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/safari/" title="Safari">
+                Safari
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/silverlight/" title="Silverlight">
+                Silverlight
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/flock/" title="Flock">
+                Flock
+              </a>
+            </li>
+          
+        
+      </ul>
+      
+        <a class="viewmore clickable" href="/categories/internet/?os=windows">
+          »View More&nbsp; <span>(13)</span>
+        </a>
+      
+    </div>
+    
+    
+  
+    
+    <div class="section ">
+      <h2 class="category-title">
+        <a href="/categories/graphics/?os=windows">
+          <span class="i-category-gray i-category-gray_graphics"></span>
+          <span>Graphics</span>
+        </a>
+      </h2>
+      <ul class="list3">
+        
+          
+            <li>
+              <a href="/windows/acdsee/" title="ACDSee">
+                ACDSee
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/paint-shop-pro/" title="Paint Shop Pro">
+                Paint Shop Pro
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/irfanview/" title="IrfanView">
+                IrfanView
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/picasa/" title="Picasa">
+                Picasa
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/paint-net/" title="Paint.NET">
+                Paint.NET
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/xnview/" title="XnView">
+                XnView
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/google-sketchup/" title="Google SketchUp">
+                Google SketchUp
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/the-gimp/" title="The GIMP">
+                The GIMP
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/faststone-image-viewer/" title="FastStone Image Viewer">
+                FastStone Image Viewer
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/blender/" title="Blender">
+                Blender
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/macromedia-fireworks/" title="Macromedia Fireworks">
+                Macromedia Fireworks
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/thumbsplus/" title="ThumbsPlus">
+                ThumbsPlus
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/winsnap/" title="WinSnap">
+                WinSnap
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/microsoft-paint/" title="Microsoft Paint">
+                Microsoft Paint
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/fresh-view/" title="Fresh View">
+                Fresh View
+              </a>
+            </li>
+          
+        
+      </ul>
+      
+        <a class="viewmore clickable" href="/categories/graphics/?os=windows">
+          »View More&nbsp; <span>(32)</span>
+        </a>
+      
+    </div>
+    
+    
+  
+    
+    <div class="section outermost">
+      <h2 class="category-title">
+        <a href="/categories/ftp/?os=windows">
+          <span class="i-category-gray i-category-gray_ftp"></span>
+          <span>FTP</span>
+        </a>
+      </h2>
+      <ul class="list3">
+        
+          
+            <li>
+              <a href="/windows/filezilla/" title="FileZilla">
+                FileZilla
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/core-ftp-le/" title="Core FTP LE">
+                Core FTP LE
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/ws-ftp-le/" title="WS_FTP LE">
+                WS_FTP LE
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/free-download-manager/" title="Free Download Manager">
+                Free Download Manager
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/bulletproof-ftp/" title="BulletProof FTP">
+                BulletProof FTP
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/cuteftp/" title="CuteFTP">
+                CuteFTP
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/cisco-tftp-server/" title="Cisco TFTP Server">
+                Cisco TFTP Server
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/3com-daemon/" title="3Com Daemon">
+                3Com Daemon
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/google-drive/" title="Google Drive">
+                Google Drive
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/gladinet-cloud-desktop/" title="Gladinet Cloud Desktop">
+                Gladinet Cloud Desktop
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/teracopy/" title="TeraCopy">
+                TeraCopy
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/bpftp-server/" title="BPFTP Server">
+                BPFTP Server
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/fluffyapp/" title="FluffyApp">
+                FluffyApp
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/wuala/" title="Wuala">
+                Wuala
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/download-accelerator-plus/" title="Download Accelerator Plus">
+                Download Accelerator Plus
+              </a>
+            </li>
+          
+        
+      </ul>
+      
+        <a class="viewmore clickable" href="/categories/ftp/?os=windows">
+          »View More&nbsp; <span>(17)</span>
+        </a>
+      
+    </div>
+    
+      <br class="clear">
+    
+    
+  
+    
+    <div class="section ">
+      <h2 class="category-title">
+        <a href="/categories/file-sharing/?os=windows">
+          <span class="i-category-gray i-category-gray_file-sharing"></span>
+          <span>File Sharing</span>
+        </a>
+      </h2>
+      <ul class="list3">
+        
+          
+            <li>
+              <a href="/windows/utorrent/" title="uTorrent">
+                uTorrent
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/limewire/" title="LimeWire">
+                LimeWire
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/bearshare/" title="Bearshare">
+                Bearshare
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/bittorrent/" title="BitTorrent">
+                BitTorrent
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/bitcomet/" title="BitComet">
+                BitComet
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/winmx/" title="WinMX">
+                WinMX
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/azureus/" title="Azureus">
+                Azureus
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/ares-galaxy/" title="Ares Galaxy">
+                Ares Galaxy
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/kazaa-lite/" title="Kazaa Lite">
+                Kazaa Lite
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/dc/" title="DC++">
+                DC++
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/emule/" title="eMule">
+                eMule
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/bitspirit/" title="BitSpirit">
+                BitSpirit
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/shareaza/" title="Shareaza">
+                Shareaza
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/edonkey2000/" title="eDonkey2000">
+                eDonkey2000
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/imesh/" title="iMesh">
+                iMesh
+              </a>
+            </li>
+          
+        
+      </ul>
+      
+        <a class="viewmore clickable" href="/categories/file-sharing/?os=windows">
+          »View More&nbsp; <span>(12)</span>
+        </a>
+      
+    </div>
+    
+    
+  
+    
+    <div class="section ">
+      <h2 class="category-title">
+        <a href="/categories/drivers/?os=windows">
+          <span class="i-category-gray i-category-gray_drivers"></span>
+          <span>Drivers</span>
+        </a>
+      </h2>
+      <ul class="list3">
+        
+          
+            <li>
+              <a href="/windows/directx/" title="DirectX">
+                DirectX
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/logitech-setpoint/" title="Logitech SetPoint">
+                Logitech SetPoint
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/intellipoint/" title="IntelliPoint">
+                IntelliPoint
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/intellitype-pro/" title="IntelliType Pro">
+                IntelliType Pro
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/ati-catalyst-drivers/" title="ATI Catalyst Drivers">
+                ATI Catalyst Drivers
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/realtek-ac-97-driver/" title="Realtek AC'97 Driver">
+                Realtek AC'97 Driver
+              </a>
+            </li>
+          
+        
+      </ul>
+      
+    </div>
+    
+    
+  
+    
+    <div class="section ">
+      <h2 class="category-title">
+        <a href="/categories/development/?os=windows">
+          <span class="i-category-gray i-category-gray_development"></span>
+          <span>Development</span>
+        </a>
+      </h2>
+      <ul class="list3">
+        
+          
+            <li>
+              <a href="/windows/java-platform/" title="Java Platform">
+                Java Platform
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/notepad/" title="Notepad++">
+                Notepad++
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/virtualbox/" title="VirtualBox">
+                VirtualBox
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/phpmyadmin/" title="PhpMyAdmin">
+                PhpMyAdmin
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/mysql-community-server/" title="MySQL Community Server">
+                MySQL Community Server
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/vmware-player/" title="VMware Player">
+                VMware Player
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/tortoisesvn/" title="TortoiseSVN">
+                TortoiseSVN
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/cheat-engine/" title="Cheat Engine">
+                Cheat Engine
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/topstyle/" title="TopStyle">
+                TopStyle
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/ruby-programming/" title="Ruby Programming">
+                Ruby Programming
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/python/" title="Python">
+                Python
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/inno-setup/" title="Inno Setup">
+                Inno Setup
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/netbeans-ide/" title="NetBeans IDE">
+                NetBeans IDE
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/nsis/" title="NSIS">
+                NSIS
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/firebird/" title="Firebird">
+                Firebird
+              </a>
+            </li>
+          
+        
+      </ul>
+      
+        <a class="viewmore clickable" href="/categories/development/?os=windows">
+          »View More&nbsp; <span>(14)</span>
+        </a>
+      
+    </div>
+    
+    
+  
+    
+    <div class="section outermost">
+      <h2 class="category-title">
+        <a href="/categories/communication/?os=windows">
+          <span class="i-category-gray i-category-gray_communication"></span>
+          <span>Communication</span>
+        </a>
+      </h2>
+      <ul class="list3">
+        
+          
+            <li>
+              <a href="/windows/skype/" title="Skype">
+                Skype
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/yahoo-messenger/" title="Yahoo Messenger">
+                Yahoo Messenger
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/msn-messenger/" title="MSN Messenger">
+                MSN Messenger
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/aol-instant-messenger/" title="AOL Instant Messenger">
+                AOL Instant Messenger
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/manycam/" title="ManyCam">
+                ManyCam
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/mirc/" title="mIRC">
+                mIRC
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/x-lite/" title="X-Lite">
+                X-Lite
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/mozilla-thunderbird/" title="Mozilla Thunderbird">
+                Mozilla Thunderbird
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/icq/" title="ICQ">
+                ICQ
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/trillian/" title="Trillian">
+                Trillian
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/gaim/" title="Gaim">
+                Gaim
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/winscp/" title="WinSCP">
+                WinSCP
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/miranda/" title="Miranda">
+                Miranda
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/incredimail/" title="IncrediMail">
+                IncrediMail
+              </a>
+            </li>
+          
+            <li>
+              <a href="/windows/google-talk/" title="Google Talk">
+                Google Talk
+              </a>
+            </li>
+          
+        
+      </ul>
+      
+        <a class="viewmore clickable" href="/categories/communication/?os=windows">
+          »View More&nbsp; <span>(31)</span>
+        </a>
+      
+    </div>
+    
+    
+  
+</div>
+
+
+
+
+<div class="ad-slot" data-ad-placement="homepage-bottom-banner" data-ad-width="728" data-ad-height="90" style="max-width: 728px; height: 110px; margin: 20px 0;">
+    <div class="ad-label" aria-hidden="true">Advertisement</div>
+    
+        
+    
+<div class="ad-container" data-ad-unit-id="2"><div class="ad-content" style="height: 90px; overflow: hidden;"><a href="https://ko-fi.com/oldversion" target="_blank" rel="noopener" style="
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: border-color 0.2s;
+">
+  <div style="
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 20px;
+    gap: 16px;
+  ">
+    <!-- Left section: Header -->
+    <div style="
+      flex-shrink: 0;
+      width: 180px;
+    ">
+      <div style="
+        margin: 0;
+        font-size: 22px;
+        font-weight: 700;
+        color: #e53e3e;
+        line-height: 1.1;
+      ">Support<br>OldVersion.com</div>
+    </div>
+    
+    <!-- Middle section: Bullet points -->
+    <div style="
+      flex: 1;
+      font-size: 10.5px;
+      line-height: 1.4;
+      color: #2d3748;
+    ">
+      <div style="margin-bottom: 2px;">• A $10/mo subscription gives you access to exclusive updates + community.</div>
+      <div style="margin-bottom: 2px;">• Even a $1 tip helps us offset hosting costs.</div>
+      <div>• Consider buying us a coffee to keep this service alive and ad-free?</div>
+    </div>
+    
+    <!-- Right section: CTA -->
+    <div style="
+      flex-shrink: 0;
+      text-align: center;
+      padding-left: 16px;
+      border-left: 2px solid #e2e8f0;
+      width: 140px;
+    ">
+      <div style="
+        font-size: 15px;
+        font-weight: 600;
+        color: #805ad5;
+        line-height: 1.3;
+      ">Click here to<br>provide a tip</div>
+    </div>
+  </div>
+</a></div></div></div>
+
+
+
+
+      </div>
+      
+      <!-- Sidebar -->
+      <div id="sidebar">
+        
+          <!-- OS Categories -->
+          <div class="widget categories">
+            
+              <a class="windows active" href="/">
+                WINDOWS
+              </a>
+            
+              <a class="mac " href="/featured/mac/">
+                MAC
+              </a>
+            
+              <a class="linux " href="/featured/linux/">
+                LINUX
+              </a>
+            
+              <a class="android " href="/featured/android/">
+                ANDROID
+              </a>
+            
+              <a class="games " href="/featured/games/">
+                GAMES
+              </a>
+            
+          </div>
+
+          
+
+
+<div class="ad-slot" data-ad-placement="homepage-sidebar" data-ad-width="300" data-ad-height="250" style="max-width: 300px; height: 270px; margin: 20px 0;">
+    <div class="ad-label" aria-hidden="true">Advertisement</div>
+    
+        
+    
+<div class="ad-container" data-ad-unit-id="1"><div class="ad-content" style="height: 250px; overflow: hidden;"><a href="https://ko-fi.com/oldversion" target="_blank" rel="noopener noreferrer"><img src="https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com/ad_assets/kofi-ad-250x250.png" alt="" loading="lazy" width="300" height="250" style="max-width: 100%; height: auto; display: block;"></a></div></div></div>
+
+
+
+
+
+          
+          
+          
+          
+        
+      </div>
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <div id="footer">
+    <div class="wrapper clearfix">
+      <img src="https://oldversion-prod-storage.nyc3.digitaloceanspaces.com/app_assets/themes/shared/images/ov-mascot.dd4aa5f7be5a.png" alt="mascot" class="image png-bg" width="150" height="273" loading="lazy">
+      
+      <div class="section sfirst">
+        <h2>Site Links</h2>
+        <ul class="list2">
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/contact/">Contact Us</a></li>
+          
+          <li><a href="/roadmap/">Roadmap</a></li>
+          
+          <li><a href="/supporters/">Supporters</a></li>
+          
+        </ul>
+      </div>
+      
+      <div class="section footer-category-section">
+        <h2>Category</h2>
+        <ul class="list2">
+          
+            <li>
+              <a href="/">
+                Windows
+              </a>
+            </li>
+          
+            <li>
+              <a href="/featured/mac/">
+                Mac
+              </a>
+            </li>
+          
+            <li>
+              <a href="/featured/linux/">
+                Linux
+              </a>
+            </li>
+          
+            <li>
+              <a href="/featured/android/">
+                Android
+              </a>
+            </li>
+          
+            <li>
+              <a href="/featured/games/">
+                Games
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      
+      <div class="section last">
+        <h2>Follow OldVersion.com</h2>
+        <ul class="sociable clearfix">
+          
+          <li><a href="http://www.facebook.com/OVCOM" rel="nofollow" class="facebook">&nbsp;</a></li>
+          <li><a href="http://twitter.com/oldversion" rel="nofollow" class="twitter">&nbsp;</a></li>
+        </ul>
+      </div>
+      
+      <div class="logo">
+        <h1><a href="/" rel="home" title="Go to homepage">Old Version</a></h1>
+        <span class="facebook">
+          <iframe data-src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Foldversion.com&amp;send=false&amp;layout=button_count&amp;width=150&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=verdana&amp;height=21&amp;appId=431722426879622" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;" allowtransparency="true"></iframe>
+        </span>
+      </div>
+      
+      <p>OldVersion.com provides free software downloads for old versions of programs, drivers and games.<br>
+      So why not downgrade to the version you love?.... because newer is not always better!</p>
+
+      <p>OldVersion.com is an independent software archive and is not affiliated with, sponsored by, or endorsed by any software publisher listed on this site unless explicitly noted.</p>
+      
+      <div id="footer-navigation">
+        <ul>
+          <li class="copyright">©2001-2026 OldVersion.com.</li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="/dmca/">DMCA</a></li>
+          <li><a href="/terms/">TOS</a></li>
+          
+          
+          <li class="last">Design by <a href="http://jenox.com/" rel="nofollow">Jenox</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Tabbed Selectors JavaScript - EXACTLY like original
+function changesoftwareorder(order) {
+  // Remove active class from all tabs
+  var tabs = document.querySelectorAll('.tabstrips2 li');
+  tabs.forEach(function(tab) {
+    tab.classList.remove('active');
+  });
+  
+  // Hide all tab panes
+  var panes = document.querySelectorAll('.tab-pane');
+  panes.forEach(function(pane) {
+    pane.classList.remove('active');
+  });
+  
+  // Show the selected tab pane
+  var targetPane = document.getElementById(order);
+  if (targetPane) {
+    targetPane.classList.add('active');
+  }
+  
+  // Add active class to clicked tab
+  event.target.closest('li').classList.add('active');
+  
+  // Prevent default link behavior
+  event.preventDefault();
+  return false;
+}
+
+// Initialize tabs on page load
+document.addEventListener('DOMContentLoaded', function() {
+  // Set up click handlers for all tab links
+  var tabLinks = document.querySelectorAll('.tabstrips2 a');
+  tabLinks.forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      var order = this.getAttribute('href').substring(1);
+      changesoftwareorder(order);
+    });
+  });
+});
+</script>
+
+  
+  <script>
+    // Make STATIC_URL available to JavaScript (for dynamic asset loading)
+    window.STATIC_URL = 'https://oldversion-prod-storage.nyc3.cdn.digitaloceanspaces.com/app_assets/';
+    
+    // Pass screensaver settings to JavaScript
+    window.SCREENSAVER_CONFIG = {
+      enabled: false,
+      defaultScreensaver: 'flyingWindows',
+      availableScreensavers: ['flyingWindows'],
+      timeoutMinutes: 5
+    };
+  </script>
+  
+  <script defer="" src="https://oldversion-prod-storage.nyc3.digitaloceanspaces.com/app_assets/dist/common.f13b2b262cb8.js"></script>
+  <!-- Ad loader: async, non-blocking -->
+  <script async="" src="https://oldversion-prod-storage.nyc3.digitaloceanspaces.com/app_assets/advertising/ads.632d0488986f.js"></script>
+  
+  
+  
+<script>
+  gtag('js', new Date());
+  gtag('config', 'G-K5SPG71NMT', {
+    'anonymize_ip': true,
+    'cookie_flags': 'SameSite=None;Secure',
+    
+    'custom_map': {
+      'dimension1': 'environment',
+      'dimension2': 'page_type',
+      'dimension3': 'content_language'
+    }
+  });
+  gtag('set', 'user_properties', {
+    'environment': 'prod',
+    'content_language': 'en-us'
+  });
+</script>
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+  
+  
+  
+  
+  
+  
+
+
+</div><canvas style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; z-index: 9999; display: none; background-color: rgb(0, 0, 0);"></canvas><div id="image-lightbox" class="lightbox">
+      <div class="lightbox-overlay"></div>
+      <div class="lightbox-content">
+        <button class="lightbox-close" aria-label="Close lightbox">×</button>
+        <img class="lightbox-image" src="" alt="">
+      </div>
+    </div></body></html>

@@ -1,0 +1,134 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nowgoal - Download and install APP</title>
+
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/onelink-smart-script-latest.js"></script>
+    <script src="./js/swiper.min.js"></script>
+
+    <link rel="icon" href="./images/favicon_nowgoal.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/download.css">
+</head>
+
+<body>
+    <div class="content">
+        <img class="logo" src="./images/logo_nowgoal.svg" alt="">
+        <h2>Sign Up/Log In - Share APP for Bonus!</h2>
+        <div class="infobox">
+            <div class="help" onclick="showPopBox()"><img class="helpicon" src="./images/helpicon.svg">How to install Android APP?</div>
+            <button class="DLbtn" onclick="download()"><img src="./images/android.svg">Download and install APP</button>
+        </div>
+        <div class="imgbox swiper-container swiper-container-horizontal">
+            <div class="swiper-wrapper" style="transform: translate3d(-604px, 0px, 0px); transition-duration: 0ms;"><img class="swiper-slide swiper-slide-duplicate swiper-slide-prev" src="./images/1.png" data-swiper-slide-index="3" style="width: 604px;">
+                <img class="swiper-slide swiper-slide-active" src="./images/4.png" data-swiper-slide-index="0" style="width: 604px;">
+                <img class="swiper-slide swiper-slide-next" src="./images/3.png" data-swiper-slide-index="1" style="width: 604px;">
+                <img class="swiper-slide" src="./images/2.png" data-swiper-slide-index="2" style="width: 604px;">
+                <img class="swiper-slide swiper-slide-duplicate-prev" src="./images/1.png" data-swiper-slide-index="3" style="width: 604px;">
+            <img class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" src="./images/4.png" data-swiper-slide-index="0" style="width: 604px;"></div>
+        </div>
+        <ul class="carousel swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span></ul>
+    </div>
+
+    <div class="popbox" id="popBox" style="display: none;">
+        <div class="title">
+            Installation Guide<i class="close" onclick="hidePopBox()"></i>
+        </div>
+        <div class="info">Since Google Play does not allow our app to use certain key features such as live match video
+            streaming, we recommend downloading the original version. Simply follow the steps below to complete the
+            installation in just a few moments.</div>
+        <div class="infobox">
+            <p>
+                1.Download the APK via Google Chrome.
+                <img src="./images/install1.png">
+            </p>
+            <p>
+                2.After downloading, you will usually see an “Open” option, or you can open it from the “Downloads”
+                folder in your file manager.
+                <img src="./images/install2.png">
+            </p>
+            <p>
+                3.You need to enable “Unknown Sources” to open the file. Tap “Settings”.
+                <img src="./images/install3.png">
+            </p>
+            <p>
+                4.Enable “Unknown Sources”.
+                <img src="./images/install4.png">
+            </p>
+            <p>
+                5.Repeat the installation process and tap “Install” in the prompt.
+                <img src="./images/install5.png">
+            </p>
+            <p class="blue">You have successfully installed the Nowgoal App on your phone.</p>
+            <p class="red">Share &amp; Earn: My Page - Sign Up/Log In - Share APP for Bonus!</p>
+        </div>
+    </div>
+
+
+<script>
+    let downloadUrl = "";
+    $(document).ready(() => {
+        //Initializing Smart Script arguments
+        var oneLinkURL = "https://nowgoal.onelink.me/XrhT";
+        var mediaSource = { defaultValue: "invite" };
+        var af_dp = { paramKey: "af_dp", defaultValue: "nowgoalapp%3A%2F%2Fmain" };
+        var deepLinkValue = { defaultValue: "invite" };
+        var deep_link_sub2 = { paramKey: "deep_link_sub2", keys: ["uid", "id", "inviteId"] };
+        var af_force_deeplink = { paramKey: "af_force_deeplink", defaultValue: "true" };
+        var custom_ss_ui = { paramKey: "af_ss_ui", defaultValue: "true" };
+
+        //Call the function after embedding the code through a global parameter on the window object called window.AF_SMART_SCRIPT.
+        //Onelink URL is generated.
+        var result = window.AF_SMART_SCRIPT.generateOneLinkURL({
+            oneLinkURL: oneLinkURL,
+            afParameters: {
+                mediaSource: mediaSource,
+                afCustom: [
+                    af_dp,
+                    deep_link_sub2,
+                    af_force_deeplink,
+                    custom_ss_ui
+                ],
+                deepLinkValue: deepLinkValue
+            }
+        });
+
+        downloadUrl = result.clickURL;
+
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.carousel',
+            paginationClickable: true,
+            autoplay: 5000,
+            loop: true,
+        })
+
+
+    })
+
+    function showPopBox() {
+        $("#popBox").show()
+    }
+    function hidePopBox() {
+        $("#popBox").hide()
+    }
+
+    function download() {
+        if(downloadUrl){
+            window.open(downloadUrl)
+        }
+    }
+
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-22RB6JYG9R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-22RB6JYG9R');
+</script>
+
+</body></html>

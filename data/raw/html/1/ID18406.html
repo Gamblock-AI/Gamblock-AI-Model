@@ -1,0 +1,815 @@
+<html lang="en"><head><meta http-equiv="origin-trial" content="A7vZI3v+Gz7JfuRolKNM4Aff6zaGuT7X0mf3wtoZTnKv6497cVMnhy03KDqX7kBz/q/iidW7srW31oQbBt4VhgoAAACUeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJEaXNhYmxlVGhpcmRQYXJ0eVN0b3JhZ2VQYXJ0aXRpb25pbmczIiwiZXhwaXJ5IjoxNzU3OTgwODAwLCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><script type="text/javascript" async="" charset="utf-8" src="https://www.gstatic.com/recaptcha/releases/gTpTIWhbKpxADzTzkcabhXN4/recaptcha__id.js" crossorigin="anonymous" integrity="sha384-DsL8aWv813TFGpGbBi0H8c3TZVdrTs1mD0hpfopFVDmNw6ZY/4AW5bkzfpI+pN7x"></script><script async="" src="https://static.ads-twitter.com/uwt.js"></script><script type="text/javascript" async="" src="https://www.everestjs.net/static/st.v3.js"></script><script src="https://connect.facebook.net/signals/config/991738589185829?v=2.9.297&amp;r=stable&amp;domain=betpanda1.io&amp;hme=c048e760b3fdc0fbdc117d7607b2c36e13eff2660c515ac72e86dac5ba060bb9&amp;ex_m=104%2C205%2C154%2C22%2C72%2C73%2C145%2C68%2C67%2C11%2C162%2C90%2C16%2C138%2C127%2C39%2C75%2C78%2C134%2C159%2C164%2C8%2C4%2C5%2C7%2C6%2C3%2C91%2C101%2C165%2C170%2C219%2C62%2C186%2C187%2C55%2C277%2C30%2C74%2C231%2C230%2C229%2C23%2C33%2C103%2C61%2C10%2C63%2C97%2C98%2C99%2C105%2C130%2C31%2C29%2C132%2C133%2C129%2C128%2C155%2C76%2C158%2C156%2C157%2C50%2C60%2C123%2C15%2C161%2C45%2C264%2C265%2C263%2C26%2C27%2C28%2C48%2C146%2C77%2C112%2C18%2C20%2C44%2C40%2C42%2C41%2C83%2C92%2C96%2C110%2C144%2C147%2C46%2C111%2C24%2C21%2C119%2C69%2C36%2C149%2C148%2C150%2C141%2C139%2C25%2C35%2C59%2C109%2C160%2C70%2C17%2C152%2C114%2C81%2C66%2C19%2C85%2C86%2C116%2C84%2C136%2C135%2C34%2C279%2C294%2C212%2C201%2C202%2C200%2C297%2C289%2C52%2C213%2C107%2C131%2C80%2C121%2C54%2C47%2C49%2C113%2C120%2C126%2C58%2C64%2C151%2C115%2C37%2C32%2C53%2C56%2C100%2C163%2C1%2C124%2C14%2C122%2C12%2C2%2C57%2C93%2C65%2C118%2C89%2C88%2C166%2C167%2C94%2C95%2C9%2C125%2C102%2C51%2C142%2C87%2C79%2C71%2C117%2C106%2C43%2C143%2C0%2C82%2C137%2C140%2C153%2C38%2C108%2C13%2C168" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-M7E3WDXGSQ&amp;cx=c&amp;gtm=4e6481h1"></script><script type="text/javascript" async="" src="https://www.redditstatic.com/ads/pixel.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-NXTTGHP8"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-NXTTGHP8"></script><script type="text/javascript" crossorigin="anonymous" async="" src="https://eu-assets.i.posthog.com/static/array.js"></script><script>
+          (function () {
+    if (!localStorage.getItem('rc-referrer')) {
+        const referrer = document.referrer;
+        let referrerValue = 'direct';
+        
+        if (referrer && referrer.trim() !== '') {
+            try {
+                const referrerDomain = new URL(referrer).hostname;
+                // Only update if we have a valid, non-empty domain that's different from ours
+                if (referrerDomain && 
+                    referrerDomain.trim() !== '' && 
+                    referrerDomain !== window.location.hostname) {
+                    referrerValue = referrerDomain;
+                }
+            } catch (error) {
+                console.log('Referrer parsing error:', error);
+            }
+        }
+        
+        localStorage.setItem('rc-referrer', referrerValue);
+        localStorage.setItem('rc-first-visit-on', new Date().toISOString());
+    }
+})();
+(function () {
+    // Function to send tracking data
+    function sendTrackingData(userId) {
+        // Check if already posted
+        if (localStorage.getItem('rc-cable-post-on')) {
+            console.info('🔦 Tracking data already sent, skipping');
+            return;
+        }
+
+        console.info('🔦 Pulse RC down the cable')
+        fetch('https://cable.' + window.location.hostname.replace(/^www./, '') + '/cable/user-event', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                userId: userId,
+                registeredOn: new Date().toISOString(),
+                firstVisitOn: localStorage.getItem('rc-first-visit-on'),
+                referrer: localStorage.getItem('rc-referrer')
+            })
+        }).catch(function (error) {
+            console.error('Failed to send tracking data:', error);
+        });
+
+        localStorage.setItem('rc-cable-post-on', new Date().toISOString());
+    }
+
+    window.addEventListener("message", (event) => {
+        if (event.origin && event.data && event.data.type) {
+            var data = { ...event.data, event: event.data.type };
+            if (event.data.type == "LOGIN") {
+                //do something
+            } else if (event.data.type == "REGISTER") {
+                sendTrackingData(localStorage.getItem('userId'))
+            } else if (event.data.type == "DEPOSIT") {
+                //do something
+            } else if (event.data.type == "WITHDRAW_REQUESTED") {
+                //do something
+            } else if (event.data.type == "WITHDRAW_APPROVED") {
+                //do something
+            }
+        }
+    }, false);
+})();
+        </script>
+    <!-- Placeholder for adding elements to header from container variables-->
+    
+    <script type="application/javascript">
+      var GLOBAL_LOADER_IMAGE = "https://d3ec3n7kizfkuy.cloudfront.net/betpanda2/loader_3ef269101e.png";
+      var GLOBAL_LOADER_WIDTH = "64px";
+      var GLOBAL_METAMAP_SCRIPT_URL = "https://web-button.getmati.com/button.js";
+    </script>
+    <style type="text/css">:root, :host {
+  --fa-font-solid: normal 900 1em/1 "Font Awesome 7 Free";
+  --fa-font-regular: normal 400 1em/1 "Font Awesome 7 Free";
+  --fa-font-light: normal 300 1em/1 "Font Awesome 7 Pro";
+  --fa-font-thin: normal 100 1em/1 "Font Awesome 7 Pro";
+  --fa-font-duotone: normal 900 1em/1 "Font Awesome 7 Duotone";
+  --fa-font-duotone-regular: normal 400 1em/1 "Font Awesome 7 Duotone";
+  --fa-font-duotone-light: normal 300 1em/1 "Font Awesome 7 Duotone";
+  --fa-font-duotone-thin: normal 100 1em/1 "Font Awesome 7 Duotone";
+  --fa-font-brands: normal 400 1em/1 "Font Awesome 7 Brands";
+  --fa-font-sharp-solid: normal 900 1em/1 "Font Awesome 7 Sharp";
+  --fa-font-sharp-regular: normal 400 1em/1 "Font Awesome 7 Sharp";
+  --fa-font-sharp-light: normal 300 1em/1 "Font Awesome 7 Sharp";
+  --fa-font-sharp-thin: normal 100 1em/1 "Font Awesome 7 Sharp";
+  --fa-font-sharp-duotone-solid: normal 900 1em/1 "Font Awesome 7 Sharp Duotone";
+  --fa-font-sharp-duotone-regular: normal 400 1em/1 "Font Awesome 7 Sharp Duotone";
+  --fa-font-sharp-duotone-light: normal 300 1em/1 "Font Awesome 7 Sharp Duotone";
+  --fa-font-sharp-duotone-thin: normal 100 1em/1 "Font Awesome 7 Sharp Duotone";
+  --fa-font-slab-regular: normal 400 1em/1 "Font Awesome 7 Slab";
+  --fa-font-slab-press-regular: normal 400 1em/1 "Font Awesome 7 Slab Press";
+  --fa-font-whiteboard-semibold: normal 600 1em/1 "Font Awesome 7 Whiteboard";
+  --fa-font-thumbprint-light: normal 300 1em/1 "Font Awesome 7 Thumbprint";
+  --fa-font-notdog-solid: normal 900 1em/1 "Font Awesome 7 Notdog";
+  --fa-font-notdog-duo-solid: normal 900 1em/1 "Font Awesome 7 Notdog Duo";
+  --fa-font-etch-solid: normal 900 1em/1 "Font Awesome 7 Etch";
+  --fa-font-jelly-regular: normal 400 1em/1 "Font Awesome 7 Jelly";
+  --fa-font-jelly-fill-regular: normal 400 1em/1 "Font Awesome 7 Jelly Fill";
+  --fa-font-jelly-duo-regular: normal 400 1em/1 "Font Awesome 7 Jelly Duo";
+  --fa-font-chisel-regular: normal 400 1em/1 "Font Awesome 7 Chisel";
+  --fa-font-utility-semibold: normal 600 1em/1 "Font Awesome 7 Utility";
+  --fa-font-utility-duo-semibold: normal 600 1em/1 "Font Awesome 7 Utility Duo";
+  --fa-font-utility-fill-semibold: normal 600 1em/1 "Font Awesome 7 Utility Fill";
+}
+
+.svg-inline--fa {
+  box-sizing: content-box;
+  display: var(--fa-display, inline-block);
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+  width: var(--fa-width, 1.25em);
+}
+.svg-inline--fa.fa-2xs {
+  vertical-align: 0.1em;
+}
+.svg-inline--fa.fa-xs {
+  vertical-align: 0em;
+}
+.svg-inline--fa.fa-sm {
+  vertical-align: -0.0714285714em;
+}
+.svg-inline--fa.fa-lg {
+  vertical-align: -0.2em;
+}
+.svg-inline--fa.fa-xl {
+  vertical-align: -0.25em;
+}
+.svg-inline--fa.fa-2xl {
+  vertical-align: -0.3125em;
+}
+.svg-inline--fa.fa-pull-left,
+.svg-inline--fa .fa-pull-start {
+  float: inline-start;
+  margin-inline-end: var(--fa-pull-margin, 0.3em);
+}
+.svg-inline--fa.fa-pull-right,
+.svg-inline--fa .fa-pull-end {
+  float: inline-end;
+  margin-inline-start: var(--fa-pull-margin, 0.3em);
+}
+.svg-inline--fa.fa-li {
+  width: var(--fa-li-width, 2em);
+  inset-inline-start: calc(-1 * var(--fa-li-width, 2em));
+  inset-block-start: 0.25em; /* syncing vertical alignment with Web Font rendering */
+}
+
+.fa-layers-counter, .fa-layers-text {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+}
+
+.fa-layers {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  text-align: center;
+  vertical-align: -0.125em;
+  width: var(--fa-width, 1.25em);
+}
+.fa-layers .svg-inline--fa {
+  inset: 0;
+  margin: auto;
+  position: absolute;
+  transform-origin: center center;
+}
+
+.fa-layers-text {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+}
+
+.fa-layers-counter {
+  background-color: var(--fa-counter-background-color, #ff253a);
+  border-radius: var(--fa-counter-border-radius, 1em);
+  box-sizing: border-box;
+  color: var(--fa-inverse, #fff);
+  line-height: var(--fa-counter-line-height, 1);
+  max-width: var(--fa-counter-max-width, 5em);
+  min-width: var(--fa-counter-min-width, 1.5em);
+  overflow: hidden;
+  padding: var(--fa-counter-padding, 0.25em 0.5em);
+  right: var(--fa-right, 0);
+  text-overflow: ellipsis;
+  top: var(--fa-top, 0);
+  transform: scale(var(--fa-counter-scale, 0.25));
+  transform-origin: top right;
+}
+
+.fa-layers-bottom-right {
+  bottom: var(--fa-bottom, 0);
+  right: var(--fa-right, 0);
+  top: auto;
+  transform: scale(var(--fa-layers-scale, 0.25));
+  transform-origin: bottom right;
+}
+
+.fa-layers-bottom-left {
+  bottom: var(--fa-bottom, 0);
+  left: var(--fa-left, 0);
+  right: auto;
+  top: auto;
+  transform: scale(var(--fa-layers-scale, 0.25));
+  transform-origin: bottom left;
+}
+
+.fa-layers-top-right {
+  top: var(--fa-top, 0);
+  right: var(--fa-right, 0);
+  transform: scale(var(--fa-layers-scale, 0.25));
+  transform-origin: top right;
+}
+
+.fa-layers-top-left {
+  left: var(--fa-left, 0);
+  right: auto;
+  top: var(--fa-top, 0);
+  transform: scale(var(--fa-layers-scale, 0.25));
+  transform-origin: top left;
+}
+
+.fa-1x {
+  font-size: 1em;
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-4x {
+  font-size: 4em;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
+.fa-6x {
+  font-size: 6em;
+}
+
+.fa-7x {
+  font-size: 7em;
+}
+
+.fa-8x {
+  font-size: 8em;
+}
+
+.fa-9x {
+  font-size: 9em;
+}
+
+.fa-10x {
+  font-size: 10em;
+}
+
+.fa-2xs {
+  font-size: calc(10 / 16 * 1em); /* converts a 10px size into an em-based value that's relative to the scale's 16px base */
+  line-height: calc(1 / 10 * 1em); /* sets the line-height of the icon back to that of it's parent */
+  vertical-align: calc((6 / 10 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text's descender */
+}
+
+.fa-xs {
+  font-size: calc(12 / 16 * 1em); /* converts a 12px size into an em-based value that's relative to the scale's 16px base */
+  line-height: calc(1 / 12 * 1em); /* sets the line-height of the icon back to that of it's parent */
+  vertical-align: calc((6 / 12 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text's descender */
+}
+
+.fa-sm {
+  font-size: calc(14 / 16 * 1em); /* converts a 14px size into an em-based value that's relative to the scale's 16px base */
+  line-height: calc(1 / 14 * 1em); /* sets the line-height of the icon back to that of it's parent */
+  vertical-align: calc((6 / 14 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text's descender */
+}
+
+.fa-lg {
+  font-size: calc(20 / 16 * 1em); /* converts a 20px size into an em-based value that's relative to the scale's 16px base */
+  line-height: calc(1 / 20 * 1em); /* sets the line-height of the icon back to that of it's parent */
+  vertical-align: calc((6 / 20 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text's descender */
+}
+
+.fa-xl {
+  font-size: calc(24 / 16 * 1em); /* converts a 24px size into an em-based value that's relative to the scale's 16px base */
+  line-height: calc(1 / 24 * 1em); /* sets the line-height of the icon back to that of it's parent */
+  vertical-align: calc((6 / 24 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text's descender */
+}
+
+.fa-2xl {
+  font-size: calc(32 / 16 * 1em); /* converts a 32px size into an em-based value that's relative to the scale's 16px base */
+  line-height: calc(1 / 32 * 1em); /* sets the line-height of the icon back to that of it's parent */
+  vertical-align: calc((6 / 32 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text's descender */
+}
+
+.fa-width-auto {
+  --fa-width: auto;
+}
+
+.fa-fw,
+.fa-width-fixed {
+  --fa-width: 1.25em;
+}
+
+.fa-ul {
+  list-style-type: none;
+  margin-inline-start: var(--fa-li-margin, 2.5em);
+  padding-inline-start: 0;
+}
+.fa-ul > li {
+  position: relative;
+}
+
+.fa-li {
+  inset-inline-start: calc(-1 * var(--fa-li-width, 2em));
+  position: absolute;
+  text-align: center;
+  width: var(--fa-li-width, 2em);
+  line-height: inherit;
+}
+
+/* Heads Up: Bordered Icons will not be supported in the future!
+  - This feature will be deprecated in the next major release of Font Awesome (v8)!
+  - You may continue to use it in this version *v7), but it will not be supported in Font Awesome v8.
+*/
+/* Notes:
+* --@{v.$css-prefix}-border-width = 1/16 by default (to render as ~1px based on a 16px default font-size)
+* --@{v.$css-prefix}-border-padding =
+  ** 3/16 for vertical padding (to give ~2px of vertical whitespace around an icon considering it's vertical alignment)
+  ** 4/16 for horizontal padding (to give ~4px of horizontal whitespace around an icon)
+*/
+.fa-border {
+  border-color: var(--fa-border-color, #eee);
+  border-radius: var(--fa-border-radius, 0.1em);
+  border-style: var(--fa-border-style, solid);
+  border-width: var(--fa-border-width, 0.0625em);
+  box-sizing: var(--fa-border-box-sizing, content-box);
+  padding: var(--fa-border-padding, 0.1875em 0.25em);
+}
+
+.fa-pull-left,
+.fa-pull-start {
+  float: inline-start;
+  margin-inline-end: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-pull-right,
+.fa-pull-end {
+  float: inline-end;
+  margin-inline-start: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-beat {
+  animation-name: fa-beat;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-bounce {
+  animation-name: fa-bounce;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+}
+
+.fa-fade {
+  animation-name: fa-fade;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-beat-fade {
+  animation-name: fa-beat-fade;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-flip {
+  animation-name: fa-flip;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-shake {
+  animation-name: fa-shake;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin {
+  animation-name: fa-spin;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 2s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin-reverse {
+  --fa-animation-direction: reverse;
+}
+
+.fa-pulse,
+.fa-spin-pulse {
+  animation-name: fa-spin;
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, steps(8));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fa-beat,
+  .fa-bounce,
+  .fa-fade,
+  .fa-beat-fade,
+  .fa-flip,
+  .fa-pulse,
+  .fa-shake,
+  .fa-spin,
+  .fa-spin-pulse {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+@keyframes fa-beat {
+  0%, 90% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(var(--fa-beat-scale, 1.25));
+  }
+}
+@keyframes fa-bounce {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+  }
+  30% {
+    transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+  }
+  50% {
+    transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+  }
+  57% {
+    transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+  }
+  64% {
+    transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
+@keyframes fa-fade {
+  50% {
+    opacity: var(--fa-fade-opacity, 0.4);
+  }
+}
+@keyframes fa-beat-fade {
+  0%, 100% {
+    opacity: var(--fa-beat-fade-opacity, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(var(--fa-beat-fade-scale, 1.125));
+  }
+}
+@keyframes fa-flip {
+  50% {
+    transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+  }
+}
+@keyframes fa-shake {
+  0% {
+    transform: rotate(-15deg);
+  }
+  4% {
+    transform: rotate(15deg);
+  }
+  8%, 24% {
+    transform: rotate(-18deg);
+  }
+  12%, 28% {
+    transform: rotate(18deg);
+  }
+  16% {
+    transform: rotate(-22deg);
+  }
+  20% {
+    transform: rotate(22deg);
+  }
+  32% {
+    transform: rotate(-12deg);
+  }
+  36% {
+    transform: rotate(12deg);
+  }
+  40%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.fa-rotate-90 {
+  transform: rotate(90deg);
+}
+
+.fa-rotate-180 {
+  transform: rotate(180deg);
+}
+
+.fa-rotate-270 {
+  transform: rotate(270deg);
+}
+
+.fa-flip-horizontal {
+  transform: scale(-1, 1);
+}
+
+.fa-flip-vertical {
+  transform: scale(1, -1);
+}
+
+.fa-flip-both,
+.fa-flip-horizontal.fa-flip-vertical {
+  transform: scale(-1, -1);
+}
+
+.fa-rotate-by {
+  transform: rotate(var(--fa-rotate-angle, 0));
+}
+
+.svg-inline--fa .fa-primary {
+  fill: var(--fa-primary-color, currentColor);
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa .fa-secondary {
+  fill: var(--fa-secondary-color, currentColor);
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-primary {
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-secondary {
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa mask .fa-primary,
+.svg-inline--fa mask .fa-secondary {
+  fill: black;
+}
+
+.svg-inline--fa.fa-inverse {
+  fill: var(--fa-inverse, #fff);
+}
+
+.fa-stack {
+  display: inline-block;
+  height: 2em;
+  line-height: 2em;
+  position: relative;
+  vertical-align: middle;
+  width: 2.5em;
+}
+
+.fa-inverse {
+  color: var(--fa-inverse, #fff);
+}
+
+.svg-inline--fa.fa-stack-1x {
+  --fa-width: 1.25em;
+  height: 1em;
+  width: var(--fa-width);
+}
+.svg-inline--fa.fa-stack-2x {
+  --fa-width: 2.5em;
+  height: 2em;
+  width: var(--fa-width);
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+  inset: 0;
+  margin: auto;
+  position: absolute;
+  z-index: var(--fa-stack-z-index, auto);
+}</style><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons&amp;display=block" as="style" onload="this.onload=null;this.rel='stylesheet';" crossorigin="">
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block"
+        crossorigin
+      />
+    </noscript>
+    <link rel="dns-prefetch" href="https://cdn.contentful.com" crossorigin="anonymous" media="all">
+    <link rel="preconnect" href="https://cdn.contentful.com" crossorigin="anonymous" media="all">
+    <link rel="dns-prefetch" href="https://storage.googleapis.com" crossorigin="anonymous" media="all">
+    <link rel="preconnect" href="https://storage.googleapis.com" crossorigin="anonymous" media="all">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" crossorigin="anonymous" media="all">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous" media="all">
+    <meta charset="utf-8">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="shortcut icon" href="" media="all">
+    <link rel="manifest" href="/rest/properties/manifest" crossorigin="use-credentials" media="all">
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <title lang="en" data-react-helmet="lang">Betpanda - Terms</title>
+
+    <style>
+      :root {
+        --primary-loading-background: #081521;
+      }
+      body {
+        background: var(--primary-loading-background);
+        margin: 0;
+      }
+
+      body,
+      #root {
+        /* Fallback for browsers that don't support dvh (specifically Firefox) */
+        min-height: 100vh;
+        /* Modern browsers that support dvh */
+        min-height: 100dvh;
+      }
+
+      .lds-facebook {
+        background-color: transparent;
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+      }
+      .lds-facebook div {
+        display: inline-block;
+        position: absolute;
+        left: 8px;
+        width: 16px;
+        background: #fff;
+        animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+      }
+      .lds-facebook div:nth-child(1) {
+        left: 8px;
+        animation-delay: -0.24s;
+      }
+      .lds-facebook div:nth-child(2) {
+        left: 32px;
+        animation-delay: -0.12s;
+      }
+      .lds-facebook div:nth-child(3) {
+        left: 56px;
+        animation-delay: 0;
+      }
+      @keyframes lds-facebook {
+        0% {
+          top: 8px;
+          height: 64px;
+        }
+        50%,
+        100% {
+          top: 24px;
+          height: 32px;
+        }
+      }
+
+      .js-loader {
+        position: fixed;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        background-color: transparent;
+        z-index: 1;
+        pointer-events: none;
+        transition: opacity 0.3s ease-out;
+      }
+
+      .js-loader.hidden {
+        opacity: 0;
+      }
+
+      .js-loader img {
+        height: auto;
+      }
+    </style>
+    <script type="module" crossorigin="" src="/assets/index-Bi6J3PGV.js"></script>
+  <link rel="modulepreload" as="script" crossorigin="" href="/assets/load-BmYJk05l.js"><link rel="modulepreload" as="script" crossorigin="" href="/assets/Maintenance-EKNK9ibA.js"><link rel="stylesheet" crossorigin="" href="/assets/Maintenance-D6zbOTNW.css"><link rel="stylesheet" crossorigin="" href="/assets/load-CuvhgGF4.css"><script async="" type="text/javascript" src="https://cdn.livechatinc.com/tracking.js"></script><style type="text/css">.marquee-container {
+  overflow-x: hidden !important;
+  display: flex !important;
+  flex-direction: row !important;
+  position: relative;
+  width: 100%;
+}
+.marquee-container:hover div {
+  animation-play-state: var(--pause-on-hover);
+}
+.marquee-container:active div {
+  animation-play-state: var(--pause-on-click);
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.overlay::before, .overlay::after {
+  background: linear-gradient(to right, var(--gradient-color));
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: var(--gradient-width);
+  z-index: 2;
+}
+.overlay::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+.overlay::before {
+  left: 0;
+  top: 0;
+}
+
+.marquee {
+  flex: 0 0 auto;
+  min-width: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  animation: scroll var(--duration) linear var(--delay) var(--iteration-count);
+  animation-play-state: var(--play);
+  animation-delay: var(--delay);
+  animation-direction: var(--direction);
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}</style><link rel="modulepreload" as="script" crossorigin="" href="/assets/SsoHandler-CI-mpg4q.js"><link rel="modulepreload" as="script" crossorigin="" href="/assets/index-Bi6J3PGV.js"><link rel="modulepreload" as="script" crossorigin="" href="/assets/InfoPageView-DIyMl2hy.js"><link rel="stylesheet" crossorigin="" href="/assets/InfoPageView-DfXp4Zye.css"><link rel="canonical" href="https://betpandacasino.io/en/info/terms" data-react-helmet="true"><link rel="alternate" href="https://betpandacasino.io/de/info/terms" hreflang="de" data-react-helmet="true"><link rel="alternate" href="https://betpandacasino.io/ja/info/terms" hreflang="ja" data-react-helmet="true"><link rel="alternate" href="https://betpandacasino.io/fr/info/terms" hreflang="fr" data-react-helmet="true"><link rel="alternate" href="https://betpandacasino.io/nl/info/terms" hreflang="nl" data-react-helmet="true"><link rel="alternate" href="https://betpandacasino.io/pt/info/terms" hreflang="pt" data-react-helmet="true"><link rel="alternate" href="https://betpandacasino.io/tr/info/terms" hreflang="tr" data-react-helmet="true"><link rel="alternate" href="https://betpandacasino.io/es/info/terms" hreflang="es" data-react-helmet="true"><link rel="alternate" href="https://betpandacasino.io/ko/info/terms" hreflang="ko" data-react-helmet="true"><link rel="alternate" href="https://betpandacasino.io/it/info/terms" hreflang="it" data-react-helmet="true"><link rel="alternate" href="https://betpandacasino.io/el/info/terms" hreflang="el" data-react-helmet="true"><link rel="alternate" href="https://betpandacasino.io/ar/info/terms" hreflang="ar" data-react-helmet="true"><link rel="alternate" href="https://betpandacasino.io/zh/info/terms" hreflang="zh" data-react-helmet="true"><link rel="alternate" href="https://betpandacasino.io/cs/info/terms" hreflang="cs" data-react-helmet="true"><link rel="alternate" href="https://betpandacasino.io/ru/info/terms" hreflang="ru" data-react-helmet="true"><link rel="alternate" href="https://betpandacasino.io/info/terms" hreflang="x-default" data-react-helmet="true"><link type="image/x-icon" rel="shortcut icon" href="https://d3ec3n7kizfkuy.cloudfront.net/fav_icon_f5bcc0bb92.svg"><script async="" type="text/javascript" src="https://www.google.com/recaptcha/api.js?render=6LfuwEkrAAAAAKJn2Eo7w-LhphI7zuR8TpCR3mRP"></script><meta charset="utf-8" data-react-helmet="true"><meta property="og:type" content="website" data-react-helmet="true"><meta property="og:url" content="https://betpanda1.io/en/info/terms" data-react-helmet="true"><meta property="twitter:url" content="https://betpanda1.io/en/info/terms" data-react-helmet="true"><meta property="twitter:card" content="summary" data-react-helmet="true"></head>
+  <body class="pn-info pn-terms">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="jsLoader" class="js-loader hidden" style="display: none;">
+      <img id="site-loader" src="https://d3ec3n7kizfkuy.cloudfront.net/betpanda2/loader_3ef269101e.png" width="64px">
+    </div>
+    <main id="root"><div></div><div class="rnc__base "><div class="rnc__notification-container--top-full"></div><div class="rnc__notification-container--bottom-full"></div><div class="rnc__notification-container--top-left"></div><div class="rnc__notification-container--top-right"></div><div class="rnc__notification-container--bottom-left"></div><div class="rnc__notification-container--bottom-right"></div><div class="rnc__notification-container--top-center"></div><div class="rnc__notification-container--center"><div class="rnc__util--flex-center"></div></div><div class="rnc__notification-container--bottom-center"></div></div><div></div><span></span><div></div><div class="menu-layout fixed"><div class="menu-layout-navbar expanded"><nav id="mainNav" class="main-menu-container header "><div class="navbar-nav"><div class="desktop-top-menu-nav"></div><div class="desktop-logo-container"><a class="linkCss" href="/en/"><img alt="logo" class="logo light-logo" src="https://d3ec3n7kizfkuy.cloudfront.net/betpanda2/Main_a728350f56.svg"></a></div><div class="desktop-user-panel"><div class="lngAndButtonWrap"><div class="hide-in-context language-menu-container "><div class="dropdown"><div class="dropbtn"><div class="dropdownItem active"><div class="item active"><div class="flag-button-container"><span class="flagIcon"><i class="material-icons">language</i></span><span class="arrow-icon"><span class="material-icons">arrow_drop_down</span></span></div></div></div></div><div class="dropdown-content"><div class="dropdownItem"><div class="item"><span style="padding-left: 10px;"><span style="width: 29px; display: inline-block;">EN</span> English</span></div></div><div class="dropdownItem"><div class="item"><span style="padding-left: 10px;"><span style="width: 29px; display: inline-block;">DE</span> Deutsch</span></div></div><div class="dropdownItem"><div class="item"><span style="padding-left: 10px;"><span style="width: 29px; display: inline-block;">JA</span> 日本語</span></div></div><div class="dropdownItem"><div class="item"><span style="padding-left: 10px;"><span style="width: 29px; display: inline-block;">FR</span> Français</span></div></div><div class="dropdownItem"><div class="item"><span style="padding-left: 10px;"><span style="width: 29px; display: inline-block;">NL</span> Nederlands</span></div></div><div class="dropdownItem"><div class="item"><span style="padding-left: 10px;"><span style="width: 29px; display: inline-block;">PT</span> Português</span></div></div><div class="dropdownItem"><div class="item"><span style="padding-left: 10px;"><span style="width: 29px; display: inline-block;">TR</span> Türkçe</span></div></div><div class="dropdownItem"><div class="item"><span style="padding-left: 10px;"><span style="width: 29px; display: inline-block;">ES</span> Español</span></div></div><div class="dropdownItem"><div class="item"><span style="padding-left: 10px;"><span style="width: 29px; display: inline-block;">KO</span> 한국어</span></div></div><div class="dropdownItem"><div class="item"><span style="padding-left: 10px;"><span style="width: 29px; display: inline-block;">IT</span> Italiano</span></div></div><div class="dropdownItem"><div class="item"><span style="padding-left: 10px;"><span style="width: 29px; display: inline-block;">EL</span> Ελληνικά</span></div></div><div class="dropdownItem"><div class="item"><span style="padding-left: 10px;"><span style="width: 29px; display: inline-block;">AR</span> العربية</span></div></div><div class="dropdownItem"><div class="item"><span style="padding-left: 10px;"><span style="width: 29px; display: inline-block;">ZH</span> 中文</span></div></div><div class="dropdownItem"><div class="item"><span style="padding-left: 10px;"><span style="width: 29px; display: inline-block;">CS</span> Čeština</span></div></div><div class="dropdownItem"><div class="item"><span style="padding-left: 10px;"><span style="width: 29px; display: inline-block;">RU</span> Русский</span></div></div></div></div></div><button class="btn btn-secondary desktop-login small fixed-menu-btn topmenu">Login</button><button class="btn btn-cta register-link small fixed-menu-btn topmenu">Sign up</button></div></div></div></nav></div><div class="menu-layout-sidebar expanded"><div class="sidemenu-container sidemenu-container-collapsed "><div class="sidemenu-header collapsed"><div class="close-button collapsed fixed"><span class="hamburger-bars sidemenu-toggle"><span class="material-icons">menu</span></span></div></div><div class="content collapsed"></div><div class="menu-items menu-items-collapsed"><a class="nav-link fixed-nav-link CASINO " href="/en/casino/page/0/"><i class=" custom-icon-bp-casino"></i></a><a class="nav-link fixed-nav-link CUSTOM live-casino" href="/en/casino/page/2/live-casino"><i class=" custom-icon-bp-live-casino"></i></a><a class="nav-link fixed-nav-link CUSTOM sports" href="/en/sportsbook?bt-path=%2F"><i class=" custom-icon-bp-sports"></i></a><a class="nav-link fixed-nav-link CUSTOM esports" href="/en/sportsbook?bt-path=%2Fe_sport%2F300"><i class=" custom-icon-mush"></i></a><a class="nav-link fixed-nav-link CUSTOM promotions" href="/en/promo/promotions"><i class=" custom-icon-bp-promotions"></i></a><a class="nav-link fixed-nav-link CUSTOM sponsorships" href="/en/info/sponsorships"><i class=" custom-icon-sixdices"></i></a></div><div class="menu-divider"></div><div class="footer-items footer-items-collapsed"></div></div><div class="sidemenu-container sidemenu-container-expanded active"><div class="sidemenu-header expanded"><div class="close-button expanded logo fixed"><span class="hamburger-bars sidemenu-toggle"><span class="material-icons">menu</span></span></div><div class="brand-logo"><a class="linkCss" href="/en/"><img alt="logo" class="logo light-logo" src="https://d3ec3n7kizfkuy.cloudfront.net/betpanda2/Main_a728350f56.svg"> </a></div></div><div class="content"><div class="cashback-component"><div class="cashback-header-container"><h4>Weekly Cashback in</h4></div><div class="cashback-timer-container"><div class="cashback-timer-item"><div class="cachback-timer-item-count nav-link"><h3>1</h3></div><div class="cachback-timer-item-text"><span>DAYS</span></div></div><span class="timer-dots"><svg width="3" height="9" viewBox="0 0 3 9" fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity="0.7"><path d="M1.5 3C2.32843 3 3 2.32843 3 1.5C3 0.671573 2.32843 0 1.5 0C0.671573 0 0 0.671573 0 1.5C0 2.32843 0.671573 3 1.5 3Z" fill="#23E78B"></path><path d="M1.5 9C2.32843 9 3 8.32843 3 7.5C3 6.67157 2.32843 6 1.5 6C0.671573 6 0 6.67157 0 7.5C0 8.32843 0.671573 9 1.5 9Z" fill="#23E78B"></path></g></svg></span><div class="cashback-timer-item"><div class="cachback-timer-item-count nav-link"><h3>22</h3></div><div class="cachback-timer-item-text"><span>HRS</span></div></div><span class="timer-dots"><svg width="3" height="9" viewBox="0 0 3 9" fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity="0.7"><path d="M1.5 3C2.32843 3 3 2.32843 3 1.5C3 0.671573 2.32843 0 1.5 0C0.671573 0 0 0.671573 0 1.5C0 2.32843 0.671573 3 1.5 3Z" fill="#23E78B"></path><path d="M1.5 9C2.32843 9 3 8.32843 3 7.5C3 6.67157 2.32843 6 1.5 6C0.671573 6 0 6.67157 0 7.5C0 8.32843 0.671573 9 1.5 9Z" fill="#23E78B"></path></g></svg></span><div class="cashback-timer-item"><div class="cachback-timer-item-count nav-link"><h3>44</h3></div><div class="cachback-timer-item-text"><span>MIN</span></div></div><span class="timer-dots"><svg width="3" height="9" viewBox="0 0 3 9" fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity="0.7"><path d="M1.5 3C2.32843 3 3 2.32843 3 1.5C3 0.671573 2.32843 0 1.5 0C0.671573 0 0 0.671573 0 1.5C0 2.32843 0.671573 3 1.5 3Z" fill="#23E78B"></path><path d="M1.5 9C2.32843 9 3 8.32843 3 7.5C3 6.67157 2.32843 6 1.5 6C0.671573 6 0 6.67157 0 7.5C0 8.32843 0.671573 9 1.5 9Z" fill="#23E78B"></path></g></svg></span><div class="cashback-timer-item"><div class="cachback-timer-item-count nav-link"><h3>52</h3></div><div class="cachback-timer-item-text"><span>SEC</span></div></div></div></div></div><div class="menu-items-container"><div class="menu-items menu-items-fixed"><div class="side-submenu-container"><div class="submenu-container "><a class="nav-link submenu-link expandable CASINO " href="/en/info/terms"><div class="nav-link-logo"><i class="custom-icon-bp-casino"></i>Casino</div><div><div class="submenu-chevron"><i class="material-icons">chevron_right</i></div></div></a><div class="expandeble-sub-menu  collapse"><a class="nav-link submenu-tab-link CASINO lobby" href="/en/casino/1/lobby"><i class="custom-icon-bp-home"></i>Lobby</a><a class="nav-link submenu-tab-link CASINO originals" href="/en/originals"><i class="custom-icon-bp-betpanda"></i>Originals</a><a class="nav-link submenu-tab-link CASINO jackpot" href="/en/casino/13/jackpot"><i class="custom-icon-jack-pot"></i>Jackpot</a><a class="nav-link submenu-tab-link CASINO provably-fair" href="/en/casino/16/provably-fair"><i class="custom-icon-scale"></i>Provably Fair</a><a class="nav-link submenu-tab-link CASINO table-games" href="/en/casino/23/table-games"><i class="custom-icon-bp-table-games"></i>Table Games</a><a class="nav-link submenu-tab-link CASINO grid-slots" href="/en/casino/27/grid"><i class="custom-icon-bp-grid-slots"></i>Grid Slots</a><a class="nav-link submenu-tab-link CASINO buy-feature" href="/en/casino/5/buy-feature"><i class="custom-icon-bp-buy-feature"></i>Buy Feature</a><a class="nav-link submenu-tab-link CASINO megaways" href="/en/casino/12/megaways"><i class="custom-icon-bp-megaways"></i>Megaways</a><a class="nav-link submenu-tab-link CASINO hold-&amp;-win" href="/en/casino/25/hold-&amp;-win"><i class="custom-icon-bp-hold-win"></i>Hold &amp; Win</a><a class="nav-link submenu-tab-link CASINO new-games" href="/en/casino/category/1/new-games"><i class="custom-icon-boy"></i>New Games</a></div></div></div><div class="side-submenu-container"><div class="submenu-container "><a class="nav-link submenu-link expandable CUSTOM live-casino" href="/en/info/terms"><div class="nav-link-logo"><i class="custom-icon-bp-live-casino"></i>Live Casino</div><div><div class="submenu-chevron"><i class="material-icons">chevron_right</i></div></div></a><div class="expandeble-sub-menu  collapse"><a class="nav-link submenu-tab-link CUSTOM lobby" href="/en/casino/page/2/live-casino/2/lobby"><i class="custom-icon-trof2"></i>Lobby</a><a class="nav-link submenu-tab-link CUSTOM roulette" href="/en/casino/page/2/live-casino/7/roulette"><i class="custom-icon-bingo"></i>Roulette</a><a class="nav-link submenu-tab-link CUSTOM blackjack" href="/en/casino/page/2/live-casino/8/blackjack"><i class="custom-icon-spades"></i>Blackjack</a><a class="nav-link submenu-tab-link CUSTOM baccarat" href="/en/casino/page/2/live-casino/9/baccarat"><i class="custom-icon-sixdices"></i>Baccarat</a><a class="nav-link submenu-tab-link CUSTOM game-shows" href="/en/casino/page/2/live-casino/11/game-shows"><i class="custom-icon-dealer2"></i>Game Shows</a><a class="nav-link submenu-tab-link CUSTOM dice" href="/en/casino/page/2/live-casino/14/dice"><i class="custom-icon-diamon"></i>Dice</a><a class="nav-link submenu-tab-link CUSTOM vip-tables" href="/en/casino/page/2/live-casino/26/vip-tables"><i class="custom-icon-kings"></i>VIP Tables</a></div></div></div><div class="side-submenu-container"><div class="submenu-container "><a class="nav-link submenu-link expandable CUSTOM sports" href="/en/info/terms"><div class="nav-link-logo"><i class="custom-icon-bp-sports"></i>Sports</div><div><div class="submenu-chevron"><i class="material-icons">chevron_right</i></div></div></a><div class="expandeble-sub-menu  collapse"><a class="nav-link submenu-tab-link CUSTOM lobby" href="/en/sportsbook?bt-path=%2F"><i class="custom-icon-bp-home"></i>Lobby</a><a class="nav-link submenu-tab-link CUSTOM my-bets" href="/en/sportsbook?bt-path=%2Fbets"><i class="custom-icon-dollarsign"></i>My Bets</a><a class="nav-link submenu-tab-link CUSTOM live" href="/en/sportsbook?bt-path=%2Flive"><i class="custom-icon-bp-live"></i>Live</a><a class="nav-link submenu-tab-link CUSTOM upcoming-events" href="/en/sportsbook?bt-path=%2Fevent-builder"><i class="custom-icon-bp-events"></i>Upcoming Events</a><a class="nav-link submenu-tab-link CUSTOM favourites" href="/en/sportsbook?bt-path=%2Ffavorites"><i class="custom-icon-bp-favourites"></i>Favourites</a><a class="nav-link submenu-tab-link CUSTOM soccer" href="/en/sportsbook?bt-path=%2Fsoccer-1"><i class="custom-icon-bp-sport-soccer"></i>Soccer</a><a class="nav-link submenu-tab-link CUSTOM basketball" href="/en/sportsbook?bt-path=%2Fbasketball-2"><i class="custom-icon-bp-sport-basketball"></i>Basketball</a><a class="nav-link submenu-tab-link CUSTOM ice-hockey" href="/en/sportsbook?bt-path=%2Fice-hockey-4"><i class="custom-icon-bp-sport-icehockey"></i>Ice Hockey</a><a class="nav-link submenu-tab-link CUSTOM tennis" href="/en/sportsbook?bt-path=%2Ftennis-5"><i class="custom-icon-bp-sport-tennis"></i>Tennis</a><a class="nav-link submenu-tab-link CUSTOM fifa" href="/en/sportsbook?bt-path=%2Ffifa-300"><i class="custom-icon-bp-fifa"></i>Fifa</a></div></div></div><div class="side-submenu-container"><div class="submenu-container "><a class="nav-link submenu-link expandable CUSTOM esports" href="/en/info/terms"><div class="nav-link-logo"><i class="custom-icon-mush"></i>Esports</div><div><div class="submenu-chevron"><i class="material-icons">chevron_right</i></div></div></a><div class="expandeble-sub-menu  collapse"><a class="nav-link submenu-tab-link CUSTOM lobby" href="/en/sportsbook?bt-path=%2Fe_sport%2F300"><i class="custom-icon-bp-home"></i>Lobby</a><a class="nav-link submenu-tab-link CUSTOM my-bets" href="/en/sportsbook?bt-path=%2Fbets"><i class="custom-icon-dollarsign"></i>My Bets</a><a class="nav-link submenu-tab-link CUSTOM live" href="/en/sportsbook?bt-path=%2Flive"><i class="custom-icon-bp-live"></i>Live</a><a class="nav-link submenu-tab-link CUSTOM upcoming-events" href="/en/sportsbook?bt-path=%2Fe_sport%2F300"><i class="custom-icon-bp-events"></i>Upcoming Events</a><a class="nav-link submenu-tab-link CUSTOM favourites" href="/en/sportsbook?bt-path=%2Ffavorites"><i class="custom-icon-bp-favourites"></i>Favourites</a><a class="nav-link submenu-tab-link CUSTOM counter-strike" href="/en/sportsbook?bt-path=%2Fcounter-strike-109"><i class="custom-icon-banan"></i>Counter-Strike</a><a class="nav-link submenu-tab-link CUSTOM league-of-legends" href="/en/sportsbook?bt-path=%2Fleague-of-legends-110"><i class="custom-icon-bp-league"></i>League of Legends</a><a class="nav-link submenu-tab-link CUSTOM dota-2" href="/en/sportsbook?bt-path=%2Fdota-2-111"><i class="custom-icon-bp-dota"></i>Dota 2</a><a class="nav-link submenu-tab-link CUSTOM fifa" href="/en/sportsbook?bt-path=%2Ffifa-300"><i class="custom-icon-melon"></i>Fifa</a><a class="nav-link submenu-tab-link CUSTOM nba2k" href="/en/sportsbook?bt-path=%2Fnba-2k-302"><i class="custom-icon-bp-nba-2k"></i>NBA2K</a></div></div></div><div class="side-submenu-container"><div class="submenu-container "><a class="nav-link submenu-link expandable CUSTOM promotions" href="/en/info/terms"><div class="nav-link-logo"><i class="custom-icon-bp-promotions"></i>Promotions</div><div><div class="submenu-chevron"><i class="material-icons">chevron_right</i></div></div></a><div class="expandeble-sub-menu  collapse"><a class="nav-link submenu-tab-link CUSTOM casino" href="/en/promo/Casino-promotions"><i class="custom-icon-powers"></i>Casino</a><a class="nav-link submenu-tab-link CUSTOM sports" href="/en/promo/Sports-promotions"><i class="custom-icon-bp-welcome-offers"></i>Sports</a><a class="nav-link submenu-tab-link CUSTOM all-promotions" href="/en/promo/promotions"><i class="custom-icon-boy"></i>All Promotions</a></div></div></div><a class="nav-link submenu-link CUSTOM sponsorships" href="/en/info/sponsorships"><i class="custom-icon-sixdices"></i>Sponsorships</a></div></div><div class="menu-divider"></div><div class="footer-items footer-items-fixed"></div><div class="language-wrapper-container active"><div class="dropdown-btn small dropdown"><button aria-haspopup="true" aria-expanded="false" id="dropdown-btn" type="button" class="dropdown-toggle btn btn-secondary"><i class="material-icons">language</i>English (en)</button></div></div><div class="footer-content footer-content-fixed"><div class="app-install-container "><div class="app-buttons-container"><div class="download-text-area">Download App</div></div></div></div></div></div><div class="menu-layout-content expanded"><div><div class="spinner-container"><div class="spinner"><div class="dot1"></div><div class="dot2"></div></div></div></div></div></div></main>
+  
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;display=swap" rel="stylesheet" media="all"><script type="text/javascript" crossorigin="anonymous" src="https://eu-assets.i.posthog.com/static/exception-autocapture.js?v=1.367.0"></script><script type="text/javascript" crossorigin="anonymous" src="https://eu-assets.i.posthog.com/static/dead-clicks-autocapture.js?v=1.367.0"></script><script type="text/javascript" crossorigin="anonymous" src="https://eu-assets.i.posthog.com/static/surveys.js?v=1.367.0"></script><script type="text/javascript" crossorigin="anonymous" src="https://eu-assets.i.posthog.com/array/phc_tYz85d5yVK3sMH2kJj8t0anUwXMQEQ8ZOaEHECwnVx2/config.js"></script><script src="https://d3ec3n7kizfkuy.cloudfront.net/betpanda2/gt2m2_7ef4ff1ce1.js"></script><script src="https://d3ec3n7kizfkuy.cloudfront.net/betpanda2/betpanda_gtm_20240322_f8a8b1e027.js"></script><script src="https://d3ec3n7kizfkuy.cloudfront.net/betpanda2/countdownV3.js"></script><script src="https://d3ec3n7kizfkuy.cloudfront.net/pa_664b193768cac40012000b63_ed75c2908d.js"></script><script src="https://d3ec3n7kizfkuy.cloudfront.net/betpanda2/livechat_d13b168b94.js"></script><script src="https://d3ec3n7kizfkuy.cloudfront.net/google_elements_d448675c6b.js"></script><script src="https://d3ec3n7kizfkuy.cloudfront.net/google_pageview_d7963820bf.js"></script><script src="https://d3ec3n7kizfkuy.cloudfront.net/betpanda2/twitter_8f14a89f21.js"></script><script src="https://d3ec3n7kizfkuy.cloudfront.net/betpanda2/posthog_4373b2606b.js"></script><script src="https://dcyrouzqit0p7.cloudfront.net/widget/nova-gamification.js"></script><link href="https://dcyrouzqit0p7.cloudfront.net/brands/betpanda-brand-tokens.css" rel="stylesheet" media="all"><link type="text/css" rel="stylesheet" href="https://d3ec3n7kizfkuy.cloudfront.net/betpanda2/bp25v55.css"><link type="text/css" rel="stylesheet" href="https://d3ec3n7kizfkuy.cloudfront.net/betpanda2/pbicons/style.css">
+<script type="text/javascript" id="" charset="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","991738589185829");fbq("track","PageView");</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=991738589185829&amp;ev=PageView&amp;noscript=1"></noscript>
+
+
+<script id="" text="" charset="" type="text/javascript" src="https://playtime.tubemogul.com/ud/prod/universal_ids/segment.js?sid=jbhlgFBK6FEXoahjsEIr&amp;id5pid=1717"></script><script id="" text="" charset="" type="text/javascript" src="https://playtime.tubemogul.com/ud/prod/universal_ids/segment.js?sid=fp8xZtsiOyyxsRLVQc9Z&amp;id5pid=1717"></script><script type="text/javascript" id="" charset="">(function(){var a=function(){EF.init({eventType:"transaction",transactionProperties:"ev_Betpanda_Cryptorino_SiteVisitos_ID5\x3d1\x26ev_transid\x3d\x3ctransid\x3e",segment:"",searchSegment:"",sku:"",userid:"9281",pixelHost:"pixel.everesttech.net",allow3rdPartyPixels:1});EF.main()};window.id5PartnerId=1717;window.EF=window.EF||{};if(window.EF.main)a();else if(window.EF.onloadCallbacks=window.EF.onloadCallbacks||[],window.EF.onloadCallbacks[window.EF.onloadCallbacks.length]=a,!window.EF.jsTagAdded){a=
+document.createElement("script");a.type="text/javascript";a.async=!0;a.src="https://www.everestjs.net/static/st.v3.js";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b);window.EF.jsTagAdded=1}})();</script>
+<noscript><img src="https://pixel.everesttech.net/9281/t?ev_Betpanda_Cryptorino_SiteVisitos_ID5=1&amp;ev_transid=&lt;transid&gt;" width="1" height="1"></noscript><script type="text/javascript" id="" charset="">(function(h){function z(a){var b=["source","medium","campaign","term","content"];b=new RegExp("(utm_("+b.join("|")+")|(d|g)clid)\x3d.*?([^\x26#]*|$)","gi");a=a.match(b);var c;if(a){var e={};var p=a.length;for(c=0;c<p;c++)(b=a[c].split("\x3d"))&&(e[b[0]]=b[1])}return e}function A(a){if(a){var b={"daum.net":{p:"q",n:"daum"},"eniro.se":{p:"search_word",n:"eniro "},"naver.com":{p:"query",n:"naver "},"yahoo.com":{p:"p",n:"yahoo"},"msn.com":{p:"q",n:"msn"},"bing.com":{p:"q",n:"live"},"aol.com":{p:"q",n:"aol"},
+"lycos.com":{p:"q",n:"lycos"},"ask.com":{p:"q",n:"ask"},"altavista.com":{p:"q",n:"altavista"},"search.netscape.com":{p:"query",n:"netscape"},"cnn.com":{p:"query",n:"cnn"},"about.com":{p:"terms",n:"about"},"mamma.com":{p:"query",n:"mama"},"alltheweb.com":{p:"q",n:"alltheweb"},"voila.fr":{p:"rdata",n:"voila"},"search.virgilio.it":{p:"qs",n:"virgilio"},"baidu.com":{p:"wd",n:"baidu"},"alice.com":{p:"qs",n:"alice"},"yandex.com":{p:"text",n:"yandex"},"najdi.org.mk":{p:"q",n:"najdi"},"seznam.cz":{p:"q",
+n:"seznam"},"search.com":{p:"q",n:"search"},"wp.pl":{p:"szukaj ",n:"wirtulana polska"},"online.onetcenter.org":{p:"qt",n:"o*net"},"szukacz.pl":{p:"q",n:"szukacz"},"yam.com":{p:"k",n:"yam"},"pchome.com":{p:"q",n:"pchome"},"kvasir.no":{p:"q",n:"kvasir"},"sesam.no":{p:"q",n:"sesam"},"ozu.es":{p:"q",n:"ozu "},"terra.com":{p:"query",n:"terra"},"mynet.com":{p:"q",n:"mynet"},"ekolay.net":{p:"q",n:"ekolay"},"rambler.ru":{p:"words",n:"rambler"},google:{p:"q",n:"google"}},c=h.createElement("a"),e={};c.href=
+a;c.hostname.indexOf("google")>-1&&(m="google");b[m]?(a=b[m],b=new RegExp(a.p+"\x3d.*?([^\x26#]*|$)","gi"),c=c.search.match(b),e.source=a.n,e.medium="organic",e.term=(c?c[0].split("\x3d")[1]:"")||"(not provided)"):m!==q&&(e.source=c.hostname,e.medium="referral");return e}}function x(a,b,c,e,p){a=a+"\x3d"+b+";";c&&(a+="Expires\x3d"+c.toGMTString()+";");e&&(a+="Path\x3d"+e+";");p&&(a+="Domain\x3d"+p+";");h.cookie=a}function r(a){var b="; "+h.cookie;a=b.split("; "+a+"\x3d");if(a.length>1)return a.pop().split(";")[0]}
+function y(a){if(a){var b=h.createElement("a");b.href=a;try{return b.hostname.match(/[^.]*\.[^.]{2,3}(?:\.[^.]{2,3})?$/)[0]}catch(c){}}}var t=h.referrer,f={utmcsr:"(direct)",utmcmd:"(none)",utmccn:"(not set)"},u=h.location.hostname,q=y(u),m=y(h.referrer),l=r("__utmzzses");u=new Date(+new Date+62208E6);var v=h.location.search.replace("?",""),d=h.location.hash.replace("#","");d=z(v+"#"+d);var g=A(t),n=r("__utmz")||r("__utmzz");t=[];var w={utm_source:"utmcsr",utm_medium:"utmcmd",utm_campaign:"utmccn",
+utm_content:"utmcct",utm_term:"utmctr",gclid:"utmgclid",dclid:"utmdclid"};v=["utmcsr","utmcmd","utmccn","utmcct","utmctr"];var k;l&&m===q&&(g=d=null);if(d&&(d.utm_source||d.gclid||d.dclid)){for(k in d)typeof d[k]!=="undefined"&&(l=w[k],f[l]=d[k]);if(d.gclid||d.dclid)f.utmcsr="google",f.utmcmd=f.utmgclid?"cpc":"cpm"}else if(g)f.utmcsr=g.source,f.utmcmd=g.medium,g.term&&(f.utmctr=g.term);else if(n)for(f={},n=n.split("|"),w=n.length,g=0;g<w;g++)l=n[g].split("\x3d"),d=l[0].split(".").pop(),f[d]=l[1];
+for(k in f)typeof f[k]!=="undefined"&&v.indexOf(k)>-1&&t.push(k+"\x3d"+f[k]);r("initialTrafficSource")||x("initialTrafficSource",t.join("|"),u,"/",q);x("__utmzzses",1,null,"/",q)})(document);</script>
+<script type="text/javascript" id="" charset="">!function(d,e,f,a,b,c){d.twq||(a=d.twq=function(){a.exe?a.exe.apply(a,arguments):a.queue.push(arguments)},a.version="1.1",a.queue=[],b=e.createElement(f),b.async=!0,b.src="https://static.ads-twitter.com/uwt.js",c=e.getElementsByTagName(f)[0],c.parentNode.insertBefore(b,c))}(window,document,"script");twq("config","p3c9e");</script>
+
+
+
+<script type="text/javascript" id="" charset="">(function(a){a.src="//dmp.adform.net/dmp/profile/?pid\x3d12718\x26sg\x3dBetPanda_AllVisitors"})(document.createElement("img"));</script>
+<noscript>
+    <img src="//dmp.adform.net/dmp/profile/?pid=12718&amp;sg=BetPanda_AllVisitors" style="display:none !important">
+</noscript>
+<script type="text/javascript" id="" charset="">fbq("track","PageView");</script><iframe src="https://pixel.everesttech.net/9281/gr?ev_gb=0&amp;url=https%3A%2F%2Fwww.everestjs.net%2Fstatic%2Fpixel_details.html%23google%3D__EFGCK__%26gsurfer%3D__EFGSURFER__%26imsId%3D__EFIMSORGID__%26optout%3D__EFOPTOUT__%26throttleCookie%3D__EFSYNC__%26time%3D__EFTIME__" height="0" width="0" style="display: none;"></iframe><img src="https://t.co/1/i/adsct?bci=4&amp;dv=UTC%26id-ID%2Cid%2Cen-US%2Cen%26Google%20Inc.%26Linux%20x86_64%26255%261366%26768%264%2624%261366%26768%261%26na&amp;eci=3&amp;event=%7B%7D&amp;event_id=4a997a83-7248-4f0d-874d-1482b3dec997&amp;integration=advertiser&amp;p_id=Twitter&amp;p_user_id=0&amp;pl_id=fd07a8ba-bd13-45d2-b5f0-7920537de894&amp;tw_document_href=https%3A%2F%2Fbetpanda1.io%2Fen%2Finfo%2Fterms&amp;tw_iframe_status=0&amp;tw_pid_src=1&amp;twpid=tw.1776089706667.424767375737663730&amp;txn_id=p3c9e&amp;type=javascript&amp;version=2.3.51" height="1" width="1" fetchpriority="high" style="display: none;"><img src="https://analytics.twitter.com/1/i/adsct?bci=4&amp;dv=UTC%26id-ID%2Cid%2Cen-US%2Cen%26Google%20Inc.%26Linux%20x86_64%26255%261366%26768%264%2624%261366%26768%261%26na&amp;eci=3&amp;event=%7B%7D&amp;event_id=4a997a83-7248-4f0d-874d-1482b3dec997&amp;integration=advertiser&amp;p_id=Twitter&amp;p_user_id=0&amp;pl_id=fd07a8ba-bd13-45d2-b5f0-7920537de894&amp;tw_document_href=https%3A%2F%2Fbetpanda1.io%2Fen%2Finfo%2Fterms&amp;tw_iframe_status=0&amp;tw_pid_src=1&amp;twpid=tw.1776089706667.424767375737663730&amp;txn_id=p3c9e&amp;type=javascript&amp;version=2.3.51" height="1" width="1" fetchpriority="high" style="display: none;"><img height="1" width="1" src="https://pixel.everesttech.net/9281/t?ev_Betpanda_Cryptorino_SiteVisitos_ID5=1&amp;ev_transid=%3Ctransid%3E&amp;linkId=706003391776089707" style="display: none;"><script type="text/javascript" src="https://www.everestjs.net/static/id5-api.js"></script><img height="1" width="1" src="https://cm.everesttech.net/cm" style="display: none;"><div id="chat-widget-container" style="opacity: 1; visibility: visible; z-index: 2147483639; position: fixed; bottom: 0px; width: 84px; height: 84px; max-width: 100%; max-height: calc(100% + 0px); min-height: 0px; min-width: 0px; background-color: transparent; border: 0px; overflow: hidden; right: 0px; transition: none;"><iframe allow="clipboard-read; clipboard-write; autoplay; display-capture *;" src="https://secure.livechatinc.com/customer/action/open_chat?license_id=18575082&amp;group=2&amp;embedded=1&amp;widget_version=3&amp;unique_groups=0&amp;organization_id=301cfe1a-9326-4a24-be85-fcadf9d37e61&amp;use_parent_storage=1&amp;x-region=us-south1" id="chat-widget" name="chat-widget" title="LiveChat chat widget" scrolling="no" style="width: 100%; height: 100%; min-height: 0px; min-width: 0px; margin: 0px; padding: 0px; background-image: none; background-position: 0% 0%; background-size: initial; background-attachment: scroll; background-origin: initial; background-clip: initial; background-color: rgba(0, 0, 0, 0); border-width: 0px; float: none; color-scheme: light; position: absolute; inset: 0px; transition: none !important; display: none; visibility: hidden;"></iframe><iframe id="chat-widget-minimized" name="chat-widget-minimized" title="LiveChat chat widget" scrolling="no" style="width: 100%; height: 100%; min-height: 0px; min-width: 0px; margin: 0px; padding: 0px; background-image: none; background-position: 0% 0%; background-size: initial; background-attachment: scroll; background-origin: initial; background-clip: initial; background-color: rgba(0, 0, 0, 0); border-width: 0px; float: none; color-scheme: light; display: block;"></iframe><div aria-live="polite" id="lc-aria-announcer-polite" tabindex="-1" style="height: 1px; width: 1px; margin: -1px; overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; position: absolute;"></div><div aria-live="assertive" id="lc-aria-announcer-assertive" tabindex="-1" style="height: 1px; width: 1px; margin: -1px; overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; position: absolute;"></div></div><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-M7E3WDXGSQ"></script><script src="https://dcyrouzqit0p7.cloudfront.net/widget/nova-component-inject.js"></script><script src="https://d1835mas0gwu6p.cloudfront.net/scripts/widget/widget-injection.js"></script><img src="https://rtd-tm.everesttech.net/upi/?sid=jbhlgFBK6FEXoahjsEIr&amp;cs=1" style="width:0px; height:0px;">
+<img src="https://rtd-tm.everesttech.net/upi/?sid=fp8xZtsiOyyxsRLVQc9Z&amp;cs=1" style="width:0px; height:0px;"><div><div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; display: block; transition: right 0.3s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"><div class="grecaptcha-logo"><iframe title="reCAPTCHA" width="256" height="60" role="presentation" name="a-z3xmyp75d09j" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LfuwEkrAAAAAKJn2Eo7w-LhphI7zuR8TpCR3mRP&amp;co=aHR0cHM6Ly9iZXRwYW5kYTEuaW86NDQz&amp;hl=id&amp;v=gTpTIWhbKpxADzTzkcabhXN4&amp;size=invisible&amp;anchor-ms=20000&amp;execute-ms=30000&amp;cb=nuwr6cpphctl"></iframe></div><div class="grecaptcha-error"></div><textarea id="g-recaptcha-response-100000" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div><iframe src="about:blank" style="display: block !important; position: absolute; top: 0px; left: 0px; visibility: hidden;"></iframe><img height="1" width="1" src="https://pixel.everesttech.net/9281/t?ef_id5=ID5*TpftKwoyfotJQTxbNeznzAnj5dJsUehYq3KY_dNWyVz__2nc-mtaAAEBCmnc-k8Anu5Ivb4Uns96rSTgVRfolQ&amp;ev_Betpanda_Cryptorino_SiteVisitos_ID5=1&amp;ev_transid=%3Ctransid%3E&amp;linkId=706003391776089707" style="display: none;"></body></html>

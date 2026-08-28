@@ -1,0 +1,1815 @@
+<html lang="en" style="scroll-behavior: smooth;"><head>
+	
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Cambium Assessment</title>
+  
+<!-- Umami Tag Container-->
+<script defer="" src="https://analytics.cambiumast.com/script.js" data-website-id="78adb57c-d359-4299-95e1-27fd381ec3c4"></script>
+<!-- End Umami Tag Container -->
+
+<!-- Load umami-kit to track time on page, scroll depth, clicks, external link clicks, downloads-->
+<script defer="" src="/static/common/umami-kit.js"></script>
+
+<script>
+window.addEventListener('load', () => {
+  // Check if UmamiTracker exists; if not, exit silently
+  if (typeof UmamiTracker === 'undefined') return;
+
+  const kit = new UmamiTracker({
+    debug: false,                
+    autoTrackClicks: true,       
+    autoTrackAllClicks: true,    
+    
+    beforeSend: (type, payload) => {
+      const downloadMatch = payload.data?.url?.match(/\.(pdf|doc|docx|xls|xlsx|zip|csv)$/i);
+      
+      if (payload.name === 'download' || downloadMatch) {
+        const url = payload.data.url;
+        payload.data.fileName = url.split('/').pop().split('#')[0].split('?')[0];
+        payload.data.fileType = url.split('.').pop().toLowerCase();
+        payload.data.pagePath = window.location.pathname;
+      }
+      
+      if (payload.name === 'click') {
+        payload.data.pagePath = window.location.pathname;
+      }
+      
+      return payload;
+    }
+  });
+
+  kit.trackDownloads();
+});
+</script>
+
+
+<!-- Auto-track with config -->
+
+  <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-cai.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/client.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/backgrounds.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/cards.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/content.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/did-you-know.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/reveal.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/svg-icons.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/accessibility_widget.css">
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <script src="/static/js/jquery.min.js"></script>
+  <script src="/static/js/jquery-ui.min.js"></script>
+  <script src="/static/js/gsap/gsap.min.js"></script>
+  <script src="/static/js/gsap/ScrollToPlugin.min.js"></script>
+  <script src="/static/js/gsap/ScrollTrigger.min.js"></script>
+  <script src="/static/js/gsap/DrawSVGPlugin.min.js"></script>
+  <script src="/static/js/gsap/MotionPathPlugin.min.js"></script>
+  <script src="/static/js/gsap/CustomEase.min.js"></script>
+  <script src="/static/js/accessibility_widget.js"></script>
+  <script src="/config/en/tag-lookup.js"></script>
+  <script src="/static/common/daisi-card-deck.js"></script>
+  <script src="/static/common/daisi-quicklinks.js"></script>
+  <script src="/static/common/daisi-html.js"></script>
+  <script src="/static/common/daisi-resource-item.js"></script>
+  <script src="/static/common/daisi-resource-list.js"></script>
+  <script src="/static/common/daisi-announcement.js"></script>
+  <script src="/static/common/daisi-event.js"></script>
+  <script src="/static/common/daisi-page.js"></script>
+	<style>
+  .logo {
+  transform: scale(1.35) translate(2rem, 1rem);
+}
+
+.home-col-grid {
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  grid-template-rows: 5rem repeat(2, 1fr) .5rem repeat(2, 1fr) .5rem repeat(2, 1fr) 2rem repeat(2, 1fr) 2rem repeat(2, 1fr) 5rem;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.home-col-grid>div {
+  background-color: transparent;
+}
+
+.home-col-grid>.card-emblem-left-top {
+  grid-template-columns: 1fr 4.5fr;
+}
+
+.home-col-grid>div:nth-child(1) {
+  grid-area: 1 / 13 / 19 / 19;
+}
+
+.home-col-grid>div:nth-child(2) {
+  grid-area: 2 / 1 / 4 / 8;
+}
+
+.home-col-grid>div:nth-child(3) {
+  grid-area: 5 / 6 / 7 / 13;
+}
+
+.home-col-grid>div:nth-child(4) {
+  grid-area: 8 / 2 / 10 / 9;
+}
+
+.home-col-grid>div:nth-child(5) {
+  grid-area: 11 / 4 / 13 / 13;
+}
+
+.home-col-grid>div:nth-child(6) {
+  grid-area: 14 / 1 / 16 / 10;
+}
+
+.home-col-grid>.card-emblem-left-top .card-image-wrapper .card-image {
+  width: 100%;
+  height: auto;
+}
+
+.home-col-grid>div .card-body .card-title {
+  font-size: 2.2rem;
+}
+
+.home-col-grid>div .card-body .card-text {
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.5;
+  margin-top: 0;
+}
+
+.home-col-grid div:nth-child(2) {
+  transition-delay: .15s !important;
+}
+
+.home-col-grid div:nth-child(3) {
+  transition-delay: .3s !important;
+}
+
+.home-col-grid div:nth-child(4) {
+  transition-delay: .45s !important;
+}
+
+.home-col-grid div:nth-child(5) {
+  transition-delay: .6s !important;
+}
+
+.home-col-grid div:nth-child(6) {
+  transition-delay: .75s !important;
+}
+
+
+/* METRIC LEAF BUDS */
+
+.home-col-grid .metricBud.mBud01 {
+  transform-origin: 1.5em 0em;
+}
+
+.home-col-grid .metricBud.mBud03 {
+  transform-origin: 1.5em 1.5em;
+}
+
+.home-col-grid .metricBud.mBud04 {
+  transform-origin: 0 1.5em;
+}
+
+.home-col-grid .metricBud.mBud05 {
+  transform-origin: 0 1.5em;
+}
+
+.home-col-grid .metricBud.mBud06 {
+  transform-origin: 0 0;
+}
+
+.home-col-grid .metricBud.mBud08 {
+  transform-origin: 1.5em 1.5em;
+}
+
+.home-col-grid .metricBud.mBud09 {
+  transform-origin: 1.5em 1.5em;
+}
+
+.home-col-grid .metricBud.mBud10 {
+  transform-origin: 1.5em 0;
+}
+
+
+.main-text .card .card-text {
+  margin-top: 0rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(-bs-body-color);
+}
+
+/*fix for state services page, where there is no text on top of the leaves*/
+.metricLeaf {
+  fill: #2c9ed9;
+}
+.metricVine {
+  stroke: #2c9ed9;
+}
+.metricBranch {
+  stroke: #2c9ed9;
+}
+.metricBud {
+  fill: #9fd8f7;
+}
+/*
+    "PRACTICE WITH US" INFO-METRIC DEFINITIONS
+    */
+#offeringsPracticeTest .metricGridCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+}
+
+
+.metricGridCard li {
+  list-style-type: none;
+
+}
+
+#offeringsPracticeTest .metricText {
+  display: block;
+  text-align: left;
+  padding: 0;
+  font-size: 2.15em;
+  font-weight: 400;
+  opacity: 1;
+  margin-bottom: .75rem
+}
+
+#offeringsPracticeTest .metricText.mText01,
+#offeringsPracticeTest .metricText.mText03 span,
+#offeringsPracticeTest .metricText.mText04 span {
+  /* color: var(--bs-primary-darker); */
+  font-weight: bold;
+}
+
+
+
+#offeringsPracticeTest .text-white {
+  color: #ffffff !important;
+}
+
+#offeringsPracticeTest .metricGridCard ul {
+  padding-left: 0;
+}
+
+.home .jumbotron h2,
+.home .jumbotron p.subtitle {
+  color: #000000;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  font-family: var(--bs-font-slab-serif);
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  margin-top: 1rem;
+  /* max-width: 50%; */
+  font-weight: 300;
+  display: block;
+}
+
+.card-rings-white-ltr,
+.card-rings-white-rtl {
+  background-color: white;
+}
+
+/*added only for homepage cards. JKT*/
+.home .card-deck-flex .card {
+  margin: 1.5rem;
+}
+
+.home .card-deck-flex .card-7col {
+  flex: 1 0 calc(58.33% - 4rem);
+  min-width: calc(58.33% - 4rem);
+  max-width: calc(58.33% - 4rem);
+}
+
+.home .card .card-title {
+  font-size: 1.6rem;
+  line-height: 1.2;
+  color: var(--bs-primary-darker);
+}
+
+.home .card .card-subtitle {
+  margin-top: .22rem;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+.home .card .card-text {
+  line-height: 1.5;
+  font-weight: 400;
+  margin: 1rem 0;
+}
+
+.home .jumbotron h1 {
+  font-size: clamp(3.6rem, 3.55556vw, 10rem);
+  font-weight: 400;
+  font-family: var(--bs-font-slab-serif);
+  line-height: 1.125;
+  font-weight: 600;
+}
+
+.home .jumbotron h1 .text-colored {
+  font-weight: 600;
+
+}
+
+/*
+    "Landing Page 5Star" INFO-METRIC DEFINITIONS
+    */
+
+h2.no-slab > a:hover:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border-bottom: .25rem solid var(--bs-warning);
+    opacity: .5;
+}
+
+p.extra {
+  margin-bottom: 0;
+}
+
+.card.cambi-card.card-emblem-top-center .card-image-wrapper .card-image {
+  transform: scale(1.65);
+  height: 10rem;
+  width: 10rem;
+  margin-top: -3rem;
+}
+
+.card.cambi-card.card-emblem-top-center {
+  grid-template-rows: calc(10rem + var(--bs-card-spacer-y)) 4fr;
+}
+
+.home .card-deck-flex .card.cambi-card {
+  margin: 1.5rem;
+  overflow: visible;
+}
+
+
+
+@media screen and (max-width: 1366px) {
+  .logo {
+    transform: initial;
+  }
+  #offeringsPracticeTest .metricGridCard {
+    transform: scale(.75);
+  }
+}
+
+
+@media screen and (min-width: 1400px) {
+  .home-col-grid>div:nth-child(5) {
+    grid-template-columns: 1fr 6.5fr !important;
+  }
+  
+  .home-col-grid>div:nth-child(6) {
+    grid-template-columns: 1fr 6.5fr !important;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399.98px) {
+
+  .home-col-grid>div:nth-child(2) {
+    grid-area: 2 / 1 / 4 / 10;
+    grid-template-columns: 1fr 5fr;
+  }
+  
+  .home-col-grid>div:nth-child(3) {
+    grid-area: 5 / 4 / 7 / 13;
+    grid-template-columns: 1fr 5fr;
+  }
+  
+  .home-col-grid>div:nth-child(4) {
+    grid-area: 8 / 2 / 10 / 11;
+    grid-template-columns: 1fr 5fr;
+  }
+  
+  .home-col-grid>div:nth-child(5) {
+    grid-area: 11 / 5 / 13 / 16;
+    grid-template-columns: 1fr 7fr;
+  }
+  
+  .home-col-grid>div:nth-child(6) {
+    grid-area: 14 / 1 / 16 / 12;
+    grid-template-columns: 1fr 7fr;
+  }
+  
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {
+
+  .jumbotron {
+    padding: 0;
+  } 
+
+  .home-col-grid {
+    display: grid;
+    grid-template-columns: repeat(18, 1fr);
+    grid-template-rows: 5rem auto 1rem auto 1rem auto 1rem auto 1rem auto 1rem;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+  
+  .home-col-grid>div {
+    background-color: transparent;
+  }
+  
+  .home-col-grid>.card-emblem-left-top {
+    grid-template-columns: 1fr 4.5fr;
+  }
+  
+  .home-col-grid>div:nth-child(1) {
+    grid-area: 1 / 11 / 19 / 19;
+    overflow-x: visible;
+    position: relative;
+  }
+
+  .metricGridSVGBG SVG {
+    width: 25rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow-x: hidden;
+  }
+  
+  .home-col-grid>div:nth-child(2) {
+    grid-area: 2 / 1 / 3 / 11;
+  }
+  
+  .home-col-grid>div:nth-child(3) {
+    grid-area: 4 / 1 / 5 / 11;
+  }
+  
+  .home-col-grid>div:nth-child(4) {
+    grid-template-columns: 1fr 6.75fr !important;
+    grid-area: 6 / 1 / 7 / 15;
+  }
+  
+  .home-col-grid>div:nth-child(5) {
+    grid-template-columns: 1fr 6.75fr !important;
+    grid-area: 8 / 1 / 9 / 15;
+  }
+  
+  .home-col-grid>div:nth-child(6) {
+    grid-template-columns: 1fr 6.75fr !important;
+    grid-area: 10 / 1 / 11 / 15;
+  }
+  
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+
+  .home-col-grid {
+    overflow-x: hidden;
+  }
+
+  #landing5StarVine > .container {
+    max-width: calc(360px + 50%);
+    margin-right: .75rem;
+  }
+
+  .jumbotron {
+    padding: 0;
+  } 
+
+
+  .home-col-grid {
+    display: grid;
+    grid-template-columns: repeat(18, 1fr);
+    grid-template-rows: 5rem auto 1rem auto 1rem auto 1rem auto 1rem auto 1rem;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+  
+  .home-col-grid>div {
+    background-color: transparent;
+  }
+  
+  .home-col-grid>.card-emblem-left-top {
+    grid-template-columns: 1fr 4.5fr;
+  }
+  
+  .home-col-grid>div:nth-child(1) {
+    grid-area: 1 / 11 / 19 / 19;
+    overflow-x: visible;
+    position: relative;
+  }
+
+  .metricGridSVGBG SVG {
+    width: 25rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow-x: hidden;
+  }
+  
+  .home-col-grid>div:nth-child(2) {
+    grid-area: 2 / 1 / 3 / 12;
+  }
+  
+  .home-col-grid>div:nth-child(3) {
+    grid-area: 4 / 1 / 5 / 12;
+  }
+  
+  .home-col-grid>div:nth-child(4) {
+    grid-template-columns: 1fr 6.5fr !important;
+    grid-area: 6 / 1 / 7 / 16;
+  }
+  
+  .home-col-grid>div:nth-child(5) {
+    grid-template-columns: 1fr 6.5fr !important;
+    grid-area: 8 / 1 / 9 / 16;
+  }
+  
+  .home-col-grid>div:nth-child(6) {
+    grid-template-columns: 1fr 6.5fr !important;
+    grid-area: 10 / 1 / 11 / 16;
+  }
+  
+}
+
+
+@media screen and (max-width: 767.98px) {
+  .card-deck-flex {
+    flex-direction: column;
+  }
+
+  .home .card-deck-flex .card-7col,
+  .home .card-deck-flex .card-5col {
+    flex: 1 1 100%;
+    min-width: fit-content;
+    max-width: fit-content;
+  }
+
+  .home-col-grid {
+    display: block;
+  }
+
+  .metricGridSVGBG {
+    display: none;
+  }
+  /* Radd - remove or use your positioning if you prefer to do that */
+  .home-col-grid>div:nth-child(5),
+  .home-col-grid>div:nth-child(6) {
+    grid-template-columns: 1fr 4.5fr !important;
+}
+
+}
+
+
+
+
+#family-portal-metrics .infograph-description h2 {
+  line-height: 1.1;
+}
+
+@media only screen and (min-width: 992px) {
+
+  #family-portal-metrics .infograph-widget {
+    display: flex;
+    justify-content: flex-start;
+    margin: 1rem 0;
+  }
+
+  #family-portal-metrics .infograph-description {
+    max-width: unset;
+  }
+
+  #family-portal-metrics .infograph-stats {
+    padding-top: 0;
+    min-width: unset;
+    padding-left: 0;
+  }
+}
+
+
+.fw-50 {
+  width: 50%;
+  min-width: 50%;
+  max-width: 50%;
+}
+
+@media only screen and (max-width: 992.98px) {
+  .infographic-margin-fix {
+      margin-left: -1.75rem !important;
+  }
+}
+
+@media screen and (max-width: 499.98px) {
+  .home-col-grid {
+    display: block;
+    padding: 0 0.5rem;
+  }
+  .card-deck-flex {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .home .card {
+    margin: 1rem 0;
+    font-size: 1rem;
+  }
+  .logo {
+    transform: scale(1.1) translate(0.5rem, 0.5rem);
+    max-width: 80vw;
+  }
+  .main-text .card .card-text {
+    font-size: 1rem;
+  }
+  .home .jumbotron h1 {
+    font-size: 2.2rem;
+  }
+  .home .jumbotron h2 {
+    font-size: 1rem;
+  }
+  .home .jumbotron .col-solid-left {
+    padding: 0 0.5rem;
+  }
+  .home-col-grid>div .card-body .card-title {
+    font-size: 1.75rem;
+}
+
+}
+  </style>
+
+</head>
+<body id="page-home" class="home cai-bg-waves-pale-1" style=""><cambium-accessibility-widget id="cambium-accessibility-widget" excludes="line-reader,reading-mask,saturation">
+            <cambium-accessibility-widget-button>
+            <button class="cambium-accessibility-widget-button" aria-label="Open Accessibility Tools"></button>
+        </cambium-accessibility-widget-button>
+        </cambium-accessibility-widget>
+<div class="pageMain">
+
+
+ <a class="skipNav" href="#skipToContent">Skip Navigation</a>
+<header class="container-fluid">
+  <div class="banner clear container">
+
+   
+    <nav class="navbar navbar-expand-md navbar-light">
+      <!--logo-->
+      <a class="logo logo navbar-brand logo-main m-1 m-sm-2" href="index.html" title="Cambium Assessments Logo">
+        <span class="offScreen">Cambium Assessments Logo</span>
+      </a>
+      <!--mobile menu button-->
+      <button class="navbar-toggler m-1  m-sm-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          
+<ul class="navbar-nav ml-auto d-flex ">
+
+<li class="nav-item dropdown " id="topNavItem5">
+	<a class="nav-link dropdown-toggle" href="/about.html" id="topNavDropdown5" role="button" data-bs-toggle="dropdown" data-bs-reference="parent" aria-haspopup="true" aria-expanded="false">About</a>
+	<div class="dropdown-menu" aria-labelledby="topNavDropdown5"><ul>
+		<li><a class="dropdown-item" href="/about.html" id="topSubItem3">About</a></li><li><a class="dropdown-item" href="/did-you-know.html" id="topSubItem6">Did You Know?</a></li><li><a class="dropdown-item" href="/deib.html" id="topSubItem7">DEIB</a></li><li><a class="dropdown-item" href="/supplier-diversity.html" id="topSubItem8">Supplier Diversity</a></li><li><a class="dropdown-item" href="news.html" id="topSubItem13">News</a></li><li><a class="dropdown-item" href="publications.html" id="topSubItem14">Insights and Expertise</a></li><li><a class="dropdown-item" href="/contact.html" id="topSubItem9">Contact Us</a></li>
+	</ul></div>
+</li>
+
+<li class="nav-item " id="topNavItem2">
+	<a class="nav-link" href="/capabilities.html">Capabilities</a>
+</li>
+
+<li class="nav-item " id="topNavItem4">
+	<a class="nav-link" href="/commitments.html">Commitments</a>
+</li>
+
+<li class="nav-item " id="topNavItem10">
+	<a class="nav-link" href="/our-offerings.html"><span>Our </span>Offerings</a>
+</li>
+
+<li class="nav-item " id="topNavItem11">
+	<a class="nav-link" href="/state-services.html">State Services</a>
+</li>
+
+<li class="nav-item " id="topNavItem12">
+	<a class="nav-link" href="/clearsight.html">ClearSight</a>
+</li>
+
+<li class="nav-item " id="topNavItem15">
+	<a class="nav-link" href="sitesearch.html"><span class="visually-hidden">Search</span></a>
+</li>
+
+</ul>
+
+          
+        </div>
+     
+    </nav>
+
+  </div>
+</header>
+
+
+
+  
+    <main>
+      <!-- ANCHOR jumbotron
+  *   ######################################
+  *   #  jumbotron
+  *   ######################################
+  -->
+      <div class="container-fluid  banner jumbotron">
+        <div class="row">
+          <div class="col d-flex flex-column col-solid-left mx-xs-4 pt-6 justify-content-center align-items-start">
+  
+            <h1 class="cai-bold title-slab">The <span class="text-dk-blue  text-colored ">Leader</span> in Online Testing
+            </h1>
+  
+            <p class="subtitle">Cambium Assessment delivers valid and innovative tests at scale so that every student, family,
+              and teacher feels seen, valued, and supported. </p>
+            <a href="contact.html" class="btn btn-lg  my-3  btn-contact">Contact Us</a>
+  
+          </div>
+          <div class="col col-fluid-right d-none d-md-block mt-6">
+  
+  
+            <div class="cai-reveal" data-slide-duration="9500" id="homeCarouselReveal">
+              <button id="disableAnim" onclick="toggleAllRevealAnimations();">Disable Animation</button>
+  
+              <div class="collage-grid collage-grid-home-01 cai-reveal-slide">
+                <div class="collage-panel collage-panel-home-01-a collage-panel-img cai-reveal-slide-element" data-transition="wipeleft">
+                  <img src="/assets/boy-c-01.jpg" alt="">
+                </div>
+                <div class="collage-panel collage-panel-home-01-b collage-panel-img cai-reveal-slide-element" data-transition="wiperight">
+                   <video autoplay="" loop="" muted="">
+                    <source src="https://files.portal.cambiumast.com/corporate-site/videos/boy-d.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="collage-panel collage-panel-home-01-c collage-panel-img cai-reveal-slide-element" data-transition="wipedown">
+                  <img src="/assets/boy-c-02.jpg" alt="">
+                </div>
+              </div>
+  
+  
+              <div class="collage-grid collage-grid-home-02 cai-reveal-slide">
+                <div class="collage-panel collage-panel-home-02-a collage-panel-img cai-reveal-slide-element" data-transition="wipeup">
+                  <img src="/assets/teen-girl-03.jpg" alt="">
+                </div>
+                <div class="collage-panel collage-panel-home-02-b collage-panel-img cai-reveal-slide-element" data-transition="wipeup">
+                  <img src="/assets/teen-girl-02.jpg" alt="">
+                </div>
+                <div class="collage-panel collage-panel-home-02-c collage-panel-img cai-reveal-slide-element" data-transition="wipedown">
+                  <img src="/assets/teen-girl-01.jpg" alt="">
+                </div>
+              </div>
+  
+  
+              <!-- <div class="collage-grid collage-grid-home-03 cai-reveal-slide">
+                <div class="collage-panel collage-panel-home-03-a collage-panel-img cai-reveal-slide-element"
+                  data-transition="wipeleft">
+                  <img src="/assets/ld-boy-01.jpg" alt="">
+                </div>
+                <div class="collage-panel collage-panel-home-03-b collage-panel-img cai-reveal-slide-element"
+                  data-transition="wiperight">
+                  <img src="/assets/ld-boy-03.jpg" alt="">
+                </div>
+                <div class="collage-panel collage-panel-home-03-c cai-reveal-slide-element" data-transition="circle">
+                  <video autoplay loop muted>
+                    <source src="https://files.portal.cambiumast.com/corporate-site/videos/ld-boy.mov" type="video/mp4">
+                  </video>
+                </div>
+              </div> -->
+  
+
+               <div class="collage-grid collage-grid-home-03 cai-reveal-slide">
+                <div class="collage-panel collage-panel-home-03-a collage-panel-img cai-reveal-slide-element" data-transition="wipeleft">
+                  <img src="/assets/young-girl-01.jpg" alt="">
+                </div>
+                <div class="collage-panel collage-panel-home-03-b collage-panel-img cai-reveal-slide-element" data-transition="wiperight">
+                  <img src="/assets/young-girl-02.jpg" alt="">
+                </div>
+                <div class="collage-panel collage-panel-home-03-c cai-reveal-slide-element" data-transition="circle">
+                  <img src="/assets/young-girl-03.jpg" alt="">  
+                </div>
+              </div>
+  
+              <div class="collage-grid collage-grid-home-04 cai-reveal-slide">
+                <div class="collage-panel collage-panel-home-04-a collage-panel-img cai-reveal-slide-element" data-transition="wipeup">
+                  <img src="/assets/brown-eyed-girl-01.jpg" alt="">
+                </div>
+                <div class="collage-panel collage-panel-home-04-b collage-panel-img cai-reveal-slide-element" data-transition="wipeleft">
+                  <img src="/assets/brown-eyed-girl-03.jpg" alt="">
+                </div>
+                <div class="collage-panel collage-panel-home-04-c collage-panel-img cai-reveal-slide-element" data-transition="wiperight">
+                  <img src="/assets/brown-eyed-girl-02.jpg" alt="">
+                </div>
+              </div>
+
+               <div class="collage-grid collage-grid-home-05 cai-reveal-slide">
+                <div class="collage-panel collage-panel-home-05-a collage-panel-img cai-reveal-slide-element" data-transition="wipeup">
+                  <img src="/assets/teacher-01.jpg" alt="">
+                </div>
+                <div class="collage-panel collage-panel-home-05-b collage-panel-img cai-reveal-slide-element" data-transition="wipeup">
+                  <img src="/assets/teacher-03.jpg" alt="">
+                </div>
+                <div class="collage-panel collage-panel-home-05-c collage-panel-img cai-reveal-slide-element" data-transition="wipedown">
+                  <img src="/assets/teacher-02.jpg" alt="">
+                </div>
+              </div>
+  
+            </div>
+  
+  
+          </div>
+        </div>
+  
+      </div>
+  
+  
+      <!-- ANCHOR 5 Star Service
+  *   ######################################
+  *   #  5 Star Service
+  *   ######################################
+  -->
+      <div class="container-fluid " id="landing5StarVine">
+        <div class="container" id="skipToContent" tabindex="-1">
+          <div class="row">
+            <div class="col home-col-grid">
+  
+  
+              <div class="metricGridSVGBG">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 416 608">
+  
+                  <path class="metricLeaf mLeaf01" d="m216,48h40v40c0,13.25-10.75,24-24,24h-40v-40c0-13.25,10.75-24,24-24Z" style="opacity: 1;"></path>
+                  <path class="metricLeaf mLeaf02" d="m152,192h40v40c0,13.25-10.75,24-24,24h-40v-40c0-13.25,10.75-24,24-24Z" transform="translate(384 64) rotate(90)" style="opacity: 1;"></path>
+                  <path class="metricLeaf mLeaf03" d="m264,336h40v40c0,13.25-10.75,24-24,24h-40v-40c0-13.25,10.75-24,24-24Z" style="opacity: 1;"></path>
+                  <path class="metricLeaf mLeaf04" d="m184,480h40v40c0,13.25-10.75,24-24,24h-40v-40c0-13.25,10.75-24,24-24Z" transform="translate(704 320) rotate(90)" style="opacity: 0.9118;"></path>
+  
+                  <path class="metricVine" d="m255.6,0l.4,48v40c0,13.25-10.75,24-24,24h-40v-40c0-13.25,10.75-24,24-24h48c13.25,0,24,10.75,24,24v64c0,13.25-10.75,24-24,24h-112c-13.25,0-24,10.75-24,24v48c0,13.25,10.75,24,24,24h40v-40c0-13.25-10.75-24-24-24h-48c-13.25,0-24,10.75-24,24v64c0,13.25,10.75,24,24,24h160c13.25,0,24,10.75,24,24v48c0,13.25-10.75,24-24,24h-40v-40c0-13.25,10.75-24,24-24h40c13.25,0,24,10.75,24,24v72c0,13.25-10.75,24-24,24h-120c-13.25,0-24,10.75-24,24h0v40c0,13.25,10.75,24,24,24h40v-40c0-13.25-10.75-24-24-24h-40" style="stroke-dashoffset: 0; stroke-dasharray: none;"></path>
+  
+                  <path class="metricBranch mBranch01" d="m288,88v12c0,11.05,8.95,20,20,20h0c11.05,0,20,8.95,20,20v28" style="stroke-dashoffset: 0; stroke-dasharray: none;"></path>
+                  <path class="metricBranch mBranch02" d="m96,224h0c0,8.84-7.16,16-16,16h-8c-8.84,0-16-7.16-16-16v-48" style="stroke-dashoffset: 0; stroke-dasharray: none;"></path>
+                  <path class="metricBranch mBranch03" d="m272,304h84c11.05,0,20,8.95,20,20v12" style="stroke-dashoffset: 0; stroke-dasharray: none;"></path>
+                  <path class="metricBranch mBranch04" d="m184,456h-32c-8.84,0-16,7.16-16,16h0c0,8.84-7.16,16-16,16h-24" style="stroke-dashoffset: 0; stroke-dasharray: 98.326px, 8.04966px;"></path>
+  
+                  <path class="metricBud mBud01" d="m308,144c-6.63,0-12,5.37-12,12v12h12c6.63,0,12-5.37,12-12v-12h-12Z" data-svg-origin="320 144" transform="matrix(1,0,0,1,0,0)" style="translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 1;"></path>
+                  <path class="metricBud mBud02" d="m348,160h-12v12c0,6.63,5.37,12,12,12h12v-12c0-6.63-5.37-12-12-12Z" data-svg-origin="336 160" transform="matrix(1,0,0,1,0,0)" style="translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 1;"></path>
+                  <path class="metricBud mBud03" d="m36,200h-12v12c0,6.63,5.37,12,12,12h12v-12c0-6.63-5.37-12-12-12Z" data-svg-origin="48 224" transform="matrix(1,0,0,1,0,0)" style="translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 1;"></path>
+                  <path class="metricBud mBud04" d="m76,160c-6.63,0-12,5.37-12,12v12h12c6.63,0,12-5.37,12-12v-12h-12Z" data-svg-origin="64 184" transform="matrix(1,0,0,1,0,0)" style="translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 1;"></path>
+                  <path class="metricBud mBud05" d="m324,272c-6.63,0-12,5.37-12,12v12h12c6.63,0,12-5.37,12-12v-12h-12Z" data-svg-origin="312 296" transform="matrix(1,0,0,1,0,0)" style="translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 1;"></path>
+                  <path class="metricBud mBud06" d="m340,312h-12v12c0,6.63,5.37,12,12,12h12v-12c0-6.63-5.37-12-12-12Z" data-svg-origin="328 312" transform="matrix(1,0,0,1,0,0)" style="translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 1;"></path>
+                  <path class="metricBud mBud07" d="m396,328h-12v12c0,6.63,5.37,12,12,12h12v-12c0-6.63-5.37-12-12-12Z" data-svg-origin="384 328" transform="matrix(0.97784,-0.0332,0.0332,0.97784,-2.38016,20.01728)" style="translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 0.9784;"></path>
+                  <path class="metricBud mBud08" d="m148,424h-12v12c0,6.63,5.37,12,12,12h12v-12c0-6.63-5.37-12-12-12Z" data-svg-origin="160 448" transform="matrix(0.97784,0.0332,-0.0332,0.97784,18.4192,4.61568)" style="translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 0.9784;"></path>
+                  <path class="metricBud mBud09" d="m108,456h-12v12c0,6.63,5.37,12,12,12h12v-12c0-6.63-5.37-12-12-12Z" data-svg-origin="120 480" transform="matrix(0,0,0,0,120,480)" style="translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 0;"></path>
+                  <path class="metricBud mBud10" d="m92,496c-6.63,0-12,5.37-12,12v12h12c6.63,0,12-5.37,12-12v-12h-12Z" data-svg-origin="104 496" transform="matrix(0.01665,-0.10185,0.10185,0.01665,51.7508,498.334)" style="translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 0.1032;"></path>
+  
+                </svg>
+              </div>
+  
+  
+  
+                <div class="card card-leaf card-emblem-left-top viewport-hidden">
+                  <div class="card-image-wrapper">
+                    <div class="card-image"><img src="/assets/icon-trusted-technology.svg" alt=""></div>
+                  </div>
+                  <div class="card-body">
+                    <h2 class="card-title">Trusted Technology</h2>
+                    <p class="card-text">Unparalled scale without compromising reliability, validity, or security</p>
+                  </div>
+                </div>
+  
+  
+  
+                <div class="card card-leaf card-emblem-left-top viewport-hidden">
+                  <div class="card-image-wrapper">
+                    <div class="card-image"><img src="/assets/icon-actionable-reports.svg" alt=""></div>
+                  </div>
+                  <div class="card-body">
+                    <h2 class="card-title">Actionable Reports</h2>
+                    <p class="card-text">Relevant data delivered quickly to schools and homes</p>
+                  </div>
+                </div>
+  
+  
+                <div class="card card-leaf card-emblem-left-top viewport-hidden">
+                  <div class="card-image-wrapper">
+                    <div class="card-image "><img src="/assets/icon-constant-innovation.svg" alt=""></div>
+                  </div>
+                  <div class="card-body">
+                    <h2 class="card-title">Constant Innovation</h2>
+                    <p class="card-text">Industry-leading technology and machine-learning capabilities</p>
+                  </div>
+                </div>
+  
+  
+                <div class="card card-leaf card-emblem-left-top viewport-hidden">
+                  <div class="card-image-wrapper">
+                    <div class="card-image "><img src="/assets/icon-sound-psychometrics.svg" alt=""></div>
+                  </div>
+                  <div class="card-body">
+                    <h2 class="card-title">Sound Psychometrics</h2>
+                    <p class="card-text">Backed by research, our testing services integrate psychometrics with sampling
+                      and statistical
+                      expertise for valid, reliable test results year to year</p>
+                  </div>
+                </div>
+  
+  
+                <div class="card card-leaf card-emblem-left-top viewport-hidden">
+                  <div class="card-image-wrapper">
+                    <div class="card-image"><img src="/assets/icon-beyond-summative-tests.svg" alt="">
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h2 class="card-title">Beyond Summative Tests</h2>
+                    <p class="card-text">The same infrastructure and knowledge for building state tests is also applied to
+                      our ThroughYear,
+                      interim, and formative classroom tests</p>
+                  </div>
+                </div>
+  
+  
+            </div>
+          </div>
+        </div>
+      </div>
+  
+  
+  
+  
+      <!-- ANCHOR Metrics
+  *    ###############################################
+  *   #                                               #
+  *   #  Metrics                                      #
+  *   #                                               #
+  *    ###############################################
+  -->
+  
+      <div class="container-fluid did-u-know mt-up-5rem cai-bg-mesh-sea-4 text-white">
+        <div class="container" id="operational-metrics" style="overflow: hidden;">
+  
+  
+          <div class="row py-4">
+  
+            <div class="clickableWidget py-4">
+              <div class="infograph-widget">
+                <div class="infograph-description textBlur">
+                  <h2>Cambium Assessment leads the industry in K–12 testing
+                  </h2>
+                </div>
+                <div class="infograph-stats row">
+       
+                  <div class="infograph-slot"><a href="/did-you-know.html">
+                    <div class="infograph-fact infograph-fact-01" data-anchor="#infograph01">
+                      <span class="infograph-verb">Administered</span>
+                      <span class="infograph-value"><span class="infograph-animated-count" data-delay="500" data-decimal-places="1">131.7</span><span>M</span>
+                      </span>
+                      <span class="infograph-subject">online tests
+                      </span>
+                    </div>
+                  </a></div>
+  
+                  <div class="infograph-slot"><a href="/did-you-know.html">
+                    <div class="infograph-fact infograph-fact-02" data-anchor="#infograph02">
+                      <span class="infograph-verb">Served</span>
+                      <span class="infograph-value"><span class="infograph-animated-count" data-delay="1000" data-decimal-places="1">1.5</span><span>M</span>
+                      </span>
+                      <span class="infograph-subject">simultaneous testers</span>
+                    </div>
+                  </a></div>
+  
+                  <div class="infograph-slot"><a href="/did-you-know.html">
+                    <div class="infograph-fact infograph-fact-03" data-anchor="#infograph03">
+                      <span class="infograph-verb">Tested</span>
+                      <span class="infograph-value"><span class="infograph-animated-count" data-delay="1500" data-decimal-places="1">15.1</span><span>M</span>
+                      </span>
+                      <span class="infograph-subject">individual students</span>
+                    </div>
+                  </a></div>
+  
+                  <div class="infograph-slot"><a href="/did-you-know.html">
+                    <div class="infograph-fact infograph-fact-04" data-anchor="#infograph04">
+                      <span class="infograph-verb">AI Scanned</span>
+                      <span class="infograph-value"><span class="infograph-animated-count" data-delay="2000" data-decimal-places="1">106.5</span><span>M</span>
+                      </span>
+                      <span class="infograph-subject"><span class="nowrap">student responses</span>
+                        using our AI engine</span>
+                    </div>
+                  </a></div>
+  
+                </div>
+              </div>
+              <div class="infograph-footnote textBlur text-white">
+                <p class="text-right ">Data from the 2024–2025 academic year </p>
+              </div>
+  
+              
+            </div>
+  
+          </div>
+        </div>
+      </div>
+<!-- ANCHOR did u know
+*    ###############################################
+*   #                                               #
+*   #  did u know                                   #
+*   #                                               #
+*    ###############################################
+-->
+
+<div class="container-fluid did-u-know mt-up-5rem cai-bg-quilt-camtasia-2 text-white">
+  <div class="container" id="family-portal-metrics">
+
+    <div class="row py-lg-3">
+      <div class="clickableWidget py-4">
+        <div class="infograph-widget" style="justify-content: space-between !important;">
+          <div class="infograph-stats row col-lg-6 px-3 pb-4 pb-lg-0 infographic-margin-fix">
+
+            <div class="infograph-slot fw-50">
+              <!-- <a href="/family-portal.html"> -->
+              <div class="infograph-fact infograph-fact-01" data-anchor="#infograph01">
+                <span class="infograph-verb">Served</span>
+                <span class="infograph-value"><span class="infograph-animated-count" data-delay="1000" data-decimal-places="0">30</span><span>M</span>
+                </span>
+                <span class="infograph-subject">Family Members
+                </span>
+              </div>
+            <!-- </a> -->
+          </div>
+    
+            <div class="infograph-slot fw-50">
+              <!-- <a href="/family-portal.html"> -->
+              <div class="infograph-fact infograph-fact-02" data-anchor="#infograph02">
+                <span class="infograph-verb">Generated</span>
+                <span class="infograph-value"><span class="infograph-animated-count" data-delay="1500" data-decimal-places="0">366</span><span>M</span>
+                </span>
+                <span class="infograph-subject">Interactions</span>
+              </div>
+            <!-- </a> -->
+          </div>
+            
+          </div>
+          <div class="infograph-description textBlur col-lg-6">
+            <h2>Our Family Portal creates connections with families, students and teachers</h2>
+          </div>
+
+        </div>
+        <div class="infograph-widget">
+          <div class="infograph-footnote textBlur text-white col-lg-6 infographic-margin-fix">
+            <div class="px-3 px-lg-0">Data from the 2024–2025 academic year </div>
+          </div>
+          <div class="col-6"></div>
+  
+        </div>
+  
+      </div>
+    </div>
+  </div>
+</div>  
+<script>
+  const widgetObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const graph = entry.target.querySelector('.infograph-widget');
+
+      if (entry.isIntersecting) {
+        widgetAnimator();
+        return; // if we added the class, exit the function
+      }
+
+    });
+  });
+
+  jQuery(document).ready(function () {
+
+      // jQuery(".jumbotron").toggleClass('animated-jumbotron');
+      widgetRan = false;
+      widgetObserver.observe(document.querySelector('.infograph-widget'));
+
+  });
+
+  var widgetRan = true;
+
+  function widgetAnimator() {
+    if (!widgetRan) {
+      widgetRan = true;
+      jQuery(".infograph-widget").addClass('infographStartAnimation');
+      jQuery(".infograph-description").toggleClass('textBlur');
+      jQuery(".infograph-footnote").toggleClass('textBlur');
+      jQuery(".infograph-animated-count").each(function () {
+        jQuery(this).prop('Counter', 0).delay(jQuery(this).data('delay'))
+          .animate({
+            Counter: jQuery(this).text()
+          }, {
+            duration: 4000,
+            easing: 'easeInOutExpo',
+            step: function (now) {
+              jQuery(this).text(now.toFixed(jQuery(this).data(
+                'decimal-places')));
+            }
+          });
+      });
+
+    }
+  }
+</script>  
+      <!-- ANCHOR our offerings
+  *    ###############################################
+  *   #                                               #
+  *   #  our offerings                                #
+  *   #                                               #
+  *    ###############################################
+  -->
+  
+      <div class="container-fluid py-5 cai-bg-waves-pale-1">
+        <div class="container my-5">
+          <div class="row">
+            <div class="col justify-content-center p-4 d-flex flex-column align-content-center align-items-start">
+              <h2 class="no-slab">Our <a href="https://files.portal.cambiumast.com/corporate-site/documents/CAI-Brochure-All-Products-Digital.pdf" target="_blank" style="position:relative;text-decoration: none; color:var(--bs-body-color);">Offerings</a></h2>
+              <div class="">
+                <div class="card-deck-flex">
+                  <div class="card card-leaf viewport-visible card-7col card-photo-left card-photo-slide-right card-rings-white-ltr cai-reveal-slide-element card-motion-pull-top ">
+                    <div class="card-image-wrapper">
+                      <div class="card-image offerings-photo justify-content-center align-content-center d-flex" id="offeringsPracticeTest">
+                        <div class="metricGridCard text-white">                         
+                              <span class="metricText mText01">
+                                <span>Easy for</span>
+                              </span>                           
+                              <span class="metricText mText02">
+                                all schools
+                              </span>                           
+                              <span class="metricText mText03">
+                                   to administer
+                              </span>                      
+                        </div>  
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="card-head">
+                        <h3 class="card-title">Summative, interim, and formative assessments for all students</h3>
+                        <p class="card-subtitle">Driving operational excellence for all your assessment needs</p>
+                      </div>
+                      <p class="card-text">We offer a breadth of assessments in grades K-12 in subjects ranging from English language arts (ELA) and mathematics, to science, social studies, and end-of-course tests like Algebra and Chemistry.
+  
+                      </p>
+                      <a class="btn btn-contact btn-lg" href="https://public.cambiumtds.com/student/?grade=3&amp;skipIntoTest=true" target="_blank">Take a Student Practice Test</a>
+  
+                    </div>
+                  </div>
+  
+  
+                  <div class="card cambi-card card-leaf viewport-visible card-5col card-photo-top card-emblem-top-center text-white card-motion-pull-top  cai-bg-mesh-sea-4">
+                    <div class="card-image-wrapper">
+                      <div class="card-image temp-icon-5"></div>
+                    </div>
+                    <div class="card-body">
+                      <div class="card-head">
+                        <h3 class="card-title text-white">Write on with Cambi!</h3>
+                        <!-- <h5 class="card-subtitle">Let Cambi help you improve your writing skills with CAI’s revolutionary new formative writing product.</h5> -->
+                      </div>
+                      <p class="card-text">
+                        <!-- See how we support students as they learn how to write and become effective communicators.  -->
+                        Let <b>Write on with Cambi!</b> help you improve your writing skills with CAI’s revolutionary formative writing product.
+                        <!-- Developed by our team of Machine Learning Scientists, and content experts, it's not just a tool; it's a dynamic companion designed for teachers and students who believe in the power of interactive and meaningful feedback. -->
+                      </p>
+                      <a href="our-offerings.html#offeringsCambi" class="btn btn-lg btn-contact" aria-label="Learn More about Write on With Cambi!">Learn
+                        More</a>
+                    </div>
+                  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+                  <div class="card card-leaf viewport-visible card-8col card-photo-left card-motion-pull-top card-photo-slide-right">
+                    <div class="card-image-wrapper">
+                      <div class="card-image clearsight-photo-1"></div>
+                    </div>
+                    <div class="card-body">
+                      <div class="card-head">
+                        <h3 class="card-title">ClearSight for Districts</h3>
+                        <p class="card-subtitle">Success made visible</p>
+                      </div>
+                      <p class="card-text">
+                        Research-based assessments that provide data so you can make instructional decisions that directly impact student access.</p>
+                      <a href="clearsight.html" class="btn btn-lg btn-contact">Learn
+                        More about ClearSight</a>
+                    </div>
+                  </div>
+  
+  
+  
+  
+                  <div class="card card-leaf viewport-visible card-7col card-photo-right card-motion-pull-top card-emblem-zoom">
+                    <div class="card-image-wrapper">
+                      <div class="card-image preK-photo-1"></div>
+                    </div>
+                    <div class="card-body  align-items-start d-flex flex-column justify-content-between">
+                      <div class="card-head">
+                        <h3 class="card-title">K–2 tests for all young learners</h3>
+                        <p class="card-subtitle">Providing early childhood tests using the same technology as our
+                          large-scale assessments</p>
+                      </div>
+                      <p class="card-text">
+  
+                        CAI offers a suite of K–2 assessments, including formative/diagnostic and comprehensive assessments and screeners. Try a practice test as a kindergartner, 1st grader or 2nd grader.</p>
+                      <a class="btn btn-contact btn-lg" href="https://public.cambiumtds.com/student/?grade=KG&amp;skipIntoTest=true" target="_blank" role="button">Take a K–2 Practice
+                        Test</a>
+                    </div>
+                  </div>
+  
+                  <!-- Hiding this card until Family Portal is ready--><!--<div
+                    class="card card-leaf viewport-visible card-5col card-photo-top card-rings-white-rtl card-motion-pull-top">
+                    <div class="card-image-wrapper">
+                      <div class="card-image family-portal-photo-1">
+  
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="card-head">
+                        <h4 class="card-title">Family Portal</h4>
+                        <h5 class="card-subtitle">Providing secure meaningful reports for all families</h5>
+                      </div>
+                      <p class="card-text">CAI offers a one-stop location for families to get understandable and meaningful information of their child’s test results.
+  
+                      </p>
+                      <a href="family-portal.html" class="btn btn-contact btn-lg">Learn
+                        More about our Family Portal</a>
+                    </div>
+                  </div> -->
+  
+                  <!-- <div class="card card-leaf viewport-visible card-5col card-photo-top card-rings-white-rtl card-motion-pull-top">
+                    <div class="card-image-wrapper">
+                      <div class="card-image hotline-photo-1">
+  
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="card-head">
+                        <h4 class="card-title">Support for Students Who Need Help</h4>
+                        <h5 class="card-subtitle">Real-time alerts for swift interventions</h5>
+                      </div>
+                      <p class="card-text">Our Hotline system uses state-of-the-art artificial intelligence to
+  
+                        identify responses that need review.
+  
+                      </p>
+                      <a href="our-offerings.html#offeringsHotline" class="btn btn-contact btn-lg">Learn
+                        More about our Hotline System</a>
+                    </div>
+                  </div> -->
+                  <div class="card card-leaf viewport-visible card-5col card-photo-top card-rings-white-rtl card-motion-pull-top">
+                    <div class="card-image-wrapper">
+                      <div class="card-image clearframe-photo-1">
+  
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="card-head">
+                        <h3 class="card-title">ClearFrame API</h3>
+                        <p class="card-subtitle">Actionable Assessment Data</p>
+                      </div>
+                      <p class="card-text">The ClearFrame™ API enables educators to provide a direct connection to third-party educational systems, delivering the actionable assessment data needed for enhanced student instruction and outcomes.
+                        
+  
+                      </p>
+                      <a href="our-offerings.html#clearFrameAPI" class="btn btn-contact btn-lg">Learn
+                        More about our ClearFrame API</a>
+                    </div>
+                  </div>
+  
+  
+                </div>
+  
+  
+              </div>
+  
+            </div>
+  
+          </div>
+        </div>
+  
+      </div>
+  
+  
+  
+  
+  
+  
+      <!-- ANCHOR Knowledge Center
+  *   ######################################
+  *   #  Knowledge Center
+  *   ######################################
+  -->
+      <div class="container-fluid pb-5 cai-bg-quilt-sea-2  text-white">
+        <div class="container">
+          <div class="row pt-3 ">
+            <div class="col-xl-9 ">
+  
+              <h2 class="mt-4">CAI in the News</h2>
+  
+  
+  
+  
+  
+  
+  
+            </div>
+  
+            <div class="col-xl-3 text-xl-end">
+              <a class="btn btn-lg mt-xl-5 mt-2 mb-3 btn-lt-blue-dk " href="news.html" role="button">
+                View More News</a>
+            </div>
+          </div>
+  
+          <div class="row pt-3">
+               <div class="col-lg py-2 d-flex ">
+              <div class="excerpt  bg-gray viewport-visible">
+                <h4>Assessment to Action: Redesigning Indiana’s State Assessments for Instructional Impact</h4>
+                <hr>
+                <div class="d-flex justify-content-between align-items-center  ">
+                  <div>
+                    <p class="extra date">September 24, 2025</p>
+                    <p class="extra">News Release</p>
+  
+                  </div>
+                  <a class="btn read-more btn-sm btn-lt-blue-dk" href="https://www.education-first.com/insights/our-publications/assessment-to-action-redesigning-indianas-state-assessments-for-instructional-impact/" target="_blank" role="button">Read
+                    More</a></div>
+  
+              </div>
+            </div>
+              <div class="col-lg py-2 d-flex ">
+              <div class="excerpt  bg-gray viewport-visible">
+                <h4>Cambium Receives Corporate Award from The Texas State Network of Assessment Professionals (TSNAP)</h4>
+                <hr>
+                <div class="d-flex justify-content-between align-items-center  ">
+                  <div>
+                    <p class="extra date">November 13, 2024</p>
+                    <p class="extra">News Release</p>
+  
+                  </div>
+                  <a class="btn read-more btn-sm btn-lt-blue-dk" href="news--cai-tsnap-award.html" target="_blank" role="button">Read
+                    More</a></div>
+  
+              </div>
+            </div>
+            <div class="col-lg py-2 d-flex ">
+              <div class="excerpt  bg-gray viewport-visible">
+                <h4>Arkansas education board approves performance levels for new student assessment</h4>
+                <hr>
+                <div class="d-flex justify-content-between align-items-center  ">
+                  <div>
+                    <p class="extra date">October 10, 2024</p>
+                    <p class="extra">Arkansas Advocate</p>
+  
+                  </div>
+                  <a class="btn read-more btn-sm btn-lt-blue-dk" href="https://arkansasadvocate.com/2024/10/10/arkansas-education-board-approves-performance-levels-for-new-student-assessment/" target="_blank" role="button">Read
+                    More</a></div>
+  
+              </div>
+            </div>
+        
+              
+          </div>
+          <hr class="w-10 border-white border border-1 mx-auto my-4">
+          <div class="row pt-3 ">
+            <div class="col-xl-9 ">
+  
+  
+  
+              <h2 class="mt-4">CAI Insights and Expertise</h2>
+  
+  
+  
+  
+            </div>
+  
+            <div class="col-xl-3 text-xl-end">
+              <a class="btn btn-lg  btn-lt-blue-dk" href="publications.html" role="button">View More Insights
+              </a>
+            </div>
+          </div>
+          <div class="row pt-3 pb-5">
+            <div class="col-lg py-2 d-flex ">
+              <div class="excerpt bg-gray viewport-visible">
+                <h4>Locating Optimal On-Track Cut Score in Through-Year-Assessment Designs using Receiver Operating Curves</h4>
+                <hr>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <p class="extra date">September 17, 2025</p>
+                    <p class="extra">NCME Papers</p>
+                  </div>
+                  <a class="btn btn-lt-blue-dk read-more" role="button" href="https://files.portal.cambiumast.com/corporate-site/documents/CAI-Locating-Optimal-On-Track-Cut-Score.pdf" target="_blank" aria-label="Read more about a Locating Optimal On-Track Cut Score in Through-Year-Assessment Designs using Receiver Operating Curves.">Read More</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg py-2 d-flex ">
+              <div class="excerpt bg-gray viewport-visible">
+                <h4>Full vs Partial Blueprints in Through-Year Assessment Combined Scoring</h4>
+                <hr>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <p class="extra date">September 17, 2025</p>
+                    <p class="extra">NCME Papers</p>
+                  </div>
+                  <a class="btn btn-lt-blue-dk read-more" role="button" href="https://files.portal.cambiumast.com/corporate-site/documents/CAI-Full-vs-Partial-Blueprints-in-Through-Year-Assessment-Combined-Scoring.pdf" target="_blank" aria-label="Read more about A Comparison Between Full vs Partial Blueprints in Through-Year Assessment Combined Scoring.">Read More</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg py-2 d-flex ">
+              <div class="excerpt bg-gray viewport-visible">
+                <h4>Longitudinal Item Response Theory Models for Combined Overall Scoring
+                  </h4>
+                <hr>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <p class="extra date">September 16, 2025</p>
+                    <p class="extra">NCME Papers</p>
+                  </div>
+                  <a class="btn btn-lt-blue-dk read-more" role="button" href="https://files.portal.cambiumast.com/corporate-site/documents/CAI-Longitudinal-Item-Response-Theory-Models-for-Combined-Overall-Scoring.pdf" target="_blank" aria-label="Read more about A Comparison Between Longitudinal Item Response Theory Models for Combined Overall Scoring">Read More</a>
+                </div>
+              </div>
+            </div>
+          
+
+          
+          </div> 
+        </div>
+      </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <!-- ANCHOR careers
+  *   ######################################
+  *   #  careers
+  *   ######################################
+  -->
+  
+      <div class=" container-fluid banner careers-image cai-bg-mesh-pale-3 border-1-solid-mid">
+  
+        <div class="container ">
+          <div class="row flex-row-reverse">
+            <div class="col-xl-7 col-lg-6 pe-6 my-4 col justify-content-center p-4 d-flex flex-column align-content-center align-items-start">
+              <div class="">
+  
+                <h2 class="">Explore Careers with Us</h2>
+                <p class="slogan-in-page pb-1">Find the opportunity that fits what you’re looking for.</p>
+                <!-- <a class="btn btn-contact btn-lg" href="https://jobs.cambiumlearning.com/?departments=Cambium%20Assessment#/" >Explore Careers</a> -->
+                <a class="btn btn-lg btn-contact" href="https://jobs.cambiumlearning.com/?departments=Cambium%20Assessment#/" target="_blank">Explore
+                Careers</a>
+  
+              </div>
+            </div>
+            <div class="col pt-4   "><img src="/assets/temp-careers-2.png" width="300" alt=""></div>
+  
+          </div>
+        </div>
+      </div>
+  
+  
+  
+  
+     
+  
+
+  
+    </main>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<!--   
+    <script src="js/popper.min.js" type="text/javascript"></script>
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/gsap/gsap.min.js"></script>
+    <script src="js/gsap/ScrollToPlugin.min.js"></script>
+    <script src="js/gsap/ScrollTrigger.min.js"></script>
+    <script src="js/gsap/DrawSVGPlugin.min.js"></script>-->
+    <script>
+  
+  
+      // Expand jQuery to be able to check if an item is visible within the viewport
+      $.fn.isInViewport = function () {
+        let thisTop = $(this).offset().top;
+        let thisBottom = thisTop + $(this).outerHeight();
+        let visibleTop = $(window).scrollTop();
+        let visibleBottom = visibleTop + $(window).height();
+        return thisBottom > visibleTop && thisTop < visibleBottom;
+      };
+  
+      // Check viewport visibility on page scroll
+      $(window).scroll(function () {
+        $('.viewport-hidden').each(function (i, el) {
+          if ($(this).isInViewport()) {
+            $(this).addClass('viewport-visible');
+            $(this).removeClass('viewport-hidden');
+          }
+        })
+      });
+  
+      // Check viewport visibility on page load
+      $(document).ready(function () {
+        $('.viewport-hidden').each(function (i, el) {
+          if ($(this).isInViewport()) {
+            $(this).addClass('viewport-visible');
+            $(this).removeClass('viewport-hidden');
+          }
+        })
+      });
+  
+      $(document).ready(function () {
+        $('body').removeClass("no-js");
+      });
+  
+      homepageVineOne();
+      function homepageVineOne() {
+  
+        $('.home-col-grid .metricGrid').css('opacity', '1');
+  
+        // draw the vine
+        gsap.from(".home-col-grid .metricVine", {
+          drawSVG: 0,
+          delay: 1.5,
+          duration: 4,
+          ease: "power1.out"
+        });
+  
+        // draw the vine branches
+        gsap.from(".home-col-grid .metricBranch.mBranch01", {
+          drawSVG: 0,
+          delay: 1.9,
+          duration: 2,
+          ease: "power1.out"
+        });
+        gsap.from(".home-col-grid .metricBranch.mBranch02", {
+          drawSVG: 0,
+          delay: 2.5,
+          duration: 2,
+          ease: "power1.out"
+        });
+        gsap.from(".home-col-grid .metricBranch.mBranch03", {
+          drawSVG: 0,
+          delay: 3.2,
+          duration: 2,
+          ease: "power1.out"
+        });
+        gsap.from(".home-col-grid .metricBranch.mBranch04", {
+          drawSVG: 0,
+          delay: 4.5,
+          duration: 2,
+          ease: "power1.out"
+        });
+  
+        // fade in the leaf fills
+        gsap.from(".home-col-grid .metricLeaf.mLeaf01", {
+          opacity: 0,
+          delay: 1.75,
+          duration: 1
+        });
+        gsap.from(".home-col-grid .metricLeaf.mLeaf02", {
+          opacity: 0,
+          delay: 2.5,
+          duration: 1
+        });
+        gsap.from(".home-col-grid .metricLeaf.mLeaf03", {
+          opacity: 0,
+          delay: 3.45,
+          duration: 1
+        });
+        gsap.from(".home-col-grid .metricLeaf.mLeaf04", {
+          opacity: 0,
+          delay: 5.25,
+          duration: 1
+        });
+  
+        // fade in the small leaf buds
+        gsap.from(".home-col-grid .metricBud.mBud01", {
+          opacity: 0,
+          scale: 0,
+          rotate: 90,
+          delay: 2.7,
+          duration: 1
+        });
+        gsap.from(".home-col-grid .metricBud.mBud02", {
+          opacity: 0,
+          scale: 0,
+          rotate: -90,
+          delay: 3,
+          duration: 1
+        });
+        gsap.from(".home-col-grid .metricBud.mBud03", {
+          opacity: 0,
+          scale: 0,
+          rotate: -90,
+          delay: 3.4,
+          duration: 1
+        });
+        gsap.from(".home-col-grid .metricBud.mBud04", {
+          opacity: 0,
+          scale: 0,
+          rotate: 90,
+          delay: 4.3,
+          duration: 1
+        });
+        gsap.from(".home-col-grid .metricBud.mBud05", {
+          opacity: 0,
+          scale: 0,
+          rotate: -90,
+          delay: 3.7,
+          duration: 1
+        });
+        gsap.from(".home-col-grid .metricBud.mBud06", {
+          opacity: 0,
+          scale: 0,
+          rotate: 90,
+          delay: 3.9,
+          duration: 1
+        });
+        gsap.from(".home-col-grid .metricBud.mBud07", {
+          opacity: 0,
+          scale: 0,
+          rotate: -90,
+          delay: 5.1,
+          duration: 1
+        });
+        gsap.from(".home-col-grid .metricBud.mBud08", {
+          opacity: 0,
+          scale: 0,
+          rotate: 90,
+          delay: 5.1,
+          duration: 1
+        });
+        gsap.from(".home-col-grid .metricBud.mBud09", {
+          opacity: 0,
+          scale: 0,
+          rotate: 90,
+          delay: 6.5,
+          duration: 1
+        });
+        gsap.from(".home-col-grid .metricBud.mBud10", {
+          opacity: 0,
+          scale: 0,
+          rotate: -90,
+          delay: 5.9,
+          duration: 1
+        });
+  
+  
+      }
+  
+  
+  
+  
+  
+  
+      function infometricofferingsPracticeTest() {
+  
+        $('#offeringsPracticeTest .metricGrid').css('opacity', '1');
+  
+        // fade in the text
+        gsap.from("#offeringsPracticeTest .metricText.mText01", {
+          opacity: 0,
+          x: "-30px",
+          delay: 0.5,
+          duration: 1,
+          ease: "back.out"
+        });
+        gsap.from("#offeringsPracticeTest .metricText.mText02", {
+          opacity: 0,
+          x: "-30px",
+          delay: 0.75,
+          duration: 1,
+          ease: "back.out"
+        });
+        gsap.from("#offeringsPracticeTest .metricText.mText03", {
+          opacity: 0,
+          x: "-30px",
+          delay: 1,
+          duration: 1,
+          ease: "back.out"
+        });
+        // gsap.from("#offeringsPracticeTest .metricText.mText04", {
+        //   opacity: 0,
+        //   x: "-30px",
+        //   delay: 1.25,
+        //   duration: 1,
+        //   ease: "back.out"
+        // });
+  
+        // fade in the secondary text
+        gsap.from("#offeringsPracticeTest .metricText.mText01 span", {
+          opacity: 0,
+          delay: 0.75,
+          duration: 3
+        });
+        // gsap.from("#offeringsPracticeTest .metricText.mText02 span", {opacity: 0, delay: 1, duration: 3 });
+        // gsap.from("#offeringsPracticeTest .metricText.mText04 span", {
+        //   opacity: 0,
+        //   delay: 1.5,
+        //   duration: 3
+        // });
+  
+      }
+  
+  
+  
+      ScrollTrigger.create({
+        trigger: "#offeringsPracticeTest",
+        start: "top 80%",
+        once: true,
+        onEnter: infometricofferingsPracticeTest,
+      });
+  
+
+      function disableAnimation() {
+        $("body").toggleClass('noanim');
+        $("#disableAnim").toggleClass('disabled').blur();
+      }
+  
+    </script>
+
+  
+
+
+
+  <!-- ANCHOR contact us
+*   ######################################
+*   #  contact us
+*   ######################################
+-->
+
+  <section class=" container-fluid banner  animated_gradient_blue tech-image">
+    	<div class="container">
+      	<div class="row flex-row-reverse py-3">
+			<div class="col-xl-1"></div><div class="col-xl-6 col justify-content-start p-4 d-flex flex-column align-content-center">
+			<h2 class="text-white">Contact Us</h2>
+			<p class="text-white">
+            <b>Cambium Assessment, Inc.</b>
+            4200 Wilson Blvd., Ste. 610
+            Arlington, VA  22203-1800<br>
+            <span class="nowrap">Phone: <a href="tel:8887496178" class="text-white">888-749-6178</a></span> | 
+			<span class="nowrap">Email: <a href="mailto:website@cambiumassessment.com?subject=Contact%20Cambium%20Assessment" class="text-white" title="Contact Cambium Assessment">website@cambiumassessment.com</a></span></p></div>
+			
+			<div class="col-xl-4 col justify-content-center p-4 d-flex flex-column align-content-center ">
+			<a class="btn btn-lg mx-6 mt-2 btn-contact" href="contact.html">Reach Out</a>
+			</div><div class="col-xl-1"></div>
+      	</div>
+    	</div>
+  </section>
+
+ <!-- ANCHOR Cambium Assessment Footer
+*   ######################################
+*   #  Cambium Assessment Footer
+*   ######################################
+-->
+	<section class="footer-cai text-white">Copyright ©  <script>document.write(new Date().getFullYear())</script>2026 <strong>Cambium Assessment, Inc.</strong> All rights reserved. <a href="https://privacypolicy.cambiumassessment.com" target="_blank">Terms of Use &amp; Privacy Policy</a>   
+	 <a href="https://levelaccess.com/a/cambium" target="_blank" class="ps-1"><img width="62" src="/assets/LevelAccessIconWhite.svg" alt="Level access in partnership with cambium assessment."></a>
+	</section>
+
+ <!-- ANCHOR Cambium Learning Group Footer
+*   ######################################
+*   #  Cambium Learning Group Footer
+*   ######################################
+-->
+	<section class="cambiumlg clickable">
+  		<div class="container">
+     		<div>
+          	<p>A Cambium Learning® Group Brand</p>
+      		</div>
+			<div>
+			<a href="https://www.cambiumlearning.com/" target="_blank"><img src="/assets/CAM-HORIZ-WHITE.svg" alt="Cambium Learning Group"></a>
+			</div>
+  		</div>
+	</section>
+	
+</div>
+
+
+
+
+<script src="/static/js/popper.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/reveal.js"></script>
+<script>
+	cambiumAccessibilityWidgetInit({excludes: "saturation"});
+	
+</script><div class="accessibility-reading-overlay accessibility-reading-overlay-ignore"></div>
+
+
+
+</body></html>

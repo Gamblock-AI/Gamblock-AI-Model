@@ -1,0 +1,605 @@
+<html lang="en"><head>
+
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-8FSC0RKCYH&amp;cx=c&amp;gtm=4e6481"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=UA-3596694-35&amp;cx=c&amp;gtm=4e6481"></script><script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202604070101/show_ads_impl_fy2021.js"></script><script async="" src="assets/scripts/consent.js"></script>
+
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <title>Femo.com Games For Girls! ❤ Dressup - Makeover - Cooking - Lots More!</title>
+    <meta name="description" content="Have fun with our amazing selection girls games including dress up, decorating, makeup and baking games!">
+
+
+
+    <style>
+        @font-face {
+            font-family: femoFont;
+            font-display: swap;
+            src: url(assets/fonts/femoFont.ttf);
+        }
+
+        body {
+            margin: 0;
+            background: lightPink;
+            background: linear-gradient(lightPink, deepPink);
+            text-align: center;
+            font-size: 1.5em;
+            font-family: femoFont, arial, helvetica, sans-serif;
+            color: white
+        }
+
+        a {
+            color: skyblue;
+            text-decoration: none;
+        }
+
+        #welcome {
+            padding: 2em;
+        }
+
+        #joke,
+        #jokeAnswer {
+            color: yellow;
+            background-color: fireBrick;
+            cursor: pointer;
+            font-size: 1.7em;
+            padding: 1em;
+            margin-left: 1vw;
+            margin-right: 1vw;
+        }
+
+        #joke {
+            border-radius: 1vmax 1vmax 0 0;
+            margin-top: 15vh;
+        }
+
+        #jokeAnswer {
+            border-radius: 0 0 1vmax 1vmax;
+            margin-bottom: 2vh;
+            padding-top: 0;
+        }
+
+        #riddle,
+        #riddleAnswer {
+            border-radius: 1vmax 1vmax 0 0;
+            color: yellow;
+            background-color: darkGreen;
+            cursor: pointer;
+            font-size: 1.7em;
+            padding: 1em;
+            margin-left: 1vw;
+            margin-right: 1vw;
+        }
+
+        #riddleAnswer {
+            border-radius: 0 0 1vmax 1vmax;
+            margin-bottom: 2vh;
+            padding-top: 0;
+        }
+
+        #funFact {
+            border-radius: 1vmax 1vmax 1vmax 1vmax;
+            color: yellow;
+            background-color: darkBlue;
+            font-size: 1.7em;
+            margin-bottom: 10vh;
+            padding: 1em;
+            margin-left: 1vw;
+            margin-right: 1vw;
+        }
+
+        #gamesBlockHeader {
+            font-size: 1.7em;
+        }
+
+        #gamesBlock {
+            margin-top: 2vh;
+            margin-bottom: 15vh;
+            overflow: hidden;
+            padding-bottom: 2vh;
+            opacity: 0;
+        }
+
+        .gameIconContainer {
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            color: white;
+
+            border-style: outset;
+            border-width: 10px;
+            border-color: deepPink;
+            border-radius: 20px;
+            box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.2);
+
+            width: 360px;
+            height: 100px;
+            margin: 5px;
+
+            background-color: mediumVioletRed;
+
+        }
+
+        /* for very small mobile screens */
+        @media only screen and (max-width: 320px) {
+            .gameIconContainer {
+                width: 288px;
+                height: 80px;
+            }
+
+            #logo {
+                width: 80vw;
+                height: 40vw;
+            }
+        }
+
+        .gameIcon {
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+            transition: 1s;
+        }
+
+        .gameIcon:hover {
+            filter: brightness(150%);
+        }
+
+        .gameIconName {
+            position: absolute;
+            width: 80%;
+            left: 10%;
+            bottom: 10%;
+            /* background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 0.5em; */
+            color: lightgoldenrodyellow;
+            text-shadow: 0 0 10px black;
+
+            pointer-events: none;
+            line-height: 100%;
+        }
+
+        #menuBar {
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 1em;
+            padding: 0.2em;
+            margin-top: 3vh;
+            display: none;
+            /* DISABLED */
+        }
+
+        .menuBarItem {
+            display: inline-block;
+            background-color: royalblue;
+            border-radius: 0.5em;
+            margin: 0.2em;
+            padding: 0.5em;
+            cursor: pointer;
+            cursor: pointer;
+            transition: 1s;
+        }
+
+        .menuBarItem:hover {
+            filter: hue-rotate(-50deg);
+        }
+
+        #results {
+            padding-bottom: 1vh;
+            font-size: 1.6em;
+            color: yellow;
+        }
+
+        #logo {
+            margin: auto;
+            margin-top: 50px;
+            margin-bottom: 2vh;
+            display: block;
+            min-width: 200px;
+            /* filter: hue-rotate(330deg); */
+            animation: shake 0.5s 20s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+        }
+
+        @keyframes shake {
+
+            10%,
+            90% {
+                transform: translate3d(-1px, -1px, 0);
+                filter: hue-rotate(360deg)
+            }
+
+            20%,
+            80% {
+                transform: translate3d(2px, 1px, 0);
+            }
+
+            30%,
+            50%,
+            70% {
+                transform: translate3d(-4px, -3px, 0);
+            }
+
+            40%,
+            60% {
+                transform: translate3d(4px, 3px, 0);
+                filter: hue-rotate(0deg)
+            }
+        }
+
+        #adSection {
+            background: rgba(128, 0, 0, 0.5);
+            padding-bottom: 2vh;
+        }
+
+        #adText {
+            letter-spacing: 1em;
+        }
+
+        .changeConsent {
+            cursor: pointer;
+        }
+
+    </style>
+
+
+    <script async="" src="https://www.googletagmanager.com/gtag/js"></script>
+
+    <script async="" src="assets/scripts/advert-336x280.js"></script>
+
+    <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9nrunKdU5m96PSN1XsSGr3qOP0lvPFUB2AiAylCDlN5DTl17uDFkpQuHj1AFtgWLxpLaiBZuhrtb2WOu7ofHwEAAACKeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A93bovR+QVXNx2/38qDbmeYYf1wdte9EO37K9eMq3r+541qo0byhYU899BhPB7Cv9QqD7wIbR1B6OAc9kEfYCA4AAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A1S5fojrAunSDrFbD8OfGmFHdRFZymSM/1ss3G+NEttCLfHkXvlcF6LGLH8Mo5PakLO1sCASXU1/gQf6XGuTBgwAAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><script async="" src="https://fundingchoicesmessages.google.com/f/AGSKWxW_7QuQn2GiRqlfORwDNht8N7_yP2lL8U1P8AxKu59sLYMz4qqozpuwHYDU2BwvPaJn5Mf5kdAl2uUWp5VnciA="></script><script async="" src="https://fundingchoicesmessages.google.com/f/AGSKWxUnxI6sNE6Yyx2asMtdCrWHp-awpHMTodBnxeNWDxYc1FDSoB_dm8rLU_MgZFv8stLv0-P5hvZnEdsZsNGaE_P9Q5T5n5TN7ZOHb1IQqIuHrX1VPK1bCpbba8NquaoFwapkIDoI1Q==?fccs=W251bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLFsxNzc1OTI3OTg0LDczOTAwMDAwMF0sbnVsbCxudWxsLG51bGwsW251bGwsWzddXSwiaHR0cHM6Ly93d3cuZmVtby5jb20vIixudWxsLFtbOCwiWHo0VGUzVHFmVDgiXSxbOSwiaWQiXSxbMzUsIjE3NzU5Mjc5ODQiXSxbMTksIjIiXSxbMjQsIiJdLFsyNSwiW1s5NTM3OTgyM11dIl0sWzI5LCJmYWxzZSJdXV0"></script><script async="" src="https://fundingchoicesmessages.google.com/i/ca-pub-0813719552929704?href=https%3A%2F%2Fwww.femo.com&amp;ers=2"></script><script async="" src="https://fundingchoicesmessages.google.com/f/AGSKWxXp5fui2bQB6V-Fcb9LoNRdlx5N4_gDFGYdeY1kyqUh-rn70wlRobDvjCrYsmrGeV6obcYcHDBMQcn-frpKITJk-BG7dYMhr0Yav1VbnUWhiE3ypcy0zD0negYtvoSoF5EnLG985Q==?fccs=W251bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLFsxNzc1OTI3OTg1LDUzNTAwMDAwMF0sbnVsbCxudWxsLG51bGwsW251bGwsWzcsNl0sbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsMV0sImh0dHBzOi8vd3d3LmZlbW8uY29tLyIsbnVsbCxbWzgsIlh6NFRlM1RxZlQ4Il0sWzksImlkIl0sWzM1LCIxNzc1OTI3OTg0Il0sWzE5LCIyIl0sWzI0LCIiXSxbMjUsIltbOTUzNzk4MjNdXSJdLFsyOSwiZmFsc2UiXSxbMTgsIltbW251bGwsMTQ0NF1dXSJdXV0"></script><script async="" src="https://fundingchoicesmessages.google.com/f/AGSKWxXprVdJzUSeu0l1-bU3QkjlTT1hcuUM8wMnQSwjbUp1NQcLJizz39h48FLOtdsGpORIVXOYe_LD4GIoOk5DWqDGsxFgA98vMg_vMFCud9Fq8iXRh54d4YZT9jKIrsRWCuGJ4pZ9ZQ==?fccs=W251bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLFsxNzc1OTI3OTg1LDYwNjAwMDAwMF0sbnVsbCxudWxsLG51bGwsW251bGwsWzcsNiwxMF0sbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsMV0sImh0dHBzOi8vd3d3LmZlbW8uY29tLyIsbnVsbCxbWzgsIlh6NFRlM1RxZlQ4Il0sWzksImlkIl0sWzM1LCIxNzc1OTI3OTg0Il0sWzE5LCIyIl0sWzI0LCIiXSxbMjUsIltbOTUzNzk4MjNdXSJdLFsyOSwiZmFsc2UiXSxbMTgsIltbW251bGwsMTQ0NF1dXSJdXV0"></script><script async="" src="https://fundingchoicesmessages.google.com/f/AGSKWxUXGLapczuDp5B_TzNb2cguOGO8Zqowy7vzeXjPPO2mdjGpRg3T2ikVN_PSe9QQ5Zl5xAWYF_fMbRTN_BjcFm1KeLpnC_ylJ43ds2xk-sTHgQR3McLgHq9Rl3oyUf7ZpQV9Nueexw==?fccs=W251bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLFsxNzc1OTI3OTg1LDY0NzAwMDAwMF0sbnVsbCxudWxsLG51bGwsW251bGwsWzcsNiwxMCw5XSxudWxsLDIsbnVsbCwiZW4tR0IiLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCwxXSwiaHR0cHM6Ly93d3cuZmVtby5jb20vIixudWxsLFtbOCwiWHo0VGUzVHFmVDgiXSxbOSwiaWQiXSxbMzUsIjE3NzU5Mjc5ODQiXSxbMTksIjIiXSxbMjQsIiJdLFsyNSwiW1s5NTM3OTgyM11dIl0sWzI5LCJmYWxzZSJdLFsxOCwiW1tbbnVsbCwxNDQ0XV1dIl1dXQ"></script></head>
+
+<body>
+
+    <img id="logo" src="assets/gfx/femoLogoMin.svg" width="500" height="250" alt="Femo" style="width: 50vw; height: 25vw;">
+
+
+    <!-- Responsive Header -->
+    <!-- DISABLED FOR NOW
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-0813719552929704" data-ad-slot="5816942546" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+
+    </script>
+    -->
+
+
+    <div id="menuBar">
+        <div class="menuBarItem" onclick="showGames('-');">All</div>
+        <div class="menuBarItem" onclick="showGames('ac');">Action</div>
+        <div class="menuBarItem" onclick="showGames('ad');">Adventure</div>
+        <div class="menuBarItem" onclick="showGames('cr');">Craft</div>
+        <div class="menuBarItem" onclick="showGames('jb');">Jobs</div>
+        <div class="menuBarItem" onclick="showGames('ms');">Motorsport</div>
+        <div class="menuBarItem" onclick="showGames('mp');">Multiplayer</div>
+        <div class="menuBarItem" onclick="showGames('pl');">Platform</div>
+        <div class="menuBarItem" onclick="showGames('pz');">Puzzle</div>
+        <div class="menuBarItem" onclick="showGames('sp');">Sport</div>
+        <div id="results">35 games!</div>
+    </div>
+
+
+    <div id="adSection" style="height: auto !important;">
+        <p id="adText">ADVERTISEMENT</p>
+        <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-0813719552929704" data-ad-slot="2186186356" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done" data-ad-status="filled"><div id="aswift_0_host" style="border: none; height: 280px; width: 1200px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: visible;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:1200px;height:280px;min-height:auto;max-height:none;min-width:auto;max-width:none;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="1200" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-0813719552929704&amp;output=html&amp;h=280&amp;slotname=2186186356&amp;adk=794094262&amp;adf=1973651650&amp;pi=t.ma~as.2186186356&amp;w=1200&amp;fwrn=4&amp;fwrnh=100&amp;lmt=1724347346&amp;rafmt=1&amp;format=1200x280&amp;url=https%3A%2F%2Fwww.femo.com%2F%3Ffrua&amp;fwr=0&amp;fwrattr=true&amp;rpe=1&amp;resp_fmts=3&amp;aiof=9&amp;asro=0&amp;aiapmd=0.0001&amp;aiapmid=1&amp;aiactd=0&amp;aicctd=0&amp;ailctd=0&amp;aimartd=4&amp;aieuf=1&amp;aicrs=1&amp;uach=WyJXaW5kb3dzIiwiMTAuMCIsIng4NiIsIiIsIjE0NS4wLjc2MzIuNiIsbnVsbCwwLG51bGwsIjY0IixbWyJOb3Q6QS1CcmFuZCIsIjk5LjAuMC4wIl0sWyJIZWFkbGVzc0Nocm9tZSIsIjE0NS4wLjc2MzIuNiJdLFsiQ2hyb21pdW0iLCIxNDUuMC43NjMyLjYiXV0sMF0.&amp;abgtt=9&amp;dt=1775927984368&amp;bpp=15&amp;bdt=65&amp;idt=161&amp;shv=r20260408&amp;mjsv=m202604070101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie_enabled=1&amp;eoidce=1&amp;correlator=2459886659264&amp;frm=20&amp;pv=2&amp;u_tz=0&amp;u_his=2&amp;u_h=768&amp;u_w=1366&amp;u_ah=768&amp;u_aw=1366&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=83&amp;ady=468&amp;biw=1366&amp;bih=768&amp;scr_x=0&amp;scr_y=0&amp;eid=31097633%2C95384087%2C95387623%2C95386955%2C95379823&amp;oid=2&amp;pvsid=3277906515151159&amp;tmod=1453917141&amp;uas=0&amp;nvt=1&amp;fc=896&amp;brdim=0%2C0%2C0%2C0%2C1366%2C0%2C1366%2C768%2C1366%2C768&amp;vis=1&amp;rsz=%7C%7CEe%7C&amp;abl=CS&amp;pfx=0&amp;fu=128&amp;bc=31&amp;bz=1&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=188" data-google-container-id="a!1" tabindex="0" title="Advertisement" aria-label="Advertisement" data-google-query-id="COPCsKWn5pMDFUyOuQUdhI04cg" data-load-complete="true"></iframe></div></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+
+        </script>
+    </div>
+
+    <div id="gamesBlockHeader">L O A D I N G&nbsp;&nbsp;&nbsp;G A M E S . . .</div>
+    <main id="gamesBlock"><a href="games/bodyartstudio/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/bodyartstudio.png" alt="bodyartstudio" width="360px" height="100px"><div class="gameIconName">Body Art Studio</div></div></a><a href="games/colormepets/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/colormepets.png" alt="colormepets" width="360px" height="100px"><div class="gameIconName">Color Me Pets</div></div></a><a href="games/myxmasselfie/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/myxmasselfie.png" alt="myxmasselfie" width="360px" height="100px"><div class="gameIconName">My Xmas Selfie</div></div></a><a href="games/cookcookrealhotdog/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/cookcookrealhotdog.png" alt="cookcookrealhotdog" width="360px" height="100px"><div class="gameIconName">Cook Cook Real Hotdog</div></div></a><a href="games/extremecarparking/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/extremecarparking.png" alt="extremecarparking" width="360px" height="100px"><div class="gameIconName">Extreme Car Parking</div></div></a><a href="games/eggycar/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/eggycar.png" alt="eggycar" width="360px" height="100px"><div class="gameIconName">Eggy Car</div></div></a><a href="games/pullthepin/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/pullthepin.png" alt="pullthepin" width="360px" height="100px"><div class="gameIconName">Pull The Pin</div></div></a><a href="games/stevesworld/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/stevesworld.png" alt="stevesworld" width="360px" height="100px"><div class="gameIconName">Steve's World</div></div></a><a href="games/goldbladedangerouswater/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/goldbladedangerouswater.png" alt="goldbladedangerouswater" width="360px" height="100px"><div class="gameIconName">Goldblade Dangerous Water</div></div></a><a href="games/evilqueenglassskinroutine/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/evilqueenglassskinroutine.png" alt="evilqueenglassskinroutine" width="360px" height="100px"><div class="gameIconName">Evil Queen Glass Skin Routine</div></div></a><a href="games/beautygurumakeuptips/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/beautygurumakeuptips.png" alt="beautygurumakeuptips" width="360px" height="100px"><div class="gameIconName">Beauty Guru Makeup Tips</div></div></a><a href="games/superbabysitter/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/superbabysitter.png" alt="superbabysitter" width="360px" height="100px"><div class="gameIconName">Super Babysitter</div></div></a><a href="games/doctorteeth2/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/doctorteeth2.png" alt="doctorteeth2" width="360px" height="100px"><div class="gameIconName">Doctor Teeth 2</div></div></a><a href="games/fashiondesignernewyork/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/fashiondesignernewyork.png" alt="fashiondesignernewyork" width="360px" height="100px"><div class="gameIconName">Fashion Designer New York</div></div></a><a href="games/colormeprincess/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/colormeprincess.png" alt="colormeprincess" width="360px" height="100px"><div class="gameIconName">Color Me Princess</div></div></a><a href="games/happycups/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/happycups.png" alt="happycups" width="360px" height="100px"><div class="gameIconName">Happy Cups</div></div></a><a href="games/hipstersvsrockers/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/hipstersvsrockers.png" alt="hipstersvsrockers" width="360px" height="100px"><div class="gameIconName">Hipsters vs Rockers</div></div></a><a href="games/dreamlikeroom/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/dreamlikeroom.png" alt="dreamlikeroom" width="360px" height="100px"><div class="gameIconName">Dreamlike Room</div></div></a><a href="games/boyfrienddoesmymakeup/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/boyfrienddoesmymakeup.png" alt="boyfrienddoesmymakeup" width="360px" height="100px"><div class="gameIconName">Boyfriend Does My Makeup</div></div></a><a href="games/creativepuzzle/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/creativepuzzle.png" alt="creativepuzzle" width="360px" height="100px"><div class="gameIconName">Creative Puzzle</div></div></a><a href="games/animalconnection/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/animalconnection.png" alt="animalconnection" width="360px" height="100px"><div class="gameIconName">Animal Connection</div></div></a><a href="games/bridezillaweddingmakeover/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/bridezillaweddingmakeover.png" alt="bridezillaweddingmakeover" width="360px" height="100px"><div class="gameIconName">Bridezilla Wedding Makeover</div></div></a><a href="games/jessiespetshop/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/jessiespetshop.png" alt="jessiespetshop" width="360px" height="100px"><div class="gameIconName">Jessie's Pet Shop</div></div></a><a href="games/frenchfashionrealhaircuts/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/frenchfashionrealhaircuts.png" alt="frenchfashionrealhaircuts" width="360px" height="100px"><div class="gameIconName">French Fashion Real Haircuts</div></div></a><a href="games/cookcookkoreanbibimbap/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/cookcookkoreanbibimbap.png" alt="cookcookkoreanbibimbap" width="360px" height="100px"><div class="gameIconName">Cook Cook Korean Bibimbap</div></div></a><a href="games/candyfiesta/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/candyfiesta.png" alt="candyfiesta" width="360px" height="100px"><div class="gameIconName">Candy Fiesta</div></div></a><a href="games/cookcookbelgianwaffles/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/cookcookbelgianwaffles.png" alt="cookcookbelgianwaffles" width="360px" height="100px"><div class="gameIconName">Cook Cook Belgian Waffles</div></div></a><a href="games/diyraincoat/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/diyraincoat.png" alt="diyraincoat" width="360px" height="100px"><div class="gameIconName">DIY Raincoat</div></div></a><a href="games/annieandelizassocialmediaadventure/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/annieandelizassocialmediaadventure.png" alt="annieandelizassocialmediaadventure" width="360px" height="100px"><div class="gameIconName">Annie And Eliza's Social Media Adventure</div></div></a><a href="games/mergecakes/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/mergecakes.png" alt="mergecakes" width="360px" height="100px"><div class="gameIconName">Merge Cakes</div></div></a><a href="games/boyfriendspellfactory/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/boyfriendspellfactory.png" alt="boyfriendspellfactory" width="360px" height="100px"><div class="gameIconName">Boyfriend Spell Factory</div></div></a><a href="games/foxadventurer/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/foxadventurer.png" alt="foxadventurer" width="360px" height="100px"><div class="gameIconName">Fox Adventurer</div></div></a><a href="games/hopdontstop/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/hopdontstop.png" alt="hopdontstop" width="360px" height="100px"><div class="gameIconName">Hop Don't Stop</div></div></a><a href="games/animaltrendssocialmediaadventure/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/animaltrendssocialmediaadventure.png" alt="animaltrendssocialmediaadventure" width="360px" height="100px"><div class="gameIconName">Animal Trends Social Media Adventure</div></div></a><a href="games/magegirladventure/"><div class="gameIconContainer"><img class="gameIcon" loading="lazy" src="thumbs/magegirladventure.png" alt="magegirladventure" width="360px" height="100px"><div class="gameIconName">Mage Girl Adventure</div></div></a></main>
+
+
+
+
+
+
+
+    <div id="joke" onclick="showJokeAnswer()">Today's joke: What is a duck’s favourite snack?</div>
+    <div id="jokeAnswer" onclick="showJokeAnswer()">Click for the answer!</div>
+    <div id="riddle" onclick="showRiddleAnswer()">Today's riddle: What stays in a corner but travels around the world?</div>
+    <div id="riddleAnswer" onclick="showRiddleAnswer()">Click for the answer!</div>
+    <div id="funFact">Today's fun fact: Only female mosquitoes bite.</div>
+
+    <p><a href="privacy.html" target="_blank">Privacy And Cookie Consent Policy</a> | <a class="changeConsent" onclick="googlefc.callbackQueue.push(googlefc.showRevocationMessage)">Manage Or Revoke Cookie Consents</a></p>
+
+    <p>Copyright © 2015-<span id="copyrightYear">2026</span>. All rights reserved. Femo is a trademark.</p>
+    <!-- First use as a games site recorded 1st August 2015 - https://web.archive.org/web/20150801090452/http://femo.com/ -->
+
+    <script>
+        //dt-desktop (tc-mobile) === ac-Action ad-adventure cr-Craft du-Dressup jb-Jobs ms-motorsport mp-Multiplayer pl-Platform pz-Puzzle rt-Retro sp-Sport st-Strategy
+
+        /////////////////////////////////////////////
+        // CHECK FOR MOBILE, SHOW WARNING, ANALYTICS
+        /////////////////////////////////////////////
+
+        var games = [
+
+
+            "Fashion-Designer-New-York,dt-xx-xx-xx",
+            "Animal-Connection,dt-tc-xx-xx-xx", //ui-fail
+            "Animal-Trends-Social-Media-Adventure,dt-tc-xx-xx-xx",
+            "Annie-And-Eliza's-Social-Media-Adventure,dt-tc-xx-xx-xx",
+            "Beauty-Guru-Makeup-Tips,dt-tc-xx-xx-xx",
+            "Body-Art-Studio,dt-tc-xx-xx-xx", //no-btn
+            "Boyfriend-Does-My-Makeup,dt-tc-xx-xx-xx", //no-btn
+            "Boyfriend-Spell-Factory,dt-tc-xx-xx-xx",
+            "Bridezilla-Wedding-Makeover,dt-tc-xx-xx-xx",
+            "Candy-Fiesta,dt-tc-xx-xx-xx", //no-ui
+            "Color-Me-Pets,dt-tc-xx-xx-xx",
+            "Color-Me-Princess,dt-tc-xx-xx-xx",
+            "Cook-Cook-Belgian-Waffles,dt-tc-xx-xx-xx",
+            "Cook-Cook-Korean-Bibimbap,dt-tc-xx-xx-xx",
+            "Cook-Cook-Real-Hotdog,dt-tc-xx-xx-xx",
+            "Creative-Puzzle,dt-tc-xx-xx-xx",
+            "DIY-Raincoat,dt-tc-xx-xx-xx",
+            "Evil-Queen-Glass-Skin-Routine,dt-tc-xx-xx-xx",
+            "Fox-Adventurer,dt-tc-xx-xx-xx",
+            "French-Fashion-Real-Haircuts,dt-tc-xx-xx-xx", //no-btn
+            "Goldblade-Dangerous-Water,dt-tc-xx-xx-xx",
+            "Hipsters-vs-Rockers,dt-tc-xx-xx-xx",
+            "Hop-Don't-Stop,dt-tc-xx-xx-xx",
+            "Jessie's-Pet-Shop,dt-tc-xx-xx-xx",
+            "Mage-Girl-Adventure,dt-tc-xx-xx-xx",
+            "My-Xmas-Selfie,dt-tc-xx-xx-xx",
+            "Doctor-Teeth-2,dt-tc-xx-xx-xx",
+            "Eggy-Car,dt-tc-xx-xx-xx",
+            "Extreme-Car-Parking,dt-tc-xx-xx-xx",
+            "Pull-The-Pin,dt-tc-xx-xx-xx",
+            "Steve's-World,dt-tc-xx-xx-xx",
+            "Super-Babysitter,dt-tc-xx-xx-xx",
+            //
+            "Merge-Cakes,dt-tc-xx-xx-xx",
+            "Happy-Cups,dt-tc-xx-xx-xx",
+            "Dreamlike-Room,dt-tc-xx-xx-xx",
+
+            //poor...
+            //"Indiara-And-The-Gold-Skull,dt-tc-xx-xx-xx",
+            //"Fox-Journey,dt-tc-xx-xx-xx",
+            //"Piggybank-Adventure,dt-tc-xx-xx-xx",
+            //"XXX,dt-tc-xx-xx-xx",
+        ];
+
+        //alert(games.length);
+
+        var sitemapText = "";
+        var fullGamesListText = "";
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        shuffleArray(games);
+
+        gamesBlockHeader.innerHTML = "L O A D I N G&nbsp;&nbsp;&nbsp;G A M E S . . .";
+
+        var gameCounter;
+
+        function showGames(selected) {
+            var output = "";
+            var gameName = "";
+            var gameID = "";
+            var i;
+            gameCounter = 0;
+            for (i = 0; i < games.length; i++) {
+                var game = games[i].split(",");
+                if (game[1].indexOf(selected) > -1) {
+                    gameCounter++;
+                    gameName = game[0].replace(/-/g, " ");
+                    gameID = game[0].replace(/-/g, "").toLowerCase();
+                    gameID = gameID.replace(/'/g, "");
+                    output += "<a href=games/" + gameID + "/><div class=gameIconContainer><img class=gameIcon loading='lazy' src=thumbs/" + gameID + ".png alt=" + gameID + " width=360px height=100px><div class=gameIconName>" + gameName + "</div></div></a>";
+
+                    sitemapText += "<url><loc>https://www.yurk.com/games/" + gameID + "/</loc></url>\n";
+                    fullGamesListText += '<li><a href="games/' + gameID + '/">' + gameName + ' Yurk Game</a></li>\n';
+                }
+            }
+
+
+            results.innerHTML = gameCounter + " games!";
+            gamesBlock.innerHTML = output;
+        }
+
+        setTimeout(function() {
+            showGames("-");
+            //console.log(sitemapText);
+            //console.log(fullGamesListText);
+        }, 1000); //faster overall page loading / less page jitter
+
+        setTimeout(function() {
+            gamesBlockHeader.innerHTML = "Welcome to femo.com! Here we have " + gameCounter + " great games for you."; //You have chosen wisely visiting yurk.com - there are NO advert interruptions in any of our games. Yay!
+            gamesBlock.style.opacity = "1";
+        }, 3500); //faster overall page loading / less page jitter
+
+        copyrightYear.innerHTML = (new Date).getFullYear()
+
+
+        //////// ANALYTICS /////////
+        ////////////////////////////
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-3596694-35');
+
+    </script>
+
+
+
+
+    <script>
+        var today = new Date();
+        var date = today.getDate();
+        var day = today.getDay();
+
+        var jokes = [
+            ["What do you call a boomerang that doesn't work?", "A stick!"],
+            ["What do you call a fly without wings?", "A walk!"],
+            ["What do you call a women who throws her bills on the fire?", "Bernadette!"],
+            ["What do you call a man with a car on his head?", "Jack!"],
+            ["What kind of storm is always in a rush?", "A hurricane!"],
+            ["What do you call a person with trifle in their ears?", "Anything you like. They can't hear you!"],
+            ["What do you call a woman with a tortoise on her head?", "Shelley!"],
+            ["What do you call a man who can't stand up?", "Neil!"],
+            ["What do you call a man who always just lies on the floor?", "Matt!"],
+            ["What do you call a deer with no eyes?", "No idea!"],
+            ["What do you call a fish with no eyes?", "A fsh!"],
+            ["What is a duck’s favourite snack?", "Quackers!"],
+            ["Why didn't the skeleton want to go on the rollercoaster?", "He didn't have the guts!"],
+            ["Why didn't the skeleton want to go on the seesaw?", "He didn't have 'any body' to go on it with!"],
+            ["What do you call an alligator in a vest?", "An investigator!"],
+            ["What do you call a man who sits behind a cow?", "Pat!"],
+            ["What do you call a teacher with no arms, no legs and no body?", "The head teacher!"],
+            ["What do you call a woman sitting on a slice of Mediterranean pizza?", "Olive!"],
+            ["What do you call a woman lying on a slice of bread?", "Marge!"],
+            ["What do you call a woman with a pint of lager balanced in one hand, a pint of ale in the other and a pint of stout on her head?", "Beatrix!"],
+            ["What do you call a dinosaur with a very extensive vocabulary?", "A Thesaurus!"],
+            ["What do you call a policeman who can't get out of bed in the morning?", "An undercover detective!"],
+            ["What do you call a zebra with no stripes?", "A horse!"],
+            ["What do you call a man with a rabbit up his jumper?", "Warren!"],
+            ["What do you call a T-Rex with a scratch on its leg?", "A dino-sore!"],
+            ["What do you call a Vicar on a moped?", "Rev!"],
+            ["Why can't pirates play cards?", "Because they keep sitting on the deck!"],
+            ["A truck driver and a doctor are in love with the same beautiful lady. The truck driver has to go on a one-week trip, but gives the lady seven apples before he leaves. Why?", "An apple a day keeps the doctor away!"],
+            ["How do you know carrots are good for your eyes?", "You never see rabbits wearing glasses!"],
+            ["Why can’t you trust the law of gravity?", "Because it will always let you down!"],
+            ["What does a fish say when it swims head first into a concrete wall?", "Dam!"],
+            ["Why can’t your nose be 12 inches long?", "Because it would be a foot!"],
+            ["What is green and smells like blue paint?", "Green paint!"],
+            ["What do you call a Frenchman wearing sandals?", "Philippe Philoppe!"],
+            ["What do you call a horse that likes arts and crafts?", "A hobby horse!"],
+            ["What do you call a spider with no legs?", "A raisin!"],
+            ["What do you call a man with an elephant on his head?", "An ambulance!"],
+            ["What do you call salted potato snack carved into the shape of a Tibetan priest?", "A chip monk!"],
+            ["What do you call a pony with a cough?", "A little hoarse!"],
+            ["What do you call a sleeping bull on a building site?", "A bulldozer!"]
+        ];
+
+        var dispJoke = "Today's joke: " + jokes[date][0];
+        var dispJokeAnswer = jokes[date][1];
+
+        joke.innerHTML = dispJoke;
+
+        function showJokeAnswer() {
+            jokeAnswer.innerHTML = dispJokeAnswer;
+            joke.style.cursor = "default";
+            jokeAnswer.style.cursor = "default";
+        }
+
+        var riddles = [
+            ["What is black when you buy it, red when you use it, and gray when you throw it away?", "Charcoal."],
+            ["What has a mouth but never eats, a bed but never sleeps, and has banks but no money?", "A river."],
+            ["It was Peter's first day on the soccer team and he scored a goal within just 5 minutes. His teammates congratulated him. When he scored a second goal, he was scolded. Why?", "His second goal was an own goal."],
+            ["Roadworks meant a school bus has to take a different route to school one day - under a low bridge. When the driver came to the bridge, he got out and saw that the bus was just a pencil width too tall, and that he would have to turn back. Sophie, a 5-year old boffin called for quiet. She said she had a solution which would require only her index finger and thumb. What was it?", "Sophie let some air out of the tyres."],
+            ["A room with no windows or doors. Walks in the night, grows in a day. Is found where there is death and decay.", "Mushrooms."],
+            ["A nonstop train leaves London for Edinburgh at 60 mph. Another nonstop train leaves Edinburgh for London at 40 mph. How far apart are the trains one hour before they pass each other?", "100 miles."],
+            ["What comes once in a minute, twice in a moment, but never in a thousand years?", "The letter 'm'."],
+            ["Re-arrange the letters... R S W T D U O O J N E ...to spell just one word.", "JUST ONE WORD."],
+            ["A man rode out of town on Sunday, he stayed a whole night at a hotel and rode back to town the next day on Sunday. How is this possible?", "His horse was called Sunday."],
+            ["You can hear me and control me, but never see me or touch me. What am I?", "Your voice."],
+            ["What is the first thing you see in an emergency but you only see it twice in a lifetime?", "The letter ‘e’."],
+            ["What stays in a corner but travels around the world?", "A postage stamp."],
+            ["What when read from right to left is a servant but when read from left to right is a ruler?", "God."],
+            ["Five apples are in a basket. How do you divide them among five girls so that each girl gets an apple, but one apple remains in the basket?", "Give the fifth girl her apple in the basket."],
+            ["You are my brother but I am not your brother. Who am I?", "Your sister."],
+            ["A one-seeded fruit I may be, but all of your calendars are full of me. What am I?", "Dates."],
+            ["Before Mount Everest was discovered, what was the highest mountain on Earth?", "Mount Everest."],
+            ["A horse was tied to a five foot long rope and the horse's food was 15 feet away from the horse. How did the horse reach the food?", "The rope wasn't tied to anything - he simply walked over to it."],
+            ["Three men fall from a boat and plunge beneath the waves, but only two get their hair wet. Why?", "The third man was bald."],
+            ["Tall I am young, short I am old. While with life I glow, wind is my foe. What am I?", "A candle."],
+            ["How many bricks does it take to complete a 2,000 square foot building made entirely of brick?", "Only one. It's the last brick that completes the building."],
+            ["Joseph builds a one storey house made entirely of redwood. He paints the roof, the walls, the floors, the ceilings - EVERYTHING in red paint. What colour would the stairs be?", "What stairs? It is a one storey house."],
+            ["Look carefully. Can you spot the the mistake? ABCDEFGHIJKLMNOPQRSTUVWXYZ", "The word 'the' is repeated."],
+            ["Mr. and Mrs. Smith have six sons and each son has one sister. How many people are in the Smith family?", "Nine. The two parents. Six sons. One daughter."],
+            ["A bus driver was heading down a street. He went right past a stop sign without stopping. Next he turned left where there was a 'no left turn' sign. Finally he went the wrong way down a one-way street. He didn't break any traffic laws. How?", "He was walking."],
+            ["I run up and down the stairs without moving. What am I?", "The stair carpet."],
+            ["What must you break in order to use it?", "An egg."],
+            ["Which is correct: 'The yoke of an egg are white' or 'The yoke of an egg is white'?", "Neither. The yoke of an egg is yellow."],
+            ["What has one head, one foot, and four legs?", "A bed."],
+            ["The more you take, the more you leave behind. What am I?", "Footsteps."],
+            ["Legend tells of an ancient invention that allows people to see through walls. What is it?", "A window."],
+            ["Three eyes have I, all in a row; when the red one opens, no one can go. What am I?", "A set of traffic lights."],
+        ];
+
+        var dispRiddle = "Today's riddle: " + riddles[date][0];
+        var dispRiddleAnswer = riddles[date][1];
+
+        riddle.innerHTML = dispRiddle;
+
+        function showRiddleAnswer() {
+            riddleAnswer.innerHTML = dispRiddleAnswer;
+            riddle.style.cursor = "default";
+            riddleAnswer.style.cursor = "default";
+        }
+
+        var funFacts = [
+            "Ants never sleep.",
+            "The longest word in the English language is: Pneumonoultramicroscopicsilicovolcanoconiosis (45 letters) although many people find Antidisestablishmentarianism (28 letters) easier to slip into everday conversation.",
+            "The average bed is home to over six billion dust mites.",
+            "Every drop of seawater contains approximately one billion atoms of gold. The problem of course is extracting it.",
+            "There are more trees on Earth than stars in the Milky Way. 100 billion stars vs. 3 trillion trees.",
+            "Babies are born with 300 bones. By the time they are adults they have only 206.",
+            "An ostrich's eye is bigger than its brain.",
+            "Brazil got its name from the nut, not the other way around.",
+            "Crocodiles swallow stones to help them dive deeper.",
+            "It's impossible to sneeze with your eyes open.",
+            "A cockroach can live several weeks with its head cut off. It dies of starvation.",
+            "Only female mosquitoes bite.",
+            "The world's termites outweigh the world's humans 10 to 1.",
+            "Months that begin on a Sunday will always have a 'Friday the 13th'.",
+            "Ninety eight per cent of the weight of water is made up from oxygen.",
+            "Snails can sleep for three years without eating.",
+            "Strawberries are the only fruit to have their seeds on the outside.",
+            "Fingernails grow nearly four times faster than toenails.",
+            "Due to gravitational effects, you weigh slightly less when the moon is directly overhead.",
+            "Earth is the only planet not named after a god.",
+            "You must have your back to the sun in order to see a rainbow.",
+            "If you multiply 526,315,789,473,684,210 with any number you will always find the original number in the result.",
+            "It takes eight and a half minutes for light to get from the Sun to Earth.",
+            "A mole can dig a tunnel the length of a football field in just one night.",
+            "The human brain is approximately 80% water.",
+            "2,520 can be divided by 1, 2, 3, 4, 5, 6, 7, 8, 9, and 10 without having a fraction left over.",
+            "The strongest muscle in the human body is the tongue.",
+            "A hippo can open its mouth wide enough to fit a four foot tall child inside.",
+            "A lump of pure gold the size of a matchbox can be flattened into a sheet the size of a tennis court.",
+            "Camels have three eyelids per eye to protect their eyes from airborne sand.",
+            "Nose prints can be used to identify dogs, just as fingerprints can be used to identify humans.",
+            "The most used letter in English is 'E', while 'Q' is the least used.",
+            "A single poison-arrow frog contains enough poison to kill over 2,000 people."
+        ];
+
+        funFact.innerHTML = "Today's fun fact: " + funFacts[date];
+
+        //fixed size specified above for good practice, now make dynamic (special case for small screens)
+        if (screen.width > 320) {
+            logo.style.width = "50vw";
+            logo.style.height = "25vw";
+        } else {
+            logo.style.width = "70vw";
+            logo.style.height = "35vw";
+        }
+
+        //alert(screen.width);
+
+        //reload page on orientation change (needed for mobile pages with responsive (large) ads.
+        window.onorientationchange = function() {
+            var orientation = window.orientation;
+            switch (orientation) {
+                case 0:
+                case 90:
+                case -90:
+                    window.location.reload();
+                    break;
+            }
+        };
+
+    </script>
+
+
+<ins class="adsbygoogle adsbygoogle-noablate" data-ad-hi="true" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><div id="aswift_1_host" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;min-height:auto;max-height:none;min-width:auto;max-width:none;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-0813719552929704&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;lmt=1724347346&amp;plaf=1%3A2%2C2%3A2%2C7%3A2&amp;plat=1%3A128%2C2%3A128%2C3%3A128%2C4%3A128%2C8%3A128%2C9%3A32776%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1081344%2C32%3A32%2C41%3A32%2C42%3A32%2C43%3A32&amp;format=0x0&amp;url=https%3A%2F%2Fwww.femo.com%2F%3Ffrua&amp;pra=7&amp;aiof=9&amp;asro=0&amp;aiapmd=0.0001&amp;aiapmid=1&amp;aiactd=0&amp;aicctd=0&amp;ailctd=0&amp;aimartd=4&amp;aieuf=1&amp;aicrs=1&amp;uach=WyJXaW5kb3dzIiwiMTAuMCIsIng4NiIsIiIsIjE0NS4wLjc2MzIuNiIsbnVsbCwwLG51bGwsIjY0IixbWyJOb3Q6QS1CcmFuZCIsIjk5LjAuMC4wIl0sWyJIZWFkbGVzc0Nocm9tZSIsIjE0NS4wLjc2MzIuNiJdLFsiQ2hyb21pdW0iLCIxNDUuMC43NjMyLjYiXV0sMF0.&amp;abgtt=9&amp;dt=1775927984383&amp;bpp=2&amp;bdt=80&amp;idt=185&amp;shv=r20260408&amp;mjsv=m202604070101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie_enabled=1&amp;eoidce=1&amp;prev_fmts=1200x280&amp;nras=1&amp;correlator=2459886659264&amp;frm=20&amp;pv=1&amp;u_tz=0&amp;u_his=2&amp;u_h=768&amp;u_w=1366&amp;u_ah=768&amp;u_aw=1366&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=1366&amp;bih=768&amp;scr_x=0&amp;scr_y=0&amp;eid=31097633%2C95384087%2C95387623%2C95386955%2C95379823&amp;oid=2&amp;pvsid=3277906515151159&amp;tmod=1453917141&amp;uas=0&amp;nvt=1&amp;fsapi=1&amp;fc=896&amp;brdim=0%2C0%2C0%2C0%2C1366%2C0%2C1366%2C768%2C1366%2C768&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=32768&amp;bc=31&amp;bz=1&amp;ifi=2&amp;uci=a!2&amp;fsb=1&amp;dtd=197" data-google-container-id="a!2" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true"></iframe></div></ins><iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="__tcfapiLocator" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="__uspapiLocator" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="__gppLocator" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcInactive" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcLoaded" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe src="https://www.google.com/recaptcha/api2/aframe" width="0" height="0" style="display: none;"></iframe></body><iframe id="google_esf" name="google_esf" src="https://googleads.g.doubleclick.net/pagead/html/r20260408/r20190131/zrt_lookup_fy2021.html" style="display: none;"></iframe></html>

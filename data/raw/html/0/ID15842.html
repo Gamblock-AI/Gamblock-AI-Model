@@ -1,0 +1,1762 @@
+<html lang="en" class="theme-ocean"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>NetYogi - Free Online Network Tools</title>
+    <meta name="description" content="Free online network diagnostic tools. DNS lookup, IP info, WHOIS, ping, traceroute, SSL checker, and 100+ more networking utilities. Fast, accurate, and reliable.">
+    
+    <!-- ========== Open Graph Meta Tags (Facebook, LinkedIn, etc.) ========== -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NetYogi">
+    <meta property="og:title" content="NetYogi - Free Online Network Tools">
+    <meta property="og:description" content="Free online network diagnostic tools. DNS lookup, IP info, WHOIS, ping, traceroute, SSL checker, and 100+ more networking utilities.">
+    <meta property="og:url" content="https://netyogi.net">
+    <meta property="og:image" content="https://netyogi.net/static/images/netyogi-og.svg">
+    <meta property="og:image:type" content="image/svg+xml">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- ========== Twitter Card Meta Tags ========== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@netyogi">
+    <meta name="twitter:title" content="NetYogi - Free Online Network Tools">
+    <meta name="twitter:description" content="Free online network diagnostic tools. DNS lookup, IP info, WHOIS, SSL checker, and 100+ more utilities.">
+    <meta name="twitter:image" content="https://netyogi.net/static/images/netyogi-og.svg">
+    
+    
+    
+    <!-- ========== Favicon ========== -->
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.e09e7f613713.svg">
+    
+    <!-- ========== Google Analytics ========== -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-H669L4BWCH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-H669L4BWCH');
+    </script>
+    
+    <!-- ========== Preconnect hints for external resources ========== -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="">
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin="">
+    <link rel="preconnect" href="https://unpkg.com" crossorigin="">
+    <link rel="preconnect" href="https://tile.openstreetmap.org" crossorigin="">
+    <link rel="dns-prefetch" href="https://a.tile.openstreetmap.org">
+    <link rel="dns-prefetch" href="https://b.tile.openstreetmap.org">
+    <link rel="dns-prefetch" href="https://c.tile.openstreetmap.org">
+    
+    <!-- ========== Critical CSS - Inlined for FCP optimization ========== -->
+    <!-- Contains: theme variables, navbar, hero, tool card shell, input, button -->
+    <!-- NOTE: These values MUST match static/css/input.css theme-ocean exactly -->
+    <style>
+        /* === Theme Variables === */
+        :root{--background:190 20% 98%;--foreground:190 25% 15%;--primary:187 85% 43%;--primary-foreground:0 0% 100%;--card:0 0% 100%;--card-foreground:190 25% 15%;--muted:190 15% 95%;--muted-foreground:190 15% 45%;--border:190 15% 90%;--secondary:190 15% 95%;--success:142 76% 36%}
+        .theme-ocean{--background:190 20% 98%;--foreground:190 25% 15%;--primary:187 85% 43%;--border:190 15% 90%;--secondary:190 15% 95%;--muted:190 15% 95%;--muted-foreground:190 15% 45%}
+        .dark{--background:222 47% 11%;--foreground:210 40% 98%;--card:222 47% 11%;--muted:217 33% 17%;--muted-foreground:215 20% 65%;--border:217 33% 17%;--secondary:217 33% 17%;--primary:187 85% 53%}
+        
+        /* === Base Reset === */
+        *,::after,::before{box-sizing:border-box;margin:0;padding:0}
+        html{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.5;-webkit-text-size-adjust:100%}
+        body{min-height:100vh;display:flex;flex-direction:column;background:hsl(var(--background));color:hsl(var(--foreground))}
+        main{flex-grow:1}
+        
+        /* === Navbar (above fold) === */
+        .navbar-glass{position:sticky;top:0;z-index:100;width:100%;background:hsl(var(--background)/.8);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid hsl(var(--border))}
+        .navbar-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto;padding:.875rem 1rem}
+        .navbar-logo{display:flex;align-items:center;gap:.625rem;text-decoration:none}
+        .navbar-wordmark{font-size:1.25rem;font-weight:700;color:hsl(var(--foreground))}
+        @media(min-width:768px){.navbar-container{padding:1rem 1.5rem}}
+        
+        /* === Tool Page Header (above fold) === */
+        .tool-page-header{position:relative;background:hsl(var(--background));padding-bottom:3rem}
+        .tool-hero{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3rem 1rem 2.5rem;text-align:center}
+        .tool-hero-content{position:relative;z-index:2;max-width:720px;margin:0 auto}
+        
+        /* === Hero Title (above fold) === */
+        .hero-title{font-size:clamp(1.75rem,5vw,2.75rem);font-weight:800;color:hsl(var(--foreground));margin-bottom:.75rem;line-height:1.2;letter-spacing:-.02em}
+        .hero-title-highlight{background:linear-gradient(135deg,hsl(var(--primary)) 0%,hsl(var(--primary)/.7) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero-privacy{display:inline-flex;align-items:center;gap:.5rem;font-size:.875rem;color:hsl(var(--muted-foreground));margin-bottom:1rem}
+        .hero-privacy svg{width:10px;height:10px;color:hsl(var(--success))}
+        .hero-subtitle{font-size:clamp(1rem,2.5vw,1.25rem);font-weight:500;color:hsl(var(--muted-foreground));max-width:600px;margin:0 auto 1.5rem;line-height:1.6}
+        .hero-trust-signals{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;margin-top:1rem}
+        .trust-signal{display:inline-flex;align-items:center;gap:.375rem;font-size:.8125rem;font-weight:500;color:hsl(var(--muted-foreground));padding:.375rem .75rem;background:hsl(var(--card));border:1px solid hsl(var(--border));border-radius:9999px}
+        .trust-signal svg{width:14px;height:14px;color:hsl(var(--success))}
+        
+        /* === Tool Interface (above fold) === */
+        .tool-interface{max-width:680px;margin:0 auto;position:relative;z-index:10;padding:0 1rem}
+        .tool-interface--wide{max-width:1400px}
+        .tool-card{background:hsl(var(--card));border-radius:1rem;border:1px solid hsl(var(--border));padding:1.5rem;box-shadow:0 4px 24px hsl(var(--foreground)/.05)}
+        @media(min-width:768px){.tool-card{padding:2rem}}
+        
+        /* === Tool Input Form (above fold) === */
+        .tool-input-wrapper{display:flex;flex-direction:column;gap:1rem}
+        @media(min-width:640px){.tool-input-wrapper{flex-direction:row}}
+        .tool-input{flex:1;padding:.875rem 1rem;font-size:1rem;background:hsl(var(--background));border:1.5px solid hsl(var(--border));border-radius:.75rem;color:hsl(var(--foreground));outline:none;transition:border-color .2s,box-shadow .2s}
+        .tool-input:focus{border-color:hsl(var(--primary));box-shadow:0 0 0 3px hsl(var(--primary)/.15)}
+        .tool-input::placeholder{color:hsl(var(--muted-foreground))}
+        .tool-submit-btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.875rem 1.5rem;font-size:1rem;font-weight:600;color:hsl(var(--primary-foreground));background:hsl(var(--primary));border:none;border-radius:.75rem;cursor:pointer;transition:transform .15s,box-shadow .15s,background .15s;white-space:nowrap}
+        .tool-submit-btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px hsl(var(--primary)/.3)}
+        .tool-submit-btn:active{transform:translateY(0)}
+        .tool-submit-btn svg{width:18px;height:18px}
+        .tool-input-helper{font-size:.875rem;color:hsl(var(--muted-foreground));margin-top:.25rem}
+        
+        /* === Results Container Shell (above fold) === */
+        .results-container{margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid hsl(var(--border))}
+        .result-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3rem 1rem;text-align:center;color:hsl(var(--muted-foreground))}
+        .result-placeholder svg{width:48px;height:48px;margin-bottom:1rem;opacity:.5}
+        .result-placeholder-title{font-size:1rem;font-weight:500;margin-bottom:.5rem}
+        .result-placeholder-text{font-size:.875rem;opacity:.8}
+        
+        /* === Loading State === */
+        .loading-spinner{width:24px;height:24px;border:2px solid hsl(var(--primary)/.2);border-top-color:hsl(var(--primary));border-radius:50%;animation:spin 1s linear infinite}
+        @keyframes spin{to{transform:rotate(360deg)}}
+        
+        /* === Initial State Icons (prevent CLS) === */
+        /* Reserve space for icons before async CSS loads */
+        .initial-icon{width:64px;height:64px;display:flex;align-items:center;justify-content:center}
+        .initial-icon svg{width:48px;height:48px}
+        .whois-initial-state,.dns-initial-state,.ip-initial-state{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3rem 1rem;text-align:center;min-height:200px}
+        .initial-text{font-size:1rem;font-weight:500;margin:0 0 .5rem}
+        .initial-subtext{font-size:.875rem;color:hsl(var(--muted-foreground));margin:0}
+        
+        /* === Screen Reader Only (accessibility) === */
+        .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    </style>
+    
+    <!-- ========== Essential Layout CSS - Render Blocking ========== -->
+    <!-- Tailwind utilities - MUST be render-blocking for CLS prevention -->
+    <!-- Contains all layout classes (flexbox, grid, spacing) used in HTML -->
+    <link rel="stylesheet" href="/static/css/dist/output.7c0be9d0bff6.css">
+    
+    <!-- Footer - loads async, applied when ready -->
+    <link rel="stylesheet" href="/static/css/dist/footer.5f639fbb0de6.css" media="all" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/static/css/dist/footer.5f639fbb0de6.css"></noscript>
+    
+    
+<!-- Canonical URL for SEO -->
+<link rel="canonical" href="https://netyogi.net">
+<link rel="stylesheet" href="/static/css/home-page.03f4d2fce1a2.css">
+
+<!-- WebSite Schema for Site Name in SERP -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "NetYogi",
+  "alternateName": ["Net Yogi"],
+  "url": "https://netyogi.net/"
+}
+</script>
+
+</head>
+<body class="min-h-screen flex flex-col" style="background: hsl(var(--background)); color: hsl(var(--foreground));">
+    
+    <!-- Navbar -->
+    
+<!-- 
+Navbar - NetYogi
+- Transparent + backdrop blur
+- Mobile-first design
+- Theme switcher (Light, Dark, Ocean, Purple, Coral)
+- Tools dropdown with categories
+- Created: 2026-01-10
+- Updated: 2026-02-20 - Added Learn link to desktop and mobile nav
+-->
+
+<header id="main-navbar" class="navbar-glass">
+    <div class="navbar-container">
+        <!-- Logo -->
+        <a href="/" class="navbar-logo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-8 h-8 text-[hsl(var(--primary))]">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span class="navbar-wordmark">NetYogi</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="navbar-nav-desktop">
+            <a href="/" class="nav-link">Home</a>
+            
+            <!-- Tools Dropdown -->
+            <div class="nav-dropdown-container" id="tools-dropdown-container">
+                <button class="nav-link nav-dropdown-trigger" id="tools-dropdown-btn">
+                    Tools
+                    <svg class="nav-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="nav-dropdown-menu" id="tools-dropdown-menu">
+                    <a href="/dns" class="nav-dropdown-item">
+                        <span class="nav-dropdown-icon dns">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                                <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                                <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                            </svg>
+                        </span>
+                        <span class="nav-dropdown-text">
+                            <span class="nav-dropdown-title">DNS Tools</span>
+                            <span class="nav-dropdown-count">15 tools</span>
+                        </span>
+                    </a>
+                    <a href="/ip" class="nav-dropdown-item">
+                        <span class="nav-dropdown-icon ip">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                        </span>
+                        <span class="nav-dropdown-text">
+                            <span class="nav-dropdown-title">IP &amp; Network</span>
+                            <span class="nav-dropdown-count">9 tools</span>
+                        </span>
+                    </a>
+                    <a href="/domain" class="nav-dropdown-item">
+                        <span class="nav-dropdown-icon domain">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                            </svg>
+                        </span>
+                        <span class="nav-dropdown-text">
+                            <span class="nav-dropdown-title">Domain Tools</span>
+                            <span class="nav-dropdown-count">5 tools</span>
+                        </span>
+                    </a>
+                    <div class="nav-dropdown-divider"></div>
+                    <a href="/#tools" class="nav-dropdown-item nav-dropdown-all">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="14" width="7" height="7"></rect>
+                            <rect x="3" y="14" width="7" height="7"></rect>
+                        </svg>
+                        <span>View All Tools</span>
+                    </a>
+                </div>
+            </div>
+            
+            <a href="/learn" class="nav-link">Learn</a>
+            <a href="/embed" class="nav-link">Embed</a>
+        </nav>
+
+        <!-- Right Controls -->
+        <div class="navbar-controls">
+            <!-- Theme Switcher -->
+            <div class="dropdown-container" id="theme-dropdown-container">
+                <button class="navbar-icon-btn" id="theme-btn" aria-label="Change theme" title="Theme">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2v2"></path>
+                        <path d="M12 20v2"></path>
+                        <path d="m4.93 4.93 1.41 1.41"></path>
+                        <path d="m17.66 17.66 1.41 1.41"></path>
+                        <path d="M2 12h2"></path>
+                        <path d="M20 12h2"></path>
+                        <path d="m6.34 17.66-1.41 1.41"></path>
+                        <path d="m19.07 4.93-1.41 1.41"></path>
+                    </svg>
+                </button>
+                <div class="dropdown-menu" id="theme-dropdown">
+                    <button onclick="setTheme('light')" class="dropdown-item">
+                        <span class="dropdown-icon" style="background: linear-gradient(135deg, #f8fafc, #e2e8f0);"></span>
+                        <span>Light</span>
+                    </button>
+                    <button onclick="setTheme('dark')" class="dropdown-item">
+                        <span class="dropdown-icon" style="background: linear-gradient(135deg, #1e293b, #0f172a);"></span>
+                        <span>Dark</span>
+                    </button>
+                    <button onclick="setTheme('ocean')" class="dropdown-item">
+                        <span class="dropdown-icon" style="background: linear-gradient(135deg, #06b6d4, #0891b2);"></span>
+                        <span>Ocean</span>
+                    </button>
+                    <button onclick="setTheme('purple')" class="dropdown-item">
+                        <span class="dropdown-icon" style="background: linear-gradient(135deg, #a855f7, #7c3aed);"></span>
+                        <span>Purple</span>
+                    </button>
+                    <button onclick="setTheme('coral')" class="dropdown-item">
+                        <span class="dropdown-icon" style="background: linear-gradient(135deg, #ff5a5f, #00a699);"></span>
+                        <span>Coral</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="navbar-icon-btn mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+                <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4" y1="6" x2="20" y2="6"></line>
+                    <line x1="4" y1="12" x2="20" y2="12"></line>
+                    <line x1="4" y1="18" x2="20" y2="18"></line>
+                </svg>
+                <svg class="close-icon hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 6 6 18"></path>
+                    <path d="m6 6 12 12"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <nav class="navbar-mobile-menu hidden" id="mobile-menu">
+        <a href="/" class="mobile-nav-link">Home</a>
+        
+        <!-- Mobile Tools Accordion -->
+        <div class="mobile-nav-accordion">
+            <button class="mobile-nav-accordion-trigger" id="mobile-tools-trigger">
+                <span>Tools</span>
+                <svg class="mobile-accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </button>
+            <div class="mobile-nav-accordion-content hidden" id="mobile-tools-content">
+                <a href="/dns" class="mobile-nav-sublink">
+                    <span class="mobile-nav-sublink-icon dns">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                        </svg>
+                    </span>
+                    DNS Tools
+                </a>
+                <a href="/ip" class="mobile-nav-sublink">
+                    <span class="mobile-nav-sublink-icon ip">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M2 12h20"></path>
+                        </svg>
+                    </span>
+                    IP &amp; Network
+                </a>
+                <a href="/domain" class="mobile-nav-sublink">
+                    <span class="mobile-nav-sublink-icon domain">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                        </svg>
+                    </span>
+                    Domain Tools
+                </a>
+                <a href="/#tools" class="mobile-nav-sublink mobile-nav-sublink-all">View All Tools</a>
+            </div>
+        </div>
+        
+        <a href="/learn" class="mobile-nav-link">Learn</a>
+        <a href="/embed" class="mobile-nav-link">Embed</a>
+    </nav>
+</header>
+
+<style>
+/* =============================================
+   NAVBAR - GLASS MORPHISM DESIGN
+   ============================================= */
+
+.navbar-glass {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.navbar-glass.scrolled {
+    background: hsl(var(--background) / 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid hsl(var(--border) / 0.3);
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0.875rem 1rem;
+}
+
+@media (min-width: 768px) {
+    .navbar-container {
+        padding: 1rem 1.5rem;
+    }
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.navbar-logo:hover {
+    opacity: 0.8;
+}
+
+.navbar-wordmark {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: hsl(var(--foreground));
+    letter-spacing: -0.02em;
+}
+
+.navbar-nav-desktop {
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .navbar-nav-desktop {
+        display: flex;
+    }
+}
+
+.nav-link {
+    position: relative;
+    padding: 0.5rem 0.875rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: hsl(var(--foreground) / 0.7);
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+    color: hsl(var(--foreground));
+    background: hsl(var(--foreground) / 0.05);
+}
+
+.navbar-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.navbar-icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    border-radius: 0.625rem;
+    background: transparent;
+    color: hsl(var(--foreground) / 0.7);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.navbar-icon-btn:hover {
+    background: hsl(var(--foreground) / 0.08);
+    color: hsl(var(--foreground));
+}
+
+.mobile-menu-btn {
+    display: flex;
+}
+
+@media (min-width: 768px) {
+    .mobile-menu-btn {
+        display: none;
+    }
+}
+
+/* Dropdown */
+.dropdown-container {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    min-width: 140px;
+    padding: 0.5rem;
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border) / 0.5);
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 40px hsl(var(--foreground) / 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: all 0.2s ease;
+    z-index: 200;
+}
+
+.dropdown-container.open .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0.625rem 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: transparent;
+    color: hsl(var(--foreground));
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.dropdown-item:hover {
+    background: hsl(var(--primary) / 0.1);
+    color: hsl(var(--primary));
+}
+
+.dropdown-icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Mobile Menu */
+.navbar-mobile-menu {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 1rem 1rem;
+    border-top: 1px solid hsl(var(--border) / 0.2);
+    background: hsl(var(--background) / 0.95);
+    backdrop-filter: blur(12px);
+}
+
+.navbar-mobile-menu.hidden {
+    display: none;
+}
+
+.mobile-nav-link {
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: hsl(var(--foreground) / 0.8);
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.mobile-nav-link:hover {
+    color: hsl(var(--foreground));
+    background: hsl(var(--foreground) / 0.05);
+}
+
+/* =============================================
+   TOOLS DROPDOWN - Desktop
+   ============================================= */
+
+.nav-dropdown-container {
+    position: relative;
+}
+
+.nav-dropdown-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem 0.875rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: hsl(var(--foreground) / 0.7);
+    background: transparent;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.nav-dropdown-trigger:hover {
+    color: hsl(var(--foreground));
+    background: hsl(var(--foreground) / 0.05);
+}
+
+.nav-dropdown-chevron {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.2s ease;
+}
+
+.nav-dropdown-container.open .nav-dropdown-chevron {
+    transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 220px;
+    padding: 0.5rem;
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border) / 0.5);
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 40px hsl(var(--foreground) / 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(-8px);
+    transition: all 0.2s ease;
+    z-index: 200;
+}
+
+.nav-dropdown-container.open .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.625rem 0.75rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: all 0.15s ease;
+}
+
+.nav-dropdown-item:hover {
+    background: hsl(var(--primary) / 0.08);
+}
+
+.nav-dropdown-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.nav-dropdown-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.nav-dropdown-icon.dns {
+    background: hsl(187 85% 43% / 0.12);
+    color: hsl(187 85% 43%);
+}
+
+.nav-dropdown-icon.ip {
+    background: hsl(142 71% 45% / 0.12);
+    color: hsl(142 71% 45%);
+}
+
+.nav-dropdown-icon.domain {
+    background: hsl(350 70% 50% / 0.12);
+    color: hsl(350 70% 50%);
+}
+
+.nav-dropdown-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+}
+
+.nav-dropdown-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: hsl(var(--foreground));
+}
+
+.nav-dropdown-count {
+    font-size: 0.75rem;
+    color: hsl(var(--muted-foreground));
+}
+
+.nav-dropdown-divider {
+    height: 1px;
+    margin: 0.5rem 0;
+    background: hsl(var(--border) / 0.5);
+}
+
+.nav-dropdown-all {
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: hsl(var(--muted-foreground));
+}
+
+.nav-dropdown-all svg {
+    width: 16px;
+    height: 16px;
+}
+
+.nav-dropdown-all:hover {
+    color: hsl(var(--primary));
+}
+
+/* =============================================
+   MOBILE TOOLS ACCORDION
+   ============================================= */
+
+.mobile-nav-accordion {
+    border-bottom: 1px solid hsl(var(--border) / 0.2);
+}
+
+.mobile-nav-accordion-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: hsl(var(--foreground) / 0.8);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.mobile-nav-accordion-trigger:hover {
+    color: hsl(var(--foreground));
+    background: hsl(var(--foreground) / 0.05);
+}
+
+.mobile-accordion-chevron {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.2s ease;
+}
+
+.mobile-nav-accordion.open .mobile-accordion-chevron {
+    transform: rotate(180deg);
+}
+
+.mobile-nav-accordion-content {
+    padding: 0 0.5rem 0.75rem;
+}
+
+.mobile-nav-accordion-content.hidden {
+    display: none;
+}
+
+.mobile-nav-sublink {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: hsl(var(--foreground) / 0.7);
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.mobile-nav-sublink:hover {
+    color: hsl(var(--foreground));
+    background: hsl(var(--foreground) / 0.05);
+}
+
+.mobile-nav-sublink-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.mobile-nav-sublink-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.mobile-nav-sublink-icon.dns {
+    background: hsl(187 85% 43% / 0.12);
+    color: hsl(187 85% 43%);
+}
+
+.mobile-nav-sublink-icon.ip {
+    background: hsl(142 71% 45% / 0.12);
+    color: hsl(142 71% 45%);
+}
+
+.mobile-nav-sublink-icon.domain {
+    background: hsl(350 70% 50% / 0.12);
+    color: hsl(350 70% 50%);
+}
+
+.mobile-nav-sublink-all {
+    margin-top: 0.25rem;
+    padding-left: 1rem;
+    font-size: 0.875rem;
+    color: hsl(var(--primary));
+}
+</style>
+
+<script>
+(function() {
+    const navbar = document.getElementById('main-navbar');
+    const themeContainer = document.getElementById('theme-dropdown-container');
+    const themeBtn = document.getElementById('theme-btn');
+    const toolsContainer = document.getElementById('tools-dropdown-container');
+    const toolsBtn = document.getElementById('tools-dropdown-btn');
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = mobileMenuBtn?.querySelector('.menu-icon');
+    const closeIcon = mobileMenuBtn?.querySelector('.close-icon');
+    const mobileToolsTrigger = document.getElementById('mobile-tools-trigger');
+    const mobileToolsContent = document.getElementById('mobile-tools-content');
+
+    // Scroll detection
+    function handleScroll() {
+        if (window.scrollY > 10) {
+            navbar?.classList.add('scrolled');
+        } else {
+            navbar?.classList.remove('scrolled');
+        }
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    // Dropdown toggle
+    function toggleDropdown(container) {
+        const isOpen = container.classList.contains('open');
+        closeAllDropdowns();
+        if (!isOpen) {
+            container.classList.add('open');
+        }
+    }
+
+    function closeAllDropdowns() {
+        themeContainer?.classList.remove('open');
+        toolsContainer?.classList.remove('open');
+    }
+
+    themeBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleDropdown(themeContainer);
+    });
+
+    toolsBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleDropdown(toolsContainer);
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!themeContainer?.contains(e.target) && !toolsContainer?.contains(e.target)) {
+            closeAllDropdowns();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeAllDropdowns();
+            closeMobileMenu();
+        }
+    });
+
+    document.querySelectorAll('#theme-dropdown button').forEach(btn => {
+        btn.addEventListener('click', () => {
+            setTimeout(closeAllDropdowns, 150);
+        });
+    });
+
+    // Mobile menu
+    function toggleMobileMenu() {
+        const isHidden = mobileMenu?.classList.contains('hidden');
+        if (isHidden) {
+            mobileMenu?.classList.remove('hidden');
+            menuIcon?.classList.add('hidden');
+            closeIcon?.classList.remove('hidden');
+        } else {
+            closeMobileMenu();
+        }
+    }
+
+    function closeMobileMenu() {
+        mobileMenu?.classList.add('hidden');
+        menuIcon?.classList.remove('hidden');
+        closeIcon?.classList.add('hidden');
+        // Also close mobile accordion
+        mobileToolsContent?.classList.add('hidden');
+        mobileToolsTrigger?.closest('.mobile-nav-accordion')?.classList.remove('open');
+    }
+
+    mobileMenuBtn?.addEventListener('click', toggleMobileMenu);
+
+    // Mobile tools accordion
+    mobileToolsTrigger?.addEventListener('click', () => {
+        const accordion = mobileToolsTrigger.closest('.mobile-nav-accordion');
+        const isOpen = !mobileToolsContent?.classList.contains('hidden');
+        if (isOpen) {
+            mobileToolsContent?.classList.add('hidden');
+            accordion?.classList.remove('open');
+        } else {
+            mobileToolsContent?.classList.remove('hidden');
+            accordion?.classList.add('open');
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) {
+            closeMobileMenu();
+        }
+    });
+})();
+</script>
+
+
+    
+    <!-- Main Content -->
+    <main class="flex-grow">
+        
+<div class="home-page-wrapper">
+<!-- Hero Section -->
+<section class="hero-home">
+    <div class="hero-content">
+        <!-- Floating network icons -->
+        <div class="hero-icons">
+            <!-- Globe/Network -->
+            <div class="hero-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+            </div>
+            <!-- DNS/Server -->
+            <div class="hero-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                    <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                    <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                </svg>
+            </div>
+            <!-- Lock/SSL -->
+            <div class="hero-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+            </div>
+            <!-- Activity/Ping -->
+            <div class="hero-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                </svg>
+            </div>
+            <!-- Search/Lookup -->
+            <div class="hero-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </div>
+        </div>
+        
+        <!-- Title -->
+        <h1 class="hero-title">
+            Network Tools,<br>
+            <span class="hero-title-highlight">Made Simple</span>
+        </h1>
+        
+        <!-- Subtitle -->
+        <p class="hero-subtitle">
+            DNS lookup, IP info, WHOIS, SSL checker &amp; more — 100% free, fast, and accurate.
+        </p>
+        
+        <!-- CTA Button -->
+        <a href="#tools" class="hero-cta-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            Explore Tools
+        </a>
+    </div>
+    
+    <!-- Trust badges at bottom -->
+    <div class="hero-trust">
+        <div class="hero-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span>Server-Side</span>
+        </div>
+        <div class="hero-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            <span>Fast</span>
+        </div>
+        <div class="hero-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Accurate</span>
+        </div>
+        <div class="hero-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+            <span>Free</span>
+        </div>
+    </div>
+</section>
+
+<!-- Tools Section -->
+<section id="tools" class="tools-section">
+    <div class="section-header">
+        <h2 class="section-title">All Network Tools</h2>
+        <p class="section-subtitle">Choose a tool and start diagnosing</p>
+    </div>
+    
+    <!-- Category Pills -->
+    <div class="category-pills" id="categoryPills">
+        <button class="category-pill active" data-category="all">All</button>
+        <button class="category-pill" data-category="dns">DNS</button>
+        <button class="category-pill" data-category="ip">IP &amp; Network</button>
+        <button class="category-pill" data-category="domain">Domain</button>
+        <button class="category-pill" data-category="utilities">Utilities</button>
+    </div>
+    
+    <!-- Tools Grid -->
+    <div class="tools-grid" id="toolsGrid">
+        <!-- IP TOOLS -->
+        <a href="/what-is-my-ip" class="tool-card" data-category="ip">
+            <div class="tool-icon ip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+            </div>
+            <h3 class="tool-title">What Is My IP</h3>
+            <p class="tool-description">Instantly discover your public IP address</p>
+            <div class="tool-footer">
+                <span class="category-badge ip">IP</span>
+                <span class="tool-cta">Check <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </div>
+        </a>
+        
+        <!-- DNS TOOLS -->
+        <a href="/dns-lookup" class="tool-card" data-category="dns">
+            <div class="tool-icon dns">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                    <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                    <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                </svg>
+            </div>
+            <h3 class="tool-title">DNS Lookup</h3>
+            <p class="tool-description">Query DNS records for any domain</p>
+            <div class="tool-footer">
+                <span class="category-badge dns">DNS</span>
+                <span class="tool-cta">Check <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </div>
+        </a>
+        
+        <a href="/dns-checker" class="tool-card" data-category="dns">
+            <div class="tool-icon dns">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                </svg>
+            </div>
+            <h3 class="tool-title">DNS Checker</h3>
+            <p class="tool-description">Check DNS propagation worldwide</p>
+            <div class="tool-footer">
+                <span class="category-badge dns">DNS</span>
+                <span class="tool-cta">Check <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </div>
+        </a>
+        
+        <!-- DNS Record Variant Tools -->
+        <a href="/mx-lookup" class="tool-card" data-category="dns">
+            <div class="tool-icon dns">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+            </div>
+            <h3 class="tool-title">MX Lookup</h3>
+            <p class="tool-description">Find mail servers for any domain</p>
+            <div class="tool-footer">
+                <span class="category-badge dns">DNS</span>
+                <span class="tool-cta">Check <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </div>
+        </a>
+        
+        <a href="/a-record-lookup" class="tool-card" data-category="dns">
+            <div class="tool-icon dns">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                    <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                    <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                </svg>
+            </div>
+            <h3 class="tool-title">A Record Lookup</h3>
+            <p class="tool-description">Find IPv4 addresses for domains</p>
+            <div class="tool-footer">
+                <span class="category-badge dns">DNS</span>
+                <span class="tool-cta">Check <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </div>
+        </a>
+        
+        <a href="/aaaa-record-lookup" class="tool-card" data-category="dns">
+            <div class="tool-icon dns">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                    <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                    <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                    <circle cx="18" cy="6" r="2"></circle>
+                    <circle cx="18" cy="18" r="2"></circle>
+                </svg>
+            </div>
+            <h3 class="tool-title">AAAA Record Lookup</h3>
+            <p class="tool-description">Find IPv6 addresses for domains</p>
+            <div class="tool-footer">
+                <span class="category-badge dns">DNS</span>
+                <span class="tool-cta">Check <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </div>
+        </a>
+        
+        <a href="/cname-lookup" class="tool-card" data-category="dns">
+            <div class="tool-icon dns">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+            </div>
+            <h3 class="tool-title">CNAME Lookup</h3>
+            <p class="tool-description">Check DNS aliases and canonical names</p>
+            <div class="tool-footer">
+                <span class="category-badge dns">DNS</span>
+                <span class="tool-cta">Check <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </div>
+        </a>
+        
+        <a href="/txt-lookup" class="tool-card" data-category="dns">
+            <div class="tool-icon dns">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <line x1="10" y1="9" x2="8" y2="9"></line>
+                </svg>
+            </div>
+            <h3 class="tool-title">TXT Record Lookup</h3>
+            <p class="tool-description">Check SPF, DKIM, DMARC &amp; text records</p>
+            <div class="tool-footer">
+                <span class="category-badge dns">DNS</span>
+                <span class="tool-cta">Check <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </div>
+        </a>
+        
+        <a href="/ns-lookup" class="tool-card" data-category="dns">
+            <div class="tool-icon dns">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="3" width="20" height="6" rx="2" ry="2"></rect>
+                    <rect x="2" y="9" width="20" height="6" rx="2" ry="2"></rect>
+                    <rect x="2" y="15" width="20" height="6" rx="2" ry="2"></rect>
+                    <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                    <line x1="6" y1="12" x2="6.01" y2="12"></line>
+                    <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                </svg>
+            </div>
+            <h3 class="tool-title">NS Lookup</h3>
+            <p class="tool-description">Find authoritative nameservers</p>
+            <div class="tool-footer">
+                <span class="category-badge dns">DNS</span>
+                <span class="tool-cta">Check <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </div>
+        </a>
+        
+        <a href="/soa-lookup" class="tool-card" data-category="dns">
+            <div class="tool-icon dns">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+            </div>
+            <h3 class="tool-title">SOA Lookup</h3>
+            <p class="tool-description">Check zone authority and refresh timers</p>
+            <div class="tool-footer">
+                <span class="category-badge dns">DNS</span>
+                <span class="tool-cta">Check <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </div>
+        </a>
+        
+        <a href="/caa-lookup" class="tool-card" data-category="dns">
+            <div class="tool-icon dns">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    <circle cx="12" cy="16" r="1"></circle>
+                </svg>
+            </div>
+            <h3 class="tool-title">CAA Lookup</h3>
+            <p class="tool-description">Check Certificate Authority Authorization</p>
+            <div class="tool-footer">
+                <span class="category-badge dns">DNS</span>
+                <span class="tool-cta">Check <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </div>
+        </a>
+        
+        <a href="/reverse-dns-lookup" class="tool-card" data-category="dns">
+            <div class="tool-icon dns">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="16 3 21 3 21 8"></polyline>
+                    <line x1="4" y1="20" x2="21" y2="3"></line>
+                    <polyline points="21 16 21 21 16 21"></polyline>
+                    <line x1="15" y1="15" x2="21" y2="21"></line>
+                    <line x1="4" y1="4" x2="9" y2="9"></line>
+                </svg>
+            </div>
+            <h3 class="tool-title">Reverse DNS Lookup</h3>
+            <p class="tool-description">Find hostname for any IP address (PTR)</p>
+            <div class="tool-footer">
+                <span class="category-badge dns">DNS</span>
+                <span class="tool-cta">Check <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </div>
+        </a>
+        
+        <a href="/check-dns-ttl" class="tool-card" data-category="dns">
+            <div class="tool-icon dns">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+            </div>
+            <h3 class="tool-title">Check DNS TTL</h3>
+            <p class="tool-description">Analyze TTL values for all DNS records</p>
+            <div class="tool-footer">
+                <span class="category-badge dns">DNS</span>
+                <span class="tool-cta">Check <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </div>
+        </a>
+        
+        <a href="/dns-over-https" class="tool-card" data-category="dns">
+            <div class="tool-icon dns">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+            </div>
+            <h3 class="tool-title">DNS over HTTPS</h3>
+            <p class="tool-description">Query DNS via encrypted HTTPS from multiple providers</p>
+            <div class="tool-footer">
+                <span class="category-badge dns">DNS</span>
+                <span class="tool-cta">Query <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </div>
+        </a>
+        
+        <a href="/dns-over-tls" class="tool-card" data-category="dns">
+            <div class="tool-icon dns">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    <rect x="9" y="9" width="6" height="7" rx="1"></rect>
+                    <path d="M10 9V7a2 2 0 1 1 4 0v2"></path>
+                </svg>
+            </div>
+            <h3 class="tool-title">DNS over TLS</h3>
+            <p class="tool-description">Query DNS via encrypted TLS connection</p>
+            <div class="tool-footer">
+                <span class="category-badge dns">DNS</span>
+                <span class="tool-cta">Query <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </div>
+        </a>
+        
+        <a href="/dnssec-checker" class="tool-card" data-category="dns">
+            <div class="tool-icon dns">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    <path d="M9 12l2 2 4-4"></path>
+                </svg>
+            </div>
+            <h3 class="tool-title">DNSSEC Checker</h3>
+            <p class="tool-description">Verify DNSSEC configuration and chain of trust</p>
+            <div class="tool-footer">
+                <span class="category-badge dns">DNS</span>
+                <span class="tool-cta">Check <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </div>
+        </a>
+        
+        <a href="/ip-lookup" class="tool-card" data-category="ip">
+            <div class="tool-icon ip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+            </div>
+            <h3 class="tool-title">IP Lookup</h3>
+            <p class="tool-description">Get geolocation and ISP info for any IP</p>
+            <div class="tool-footer">
+                <span class="category-badge ip">IP</span>
+                <span class="tool-cta">Check <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </div>
+        </a>
+        
+        <a href="/ip-location" class="tool-card" data-category="ip">
+            <div class="tool-icon ip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+            </div>
+            <h3 class="tool-title">IP Location</h3>
+            <p class="tool-description">Find geographic location of any IP address</p>
+            <div class="tool-footer">
+                <span class="category-badge ip">IP</span>
+                <span class="tool-cta">Locate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </div>
+        </a>
+        
+        <a href="/ip-timezone" class="tool-card" data-category="ip">
+            <div class="tool-icon ip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+            </div>
+            <h3 class="tool-title">IP to Timezone</h3>
+            <p class="tool-description">Find timezone and local time for any IP</p>
+            <div class="tool-footer">
+                <span class="category-badge ip">IP</span>
+                <span class="tool-cta">Check <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </div>
+        </a>
+        
+        <a href="/asn-lookup" class="tool-card" data-category="ip">
+            <div class="tool-icon ip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <circle cx="19" cy="5" r="2"></circle>
+                    <circle cx="5" cy="5" r="2"></circle>
+                    <circle cx="5" cy="19" r="2"></circle>
+                    <circle cx="19" cy="19" r="2"></circle>
+                    <line x1="12" y1="9" x2="12" y2="3"></line>
+                    <line x1="9.5" y1="13.5" x2="5" y2="17"></line>
+                    <line x1="14.5" y1="13.5" x2="19" y2="17"></line>
+                </svg>
+            </div>
+            <h3 class="tool-title">ASN Lookup</h3>
+            <p class="tool-description">Find ASN details for any IP or AS number</p>
+            <div class="tool-footer">
+                <span class="category-badge ip">IP</span>
+                <span class="tool-cta">Lookup <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </div>
+        </a>
+        
+        <a href="/reverse-ip-lookup" class="tool-card" data-category="ip">
+            <div class="tool-icon ip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                </svg>
+            </div>
+            <h3 class="tool-title">Reverse IP Lookup</h3>
+            <p class="tool-description">Find domains hosted on any IP address</p>
+            <div class="tool-footer">
+                <span class="category-badge ip">IP</span>
+                <span class="tool-cta">Lookup <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </div>
+        </a>
+        
+        <!-- DOMAIN TOOLS -->
+        <a href="/whois-lookup" class="tool-card" data-category="domain">
+            <div class="tool-icon domain">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                </svg>
+            </div>
+            <h3 class="tool-title">WHOIS Lookup</h3>
+            <p class="tool-description">Find domain registration info</p>
+            <div class="tool-footer">
+                <span class="category-badge domain">Domain</span>
+                <span class="tool-cta">Check <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </div>
+        </a>
+        
+        <a href="/domain-age-checker" class="tool-card" data-category="domain">
+            <div class="tool-icon domain">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+            </div>
+            <h3 class="tool-title">Domain Age Checker</h3>
+            <p class="tool-description">Find out how old a domain is</p>
+            <div class="tool-footer">
+                <span class="category-badge domain">Domain</span>
+                <span class="tool-cta">Check <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </div>
+        </a>
+        
+        <a href="/domain-expiry-checker" class="tool-card" data-category="domain">
+            <div class="tool-icon domain">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                    <path d="M17 14l-5 5-3-3"></path>
+                </svg>
+            </div>
+            <h3 class="tool-title">Domain Expiry Checker</h3>
+            <p class="tool-description">Check when a domain expires</p>
+            <div class="tool-footer">
+                <span class="category-badge domain">Domain</span>
+                <span class="tool-cta">Check <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </div>
+        </a>
+        
+        <a href="/check-domain-owner" class="tool-card" data-category="domain">
+            <div class="tool-icon domain">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+            </div>
+            <h3 class="tool-title">Check Domain Owner</h3>
+            <p class="tool-description">Find who owns a domain</p>
+            <div class="tool-footer">
+                <span class="category-badge domain">Domain</span>
+                <span class="tool-cta">Check <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </div>
+        </a>
+        
+        <a href="/domain-registrar-lookup" class="tool-card" data-category="domain">
+            <div class="tool-icon domain">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+            </div>
+            <h3 class="tool-title">Domain Registrar Lookup</h3>
+            <p class="tool-description">Find the registrar for any domain</p>
+            <div class="tool-footer">
+                <span class="category-badge domain">Domain</span>
+                <span class="tool-cta">Lookup <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </div>
+        </a>
+        
+        <!-- IP/NETWORK TOOLS -->
+        <a href="/subnet-calculator" class="tool-card" data-category="ip">
+            <div class="tool-icon ip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="3" width="20" height="18" rx="2" ry="2"></rect>
+                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                    <line x1="12" y1="8" x2="12" y2="16"></line>
+                    <circle cx="6" cy="6" r="1"></circle>
+                    <circle cx="18" cy="6" r="1"></circle>
+                </svg>
+            </div>
+            <h3 class="tool-title">Subnet Calculator</h3>
+            <p class="tool-description">Calculate CIDR, subnet masks, and IP ranges</p>
+            <div class="tool-footer">
+                <span class="category-badge ip">IP</span>
+                <span class="tool-cta">Calculate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </div>
+        </a>
+        
+        <a href="/cidr-to-ip-range" class="tool-card" data-category="ip">
+            <div class="tool-icon ip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="8" y1="6" x2="21" y2="6"></line>
+                    <line x1="8" y1="12" x2="21" y2="12"></line>
+                    <line x1="8" y1="18" x2="21" y2="18"></line>
+                    <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                    <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                    <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                </svg>
+            </div>
+            <h3 class="tool-title">CIDR to IP Range</h3>
+            <p class="tool-description">Convert CIDR notation to IP address range</p>
+            <div class="tool-footer">
+                <span class="category-badge ip">IP</span>
+                <span class="tool-cta">Convert <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </div>
+        </a>
+        
+        <a href="/ip-to-cidr" class="tool-card" data-category="ip">
+            <div class="tool-icon ip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="4 17 10 11 4 5"></polyline>
+                    <line x1="12" y1="19" x2="20" y2="19"></line>
+                </svg>
+            </div>
+            <h3 class="tool-title">IP to CIDR</h3>
+            <p class="tool-description">Convert IP range to CIDR notation</p>
+            <div class="tool-footer">
+                <span class="category-badge ip">IP</span>
+                <span class="tool-cta">Convert <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </div>
+        </a>
+        
+        <!-- UTILITIES -->
+        <a href="http://morsecodeapp.com/" class="tool-card" data-category="utilities" target="_blank" rel="noopener noreferrer">
+            <div class="tool-icon utilities">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                    <path d="M2 17l10 5 10-5"></path>
+                    <path d="M2 12l10 5 10-5"></path>
+                </svg>
+            </div>
+            <h3 class="tool-title">Morse Code Translator</h3>
+            <p class="tool-description">Translate morse code to text and text to morse code</p>
+            <div class="tool-footer">
+                <span class="category-badge utilities">Utilities</span>
+                <span class="tool-cta">Translate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </div>
+        </a>
+    </div>
+    
+    <p class="tools-footer">All tools run server-side for accurate, real-world results.</p>
+</section>
+
+<!-- Recent Articles Section -->
+
+<section class="learn-section">
+    <div class="section-header">
+        <span class="section-label">Learn</span>
+        <h2 class="section-title">Latest Guides</h2>
+        <p class="section-subtitle">Free educational guides on networking, DNS, and IP fundamentals</p>
+    </div>
+    <div class="learn-grid">
+        
+        <a href="/learn/what-is-ip-address" class="learn-card">
+            
+            <div class="learn-card-image">
+                <img src="/static/images/learn/what-is-ip-address/hero.jpg" alt="What Is an IP Address?" loading="lazy">
+            </div>
+            
+            <div class="learn-card-body">
+                
+                <span class="learn-card-category">IP &amp; Network</span>
+                
+                <h3 class="learn-card-title">What Is an IP Address?</h3>
+                <p class="learn-card-desc">Learn what an IP address is and how it works. Covers IPv4 vs IPv6, public vs private IPs, how to find yours, and securi…</p>
+                <div class="learn-card-footer">
+                    
+                    <span class="learn-card-time">8 min read</span>
+                    
+                    
+                    <span class="learn-card-difficulty learn-card-difficulty--beginner">beginner</span>
+                    
+                </div>
+            </div>
+        </a>
+        
+    </div>
+    <div class="learn-section-cta">
+        <a href="/learn" class="learn-view-all">
+            View All Guides
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+    </div>
+</section>
+
+
+<!-- Filter Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const pills = document.querySelectorAll('.category-pill');
+    const cards = document.querySelectorAll('.tool-card');
+    
+    pills.forEach(pill => {
+        pill.addEventListener('click', function() {
+            const category = this.dataset.category;
+            
+            // Update active pill
+            pills.forEach(p => p.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Filter cards
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.hidden = false;
+                } else {
+                    card.hidden = true;
+                }
+            });
+        });
+    });
+});
+</script>
+</div>
+
+
+    </main>
+    
+    <!-- Footer -->
+    <!-- Site Footer - NetYogi
+     Updated: 2026-02-20
+     Changes: Added Team link under Company column
+-->
+
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <!-- Brand Column -->
+        <div class="footer-brand">
+            <a href="/" class="footer-logo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="footer-logo-icon">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+                <span class="footer-logo-text">NetYogi</span>
+            </a>
+            <p class="footer-tagline">
+                Professional-grade network diagnostics. No signup, no limits, no ads.
+            </p>
+        </div>
+        
+        <!-- Tools Column -->
+        <div class="footer-column">
+            <p class="footer-heading" role="heading" aria-level="2">Tools</p>
+            <ul class="footer-links">
+                <li><a href="/what-is-my-ip">What Is My IP</a></li>
+                <li><a href="/dns-lookup">DNS Lookup</a></li>
+                <li><a href="/whois-lookup">WHOIS Lookup</a></li>
+                <li><a href="/ip-lookup">IP Lookup</a></li>
+            </ul>
+        </div>
+        
+        <!-- Company Column -->
+        <div class="footer-column">
+            <p class="footer-heading" role="heading" aria-level="2">Company</p>
+            <ul class="footer-links">
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/team">Team</a></li>
+                <li><a href="/learn">Learn</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+        
+        <!-- Legal Column -->
+        <div class="footer-column">
+            <p class="footer-heading" role="heading" aria-level="2">Legal</p>
+            <ul class="footer-links">
+                <li><a href="/privacy">Privacy Policy</a></li>
+                <li><a href="/terms">Terms of Service</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+        <div class="footer-bottom-content">
+            <p class="footer-copyright">
+                © 2026 NetYogi. All rights reserved. Made with ❤️ by <a href="https://appsyogi.com/" target="_blank" rel="noopener noreferrer" style="color: hsl(var(--primary)); text-decoration: none;">AppsYogi</a>.
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <!-- UI Strings for JavaScript -->
+    <script id="ui-data" type="application/json">
+{"nav": {"home": "Home", "tools": "Tools", "learn": "Learn", "embed": "Embed", "about": "About", "contact": "Contact", "all_tools": "All Tools"}, "footer": {"tagline": "Professional-grade network diagnostics. No signup, no limits, no ads.", "tools": "Tools", "company": "Company", "legal": "Legal", "copyright": "© 2026 NetYogi. All rights reserved.", "made_by": "Made with ❤️ by <a href=\"https://appsyogi.com/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: hsl(var(--primary)); text-decoration: none;\">AppsYogi</a>."}, "buttons": {"lookup": "Lookup", "check": "Check", "test": "Test", "generate": "Generate", "copy": "Copy", "copy_all": "Copy All", "download": "Download", "clear": "Clear", "reset": "Reset", "submit": "Submit"}, "labels": {"domain": "Domain", "ip_address": "IP Address", "url": "URL", "hostname": "Hostname", "port": "Port", "type": "Type", "value": "Value", "ttl": "TTL", "status": "Status", "result": "Result", "loading": "Loading..."}, "messages": {"loading": "Detecting your IP...", "no_results": "No results found", "error": "An error occurred", "copied": "Copied!", "invalid_domain": "Please enter a valid domain", "invalid_ip": "Please enter a valid IP address", "invalid_url": "Please enter a valid URL", "rate_limited": "Too many requests. Please wait a moment."}, "headings": {"features": "Features", "howto": "How to Use", "faq": "Frequently Asked Questions", "related": "Related Tools", "results": "Results"}, "trust_badges": {"fast": "Instant Results", "free": "Free Forever", "unlimited": "Unlimited Lookups", "accurate": "Real-Time Data"}}
+    </script>
+    
+    <!-- Theme Switcher Script -->
+    <script>
+        // Helper function to set theme class
+        function setThemeClass(themeName) {
+            const html = document.documentElement;
+            
+            // Remove all theme classes
+            html.classList.remove('theme-light', 'theme-ocean', 'theme-purple', 'theme-rose', 'theme-coral', 'dark');
+            
+            // Add the selected theme class
+            if (themeName === 'dark') {
+                html.classList.add('dark');
+            } else {
+                html.classList.add(`theme-${themeName}`);
+            }
+            
+            console.log(`Theme changed to: ${themeName}`);
+        }
+        
+        // Theme switcher function
+        function setTheme(themeName) {
+            setThemeClass(themeName);
+            localStorage.setItem('netYogiTheme', themeName);
+        }
+        
+        // Load saved theme from localStorage on page load
+        (function() {
+            const savedTheme = localStorage.getItem('netYogiTheme') || 'ocean';
+            setThemeClass(savedTheme);
+        })();
+    </script>
+    
+    <!-- Share/Embed/Export Modal Script (minified) -->
+    <script src="/static/js/dist/share-modal.61f1fcd46ecc.js" defer=""></script>
+    
+    <!-- Scroll Reveal Animation Script -->
+    <script>
+        (function() {
+            // Elements to animate on scroll
+            const revealSelectors = [
+                '.section-header',
+                '.howto-step',
+                '.feature-card',
+                '.usecase-card',
+                '.technical-block',
+                '.specs-card',
+                '.faq-item',
+                '.related-card',
+                '.cta-card'
+            ];
+            
+            // Intersection Observer for scroll reveal
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        // Stop observing once revealed
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            // Start observing when DOM is ready
+            document.addEventListener('DOMContentLoaded', () => {
+                revealSelectors.forEach(selector => {
+                    document.querySelectorAll(selector).forEach(el => {
+                        revealObserver.observe(el);
+                    });
+                });
+            });
+        })();
+    </script>
+    
+    
+
+
+
+</body></html>

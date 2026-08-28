@@ -1,0 +1,1553 @@
+<html class="scroll-smooth" data-authenticated="false" lang="en"><head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="J-onzXE6OeNXHeQ-VinI99TK_zpe0hKbYXShYCGutKo">
+<meta name="ahrefs-site-verification" content="5179741a52de628b7ade6c395de9c4628ac58317be69b8ed0cd7cbc5c696211b">
+
+
+    <title>Error Tracking &amp; Performance Monitoring for Laravel &amp; PHP | Flare</title>
+
+<meta name="description" content="Catch errors and fix slowdowns with Flare, the full-stack application monitoring platform for Laravel, PHP &amp; JavaScript.">
+
+<link rel="alternate" type="application/atom+xml" href="https://flareapp.io/feed" title="flareapp.io">
+
+
+
+<link rel="preconnect" href="https://fonts.cdnfonts.com">
+<link rel="preconnect" href="https://kit.fontawesome.com">
+<link rel="preconnect" href="https://ka-p.fontawesome.com">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+    
+    <style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://flareapp.io/storage/fonts/0c6ec1a12c/sinterv20ucc73fwrk3iltehus-nvmrmxcp50sjia2jl7w0q5n-wu.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://flareapp.io/storage/fonts/0c6ec1a12c/sinterv20ucc73fwrk3iltehus-nvmrmxcp50sjia0zl7w0q5n-wu.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://flareapp.io/storage/fonts/0c6ec1a12c/sinterv20ucc73fwrk3iltehus-nvmrmxcp50sjia2zl7w0q5n-wu.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://flareapp.io/storage/fonts/0c6ec1a12c/sinterv20ucc73fwrk3iltehus-nvmrmxcp50sjia1pl7w0q5n-wu.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://flareapp.io/storage/fonts/0c6ec1a12c/sinterv20ucc73fwrk3iltehus-nvmrmxcp50sjia2pl7w0q5n-wu.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://flareapp.io/storage/fonts/0c6ec1a12c/sinterv20ucc73fwrk3iltehus-nvmrmxcp50sjia25l7w0q5n-wu.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://flareapp.io/storage/fonts/0c6ec1a12c/sinterv20ucc73fwrk3iltehus-nvmrmxcp50sjia1zl7w0q5nw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://flareapp.io/storage/fonts/0c6ec1a12c/sinterv20ucc73fwrk3iltehus-nvmrmxcp50sjia2jl7w0q5n-wu.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://flareapp.io/storage/fonts/0c6ec1a12c/sinterv20ucc73fwrk3iltehus-nvmrmxcp50sjia0zl7w0q5n-wu.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://flareapp.io/storage/fonts/0c6ec1a12c/sinterv20ucc73fwrk3iltehus-nvmrmxcp50sjia2zl7w0q5n-wu.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://flareapp.io/storage/fonts/0c6ec1a12c/sinterv20ucc73fwrk3iltehus-nvmrmxcp50sjia1pl7w0q5n-wu.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://flareapp.io/storage/fonts/0c6ec1a12c/sinterv20ucc73fwrk3iltehus-nvmrmxcp50sjia2pl7w0q5n-wu.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://flareapp.io/storage/fonts/0c6ec1a12c/sinterv20ucc73fwrk3iltehus-nvmrmxcp50sjia25l7w0q5n-wu.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://flareapp.io/storage/fonts/0c6ec1a12c/sinterv20ucc73fwrk3iltehus-nvmrmxcp50sjia1zl7w0q5nw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://flareapp.io/storage/fonts/0c6ec1a12c/sinterv20ucc73fwrk3iltehus-nvmrmxcp50sjia2jl7w0q5n-wu.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://flareapp.io/storage/fonts/0c6ec1a12c/sinterv20ucc73fwrk3iltehus-nvmrmxcp50sjia0zl7w0q5n-wu.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://flareapp.io/storage/fonts/0c6ec1a12c/sinterv20ucc73fwrk3iltehus-nvmrmxcp50sjia2zl7w0q5n-wu.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://flareapp.io/storage/fonts/0c6ec1a12c/sinterv20ucc73fwrk3iltehus-nvmrmxcp50sjia1pl7w0q5n-wu.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://flareapp.io/storage/fonts/0c6ec1a12c/sinterv20ucc73fwrk3iltehus-nvmrmxcp50sjia2pl7w0q5n-wu.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://flareapp.io/storage/fonts/0c6ec1a12c/sinterv20ucc73fwrk3iltehus-nvmrmxcp50sjia25l7w0q5n-wu.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://flareapp.io/storage/fonts/0c6ec1a12c/sinterv20ucc73fwrk3iltehus-nvmrmxcp50sjia1zl7w0q5nw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://flareapp.io/storage/fonts/0c6ec1a12c/sinterv20ucc73fwrk3iltehus-nvmrmxcp50sjia2jl7w0q5n-wu.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://flareapp.io/storage/fonts/0c6ec1a12c/sinterv20ucc73fwrk3iltehus-nvmrmxcp50sjia0zl7w0q5n-wu.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://flareapp.io/storage/fonts/0c6ec1a12c/sinterv20ucc73fwrk3iltehus-nvmrmxcp50sjia2zl7w0q5n-wu.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://flareapp.io/storage/fonts/0c6ec1a12c/sinterv20ucc73fwrk3iltehus-nvmrmxcp50sjia1pl7w0q5n-wu.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://flareapp.io/storage/fonts/0c6ec1a12c/sinterv20ucc73fwrk3iltehus-nvmrmxcp50sjia2pl7w0q5n-wu.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://flareapp.io/storage/fonts/0c6ec1a12c/sinterv20ucc73fwrk3iltehus-nvmrmxcp50sjia25l7w0q5n-wu.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://flareapp.io/storage/fonts/0c6ec1a12c/sinterv20ucc73fwrk3iltehus-nvmrmxcp50sjia1zl7w0q5nw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<script async="" src="https://scripts.clarity.ms/0.8.59/clarity.js"></script><script type="text/javascript" async="" src="https://www.clarity.ms/tag/vmwvg41qqn?ref=gtm"></script><script type="text/javascript" async="" src="https://www.redditstatic.com/ads/pixel.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-P9HCNSXYLB&amp;cx=c&amp;gtm=4e6481"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=AW-11113255107&amp;cx=c&amp;gtm=4e6481"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-9ZPT64W0YM&amp;cx=c&amp;gtm=4e6481"></script><script defer="" src="https://kit.fontawesome.com/d8b02e49ed.js" crossorigin="anonymous"></script><style media="all" id="fa-main">@charset "utf-8";.fak.fa-exclamation-bold,.fa-kit.fa-exclamation-bold{--fa:"";--fa--fa:""}.fak.fa-linear,.fa-kit.fa-linear{--fa:"";--fa--fa:""}.fak,.fa-kit{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;display:var(--fa-display,inline-block);font-family:Font Awesome Kit;font-style:normal;font-variant:normal;font-weight:400;line-height:1;text-rendering:auto}.fak:before,.fa-kit:before{content:var(--fa)}@font-face{font-family:Font Awesome Kit;font-style:normal;font-display:block;src:url(data:font/woff2;base64,d09GMk9UVE8AAASoAAkAAAAACLYAAARjAAEjAAAAAAAAAAAAAAAAAAAAAAAAAAAAATYCJAQGBmADDAWIUwA0ByANhkOFWgQRlZynAH4W5GS8qW3FSU8m0/Om3LTsZb/dSkRrJ03xkj3ZfdWbmV6TER2R0e9lKByRkUGy6YHhuZdj0jZI7ULBtJLxkNS3R3i+ur2/d3GBB540CQWZxrgmCedTa790w0u0o1slFDwkEkPy9mli0Vff7hnWVJNpgkijav19Mb9+TW0A5akQvpCKt7f5G8QCOiIFANIC27Irj6+QrKtsH+KNXazxohkEf7QDAOrWhL/QLwDAl58ZX+rbqx2VngDQIQEAAmq1ScW/idY1ZCghyZTU0jIWUtFnU+TpBLbmkLABYaINxyH1KWP5yXvvyTUzNVIECHsi4AL02gCswSpGoPZM+zCIiXuQaLsLmTMBhY33YEIBWqy8gx4vodBnrXq9iRtq05MGmroANPnNQVyKQ2JU45AlDW0oQuoATGOsoSWgrkJPQYahLygv15twlSnvaR4aGhQaHhUdGhMd6eJzMqwldbDbDPGM0h26hATRVaN9dytppqSLyK35Hbyr/YHmmMaQsJaI2Jbmf3al5Spb2UbLQOKWs0FCT8N/inf+ng6vS3P0GJxwrNzRu4dLdvKLsxb4lPxB41jJajsK5U6AyypB/RdRpXMjk8MOQgUJFS5KtFAxokVy4SPLYccg1atDDpsODNiSChN1iBQkdKqvJgJhM/3QoaFVUnurG9Oab7KfKFsXnW/eppmvkS5MC1usFq0RYycSChas1WcbK2hVNQ2lonLq6XebDObJ5RE9Kj84ql1n1YLGce19xjApKwJJoPFNbp3KfxRWJdb1ZhaGqr3Djs1OoWQ/pgroHwir/cuKT46LBM1CYNhNxb69hJmNyhRtA6QVmhEWGeqXFC5KRUHd70lVQYEGaNWy/FYIUSZoG9bzNqHv0STsIRxIOErCSRbOitP7XdXpa57u6kDvJUrtVlcnnTI0xowbOgJ0GCvjaVqClnqQfJkJBwM4fXaagezkeUE1UJz0YHub1XHe/LYG2mChsMGl7QvrirVf3FdlCWaV2LJcqkBGE03iOOQ+wHb8X/t/Q/TXM4J/79le/8jiCFcCoTjuCnWhGWiojeE9T32o1DFhDCOsuOczt+Tb6+vbRDjl0Q7XxjgE/kdEHBwfH+TKv5AhPrbGHcX3E1euBNtYk+VJqhDaj4tZqrWQDvW7ba/9P3TEa8yNs84irBxvs6FR9MSya49MkNBnuu75u/v/kOkJylgNPWnFCKx/xRpjuOgNRL4dvzFvfNdCtpB2R8J7l2rP3eX/ZWYM1nTJWTVTduP8KaZ+P4n3uH58uXZAnVDNoH1cwf9cwdbO7M4uGKNpPf7C/3/M6KSqLDosm3g0R0FJCCut1JhVQuhZmFEXUILCCc5h5a+GDVJTdKo3KlFI53KZh2QmsynNzJh3J4yKITFyX5d6FGmepQV8IWOKcCCTTsRKqGEsXC5TLC6hc+h5kc+mkIl0gpDO3puYOD6y7OelEvvBvpOBM+KMJ8c8B89KJ/1ybKVYsBC3LA0DAA)format("woff2")}.fa{font-family:var(--fa-style-family,"Font Awesome 6 Pro");font-weight:var(--fa-style,900)}.fas,.fass,.far,.fasr,.fal,.fasl,.fat,.fast,.fad,.fadr,.fadl,.fadt,.fasds,.fasdr,.fasdl,.fasdt,.fab,.fa-solid,.fa-regular,.fa-light,.fa-thin,.fa-brands,.fa-classic,.fa-duotone,.fa-sharp,.fa-sharp-duotone,.fa{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:var(--fa-display,inline-block);font-style:normal;font-variant:normal;line-height:1;text-rendering:auto}.fas:before,.fass:before,.far:before,.fasr:before,.fal:before,.fasl:before,.fat:before,.fast:before,.fad:before,.fadr:before,.fadl:before,.fadt:before,.fasds:before,.fasdr:before,.fasdl:before,.fasdt:before,.fab:before,.fa-solid:before,.fa-regular:before,.fa-light:before,.fa-thin:before,.fa-brands:before,.fa-classic:before,.fa-duotone:before,.fa-sharp:before,.fa-sharp-duotone:before,.fa:before{content:var(--fa)}.fad:after,.fa-duotone.fa-solid:after,.fa-duotone:after,.fadr:after,.fa-duotone.fa-regular:after,.fadl:after,.fa-duotone.fa-light:after,.fadt:after,.fa-duotone.fa-thin:after,.fasds:after,.fa-sharp-duotone.fa-solid:after,.fa-sharp-duotone:after,.fasdr:after,.fa-sharp-duotone.fa-regular:after,.fasdl:after,.fa-sharp-duotone.fa-light:after,.fasdt:after,.fa-sharp-duotone.fa-thin:after{content:var(--fa--fa)}.fa-classic.fa-duotone{font-family:"Font Awesome 6 Duotone"}.fass,.fa-sharp{font-weight:900}.fad,.fa-duotone{font-weight:900}.fasds,.fa-sharp-duotone{font-weight:900}.fa-classic,.fas,.fa-solid,.far,.fa-regular,.fal,.fa-light,.fat,.fa-thin{font-family:"Font Awesome 6 Pro"}.fa-duotone,.fad,.fadr,.fadl,.fadt{font-family:"Font Awesome 6 Duotone"}.fa-brands,.fab{font-family:"Font Awesome 6 Brands"}.fa-sharp,.fass,.fasr,.fasl,.fast{font-family:"Font Awesome 6 Sharp"}.fa-sharp-duotone,.fasds,.fasdr,.fasdl,.fasdt{font-family:"Font Awesome 6 Sharp Duotone"}.fa-1x{font-size:1em}.fa-2x{font-size:2em}.fa-3x{font-size:3em}.fa-4x{font-size:4em}.fa-5x{font-size:5em}.fa-6x{font-size:6em}.fa-7x{font-size:7em}.fa-8x{font-size:8em}.fa-9x{font-size:9em}.fa-10x{font-size:10em}.fa-2xs{font-size:.625em;line-height:.1em;vertical-align:.225em}.fa-xs{font-size:.75em;line-height:.08333em;vertical-align:.125em}.fa-sm{font-size:.875em;line-height:.07143em;vertical-align:.05357em}.fa-lg{font-size:1.25em;line-height:.05em;vertical-align:-.075em}.fa-xl{font-size:1.5em;line-height:.04167em;vertical-align:-.125em}.fa-2xl{font-size:2em;line-height:.03125em;vertical-align:-.1875em}.fa-fw{text-align:center;width:1.25em}.fa-ul{list-style-type:none;margin-left:var(--fa-li-margin,2.5em);padding-left:0}.fa-ul>li{position:relative}.fa-li{left:calc(-1*var(--fa-li-width,2em));position:absolute;text-align:center;width:var(--fa-li-width,2em);line-height:inherit}.fa-border{border-color:var(--fa-border-color,#eee);border-radius:var(--fa-border-radius,.1em);border-style:var(--fa-border-style,solid);border-width:var(--fa-border-width,.08em);padding:var(--fa-border-padding,.2em .25em .15em)}.fa-pull-left{float:left;margin-right:var(--fa-pull-margin,.3em)}.fa-pull-right{float:right;margin-left:var(--fa-pull-margin,.3em)}.fa-beat{animation-name:fa-beat;animation-delay:var(--fa-animation-delay,0s);animation-direction:var(--fa-animation-direction,normal);animation-duration:var(--fa-animation-duration,1s);animation-iteration-count:var(--fa-animation-iteration-count,infinite);animation-timing-function:var(--fa-animation-timing,ease-in-out)}.fa-bounce{animation-name:fa-bounce;animation-delay:var(--fa-animation-delay,0s);animation-direction:var(--fa-animation-direction,normal);animation-duration:var(--fa-animation-duration,1s);animation-iteration-count:var(--fa-animation-iteration-count,infinite);animation-timing-function:var(--fa-animation-timing,cubic-bezier(.28,.84,.42,1))}.fa-fade{animation-name:fa-fade;animation-delay:var(--fa-animation-delay,0s);animation-direction:var(--fa-animation-direction,normal);animation-duration:var(--fa-animation-duration,1s);animation-iteration-count:var(--fa-animation-iteration-count,infinite);animation-timing-function:var(--fa-animation-timing,cubic-bezier(.4,0,.6,1))}.fa-beat-fade{animation-name:fa-beat-fade;animation-delay:var(--fa-animation-delay,0s);animation-direction:var(--fa-animation-direction,normal);animation-duration:var(--fa-animation-duration,1s);animation-iteration-count:var(--fa-animation-iteration-count,infinite);animation-timing-function:var(--fa-animation-timing,cubic-bezier(.4,0,.6,1))}.fa-flip{animation-name:fa-flip;animation-delay:var(--fa-animation-delay,0s);animation-direction:var(--fa-animation-direction,normal);animation-duration:var(--fa-animation-duration,1s);animation-iteration-count:var(--fa-animation-iteration-count,infinite);animation-timing-function:var(--fa-animation-timing,ease-in-out)}.fa-shake{animation-name:fa-shake;animation-delay:var(--fa-animation-delay,0s);animation-direction:var(--fa-animation-direction,normal);animation-duration:var(--fa-animation-duration,1s);animation-iteration-count:var(--fa-animation-iteration-count,infinite);animation-timing-function:var(--fa-animation-timing,linear)}.fa-spin{animation-name:fa-spin;animation-delay:var(--fa-animation-delay,0s);animation-direction:var(--fa-animation-direction,normal);animation-duration:var(--fa-animation-duration,2s);animation-iteration-count:var(--fa-animation-iteration-count,infinite);animation-timing-function:var(--fa-animation-timing,linear)}.fa-spin-reverse{--fa-animation-direction:reverse}.fa-pulse,.fa-spin-pulse{animation-name:fa-spin;animation-direction:var(--fa-animation-direction,normal);animation-duration:var(--fa-animation-duration,1s);animation-iteration-count:var(--fa-animation-iteration-count,infinite);animation-timing-function:var(--fa-animation-timing,steps(8))}@media (prefers-reduced-motion:reduce){.fa-beat,.fa-bounce,.fa-fade,.fa-beat-fade,.fa-flip,.fa-pulse,.fa-shake,.fa-spin,.fa-spin-pulse{animation-delay:-1ms;animation-duration:1ms;animation-iteration-count:1;transition-delay:0s;transition-duration:0s}}@keyframes fa-beat{0%,90%{transform:scale(1)}45%{transform:scale(var(--fa-beat-scale,1.25))}}@keyframes fa-bounce{0%{transform:scale(1)translateY(0)}10%{transform:scale(var(--fa-bounce-start-scale-x,1.1),var(--fa-bounce-start-scale-y,.9))translateY(0)}30%{transform:scale(var(--fa-bounce-jump-scale-x,.9),var(--fa-bounce-jump-scale-y,1.1))translateY(var(--fa-bounce-height,-.5em))}50%{transform:scale(var(--fa-bounce-land-scale-x,1.05),var(--fa-bounce-land-scale-y,.95))translateY(0)}57%{transform:scale(1,1)translateY(var(--fa-bounce-rebound,-.125em))}64%{transform:scale(1)translateY(0)}to{transform:scale(1)translateY(0)}}@keyframes fa-fade{50%{opacity:var(--fa-fade-opacity,.4)}}@keyframes fa-beat-fade{0%,to{opacity:var(--fa-beat-fade-opacity,.4);transform:scale(1)}50%{opacity:1;transform:scale(var(--fa-beat-fade-scale,1.125))}}@keyframes fa-flip{50%{transform:rotate3d(var(--fa-flip-x,0),var(--fa-flip-y,1),var(--fa-flip-z,0),var(--fa-flip-angle,-180deg))}}@keyframes fa-shake{0%{transform:rotate(-15deg)}4%{transform:rotate(15deg)}8%,24%{transform:rotate(-18deg)}12%,28%{transform:rotate(18deg)}16%{transform:rotate(-22deg)}20%{transform:rotate(22deg)}32%{transform:rotate(-12deg)}36%{transform:rotate(12deg)}40%,to{transform:rotate(0)}}@keyframes fa-spin{0%{transform:rotate(0)}to{transform:rotate(360deg)}}.fa-rotate-90{transform:rotate(90deg)}.fa-rotate-180{transform:rotate(180deg)}.fa-rotate-270{transform:rotate(270deg)}.fa-flip-horizontal{transform:scaleX(-1)}.fa-flip-vertical{transform:scaleY(-1)}.fa-flip-both,.fa-flip-horizontal.fa-flip-vertical{transform:scale(-1)}.fa-rotate-by{transform:rotate(var(--fa-rotate-angle,0))}.fa-stack{display:inline-block;height:2em;line-height:2em;position:relative;vertical-align:middle;width:2.5em}.fa-stack-1x,.fa-stack-2x{left:0;position:absolute;text-align:center;width:100%;z-index:var(--fa-stack-z-index,auto)}.fa-stack-1x{line-height:inherit}.fa-stack-2x{font-size:2em}.fa-inverse{color:var(--fa-inverse,#fff)}.fa-add{--fa:"+";--fa--fa:"++"}.fa-address-book{--fa:"";--fa--fa:""}.fa-angle-down{--fa:"";--fa--fa:""}.fa-angle-left{--fa:"";--fa--fa:""}.fa-angle-right{--fa:"";--fa--fa:""}.fa-angle-up{--fa:"";--fa--fa:""}.fa-arrow-down-right{--fa:"";--fa--fa:""}.fa-arrow-down-to-line{--fa:"";--fa--fa:""}.fa-arrow-left{--fa:"";--fa--fa:""}.fa-arrow-right{--fa:"";--fa--fa:""}.fa-arrow-right-rotate{--fa:"";--fa--fa:""}.fa-arrow-rotate-forward{--fa:"";--fa--fa:""}.fa-arrow-rotate-right{--fa:"";--fa--fa:""}.fa-arrow-to-bottom{--fa:"";--fa--fa:""}.fa-arrow-up-right{--fa:"";--fa--fa:""}.fa-arrow-up-right-from-square{--fa:"";--fa--fa:""}.fa-axe{--fa:"";--fa--fa:""}.fa-ban{--fa:"";--fa--fa:""}.fa-bars-staggered{--fa:"";--fa--fa:""}.fa-bell{--fa:"";--fa--fa:""}.fa-book{--fa:"";--fa--fa:""}.fa-brackets-curly{--fa:"";--fa--fa:""}.fa-bug{--fa:"";--fa--fa:""}.fa-calendar-range{--fa:"";--fa--fa:""}.fa-cancel{--fa:"";--fa--fa:""}.fa-chain{--fa:"";--fa--fa:""}.fa-chart-line{--fa:"";--fa--fa:""}.fa-chart-simple{--fa:"";--fa--fa:""}.fa-check{--fa:"";--fa--fa:""}.fa-check-circle{--fa:"";--fa--fa:""}.fa-chevron-right{--fa:"";--fa--fa:""}.fa-circle{--fa:"";--fa--fa:""}.fa-circle-check{--fa:"";--fa--fa:""}.fa-circle-dot{--fa:"";--fa--fa:""}.fa-circle-exclamation{--fa:"";--fa--fa:""}.fa-circle-info{--fa:"";--fa--fa:""}.fa-circle-notch{--fa:"";--fa--fa:""}.fa-circle-plus{--fa:"";--fa--fa:""}.fa-circle-question{--fa:"";--fa--fa:""}.fa-circle-xmark{--fa:"";--fa--fa:""}.fa-clipboard{--fa:"";--fa--fa:""}.fa-clock{--fa:"";--fa--fa:""}.fa-clock-four{--fa:"";--fa--fa:""}.fa-close{--fa:"";--fa--fa:""}.fa-code-branch{--fa:"";--fa--fa:""}.fa-cog{--fa:"";--fa--fa:""}.fa-comment{--fa:"";--fa--fa:""}.fa-contact-book{--fa:"";--fa--fa:""}.fa-copy{--fa:"";--fa--fa:""}.fa-dashboard{--fa:"";--fa--fa:""}.fa-database{--fa:"";--fa--fa:""}.fa-dot-circle{--fa:"";--fa--fa:""}.fa-edit{--fa:"";--fa--fa:""}.fa-ellipsis-v{--fa:"";--fa--fa:""}.fa-ellipsis-vertical{--fa:"";--fa--fa:""}.fa-envelope{--fa:"";--fa--fa:""}.fa-exclamation{--fa:"!";--fa--fa:"!!"}.fa-exclamation-circle{--fa:"";--fa--fa:""}.fa-exclamation-triangle{--fa:"";--fa--fa:""}.fa-external-link{--fa:"";--fa--fa:""}.fa-external-link-alt{--fa:"";--fa--fa:""}.fa-file-alt{--fa:"";--fa--fa:""}.fa-file-code{--fa:"";--fa--fa:""}.fa-file-lines{--fa:"";--fa--fa:""}.fa-file-text{--fa:"";--fa--fa:""}.fa-filter{--fa:"";--fa--fa:""}.fa-fire-flame{--fa:"";--fa--fa:""}.fa-flame{--fa:"";--fa--fa:""}.fa-gauge{--fa:"";--fa--fa:""}.fa-gauge-max{--fa:"";--fa--fa:""}.fa-gauge-med{--fa:"";--fa--fa:""}.fa-gear{--fa:"";--fa--fa:""}.fa-github{--fa:"";--fa--fa:""}.fa-github-alt{--fa:"";--fa--fa:""}.fa-gitlab{--fa:"";--fa--fa:""}.fa-google{--fa:"";--fa--fa:""}.fa-grid-2{--fa:"";--fa--fa:""}.fa-hexagon-exclamation{--fa:"";--fa--fa:""}.fa-infinity{--fa:"";--fa--fa:""}.fa-info-circle{--fa:"";--fa--fa:""}.fa-jira{--fa:"";--fa--fa:""}.fa-js{--fa:"";--fa--fa:""}.fa-key{--fa:"";--fa--fa:""}.fa-keyboard{--fa:"";--fa--fa:""}.fa-laravel{--fa:"";--fa--fa:""}.fa-layer-group{--fa:"";--fa--fa:""}.fa-layer-group-plus{--fa:"";--fa--fa:""}.fa-layer-plus{--fa:"";--fa--fa:""}.fa-lightbulb{--fa:"";--fa--fa:""}.fa-line-chart{--fa:"";--fa--fa:""}.fa-link{--fa:"";--fa--fa:""}.fa-list{--fa:"";--fa--fa:""}.fa-list-check{--fa:"";--fa--fa:""}.fa-list-squares{--fa:"";--fa--fa:""}.fa-location{--fa:"";--fa--fa:""}.fa-location-crosshairs{--fa:"";--fa--fa:""}.fa-lock{--fa:"";--fa--fa:""}.fa-magic{--fa:"";--fa--fa:""}.fa-magnifying-glass{--fa:"";--fa--fa:""}.fa-mail-forward{--fa:"";--fa--fa:""}.fa-markdown{--fa:"";--fa--fa:""}.fa-merge{--fa:"";--fa--fa:""}.fa-minus{--fa:"";--fa--fa:""}.fa-multiply{--fa:"";--fa--fa:""}.fa-palette{--fa:"";--fa--fa:""}.fa-pen-to-square{--fa:"";--fa--fa:""}.fa-pencil{--fa:"";--fa--fa:""}.fa-pencil-alt{--fa:"";--fa--fa:""}.fa-people-group{--fa:"";--fa--fa:""}.fa-php{--fa:"";--fa--fa:""}.fa-pipe{--fa:"|";--fa--fa:"||"}.fa-plus{--fa:"+";--fa--fa:"++"}.fa-plus-circle{--fa:"";--fa--fa:""}.fa-poll{--fa:"";--fa--fa:""}.fa-question-circle{--fa:"";--fa--fa:""}.fa-react{--fa:"";--fa--fa:""}.fa-receipt{--fa:"";--fa--fa:""}.fa-rectangle-history{--fa:"";--fa--fa:""}.fa-redo{--fa:"";--fa--fa:""}.fa-remove{--fa:"";--fa--fa:""}.fa-reorder{--fa:"";--fa--fa:""}.fa-right-from-bracket{--fa:"";--fa--fa:""}.fa-robot{--fa:"";--fa--fa:""}.fa-search{--fa:"";--fa--fa:""}.fa-share{--fa:"";--fa--fa:""}.fa-sidebar{--fa:"";--fa--fa:""}.fa-sign-out-alt{--fa:"";--fa--fa:""}.fa-slack{--fa:"";--fa--fa:""}.fa-slack-hash{--fa:"";--fa--fa:""}.fa-snooze{--fa:"";--fa--fa:""}.fa-sort-asc{--fa:"";--fa--fa:""}.fa-sort-desc{--fa:"";--fa--fa:""}.fa-sort-down{--fa:"";--fa--fa:""}.fa-sort-up{--fa:"";--fa--fa:""}.fa-sparkles{--fa:"";--fa--fa:""}.fa-spinner{--fa:"";--fa--fa:""}.fa-spinner-third{--fa:"";--fa--fa:""}.fa-square-poll-vertical{--fa:"";--fa--fa:""}.fa-stop{--fa:"";--fa--fa:""}.fa-stream{--fa:"";--fa--fa:""}.fa-subtract{--fa:"";--fa--fa:""}.fa-table-cells{--fa:"";--fa--fa:""}.fa-tachometer-alt-average{--fa:"";--fa--fa:""}.fa-tachometer-alt-fastest{--fa:"";--fa--fa:""}.fa-tasks{--fa:"";--fa--fa:""}.fa-telescope{--fa:"";--fa--fa:""}.fa-terminal{--fa:"";--fa--fa:""}.fa-th{--fa:"";--fa--fa:""}.fa-times{--fa:"";--fa--fa:""}.fa-times-circle{--fa:"";--fa--fa:""}.fa-trash{--fa:"";--fa--fa:""}.fa-trash-alt{--fa:"";--fa--fa:""}.fa-trash-can{--fa:"";--fa--fa:""}.fa-triangle-exclamation{--fa:"";--fa--fa:""}.fa-twitter{--fa:"";--fa--fa:""}.fa-up-right-from-square{--fa:"";--fa--fa:""}.fa-user{--fa:"";--fa--fa:""}.fa-user-minus{--fa:"";--fa--fa:""}.fa-user-plus{--fa:"";--fa--fa:""}.fa-user-slash{--fa:"";--fa--fa:""}.fa-users{--fa:"";--fa--fa:""}.fa-vuejs{--fa:"";--fa--fa:""}.fa-wand-magic{--fa:"";--fa--fa:""}.fa-warning{--fa:"";--fa--fa:""}.fa-webhook{--fa:"";--fa--fa:""}.fa-wrench{--fa:"";--fa--fa:""}.fa-x-twitter{--fa:"";--fa--fa:""}.fa-xmark{--fa:"";--fa--fa:""}.fa-xmark-circle{--fa:"";--fa--fa:""}.fa-xmark-large{--fa:"";--fa--fa:""}.fa-zzz{--fa:"";--fa--fa:""}.sr-only,.fa-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}.sr-only-focusable:not(:focus),.fa-sr-only-focusable:not(:focus){position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}:root,:host{--fa-style-family-sharp:"Font Awesome 6 Sharp";--fa-font-sharp-solid:normal 900 1em/1 "Font Awesome 6 Sharp"}@font-face{font-family:"Font Awesome 6 Sharp";font-weight:900;font-style:normal;font-display:block;src:url(data:font/woff2;base64,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)format("woff2")}.fass,.fa-solid{font-weight:900}:root,:host{--fa-style-family-sharp:"Font Awesome 6 Sharp";--fa-font-sharp-regular:normal 400 1em/1 "Font Awesome 6 Sharp"}@font-face{font-family:"Font Awesome 6 Sharp";font-weight:400;font-style:normal;font-display:block;src:url(data:font/woff2;base64,d09GMk9UVE8AAAV0AAkAAAAACn0AAAUvAAEjAAAAAAAAAAAAAAAAAAAAAAAAAAAAATYCJAQGBmADGAWIEQCBPAcgDYk4BT4FEZWccAA/DnKyeBPeVqgLRfq2cIDizJkvMh6evxc99/2RORem1lgnQQALVvACfYPEO5b9g2t+EdyqvsqWFu0fUT4c6kQnNv/Lpp4s/dGaYAPElePyqgBXBqAzsAz8jBAibDOpgPDfzBqu5tLep3QBV5S4ReNqVe6SdH5zKcOTKiCOx/Gd6hcKUBVQ6Pp61rW/iOezdnI8XC4S/NMMBO86Tv9oSeD1h/7aRaqrJCo0YmkJuIG6El3pGINHlLyBlPKo4guSEj+5dJKS3iHvSIvMCoXRKZKrt/cjWr0M1LW1sahcykw9NUxC4nnTWIvnBegPD88GhuXzEHr9IWnwCJkZCORGvaCw5QOlIV9otmoALQb8DnfayOiKhou8CbvxDiAspieQtMdXyNxHQO4wjkDhYxqC0nYqhGZP8QAt1tORw50gdfEbwXrXjXX2I8RXBbBepmp4RZPMsEN6fIPA8/qkuPbJz6LOFlb5DRr5USkQeCUpvWvNm75f5jljBtzWJeBPMyTDiRIjSwJMtVl/YI0DztkzBisK0U7WasvHh+VHcUdj4kfHHV17F+QgESuBtYalkIhYgAjcuTS5FLixOCohduYKjcSMRyQPrhzXElo3UQCRRKHdI5WAJT0D8BiWEXiElaOGQTPHklY9EQp4x5B2D8ZfsfUBuzn0KMLVErwpwwzoxReM5gqet9bShuaIJAyZRNC0W7+O1lrOq2CtNc6kt8sOi8tS14p7H72UKqgoFDs/qkEvyZjbnzUWDZEjw+w8fs5F5Lm45nQQLiFaNUryl4GIPxN/Nv388uvBcA18buSzZ49ntudojwAtDJRW2hO7lDR7KrTviVTSvjdRmfb9C5VrPx7UUrD83hF0clZJlWDLNcvpxhxdOMctQ8yx2v9xFnO8kznBak60TXDxnPB+RaDr54TU6z0J7uM10emZyyPeLcp4h/ybjznOTZvwbsxCN+uE6XuHW4UXaqM3+oQBM3+tm12jsCxZFV9UcRTf5anFrk9jdqRbcbvzojclzSLPm0iy/Hb6bq1Ri2BukrtA/BY0WQMGYSDaY4AU3mWQXcRkEOLSgL9kO/uTysJAvaT9EZILgGNAlIencTQfKhbCBhpfRVSMBsVQcQePm7xJ/mSdOBj0U+k0Y4xqns7gMI84Syo/lUVct3SgIywUcIx/3lwZ5K2ibM4lNxW2zQhSmySC8He6REEgD+4wp0m24+MCKLsY0wULZAjPgo/gRgf68eMSCAxES55cM4Q+jSKg6j1qMgTooOduRCqAnCBTrr7L9POlq1IWLQiCkafmJmnMp2MX6BdIGcqgggI6kkCbNxMbbBCm65KW8U1Blo2p20nS2ESSTnZRU8/cpbBe75FnHg34ZaOmH/E8NnFJF9E/nIdaxFc4SPZtb9+NvQIPN9zWIXRs2ABdIL09sy9HNFc3V7VUCgAARE9BX3ZXrujKa8ltyhOBoLrumu6qTlG2xbHZsbm3Jl9T3VbVVt0u8vY5juK4wNfHj79CfMXjAMwJxbGO+Ly0myqqKqsrZUM7ChyFZXmiqqzGUecw9KVNW1u2dW0RXdv7d3QfrPCGlrbm1uYWMYXdZQays5EhkkA4d+zYuZAiiZar05KXgTCXFNhflj/EpUIJcxmxjg2nT0u2otukTq/haDNaqmhsMz8GltG+hMxgbs1e8NtdMZQfzVNn5ObNlHBkG7YGBU2Vbi6gS0F4hDBpMyUfpIOd58sRWcBqJ9CuHUym5ORt3nLp0hTndgf10z3MDj/zuDQAAw)format("woff2")}.fasr,.fa-regular{font-weight:400}:root,:host{--fa-style-family-sharp:"Font Awesome 6 Sharp";--fa-font-sharp-light:normal 300 1em/1 "Font Awesome 6 Sharp"}@font-face{font-family:"Font Awesome 6 Sharp";font-weight:300;font-style:normal;font-display:block;src:url(data:font/woff2;base64,d09GMk9UVE8AAATkAAkAAAAACcgAAASfAAEjAAAAAAAAAAAAAAAAAAAAAAAAAAAAATYCJAQGBmADFAWIDgCBKAcgDYgeheMEEYXsAvw8sI2pDRfRAosSl6GNXFnGaZgwJDClPhOeUeR/6son2VprCXQhwgoJqvvtcQCwS1FuaqwA4GuinfHVmoZYZfy6/AeIFIF/xLuQg9Z4NqbGdGoMEIbnJa234FOY6RifcF3AUIH3ai7tpXhfQotrrkKYZPO0gTIoIvvEsg6NJAInO3W2r+iaWvTQqjrx/SMIgHjgALDwtP+KFwDw9uf47e3o8H84hRgAGku9kEchiRIQ/pFBHp6uYBKH4ueR6AwvWUgAhsdPFtDAM5K/AKXi4iiMeLdz5+3F4zCs2pgYDOdt+sqbc4jPmDBLYhgrSwwCuht6SUsitQBSYCx4WtjE+3yg9OCAiHp+IKYzBHH1fEFG3P/1WV6OR+wogN7tAhPZoUFKpQo8I/MZ7wMoS+KAiK59hZhZ+YO4rrUhg+j3WFao/+Y4DyxkC6VqrVCvVYBYKdYxOHOTI9sfRpMP+ezMGsmgV19CQN1dzPbCVmHejIwac/dtBOfSCbQki5O72YjD38YRB8tZioR/h445DAnqAz4dLA7BBpWNQxuy2axerXxyJmSNqfZfdBxwbIjEoAMFWQUlVTUFdTUVgDBl0GFg4IyDGDQccNJCTUrOY7jYGlKaqvDZLRHFZgIzEoEI2+AIjtTyqGtJzNQJ7fJRBjUM0RKQb9cYccIkmbVmFceAhGkjhAC5iMohlh6AGQwqhQTLGpHuvrKrjfxlBAYZXp0j5/GYCWnKyeEpkYLOLCZl0xTMx1ebPDcjKm3L3x/ngA/wAK3TNI90QYVusSGP/hz4N02S/+Pr2+M/5I/pYQjpdZt1argyI9K3x3Z6AsxxpCkZHSGHyHp7HCCBHxxe1o/pAnyIv0ksQwr7YWsEfB9CiPoDAZbfaYFtBNtY2CbSNvVsM7/pu0thWDYm3XRyxwNHl6cVJZsAIp4mXsi2AxHb5tfPSe6RQNPfht0SXtM2/rT8pjE02OYWEiV+2wIoIXqOW7Hn4GglzAE99PgkkoHa/+E9SkJgX25JyHnyn+tOdpo5TvgPqahAe1Fpm7CXlPtDAh1Hdtse10uzDTfn2cp5msXMGveV7/Sm/MYbZBXDXD/35m2szHWTbYJSgtxJLVLVTE9144KdZirqMhdPI0UPK9NEshuLlGZr9bGxBvfACWtJlQpUja4jfkBFQIH4oqJhfuCmmQsKd9kCGeNztjHWtheVwogNm9QbNWHbSOm9NGu51q5gylHS6Wc1mrVWv840sPa6uV7napC9lrLpuoJtvM3J+h1MgsiOD0t1u2S7mUPVtm1T1YfwLDdbuUjfwUPqXDavqnbOJgWZq6s6iM5zhVTFxFhj01ddZZvhhw4iysh475Qt8DFDXwY/70jalw0eTB112fPBX0jf//lz+qJp19OsXDdv10zSLqCuH4gD7fiHDxbS/R+6kss9YObnrVupuY1rU4NyzMl0XoorbG/DGfrejlxGh7xdOwvp/nbfiXPLOfP9O+9JpW2GWxAHHBCSRnJJpzOkUUanK2FOQWIkxtHj/Mes7VXyxhqbvNc43g+wsUl7scfVirn8ONF1PuSWEcump2xFwd4xAw)format("woff2")}.fasl,.fa-light{font-weight:300}:root,:host{--fa-style-family-classic:"Font Awesome 6 Pro";--fa-font-solid:normal 900 1em/1 "Font Awesome 6 Pro"}@font-face{font-family:"Font Awesome 6 Pro";font-weight:900;font-style:normal;font-display:block;src:url(data:font/woff2;base64,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)format("woff2")}.fas,.fa-solid{font-weight:900}:root,:host{--fa-style-family-classic:"Font Awesome 6 Pro";--fa-font-regular:normal 400 1em/1 "Font Awesome 6 Pro"}@font-face{font-family:"Font Awesome 6 Pro";font-weight:400;font-style:normal;font-display:block;src:url(data:font/woff2;base64,d09GMk9UVE8AAATQAAkAAAAACZcAAASLAAEjAAAAAAAAAAAAAAAAAAAAAAAAAAAAATYCJAQGBmADFAWHeQCDAAcgDYYqBcsEEZWcuAA/C+w2l+A4by4WOxuavHwQhuERCwv00eQN1cIr+O9/v98+c+d+MUF99Q8hEWliIdF4KVAStVkUT/zPulqfUPnnhMFa6c7rNuOl673uEi75dSkU0v/a73e/7LCYLGJJpUSIRLP8TeEheurDPRIpgekkschPd2f2zzyeHm/vbvMCTyHTGL9KvOv3a/W9wxaVqIuVSE2P/ewc+++lU5mOeDWNHklNREuhNIbM9Ev4a/y8J/yqAepwGS0If/QQAaeX+af8AvCYcX/P7/+fkgZkGABBcwZp28DqDRHHRJHnxrVGkTW+ndHFQtcqYeIioG4izuLwXZkTH0uOs2/DGjM159c6IdJHNtG2wigyrbR7lerpl1FqdtGkgcHUPbqebYx26TGlrQFzNkQlT0Unayv7UVA9L9DOAgfRBJSFBtGU/GFw1B10Bx3C6CJRTNlKA+ac5A7ztlpfW4Gnyp9GRa+DizvK7AlwWLuYS8+Y5vwPTD898V55jsm3VI8gUEKl1RF6naad1/L7THJGwNEhpZvw/QfBg9RY/v4rXcntz7OF/+BIZ8bD8WgBzWyaFhZzaXBqEeu8XwmrOUsyneuWmI2doX9OtIzFK0og5XilpRQ4lLHy0pJYWoty0mZSaNdnM6pyoniCAjCONgFy2wia2gA2nheNk8cAAoqgoqVD0NPRAON5HASlRoxNAU5bg94TfAQspTydMiYPJKXlc/Rl/OZSTAOiaG8SeSzaSCmMLvzUtIS4qALUq5QWHEr9wPLT0WF3fkFGnhEGw2E9iTiKllbek/Uzh9J5IhwEsCDLfeNTUy+Vq3W3+aujk9SADMl8R/Nry2PLU2fTv+8/kmnNdGWeHIfImnHWaPWt5YfiB6LSh4gQ0KIWNahGFQLIASnAcAoAvEAA1AiSTqlivgOwisVXwMuWHlm2TyAE15tACL76AFjFawQIFW+tgJe9dTHsE/rg6EvN0JpCjf/nHQz3Awz3Ewz3Cwz9XfC9/cDcQ7iTtlJ9gfQFcsk1pnvot9el+9y636MHvI3NxY2/gwRLHUe4t4sFChtEyEAT1LtikOJoWOhOeHwBjb5rews8jSO3TkHi2dQdLpsAhN+2IIeiXAOz87HFC7glXlau2MUZG9fS6uXRSNxxS996cHsM/nKjuIGNwuwYA/Mu7qeUwRrYBGWyPMyMmqQk+B3yzmIiOpbBLL54BYWbi4sbSD6CuMV5GH6JrFrAF4n4oE0PP8LnuFX6+KJs5kn71D52LSzEVUzLgmUtmE3W2sW+VuuW/d3d/a8UmQxf8Jyyl5FcXpbGZ3xieTmJZVtiLI5sW7KL/cJ0rDQUPYId3cPXFfGWHlbcgL8emAa5hR60FLJXzx+4QcLfnwtPYooR1UAdY0SSGDFnEEgYmGYIDBLCQdgyeYbdagFWIU5d2LX2Id8g9rHL2X1rd0GpVlL4FAo1skASdXU1hkQQ4pmH1QkODnAiN63pgzhkazqNuHzwIH0CWaQZ9ilwQ8+/+1wgA08PFdEJsSyDuIKUw3HTKZLXeWW84IJOLNJbFXpPGQM)format("woff2")}.far,.fa-regular{font-weight:400}:root,:host{--fa-style-family-classic:"Font Awesome 6 Pro";--fa-font-light:normal 300 1em/1 "Font Awesome 6 Pro"}@font-face{font-family:"Font Awesome 6 Pro";font-weight:300;font-style:normal;font-display:block;src:url(data:font/woff2;base64,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)format("woff2")}.fal,.fa-light{font-weight:300}:root,:host{--fa-style-family-brands:"Font Awesome 6 Brands";--fa-font-brands:normal 400 1em/1 "Font Awesome 6 Brands"}@font-face{font-family:"Font Awesome 6 Brands";font-weight:400;font-style:normal;font-display:block;src:url(data:font/woff2;base64,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)format("woff2")}.fab,.fa-brands{font-weight:400}.fa-slack{--fa:""}.fa-twitter{--fa:""}.fa-php{--fa:""}.fa-github{--fa:""}.fa-js{--fa:""}.fa-jira{--fa:""}.fa-x-twitter{--fa:""}.fa-gitlab{--fa:""}.fa-react{--fa:""}.fa-laravel{--fa:""}.fa-vuejs{--fa:""}.fa-google{--fa:""}.fa-github-alt{--fa:""}.fa-markdown{--fa:""}</style>
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://flareapp.io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://flareapp.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://flareapp.io/favicon-16x16.png">
+<link rel="manifest" href="https://flareapp.io/site.webmanifest">
+<meta name="msapplication-TileColor" content="#4f0f8f">
+<meta name="theme-color" content="#E5E7EB">
+
+<meta property="og:site_name" content="Flare">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Error Tracking &amp; Performance Monitoring for Laravel &amp; PHP">
+<meta property="og:description" content="Catch errors and fix slowdowns with Flare, the full-stack application monitoring platform for Laravel, PHP &amp; JavaScript.">
+<meta property="og:url" content="https://flareapp.io">
+<meta property="og:type" content="product">
+    <meta property="og:image" content="https://flareapp.io/images/front/og/default.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:domain" content="flareapp.io">
+<meta name="twitter:url" content="https://flareapp.io">
+<meta name="twitter:title" content="Error Tracking &amp; Performance Monitoring for Laravel &amp; PHP | Flare">
+<meta name="twitter:creator" content="@flareappio">
+<meta name="twitter:description" content="Catch errors and fix slowdowns with Flare, the full-stack application monitoring platform for Laravel, PHP &amp; JavaScript.">
+<meta name="twitter:site" content="@flareappio">
+    <meta name="twitter:image" content="https://flareapp.io/images/front/og/default.jpg">
+
+    <script defer="" src="https://cdn.tolt.io/tolt.js" data-tolt="b6ec0ebf-1b79-4a17-89ec-3d9d7ab5dd92"></script>
+
+<link rel="preconnect" href="https://cdn-cookieyes.com">
+    <link rel="preconnect" href="https://cdn.usefathom.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+
+    
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag("consent", "default", {
+            ad_storage: "denied",
+            ad_user_data: "denied",
+            ad_personalization: "denied",
+            analytics_storage: "denied",
+            functionality_storage: "denied",
+            personalization_storage: "denied",
+            security_storage: "granted",
+            wait_for_update: 2000,
+        });
+        gtag("set", "ads_data_redaction", true);
+        gtag("set", "url_passthrough", true);
+    </script>
+
+    
+    <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/da388cad89dfa33297b7fe29/script.js"></script><script src="https://cdn-cookieyes.com/client_data/da388cad89dfa33297b7fe29/banner.js" async="" id="cookieyes-banner"></script>
+
+    
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-N65RXQ4C');</script>
+
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
+
+    <script defer="" src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script defer="" src="https://cdn.jsdelivr.net/npm/@alpinejs/persist@3.x.x/dist/cdn.min.js"></script>
+    <!-- Livewire Styles --><style>[wire\:loading][wire\:loading], [wire\:loading\.delay][wire\:loading\.delay], [wire\:loading\.inline-block][wire\:loading\.inline-block], [wire\:loading\.inline][wire\:loading\.inline], [wire\:loading\.block][wire\:loading\.block], [wire\:loading\.flex][wire\:loading\.flex], [wire\:loading\.table][wire\:loading\.table], [wire\:loading\.grid][wire\:loading\.grid], [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.none][wire\:loading\.delay\.none], [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short][wire\:loading\.delay\.short], [wire\:loading\.delay\.default][wire\:loading\.delay\.default], [wire\:loading\.delay\.long][wire\:loading\.delay\.long], [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {display: none;}[wire\:offline][wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}:root {--livewire-progress-bar-color: #2299dd;}[x-cloak] {display: none !important;}[wire\:cloak] {display: none !important;}dialog#livewire-error::backdrop {background-color: rgba(0, 0, 0, .6);}</style>
+
+        <link rel="preload" as="style" href="https://flareapp.io/build/assets/front-CZL35UUr.css"><link rel="modulepreload" as="script" href="https://flareapp.io/build/assets/front-NyVtmKo5.js"><link rel="modulepreload" as="script" href="https://flareapp.io/build/assets/ActionsBar-DoHzwVas.js"><link rel="modulepreload" as="script" href="https://flareapp.io/build/assets/toAuthenticatorAttachment-DIPxyKr-.js"><link rel="stylesheet" href="https://flareapp.io/build/assets/front-CZL35UUr.css" data-navigate-track="reload"><script type="module" src="https://flareapp.io/build/assets/front-NyVtmKo5.js" data-navigate-track="reload"></script>
+<script>
+     window.addEventListener('load', () => window.setTimeout(() => {
+        const makeLink = (asset) => {
+            const link = document.createElement('link')
+
+            Object.keys(asset).forEach((attribute) => {
+                link.setAttribute(attribute, asset[attribute])
+            })
+
+            return link
+        }
+
+        const loadNext = (assets, count) => window.setTimeout(() => {
+            if (count > assets.length) {
+                count = assets.length
+
+                if (count === 0) {
+                    return
+                }
+            }
+
+            const fragment = new DocumentFragment
+
+            while (count > 0) {
+                const link = makeLink(assets.shift())
+                fragment.append(link)
+                count--
+
+                if (assets.length) {
+                    link.onload = () => loadNext(assets, 1)
+                    link.onerror = () => loadNext(assets, 1)
+                }
+            }
+
+            document.head.append(fragment)
+        })
+
+        loadNext([], 3)
+    }))
+</script><style>/* Make clicks pass-through */
+
+    #nprogress {
+      pointer-events: none;
+    }
+
+    #nprogress .bar {
+      background: var(--livewire-progress-bar-color, #29d);
+
+      position: fixed;
+      z-index: 1031;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 2px;
+    }
+
+    /* Fancy blur effect */
+    #nprogress .peg {
+      display: block;
+      position: absolute;
+      right: 0px;
+      width: 100px;
+      height: 100%;
+      box-shadow: 0 0 10px var(--livewire-progress-bar-color, #29d), 0 0 5px var(--livewire-progress-bar-color, #29d);
+      opacity: 1.0;
+
+      -webkit-transform: rotate(3deg) translate(0px, -4px);
+          -ms-transform: rotate(3deg) translate(0px, -4px);
+              transform: rotate(3deg) translate(0px, -4px);
+    }
+
+    /* Remove these to get rid of the spinner */
+    #nprogress .spinner {
+      display: block;
+      position: fixed;
+      z-index: 1031;
+      top: 15px;
+      right: 15px;
+    }
+
+    #nprogress .spinner-icon {
+      width: 18px;
+      height: 18px;
+      box-sizing: border-box;
+
+      border: solid 2px transparent;
+      border-top-color: var(--livewire-progress-bar-color, #29d);
+      border-left-color: var(--livewire-progress-bar-color, #29d);
+      border-radius: 50%;
+
+      -webkit-animation: nprogress-spinner 400ms linear infinite;
+              animation: nprogress-spinner 400ms linear infinite;
+    }
+
+    .nprogress-custom-parent {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .nprogress-custom-parent #nprogress .spinner,
+    .nprogress-custom-parent #nprogress .bar {
+      position: absolute;
+    }
+
+    @-webkit-keyframes nprogress-spinner {
+      0%   { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+    @keyframes nprogress-spinner {
+      0%   { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    </style><script src="https://www.googletagmanager.com/gtm.js?id=GTM-N65RXQ4C" type="text/javascript"></script><script type="text/javascript" async="" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/11113255107/?random=1775942936688&amp;cv=11&amp;fst=1775942936688&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;en=gtag.config&amp;gtm=45be6481v9104216317z89227862755za20gzb9227862755zd9227862755xec&amp;gcd=13r3r3r3r5l1&amp;dma=0&amp;tag_exp=0~115938465~115938468~117266400~117884344&amp;u_w=1366&amp;u_h=768&amp;url=https%3A%2F%2Fflareapp.io%2F&amp;rcb=2&amp;frm=0&amp;tiba=Error%20Tracking%20%26%20Performance%20Monitoring%20for%20Laravel%20%26%20PHP%20%7C%20Flare&amp;hn=www.googleadservices.com&amp;npa=0&amp;pscdl=noapi&amp;auid=638336038.1775942936&amp;uaa=x86&amp;uab=64&amp;uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&amp;uamb=0&amp;uam=&amp;uap=Windows&amp;uapv=10.0&amp;uaw=0&amp;_tu=CA&amp;data=event%3Dgtag.config&amp;rfmt=3&amp;fmt=4"></script><script type="text/javascript" async="" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/11113255107/?random=1775942936743&amp;cv=11&amp;fst=1775942936743&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;gtm=45be6481v9104216317z89227862755za20gzb9227862755zd9227862755xea&amp;gcd=13r3r3r3r5l1&amp;dma=0&amp;tag_exp=0~115938465~115938468~117266400~117884344&amp;u_w=1366&amp;u_h=768&amp;url=https%3A%2F%2Fflareapp.io%2F&amp;rcb=2&amp;frm=0&amp;tiba=Error%20Tracking%20%26%20Performance%20Monitoring%20for%20Laravel%20%26%20PHP%20%7C%20Flare&amp;hn=www.googleadservices.com&amp;npa=0&amp;pscdl=noapi&amp;auid=638336038.1775942936&amp;uaa=x86&amp;uab=64&amp;uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&amp;uamb=0&amp;uam=&amp;uap=Windows&amp;uapv=10.0&amp;uaw=0&amp;_tu=CA&amp;data=ads_data_redaction%3Dtrue&amp;rfmt=3&amp;fmt=4"></script><script src="https://cdn.jsdelivr.net/npm/psl/dist/psl.min.js"></script></head>
+<body class="relative bg-fl-gray-extra-light bg-front-green-fade-bg bg-no-repeat bg-size-[100%_auto] bg-top font-satoshi subpixel-antialiased  bg-fl-gray-extra-light bg-front-image-circles-purple-green-hor bg-[100%_auto] bg-no-repeat" style="text-rendering: optimizeLegibility;">
+
+<header class="fixed inset-x-0 top-0 container mx-auto z-50 px-6" x-data="{
+        scrolled: false,
+        menuOpen: false,
+        sticky: true
+    }" x-init="if (sticky) { scrolled = window.scrollY &gt; 0 }" @scroll.window="if (sticky) { scrolled = window.scrollY &gt; 64 }">
+    <div :class="scrolled ? 'max-w-screen-lg' : 'max-w-screen-xl'" class="w-full mx-auto py-6 transform-gpu transition-[max-width] max-w-screen-xl">
+        <div :class="scrolled ? 'bg-gradient-to-b from-white/75 to-white/25 inner px-2 py-2 pl-5 backdrop-blur-xl drop-shadow-2xl border-white/50' : 'backdrop-blur-0 drop-shadow-none'" class="relative font-semibold text-fl-gray-dark rounded-full transition-[backdrop-filter,box-shadow,background-color,border-color] duration-300 border border-white/0 backdrop-blur-0 drop-shadow-none">
+
+            <div class="flex items-center gap-20 justify-between">
+
+                <div class="flex-1">
+                    <a href="https://flareapp.io" wire:navigate.hover="true" class="flex flex-nowrap gap-3 items-center active:translate-y-[0.5px]">
+                        <div class="h-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-[inherit]" sticky="true" fill="none" viewBox="0 0 42 64"><path fill="url(#a)" d="M13.73 31.985 0 23.997V7.99l13.82 8.047-.088 15.948h-.002Z"></path><path fill="url(#b)" d="M27.46 23.968 0 7.99 13.73 0l27.52 15.977-13.79 7.99Z"></path><path fill="url(#c)" d="M13.73 64 0 56.01V40.032l13.7 7.99L13.73 64Z"></path><path fill="url(#d)" d="M13.7 48.023 0 40.033l13.73-8.017 13.76 8.017-13.79 7.99Z"></path><defs><linearGradient id="a" x1="6.91" x2="6.91" y1="26.18" y2="2.182" gradientUnits="userSpaceOnUse"><stop stop-color="#48B987"></stop><stop offset="1" stop-color="#137449"></stop></linearGradient><linearGradient id="b" x1="20.625" x2="20.625" y1="9.015" y2="32.983" gradientUnits="userSpaceOnUse"><stop stop-color="#66FFBC"></stop><stop offset="1" stop-color="#218E5E"></stop></linearGradient><linearGradient id="c" x1="6.865" x2="6.865" y1="58.192" y2="34.197" gradientUnits="userSpaceOnUse"><stop stop-color="#A189F2"></stop><stop offset="1" stop-color="#3F00F5"></stop></linearGradient><linearGradient id="d" x1="13.745" x2="13.745" y1="23.498" y2="39.506" gradientUnits="userSpaceOnUse"><stop stop-color="#BBADFA"></stop><stop offset="1" stop-color="#9275F4"></stop></linearGradient></defs></svg>
+                        </div>
+                        <span class="font-medium text-flare-gray-dark leading-[0.9]">
+                            <span class="block text-22 font-black text-flare-gray-extra-dark">Flare</span>
+                            <span class="text-12 opacity-75">by Spatie</span>
+                        </span>
+                    </a>
+                </div>
+
+                <nav class="hidden lg:block">
+                    <ul class="flex gap-8 items-center">
+
+                        <li class="group cursor-pointer relative flex items-center gap-1">
+                            <button class="flex items-center hover:text-fl-purple-bright group-hover:text-fl-purple-bright">
+                Platform
+    </button>
+                            <svg class="w-4 mt-[2px] group-hover:text-fl-purple-bright group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 15 16"><path stroke="currentColor" stroke-linecap="square" d="m4.5 7 3 3 3-3"></path></svg>
+
+                            <div class="py-2 absolute left-1/2 top-full -translate-x-1/2 opacity-0 pointer-events-none transition z-10 group-hover:opacity-100 group-hover:pointer-events-auto">
+                                <div class="relative bg-white/35 rounded-12 p-[3px] drop-shadow-2xl">
+                                    <div class="absolute w-full flex justify-center top-[-3px]">
+                                        <svg width="15" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><mask id="a" fill="#fff"><path d="M.97 6.843 7.815 0l6.843 6.843-6.843 6.843L.971 6.843Z"></path></mask><path d="M.97 6.843 7.815 0l6.843 6.843-6.843 6.843L.971 6.843Z" fill="#fff"></path><path d="m7.814 0 .707-.708-.707-.707-.707.707.707.708ZM1.678 7.55 8.52.707 7.107-.708.264 6.136 1.678 7.55ZM7.107.707 13.95 7.55l1.414-1.414L8.521-.708 7.107.707Z" fill="#E2E8F0" mask="url(#a)"></path></svg>
+                                    </div>
+                                    <ul class="bg-white rounded-8 border border-fl-gray-light">
+                                                                                    <li>
+                                                <a wire:navigate.hover="true" class="flex items-center hover:text-fl-purple-bright group/link px-4 py-3 whitespace-nowrap gap-2" href="https://flareapp.io/platform/error-tracking">
+                    <div class="w-6 transition group-hover/link:brightness-150">
+                                                            <img src="/images/front/icons/logo-dark-error.svg" alt="">
+                                                        </div>
+                Error Tracking
+    </a>
+                                            </li>
+                                                                                            <div class="bg-fl-gray-light h-px"></div>
+                                                                                                                                <li>
+                                                <a wire:navigate.hover="true" class="flex items-center hover:text-fl-purple-bright group/link px-4 py-3 whitespace-nowrap gap-2" href="https://flareapp.io/platform/performance-monitoring">
+                    <div class="w-6 transition group-hover/link:brightness-150">
+                                                            <img src="/images/front/icons/logo-dark-pm.svg" alt="">
+                                                        </div>
+                Performance Monitoring
+    </a>
+                                            </li>
+                                                                                            <div class="bg-fl-gray-light h-px"></div>
+                                                                                                                                <li>
+                                                <a wire:navigate.hover="true" class="flex items-center hover:text-fl-purple-bright group/link px-4 py-3 whitespace-nowrap gap-2" href="https://flareapp.io/platform/logging">
+                    <div class="w-6 transition group-hover/link:brightness-150">
+                                                            <img src="/images/front/icons/logo-dark-logs.svg" alt="">
+                                                        </div>
+                Logging
+                                                                                                            <span class="text-uppercase-semibold tracking-wide text-fl-purple-bright bg-fl-purple-bright/10 rounded-full px-2 py-1 leading-none">Coming soon</span>
+    </a>
+                                            </li>
+                                                                                                                        </ul>
+                                </div>
+                            </div>
+
+                        </li>
+
+                                                    <li><a wire:navigate.hover="true" class="flex items-center hover:text-fl-purple-bright" href="https://flareapp.io/pricing">
+                Pricing
+    </a>
+</li>
+                                                    <li><a wire:navigate.hover="true" class="flex items-center hover:text-fl-purple-bright" href="https://flareapp.io/docs">
+                Docs
+    </a>
+</li>
+                                                    <li><a wire:navigate.hover="true" class="flex items-center hover:text-fl-purple-bright" href="https://flareapp.io/blog">
+                Insights
+    </a>
+</li>
+                                                    <li><a wire:navigate.hover="true" class="flex items-center hover:text-fl-purple-bright" href="https://flareapp.io/changelog">
+                Changelog
+    </a>
+</li>
+                        
+                    </ul>
+                </nav>
+
+                <ul class="hidden gap-6 items-center flex-1 justify-end lg:flex">
+                    <li class="guest:hidden">
+                        <a href="https://flareapp.io/projects" class="inline-block button-primary rounded-full whitespace-nowrap">
+                    Back to Flare
+            </a>
+                    </li>
+                    <li class="authenticated:hidden">
+                        <a wire:navigate.hover="true" class="flex items-center hover:text-fl-purple-bright text-sm gap-1.5 whitespace-nowrap" href="https://flareapp.io/login">
+                    <div class="w-5">
+                                    <img src="/images/front/icons/icon-gray-user.svg" alt="">
+                                </div>
+                Sign in
+    </a>
+                    </li>
+                    <li class="authenticated:hidden">
+                        <a wire:navigate.hover="true" class="inline-block button-primary rounded-full whitespace-nowrap" href="https://flareapp.io/register">
+                    Try Flare for free
+            </a>
+                    </li>
+                </ul>
+
+                <button type="button" class="button-secondary flex rounded-full items-center text-sm font-semibold lg:hidden" @click="menuOpen = !menuOpen">
+                    <span class="flex size-4 mr-2">
+                        <template x-if="!menuOpen">
+                            <img src="/images/front/icons/icon-gray-bars.svg" alt="Menu">
+                        </template><img src="/images/front/icons/icon-gray-bars.svg" alt="Menu">
+                        <template x-if="menuOpen">
+                            <img src="/images/front/icons/icon-gray-xmark.svg" alt="Close Menu">
+                        </template>
+                    </span>
+                    Menu
+            </button>
+
+            </div>
+
+        </div>
+
+        <div x-show="menuOpen" x-transition:enter="transition ease-out duration-150" x-transition:enter-start="opacity-0 transform -translate-y-4" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform -translate-y-4" class="bg-white/75 p-5 my-4 backdrop-blur-md drop-shadow-2xl rounded-24 lg:hidden" style="display: none;">
+            <ul class="text-fl-gray-dark font-medium space-y-4">
+
+                                    <li>
+                        <a wire:navigate.hover="true" class="flex items-center hover:text-fl-purple-bright gap-2" href="https://flareapp.io/platform/error-tracking">
+                    <div class="w-5">
+                                    <img src="/images/front/icons/logo-dark-error.svg" alt="">
+                                </div>
+                Error Tracking
+    </a>
+                    </li>
+                                    <li>
+                        <a wire:navigate.hover="true" class="flex items-center hover:text-fl-purple-bright gap-2" href="https://flareapp.io/platform/performance-monitoring">
+                    <div class="w-5">
+                                    <img src="/images/front/icons/logo-dark-pm.svg" alt="">
+                                </div>
+                Performance Monitoring
+    </a>
+                    </li>
+                                    <li>
+                        <a wire:navigate.hover="true" class="flex items-center hover:text-fl-purple-bright gap-2" href="https://flareapp.io/platform/logging">
+                    <div class="w-5">
+                                    <img src="/images/front/icons/logo-dark-logs.svg" alt="">
+                                </div>
+                Logging
+                                                            <span class="text-[10px] font-semibold uppercase tracking-wide text-fl-purple-bright bg-fl-purple-bright/10 rounded-full px-2 py-0.5 leading-none">Coming soon</span>
+    </a>
+                    </li>
+                
+                                    <li><a wire:navigate.hover="true" class="flex items-center hover:text-fl-purple-bright" href="https://flareapp.io/pricing">
+                Pricing
+    </a>
+</li>
+                                    <li><a wire:navigate.hover="true" class="flex items-center hover:text-fl-purple-bright" href="https://flareapp.io/docs">
+                Docs
+    </a>
+</li>
+                                    <li><a wire:navigate.hover="true" class="flex items-center hover:text-fl-purple-bright" href="https://flareapp.io/blog">
+                Insights
+    </a>
+</li>
+                                    <li><a wire:navigate.hover="true" class="flex items-center hover:text-fl-purple-bright" href="https://flareapp.io/changelog">
+                Changelog
+    </a>
+</li>
+                
+                <li>
+                    <ul class="flex mt-4 gap-6 items-center">
+                        <li class="guest:hidden">
+                            <a href="https://flareapp.io/projects" class="inline-block button-primary rounded-full">
+                    Back to Flare
+            </a>
+                        </li>
+
+                        <li class="authenticated:hidden">
+                            <a wire:navigate.hover="true" class="inline-block button-primary rounded-full" href="https://flareapp.io/register">
+                    Try Flare for free
+            </a>
+                        </li>
+                        <li class="authenticated:hidden">
+                            <a wire:navigate.hover="true" class="flex items-center hover:text-fl-purple-bright gap-1.5 whitespace-nowrap" href="https://flareapp.io/login">
+                    <div class="w-5">
+                                        <img src="/images/front/icons/icon-gray-user.svg" alt="">
+                                    </div>
+                Sign in
+    </a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+</header>
+
+<main class="mt-32">
+    <div class="container mx-auto my-2 px-8 md:my-12">
+    <div class="max-w-screen-md mx-auto space-y-8">
+
+                <div class="flex justify-center gap-3 flex-wrap">
+            <a href="https://flareapp.io/platform/logging" wire:navigate.hover="true" class="text-uppercase-semibold transition flex gap-2 items-center font-semibold px-3.5 py-1.5 rounded-full text-fl-purple-dark border border-white bg-white/50 group-hover:bg-white/75 group hover:text-fl-purple-bright/90 drop-shadow-sm">
+                <div class="flex items-center gap-2">
+                    <span class="transition opacity-75">Coming soon</span>
+                </div>
+                <img class="w-4" src="/images/front/icons/logo-dark-logs.svg" alt="">
+                Logging
+                <svg class="size-[9px]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 5 8">
+                    <path fill="currentColor" d="m4.53 4-.266.266-2.998 3L1 7.53.47 7l.266-.266L3.47 4 .734 1.266.47 1 1 .47l.266.266 3 2.998L4.53 4H4.53Z"></path>
+                </svg>
+            </a>
+        </div>
+        
+        <div class="text-center space-y-6">
+            <h1 class="text-dark-purple font-black heading-1 text-balance text-5xl/[1.05] md:text-7xl/[1.05]">
+                Catch errors. Fix slowdowns.
+            </h1>
+
+                            <p class="text-bleak-purple text-xl font-semibold text-balance">
+                    Flare is full-stack monitoring without the complexity, <span class="md:block">built for Laravel, PHP &amp; JavaScript</span>
+                </p>
+                    </div>
+
+        <div class="space-y-3.5">
+    <div class="h-px bg-front-purple-underline-gradient"></div>
+    <div class="authenticated:hidden flex items-center justify-center gap-4">
+        <a wire:navigate.hover="true" class="inline-block button-primary rounded-full" href="https://flareapp.io/register">
+                    Try Flare for free
+            </a>
+        <span class="text-[8.5px] font-semibold tracking-[1.25px] text-fl-gray">OR</span>
+        <a wire:navigate.hover="true" class="inline-block button-secondary rounded-full" href="https://flareapp.io/pricing">
+                    See pricing
+            </a>
+    </div>
+    <div class="guest:hidden flex items-center justify-center gap-4">
+        <a href="https://flareapp.io/projects" class="inline-block button-primary rounded-full">
+                    Back to Flare
+            </a>
+        <span class="text-[8.5px] font-semibold tracking-[1.25px] text-fl-gray">OR</span>
+        <a wire:navigate.hover="true" class="inline-block button-secondary rounded-full" href="https://flareapp.io/docs">
+                    Read the docs
+            </a>
+    </div>
+    <div class="h-px bg-front-purple-underline-gradient"></div>
+    <p class="text-uppercase-semibold w-full text-center text-fl-purple-bleak">10 day trial, No credit card required</p>
+</div>
+
+    </div>
+</div>
+
+    <div class="container mx-auto my-16 px-8 space-y-16 md:space-y-24 md:my-24">
+
+        <div class="max-w-screen-xl mx-auto space-y-8">
+            <div class="flex flex-wrap flex-col gap-16 lg:flex-row">
+    <div class="space-y-8 flex-1">
+    <div class="border border-white bg-fl-gray-extra-light/50 p-6 rounded-24 text-center space-y-8 shadow-front-box-shadow-glow md:p-8">
+        <div class="space-y-6">
+            <div class="space-y-2">
+
+                <div class="flex gap-2 mt-2 mb-6 items-center justify-center text-fl-purple-bleak">
+                    <img class="w-6" src="/images/front/icons/logo-dark-error.svg" alt=""><span class="text-uppercase-semibold">Error Tracking</span>
+                                    </div>
+
+                <h2 class="text-bleak-purple font-bold heading-3 text-balance">
+                    Catch errors before your users do
+                </h2>
+
+                <p class="text-fl-purple-dark text-18/120 md:text-20">Databases go down. Routes hit 500s. Exceptions pile up. We've been there. Flare helps you act fast.</p>
+
+            </div>
+            <a wire:navigate.hover="true" class="inline-block button-secondary rounded-12" href="/platform/error-tracking">
+                    Explore Error Tracking
+            </a>
+        </div>
+        <img class="w-full" src="/images/front/features/feature-et-home.png" alt="">
+    </div>
+    <ul class="px-4 text-fl-purple-bleak space-y-4 md:px-16">
+                    <li class="flex gap-5 items-center">
+                <img class="w-5" src="/images/front/icons/icon-magnifying-glass-chart.svg" alt="">
+                <p class="leading-tight">Track everything that goes wrong in production or staging</p>
+            </li>
+                    <li class="flex gap-5 items-center">
+                <img class="w-5" src="/images/front/icons/icon-window-check.svg" alt="">
+                <p class="leading-tight">Gain valuable insight into what, when and how it happened</p>
+            </li>
+                    <li class="flex gap-5 items-center">
+                <img class="w-5" src="/images/front/icons/icon-alarm-plus.svg" alt="">
+                <p class="leading-tight">Advanced triggers to receive only the notifications you want</p>
+            </li>
+            </ul>
+</div>
+
+    <div class="space-y-8 flex-1">
+    <div class="border border-white bg-fl-gray-extra-light/50 p-6 rounded-24 text-center space-y-8 shadow-front-box-shadow-glow md:p-8">
+        <div class="space-y-6">
+            <div class="space-y-2">
+
+                <div class="flex gap-2 mt-2 mb-6 items-center justify-center text-fl-purple-bleak">
+                    <img class="w-6" src="/images/front/icons/logo-dark-pm.svg" alt=""><span class="text-uppercase-semibold">Performance Monitoring</span>
+                                    </div>
+
+                <h2 class="text-bleak-purple font-bold heading-3 text-balance">
+                    Locate and fix slow parts of your app
+                </h2>
+
+                <p class="text-fl-purple-dark text-18/120 md:text-20">Slow requests go unseen. Queues back up. Jobs drag. Happens to every app. Flare helps you fix them.</p>
+
+            </div>
+            <a wire:navigate.hover="true" class="inline-block button-secondary rounded-12" href="/platform/performance-monitoring">
+                    Explore Performance Monitoring
+            </a>
+        </div>
+        <img class="w-full" src="/images/front/features/feature-pm-home.png" alt="">
+    </div>
+    <ul class="px-4 text-fl-purple-bleak space-y-4 md:px-16">
+                    <li class="flex gap-5 items-center">
+                <img class="w-5" src="/images/front/icons/icon-grid.svg" alt="">
+                <p class="leading-tight">See how routes, jobs and queries impact each other</p>
+            </li>
+                    <li class="flex gap-5 items-center">
+                <img class="w-5" src="/images/front/icons/icon-heartbeat.svg" alt="">
+                <p class="leading-tight">Track averages, p50, and p95 to spot bottlenecks</p>
+            </li>
+                    <li class="flex gap-5 items-center">
+                <img class="w-5" src="/images/front/icons/icon-time-reverse.svg" alt="">
+                <p class="leading-tight">Dive into timelines to investigate difficult performance issues</p>
+            </li>
+            </ul>
+</div>
+</div>
+        </div>
+
+        <div class="space-y-12">
+            <div class="max-w-screen-md mx-auto space-y-2 text-center">
+            <p class="text-uppercase-semibold text-fl-purple-bleak">Flare integrates seamlessly with</p>
+        <ul class="flex flex-wrap gap-0 justify-center md:gap-4">
+                    <li>
+                                <img class="size-20 md:size-20" src="/images/front/icons/logo-gray-laravel.svg" alt="Laravel">
+                            </li>
+                    <li>
+                                <img class="size-20 md:size-20" src="/images/front/icons/logo-gray-php.svg" alt="PHP">
+                            </li>
+                    <li>
+                                <img class="size-20 md:size-20" src="/images/front/icons/logo-gray-js.svg" alt="JavaScript">
+                            </li>
+                    <li>
+                                <img class="size-20 md:size-20" src="/images/front/icons/logo-gray-react.svg" alt="React">
+                            </li>
+                    <li>
+                                <img class="size-20 md:size-20" src="/images/front/icons/logo-gray-vue.svg" alt="Vue">
+                            </li>
+            </ul>
+</div>
+
+            <div class="h-px bg-front-purple-underline-gradient"></div>
+        </div>
+
+    </div>
+
+    <div class="container mx-auto my-16 mb-16 px-8 space-y-16 md:space-y-72px md:my-72px md:mb-192px">
+
+        <div class="max-w-screen-sm mx-auto space-y-8 text-center">
+    <h2 class="text-4xl pb-2 font-black tracking-tight text-balance bg-fl-purple-bleak-gradient text-transparent bg-clip-text md:text-5xl/[1.125]">Flare fits right into your workflow</h2>
+        <p class="text-lg font-medium tracking-[-0.0125em] leading-tight text-fl-purple-bleak/70">Send alerts via Slack, email, Teams and more, and connect with GitHub, Jira, Linear or your favorite issue tracker.</p>
+    </div>
+
+        <div class="max-w-screen-xl mx-auto">
+
+            <div class="hidden sticky w-full h-[720px] top-[12vh] z-[-1] md:block">
+                <div class="h-full border border-white bg-fl-gray-extra-light/50 py-12 p-6 rounded-32 text-center space-y-8 shadow-flare-inner-glow-white md:p-24 md:py-24 md:rounded-64"></div>
+            </div>
+
+            <div class="flex gap-8 justify-center md:mt-[-720px]">
+
+                <ul class="max-w-screen-lg space-y-16 mx-auto text-18/120 md:text-21 md:space-y-0 md:px-8" x-data="{ scrollIndex: 0 }">
+
+    
+    <li x-data="{ inView: false }" x-intersect.threshold.75="if (!inView) { inView = true; $root.scrollIndex++ }" class="transition duration-2000 ease-[cubic-bezier(0.16,1,0.3,1.03)] origin-top flex flex-wrap gap-12 xl:py-12 scale-95 translate-y-10 opacity-50" x-bind:class="{
+            'scale-95 translate-y-10 opacity-50': !inView,
+            'delay-0': $root.scrollIndex == 0,
+            'delay-200': $root.scrollIndex == 1,
+            'delay-400': $root.scrollIndex == 2,
+        }">
+                <img class="w-512px" src="/images/front/features/feature-et-teams.png" alt="">
+                <div class="flex-1 self-center bg-gradient-to-b from-white/80 to-white/50 border border-white rounded-14 p-6 space-y-4 text-fl-purple-extra-dark/70 bg-white/20 shadow-front-large-blur md:p-12">
+                        <img class="w-8" src="images/front/icons/icon-dark-message-dots.svg" alt="Icon">
+                        <h3 class="text-bleak-purple font-semibold heading-4">Users, teams and collaboration</h3>
+            <p>Create and manage multiple teams and projects, with detailed access control and sharing options.</p>
+        </div>
+    </li>
+
+    
+    <li x-data="{ inView: false }" x-intersect.threshold.75="if (!inView) { inView = true; $root.scrollIndex++ }" class="transition duration-2000 ease-[cubic-bezier(0.16,1,0.3,1.03)] origin-top flex flex-wrap gap-12 xl:py-12 scale-95 translate-y-10 opacity-50" x-bind:class="{
+            'scale-95 translate-y-10 opacity-50': !inView,
+            'delay-0': $root.scrollIndex == 1,
+            'delay-200': $root.scrollIndex == 2,
+            'delay-400': $root.scrollIndex == 3,
+        }">
+                <img class="w-512px" src="/images/front/features/feature-et-notifications.png" alt="">
+                <div class="flex-1 self-center bg-gradient-to-b from-white/80 to-white/50 border border-white rounded-14 p-6 space-y-4 text-fl-purple-extra-dark/70 bg-white/20 shadow-front-large-blur md:p-12">
+                        <img class="w-8" src="images/front/icons/icon-dark-bell-ringing.svg" alt="Icon">
+                        <h3 class="text-bleak-purple font-semibold heading-4">Get notified when something’s up</h3>
+            <p>Have one project report to Slack’s #on-call channel, and another in your mailbox. Integrates with many tools, including Slack, email, Teams, SMS, webhooks, and more.</p>
+        </div>
+    </li>
+
+    
+    <li x-data="{ inView: false }" x-intersect.threshold.75="if (!inView) { inView = true; $root.scrollIndex++ }" class="transition duration-2000 ease-[cubic-bezier(0.16,1,0.3,1.03)] origin-top flex flex-wrap gap-12 xl:py-12 scale-95 translate-y-10 opacity-50" x-bind:class="{
+            'scale-95 translate-y-10 opacity-50': !inView,
+            'delay-0': $root.scrollIndex == 2,
+            'delay-200': $root.scrollIndex == 3,
+            'delay-400': $root.scrollIndex == 4,
+        }">
+                <img class="w-512px" src="/images/front/features/feature-et-integrations.png" alt="">
+                <div class="flex-1 self-center bg-gradient-to-b from-white/80 to-white/50 border border-white rounded-14 p-6 space-y-4 text-fl-purple-extra-dark/70 bg-white/20 shadow-front-large-blur md:p-12">
+                        <img class="w-8" src="images/front/icons/icon-dark-screwdriver-wrench.svg" alt="Icon">
+                        <h3 class="text-bleak-purple font-semibold heading-4">Works with your existing tools</h3>
+            <p>Flare easily connects with GitHub, GitLab, Jira, and Linear. Quickly create and close issues in sync with your favorite error tracker.</p>
+        </div>
+    </li>
+
+    
+</ul>
+            </div>
+        </div>
+
+        <div class="h-px bg-front-gray-underline-gradient"></div>
+
+        <div class="max-w-screen-xl mx-auto md:space-y-16">
+
+            <div class="max-w-screen-sm mx-auto space-y-8 text-center">
+    <h2 class="text-4xl pb-2 font-black tracking-tight text-balance bg-fl-purple-bleak-gradient text-transparent bg-clip-text md:text-5xl/[1.125]">Bring AI into application monitoring</h2>
+        <p class="text-lg font-medium tracking-[-0.0125em] leading-tight text-fl-purple-bleak/70">Use our MCP server to integrate Flare directly into your AI-powered development workflow, or enable Flare to generate solutions for any errors it receives.</p>
+    </div>
+
+            <div class="flex flex-wrap gap-12 mt-12 md:mt-0">
+
+                <div class="border border-white bg-fl-gray-extra-light/50 p-6 rounded-24 space-y-8 shadow-front-box-shadow-glow md:p-12 md:flex-1">
+
+                    <img class="w-full" src="/images/front/features/feature-ai-mcp-light.png" alt="">
+
+                    <div class="space-y-1">
+                        <div class="flex gap-4 items-center">
+                            <h3 class="text-bleak-purple font-bold heading-3 md:text-balance">
+                                Connect AI to Flare via MCP
+                            </h3>
+                        </div>
+                        <p class="text-xl text-fl-purple-dark/70">
+                            Use Claude, Junie or other AI agents to monitor and fix errors right from your chat.
+                        </p>
+                    </div>
+
+                    <ul class="text-fl-purple-dark space-y-4">
+                        <li class="flex gap-5 items-center">
+                            <img class="w-5" src="/images/front/icons/icon-ballot.svg" alt="">
+                            <p class="text-base leading-tight md:text-lg">Add errors, stack traces, and request data from Flare directly into your AI chat context.</p>
+                        </li>
+                        <li class="flex gap-5 items-center">
+                            <img class="w-5" src="/images/front/icons/icon-auto-fix.svg" alt="">
+                            <p class="text-base leading-tight md:text-lg">Let AI fix errors and mark them as resolved in Flare.</p>
+                        </li>
+                    </ul>
+
+                    <a wire:navigate.hover="true" class="inline-block button-secondary rounded-12" href="/docs/flare/general/our-mcp-server">
+                    More about our MCP server
+            </a>
+
+                </div>
+
+                <div class="border border-white p-6 rounded-24 space-y-8 md:p-12 md:flex-1">
+
+                    <img class="w-full" src="/images/front/features/feature-ai-solution.png" alt="">
+
+                    <div class="space-y-1">
+                        <div class="flex gap-4 items-center">
+                            <h3 class="text-bleak-purple font-bold heading-3 md:text-balance">
+                                Get AI-powered solutions for errors
+                            </h3>
+                        </div>
+                        <p class="text-xl text-fl-purple-dark/70">
+                            Flare can securely send error data to specialized AI to suggest solutions and debugging steps.
+                        </p>
+                    </div>
+
+                    <ul class="text-fl-purple-dark space-y-4">
+                        <li class="flex gap-5 items-center">
+                            <img class="w-5" src="/images/front/icons/icon-window-check.svg" alt="">
+                            <p class="text-base leading-tight md:text-lg">Get helpful explanations and links to documentation on Laravel, PHP and JavaScript errors.</p>
+                        </li>
+                        <li class="flex gap-5 items-center">
+                            <img class="w-5" src="/images/front/icons/icon-billing-person.svg" alt="">
+                        <p class="text-base leading-tight md:text-lg">Add your own OpenAI API key to have control over limits.</p>
+                        </li>
+                    </ul>
+
+                    <a wire:navigate.hover="true" class="inline-block button-secondary rounded-12" href="/docs/flare/general/ai-powered-solutions">
+                    More about AI solutions
+            </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="bg-front-image-quotes bg-no-repeat bg-[position:10%_3%] bg-[length:250%] md:bg-top md:bg-auto">
+        <div class="relative container mx-auto my-16 px-8 space-y-16 md:space-y-72px md:my-72px">
+
+            <div class="max-w-screen-sm mx-auto space-y-8 text-center">
+    <h2 class="text-4xl pb-2 font-black tracking-tight text-balance bg-fl-purple-bleak-gradient text-transparent bg-clip-text md:text-5xl/[1.125]">Our users think Flare is pretty great, and so will you</h2>
+    </div>
+
+            <div class="relative" x-data="{ showAll: false }">
+
+                <div class="flex items-end justify-center absolute bottom-0 w-full z-1 lg:py-12" x-bind:class="{ 'hidden': showAll }">
+                    <button type="button" class="button-primary rounded-full" @click="showAll = true">
+                    Show all reviews
+            </button>
+                </div>
+
+                <div x-bind:class="showAll ? 'max-h-none' : 'mask-60-to-transparent max-h-[55rem]'" class="transition-[max-height] max-w-screen-xl mx-auto grid grid-cols-1 gap-4 overflow-hidden lg:grid-cols-3 mask-60-to-transparent max-h-[55rem]">
+
+                    <ul class="space-y-4 lg:my-12">
+                                                    <li class="bg-gradient-to-b from-white/80 to-white/50 border border-white rounded-14 p-6 space-y-4 text-fl-purple-extra-dark/70 shadow-front-box-shadow-glow text-left md:p-8">
+
+    <div class="flex gap-4 items-center">
+        <img src="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/jeffrey-way.jpg" srcset="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/jeffrey-way.jpg 1x, /cdn-cgi/image/format=auto,fit=contain,width=192/images/quotes/jeffrey-way.jpg 2x" alt="Jeffrey Way" class="border-2 border-white shadow-md size-12 rounded-10 overflow-hidden shrink-0">
+        <div>
+            <h3 class="text-bleak-purple font-semibold text-20 leading-[1] pb-[0.25em]">Jeffrey Way</h3>
+            <p class="text-uppercase-semibold">Owner of Laracasts</p>
+        </div>
+    </div>
+
+    <p>Ignition provided a massive upgrade to Laravel's default error page. But the seamless and instantly familiar integration with Flare changes the game entirely. I'm blown away.</p>
+</li>
+                                                    <li class="bg-gradient-to-b from-white/80 to-white/50 border border-white rounded-14 p-6 space-y-4 text-fl-purple-extra-dark/70 shadow-front-box-shadow-glow text-left md:p-8">
+
+    <div class="flex gap-4 items-center">
+        <img src="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/patrick-brouwers.jpg" srcset="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/patrick-brouwers.jpg 1x, /cdn-cgi/image/format=auto,fit=contain,width=192/images/quotes/patrick-brouwers.jpg 2x" alt="Patrick Brouwers" class="border-2 border-white shadow-md size-12 rounded-10 overflow-hidden shrink-0">
+        <div>
+            <h3 class="text-bleak-purple font-semibold text-20 leading-[1] pb-[0.25em]">Patrick Brouwers</h3>
+            <p class="text-uppercase-semibold">Creator of Laravel Excel</p>
+        </div>
+    </div>
+
+    <p> Absolutely love Flare and Ignition! It already has become a vital part of my techstack. Great integration with Laravel, dead simple UX and a beautiful UI. Worth every penny!</p>
+</li>
+                                                    <li class="bg-gradient-to-b from-white/80 to-white/50 border border-white rounded-14 p-6 space-y-4 text-fl-purple-extra-dark/70 shadow-front-box-shadow-glow text-left md:p-8">
+
+    <div class="flex gap-4 items-center">
+        <img src="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/nuno.jpg" srcset="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/nuno.jpg 1x, /cdn-cgi/image/format=auto,fit=contain,width=192/images/quotes/nuno.jpg 2x" alt="Nuno Maduro" class="border-2 border-white shadow-md size-12 rounded-10 overflow-hidden shrink-0">
+        <div>
+            <h3 class="text-bleak-purple font-semibold text-20 leading-[1] pb-[0.25em]">Nuno Maduro</h3>
+            <p class="text-uppercase-semibold">Developer at Laravel</p>
+        </div>
+    </div>
+
+    <p>Flare keeps levelling up like crazy. It's freaking awesome!</p>
+</li>
+                                                    <li class="bg-gradient-to-b from-white/80 to-white/50 border border-white rounded-14 p-6 space-y-4 text-fl-purple-extra-dark/70 shadow-front-box-shadow-glow text-left md:p-8">
+
+    <div class="flex gap-4 items-center">
+        <img src="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/christoph.jpg" srcset="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/christoph.jpg 1x, /cdn-cgi/image/format=auto,fit=contain,width=192/images/quotes/christoph.jpg 2x" alt="Christoph Rumpel" class="border-2 border-white shadow-md size-12 rounded-10 overflow-hidden shrink-0">
+        <div>
+            <h3 class="text-bleak-purple font-semibold text-20 leading-[1] pb-[0.25em]">Christoph Rumpel</h3>
+            <p class="text-uppercase-semibold">PHP Developer and Laravel Expert</p>
+        </div>
+    </div>
+
+    <p>I always knew that error tracking is important but I often just did not do it. I'm glad Flare helped me see the importance of it and wouldn't want to live without it anymore. Don't let users tell you about your errors!</p>
+</li>
+                                                    <li class="bg-gradient-to-b from-white/80 to-white/50 border border-white rounded-14 p-6 space-y-4 text-fl-purple-extra-dark/70 shadow-front-box-shadow-glow text-left md:p-8">
+
+    <div class="flex gap-4 items-center">
+        <img src="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/sascha-presnac.jpg" srcset="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/sascha-presnac.jpg 1x, /cdn-cgi/image/format=auto,fit=contain,width=192/images/quotes/sascha-presnac.jpg 2x" alt="Sasche Presnac" class="border-2 border-white shadow-md size-12 rounded-10 overflow-hidden shrink-0">
+        <div>
+            <h3 class="text-bleak-purple font-semibold text-20 leading-[1] pb-[0.25em]">Sasche Presnac</h3>
+            <p class="text-uppercase-semibold">Laravel Developer</p>
+        </div>
+    </div>
+
+    <p>I had already fixed the bug in Flare before my colleagues came to me to report the error. Nice work!</p>
+</li>
+                                                    <li class="bg-gradient-to-b from-white/80 to-white/50 border border-white rounded-14 p-6 space-y-4 text-fl-purple-extra-dark/70 shadow-front-box-shadow-glow text-left md:p-8">
+
+    <div class="flex gap-4 items-center">
+        <img src="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/gareth-redfern.jpg" srcset="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/gareth-redfern.jpg 1x, /cdn-cgi/image/format=auto,fit=contain,width=192/images/quotes/gareth-redfern.jpg 2x" alt="Gareth Redfern" class="border-2 border-white shadow-md size-12 rounded-10 overflow-hidden shrink-0">
+        <div>
+            <h3 class="text-bleak-purple font-semibold text-20 leading-[1] pb-[0.25em]">Gareth Redfern</h3>
+            <p class="text-uppercase-semibold">Laravel Developer</p>
+        </div>
+    </div>
+
+    <p>I’ve been using Flare for the last month now. For my work and learning it’s the perfect fit. You can learn how to fix issues using Laravel specific and easy to understand logs. It’s as much a tool for learning as it is a bug tracker. 🔥</p>
+</li>
+                                            </ul>
+
+                    <ul class="space-y-4">
+                                                    <li class="bg-gradient-to-b from-white/80 to-white/50 border border-white rounded-14 p-6 space-y-4 text-fl-purple-extra-dark/70 shadow-front-box-shadow-glow text-left md:p-8">
+
+    <div class="flex gap-4 items-center">
+        <img src="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/nico.jpg" srcset="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/nico.jpg 1x, /cdn-cgi/image/format=auto,fit=contain,width=192/images/quotes/nico.jpg 2x" alt="Nico Deblauwe" class="border-2 border-white shadow-md size-12 rounded-10 overflow-hidden shrink-0">
+        <div>
+            <h3 class="text-bleak-purple font-semibold text-20 leading-[1] pb-[0.25em]">Nico Deblauwe</h3>
+            <p class="text-uppercase-semibold">Laravel Developer and Lecturer</p>
+        </div>
+    </div>
+
+    <p>Since using Flare, I’ve become much more confident in the quality of my products (yes, I sleep better!). When a glitch occurs, I can proactively inform the client (they appreciate that!), and have all the information I need to fix the problem.</p>
+</li>
+                                                    <li class="bg-gradient-to-b from-white/80 to-white/50 border border-white rounded-14 p-6 space-y-4 text-fl-purple-extra-dark/70 shadow-front-box-shadow-glow text-left md:p-8">
+
+    <div class="flex gap-4 items-center">
+        <img src="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/marco.jpg" srcset="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/marco.jpg 1x, /cdn-cgi/image/format=auto,fit=contain,width=192/images/quotes/marco.jpg 2x" alt="Marco Reimann" class="border-2 border-white shadow-md size-12 rounded-10 overflow-hidden shrink-0">
+        <div>
+            <h3 class="text-bleak-purple font-semibold text-20 leading-[1] pb-[0.25em]">Marco Reimann</h3>
+            <p class="text-uppercase-semibold">CTO at Ofelos</p>
+        </div>
+    </div>
+
+    <p>Flare allows us to catch, understand &amp; fix errors minutes. Setup for a new project takes only seconds. It increases the quality of our product AND saves us time. Awesome stuff!</p>
+</li>
+                                                    <li class="bg-gradient-to-b from-white/80 to-white/50 border border-white rounded-14 p-6 space-y-4 text-fl-purple-extra-dark/70 shadow-front-box-shadow-glow text-left md:p-8">
+
+    <div class="flex gap-4 items-center">
+        <img src="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/mattias.jpg" srcset="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/mattias.jpg 1x, /cdn-cgi/image/format=auto,fit=contain,width=192/images/quotes/mattias.jpg 2x" alt="Mattias Geniar" class="border-2 border-white shadow-md size-12 rounded-10 overflow-hidden shrink-0">
+        <div>
+            <h3 class="text-bleak-purple font-semibold text-20 leading-[1] pb-[0.25em]">Mattias Geniar</h3>
+            <p class="text-uppercase-semibold">CTO at Acheron Trading and Oh Dear</p>
+        </div>
+    </div>
+
+    <p>We gain valuable insights into our exceptions and error tracking at both Acheron and Oh Dear. It adds incredible value to any PHP project!</p>
+</li>
+                                                    <li class="bg-gradient-to-b from-white/80 to-white/50 border border-white rounded-14 p-6 space-y-4 text-fl-purple-extra-dark/70 shadow-front-box-shadow-glow text-left md:p-8">
+
+    <div class="flex gap-4 items-center">
+        <img src="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/georgi.jpg" srcset="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/georgi.jpg 1x, /cdn-cgi/image/format=auto,fit=contain,width=192/images/quotes/georgi.jpg 2x" alt="Georgi Chelev" class="border-2 border-white shadow-md size-12 rounded-10 overflow-hidden shrink-0">
+        <div>
+            <h3 class="text-bleak-purple font-semibold text-20 leading-[1] pb-[0.25em]">Georgi Chelev</h3>
+            <p class="text-uppercase-semibold">CTO of RaceFacer</p>
+        </div>
+    </div>
+
+    <p>Thanks for Flare, we’re confident we can support over 200 karting tracks and process more than one million bookings per year without unexpected downtime.</p>
+</li>
+                                                    <li class="bg-gradient-to-b from-white/80 to-white/50 border border-white rounded-14 p-6 space-y-4 text-fl-purple-extra-dark/70 shadow-front-box-shadow-glow text-left md:p-8">
+
+    <div class="flex gap-4 items-center">
+        <img src="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/james.jpg" srcset="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/james.jpg 1x, /cdn-cgi/image/format=auto,fit=contain,width=192/images/quotes/james.jpg 2x" alt="James Brooks" class="border-2 border-white shadow-md size-12 rounded-10 overflow-hidden shrink-0">
+        <div>
+            <h3 class="text-bleak-purple font-semibold text-20 leading-[1] pb-[0.25em]">James Brooks</h3>
+            <p class="text-uppercase-semibold">Engineering Team Lead at Laravel</p>
+        </div>
+    </div>
+
+    <p>Flare is 🔥</p>
+</li>
+                                                    <li class="bg-gradient-to-b from-white/80 to-white/50 border border-white rounded-14 p-6 space-y-4 text-fl-purple-extra-dark/70 shadow-front-box-shadow-glow text-left md:p-8">
+
+    <div class="flex gap-4 items-center">
+        <img src="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/mischa.jpg" srcset="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/mischa.jpg 1x, /cdn-cgi/image/format=auto,fit=contain,width=192/images/quotes/mischa.jpg 2x" alt="Mischa Sigtermans" class="border-2 border-white shadow-md size-12 rounded-10 overflow-hidden shrink-0">
+        <div>
+            <h3 class="text-bleak-purple font-semibold text-20 leading-[1] pb-[0.25em]">Mischa Sigtermans</h3>
+            <p class="text-uppercase-semibold">Founder of Stagent</p>
+        </div>
+    </div>
+
+    <p>At Stagent, Flare acts as our critical watchtower, highlighting Laravel errors for our developers to fix. It's our secret weapon for ensuring a smooth, disruption-free experience for our users in the chaotic world of artist bookings.</p>
+</li>
+                                            </ul>
+
+                    <ul class="space-y-4 lg:my-12">
+                                                    <li class="bg-gradient-to-b from-white/80 to-white/50 border border-white rounded-14 p-6 space-y-4 text-fl-purple-extra-dark/70 shadow-front-box-shadow-glow text-left md:p-8">
+
+    <div class="flex gap-4 items-center">
+        <img src="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/jens.jpg" srcset="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/jens.jpg 1x, /cdn-cgi/image/format=auto,fit=contain,width=192/images/quotes/jens.jpg 2x" alt="Jens Twesmann" class="border-2 border-white shadow-md size-12 rounded-10 overflow-hidden shrink-0">
+        <div>
+            <h3 class="text-bleak-purple font-semibold text-20 leading-[1] pb-[0.25em]">Jens Twesmann</h3>
+            <p class="text-uppercase-semibold">CEO at Star Media Gmbh</p>
+        </div>
+    </div>
+
+    <p>I have used and loved Flare since the day the service launched. It helps us manage nearly a dozen of services with hundreds of thousands requests a day.</p>
+</li>
+                                                    <li class="bg-gradient-to-b from-white/80 to-white/50 border border-white rounded-14 p-6 space-y-4 text-fl-purple-extra-dark/70 shadow-front-box-shadow-glow text-left md:p-8">
+
+    <div class="flex gap-4 items-center">
+        <img src="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/chris.jpg" srcset="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/chris.jpg 1x, /cdn-cgi/image/format=auto,fit=contain,width=192/images/quotes/chris.jpg 2x" alt="Chris Page" class="border-2 border-white shadow-md size-12 rounded-10 overflow-hidden shrink-0">
+        <div>
+            <h3 class="text-bleak-purple font-semibold text-20 leading-[1] pb-[0.25em]">Chris Page</h3>
+            <p class="text-uppercase-semibold">Laravel Developer</p>
+        </div>
+    </div>
+
+    <p>Flare has been a game changer for our company. It has helped us spot issues before our customers, and gives us real insight into the error that occurred and why.</p>
+</li>
+                                                    <li class="bg-gradient-to-b from-white/80 to-white/50 border border-white rounded-14 p-6 space-y-4 text-fl-purple-extra-dark/70 shadow-front-box-shadow-glow text-left md:p-8">
+
+    <div class="flex gap-4 items-center">
+        <img src="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/davidalen.jpg" srcset="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/davidalen.jpg 1x, /cdn-cgi/image/format=auto,fit=contain,width=192/images/quotes/davidalen.jpg 2x" alt="Davidalen Fountain" class="border-2 border-white shadow-md size-12 rounded-10 overflow-hidden shrink-0">
+        <div>
+            <h3 class="text-bleak-purple font-semibold text-20 leading-[1] pb-[0.25em]">Davidalen Fountain</h3>
+            <p class="text-uppercase-semibold">Lead Developer at RSN Technologies</p>
+        </div>
+    </div>
+
+    <p>Flare has helped alert us to an issue long before the customers do, allowing us to quickly resolve all the issues. Flare's live error reporting is crucial to the success of my service.</p>
+</li>
+                                                    <li class="bg-gradient-to-b from-white/80 to-white/50 border border-white rounded-14 p-6 space-y-4 text-fl-purple-extra-dark/70 shadow-front-box-shadow-glow text-left md:p-8">
+
+    <div class="flex gap-4 items-center">
+        <img src="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/peter.jpg" srcset="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/peter.jpg 1x, /cdn-cgi/image/format=auto,fit=contain,width=192/images/quotes/peter.jpg 2x" alt="Peter Day" class="border-2 border-white shadow-md size-12 rounded-10 overflow-hidden shrink-0">
+        <div>
+            <h3 class="text-bleak-purple font-semibold text-20 leading-[1] pb-[0.25em]">Peter Day</h3>
+            <p class="text-uppercase-semibold">Developer</p>
+        </div>
+    </div>
+
+    <p>Flare has been a lifeline on giving my evenings back by giving me a heads up when something goes wrong rather than panicking!</p>
+</li>
+                                                    <li class="bg-gradient-to-b from-white/80 to-white/50 border border-white rounded-14 p-6 space-y-4 text-fl-purple-extra-dark/70 shadow-front-box-shadow-glow text-left md:p-8">
+
+    <div class="flex gap-4 items-center">
+        <img src="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/harish.jpg" srcset="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/harish.jpg 1x, /cdn-cgi/image/format=auto,fit=contain,width=192/images/quotes/harish.jpg 2x" alt="Harish Toshniwal" class="border-2 border-white shadow-md size-12 rounded-10 overflow-hidden shrink-0">
+        <div>
+            <h3 class="text-bleak-purple font-semibold text-20 leading-[1] pb-[0.25em]">Harish Toshniwal</h3>
+            <p class="text-uppercase-semibold">Developer</p>
+        </div>
+    </div>
+
+    <p>Blown away by @flareappio! It is truly the most advanced error tracker for a Laravel project. It helps you out with the query and bindings, serialised objects and literally everything related to the error logged. Oh and I forgot that beautiful stack trace. So much better ✨</p>
+</li>
+                                                    <li class="bg-gradient-to-b from-white/80 to-white/50 border border-white rounded-14 p-6 space-y-4 text-fl-purple-extra-dark/70 shadow-front-box-shadow-glow text-left md:p-8">
+
+    <div class="flex gap-4 items-center">
+        <img src="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/chris-lloyd.jpeg" srcset="/cdn-cgi/image/format=auto,fit=contain,width=96/images/quotes/chris-lloyd.jpeg 1x, /cdn-cgi/image/format=auto,fit=contain,width=192/images/quotes/chris-lloyd.jpeg 2x" alt="Chris Lloyd" class="border-2 border-white shadow-md size-12 rounded-10 overflow-hidden shrink-0">
+        <div>
+            <h3 class="text-bleak-purple font-semibold text-20 leading-[1] pb-[0.25em]">Chris Lloyd</h3>
+            <p class="text-uppercase-semibold">Founder Four/Four</p>
+        </div>
+    </div>
+
+    <p>I think it's best to go with the service that's got the most depth of integration into something like Laravel</p>
+</li>
+                                            </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="bg-front-image-circles-purple-green-ver bg-no-repeat bg-cover bg-center md:bg-top">
+        <div class="h-px bg-front-purple-underline-gradient"></div>
+
+        <div class="container mx-auto mt-3 mb-0 px-3 space-y-16 md:space-y-24 sm:px-8 md:mt-24 xl:mb-24">
+            <div class="max-w-screen-xl mx-auto space-y-12 gap-16 justify-center md:space-y-24 xl:flex xl:space-y-0 2xl:gap-32">
+
+                <div class="max-w-screen-md mx-auto xl:mx-0">
+                    <div class="border border-white bg-fl-gray-extra-light/50 py-12 p-6 rounded-32 text-center space-y-8 shadow-front-box-shadow-glow md:p-24 md:py-24 md:rounded-64">
+
+    <div class="max-w-screen-sm mx-auto space-y-8 text-center">
+    <h2 class="text-4xl pb-2 font-black tracking-tight text-balance bg-fl-purple-bleak-gradient text-transparent bg-clip-text md:text-5xl/[1.125]">Four reasons why you should try Flare</h2>
+    </div>
+
+    <div class="md:px-6">
+        <ol class="markup-list-large-numbers markup-links text-fl-purple-dark text-left space-y-5 md:text-20">
+            <li class="text-fl-purple-dark/70 leading-[1.2]">Error tracking and performance monitoring built specifically for <a href="/docs/laravel/general" wire:navigate.hover="true">Laravel</a>, <a href="/docs/php/general" wire:navigate.hover="true">PHP</a>, and <a href="/docs/javascript/general" wire:navigate.hover="true">JavaScript</a>.</li>
+            <li class="text-fl-purple-dark/70 leading-[1.2]"><a href="/pricing" wire:navigate.hover="true">Friendly pricing</a> for solo devs, and team plans that include unlimited projects, groups, and users.</li>
+            <li class="text-fl-purple-dark/70 leading-[1.2]">A simple user interface that doesn’t overwhelm you with data you don’t need.</li>
+            <li class="text-fl-purple-dark/70 leading-[1.2]">You get help from the people who actually built Flare when you <a href="/support" wire:navigate.hover="true">contact support</a>.</li>
+    </ol>
+    </div>
+
+    <div class="space-y-5">
+        <h3 class="text-bleak-purple heading-5 font-semibold">Convinced? Let's get you started!</h3>
+        <a wire:navigate.hover="true" class="inline-block authenticated:hidden | button-primary rounded-full" href="https://flareapp.io/register">
+                    Try Flare for free
+            </a>
+        <a wire:navigate.hover="true" class="inline-block guest:hidden | button-primary rounded-full" href="https://flareapp.io/pricing">
+                    View pricing
+            </a>
+        <p class="text-uppercase-semibold text-fl-purple-bleak">10 day trial, No credit card required</p>
+    </div>
+
+</div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer class="container mx-auto px-8 py-16 space-y-16 md:space-y-24 md:py-24">
+    <div class="relative max-w-screen-xl mx-auto space-y-12">
+
+        <div class="flex flex-wrap space-y-12 md:space-y-0">
+
+            <div class="text-fl-purple-dark/70 max-w-[360px]">
+                <p>Catch errors and fix slowdowns with Flare, the full-stack application monitoring platform for Laravel, PHP &amp; JavaScript.</p>
+            </div>
+
+            <nav class="flex-1 flex flex-col gap-6 justify-end text-sm text-fl-purple-dark md:flex-row md:gap-12">
+                <ul class="space-y-1">
+                    <li class="text-uppercase-semibold mb-3 text-fl-purple-bleak">Platform</li>
+                                            <li>
+                            <a wire:navigate.hover="true" class="transition hover:text-fl-purple-bright align-middle" href="https://flareapp.io/platform/error-tracking">
+        Error Tracking
+</a>
+                        </li>
+                                            <li>
+                            <a wire:navigate.hover="true" class="transition hover:text-fl-purple-bright align-middle" href="https://flareapp.io/platform/performance-monitoring">
+        Performance Monitoring
+</a>
+                        </li>
+                                            <li>
+                            <a wire:navigate.hover="true" class="transition hover:text-fl-purple-bright align-middle" href="https://flareapp.io/pricing">
+        Pricing
+</a>
+                        </li>
+                                            <li>
+                            <a wire:navigate.hover="true" class="transition hover:text-fl-purple-bright align-middle" href="https://flareapp.io/support">
+        Support
+</a>
+                        </li>
+                                    </ul>
+                <ul class="space-y-1">
+                    <li class="text-uppercase-semibold mb-3 text-fl-purple-bleak">Resources</li>
+                                            <li>
+                            <a wire:navigate.hover="true" class="transition hover:text-fl-purple-bright align-middle" href="https://flareapp.io/blog">
+        Insights
+</a>
+                        </li>
+                                            <li>
+                            <a wire:navigate.hover="true" class="transition hover:text-fl-purple-bright align-middle" href="https://flareapp.io/newsletter">
+        Newsletter
+</a>
+                        </li>
+                                            <li>
+                            <a wire:navigate.hover="true" class="transition hover:text-fl-purple-bright align-middle" href="https://flareapp.io/changelog">
+        Changelog
+</a>
+                        </li>
+                                            <li>
+                            <a wire:navigate.hover="true" class="transition hover:text-fl-purple-bright align-middle" href="https://flareapp.io/docs">
+        Documentation
+</a>
+                        </li>
+                                            <li>
+                            <a wire:navigate.hover="true" class="transition hover:text-fl-purple-bright align-middle" href="https://flareapp.io/affiliate-program">
+        Affiliate program
+</a>
+                        </li>
+                                    </ul>
+            </nav>
+
+        </div>
+
+        <div class="h-px bg-front-green-underline-gradient opacity-75"></div>
+
+        <div class="flex flex-col flex-wrap gap-8 md:flex-row md:items-center">
+
+            <nav class="flex-1 flex text-sm text-fl-purple-dark">
+                <ul class="flex flex-wrap gap-6">
+                    <li>
+                        <a href="https://status.flareapp.io/" class="transition hover:text-fl-purple-bright align-middle" target="_blank" rel="nofollow noopener noreferrer">
+        <img src="https://ohdear.app/badges/site/01hn3vrsbj7xasxwpnw5bfs77k/uptime/small" alt="uptime status badge" class="inline -mt-1 mr-0.5"> Service status
+</a>
+                    </li>
+                                            <li>
+                            <a wire:navigate.hover="true" class="transition hover:text-fl-purple-bright align-middle" href="https://flareapp.io/terms-of-use">
+        Terms of use
+</a>
+                        </li>
+                                            <li>
+                            <a wire:navigate.hover="true" class="transition hover:text-fl-purple-bright align-middle" href="https://flareapp.io/dpa">
+        DPA
+</a>
+                        </li>
+                                            <li>
+                            <a wire:navigate.hover="true" class="transition hover:text-fl-purple-bright align-middle" href="https://flareapp.io/privacy-cookie-policy">
+        Privacy &amp; cookie Policy
+</a>
+                        </li>
+                                    </ul>
+            </nav>
+
+            <div class="inline-flex items-center gap-2.5 text-gray-600 font-semibold text-[10px] tracking-widest uppercase">
+                <span class="inline-flex items-center gap-1.5">Made in <button class="inline cursor-pointer transition hover:opacity-80" x-data="{ audio: null }" x-on:click="
+                        if (audio &amp;&amp; !audio.paused) { audio.pause(); audio.currentTime = 0; }
+                        else { audio = new Audio('https://upload.wikimedia.org/wikipedia/commons/e/e8/La_Braban%C3%A7onne.oga'); audio.play(); }
+                    "><img src="https://flareapp.io/images/front/flag-be-circle.svg" alt="Belgium"></button> by</span>
+                <a class="transition hover:opacity-80" href="http://spatie.be">
+                    <img class="w-20" src="/images/front/logo-spatie.svg" alt="">
+                </a>
+
+            </div>
+
+        </div>
+
+        <span class="text-green-to-transparent font-black text-huge hidden absolute w-full -bottom-6 text-center pointer-events-none md:block">Flare</span>
+
+    </div>
+</footer>
+
+    </div>
+</main>
+
+<div class="absolute -top-36 z-[-1] flex flex-col w-full justify-between items-start pointer-events-none md:flex-row md:h-svh">
+        <img class="w-full max-w-[300px]" src="/images/front/bg-shape-angle-purple-l.svg" alt="">
+        <img class="w-full max-w-[300px] ml-auto md:translate-y-2/3" src="/images/front/bg-shape-angle-green-r.svg" alt="">
+    </div>
+
+<script>
+    (function() {
+        function updateAuthUI(isAuthenticated) {
+            document.documentElement.setAttribute('data-authenticated', isAuthenticated ? 'true' : 'false');
+        }
+
+        function checkAuth() {
+            const cachedAuth = localStorage.getItem('authenticated');
+
+            if (cachedAuth !== null) {
+                updateAuthUI(cachedAuth === 'true');
+            }
+
+            // Revalidate in background
+            fetch('/internal-api/auth/check', { credentials: 'same-origin' })
+                .then(response => {
+                    const isAuthenticated = response.ok;
+                    localStorage.setItem('authenticated', isAuthenticated ? 'true' : 'false');
+                    updateAuthUI(isAuthenticated);
+                })
+                .catch(() => {
+                    localStorage.setItem('authenticated', 'false');
+                    updateAuthUI(false);
+                });
+        }
+
+        checkAuth();
+    })();
+</script>
+
+
+<!-- Referrer Tracking - Must run before other analytics -->
+<script>
+    (function() {
+        const FIRST_COOKIE_NAME = 'flare_first_referrer';
+        const LAST_COOKIE_NAME = 'flare_last_referrer';
+        const COOKIE_DAYS = 30;
+
+        // Domains to always ignore (all paths)
+        const IGNORED_DOMAINS = ['stripe.com', 'accounts.google.com'];
+
+        // Path patterns to ignore (OAuth callbacks)
+        const IGNORED_PATHS = ['github.com/login/'];
+
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+            return null;
+        }
+
+        function setCookie(name, value, days) {
+            const d = new Date();
+            d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+            document.cookie = `${name}=${encodeURIComponent(value)};expires=${d.toUTCString()};path=/;SameSite=Lax;Secure`;
+        }
+
+        function extractDomain(url) {
+            try {
+                // If it's already just a domain, return it
+                if (!url.includes('/') && !url.includes(':')) {
+                    return url.toLowerCase().trim();
+                }
+
+                const urlObj = new URL(url.startsWith('http') ? url : 'https://' + url);
+                return urlObj.hostname.toLowerCase();
+            } catch (e) {
+                return null;
+            }
+        }
+
+        function shouldIgnoreUrl(url) {
+            try {
+                const urlObj = new URL(url.startsWith('http') ? url : 'https://' + url);
+                const host = urlObj.hostname.toLowerCase();
+                const path = urlObj.pathname.toLowerCase();
+
+                // Check domain-only ignore list
+                for (const domain of IGNORED_DOMAINS) {
+                    if (host === domain || host.endsWith('.' + domain)) {
+                        return true;
+                    }
+                }
+
+                // Check path patterns
+                const hostPath = host + path;
+                for (const pattern of IGNORED_PATHS) {
+                    if (hostPath.includes(pattern)) {
+                        return true;
+                    }
+                }
+
+                // Ignore self-referrals
+                if (host === window.location.hostname || host.endsWith('.' + window.location.hostname)) {
+                    return true;
+                }
+
+                return false;
+            } catch (e) {
+                return true; // Ignore malformed URLs
+            }
+        }
+
+        function getUtmParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return {
+                utm_source: urlParams.get('utm_source') || null,
+                utm_medium: urlParams.get('utm_medium') || null,
+                utm_campaign: urlParams.get('utm_campaign') || null,
+                utm_term: urlParams.get('utm_term') || null,
+                utm_content: urlParams.get('utm_content') || null
+            };
+        }
+
+        function captureReferrer() {
+            const utmParams = getUtmParams();
+            let domain = null;
+            let rawUrl = null;
+
+            // Priority 1: UTM source parameter provides the domain
+            if (utmParams.utm_source) {
+                domain = extractDomain(utmParams.utm_source);
+            }
+
+            // Priority 2: document.referrer
+            if (!domain && document.referrer) {
+                if (!shouldIgnoreUrl(document.referrer)) {
+                    domain = extractDomain(document.referrer);
+                    rawUrl = document.referrer;
+                }
+            }
+
+            // Check if we have any data worth capturing (domain or UTM params)
+            const hasUtmData = Object.values(utmParams).some(v => v !== null);
+
+            if (domain || hasUtmData) {
+                // Build referrer data object
+                const referrerData = {
+                    domain: domain,
+                    raw_url: rawUrl,
+                    utm_source: utmParams.utm_source,
+                    utm_medium: utmParams.utm_medium,
+                    utm_campaign: utmParams.utm_campaign,
+                    utm_term: utmParams.utm_term,
+                    utm_content: utmParams.utm_content
+                };
+
+                const jsonValue = JSON.stringify(referrerData);
+
+                // Set first-touch cookie if it doesn't exist (never overwrite)
+                if (!getCookie(FIRST_COOKIE_NAME)) {
+                    setCookie(FIRST_COOKIE_NAME, jsonValue, COOKIE_DAYS);
+                }
+
+                // Always update last-touch cookie
+                setCookie(LAST_COOKIE_NAME, jsonValue, COOKIE_DAYS);
+            }
+        }
+
+        captureReferrer();
+    })();
+</script>
+<!-- End Referrer Tracking -->
+
+    <script src="https://cdn.usefathom.com/script.js" data-spa="auto" data-site="LBABKDJB" defer=""></script>
+
+
+<script src="/livewire/livewire.min.js?id=57eb113f" data-csrf="" data-update-uri="/livewire/update" data-navigate-once="true"></script>
+
+
+
+</body></html>

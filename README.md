@@ -1,58 +1,95 @@
-# Gamblock-AI Hybrid Model
+# Gamblock-AI Model
 
-Repositori ini berisi dataset, eksperimen training, artefak serialisasi model (ONNX dan Scikit-Learn), serta laporan evaluasi sistem deteksi untuk **Gamblock-AI**.
+Repository dataset, training notebook, deployment artifacts, and evaluation
+reports for Gamblock-AI's on-device hybrid detector.
 
-## 1. Arsitektur Deteksi (*Hybrid Analysis*)
+## Detection contract
 
-Gamblock-AI mengimplementasikan pendekatan deteksi bertingkat (*Hybrid Analysis*) untuk mengatasi keterbatasan *blacklist* URL konvensional dan kamuflase situs judi online:
+The detector combines two local signals:
 
-1. **Machine Learning Model (Bobot: 0.75)**:
-   - Menggunakan algoritma **Logistic Regression** yang ringan (*lightweight*) untuk inferensi lokal (*On-Device AI*).
-   - **Fitur Teks / Konten**: Ekstraksi teks dari *title*, *headings*, dan *DOM/content* menggunakan representasi *Bag-of-Words (BoW)*.
-   - **Fitur URL**: Ekstraksi fitur numerik struktur URL:
-     `['url_length', 'url_digit_count', 'url_dot_count', 'url_slash_count', 'url_hyphen_count', 'url_question_count', 'url_equal_count', 'url_keyword_count', 'url_has_number', 'url_has_https', 'url_is_valid', 'domain_length', 'subdomain_length', 'suffix_length']`
-2. **Rule-Based System (Bobot: 0.25)**:
-   - Mencocokkan kata kunci domain dan konten menggunakan `models/gambling_keywords.json`.
-3. **Hybrid Decision Formula**:
-   $$\text{hybrid\_score} = (0.75 \times \text{ml\_probability}) + (0.25 \times \text{rule\_score})$$
-   - Ambang batas (*threshold*): **$\ge 0.4$** diklasifikasikan sebagai situs judi online (`judi`).
-   - Memicu mekanisme pemblokiran lokal dan intervensi *Pattern Interrupt*.
+1. Logistic Regression with Bag-of-Words text features from page title,
+   headings, and DOM/content, plus 14 numeric URL features.
+2. A rule-based matcher using `models/gambling_keywords.json`.
 
----
+The exported artifact score is:
 
-## 2. Struktur Repositori dan Berkas Model
+```text
+hybrid_score = (0.75 * ml_probability) + (0.25 * rule_score)
+```
 
-- `Gamblock_AI_Hybrid_Model.ipynb`: Notebook Jupyter untuk data preprocessing, vectorization, hyperparameter tuning, dan evaluasi.
-- `models/`:
-  - `gamblock_logistic_regression.onnx`: Model ONNX teroptimasi untuk inferensi lokal di Android dan Windows.
-  - `gamblock_logistic_regression.pkl`: Pipeline Scikit-Learn lengkap yang telah dilatih.
-  - `gambling_keywords.json`: Kamus kata kunci untuk komponen Rule-Based.
-  - `gamblock_hybrid_metadata.json`: Metadata kanonikal berisi bobot, ambang batas, daftar fitur, dan metrik model.
-  - `README_INTEGRASI_MODEL.txt`: Panduan integrasi model bagi pengembang aplikasi klien.
-- `data/`: Dataset pelatihan dan pengujian berlabel `judi` (1) dan `non_judi` (0).
-- `reports/`:
-  - `evaluation_report_hybrid.txt`: Ringkasan metrik performa klasifikasi.
-  - `confusion_matrix_hybrid.png`: Matriks konfusi hasil pengujian model final.
-  - `hybrid_prediction_result.csv`: Hasil prediksi per sampel uji.
-  - `hyperparameter_tuning_results.csv`: Log pencarian hyperparameter.
-  - `hybrid_weight_threshold_tuning_results.csv`: Log kalibrasi bobot dan threshold.
-- `requirements.txt`: Dependensi Python (pandas, numpy, scikit-learn, joblib, skl2onnx, onnx, onnxruntime, dsb).
+The canonical artifact threshold is `0.4`. Client protection authorities apply
+an additional evidence policy: explicit URL/content rules remain decisive,
+while model-only blocking requires committed page content whose text-only score
+is independently suspicious. URL-shape evidence alone cannot block opaque
+short links.
 
----
+All inference and classification remain on-device. Raw URLs, DOM, screenshots,
+and browsing history are not sent to the backend or any cloud service.
 
-## 3. Hasil Evaluasi Performa
+## Repository layout
 
-Berdasarkan pengujian pada data uji (*test set*):
+```text
+.
+├── data/
+│   ├── raw/
+│   │   ├── judi.csv
+│   │   ├── non_judi.csv
+│   │   ├── html/{0,1}/       # captured page HTML by label
+│   │   └── images/{0,1}/     # page images by label
+│   └── processed/
+│       ├── dataset_clean.csv
+│       └── splits/{train,test}.csv
+├── docs/
+│   ├── ai/                   # repository AI context and manifest
+│   └── integration/
+│       └── model-integration.md
+├── models/                   # deployment contract; filenames are stable
+│   ├── gamblock_logistic_regression.onnx
+│   ├── gamblock_logistic_regression.pkl
+│   ├── gamblock_hybrid_metadata.json
+│   ├── gamblock_training_metadata.json
+│   └── gambling_keywords.json
+├── notebooks/
+│   └── hybrid_model_training.ipynb
+├── reports/
+│   ├── evaluation/
+│   │   ├── classification_report.txt
+│   │   ├── confusion_matrix.png
+│   │   └── predictions.csv
+│   └── tuning/
+│       ├── hyperparameter_search.csv
+│       └── hybrid_threshold_search.csv
+├── scripts/
+│   └── verify-ai-context.sh
+└── requirements.txt
+```
 
-| Metrik | Nilai |
-|---|---|
-| **Akurasi** | **97.38%** (0.9738) |
-| **Precision** | **96.38%** (0.9638) |
-| **Recall** | **95.46%** (0.9546) |
-| **F1-Score** | **95.92%** (0.9592) |
+The `0` and `1` dataset folders represent `non_judi` and `judi` respectively.
+CSV path columns use repository-relative POSIX paths, so they work consistently
+on Linux, macOS, and Windows.
 
----
+## Training workflow
 
-## 4. Batasan Privasi (*Privacy Boundary*)
+Open `notebooks/hybrid_model_training.ipynb` from the repository root or from
+the `notebooks/` directory. The notebook discovers the repository root, reads
+raw CSV inputs, writes processed splits, trains and evaluates the model, and
+exports artifacts and reports to the directories shown above.
 
-Semua proses klasifikasi dan inferensi berjalan secara *On-Device* (lokal pada perangkat pengguna). Tidak ada riwayat penelusuran (*browsing history*), konten DOM mentah, atau rekaman ketikan yang dikirimkan keluar perangkat.
+The notebook is an authoring workflow. Training and re-evaluation are
+explicit opt-in operations; the checked-in ONNX/PKL artifacts are the current
+deployment outputs and must not be replaced casually.
+
+## Validation
+
+```sh
+./scripts/verify-ai-context.sh --allow-untracked
+```
+
+Use strict mode after staging all required context files:
+
+```sh
+./scripts/verify-ai-context.sh
+```
+
+See [the integration guide](docs/integration/model-integration.md) for the
+client-facing artifact contract.

@@ -1,0 +1,2656 @@
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+
+
+
+
+<!-- Google tag (gtag.js) -->
+<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-V0L0S4EMZB&amp;cx=c&amp;_slc=1"></script><script async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-EJG1MYMP2L&amp;cx=c&amp;gtm=4e6481"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-P9RCPW6"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-122298816-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-122298816-1');
+</script>
+
+
+
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P9RCPW6');</script>
+<!-- End Google Tag Manager -->
+
+
+<title>Soccer Prediction Machine</title>
+
+
+<script> // NIEUW! checken
+/**
+* Function that captures a click on an outbound link in Analytics.
+* This function takes a valid URL string as an argument, and uses that URL string
+* as the event label. Setting the transport method to 'beacon' lets the hit be sent
+* using 'navigator.sendBeacon' in browser that support it.
+*/
+var captureOutboundLink = function(url) {
+   ga('send', 'event', 'outbound', 'click', url, {
+     'transport': 'beacon',
+     'hitCallback': function(){document.location = url;}
+   });
+}
+</script>
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<style>
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted: tan;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 220px;
+    height: 48px;
+    background-color:  white;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 3px 0;
+   
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+</style>
+
+
+
+
+<style>
+#rightImage
+{
+    height:55px;
+    width:70px;
+    float:left;
+    position:relative;
+   //  box-shadow:2px -2px 10px 3px #888, inset 2px -2px 10px 3px #888;
+}
+#rightImage:hover img
+{
+    height:60px;
+    width:75px
+   
+   // box-shadow:4px -4px 10px 3px #888, inset 4px -4px 10px 3px #888;
+}
+ </style>
+
+
+
+    <style>
+        .blink {
+            animation: blinker 1.5s linear infinite;
+            color: red;
+            font-family: impact;
+        }
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+
+
+
+
+
+
+
+<meta name="keywords" content="soccer, predict, Premier league,  football, prediction, odds, World cup,
+         Serie A,  Primera division, Bundesliga, Champions league, 
+         Ere divisie, Europa league, Asian cup, Africa Cup, Copa America, Worldcup">
+
+<meta name="description" content="Real-time generation of all requested predictions, 
+        with: Score prediction,  Asian odds, Fractional odds, Decimal odds,  
+         HDA percentages, and analyzer/converter."> 
+
+
+ <meta name="robots" content="index, follow">                                                                                                                                 
+<meta name="google-site-verification" content="Vc5D7fXPd1yLBwMH0S8C81fAozGSM-QO-hTaYfJdCGo">  
+
+
+                                                                                                                                                             
+
+<style type="text/css">BODY {
+	SCROLLBAR-FACE-COLOR: #FFFFFF; SCROLLBAR-ARROW-COLOR: #990000; SCROLLBAR-TRACK-COLOR: #FFFFFF; SCROLLBAR-DARKSHADOW-COLOR: "Tan";
+}
+.TextScrollStyle {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; VISIBILITY: hidden; PADDING-BOTTOM: 0px; MARGIN: 0px; OVERFLOW: hidden; WIDTH: 90%; PADDING-TOP: 0px; FONT-FAMILY: Tahoma; TEXT-ALIGN: center
+}
+</style>
+
+
+
+
+<link rel="icon" href="http://www.totomaster.com/tmfavicon1.ico" type="image/x-icon"> 
+<link rel="SHORTCUT ICON" href="http://www.totomaster.com/tmfavicon1.ico" type="image/x-icon">
+
+
+
+
+  <script>
+    function countdown() {
+      // Stel de einddatum in voor de countdown (in dit voorbeeld is het 16 augustus 2025, start EPL)
+      var endDate = new Date("Aug 19, 2025 16:00:00").getTime();
+
+      // Update de countdown elke seconde
+      var countdownInterval = setInterval(function() {
+        // Haal de huidige datum en tijd op
+        var now = new Date().getTime();
+
+        // Bereken het verschil tussen de einddatum en de huidige datum en tijd
+        var timeRemaining = endDate - now;
+
+        // Bereken de dagen, uren, minuten en seconden
+        var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+        // Toon de countdown in de HTML
+        document.getElementById("countdown").innerHTML = days + " days, " + hours + " hours,  <BR>" + minutes + " min, " + seconds + " sec. left.";
+
+        // Stop de countdown als de einddatum is bereikt
+        if (timeRemaining < 0) {
+          clearInterval(countdownInterval);
+          document.getElementById("countdown").innerHTML = "Countdown is finished!";
+        }
+      }, 1000);
+    }
+  </script>
+  
+
+
+
+
+
+
+<script>
+function refresh() {    
+    setTimeout(function () {
+    document.location.reload(true)
+    return false;
+    }, 100);
+}
+</script>
+
+
+
+
+
+
+<script> 
+function Tableau(n) { 
+this.length=n; 
+return this; } 
+</script>
+
+
+
+<script> 
+function Tableau(n) { 
+this.length=n; 
+return this; } 
+function DateModif() { 
+NomMois=new Tableau(12) 
+NomMois[1]="January" 
+NomMois[2]="February" 
+NomMois[3]="March" 
+NomMois[4]="April" 
+NomMois[5]="May" 
+NomMois[6]="June" 
+NomMois[7]="July" 
+NomMois[8]="August"
+NomMois[9]="September" 
+NomMois[10]="October" 
+NomMois[11]="November" 
+NomMois[12]="December"
+Date=new Date(document.lastModified) 
+var Mois=NomMois[Date.getMonth()+1] 
+var Annee=Date.getYear()
+return Date.getDate()+" "+Mois }
+</script>
+
+
+
+
+<script>
+function testQ(form) {
+ODDY = ( form.odds.value) ;
+STAKY = (form.stake.value);
+
+WIN = ((ODDY*STAKY)-STAKY);
+
+WINHALF = (WIN/2);
+LOOSEHALF = (STAKY/2);
+
+    alert('With your stake of: '+ STAKY+ ' and odds of: '+ ODDY+ ','+ '\n'+
+             'this is your profit or lost:'+ '\n'+ '\n'+
+             'If you win :            '+ round(WIN) +'  ( + stake back )'+ '\n'+'\n'+
+             'If you win ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â½ :        ' +round(WINHALF) +'  ( + stake back )'+ '\n'+ '\n'+   
+             'If you loose ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â½ :    -'+ round(LOOSEHALF) +'  ( you loose half your stake )'+ '\n'+ '\n'+
+             'If you loose :         -'+STAKY+'   ( you loose your  whole stake )'
+              );
+
+}
+
+// -->
+</script>
+
+
+
+
+
+
+
+
+
+<script src="eng1.js"> </script>
+
+
+<!-- rounded corners1 = odds analyzer -->
+
+<style> 
+#rcorners1 {
+ background:  #FFFFFF;
+  border-radius: 25px;
+ border: 2px solid #990000;
+  padding: 6px; 
+  width: "100%";
+  height: 200px;  
+}
+
+#rcornersfree4free1 {
+ background:  #FFFFFF;
+  border-radius: 20px;
+border: 2px solid  #990000;
+  padding: 1px; 
+  width: "100%";
+  height: 60px;  
+}
+
+
+#rcorners3 {
+ background:  #FFFFFF;
+  border-radius: 25px;
+ border: 2px solid #990000;
+  padding: 6px; 
+  width: "100%";
+  height: 210px;  
+}
+
+
+// url(bg2.jpg)
+
+#rcorners10 {
+ background:  #FFFFFF;
+  border-radius: 25px;
+ border: 2px solid #990000;
+  padding: 6px; 
+  width: 200;
+  height: 230px;  
+}
+
+
+ 
+#rcornersuseful {
+ background:  #FFFFFF;
+  border-radius: 25px;
+ border: 4px solid #990000;
+  padding: 6px; 
+  width: "100%";
+  height: 230px;  
+}
+
+
+#rcornersAnalize {
+ background:  #FFFFFF;
+  border-radius: 25px;
+ border: 4px solid #990000;
+  padding: 6px; 
+  width: "100%";
+  height: 200px;  
+}
+
+#rcornersAllcov {
+ background:  #FFFFFF;
+  border-radius: 25px;
+ border: 4px solid  #990000;
+  padding: 6px; 
+  width: "100%";
+  height: 540px;  
+}
+
+#rcornersPerformance {
+ background:  #FFFFFF;
+  border-radius: 25px;
+ border: 4px solid  #990000;
+  padding: 6px; 
+  width: "100%";
+  height: 200px;  
+}
+
+#rcornersfree4free {
+ background:  #FFFFFF;
+  border-radius: 25px;
+border: 4px solid  #990000;
+  padding: 20px; 
+  width: "100%";
+  height: 84px;  
+}
+
+  
+#rcornersfree4free5 {
+ background:   url(wisdomclouds.jpg);
+  border-radius: 25px;
+border: 4px solid  #990000;
+  padding: 20px; 
+  width: "100%";
+  height: 84px;  
+}
+
+
+#rcorners80 {
+ background:  #FFFFFF;
+  border-radius: 25px;
+border: 4px solid  #990000;
+  padding: 20px; 
+  width: "100%";
+  height: 80px;  
+}
+
+#rcornersteamform {
+ background:  #FFFFFF;
+  border-radius: 25px;
+ border: 4px solid  #990000;
+  padding: 6px; 
+  width: "100%";
+  height: 460px;  
+}
+
+#rcorners222 {
+ background:  #FFFFFF;
+  border-radius: 25px;
+ border: 4px solid #990000;
+  padding: 6px; 
+  width: 180px;
+  height: 210px;  
+}
+
+#rcornersrankings {
+ background:  #FFFFFF;
+  border-radius: 25px;
+ border: 4px solid #990000;
+  padding: 6px; 
+  width: 220px;
+  height: 230px;  
+}
+
+#rcorners2 {
+ background:  #FFFFFF;
+  border-radius: 25px;
+  border: 4px solid  #990000;
+  padding: 6px; 
+  width: "100%";
+  height: 200px;  
+}
+
+#rcorners3 {
+  border-radius: 25px;
+  background: url(paper.gif);
+  background-position: left top;
+  background-repeat: repeat;
+  padding: 20px; 
+  width: 200px;
+  height: 150px;  
+}
+
+#aboutcorners2 {
+  background: #F5D0A95;
+  border-radius: 25px;
+  border: 4px solid #F5D0A9;
+  padding: 20px; 
+  width: 90%;
+  height: 140px;  
+}
+</style>
+
+
+
+
+<script>
+ 
+    function round(num, d) { 
+           n = Math.pow(10, !d ? 2 : d);
+           return Math.round(num*n) / n;
+   }
+
+</script>
+
+
+
+
+
+
+<script> // tel resterende wedstr.
+Xleague = [Ar, BrightonHove, So, Leeds, Bournemouth, Che, Notthingham, Ev, Brentford, Liv, Mc, Mu, Wolves, Fulham, Lei, To, Wh, Newcastle, Cry, Aston,];
+
+var totaal = 0;
+var verlies = 0;
+var winst = 0;
+var gelijk = 0;
+
+// doorloop leagues:
+for (i = 0; i < Xleague.length; i++) {
+
+  winst = (winst + Xleague[i] [3]) ;
+  verlies = (verlies + Xleague[i] [4]);
+  gelijk = (gelijk + Xleague[i] [5]);
+  totaal = ( totaal +  Xleague[i] [4] +  Xleague[i] [5] );
+ 
+}
+   winst = Math.round(winst / 2);
+   verlies = Math.round(verlies / 2);
+   gelijk = Math.round(gelijk / 2);
+   totaal = ( winst + gelijk + verlies );
+
+var restwedstr = (380 - totaal);
+
+
+
+</script>
+
+
+
+
+
+
+
+
+<script>
+function testx(form) {
+
+Profitindicator = ( (1 /  form.tex1.value) + (1 /  form.tex2.value) + (1 /  form.tex3.value) );
+
+Payoutshare = (100 * 1 / Profitindicator );
+
+Prob1 = (1 / form.tex1.value) * Payoutshare ;
+Prob2 = (1 / form.tex2.value) * Payoutshare ;
+Prob3 = (1 / form.tex3.value) * Payoutshare ;
+Prob1 = round(Prob1);
+Prob2=  round(Prob2);
+Prob3 = round(Prob3);
+Profitindicator = round(Profitindicator );
+Bookieprofit = ' wins ';
+if (Profitindicator < 1) Bookieprofit = ' loses ';
+Procje = (Profitindicator - 1); 
+Procje = Math.round(Procje * 100);
+
+valbet1 = (100 / Prob1 ); valbet1 = round(valbet1);
+valbet2 = (100 / Prob2 ); valbet2 = round(valbet2);
+valbet3 = (100 / Prob3 ); valbet3 = round(valbet3);
+
+
+var indicator1 = 'No valuebet here';
+if (round(valbet1-0.01) < form.tex1.value) indicator1 = 'A valuebet here !!!';
+
+var indicator2 = 'No valuebet here';
+if (round(valbet2-0.01) < form.tex2.value) indicator2 = 'A valuebet here !!!';
+
+var indicator3 = 'No valuebet here';
+if (round(valbet3-0.01) < form.tex3.value) indicator3 = 'A valuebet here !!!';
+
+
+
+
+pureprofit = round(Procje); 
+var oordeel = '';
+
+if (  pureprofit < 2 ) {  oordeel = 'THESE ODDS ARE UNREALISTIC GOOD !'; 
+} else
+
+if (  pureprofit < 5 ) {  oordeel = 'THESE ODDS BELONG TO THE FINEST YOU COULD GET !'; 
+} else
+
+if (  pureprofit < 8 ) {  oordeel = 'THESE ARE VERY GOOD ODDS !'; 
+} else
+
+if (  pureprofit < 10 ) {  oordeel = 'THESE ODDS ARE GOOD !'; 
+} else
+
+if (  pureprofit < 12 ) {  oordeel = 'THESE ODDS ARE VERY COMMON !'; 
+} else
+
+if (  pureprofit < 14 ) {  oordeel = 'THESE ARE BAD ODDS !'; 
+} else
+
+if (  pureprofit >= 14 ) {  oordeel = 'THESE ODDS ARE VERY, VERY BAD !'; 
+} 
+
+
+
+
+var asianA = 100 / ( Prob1 + (Prob2/2));
+var asianB = 100 / ( Prob3 + (Prob2/2));
+
+var aantalAchterKomma = 3;
+asianA = ( Math.round(asianA *Math.pow(10,aantalAchterKomma ))/Math.pow(10,aantalAchterKomma ) );
+asianB = ( Math.round(asianB *Math.pow(10,aantalAchterKomma ))/Math.pow(10,aantalAchterKomma ) );
+
+
+
+var Probx = Prob1;
+grabFRACTO( Probx );
+var fr1 = Fractio3;
+
+
+var Proby = Prob2;
+grabFRACTO( Proby );
+var fr2 = Fractio3;
+
+var Probz = Prob3;
+grabFRACTO( Probz );
+var fr3 = Fractio3;
+
+
+var moneyline1 = 10;
+var moneyline2 = 10;
+var moneyline3 = 10;
+var moneysign = '-';
+
+
+if  (Prob1 < 50) { 
+moneyline1 =  Math.round(((100-Prob1) / Prob1) * 100); 
+moneysign1 = '+';
+} else
+if  (Prob1 >= 50) {
+ moneyline1 =  Math.round(( Prob1 / (100-Prob1)) * 100); 
+moneysign1 = '-';
+}
+
+if  (Prob2 < 50) { moneyline2 =  Math.round(((100-Prob2) / Prob2) * 100); 
+moneysign2 = '+';
+} else
+if  (Prob2 >= 50) { 
+moneyline2 =  Math.round(((100-Prob2) / Prob2) * 100); 
+moneysign2 = '-';
+}
+
+if  (Prob3 < 50) { 
+moneyline3 =  Math.round(((100-Prob3) / Prob3) * 100); 
+moneysign3 = '+';
+} else if  (Prob3 >= 50) {
+moneyline3 =  Math.round(( Prob3 / (100-Prob3)) * 100); 
+moneysign3 = '-';
+}
+
+
+
+var oddstring = '   A   ';
+if  (asianA >= asianB) oddstring = '  '+ round(1.5) + ':0   to    0.25:0  ';
+if  (asianB > asianA) oddstring = ' 0:0.25   to  0:' + round(1.5) + '   ';
+
+
+var Frac1 = ((100 / Prob1) -1);
+var Frac2 = (100 / Prob2) -1;
+var Frac3 = (100 / Prob3) -1;
+
+
+var procversch = 0;
+var oddy = 0;
+// verschil in percentages:
+  if (Prob1 >= Prob3)   procversch = (Prob1 - Prob3); 
+  if (Prob1 < Prob3)     procversch = (Prob3 - Prob1);   
+
+ if  (procversch < 3) { oddy = 0.25;   } else
+ if  (procversch < 6) { oddy = 0.50;   } else
+ if  (procversch < 13) { oddy = 0.75; } else
+ if  (procversch < 20) { oddy = 1;     } else
+ if  (procversch < 25) { oddy = 1.25; } else
+ if  (procversch < 30) { oddy = 1.5;   } else
+ if  (procversch < 35) { oddy = 1.75; } else
+ if  (procversch < 38) { oddy = 2; }     else
+ if  (procversch >= 38) { oddy = 2.25; }  
+
+var asianodd = 'NIL';
+  if (Prob1 >= Prob3) asianodd = '0 : ' + oddy;
+  if (Prob1 <   Prob3) asianodd = oddy + ' : 0';
+
+var stake = 10;
+var profit1 =  round( stake * ( form.tex1.value - 1));
+var profit2 =  round( stake * ( form.tex2.value - 1));
+var profit3 =  round( stake * ( form.tex3.value - 1));
+
+
+var asian1 = (Prob1 + (Prob1 + (Prob1*2)) * 100);   // yep
+var asian3 = (Prob3 + (Prob3 + (Prob3*2)) * 100);
+
+
+    alert(  
+             oordeel            + '\n'+
+
+'Your Decimal Odds  '+' Home: '+ form.tex1.value+'.  '+'   Draw: '+ form.tex2.value+'.  '+'    Away: '+ form.tex3.value+ '.' + '\n'+ '\n'+
+
+             'Probabilities:     Home: '+ Math.round(Prob1)+ '%       Draw: ' +Math.round(Prob2)+ '%       Away: '+ Math.round(Prob3)+'%' + '\n'+ 
+
+ 
+
+             'Bookmaker gets  $ '+round(Profitindicator*100)+'  back for every $ 100  paid out.' + '\n'+
+           
+             'So the Bookmaker' + Bookieprofit + ' '+Procje +  '%  on this bet.'  + '\n'+ '\n'+
+        
+
+             'With a stake of  $ ' + stake   + '\n'+
+             'your winning profit is  Home:  $ ' + profit1 + '   Draw:  $ ' + profit2 +'   Away:  $ '+ profit3     + '\n'+ 
+             'So you get back        Home:  $ ' + (stake+profit1) + '   Draw:  $ ' + (stake+profit2)   +'   Away:  $ '+ (stake+profit3) + '\n'+'\n'+
+
+             
+             'Your odds converted: ' +'\n'+
+             'Fractional : ' + '    ' +
+            
+             ' Home : ' + fr1  +'         Draw: ' + fr2 +  '          Away: ' + fr3 +'\n'+
+               
+         
+             
+
+            
+                         
+            'Moneyline :    ' +
+            ' Home : '  + moneysign1+ moneyline1 + '.        Draw : ' +moneysign2+ moneyline2 +'.       Away '  +  ' :  '+moneysign3 + moneyline3 + '.'     +'\n'+
+
+
+
+             
+
+ 
+             'Hong-Kong : ' +
+             '  Home : ' +  round((form.tex1.value)-1) +'.         '+' Draw :  '+ round((form.tex2.value)-1) +'.           '+'  Away :  '+ round((form.tex3.value)-1) + '.' + '\n'+ 
+
+
+             '___________________________________________________     ' );
+           
+}
+
+// -->
+</script>
+
+
+
+
+<script>  
+
+function grabFRACTO( Proba ) {
+
+if (  Math.round(Proba) == 10 ) {  Fractio3 = ' 9/1 ';
+} else
+if (  Math.round(Proba) == 11 ) {  Fractio3 = ' 8/1 ';
+} else
+if (  Math.round(Proba) == 12 ) {  Fractio3 = ' 7/1 ';
+} else
+if (  Math.round(Proba) == 13 ) {  Fractio3 = ' 13/2 ';
+} else
+if (  Math.round(Proba) == 14 ) {  Fractio3 = ' 6/1 ';
+} else
+
+if (  Math.round(Proba) == 15 ) {  Fractio3 = ' 11/2 ';
+} else
+if (  Math.round(Proba) == 16 ) {  Fractio3 = ' 5/1 ';
+} else
+if (  Math.round(Proba) == 17 ) {  Fractio3 = ' 5/1 ';
+} else
+if (  Math.round(Proba) == 18 ) {  Fractio3 = ' 9/2 ';
+} else
+if (  Math.round(Proba) == 19 ) {  Fractio3 = ' 4/1 ';
+} else
+
+if (  Math.round(Proba) == 20 ) {  Fractio3 = ' 4/1 ';
+} else
+if (  Math.round(Proba) == 21 ) {  Fractio3 = ' 18/5 ';
+} else
+if (  Math.round(Proba) == 22 ) {  Fractio3 = ' 7/2 ';
+} else
+if (  Math.round(Proba) == 23 ) {  Fractio3 = ' 10/3 ';
+} else
+if (  Math.round(Proba) == 24 ) {  Fractio3= ' 16/5 ';
+} else
+
+if (  Math.round(Proba) == 25 ) {  Fractio3 = ' 3/1 ';
+} else
+if (  Math.round(Proba) == 26 ) {  Fractio3 = ' 14/5 ';
+} else
+if (  Math.round(Proba) == 27 ) {  Fractio3 = ' 13/5 ';
+} else
+if (  Math.round(Proba) == 28 ) {  Fractio3 = ' 13/2 ';
+} else
+if (  Math.round(Proba) == 29 ) {  Fractio3 = ' 5/2 ';
+} else
+
+if (  Math.round(Proba) == 30 ) {  Fractio3 = ' 9/4 ';
+} else
+if (  Math.round(Proba) == 31 ) {  Fractio3 = ' 11/5 ';
+} else
+if (  Math.round(Proba) == 32 ) {  Fractio3 = ' 21/10 ';
+} else
+if (  Math.round(Proba) == 33 ) {  Fractio3 = ' 2/1 ';
+} else
+if (  Math.round(Proba) == 34 ) {  Fractio3 = ' 19/10 ';
+} else
+
+if (  Math.round(Proba) == 35 ) {  Fractio3 = ' 9/5 ';
+} else
+if (  Math.round(Proba) == 36 ) {  Fractio3 = ' 7/4 ';
+} else
+if (  Math.round(Proba) == 37 ) {  Fractio3 = ' 17/10 ';
+} else
+if (  Math.round(Proba) == 38 ) {  Fractio3 = ' 13/8 ';
+} else
+if (  Math.round(Proba) == 39 ) {  Fractio3 = ' 8/5 ';
+} else
+
+if (  Math.round(Proba) == 40 ) {  Fractio3 = ' 6/4 ';
+} else
+if (  Math.round(Proba) == 41 ) {  Fractio3 = ' 7/5 ';
+} else
+if (  Math.round(Proba) == 42 ) {  Fractio3 = ' 11/8 ';
+} else
+if (  Math.round(Proba) == 43 ) {  Fractio3 = ' 13/10 ';
+} else
+if (  Math.round(Proba) == 44 ) {  Fractio3 = ' 5/4 ';
+} else
+
+if (  Math.round(Proba) == 45 ) {  Fractio3 = ' 6/5 ';
+} else
+if (  Math.round(Proba) == 46 ) {  Fractio3 = ' 6/5 ';
+} else
+if (  Math.round(Proba) == 47 ) {  Fractio3 = ' 11/10 ';
+} else
+if (  Math.round(Proba) == 48 ) {  Fractio3 = ' 21/20 ';
+} else
+if (  Math.round(Proba) == 49 ) {  Fractio3 = ' 21/10 ';
+} else
+
+if (  Math.round(Proba) == 50 ) {  Fractio3 = ' 1/1 ';
+} else
+if (  Math.round(Proba) == 51 ) {  Fractio3 = ' 20/21 ';
+} else
+if (  Math.round(Proba) == 52 ) {  Fractio3 = ' 10/11 ';
+} else
+if (  Math.round(Proba) == 53 ) {  Fractio3 = ' 9/10 ';
+} else
+if (  Math.round(Proba) == 54 ) {  Fractio3 = ' 5/6 ';
+} else
+
+if (  Math.round(Proba) == 55 ) {  Fractio3 = ' 4/5 ';
+} else
+if (  Math.round(Proba) == 56 ) {  Fractio3 = ' 4/5 ';
+} else
+if (  Math.round(Proba) == 57 ) {  Fractio3 = ' 8/11 ';
+} else
+if (  Math.round(Proba) == 58 ) {  Fractio3 = ' 7/10 ';
+} else
+if (  Math.round(Proba) == 59 ) {  Fractio3 = ' 7/10 ';
+} else
+if (  Math.round(Proba) == 60 ) {  Fractio3 = ' 2/3 ';
+} else
+
+if (  Math.round(Proba) == 61 ) {  Fractio3 = ' 5/8 ';
+} else
+if (  Math.round(Proba) == 62 ) {  Fractio3 = ' 8/13 ';
+} else
+if (  Math.round(Proba) == 63 ) {  Fractio3 = ' 3/5 ';
+} else
+if (  Math.round(Proba) == 64 ) {  Fractio3 = ' 4/7 ';
+} else
+if (  Math.round(Proba) == 65 ) {  Fractio3 = ' 18/5 ';
+} else
+
+if (  Math.round(Proba) == 66 ) {  Fractio3 = ' 1/2 ';
+} else
+if (  Math.round(Proba) == 67 ) {  Fractio3 = ' 8/17 ';
+} else
+if (  Math.round(Proba) == 68 ) {  Fractio3 = ' 9/20 ';
+} else
+if (  Math.round(Proba) == 69 ) {  Fractio3 = ' 4/9 ';
+} else
+if (  Math.round(Proba) == 70 ) {  Fractio3 = ' 4/9 ';
+} else
+
+if (  Math.round(Proba) == 71 ) {  Fractio3 = ' 2/5 ';
+} else
+if (  Math.round(Proba) == 72 ) {  Fractio3 = ' 2/5 ';
+} else
+if (  Math.round(Proba) == 73 ) {  Fractio3 = ' 4/11 ';
+} else
+if (  Math.round(Proba) == 74 ) {  Fractio3 = ' 7/20 ';
+} else
+if (  Math.round(Proba) == 75 ) {  Fractio3 = ' 1/3 ';
+} else
+
+if (  Math.round(Proba) == 76 ) {  Fractio3 = ' 1/3 ';
+} else
+if (  Math.round(Proba) == 77 ) {  Fractio3 = ' 3/10 ';
+} else
+if (  Math.round(Proba) == 78 ) {  Fractio3 = ' 2/7 ';
+} else
+if (  Math.round(Proba) == 79 ) {  Fractio3 = ' 2/7 ';
+} else
+if (  Math.round(Proba) == 80 ) {  Fractio3 = ' 1/4 ';
+} else
+
+if (  Math.round(Proba) == 81 ) {  Fractio3 = ' 2/9 ';
+} else
+if (  Math.round(Proba) == 82 ) {  Fractio3 = ' 2.9 ';
+} else
+if (  Math.round(Proba) == 83 ) {  Fractio3 = ' 1/5 ';
+} else
+if (  Math.round(Proba) == 84 ) {  Fractio3 = ' 1/5 ';
+}
+ return Fractio3;
+  }
+</script>
+
+
+
+
+
+<script>
+
+  function round(num, d) { 
+           n = Math.pow(10, !d ? 2 : d);
+           return Math.round(num*n) / n;
+   }
+</script>
+
+
+<script>
+<!-- Begin
+function popUp2(URL) {
+day = new Date();
+id = day.getTime();
+eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=380, left = 5,top = 5');");
+}
+// End -->
+</script>
+
+
+
+
+
+<script>
+function testV(form) {
+steek = (form.steeky.value) ;
+profi = (form.prof.value);
+yieldo = (profi/steek)*100;
+
+   alert('With your stake of: '+ steek + '\n'+
+         'and your profit of ' + profi + '\n'+
+         'your Yield =  '+ round(yieldo) + '%'
+);
+}
+                        
+// -->
+</script>
+
+
+
+
+
+
+
+<script>
+<!--
+
+
+
+function masc() {
+
+var inst1 = document.uitslagen1.tijdschaal.options[document.uitslagen1.tijdschaal.selectedIndex].value;
+
+var inst3 = document.uitslagen1.afrondschaal.options[document.uitslagen1.afrondschaal.selectedIndex].value;
+
+var a = document.uitslagen1.thuisclub.options[document.uitslagen1.thuisclub.selectedIndex].value;
+var b = document.uitslagen1.uitclub.options[document.uitslagen1.uitclub.selectedIndex].value;
+
+var handicap1 = document.uitslagen1.handicap.options[document.uitslagen1.handicap.selectedIndex].value;
+handicap2 = handicap1;
+handicap1 = eval(handicap1);
+
+
+
+
+if (a == "Arsenal") thuisarray = Ar; 
+if (a == "Leeds") thuisarray = Leeds;
+if (a == "Sunderland") thuisarray = Sunderland; 
+if (a == "Bournemouth") thuisarray = Bournemouth;
+if (a == "Chelsea") thuisarray = Che;
+if (a == "Notthingham") thuisarray = Notthingham;  
+if (a == "Everton") thuisarray = Ev;
+if (a == "Brentford") thuisarray = Brentford;
+if (a == "Liverpool") thuisarray = Liv;
+if (a == "Manchester City") thuisarray = Mc;
+if (a == "Manchester United") thuisarray = Mu;
+if (a == "Wolves") thuisarray = Wolves;
+if (a == "Fulham") thuisarray = Fulham;
+if (a == "Burnley") thuisarray = Burnley; 
+if (a == "Tottenham") thuisarray = To; 
+if (a == "Westham") thuisarray = Wh;       
+if (a == "Newcastle") thuisarray = Newcastle;             
+if (a == "Crystal P.") thuisarray = Cry;
+if (a == "Aston") thuisarray = Aston;  
+if (a == "Eng1Today") thuisarray = Eng1Today;   
+
+  
+if (b == "Arsenal") uitarray = Ar; 
+if (b == "BrightonHove") uitarray = BrightonHove;
+if (b == "Leeds") uitarray = Leeds;
+if (b == "Sunderland") uitarray = Sunderland; 
+if (b == "Bournemouth") uitarray = Bournemouth;
+if (b == "Chelsea") uitarray = Che;
+if (b == "Notthingham") uitarray = Notthingham; 
+if (b == "Everton") uitarray = Ev;
+if (b == "Brentford") uitarray = Brentford;
+if (b == "Liverpool") uitarray = Liv;
+if (b == "Manchester City") uitarray = Mc;
+if (b == "Manchester United") uitarray = Mu;
+if (b == "Wolves") uitarray = Wolves;
+if (b == "Fulham") uitarray = Fulham;
+if (b == "Burnley") uitarray = Burnley; 
+if (b == "Tottenham") uitarray = To;  
+if (b == "Westham") uitarray = Wh;     
+if (b == "Newcastle") uitarray = Newcastle;             
+if (b == "Crystal P.") uitarray = Cry;
+if (b == "Aston") uitarray = Aston;  
+if (b == "Eng1Today") uitarray = Eng1Today;  
+
+
+
+
+
+
+
+  
+
+
+
+
+ var Club1DPV = thuisarray[1] / thuisarray[0]; 
+ var Club1DPT = thuisarray[2] / thuisarray[0]; 
+
+ var Club2DPV = uitarray[1] / uitarray[0]; 
+ var Club2DPT = uitarray[2] / uitarray[0];   
+
+var Club1punten = ((thuisarray[3]*3) + (thuisarray[5]));
+var Club2punten = ((uitarray[3]*3) + (uitarray[5]));
+
+var Club1gesp = ( (thuisarray[3]) + (thuisarray[5])  + (thuisarray[4])   );
+var Club2gesp = ( (uitarray[3]) +          (uitarray[5])  + (uitarray[4])       );
+
+
+var Club1PPG = round(Club1punten / Club1gesp);                       
+var Club2PPG = round(Club2punten / Club2gesp);
+
+
+
+Thuis1voor   = thuisarray[2];
+Thuis1tegen  = thuisarray[3];
+
+uit1voor     = uitarray[2];
+uit1tegen    = uitarray[3]; 
+
+
+
+Thuis1voor   = thuisarray[1];
+Thuis1tegen  = thuisarray[2];
+
+uit1voor     = uitarray[1];
+uit1tegen    = uitarray[2]; 
+
+var force1 = 0;
+var force2 = 0;
+bestevoorhoede = (' Both '); 
+besteachterhoede =  (' Both '); 
+
+
+
+
+
+
+
+
+
+
+if (Thuis1voor  > uit1voor) {
+     bestevoorhoede =  a;
+     force1 = (Thuis1voor  - uit1voor);
+ }
+
+if (Thuis1voor  < uit1voor) {
+     bestevoorhoede =  b;
+     force1 = (uit1voor - Thuis1voor);
+ }
+
+if (Thuis1tegen  > uit1tegen) {
+   besteachterhoede =  b;
+   force2 = (Thuis1tegen  - uit1tegen);
+ }
+ 
+if (Thuis1tegen  < uit1tegen) {
+    besteachterhoede =  a;
+   force2 = (uit1tegen - Thuis1tegen);
+}
+
+
+
+
+
+
+
+
+
+
+var VOORwin = b;
+var scoreA = (uit1voor - Thuis1voor);
+if  (Thuis1voor >= uit1voor)   {
+     scoreA = (Thuis1voor - uit1voor); 
+     VOORwin = a;
+     }
+
+var TEGENwin = a;
+var scoreB = (uit1tegen - Thuis1tegen);
+if  (Thuis1tegen >= uit1tegen)   {
+     scoreB = (Thuis1tegen - uit1tegen); 
+     TEGENwin = b;
+     }
+  
+
+
+  
+var objecto = " defece ";
+if (scoreA  >= scoreB) objecto = " attack ";
+
+
+
+
+
+var lijn =    'ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“Ãƒâ€šÃ‚Â¬ÃƒÆ’ Ãƒâ€šÃ‚Â®Ãƒâ€¦Ã¢â‚¬Å“ÃƒÆ’Ã¢â‚¬ÂºÃƒâ€šÃ‚Â©ÃƒÆ’Ã¢â‚¬ÂºÃƒâ€¦Ã‚Â¾ÃƒÆ’Ã¢â‚¬ÂºÃƒâ€šÃ‚Â©ÃƒÆ’ Ãƒâ€šÃ‚Â®Ãƒâ€¦Ã¢â‚¬Å“ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“Ãƒâ€šÃ‚Â¬';  
+
+var lijnio =  '------------------------------ÃƒÆ’ Ãƒâ€šÃ‚Â®Ãƒâ€¦Ã¢â‚¬Å“ÃƒÆ’Ã¢â‚¬ÂºÃƒâ€šÃ‚Â©ÃƒÆ’Ã¢â‚¬ÂºÃƒâ€¦Ã‚Â¾ÃƒÆ’Ã¢â‚¬ÂºÃƒâ€šÃ‚Â©ÃƒÆ’ Ãƒâ€šÃ‚Â®Ãƒâ€¦Ã¢â‚¬Å“-------------------------------'; 
+
+
+var lijntje = '_____________________________________________________________'; 
+
+var thuistrend = Math. round(thuisarray[6] *10);  
+var uittrend =     Math.round(uitarray[6]  *10);
+
+var thuistrend1 = Math.round(thuisarray[7] *10);  
+var uittrend1 =     Math.round(uitarray[7]  *10);
+
+var thuistrend2 = Math.round(thuisarray[8] *10);  
+var uittrend2 =     Math.round(uitarray[8]  *10);
+
+var thuisexpect = ((thuistrend*2) + thuistrend1)/3;
+var uitexpect = ((uittrend*2) + uittrend1)/3;
+
+var copyrights = "- Copyrights 2001 TotoMaster.";
+
+
+
+<!-- trenderos -->
+ //                   var C1tr = thuisarray[6];
+ //                  var C2tr = uitarray[6] ;  
+
+var C1tr = thuistrend;
+                    var C2tr = uittrend;  
+
+if ( C1tr >= C2tr) {
+Cwtr = a;
+gTr = (C1tr - C2tr);
+}
+
+if ( C2tr > C1tr) {
+Cwtr = b;
+gTr = (C2tr - C1tr);
+}
+
+
+
+
+beter = ' ';
+if (gTr <= 5) beter = ' a bit ';
+if ((gTr > 5) && (gTr <= 20))  beter = ' a little ';
+if ((gTr > 20) && (gTr <= 40)) beter = ' much ';
+if ((gTr > 40) && (gTr <= 60))  beter = ' very much ';
+if (gTr > 60) beter = ' a lot ';
+
+
+
+
+
+var thuis1 = 0;
+var thuis2 = 0;
+var thuis3 = 0;
+if (thuisarray[6] > 0) thuis1 =1;
+if (thuisarray[7] > 0) thuis2 =1;
+if (thuisarray[8] > 0) thuis3 =1;
+thuis = (thuis1+thuis2+thuis3);
+
+var uit1 = 0;
+var uit2 = 0;
+var uit3 = 0;
+if (uitarray[6] > 0) uit1 =1;
+if (uitarray[7] > 0) uit2 =1;
+if (uitarray[8] > 0) uit3 =1;
+uit = (uit1+uit2+uit3);
+
+
+
+
+Trpro = Math.round((gTr*100));
+
+
+ var Club1SCORE = ((Club1DPV + Club2DPT) /2);
+ var Club2SCORE = ((Club2DPV + Club1DPT) / 2);
+
+
+
+
+
+// Remove:
+Club1SCORE = ( Club1SCORE * 1.2);
+Club2SCORE = ( Club2SCORE * 1.2);
+
+
+
+
+ var a1 = Club1SCORE;
+ var b1 = Club2SCORE;
+
+ var Club1SC = 0;
+ var Club2SC = 0;
+ var versch = 0;
+ var Gr = '?';
+ var Kl = '?';
+ var Aktief = 'Geen inst3.';
+
+
+if (Club1SCORE >= Club2SCORE)  <!-- Basis bepaling Grootste -->
+    {
+    versch = Club1SCORE - Club2SCORE;
+    Gr = a;
+    Kl = b;
+    }
+
+ if (Club2SCORE > Club1SCORE)
+    {
+    versch = Club2SCORE - Club1SCORE;
+    Gr = b;
+    Kl = a;
+    }
+var Club1X0 = round(Club1SCORE);                                                   //     Test0                                    
+var Club2X0 = round(Club2SCORE);                                                   //     Puur 
+var verschX0 = round(versch);
+
+
+
+
+
+//  Club1SCORE = Club1SCORE + (Club1SCORE/12);                                           thuisvoordeel    
+if (Club1SCORE >= Club2SCORE)  <!-- Basis bepaling Grootste -->
+    {
+    versch = Club1SCORE - Club2SCORE;
+    Gr = a;
+    Kl = b;
+    }
+
+ if (Club2SCORE > Club1SCORE)
+    {
+    versch = Club2SCORE - Club1SCORE;
+    Gr = b;
+    Kl = a;
+    }                      
+
+var Club1X1 = round(Club1SCORE);                                                   //     Test1                                    
+var Club2X1 = round(Club2SCORE);
+var verschX1 = round(versch)
+
+
+ Club1SCORE = (Club1SCORE + ((thuisarray[6] /  75) * inst1));
+ Club2SCORE = (Club2SCORE + ((uitarray[6] /  75) * inst1));
+
+var Club1FormPlus = ( ((thuisarray[6] /  75) * inst1));
+var Club2FormPlus = ( ((uitarray[6] /  75) * inst1));
+
+b1 = Club1SCORE;        // toevoeging 2?
+b2 = Club2SCORE;
+
+
+if (Club1SCORE >= Club2SCORE)                       <!-- tweede bepaling Grootste en verschil -->
+    {
+    versch = Club1SCORE - Club2SCORE;
+    Gr = a;
+    Kl = b;
+    }
+
+ if (Club2SCORE > Club1SCORE)
+    {
+    versch = Club2SCORE - Club1SCORE;
+    Gr = b;
+    Kl = a;
+    }
+
+
+var Club1X2 = round(Club1SCORE);                                                   //     Test2                                    
+var Club2X2 = round(Club2SCORE);
+var verschX2 = round(versch);
+
+
+
+return1 = Club2SCORE;
+return2 = Club1SCORE;
+
+Club1SCOREX =  (Club1SCORE /11) ;
+//  if (a  != b)
+//  Club1SCORE = Club1SCORE +   (Club1SCORE /11) ;   <!-- on time-out --> 
+
+
+
+// CrazyBonus: bij 1e gemeten versch > 100 
+var CrazyBonus = 0;
+
+// if ((verschX0 >= 0.80) && (Gr == a)) { 
+//     Club1SCORE = Club1SCORE + 0.84; 
+//     CrazyBonus = CrazyBonus + 0.84;
+//     Cl1 = (Cl1 + 1);
+//     Cl2 = (Cl2 - 1);
+// }
+// else
+// if ((verschX0 > 0.80) && (Gr == b)) {
+//      Club2SCORE = Club2SCORE + 0.64; 
+//      CrazyBonus = CrazyBonus + 0.64;
+//      Cl1 = (Cl1 - 1);
+//      Cl2 = (Cl2 + 1)
+// }
+
+
+
+
+
+
+
+if (Club1SCORE >= Club2SCORE)  <!-- derde bepaling Grootste en verschil -->
+    {
+    versch = Club1SCORE - Club2SCORE;
+    Gr = a;
+    Kl = b;
+    }
+
+ if (Club2SCORE > Club1SCORE)
+    {
+    versch = Club2SCORE - Club1SCORE;
+    Gr = b;
+    Kl = a;
+    }
+
+var Club1X3 = round(Club1SCORE);                                                   //     Test3   + CrazyBonus                                    
+var Club2X3 = round(Club2SCORE);
+var verschX3 = round(versch);
+
+ var c1 = Club1SCORE;  // met 0.64 bin de 1.44
+ var c2 = Club2SCORE;
+
+return1 = Club2SCORE;
+return2 = Club1SCORE;
+
+
+// -------------------------------------------------------------------------------------
+
+
+
+if ((versch >= inst3) && (Gr == a) && (Math.round(Club1SCORE) == Math.round(Club2SCORE)))
+    {
+    Club1SCORE = Club1SCORE+0.51;
+    Aktief = "Club1 +0.51 inst3 voordeel";
+    }
+else
+if ((versch > inst3) && (Gr == b) && (Math.round(Club1SCORE) == Math.round(Club2SCORE)))
+    {
+    Club2SCORE = Club2SCORE +0.51;
+    Aktief = "Club2 +0.51 inst3 voordeel";
+    }
+else Aktief = "(Versch < inst3) OF: geen gelijkspel";
+
+// -------------------------------------------------------------------------------------
+
+ if (Club1SCORE >= Club2SCORE)  <!-- vierde bepaling Grootste en verschil -->
+    {
+    versch = Club1SCORE - Club2SCORE;
+    Gr = a;
+    Kl = b;
+    }
+
+ if (Club2SCORE > Club1SCORE)
+    {
+    versch = Club2SCORE - Club1SCORE;
+    Gr = b;
+    Kl = a;
+    }
+
+var Club1X4 = round(Club1SCORE);                                                   //     Test4   + inst3                                    
+var Club2X4 = round(Club2SCORE);
+var verschX4 = round(versch);
+
+if (a == b ) alert( a + ' vs ' + b + " would end in a draw." + '\n'+
+                   "Choose different home and away teams !" );
+
+
+H1 = '0';
+H2 = '0';
+if (handicap1 < 10) {
+    Club1SCOR = (Club1SCORE + handicap1);
+    H1 = handicap1;
+}
+
+
+if (handicap1 >= 10) {
+    Club2SCOR = (Club2SCORE + handicap1 - 10);
+    H2 = handicap1 - 10;
+}
+
+if  (handicap1 >= 10)  handicap1 = handicap1 - 10;
+
+
+<!--      Club1SCOR = Club1SCORE;  -->
+<!--      Club2SCOR = Club2SCORE;  --> 
+
+
+text = 'These odds are as aspected !';
+if ((Club1SCORE>Club2SCORE) && (H1 > H2)) {text = 'These odds are not bad !';}
+if ((Club2SCORE>Club1SCORE) && (H2 > H1)) {text = 'These odds are not bad !';}
+
+
+
+if (handicap1 < 10) Club1SCOR = (Club1SCORE + handicap1);
+if (handicap1 >= 10) Club2SCOR = (Club2SCORE + handicap1 - 10);
+
+if  (handicap1 >= 10)  handicap1 = handicap1 - 10;
+
+
+
+<!-- HIEROOOOOOOOOOOOOOOOOOOOOOO org:1.55-- nu:  1.45 naar 0>
+ahsc1 = (Club1SCORE + (H1 ));
+ahsc2 = (Club2SCORE + (H2 ));
+
+
+
+
+if (ahsc1 >= (ahsc2))  {
+    win = a;
+    los = b;
+    ahversh = (ahsc1-ahsc2);
+}
+
+
+if ((ahsc2 ) > (ahsc1)) {
+ win = b;
+ los = a;
+ ahversh = (ahsc2-ahsc1);
+}
+
+
+
+
+<!-- hier bezig -->
+
+if (thuisarray[8] > uitarray[8]) {
+week3club = a;
+tegenst3 = b;
+week3perc =round((thuisarray[8] - uitarray[8]) *10);
+}
+
+if (thuisarray[8] < uitarray[8]) {
+week3club = b;
+tegenst3 = a;
+week3perc =round((uitarray[8] - thuisarray[8]) *10);
+}
+
+
+
+if (thuisarray[7] > uitarray[7]) {
+week2club = a;
+tegenst2 = b;
+week2perc =round((thuisarray[7] - uitarray[7]) *10);
+}
+
+if (thuisarray[7] < uitarray[7]) {
+week2club = b;
+tegenst2 = a;
+week2perc =round((uitarray[7] - thuisarray[7]) *10);
+}
+
+
+
+if (thuisarray[6] > uitarray[6]) {
+week1club = a;
+tegenst1 = b;
+week1perc =round((thuisarray[6] - uitarray[6]) *10);
+}
+
+if (thuisarray[6] < uitarray[6]) {
+week1club = b;
+tegenst1 = a;
+week1perc =round((uitarray[6] - thuisarray[6]) *10);
+}
+
+
+
+
+
+// Com. tapu expectation:
+
+var Expect = 'Not';
+if ((week1club = a) && (thuistrend == uittrend)) 
+   Expect = ('We expect the same performance: '+ win+ ' '+ (thuistrend)+ '%') ;
+
+if ((week1club = a) && (thuistrend > uittrend)) 
+   Expect = ('We expect a lower performance: '+ win+ ' ' +(thuistrend - thuisexpect)+ '%') ;
+
+
+if ((week1club = a) && (thuistrend < uittrend)) 
+   Expect = ('We expect a higher performance: '+ win+ ' '+ ( uittrend - thuistrend )+ '%') ;
+
+    
+  
+
+if ((week1club = b) && (thuistrend == uittrend)) 
+   Expect = ('We expect the same performance: '+ win+ ' '+ (uittrend)+ '%') ;
+
+if ((week1club = b) && (thuistrend > uittrend)) 
+   Expect = ('We expect a lower performance: '+ win+ ' ' +(uittrend - thuistrend)+ '%') ;
+
+
+if ((week1club = b) && (thuistrend < uittrend)) 
+   Expect = ('We expect a higer performance: '+ win+ ' '+ ( uittrend - thuistrend )+ '%') ;
+
+                             
+
+if ((Club1SCOR < Club2SCORE) && ( H1==H2 )) win = b; 
+if ((Club1SCOR >= Club2SCORE) && ( H1==H2)) win = a; 
+
+
+
+if (ahsc1 > ahsc2) conf = (ahsc1 - ahsc1);
+if (ahsc1 < ahsc1) conf = (ahsc2 - ahsc1);
+if (ahsc1 == ahsc2) conf = 0.01;
+
+
+
+
+
+
+
+
+
+
+
+                          
+
+var Gel = 33-(versch*Eng1Today[0]);            
+var R = 100-Gel;
+var Cl1= Club1SCORE*(R/(Club1SCORE+Club2SCORE));
+var Cl2= Club2SCORE*(R/(Club1SCORE+Club2SCORE));
+
+
+
+// --------------------- Begin alternatief gelijk 
+var GelX = 0;
+var Cl1X = 0;
+var Cl2X = 0;
+
+if (Cl1 > Cl2) GelX = (Cl1-((Cl1-Cl2)/2));
+if (Cl1 < Cl2) GelX = (Cl2-((Cl2-Cl1)/2));
+
+if (Cl1 > Cl2) GelX = (Cl1-((Cl1-Cl2)/2));
+if (Cl1 < Cl2) GelX = (Cl2-((Cl2-Cl1)/2));
+
+Totproc = (Cl1 + Cl2 + GelX)/100;
+GelX = GelX*Totproc;
+Cl1X = Cl1*Totproc;
+Cl2X = Cl2*Totproc;
+
+GelX = (100-( Cl1X + Cl2X ));
+
+GelX = Math.round(GelX);
+Cl1X = Math.round(Cl1X);
+Cl2X = Math.round(Cl2X);
+Totproc = round(Totproc);
+// --------------------- Eind alternatief gelijk 
+
+
+
+
+Gel = Math.round(Gel);
+Cl1 = Math.round(Cl1);
+Cl2 = (100-Gel-Cl1);
+
+
+
+// testooooo +3 was +2.
+if (Cl1 > Cl2) {
+Cl1 = (Cl1 + 1);
+Cl2 = (Cl2 - 1);}
+
+else  if (Cl1 < Cl2){
+Cl1 = (Cl1 - 1);
+Cl2 = (Cl2 + 1)
+}
+
+
+
+ 
+
+win = '.';
+if (ahsc1 >=  ahsc2 )  {win = a;}
+else
+if (ahsc1 < ahsc2 ) { win = b;}    
+else { win = 'None or  ' + a + '.';}
+
+if (win == a) (lose = b);
+if (win == b) (lose = a);
+
+
+
+if (ahsc1 > ahsc2) conf = (ahsc1 - ahsc2);
+if (ahsc1 < ahsc2) conf = (ahsc2 - ahsc1);
+if (ahsc1 == ahsc2) conf = 0.01;
+
+conf = conf*70;
+conf = Math.round(conf);
+confie = '.';
+
+if (conf > 60) confie = 'High';
+if (conf > 70) confie = 'Very high';
+if (conf < 30) confie = 'Low';
+if ((conf >= 30)  && (conf <= 60)) confie = 'Medium';
+
+
+Homeodds = 70/Cl1; Drawodds = 70/Gel; Awayodds=70/Cl2;
+
+
+
+//     <!-- over-under correctie --> 
+//     if (((Club1SCORE > 1.25) && (Club1SCORE < 1.99)) && ((Club2SCORE > 1.25) && (Club2SCORE < 1.99)))        
+//        { Club1SCORE = Club1SCORE-1;                                                                     
+//        Club2SCORE = Club2SCORE-1;                                                                        
+//                  }   
+
+
+     <!-- over-under correctie --> 
+     if ((Club1SCORE < 1.25) &&  (Club2SCORE < 1.25))       
+        { Club1SCORE = Club1SCORE-1;                                                                     
+        Club2SCORE = Club2SCORE-1;                                                                        
+                  }                                                                                                  
+
+
+
+if (Club1SCORE < 0) Club1SCORE = 0;
+ if (Club2SCORE < 0) Club2SCORE = 0;
+
+
+
+
+ if (Club1SCORE >= Club2SCORE)  <!-- nieuw verschil, na extras -->
+    {
+    versch = Club1SCORE - Club2SCORE;
+    Gr = a;
+    Kl = b;
+    }
+
+ if (Club2SCORE > Club1SCORE)
+    {
+    versch = Club2SCORE - Club1SCORE;
+    Gr = b;
+    Kl = a;
+    }
+
+
+
+
+
+canhave = 0; <!-- loopt met ah mee, test -->
+if (versch >= 2) {canhave = 2.25;}
+if((versch < 2) && (versch >= 1.75)) {canhave = 2.00;}
+if ((versch < 1.75) && (versch >= 1.50)) {canhave = 1.75;}
+if ((versch < 1.50) && (versch >= 1.25)) {canhave =  1.50;}
+if ((versch < 1.25) && (versch >= 1.00)) {canhave = 1.25;}
+if ((versch < 1.00) && (versch >= 0.75)) {canhave =  1.00;}
+if ((versch < 0.75) && (versch >= 0.50)) {canhave =  0.75;}
+if ((versch < 0.50) && (versch >= 0.25)) {canhave = 0.50;}
+if ((versch < 0.25) && (versch >= 0.12)) {canhave = 0.25;}
+if ((versch < 0.12) && (versch >= 0.00)) {canhave = 0;}      // extra line
+
+
+var canhave1 = '0';
+if (ahversh >= 2)                                           {canhave1 = '2ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼';}
+if((ahversh < 2) && (versch >= 1.75))       {canhave1 = '2';}
+if ((ahversh <= 1.75) && (ahversh > 1.50)) {canhave1 = '1ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¾';}
+if ((ahversh <= 1.50) && (ahversh > 1.25)) {canhave1 =  '1ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â½';}
+if ((ahversh <= 1.25) && (ahversh > 1.00)) {canhave1 = '1ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼';}
+if ((ahversh <= 1.00) && (ahversh > 0.75)) {canhave1 =  '1';}
+if ((ahversh <= 0.75) && (ahversh > 0.50)) {canhave1 = 'ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¾';}
+if ((ahversh <= 0.50) && (ahversh > 0.25)) {canhave1 = 'ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â½';}
+if ((ahversh <= 0.25) && (ahversh > 0.12)) {canhave1 =  'ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼';}
+if ((ahversh <= 0.12) && (ahversh > 0.00)) {canhave1 =  '0';}   // extra line
+if (VOORwin == a) CHstring = ('0 : ' + canhave1);
+if (VOORwin == b) CHstring = (canhave1 + ' : 0');
+
+
+
+OU = (Club1SCORE + Club2SCORE - 0.15);  //check this!
+
+var oddeven = 'No bet.';
+if ((OU>=0) && (OU <=0.40)) oddeven = 'EVEN';
+if ((OU>0.60) && (OU <=1.40)) oddeven = 'ODD';
+if ((OU>=1.6) && (OU <=2.40)) oddeven = 'EVEN';
+if ((OU>=2.6) && (OU <=3.40)) oddeven = 'ODD';
+if ((OU>=3.6) && (OU <=4.40)) oddeven = 'EVEN';
+if ((OU>=4.6) && (OU <=5.40)) oddeven = 'ODD';
+if ((OU>=5.6) && (OU <=6.40)) oddeven = 'EVEN';
+if ((OU>=6.6) && (OU <=7.40)) oddeven = 'ODD';
+if ((OU>=7.6) && (OU <=8.40)) oddeven = 'EVEN';
+if ((OU>=8.6) && (OU <=9.40)) oddeven = 'ODD';
+if ((OU>=9.6) && (OU <=10.40)) oddeven = 'EVEN';
+if ((OU>=10.6) && (OU <=11.40)) oddeven = 'ODD';
+
+
+if (Club1SCORE + Club2SCORE > 2.5)   overunder = ' OVER '; 
+
+if (Club1SCORE + Club2SCORE <= 2.5)   overunder = ' UNDER '; 
+
+var OUadv = "    ";
+
+if ((OU > 2.15) && (OU < 2.85)) { OUadv = "!" }
+
+
+
+
+
+
+if (Club1SCORE >= Club2SCORE)  AHstring = " 0 : "+   canhave ;
+ 
+if (Club1SCORE < Club2SCORE)    AHstring =   canhave + " : 0 ";
+
+
+if (win == b)    AHstring1 =   canhave1 + " : 0 ";
+
+if (win == a)  AHstring1 = " 0 : "+   canhave1 ;
+
+
+
+
+
+
+
+if (thuisarray[6] > thuisarray[7]) thuisgoing = '   (upwards)';
+if (thuisarray[6] < thuisarray[7]) thuisgoing = '   (downwards)';
+if ((thuisarray[6] > (thuisarray[7] - 0.40))  &&  (thuisarray[6] <  (thuisarray[6] + 0.40))) thuisgoing = 
+'   (steady) ';
+
+if (uitarray[6] > uitarray[7]) uitgoing = '   (up) ';
+if (uitarray[6] < uitarray[7]) uitgoing = '   (down) ';
+if ((uitarray[6] > (uitarray[7] - 0.40))  &&  (uitarray[6] <  (uitarray[7] + 0.40))) uitgoing = '   (steady) ';
+
+
+
+var  ouPerc = round( OU / 0.25 );
+
+
+
+
+
+texus = "No bet";
+if ((Gr == b) && (H2 > 0))  { texus ="Bookie's mistake, Take this bet !";} 
+
+
+
+aanhef = "But ";
+if (Cwtr == win) aanhef = "And ";
+
+
+value1 = (101 / Cl1 );
+value2 = (101 / Cl2 );
+value3 = (101 / Gel );
+
+
+
+
+
+
+
+var gem = 0;
+gemtext=' ';
+var agem = ( thuistrend+thuistrend1+thuistrend2);
+var bgem = ( uittrend+uittrend1+uittrend2);
+
+if ((agem>bgem) && (Cwtr==a)) {
+gem = Math.round(agem);
+gemtext = 'They have a higher average in last 3 matches: '+ Math.round((agem-bgem)/3) + ' %' ;
+}
+
+if ((agem<bgem) && (Cwtr==a)) {
+gem = Math.round(agem);
+gemtext = 'They have a lower average in last 3 matches:  - '+ Math.round((bgem-agem)/3) + ' %' ;
+}
+
+
+if ((agem<bgem)  && (Cwtr==b)) {
+gem = Math.round(bgem);
+gemtext = 'They have a higher average in last 3 matches: '+ Math.round((bgem-agem)/3) + ' %';
+}
+
+if ((agem>bgem)  && (Cwtr==b)) {
+gem = Math.round(bgem);
+gemtext = 'They have a lower average in last 3 matches:  - '+  Math.round((agem-bgem)/3) + ' %';
+}
+
+var gemtext2 = "PPG: " + Club1PPG;
+
+
+
+
+return1 = Club2SCORE+0.23;
+return2 = Club1SCORE-0.23;
+
+var Cwtrlang = Cwtr.substring(0,9);
+var korta =a;
+var kortb =b;
+var langa = a;
+var langb = b;
+
+
+biga = a.toUpperCase();
+bigb = b.toUpperCase();
+
+langa = langa.substring(0,9);
+langb = langb.substring(0,9);
+langa = (langa + '~');
+langb = (langb + '~');
+
+korta = korta.substring(0,5);
+kortb = kortb.substring(0,5);
+
+korta = (korta + '~');
+kortb = (kortb + '~');
+
+if (Cwtr==a)  texto = b;
+if (Cwtr==b)  texto = a;
+
+
+win = win.toUpperCase();
+
+
+
+ var monName = new Array ("JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "October", "November", "December")
+
+ var now = new Date;
+
+
+
+
+// Asian odds bepalen
+// var Cl12 = ( Cl1 + Cl2 );
+// var asianA = 100 / ( Cl1 + ( Cl1 / Cl12 ));
+// var asianB = 100 / ( Cl2 + ( Cl2 / Cl12 ));
+
+
+var asianA = 100 / ( Cl1 + (Gel/2));
+var asianB = 100 / ( Cl2 + (Gel/2));
+
+var aantalAchterKomma = 3;
+asianA = ( Math.round(asianA *Math.pow(10,aantalAchterKomma ))/Math.pow(10,aantalAchterKomma ) );
+asianB = ( Math.round(asianB *Math.pow(10,aantalAchterKomma ))/Math.pow(10,aantalAchterKomma ) );
+
+var oddstring = '   A   ';
+if  (asianA > asianB) oddstring = '      '+ round(canhave+0.25) + ' : 0    to    0.25 : 0   ';
+if  (asianB > asianA) oddstring = '      0 : 0.25    to    0 : ' + round(canhave+0.25) + '     ';
+
+
+
+var moneyline1 = 10;
+var moneyline2 = 10;
+var moneyline3 = 10;
+var moneysign = '-';
+
+if  (Cl1 < 50) { 
+moneyline1 =  Math.round(((100-Cl1) / Cl1) * 100); 
+moneysign1 = '+';
+} else
+if  (Cl1 >= 50) {
+ moneyline1 =  Math.round(( Cl1 / (100-Cl1)) * 100); 
+moneysign1 = '-';
+}
+
+if  (Gel < 50) { moneyline2 =  Math.round(((100-Gel) / Gel) * 100); 
+moneysign2 = '+';
+} else
+if  (Gel >= 50) { 
+moneyline2 =  Math.round(((100-Gel) / Gel) * 100); 
+moneysign2 = '-';
+}
+
+if  (Cl2 < 50) { 
+moneyline3 =  Math.round(((100-Cl2) / Cl2) * 100); 
+moneysign3 = '+';
+} else if  (Cl2 >= 50) {
+moneyline3 =  Math.round(( Cl2 / (100-Cl2)) * 100); 
+moneysign3 = '-';
+}
+
+
+
+
+Proba = Cl1;
+grabFRACTO( Proba );
+Fractio1 = Fractio3 ;
+
+
+
+Proba = Gel;
+grabFRACTO( Proba );
+Fractio2 = Fractio3 ;
+
+
+
+Proba = Cl2;
+grabFRACTO( Proba );
+Fractio3 = Fractio3 ;
+
+
+// instellen roundoff.
+//****************************************
+ if ((versch <= inst3) && (Gr == a) && (round(Club1SCORE) != round(Club2SCORE) )  ) {
+    Club1SCORE = (Club1SCORE- ((inst3-versch))); 
+    Club2SCORE = (Club1SCORE);
+    Cl1 = 33;
+    Cl2 = 33;
+    Gel = 34;
+    }
+ else
+ if ((versch <= inst3) && (Gr == b) && (round(Club1SCORE) != round(Club2SCORE) ) ) {
+    Club1SCORE = (Club1SCORE+ ((inst3-versch))); 
+    Club1SCORE = (Club2SCORE);
+    Cl1 = 33;
+    Cl2 = 33;
+    Gel = 34;
+    };
+
+//****************************************
+
+if ((versch >= 0.60) && (Gr == a))  ( Club1SCORE = Club1SCORE + 0.90 ); 
+else
+if ((versch > 0.60) && (Gr == b))  ( Club2SCORE = Club2SCORE + 0.90); 
+//****************************************
+// End: instellen roundoff.   
+//****************************************
+
+
+var homes = (100/Cl1); 
+var aways = (100/Cl2); 
+var draws = (100/Gel); 
+var aantalAchterKomma = 2;
+homes = ( Math.round(homes *Math.pow(10,aantalAchterKomma ))/Math.pow(10,aantalAchterKomma ) );
+aways = ( Math.round(aways *Math.pow(10,aantalAchterKomma ))/Math.pow(10,aantalAchterKomma ) );
+draws = ( Math.round(draws *Math.pow(10,aantalAchterKomma ))/Math.pow(10,aantalAchterKomma ) );
+
+
+
+//alerto
+
+alert(        
+  biga+ '  vs  ' + bigb +  ' :    '+Math.round(Club1SCORE)+' - '+Math.round(Club2SCORE)  +'\n'+                 
+  '(PPG: '+   Club1PPG + ' - ' + Club2PPG+ ')'   +'\n'+
+ 
+ 
+
+
+      'Probabilities of  Home - Draw - Away '+ ':    '+ Cl1+'%  -  '+Gel+'%  -  '+Cl2+'% .'+'\n'+ '\n'+
+
+      'Asian Handicap Advice: '+'With an asian handicap of: ' + H1 + ' : '+H2 + '\n'+  
+      'PICK :        '+  win +'\n'+'\n'+
+
+<!--    'last 3 matches: '+ texto + ' matches over normal.'+'\n'+  -->
+      aanhef+ Cwtr + ' was ' + beter + ' better in their last match' +'\n'+
+     '( '+ week1perc + ' % higher than ' + texto + ' ).' + '\n' +
+
+
+       gemtext + '.' +'\n'+
+     'Confidence: '+ confie + '. '    +'\n'+ '\n'+
+	  
+      
+ lijntje +'\n'+'\n'+
+
+'REAL ODDS FOR:   '+ a + ' vs ' + b + '  :' +  '\n'+'\n'+
+
+'Fractional:        ' + korta + ': ' + Fractio1 + '.   Draw: ' +  Fractio2 + '.   ' + kortb + ': ' + Fractio3 + '.'    +'\n'+'\n'+
+
+'Decimal    :      '   +   korta +  ':  ' + homes + '.     '  + 'Draw:  '+  draws  + '.     '  +  kortb +  ':   '+ aways + '\n'+'\n'+
+
+
+
+'Handicap  :      ' + AHstring  +'\n'+
+'                        ' +  korta +   ':  ' + asianA + '                  ' +  kortb +   ':  ' + asianB +'\n'+'\n'+
+
+
+'Moneyline:        ' + korta + ': ' +moneysign1+ moneyline1 + '.   Draw : ' +moneysign2+ moneyline2 +'.   '  + kortb + ':  '+moneysign3 + moneyline3 + '.'     +'\n'+'\n'+
+     
+   
+ 'Over/Under:   '+overunder+ '('+round(OU) + ') '+ '.          ' + OUadv  +  'Odd/Even :  '+oddeven+ '.' + '\n'+ '\n'+
+
+
+ 
+ lijntje +'\n'+'\n'+
+ 'TEAM PERFORMANCE in the last 3 matches and Expectation :'  +'\n'+ '\n'+
+   
+'Team \t Last \t 2 ago \t  3  ago \t  Expect  \n'  +'\n'
++  korta + '\t' +' '+  round(thuistrend + 100)+' %'+ '\t ' +' '+round (thuistrend1 + 100)+' %' +'\t' +  round (thuistrend2 + 100)+' %' +'\t'  + '  '+Math.round(thuisexpect + 100)+' %'  
++'\n'+
+ kortb + '\t' + ' '+ round(uittrend + 100)+' %'+ '\t ' +' '+ round(uittrend1+100)+'  %'+'\t'+  round(uittrend2 +100)+' %' +'\t'   + '  '+Math.round(uitexpect + 100)+' %' 
+ +'\n'+'\n'+
+lijntje  +'\n'+'\n'+
+
+
+  'TEAM-STANDINGS in the Premier League 2025-2026:'   +'\n'+ '\n'+
+
+ 
+'Team \t Ppg \t Pl \t W. \t Dr  \t Lo \t Pts  \n' +'\n'
++  korta +  '\t' +' '+Club1PPG    + ' \t' +' '+  Club1gesp+ ' \t ' +' '+ thuisarray[3] +' \t'+ '  '+ thuisarray[5] +' \t' +'  '+ thuisarray[4]  +'\t' +' '+ Club1punten   +'\n'+
+ kortb  +  '\t' +' '+ Club2PPG    + ' \t' + ' '+ Club2gesp+ ' \t ' +' '+ uitarray[3] +' \t'+ '  '+ uitarray[5] +' \t' + '  '+uitarray[4]+ ' \t' +' '+ Club2punten         +'\n'+ '\n'+
+
+
+lijntje +'\n'+'\n'+
+'Last modified: ' + DateModif() + '.' );
+
+
+return true;
+} 
+
+</script>
+
+
+ 
+
+
+
+<script>
+<!-- Begin
+function popUp(URL) {
+day = new Date();
+id = day.getTime();
+eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=720,height=330,left = 5,top = 5');");
+}
+// End -->
+</script>
+
+
+
+
+
+<script async="" src="https://wts.one/log7.js"></script></head>
+
+
+
+
+<body bgcolor="#FCF3CF">
+
+
+
+
+
+<!-- Google Tag Manager (noscript) FIRST IN BODY -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9RCPW6"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+
+
+
+
+
+<center>
+    
+    </center><table width="100%" border="0" height="35"> 
+  <tbody>
+  <tr><td width="33%" border="0">
+       <img src="premierleague.gif" width="90%" height="50" border="0">
+	   
+    </td>
+
+   
+   <td width="30%" border="0"> <center>
+    
+	
+	
+    
+    
+    </center></td>
+   
+   
+ 
+
+<td width="35%"><center>
+      <center><font face="arial" color="#990000" size="1"><b>
+
+      <div align="right">
+<img src="totomaster13.gif" border="0" width="100%">      <!-- totomaster13.gif   -->
+      </div></b></font></center></center></td></tr></tbody>
+</table>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+<center>
+<!---------------- M E N U menu ----------------------->
+<table cellspacing="5" width="360" border="0" height="12">
+  <tbody>
+    <tr><td width="180"> <font color="white">
+    <form name="menu1">
+    <select onchange="location=this.options[this.selectedIndex].value;" style="color:#ffffff; background-image: url('menubg.gif'); font-size: 14px; font-weight:bold;">
+    <option value="#"> Country Leagues:</option>
+    <option value="index.html" style="color:#000000;">England Premier League</option>
+    <option value="ita1.html" style="color:#000000;">Italy Serie A</option>
+    <option value="spa1.html" style="color:#000000;">Spain Primera Division</option>
+    <option value="dui1.html" style="color:#000000;">Germany Bundesliga</option>
+    <option value="fra1.html" style="color:#000000;">France Lique 1</option>
+    <option value="kor1.html" style="color:#000000;"> Korea K-League</option>
+	<option value="usa1.html" style="color:#000000;"> USA Major League</option>
+     </select>
+    </form>
+   </font></td>
+     
+   <td width="180" div="" align="center"> 
+    <form name="menu2"> 
+     <select onchange="location=this.options[this.selectedIndex].value;" style="color:#ffffff; background-image: url('menubg.gif'); font-size: 14px; font-weight:bold;">
+    <option value="#"> Cups and friendlies: </option>
+    <option value="championsleague2023.html" style="color:#000000;">Champions League </option>
+    <option value="asianWC.html" style="color:#000000;">AFC Asian Cup</option>
+	<option value="africacup.html" style="color:#000000;"> Africa Cup</option>
+    <option value="arabcup.html" style="color:#000000;">FIFA Arab Cup </option>
+    <option value="womeneuro.html" style="color:#000000;">Woman's Euro 2024 </option>
+    <option value="eurofriendlies.html" style="color:#000000;">Euro Friendlies</option>
+ <option value="nations.html" style="color:#000000;">Nations</option>
+    </select>
+   </form>
+  </td>
+  
+ </tr></tbody></table>
+ <!---------------------- end menu ---------------------->
+
+
+
+
+
+
+
+</center>
+<!-- CHOOSE HOME & AWAY -->
+<table width="100%" border="0">     <!-- choose teams -->
+  <tbody>
+  <tr>
+ <td width="32%">
+   <div align="center">
+   <font color="#660000" face="Arial" black="" size="2"> <b>
+   1: Choose home team <img src="ardown.png" height="14">
+     </b></font></div><font color="#660000" face="Arial" black="" size="2"><b>
+ </b></font></td>
+ <td width="32%">
+     <center> <font color="#660000" face="Arial" black="" size="2"> <b> 2: Choose away team  
+     <img src="ardown.png" height="14">
+     </b></font></center>
+</td>
+ <td width="32%"><font face="verdana" color="beige" size="2"><b>
+     <center> <font color="#660000" face="Arial" black="" size="2"><b>3: Press the button  
+      <img src="ardown.png" height="14">
+     </b></font></center></b></font></td>
+     </tr>
+   </tbody>
+</table>
+<!-- END CHOOSE HOME & AWAY -->
+
+
+
+
+
+<center></center><table cellspacing="5" cellpadding="6" width="100%" border="0">
+  <tbody>
+  <tr>
+    
+    <td valign="top" width="33%" background="redmenubg.png" border="2">
+      <center>
+      <center>
+      <form name="uitslagen1" method="get"><select multiple="" size="6" name="thuisclub"> 
+
+        <option value="Arsenal" selected="">Arsenal</option><option value="Aston">Aston</option><option value="Brentford">Brentford</option><option value="BrightonHove">Brighton&amp;Hove</option><option value="Bournemouth">Bournemouth</option><option value="Burnley">Burnley</option><option value="Chelsea">Chelsea</option><option value="Crystal P.">Crystal P.</option><option value="Everton">Everton</option><option value="Fulham">Fulham</option><option value="Leeds">Leeds</option><option value="Liverpool">Liverpool</option><option value="Manchester City">Man. City</option><option value="Manchester United">Man. United</option><option value="Newcastle">Newcastle</option><option value="Notthingham">Notthingham</option><option value="Sunderland">Sunderland</option><option value="Tottenham">Tottenham</option><option value="Westham">Westham</option><option value="Wolves">Wolves
+        </option>
+	  
+     
+      </select><br><font face="verdana" color="#f9ec6f" size="1"><b> home teams 
+      </b></font></form></center></center></td>
+
+
+
+    <td valign="top" width="33%" background="redmenubg.png"><b><font face="verdana" color="#ffcc33" size="1">
+      <center><select multiple="" size="6" name="uitclub"> 
+
+        <option value="Arsenal" selected="">Arsenal</option><option value="Aston">Aston</option><option value="Brentford">Brentford</option><option value="BrightonHove">Brighton&amp;Hove</option><option value="Bournemouth">Bournemouth</option><option value="Burnley">Burnley</option><option value="Chelsea">Chelsea</option><option value="Crystal P.">Crystal P.</option><option value="Everton">Everton</option><option value="Fulham">Fulham</option><option value="Leeds">Leeds</option><option value="Liverpool">Liverpool</option><option value="Manchester City">Man. City</option><option value="Manchester United">Man. United</option><option value="Newcastle">Newcastle</option><option value="Notthingham">Notthingham</option><option value="Sunderland">Sunderland</option><option value="Tottenham">Tottenham</option><option value="Westham">Westham</option><option value="Wolves">Wolves
+        </option>
+     
+  
+ 
+ 
+      </select><br><font color="#f9ec6f"> away teams </font></center></font></b></td>
+    <td valign="top" width="33%" background="redmenubg.png"><font face="Tahoma" color="#eee8aa" size="1"><b>
+      <center>England 2025-2026 <br>Premier League <br><img height="10" src="blackye.gif" width="10" border="0"> <p>
+
+
+<table width="90" border="0"><tbody><tr><td><center>
+
+
+<input onclick="masc()" type="submit" style="background-image: url('menubg.gif'); color: white; font-weight: bold; font-size: 14px;" value="PREDICT">
+
+<p>
+
+
+ </p><center>
+    <font size="2" color="pink" face="arial"><center>
+    <script type="text/javascript">
+    today = new Date();
+    BigDay = new Date("August 16, 2025");
+    msPerDay = 24 * 60 * 60 * 1000 ;
+    timeLeft = (BigDay.getTime() - today.getTime());
+    e_daysLeft = timeLeft / msPerDay;
+    daysLeft = Math.floor(e_daysLeft);
+    e_hrsLeft = (e_daysLeft - daysLeft)*24;
+    hrsLeft = Math.floor(e_hrsLeft);
+    minsLeft = Math.floor((e_hrsLeft - hrsLeft)*60);
+    document.write("There are only<BR>" + daysLeft + " days  left to the start !" );
+    </script>There are only<br>-241 days  left to the start !
+
+
+
+
+
+
+      
+      <font color="beige" size="1">
+      </font></center></font></center></center></td>
+</tr></tbody></table>
+   
+     
+     
+</p></center>
+      <center></center></b></font></td>
+    </tr></tbody></table>
+
+<table cellspacing="4" cellpadding="1" width="100%" border="0">
+  <tbody>
+  <tr>
+
+    <td width="96%" background="redmenubg.png"><font face="arial" color="#eee8aa" size="2">
+      <center><b>
+
+<font size="1">
+<div class="tooltip">You may use your personal settings instead of our defaults :
+  <span class="tooltiptext">
+        Our default settings are very good, 
+        still we recommend to try and use your own settings.
+  </span>
+</div>
+      
+
+    </font></b></center>
+    </font></td></tr></tbody>
+</table>
+
+<table cellspacing="4" cellpadding="6" width="100%" border="0">
+  <tbody>
+  <tr>
+    
+    <td valign="top" width="22%" background="redmenubg.png"><font face="verdana" color="red" size="1" border="2" bordercolor="red"><b>
+      <center><select multiple="" size="4" name="tijdschaal"> <option value="2">2%</option><option value="4">4%</option><option value="6">6%</option><option value="8" selected="">8%</option><option value="10">10%</option><option value="12">12%</option><option value="14">14%</option><option value="16">16%</option><option value="18">18%</option><option value="20">20%</option><option value="22">22%</option><option value="24">24%</option><option value="26">26%</option><option value="28">28%</option><option value="30">30%</option><option value="32">32%</option><option value="34">34%</option><option value="36">36%</option><option value="38">38%</option><option value="40">40%</option><option value="42">42%</option><option value="44">44%</option><option value="46">46%</option><option value="48">48%</option><option value="50">50%</option><option value="52">52%</option><option value="54">54%</option><option value="56">56%</option><option value="58">58%</option><option value="60">60%</option><option value="62">62%</option><option value="64">64%</option><option value="66">66%</option><option value="68">68%</option><option value="70">70%</option><option value="72">72%</option><option value="74">74%</option><option value="76">76%</option><option value="78">78%</option><option value="80">80%</option><option value="82">82%</option><option value="84">84%</option><option value="86">86%</option><option value="88">88%</option><option value="90">90%</option><option value="92">92%</option><option value="94">94%</option><option value="96">96%</option><option value="98">98%</option><option value="100">100%</option></select><br><font color="#eee8aa"><b>
+
+<p>
+</p><div class="tooltip">Add Form
+  <span class="tooltiptext">
+        Here you can decide proportionally <br>
+        how much to include the actual <br>
+        team-forms to the prediction.
+  </span>
+</div>
+
+ </b></font></center></b></font></td>
+    <td valign="top" width="22%" background="redmenubg.png"><b><font face="verdana" color="red" size="1">
+      <center><select multiple="" size="4" name="handicap"> <option value="0.00" selected="">0 : 0</option><option value="10.25">0 : 0.25</option><option value="10.50">0 : 0.5</option><option value="10.75">0 : 0.75</option><option value="11.00">0 : 1</option><option value="11.25">0 : 
+        1.25</option><option value="11.50">0 : 1.5</option><option value="11.75">0 : 1.75</option><option value="12.00">0 : 2</option><option value="0.25">0.25 : 0</option><option value="0.50">0.5 : 0</option><option value="0.75">0.75 : 0</option><option value="1.00">1 : 0</option><option value="1.25">1.25 : 0</option><option value="1.50">1.5 : 0</option><option value="1.75">1.75 : 0</option><option value="2.00">2 : 
+        0</option></select><br><font color="#eee8aa"><b>
+
+<p>
+</p><div class="tooltip">Handicap
+  <span class="tooltiptext">Add the right Asian Handicap <br>
+                            (from your bookmaker) to the match <br>
+                            to get a good advice.</span>
+</div>
+
+ 
+      </b></font></center></font></b></td>
+    <td valign="top" width="22%" background="redmenubg.png"><b><font face="verdana" color="red" size="1">
+      <center><select multiple="" size="4" name="afrondschaal"> <option value="0.01">0.01</option><option value="0.02">0.02</option><option value="0.03">0.03</option><option value="0.04">0.04</option><option value="0.05">0.05</option><option value="0.06">0.06</option><option value="0.07">0.07</option><option value="0.08">0.08</option><option value="0.09">0.09</option><option value="0.10">0.10</option><option value="0.11">0.11</option><option value="0.12">0.12</option><option value="0.13">0.13</option><option value="0.14">0.14</option><option value="0.15">0.15</option><option value="0.16">0.16</option><option value="0.17">0.17</option><option value="0.18">0.18</option><option value="0.19">0.19</option><option value="0.20" selected="">0.20</option><option value="0.21">0.21</option><option value="0.22">0.22</option><option value="0.23">0.23</option><option value="0.24">0.24</option><option value="0.25">0.25</option><option value="0.26">0.26</option><option value="0.27">0.27</option><option value="0.28">0.28</option><option value="0.29">0.29</option><option value="0.30">0.30</option><option value="0.31">0.31</option><option value="0.32">0.32</option><option value="0.33">0.33</option><option value="0.34">0.34</option><option value="0.35">0.35</option><option value="0.36">0.36</option><option value="0.37">0.37</option><option value="0.38">0.38</option><option value="0.39">0.39</option><option value="0.40">0.40</option><option value="0.41">0.41</option><option value="0.42">0.42</option><option value="0.43">0.43</option><option value="0.44">0.44</option><option value="0.45">0.45</option><option value="0.46">0.46</option><option value="0.47">0.47</option><option value="0.48">0.48</option><option value="0.49">0.49</option><option value="0.50">0.50</option><option value="0.51">0.51</option><option value="0.52">0.52</option><option value="0.53">0.53</option><option value="0.54">0.54</option><option value="0.55">0.55</option><option value="0.56">0.56</option><option value="0.57">0.57</option><option value="0.58">0.58</option><option value="0.59">0.59</option><option value="0.60">0.60</option><option value="0.61">0.61</option><option value="0.62">0.62</option><option value="0.63">0.63</option><option value="0.64">0.64</option><option value="0.65">0.65</option><option value="0.66">0.66</option><option value="0.67">0.67</option><option value="0.68">0.68</option><option value="0.69">0.69</option><option value="0.70">0.70</option><option value="0.71">0.71</option><option value="0.72">0.72</option><option value="0.73">0.73</option><option value="0.74">0.74</option><option value="0.75">0.75</option><option value="0.76">0.76</option><option value="0.77">0.77</option><option value="0.78">0.78</option><option value="0.79">0.79</option><option value="0.80">0.80</option><option value="0.81">0.81</option><option value="0.82">0.82</option><option value="0.83">0.83</option><option value="0.84">0.84</option><option value="0.85">0.85</option><option value="0.86">0.86</option><option value="0.87">0.87</option><option value="0.88">0.88</option><option value="0.89">0.89</option><option value="0.90">0.90</option><option value="0.91">0.91</option><option value="0.92">0.92</option><option value="0.93">0.93</option><option value="0.94">0.94</option><option value="0.95">0.95</option><option value="0.96">0.96</option><option value="0.97">0.97</option><option value="0.98">0.98</option><option value="0.99">0.99</option><option value="1.00">1.00</option></select><br><font color="#eee8aa"><b>
+
+<p>
+</p><div class="tooltip">Round Off
+  <span class="tooltiptext"> RoundOff determines
+what difference between the teams will 
+lead to a profit or loss.</span>
+</div>
+
+ </b></font></center></font></b></td>
+    <td width="34%" background="redmenubg.png"><font face="arial" color="#eee8aa" size="1"><b>
+      <center><img src="f11.gif" width="60%"><br>Independent and Free 
+     <br><font face="verdana" color="#f9ec6f"> 
+      service <br><font face="arial" color="#eee8aa"><a title="Read our Terms and Conditions of use." href="http://www.totomaster.com/terms.html"><font face="arial" color="#eee8aa">All rights 2001 <font color="#ea4f5c" size="2"> - <font color="#eee8aa" size="1">2025 reserved 
+      </font></font></font></a></font></font></center></b></font></td></tr></tbody></table>
+
+
+
+
+
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<br><table width="100%" border="0">
+  <tbody><tr><td width="50%" style="vertical-align: top;"> <center>
+<center>
+
+<p id="rcornersAllcov">
+<table width="100%" border="0" bgcolor="white">
+  <tbody><tr><td width="100%" style=" border-style: solid; border-color: Tan; border-width: 0px"><center>                    
+  <iframe frameborder="0" width="90%" height="530" scrolling="yes" src="allcovered2.html" marginheight="0" marginwidth="0" noresize="">
+  </iframe>
+  </center></td>
+</tr></tbody></table>
+</p>
+
+
+
+<p id="rcornersfree4free">
+<table width="98%" border="0" bgcolor="white">    
+<tbody><tr><td width="100%">
+<center> 
+<iframe frameborder="0" width="100%" height="90" scrolling="no" src="free4free.html" marginheight="0" marginwidth="0" noresize="">
+</iframe>
+</center></td>
+</tr></tbody></table>
+</p>          
+
+
+
+<!--  wisdom -->
+<p id="rcornersfree4free">
+<table width="98%" border="0">    
+<tbody><tr><td width="100%">
+<center> 
+<iframe frameborder="0" width="100%" height="100%" scrolling="no" src="betslider.html" marginheight="0" marginwidth="0" noresize="">
+</iframe>
+</center></td>
+</tr></tbody></table>
+</p>    
+
+
+
+
+
+
+<!-- Table & analyzer  -->
+
+<!-- analyzer headline -->
+<p id="rcorners10">
+<table width="99%" border="0">
+<tbody><tr><td width="50%"> <center>
+<img src="roundeng.png" height="22" border="0" hspace="4">
+<font color="#cc0044" face="Arial" black="" size="3"><b> PREMIER LEAGUE <br>
+ <font size="2" color="#990000">   Ranking list 2025-2026: 
+</font></b></font></center></td>
+  <td width="50%"> <center>
+<font color="#cc0000" face="Arial" black="" size="3"><b> ODDS ANALYZER
+<br> <font size="2" color="#990000">
+and converter
+  </font></b></font></center></td>
+</tr></tbody></table>
+<!-- End analyzer headline -->
+
+     <!-- sortpremier league -->
+
+<table width="100%" height="220" border="0">
+  <tbody><tr><td width="50%"><center><font size="1"> 
+    <font size="2" color="crimson" face="arialblack"> <b>
+
+
+<p id="rcornersrankings">
+    <iframe frameborder="0" width="220" height="226" scrolling="yes" src="sortpremier.html" marginheight="0" marginwidth="0" noresize="">
+    </iframe>
+</p>
+  </b></font></font></center></td>
+
+
+  <!-- OddsAnalyzer  -->
+  <td width="50%"> <center>
+
+<center>
+   </center><table bordercolor="#990000" width="99%" border="0"> 
+<tbody>
+<tr> <td bordercolor="white" border="0" height="160">
+    <center>  
+      <font color="gray" face="tahoma" size="1"> <b>
+      Enter your Bookmakers <br>
+      decimal odds:
+      <p>
+      </p><form name="first">
+      <font face="verdana" color="black" size="1"><b><font color="black"><b>
+      <input size="1" name="tex1" style="background-color:white"> 
+      Home Odds <font color="990000" size="2"><b>  1 
+      <font size="1" color="000000"> <p>
+      <input size="1" name="tex2">
+      Draw Odds <font color="990000" size="2"><b>  X 
+      <font size="1" color="000000"> </font></b></font></p><p><font color="990000" size="2"><b><font size="1" color="000000">
+      <input size="1" name="tex3"> 
+      Away Odds  <font color="990000" size="2"><b>  2 <font size="1"> <br>
+      </font></b></font></font></b></font></p><p><font color="990000" size="2"><b><font size="1" color="000000"><font color="990000" size="2"><b><font size="1">
+      <button type="reset" style="background-color:pink"><font color="black" size="1">reset</font></button> <input onclick="testx(this.form)" type="button" value="Analyze !" name="button1" style="background-color: #EBF4FA"> 
+       
+      </font></b></font></font></b></font></p><p><font color="990000" size="2"><b><font size="1" color="000000"><font color="990000" size="2"><b><font size="1">
+      
+       <br> <img src="flash.gif">
+       </font></b></font></font></b></font></p></font></b></font></b></font></b></font></form></b></font></center><font color="gray" face="tahoma" size="1"><font face="verdana" color="black" size="1"><font color="black"><font color="990000" size="2"><b><font size="1" color="000000"><font color="990000" size="2"><b><font size="1" color="000000"><font color="990000" size="2"><b> 
+     </b></font></font></b></font></font></b></font></font></font></font></td></tr></tbody>
+</table>                 <!-- END ANALYZER ---->
+
+  </center></td>
+</tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</p><center>
+
+<!-- WAYBACK -->
+<p id="rcornersfree4free">
+<table width="96%" border="0">
+  <tbody><tr><td width="100%"><center>                    
+  <iframe frameborder="0" width="100%" height="80" scrolling="no" src="wayback.html" marginheight="0" marginwidth="0" noresize="">
+  </iframe>
+  </center></td>
+</tr></tbody></table>
+<!-- END Wayback -->
+</p>
+
+
+
+</center></center></center></td>  <!-- End linker table -->
+
+
+
+<!-- middelste table -->
+<td width="1%">
+&nbsp;
+</td>
+
+
+
+<td align="right" valign="top">
+
+</td><td width="49%" align="right" valign="top">  <!-- Begin table 2 rechts  -->
+
+   
+<p id="rcorners1">
+<table width="100%" align="right" valign="top">                                        <!-- OVERKOEPELEND  -->
+
+<tbody><tr><td width="20%">
+<div align="right">
+
+<!--    STYLE=" border-style: solid; border-color: Tan; border-width: 0px"   -->
+
+<table width="100%" border="0">
+  <tbody><tr><td width="98%" style=" border-style: solid; border-color: Tan; border-width: 0px"><center>                    
+  <iframe frameborder="0" width="98%" height="188" scrolling="yes" src="abouttotomaster.html" marginheight="0" marginwidth="0" noresize="">
+  </iframe>
+  </center></td>
+</tr></tbody></table>
+<p></p>
+
+<p>
+  <!-- blok useful info -->
+    <iframe frameborder="0" width="100%" height="260" scrolling="no" src="eng1useful.html" marginheight="0" marginwidth="0" noresize="">
+  </iframe>
+
+</p>
+
+<p id="rcornersteamform">
+<table border="0" width="100%" height="440">
+<tbody><tr><td width="90%" style=" border-style: solid; border-color: Tan; border-width: 0px"> 
+<center> 
+<iframe frameborder="0" width="100%" height="460" scrolling="yes" src="form1.html" marginheight="0" marginwidth="0" noresize="">
+</iframe>
+<font color="990000" size="1"><b>`
+</b></font></center></td>
+
+</tr></tbody></table>
+</p>
+
+
+<center>
+<p id="rcornersPerformance">
+<table width="100%" bgcolor="white"> 
+  <tbody><tr><td> <div align="center">
+  <center> 
+  <iframe frameborder="0" width="100%" height="190" scrolling="no" src="engformscore.html" marginheight="0" marginwidth="0" noresize="">
+  </iframe>
+<br>
+</center></div></td>
+</tr><tr>
+</tr></tbody></table>
+
+
+
+
+</p></center></div></td>
+</tr></tbody></table>  <!-- OVERKOEPELEND 94%  TOP-RIGHT -->
+
+
+
+
+</p><p>
+</p><center>
+
+
+<table height="40">
+<tbody><tr><td>
+&nbsp;  
+</td>
+</tr></tbody></table>
+<br>
+
+
+<table height="20" bgcolor="black">
+<tbody><tr><td>
+<a href="https://infoowls.jimdofree.com/" title="grandson's hobby" style="text-decoration: none;"> 
+<font color="A3F055" size="1" face="verdana"> <b>
+<img src="blackgr.gif" height="10">
+ SOME TIME LEFT? <font color="dodgerblue"> (no soccer)
+</font></b></font></a><font color="A3F055" size="1" face="verdana"><b><font color="dodgerblue">
+</font></b></font></td><td>
+</td></tr></tbody></table>
+
+</center></td>
+
+
+
+
+
+
+
+
+
+<!-- end headtable  -->
+
+
+
+<!--  Totolinks -->
+</tr></tbody></table><table width="100%" border="0">
+  <tbody><tr><td width="100%" style=" border-style: solid; border-color: Tan; border-width: 0px"><center>                    
+  <iframe frameborder="0" width="100%" height="140px" scrolling="no" src="totolinks2.html" marginheight="0" marginwidth="0" noresize="">
+  </iframe>
+  </center></td>
+</tr></tbody></table>
+<!-- END Totolinks -->
+
+</p><center>
+<table border="0">
+<tbody><tr><td>
+<!-- Begin Web-Stat code v 7.0 -->
+<span id="wts1996894"></span>
+<script>var wts=document.createElement('script');wts.async=true;
+wts.src='https://wts.one/log7.js';document.head.appendChild(wts);
+wts.onload = function(){ wtslog7(1996894,5); };
+</script><noscript><a href="https://www.web-stat.com">
+<img src="https://wts.one/7/5/1996894.png" 
+alt="Web-Stat traffic analysis"></a></noscript>
+<!-- End Web-Stat code v 7.0 -->
+</td>
+</tr></tbody></table>
+
+
+
+<center>
+<table>
+<tbody><tr><td width="500"><center>
+
+<iframe border="0" marginwidth="0" marginheight="0" src="sitemap.html" frameborder="0" noresize="" width="100%" height="288" scrolling="no">
+</iframe> 
+
+
+</center></td>
+</tr></tbody></table>
+
+
+
+
+
+ <center>
+ 
+
+ 
+
+
+<table width="100%">
+<tbody><tr><td width="100%">
+<center>
+
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1950902-1', 'auto');
+ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+</center></td></tr></tbody></table>
+
+
+<!-- Default Statcounter code for Soccer predictions http://www.totomaster.com
+-->
+<script type="text/javascript">
+var sc_project=13136072; 
+var sc_invisible=1; 
+var sc_security="fc3ecfa0"; 
+</script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async=""></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img class="statcounter"
+src="https://c.statcounter.com/13136072/0/fc3ecfa0/1/" alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
+
+
+
+</center></center></center></body></html>

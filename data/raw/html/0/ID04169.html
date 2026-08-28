@@ -1,0 +1,601 @@
+<html lang="id"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BOS88 Pusat Media Publikasi Profesional</title>
+<meta name="description" content="Platform distribusi konten dan publikasi digital terpadu untuk penyebaran informasi faktual analisis mendalam dan kurasi editorial berkualitas tinggi">
+<link rel="canonical" href="https://screwfixmedia.com/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsMediaOrganization",
+  "name": "BOS88 Publication Media Hub",
+  "url": "https://screwfixmedia.com/",
+  "logo": "https://ayowasabi.com/cdn/screwfixmedia-1.jpg",
+  "description": "Pusat media publikasi independen yang berfokus pada jurnalisme berkualitas, analisis editorial, dan distribusi informasi global.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "ID"
+  }
+}
+</script>
+<style>
+:root {
+  --gray-900: #111111;
+  --gray-800: #2b2b2b;
+  --gray-600: #555555;
+  --gray-400: #9e9e9e;
+  --gray-200: #e0e0e0;
+  --gray-100: #f5f5f5;
+  --white: #ffffff;
+  
+  --font-serif: 'Georgia', 'Times New Roman', serif;
+  --font-sans: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  
+  --transition-smooth: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--gray-100);
+  color: var(--gray-900);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  color: var(--gray-900);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.editorial-line {
+  height: 1px;
+  background-color: var(--gray-200);
+  width: 100%;
+  margin: 0;
+}
+
+/* Header */
+header {
+  padding: 1.5rem 0;
+  background: rgba(245, 245, 245, 0.85);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 2px solid var(--gray-900);
+}
+
+.brand {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+}
+
+.brand-subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: var(--gray-600);
+  text-transform: uppercase;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+/* Button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  background-color: var(--gray-900);
+  color: var(--white);
+  border: 1px solid var(--gray-900);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.btn:hover {
+  background-color: var(--white);
+  color: var(--gray-900);
+}
+
+.btn:hover::before {
+  transform: translateX(100%);
+}
+
+/* Hero Section (Editorial Layout) */
+.hero {
+  padding: 5rem 0;
+  position: relative;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: stretch;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-meta {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--gray-600);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hero-meta::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: var(--gray-900);
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  letter-spacing: -1px;
+}
+
+.hero p {
+  font-size: 1.125rem;
+  color: var(--gray-600);
+  margin-bottom: 3rem;
+  max-width: 90%;
+}
+
+.hero-visual {
+  position: relative;
+}
+
+.img-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  min-height: 600px;
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: var(--transition-smooth);
+}
+
+.img-wrapper:hover img {
+  filter: grayscale(30%);
+  transform: scale(1.03);
+}
+
+.img-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: var(--white);
+  padding: 1rem 1.5rem;
+  font-size: 0.75rem;
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-top: 1px solid var(--gray-200);
+  border-right: 1px solid var(--gray-200);
+}
+
+/* Statement Section */
+.statement {
+  padding: 6rem 0;
+  background-color: var(--white);
+  border-top: 1px solid var(--gray-200);
+  border-bottom: 1px solid var(--gray-200);
+  text-align: center;
+}
+
+.statement h2 {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.3;
+}
+
+/* Features Grid */
+.features {
+  padding: 6rem 0;
+  background: linear-gradient(180deg, var(--gray-100) 0%, var(--white) 100%);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.feature-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  padding: 3rem 2rem;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 0;
+  background-color: var(--gray-900);
+  transition: var(--transition-smooth);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+}
+
+.feature-card:hover::after {
+  height: 100%;
+}
+
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 2rem;
+}
+
+.feature-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: var(--gray-900);
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card p {
+  color: var(--gray-600);
+  font-size: 0.95rem;
+}
+
+/* Showcase Section */
+.showcase {
+  padding: 6rem 0;
+  background-color: var(--gray-900);
+  color: var(--white);
+}
+
+.showcase .section-title {
+  color: var(--white);
+  text-align: left;
+  margin-bottom: 3rem;
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+.showcase-item {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.showcase-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: var(--transition-smooth);
+}
+
+.showcase-item:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.item-1 { grid-column: span 8; height: 500px; }
+.item-2 { grid-column: span 4; height: 500px; }
+.item-3 { grid-column: span 4; height: 400px; }
+.item-4 { grid-column: span 4; height: 400px; }
+.item-5 { grid-column: span 4; height: 400px; }
+
+/* Highlight Text Section */
+.highlight-section {
+  padding: 6rem 0;
+  background-color: var(--white);
+}
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.highlight-img {
+  height: 600px;
+}
+
+.highlight-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(80%);
+}
+
+.highlight-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.highlight-content p {
+  font-size: 1.1rem;
+  color: var(--gray-600);
+  margin-bottom: 1.5rem;
+}
+
+/* CTA Section */
+.cta {
+  padding: 8rem 0;
+  background-color: var(--gray-200);
+  text-align: center;
+  position: relative;
+  border-top: 1px solid var(--gray-400);
+  background-image: radial-gradient(var(--gray-400) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.cta-content {
+  background: var(--white);
+  padding: 4rem;
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px solid var(--gray-900);
+  box-shadow: 20px 20px 0px var(--gray-900);
+}
+
+.cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta p {
+  font-size: 1.125rem;
+  color: var(--gray-600);
+  margin-bottom: 2.5rem;
+}
+
+/* Footer */
+footer {
+  padding: 3rem 0;
+  background-color: var(--gray-900);
+  color: var(--gray-400);
+  text-align: center;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero-grid, .highlight-grid {
+    gap: 2rem;
+  }
+  .item-1, .item-2, .item-3, .item-4, .item-5 {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-grid, .highlight-grid {
+    grid-template-columns: 1fr;
+  }
+  .img-wrapper {
+    min-height: 400px;
+  }
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  .item-1, .item-2, .item-3, .item-4, .item-5 {
+    grid-column: span 12;
+  }
+  .cta-content {
+    padding: 2rem;
+    box-shadow: 10px 10px 0px var(--gray-900);
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="brand">
+      BOS88
+      <span class="brand-subtitle">Publication Media Hub</span>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <div class="hero-meta">Edisi Digital Global</div>
+      <h1>Episentrum Jurnalisme dan Kurasi Informasi</h1>
+      <p>Mengkurasi literatur faktual dengan standar editorial tertinggi untuk menghadirkan wawasan mendalam bagi audiens profesional secara global. Kami menetapkan presisi dalam setiap publikasi.</p>
+      <div>
+        <button class="btn" type="button">Jelajahi Arsip Editorial</button>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="img-wrapper">
+        <img src="https://ayowasabi.com/cdn/screwfixmedia-5.jpg" alt="Ruang redaksi dan publikasi media">
+        <div class="img-caption">BOS88 Media Network</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="editorial-line"></div>
+
+<section class="statement">
+  <div class="container">
+    <h2>"Integritas informasi adalah fondasi kami. Kami mendistribusikan karya analitis yang telah melalui proses verifikasi dan validasi editorial secara komprehensif."</h2>
+  </div>
+</section>
+
+<div class="editorial-line"></div>
+
+<section class="features">
+  <div class="container">
+    <h2 class="section-title">Pilar Operasional Publikasi</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        </div>
+        <h3>Sindikasi Literatur</h3>
+        <p>Distribusi silang artikel dan jurnal berstandar tinggi melalui jaringan media terafiliasi untuk memaksimalkan jangkauan informasi.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </div>
+        <h3>Analisis Investigatif</h3>
+        <p>Kolaborasi bersama para ahli untuk menghasilkan tajuk rencana dan tinjauan mendalam terhadap isu-isu sektoral terkini.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+        </div>
+        <h3>Arsip Terstruktur</h3>
+        <p>Akses tanpa batas menuju repositori digital yang merangkum dokumentasi, rilis pers, dan pangkalan data publikasi historis.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="showcase">
+  <div class="container">
+    <h2 class="section-title">Dokumentasi Liputan Spesial</h2>
+    <div class="showcase-grid">
+      <div class="showcase-item item-1">
+        <img src="https://ayowasabi.com/cdn/screwfixmedia-6.jpg" alt="Proses editorial dan kurasi berita">
+      </div>
+      <div class="showcase-item item-2">
+        <img src="https://ayowasabi.com/cdn/screwfixmedia-4.webp" alt="Distribusi media digital">
+      </div>
+      <div class="showcase-item item-3">
+        <img src="https://ayowasabi.com/cdn/screwfixmedia-3.webp" alt="Jaringan publikasi informasi">
+      </div>
+      <div class="showcase-item item-4">
+        <img src="https://ayowasabi.com/cdn/screwfixmedia-2.jpg" alt="Rapat redaksi profesional">
+      </div>
+      <div class="showcase-item item-5">
+        <img src="https://ayowasabi.com/cdn/screwfixmedia-1.jpg" alt="Pusat data literatur faktual">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="highlight-section">
+  <div class="container highlight-grid">
+    <div class="highlight-img">
+      <img src="https://ayowasabi.com/cdn/screwfixmedia-4.webp" alt="Transformasi media cetak ke digital">
+    </div>
+    <div class="highlight-content">
+      <h2>Transformasi Platform Jurnalistik Masa Depan</h2>
+      <p>Dalam era sirkulasi informasi yang masif, kedisiplinan verifikasi adalah hal mutlak. Kami menghadirkan infrastruktur media yang tidak hanya bertindak sebagai wadah distribusi, tetapi juga sebagai penyaring kebenaran.</p>
+      <p>Setiap naskah yang diterbitkan melalui platform kami menjunjung tinggi kode etik jurnalistik profesional, memberikan para pembaca kepastian atas kualitas dan akurasi literatur yang dikonsumsi.</p>
+      <button class="btn" type="button" style="margin-top: 1rem;">Pelajari Standar Editorial</button>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Inisiasi Kolaborasi Publikasi</h2>
+      <p>Kami menyambut para profesional jurnalis, institusi akademis, dan analis industri untuk mendistribusikan karya dan hasil riset melalui jaringan portal BOS88.</p>
+      <button class="btn" type="button">Ajukan Naskah Editorial</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 BOS88 Publication Media Hub. Hak cipta dilindungi oleh regulasi pers dan publikasi independen.</p>
+  </div>
+</footer>
+
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;6bc730c84fca4eca93099d7cd5a255d8&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+</body></html>

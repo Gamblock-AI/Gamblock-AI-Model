@@ -1,0 +1,1598 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>BERANDA</title>
+
+    <!-- SEO -->
+    <meta content="Institut Pemerintahan Dalam Negeri (IPDN) adalah sebuah lembaga pendidikan tinggi milik pemerintah yang bergerak di bidang kepamongprajaan yang bertujuan menghasilkan kader pemerintahan yang berkompetensi, berkarakter, dan berkepribadian." name="description">
+    <meta name="robots" content="index, follow">
+    <meta content="ipdn, IPDN, Institut Pemerintahan Dalam Negeri, Institut Pemerintahan Dalam Negeri (IPDN)" name="keywords">
+    <meta name="geo.placename" content="IPDN">
+    <meta name="geo.region" content="Indonesia">
+    <meta name="language" content="id">
+
+    <!-- Favicons -->
+    <link href="https://ipdn.ac.id/assets/img/ipdn.png" rel="shortcut icon">
+    <link href="https://ipdn.ac.id/assets/img/ipdn.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="https://ipdn.ac.id/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="https://ipdn.ac.id/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://ipdn.ac.id/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://ipdn.ac.id/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://ipdn.ac.id/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="https://ipdn.ac.id/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="https://ipdn.ac.id/assets/css/style.css" rel="stylesheet">
+    <link href="https://ipdn.ac.id/assets/css/timeline.css" rel="stylesheet">
+
+    <script async="" src="https://embed.tawk.to/56eb0398b2282a2a6ce4c691/default" charset="UTF-8" crossorigin="*"></script><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+    <!-- Costume CSS -->
+    <link rel="stylesheet" type="text/css" href="">
+    <link rel="stylesheet" type="text/css" href="">
+    <link rel="stylesheet" type="text/css" href="">
+    <!-- Bootstrap Css -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <script src=""></script>
+
+    <style type="text/css">
+        .megamenu {
+            padding: 1rem;
+        }
+
+        .list-unstyled {
+            padding-left: 0;
+            list-style: none
+        }
+
+        /* ============ desktop view ============ */
+        @media all and (min-width: 992px) {
+
+            .has-megamenu {
+                position: static !important;
+            }
+
+            .megamenu {
+                left: 0;
+                right: 0;
+                width: 100%;
+                margin-top: 0;
+            }
+
+        }
+
+        /* ============ desktop view .end// ============ */
+
+
+        /* ============ mobile view ============ */
+        @media(max-width: 991px) {
+
+            .fixed-top .navbar-collapse,
+            .sticky-top .navbar-collapse {
+                overflow-y: auto;
+                max-height: 90vh;
+                margin-top: 10px;
+            }
+        }
+
+        /* ============ mobile view .end// ============ */
+
+        .bestmegamenu {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .bar1,
+        .bar2,
+        .bar3 {
+            width: 30px;
+            height: 5px;
+            background-color: #333;
+            margin: 4px 0;
+            transition: 0.4s;
+        }
+
+        .change .bar1 {
+            -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+            transform: rotate(-45deg) translate(-9px, 6px);
+        }
+
+        .change .bar2 {
+            opacity: 0;
+        }
+
+        .change .bar3 {
+            -webkit-transform: rotate(45deg) translate(-8px, -8px);
+            transform: rotate(45deg) translate(-8px, -8px);
+        }
+    </style>
+
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function() {
+            /////// Prevent closing from click inside dropdown
+            document.querySelectorAll('.dropdown-menu').forEach(function(element) {
+                element.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            })
+        });
+        // DOMContentLoaded  end
+    </script>
+
+
+
+    <!-- <script>
+        // Cek ke server apakah IP sudah isi hari ini
+        fetch('https://ipdn.ac.id/cek_penilaian')
+            .then(response => response.json())
+            .then(data => {
+                if (!data.sudah_mengisi) {
+                    // Kalau belum pernah isi, tunggu 10 detik baru tampilkan
+                    setTimeout(function() {
+                        document.getElementById('popup-penilaian').style.display = 'block';
+                    }, 300000); // 10 detik
+                } else {
+                    // Sudah isi hari ini, tidak perlu tampilkan popup
+                    console.log("Sudah mengisi hari ini. Tidak menampilkan popup.");
+                }
+            });
+
+        // Fungsi kirim penilaian
+        function submitFeedback(status) {
+            fetch('https://ipdn.ac.id/penilaian_kirim', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    penilaian: status
+                })
+            });
+
+            document.getElementById('popup-penilaian').style.display = 'none';
+            alert('Terima kasih atas penilaian Anda!');
+        }
+    </script> -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('cek_penilaian')
+                .then(response => response.json())
+                .then(data => {
+                    if (!data.sudah_mengisi) {
+                        // Ambil waktu awal dari sessionStorage, jika belum ada maka set sekarang
+                        let waktuAwal = sessionStorage.getItem('waktu_awal');
+                        if (!waktuAwal) {
+                            waktuAwal = Date.now();
+                            sessionStorage.setItem('waktu_awal', waktuAwal);
+                        }
+
+                        // Hitung sisa waktu menuju 5 menit (300000 ms)
+                        const sisaWaktu = 60000 - (Date.now() - waktuAwal);
+
+                        if (sisaWaktu <= 0) {
+                            // Jika waktunya sudah habis, tampilkan popup
+                            tampilkanPopup();
+                        } else {
+                            // Tunggu sisa waktu sebelum menampilkan popup
+                            setTimeout(function() {
+                                tampilkanPopup();
+                            }, sisaWaktu);
+                        }
+
+                        function tampilkanPopup() {
+                            document.getElementById('popup-penilaian').style.display = 'block';
+                            // Reset waktu_awal agar 5 menit berikutnya popup muncul lagi
+                            sessionStorage.setItem('waktu_awal', Date.now());
+                        }
+                    }
+                });
+        });
+    </script>
+
+
+
+</head>
+
+<body class="mt-0">
+    <div class="col-lg-12" data-aos="fade-right" data-aos-delay="100">
+        <img src="https://ipdn.ac.id/assets/img/header/header3.jpg" class="d-flex img-fluid" alt="" width="100%" height="100%">
+    </div>
+
+    <!-- ======= Header ======= -->
+    
+    <header id="header" class="d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
+            <a class="btn-getstarted scrollto" href="#"></a>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                                                        <li><a class="nav-link scrollto active" href="https://ipdn.ac.id/">BERANDA</a></li>
+                                                            
+                    
+                            <!-- Main Menu -->
+                            <li class="dropdown"><a href="#"><span>PROFIL IPDN</span> <i class="bi bi-chevron-down"></i></a>
+                                <ul>
+                                                                                                                            <li><a href="https://ipdn.ac.id/pimpinan">PIMPINAN IPDN</a></li>
+                                            
+                                                                                                                            <li><a href="https://ipdn.ac.id/visi_misi">VISI &amp; MISI IPDN</a></li>
+                                            
+                                                                                                                            <li><a href="https://ipdn.ac.id/mars_hymne">MARS &amp; HYMNE IPDN</a></li>
+                                            
+                                                                                                                            <li><a href="https://ipdn.ac.id/makna_lambang">MAKNA LAMBANG IPDN</a></li>
+                                            
+                                                                                                                            <li><a href="https://ipdn.ac.id/senat_institut">SENAT INSTITUT</a></li>
+                                            
+                                                                                                                            <li><a href="https://ipdn.ac.id/riwayat_pimpinan">PIMPINAN IPDN DARI MASA KE MASA</a></li>
+                                            
+                                                                                                                            <li><a href="https://ipdn.ac.id/penanggung_jawab">PENANGGUNG JAWAB</a></li>
+                                            
+                                                                                                                            <li><a href="https://ipdn.ac.id/sejarah_ipdn">SEJARAH INSTITUT PEMERINTAHAN DALAM NEGERI</a></li>
+                                            
+                                                                                                                            <li><a href="https://ipdn.ac.id/lokasi_ipdn">LOKASI KAMPUS IPDN JATINANGOR</a></li>
+                                            
+                                                                    </ul>
+                            </li>
+
+                            
+                            <!-- Main Menu -->
+                            <li class="dropdown"><a href="#"><span>TRI DHARMA PERGURUAN TINGGI</span> <i class="bi bi-chevron-down"></i></a>
+                                <ul>
+                                                                            
+                                            <!-- Sub Menu -->
+                                            <li class="dropdown"><a href="#"><span>PENDIDIKAN </span> <i class="bi bi-chevron-right"></i></a>
+                                                <ul>
+                                                                                                                                                                            <li><a href="https://pascasarjana.ipdn.ac.id/" target="_blank">PASCASARJANA</a></li>
+                                                            
+                                                        
+                                                                                                            
+                                                            <!-- Sub Sub Menu -->
+                                                            <li class="dropdown"><a href="#"><span>FAKULTAS</span> <i class="bi bi-chevron-right"></i></a>
+                                                                <ul>
+                                                                                                                                                <li><a href="https://fpp.ipdn.ac.id/" target="_blank">FAKULTAS POLITIK PEMERINTAHAN</a></li>
+                                                                        
+                                                                                                                                                <li><a href="https://fmp.ipdn.ac.id/" target="_blank">FAKULTAS MANAJEMEN PEMERINTAHAN</a></li>
+                                                                        
+                                                                                                                                                <li><a href="https://fpm.ipdn.ac.id/" target="_blank">FAKULTAS PERLINDUNGAN MASYARAKAT</a></li>
+                                                                        
+                                                                                                                                    </ul>
+                                                            </li>
+
+                                                            
+                                                                                                                                                                            <li><a href="https://pppkp.ipdn.ac.id/" target="_blank">PROGRAM PROFESI KEPAMONGPRAJAAN</a></li>
+                                                            
+                                                        
+                                                                                                                                                                            <li><a href="https://ipdn.ac.id/sarana_prasarana">SARANA &amp; PRASARANA</a></li>
+                                                            
+                                                        
+                                                                                                    </ul>
+                                            </li>
+
+                                                                                    
+                                            <!-- Sub Menu -->
+                                            <li class="dropdown"><a href="#"><span>PENELITIAN </span> <i class="bi bi-chevron-right"></i></a>
+                                                <ul>
+                                                                                                                                                                            <li><a href="https://lemriska.ipdn.ac.id/" target="_blank">LEMBAGA RISET &amp; KAJIAN STRATEGIS</a></li>
+                                                            
+                                                        
+                                                                                                                                                                            <li><a href="https://ejournal.ipdn.ac.id/" target="_blank">E-JOURNAL</a></li>
+                                                            
+                                                        
+                                                                                                    </ul>
+                                            </li>
+
+                                                                                    
+                                            <!-- Sub Menu -->
+                                            <li class="dropdown"><a href="#"><span>PENGABDIAN </span> <i class="bi bi-chevron-right"></i></a>
+                                                <ul>
+                                                                                                                                                                            <li><a href="https://ipdn.ac.id/lembaga_pengabdian_masyarakat">LEMBAGA PENGABDIAN MASYARAKAT</a></li>
+                                                            
+                                                        
+                                                                                                    </ul>
+                                            </li>
+
+                                                                            </ul>
+                            </li>
+
+                            
+                            <!-- Main Menu -->
+                            <li class="dropdown"><a href="#"><span>KAMPUS DAERAH</span> <i class="bi bi-chevron-down"></i></a>
+                                <ul>
+                                                                                                                            <li><a href="https://ipdn.ac.id/ipdn_jakarta">IPDN KAMPUS JAKARTA</a></li>
+                                            
+                                                                                                                            <li><a href="https://ipdn.ac.id/ipdn_sumbar">IPDN KAMPUS SUMATERA BARAT</a></li>
+                                            
+                                                                                                                            <li><a href="https://ipdn.ac.id/ipdn_kalbar">IPDN KAMPUS KALIMANTAN BARAT</a></li>
+                                            
+                                                                                                                            <li><a href="https://ipdn.ac.id/ipdn_sulut">IPDN KAMPUS SULAWESI UTARA</a></li>
+                                            
+                                                                                                                            <li><a href="https://ipdn.ac.id/ipdn_sulsel">IPDN KAMPUS SULAWESI SELATAN</a></li>
+                                            
+                                                                                                                            <li><a href="https://ipdn.ac.id/ipdn_ntb">IPDN KAMPUS NUSA TENGGARA BARAT</a></li>
+                                            
+                                                                                                                            <li><a href="https://ipdn.ac.id/ipdn_papua">IPDN KAMPUS PAPUA</a></li>
+                                            
+                                                                    </ul>
+                            </li>
+
+                                                                <li><a class="nav-link scrollto " href="https://ipdn.ac.id/berita">BERITA</a></li>
+                                                            
+                                                    <li><a class="nav-link scrollto" href="http://spcp.ipdn.ac.id/" target="_blank">SPCP IPDN</a></li>
+                                
+                    
+                    <!-- Main Menu -->
+                    <!-- <li class="dropdown"><a href="#"><span>BAHASA</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="https://ipdn.ac.id/translate/in">Indonesia</a></li>
+                            <li><a href="https://ipdn.ac.id/translate/en">Inggris</a></li>
+                        </ul>
+                    </li> -->
+
+                    <li class="nav-item dropdown has-megamenu">
+
+                        <div class="bestmegamenu container" data-bs-toggle="dropdown" onclick="myFunction(this)">
+                            <div class="bar1"></div>
+                            <div class="bar2"></div>
+                            <div class="bar3"></div>
+                        </div>
+                        <!-- <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> MENU LAINNYA </a> -->
+                        <div class="dropdown-menu megamenu" role="menu">
+                            <div class="row g-3">
+
+                                                                
+                                                                        
+                                        
+                                        
+                                            <div class="col-lg-3 col-6">
+                                                <div class="col-megamenu">
+                                                    <h6 class="title"><a href="https://ipdn.ac.id/konten_table/konten_table/konten12">KETERANGAN</a></h6>
+                                                </div> <!-- col-megamenu.// -->
+                                            </div><!-- end col-3 -->
+
+                                        
+                                                                    
+                                                                                                                <div class="col-lg-3 col-md-6">
+                                            <div class="col-megamenu">
+                                                <h5 class="title" style="color:Red;">PENJAMINAN MUTU</h5>
+                                                
+                                                    
+                                                                                                            <h6><a href="https://lp3mi.ipdn.ac.id" target="_blank">Profil LPPPMI</a></h6>
+                                                    
+                                                
+                                                    
+                                                                                                            <h6><a href="https://sites.google.com/peg.ipdn.ac.id/lppmiipdn/visi_dan_misi/standar_mutu_akademik" target="_blank">Standar Mutu Akademik</a></h6>
+                                                    
+                                                                                            </div> <!-- col-megamenu.// -->
+                                        </div><!-- end col-3 -->
+                                                                    
+                                                                                                                <div class="col-lg-3 col-md-6">
+                                            <div class="col-megamenu">
+                                                <h5 class="title" style="color:Red;">SATU DATA</h5>
+                                                
+                                                    
+                                                                                                            <h6><a href="https://scdbv2.ipdn.ac.id/" target="_blank">Smart Campus Database</a></h6>
+                                                    
+                                                                                            </div> <!-- col-megamenu.// -->
+                                        </div><!-- end col-3 -->
+                                                                    
+                                                                                                                <div class="col-lg-3 col-md-6">
+                                            <div class="col-megamenu">
+                                                <h5 class="title" style="color:Red;">HUMAS</h5>
+                                                
+                                                    
+                                                                                                            <h6><a href="https://ipdn.ac.id/galeri">Galeri IPDN</a></h6>
+                                                    
+                                                
+                                                    
+                                                                                                            <h6><a href="https://ipdn.ac.id/buletin">Lihat Buletin</a></h6>
+                                                    
+                                                                                            </div> <!-- col-megamenu.// -->
+                                        </div><!-- end col-3 -->
+                                                                    
+                                                                                                                <div class="col-lg-3 col-md-6">
+                                            <div class="col-megamenu">
+                                                <h5 class="title" style="color:Red;">HUKUM</h5>
+                                                
+                                                    
+                                                                                                            <h6><a href="http://harum.ipdn.ac.id/" target="_blank">Harum IPDN</a></h6>
+                                                    
+                                                
+                                                    
+                                                                                                            <h6><a href="https://scdb.ipdn.ac.id/hkuser" target="_blank">Produk Hukum</a></h6>
+                                                    
+                                                                                            </div> <!-- col-megamenu.// -->
+                                        </div><!-- end col-3 -->
+                                                                    
+                                                                                                                <div class="col-lg-3 col-md-6">
+                                            <div class="col-megamenu">
+                                                <h5 class="title" style="color:Red;">PELAYANAN PUBLIK</h5>
+                                                
+                                                    
+                                                                                                            <h6><a href="http://lib.ipdn.ac.id/" target="_blank">Perpustakaan</a></h6>
+                                                    
+                                                
+                                                    
+                                                                                                            <h6><a href="https://drive.google.com/drive/folders/16a4gy2GNLLwNbtayFzsQAE8FGWdiQ1x_?usp=sharing" target="_blank">Standar Pelayanan IPDN</a></h6>
+                                                    
+                                                
+                                                    
+                                                                                                            <h6><a href="https://drive.google.com/drive/folders/1NTjSy6DtNTtMYNQNTf3LJ8Dq6AwMxprC?usp=sharing" target="_blank">Survey Kepuasan Masyarakat</a></h6>
+                                                    
+                                                
+                                                    
+                                                                                                            <h6><a href="https://ipdn.ac.id/lokasi_ipdn">Hubungi Kami</a></h6>
+                                                    
+                                                
+                                                    
+                                                                                                            <h6><a href="https://linktr.ee/poliklinikipdnjatinangor?utm_source=linktree_profile_share" target="_blank">Poliklinik IPDN</a></h6>
+                                                    
+                                                                                            </div> <!-- col-megamenu.// -->
+                                        </div><!-- end col-3 -->
+                                                                    
+                                                                                                                <div class="col-lg-3 col-md-6">
+                                            <div class="col-megamenu">
+                                                <h5 class="title" style="color:Red;">ALUMNI</h5>
+                                                
+                                                    
+                                                                                                            <h6><a href="https://ipdn.ac.id/konten_table/konten1">Alumni Penghargaan</a></h6>
+                                                    
+                                                
+                                                    
+                                                                                                            <h6><a href="https://ipdn.ac.id/prestasi_alumni">Prestasi Alumni</a></h6>
+                                                    
+                                                
+                                                    
+                                                                                                            <h6><a href="http://alumni.ipdn.ac.id/" target="_blank">Portal Alumni</a></h6>
+                                                    
+                                                
+                                                    
+                                                                                                            <h6><a href="http://alumni.ipdn.ac.id/data-alumni" target="_blank">Tracer Alumni</a></h6>
+                                                    
+                                                                                            </div> <!-- col-megamenu.// -->
+                                        </div><!-- end col-3 -->
+                                                                    
+                                                                                                                <div class="col-lg-3 col-md-6">
+                                            <div class="col-megamenu">
+                                                <h5 class="title" style="color:Red;">LAPORAN KINERJA</h5>
+                                                
+                                                    
+                                                                                                            <h6><a href="https://scdb.ipdn.ac.id/pdperingkat" target="_blank">Penyerapan Anggaran</a></h6>
+                                                    
+                                                
+                                                    
+                                                                                                            <h6><a href="http://penilaianpengasuhan.ipdn.ac.id" target="_blank">Aplikasi Penilaian Pengasuhan Praja</a></h6>
+                                                    
+                                                
+                                                    
+                                                                                                            <h6><a href="https://ipdn.ac.id/dokumen_perencanaan">Dokumen Perencanaan</a></h6>
+                                                    
+                                                                                            </div> <!-- col-megamenu.// -->
+                                        </div><!-- end col-3 -->
+                                                                    
+                                                                                                                <div class="col-lg-3 col-md-6">
+                                            <div class="col-megamenu">
+                                                <h5 class="title" style="color:Red;">PENGADUAN</h5>
+                                                
+                                                    
+                                                                                                            <h6><a href="https://kemendagri.lapor.go.id/" target="_blank">SPAN LAPOR/LAPOR KEMENDAGRI</a></h6>
+                                                    
+                                                                                            </div> <!-- col-megamenu.// -->
+                                        </div><!-- end col-3 -->
+                                                                    
+                                                                                                                <div class="col-lg-3 col-md-6">
+                                            <div class="col-megamenu">
+                                                <h5 class="title" style="color:Red;">PENDAMPINGAN BEASISWA</h5>
+                                                
+                                                    
+                                                                                                            <h6><a href="https://drive.google.com/drive/folders/1FCjWmc8s98t7_vxl5i2ItWRetOqsarm8?usp=sharing" target="_blank">Materi Bahasa Inggris</a></h6>
+                                                    
+                                                
+                                                    
+                                                                                                            <h6><a href="https://ipdn.ac.id/#">Pendampingan Penyusunan Esai</a></h6>
+                                                    
+                                                                                            </div> <!-- col-megamenu.// -->
+                                        </div><!-- end col-3 -->
+                                                                    
+                                                                                                                <div class="col-lg-3 col-md-6">
+                                            <div class="col-megamenu">
+                                                <h5 class="title" style="color:Red;">SERTIFIKASI PROFESI</h5>
+                                                
+                                                    
+                                                                                                            <h6><a href="https://lsp.ipdn.ac.id/" target="_blank">Lembaga Sertifikasi Profesi IPDN</a></h6>
+                                                    
+                                                                                            </div> <!-- col-megamenu.// -->
+                                        </div><!-- end col-3 -->
+                                                                                                </div><!-- end row -->
+                        </div> <!-- dropdown-mega-menu.// -->
+                    </li>
+
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+                <!-- <button class="btn btn-sm btn-danger ms-3" data-bs-toggle="collapse" data-bs-target="#featured-services">Menu Lainnya</button> -->
+            </nav><!-- .navbar -->
+
+            <a class="btn-getstarted scrollto" href="#"></a>
+        </div>
+    </header><!-- End Header -->
+
+    <script>
+        function myFunction(x) {
+            x.classList.toggle("change");
+        }
+    </script>
+
+    <!--Start of Tawk.to Script-->
+    <!-- <script type="text/javascript">
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/626605cc7b967b11798c4d4a/1g1f8daf4';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script> -->
+    <!--End of Tawk.to Script-->
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/56eb0398b2282a2a6ce4c691/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script--><main id="main">
+
+            <!-- ======= Info ======= -->
+        <section id="testimonials" class="team">
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="memberxxx shadow-lg">
+                        <div class="member-img">
+                            <div class="testimonials-slider swiper swiper-initialized swiper-horizontal swiper-pointer-events" data-aos="fade-up" data-aos-delay="100">
+                                <div class="swiper-wrapper" id="swiper-wrapper-b8b21e47ac792d1010" aria-live="off" style="transform: translate3d(-4464px, 0px, 0px); transition-duration: 0ms;"><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="0" role="group" aria-label="1 / 4">
+                                            <div class="testimonial-item">
+                                                <img class="img-fluid" src="https://ipdn.ac.id/assets/img/galeri/2025081310405634galeri.jpeg" onerror="this.onerror=null;this.src='https://ipdn.ac.id/assets/admin/img/not-found.png'" alt="IPDN, ipdn, Maklumat Pelayanan">
+                                            </div>
+                                        </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="1" role="group" aria-label="2 / 4">
+                                            <div class="testimonial-item">
+                                                <img class="img-fluid" src="https://ipdn.ac.id/assets/img/galeri/2025042219523432galeri.jpeg" onerror="this.onerror=null;this.src='https://ipdn.ac.id/assets/admin/img/not-found.png'" alt="IPDN, ipdn, AKREDITASI">
+                                            </div>
+                                        </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2" role="group" aria-label="3 / 4">
+                                            <div class="testimonial-item">
+                                                <img class="img-fluid" src="https://ipdn.ac.id/assets/img/galeri/2022090819192332galeri.jpg" onerror="this.onerror=null;this.src='https://ipdn.ac.id/assets/admin/img/not-found.png'" alt="IPDN, ipdn, MAKLUMAT BIRO 4">
+                                            </div>
+                                        </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-prev" data-swiper-slide-index="3" role="group" aria-label="4 / 4">
+                                            <div class="testimonial-item">
+                                                <img class="img-fluid" src="https://ipdn.ac.id/assets/img/galeri/2025072508560733galeri.png" onerror="this.onerror=null;this.src='https://ipdn.ac.id/assets/admin/img/not-found.png'" alt="IPDN, ipdn, PAKTA INTEGRITAS ">
+                                            </div>
+                                        </div>
+
+                                                                            <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="0" role="group" aria-label="1 / 4">
+                                            <div class="testimonial-item">
+                                                <img class="img-fluid" src="https://ipdn.ac.id/assets/img/galeri/2025081310405634galeri.jpeg" onerror="this.onerror=null;this.src='https://ipdn.ac.id/assets/admin/img/not-found.png'" alt="IPDN, ipdn, Maklumat Pelayanan">
+                                            </div>
+                                        </div><!-- End testimonial item -->
+                                                                            <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="1" role="group" aria-label="2 / 4">
+                                            <div class="testimonial-item">
+                                                <img class="img-fluid" src="https://ipdn.ac.id/assets/img/galeri/2025042219523432galeri.jpeg" onerror="this.onerror=null;this.src='https://ipdn.ac.id/assets/admin/img/not-found.png'" alt="IPDN, ipdn, AKREDITASI">
+                                            </div>
+                                        </div><!-- End testimonial item -->
+                                                                            <div class="swiper-slide" data-swiper-slide-index="2" role="group" aria-label="3 / 4">
+                                            <div class="testimonial-item">
+                                                <img class="img-fluid" src="https://ipdn.ac.id/assets/img/galeri/2022090819192332galeri.jpg" onerror="this.onerror=null;this.src='https://ipdn.ac.id/assets/admin/img/not-found.png'" alt="IPDN, ipdn, MAKLUMAT BIRO 4">
+                                            </div>
+                                        </div><!-- End testimonial item -->
+                                                                            <div class="swiper-slide swiper-slide-duplicate-prev" data-swiper-slide-index="3" role="group" aria-label="4 / 4">
+                                            <div class="testimonial-item">
+                                                <img class="img-fluid" src="https://ipdn.ac.id/assets/img/galeri/2025072508560733galeri.png" onerror="this.onerror=null;this.src='https://ipdn.ac.id/assets/admin/img/not-found.png'" alt="IPDN, ipdn, PAKTA INTEGRITAS ">
+                                            </div>
+                                        </div><!-- End testimonial item -->
+                                    
+                                <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="0" role="group" aria-label="1 / 4">
+                                            <div class="testimonial-item">
+                                                <img class="img-fluid" src="https://ipdn.ac.id/assets/img/galeri/2025081310405634galeri.jpeg" onerror="this.onerror=null;this.src='https://ipdn.ac.id/assets/admin/img/not-found.png'" alt="IPDN, ipdn, Maklumat Pelayanan">
+                                            </div>
+                                        </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="1" role="group" aria-label="2 / 4">
+                                            <div class="testimonial-item">
+                                                <img class="img-fluid" src="https://ipdn.ac.id/assets/img/galeri/2025042219523432galeri.jpeg" onerror="this.onerror=null;this.src='https://ipdn.ac.id/assets/admin/img/not-found.png'" alt="IPDN, ipdn, AKREDITASI">
+                                            </div>
+                                        </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2" role="group" aria-label="3 / 4">
+                                            <div class="testimonial-item">
+                                                <img class="img-fluid" src="https://ipdn.ac.id/assets/img/galeri/2022090819192332galeri.jpg" onerror="this.onerror=null;this.src='https://ipdn.ac.id/assets/admin/img/not-found.png'" alt="IPDN, ipdn, MAKLUMAT BIRO 4">
+                                            </div>
+                                        </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3" role="group" aria-label="4 / 4">
+                                            <div class="testimonial-item">
+                                                <img class="img-fluid" src="https://ipdn.ac.id/assets/img/galeri/2025072508560733galeri.png" onerror="this.onerror=null;this.src='https://ipdn.ac.id/assets/admin/img/not-found.png'" alt="IPDN, ipdn, PAKTA INTEGRITAS ">
+                                            </div>
+                                        </div></div>
+                                <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4"></span></div>
+                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- End of Info Section -->
+
+    <!-- ======= Event Section ======= -->
+            <section id="services" class="services" style="background: linear-gradient(90deg, rgba(148,187,233,1) 0%,rgba(238,174,202,1) 100% );">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h3><span>EVENT</span></h3>
+                    <hr>
+                </div>
+
+                <div class="row">
+
+                    
+                        <div class="col-lg-6 col-md-6 mb-3" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="icon-box shadow-lg">
+                                <div class="icon"><i class="bx bx-calendar"></i></div>
+                                <h4><a href="https://ipdn.ac.id/event/1">21 January 2025</a></h4>
+                                <p>Kuesioner Tracer Study IPDN Tahun 2025</p>
+                            </div>
+                        </div>
+                    
+                        <div class="col-lg-6 col-md-6 mb-3" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="icon-box shadow-lg">
+                                <div class="icon"><i class="bx bx-calendar"></i></div>
+                                <h4><a href="https://ipdn.ac.id/event/0">29 July 2024</a></h4>
+                                <p>SIDANG TERBUKA SENAT INSTITUT PEMERINTAHAN DALAM NEGERI</p>
+                            </div>
+                        </div>
+                                    </div>
+
+            </div>
+        </section>
+        <!-- End Event Section -->
+
+    <!-- ======= Berita Section ======= -->
+    <section id="team" class="team section-bg">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h3><span>BERITA</span></h3>
+                <hr>
+            </div>
+
+            <div class="row">
+
+                                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        <div class="member">
+                            <div class="member-img">
+                                <img src="https://ipdn.ac.id/assets/img/berita/20260409160339223beritaWhatsApp_Image_2026-04-09_at_15_54_36_(1).jpeg" class="img-fluid" onerror="this.onerror=null;this.src='https://ipdn.ac.id/assets/admin/img/not-found.png'" alt="IPDN, ipdn, Dies Natalis IPDN ke-70 menjadi Simbol Komitmen Menuju World Class University">
+                                <div class="social">
+                                    <a href="https://ipdn.ac.id/berita/detail/MjQz"><i class="bi bi-eye"></i></a>
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h4>Dies Natalis IPDN ke-70 menjadi Simbol Komitmen Menuju World Class University</h4>
+                                <p><strong><i>31 March 2026</i></strong></p>
+                                <span>Jatinangor (31/03/2026), lebih dari sekedar perayaan angka, Dies Natalis IPDN ke-70 menjadi simbol komitmen lembaga pendidikan tinggi kedinasan ini untuk terus memberikan yang terbaik dalam perjalanan...</span><br>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        <div class="member">
+                            <div class="member-img">
+                                <img src="https://ipdn.ac.id/assets/img/berita/20260409160217222beritakomisi_ii.jpg" class="img-fluid" onerror="this.onerror=null;this.src='https://ipdn.ac.id/assets/admin/img/not-found.png'" alt="IPDN, ipdn, Komisi II DPR RI Tegaskan Komitmen untuk Terus Mendukung Kemajuan IPDN">
+                                <div class="social">
+                                    <a href="https://ipdn.ac.id/berita/detail/MjQy"><i class="bi bi-eye"></i></a>
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h4>Komisi II DPR RI Tegaskan Komitmen untuk Terus Mendukung Kemajuan IPDN</h4>
+                                <p><strong><i>11 March 2026</i></strong></p>
+                                <span>Jatinangor (11/03/2026), Komisi II DPR RI tegaskan komitmen untuk terus mendukung keberlanjutan dan kemajuan IPDN dalam segala aspek. Hal ini disampaikan oleh Ketua Tim/Ketua Komisi II DPR RI, Dr. H.M...</span><br>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        <div class="member">
+                            <div class="member-img">
+                                <img src="https://ipdn.ac.id/assets/img/berita/20260409155758221beritaWhatsApp_Image_2026-04-09_at_15_49_48.jpeg" class="img-fluid" onerror="this.onerror=null;this.src='https://ipdn.ac.id/assets/admin/img/not-found.png'" alt="IPDN, ipdn, IPDN Untuk Negeri, Aceh Mari Bangkit Bersama">
+                                <div class="social">
+                                    <a href="https://ipdn.ac.id/berita/detail/MjQx"><i class="bi bi-eye"></i></a>
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h4>IPDN Untuk Negeri, Aceh Mari Bangkit Bersama</h4>
+                                <p><strong><i>03 February 2026</i></strong></p>
+                                <span>Aceh (03/02/2026), Genap 1 bulan sudah misi kemanusiaan praja IPDN dan ASN Kemendagri membantu masyarakat Aceh Tamiang membangun kembali sistem birokrasi pasca bencana banjir bandang berlangsung. Seju...</span><br>
+                            </div>
+                        </div>
+                    </div>
+                
+                <div class="section-title">
+                    <h2>
+                        <div class="pricing text-center">
+                            <a href="https://ipdn.ac.id/berita" class="btn-buy">
+                                <i class="bi bi-eye"></i> Lihat Berita Lainnya
+                            </a>
+                        </div>
+                    </h2>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Berita Section -->
+
+
+
+    <!-- ======= Buletin Section ======= -->
+    <section id="team" class="team contact">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h3><span>BULLETIN</span></h3>
+                <hr>
+            </div>
+
+            <div class="row">
+
+                <style type="text/css">
+                    .bookshelf .thumb {
+                        display: inline-block;
+                        cursor: pointer;
+                        margin: 0px 0.5%;
+                        width: 19% !important;
+                        box-shadow: 0px 1px 3px rgba(0, 0, 0, .3);
+                        max-width: 540px;
+                    }
+
+                    .bookshelf .thumb img {
+                        width: 100%;
+                        display: block;
+                        vertical-align: top;
+                    }
+
+                    .bookshelf .shelf-img {
+                        z-index: 0;
+                        height: auto;
+                        max-width: 100%;
+                        vertical-align: top;
+                        margin-top: -12px;
+                    }
+
+                    .bookshelf .covers {
+                        width: 100%;
+                        height: auto;
+                        z-index: 99;
+                        position: relative;
+                        text-align: center;
+                    }
+
+                    .bookshelf {
+                        text-align: center;
+                        padding: 0px;
+                    }
+
+                    /* Pagination */
+                    .pagination>li>a,
+                    .pagination>li>span {
+                        color: #c0392b;
+                    }
+
+                    .pagination>li>a:hover,
+                    .pagination>li>span:hover {
+                        color: #c0392b !important;
+                    }
+
+                    .pagination>li.active>a {
+                        background-color: #c0392b !important;
+                        border: 0;
+                        color: #fff;
+                    }
+                </style>
+
+                <!-- PDF HERE -->
+                <div class="bookshelf">
+                    <div class="covers">
+                                                    <div class="thumb book-1">
+                                <a href="https://ipdn.ac.id/buletin/detail/MTI=">
+                                    <img src="https://ipdn.ac.id/assets/img/buletin/202310171500342buletinScreenshot_2023-10-17_at_14_55_20_11zon.jpg">
+                                </a>
+                            </div>
+                                                    <div class="thumb book-1">
+                                <a href="https://ipdn.ac.id/buletin/detail/MTE=">
+                                    <img src="https://ipdn.ac.id/assets/img/buletin/202307071108060buletinbuletin_ipdn_edisi_maret-1_page-0001.jpg">
+                                </a>
+                            </div>
+                                                    <div class="thumb book-1">
+                                <a href="https://ipdn.ac.id/buletin/detail/MTA=">
+                                    <img src="https://ipdn.ac.id/assets/img/buletin/202307071108471buletinbuletin_ipdn_edisi_april-1_page-0001.jpg">
+                                </a>
+                            </div>
+                                            </div>
+                    <img class="shelf-img" src="https://ipdn.ac.id/assets/pdf/images/shelf_metal.png">
+                </div>
+
+                <div class="section-title">
+                    <h2>
+                        <div class="pricing text-center">
+                            <a href="https://ipdn.ac.id/buletin" class="btn-buy">
+                                <i class="bi bi-eye"></i> Lihat Buletin Lainnya
+                            </a>
+                        </div>
+                    </h2>
+                </div>
+                <!-- End Of PDF -->
+
+
+
+
+                <!--                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        <div class="member">
+                            <div class="member-img">
+                                <img src="https://ipdn.ac.id/assets/img/buletin/202310171500342buletinScreenshot_2023-10-17_at_14_55_20_11zon.jpg" class="img-fluid" onerror="this.onerror=null;this.src='https://ipdn.ac.id/assets/admin/img/not-found.png'" alt="IPDN, ipdn, BULETIN BHINEKA NARA EKA BHAKTI">
+                                <div class="social">
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal12"><i class="bi bi-eye"></i></button>
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h4>BULETIN BHINEKA NARA EKA BHAKTI</h4>
+                                <h4>Edisi Mei 2023</h4>
+                                <span>Mei 2023</span><br>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        <div class="member">
+                            <div class="member-img">
+                                <img src="https://ipdn.ac.id/assets/img/buletin/202307071108060buletinbuletin_ipdn_edisi_maret-1_page-0001.jpg" class="img-fluid" onerror="this.onerror=null;this.src='https://ipdn.ac.id/assets/admin/img/not-found.png'" alt="IPDN, ipdn, BULETIN BHINEKA NARA EKA BHAKTI">
+                                <div class="social">
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal11"><i class="bi bi-eye"></i></button>
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h4>BULETIN BHINEKA NARA EKA BHAKTI</h4>
+                                <h4>Edisi Dies Natalis IPDN ke-67</h4>
+                                <span>Maret 2023</span><br>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        <div class="member">
+                            <div class="member-img">
+                                <img src="https://ipdn.ac.id/assets/img/buletin/202307071108471buletinbuletin_ipdn_edisi_april-1_page-0001.jpg" class="img-fluid" onerror="this.onerror=null;this.src='https://ipdn.ac.id/assets/admin/img/not-found.png'" alt="IPDN, ipdn, BULETIN BHINEKA NARA EKA BHAKTI">
+                                <div class="social">
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal10"><i class="bi bi-eye"></i></button>
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h4>BULETIN BHINEKA NARA EKA BHAKTI</h4>
+                                <h4>Edisi Halal-Bihalal</h4>
+                                <span>April 2023</span><br>
+                            </div>
+                        </div>
+                    </div>
+                 -->
+
+                <!-- Modal -->
+                <!-- <div class="section-title">
+                    <h2>
+                        <div class="pricing text-center">
+                            <a href="https://ipdn.ac.id/buletin" class="btn-buy">
+                                <i class="bi bi-eye"></i> Lihat Buletin Lainnya
+                            </a>
+                        </div>
+                    </h2>
+                </div> -->
+
+            </div>
+
+        </div>
+    </section>
+    <!-- End Buletin Section -->
+
+    <!-- ======= Pendidikan Section ======= -->
+    <section id="contact" class="section-bg">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h3><span>PENDIDIKAN</span></h3>
+                <hr>
+                <p align="justify">Institut Pemerintahan Dalam Negeri (IPDN) adalah sebuah lembaga pendidikan tinggi milik pemerintah yang bergerak di bidang kepamongprajaan yang bertujuan menghasilkan kader pemerintahan yang berkompetensi, berkarakter, dan berkepribadian.</p>
+                <p align="justify">Institut Pemerintahan Dalam Negeri menyelenggarakan program pendidikan meliputi program Diploma IV. Sarjana, Pascasarjana dan Program Profesi Kepamongprajaan. </p>
+            </div>
+            <style>
+                .imgxxx {
+                    border: 2px solid #fff;
+                    -moz-box-shadow: 10px 10px 5px #ccc;
+                    -webkit-box-shadow: 10px 10px 5px #ccc;
+                    box-shadow: 10px 10px 5px #ccc;
+                    -moz-border-radius: 25px;
+                    -webkit-border-radius: 25px;
+                    border-radius: 25px;
+                }
+            </style>
+            <div class="row" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-4 col-md-6">
+                    <div class="info-box shadow p-3 bg-white rounded mb-4">
+                        <div class="card-body text-primary" align="center">
+                            <h5 class="card-title">
+                                <a href="https://fpp.ipdn.ac.id/" target="_blank">FPP</a>
+                            </h5>
+                            <hr>
+                            <p class="card-text">Fakultas Politik &nbsp; Pemerintahan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="info-box shadow p-3 bg-white rounded mb-4">
+                        <div class="card-body text-primary" align="center">
+                            <h5 class="card-title">
+                                <a href="https://fmp.ipdn.ac.id/" target="_blank">FMP</a>
+                            </h5>
+                            <hr>
+                            <p class="card-text">Fakultas Manajemen Pemerintahan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="info-box shadow p-3 bg-white rounded mb-4">
+                        <div class="card-body text-primary" align="center">
+                            <h5 class="card-title">
+                                <a href="https://fpm.ipdn.ac.id/" target="_blank">FPM</a>
+                            </h5>
+                            <hr>
+                            <p class="card-text">Fakultas Perlindungan Masyarakat</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" data-aos="fade-up" data-aos-delay="100">
+            </div>
+
+            <div class="row align-items-end" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-4 col-md-6">
+                    <div class="info-box shadow p-3 bg-white rounded mb-4">
+                        <div class="card-body text-primary" align="center">
+                            <h5 class="card-title">
+                                Program <br> Pasca Sarjana
+                            </h5>
+                            <hr>
+                            <p class="card-text">Program Magister dan Doktor</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="mb-4" align="center">
+                        <img src="https://ipdn.ac.id/assets/img/img4.jpg" class="img-fluid imgxxx" onerror="this.onerror=null;this.src='https://ipdn.ac.id/assets/admin/img/not-found.png'" alt="IPDN, ipdn, pendidikan, Institut Pemerintahan Dalam Negeri, Fakultas Politik Pemerintahan, Fakultas Manajemen Pemerintahan, Fakultas Perlindungan Masyarakat">
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="info-box shadow p-3 bg-white rounded mb-4">
+                        <div class="card-body text-primary" align="center">
+                            <h5 class="card-title">
+                                Program Profesi Kepamongprajaan
+                            </h5>
+                            <hr>
+                            <p class="card-text">Program Profesi Kepamongprajaan</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </div></section><!-- End Pendidikan Section -->
+
+    <!-- ======= Penelitian Section ======= -->
+    <section id="about" class="about contact">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h3><span>PENELITIAN</span></h3>
+                <hr>
+                <p>Warek Bidang Akademik menyatakan bahwa penelitian merupakan salah satu pilar dari Tri Dharma Pendidikan yang wajib dilaksanakan oleh dosen-dosen IPDN, karena penelitian ini dapat meningkatkan kualitas dosen yang juga akan meningkatkan nama baik dan kedibilitas IPDN, “Dosen-dosen IPDN harus aktif membuat penelitian, dengan harapan penelitian ini nantinya dapat dipublikasikan dalam jurnal-jurnal ilmiah. IPDN juga sudah memiliki beberapa platform yang dapat membantu mempublikasikan jurnal-jurnal penelitian atau hasil riset dosen dan praja IPDN, jadi bisa dimanfaatkan secara maksimal”</p>
+            </div>
+
+                            <div class="row">
+                    <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+                        <img src="https://ipdn.ac.id/assets/img/berita/20231018153330158beritaWhatsApp_Image_2023-10-18_at_13_54_43.jpeg" class="img-fluid imgxxx" onerror="this.onerror=null;this.src='https://ipdn.ac.id/assets/admin/img/not-found.png'" alt="IPDN, ipdn, Dosen IPDN Proaktif Berikan 10 Judul Penelitian Tahun Ini">
+                    </div>
+                    <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                        <h3 align="justify">Dosen IPDN Proaktif Berikan 10 Judul Penelitian Tahun Ini</h3>
+                        <p class="fst-italic">18 October 2023</p>
+                        <p align="justify">Jatinangor (18/10/2023), demi menjadi lembaga pendidikan tinggi yang dapat diandalkan dalam menyikapi berbagai tantangan dan dinamika perubahan, IPDN terus melakukan inovasi dan terobosan terutama dalam pelaksanaan Tri Dharma Perguruan Tinggi. Salah satunya yakni dengan melaksanakan kegiatan penelitian yang dilakukan oleh para dosen yang mengajar di IPDN. Rektor IPDN, Prof. Dr. Drs. H. Hadi Prabowo., M.M hari ini hadir secara langsung dalam acara Seminar Evaluasi dan Pelaporan Penelitian Kelompo...</p>
+
+                        <div class="section-title">
+                            <h2>
+                                <div class="pricing text-center">
+                                    <a href="https://ipdn.ac.id/berita/detail/MTc4" class="btn-buy">
+                                        <i class="bi bi-eye"></i> Baca Selengkapnya
+                                    </a>
+                                </div>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            
+        </div>
+    </section><!-- End Penelitian Section -->
+
+    <!-- ======= Pengabdian Section ======= -->
+    <section id="about" class="about section-bg">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h3><span>PENGABDIAN</span></h3>
+                <hr>
+                <p align="justify">
+                    Pengabdian kepada masyarakat dilaksanakan untuk memberikan kontribusi penyelenggaraan pemerintahan daerah, pembangunan daerah, pengembangan wilayah dan pemberdayaan masyarakat melalui kerja sama dengan institusi lain.
+                </p>
+                <p align="justify">
+                    Civitas Akademika IPDN melakukan Kunjungan dan memberikan bantuan kepada masyarakat yang terkena bencana tanah longsor di Desa Cimanggung, Kecamatan Cimanggung, Kabupaten Sumedang
+                </p>
+
+            </div>
+
+                            <div class="row">
+                    <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                        <h3 align="justify">IPDN Untuk Negeri, Aceh Mari Bangkit Bersama</h3>
+                        <p class="fst-italic">03 February 2026</p>
+                        <p align="justify">Aceh (03/02/2026), Genap 1 bulan sudah misi kemanusiaan praja IPDN dan ASN Kemendagri membantu masyarakat Aceh Tamiang membangun kembali sistem birokrasi pasca bencana banjir bandang berlangsung. Sejumlah 861 orang praja dan 273 ASN Kemendagri ditambah 2 orang Wakil Rektor IPDN dengan total 1.136 orang yang terbentuk dalam Satuan Tugas Pemulihan Bencana Aceh hadir membantu masyarakat disana untuk pemulihan wilayah. Total 38 gedung di Komplek Kantor Pemerintahan Aceh Tamiang yang terdiri atas 32 ...</p>
+
+                        <div class="section-title">
+                            <h2>
+                                <div class="pricing text-center">
+                                    <a href="https://ipdn.ac.id/berita/detail/MjQx" class="btn-buy">
+                                        <i class="bi bi-eye"></i> Baca Selengkapnya
+                                    </a>
+                                </div>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+                        <img src="https://ipdn.ac.id/assets/img/berita/20260409155758221beritaWhatsApp_Image_2026-04-09_at_15_49_48.jpeg" class="img-fluid imgxxx" onerror="this.onerror=null;this.src='https://ipdn.ac.id/assets/admin/img/not-found.png'" alt="IPDN, ipdn, IPDN Untuk Negeri, Aceh Mari Bangkit Bersama">
+                    </div>
+                </div>
+            
+        </div>
+    </section><!-- End Pengabdian Section -->
+
+    <!-- ======= Smart Campus Section ======= -->
+    <section id="featured-services" class="featured-services" style="background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);">
+
+        <div class="container" data-aos="fade-up">
+            <div class="row">
+
+                <div class="section-title text-light">
+                    <h3>SMART<span> CAMPUS</span></h3>
+                    <p>Sistem pendidikan IPDN telah menerapkan dan memadukan sistem pembelajaran dengan penggunaan Teknologi Informasi untuk mempermudah dalam kegiatan proses belajar-mengajar dengan memanfaatkan Teknologi Informasi.</p>
+                </div>
+                
+                                    <div class="col-lg-3 mb-4 text-center">
+                        <div class="icon-box shadow-lg rounded" data-aos="fade-up" data-aos-delay="200">
+                            
+                                                            <h4 class="title mt-3 mb-1"><a target="_blank">SATU DATA</a></h4>
+                                <!-- Sub menu -->
+                                                                    
+                                                                            <a class="description mb-3" href="https://scdbv2.ipdn.ac.id/" target="_blank">Smart Campus Database</a> <br>
+                                    
+                                                        </div>
+                    </div>
+                                    <div class="col-lg-3 mb-4 text-center">
+                        <div class="icon-box shadow-lg rounded" data-aos="fade-up" data-aos-delay="200">
+                            
+                                                            <h4 class="title mt-3 mb-1"><a target="_blank">SIAP</a></h4>
+                                <!-- Sub menu -->
+                                                                    
+                                                                            <a class="description mb-3" href="https://siap.ipdn.ac.id/gate/login" target="_blank">Sistem Informasi Akademik Terpadu</a> <br>
+                                    
+                                                        </div>
+                    </div>
+                                    <div class="col-lg-3 mb-4 text-center">
+                        <div class="icon-box shadow-lg rounded" data-aos="fade-up" data-aos-delay="200">
+                            
+                                                            <h4 class="title mt-3 mb-1"><a target="_blank">PERPUSTAKAAN</a></h4>
+                                <!-- Sub menu -->
+                                                                    
+                                                                            <a class="description mb-3" href="https://lib.ipdn.ac.id/" target="_blank">Website Perpustakaan IPDN</a> <br>
+                                    
+                                                        </div>
+                    </div>
+                                    <div class="col-lg-3 mb-4 text-center">
+                        <div class="icon-box shadow-lg rounded" data-aos="fade-up" data-aos-delay="200">
+                            
+                                                            <h4 class="title mt-3 mb-1"><a target="_blank">PENYERAPAN ANGGARAN</a></h4>
+                                <!-- Sub menu -->
+                                                                    
+                                                                            <a class="description mb-3" href="https://scdb.ipdn.ac.id/home" target="_blank">Aplikasi Penyerapan Anggaran</a> <br>
+                                    
+                                                        </div>
+                    </div>
+                                    <div class="col-lg-3 mb-4 text-center">
+                        <div class="icon-box shadow-lg rounded" data-aos="fade-up" data-aos-delay="200">
+                            
+                                                            <h4 class="title mt-3 mb-1"><a target="_blank">MONITORING PEMBELAJARAN</a></h4>
+                                <!-- Sub menu -->
+                                                                    
+                                                                            <a class="description mb-3" href="https://presensi.ipdn.ac.id/" target="_blank">Aplikasi Monitoring Pembelajaran</a> <br>
+                                    
+                                                        </div>
+                    </div>
+                                    <div class="col-lg-3 mb-4 text-center">
+                        <div class="icon-box shadow-lg rounded" data-aos="fade-up" data-aos-delay="200">
+                            
+                                                            <h4 class="title mt-3 mb-1"><a target="_blank">MONITORING KEHADIRAN</a></h4>
+                                <!-- Sub menu -->
+                                                                    
+                                                                            <a class="description mb-3" href="https://presensi.ipdn.ac.id/" target="_blank">Aplikasi Monitoring Kehadiran</a> <br>
+                                    
+                                                        </div>
+                    </div>
+                                    <div class="col-lg-3 mb-4 text-center">
+                        <div class="icon-box shadow-lg rounded" data-aos="fade-up" data-aos-delay="200">
+                            
+                                                            <h4 class="title mt-3 mb-1"><a target="_blank">DATA PRAJA</a></h4>
+                                <!-- Sub menu -->
+                                                                    
+                                                                            <a class="description mb-3" href="https://scdb.ipdn.ac.id/" target="_blank">Aplikasi Data Praja</a> <br>
+                                    
+                                                        </div>
+                    </div>
+                                    <div class="col-lg-3 mb-4 text-center">
+                        <div class="icon-box shadow-lg rounded" data-aos="fade-up" data-aos-delay="200">
+                            
+                                                            <h4 class="title mt-3 mb-1"><a target="_blank">REPOSITORY</a></h4>
+                                <!-- Sub menu -->
+                                                                    
+                                                                            <a class="description mb-3" href="http://eprints2.ipdn.ac.id/" target="_blank">Aplikasi perpustakaan digital </a> <br>
+                                    
+                                                        </div>
+                    </div>
+                                    <div class="col-lg-3 mb-4 text-center">
+                        <div class="icon-box shadow-lg rounded" data-aos="fade-up" data-aos-delay="200">
+                            
+                                                            <h4 class="title mt-3 mb-1"><a target="_blank">E JOURNAL</a></h4>
+                                <!-- Sub menu -->
+                                                                    
+                                                                            <a class="description mb-3" href="https://ejournal-new.ipdn.ac.id/" target="_blank">Jurnal IPDN</a> <br>
+                                    
+                                                        </div>
+                    </div>
+                                    <div class="col-lg-3 mb-4 text-center">
+                        <div class="icon-box shadow-lg rounded" data-aos="fade-up" data-aos-delay="200">
+                            
+                                                            <h4 class="title mt-3 mb-1"><a target="_blank">E LEARNING</a></h4>
+                                <!-- Sub menu -->
+                                                                    
+                                                                            <a class="description mb-3" href="http://elearning.ipdn.ac.id/" target="_blank">Sistem pembelajaran digital</a> <br>
+                                    
+                                                        </div>
+                    </div>
+                                    <div class="col-lg-3 mb-4 text-center">
+                        <div class="icon-box shadow-lg rounded" data-aos="fade-up" data-aos-delay="200">
+                            
+                                                            <h4 class="title mt-3 mb-1"><a target="_blank">HARUM IPDN</a></h4>
+                                <!-- Sub menu -->
+                                                                    
+                                                                            <a class="description mb-3" href="http://harum.ipdn.ac.id/" target="_blank">Aplikasi Harmonisasi Produk Hukum</a> <br>
+                                    
+                                                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </section><!-- End Smart Campus Section -->
+
+    <!-- ======= Seputar Kampus Section ======= -->
+    <section id="team" class="team section-bg">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h3>SEPUTAR KAMPUS <span>IPDN</span></h3>
+                <hr>
+                <p align="justify">IPDN meniliki Beberapa Fasilitas Kampus sebagai Penunjang Kegiatan Praja dalam mengikuti Program Pendidikan diantaranya:</p>
+                <p align="justify">&nbsp;&nbsp; 1. Ruang kuliah: luas ruangan seluruhnya 8.820 m2 (64 ruangan yang terdiri dari 8 ruang besar dan 56 ruang kecil).</p>
+                <p align="justify">&nbsp;&nbsp; 2. Perpustakaan: luas ruangan 400 m2, koleksi 1947 judul, 48.375 eksemplar.</p>
+                <p align="justify">&nbsp;&nbsp; 3. Laboratorium: luas ruangan seluruhnya 800 m2, laboratorium terpadu (komputer, bahasa, dan pemerintahan).</p>
+                <p align="justify">&nbsp;&nbsp; 4. Lembaga penelitian: ada ruangan untuk penelitian dan pengabdian kepada masyarakat (100 m2).</p>
+            </div>
+
+            <div class="row">
+
+                                                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        <div class="member">
+                            <div class="member-img">
+                                <img src="https://ipdn.ac.id/assets/img/galeri/202203201544038galeri.jpg" class="img-fluid" onerror="this.onerror=null;this.src='https://ipdn.ac.id/assets/admin/img/not-found.png'" alt="IPDN, ipdn, Sarana dan Prasarana">
+                            </div>
+                            <div class="member-info">
+                                <h4>Sarana dan Prasarana</h4>
+                            </div>
+                        </div>
+                    </div>
+                
+                                                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        <div class="member">
+                            <div class="member-img">
+                                <img src="https://ipdn.ac.id/assets/img/galeri/2022032016011723galeri.JPG" class="img-fluid" onerror="this.onerror=null;this.src='https://ipdn.ac.id/assets/admin/img/not-found.png'" alt="IPDN, ipdn, Fasilitas">
+                            </div>
+                            <div class="member-info">
+                                <h4>Fasilitas</h4>
+                            </div>
+                        </div>
+                    </div>
+                
+                                                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        <div class="member">
+                            <div class="member-img">
+                                <img src="https://ipdn.ac.id/assets/img/galeri/2022032016035327galeri.jpg" class="img-fluid" onerror="this.onerror=null;this.src='https://ipdn.ac.id/assets/admin/img/not-found.png'" alt="IPDN, ipdn, Tempat Ibadah">
+                            </div>
+                            <div class="member-info">
+                                <h4>Tempat Ibadah</h4>
+                            </div>
+                        </div>
+                    </div>
+                
+                <div class="section-title">
+                    <h2>
+                        <div class="pricing text-center">
+                            <a href="https://ipdn.ac.id/sarana_prasarana" class="btn-buy">
+                                <i class="bi bi-eye"></i> Lihat Sarana Prasarana
+                            </a>
+                        </div>
+                    </h2>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Seputar Kampus Section -->
+
+    <!-- ======= Pendaftaran SPCP Section ======= -->
+    <section id="hero" class="d-flex align-items-center">
+        <div class="container" data-aos="zoom-out" data-aos-delay="100">
+            <h1>Seleksi Penerimaan <span> Calon Praja</span></h1>
+            <h2 align="justify"><b>
+                    Berdasarkan Surat Menteri Pendayagunaan
+                    Reformasi
+                    Birokrasi
+                    Aparatur Nomor
+                    Negara dan B/1977/M.SM.01.00/2024 tanggal 6 Mei 2024 Hal Persetujuan Prinsip Kebutuhan Praja Sekolah Kedinasan dari Institut Pemerintahan Dalam Negeri Tahun Anggaran 2024 untuk Mengisi Kebutuhan CPNS di Lingkungan Instansi Pemerintah, telah ditetapkan formasi Calon Praja IPDN sebanyak 721 (tujuh ratus dua puluh satu) untuk SPCP IPDN Tahun 2024, sehingga Kementerian Dalam Negeri Republik Indonesia memberikan kesempatan bagi Putra/Putri Warga Negara Republik Indonesia untuk mengikuti Seleksi Penerimaan Calon Praja (SPCP) Institut Pemerintahan Dalam Negeri (IPDN) Tahun 2024.
+                </b></h2>
+            <div class="d-flex">
+                <a href="http://spcp.ipdn.ac.id/" class="btn-get-started scrollto">Daftar SPCP</a>
+            </div>
+        </div>
+    </section><!-- End Pendaftaran SPCP -->
+
+
+
+
+
+
+
+
+</main><!-- End #main -->
+
+
+<div class="pdf-container">
+            <div class="modal fade" id="exampleModal12" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class=" modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe style="background-color: white;" src="https://drive.google.com/file/d/1eu6wBk1UPaVDS3FJkIB2QWcxUvrkzo-b/preview" width="100%" height="900"></iframe>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="modal fade" id="exampleModal11" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class=" modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe style="background-color: white;" src="https://drive.google.com/file/d/1ZK5Z6LG_HquQfbW5nUUJgdc8_8rSFow5/preview" width="100%" height="900"></iframe>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="modal fade" id="exampleModal10" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class=" modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe style="background-color: white;" src="https://drive.google.com/file/d/1zbT0w1ifrlKiviz43MQLU4bukE-uc4hp/preview" width="100%" height="900"></iframe>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+      <!-- <div class="footer-newsletter">
+          <div class="row justify-content-center">
+              <div class="col-lg-4 mb-5">
+                  <div class="embed-responsive embed-responsive-21by9">
+                      <iframe width="390" height="220" class="embed-responsive-item" src="https://www.youtube.com/embed/eH2VGTKbMZg" frameborder="0" allowfullscreen></iframe>
+                  </div>
+              </div>
+              <div class="col-lg-4 mb-5">
+                  <div class="embed-responsive embed-responsive-21by9">
+                      <iframe width="390" height="220" class="embed-responsive-item" src="https://www.youtube.com/embed/ciuHabZoTx0" frameborder="0" allowfullscreen></iframe>
+                  </div>
+              </div>
+              <div class="col-lg-4 mb-5">
+                  <div class="embed-responsive embed-responsive-21by9">
+                      <iframe width="390" height="220" class="embed-responsive-item" src="https://www.youtube.com/embed/_YtyiKLMQNo" frameborder="0" allowfullscreen></iframe>
+                  </div>
+              </div>
+              <div class="col-lg-4 mb-5">
+                  <div class="embed-responsive embed-responsive-21by9">
+                      <iframe width="390" height="220" class="embed-responsive-item" src="https://www.youtube.com/embed/OwCLjpMN3N4" frameborder="0" allowfullscreen></iframe>
+                  </div>
+              </div>
+              <div class="col-lg-4 mb-5">
+                  <div class="embed-responsive embed-responsive-21by9">
+                      <iframe width="390" height="220" class="embed-responsive-item" src="https://www.youtube.com/embed/K9C1KZijJsQ" frameborder="0" allowfullscreen></iframe>
+                  </div>
+              </div>
+              <div class="col-lg-4 mb-5">
+                  <div class="embed-responsive embed-responsive-21by9">
+                      <iframe width="390" height="220" class="embed-responsive-item" src="https://www.youtube.com/embed/h-tGfpO4U-w" frameborder="0" allowfullscreen></iframe>
+                  </div>
+              </div>
+          </div>
+      </div> -->
+
+      <div class="footer-top">
+          <div class="container">
+              <div class="row">
+
+                  <div class="col-lg-3 col-md-6 footer-contact">
+                      <h3>Institut Pemerintahan Dalam Negeri<span>.</span></h3>
+                      <p>
+                          <i class="bx bx-current-location"></i> Jalan Ir. Soekarno KM 20, Cibeusi,<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jatinangor, Kabupaten Sumedang<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jawa Barat 45363<br><br>
+                          <!--<i class="bx bx-phone-outgoing"></i><strong> Tel:</strong> (022) 7798252<br>-->
+                          <!--<i class="bx bx-phone-call"></i><strong> Fax:</strong> (021) 7798256<br>-->
+                          <i class="bi bi-envelope"></i> <a href="mailto:humas@ipdn.ac.id"><strong> humas@ipdn.ac.id</strong></a><br>
+                          <i class="bi bi-instagram"></i> <a href="https://www.instagram.com/humas.ipdn/" target="_blank"><strong> humas.ipdn</strong></a><br>
+                      </p>
+                  </div>
+
+                  <div class="col-lg-3 col-md-6 footer-links">
+                      <h4>Tautan Lainya</h4>
+                      <ul>
+                          <li><i class="bx bx-chevron-right"></i> <a href="https://kemendagri.go.id">Kementerian Dalam Negeri</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="https://jakarta.ipdn.ac.id/">IPDN Kampus Jakarta</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="https://ipdnkalbar.ac.id/">IPDN Kampus Kalbar</a></li>
+                      </ul>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 footer-links">
+                      <h4>Youtube</h4>
+                      <ul>
+                          <li><i class="bx bx-chevron-right"></i> <a target="_blank" href="https://youtu.be/eH2VGTKbMZg">[HIGHLIGHTS] TESTIMONI DIES NATALIS KE 65 INSTITUT PEMERINTAHAN DALAM NEGERI TAHUN 2021</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a target="_blank" href="https://youtu.be/ciuHabZoTx0">[HIGHLIGHT] PELANTIKAN PAMONG PRAJA MUDA ANGKATAN XXVIII TAHUN 2021</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a target="_blank" href="https://youtu.be/_YtyiKLMQNo">[HIGHLIGHT] WISUDA IPDN 2021</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a target="_blank" href="https://youtu.be/OwCLjpMN3N4">PENGUKUHAN MUDA PRAJA ANGKATAN XXXII IPDN TAHUN 2021</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a target="_blank" href="https://youtu.be/K9C1KZijJsQ">HIGHLIGHT PELANTIKAN PAMONG PRAJA MUDA ANGKATAN XXVII</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a target="_blank" href="https://youtu.be/h-tGfpO4U-w">TESTIMONI DIES NATALIS IPDN KE 65 (FULL)</a></li>
+                      </ul>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+
+      <div class="container py-4">
+          <div class="copyright">
+              © Copyright <strong><span>IPDN 2026</span></strong>. All Rights Reserved
+          </div>
+      </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="https://ipdn.ac.id/assets/vendor/purecounter/purecounter.js"></script>
+  <script src="https://ipdn.ac.id/assets/vendor/aos/aos.js"></script>
+  <script src="https://ipdn.ac.id/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ipdn.ac.id/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="https://ipdn.ac.id/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="https://ipdn.ac.id/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="https://ipdn.ac.id/assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="https://ipdn.ac.id/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Bootstrap Js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  <div id="popup-penilaian" class="modal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgba(0,0,0,0.4);">
+      <div style="background-color:#fff; margin:10% auto; padding:30px; border:1px solid #888; width:90%; max-width:400px; text-align:center; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.3); position:relative;">
+          <!-- Tombol tutup -->
+          <span onclick="tutupPopup()" style="position:absolute; top:10px; right:15px; font-size:24px; font-weight:bold; color:#aaa; cursor:pointer;">×</span>
+
+          <h5 style="margin-bottom: 20px;">Apakah Anda puas dengan pelayanan kami?</h5>
+          <button onclick="submitFeedback('Puas')" class="btn btn-success" style="margin: 5px 15px; font-size:18px;">
+              😊 Puas
+          </button>
+          <button onclick="submitFeedback('Tidak Puas')" class="btn btn-danger" style="margin: 5px 15px; font-size:18px;">
+              😞 Tidak Puas
+          </button>
+      </div>
+  </div>
+
+  <!-- JS File -->
+  <script src="https://ipdn.ac.id/assets/js/main.js"></script>
+
+  <!-- Script Tutup Popup -->
+  <script>
+      let popupSudahMuncul = false;
+
+      function showPopupPenilaian() {
+          if (!popupSudahMuncul) {
+              popupSudahMuncul = true;
+              document.getElementById('popup-penilaian').style.display = 'block';
+          }
+      }
+
+      function tutupPopup() {
+          document.getElementById('popup-penilaian').style.display = 'none';
+      }
+
+      function tampilkanPopupJikaPerlu() {
+          fetch('https://ipdn.ac.id/cek_penilaian')
+              .then(response => response.json())
+              .then(data => {
+                  if (!data.sudah_mengisi) {
+                      // Kalau belum mengisi hari ini, tampilkan popup setelah 1 menit
+                      setTimeout(showPopupPenilaian, 60000);
+                  } else {
+                      console.log("Popup tidak ditampilkan karena sudah mengisi hari ini.");
+                  }
+              })
+              .catch(error => console.error("Gagal cek IP:", error));
+      }
+
+
+      function submitFeedback(penilaian) {
+          // Tutup popup segera
+          document.getElementById('popup-penilaian').style.display = 'none';
+
+          fetch('https://ipdn.ac.id/simpan_penilaian', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({
+                      penilaian: penilaian
+                  })
+              })
+              .then(response => response.json())
+              .then(data => {
+                  console.log('Respon dari server:', data);
+
+                  // Tampilkan pesan terima kasih
+                  const feedbackBox = document.createElement('div');
+                  feedbackBox.style.cssText = 'position:fixed; top:20%; left:50%; transform:translateX(-50%); background:#fff; padding:20px 30px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.3); z-index:99999;';
+                  feedbackBox.innerHTML = "<h5>🙏 Terima kasih atas penilaian Anda!</h5>";
+
+                  document.body.appendChild(feedbackBox);
+                  setTimeout(() => {
+                      feedbackBox.remove();
+                  }, 3000);
+              })
+              .catch(error => {
+                  console.error('Error:', error);
+              });
+      }
+
+      tampilkanPopupJikaPerlu(); // panggil saat halaman dimuat
+  </script>
+
+
+
+
+
+
+
+  <!-- Floating Button Survei Kepuasan -->
+  <button id="btnPenilaian" onclick="window.open('https://ipdn.ac.id/isi_survei', '_blank')" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; background-color: #007bff; color: white; border: none; border-radius: 30px; padding: 12px 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); font-size: 16px; cursor: pointer;">
+      Survei Kepuasan
+  </button>
+
+
+
+
+
+
+
+  <div id="aksesibilitas-menu">
+    <button class="aksesibilitas-btn" onclick="toggleAksesibilitas()">
+        <i class="fa-solid fa-universal-access"></i>
+    </button>
+    <div id="aksesibilitas-panel" style="display:none;">
+        <button onclick="besarTeks()"><i class="fa-solid fa-magnifying-glass-plus"></i> Perbesar Teks</button>
+        <button onclick="kecilTeks()"><i class="fa-solid fa-magnifying-glass-minus"></i> Perkecil Teks</button>
+        <button onclick="ubahKontras()"><i class="fa-solid fa-adjust"></i> Kontras Tinggi</button>
+        <button onclick="ubahFont()"><i class="fas fa-font"></i> Ubah Font</button>
+        <button onclick="highlightLink()"><i class="fas fa-highlighter"></i> Highlight Link</button>
+        <button onclick="textToSpeech()"><i class="fas fa-volume-up"></i> Baca Halaman</button>
+        <button onclick="stopSpeech()"><i class="fas fa-stop"></i> Stop Membaca</button>
+        <button onclick="resetAksesibilitas()"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+    </div>
+</div>  <link rel="stylesheet" href="https://ipdn.ac.id/assets/css/aksesibilitas.css">
+  <script src="https://ipdn.ac.id/assets/js/aksesibilitas.js"></script>
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+  
+
+  <ads style="display:none;"></ads></body><!-- Pop-up Penilaian dengan Ikon --><!-- <div id="popup-penilaian" class="modal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgba(0,0,0,0.4);">
+      <div style="background-color:#fff; margin:10% auto; padding:30px; border:1px solid #888; width:90%; max-width:400px; text-align:center; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.3);">
+          <h5 style="margin-bottom: 20px;">Apakah Anda puas dengan pelayanan kami?</h5>
+          <button onclick="submitFeedback('Puas')" class="btn btn-success" style="margin: 5px 15px; font-size:18px;">
+              😊 Puas
+          </button>
+          <button onclick="submitFeedback('Tidak Puas')" class="btn btn-danger" style="margin: 5px 15px; font-size:18px;">
+              😞 Tidak Puas
+          </button>
+      </div>
+  </div> --></html>

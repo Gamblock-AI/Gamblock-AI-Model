@@ -1,0 +1,388 @@
+<html lang="en" manifest="/manifest.appcache"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PouchDB, the JavaScript Database that Syncs!</title>
+    <link rel="alternate" title="PouchDB, the JavaScript Database that Syncs!" type="application/rss+xml" href="/feed.xml">
+    <link rel="stylesheet" href="/static/css/pouchdb.css">
+    <link rel="me" href="https://fosstodon.org/@pouchdb">
+    <meta name="theme-color" content="#6ccb99">
+    <meta name="msapplication-TileColor" content="#6ccb99">
+    <script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script><script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-42479701-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <link href="//fonts.googleapis.com/css?family=Lato:400,700|Open+Sans:400,700" rel="stylesheet" type="text/css">
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body data-spy="scroll" data-target="#sidebar">
+
+    <header role="banner">
+
+      <a href="https://github.com/apache/pouchdb" target="_blank" rel="noopener noreferrer">
+         <div class="ribbon">GitHub</div>
+      </a>
+
+      <div class="container">
+
+        <a class="logo" href="/">
+          <div class="logo-img"></div>
+          <span class="sr-only">PouchDB</span>
+        </a>
+
+        <ul class="nav nav-header nav-pills" role="navigation">
+          <li>
+            <a class="btn btn-link btn-lg" href="/blog/">Blog</a>
+          </li>
+          <li>
+            <a class="btn btn-link btn-lg" href="/guides/">Guides</a>
+          </li>
+          <li>
+            <a class="btn btn-link btn-lg" href="/api.html">API</a>
+          </li>
+          <li>
+            <a class="btn btn-link btn-lg" href="/learn.html">Learn</a>
+          </li>
+          <li>
+            <a class="btn btn-primary btn-lg" href="/download.html">Download <strong>v9.0.0</strong></a>
+          </li>
+        </ul>
+
+      </div>
+
+    </header>
+    
+
+    <div role="main">
+      <div class="band band-inverse">
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-sm-6">
+
+        <h1>The Database that Syncs!</h1>
+
+        <p>PouchDB is an open-source JavaScript database inspired by <a href="http://couchdb.apache.org/">Apache CouchDB</a> that is designed to run well within the browser.</p>
+
+        <p>PouchDB was created to help web developers build applications that work as well offline as they do online.<br>
+        </p><p>It enables applications to store data locally while offline, then synchronize it with CouchDB and compatible servers when the application is back online, keeping the user's data in sync no matter where they next login.</p>
+
+        <a href="/learn.html" class="btn btn-primary btn-lg btn-block-xs">Learn more</a>
+
+      </div>
+
+      <div class="col-sm-6">
+
+
+<figure class="highlight"><pre style="position: relative;"><code class="language-js" data-lang="js"><span class="kd">const</span> <span class="nx">db</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PouchDB</span><span class="p">(</span><span class="dl">'</span><span class="s1">dbname</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">db</span><span class="p">.</span><span class="nx">put</span><span class="p">({</span>
+  <span class="na">_id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">dave@gmail.com</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">David</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">69</span>
+<span class="p">});</span>
+
+<span class="nx">db</span><span class="p">.</span><span class="nx">changes</span><span class="p">().</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">change</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Ch-Ch-Changes</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">db</span><span class="p">.</span><span class="nx">replicate</span><span class="p">.</span><span class="nx">to</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://example.com/mydb</span><span class="dl">'</span><span class="p">);</span><button class="btnCopyCode" style="position: absolute; top: 11.5px; right: 15px;">📎</button></code></pre></figure>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="band">
+
+  <div class="container">
+
+    <div class="row">
+
+
+      <div class="text-center col-sm-6 col-md-3">
+
+        <img class="icon icon-lg" src="/static/img/index/node.svg" alt="">
+
+        <h3>Cross Browser</h3>
+        <p class="margin-bottom-none-md">Works in Firefox, Chrome, Opera, Safari, IE and Node.js</p>
+
+      </div>
+
+      <div class="text-center col-sm-6 col-md-3">
+
+        <img class="icon icon-lg" src="/static/img/index/light.svg" alt="">
+
+        <h3>Lightweight</h3>
+        <p class="margin-bottom-none-md">PouchDB is just a script tag and 46KB (gzipped) away in the browser, or <code>$ npm install pouchdb</code> away
+        in Node.</p>
+
+      </div>
+
+      <div class="text-center col-sm-6 col-md-3">
+
+        <img class="icon icon-lg" src="/static/img/index/learn.svg" alt="">
+
+        <h3>Easy to Learn</h3>
+        <p class="margin-bottom-none-md">Requires some programming knowledge, however PouchDB is a piece of cake to learn.</p>
+
+      </div>
+
+      <div class="text-center col-sm-6 col-md-3">
+
+        <img class="icon icon-lg" src="/static/img/index/open.svg" alt="">
+
+        <h3>Open Source</h3>
+        <p class="margin-bottom-none-md">Everything is developed out in the open on GitHub, contributors always welcome!</p>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="band band-inverse">
+
+  <div class="container">
+
+    <h3>Latest</h3>
+
+        <div class="row">
+
+
+
+<div class="col-md-6">
+
+
+  <p class="margin-bottom-none"><a class="h4" href="/2024/05/24/pouchdb-9.0.0.html">PouchDB 9.0.0</a></p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="post">
+  <div class="media">
+    <a class="pull-left" href="#">
+    <img class="media-object img-circle img-responsive" src="https://gravatar.com/avatar/da81e745b26ae8ca53fc77538599510f" alt="Alba Herrerías">
+    </a>
+    <div class="media-body">
+    <p>
+      <strong>By:</strong> <a href="https://twitter.com/alba_dev">Alba Herrerías</a><br>
+      <strong>Published:</strong> 24 May 2024<br>
+      
+        The PouchDB developers are delighted to announce the immediate availability of PouchDB 9.0.0. This is a major release with 202 PRs merged since the last version.
+
+        <a href="/2024/05/24/pouchdb-9.0.0.html">[...]</a>
+      
+    </p>
+    </div>
+  </div>
+</div>
+
+<p></p></div><p></p>
+
+<div class="col-md-6">
+
+
+  <p class="margin-bottom-none"><a class="h4" href="/2023/02/09/pouchdb-8.0.1.html">PouchDB 8.0.1</a></p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="post">
+  <div class="media">
+    <a class="pull-left" href="#">
+    <img class="media-object img-circle img-responsive" src="https://gravatar.com/avatar/da81e745b26ae8ca53fc77538599510f" alt="Alba Herrerías">
+    </a>
+    <div class="media-body">
+    <p>
+      <strong>By:</strong> <a href="https://twitter.com/alba_dev">Alba Herrerías</a><br>
+      <strong>Published:</strong> 09 February 2023<br>
+      
+        The first release of the year! This is a patch release, it fixes a bug we introduced during a refactor made in the last release and sets Node 14 in
+        <a href="/2023/02/09/pouchdb-8.0.1.html">[...]</a>
+      
+    </p>
+    </div>
+  </div>
+</div>
+
+<p></p></div><p></p>
+
+<p></p></div><p></p>
+
+<p><a class="btn btn-primary btn-lg" href="/blog/index.html">View more</a></p>
+
+<p></p></div><p></p>
+
+<p></p></div><p></p>
+
+    </div>
+
+    <div class="band">
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-xs-4 col-md-offset-0 col-md-2">
+            <a href="https://bsky.app/profile/pouchdb.bsky.social" target="_blank" rel="noopener noreferrer">
+              <img class="icon" src="/static/img/friends/bluesky.svg" alt="PouchDB's Bluesky">
+            </a>
+          </div>
+
+          <div class="col-xs-4 col-md-offset-0 col-md-2">
+            <a href="https://fosstodon.org/@pouchdb" target="_blank" rel="noopener noreferrer">
+              <img class="icon" src="/static/img/friends/mastodon.svg" alt="PouchDB's Mastodon">
+            </a>
+          </div>
+
+          <div class="col-xs-4 col-md-2">
+            <a href="https://github.com/rvagg/node-levelup" target="_blank" rel="noopener noreferrer">
+              <img class="icon" src="/static/img/friends/leveldb.svg" alt="Node Levelup">
+            </a>
+          </div>
+
+          <div class="col-xs-4 col-md-2">
+            <a href="https://github.com/apache/pouchdb" target="_blank" rel="noopener noreferrer">
+              <img class="icon" src="/static/img/friends/github.svg" alt="PouchDB's Github Repo">
+            </a>
+          </div>
+
+          <div class="col-xs-4 col-md-2">
+            <a href="http://couchdb.apache.org/" target="_blank" rel="noopener noreferrer">
+              <img class="icon" src="/static/img/friends/couchdb.svg" alt="CouchDB">
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <footer class="band band-inverse">
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-sm-3">
+            <h3 class="nav-head">Learn</h3>
+            <ul class="nav nav-silent">
+              <li><a href="/getting-started.html">Getting Started</a></li>
+              <li><a href="/api.html">API Guide</a></li>
+              <li><a href="https://github.com/apache/pouchdb/wiki">Wiki</a></li>
+            </ul>
+          </div>
+
+          <div class="col-sm-3">
+            <h3 class="nav-head">Discuss</h3>
+            <ul class="nav nav-silent">
+              <li><a href="https://bsky.app/profile/pouchdb.bsky.social">Bluesky</a></li>
+              <li><a href="https://fosstodon.org/@pouchdb">Mastodon</a></li>
+              <li><a href="https://github.com/apache/pouchdb/discussions">GitHub Discussions</a></li>
+              <li><a href="https://join.slack.com/t/couchdb/shared_invite/zt-3aqucllea-C92fkzW5oO_VhllRCqFbcw">Slack</a></li>
+              <li><a href="http://stackoverflow.com/questions/tagged/pouchdb">StackOverflow</a></li>
+            </ul>
+          </div>
+
+          <div class="col-sm-3">
+            <h3 class="nav-head">Contribute</h3>
+            <ul class="nav nav-silent">
+              <li><a href="https://github.com/apache/pouchdb/blob/master/CONTRIBUTING.md">Contributing</a></li>
+              <li><a href="https://github.com/apache/pouchdb">Source</a></li>
+              <li><a href="https://github.com/apache/pouchdb/issues">Issues</a></li>
+              <li><a href="https://github.com/apache/pouchdb/blob/master/LICENSE">Apache License</a></li>
+              <li><a href="https://lists.apache.org/list.html?dev@pouchdb.apache.org">Dev Mailing List</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+    </footer>
+    <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/code.min.js"></script>
+    <script type="text/javascript" src="/static/js/stickyfill.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pouchdb/dist/pouchdb.min.js"></script>
+    <script type="text/javascript">
+      var $navSidebarWrapper = $('.nav-sidebar-wrapper');
+      if ($navSidebarWrapper.length) {
+        $navSidebarWrapper.Stickyfill();
+      }
+      $('[data-toggle="tooltip"]').tooltip();
+      function onCached(e) {
+        if (applicationCache.status === 1) {
+          giveIntro();
+        }
+      }
+
+      function giveIntro() {
+        console.log('%c\n..............................................................................\n.?I...........~+: ............................................................\n.???.........++++.............................................................\n:????+......+++++.............................................................\n.??????+++++++++:.................................H...........D..B............\n...????++++++++...................................H...........D..B............\n...=????++++++.......PPPPP...OOOO...U....U...CCCC.HHHHH...DDDDD..BBBBB........\n...?????+++++++......P...:P.OO...O..U....U..C.....H...H..D....D..B....B.......\n..???????+++++++ ....P. ..P.O....O..U....U.CC.....H...H..D....D..B....B.......\n..?????????????......P...:P.OO...O..U....U..C.....H...H..D....D..B....B.......\n...I??????????~......PPPPP...OOOO...=UUUUU...CCCC.H...H...DDDDD..BBBBB........\n....?????????~.......P.... ...................................................\n.....???????+........P........................................................\n......??????..................................................................\n..............................................................................\n..............................................................................\n..............................................................................', 'color: #4ec084');
+        console.log('%c\nPouchDB itself is hosted at PouchDB.com!\nTo get started, try typing:\nvar db = new PouchDB(\'mydb\');', 'color: #4ec084');
+      }
+      function offerToReload() {
+        $('.js-update-notification')
+          .removeClass('btn-update-hidden')
+          .on('click', function(){
+            window.location.reload();
+          });
+      }
+      if (navigator.serviceWorker) {
+        navigator.serviceWorker.register('/serviceWorker.js')
+          .then(function (registration) {
+            registration.addEventListener('updatefound', function () {
+              var newWorker = registration.installing;
+              registration.installing.addEventListener('statechange', function () {
+                if (newWorker.state == 'installed' && navigator.serviceWorker.controller) {
+                  offerToReload();
+                }
+              });
+            });
+            giveIntro();
+          })
+          .catch(function(error) {
+            console.log('ServiceWorker registration failed: ', error);
+          });
+      } else if (window.applicationCache) {
+        applicationCache.addEventListener('cached', onCached, false);
+        applicationCache.addEventListener('noupdate', giveIntro, false);
+        applicationCache.addEventListener('updateready', offerToReload, false);
+      }
+    </script>
+    <button type="button" class="js-update-notification btn btn-primary btn-update btn-update-hidden">
+      Content updated, reload now? ↻
+    </button>
+  
+
+</body></html>

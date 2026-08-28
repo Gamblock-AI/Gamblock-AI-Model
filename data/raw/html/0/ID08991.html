@@ -1,0 +1,219 @@
+<html lang="vi"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Web WP</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #686868;
+      --border: #e8e8e8;
+      --soft: #f7f7f7;
+      --max-content: 760px;
+      --max-wide: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.55;
+      font-size: 18px;
+    }
+
+    a { color: inherit; }
+    a:hover { opacity: 0.82; }
+
+    .container {
+      width: min(100% - 40px, var(--max-content));
+      margin: 0 auto;
+    }
+
+    .wide {
+      width: min(100% - 40px, var(--max-wide));
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      background: #fff;
+    }
+
+    .topbar {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .site-title {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+    }
+
+    .nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 15px;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--muted);
+    }
+
+    main {
+      padding: 56px 0 24px;
+    }
+
+    h1 {
+      margin: 0 0 28px;
+      font-size: 42px;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      font-weight: 700;
+    }
+
+    .post {
+      padding: 34px 0 44px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .post h2 {
+      margin: 0 0 16px;
+      font-size: 34px;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      font-weight: 700;
+    }
+
+    .post h2 a {
+      text-decoration: none;
+    }
+
+    .entry-content {
+      color: #222;
+      font-size: 19px;
+      margin-bottom: 22px;
+    }
+
+    .post-date {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 48px;
+      padding: 56px 0 40px;
+      background: #fff;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .footer-title {
+      margin: 0;
+      font-size: 30px;
+      line-height: 1.1;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 12px;
+      font-size: 15px;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: var(--muted);
+    }
+
+    .notice {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 820px) {
+      body { font-size: 17px; }
+      h1 { font-size: 36px; }
+      .post h2, .footer-title { font-size: 28px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .topbar { align-items: flex-start; padding: 18px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wide topbar">
+      <a class="site-title" href="#">Web WP</a>
+      <nav class="nav" aria-label="Điều hướng chính">
+        <a href="#blog">Blog</a>
+        <a href="#">Trang mẫu</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="blog">
+    <div class="container">
+      <h1>Blog</h1>
+
+      <article class="post">
+        <h2><a href="#">Chào tất cả mọi người!</a></h2>
+        <div class="entry-content">
+          <p>Cảm ơn vì đã sử dụng WordPress. Đây là bài viết đầu tiên của bạn. Sửa hoặc xóa nó, và bắt đầu bài viết của bạn nhé!</p>
+        </div>
+        <div class="post-date">7 Tháng 3, 2026</div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wide footer-grid">
+      <div>
+        <h2 class="footer-title">Web WP</h2>
+      </div>
+
+      <ul class="footer-links">
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Giới thiệu</a></li>
+        <li><a href="#">Câu hỏi thường gặp</a></li>
+        <li><a href="#">Tác giả</a></li>
+      </ul>
+
+      <ul class="footer-links">
+        <li><a href="#">Sự kiện</a></li>
+        <li><a href="#">Cửa hàng</a></li>
+        <li><a href="#">Mẫu</a></li>
+        <li><a href="#">Chủ đề</a></li>
+      </ul>
+    </div>
+
+    <div class="wide notice">
+      File này là bản HTML duy nhất, self-contained, dựng lại từ source WordPress mẫu bạn đã gửi.
+    </div>
+  </footer>
+
+
+</body></html>

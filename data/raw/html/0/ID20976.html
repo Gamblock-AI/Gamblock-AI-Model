@@ -1,0 +1,518 @@
+<html lang="en"><head>
+    <link rel="prefetch" href="https://app.only2chat.com/">
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#0092ff">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Chatroulette - Only2chat the safe and anonymous video chat alternative</title>
+    <meta name="description" content="Discover only2chat.com, the leading Chatroulette alternative. Instantly connect with random strangers worldwide via video chat – securely, anonymously, and without registration.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="only2chat.com">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://only2chat.com/">
+    <meta property="og:site_name" content="only2chat.com">
+    <meta property="og:site" content="only2chat.com">
+    <meta property="og:title" content="only2chat.com: The safe &amp; anonymous Chatroulette alternative">
+    <meta property="og:description" content="Discover only2chat.com, the leading Chatroulette alternative. Instantly connect with random strangers worldwide via video chat – securely, anonymously, and without registration.">
+    <meta property="og:image" content="https://only2chat.com/images/header-image.png">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="icon" href="/images/favicon.png">
+    <link rel="canonical" href="https://only2chat.com/">
+    <link rel="alternate" hreflang="x-default" href="https://only2chat.com/">
+    <link rel="alternate" hreflang="en" href="https://only2chat.com/">
+    <link rel="alternate" hreflang="de" href="https://only2chat.com/de/">
+    <link rel="alternate" hreflang="es" href="https://only2chat.com/es/">
+    <link rel="alternate" hreflang="fr" href="https://only2chat.com/fr/">
+    <link rel="alternate" hreflang="it" href="https://only2chat.com/it/">
+    <link rel="preload" as="image" href="https://only2chat.com/images/en-chat.png">
+    <link rel="preload" as="image" href="https://only2chat.com/images/header-image.png">
+    
+</head> 
+
+<body><nav class="o2c-navbar">
+  <div class="o2c-dropdown">
+    <!-- Added id and onclick for better control -->
+    <button id="o2c-btn" class="o2c-dropbtn" aria-haspopup="true" aria-expanded="false">
+      🇺🇸 🇫🇷 🇩🇪 🇮🇹 🇪🇸 🇧🇷 🇵🇹 ▾
+    </button>
+    <div id="o2c-menu" class="o2c-dropdown-content">
+      <a href="/">English</a>
+      <a href="/fr/">Français</a>
+      <a href="/de/">Deutsch</a>
+      <a href="/it/">Italiano</a>
+      <a href="/es/">Español</a>
+      <a href="/br/">Português</a>
+      <!--
+      <hr>
+      <a href="/settings">Settings</a>
+      <a href="/logout">Logout</a> -->
+    </div>
+  </div>
+</nav>
+
+
+ <style>
+.o2c-navbar {
+  position: absolute;
+  top: 1px;
+  right: 15px;
+  z-index: 1000;
+  font-family: sans-serif;
+}
+
+.o2c-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.o2c-dropbtn {
+  background-color: #007bff;
+  color: white;
+  
+  /* 1. Reduce padding (top/bottom and left/right) */
+  padding: 6px 12px; 
+  
+  /* 2. Shrink the flags by reducing font size */
+  font-size: 14px; 
+  
+  /* 3. Tighten the space between the flags */
+  gap: 3px; 
+  
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  
+  /* This ensures the button isn't forced to be tall */
+  min-height: auto; 
+}
+
+.o2c-dropdown-content {
+  display: none; /* Hidden by default */
+  position: absolute;
+  right: 0;
+  background-color: #ffffff;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  margin-top: 5px;
+  z-index: 1;
+}
+
+/* This class is added/removed by JavaScript */
+.o2c-dropdown-content.show {
+  display: block;
+}
+
+.o2c-dropdown-content a {
+  color: #333;
+  padding: 14px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.o2c-dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.o2c-dropdown-content hr {
+  border: 0;
+  border-top: 1px solid #eee;
+  margin: 0;
+}
+
+ </style>
+
+<script type="text/javascript">
+  const menuBtn = document.getElementById('o2c-btn');
+  const menuContent = document.getElementById('o2c-menu');
+
+  menuBtn.addEventListener('click', function(event) {
+    menuContent.classList.toggle('show');
+    const isOpen = menuContent.classList.contains('show');
+    menuBtn.setAttribute('aria-expanded', isOpen);
+    event.stopPropagation();
+  });
+
+  window.addEventListener('click', function(event) {
+    if (!menuBtn.contains(event.target) && !menuContent.contains(event.target)) {
+      menuContent.classList.remove('show');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  window.addEventListener('keydown', function(event) {
+    if (event.key === "Escape") {
+      menuContent.classList.remove('show');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }
+  });
+</script>
+
+
+<a href="https://only2chat.com/">
+<img src="https://only2chat.com/images/logo.png" style="width:150px;height:35px;" title="" alt="only2chat.com: The safe &amp; anonymous Chatroulette alternative"></a>
+
+<br>
+
+
+<div id="iframeHolder"></div>
+<header id="header" class="header">
+        <div class="container">
+
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+$(function(){
+    $('#button').click(function(){ 
+        if(!$('#iframe').length) {
+            // 'display-capture' ist entscheidend für die Analyse der Pixel im Iframe
+            $('#iframeHolder').html('<iframe id="iframe" src="https://app.only2chat.com" allow="camera; microphone; autoplay" width="100%" height="600px" style="border:none;"></iframe>');
+        }
+    });   
+});
+</script>
+
+ <style>
+.button {
+    background-image: url(https://only2chat.com/images/en-chat.png);
+    background-repeat: no-repeat;
+    cursor:pointer;
+    max-width: 283px;
+    width: 283px;
+    height: 76px;
+    border: none;
+
+</style>
+<br>
+
+<button id="button" class="button" aria-label="Chat" onclick="if (!window.__cfRLUnblockHandlers) return false; this.style.display='none'" title=""></button>
+
+<p>
+
+
+
+</p></div>
+<!--
+<a href="https://only2chat.com/non-moderated" target="_blank" rel="nofollow"><img src="https://only2chat.com/images/18-chat.png" style="width:283px;height:76px;" title="chat" alt="" ></a> 
+
+-->
+        
+    </header> 
+
+
+<main>
+    <header id="header" class="header">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6 col-xl-5">
+                    <div class="text-container">
+                        <h1>Spontaneous Chatroulette video chat with strangers!</h1>
+                        <p class="p-large">Only2chat.com, your premier platform for spontaneous random video chats with strangers from all over the world. In a digital world where connections are often superficial, we offer an authentic and anonymous way to make new friends, have interesting conversations, or just have fun. Your safety is our top priority, which is why we offer one of the best-moderated alternatives to the original Chatroulette or Omegle.
+                        </p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-6 col-xl-7">
+                    <div class="image-container">
+                        <img class="" alt="Blonde girl chatting on our chatroulette app with 2 boys" title="" width="340" height="357" src="https://only2chat.com/images/header-image.png">
+                    </div> <!-- end of image-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of header -->
+    <!-- end of header -->
+
+ <header id="header" class="header">
+        <div class="container">
+
+            <div class="row">
+             
+                        <h2>Why only2chat.com is the best choice for a random video chat?</h2>
+                        <p>
+<b>Anonymous &amp; Secure:</b> No registration required. We do not store any personal data, IP addresses, or chat histories. Your privacy is our top priority. Real people, real connections: Our algorithm quickly connects you with real users to ensure meaningful or simply entertaining interactions.
+</p><p>
+Global reach: Chat with users from Germany, the USA, France, Spain, and many other countries. The world is just a click away!
+</p><p>
+Innovative filters: Use our premium filters to sort by language or gender and find even more targeted matches. Cross-platform: Whether on your PC, tablet, or smartphone, only2chat.com is available everywhere.</p><p>
+
+
+</p><h2>How our chat with strangers works (instructions):</h2><p>
+
+Allow: <b>Grant access to your camera and microphone.</b>
+</p><p>
+Connect: <b>Click “Start” and our system will immediately find a random chat partner for you.</b>
+</p><p>
+
+<b>Chat &amp; Swipe:</b> Enjoy the conversation or simply click “Next” to find the next exciting encounter. Join now and experience the future of anonymous video chat!
+
+</p><h2>Our rules of conduct:</h2>
+
+<p>
+1. No nudity or sexually explicit content: This will result in immediate and permanent suspension of the user.
+</p><p>
+2. Respectful behavior: Harassment, bullying, hateful behavior, or discrimination (based on race, gender, religion, etc.) will not be tolerated.
+</p><p>
+3.Do not share personal information: To protect your privacy, you should never disclose sensitive information such as your full name, address, or financial details.
+</p><p>
+4.No illegal activities: Content that promotes illegal activities such as drug use or human trafficking is strictly prohibited.</p><p>
+
+
+</p><h2>Important things you must NOT do on our video chat!</h2>
+
+<p>Do not share personal information (address, phone number, real email address).</p>
+
+<li>
+<p>Do not send private or intimate pictures.</p>
+</li>
+<li>
+<p>Do not click on links sent to you by strangers.</p>
+</li>
+<li>
+<p>Do not download software recommended by someone in the chat room.</p>
+</li>
+<li>
+<p>Do not show or say anything offensive or discriminatory.</p>
+</li>
+<li>
+<p>Do not show illegal content.
+</p></li>
+<li>
+<p>Do not engage in harassing behavior or gestures.
+</p></li>
+<li>
+<p>Do not disclose sensitive information about your family, work, or finances.
+</p></li>
+<li>
+<p>Do not point your webcam at private rooms that reveal your private life.</p>
+</li>
+<li>
+<p>Do not chat under the influence of alcohol or drugs.</p>
+</li>
+
+
+<h2>Guide 2026 - Tips for Good Equipment and Great Effects for Omegle, Chatroulette, and Other Video Chats</h2>
+
+<p>Read also about <strong><a href="/2026-guide-for-best-equipment-and-effects-for-omegle-chatroulette-and-other-random-video-chats.html"> Equipment and Effects for Omegle, Chatroulette, and Other Platforms</a></strong> and learn how you can make your experience in a random video chat even more exciting! You could even make a viral video out of your random conversation!</p>
+
+
+
+
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+               
+    </header> <!-- end of header -->
+    <!-- end of header -->
+
+    <!-- Services -->
+    <div id="services" class="cards-1 bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                 
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-icon">
+                            <span class="fas fa-headphones-alt"></span>
+                        </div>
+                        <div class="card-body">
+                            <h2 class="card-title">Is this platform for free?</h2>
+                            <p>Yep, totally free! No credit card, no subscriptions, no sneaky “free trials” that bill you later. Just real, random chat vibes anytime you want.</p>
+                    
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-icon red">
+                            <span class="far fa-clipboard"></span>
+                        </div>
+                        <div class="card-body">
+                            <h2 class="card-title">Our chat roulette code is safe!</h2>
+                            <p>The DTLS protocol, Datagram Transport Layer Security, which is integrated as standard in browsers such as Chrome, Firefox and Opera, is used to encrypt the data to be transmitted. We’ve got human moderators active 24/7, fake-cam detection, an instant skip button, and easy reporting for bad actors.</p>
+                       
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-icon green">
+                            <span class="far fa-comments"></span>
+                        </div>
+                        <div class="card-body">
+                            <h2 class="card-title">Do i need to download the app or something else for this random chat?</h2>
+                            <p>Nope — it works right in your browser! No app, no downloads, no sketchy installs. Just click and start chatting. Works on your phone, laptop, tablet — whatever you’re using.!</p>
+                    
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of cards-1 -->
+    <!-- end of services -->
+
+    <!-- Details 1 -->
+    <div id="details" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-xl-7">
+                    <div class="image-container">
+                        <img class="lazyload" data-src="https://only2chat.com/images/details-1.jpg" alt="Random chat" width="350" height="300">
+                    </div> <!-- end of image-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-6 col-xl-5">
+                    <div class="text-container">
+                       
+                        <h2>Who uses chatroulette?</h2>
+                        <p>Whether you are looking for a chatroulette partner from America, England, Germany, Brazil or Russia, our users are talking from all over the world. Just start a chat like on chatroulette or omegle and you'll be connected to the next available person.If you don´t like the chat , hit next button. Our app connects you to a stranger cam with whom you can instantly talk. There are thousands of strangers online at any given time and with just one click you are instantly connected live and for free with one of them for a fun random video chat!</p>
+
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+
+
+<style>
+    .content-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #f9fafb;
+    line-height: 1.8;
+}
+
+.seo-text-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.article-body h3 {
+    margin-top: 30px;
+    color: #007bff;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.article-body p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #444;
+    text-align: justify;
+}
+
+.article-body strong {
+    color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .seo-text-container {
+        padding: 20px;
+    }
+    .article-body p {
+        font-size: 15px;
+    }
+}
+</style>
+
+    <!-- Features Section -->
+<div id="features" class="content-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <h2 class="h2-heading">Why Random Video Chat is the Ultimate Way to Connect in 2026</h2>
+                <p class="p-heading">At Only2chat.com, we’ve taken the spirit of the original Omegle and Chatroulette and evolved it for a new generation of global connection.</p>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->   
+        
+        <div class="row">
+            <div class="col-xl-12 seo-text-container">
+                <div class="article-body">
+                    <h3>The Magic of the Random Video Chat Experience</h3>
+                    <p>In a world dominated by curated social media feeds and predictable algorithms, the raw, unfiltered nature of random video chat remains one of the most exciting experiences on the internet. Since the early days of <strong>Chatroulette</strong> and the rise of Omegle, the thrill of clicking "next" and meeting a stranger from the other side of the planet has never lost its appeal. Whether you are looking for a deep conversation, a quick laugh, or a way to practice a new language, sites like <strong>Only2chat.com</strong> offer a bridge to the world that traditional apps simply can’t match.</p>
+
+                    <p>The concept is simple but powerful: video chat with strangers. It removes the barriers of social circles and geographic location. One moment you might be talking to a student in Berlin about music, and the next, you are sharing a laugh with someone in Tokyo or New York. This unpredictability is what made Omegle a household name and why Chatroulette alternatives continue to thrive today. It’s about the "serendipity of the click"—the idea that your next best friend or a <strong>life-changing conversation</strong> is just one second away.</p>
+
+                    <h3>Why We Still Miss Omegle and Why Alternatives Matter</h3>
+                    <p>When the original Omegle shut down, it left a massive void in the digital landscape. It was the "wild west" of the internet—a place where you didn't need a profile, a picture, or a long bio to start talking. You just needed a webcam and an open mind. People flocked to Omegle because it offered anonymous chat without the pressure of modern dating apps. You weren't being judged by a static photo; you were being seen and heard in real-time.</p>
+
+                    <p>In 2026, Only2chat.com carries that torch by providing a <strong>free video chat platform</strong> that prioritizes speed and ease of use. We understand that the "Omegle itch" is about immediate gratification. You don't want to fill out forms; you want to chat with strangers now. Our platform is built to be the best Omegle alternative, focusing on high-quality connections and a responsive interface that works flawlessly on mobile and desktop alike.</p>
+
+                    <h3>Exploring the World of Chatroulette and Beyond</h3>
+                    <p>Chatroulette revolutionized the way we see the world by making the "next" button famous. It turned the internet into a giant game of social roulette. Today, the landscape of random chat has evolved. Users are looking for more than just a random face; they want talk to strangers in an environment that feels modern and secure. Sites like <strong>Bazoocam, Chatrandom, and CooMet</strong> have attempted to capture this, but many have become cluttered with ads or restrictive paywalls.</p>
+
+                    <p>Only2chat.com stands out by keeping the experience pure. We believe <strong>random video chat should be accessible to everyone</strong>. By utilizing encrypted chat servers and the latest WebRTC technology, we ensure that your video call is not only fast but private. Whether you're a fan of the classic roulette chat style or you prefer a more stable online video chat environment, our platform provides the tools to filter by interests and location, giving you more control over who you meet.</p>
+
+                    <h3>The Social Benefits of Cam Chat</h3>
+                    <p>Is cam chat just for fun? Not necessarily. For many, stranger chat is a vital social outlet. In an increasingly isolated digital age, <strong>the ability to video chat with someone new can reduce loneliness and broaden horizons</strong>. It is a tool for cultural exchange. You can see into someone else's living room halfway across the globe, see the weather in their city, and hear their accent. This humanizes the "anonymous stranger" and fosters a sense of global community that text-based apps fail to achieve.</p>
+
+                    <p>Furthermore, live video chat is an incredible tool for practicing languages. Why pay for an expensive tutor when you can hop on a random chat and speak with native speakers for free? By using Only2chat.com, you can specifically target regions like Spain, Brazil, or France to immerse yourself in the language. It’s an organic, fun, and effective way to learn while making new connections.</p>
+
+                    <h3>The Future of Random Video Chat in 2026</h3>
+                    <p>As technology progresses, the quality of webcam chat continues to hit new heights. We are seeing 4K video streams, AI-powered moderation to keep communities safe, and instant translation features that break down language barriers in real-time. The era of grainy, lagging video is over. <strong>Only2chat.com uses the latest video compression standards</strong> to ensure that even on a mobile data connection, your random video call remains crystal clear.</p>
+
+                    <p>Whether you call it talk to strangers, random chat, or video chat roulette, the core desire remains the same: human connection. We invite you to join our growing community. Stop scrolling through boring feeds and start experiencing the world live. Click the start button, enable your camera, and see where the next "next" takes you. Welcome to the best Chatroulette alternative on the web—welcome to Only2chat.com.</p>
+                </div>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of section -->
+
+
+
+
+    <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <ul class="list-unstyled li-space-lg p-small">
+                    
+                        <li><a href="terms.html" rel="nofollow"><font color="black">Terms &amp; Conditions</font></a></li>
+                        <li><a href="privacy.html" rel="nofollow"><font color="black">Privacy Policy</font></a></li>
+                    </ul>
+                </div> <!-- end of col -->
+                <div class="col-lg-3 col-md-12 col-sm-12">
+                  
+                    <p class="p-small statement"><font color="black">Copyright © </font><a href="https://only2chat.com"><font color="black">only2chat.com: The safe &amp; anonymous Chatroulette alternative</font></a></p>
+                </div> <!-- end of col -->
+
+                <div class="col-lg-3 col-md-12 col-sm-12">
+
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright --> 
+    <!-- end of copyright -->
+  <!-- <script src="https://app.only2chat.com/js/bootstrap.min.js"></script> --> <!-- Bootstrap framework -->
+    <script async="" type="text/javascript" src="https://only2chat.com/js/lazy.js" id="lazyloadjs"></script> 
+
+</main>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-2H998PH9Q6" type="text/javascript"></script>
+<script type="text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2H998PH9Q6');
+</script>
+
+
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;4bcbd7249b2345408e6e54dfe7d39202&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ebc94112b55a2f1',t:'MTc3NjEwNTQwOA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe></body></html>

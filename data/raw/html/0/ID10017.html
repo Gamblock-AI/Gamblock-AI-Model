@@ -1,0 +1,3194 @@
+<html lang="es-CL" xmlns:fb="http://ogp.me/ns/fb#" xmlns="http://www.w3.org/1999/xhtml" class=" no-applicationcache history geolocation postmessage localstorage sessionstorage websockets svg hashchange audio canvas canvastext cssgradients multiplebgs opacity rgba video webgl hsla no-websqldatabase supports fontface generatedcontent textshadow indexeddb indexeddb-deletedatabase cssanimations backgroundsize borderimage borderradius boxshadow csscolumns csscolumns-width csscolumns-span csscolumns-fill csscolumns-gap csscolumns-rule csscolumns-rulecolor csscolumns-rulestyle csscolumns-rulewidth csscolumns-breakbefore csscolumns-breakafter csscolumns-breakinside flexbox flexboxlegacy cssreflections csstransforms csstransforms3d csstransitions inlinesvg webworkers svgclippaths smil"><head><meta http-equiv="origin-trial" content="A7vZI3v+Gz7JfuRolKNM4Aff6zaGuT7X0mf3wtoZTnKv6497cVMnhy03KDqX7kBz/q/iidW7srW31oQbBt4VhgoAAACUeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJEaXNhYmxlVGhpcmRQYXJ0eVN0b3JhZ2VQYXJ0aXRpb25pbmczIiwiZXhwaXJ5IjoxNzU3OTgwODAwLCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==">
+<!-- Bootstrap -->
+<style>
+  /*<![CDATA[*/
+    @font-face {
+      font-family: "Bevan";
+      src: url("/assets/Bevan.ttf");
+    }
+    @font-face {
+      font-family: "Glyphicons Halflings";
+      src: url("/assets/glyphicons-halflings-regular.eot");
+      src: url("/assets/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"),url("/assets/glyphicons-halflings-regular.woff") format("woff"),url("/assets/glyphicons-halflings-regular.ttf") format("truetype"),url("/assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg")
+    }
+    @font-face {
+      font-family: "FontAwesome";
+      src: url("/assets/fontawesome-webfont.eot");
+      src: url("/assets/fontawesome-webfont.eot?#iefix") format("embedded-opentype"),url("/assets/fontawesome-webfont.woff") format("woff"),url("/assets/fontawesome-webfont.ttf") format("truetype"),url("/assets/gfontawesome-webfont.svg#fontawesome-webfontr") format("svg")
+    }
+    
+    @font-face {
+      font-family: 'Open Sans';
+      font-display: swap;
+      src: url('/assets/Open_Sans/OpenSans-ExtraBold.ttf');
+      font-weight: 800;
+      font-style: normal, italic;
+    
+    }
+    @font-face {
+      font-family: 'Ubuntu';
+      font-display: swap;
+      src: url('/assets/Ubuntu/Ubuntu-Regular.ttf');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Ubuntu';
+      font-display: swap;
+      src: url('/assets/Ubuntu/Ubuntu-Medium.ttf');
+      font-weight: 500;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Ubuntu';
+      font-display: swap;
+      src: url('/assets/Ubuntu/Ubuntu-Bold.ttf');
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Ubuntu';
+      font-display: swap;
+      src: url('/assets/Ubuntu/Ubuntu-LightItalic.ttf');
+      font-weight: 200;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'Ubuntu';
+      font-display: swap;
+      src: url('/assets/Ubuntu/Ubuntu-BoldItalic.ttf');
+      font-weight: 700;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'Kanit';
+      src: url('/assets/Kanit/Kanit-Regular.ttf');
+      font-weight: 400;
+      font-style: normal;
+    
+    }
+    @font-face {
+      font-family: 'Kanit';
+      src: url('/assets/Kanit/Kanit-Italic.ttf');
+      font-weight: 400;
+      font-style: italic;
+    
+    }
+    
+    @font-face {
+      font-family: 'Kanit';
+      src: url('/assets/Kanit/Kanit-Bold.ttf');
+      font-weight: 700;
+      font-style: normal;
+    
+    }
+    @font-face {
+      font-family: 'Kanit';
+      src: url('/assets/Kanit/Kanit-BoldItalic.ttf');
+      font-weight: 700;
+      font-style: italic;
+    }
+    
+    @font-face {
+      font-family: 'Kanit';
+      src: url('/assets/Kanit/Kanit-ExtraBold.ttf');
+      font-weight: 800;
+      font-style: normal;
+    }
+    
+    @font-face {
+      font-family: 'Kanit';
+      src: url('/assets/Kanit/Kanit-ExtraBoldItalic.ttf');
+      font-weight: 800;
+      font-style: italic;
+    
+    }
+    
+    @font-face {
+      font-family: 'Cairo';
+      src: url('/assets/Cairo/Cairo-Regular.ttf');
+      font-weight: 400;
+      font-style: normal;
+    
+    }
+    @font-face {
+      font-family: 'Cairo';
+      src: url('/assets/Cairo/Cairo-Bold.ttf');
+      font-weight: 600;
+      font-style: normal;
+    
+    }
+    @font-face {
+      font-family: 'Cairo';
+      src: url('/assets/Cairo/Cairo-Black.ttf');
+      font-weight: 900;
+      font-style: normal;
+    
+    }
+    /* ======== CUSTOM FONT ==========*/
+    @font-face {
+      font-family: 'icomoon';
+      src:  url('/assets/icomoon.eot?cj2tex');
+      src:  url('/assets/icomoon.eot?cj2tex#iefix') format('embedded-opentype'),
+        url('/assets/icomoon.ttf?cj2tex') format('truetype'),
+        url('/assets/icomoon.woff?cj2tex') format('woff'),
+        url('/assets/icomoon.svg?cj2tex#icomoon') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+    
+    /* ======== BOOTSTRAP STYLE ========= */
+    ul {
+      list-style: disc url('/assets/list-bullet.svg');
+    }
+    
+    /* ======= KidZania font =========== */
+    @font-face {
+        font-family: 'KZfont';
+        src: url('/assets/kz-font.ttf');
+        src:  url('/assets/kz-font.eot') format('embedded-opentype'),
+          url('/assets/kz-font.ttf') format('truetype'),
+          url('/assets/kz-font.woff') format('woff'),
+          url('/assets/kz-font.svg') format('svg');
+        font-weight: 400;
+        font-style: normal;
+    }
+    
+    /* ======== Bar Code ================ */
+    @font-face {
+      font-family: 'barcode';
+      src: url('/assets/barcode.woff') ;
+      font-weight: 400;
+      font-style: normal;
+    }
+  /*]]>*/
+</style>
+
+<!-- Google Tag Manager -->
+<script src="https://connect.facebook.net/signals/config/484408979251287?v=2.9.297&amp;r=stable&amp;domain=santiago.kidzania.com&amp;hme=c048e760b3fdc0fbdc117d7607b2c36e13eff2660c515ac72e86dac5ba060bb9&amp;ex_m=104%2C205%2C154%2C22%2C72%2C73%2C145%2C68%2C67%2C11%2C162%2C90%2C16%2C138%2C127%2C39%2C75%2C78%2C134%2C159%2C164%2C8%2C4%2C5%2C7%2C6%2C3%2C91%2C101%2C165%2C170%2C219%2C62%2C186%2C187%2C55%2C277%2C30%2C74%2C231%2C230%2C229%2C23%2C33%2C103%2C61%2C10%2C63%2C97%2C98%2C99%2C105%2C130%2C31%2C29%2C132%2C133%2C129%2C128%2C155%2C76%2C158%2C156%2C157%2C50%2C60%2C123%2C15%2C161%2C45%2C264%2C265%2C263%2C26%2C27%2C28%2C48%2C146%2C77%2C112%2C18%2C20%2C44%2C40%2C42%2C41%2C83%2C92%2C96%2C110%2C144%2C147%2C46%2C111%2C24%2C21%2C119%2C69%2C36%2C149%2C148%2C150%2C141%2C139%2C25%2C35%2C59%2C109%2C160%2C70%2C17%2C152%2C114%2C81%2C66%2C19%2C85%2C86%2C116%2C84%2C136%2C135%2C34%2C279%2C294%2C212%2C201%2C202%2C200%2C297%2C289%2C52%2C213%2C107%2C131%2C80%2C121%2C54%2C47%2C49%2C113%2C120%2C126%2C58%2C64%2C151%2C115%2C37%2C32%2C53%2C56%2C100%2C163%2C1%2C124%2C14%2C122%2C12%2C2%2C57%2C93%2C65%2C118%2C89%2C88%2C166%2C167%2C94%2C95%2C9%2C125%2C102%2C51%2C142%2C87%2C79%2C71%2C117%2C106%2C43%2C143%2C0%2C82%2C137%2C140%2C153%2C38%2C108%2C13%2C168%2C228%2C227%2C222%2C224%2C225%2C226%2C223%2C211%2C221%2C193%2C190%2C191%2C185%2C189%2C192%2C188%2C183%2C317%2C196%2C215%2C184%2C182%2C235%2C206%2C176%2C177%2C172%2C178%2C175%2C173%2C174%2C171%2C169%2C180%2C181%2C179%2C266%2C316%2C194%2C239%2C252%2C244%2C248%2C249%2C247%2C253%2C250%2C246%2C251%2C245" async=""></script><script src="https://connect.facebook.net/signals/config/2239787819602030?v=2.9.297&amp;r=stable&amp;domain=santiago.kidzania.com&amp;hme=c048e760b3fdc0fbdc117d7607b2c36e13eff2660c515ac72e86dac5ba060bb9&amp;ex_m=104%2C205%2C154%2C22%2C72%2C73%2C145%2C68%2C67%2C11%2C162%2C90%2C16%2C138%2C127%2C39%2C75%2C78%2C134%2C159%2C164%2C8%2C4%2C5%2C7%2C6%2C3%2C91%2C101%2C165%2C170%2C219%2C62%2C186%2C187%2C55%2C277%2C30%2C74%2C231%2C230%2C229%2C23%2C33%2C103%2C61%2C10%2C63%2C97%2C98%2C99%2C105%2C130%2C31%2C29%2C132%2C133%2C129%2C128%2C155%2C76%2C158%2C156%2C157%2C50%2C60%2C123%2C15%2C161%2C45%2C264%2C265%2C263%2C26%2C27%2C28%2C48%2C146%2C77%2C112%2C18%2C20%2C44%2C40%2C42%2C41%2C83%2C92%2C96%2C110%2C144%2C147%2C46%2C111%2C24%2C21%2C119%2C69%2C36%2C149%2C148%2C150%2C141%2C139%2C25%2C35%2C59%2C109%2C160%2C70%2C17%2C152%2C114%2C81%2C66%2C19%2C85%2C86%2C116%2C84%2C136%2C135%2C34%2C279%2C294%2C212%2C201%2C202%2C200%2C297%2C289%2C52%2C213%2C107%2C131%2C80%2C121%2C54%2C47%2C49%2C113%2C120%2C126%2C58%2C64%2C151%2C115%2C37%2C32%2C53%2C56%2C100%2C163%2C1%2C124%2C14%2C122%2C12%2C2%2C57%2C93%2C65%2C118%2C89%2C88%2C166%2C167%2C94%2C95%2C9%2C125%2C102%2C51%2C142%2C87%2C79%2C71%2C117%2C106%2C43%2C143%2C0%2C82%2C137%2C140%2C153%2C38%2C108%2C13%2C168" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y508GDJQB1&amp;cx=c&amp;gtm=4e6481"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-7VMZSMS86G&amp;cx=c&amp;_slc=1"></script><script type="text/javascript" async="" charset="utf-8" src="https://www.gstatic.com/recaptcha/releases/gTpTIWhbKpxADzTzkcabhXN4/recaptcha__id.js" crossorigin="anonymous" integrity="sha384-DsL8aWv813TFGpGbBi0H8c3TZVdrTs1mD0hpfopFVDmNw6ZY/4AW5bkzfpI+pN7x"></script><script async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-MVHHRZ5"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MVHHRZ5');</script>
+<!-- End Google Tag Manager -->
+
+<script>
+  //<![CDATA[
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+    ga('create', 'UA-33698193-22', 'auto');
+    ga('send', 'pageview');
+  //]]>
+</script>
+
+
+
+<!-- Main Critical CSS -->
+<style>
+  /*<![CDATA[*/
+    .btn-outline,a{text-decoration:none}.owl-carousel,.owl-carousel .owl-item{-webkit-tap-highlight-color:transparent}*,.btn,.btn-red,:after,body{box-sizing:border-box}body{font:400 18px/1.4 Ubuntu,sans-serif;color:#000;background:#FFF;padding-top:0;position:relative;margin:0;height:100%;width:100%;-webkit-font-smoothing:subpixel-antialiased}h1{margin:.67em 0;font-size:2em}.container,.container-fluid{margin-right:auto;margin-left:auto;padding-right:15px;padding-left:15px}.h1,.h2,.h3,h1,h2,h3{margin-top:20px;margin-bottom:10px}.hidden{display:none!important}.collapse,.modal,.navbar-toggle{display:none}.text-center{text-align:center}.col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-xs-1,.col-xs-10,.col-xs-11,.col-xs-12,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9{position:relative;min-height:1px;padding-right:15px;padding-left:15px;float:left;max-width:100%}@media (min-width:768px){.container{width:750px}}@media (min-width:992px){.container{width:970px}}@media (min-width:1200px){.container{width:1170px}}.pull-left{float:left!important}.modal{position:fixed;top:0;right:0;bottom:0;left:0;z-index:1050;overflow:hidden;-webkit-overflow-scrolling:touch;outline:0}.panel-group{margin-bottom:20px}.navbar-collapse{padding-right:15px;padding-left:15px;overflow-x:visible;-webkit-overflow-scrolling:touch;-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,.1)}.dropdown-menu{position:absolute;top:100%;left:0;z-index:1000;display:none;float:left;min-width:160px;padding:5px 0;margin:2px 0 0;font-size:14px;text-align:left;list-style:none;background-color:#fff;-webkit-background-clip:padding-box;background-clip:padding-box;border:1px solid #ccc;border:1px solid rgba(0,0,0,.15);border-radius:4px;-webkit-box-shadow:0 6px 12px rgba(0,0,0,.175);box-shadow:0 6px 12px rgba(0,0,0,.175)}.img-responsive{display:block;max-width:100%;height:auto}.nav>li,.navbar,.owl-carousel,.owl-carousel .owl-item,.owl-carousel .owl-stage{position:relative}.list-inline,.list-unstyled{padding-left:0;list-style:none}.center-block{display:block;margin-right:auto;margin-left:auto}.list-inline{margin-left:-5px}.list-inline>li{display:inline-block;padding-right:5px;padding-left:5px}.navbar{min-height:50px;margin-bottom:20px;border:1px solid transparent}.navbar-nav{margin:7.5px -15px}.navbar-right,ol,ul{margin-top:0}@media (min-width:768px){.navbar-nav{float:left;margin:0}.navbar-right{float:right!important;margin-right:-15px}.navbar-nav>li{float:left}}.container-fluid>.navbar-collapse,.container-fluid>.navbar-header,.container>.navbar-collapse,.container>.navbar-header{margin-right:-15px;margin-left:-15px}@media (max-width:767px){.hidden-xs{display:none}}.navbar-brand>img,.owl-carousel,.owl-carousel.owl-loaded{display:block}.navbar-nav.navbar-right:last-child{margin-right:0}.navbar-default .navbar-collapse,.navbar-default .navbar-form{border-color:#e7e7e7}.navbar-default .navbar-brand{color:#777}.navbar-brand{float:left;height:50px;padding:15px;font-size:18px;line-height:20px}ol,ul{margin-bottom:10px}.nav{padding-left:0;margin-bottom:0;list-style:none}.navbar-fixed-top{top:0;border-width:0 0 1px}.owl-carousel{direction:ltr;width:100%;z-index:1}.owl-carousel .owl-stage{-ms-touch-action:pan-Y;width:100%}.owl-carousel .owl-stage-outer{position:relative;overflow:hidden;-webkit-transform:translate3d(0,0,0)}.owl-carousel .owl-item,.owl-carousel .owl-wrapper{-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-ms-backface-visibility:hidden;-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0)}.owl-carousel .owl-item{min-height:1px;float:left;-webkit-backface-visibility:hidden;-webkit-touch-callout:none}.section-wrapper{background:#FFF}.cookie-message.purple{position:fixed;bottom:0;left:0;right:0;padding:15px 100px;background:rgba(255,255,255,.9);box-shadow:0 0 5px #ccc;z-index:998;color:#333;line-height:1;font-size:80%;transition:all .4s;text-align:center;display:none}.cookie-message .inner{max-width:960px;margin:0 auto;padding:0 15px!important}.cookie-message .inner img{width:120px;margin-left:-100px;margin-right:15px;position:relative;float:left}.cookie-message .inner .glyphicon{position:absolute;right:70px;top:28px;color:#666}@media (max-width:580px){.cookie-message.purple{padding:10px 100px 10px 30px;font-size:70%}.cookie-message .inner img{width:80px;margin-top:15px;margin-bottom:10px;margin-left:0}}@media (max-width:470px){.cookie-message.purple{padding-right:50px}.cookie-message .inner .glyphicon{right:auto;left:20px}.cookie-message .inner img{display:block;float:none;margin:8px auto 5px}}.mobile-nav{width:100%;background:#bd234d;position:fixed;top:0;z-index:10;padding-top:20px;min-height:75px;color:#FFF;font-size:18px;transition:all .4s;box-shadow:0 7px 10px rgba(0,0,0,.13)}@media (min-width:1201px){.mobile-nav{display:none}}.img-icon{max-width:70px;margin-right:10px;max-height:70px;overflow:hidden;width:100%}.mobile-nav a{color:#FFF}.mobile-menu-toggle{width:44px;padding:5px 20px 10px;display:inline-block;position:absolute}.mobile-menu-toggle .icon-bar{height:4px;width:24px;background:#FFF;margin-left:auto;margin-right:auto}.mobile-menu-toggle .icon-bar.middle{width:18px;margin:5px auto}.mobile-nav-logo{max-width:130px;display:block;margin:0 auto;height:30px}.mobile-menu-franchise{color:#FFF;text-align:center;margin:2px 0 0 42px;font-size:10px;font-family:Arial,sans-serif}.content-list{margin-top:10px;padding-left:5px}.mobile-visit-info{height:70px;width:100%;margin-top:8px;position:fixed;bottom:0;z-index:9;box-shadow:rgba(0,0,0,.2) 0 0 10px;background:linear-gradient(to bottom,#f18b21,#e07608)}.mobile-visit-info ul{max-width:450px;color:#FFF;margin:0 auto;padding:8px 0;font-size:12px;text-align:center}.mobile-visit-info ul>li{margin-bottom:0;width:31.5%;padding:0;white-space:nowrap;overflow-y:hidden;text-overflow:ellipsis}.mobile-visit-info a{color:#FFF}@media (min-width:1201px){.mobile-visit-info{display:none}}.outter{position:relative;width:100%;height:100%;display:block}.navbar-default,.navbar-default .navbar-nav>.open>a,.navbar-default .navbar-nav>.open>a:focus{background-color:transparent;color:#FFF;z-index:5}.navbar.navbar-default{border-radius:0;-moz-border-radius:0;-webkit-border-radius:0;border:0;background:linear-gradient(180deg,rgba(0,0,0,.5) 0,transparent);padding-bottom:40px;position:absolute;width:100%}.navbar-nav.nav.navbar-right>li{padding:8px 10px;font-weight:200;font-size:15px;color:#FFF!important;line-height:3px!important;cursor:pointer}.mobile-brand{display:none!important}.nav-container{max-width:1550px;width:100%;margin-left:auto;margin-right:auto}@media (max-width:768px){.nav-container,.navbar-collapse{padding-left:0;padding-right:0}.navbar.navbar-default{padding-top:100px}.nav-container.tick{position:absolute;margin-top:170px;max-width:none;padding:0}.navbar-collapse{position:absolute;width:100%}}.navbar-header{padding-top:70px;float:none}@media (max-width:1200px){.navbar-header{display:none;padding-top:55px}}.navbar-collapse{border-top:0;box-shadow:none;max-height:600px}@media (min-width:1201px){.navbar-collapse.collapse{display:block!important;height:auto!important;padding-bottom:0;overflow:visible!important}}@media (max-width:767px){.hidden-xs{display:none!important}}.nav>li,.nav>li>a,.ticket-bar ul{display:inline}.navbar-brand{width:240px}.navbar .navbar-brand{padding-right:30px;height:30px;outline:0;margin-top:-35px;padding-left:10px!important}.navbar .navbar-brand img,.navbar-brand img{max-width:210px;margin-top:15px}.facility{color:#FFF;font-size:13px;text-align:center;margin-top:-5px;margin-left:68px;font-weight:400;font-family:Arial,sans-serif}.ticket-bar{margin-top:-55px;background:#f18b21;font-size:14px;padding-top:12px;padding-bottom:12px;text-align:right;float:right;max-width:none;border-radius:25px 7px 7px 25px}.ticket-bar ul>li{display:inline;margin-right:20px;position:relative}.ticket-bar a{color:#FFF;font-size:15px}.expand-info{padding:15px;background:rgba(255,255,255,.9);border-radius:10px;box-shadow:0 5px 25px rgba(0,0,0,.2);position:absolute;top:30px;right:-25px;text-align:left;min-width:250px;z-index:50;color:#666;transition:all .4s;opacity:0;visibility:hidden}.lang-selector-ticket{position:relative;text-align:right;margin-bottom:5px;margin-top:0}.lang-selector-ticket a{color:#FFF;font-size:13px;padding:5px 15px!important;border-radius:10px}.row{max-width:1300px;margin-right:auto;margin-left:auto}.nav>li{padding-bottom:5px}.nav a{padding-top:5px!important;padding-bottom:20px!important;font-size:18px}.navbar-nav>li>a{margin:8px 10px;padding:0;font-weight:200;font-size:15px;color:#FFF!important;line-height:3px!important}.btn,.btn-outline{padding:10px 40px}#navSpy{display:none}.home-wrapper,.spacer{display:block;width:100%}.home-wrapper{position:relative;min-height:200px;height:650px}#main-slider{overflow-y:hidden;max-height:750px}@media (max-width:1200px){#main-slider,#main-slider .item,.home-wrapper{height:650px}}@media (max-width:800px){.home-wrapper{height:60%;min-height:476px}}@media (max-width:768px){#main-slider,#main-slider .item,.home-wrapper{height:600px}}@media (max-width:400px){#main-slider,#main-slider .item,.home-wrapper{height:480px}}.content-home-wrapper{z-index:0;position:relative;width:100%;height:135%}@media (max-width:600px){.content-home-wrapper{height:50%}}.spacer.small{height:20px}.header-center{position:absolute;left:50%;top:59%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);-moz-transform:translate(-50%,-50%);transform:translate(-50%,-50%);display:inline-block}.btn,.btn-red{white-space:nowrap;display:inline-block;position:relative;text-align:center;box-sizing:border-box;outline:0}.header-center h1,.header-center p{color:#FFF}.header-center h1{font-weight:600;font-size:48px;text-shadow:0 1px 7px rgba(0,0,0,.6)}@media (max-width:800px){.header-center h1,h2{font-size:36px}}.btn{color:#bd234d;cursor:pointer!important;background-color:transparent;border-radius:30px;font-size:18px;font-weight:700;box-shadow:inset 0 0 0 2px #d00a40;text-shadow:0 0 1px rgba(0,0,0,.1);border:0}.btn-outline{border:none;border-radius:35px;box-sizing:border-box;box-shadow:inset 0 0 0 2px #FFF;-webkit-transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-ms-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;transition:all .2s ease-in-out;background-color:rgba(0,0,0,.2);color:#FFF}.btn-red{padding-top:0;padding-bottom:0;height:44px;line-height:40px;cursor:pointer;background-color:#bd234d;background-image:linear-gradient(180deg,#e7255a 0,#ca1f4b);border-radius:25px;outline:0;color:#fff;border:none;box-shadow:0 8px 15px rgba(133,26,44,.3),0 20px 55px rgba(206,27,74,.35)}.btn-tickets{background-image:linear-gradient(180deg,#ffb31f 0,#ff9600 55%,#e17f0b);color:#fff;box-shadow:none;padding:15px 45px;max-width:300px!important}@media (max-width:1100px){.btn-red{box-shadow:none}}.fullfilter{position:absolute;width:100%;height:100%;left:0;top:0;background:rgba(37,41,44,.1);z-index:1;display:none}.home-video{position:relative;height:100%;display:block}.home-video-fallback{position:absolute;top:0;height:100%;width:100%;display:none;z-index:-1}@media (max-width:600px){.home-video{display:none}.home-video-fallback{display:block}}#main-slider .owl-nav{position:absolute;top:350px;color:#FFF;width:100%}.simple-slider .owl-nav{position:absolute;top:250px;color:#FFF;width:100%}#main-slider .owl-next,#main-slider .owl-prev,.simple-slider .owl-next,.simple-slider .owl-prev{width:60px;height:90px;background:rgba(0,0,0,.3);padding:32px 15px;font-size:24px;display:inline-block;transition:all .4s}#main-slider .owl-next:hover,#main-slider .owl-prev:hover,.simple-slider .owl-next:hover,.simple-slider .owl-prev:hover{background:linear-gradient(180deg,#f5981f 0,#f5821f 60%,#f5821f);box-shadow:0 8px 15px rgba(164,76,0,.3),0 20px 35px rgba(245,130,31,.35)}#main-slider .owl-prev,.simple-slider .owl-prev{border-top-right-radius:10px;border-bottom-right-radius:10px;float:left}#main-slider .owl-next,.simple-slider .owl-next{border-top-left-radius:10px;border-bottom-left-radius:10px;float:right}.book-now,.text-module{float:left;text-align:center}#main-slider .item{position:relative;height:750px}.simple-slider .item{position:relative;height:500px}#main-slider .caption,.mid-header .caption,.simple-slider .caption{width:100%;position:absolute;bottom:85px;padding-left:10%;padding-right:10%;text-shadow:0 5px 20px rgba(0,0,0,.5);font-size:18px}.arc-divider,.book-now,.section-outter{position:relative}.mid-header .caption{bottom:70px}#main-slider .caption .title,#main-slider .caption p,.mid-header .caption p,.mid-header .title,.simple-slider .caption .title,.simple-slider .caption p{color:#FFF;text-align:center;max-width:750px;overflow:hidden;margin:0 auto;padding:12px}#main-slider .caption .btn{margin-left:auto;margin-right:auto;text-align:center;display:block;max-width:250px}@media (max-width:1200px){#main-slider .item{height:650px}#main-slider .caption,.simple-slider .caption{padding-left:20px;padding-right:20px;bottom:66px}#main-slider .caption .title{font-size:36px;line-height:1}}@media (max-width:800px){#main-slider .caption,.simple-slider .caption{bottom:45px}#main-slider .caption,#main-slider .caption p,.simple-slider .caption,.simple-slider .caption p{padding-left:20px;padding-right:20px}.simple-slider .caption .title{font-size:36px;line-height:1}}@media (max-width:768px){#main-slider .item,.home-wrapper{height:600px}#main-slider .owl-nav{top:250px}}@media (max-width:600px){#main-slider .caption,.simple-slider .caption{bottom:34px}#main-slider .caption .title,.simple-slider .caption .title{font-size:30px}#main-slider .owl-next,#main-slider .owl-prev{padding:17px 10px;width:40px;height:60px}#main-slider .caption .title,#main-slider .caption p{padding-left:40px;padding-right:40px}.simple-slider .owl-next,.simple-slider .owl-prev{padding:17px 10px;width:40px;height:60px}.simple-slider .caption .title,.simple-slider .caption p{padding-left:40px;padding-right:40px}.content-home-wrapper{height:120%}}@media (max-width:400px){#main-slider .item,.home-wrapper,.simple-slider .item{height:480px}#main-slider .caption .title{padding-left:10px;padding-right:10px}#main-slider .caption p{padding-left:0;padding-right:0}#main-slider .caption{padding-left:40px;padding-right:40px}.simple-slider .caption .title{padding-left:10px;padding-right:10px}.simple-slider .caption p{padding-left:0;padding-right:0}.simple-slider .caption{padding-left:40px;padding-right:40px}}@media (max-width:350px){#main-slider .item,.home-wrapper{height:480px!important;min-height:200px}#main-slider .item,.home-wrapper,.simple-slider .item{height:430px;min-height:200px}}@media (max-width:380px){#contact .col-md-5{padding:0}}.ticket-bar-2 ul{display:inline}.arc-divider{width:100%;height:70px;margin-top:-70px;z-index:1}@media (max-width:800px){.arc-divider{height:40px;margin-top:-40px}}@media (max-width:400px){.arc-divider{height:25px;margin-top:-25px}}.visit-info-2{background-color:#FFF}.clearfix::after{content:"";clear:both;display:table}.visit-info-2 .block p{font-size:20px;padding-left:25px;margin-top:12px;margin-bottom:12px}.visit-info-2 .block{display:inline-block;margin-bottom:15px}.hours-name,.ticket-name{color:#777;text-align:center;display:block;font-size:26px;margin:10px auto}.book-now,.book-now .title{color:#FFF}.book-now{background:#f18b21;min-height:100px;padding:20px 30px 40px;width:100%}.simple-slider{background:#e0e0e0;width:100%}.simple-slider.open{margin-top:300px}.arc-svg{bottom:-1px;left:0;position:absolute;z-index:1}.title{font-size:48px;font-weight:800;line-height:60px;letter-spacing:-1px;margin-bottom:20px;color:#25292c;padding:0 20px}.text-module{position:relative;z-index:2;width:100%;margin:30px auto 0}.text-module p{max-width:1200px;margin:12px auto}@media (max-width:500px){h2.title{padding:15px;font-size:35px;line-height:1}}.ip-logo{width:130px;height:130px;padding:15px;margin-right:auto;margin-left:auto;border:2px solid #DDD;transition:all .3s}.ip-logo.grid{margin:5px;display:inline-block;width:140px;height:140px;transition:all .3s}.title span{min-height:48px;min-width:48px;border-radius:50%;background:#bd234d;color:#bd234d;display:inline-block}body.nl .facility{margin-left:13px;margin-top:0;font-size:14px;font-weight:600}body.nl #logo img{max-width:186px;margin-left:15px;margin-top:10px;height:43px}body.nl .nav-brand-2{width:33px;margin-top:6px;margin-left:27px}body.nl .mobile-nav-logo{margin-top:2px}body.nl .mobile-menu-franchise{margin:1px 0 0 6px;font-family:KZfont,sans-serif;letter-spacing:1.2px;font-size:9px;font-weight:400;text-align:center}@media (min-width:992px){.col-md-offset-1{margin-left:8.33333333%}.col-md-5{width:41.66666667%}}.visible-lg-block,.visible-lg-inline,.visible-lg-inline-block,.visible-md-block,.visible-md-inline,.visible-md-inline-block,.visible-sm-block,.visible-sm-inline,.visible-sm-inline-block,.visible-xs-block,.visible-xs-inline,.visible-xs-inline-block{display:none!important}.faqs-tabs .tab{width:32.8%;display:inline-block;text-align:center;padding:20px;border-top-right-radius:10px;border-top-left-radius:10px;background:#e4e4e4;border:2px solid #DDD;color:#666;font-size:22px;cursor:pointer}.faqs-tabs .tab.active{background:#FFF;color:#bd234d;font-weight:800;border-bottom:2px solid #FFF}.two-column .title{text-align:center}body.ar,body.ar .caption{direction:rtl}@media (min-width:768px){body.ar .navbar-header{float:left;width:100%}}body.ar .navbar-right,body.ar .pull-right{float:left!important}body.ar .establishment .name-logo .industry-partner{margin-left:0;margin-right:2%}body.ar .close,body.ar .ticket-bar,body.ar .ticket-bar-2{float:left}body.ar .mainNavSpy .lang-selector,body.ar .navbar-brand{float:right}body.ar .lang-selector-ticket .glyphicon{margin-right:0;margin-left:3px}body.ar .lang-selector-ticket,body.ar .mainNavSpy{text-align:left;direction:ltr}body.ar .contact,body.ar .expand-info,body.ar .secondary-modules-wrapper2 .module,body.ar .text-left,body.ar .two-column .side-column{text-align:right}body.ar .ticket-bar,body.ar .ticket-bar-2{border-radius:7px 25px 25px 7px}body.ar .ticket-bar ul,body.ar .ticket-bar-2 ul{padding-right:0;padding-left:40px}body.ar .visit-info-2 p{padding-left:0;padding-right:78px}
+  /*]]>*/
+</style>
+
+<meta content="https://d1eilicilqktnj.cloudfront.net/franchises/logo_franchises/4/original/kz-logo-color-full.png?1539208102" property="og:image">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="KidZania" name="author">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<title>KidZania Santiago!</title>
+<meta content="KidZania Santiago, kidzaniasantiago, kidzania chile, kidzania las condes, horarios kidzania, entradas kidzania, tickets kidzania, precio kidzania, kidzania precios" name="keywords">
+<meta content="¿Alguna vez soñaste con ser piloto de un avión, bombero o una estrella de rock?. Aquí podrás realizar más de 100 roles como en la vida real, en la clínica, el escenario o investigando casos como policías." name="description">
+<link href="https://d1eilicilqktnj.cloudfront.net/system_configs/favicons/13/original/favicon.png?1526028195" rel="shortcut icon" type="image/vnd.microsoft.icon">
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon">
+<link href="/assets/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57">
+<link href="/assets/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+<link href="/assets/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+<link href="/assets/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+<link href="/assets/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+<link href="/assets/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+<link href="/assets/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+<link href="/assets/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180">
+<link href="/assets/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed">
+<link href="/assets/apple-touch-icon-57x57-precomposed.png" rel="apple-touch-icon-precomposed" sizes="57x57">
+<link href="/assets/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72">
+<link href="/assets/apple-touch-icon-76x76-precomposed.png" rel="apple-touch-icon-precomposed" sizes="76x76">
+<link href="/assets/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114">
+<link href="/assets/apple-touch-icon-120x120-precomposed.png" rel="apple-touch-icon-precomposed" sizes="120x120">
+<link href="/assets/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144">
+<link href="/assets/apple-touch-icon-152x152-precomposed.png" rel="apple-touch-icon-precomposed" sizes="152x152">
+<link href="/assets/apple-touch-icon-180x180-precomposed.png" rel="apple-touch-icon-precomposed" sizes="180x180">
+
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<meta content="authenticity_token" name="csrf-param">
+<meta content="VzmYMCftjizajgj69oDdRwnJbYltKGMNNyZ+f9hkObw=" name="csrf-token">
+</head>
+<body class="nl es" data-spy="scroll" data-target="#navSpy" style="">
+<!-- Get link_url value -->
+<!-- Strip all whitespaces -->
+<!-- Check if link_url is defined -->
+<!-- * If yes: assign link_url value to redirectTo -->
+<!-- * If no: assign root_path value to redirectTo -->
+<!-- Get link_url value -->
+<!-- Strip all whitespaces -->
+<!-- Check if franchise_name is defined -->
+<!-- * If yes: assign franchise_name value to name -->
+<!-- * If no: assign current_franchise.name value to name -->
+<script>
+  //<![CDATA[
+    var url = "/es-cl";
+    var link_url = "";
+    var root = "/es-cl";
+    var franchise_name = "";
+    var current = "Santiago";
+    var name = "Santiago";
+    console.log("redirect: ", url);
+    console.log("linkUrl: ", link_url);
+    console.log("root: ", root);
+    console.log("franchise: ", franchise_name);
+    console.log("current: ", current);
+    console.log("name: ", name);
+  //]]>
+</script>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+<iframe height='0' src='https://www.googletagmanager.com/ns.html?id=GTM-MVHHRZ5' style='display:none;visibility:hidden' width='0'></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- Analytics -->
+<div class="mobile-nav">
+<!-- Get link_url value -->
+<!-- Strip all whitespaces -->
+<!-- Check if link_url is defined -->
+<!-- * If yes: assign link_url value to redirectTo -->
+<!-- * If no: assign root_path value to redirectTo -->
+<!-- Get link_url value -->
+<!-- Strip all whitespaces -->
+<!-- Check if franchise_name is defined -->
+<!-- * If yes: assign franchise_name value to name -->
+<!-- * If no: assign current_franchise.name value to name -->
+<a class="mobile-menu-toggle pull-left" data-toggle="collapse" href="#content-list" role="button">
+<div class="icon-bar"></div>
+<div class="icon-bar middle"></div>
+<div class="icon-bar"></div>
+</a>
+<a href="/es-cl/">
+<img alt="KidZania" class="img-responsive mobile-nav-logo" src="https://d1eilicilqktnj.cloudfront.net/system_configs/white_logos/13/original/kz-logo-2-white.svg?1526028195">
+<p class="mobile-menu-franchise">
+Santiago
+</p>
+</a>
+<div aria-multiselectable="true" class="content-list panel-group collapse" id="content-list" role="tablist">
+<div class="panel panel-default">
+<div class="panel-heading" id="headingOne" role="tab">
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading" id="heading0" role="tab">
+<a aria-controls="collapse0" aria-expanded="true" data-parent="#content-list" data-toggle="collapse" href="#collapse0" role="button">
+Concepto KidZania
+<b class="caret"></b>
+&nbsp;
+</a>
+</div>
+<div aria-labelledby="heading0" class="panel-collapse collapse" id="collapse0" role="tabpanel">
+<div class="panel-body">
+<ul class="sub-menu list-unstyled">
+<li>
+<a href="https://santiago.kidzania.com/es-cl/pages/concepto-kidzania">¿Qué es KidZania?</a>
+</li>
+<li>
+<a href="https://youtu.be/XaxsojQJrPg">Propósito de KidZania</a>
+</li>
+<li>
+<a href="https://santiago.kidzania.com/es-cl/pages/nuestra-historia">La historia de KidZania</a>
+</li>
+<li>
+<a href="https://santiago.kidzania.com/es-cl/pages/mision-y-vision">Nuestra Misión y Visión</a>
+</li>
+<li>
+<a href="https://santiago.kidzania.com/es-cl/pages/juego-de-rol">Juego de Rol</a>
+</li>
+<li>
+<a href="https://santiago.kidzania.com/es-cl/pages/aprendizaje-y-educacion">Aprendizaje y Educación</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading" id="heading1" role="tab">
+<a aria-controls="collapse1" aria-expanded="true" data-parent="#content-list" data-toggle="collapse" href="#collapse1" role="button">
+Acerca de KidZania Santiago
+<b class="caret"></b>
+&nbsp;
+</a>
+</div>
+<div aria-labelledby="heading1" class="panel-collapse collapse" id="collapse1" role="tabpanel">
+<div class="panel-body">
+<ul class="sub-menu list-unstyled">
+<li>
+<a href="https://santiago.kidzania.com/es-cl/partners">Nuestros Socios</a>
+</li>
+<li>
+<a href="https://santiago.kidzania.com/es-cl/pages/legal">Información legal</a>
+</li>
+<li>
+<a href="https://santiago.kidzania.com/es-cl/pages/b-kidzanian">B•KidZanian</a>
+</li>
+<li>
+<a href="https://santiago.kidzania.com/es-cl/pages/accesibilidad">Accesibilidad y Seguridad</a>
+</li>
+<li>
+<a href="https://santiago.kidzania.com/es-cl/pages/nuestros-guardianes">Guardianes de los Derechos</a>
+</li>
+<li>
+<a href="https://santiago.kidzania.com/es-cl/faq">Preguntas Frecuentes</a>
+</li>
+<li>
+<a href="https://santiago.kidzania.com/es-cl/pages/kz-inclusion">Protocolo de Inclusión</a>
+</li>
+<li>
+<a href="https://santiago.kidzania.com/es-cl/pages/trabaja-con-nosotros">¡Trabaja con nosotros!</a>
+</li>
+<li>
+<a href="https://santiago.kidzania.com/es-cl/pages/linea-etica">Línea Etica</a>
+</li>
+<li>
+<a href="https://santiago.kidzania.com/files/8142#ga_track_hosted_file=Reglamento_Parque_KZ">Reglamento del Parque</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading" id="heading2" role="tab">
+<a aria-controls="collapse2" aria-expanded="true" data-parent="#content-list" data-toggle="collapse" href="#collapse2" role="button">
+Planifica tu Visita
+<b class="caret"></b>
+&nbsp;
+</a>
+</div>
+<div aria-labelledby="heading2" class="panel-collapse collapse" id="collapse2" role="tabpanel">
+<div class="panel-body">
+<ul class="sub-menu list-unstyled">
+<li>
+<a href="https://santiago.kidzania.com/es-cl/pages/guia-de-ingreso">Guía bienvenida a KidZania</a>
+</li>
+<li>
+<a href="https://santiago.kidzania.com/es-cl/activities">Actividades</a>
+</li>
+<li>
+<a href="https://santiago.kidzania.com/es-cl/pages/horario-de-apertura">Horarios de Apertura</a>
+</li>
+<li>
+<a href="https://santiago.kidzania.com/es-cl/pages/actividades-para-padres">Actividades para Papás</a>
+</li>
+<li>
+<a href="https://santiago.kidzania.com/es-cl/pages/precios-de-entradas">Precios Entradas</a>
+</li>
+<li>
+<a href="https://santiago.kidzania.com/es-cl/pages/como-llegar">¿Cómo llegar?</a>
+</li>
+<li>
+<a href="https://santiago.kidzania.com/es-cl/pages/mapa-de-la-ciudad">Mapa de la Ciudad</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading" id="heading3" role="tab">
+<a aria-controls="collapse3" aria-expanded="true" data-parent="#content-list" data-toggle="collapse" href="#collapse3" role="button">
+Visitas y Programas
+<b class="caret"></b>
+&nbsp;
+</a>
+</div>
+<div aria-labelledby="heading3" class="panel-collapse collapse" id="collapse3" role="tabpanel">
+<div class="panel-body">
+<ul class="sub-menu list-unstyled">
+<li>
+<a href="https://santiago.kidzania.com/es-cl/pages/eventos-corporativos">Experiencias Corporativas</a>
+</li>
+<li>
+<a href="https://santiago.kidzania.com/es-cl/pages/visitas-escolares">Visitas Escolares</a>
+</li>
+<li>
+<a href="https://santiago.kidzania.com/es-cl/pages/ayudas-pedagogicas">Guías Pedagógicas</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading" id="heading4" role="tab">
+<a aria-controls="collapse4" aria-expanded="true" data-parent="#content-list" data-toggle="collapse" href="#collapse4" role="button">
+Cumpleaños
+<b class="caret"></b>
+&nbsp;
+</a>
+</div>
+<div aria-labelledby="heading4" class="panel-collapse collapse" id="collapse4" role="tabpanel">
+<div class="panel-body">
+<ul class="sub-menu list-unstyled">
+<li>
+<a href="https://santiago.kidzania.com/es-cl/pages/fiestas-de-cumpleanos">¡Celebra a lo Grande!</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading" id="heading5" role="tab">
+<a aria-controls="collapse5" aria-expanded="true" data-parent="#content-list" data-toggle="collapse" href="#collapse5" role="button">
+Novedades
+<b class="caret"></b>
+&nbsp;
+</a>
+</div>
+<div aria-labelledby="heading5" class="panel-collapse collapse" id="collapse5" role="tabpanel">
+<div class="panel-body">
+<ul class="sub-menu list-unstyled">
+<li>
+<a href="https://santiago.kidzania.com/es-cl/pages/concurso-25">Concurso Literario 2026</a>
+</li>
+<li>
+<a href="https://santiago.kidzania.com/es-cl/pages/resultado-concursos">Concursos y Resultados</a>
+</li>
+<li>
+<a href="https://youtu.be/FUbV-_XeLqM">Actividades Anteriores</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mobile-visit-info apps" id="mobile-visit-info">
+<ul class="list-unstyled list-inline center-block">
+<li>
+<a data-toggle="modal" href="#ticket-prices-expand-mobile">
+<span class="icon-ticket"></span>
+<br>
+Precio de Entradas
+</a>
+</li>
+<li>
+<a data-toggle="modal" href="#opening-hours-expand-mobile">
+<span class="icon-clock"></span>
+<br>
+Horario de Apertura
+</a>
+</li>
+<li>
+<a href="https://ventasonline.kidzania.cl/checkout/choose_date?start_date=2021-11-15" target="_blank">
+<span class="icon-calendar"></span>
+<br>
+Compra Ahora
+</a>
+</li>
+<li>
+<a href="https://webapp.resolucionenlinea.com/claims/new/kidzania/step1/problem" target="_blank">
+<span class="glyphicon glyphicon-phone"></span>
+<br>Servicio al cliente Santiago KidZania<br>
+</a>
+</li>
+</ul>
+</div>
+<div aria-labelledby="myModalLabel" class="modal fade" id="ticket-prices-expand-mobile" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-adj" role="document">
+<div class="modal-content">
+<div class="modal-body">
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+<div class="section-title">
+<h2 class="title">
+<span class="icon-ticket"></span>
+Precio de Entradas
+</h2>
+</div>
+<div class="owl-carousel prices-slider owl-loaded owl-drag">
+
+
+<div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all;"><div class="owl-item"><div>
+<p class="hours-name small">
+Valor de Entradas 2026 Online
+</p>
+<p class="ticket-type">
+Infante (2 a 3 años)
+</p>
+<p class="cost">
+$12.950
+</p>
+<p class="ticket-type">
+Niño (4 a 17 años)
+</p>
+<p class="cost">
+$22.950
+</p>
+<p class="ticket-type">
+Adulto (18 a 59 años)
+</p>
+<p class="cost">
+$11.950
+</p>
+<p class="ticket-type">
+Senior (+60 años)
+</p>
+<p class="cost">
+$ 11.950
+</p>
+<p class="ticket-type">
+
+</p>
+<p class="cost">
+
+</p>
+<p class="ticket-type">
+Niños menores de 2 años no pueden
+</p>
+<p class="cost">
+Realizar actividades en la ciudad.
+</p>
+</div></div><div class="owl-item"><div>
+<p class="hours-name small">
+Valor de Entradas 2026 Boletería
+</p>
+<p class="ticket-type">
+Infante (2 a 3 años)
+</p>
+<p class="cost">
+$13.950
+</p>
+<p class="ticket-type">
+Niño (4 a 17 años)
+</p>
+<p class="cost">
+$23.950
+</p>
+<p class="ticket-type">
+Adulto (18 a 59 años)
+</p>
+<p class="cost">
+$12.950
+</p>
+<p class="ticket-type">
+Senior (+60 años)
+</p>
+<p class="cost">
+$12.950
+</p>
+<p class="ticket-type">
+
+</p>
+<p class="cost">
+
+</p>
+<p class="ticket-type">
+
+</p>
+<p class="cost">
+
+</p>
+</div></div></div></div><div class="owl-nav"><div class="owl-prev disabled"><span class="glyphicon glyphicon-menu-left"></span></div><div class="owl-next"><span class="glyphicon glyphicon-menu-right"></span></div></div><div class="owl-dots"><div class="owl-dot active"><span></span></div><div class="owl-dot"><span></span></div></div></div>
+<p class="small">
+Infante: 2 a 3 años. Senior: 60 años o más.
+</p>
+<a class="btn btn-default btn-tickets no-shadow" href="https://ventasonline.kidzania.cl/checkout/choose_date?start_date=2021-11-15" target="_blank">
+<span class="icon-ticket"></span>
+Compra Ahora
+</a>
+
+</div>
+</div>
+</div>
+</div>
+<div aria-labelledby="myModalLabel" class="modal fade" id="opening-hours-expand-mobile" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-adj" role="document">
+<div class="modal-content">
+<div class="modal-body">
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+<div class="section-title">
+<h2 class="title">
+<span class="icon-clock"></span>
+Horario de Apertura
+</h2>
+</div>
+<div class="owl-carousel hours-slider owl-loaded owl-drag">
+
+
+<div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all;"><div class="owl-item"><div>
+<p class="hours-name small">
+Horario Abril 2026
+</p>
+<p class="days">
+Lunes a miercoles
+</p>
+<p class="hours">
+Cerrado
+</p>
+<p class="days">
+Viernes 03 - KidZania en armonía
+</p>
+<p class="hours">
+15:00 a 20:00 hrs.
+</p>
+<p class="days">
+Sábado 11 - TeenZania PM
+</p>
+<p class="hours">
+11:00 a 17:00 hrs.<br>18:00 a 22:00 hr
+</p>
+<p class="days">
+Domingo 12
+</p>
+<p class="hours">
+12:00 a 19:00 hrs.
+</p>
+<p class="days">
+
+</p>
+<p class="hours">
+
+</p>
+<p class="days">
+
+</p>
+<p class="hours">
+
+</p>
+</div></div><div class="owl-item"><div>
+<p class="hours-name small">
+KidZania en Armonía
+</p>
+<p class="days">
+Viernes 10 de Abril
+</p>
+<p class="hours">
+15:00 a 20:00 hrs.
+</p>
+<p class="days">
+TeenZania 11 de abril
+</p>
+<p class="hours">
+18:00 a 22:00 hrs.
+</p>
+<p class="days">
+
+</p>
+<p class="hours">
+
+</p>
+<p class="days">
+
+</p>
+<p class="hours">
+
+</p>
+<p class="days">
+
+</p>
+<p class="hours">
+
+</p>
+<p class="days">
+
+</p>
+<p class="hours">
+
+</p>
+</div></div></div></div><div class="owl-nav"><div class="owl-prev disabled"><span class="glyphicon glyphicon-menu-left"></span></div><div class="owl-next"><span class="glyphicon glyphicon-menu-right"></span></div></div><div class="owl-dots"><div class="owl-dot active"><span></span></div><div class="owl-dot"><span></span></div></div></div>
+<p class="small">
+Te recomendamos llegar 20 minutos antes de nuestra apertura. Días y Horarios sujetos a cambio sin previo aviso.
+</p>
+<a class="btn btn-default btn-tickets no-shadow" href="https://ventasonline.kidzania.cl/checkout/choose_date?start_date=2021-11-15" target="_blank">
+<span class="icon-ticket"></span>
+Compra Ahora
+</a>
+
+</div>
+</div>
+</div>
+</div>
+<div aria-labelledby="myModalLabel" class="modal fade" id="apps-out" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-adj" role="document">
+<div class="modal-content">
+<div class="modal-body">
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+<img class="lozad" data-src="//d1eilicilqktnj.cloudfront.net/assets/app-logo-28cb2611681c833769f8a2299cea20f3.png" style="max-width: 60px; display: inline-block;">
+<br>
+<h4 class="subtitle" style="display: inline-block; margin: 0;">Necesitas ayuda?</h4>
+<div id="storeSelect">
+<p></p>
+<p style="color: #777">
+<b></b>
+</p>
+<br>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div aria-labelledby="myModalLabel" class="modal fade grid" id="book-now-tickets-out" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-adj" role="document">
+<div class="modal-content">
+<div class="modal-body">
+<button aria-label="Close" class="close" data-dismiss="modal" id="grid-1-close" type="button">
+<span aria-hidden="true">×</span>
+</button>
+<div class="section-title">
+<h2 class="title">
+<span class="icon-calendar"></span>
+Compra Ahora
+</h2>
+</div>
+<div class="single-column">
+<p class="catch">
+
+</p>
+</div>
+</div>
+<div class="totop-modal" id="">
+<a href="#grid-1-close">
+<span class="glyphicon glyphicon-menu-up"></span>
+</a>
+</div>
+</div>
+</div>
+</div>
+
+<div>
+<div class="sticky-nav affix-top" data-offset-top="800" data-spy="affix">
+<nav class="navbar navbar-default" role="navigation">
+<div class="container-fluid nav-container center-block">
+<div class="navbar-header">
+<div class="collapse navbar-collapse no-transition" id="bs-example-navbar-collapse-1">
+<a class="navbar-brand" href="/es-cl/" id="logo">
+<img alt="KidZania" class="img-responsive hidden-xs hidden-sm hidden-md" src="https://d1eilicilqktnj.cloudfront.net/system_configs/white_logos/13/original/kz-logo-2-white.svg?1526028195">
+<p class="text-center facility">
+Santiago
+</p>
+<!-- valor del YML -->
+</a>
+<div class="nav-container tick">
+<div class="ticket-bar">
+<ul>
+<li id="tickets-nav">
+<span class="icon-ticket"></span>
+Precio de Entradas
+<div class="expand-info ticket-prices ticket-prices-fixed">
+<div class="prices-slider-2">
+<div class="element price-grid">
+<div class="ticket-name small">
+Valor de Entradas 2026 Online
+</div>
+<p class="ticket-type">
+Infante (2 a 3 años)
+</p>
+<p class="cost">
+$12.950
+</p>
+<p class="ticket-type">
+Niño (4 a 17 años)
+</p>
+<p class="cost">
+$22.950
+</p>
+<p class="ticket-type">
+Adulto (18 a 59 años)
+</p>
+<p class="cost">
+$11.950
+</p>
+<p class="ticket-type">
+Senior (+60 años)
+</p>
+<p class="cost">
+$ 11.950
+</p>
+<p class="ticket-type">
+</p>
+<p class="cost">
+</p>
+<p class="ticket-type">
+Niños menores de 2 años no pueden
+</p>
+<p class="cost">
+Realizar actividades en la ciudad.
+</p>
+</div>
+<div class="element price-grid">
+<div class="ticket-name small">
+Valor de Entradas 2026 Boletería
+</div>
+<p class="ticket-type">
+Infante (2 a 3 años)
+</p>
+<p class="cost">
+$13.950
+</p>
+<p class="ticket-type">
+Niño (4 a 17 años)
+</p>
+<p class="cost">
+$23.950
+</p>
+<p class="ticket-type">
+Adulto (18 a 59 años)
+</p>
+<p class="cost">
+$12.950
+</p>
+<p class="ticket-type">
+Senior (+60 años)
+</p>
+<p class="cost">
+$12.950
+</p>
+<p class="ticket-type">
+</p>
+<p class="cost">
+</p>
+<p class="ticket-type">
+</p>
+<p class="cost">
+</p>
+</div>
+</div>
+<p>
+Infante: 2 a 3 años. Senior: 60 años o más.
+</p>
+<a class="btn btn-default btn-tickets no-shadow" href="https://ventasonline.kidzania.cl/checkout/choose_date?start_date=2021-11-15" target="_blank">
+<span class="icon-ticket"></span>
+Compra Ahora
+</a>
+
+</div>
+</li>
+<li>
+<span class="icon-clock"></span>
+Horario de Apertura
+<div class="expand-info opening-hours opening-hours-fixed">
+<div class="hours-slider-2">
+<div class="element time-grid">
+<div class="hours-name small">
+Horario Abril 2026
+</div>
+<p class="days">
+Lunes a miercoles
+</p>
+<p class="hours">
+Cerrado
+</p>
+<p class="days">
+Viernes 03 - KidZania en armonía
+</p>
+<p class="hours">
+15:00 a 20:00 hrs.
+</p>
+<p class="days">
+Sábado 11 - TeenZania PM
+</p>
+<p class="hours">
+11:00 a 17:00 hrs.<br>18:00 a 22:00 hr
+</p>
+<p class="days">
+Domingo 12
+</p>
+<p class="hours">
+12:00 a 19:00 hrs.
+</p>
+<p class="days">
+</p>
+<p class="hours">
+</p>
+<p class="days">
+</p>
+<p class="hours">
+</p>
+</div>
+<div class="element time-grid">
+<div class="hours-name small">
+KidZania en Armonía
+</div>
+<p class="days">
+Viernes 10 de Abril
+</p>
+<p class="hours">
+15:00 a 20:00 hrs.
+</p>
+<p class="days">
+TeenZania 11 de abril
+</p>
+<p class="hours">
+18:00 a 22:00 hrs.
+</p>
+<p class="days">
+</p>
+<p class="hours">
+</p>
+<p class="days">
+</p>
+<p class="hours">
+</p>
+<p class="days">
+</p>
+<p class="hours">
+</p>
+<p class="days">
+</p>
+<p class="hours">
+</p>
+</div>
+</div>
+<p>
+Te recomendamos llegar 20 minutos antes de nuestra apertura. Días y Horarios sujetos a cambio sin previo aviso.
+</p>
+<a class="btn btn-default btn-tickets no-shadow" href="https://ventasonline.kidzania.cl/checkout/choose_date?start_date=2021-11-15" target="_blank">
+<span class="icon-ticket"></span>
+Compra Ahora
+</a>
+
+</div>
+</li>
+<li>
+<a href="https://ventasonline.kidzania.cl/checkout/choose_date?start_date=2021-11-15" target="_blank">
+<span class="icon-calendar"></span>
+Compra Ahora
+</a>
+</li>
+<li id="app-link-nav">
+<a href="https://webapp.resolucionenlinea.com/claims/new/kidzania/step1/problem" target="_blank">
+<span class="glyphicon glyphicon-phone"></span>
+Servicio al cliente Santiago KidZania
+</a>
+<div class="expand-info get-the-app-fixed" style="display: none;">
+<img alt="App-logo" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" style="max-width: 60px; display: inline-block;" data-original="//d1eilicilqktnj.cloudfront.net/assets/app-logo-28cb2611681c833769f8a2299cea20f3.png">
+<br>
+<h4 class="subtitle" style="display: inline-block;">Necesitas ayuda?</h4>
+<div id="storeSelect">
+<p></p>
+<p style="color: #777">
+<b></b>
+</p>
+<img alt="As-badge" class="app-badge-two" id="appleStore" onclick="activateStore('.appStoreQR');" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" data-original="//d1eilicilqktnj.cloudfront.net/assets/as-badge-3701e6daadae809c8dadd73923365bd7.svg">
+<img alt="Gp-badge" class="app-badge-two" id="googleStore" onclick="activateStore('.googleStoreQR');" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" data-original="//d1eilicilqktnj.cloudfront.net/assets/gp-badge-2b7e9eca95e1b41083ebeca3d34db190.svg">
+<br>
+</div>
+<div class="appStoreQR storeQR">
+<p class="text-center">
+
+</p>
+<img alt="As-badge" class="app-badge center" id="appleStore" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" data-original="//d1eilicilqktnj.cloudfront.net/assets/as-badge-3701e6daadae809c8dadd73923365bd7.svg">
+</div>
+<div class="googleStoreQR storeQR">
+<p class="text-center">
+
+</p>
+<img alt="Gp-badge" class="app-badge center" id="googleStore" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" data-original="//d1eilicilqktnj.cloudfront.net/assets/gp-badge-2b7e9eca95e1b41083ebeca3d34db190.svg">
+</div>
+</div>
+</li>
+</ul>
+
+</div>
+<div class="lang-selector-ticket">
+</div>
+</div>
+<ul class="nav navbar-nav navbar-right" id="#mainNav"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li class="dropdown main-menu">
+Concepto KidZania
+<b class="caret"></b>
+&nbsp;
+<ul class="dropdown-menu" role="menu">
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/concepto-kidzania" class="sub_menu_class" id="sub_menu" target="">¿Qué es KidZania?</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://youtu.be/XaxsojQJrPg" class="sub_menu_class" id="sub_menu" target="_blank">Propósito de KidZania</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/nuestra-historia" class="sub_menu_class" id="sub_menu" target="">La historia de KidZania</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/mision-y-vision" class="sub_menu_class" id="sub_menu" target="">Nuestra Misión y Visión</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/juego-de-rol" class="sub_menu_class" id="sub_menu" target="">Juego de Rol</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/aprendizaje-y-educacion" class="sub_menu_class" id="sub_menu" target="">Aprendizaje y Educación</a>
+</li>
+</ul>
+
+</li>
+<li class="dropdown main-menu">
+Acerca de KidZania Santiago
+<b class="caret"></b>
+&nbsp;
+<ul class="dropdown-menu" role="menu">
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/partners" class="sub_menu_class" id="sub_menu" target="">Nuestros Socios</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/legal" class="sub_menu_class" id="sub_menu" target="">Información legal</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/b-kidzanian" class="sub_menu_class" id="sub_menu" target="">B•KidZanian</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/accesibilidad" class="sub_menu_class" id="sub_menu" target="">Accesibilidad y Seguridad</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/nuestros-guardianes" class="sub_menu_class" id="sub_menu" target="">Guardianes de los Derechos</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/faq" class="sub_menu_class" id="sub_menu" target="">Preguntas Frecuentes</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/kz-inclusion" class="sub_menu_class" id="sub_menu" target="">Protocolo de Inclusión</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/trabaja-con-nosotros" class="sub_menu_class" id="sub_menu" target="">¡Trabaja con nosotros!</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/linea-etica" class="sub_menu_class" id="sub_menu" target="">Línea Etica</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/files/8142#ga_track_hosted_file=Reglamento_Parque_KZ" class="sub_menu_class" id="sub_menu" target="">Reglamento del Parque</a>
+</li>
+</ul>
+
+</li>
+<li class="dropdown main-menu">
+Planifica tu Visita
+<b class="caret"></b>
+&nbsp;
+<ul class="dropdown-menu" role="menu">
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/guia-de-ingreso" class="sub_menu_class" id="sub_menu" target="">Guía bienvenida a KidZania</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/activities" class="sub_menu_class" id="sub_menu" target="">Actividades</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/horario-de-apertura" class="sub_menu_class" id="sub_menu" target="">Horarios de Apertura</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/actividades-para-padres" class="sub_menu_class" id="sub_menu" target="">Actividades para Papás</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/precios-de-entradas" class="sub_menu_class" id="sub_menu" target="">Precios Entradas</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/como-llegar" class="sub_menu_class" id="sub_menu" target="">¿Cómo llegar?</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/mapa-de-la-ciudad" class="sub_menu_class" id="sub_menu" target="">Mapa de la Ciudad</a>
+</li>
+</ul>
+
+</li>
+<li class="dropdown main-menu">
+Visitas y Programas
+<b class="caret"></b>
+&nbsp;
+<ul class="dropdown-menu" role="menu">
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/eventos-corporativos" class="sub_menu_class" id="sub_menu" target="">Experiencias Corporativas</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/visitas-escolares" class="sub_menu_class" id="sub_menu" target="">Visitas Escolares</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/ayudas-pedagogicas" class="sub_menu_class" id="sub_menu" target="_blank">Guías Pedagógicas</a>
+</li>
+</ul>
+
+</li>
+<li class="dropdown main-menu">
+Cumpleaños
+<b class="caret"></b>
+&nbsp;
+<ul class="dropdown-menu" role="menu">
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/fiestas-de-cumpleanos" class="sub_menu_class" id="sub_menu" target="">¡Celebra a lo Grande!</a>
+</li>
+</ul>
+
+</li>
+<li class="dropdown main-menu">
+Novedades
+<b class="caret"></b>
+&nbsp;
+<ul class="dropdown-menu" role="menu">
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/concurso-25" class="sub_menu_class" id="sub_menu" target="">Concurso Literario 2026</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/resultado-concursos" class="sub_menu_class" id="sub_menu" target="">Concursos y Resultados</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://youtu.be/FUbV-_XeLqM" class="sub_menu_class" id="sub_menu" target="">Actividades Anteriores</a>
+</li>
+</ul>
+
+</li>
+<!-- / logout button for pary_users ( only in fixed nav-bar ) -->
+</ul>
+
+</div>
+<button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" id="navbar-toggle" type="button">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar middle"></span>
+<span class="icon-bar"></span>
+</button>
+<div class="logo-header-mobile center-block hidden">
+<svg class="header-mobile-logo" space="preserve" style="enable-background:new 0 0 149.8 105;" version="1.1" viewBox="0 0 149.8 105" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" y="0px">
+<g>
+<path clip-rule="evenodd" d="M86.4,43.1c-2.8-0.3-5.5-1.3-8-3.3c-0.6-0.5-1.3-1-2-1.3l5.2-0.9l-6.9-1.2l-1.5-10.8l3.7-3.1l13.6,12l-4.9,3 l17.6-2.7l-6.8-1.1L81,19.4l4.8-4.4c10.3,3,20.5-9.2,22-12.7c-3.9,16-3.9,28.9-3,34.7C103.3,38.9,94.7,44,86.4,43.1L86.4,43.1z M100.8,2.9l1.7,0.7c0.3,4.6-6.4,8.6-6.4,8.6C100,8.2,101.6,5.1,100.8,2.9 M111.2,37.1c-1.6,2.5-13.5,11.2-22.9,7.8 c8.9,1.7,18.2-5,19.7-7.3c0,0-3.7-11.1-1.2-25.4C106.2,26.4,109.2,34.8,111.2,37.1" fill-rule="evenodd" fill="#FFFFFF"></path>
+<path clip-rule="evenodd" d="M70.3,37.1c-0.7,0-1.4,0.1-2.1,0.2l-0.1,0l-0.2,0l-0.2,0l-0.1,0l-0.1,0c-6.3,1.5-11.3,6.2-11.3,6.2 C53.5,23,50.6,11.4,47.7,8.9c0,0,17.6-17.1,29.9-0.4c1.2,1.6,2.4,2.9,3.6,3.9c0.6,0.6,1.2,1,1.8,1.3c0.3,0.2,0.7,0.4,1,0.5L73,24 l-1.7-13.6l5.2-2.8l-18.6,2.7l7.1,1.6L70.3,37.1z M61.3,45.9l-1.4-1.2c1.2-4.4,8.7-6.2,8.7-6.2C63.7,41,61.2,43.5,61.3,45.9 M53.3,32.3c-4.1-15.1-8.9-21-12.9-23.4c0,0,9.7-11.2,22.7-8.5c-8.4-0.3-15,3.3-18.6,8.3C47.9,11.1,51.7,19,53.3,32.3" fill-rule="evenodd" fill="#FFFFFF"></path>
+<polygon fill="#FFFFFF" points="39,71.1 41.8,80.3 39.3,82.8 47,81.1 43.9,79.9 42.1,68.9 35.8,70.5     "></polygon>
+<polygon fill="#FFFFFF" points="125.7,80.8 122.8,81.6 129.2,83.6 127.5,81.4 130.8,72.5 125.5,71 127.6,72.9     "></polygon>
+<path d="M130.3,71c1.4,0,2.5-1.1,2.5-2.5c0-1.4-1.1-2.5-2.5-2.5c-1.4,0-2.5,1.1-2.5,2.5C127.8,69.9,128.9,71,130.3,71" fill="#FFFFFF"></path>
+<polygon fill="#FFFFFF" points="25,76.5 32.9,64.8 37.2,60.5 24.5,65.6 30.2,65.8 18,82.9 13.2,69.8 17.7,65.8 0,72.7 7.4,72.7 18.4,96.5 13.1,101.3 29.7,94.4 22.6,94.8 18.6,84.5 21.5,80.6 37.8,89.3 33.6,93.4 50.3,86.7 43.4,87.1     "></polygon>
+<path d="M39.2,67.6c1.4,0,2.5-1.1,2.5-2.5c0-1.4-1.1-2.5-2.5-2.5c-1.4,0-2.5,1.1-2.5,2.5 C36.7,66.5,37.8,67.6,39.2,67.6" fill="#FFFFFF"></path>
+<polygon fill="#FFFFFF" points="85.9,81.2 77.4,80 90.1,62.1 67.3,63.2 69.5,72.1 70.6,65.1 82,64.3 67.7,82.1 88.9,82.9 88.2,74.5 "></polygon>
+<path d="M123.7,77.4c0.7-4.2-1.7-6.8-7-7.9c-2.7-0.6-5.8-0.2-5.8-0.2l0.6-2.4l-11-0.2l5.4,2.5l-0.5,9.8l-4.9,2.3 l11.1,1.9l-3.5-4c0,0,2.2-7.9,2.3-8.2c1.2-0.4,3-0.6,5.5-0.1c3.4,0.7,4.4,3.2,3.8,6.3l-1.2,5.7l-4.9,2.4l11.1,1.8l-3.5-4 L123.7,77.4z" fill="#FFFFFF"></path>
+<path d="M101.2,78.7L99,77.5l0.8-5.5c0-0.2,0.1-0.4,0.1-0.6c0.3-3.5-1.4-5.2-4.4-5.5c-2.7-0.2-4.7,1.2-4.8,3.1 c-0.1,0.8,0.3,1.3,1.1,1.4c0.8,0.1,1.4-0.4,1.4-1.1c0-0.5-0.2-0.9-0.7-1.2c0.4-1.1,1.4-1.7,2.8-1.6c1.7,0.2,2.6,1.1,2.4,4.2 c-0.1,0.7-0.1,1.2-0.2,1.5c0,0-2-0.4-3.2-0.5c-2.9-0.3-4.4,0.7-4.5,2.4c-0.1,1.5,1.1,2.6,3.4,2.8c2,0.2,3.5-0.1,3.5-0.1l-0.3,1.4 L101.2,78.7z M94.2,76.4c-1.3-0.1-2.1-0.9-1.9-2.1c0.1-1.3,1.2-2,2.5-1.9c1.4,0.1,2.6,0.4,2.6,0.4l-0.6,3.4 C96.8,76.2,95.6,76.5,94.2,76.4" fill="#FFFFFF"></path>
+<path d="M146,101.1l-3.1-3.6l4.8-9.3c0.2-0.3,0.3-0.7,0.5-1c2.6-5.9,0.7-10-4.4-12.3c-4.6-2.1-8.9-0.7-10.4,2.4 c-0.6,1.3-0.3,2.6,1.1,3.2c1.3,0.6,2.7,0.1,3.2-1c0.4-0.8,0.2-1.6-0.5-2.4c1.4-1.6,3.5-2.1,5.9-1c2.9,1.3,4,3.5,1.6,8.9 c-0.5,1.1-0.9,2-1.2,2.6c0,0-3.3-1.9-5.4-2.8c-4.9-2.2-8.1-1.4-9.4,1.5c-1.1,2.5,0.3,5.3,4.2,7c3.4,1.5,6.1,2,6.1,2l-1.3,2.3 L146,101.1z M135.1,92.6c-2.2-1-3.1-2.8-2.1-4.9c1-2.2,3.3-2.8,5.6-1.8c2.4,1.1,4.3,2.3,4.3,2.3l-3.1,5.7 C139.8,94,137.5,93.7,135.1,92.6" fill="#FFFFFF"></path>
+<path d="M65.6,84.5l-0.7-26.9l-8.6,0.7l4.3,1.3L61.8,72c-1.8-0.7-4.2-1-6.6-0.8c-5,0.6-7.9,4.1-7.4,7.9 c0.5,4,4.1,6.7,10.1,6c3.3-0.4,5.1-1.4,5.1-1.4l0.4,2.7l5.9-1.7L65.6,84.5z M62.9,82.4c0,0-1.7,1.2-4.2,1.5 c-4.3,0.5-6.9-1.3-7.3-4.5c-0.4-3.6,1.6-6.2,5.2-6.6c3.2-0.4,5.4,0.7,5.4,0.7L62.9,82.4z" fill="#FFFFFF"></path>
+</g>
+</svg>
+</div>
+</div>
+</div>
+</nav>
+<div class="navbar-fixed-top hidden-xs hidden-sm hidden-md affix-top" data-offset-top="60" data-spy="affix" id="navSpy">
+<div class="mainNavSpy">
+<div class="nav-container">
+<a href="/es-cl/">
+<img class="img-responsive pull-left nav-brand-2 lozad" data-src="https://d1eilicilqktnj.cloudfront.net/system_configs/flag_logos/13/original/kz-logo-2-flag.svg?1526028195">
+</a>
+<ul class="nav navbar-nav">
+<ul class="nav navbar-nav navbar-right">
+<li class="dropdown main-menu">
+Concepto KidZania
+<b class="caret"></b>
+&nbsp;
+<ul class="dropdown-menu" role="menu">
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/concepto-kidzania" class="sub_menu_class" id="sub_menu" target="">¿Qué es KidZania?</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://youtu.be/XaxsojQJrPg" class="sub_menu_class" id="sub_menu" target="_blank">Propósito de KidZania</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/nuestra-historia" class="sub_menu_class" id="sub_menu" target="">La historia de KidZania</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/mision-y-vision" class="sub_menu_class" id="sub_menu" target="">Nuestra Misión y Visión</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/juego-de-rol" class="sub_menu_class" id="sub_menu" target="">Juego de Rol</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/aprendizaje-y-educacion" class="sub_menu_class" id="sub_menu" target="">Aprendizaje y Educación</a>
+</li>
+</ul>
+
+</li>
+<li class="dropdown main-menu">
+Acerca de KidZania Santiago
+<b class="caret"></b>
+&nbsp;
+<ul class="dropdown-menu" role="menu">
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/partners" class="sub_menu_class" id="sub_menu" target="">Nuestros Socios</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/legal" class="sub_menu_class" id="sub_menu" target="">Información legal</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/b-kidzanian" class="sub_menu_class" id="sub_menu" target="">B•KidZanian</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/accesibilidad" class="sub_menu_class" id="sub_menu" target="">Accesibilidad y Seguridad</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/nuestros-guardianes" class="sub_menu_class" id="sub_menu" target="">Guardianes de los Derechos</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/faq" class="sub_menu_class" id="sub_menu" target="">Preguntas Frecuentes</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/kz-inclusion" class="sub_menu_class" id="sub_menu" target="">Protocolo de Inclusión</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/trabaja-con-nosotros" class="sub_menu_class" id="sub_menu" target="">¡Trabaja con nosotros!</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/linea-etica" class="sub_menu_class" id="sub_menu" target="">Línea Etica</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/files/8142#ga_track_hosted_file=Reglamento_Parque_KZ" class="sub_menu_class" id="sub_menu" target="">Reglamento del Parque</a>
+</li>
+</ul>
+
+</li>
+<li class="dropdown main-menu">
+Planifica tu Visita
+<b class="caret"></b>
+&nbsp;
+<ul class="dropdown-menu" role="menu">
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/guia-de-ingreso" class="sub_menu_class" id="sub_menu" target="">Guía bienvenida a KidZania</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/activities" class="sub_menu_class" id="sub_menu" target="">Actividades</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/horario-de-apertura" class="sub_menu_class" id="sub_menu" target="">Horarios de Apertura</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/actividades-para-padres" class="sub_menu_class" id="sub_menu" target="">Actividades para Papás</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/precios-de-entradas" class="sub_menu_class" id="sub_menu" target="">Precios Entradas</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/como-llegar" class="sub_menu_class" id="sub_menu" target="">¿Cómo llegar?</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/mapa-de-la-ciudad" class="sub_menu_class" id="sub_menu" target="">Mapa de la Ciudad</a>
+</li>
+</ul>
+
+</li>
+<li class="dropdown main-menu">
+Visitas y Programas
+<b class="caret"></b>
+&nbsp;
+<ul class="dropdown-menu" role="menu">
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/eventos-corporativos" class="sub_menu_class" id="sub_menu" target="">Experiencias Corporativas</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/visitas-escolares" class="sub_menu_class" id="sub_menu" target="">Visitas Escolares</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/ayudas-pedagogicas" class="sub_menu_class" id="sub_menu" target="_blank">Guías Pedagógicas</a>
+</li>
+</ul>
+
+</li>
+<li class="dropdown main-menu">
+Cumpleaños
+<b class="caret"></b>
+&nbsp;
+<ul class="dropdown-menu" role="menu">
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/fiestas-de-cumpleanos" class="sub_menu_class" id="sub_menu" target="">¡Celebra a lo Grande!</a>
+</li>
+</ul>
+
+</li>
+<li class="dropdown main-menu">
+Novedades
+<b class="caret"></b>
+&nbsp;
+<ul class="dropdown-menu" role="menu">
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/concurso-25" class="sub_menu_class" id="sub_menu" target="">Concurso Literario 2026</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://santiago.kidzania.com/es-cl/pages/resultado-concursos" class="sub_menu_class" id="sub_menu" target="">Concursos y Resultados</a>
+</li>
+<li class="dropdown sub-menu">
+<a href="https://youtu.be/FUbV-_XeLqM" class="sub_menu_class" id="sub_menu" target="">Actividades Anteriores</a>
+</li>
+</ul>
+
+</li>
+<!-- / logout button for pary_users ( only in fixed nav-bar ) -->
+</ul>
+
+</ul>
+</div>
+</div>
+<div class="nav-container">
+<div class="ticket-bar-2">
+<ul>
+<li id="tickets-nav">
+<span class="icon-ticket"></span>
+Precio de Entradas
+<div class="expand-info ticket-prices ticket-prices-fixed">
+<div class="prices-slider-2">
+<div class="element price-grid">
+<div class="ticket-name small">
+Valor de Entradas 2026 Online
+</div>
+<p class="ticket-type">
+Infante (2 a 3 años)
+</p>
+<p class="cost">
+$12.950
+</p>
+<p class="ticket-type">
+Niño (4 a 17 años)
+</p>
+<p class="cost">
+$22.950
+</p>
+<p class="ticket-type">
+Adulto (18 a 59 años)
+</p>
+<p class="cost">
+$11.950
+</p>
+<p class="ticket-type">
+Senior (+60 años)
+</p>
+<p class="cost">
+$ 11.950
+</p>
+<p class="ticket-type">
+</p>
+<p class="cost">
+</p>
+<p class="ticket-type">
+Niños menores de 2 años no pueden
+</p>
+<p class="cost">
+Realizar actividades en la ciudad.
+</p>
+</div>
+<div class="element price-grid">
+<div class="ticket-name small">
+Valor de Entradas 2026 Boletería
+</div>
+<p class="ticket-type">
+Infante (2 a 3 años)
+</p>
+<p class="cost">
+$13.950
+</p>
+<p class="ticket-type">
+Niño (4 a 17 años)
+</p>
+<p class="cost">
+$23.950
+</p>
+<p class="ticket-type">
+Adulto (18 a 59 años)
+</p>
+<p class="cost">
+$12.950
+</p>
+<p class="ticket-type">
+Senior (+60 años)
+</p>
+<p class="cost">
+$12.950
+</p>
+<p class="ticket-type">
+</p>
+<p class="cost">
+</p>
+<p class="ticket-type">
+</p>
+<p class="cost">
+</p>
+</div>
+</div>
+<p>
+Infante: 2 a 3 años. Senior: 60 años o más.
+</p>
+<a class="btn btn-default btn-tickets no-shadow" href="https://ventasonline.kidzania.cl/checkout/choose_date?start_date=2021-11-15" target="_blank">
+<span class="icon-ticket"></span>
+Compra Ahora
+</a>
+
+</div>
+</li>
+<li>
+<span class="icon-clock"></span>
+Horario de Apertura
+<div class="expand-info opening-hours opening-hours-fixed">
+<div class="hours-slider-2">
+<div class="element time-grid">
+<div class="hours-name small">
+Horario Abril 2026
+</div>
+<p class="days">
+Lunes a miercoles
+</p>
+<p class="hours">
+Cerrado
+</p>
+<p class="days">
+Viernes 03 - KidZania en armonía
+</p>
+<p class="hours">
+15:00 a 20:00 hrs.
+</p>
+<p class="days">
+Sábado 11 - TeenZania PM
+</p>
+<p class="hours">
+11:00 a 17:00 hrs.<br>18:00 a 22:00 hr
+</p>
+<p class="days">
+Domingo 12
+</p>
+<p class="hours">
+12:00 a 19:00 hrs.
+</p>
+<p class="days">
+</p>
+<p class="hours">
+</p>
+<p class="days">
+</p>
+<p class="hours">
+</p>
+</div>
+<div class="element time-grid">
+<div class="hours-name small">
+KidZania en Armonía
+</div>
+<p class="days">
+Viernes 10 de Abril
+</p>
+<p class="hours">
+15:00 a 20:00 hrs.
+</p>
+<p class="days">
+TeenZania 11 de abril
+</p>
+<p class="hours">
+18:00 a 22:00 hrs.
+</p>
+<p class="days">
+</p>
+<p class="hours">
+</p>
+<p class="days">
+</p>
+<p class="hours">
+</p>
+<p class="days">
+</p>
+<p class="hours">
+</p>
+<p class="days">
+</p>
+<p class="hours">
+</p>
+</div>
+</div>
+<p>
+Te recomendamos llegar 20 minutos antes de nuestra apertura. Días y Horarios sujetos a cambio sin previo aviso.
+</p>
+<a class="btn btn-default btn-tickets no-shadow" href="https://ventasonline.kidzania.cl/checkout/choose_date?start_date=2021-11-15" target="_blank">
+<span class="icon-ticket"></span>
+Compra Ahora
+</a>
+
+</div>
+</li>
+<li>
+<a href="https://ventasonline.kidzania.cl/checkout/choose_date?start_date=2021-11-15" target="_blank">
+<span class="icon-calendar"></span>
+Compra Ahora
+</a>
+</li>
+<li id="app-link-nav">
+<a href="#">
+<span class="glyphicon glyphicon-phone"></span>
+Servicio al cliente Santiago KidZania
+</a>
+<div class="expand-info get-the-app-fixed">
+<img alt="App-logo" src="//d1eilicilqktnj.cloudfront.net/assets/app-logo-28cb2611681c833769f8a2299cea20f3.png" style="max-width: 60px; display: inline-block;" data-original="//d1eilicilqktnj.cloudfront.net/assets/app-logo-28cb2611681c833769f8a2299cea20f3.png">
+<br>
+<h4 class="subtitle" style="display: inline-block;">Necesitas ayuda?</h4>
+<div id="storeSelect">
+<p></p>
+<p style="color: #777">
+<b></b>
+</p>
+<img alt="As-badge" class="app-badge-two" id="appleStore" onclick="activateStore('.appStoreQR');" src="//d1eilicilqktnj.cloudfront.net/assets/as-badge-3701e6daadae809c8dadd73923365bd7.svg" data-original="//d1eilicilqktnj.cloudfront.net/assets/as-badge-3701e6daadae809c8dadd73923365bd7.svg">
+<img alt="Gp-badge" class="app-badge-two" id="googleStore" onclick="activateStore('.googleStoreQR');" src="//d1eilicilqktnj.cloudfront.net/assets/gp-badge-2b7e9eca95e1b41083ebeca3d34db190.svg" data-original="//d1eilicilqktnj.cloudfront.net/assets/gp-badge-2b7e9eca95e1b41083ebeca3d34db190.svg">
+<br>
+</div>
+<div class="appStoreQR storeQR">
+<p class="text-center">
+
+</p>
+<img alt="As-badge" class="app-badge center" id="appleStore" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" data-original="//d1eilicilqktnj.cloudfront.net/assets/as-badge-3701e6daadae809c8dadd73923365bd7.svg">
+</div>
+<div class="googleStoreQR storeQR">
+<p class="text-center">
+
+</p>
+<img alt="Gp-badge" class="app-badge center" id="googleStore" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" data-original="//d1eilicilqktnj.cloudfront.net/assets/gp-badge-2b7e9eca95e1b41083ebeca3d34db190.svg">
+</div>
+</div>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="totop" id="backtotop" style="display: none;">
+<span>
+<a class="first sscroll" href="#top">
+<i class="glyphicon glyphicon-menu-up"></i>
+</a>
+<a class="hover sscroll" href="#top" onclick="$('html,body').animate({scrollTop:0},'slow');return false;">
+<i class="glyphicon glyphicon-menu-up"></i>
+</a>
+</span>
+</div>
+<main>
+<script src="//d1eilicilqktnj.cloudfront.net/assets/admin/jquery-1.10.2-52d1419e6edcf00dd285f6bb553e21c8.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    function isAlphabetic(evt) {
+      evt = (evt) ? evt : window.event;
+      var charCode = (evt.which) ? evt.which : evt.keyCode;
+      if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123)){
+          return true;
+      }
+      return false;
+    }
+    
+    function isAlphabeticSp(evt) {
+      evt = (evt) ? evt : window.event;
+      var charCode = (evt.which) ? evt.which : evt.keyCode;
+      if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123) || (charCode == 32) ){
+          return true;
+      }
+      return false;
+    }
+    
+    function isNumber(evt) {
+      evt = (evt) ? evt : window.event;
+      var charCode = (evt.which) ? evt.which : evt.keyCode;
+      if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+          return false;
+      }
+      return true;
+    }
+  //]]>
+</script>
+
+<!-- Homepage Critical CSS -->
+<style>
+  /*<![CDATA[*/
+    .secondary-modules-wrapper2.encapsulated .module{float:left}.secondary-modules-wrapper2.encapsulated .module .copy h3{font-size:20px}.secondary-modules-wrapper2.encapsulated p,.secondary-modules-wrapper2.encapsulated ul{font-size:15px}.secondary-modules-wrapper2 .module .copy h3{font-size:18px;font-weight:700;color:#bd234d}.secondary-modules-wrapper2{width:100%}.secondary-modules-wrapper2 .module{text-align:left;width:30%;margin:15px;display:inline-block;background:#f4f4f4;border-radius:7px;position:relative;min-height:454px;vertical-align:top}.secondary-modules-wrapper2 .module .headline{text-align:center;background:#bd234d;color:#FFF;margin:0;padding:20px 15px 10px;border-top-right-radius:10px;border-top-left-radius:10px}.secondary-modules-wrapper2 .module .photo{position:relative;border-top-right-radius:7px;border-top-left-radius:7px;height:250px;background-color:#f0f0f0}.secondary-modules-wrapper .module .copy a,.secondary-modules-wrapper2 .module .copy a{color:#F38230;display:block;width:100%;font-size:16px;padding:15px}.secondary-modules-wrapper .module .copy a.prop3,.secondary-modules-wrapper2 .module .copy a.prop3{border-top:1px solid #CCC;border-bottom-right-radius:10px;border-bottom-left-radius:10px}.secondary-modules-wrapper2 .module .copy{background-color:#f4f4f4;width:100%;border-bottom-right-radius:10px;border-bottom-left-radius:10px;padding:0 15px}.secondary-modules-wrapper2 .module .copy p{font-size:16px;margin-bottom:15px}.secondary-modules-wrapper2 .module.tertiary{width:22%;background:#bd234d;color:#FFF;min-height:auto}.secondary-modules-wrapper2 .module.tertiary .photo{border-radius:6px}.secondary-modules-wrapper2 .module.tertiary .copy{position:absolute;bottom:0;min-height:80px;background:rgba(189,35,77,.8);color:#FFF;text-align:center;padding:15px 25px;border-bottom-left-radius:10px;border-bottom-right-radius:10px}@media (max-width:1000px){.secondary-modules-wrapper2 .module{width:45%}.secondary-modules-wrapper2 .module.tertiary{width:30%}}@media (max-width:800px){.secondary-modules-wrapper2 .module.tertiary{width:43%}}@media (max-width:650px){.secondary-modules-wrapper2 .module{width:90%}.secondary-modules-wrapper2 .module.tertiary{width:43%}}@media (max-width:460px){.secondary-modules-wrapper2 .module.tertiary{width:85%}}@media (max-width:400px){.secondary-modules-wrapper2 .module{min-height:auto}.secondary-modules-wrapper2 .module .copy p{display:none}.secondary-modules-wrapper2 .module .copy h3{font-size:24px}}body.ar .contact,body.ar .expand-info,body.ar .secondary-modules-wrapper2 .module,body.ar .text-left,body.ar .two-column .side-column{text-align:right}.address-directions{padding:25px 25px 40px}.directions{margin-top:60px;margin-left:78px;min-width:267px}.directions.moreinfo{margin-top:30px}@media(max-width:992px){.directions,.directions.moreinfo{margin-left:auto;margin-right:auto;display:block;max-width:280px}.address-directions{padding:25px 0}.text-module{text-align:center;position:relative;z-index:2;width:100%;float:left;margin:30px auto 0}.section-title .subtitle{font-size:20px;font-weight:300;line-height:28px;margin-top:0;color:inherit;text-align:justify}}
+  /*]]>*/
+</style>
+
+<div class="simple-slider">
+<div class="owl-carousel owl-lazy owl-loaded owl-drag" id="main-slider">
+
+
+
+
+
+<div class="owl-stage-outer"><div class="owl-stage" style="width: 15037px; transform: translate3d(-4101px, 0px, 0px); transition: all;"><div class="owl-item cloned" style="width: 1366px; margin-right: 1px;"><div alt="visitas escolares KidZania" class="item owl-lazy" data-src="https://d1eilicilqktnj.cloudfront.net/franchises/hero_image_4_images/4/slider/visitas_escolares.jpeg?1772485594" id="Header-Image4" style="background: center center / cover no-repeat;">
+<div class="header-gradient">
+<div class="caption">
+<h2 class="title">
+¡Ven a KidZania con tu colegio!
+</h2>
+<p>
+Aprende y diviértete al mismo tiempo
+</p>
+<a href="https://santiago.kidzania.com/es-cl/pages/visitas-escolares" target="_blank"><button class="btn btn-red" type="button">
+¡Más info!
+<span class="caret-2"></span>
+</button>
+</a></div>
+</div>
+</div></div><div class="owl-item cloned" style="width: 1366px; margin-right: 1px;"><div alt="No te preocupes de nada ... solo ven a pasarlo bien y celebra el cumpleaños con nosotros a lo grande" class="item owl-lazy" data-src="https://d1eilicilqktnj.cloudfront.net/franchises/hero_image_5_images/4/slider/C1_25.jpeg?1748619323" id="Header-Image5" style="background: center center / cover no-repeat;">
+<div class="header-gradient">
+<div class="caption">
+<h2 class="title">
+¡Nos encargamos de todo!
+</h2>
+<p>
+Contrata con nuestra ejecutiva
+</p>
+<a href="https://santiago.kidzania.com/es-cl/pages/fiestas-de-cumpleanos" target="_blank"><button class="btn btn-red" type="button">
+Ver más
+<span class="caret-2"></span>
+</button>
+</a></div>
+</div>
+</div></div><div class="owl-item cloned" style="width: 1366px; margin-right: 1px;"><div alt="Concuros literario" class="item owl-lazy" data-src="https://d1eilicilqktnj.cloudfront.net/franchises/hero_image_6_images/4/slider/homeb_concurso.jpeg?1775685806" id="Header-Image6" style="background: center center / cover no-repeat;">
+<div class="header-gradient">
+<div class="caption">
+<h2 class="title">
+¡Gana una salida a KidZania!
+</h2>
+<p>
+Participa en el concurso literario con tu curso.
+</p>
+<a href="https://santiago.kidzania.com/es-cl/pages/concurso-25"><button class="btn btn-red" type="button">
+Más información
+<span class="caret-2"></span>
+</button>
+</a></div>
+</div>
+</div></div><div class="owl-item active" style="width: 1366px; margin-right: 1px;"><div alt="Tenzania adolecentes en kidzania" class="item owl-lazy" data-src="https://d1eilicilqktnj.cloudfront.net/franchises/hero_image_1_images/4/slider/banner_web_tennZania.jpeg?1773238523" id="Header-Image1" style="background: url(&quot;https://d1eilicilqktnj.cloudfront.net/franchises/hero_image_1_images/4/slider/banner_web_tennZania.jpeg?1773238523&quot;) center center / cover no-repeat; opacity: 1;">
+<div class="header-gradient">
+<div class="caption">
+<h2 class="title">
+TeenZania: 11 de abril
+</h2>
+<p>
+¡18:00 a 22:00 hrs sólo adolescentes!
+</p>
+<a href="https://santiago.kidzania.com/es-cl/pages/teenzania"><button class="btn btn-red" type="button">
+Más información
+<span class="caret-2"></span>
+</button>
+</a></div>
+</div>
+</div></div><div class="owl-item" style="width: 1366px; margin-right: 1px;"><div alt="KidZania en armonía" class="item owl-lazy" data-src="https://d1eilicilqktnj.cloudfront.net/franchises/hero_image_2_images/4/slider/armnia.jpeg?1775509099" id="Header-Image2" style="background: center center / cover no-repeat;">
+<div class="header-gradient">
+<div class="caption">
+<h2 class="title">
+¡KidZania en armonía!
+</h2>
+<p>
+de 15:00 a 20:00 hrs.
+</p>
+<a href="https://ventasonline.kidzania.cl/checkout/choose_date?start_date=2026-04-10"><button class="btn btn-red" type="button">
+Compra aquí
+<span class="caret-2"></span>
+</button>
+</a></div>
+</div>
+</div></div><div class="owl-item" style="width: 1366px; margin-right: 1px;"><div alt="visitas escolares KidZania" class="item owl-lazy" data-src="https://d1eilicilqktnj.cloudfront.net/franchises/hero_image_4_images/4/slider/visitas_escolares.jpeg?1772485594" id="Header-Image4" style="background: center center / cover no-repeat;">
+<div class="header-gradient">
+<div class="caption">
+<h2 class="title">
+¡Ven a KidZania con tu colegio!
+</h2>
+<p>
+Aprende y diviértete al mismo tiempo
+</p>
+<a href="https://santiago.kidzania.com/es-cl/pages/visitas-escolares" target="_blank"><button class="btn btn-red" type="button">
+¡Más info!
+<span class="caret-2"></span>
+</button>
+</a></div>
+</div>
+</div></div><div class="owl-item" style="width: 1366px; margin-right: 1px;"><div alt="No te preocupes de nada ... solo ven a pasarlo bien y celebra el cumpleaños con nosotros a lo grande" class="item owl-lazy" data-src="https://d1eilicilqktnj.cloudfront.net/franchises/hero_image_5_images/4/slider/C1_25.jpeg?1748619323" id="Header-Image5" style="background: center center / cover no-repeat;">
+<div class="header-gradient">
+<div class="caption">
+<h2 class="title">
+¡Nos encargamos de todo!
+</h2>
+<p>
+Contrata con nuestra ejecutiva
+</p>
+<a href="https://santiago.kidzania.com/es-cl/pages/fiestas-de-cumpleanos" target="_blank"><button class="btn btn-red" type="button">
+Ver más
+<span class="caret-2"></span>
+</button>
+</a></div>
+</div>
+</div></div><div class="owl-item" style="width: 1366px; margin-right: 1px;"><div alt="Concuros literario" class="item owl-lazy" data-src="https://d1eilicilqktnj.cloudfront.net/franchises/hero_image_6_images/4/slider/homeb_concurso.jpeg?1775685806" id="Header-Image6" style="background: center center / cover no-repeat;">
+<div class="header-gradient">
+<div class="caption">
+<h2 class="title">
+¡Gana una salida a KidZania!
+</h2>
+<p>
+Participa en el concurso literario con tu curso.
+</p>
+<a href="https://santiago.kidzania.com/es-cl/pages/concurso-25"><button class="btn btn-red" type="button">
+Más información
+<span class="caret-2"></span>
+</button>
+</a></div>
+</div>
+</div></div><div class="owl-item cloned" style="width: 1366px; margin-right: 1px;"><div alt="Tenzania adolecentes en kidzania" class="item owl-lazy" data-src="https://d1eilicilqktnj.cloudfront.net/franchises/hero_image_1_images/4/slider/banner_web_tennZania.jpeg?1773238523" id="Header-Image1" style="background: url(&quot;https://d1eilicilqktnj.cloudfront.net/franchises/hero_image_1_images/4/slider/banner_web_tennZania.jpeg?1773238523&quot;) center center / cover no-repeat; opacity: 1;">
+<div class="header-gradient">
+<div class="caption">
+<h2 class="title">
+TeenZania: 11 de abril
+</h2>
+<p>
+¡18:00 a 22:00 hrs sólo adolescentes!
+</p>
+<a href="https://santiago.kidzania.com/es-cl/pages/teenzania"><button class="btn btn-red" type="button">
+Más información
+<span class="caret-2"></span>
+</button>
+</a></div>
+</div>
+</div></div><div class="owl-item cloned" style="width: 1366px; margin-right: 1px;"><div alt="KidZania en armonía" class="item owl-lazy" data-src="https://d1eilicilqktnj.cloudfront.net/franchises/hero_image_2_images/4/slider/armnia.jpeg?1775509099" id="Header-Image2" style="background: center center / cover no-repeat;">
+<div class="header-gradient">
+<div class="caption">
+<h2 class="title">
+¡KidZania en armonía!
+</h2>
+<p>
+de 15:00 a 20:00 hrs.
+</p>
+<a href="https://ventasonline.kidzania.cl/checkout/choose_date?start_date=2026-04-10"><button class="btn btn-red" type="button">
+Compra aquí
+<span class="caret-2"></span>
+</button>
+</a></div>
+</div>
+</div></div><div class="owl-item cloned" style="width: 1366px; margin-right: 1px;"><div alt="visitas escolares KidZania" class="item owl-lazy" data-src="https://d1eilicilqktnj.cloudfront.net/franchises/hero_image_4_images/4/slider/visitas_escolares.jpeg?1772485594" id="Header-Image4" style="background: center center / cover no-repeat;">
+<div class="header-gradient">
+<div class="caption">
+<h2 class="title">
+¡Ven a KidZania con tu colegio!
+</h2>
+<p>
+Aprende y diviértete al mismo tiempo
+</p>
+<a href="https://santiago.kidzania.com/es-cl/pages/visitas-escolares" target="_blank"><button class="btn btn-red" type="button">
+¡Más info!
+<span class="caret-2"></span>
+</button>
+</a></div>
+</div>
+</div></div></div></div><div class="owl-nav"><div class="owl-prev"><span class="glyphicon glyphicon-menu-left"></span></div><div class="owl-next"><span class="glyphicon glyphicon-menu-right"></span></div></div><div class="owl-dots disabled"></div></div>
+</div>
+<script>
+  //<![CDATA[
+    $(window).resize(function() {
+      var width = "98.0";
+      var objId = "Header-Image1";
+      if ($(window).width() < 769) {
+        $('#' + objId).css('background-position', ''+width+'% top');
+      }
+      else{
+        $('#' + objId).css('background-position', 'center');
+      }
+    });
+    
+    $(document).ready(function() {
+      var width = "98.0";
+      var objId = "Header-Image1";
+      if ($(window).width() < 769) {
+        $('#' + objId).css('background-position', ''+width+'% top');
+      }
+      else{
+        $('#' + objId).css('background-position', 'center');
+      }
+    });
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    $(window).resize(function() {
+      var width = "51.0";
+      var objId = "Header-Image2";
+      if ($(window).width() < 769) {
+        $('#' + objId).css('background-position', ''+width+'% top');
+      }
+      else{
+        $('#' + objId).css('background-position', 'center');
+      }
+    });
+    
+    $(document).ready(function() {
+      var width = "51.0";
+      var objId = "Header-Image2";
+      if ($(window).width() < 769) {
+        $('#' + objId).css('background-position', ''+width+'% top');
+      }
+      else{
+        $('#' + objId).css('background-position', 'center');
+      }
+    });
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    $(window).resize(function() {
+      var width = "50.0";
+      var objId = "Header-Image4";
+      if ($(window).width() < 769) {
+        $('#' + objId).css('background-position', ''+width+'% top');
+      }
+      else{
+        $('#' + objId).css('background-position', 'center');
+      }
+    });
+    
+    $(document).ready(function() {
+      var width = "50.0";
+      var objId = "Header-Image4";
+      if ($(window).width() < 769) {
+        $('#' + objId).css('background-position', ''+width+'% top');
+      }
+      else{
+        $('#' + objId).css('background-position', 'center');
+      }
+    });
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    $(window).resize(function() {
+      var width = "50.0";
+      var objId = "Header-Image5";
+      if ($(window).width() < 769) {
+        $('#' + objId).css('background-position', ''+width+'% top');
+      }
+      else{
+        $('#' + objId).css('background-position', 'center');
+      }
+    });
+    
+    $(document).ready(function() {
+      var width = "50.0";
+      var objId = "Header-Image5";
+      if ($(window).width() < 769) {
+        $('#' + objId).css('background-position', ''+width+'% top');
+      }
+      else{
+        $('#' + objId).css('background-position', 'center');
+      }
+    });
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    $(window).resize(function() {
+      var width = "51.0";
+      var objId = "Header-Image6";
+      if ($(window).width() < 769) {
+        $('#' + objId).css('background-position', ''+width+'% top');
+      }
+      else{
+        $('#' + objId).css('background-position', 'center');
+      }
+    });
+    
+    $(document).ready(function() {
+      var width = "51.0";
+      var objId = "Header-Image6";
+      if ($(window).width() < 769) {
+        $('#' + objId).css('background-position', ''+width+'% top');
+      }
+      else{
+        $('#' + objId).css('background-position', 'center');
+      }
+    });
+  //]]>
+</script>
+
+
+
+<div class="arc-divider" style="background: url(//d1eilicilqktnj.cloudfront.net/assets/arc-dedaa25488c550c4828a7bebb5f4e691.svg) bottom/100% 100% no-repeat;"></div>
+<section class="visit-info-2 clearfix">
+<div class="row">
+<div class="col-md-offset-1 col-md-5 col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+<h2 class="title">
+<span class="icon-ticket"></span>
+Precio de Entradas
+</h2>
+<div class="owl-carousel prices-slider owl-loaded owl-drag">
+
+
+<div class="owl-stage-outer"><div class="owl-stage" style="width: 1026px; transform: translate3d(0px, 0px, 0px); transition: all;"><div class="owl-item active" style="width: 512px; margin-right: 1px;"><div class="element price-0 op-tp">
+<h3 class="ticket-name">
+Valor de Entradas 2026 Online
+</h3>
+<div class="price-list">
+<div class="block">
+<p>
+<b>Infante (2 a 3 años)</b>
+<br>
+$12.950
+</p>
+</div>
+<div class="block">
+<p>
+<b>Niño (4 a 17 años)</b>
+<br>
+$22.950
+</p>
+</div>
+<div class="block">
+<p>
+<b>Adulto (18 a 59 años)</b>
+<br>
+$11.950
+</p>
+</div>
+<div class="block">
+<p>
+<b>Senior (+60 años)</b>
+<br>
+$ 11.950
+</p>
+</div>
+<div class="block">
+<p>
+<b>Niños menores de 2 años no pueden</b>
+<br>
+Realizar actividades en la ciudad.
+</p>
+</div>
+</div>
+</div></div><div class="owl-item" style="width: 512px; margin-right: 1px;"><div class="element price-1 op-tp">
+<h3 class="ticket-name">
+Valor de Entradas 2026 Boletería
+</h3>
+<div class="price-list">
+<div class="block">
+<p>
+<b>Infante (2 a 3 años)</b>
+<br>
+$13.950
+</p>
+</div>
+<div class="block">
+<p>
+<b>Niño (4 a 17 años)</b>
+<br>
+$23.950
+</p>
+</div>
+<div class="block">
+<p>
+<b>Adulto (18 a 59 años)</b>
+<br>
+$12.950
+</p>
+</div>
+<div class="block">
+<p>
+<b>Senior (+60 años)</b>
+<br>
+$12.950
+</p>
+</div>
+</div>
+</div></div></div></div><div class="owl-nav"><div class="owl-prev disabled"><span class="glyphicon glyphicon-menu-left"></span></div><div class="owl-next"><span class="glyphicon glyphicon-menu-right"></span></div></div><div class="owl-dots"><div class="owl-dot active"><span></span></div><div class="owl-dot"><span></span></div></div></div>
+<p class="small">
+Infante: 2 a 3 años. Senior: 60 años o más.
+</p>
+</div>
+<div class="col-md-5 col-sm-10 col-sm-offset-1 col-md-offset-0 col-xs-12 col-xs-offset-0 ticket-prices">
+<h2 class="title">
+<span class="icon-clock"></span>
+Horario de Apertura
+</h2>
+<div class="owl-carousel hours-slider owl-loaded owl-drag">
+
+
+<div class="owl-stage-outer"><div class="owl-stage" style="width: 1022px; transform: translate3d(0px, 0px, 0px); transition: all;"><div class="owl-item active" style="width: 510px; margin-right: 1px;"><div class="element price-0 op-tp">
+<h3 class="ticket-name">
+Horario Abril 2026
+</h3>
+<div class="hours-list">
+<div class="block">
+<p>
+<b>
+Lunes a miercoles
+</b>
+<br>
+Cerrado
+</p>
+</div>
+<div class="block">
+<p>
+<b>
+Viernes 03 - KidZania en armonía
+</b>
+<br>
+15:00 a 20:00 hrs.
+</p>
+</div>
+<div class="block">
+<p>
+<b>
+Sábado 11 - TeenZania PM
+</b>
+<br>
+11:00 a 17:00 hrs.<br>18:00 a 22:00 hr
+</p>
+</div>
+<div class="block">
+<p>
+<b>
+Domingo 12
+</b>
+<br>
+12:00 a 19:00 hrs.
+</p>
+</div>
+</div>
+</div></div><div class="owl-item" style="width: 510px; margin-right: 1px;"><div class="element price-1 op-tp">
+<h3 class="hours-name">
+KidZania en Armonía
+</h3>
+<div class="hours-list">
+<div class="block">
+<p>
+<b>
+Viernes 10 de Abril
+</b>
+<br>
+15:00 a 20:00 hrs.
+</p>
+</div>
+<div class="block">
+<p>
+<b>
+TeenZania 11 de abril
+</b>
+<br>
+18:00 a 22:00 hrs.
+</p>
+</div>
+</div>
+</div></div></div></div><div class="owl-nav"><div class="owl-prev disabled"><span class="glyphicon glyphicon-menu-left"></span></div><div class="owl-next"><span class="glyphicon glyphicon-menu-right"></span></div></div><div class="owl-dots"><div class="owl-dot active"><span></span></div><div class="owl-dot"><span></span></div></div></div>
+<p class="small">
+Te recomendamos llegar 20 minutos antes de nuestra apertura. Días y Horarios sujetos a cambio sin previo aviso.
+</p>
+</div>
+</div>
+</section>
+
+<div class="section-outter clearfix">
+<section id="what">
+<div class="section-wrapper homepage-bottom">
+<div class="secondary-modules-wrapper2 row">
+<div class="intro">
+
+</div>
+<a class="module tertiary" href="https://santiago.kidzania.com/es-cl/pages/reapertura">
+<div class="photo lazy" data-src="https://d1eilicilqktnj.cloudfront.net/franchises/img1_images/4/original/bb1.jpeg?1634754721" style="background: #f0f0f0 top center/cover no-repeat;"></div>
+<div class="copy">
+<p>Recomendaciones para tu visita</p>
+</div>
+</a>
+<a class="module tertiary" href="https://santiago.kidzania.com/es-cl/pages/guia-de-ingreso">
+<div class="photo lazy" data-src="https://d1eilicilqktnj.cloudfront.net/franchises/img2_images/4/original/banner-dinamicas.jpeg?1570132064" style="background: #f0f0f0 top center/cover no-repeat;"></div>
+<div class="copy">
+<p>¡Conoce nuestras actividades!</p>
+</div>
+</a>
+<a class="module tertiary" href="https://santiago.kidzania.com/es-cl/pages/b-kidzanian">
+<div class="photo lazy" data-src="https://d1eilicilqktnj.cloudfront.net/franchises/img3_images/4/original/banner-bkidzanian.jpeg?1570132064" style="background: #f0f0f0 top center/cover no-repeat;"></div>
+<div class="copy">
+<p>Se un ciudadano B•KidZanian</p>
+</div>
+</a>
+<a class="module tertiary" href="https://santiago.kidzania.com/es-cl/pages/horario-de-apertura">
+<div class="photo lazy" data-src="https://d1eilicilqktnj.cloudfront.net/franchises/img4_images/4/original/mh.jpeg?1634755015" style="background: #f0f0f0 top center/cover no-repeat;"></div>
+<div class="copy">
+<p>¡Conoce nuestro calendario completo!</p>
+</div>
+</a>
+</div>
+</div>
+</section>
+</div>
+
+<section>
+<div class="visit-info-2 clearfix">
+<div class="address-directions container clearfix">
+<div class="col-xs-12">
+<h2 class="title text-center">
+<span class="glyphicon glyphicon-map-marker"></span>
+¿Dónde Estamos?
+</h2>
+<p class="catch">
+Av. Presidente Riesco 5330, Boulevard -2 Vida Parque (Parque Araucano) Las Condes, Santiago.
+<br>
+
+</p>
+</div>
+<div class="col-xs-12">
+<a class="btn btn-red directions" href="https://www.google.com/maps/place/KidZania+Santiago/@-33.4034953,-70.5776728,17z/data=!3m1!4b1!4m5!3m4!1s0x9662cf27e9c967f9:0x599df287ac39d396!8m2!3d-33.4034953!4d-70.5754841" target="_blank">
+Ver en el mapa &nbsp;&nbsp;›
+</a>
+</div>
+</div>
+</div>
+</section>
+<div aria-hidden="false" aria-labelledby="myModalLabel" class="modal fade in" id="transportationInfo" role="dialog" style="display: none;" tabindex="-1">
+<div class="modal-dialog modal-adj" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<button aria-label="Close" class="close modal-close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+<h2 class="title modal-title" id="myModalLabel">
+<div class="bus-icon" style="background: url('/assets/bus.svg') center/cover no-repeat"></div>
+Información de transporte
+</h2>
+</div>
+<div class="modal-body transportation-info">
+<p>
+
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="text-module">
+<div class="container">
+<div class="section-title">
+<h2 class="title">
+¿Necesitas contactarte con nosotros?
+</h2>
+<p class="subtitle center-push">
+
+</p>
+</div>
+<br>
+<a href="https://webapp.resolucionenlinea.com/claims/new/kidzania" class="btn btn-default">Te ayudamos aquí</a>
+</div>
+</div>
+
+<div class="section-wrapper homepage-bottom">
+<section style="background: #FFF;padding-top: 50px;">
+<div>
+<h2 class="title text-center">
+<span class="icon-industry-partners"></span>
+Nuestros Socios
+</h2>
+<div class="intro"><p style="text-align: center;">KidZania forja relaciones con marcas que son atractivas y preocupadas por los niños, las cuales ayuden en su proceso de aprendizaje, brindando mensajes de alto impacto, cargados con valores compartidos. Si te interesa ser parte de nuestro propósito de trabajar para un mundo mejor, te invitamos a contactarnos a traves del siguiente enlace:&nbsp;</p>
+
+<p style="text-align: center;"><a buttontype="default" class="cta-button-plugin btn btn-default" href="https://docs.google.com/forms/d/e/1FAIpQLSdALzq9mzKO3FRPFpRb3h1BlMZISFEtDpCZzdfbDdp2kVa2UQ/viewform" target="_blank">Contáctanos aquí</a></p>
+</div>
+<div class="container ip-wrapper">
+<div class="ip-slider  owl-carousel owl-loaded owl-drag" id="ip-slider">
+<div class="owl-stage-outer"><div class="owl-stage" style="width: 9196px; transform: translate3d(-2337px, 0px, 0px); transition: all;"><div class="owl-item cloned" style="width: 154.857px; margin-right: 1px;"><a href="/es-cl/coming-soon/index" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/1521/brand/logo_osito.png?1695393968">
+</div>
+</a></div><div class="owl-item cloned" style="width: 154.857px; margin-right: 1px;"><a href="/es-cl/coming-soon/index" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/1589/brand/IMEX_LOGO.png?1751905967">
+</div>
+</a></div><div class="owl-item cloned" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/avion" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/905/brand/jetsmart.png?1548955677">
+</div>
+</a></div><div class="owl-item cloned" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/supermercado" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/497/brand/jumbo.png?1525443160">
+</div>
+</a></div><div class="owl-item cloned" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/oficina-de-prensa" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/491/brand/lun_2.png?1711033413">
+</div>
+</a></div><div class="owl-item cloned" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/fabrica-de-leches" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/1106/brand/loncoleche.png?1553799264">
+</div>
+</a></div><div class="owl-item cloned" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/activities" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/1345/brand/jjhgdf.png?1750705279">
+</div>
+</a></div><div class="owl-item cloned" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/centro-de-educacion-vial" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/1214/brand/MUTUAL_ICONO.png?1570812793">
+</div>
+</a></div><div class="owl-item cloned" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/centrodecuidadosdelapiel" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/517/brand/NIVEA.png?1463603233">
+</div>
+</a></div><div class="owl-item cloned" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/clinica-odontologica" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/521/brand/norden.png?1525444305">
+</div>
+</a></div><div class="owl-item cloned" style="width: 154.857px; margin-right: 1px;"><a href="/es-cl/coming-soon/index" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/558/brand/Pampers_200x200.png?1470770260">
+</div>
+</a></div><div class="owl-item cloned" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/lavaseco" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/511/brand/prontomatic.png?1525444342">
+</div>
+</a></div><div class="owl-item cloned" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/banco" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/1578/brand/Scotiabank.png?1735910971">
+</div>
+</a></div><div class="owl-item cloned" style="width: 154.857px; margin-right: 1px;"><a href="/es-cl/coming-soon/index" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/528/brand/TORK.png?1468605238">
+</div>
+</a></div><div class="owl-item cloned" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/centroautomotriz" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/903/brand/toyota.png?1524747682">
+</div>
+</a></div><div class="owl-item active" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/centro-de-distribuicion-de-agua-purificada" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/924/brand/logoaquakidz-min(1)_optimized.png?1570810000">
+</div>
+</a></div><div class="owl-item active" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/fabrica-de-caramelos-light" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/502/brand/arcor.png?1525443883">
+</div>
+</a></div><div class="owl-item active" style="width: 154.857px; margin-right: 1px;"><a href="/es-cl/coming-soon/index" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/1610/brand/logo_audiomusica_web.png?1766155181">
+</div>
+</a></div><div class="owl-item active" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/embotelladora" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/525/brand/bilzypap.png?1525443941">
+</div>
+</a></div><div class="owl-item active" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/pintura-de-casas" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/488/brand/CERESITA.png?1463602349">
+</div>
+</a></div><div class="owl-item active" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/courier" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/492/brand/Socio_chilexpress.png?1757003302">
+</div>
+</a></div><div class="owl-item active" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/fabrica-de-saborizantes" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/902/brand/logo_cola_cao_web.png?1683298185">
+</div>
+</a></div><div class="owl-item" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/escuela-de-mineria" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/1585/brand/collahuasi_1.png?1750704950">
+</div>
+</a></div><div class="owl-item" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/bomberos" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/490/brand/Recurso_1Logo.png?1735911437">
+</div>
+</a></div><div class="owl-item" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/energia-limpia" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/1524/brand/logo_enel.png?1702563676">
+</div>
+</a></div><div class="owl-item" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/farmacia" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/1520/brand/LOGO_AHUMADA.png?1700226019">
+</div>
+</a></div><div class="owl-item" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/estacion-de-radio" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/504/brand/fm.png?1680540357">
+</div>
+</a></div><div class="owl-item" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/planta-envasadora-de-gas" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/516/brand/gasco.png?1524747274">
+</div>
+</a></div><div class="owl-item" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/taller-mecanico" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/906/brand/goodyear.png?1524747731">
+</div>
+</a></div><div class="owl-item" style="width: 154.857px; margin-right: 1px;"><a href="/es-cl/coming-soon/index" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/1521/brand/logo_osito.png?1695393968">
+</div>
+</a></div><div class="owl-item" style="width: 154.857px; margin-right: 1px;"><a href="/es-cl/coming-soon/index" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/1589/brand/IMEX_LOGO.png?1751905967">
+</div>
+</a></div><div class="owl-item" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/avion" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/905/brand/jetsmart.png?1548955677">
+</div>
+</a></div><div class="owl-item" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/supermercado" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/497/brand/jumbo.png?1525443160">
+</div>
+</a></div><div class="owl-item" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/oficina-de-prensa" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/491/brand/lun_2.png?1711033413">
+</div>
+</a></div><div class="owl-item" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/fabrica-de-leches" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/1106/brand/loncoleche.png?1553799264">
+</div>
+</a></div><div class="owl-item" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/activities" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/1345/brand/jjhgdf.png?1750705279">
+</div>
+</a></div><div class="owl-item" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/centro-de-educacion-vial" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/1214/brand/MUTUAL_ICONO.png?1570812793">
+</div>
+</a></div><div class="owl-item" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/centrodecuidadosdelapiel" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/517/brand/NIVEA.png?1463603233">
+</div>
+</a></div><div class="owl-item" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/clinica-odontologica" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/521/brand/norden.png?1525444305">
+</div>
+</a></div><div class="owl-item" style="width: 154.857px; margin-right: 1px;"><a href="/es-cl/coming-soon/index" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/558/brand/Pampers_200x200.png?1470770260">
+</div>
+</a></div><div class="owl-item" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/lavaseco" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/511/brand/prontomatic.png?1525444342">
+</div>
+</a></div><div class="owl-item" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/banco" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/1578/brand/Scotiabank.png?1735910971">
+</div>
+</a></div><div class="owl-item" style="width: 154.857px; margin-right: 1px;"><a href="/es-cl/coming-soon/index" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/528/brand/TORK.png?1468605238">
+</div>
+</a></div><div class="owl-item" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/centroautomotriz" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/903/brand/toyota.png?1524747682">
+</div>
+</a></div><div class="owl-item cloned" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/centro-de-distribuicion-de-agua-purificada" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/924/brand/logoaquakidz-min(1)_optimized.png?1570810000">
+</div>
+</a></div><div class="owl-item cloned" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/fabrica-de-caramelos-light" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/502/brand/arcor.png?1525443883">
+</div>
+</a></div><div class="owl-item cloned" style="width: 154.857px; margin-right: 1px;"><a href="/es-cl/coming-soon/index" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/1610/brand/logo_audiomusica_web.png?1766155181">
+</div>
+</a></div><div class="owl-item cloned" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/embotelladora" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/525/brand/bilzypap.png?1525443941">
+</div>
+</a></div><div class="owl-item cloned" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/pintura-de-casas" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/488/brand/CERESITA.png?1463602349">
+</div>
+</a></div><div class="owl-item cloned" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/courier" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/492/brand/Socio_chilexpress.png?1757003302">
+</div>
+</a></div><div class="owl-item cloned" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/fabrica-de-saborizantes" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/902/brand/logo_cola_cao_web.png?1683298185">
+</div>
+</a></div><div class="owl-item cloned" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/escuela-de-mineria" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/1585/brand/collahuasi_1.png?1750704950">
+</div>
+</a></div><div class="owl-item cloned" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/bomberos" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/490/brand/Recurso_1Logo.png?1735911437">
+</div>
+</a></div><div class="owl-item cloned" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/energia-limpia" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/1524/brand/logo_enel.png?1702563676">
+</div>
+</a></div><div class="owl-item cloned" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/farmacia" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/1520/brand/LOGO_AHUMADA.png?1700226019">
+</div>
+</a></div><div class="owl-item cloned" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/estacion-de-radio" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/504/brand/fm.png?1680540357">
+</div>
+</a></div><div class="owl-item cloned" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/planta-envasadora-de-gas" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/516/brand/gasco.png?1524747274">
+</div>
+</a></div><div class="owl-item cloned" style="width: 154.857px; margin-right: 1px;"><a href="https://santiago.kidzania.com/es-cl/pages/taller-mecanico" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/906/brand/goodyear.png?1524747731">
+</div>
+</a></div><div class="owl-item cloned" style="width: 154.857px; margin-right: 1px;"><a href="/es-cl/coming-soon/index" target="_blank"><div class="ip-logo">
+<img alt="Image" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="96" data-original="https://d1eilicilqktnj.cloudfront.net/partners/logo_images/1521/brand/logo_osito.png?1695393968">
+</div>
+</a></div></div></div><div class="owl-nav"><div class="owl-prev"><span class="glyphicon glyphicon-menu-left"></span></div><div class="owl-next"><span class="glyphicon glyphicon-menu-right"></span></div></div><div class="owl-dots"><div class="owl-dot active"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div></div></div>
+</div>
+</div>
+<div class="spacer medium"></div>
+<div class="kaw">
+<div class="section-title">
+<h2 class="title">
+<span class="icon-around-the-world2"></span>
+KidZania alrededor del mundo
+</h2>
+</div>
+<p class="catch">
+KidZania es una de las marcas de eduentretenimiento para niños con mayor crecimiento a nivel global, con instalaciones repartidas por todo el mundo; desde la Ciudad de México hasta Tokio, pasando por Bangkok, y Londres.
+</p>
+<a data-toggle="modal" class="btn btn-outline white hidden-sm hidden-xs" data-target="#around-world-modal" href="#" remote="">
+KidZania en el Mundo
+</a>
+<div class="hidden-md hidden-lg hidden-xl" id="kz-select">
+<select class="form-control" id="facility_url" name="facility_url"><option value="">Elige tu KidZania</option><option value="https://abudhabi.kidzania.com/en-ae/">KidZania Abu Dhabi</option>
+<option value="http://bangkok.kidzania.com">KidZania Bangkok</option>
+<option value="http://www.kidzania.co.kr/web/busan_eng/">KidZania Busan</option>
+<option value="http://cairo.kidzania.com">KidZania Cairo</option>
+<option value="http://cuicuilco.kidzania.com">KidZania Cuicuilco</option>
+<option value="https://usa.kidzania.com/en-us/">KidZania Dallas</option>
+<option value="http://india.kidzania.com">KidZania Delhi NCR</option>
+<option value="http://doha.kidzania.com">KidZania Doha</option>
+<option value="http://www.kidzania.ae/en/">KidZania Dubai</option>
+<option value="http://guadalajara.kidzania.com">KidZania Guadalajara</option>
+<option value="https://hanoi.kidzania.com/">KidZania Hanoi</option>
+<option value="http://istanbul.kidzania.com">KidZania Istanbul</option>
+<option value="http://jakarta.kidzania.com">KidZania Jakarta</option>
+<option value="http://jeddah.kidzania.com">KidZania Jeddah</option>
+<option value="http://johannesburg.kidzania.com">KidZania Johannesburg</option>
+<option value="http://www.kidzania.jp/koshien/en/">KidZania Koshien</option>
+<option value="http://www.kidzania.com.my">KidZania Kuala Lumpur</option>
+<option value="http://kuwait.kidzania.com">KidZania Kuwait</option>
+<option value="http://www.kidzania.pt">KidZania Lisbon</option>
+<option value="http://london.kidzania.com">KidZania London</option>
+<option value="http://manila.kidzania.com">KidZania Manila</option>
+<option value="http://monterrey.kidzania.com">KidZania Monterrey</option>
+<option value="http://www.kidzania.ru">KidZania Moscow</option>
+<option value="http://india.kidzania.com">KidZania Mumbai</option>
+<option value="http://costarica.kidzania.com/">KidZania San Jose</option>
+<option value="http://santafe.kidzania.com">KidZania Santa Fe</option>
+<option value="http://santiago.kidzania.com">KidZania Santiago</option>
+<option value="http://saopaulo.kidzania.com">KidZania Sao Paulo</option>
+<option value="http://www.kidzania.co.kr/web/eng/">KidZania Seoul</option>
+<option value="http://www.kidzania.com.sg">KidZania Singapore</option>
+<option value="https://surabaya.kidzania.com/in-id">KidZania Surabaya</option>
+<option value="http://www.kidzania.jp/tokyo/en/">KidZania Tokyo</option></select>
+<a class="widget-link" id="widget-link" target="blank">
+<span class="glyphicon glyphicon-send"></span>
+</a>
+</div>
+<script>
+  //<![CDATA[
+    $('#widget-link').click(function() {
+      window.open($('#facility_url')[0].value)
+    });
+  //]]>
+</script>
+
+</div>
+</section>
+<section id="contact">
+<!-- Get link_url value -->
+<!-- Strip all whitespaces -->
+<!-- Check if franchise_name is defined -->
+<!-- * If yes: assign franchise_name value to name -->
+<!-- * If no: assign current_franchise.name value to name -->
+<div class="section-wrapper homepage-bottom">
+<div class="section-inner">
+<div class="container">
+<div class="mg-sm footer-left text-center" data-effect="fadeIn">
+<div class="logo-footer center-block">
+<img class="lozad" data-src="https://d1eilicilqktnj.cloudfront.net/system_configs/color_logos/13/original/kz-logo-2-color.svg?1526028195">
+<p class="footer-franchise">
+Santiago
+</p>
+</div>
+<p class="footer-address">
+Av. Presidente Riesco 5330, Boulevard -2 Vida Parque (Parque Araucano) Las Condes, Santiago.
+<br>
+</p>
+<div class="spacer small"></div>
+<h3>
+<strong>
+Síguenos en nuestras redes sociales
+</strong>
+</h3>
+<div class="soc-btn">
+<a href="https://www.facebook.com/KidZaniaSantiago" target="_blank"><img alt="Facebook" class="svg social-logo" height="41" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="41" data-original="https://d1eilicilqktnj.cloudfront.net/sm_icons/files/67/original/facebook-logo.svg?1493123203">
+</a><a href="https://www.instagram.com/kidzaniasantiago" target="_blank"><img alt="Instagram" class="svg social-logo" height="41" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="41" data-original="https://d1eilicilqktnj.cloudfront.net/sm_icons/files/68/original/instagram-logo.svg?1493123204">
+</a><a href="https://www.youtube.com/user/KidzaniaSantiago" target="_blank"><img alt="Youtube" class="svg social-logo" height="41" src="/assets/grey-37fc9820e3ef9cfc84fe5de01bf5484b.gif" width="41" data-original="https://d1eilicilqktnj.cloudfront.net/sm_icons/files/141/original/KZ-SocialMediaTemplate_(1).svg?1526312557">
+</a></div>
+</div>
+</div>
+</div>
+</div>
+<!-- %nav.footer-nav{:role => "navigation"} -->
+<!-- = render 'layouts/main_menu' -->
+</section>
+</div>
+<div aria-hidden="false" aria-labelledby="myModalLabel" class="modal fade in" id="around-world-modal" role="dialog" style="display: none;" tabindex="-1">
+<div class="modal-dialog modal-adj around-world" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+<h1 class="modal-title" id="myModalLabel">
+Ir a KidZania
+</h1>
+</div>
+<div class="modal-body kznationmap" style="background: url('/assets/mapbackground.jpg')">
+<div class="santafe"><a href="http://santafe.kidzania.com" target="_blank">Santa Fe <img src="/assets/red-marker.png" alt="Open Facility"></a></div>
+<div class="cuicuilco"><a href="http://cuicuilco.kidzania.com" target="_blank"><img src="/assets/red-marker.png" alt="Open Facility"> Cuicuilco</a></div>
+<div class="monterrey"><a href="http://monterrey.kidzania.com" target="_blank"><img src="/assets/red-marker.png" alt="Open Facility"> Monterrey</a></div>
+<div style="top:201px; left: 144px; position: absolute;" data-toggle="tooltip" data-placement="top" title="Coming Soon!"><a <div="" style="top:161px; right: 803px; position: absolute;" data-toggle="tooltip" data-placement="top" title="Coming Soon!"></a><a href="https://usa.kidzania.com/en-us/" target="_blank">Chicago <img src="/assets/yellow-marker.png" alt="Coming Soon"></a></div>
+<div style="top:158px; left: 225px; position: absolute;" data-toggle="tooltip" data-placement="top" title="Coming Soon!"><a href="https://usa.kidzania.com/en-us/" target="_blank"><img src="/assets/yellow-marker.png" alt="Coming Soon"> New York</a></div>
+<div style="top:142px; line-height: 1;  right: 776px; position: absolute;" data-toggle="tooltip" data-placement="top" title="Coming Soon!"><a target="">Toronto<br><img src="/assets/yellow-marker.png" class="pull-right" alt="Coming Soon"></a></div>
+<div class="guadalajara"><a href="http://guadalajara.kidzania.com" target="_blank"> Guadalajara<img src="/assets/red-marker.png" alt="Guadalajara"></a></div>
+<div class="santiago"><a href="https://santiago.kidzania.com" target="_blank">Santiago <img src="/assets/red-marker.png" alt="Open Facility"></a></div>
+<div class="saopaulo"><a href="http://saopaulo.kidzania.com" target="_blank"><img src="/assets/red-marker.png" alt="Open Facility"> Sao Paulo</a></div>
+<div class="lisbon"><a href="http://www.kidzania.pt" target="_blank">Lisbon <img src="/assets/red-marker.png" alt="Open Facility"></a></div>
+<div class="london"><a href="http://london.kidzania.com" target="_blank">London <img src="/assets/red-marker.png" alt="Open Facility"></a></div>
+<div class="paris" data-toggle="tooltip" data-placement="top" title="Coming Soon!"><a> <img src="/assets/yellow-marker.png" alt="Coming Soon"> Paris</a></div>
+<div class="delhi"><a href="https://india.kidzania.com" target="_blank"><img src="/assets/red-marker.png" alt="Open Facility"> Delhi NCR</a></div>
+<div class="mumbai"><a href="https://india.kidzania.com" target="_blank"><img src="/assets/red-marker.png" alt="Open Facility"> Mumbai</a></div>
+<div class="moscow"><a href="http://www.kidzania.ru" target="_blank"><img src="/assets/red-marker.png" alt="Open Facility"> Moscow</a></div>
+<div class="istanbul"><a href="http://istanbul.kidzania.com" target="_blank"><img src="/assets/red-marker.png" alt="Open Facility"> Istanbul</a></div>
+<div class="cairo"><a href="http://cairo.kidzania.com" target="_blank">Cairo <img src="/assets/red-marker.png" alt="Open Facility"></a></div>
+<div class="johannesburg" data-toggle="tooltip" data-placement="top" title="Coming Soon!"><a href="http://johannesburg.kidzania.com" target="_blank"> <img src="/assets/yellow-marker.png" alt="Coming Soon"> Johannesburg</a></div>
+<div class="jeddah"><a href="http://jeddah.kidzania.com" target="_blank">Jeddah <img src="/assets/red-marker.png" alt="Open Facility"></a></div>
+<div class="kuwait"><a href="http://kuwait.kidzania.com" target="_blank">Kuwait<br><img src="/assets/red-marker.png" alt="Open Facility"></a></div>
+<div style="right: 370px; top: 227px; line-height: 1; position: absolute;"><a href="http://doha.kidzania.com" target="_blank">Doha <img src="/assets/red-marker.png" alt="Coming Soon"></a></div>
+<div style="left: 621px; top: 235px; line-height: .8; position: absolute;"><a href="https://abudhabi.kidzania.com/en-ae/"><img src="/assets/red-marker.png" alt="open"><br>Abu Dhabi</a></div>
+<div class="dubai"><a href="http://www.kidzania.ae/en/" target="_blank"><img src="/assets/red-marker.png" alt="Open Facility"> Dubai</a></div>
+<div style="left: 775px; top: 251px; position: absolute; line-height: 1"><a href="http://bangkok.kidzania.com" target="_blank"> Bangkok <br><img src="/assets/red-marker.png" alt="Open Facility"></a></div>
+<div class="kuala"><a href="http://www.kidzania.com.my" target="_blank"> Kuala Lumpur <img src="/assets/red-marker.png" alt="Open Facility"></a></div>
+
+<div class="jakarta"><a href="http://jakarta.kidzania.com" target="_blank"> Jakarta <img src="/assets/red-marker.png" alt="Open Facility"></a></div>
+<div style="left: 811px; top: 337px; position: absolute;" data-toggle="tooltip" data-placement="top" title=""><a><img src="/assets/red-marker.png" alt="Open Facility">Surabaya</a></div>
+
+<div class="seoul"><a href="http://www.kidzania.co.kr/web/eng/" target="_blank"> Seoul <img src="/assets/red-marker.png" alt="Open Facility"></a></div>
+<div class="busan"><a href="http://www.kidzania.co.kr/web/busan_eng/" target="_blank"> Busan <img src="/assets/red-marker.png" alt="Open Facility"></a></div>
+<div class="koshien" style="left: 889px; top: 190px; position: absolute;"><a href="http://www.kidzania.jp/koshien/en/" target="_blank"><img src="/assets/red-marker.png" alt="Open Facility"> <br>Koshien</a></div>
+<div class="tokyo" style="left: 901px; top: 155px; position: absolute; line-height: 0.9;"><a href="http://www.kidzania.jp/tokyo/en/" target="_blank">Tokyo <br><img src="/assets/red-marker.png" alt="Open Facility"></a></div>
+<div style="top: 281px; left: 189px; position: absolute;"><a href="http://costarica.kidzania.com/"><img src="/assets/red-marker.png" alt="Costa Rica"> Costa Rica</a></div>
+<div style="left: 599px; top: 243px; line-height: .9; position: absolute;" data-toggle="tooltip" data-placement="top" title="" data-original-title="Website Coming Soon!"><a><img src="/assets/yellow-marker.png" alt="Coming Soon"><br>Riyadh</a></div>
+
+<div class="nagoya" data-toggle="tooltip" data-placement="top" title="Website Coming Soon!" style="left: 897px; top: 181px; position: absolute;"><a><img src="/assets/yellow-marker.png"> Nagoya</a></div>
+<div style="left: 790px; top: 245px; position: absolute;" data-toggle="tooltip" data-placement="top" title=""><a><img src="/assets/red-marker.png" alt="Open Facility">Hanoi</a></div>
+</div>
+<div class="legend">
+<img class="lozad" data-src="/assets/red-marker.png">
+Abierto
+<br>
+<img class="lozad" data-src="/assets/yellow-marker.png">
+Próximamente
+</div>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    $("#submit-contact").on('click', function(){
+      $('input[type=email], input[type=text], textarea').filter('[required]').next().hide();
+      $('input[type=checkbox], input[type=radio]').filter('[required]').parent().parent().next().hide();
+      email = $('input#email').val();
+      errorsArray = validateForm();
+      if (errorsArray && errorsArray.length) {
+        for(var i =0; i < errorsArray.length; i++) {
+          if (errorsArray[i].type == 'checkbox' || errorsArray[i].type == 'radio') {
+            $(errorsArray[i]).parent().parent().next().show();
+          }
+          else {
+            $(errorsArray[i]).next().show();
+          }
+        }
+      }
+      else if (email && !isValidEmailAddress(email)){
+        $("input#email").next().show();
+      }
+      else if ($('#legal_note_check').length && ($('#legal_note_check')[0].checked == false)){
+        $('#legal_note_check').next().next().show()
+      }
+      else {
+        var valuesToSubmit = $('form').serialize();
+        $.ajax({
+          type: $('form').attr('method'),
+          url: $('form').attr('action'), //sumbits it to the given url of the form
+          data: valuesToSubmit,
+          dataType: "JSON" // you want a difference between normal and ajax-calls, and json is standard
+        }).success(function(json){
+          if (json.status == 'success') {
+            contactTargetUrl = $('form').attr('contact_target_url')
+            if ( contactTargetUrl && contactTargetUrl.length != 0) {
+              window.location = contactTargetUrl
+            }
+            else {
+              $('#contact-section').hide();
+              $('.zanks').fadeIn();
+            }
+          }
+          else {
+             $('.captcha-error').css('display', 'block')
+          }
+        });
+        return false;
+      }
+    })
+    
+    $('.close').click("click",function () {
+      $('form').trigger("reset");
+    });
+    
+    function validateForm() {
+        var errorsArray= [];
+        var requiredElements = $('input,textarea,select').filter('[required]');
+        for(var i=0; i < requiredElements.length; i++) {
+            if(!$(requiredElements[i]).val()) {
+               errorsArray.push(requiredElements[i])
+            }
+            if (requiredElements[i].type == 'checkbox' && !requiredElements[i].checked) {
+              errorsArray.push(requiredElements[i])
+            }
+            if (requiredElements[i].type == 'radio' && !$("input[name='"+requiredElements[i].name+"']:checked").val()) {
+              errorsArray.push(requiredElements[i]);
+            }
+        }
+    
+        return errorsArray;
+    }
+    
+    $("#submit-custom-contact").on('click', function(){
+      $('input[type=email], input[type=text], textarea').filter('[required]').next().hide();
+      $('input[type=checkbox], input[type=radio]').filter('[required]').parent().parent().next().hide();
+      email = $('input#email').val();
+      errorsArray = validateForm();
+      if (errorsArray && errorsArray.length) {
+        for(var i =0; i < errorsArray.length; i++) {
+          if (errorsArray[i].type == 'checkbox' || errorsArray[i].type == 'radio') {
+            $(errorsArray[i]).parent().parent().next().show();
+          }
+          else {
+            $(errorsArray[i]).next().show();
+          }
+        }
+      }
+      else if (email && !isValidEmailAddress(email)){
+        $("input#email").next().show();
+      }
+      else if ($('#legal_note_check').length && $('#legal_note_check')[0].checked == false){
+        $('#legal_note_check').next().next().show()
+      }
+      else {
+        var valuesToSubmit = $('form').serialize();
+        $.ajax({
+          type: $('form').attr('method'),
+          url: $('form').attr('action'), //sumbits it to the given url of the form
+          data: valuesToSubmit,
+          dataType: "JSON" // you want a difference between normal and ajax-calls, and json is standard
+        }).success(function(json){
+          if (json.status == 'success') {
+            contactTargetUrl = $('form').attr('contact_target_url')
+            if ( contactTargetUrl && contactTargetUrl.length != 0) {
+              window.location = contactTargetUrl
+            }
+            else {
+              $('#contact-section').hide();
+              $('.zanks').fadeIn();
+            }
+          } else {
+             $('.captcha-error').css('display', 'block');
+          }
+        });
+      }
+      return false;
+    })
+    
+    function isValidEmailAddress(emailAddress) {
+      var pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return pattern.test(emailAddress);
+    };
+  //]]>
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const linkElement = document.querySelector('#app-link-nav a');
+    linkElement.setAttribute('href', 'https://webapp.resolucionenlinea.com/claims/new/kidzania/step1/problem');
+    linkElement.setAttribute('target', '_blank');
+    const expandDiv = document.querySelector('#app-link-nav .expand-info');
+    if (expandDiv) { expandDiv.style.display = 'none'; }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const lastLi = document.querySelector('#mobile-visit-info ul li:last-child a');
+    if (lastLi) {
+        lastLi.removeAttribute('data-toggle');
+        lastLi.setAttribute('href', 'https://webapp.resolucionenlinea.com/claims/new/kidzania/step1/problem');
+        lastLi.setAttribute('target', '_blank');
+    }
+});
+</script>
+
+</main>
+<script type="text/javascript" id="" charset="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","2239787819602030");fbq("set","agent","tmgoogletagmanager","2239787819602030");fbq("track","PageView");</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2239787819602030&amp;ev=PageView&amp;noscript=1"></noscript>
+
+<script type="text/javascript" id="" charset="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","484408979251287");fbq("set","agent","tmgoogletagmanager","484408979251287");fbq("track","PageView");</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=484408979251287&amp;ev=PageView&amp;noscript=1"></noscript>
+
+<link as="style" href="//d1eilicilqktnj.cloudfront.net/assets/winter-fd00718d128620c361bb70503330639f.css" media="all" onload="this.onload=null;this.rel='stylesheet'" rel="stylesheet" type="text/css">
+<noscript>
+<link href="//d1eilicilqktnj.cloudfront.net/assets/winter-fd00718d128620c361bb70503330639f.css" media="all" rel="stylesheet" type="text/css" />
+</noscript>
+<script>
+  //<![CDATA[
+    /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+    /* This file is meant as a standalone workflow for
+    - testing support for link[rel=preload]
+    - enabling async CSS loading in browsers that do not support rel=preload
+    - applying rel preload css once loaded, whether supported or not.
+    */
+    (function( w ){
+      "use strict";
+      // rel=preload support test
+      if( !w.loadCSS ){
+        w.loadCSS = function(){};
+      }
+      // define on the loadCSS obj
+      var rp = loadCSS.relpreload = {};
+      // rel=preload feature support test
+      // runs once and returns a function for compat purposes
+      rp.support = (function(){
+        var ret;
+        try {
+            ret = w.document.createElement( "link" ).relList.supports( 'preload' );
+        } catch (e) {
+            ret = false;
+        }
+        return function(){
+            return ret;
+        };
+      })();
+    
+      // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+      // then change that media back to its intended value on load
+      rp.bindMediaToggle = function( link ){
+        // remember existing media attr for ultimate state, or default to 'all'
+        var finalMedia = link.media || "all";
+    
+        function enableStylesheet(){
+          link.media = finalMedia;
+        }
+    
+        // bind load handlers to enable media
+        if( link.addEventListener ){
+          link.addEventListener( "load", enableStylesheet );
+        } else if( link.attachEvent ){
+          link.attachEvent( "onload", enableStylesheet );
+        }
+    
+        // Set rel and non-applicable media type to start an async request
+        // note: timeout allows this to happen async to let rendering continue in IE
+        setTimeout(function(){
+          link.rel = "stylesheet";
+          link.media = "only x";
+        });
+        // also enable media after 3 seconds,
+        // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+        setTimeout( enableStylesheet, 3000 );
+      };
+    
+      // loop through link elements in DOM
+      rp.poly = function(){
+        // double check this to prevent external calls from running
+        if( rp.support() ){
+          return;
+        }
+        var links = w.document.getElementsByTagName( "link" );
+        for( var i = 0; i < links.length; i++ ){
+          var link = links[ i ];
+          // qualify links to those with rel=preload and as=style attrs
+          if( link.rel === 'preload' && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+            // prevent rerunning on link
+            link.setAttribute( "data-loadcss", true );
+            // bind listeners to toggle media back
+            rp.bindMediaToggle( link );
+          }
+        }
+      };
+    
+      // if unsupported, run the polyfill
+      if( !rp.support() ){
+        // run once at least
+        rp.poly();
+    
+        // rerun poly on an interval until onload
+        var run = w.setInterval( rp.poly, 500 );
+        if( w.addEventListener ){
+          w.addEventListener( "load", function(){
+            rp.poly();
+            w.clearInterval( run );
+          } );
+        } else if( w.attachEvent ){
+          w.attachEvent( "onload", function(){
+            rp.poly();
+            w.clearInterval( run );
+          } );
+        }
+      }
+    
+    
+      // commonjs
+      if( typeof exports !== "undefined" ){
+        exports.loadCSS = loadCSS;
+      }
+      else {
+        w.loadCSS = loadCSS;
+      }
+    }( typeof global !== "undefined" ? global : this ) );
+  //]]>
+</script>
+
+<script async="async" src="//d1eilicilqktnj.cloudfront.net/assets/winter-d9cd99ed95873faad0d7c22a63e9e6e0.js" type="text/javascript"></script>
+<script src="//d1eilicilqktnj.cloudfront.net/assets/winter/owl.carousel.min-7c370ae5f19ee7a0ad5a77f2006af0b4.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    $(document).ready(function(){
+      $('#ip-slider').owlCarousel({
+          loop:true,
+          autoplay:true,
+          autoplayTimeout:4000,
+          autoplayHoverPause:true,
+          margin:1,
+          lazyLoad:true,
+          dots:true,
+          nav:true,
+          slideBy:'page',
+          navSpeed:200,
+          autoplaySpeed:300,
+          navText:['<span class="glyphicon glyphicon-menu-left"></span>','<span class="glyphicon glyphicon-menu-right"></span>'],
+          responsive:{
+              0:{
+                  items:2
+              },
+               650:{
+                  items:3
+              },
+              800:{
+                  items:5
+              },
+              1200:{
+                  items:7
+              }
+          }
+      })
+      $('#main-slider').owlCarousel({
+        autoplay: true,
+        autoplayTimeout: 8000,
+        lazyLoad:true,
+        loop:true,
+        margin:1,
+        lazyLoad:true,
+        nav:true,
+        dots:false,
+        navText:['<span class="glyphicon glyphicon-menu-left"></span>','<span class="glyphicon glyphicon-menu-right"></span>'],
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:1
+            },
+            1000:{
+                items:1
+            }
+        }
+      })
+    
+    });
+  //]]>
+</script>
+
+
+
+<script>
+  //<![CDATA[
+    function activateStore(class_name) {
+      $('.storeQR').hide();
+      $(class_name).show();
+    }
+  //]]>
+</script>
+
+<span class="privacy_footer">
+Verifique su boleta electrónica
+<a href="http://kidzaniasantiago.cl/portalboleta/">
+aquí
+</a>
+
+</span>
+<p class="copyright">
+Platform provided by KidZania Operations S.A.R.L. © 2026, KidZania, and all related characters and elements are trademarks of KidZania Operations S.A.R.L. All Rights Reserved.
+<br>
+<a href="/es-cl/privacy">
+Privacy Policy
+</a>
+</p>
+
+
+
+
+
+<script src="//d1eilicilqktnj.cloudfront.net/assets/winter/js.cookie.min-1c12057c3f78325a435f300ea39e4be5.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    $( document ).ready(function() {  
+        //COOKIE BAR
+        $('#cookiesOk').click(function(){
+            $('.cookie-message').css('opacity','0');
+            $('.cookie-message').css('visibility','hidden');
+            Cookies.set('visited','yes', {expires : 365});
+        });
+        if(Cookies.get('visited') != 'yes'){
+                $('.cookie-message').show();
+            }
+    });
+  //]]>
+</script>
+
+<!-- Video Modal -->
+<div aria-labelledby="myModalLabel" class="internal modal fade" id="videoModal" role="dialog" tabindex="-1">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header-topbar" id="economy-top">
+<button aria-label="Close" class="close video" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="embed-responsive embed-responsive-16by9" id="videoContainer"></div>
+</div>
+</div>
+</div>
+<script>
+  //<![CDATA[
+    function videoCta(video_url) {
+      $('#videoContainer').html('<iframe src="'+video_url+'" allowfullscreen class="embed-responsive-item" ></iframe>');
+    };
+    $('.close.video').click(function(){
+      $('#videoContainer').html('');
+    });
+  //]]>
+</script>
+
+<!-- External Link Modal -->
+<div aria-labelledby="myModalLabel" class="modal fade grid" id="extModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-adj" role="document">
+<div class="modal-content">
+<div class="modal-body">
+<button aria-label="Close" class="close" data-dismiss="modal" id="grid-1-close" type="button">
+<span aria-hidden="true">×</span>
+</button>
+<div class="section-title">Leaving KidZania Website</div>
+<div class="single-column">
+<p>The content displayed on the subsequent pages are not part of this KidZania website</p>
+<a data-dismiss="modal" href="" style="text-decoration: underline;">
+<small>Stay in KidZania</small>
+</a>
+&nbsp;&nbsp;
+<a class="btn btn-red" href="" id="external_link" target="_blank">Proceed</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  //<![CDATA[
+    function externalLink(url) {
+      $('#extModal').show();
+      $('#external_link').attr("href", url);
+    };
+    $('#grid-1-close').click(function(){
+      $('#extModal').hide();
+    });
+  //]]>
+</script>
+<style>
+  /*<![CDATA[*/
+    /* External CTA Modal */
+    #extModal.modal.grid .modal-body .single-column {
+      text-align: center;
+      margin-bottom: 0;
+      padding-left: 30px;
+      padding-right: : 30px;
+    }
+    #extModal.modal.grid .modal-body .single-column .btn {
+      font-size: 14px;
+      margin: 10px;
+    }
+    #extModal .section-title {
+      margin: 0 auto 30px;
+      font-size: 24px;
+      font-weight: 600;
+    }
+    #extModal .modal-dialog {
+      max-width: 600px;
+    }
+  /*]]>*/
+</style>
+
+<script>
+  //<![CDATA[
+    $('.section-outter,.visit-info-2').addClass('clearfix');
+    
+    $('#kznation-dropdown').hover(function(){
+          $('#kznation-dropdown-menu').css('display','block');
+          $('#kznation').addClass('open');
+    });
+    $('#kznation-dropdown-menu').mouseleave(function(){
+        function dismissMenuNation(){
+    
+            $('#kznation').removeClass('open');
+            $('#kznation-dropdown-menu').css('display','none');
+    
+        }
+        var timeoutID = window.setTimeout(dismissMenuNation,300);
+    
+    });
+    $('#kznation-dropdown-2').hover(function(){
+        $('#kznation-dropdown-menu-2').css('display', 'block');
+        $('#kznation2').addClass('open');
+    });
+    $('#kznation-dropdown-menu-2').mouseleave(function(){
+        function dismissMenuNation2(){
+            $('#kznation2').removeClass('open');
+            $('#kznation-dropdown-menu-2').css('display','none');
+    
+        }
+        var timeoutID = window.setTimeout(dismissMenuNation2,300);
+    
+    });
+    $('#companyinfo').hover(function(){
+        $('#companyinfo-dropdown').addClass('open');
+    });
+    $('#companyinfo-dropdown-menu').mouseleave(function(){
+        function dismissMenuCompany(){
+            $('#companyinfo-dropdown').removeClass('open')
+        }
+        var timeoutID = window.setTimeout(dismissMenuCompany,300);
+    
+    });
+    $('#companyinfo-dropdown-2').hover(function(){
+        $('#companyinfo-dropdown-menu-2').css('display', 'block');
+        $('#companyinfo2').addClass('open');
+    
+    });
+    $('#companyinfo-dropdown-2').mouseleave(function(){
+        function dismissMenuCompany2(){
+        $('#companyinfo-dropdown-menu-2').css('display', 'none');
+        $('#companyinfo2').removeClass('open');
+        }
+        var timeoutID = window.setTimeout(dismissMenuCompany2,300);
+    
+    });
+    $('#navbar-toggle').click(function(){
+        $('.home-wrapper').toggleClass('open');
+        $('.navbar-header').toggleClass('open');
+        $('.menu-wave').toggleClass('in');
+    });
+    $('#kznation').click(function(){
+        $('.home-wrapper').toggleClass('nation');
+        $('.navbar-header').toggleClass('nation');
+    });
+    $('#companyinfo').click(function(){
+        $('.home-wrapper').toggleClass('company');
+        $('.navbar-header').toggleClass('company');
+    });
+    
+    $(window).scroll(function() {
+    
+      var scroll = $(window).scrollTop();
+     //>=, not <=
+      if (scroll >= 212) {
+        //clearHeader, not clearheader - caps H
+        $("#navSpy").css("margin-top","0");
+        $(".navbar-default").css("display","none");
+      }else {
+        $("#navSpy").css("margin-top","-100px");
+        $(".navbar-default").css("display","block");
+      }
+    });
+    $('#cookiesOk').click(function(){
+        $('.cookie-bar').css('opacity','0');
+        $('.cookie-bar').css('visibility','hidden');
+    });
+    
+    $('#sel1').change(function (){
+        var franchUrl = $('select#sel1').val();
+        window.location.href = franchUrl ;
+    });
+    
+    /*
+      jQuery('img.svg').each(function(){
+        var $img = jQuery(this);
+        var imgID = $img.attr('id');
+        var imgClass = $img.attr('class');
+        var imgURL = $img.attr('src');
+        jQuery.get(imgURL, function(data) {
+            // Get the SVG tag, ignore the rest
+            var $svg = jQuery(data).find('svg');
+            // Add replaced image's ID to the new SVG
+            if(typeof imgID !== 'undefined') {
+                $svg = $svg.attr('id', imgID);
+            }
+            // Add replaced image's classes to the new SVG
+            if(typeof imgClass !== 'undefined') {
+                $svg = $svg.attr('class', imgClass+' replaced-svg');
+            }
+    
+            // Remove any invalid XML tags as per http://validator.w3.org
+            $svg = $svg.removeAttr('xmlns:a');
+    
+            // Replace image with new SVG
+            $img.replaceWith($svg);
+    
+        }, 'xml');
+      });
+    */
+    
+    var lastScrollTop = 0;
+    $(window).scroll(function(event){
+       var st = $(this).scrollTop();
+       if (st > lastScrollTop){
+           $('.mobile-nav').css('top','-90px');
+           $('.mobile-nav').css('opacity','0');
+           $('.mobile-nav').css('z-index','2');
+       } else {
+          $('.mobile-nav').css('top','0');
+          $('.mobile-nav').css('opacity','1');
+          $('.mobile-nav').css('z-index','10');
+       }
+       lastScrollTop = st;
+    });
+    
+    $(document).ready(function(){
+        $( "iframe" ).wrap( "<div class='embed-responsive embed-responsive-16by9' />");
+        $('.flexible-embed').children().children().removeClass('embed-responsive embed-responsive-16by9')
+        $( "table" ).wrap( "<div class='table-responsive' />");
+        $( "table" ).addClass( "table" );
+    
+        $(window).resize(function() {
+            if(($(this).width() < 769) && $("table").length > 0 && !$("table").next().is("span")) {
+                $("<span class='glyphicon glyphicon-transfer'></span>").insertAfter($("table"));
+            } else if (($(this).width() > 769) && $("table").length > 0 && $("table").next().is("span")){
+                $("table").next("span").remove();
+            }
+        });
+    
+    });
+    
+    $(document).ready(function(){
+        $('.hours-slider').owlCarousel({
+              dots:true,
+              loop:false,
+              margin:1,
+              nav:true,
+              autoplay:true,
+              autoplayTimeout: 5000,
+              autoplayHoverPause:true,
+              navText:['<span class="glyphicon glyphicon-menu-left"></span>','<span class="glyphicon glyphicon-menu-right"></span>'],
+              responsive:{
+                  0:{
+                      items:1
+                  },
+                  600:{
+                      items:1
+                  },
+                  1000:{
+                      items:1
+                  }
+              }
+        });
+    
+        $('.prices-slider').owlCarousel({
+              dots:true,
+              loop:false,
+              margin:1,
+              nav:true,
+              autoplay:true,
+              autoplayTimeout: 5000,
+              autoplayHoverPause:true,
+              navText:['<span class="glyphicon glyphicon-menu-left"></span>','<span class="glyphicon glyphicon-menu-right"></span>'],
+              responsive:{
+                  0:{
+                      items:1
+                  },
+                  600:{
+                      items:1
+                  },
+                  1000:{
+                      items:1
+                  }
+              }
+        });
+    });
+    
+    $('.section-wrapper').addClass('homepage-bottom');
+  //]]>
+</script>
+
+</body></html>

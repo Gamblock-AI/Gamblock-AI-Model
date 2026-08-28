@@ -1,0 +1,421 @@
+<html lang="fr"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/fppn.png">
+    <title>GrenierShop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google tag (gtag.js) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-QLY82Z0Z3E"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-QLY82Z0Z3E');
+    </script> -->
+</head>
+
+<body><header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top_">
+    <div class="container-fluid">
+      <!--logo-->
+      <a class="navbar-brand" href="./index.php">
+        <img src="./images/fppn.png" alt="fppn" width="150" height="70">
+      </a>
+      <!--menu-->
+      <div class="cat_mobile d-flex">
+              </div>
+      <!---->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./index.php" id="home">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="./cart.php" id="cart">Panier</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+
+                    <!--icone panier-->
+          <a href="cart.php" class="btn btn-light position-relative mx-1" id="cart">
+            <i class="bi bi-cart-fill"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
+              <span> 
+                0              </span>
+            </span>
+          </a>
+          
+          <!--login/logout-->
+          <a href="./login.php?p=login" class="btn btn-sm btn-success"><i class="bi bi-person-lock"></i> Se connecter</a>        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+<!--corps de la page-->
+<main class="container-fluid">
+    <div class="row">
+        <!--categories list-->
+<div class="col-12 col-md-2 p-0" id="sidebar">
+    <ul class="list-group list-group-flush category">
+        <a class="list-group-item" href="index.php"><i class="bi bi-house-fill"></i> Toutes les catégories</a>
+                    <a class="list-group-item" href="index.php?category_id=1" id="item_1">
+                <i class="bi bi-arrow-right-circle-fill"></i> Congélateurs verticaux            </a>
+                    <a class="list-group-item" href="index.php?category_id=2" id="item_2">
+                <i class="bi bi-arrow-right-circle-fill"></i> Télévisions            </a>
+                    <a class="list-group-item" href="index.php?category_id=3" id="item_3">
+                <i class="bi bi-arrow-right-circle-fill"></i> Ventilateurs            </a>
+                    <a class="list-group-item" href="index.php?category_id=4" id="item_4">
+                <i class="bi bi-arrow-right-circle-fill"></i> Cuisinières            </a>
+                    <a class="list-group-item" href="index.php?category_id=5" id="item_5">
+                <i class="bi bi-arrow-right-circle-fill"></i> Réfrigérateurs            </a>
+                    <a class="list-group-item" href="index.php?category_id=6" id="item_6">
+                <i class="bi bi-arrow-right-circle-fill"></i> Congélateurs horizontaux            </a>
+                    <a class="list-group-item" href="index.php?category_id=7" id="item_7">
+                <i class="bi bi-arrow-right-circle-fill"></i> Lave-Linge            </a>
+                    <a class="list-group-item" href="index.php?category_id=8" id="item_8">
+                <i class="bi bi-arrow-right-circle-fill"></i> Refroidisseurs            </a>
+                    <a class="list-group-item" href="index.php?category_id=9" id="item_9">
+                <i class="bi bi-arrow-right-circle-fill"></i> Sonorisation            </a>
+                    <a class="list-group-item" href="index.php?category_id=10" id="item_10">
+                <i class="bi bi-arrow-right-circle-fill"></i> Splits            </a>
+                    <a class="list-group-item" href="index.php?category_id=11" id="item_11">
+                <i class="bi bi-arrow-right-circle-fill"></i> Splits armoires            </a>
+                    <a class="list-group-item" href="index.php?category_id=12" id="item_12">
+                <i class="bi bi-arrow-right-circle-fill"></i> Fer à repasser            </a>
+                    <a class="list-group-item" href="index.php?category_id=13" id="item_13">
+                <i class="bi bi-arrow-right-circle-fill"></i> Bouilloires            </a>
+                    <a class="list-group-item" href="index.php?category_id=15" id="item_15">
+                <i class="bi bi-arrow-right-circle-fill"></i> Stabilisateurs            </a>
+                    <a class="list-group-item" href="index.php?category_id=16" id="item_16">
+                <i class="bi bi-arrow-right-circle-fill"></i> Chauffe eau            </a>
+                    <a class="list-group-item" href="index.php?category_id=17" id="item_17">
+                <i class="bi bi-arrow-right-circle-fill"></i> Micro-ondes            </a>
+                    <a class="list-group-item" href="index.php?category_id=18" id="item_18">
+                <i class="bi bi-arrow-right-circle-fill"></i> Fontaine à eau            </a>
+                    <a class="list-group-item" href="index.php?category_id=19" id="item_19">
+                <i class="bi bi-arrow-right-circle-fill"></i> Machine à café            </a>
+                    <a class="list-group-item" href="index.php?category_id=20" id="item_20">
+                <i class="bi bi-arrow-right-circle-fill"></i> Glacières             </a>
+                    <a class="list-group-item" href="index.php?category_id=21" id="item_21">
+                <i class="bi bi-arrow-right-circle-fill"></i> Machine à foutou            </a>
+                    <a class="list-group-item" href="index.php?category_id=23" id="item_23">
+                <i class="bi bi-arrow-right-circle-fill"></i> Air fryer            </a>
+                    <a class="list-group-item" href="index.php?category_id=24" id="item_24">
+                <i class="bi bi-arrow-right-circle-fill"></i> Pondeuse à glace            </a>
+                    <a class="list-group-item" href="index.php?category_id=25" id="item_25">
+                <i class="bi bi-arrow-right-circle-fill"></i> Mixeurs            </a>
+                    <a class="list-group-item" href="index.php?category_id=26" id="item_26">
+                <i class="bi bi-arrow-right-circle-fill"></i> Accessoires de cuisine             </a>
+            </ul>
+</div>
+
+<!--OFFCANVAS-->
+<button class="btn btn-primary btn-category" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+Catégories
+</button>
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body p-0">
+        <ul class="list-group list-group-flush category">
+            <a class="list-group-item" href="index.php"><i class="bi bi-house-fill"></i> Toutes les catégories</a>
+                        <a class="list-group-item" href="index.php?category_id=1" id="item_1">
+                <i class="bi bi-arrow-right-circle-fill"></i> Congélateurs verticaux            </a>
+                        <a class="list-group-item" href="index.php?category_id=2" id="item_2">
+                <i class="bi bi-arrow-right-circle-fill"></i> Télévisions            </a>
+                        <a class="list-group-item" href="index.php?category_id=3" id="item_3">
+                <i class="bi bi-arrow-right-circle-fill"></i> Ventilateurs            </a>
+                        <a class="list-group-item" href="index.php?category_id=4" id="item_4">
+                <i class="bi bi-arrow-right-circle-fill"></i> Cuisinières            </a>
+                        <a class="list-group-item" href="index.php?category_id=5" id="item_5">
+                <i class="bi bi-arrow-right-circle-fill"></i> Réfrigérateurs            </a>
+                        <a class="list-group-item" href="index.php?category_id=6" id="item_6">
+                <i class="bi bi-arrow-right-circle-fill"></i> Congélateurs horizontaux            </a>
+                        <a class="list-group-item" href="index.php?category_id=7" id="item_7">
+                <i class="bi bi-arrow-right-circle-fill"></i> Lave-Linge            </a>
+                        <a class="list-group-item" href="index.php?category_id=8" id="item_8">
+                <i class="bi bi-arrow-right-circle-fill"></i> Refroidisseurs            </a>
+                        <a class="list-group-item" href="index.php?category_id=9" id="item_9">
+                <i class="bi bi-arrow-right-circle-fill"></i> Sonorisation            </a>
+                        <a class="list-group-item" href="index.php?category_id=10" id="item_10">
+                <i class="bi bi-arrow-right-circle-fill"></i> Splits            </a>
+                        <a class="list-group-item" href="index.php?category_id=11" id="item_11">
+                <i class="bi bi-arrow-right-circle-fill"></i> Splits armoires            </a>
+                        <a class="list-group-item" href="index.php?category_id=12" id="item_12">
+                <i class="bi bi-arrow-right-circle-fill"></i> Fer à repasser            </a>
+                        <a class="list-group-item" href="index.php?category_id=13" id="item_13">
+                <i class="bi bi-arrow-right-circle-fill"></i> Bouilloires            </a>
+                        <a class="list-group-item" href="index.php?category_id=15" id="item_15">
+                <i class="bi bi-arrow-right-circle-fill"></i> Stabilisateurs            </a>
+                        <a class="list-group-item" href="index.php?category_id=16" id="item_16">
+                <i class="bi bi-arrow-right-circle-fill"></i> Chauffe eau            </a>
+                        <a class="list-group-item" href="index.php?category_id=17" id="item_17">
+                <i class="bi bi-arrow-right-circle-fill"></i> Micro-ondes            </a>
+                        <a class="list-group-item" href="index.php?category_id=18" id="item_18">
+                <i class="bi bi-arrow-right-circle-fill"></i> Fontaine à eau            </a>
+                        <a class="list-group-item" href="index.php?category_id=19" id="item_19">
+                <i class="bi bi-arrow-right-circle-fill"></i> Machine à café            </a>
+                        <a class="list-group-item" href="index.php?category_id=20" id="item_20">
+                <i class="bi bi-arrow-right-circle-fill"></i> Glacières             </a>
+                        <a class="list-group-item" href="index.php?category_id=21" id="item_21">
+                <i class="bi bi-arrow-right-circle-fill"></i> Machine à foutou            </a>
+                        <a class="list-group-item" href="index.php?category_id=23" id="item_23">
+                <i class="bi bi-arrow-right-circle-fill"></i> Air fryer            </a>
+                        <a class="list-group-item" href="index.php?category_id=24" id="item_24">
+                <i class="bi bi-arrow-right-circle-fill"></i> Pondeuse à glace            </a>
+                        <a class="list-group-item" href="index.php?category_id=25" id="item_25">
+                <i class="bi bi-arrow-right-circle-fill"></i> Mixeurs            </a>
+                        <a class="list-group-item" href="index.php?category_id=26" id="item_26">
+                <i class="bi bi-arrow-right-circle-fill"></i> Accessoires de cuisine             </a>
+                    </ul>
+    </div>
+</div>        <div class="col-12 col-sm-10 col-md-10 col-lg-10">
+            <!--hero-->
+            <div>
+        
+                <div class="alert alert-danger d-flex align-items-center justify-content-center p-1 mt-1" role="alert">
+                    <div class="text-center">
+                    Bonne nouvelle ! Plus besoin de télécharger le dernier BULETTIN DE SALAIRE<br>Télécharge UNIQUEMENT ta carte FPPN et reçoit ton électroménager.
+                    </div>
+                </div>
+        
+            
+
+                <h1 class="text-center text-success"><b>GrenierShop</b></h1>
+                <p class="text-center mb-5">Veuillez choisir un ou plusieurs articles</p>
+            </div>
+            <!--list articles-->
+                            <form method="post" action="" class="p-3">
+                    <div class="container">
+                        <div class="row">
+                                                            <div class="col-6 col-md-3 p-0" style="padding:2px!important">
+                                    <div class="card border-secondary h-100">
+                                        <img src="image/tv1.png" class="card-img-top text-center" alt="TV 32" hd="" google="" originale="" tv="" smart="" qled="" 2telec="" voice="" control(stt-3280k)"="" title="TV 32" style="height:200px;object-fit:contain">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-center">TV 32" HD GOOGLE ORIGINALE TV SMART/QLED/2TELEC/VOICE CONTROL(STT-3280K)</h5>
+                                            <p class="card-text text-center m-0"></p>
+                                            <p class="card-text text-center m-0">STT-3280K</p>
+
+                                            <p class="card-text text-center m-0"><span id="price3305">83375</span><strong> F CFA</strong></p>
+                                        </div>
+
+                                        <div class="card-footer">
+                                                                                            <div class="row">
+                                                    <label class="col-3 p-0">Qté</label>
+                                                    <div class="col-9 p-0">
+                                                        <input class="form-control" type="number" name="3305">
+                                                    </div>
+                                                </div>
+                                                <input type="submit" value="Ajouter au panier" class="btn btn-success my-2 form-control">
+
+                                                                                    </div>
+                                    </div>
+                                </div>
+                                                            <div class="col-6 col-md-3 p-0" style="padding:2px!important">
+                                    <div class="card border-secondary h-100">
+                                        <img src="image/tv1.png" class="card-img-top text-center" alt="32" "="" hd="" tv+atv="" (stt-3200ak)""="" title="32" style="height:200px;object-fit:contain">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-center">32"" HD TV+ATV  (STT-3200AK)"</h5>
+                                            <p class="card-text text-center m-0"></p>
+                                            <p class="card-text text-center m-0">STT-3200AK</p>
+
+                                            <p class="card-text text-center m-0"><span id="price3306">52325</span><strong> F CFA</strong></p>
+                                        </div>
+
+                                        <div class="card-footer">
+                                                                                            <span class="text-danger">Stock indisponible</span>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                                                            <div class="col-6 col-md-3 p-0" style="padding:2px!important">
+                                    <div class="card border-secondary h-100">
+                                        <img src="image/STT-3298K.jpg" class="card-img-top text-center" alt="32" hd="" android="" 11="" tv="" smart="" (stt-3298k)"="" title="32" style="height:200px;object-fit:contain">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-center">32" HD ANDROID 11 TV SMART (STT-3298K)</h5>
+                                            <p class="card-text text-center m-0">TV 32" HD</p>
+                                            <p class="card-text text-center m-0">STT-3298K</p>
+
+                                            <p class="card-text text-center m-0"><span id="price3307">71875</span><strong> F CFA</strong></p>
+                                        </div>
+
+                                        <div class="card-footer">
+                                                                                            <span class="text-danger">Stock indisponible</span>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                                                            <div class="col-6 col-md-3 p-0" style="padding:2px!important">
+                                    <div class="card border-secondary h-100">
+                                        <img src="image/tv1.png" class="card-img-top text-center" alt="32" hd="" tv+atv="" analogue="" (stt-5132aa)"="" title="32" style="height:200px;object-fit:contain">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-center">32" HD TV+ATV ANALOGUE (STT-5132AA)</h5>
+                                            <p class="card-text text-center m-0"></p>
+                                            <p class="card-text text-center m-0">STT-5132AA</p>
+
+                                            <p class="card-text text-center m-0"><span id="price3308">55200</span><strong> F CFA</strong></p>
+                                        </div>
+
+                                        <div class="card-footer">
+                                                                                            <div class="row">
+                                                    <label class="col-3 p-0">Qté</label>
+                                                    <div class="col-9 p-0">
+                                                        <input class="form-control" type="number" name="3308">
+                                                    </div>
+                                                </div>
+                                                <input type="submit" value="Ajouter au panier" class="btn btn-success my-2 form-control">
+
+                                                                                    </div>
+                                    </div>
+                                </div>
+                                                            <div class="col-6 col-md-3 p-0" style="padding:2px!important">
+                                    <div class="card border-secondary h-100">
+                                        <img src="image/tv1.png" class="card-img-top text-center" alt="32" led="" tv="" dvbt2="" s2="" support="" (stt-5132a)"="" title="32" style="height:200px;object-fit:contain">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-center">32" LED TV DVBT2/S2 /SUPPORT (STT-5132A)</h5>
+                                            <p class="card-text text-center m-0"></p>
+                                            <p class="card-text text-center m-0">STT-5132A</p>
+
+                                            <p class="card-text text-center m-0"><span id="price3309">57500</span><strong> F CFA</strong></p>
+                                        </div>
+
+                                        <div class="card-footer">
+                                                                                            <div class="row">
+                                                    <label class="col-3 p-0">Qté</label>
+                                                    <div class="col-9 p-0">
+                                                        <input class="form-control" type="number" name="3309">
+                                                    </div>
+                                                </div>
+                                                <input type="submit" value="Ajouter au panier" class="btn btn-success my-2 form-control">
+
+                                                                                    </div>
+                                    </div>
+                                </div>
+                                                            <div class="col-6 col-md-3 p-0" style="padding:2px!important">
+                                    <div class="card border-secondary h-100">
+                                        <img src="image/STT-3288EG.jpg" class="card-img-top text-center" alt="" 32"="" hd="" google="" tv="" smart="" (stt-3288eg)"="" title="" style="height:200px;object-fit:contain">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-center">"32" HD GOOGLE TV SMART (STT-3288EG)</h5>
+                                            <p class="card-text text-center m-0">TV 32" HD GOOGLE</p>
+                                            <p class="card-text text-center m-0">STT-3288EG</p>
+
+                                            <p class="card-text text-center m-0"><span id="price3310">66125</span><strong> F CFA</strong></p>
+                                        </div>
+
+                                        <div class="card-footer">
+                                                                                            <span class="text-danger">Stock indisponible</span>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                                                            <div class="col-6 col-md-3 p-0" style="padding:2px!important">
+                                    <div class="card border-secondary h-100">
+                                        <img src="image/tv1.png" class="card-img-top text-center" alt="" 32"hd="" led="" tv="" dvbt2="" s2="" support="" (stt-3288sk)""="" title="" style="height:200px;object-fit:contain">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-center">"32"HD LED TV DVBT2/S2/SUPPORT  (STT-3288SK)"</h5>
+                                            <p class="card-text text-center m-0"></p>
+                                            <p class="card-text text-center m-0">STT-3288SK</p>
+
+                                            <p class="card-text text-center m-0"><span id="price3311">60375</span><strong> F CFA</strong></p>
+                                        </div>
+
+                                        <div class="card-footer">
+                                                                                            <span class="text-danger">Stock indisponible</span>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                                                            <div class="col-6 col-md-3 p-0" style="padding:2px!important">
+                                    <div class="card border-secondary h-100">
+                                        <img src="image/STT-3298K.jpg" class="card-img-top text-center" alt="" 32""hd="" led="" tv="" analogue="" (stt-3291ha)""="" title="" style="height:200px;object-fit:contain">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-center">"32""HD LED TV ANALOGUE (STT-3291HA)"</h5>
+                                            <p class="card-text text-center m-0">TV 32" HD LED TV ANALOGUE</p>
+                                            <p class="card-text text-center m-0">STT-3291HA</p>
+
+                                            <p class="card-text text-center m-0"><span id="price3312">54625</span><strong> F CFA</strong></p>
+                                        </div>
+
+                                        <div class="card-footer">
+                                                                                            <span class="text-danger">Stock indisponible</span>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                                                    </div>
+                    </div>
+                </form>
+                        <!--pagination-->
+                            <div>
+                    <nav class="py-2">
+                        <ul class="pagination" style="flex-wrap: wrap;">
+                            <li class="page-item"><a class="page-link bg-success text-white" href="index.php?p=1">1</a></li><li class="page-item"><a class="page-link" href="index.php?p=2">2</a></li><li class="page-item"><a class="page-link" href="index.php?p=3">3</a></li><li class="page-item"><a class="page-link" href="index.php?p=4">4</a></li><li class="page-item"><a class="page-link" href="index.php?p=5">5</a></li><li class="page-item"><a class="page-link" href="index.php?p=6">6</a></li><li class="page-item"><a class="page-link" href="index.php?p=7">7</a></li><li class="page-item"><a class="page-link" href="index.php?p=8">8</a></li><li class="page-item"><a class="page-link" href="index.php?p=9">9</a></li><li class="page-item"><a class="page-link" href="index.php?p=10">10</a></li><li class="page-item"><a class="page-link" href="index.php?p=11">11</a></li><li class="page-item"><a class="page-link" href="index.php?p=12">12</a></li><li class="page-item"><a class="page-link" href="index.php?p=13">13</a></li><li class="page-item"><a class="page-link" href="index.php?p=14">14</a></li><li class="page-item"><a class="page-link" href="index.php?p=15">15</a></li><li class="page-item"><a class="page-link" href="index.php?p=16">16</a></li><li class="page-item"><a class="page-link" href="index.php?p=17">17</a></li><li class="page-item"><a class="page-link" href="index.php?p=18">18</a></li><li class="page-item"><a class="page-link" href="index.php?p=19">19</a></li><li class="page-item"><a class="page-link" href="index.php?p=20">20</a></li><li class="page-item"><a class="page-link" href="index.php?p=21">21</a></li><li class="page-item"><a class="page-link" href="index.php?p=22">22</a></li><li class="page-item"><a class="page-link" href="index.php?p=23">23</a></li><li class="page-item"><a class="page-link" href="index.php?p=24">24</a></li><li class="page-item"><a class="page-link" href="index.php?p=25">25</a></li><li class="page-item"><a class="page-link" href="index.php?p=26">26</a></li><li class="page-item"><a class="page-link" href="index.php?p=27">27</a></li><li class="page-item"><a class="page-link" href="index.php?p=28">28</a></li><li class="page-item"><a class="page-link" href="index.php?p=29">29</a></li><li class="page-item"><a class="page-link" href="index.php?p=30">30</a></li><li class="page-item"><a class="page-link" href="index.php?p=31">31</a></li><li class="page-item"><a class="page-link" href="index.php?p=32">32</a></li><li class="page-item"><a class="page-link" href="index.php?p=33">33</a></li><li class="page-item"><a class="page-link" href="index.php?p=34">34</a></li><li class="page-item"><a class="page-link" href="index.php?p=35">35</a></li><li class="page-item"><a class="page-link" href="index.php?p=36">36</a></li><li class="page-item"><a class="page-link" href="index.php?p=37">37</a></li><li class="page-item"><a class="page-link" href="index.php?p=38">38</a></li><li class="page-item"><a class="page-link" href="index.php?p=39">39</a></li><li class="page-item"><a class="page-link" href="index.php?p=40">40</a></li><li class="page-item"><a class="page-link" href="index.php?p=41">41</a></li><li class="page-item"><a class="page-link" href="index.php?p=42">42</a></li><li class="page-item"><a class="page-link" href="index.php?p=43">43</a></li><li class="page-item"><a class="page-link" href="index.php?p=44">44</a></li><li class="page-item"><a class="page-link" href="index.php?p=45">45</a></li><li class="page-item"><a class="page-link" href="index.php?p=46">46</a></li><li class="page-item"><a class="page-link" href="index.php?p=47">47</a></li><li class="page-item"><a class="page-link" href="index.php?p=48">48</a></li><li class="page-item"><a class="page-link" href="index.php?p=49">49</a></li><li class="page-item"><a class="page-link" href="index.php?p=50">50</a></li><li class="page-item"><a class="page-link" href="index.php?p=51">51</a></li><li class="page-item"><a class="page-link" href="index.php?p=52">52</a></li><li class="page-item"><a class="page-link" href="index.php?p=53">53</a></li><li class="page-item"><a class="page-link" href="index.php?p=54">54</a></li>                        </ul>
+                    </nav>
+
+                </div>
+                    </div>
+    </div>
+</main>
+
+
+
+<section class="bg-light" id="footer">
+    <p class="text-center m-0">©2023 - Application GrenierShop | Développé par Diamak</p>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+
+<!--custom scripts-->
+<script>
+    //open sidebar
+    function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+    }
+    //close sidebar
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+    }
+    //logout click ffunction
+    $('#deconnexion').click(function(e) {
+        e.preventDefault()
+        if (confirm('Voulez-vous vraiment vous deconnecter ?')) {
+            location.href = 'logout.php'
+        }
+    })
+    //active page/content
+    function activeContent(content) {
+        const currentContent = content
+        const contentActive = document.querySelector('#' + currentContent)
+        contentActive.classList.add('active')
+    }
+
+    function verifyInput(input){
+        let $input = $(input);
+        if(input.checkValidity()){
+            $input.addClass("is-valid").removeClass("is-invalid")
+        }else{
+            $input.addClass("is-invalid").removeClass("is-valid")
+        }
+    }
+</script><script>
+    activeContent("home")
+    //active_navbar
+    let categoryActive = ""
+    if (categoryActive != "") {
+        activeContent(categoryActive)
+    }
+</script>
+
+
+
+</body></html>

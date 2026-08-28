@@ -1,0 +1,140 @@
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths"><head>
+
+		<title>Metland Card</title>
+
+		<!-- <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">  -->
+
+							<link rel="stylesheet" href="https://metlandcard.metropolitanland.com/assets/css/bootstrap.min.css">
+					<link rel="stylesheet" href="https://metlandcard.metropolitanland.com/assets/css/font-awesome.min.css">
+					<link rel="stylesheet" href="https://metlandcard.metropolitanland.com/assets/css/animate.css">
+					<link rel="stylesheet" href="https://metlandcard.metropolitanland.com/assets/css/metland.css">
+		
+
+
+	<style>
+		@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700,900);
+		body{
+			background: url("./assets/img/background.png") no-repeat center center fixed;
+		  	-webkit-background-size: cover;
+		  	-moz-background-size: cover;
+		  	-o-background-size: cover;
+		  	background-size: cover;
+		  	font-family: 'Roboto';
+		  	color:#fff;
+		}
+		.container-fluid{
+			padding: 0;
+			margin: 0;
+		}
+		.welcome p{
+			width: 200px;
+		}
+		.signin p{
+			width: auto;
+		}
+		.box-signin{
+			position: relative;
+			background: url("./assets/img/bg-signin.png") no-repeat top center;
+		  	width: 700px;
+		  	height: 414px;
+		  	margin: 0 auto;
+		  	margin-top: 15%;
+		}
+		.welcome {
+			position: absolute;
+			left: 50%;
+			top: 10%;
+		}
+		.signin{
+			position: absolute;
+			left: 54%;
+			top: 15%;
+		}
+		#form-signin input{
+			border-radius: 0;
+			border: 1px solid #fff;
+			margin-bottom: 20px;
+			width: 250px;
+		}
+		.btn-white{
+			border: 1px solid #fff;
+			border-radius: 0;
+			width: 100px;
+			background: transparent;
+		}
+		.btn-white:hover { color: #f1f1f1; }
+		.continue{
+			padding-top: 30px;
+		}
+
+		.continue a {
+			color: #fff;
+			text-decoration: none;
+		}
+
+		.continue a:hover{
+			color: #f1f1f1;
+		}
+
+		.text_tambahan {
+			width: 100%;
+			position: absolute;
+			text-align: center;
+			top: 70%;
+			padding: 20px;
+		}
+
+		.footer{ position: relative; bottom: -170px; width: 100%; color: #000; font-size: 12px; text-align: center; }
+	</style></head>
+	
+<body style="">
+	<div class="container">
+		<div class="box-signin">
+			<div class="welcome">
+				<h1>Selamat Datang di Metland Card</h1>
+				<p>
+					Apakah anda sudah menjadi anggota Metland Card ?
+				</p>
+				<a href="https://metlandcard.metropolitanland.com/home"><button type="button" class="btn btn-white" id="belum" style="color:white !important;">Belum</button></a> &nbsp; &nbsp;
+				<button type="button" class="btn btn-white" id="sudah">Sudah</button>
+				<div class="continue">
+					<a href="https://metlandcard.metropolitanland.com/home">  &gt; Continue Browsing </a>
+				</div>
+
+
+			</div>
+			<div class="text_tambahan">
+					<p style="text-align: center; line-height: 1;"><font color="#ffffff"><span style="font-family: Arial, helvetica, sans-serif; font-size: 14.4px; text-align: justify;">Metland Card&nbsp;</span><em style="margin: 0px; padding: 0px; font-family: Arial, helvetica, sans-serif; font-size: 14.4px; text-align: justify;">My Precious One&nbsp;</em><span style="font-family: Arial, helvetica, sans-serif; font-size: 14.4px; text-align: justify;">adalah program&nbsp;</span><em style="margin: 0px; padding: 0px; font-family: Arial, helvetica, sans-serif; font-size: 14.4px; text-align: justify;">customer loyalty&nbsp;</em><span style="font-family: Arial, helvetica, sans-serif; font-size: 14.4px; text-align: justify;">yang terintegrasi secara&nbsp;</span><em style="margin: 0px; padding: 0px; font-family: Arial, helvetica, sans-serif; font-size: 14.4px; text-align: justify;">online</em><span style="font-family: Arial, helvetica, sans-serif; font-size: 14.4px; text-align: justify;">&nbsp;di seluruh jaringan usaha Metland, meliputi mal, hotel dan perumahan. Dengan menjadi anggota, Anda akan dimanjakan dengan berbagai manfaat dan kemudahan sebagai pelengkap gaya hidup. Juga telah terintegrasi</span><span style="font-family: Arial, helvetica, sans-serif; font-size: 14.4px; text-align: justify;">&nbsp;e-money,&nbsp;</span><span style="font-family: Arial, helvetica, sans-serif; font-size: 14.4px; text-align: justify;">sebagai alat pembayaran parkir, tol, belanja, dsb.</span></font></p>			</div>
+			<div class="signin" style="display: none;">
+				
+				<p>Please sign in with your Username</p>
+				<form action="https://metlandcard.metropolitanland.com/api/signin" id="form-signin" method="post" accept-charset="utf-8">
+					<input type="text" name="card_no" placeholder="No. Kartu (1803010000000410)" class="form-control">
+					<input type="text" name="hp_tlp" placeholder="No. Telp (6281287233515)" class="form-control">
+					<button type="submit" class="btn btn-white" id="sudah">Log in</button>
+					<!--<a href="https://metlandcard.metropolitanland.com/signin/forgot_password" style="color: #fff; text-decoration: underline; padding-left: 20px;">  Forgot Password?</a>-->
+
+				</form>
+			</div>
+
+		</div>
+		<div class="footer">
+			Copyright © 2016 Metropolitan Land. All Rights Reserved
+		</div>
+	</div>
+
+
+	<script src="https://metlandcard.metropolitanland.com/assets/js/jquery.min.js"></script>
+	<script src="https://metlandcard.metropolitanland.com/assets/js/bootstrap.min.js"></script>
+	<script src="https://metlandcard.metropolitanland.com/assets/js/modernizr.js"></script>
+<script>
+	$(document).ready(function(){
+		$(".signin").hide();
+		$("#sudah").click(function(){
+			$(".welcome").fadeOut();
+			$(".signin").fadeIn();
+		});
+			});
+</script>
+
+</body></html>

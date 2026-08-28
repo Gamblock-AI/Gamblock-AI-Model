@@ -1,0 +1,427 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camel Mirror List</title>
+    <script src="/pako.min.js"></script>
+    <script src="/sensorsdata.full.min.js"></script>
+    <script>
+        // 神策 SDK 初始化 & UV 上报
+        (function () {
+            var sa = window.sensorsDataAnalytic201505;
+            if (!sa) return;
+            sa.init({
+                server_url: 'https://sensors.cameltv.live/sa.gif?project=production',
+                is_track_single_page: false,
+                send_type: 'beacon',
+                datasend_timeout: 10000,
+                batch_send: true,
+                heatmap: {
+                    scroll_notice_map: 'not_collect',
+                    clickmap: 'not_collect'
+                },
+                show_log: false
+            });
+            sa.register({
+                app: 'tv',
+                url: window.location.origin,
+                $full_url: typeof window !== 'undefined' ? window.location.href : '',
+                platform: /Mobi|Android/i.test(navigator.userAgent) ? 'mobile-h5' : 'pc'
+            });
+            // 上报 UV
+            sa.track('tv_link', {
+                $url: window.location.href,
+                $url_path: window.location.pathname,
+                $title: document.title,
+                $referrer: document.referrer
+            });
+        })();
+    </script>
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --card-bg: #141414;
+            --card-hover: #1c1c1c;
+            --primary-color: #3498db;
+            --online-color: #2ecc71;
+            --offline-color: #e74c3c;
+            --checking-color: #f1c40f;
+            --text-color: #f0f0f0;
+            --text-secondary: #AAA;
+            --border-color: #222;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 0;
+        }
+
+        h1 {
+            margin-bottom: 2.5rem;
+            font-weight: 500;
+            font-size: 1.5rem;
+            letter-spacing: 0.5px;
+            color: #fff;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            width: 100%;
+            max-width: 420px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 1.55rem 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            background-color: var(--card-hover);
+            border-color: #444;
+            transform: translateY(-1px);
+        }
+
+        .info-section {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .mirror-name {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        .mirror-url {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .status-badge {
+            display: flex;
+            align-items: center;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .dot {
+            height: 6px;
+            width: 6px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+        }
+
+        .dot.checking {
+            background-color: var(--checking-color);
+            animation: pulse 1s infinite;
+        }
+
+        .dot.online {
+            background-color: var(--online-color);
+            box-shadow: 0 0 6px var(--online-color);
+        }
+
+        .dot.offline {
+            background-color: var(--offline-color);
+            box-shadow: 0 0 6px var(--offline-color);
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 3rem 0;
+            font-size: 0.7rem;
+            color: #444;
+            text-align: center;
+        }
+
+        p {
+            padding: 1rem 0;
+            font-size: 0.8rem;
+            color: #999;
+            text-align: center;
+        }
+
+        .subtitle {
+            margin-top: 0.5rem;
+            margin-bottom: 1.5rem;
+            padding: 0;
+            font-size: 1.22rem;
+            color: var(--text-secondary);
+        }
+
+        /* Bookmark Banner */
+        .bookmark-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(90deg, #1a5276, #2e86c1);
+            color: #fff;
+            text-align: center;
+            padding: 0.6rem 1rem;
+            font-size: 0.82rem;
+            z-index: 1000;
+            letter-spacing: 0.3px;
+        }
+
+        .bookmark-banner kbd {
+            background: rgba(255,255,255,0.18);
+            border-radius: 3px;
+            padding: 0.1rem 0.4rem;
+            font-family: inherit;
+            font-size: 0.78rem;
+        }
+
+        body.banner-visible {
+            padding-top: calc(2rem + 40px);
+        }
+
+        /* Mobile: hide desktop banner, show fixed bottom panel */
+        .mobile-bottom-guide {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+            padding: 1rem 1.2rem;
+            z-index: 1000;
+        }
+
+        .mobile-bottom-guide h4 {
+            margin: 0 0 0.6rem;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .mobile-bottom-guide .tab-bar {
+            display: flex;
+            gap: 0.4rem;
+            margin-bottom: 0.7rem;
+        }
+
+        .mobile-bottom-guide .tab-bar button {
+            flex: 1;
+            padding: 0.35rem;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            background: transparent;
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .mobile-bottom-guide .tab-bar button.active {
+            background: var(--primary-color);
+            color: #fff;
+            border-color: var(--primary-color);
+        }
+
+        .mobile-bottom-guide ol {
+            margin: 0;
+            padding-left: 1.2rem;
+            font-size: 0.78rem;
+            line-height: 1.65;
+            color: #ccc;
+        }
+
+        @media (max-width: 640px) {
+            .bookmark-banner {
+                display: none !important;
+            }
+
+            body.banner-visible {
+                padding-top: 2rem;
+            }
+
+            .mobile-bottom-guide {
+                display: block;
+            }
+
+            body.guide-visible {
+                padding-bottom: 180px;
+            }
+        }
+    </style>
+</head>
+
+<body class="banner-visible">
+
+    <!-- Bookmark Banner -->
+    <div class="bookmark-banner" id="bookmarkBanner">
+        Press <kbd>Ctrl+D</kbd> (Windows) or <kbd>Cmd+D</kbd> (Mac) to bookmark this page for emergency access.
+    </div>
+
+    <h1>CamelLive Mirror List</h1>
+    <p class="subtitle">🔖 Never lose access! Bookmark this page now. 🚀</p>
+
+    <div class="container" id="mirror-container">
+        <!-- Cards will be generated by JS -->
+    <a class="card" href="https://www.camel1.to" target="_blank">
+                <div class="info-section">
+                    <div class="mirror-name">camel1.to</div>
+                </div>
+                <div class="status-badge">
+                    <span class="dot online" id="dot-camel1"></span>
+                    <span id="text-camel1" style="color: var(--online-color);">Online</span>
+                </div>
+            </a><a class="card" href="https://www.camel2.live" target="_blank">
+                <div class="info-section">
+                    <div class="mirror-name">camel2.live</div>
+                </div>
+                <div class="status-badge">
+                    <span class="dot online" id="dot-camel2"></span>
+                    <span id="text-camel2" style="color: var(--online-color);">Online</span>
+                </div>
+            </a><a class="card" href="https://www.camel1.tv" target="_blank">
+                <div class="info-section">
+                    <div class="mirror-name">camel1.tv</div>
+                </div>
+                <div class="status-badge">
+                    <span class="dot online" id="dot-camel4"></span>
+                    <span id="text-camel4" style="color: var(--online-color);">Online</span>
+                </div>
+            </a></div>
+
+    <!-- Mobile: Fixed Bottom Bookmark Guide -->
+    <div class="mobile-bottom-guide" id="mobileGuide">
+        <h4>How to Add to Home Screen</h4>
+        <div class="tab-bar">
+            <button class="active" onclick="switchTab('ios', this)">iOS Safari</button>
+            <button onclick="switchTab('android', this)">Android Chrome</button>
+        </div>
+        <div id="tab-ios">
+            <ol>
+                <li>Tap the <strong>Share</strong> button (square with arrow) at the bottom.</li>
+                <li>Scroll down and tap <strong>"Add to Home Screen"</strong>.</li>
+                <li>Tap <strong>"Add"</strong> to confirm.</li>
+            </ol>
+        </div>
+        <div id="tab-android" style="display:none;">
+            <ol>
+                <li>Tap the <strong>three-dot menu</strong> (⋮) in the top-right corner.</li>
+                <li>Tap <strong>"Add to Home screen"</strong>.</li>
+                <li>Tap <strong>"Add"</strong> to confirm.</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        // Detect mobile and add bottom padding
+        if (window.innerWidth <= 640) {
+            document.body.classList.add('guide-visible');
+        }
+
+        function switchTab(tab, btn) {
+            document.getElementById('tab-ios').style.display = tab === 'ios' ? 'block' : 'none';
+            document.getElementById('tab-android').style.display = tab === 'android' ? 'block' : 'none';
+            btn.parentElement.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+
+        const mirrors = [
+            { id: 'camel1', name: 'camel1.to', url: 'https://www.camel1.to' },
+            { id: 'camel2', name: 'camel2.live', url: 'https://www.camel2.live' },
+            { id: 'camel4', name: 'camel1.tv', url: 'https://www.camel1.tv' }
+        ];
+
+        const container = document.getElementById('mirror-container');
+
+        function createCard(mirror) {
+            const card = document.createElement('a');
+            card.className = 'card';
+            card.href = mirror.url;
+            card.target = '_blank';
+            card.innerHTML = `
+                <div class="info-section">
+                    <div class="mirror-name">${mirror.name}</div>
+                </div>
+                <div class="status-badge">
+                    <span class="dot checking" id="dot-${mirror.id}"></span>
+                    <span id="text-${mirror.id}">Checking...</span>
+                </div>
+            `;
+            container.appendChild(card);
+            checkStatus(mirror);
+        }
+
+        async function checkStatus(mirror) {
+            const dot = document.getElementById(`dot-${mirror.id}`);
+            const text = document.getElementById(`text-${mirror.id}`);
+
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 6000);
+
+            try {
+                const response = await fetch(`${mirror.url}/api/ping`, {
+                    method: 'GET',
+                    mode: 'cors',
+                    signal: controller.signal
+                });
+
+                clearTimeout(timeoutId);
+
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.status === 200) {
+                        dot.className = 'dot online';
+                        text.innerText = 'Online';
+                        text.style.color = 'var(--online-color)';
+                    } else {
+                        dot.className = 'dot offline';
+                        text.innerText = 'Error';
+                    }
+                } else {
+                    dot.className = 'dot offline';
+                    text.innerText = 'Offline';
+                }
+            } catch (error) {
+                clearTimeout(timeoutId);
+                dot.className = 'dot offline';
+                text.innerText = 'Offline';
+            }
+        }
+
+        // Initialize
+        mirrors.forEach(createCard);
+    </script>
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;c0ad7222ec06420f92a704badd69268f&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+</body></html>

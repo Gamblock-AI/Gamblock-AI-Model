@@ -1,0 +1,37 @@
+
+HASIL EVALUASI MODEL HYBRID GAMBLOCK-AI
+
+Metode:
+Rule-Based System + Logistic Regression
+
+Model final:
+- Model source : tuned_random_search
+- Input fitur teks  : title + content/DOM
+- Input fitur URL   : panjang URL, jumlah angka, jumlah simbol, keyword URL, domain, subdomain
+- Label             : 0 = non_judi, 1 = judi
+
+Konfigurasi Hybrid:
+- Logistic Regression Weight : 0.75
+- Rule-Based Weight          : 0.25
+- Threshold                  : 0.4
+
+Metrik Evaluasi:
+- Accuracy  : 0.9738
+- Precision : 0.9638
+- Recall    : 0.9546
+- F1-Score  : 0.9592
+
+Classification Report:
+              precision    recall  f1-score   support
+
+    non_judi       0.98      0.98      0.98      1755
+        judi       0.96      0.95      0.96       837
+
+    accuracy                           0.97      2592
+   macro avg       0.97      0.97      0.97      2592
+weighted avg       0.97      0.97      0.97      2592
+
+
+Confusion Matrix:
+[[1725   30]
+ [  38  799]]

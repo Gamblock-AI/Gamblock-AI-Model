@@ -1,0 +1,816 @@
+<html lang="en"><head>
+        <meta charset="utf-8">
+        <title>Daya Adicipta Motora</title>
+        <meta name="author" content="Pentacode Digital">
+        <meta name="google-site-verification" content="XZIUOlFkwwI9u-lZEneBWI2fxT7QNixGY6wEcS23z1Y">
+        <link rel="stylesheet" href="https://daya-motora.com/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://daya-motora.com/font/font-awesome/css/font-awesome.css">
+        <link rel="stylesheet" href="https://daya-motora.com/global/vendor/toastr/toastr.min.css">
+        <link rel="stylesheet" href="https://daya-motora.com/global/fonts/web-icons/web-icons.min.css">
+        <link rel="stylesheet" href="https://daya-motora.com/css/front/desktop/style-desktop.css">
+        <!-- Custom Font -->
+	    <link href="https://daya-motora.com/css/fonts.css" rel="stylesheet">
+        <link rel="apple-touch-icon" href="https://daya-motora.com/favicon.ico">
+        <link rel="shortcut icon" href="https://daya-motora.com/favicon.ico">
+        <link rel="stylesheet" href="https://daya-motora.com/global/vendor/select2/select2.css">
+<link rel="stylesheet" href="https://daya-motora.com/css/front/desktop/style-promo-detail.css">
+<style type="text/css">
+    main .banner {
+        margin-bottom: 20px;
+    }
+
+    .form-control {
+        font-size: 1rem;
+        font-weight: 300;
+    }
+
+    .promo-text {
+        font-weight: 300;
+    }
+
+    .recommended h5 {
+        font-size: 1rem;
+    }
+
+    .recommended h6 {
+        font-size: .75rem;
+    }
+
+    .content {
+        margin-top: 100px;
+    }
+
+    .img-fluid-custom {
+        max-width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    .modal-footer-submit {
+        display: flex;
+        justify-content: flex-end;
+    }
+    #captcha-wrapper img {
+        width: 200px;
+    }
+    .button {
+        background: hsl(357, 80%, 52%);
+        border-radius: 5px;
+        color: hsl(0, 0%, 98%);
+        padding: 1rem 1rem;
+        transition: background-color .3s ease;
+        text-align: center;
+        font-family: 'IBM Plex Sans', sans-serif;
+        display: inline-block;
+        cursor: pointer;
+    }
+    .button--inverse {
+        color: hsl(357, 80%, 52%);
+        background: hsl(0, 0%, 100%);
+        border-radius: 5px !important;
+        border-color: hsl(357, 80%, 52%);
+    }
+    .button:hover {
+        background: hsl(357, 80%, 42%);
+        color: hsl(0, 0%, 98%);
+        text-decoration: none;
+    }
+    .button--inverse:hover {
+        background: white;
+        color: hsl(357, 80%, 42%);
+        text-decoration: none;
+        border-color: hsl(357, 80%, 42%);
+    }
+    .button--outline {
+        border: 1px solid;
+    }
+    .promo-area {
+        text-transform: text-uppercase;
+        width: 75%;
+        background: rgba(0,0,0,0.1);
+        margin: auto;
+        text-transform: uppercase;
+    }
+    .custom-badge {
+        font-size: .75rem;
+        background: #eee;
+        padding: 0.25rem 0.5rem;
+        margin: .25rem;
+        display: inline-block;
+    }
+</style>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-T85X06V81F&amp;cx=c&amp;gtm=4e6490h2"></script><script src="https://connect.facebook.net/signals/config/1401942213934502?v=2.9.297&amp;r=stable&amp;domain=daya-motora.com&amp;hme=c048e760b3fdc0fbdc117d7607b2c36e13eff2660c515ac72e86dac5ba060bb9&amp;ex_m=104%2C205%2C154%2C22%2C72%2C73%2C145%2C68%2C67%2C11%2C162%2C90%2C16%2C138%2C127%2C39%2C75%2C78%2C134%2C159%2C164%2C8%2C4%2C5%2C7%2C6%2C3%2C91%2C101%2C165%2C170%2C219%2C62%2C186%2C187%2C55%2C277%2C30%2C74%2C231%2C230%2C229%2C23%2C33%2C103%2C61%2C10%2C63%2C97%2C98%2C99%2C105%2C130%2C31%2C29%2C132%2C133%2C129%2C128%2C155%2C76%2C158%2C156%2C157%2C50%2C60%2C123%2C15%2C161%2C45%2C264%2C265%2C263%2C26%2C27%2C28%2C48%2C146%2C77%2C112%2C18%2C20%2C44%2C40%2C42%2C41%2C83%2C92%2C96%2C110%2C144%2C147%2C46%2C111%2C24%2C21%2C119%2C69%2C36%2C149%2C148%2C150%2C141%2C139%2C25%2C35%2C59%2C109%2C160%2C70%2C17%2C152%2C114%2C81%2C66%2C19%2C85%2C86%2C116%2C84%2C136%2C135%2C34%2C279%2C294%2C212%2C201%2C202%2C200%2C297%2C289%2C52%2C213%2C107%2C131%2C80%2C121%2C54%2C47%2C49%2C113%2C120%2C126%2C58%2C64%2C151%2C115%2C37%2C32%2C53%2C56%2C100%2C163%2C1%2C124%2C14%2C122%2C12%2C2%2C57%2C93%2C65%2C118%2C89%2C88%2C166%2C167%2C94%2C95%2C9%2C125%2C102%2C51%2C142%2C87%2C79%2C71%2C117%2C106%2C43%2C143%2C0%2C82%2C137%2C140%2C153%2C38%2C108%2C13%2C168%2C228%2C227%2C222%2C224%2C225%2C226%2C223%2C211%2C221%2C193%2C190%2C191%2C185%2C189%2C192%2C188%2C183%2C317%2C196%2C215%2C184%2C182%2C235%2C206%2C176%2C177%2C172%2C178%2C175%2C173%2C174%2C171%2C169%2C180%2C181%2C179%2C266%2C316%2C194%2C239%2C252%2C244%2C248%2C249%2C247%2C253%2C250%2C246%2C251%2C245" async=""></script><script src="https://connect.facebook.net/signals/config/1747215525542023?v=2.9.297&amp;r=stable&amp;domain=daya-motora.com&amp;hme=c048e760b3fdc0fbdc117d7607b2c36e13eff2660c515ac72e86dac5ba060bb9&amp;ex_m=104%2C205%2C154%2C22%2C72%2C73%2C145%2C68%2C67%2C11%2C162%2C90%2C16%2C138%2C127%2C39%2C75%2C78%2C134%2C159%2C164%2C8%2C4%2C5%2C7%2C6%2C3%2C91%2C101%2C165%2C170%2C219%2C62%2C186%2C187%2C55%2C277%2C30%2C74%2C231%2C230%2C229%2C23%2C33%2C103%2C61%2C10%2C63%2C97%2C98%2C99%2C105%2C130%2C31%2C29%2C132%2C133%2C129%2C128%2C155%2C76%2C158%2C156%2C157%2C50%2C60%2C123%2C15%2C161%2C45%2C264%2C265%2C263%2C26%2C27%2C28%2C48%2C146%2C77%2C112%2C18%2C20%2C44%2C40%2C42%2C41%2C83%2C92%2C96%2C110%2C144%2C147%2C46%2C111%2C24%2C21%2C119%2C69%2C36%2C149%2C148%2C150%2C141%2C139%2C25%2C35%2C59%2C109%2C160%2C70%2C17%2C152%2C114%2C81%2C66%2C19%2C85%2C86%2C116%2C84%2C136%2C135%2C34%2C279%2C294%2C212%2C201%2C202%2C200%2C297%2C289%2C52%2C213%2C107%2C131%2C80%2C121%2C54%2C47%2C49%2C113%2C120%2C126%2C58%2C64%2C151%2C115%2C37%2C32%2C53%2C56%2C100%2C163%2C1%2C124%2C14%2C122%2C12%2C2%2C57%2C93%2C65%2C118%2C89%2C88%2C166%2C167%2C94%2C95%2C9%2C125%2C102%2C51%2C142%2C87%2C79%2C71%2C117%2C106%2C43%2C143%2C0%2C82%2C137%2C140%2C153%2C38%2C108%2C13%2C168" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-151258908-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-151258908-1');
+        </script>
+
+        <!-- Facebook Pixel Code -->
+        <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1747215525542023');
+        fbq('track', 'PageView');
+        </script>
+		<!-- Meta Pixel Code -->
+		<script>
+		!function(f,b,e,v,n,t,s)
+		{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+		n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+		if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+		n.queue=[];t=b.createElement(e);t.async=!0;
+		t.src=v;s=b.getElementsByTagName(e)[0];
+		s.parentNode.insertBefore(t,s)}(window, document,'script',
+		'https://connect.facebook.net/en_US/fbevents.js');
+		fbq('init', '1401942213934502');
+		fbq('track', 'PageView');
+		</script>
+		<noscript><img height="1" width="1" style="display:none"
+		src="https://www.facebook.com/tr?id=1401942213934502&ev=PageView&noscript=1"
+		/></noscript>
+		<!-- End Meta Pixel Code -->
+
+        <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=1747215525542023&ev=PageView&noscript=1"
+        /></noscript>
+        <!-- End Facebook Pixel Code -->
+    
+        <style>
+            .dara-contact {
+                position: fixed;
+                bottom: 15px;
+                right: 15px;
+                z-index: 20000;
+            }
+        </style>
+
+    <script type="text/javascript" async="" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/674232534/?random=1775952667394&amp;cv=11&amp;fst=1775952667394&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;en=gtag.config&amp;gtm=45je6490h2v9117895576za20gxec&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=0~115938466~115938468~117266402~117884344&amp;u_w=1366&amp;u_h=768&amp;url=https%3A%2F%2Fdaya-motora.com%2Fpromotion%2F305%2Fspecial-discount-honda-beat-sporty&amp;rcb=5&amp;frm=0&amp;tiba=Daya%20Adicipta%20Motora&amp;hn=www.googleadservices.com&amp;npa=0&amp;pscdl=noapi&amp;auid=1592167259.1775952667&amp;data=event%3Dgtag.config&amp;rfmt=3&amp;fmt=4"></script></head>
+    <body>
+        <style>
+    .sub-header-menu a {
+        padding: 15px;
+        color: white;
+    }
+</style>
+<header>
+    <div class="top-header container-fluid">
+        <div class="row">
+            <div class="col-1" style="margin:auto;padding: 0 5px;">
+                <a class="logo" href="https://daya-motora.com">
+                    <img src="https://daya-motora.com/images/dam.png" alt="">
+                </a>
+            </div>
+            <div class="col-10 col-xl-9 top-header-menu-block">
+                <ul class="menu top-header-menu">
+                    <li><a href="https://daya-motora.com/about">Tentang Kami</a></li>
+                    <li><a href="https://daya-motora.com/community" class="">Komunitas</a></li>
+                    <li><a href="https://daya-motora.com/contact" class="">Hubungi Kami</a></li>
+                    <li><a href="https://daya-motora.com/news" class="">Berita</a></li>
+                    <li><a href="https://daya-motora.com/career" class="">Karir</a></li>
+                    <li><a href="https://daya-motora.com/safety-riding">Safety Riding Center</a></li>
+                    <li><a href="https://daya-motora.com/testride">Test Ride</a></li>
+
+                    
+                    <li><a href="https://daya-motora.com/dara"><img src="https://daya-motora.com/images/dara.svg" alt="" style="height: 3rem; transform: translateY(-4px);"></a></li>
+                    
+                    <li><a href="https://daya-motora.com/daya-auto"><img src="https://daya-motora.com/images/daya_auto/logo.png" alt="" style="height: 2.7rem; transform: translateY(-2px);"></a></li>
+                </ul>
+            </div>
+            <div class="col-1 col-xl-2" style="padding-right: 0; text-aligb: right">
+                <div class="honda-logo"><img src="https://daya-motora.com/images/honda.png"></div>
+                <div class="search-block">
+                    <i class="fa fa-search"></i>
+                </div>
+                <div class="search-form-wrapper">
+                    <form action="https://daya-motora.com/search" method="get" class="search-form">
+                        <input type="text" name="q" id="" placeholder="Kata Pencarian.." style="font-size: 1vw;width: 100%;text-align: right;">
+                        <input type="submit" value="" class="d-none">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="sub-header" style="height: 0 !important">-->
+    <div class="sub-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-2 sub-header-menu ">
+                                        <a href="https://www.astra-honda.com/product" target="_blank">PRODUK</a></div>
+                <div class="col-2 sub-header-menu  active ">
+                    <a href="https://daya-motora.com/promotion">PROMO</a></div>
+                <div class="col-2 sub-header-menu ">
+                    <a href="https://daya-motora.com/events">EVENT</a></div>
+                <div class="col-2 sub-header-menu ">
+                    <a href="https://daya-motora.com/jaringan/dealer">JARINGAN</a></div>
+                <div class="col-2 sub-header-menu ">
+                    <a href="https://daya-motora.com/aftersales">PURNA JUAL</a></div>  
+				<div class="col-2 sub-header-menu ">
+                    <a href="https://daya-motora.com/hepigo">LOYALTY HEPIGO</a></div>  
+            </div>
+        </div>
+    </div>
+</header>
+        <main>
+    <div class="container">
+        <div class="content mb-5">
+            <div class="row">
+                <div class="col-8">
+                    <div class="banner"><img style="width: 100%;" src="https://daya-motora.com/storage/featured_image/promotions/Ca9vKWA3349DlHXh3Q9CH92Q8VkE90.png"></div>
+                    <h4 class="font-weight-bold">Special Discount Honda BeAT Sporty</h4>
+                    <div class="promo-text">
+                        <p>Special Discount Honda BeAT Sporty : Let's get the Beat!. Dapatkan Discount Rp. 444.000 untuk setiap pembelian Honda BeAT Sporty, Periode 1 November 2025 hingga 31 Desember 2025. S&amp;K Berlaku.</p>
+                    </div>
+                                    </div>
+                <div class="col-4 text-center">
+                    <div class="p-3 mb-2" style="border: 1px solid #000;">
+                        <span><i class="mb-3 fa fa-calendar" style="font-size: 2rem"></i></span>
+                        <small class="promo-text text-secondary d-block mb-2">01 November 2025 - 31 December 2025</small>
+                        <div class="promo-text text-danger d-block mb-2">Promo ini berlaku di Area</div>
+                        
+                                                                    </div>
+                                        
+                </div>
+            </div>
+            <div class="row mt-4">
+
+            </div>
+        </div>
+
+                    <div class="other-promo">
+                <h6 class="font-weight-bold">Promo Lainnya</h6>
+                <div class="row">
+                                            <div class="col-3 recommended">
+                            <a href="https://daya-motora.com/promotion/325/program-sales-discount-cuv-e">
+                                <img src="https://daya-motora.com/storage/featured_image/promotions/YgLkRNsoHxKpMIZbNe61YQnDlWE0rh.png" alt="logo" class="img-fluid-custom mb-3" width="250" height="150">
+                                <h5>Program Sales Discount CUV e:</h5>
+                                <h6 class="text-secondary">06 April 2026</h6>
+                            </a>
+                        </div>
+                                            <div class="col-3 recommended">
+                            <a href="https://daya-motora.com/promotion/324/program-sales-discount-icon-e">
+                                <img src="https://daya-motora.com/storage/featured_image/promotions/J2oyFwyPlqAun5IPX6zh0mTvbzZSJA.png" alt="logo" class="img-fluid-custom mb-3" width="250" height="150">
+                                <h5>Program Sales Discount ICON e:</h5>
+                                <h6 class="text-secondary">06 April 2026</h6>
+                            </a>
+                        </div>
+                                            <div class="col-3 recommended">
+                            <a href="https://daya-motora.com/promotion/323/miliki-honda-em1-e">
+                                <img src="https://daya-motora.com/storage/featured_image/promotions/mmqIVfpPszrPrHcSkj1n3uDkvd2WUs.png" alt="logo" class="img-fluid-custom mb-3" width="250" height="150">
+                                <h5>Miliki Honda EM1 e</h5>
+                                <h6 class="text-secondary">06 April 2026</h6>
+                            </a>
+                        </div>
+                                            <div class="col-3 recommended">
+                            <a href="https://daya-motora.com/promotion/322/special-discount-adv-160">
+                                <img src="https://daya-motora.com/storage/featured_image/promotions/qCYsTaB0nmtUdBHehAE1BYmigcNRMt.png" alt="logo" class="img-fluid-custom mb-3" width="250" height="150">
+                                <h5>Special Discount ADV 160</h5>
+                                <h6 class="text-secondary">06 April 2026</h6>
+                            </a>
+                        </div>
+                                    </div>
+            </div>
+            </div>
+</main>
+
+<div class="modal fade" id="modal-promo" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Dapatkan Promo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12">
+
+                        
+                        <div class="loading d-none">
+                            <div class="sk-circle">
+                                <div class="sk-circle1 sk-child"></div>
+                                <div class="sk-circle2 sk-child"></div>
+                                <div class="sk-circle3 sk-child"></div>
+                                <div class="sk-circle4 sk-child"></div>
+                                <div class="sk-circle5 sk-child"></div>
+                                <div class="sk-circle6 sk-child"></div>
+                                <div class="sk-circle7 sk-child"></div>
+                                <div class="sk-circle8 sk-child"></div>
+                                <div class="sk-circle9 sk-child"></div>
+                                <div class="sk-circle10 sk-child"></div>
+                                <div class="sk-circle11 sk-child"></div>
+                                <div class="sk-circle12 sk-child"></div>
+                            </div>
+                        </div>
+                        
+
+                        
+                        <div class="form-promo">
+                                                            <input type="hidden" name="city" class="form-control" value="">
+                                                        <div class="form-group">
+                                <label for="name">Nama <sup style="color: red">*(wajib diisi)</sup></label>
+                                <input type="text" class="form-control" id="name">
+                                <small class="text-danger error error-name"></small>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email">
+                                <small class="text-danger error error-email"></small>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Nomor Telepon <sup style="color: red">*(wajib diisi)</sup></label>
+                                <input type="text" class="form-control" id="phone">
+                                <small class="text-danger error error-phone"></small>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Alamat <sup style="color: red">*(wajib diisi)</sup></label>
+                                <textarea name="address" class="form-control" id="address" rows="5"></textarea>
+                                <small class="text-danger error error-address"></small>
+                            </div>
+                            <div class="form-group">
+                                <label for="dealer">Dealer Pilihan</label>
+                                <input type="text" class="form-control" id="dealer">
+                                <small class="text-danger error error-dealer"></small>
+                            </div>
+                            <div class="form-group">
+                                <small class="text-danger">*Promo hanya berlaku di kota yang telah ditentukan.</small>
+                            </div>
+                            <div class="modal-footer-submit">
+                                <button type="button" class="btn btn-danger btn-submit-form">SUBMIT</button>
+                            </div>
+                        </div>
+                        
+
+                        
+                        <div class="captcha-container d-none">
+                            <div class="captcha-section text-center">
+                                <span id="captcha-wrapper">
+                                    <img src="https://daya-motora.com/captcha/default?qhetWG1R">
+                                </span>
+                                <a class="button button--inverse button--outline" id="refresh-captcha" href="javascript:void(0)">
+                                    <span class="fa fa-refresh"></span>
+                                </a>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="captcha" placeholder="Masukan karakter captcha" style="margin-top: 1rem">
+                                <small class="error-text error-captcha" style="display: block; margin-bottom: 1rem; color: red"></small>
+                            </div>
+                            <div class="modal-footer-submit">
+                                <button class="btn btn-danger btn-submit-captcha">Submit</button>
+                            </div>
+                        </div>
+                        
+
+                        
+                        <div class="promo-error d-none">
+                            <h5>Terjadi kesalahan, silakan ulangi lagi</h5>
+                        </div>
+                        
+
+                        
+                        <div class="promo-code d-none">
+                                                        <h6 class="font-weight-light">Nama</h6>
+                            <p class="promo-name"></p>
+                            <h6 class="font-weight-light">Email</h6>
+                            <p class="promo-email"></p>
+                            <h6 class="font-weight-light">Nomor Telepon</h6>
+                            <p class="promo-phone"></p>
+                            <h6 class="font-weight-light">Alamat</h6>
+                            <p class="promo-address"></p>
+                            <h6 class="font-weight-light">Dealer Pilihan</h6>
+                            <p class="promo-dealer"></p>
+                            <h6 class="font-weight-light">Kode promo anda adalah</h6>
+                            <p class="promo-code-text"></p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div id="chat-container" class="hide"></div>
+<footer class="footer position-relative">
+    
+    <div class="top-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>PT Daya Adicipta Motora</h4>
+                    <div class="address">Jl. Raya Cibeureum No.26, Campaka, Andir <br>Kota Cimahi, Jawa Barat 40184</div>
+                    <div class="phone">Telepon: (022) 6051033</div>
+                </div>
+                <div class="col-md-4">
+                    <h4>Site Map</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a class="site-map-item" href="https://daya-motora.com/about">Tentang Kami</a>
+                            <a class="site-map-item" href="https://daya-motora.com/product">Produk</a>
+                            <a class="site-map-item" href="https://daya-motora.com/promotion">Promo</a>
+                            <a class="site-map-item" href="https://daya-motora.com/events">Event</a>
+                            <a class="site-map-item" href="https://daya-motora.com/safety-riding">Safety Riding</a>
+                            <a class="site-map-item" href="https://daya-motora.com/jaringan/dealer">Jaringan</a>
+                        </div>
+                        <div class="col-md-6">
+                            <a class="site-map-item" href="https://daya-motora.com/community">Komunitas</a>
+                            <a class="site-map-item" href="https://daya-motora.com/news">Berita</a>
+                            <a class="site-map-item" href="https://daya-motora.com/career">Karir</a>
+                            <a class="site-map-item" href="https://daya-motora.com/contact">Hubungi Kami</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h4>Dapatkan Info Terbaru</h4>
+                    <form action="https://daya-motora.com/subscribe" method="POST"> <input type="hidden" name="_token" value="zr4C9uRPFkq9PSNfTFm2oh9DU3f1JRsKsqiz6yqg">                        <div class="d-flex">
+                            <input class="form-control" name="email" id="email" placeholder="Masukkan alamat email Anda">
+                            <button class="ml-2 btn btn-danger btn-subscribe">Subscribe</button>
+                            <input type="hidden" name="url" value="https://daya-motora.com/promotion/305/special-discount-honda-beat-sporty">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mid-footer d-flex justify-content-center align-items-center">
+        <span>Stay Connected with Us</span>
+                <span><a target="_blank" href="https://www.facebook.com/alwayshonda/" style="color: #FFF;"><i style="font-size: 1em;" class="fa fa-facebook"></i></a></span>
+                <span><a target="_blank" href="https://twitter.com/SR_DayaAdicipta" style="color: #FFF;"><i style="font-size: 1em;" class="fa fa-twitter"></i></a></span>
+                <span><a target="_blank" href="https://www.instagram.com/alwayshonda/" style="color: #FFF;"><i style="font-size: 1em;" class="fa fa-instagram"></i></a></span>
+                <span><a target="_blank" href="https://www.youtube.com/channel/UC-xOYVRf8Ciu0wtedBK3TNw" style="color: #FFF;"><i style="font-size: 1em;" class="fa fa-youtube"></i></a></span>
+            </div>
+    <div class="mid-footer2 d-flex justify-content-center align-items-center">
+        <img src="https://daya-motora.com/images/logo-daya-auto.png" height="40">
+
+        <a href="https://apps.apple.com/id/app/daya-auto/id1496743302">
+            <img src="https://daya-motora.com/images/daya_auto/apple.png" height="40">
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=id.co.dayagroup.alwaysdaya.dam&amp;hl=en_ZA">
+            <img src="https://daya-motora.com/images/daya_auto/google.png" height="40">
+        </a>
+    </div>
+    <div class="bottom-footer">
+        <div>Copyright © 2019 PT Daya Adicipta Motora. All Right Reserved</div>
+        <div class="footnote"><a href="https://daya-motora.com/termsconditions">Syarat &amp; Ketentuan</a> | <a href="https://daya-motora.com/privacypolicy">Kebijakan Privasi</a> | <a href="https://daya-motora.com/generalpolicy">Kebijakan Umum</a></div>
+    </div>
+</footer>
+	    
+        <a target="_blank" style="display: block; position: fixed; bottom: 1em; left: 1em; width: 220px; z-index: 9999;" href="https://daya-motora.com/daya-auto">
+        <img style="width: 100%;" src="https://daya-motora.com/storage/daya_auto/floating_button_1717061447_.png">
+    </a>
+    
+        <script src="https://daya-motora.com/js/jquery-3.3.1.min.js"></script>
+        <script src="https://daya-motora.com/js/popper.js/dist/umd/popper.min.js"></script>
+        <script src="https://daya-motora.com/js/bootstrap.bundle.min.js"></script>
+        <script src="https://daya-motora.com/global/vendor/toastr/toastr.min.js"></script>
+        <script>
+            toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-bottom-left",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+        </script>
+        <script>
+            jQuery(document).ready(function($) {
+                $('.search-block').click(function(e) {
+                    $('.search-form').toggleClass('expanded');
+                })
+            })
+        </script>
+		<script type="text/javascript"> 
+		<!-- chatsdk dara -->
+		$(document).ready(function () {
+			$('#chat-btn').on('click', function () {
+				console.log('btn click');
+				
+				if ($("#chat-container").is(":visible")) {
+					$('#chat-container').attr("class", "hide");
+					$('#chat-btn').attr("class", "btn-original");
+					$('#img-chat').attr("src", "https://daya-motora.com/images/btn-dara.png");
+					$("#img-chat").css("width", "100%");
+					$("#img-chat").css("height", "100%");
+					$('#chat-container').html('');
+				} else {
+					$('#chat-container').attr("class", "show");
+					$('#chat-btn').attr("class", "btn-close");
+					$('#chat-container').html('');
+					var iframe = document.createElement("iframe");
+					iframe.src = "https://chatsdk-dara.modakita.com/chatroom";
+					iframe.width = "100%"; iframe.height = "100%"; 
+					iframe.scrolling = "no";
+					iframe.style="border:none"
+					// Disable iframe scrollbars
+					$('#chat-container').html(iframe);
+				
+					$('#img-chat').attr("src", "https://daya-motora.com/images/close-button.png"); // delete icon
+					$("#img-chat").css("width", "50px");
+					$("#img-chat").css("height", "50px");
+				}
+			})
+			$(window).on("message", function (e) {
+					console.log('origin',e.originalEvent.origin);
+					if (e.originalEvent.origin === "https://chatsdk-dara.modakita.com") {
+						setTimeout(() => { $('#chat-container').height('70vh')}, 500);
+						console.log('disini'+e.originalEvent.data);
+						if (e.originalEvent.data === "toggle-chat-popup-close") setTimeout(() => { $('#chat-container').height('72px')}, 500);
+					}else if (e.originalEvent.data === "toggle-chat-popup-open") {
+						$('#chat-container').height('70vh');
+					}
+				})
+		})
+		</script>
+		<style>
+		#chat-container { 
+				width: 0;
+				height:0; 
+				max-width: 400px; 
+				position: fixed; 
+				right: 122px; 
+				bottom: 70px;
+				z-index: 30000;
+				max-height: 100vh; 
+		}
+		#chat-container.show {
+			  width: 100%;
+			  height: 70vh;
+			  display:block;
+			}
+		#chat-container.hide {
+			display:none;
+		}
+		.btn-original {
+			display: block; 
+			position: fixed; 
+			bottom: 1em; 
+			right: 1em; 
+			width: 220px; 
+			z-index: 9999;
+		}
+		.btn-close {
+			display: block;
+			position: fixed;
+			bottom: 2.2em;
+			right: -5em;
+			width: 220px;
+			z-index: 99990;
+		}
+		</style>
+        
+
+<script src="https://daya-motora.com/js/select2Ajax.js"></script>
+<script src="https://daya-motora.com/global/vendor/select2/select2.min.js"></script>
+
+<script>
+
+    let loadingScreen = $('.loading');
+    let formPromo = $('.form-promo');
+    let promoCode = $('.promo-code');
+    let promoError = $('.promo-error');
+    let captchaContainer = $('.captcha-container');
+
+    $(document).ready(function($) {
+
+        
+        $('#city').select2();
+
+        $('.btn-submit-form').click(function(e) {
+
+            let arrayIdentity = [];
+            let isError = false;
+
+            isError = validateRequired($('input[name="name"]'), '.error-name');
+            // isError = validateEmail($('input[name="email"]'), '.error-email');
+            isError = validateNumber($('input[name="phone"]'), '.error-phone');
+            isError = validateRequired($('textarea[name="address"]'), '.error-address');
+
+            if (!isError) {
+
+                $("#refresh-captcha").trigger("click");
+
+                formPromo.addClass('d-none');
+                captchaContainer.removeClass('d-none');
+
+                $('.btn-submit-captcha').click(function(event) {
+
+                    let captcha = function() {
+                        let tmp;
+
+                        $.ajax({
+                            url: 'https://daya-motora.com/promotion/checkcaptcha',
+                            type: 'POST',
+                            async: false,
+                            global: false,
+                            headers: {
+                                'X-CSRF-TOKEN': 'zr4C9uRPFkq9PSNfTFm2oh9DU3f1JRsKsqiz6yqg'
+                            },
+                            data: {
+                                captcha: $('input[name="captcha"]').val()
+                            },
+                        })
+                        .done(function(data) {
+                            tmp = true;
+                        })
+                        .fail(function(data) {
+                            tmp = false;
+                            $('.error-captcha').html(data.responseJSON.message);
+                        });
+
+                        return tmp;
+                    }();
+
+                    if (captcha === true) {
+
+                        // Show loading screen;
+                        captchaContainer.addClass('d-none');
+                        loadingScreen.removeClass('d-none');
+
+                        $('.form-control').each(function() {
+                            arrayIdentity.push($(this).val());
+                        });
+
+                        let identity = {
+                            city: arrayIdentity[0],
+                            name: arrayIdentity[1],
+                            email: arrayIdentity[2],
+                            phone: arrayIdentity[3],
+                            address: arrayIdentity[4],
+                            dealer: arrayIdentity[5],
+                        }
+
+                        $.ajax({
+                            url: 'https://daya-motora.com/mobile/promotions/305',
+                            type: 'POST',
+                            data: {
+                                identity: identity
+                            },
+                        })
+                        .done(function(data) {
+                            $('.promo-code .promo-city').html(data.identity.city);
+                            $('.promo-code .promo-name').html(data.identity.name);
+                            $('.promo-code .promo-email').html(data.identity.email);
+                            $('.promo-code .promo-phone').html(data.identity.phone);
+                            $('.promo-code .promo-address').html(data.identity.address);
+
+                            if (data.identity.dealer == '' || data.identity.dealer == null) {
+                                $('.promo-code .promo-dealer').html('Tidak ada');
+                            } else {
+                                $('.promo-code .promo-dealer').html(data.identity.dealer);
+
+                            }
+
+                            $('.promo-code .promo-code-text').html(data.code);
+
+                            setTimeout(function () {
+                                loadingScreen.addClass('d-none');
+                                formPromo.addClass('d-none');
+                                promoCode.removeClass('d-none');
+                                promoError.addClass('d-none');
+                                captchaContainer.addClass('d-none');
+
+                                $('.btn-submit').attr('disabled', 'disabled');
+                            }, 3000);
+                        })
+                        .fail(function() {
+                            setTimeout(function () {
+                                loadingScreen.addClass('d-none');
+                                formPromo.addClass('d-none');
+                                promoCode.addClass('d-none');
+                                promoError.removeClass('d-none');
+                                captchaContainer.addClass('d-none');
+
+                                $('.btn-submit').attr('disabled', 'disabled');
+                            }, 3000);
+                        });
+                    }
+                });
+            }
+
+        });
+
+        $('#modal-promo').on('hidden.bs.modal', function (e) {
+            $('.form-control').val('');
+
+            $('.error').html('');
+
+            if ($('.promo-code').hasClass('d-none')) {
+                $('.form-promo').removeClass('d-none');
+                $('.promo-error').addClass('d-none');
+                $('.promo-code').addClass('d-none');
+                $('.captcha-container').addClass('d-none');
+            }
+        });
+    });
+
+    $('#refresh-captcha').click(function(e) {
+        $.ajax({
+            type:'GET',
+            url:'https://daya-motora.com/safety-riding/refreshcaptcha',
+            success:function(data){
+                $("#captcha-wrapper").html(data);
+            },
+            error: function (request, error) {
+                alert(" Can't do because: " + error);
+            }
+        });
+    })
+
+    // The input is required
+    function validateRequired(inputRequired, errorFields) {
+        let input = inputRequired;
+        let isFilled = input.val();
+        let message;
+        let status;
+
+        if(!isFilled) {
+            status = true;
+
+            if (errorFields == '.error-name') {
+                message = 'Nama tidak boleh kosong';
+            } else if (errorFields == '.error-phone') {
+                message = 'Nomor telepon tidak boleh kosong';
+            } else if (errorFields == '.error-kota') {
+                message = 'Kota tidak boleh kosong';
+            } else {
+                message = 'Alamat tidak boleh kosong';
+            }
+
+            $(errorFields).html(message);
+        } else {
+            status = false;
+            $(errorFields).html('');
+        }
+
+        return status;
+    }
+
+    // The input must be email and also required
+    function validateEmail(inputEmail, errorFields) {
+        let input = inputEmail;
+        let re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        let isFilled = input.val();
+        let isEmail =re.test(isFilled);
+        let status;
+
+        if(!isFilled) {
+            status = true;
+            $(errorFields).html('Email tidak boleh kosong');
+        } else if (!isEmail) {
+            status = true;
+            $(errorFields).html('Format email salah, silakan cek kembali');
+        } else {
+            status = false;
+            $(errorFields).html('');
+        }
+
+        return status;
+    }
+
+    // The input must be a number and also required
+    function validateNumber(inputNumber, errorFields) {
+        let input = inputNumber;
+        let re = /^\d*$/;
+        let isFilled = input.val();
+        let isNumber =re.test(isFilled);
+        let status;
+
+        if(!isFilled) {
+            status = true;
+            $(errorFields).html('Nomor telepon tidak boleh kosong');
+        } else if (!isNumber) {
+            status = true;
+            $(errorFields).html('Format isian harus nomor telepon');
+        } else {
+            status = false;
+            $(errorFields).html('');
+        }
+
+        return status;
+    }
+</script>
+    
+
+</body></html>

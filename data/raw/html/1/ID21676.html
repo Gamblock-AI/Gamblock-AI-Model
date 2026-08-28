@@ -1,0 +1,472 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPT – Sign In</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --primary: #6366f1;
+            --primary-light: #818cf8;
+            --primary-dark: #4f46e5;
+            --bg-start: #0c0a1d;
+            --bg-end: #1a1333;
+            --surface: rgba(255, 255, 255, 0.03);
+            --surface-hover: rgba(255, 255, 255, 0.06);
+            --border: rgba(255, 255, 255, 0.08);
+            --text: #f8fafc;
+            --text-secondary: #94a3b8;
+            --error: #f87171;
+            --error-bg: rgba(248, 113, 113, 0.1);
+        }
+        html, body {
+            height: 100%;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 30% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+            animation: drift 20s ease-in-out infinite;
+            pointer-events: none;
+        }
+        @keyframes drift {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-2%, 2%) rotate(1deg); }
+        }
+        .container {
+            width: 100%;
+            max-width: 400px;
+            position: relative;
+            z-index: 1;
+        }
+        .logo-section {
+            text-align: center;
+        }
+        .logo-icon {
+            width: 180px;
+            height: 180px;
+            display: inline-block;
+            position: relative;
+            margin-bottom: 8px;
+            filter: drop-shadow(0 10px 30px rgba(99, 102, 241, 0.4));
+        }
+        .logo-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+        .logo-icon .logo-glow {
+            position: absolute;
+            inset: -20%;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%);
+            animation: pulse-glow 3s ease-in-out infinite;
+            pointer-events: none;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.1); }
+        }
+        @keyframes rotate-nodes {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes data-flow {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 1; }
+        }
+        .logo-icon .orbit-ring {
+            animation: rotate-nodes 20s linear infinite;
+            transform-origin: center;
+        }
+        .logo-icon .data-pulse {
+            animation: data-flow 2s ease-in-out infinite;
+        }
+        .logo-icon .data-pulse:nth-child(2) { animation-delay: 0.3s; }
+        .logo-icon .data-pulse:nth-child(3) { animation-delay: 0.6s; }
+        .logo-icon .data-pulse:nth-child(4) { animation-delay: 0.9s; }
+        .logo-text {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+        }
+        .login-card {
+            background: var(--surface);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 20px 32px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .card-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .card-header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--text) 0%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-header p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        .error-msg {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--error-bg);
+            border: 1px solid rgba(248, 113, 113, 0.2);
+            border-radius: 12px;
+            padding: 14px 16px;
+            margin-bottom: 24px;
+            font-size: 14px;
+            color: var(--error);
+        }
+        .error-msg svg {
+            flex-shrink: 0;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        .input-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+        .input-wrapper {
+            position: relative;
+        }
+        .input-wrapper svg {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            pointer-events: none;
+            transition: color 0.2s ease;
+        }
+        .input-wrapper input {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 14px 16px 14px 48px;
+            font-size: 15px;
+            color: var(--text);
+            transition: all 0.2s ease;
+        }
+        .input-wrapper input::placeholder {
+            color: rgba(148, 163, 184, 0.5);
+        }
+        .input-wrapper input:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(99, 102, 241, 0.05);
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+        }
+        .input-wrapper input:focus + svg,
+        .input-wrapper:focus-within svg {
+            color: var(--primary-light);
+        }
+        .captcha-container {
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: center;
+        }
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border: none;
+            border-radius: 12px;
+            padding: 16px;
+            font-size: 15px;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(99, 102, 241, 0.4);
+        }
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            gap: 16px;
+        }
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+        .divider span {
+            font-size: 12px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+        }
+        .links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+            position: relative;
+        }
+        .links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-light);
+            transition: width 0.2s ease;
+        }
+        .links a:hover {
+            color: var(--primary-light);
+        }
+        .links a:hover::after {
+            width: 100%;
+        }
+        .support-section {
+            text-align: center;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border);
+        }
+        .support-section p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+        .support-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--surface-hover);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--primary-light);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .support-btn:hover {
+            background: rgba(99, 102, 241, 0.1);
+            border-color: var(--primary);
+            transform: translateY(-1px);
+        }
+        @media (max-width: 480px) {
+            body {
+                padding: 16px;
+                align-items: flex-start;
+                padding-top: 40px;
+            }
+            .container {
+                max-width: 100%;
+            }
+            .logo-section {
+                margin-bottom: 10px;
+            }
+            .logo-icon {
+                width: 100px;
+                height: 100px;
+                font-size: 24px;
+                border-radius: 16px;
+            }
+            .login-card {
+                padding: 28px 20px;
+                border-radius: 20px;
+            }
+            .card-header {
+                margin-bottom: 24px;
+            }
+            .card-header h1 {
+                font-size: 20px;
+            }
+            .input-wrapper input {
+                padding: 12px 14px 12px 44px;
+                font-size: 16px;
+            }
+            .submit-btn {
+                padding: 14px;
+            }
+            .links {
+                flex-direction: column;
+                gap: 16px;
+                align-items: center;
+            }
+            .support-section {
+                margin-top: 24px;
+                padding-top: 20px;
+            }
+        }
+        @media (max-height: 700px) {
+            body {
+                align-items: flex-start;
+                padding-top: 20px;
+            }
+            .logo-section {
+                margin-bottom: 20px;
+            }
+            .login-card {
+                padding: 28px 24px;
+            }
+            .card-header {
+                margin-bottom: 20px;
+            }
+            .input-group {
+                margin-bottom: 16px;
+            }
+            .divider {
+                margin: 20px 0;
+            }
+            .support-section {
+                margin-top: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-section">
+            <div class="logo-icon">
+                <div class="logo-glow"></div>
+                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#6366f1"></stop>
+                            <stop offset="50%" style="stop-color:#818cf8"></stop>
+                            <stop offset="100%" style="stop-color:#a78bfa"></stop>
+                        </linearGradient>
+                        <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#c4b5fd"></stop>
+                            <stop offset="100%" style="stop-color:#818cf8"></stop>
+                        </linearGradient>
+                        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation="2" result="coloredBlur"></feGaussianBlur>
+                            <feMerge><feMergeNode in="coloredBlur"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+                        </filter>
+                    </defs>
+                    <circle cx="60" cy="60" r="52" fill="url(#logoGrad)" opacity="0.15"></circle>
+                    <circle cx="60" cy="60" r="44" fill="none" stroke="url(#logoGrad)" stroke-width="1" opacity="0.3"></circle>
+                    <g class="orbit-ring">
+                        <circle cx="60" cy="16" r="6" fill="url(#nodeGrad)" filter="url(#glow)" class="data-pulse"></circle>
+                        <circle cx="98" cy="38" r="5" fill="url(#nodeGrad)" filter="url(#glow)" class="data-pulse"></circle>
+                        <circle cx="98" cy="82" r="5" fill="url(#nodeGrad)" filter="url(#glow)" class="data-pulse"></circle>
+                        <circle cx="60" cy="104" r="6" fill="url(#nodeGrad)" filter="url(#glow)" class="data-pulse"></circle>
+                        <circle cx="22" cy="82" r="5" fill="url(#nodeGrad)" filter="url(#glow)" class="data-pulse"></circle>
+                        <circle cx="22" cy="38" r="5" fill="url(#nodeGrad)" filter="url(#glow)" class="data-pulse"></circle>
+                    </g>
+                    <g stroke="url(#logoGrad)" stroke-width="1.5" opacity="0.5" fill="none">
+                        <line x1="60" y1="22" x2="60" y2="45"></line>
+                        <line x1="93" y1="40" x2="75" y2="50"></line>
+                        <line x1="93" y1="80" x2="75" y2="70"></line>
+                        <line x1="60" y1="98" x2="60" y2="75"></line>
+                        <line x1="27" y1="80" x2="45" y2="70"></line>
+                        <line x1="27" y1="40" x2="45" y2="50"></line>
+                    </g>
+                    <circle cx="60" cy="60" r="22" fill="url(#logoGrad)"></circle>
+                    <g fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1">
+                        <path d="M48 52 L60 44 L72 52"></path>
+                        <path d="M48 68 L60 76 L72 68"></path>
+                    </g>
+                    <text x="60" y="66" text-anchor="middle" fill="white" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="800" letter-spacing="-0.5">iPT</text>
+                </svg>
+            </div>
+        </div>
+        <div class="login-card">
+            <div class="card-header">
+                <h1>Welcome Back</h1>
+                <p>Sign in to access your account</p>
+            </div>
+                        <form action="do-login.php" method="post">
+                <div class="input-group">
+                    <label for="username">Email or Username</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="username" name="username" placeholder="Enter your email or username" required="" autofocus="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    </div>
+                </div>
+                                <button type="submit" class="submit-btn">Sign In</button>
+            </form>
+            <div class="divider"><span>or</span></div>
+            <div class="links">
+                <a href="/signup.php">Create Account</a>
+                <a href="/recover.php">Forgot Password?</a>
+            </div>
+            <div class="support-section">
+                <p>Having trouble accessing your account?</p>
+                <a href="http://irc.iptorrents.com/?channel=#support" class="support-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    Live IRC Support
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body></html>

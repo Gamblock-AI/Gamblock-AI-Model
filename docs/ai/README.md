@@ -11,7 +11,7 @@ Context version: `2026-08-28.7`
 1. `AGENTS.md` is the canonical source of repository instructions.
 2. `docs/ai/manifest.yaml` declares the context version, required files, and contracts.
 3. `CLAUDE.md`, `GEMINI.md`, `.github/copilot-instructions.md`, and `.cursor/rules/gamblock-ai.mdc` adapt supported tools to `AGENTS.md`.
-4. `models/gamblock_hybrid_metadata.json` and `reports/` provide verified model parameters and metrics.
+4. `models/gamblock_hybrid_metadata.json` and `reports/evaluation/` provide verified model parameters and metrics.
 
 ## Model and Evaluation Architecture
 
@@ -19,7 +19,7 @@ Context version: `2026-08-28.7`
 - **ML Weight**: 0.75 (evaluated via Bag-of-Words on title and DOM/content, plus 14 numeric URL structural features).
 - **Rule Weight**: 0.25 (evaluated via `models/gambling_keywords.json`).
 - **Hybrid Threshold**: 0.4.
-- **Deployment Artifacts**: `models/gamblock_logistic_regression.onnx` for lightweight on-device inference on Android and Windows clients.
+- **Deployment Artifacts**: `models/gamblock_logistic_regression.onnx` for lightweight on-device inference on Android and Windows clients. Stable client-facing artifact paths remain under `models/`; evaluation and tuning outputs are separated under `reports/evaluation/` and `reports/tuning/`.
 
 ## Performance Metrics
 

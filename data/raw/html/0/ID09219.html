@@ -1,0 +1,141 @@
+<html lang="en"><head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+    <meta name="description" content="VR Expo">
+    <meta name="keywords" content="VR, Expo, Virtual Reality">
+    <meta name="author" content="Digital Art Project">
+
+    <link rel="icon" href="https://pameranvirtualhonda-minang.com/assets/theme/img/logo.png" sizes="16x16" type="image/png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://pameranvirtualhonda-minang.com/assets/theme/css/bootstrap.custom.css">
+    <link rel="stylesheet" href="https://pameranvirtualhonda-minang.com/assets/theme/css/custom.css">
+    <link rel="stylesheet" href="https://pameranvirtualhonda-minang.com/assets/theme/css/custom-tablet.css">
+    <link rel="stylesheet" href="https://pameranvirtualhonda-minang.com/assets/theme/css/custom-mobile.css">
+    <link rel="stylesheet" href="https://pameranvirtualhonda-minang.com/assets/theme/css/responsive2.css">
+    <!-- <link rel="stylesheet" href="https://pameranvirtualhonda-minang.com/assets/theme/css/orientation.css"> -->
+    
+
+    <title>Welcome</title>
+    <style>
+    body,
+    html {
+        height: 100%;
+        margin: 0;
+    }
+
+    .bg-res {
+        position:fixed;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;        
+        /* Full height */
+        height: 100%;
+        width: 100%;
+
+        /* Center and scale the image nicely */
+    }
+    </style>
+</head>
+
+<body>
+    <div class="bg-res" id="bg-res" style="background-size: 100% 100%; background-repeat: no-repeat; background-position: center center; background-image: url(&quot;https://infoahmexpo.com/server/files/7e9260aabd6912dabcd19be1b3c63ac3/image/content090923054622156332111.jpg&quot;);"></div>
+    <div class="container-fluid text-light">
+    <div class="d-flex flex-column">
+        <div class="row mt-5 mb-5">
+            <div class="col-md-6 mt-4 mt-md-0">
+                <div class="d-flex button-entrance mt-5">
+                    <a href="https://pameranvirtualhonda-minang.com/login" class="btn btn-danger d-flex align-items-center" style="bottom: 7.5rem; right: 20rem; left: unset;">
+                        <span class="h1 font-weight-bold mr-2 mb-0">MASUK</span>
+                        <img src="https://pameranvirtualhonda-minang.com/assets/theme/img/button/arrow.gif" style="transform:rotate(180deg)" height="20">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+</script>
+
+<script>
+if ($(window).width() < 426) {
+    $('.button-entrance a').css('bottom', '7.5rem');
+    $('.button-entrance a').css('right', 'unset');
+    $('.button-entrance a').css('left', '1rem');
+} else if ($(window).width() < 769) {
+    $('.button-entrance a').css('bottom', '7.5rem');
+    $('.button-entrance a').css('right', 'unset');
+    $('.button-entrance a').css('left', '2rem');
+} else {
+    $('.button-entrance a').css('bottom', '7.5rem');
+    $('.button-entrance a').css('right', '20rem');
+    $('.button-entrance a').css('left', 'unset');
+}
+$(window).resize(function() {
+    if ($(window).width() < 426) {
+        $('.button-entrance a').css('bottom', '7.5rem');
+        $('.button-entrance a').css('right', 'unset');
+        $('.button-entrance a').css('left', '1rem');
+    } else if ($(window).width() < 769) {
+        $('.button-entrance a').css('bottom', '7.5rem');
+        $('.button-entrance a').css('right', 'unset');
+        $('.button-entrance a').css('left', '2rem');
+    } else {
+        $('.button-entrance a').css('bottom', '7.5rem');
+        $('.button-entrance a').css('right', '20rem');
+        $('.button-entrance a').css('left', 'unset');
+    }
+});
+</script>
+<script>
+var mobileImage = 'https://infoahmexpo.com/server/files/7e9260aabd6912dabcd19be1b3c63ac3/image/content090923054423354543115.jpg';
+var laptopImage = 'https://infoahmexpo.com/server/files/7e9260aabd6912dabcd19be1b3c63ac3/image/content090923054622156332111.jpg';
+var tabletImage = 'https://infoahmexpo.com/server/files/7e9260aabd6912dabcd19be1b3c63ac3/image/content0909230546541089229470.jpg';
+$('.bg-res').css('background-size', '100% 100%');
+$('.bg-res').css('background-repeat', 'no-repeat');
+$('.bg-res').css('background-position', 'center');
+if (window.matchMedia('(max-width: 425px)').matches) {
+    $('.bg-res').css('background-image', 'url("' + mobileImage + '")');
+} else if (window.matchMedia('(max-width: 768px)').matches) {
+    $('.bg-res').css('background-image', 'url("' + tabletImage + '")');
+} else {
+    $('.bg-res').css('background-image', 'url("' + laptopImage + '")');
+}
+$(window).resize(function() {
+    if (window.matchMedia('(max-width: 425px)').matches) {
+        $('.bg-res').css('background-image', 'url("' + mobileImage + '")');
+    } else if (window.matchMedia('(max-width: 768px)').matches) {
+        $('.bg-res').css('background-image', 'url("' + tabletImage + '")');
+    } else {
+        $('.bg-res').css('background-image', 'url("' + laptopImage + '")');
+    }
+});
+</script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha512-U6K1YLIFUWcvuw5ucmMtT9HH4t0uz3M366qrF5y4vnyH6dgDzndlcGvH/Lz5k8NFh80SN95aJ5rqGZEdaQZ7ZQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/umd/popper.min.js" integrity="sha512-BmM0/BQlqh02wuK5Gz9yrbe7VyIVwOzD1o40yi1IsTjriX/NGF37NyXHfmFzIlMmoSIBXgqDiG1VNU6kB5dBbA==" crossorigin="anonymous"></script>
+
+    <script src="https://pameranvirtualhonda-minang.com/assets/theme/js/bootstrap.min.js"></script>
+    <script src="https://pameranvirtualhonda-minang.com/assets/theme/js/custom.js"></script>
+    <script>
+    $(document).ready(function() {
+        if ($('#announcementModal').length > 0) {
+            if ($(window).width() < 426) {
+                $('#announcementModal').modal('show');
+            }else{
+                window.location.href = 'https://pameranvirtualhonda-minang.com/exhibition';
+            }
+        }
+        if ($('#guideModal').length > 0) {
+            $('#guideModal').modal('show');
+        }
+    })
+    </script>
+
+
+</body></html>
