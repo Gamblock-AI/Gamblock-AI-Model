@@ -2,7 +2,7 @@
 
 This repository contains the dataset, training pipelines, model artifacts, metadata, and evaluation reports for Gamblock-AI machine learning components. It must remain safe and understandable as a standalone clone; no parent workspace files are required. Read `docs/ai/README.md` and `context/pkm_proposal.md` for background, capability status, and research contracts.
 
-Context version: `2026-08-28.7`
+Context version: `2026-08-31.2`
 
 ## Start and finish
 
@@ -15,9 +15,9 @@ Context version: `2026-08-28.7`
 ## Architecture and Model Specifications
 
 Gamblock-AI uses a **Hybrid Analysis** detection method combining:
-- **Logistic Regression Model (ML Weight = 0.75)**: Evaluates page-content features via Bag-of-Words (BoW) from page title, headings, and DOM/content, combined with numeric URL features (length, digit count, symbols, domain properties).
-- **Rule-Based System (Rule Weight = 0.25)**: Evaluates explicit keyword patterns using `gambling_keywords.json`.
-- **Hybrid Decision Threshold**: `hybrid_score = (0.75 * ml_probability) + (0.25 * rule_score)`. If `hybrid_score >= 0.4`, the site is classified as gambling (`judi`), triggering local blocking and Pattern Interrupt interventions.
+- **Logistic Regression Model (ML Weight = 0.80)**: Evaluates Bag-of-Words from the bounded title, heading, and anchor-text surface supplied by the passive extension, combined with numeric URL features (length, digit count, symbols, domain properties).
+- **Rule-Based System (Rule Weight = 0.20)**: Evaluates explicit keyword patterns using `gambling_keywords.json`.
+- **Hybrid Decision Threshold**: `hybrid_score = (0.80 * ml_probability) + (0.20 * rule_score)`. If `hybrid_score >= 0.45`, the site is classified as gambling (`judi`), triggering local blocking and Pattern Interrupt interventions.
 
 Client authorities add an evidence gate after calculating the artifact score:
 explicit URL/content rules remain decisive, while model-only blocking requires
@@ -26,10 +26,9 @@ shape features alone are supporting evidence and must not block opaque links.
 
 Serialized artifacts:
 - `models/gamblock_logistic_regression.onnx`: Exported ONNX model for on-device inference on Android and Windows clients.
-- `models/gamblock_logistic_regression.pkl`: Python Scikit-Learn pipeline for training and offline validation.
 - `models/gambling_keywords.json`: Keyword ruleset for the rule-based component.
 - `models/gamblock_hybrid_metadata.json`: Canonical parameters, feature columns, weights, thresholds, and benchmark metrics.
-- `models/gamblock_training_metadata.json`: Metadata emitted by the training notebook.
+- `models/gamblock_training_metadata.json`: Immutable metadata for the promoted training run.
 
 ## Repository layout
 
@@ -39,6 +38,14 @@ Serialized artifacts:
 - `models/`: Stable deployment artifacts and model metadata.
 - `reports/evaluation/`: Classification report, confusion matrix, and predictions.
 - `reports/tuning/`: Hyperparameter and hybrid threshold search outputs.
+- `scripts/evaluate_model_evidence.py`: Reproducible aggregate/hash-only audit
+  of the frozen data, split, prediction, and ONNX snapshots. It can report a
+  numeric gate independently from audit maturity; incomplete provenance or a
+  non-domain-grouped split must remain `provisional`.
+- `scripts/train_deployment_projection.py`: Explicit candidate-only training
+  workflow for the bounded title/heading/anchor surface actually supplied by
+  the passive Windows sensor. It selects policy on a train-derived validation
+  split and never promotes an artifact automatically.
 - `docs/integration/`: Client integration contract.
 
 ## Privacy Boundary
@@ -56,3 +63,10 @@ All classification and inference run strictly on-device (*Edge AI* / *On-Device 
 
 Explicit opt-in test requests:
 - Explicit model re-evaluation or pipeline testing is only performed upon explicit user instruction.
+  The frozen evidence audit can be run without retraining:
+
+  ```sh
+  python3 scripts/evaluate_model_evidence.py
+  python3 -m unittest discover -s tests -p 'test_*.py'
+  python3 scripts/train_deployment_projection.py --output-dir /tmp/candidate
+  ```

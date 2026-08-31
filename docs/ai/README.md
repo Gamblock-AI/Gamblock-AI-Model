@@ -4,29 +4,57 @@ Jika ada pertentangan dengan `pkm_proposal.md`, proposal PKM adalah sumber mutla
 
 This repository is intentionally self-contained. A clone does not need a parent workspace to discover its product constraints, model architecture, or privacy rules.
 
-Context version: `2026-08-28.7`
+Context version: `2026-08-31.2`
 
 ## Source hierarchy
 
 1. `AGENTS.md` is the canonical source of repository instructions.
 2. `docs/ai/manifest.yaml` declares the context version, required files, and contracts.
 3. `CLAUDE.md`, `GEMINI.md`, `.github/copilot-instructions.md`, and `.cursor/rules/gamblock-ai.mdc` adapt supported tools to `AGENTS.md`.
-4. `models/gamblock_hybrid_metadata.json` and `reports/evaluation/` provide verified model parameters and metrics.
+4. `models/gamblock_hybrid_metadata.json` and `reports/evaluation/` provide
+   model parameters and frozen prediction snapshots; their evidence maturity is
+   determined by `scripts/evaluate_model_evidence.py`.
 
 ## Model and Evaluation Architecture
 
 - **Method**: Hybrid Analysis (Rule-Based System + Logistic Regression).
-- **ML Weight**: 0.75 (evaluated via Bag-of-Words on title and DOM/content, plus 14 numeric URL structural features).
-- **Rule Weight**: 0.25 (evaluated via `models/gambling_keywords.json`).
-- **Hybrid Threshold**: 0.4.
+- **ML Weight**: 0.80 (evaluated via Bag-of-Words on the bounded title, heading, and anchor-text surface, plus 14 numeric URL structural features).
+- **Rule Weight**: 0.20 (evaluated via `models/gambling_keywords.json`).
+- **Hybrid Threshold**: 0.45.
 - **Deployment Artifacts**: `models/gamblock_logistic_regression.onnx` for lightweight on-device inference on Android and Windows clients. Stable client-facing artifact paths remain under `models/`; evaluation and tuning outputs are separated under `reports/evaluation/` and `reports/tuning/`.
 
-## Performance Metrics
+## Frozen Snapshot Metrics
 
 - Accuracy: 0.9738 (97.38%)
 - Precision: 0.9638 (96.38%)
 - Recall: 0.9546 (95.46%)
 - F1-Score: 0.9592 (95.92%)
+
+These values are reproducible for the checked-in full-content prediction
+snapshot, but are provisional rather than a deployment claim: the dataset card
+is incomplete and the frozen split is not domain-grouped. Use the evaluator to
+emit counts, hashes, leakage checks, metrics, and audit maturity without
+emitting raw browsing data:
+
+```sh
+python3 scripts/evaluate_model_evidence.py
+python3 -m unittest discover -s tests -p 'test_*.py'
+```
+
+## Deployment-aligned candidate workflow
+
+`scripts/train_deployment_projection.py` reconstructs only the passive Windows
+sensor surface (title, up to 10 `h1`-`h3` values, and up to 50 anchor texts)
+from the local HTML snapshots. It selects the fusion policy solely from a
+stratified validation subset of `train.csv`; it searches five
+client-compatible Logistic Regression configurations and selects a policy that
+passes every validation target, maximizes recall, and retains a 1.5% validation
+FPR buffer. `test.csv` is held for its final report. The resulting ONNX artifact is explicitly marked
+`candidate_not_promoted` and is never copied into `models/` or client assets by
+the script. The latest candidate was manually promoted after all numeric
+offline deployment targets and client-artifact parity passed. Its evidence
+remains provisional until the domain-grouped/provenance and device-runtime
+gates are complete.
 
 ## Privacy Boundary
 

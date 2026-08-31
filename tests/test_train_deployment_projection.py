@@ -1,0 +1,47 @@
+from __future__ import annotations
+
+import importlib.util
+import unittest
+from pathlib import Path
+
+
+SCRIPT = Path(__file__).parents[1] / "scripts" / "train_deployment_projection.py"
+SPEC = importlib.util.spec_from_file_location("train_deployment_projection", SCRIPT)
+TRAINER = importlib.util.module_from_spec(SPEC)
+assert SPEC and SPEC.loader
+SPEC.loader.exec_module(TRAINER)
+
+
+class DeploymentProjectionTrainingTest(unittest.TestCase):
+    def test_extracts_only_the_supported_bounded_sensor_surface(self) -> None:
+        extractor = TRAINER.DOMExtractor()
+        extractor.feed(
+            "<title> Judul </title><h1> Heading </h1><h4> Tidak didukung </h4>"
+            "<a> Tautan </a><a>" + ("x" * 200) + "</a>"
+        )
+        extractor.close()
+        self.assertEqual("Judul Heading Tautan", extractor.text())
+
+    def test_url_feature_contract_is_complete_and_deterministic(self) -> None:
+        values = TRAINER.url_feature_values(
+            "https://promo.example.test/slot?ref=7",
+            ["slot", "casino"],
+        )
+        self.assertEqual(TRAINER.URL_FEATURES, list(values))
+        self.assertEqual(1.0, values["url_keyword_count"])
+        self.assertEqual(1.0, values["url_has_https"])
+
+    def test_policy_rank_prioritizes_recall_without_spending_fpr_buffer(self) -> None:
+        buffered = {
+            "accuracy": 0.97,
+            "precision": 0.96,
+            "recall": 0.96,
+            "f1_score": 0.96,
+            "false_positive_rate": 0.014,
+        }
+        unbuffered = {**buffered, "recall": 0.99, "false_positive_rate": 0.019}
+        self.assertGreater(TRAINER.policy_rank(buffered), TRAINER.policy_rank(unbuffered))
+
+
+if __name__ == "__main__":
+    unittest.main()

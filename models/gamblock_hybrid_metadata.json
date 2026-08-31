@@ -1,49 +1,88 @@
 {
-    "model_name": "Gamblock-AI Hybrid Detection Model",
-    "model_type": "Hybrid AI Detection",
-    "method": "Rule-Based System + Logistic Regression",
-    "model_source": "tuned_random_search",
-    "text_feature": "Bag-of-Words from title + content/DOM",
-    "url_features": [
-        "url_length",
-        "url_digit_count",
-        "url_dot_count",
-        "url_slash_count",
-        "url_hyphen_count",
-        "url_question_count",
-        "url_equal_count",
-        "url_keyword_count",
-        "url_has_number",
-        "url_has_https",
-        "url_is_valid",
-        "domain_length",
-        "subdomain_length",
-        "suffix_length"
-    ],
-    "hybrid_configuration": {
-        "ml_weight": 0.75,
-        "rule_weight": 0.25,
-        "threshold": 0.4,
-        "formula": "hybrid_score = (ML_WEIGHT * ml_probability) + (RULE_WEIGHT * rule_score)"
+  "contract_version": "hybrid-v2",
+  "evidence_maturity": "provisional_offline_deployment_projection",
+  "evaluation_metrics": {
+    "accuracy": 0.9722222222222222,
+    "all_targets_passed": true,
+    "confusion_matrix": {
+      "fn": 41,
+      "fp": 31,
+      "tn": 1724,
+      "tp": 796
     },
-    "label_mapping": {
-        "0": "non_judi",
-        "1": "judi"
+    "f1_score": 0.9567307692307692,
+    "false_positive_rate": 0.017663817663817662,
+    "precision": 0.9625151148730351,
+    "recall": 0.951015531660693,
+    "samples": 2592,
+    "target_checks": {
+      "accuracy": true,
+      "f1_score": true,
+      "false_positive_rate": true,
+      "precision": true,
+      "recall": true
+    }
+  },
+  "ml_weight": 0.8,
+  "model_name": "Gamblock-AI deployment-aligned Hybrid Detection Model",
+  "model_source": "train.csv deployment DOM projection",
+  "random_state": 42,
+  "rule_weight": 0.19999999999999996,
+  "status": "promoted_client_artifact_provisional",
+  "text_representation": "bounded title + h1-h3 + anchor text from passive extension contract",
+  "threshold": 0.45,
+  "training_configuration": {
+    "c": 0.05,
+    "max_features": 10000,
+    "min_df": 3,
+    "name": "baseline"
+  },
+  "deployment_artifacts": {
+    "onnx_model": "models/gamblock_logistic_regression.onnx",
+    "rule_keywords": "models/gambling_keywords.json"
+  },
+  "url_feature_columns": [
+    "url_length",
+    "url_digit_count",
+    "url_dot_count",
+    "url_slash_count",
+    "url_hyphen_count",
+    "url_question_count",
+    "url_equal_count",
+    "url_keyword_count",
+    "url_has_number",
+    "url_has_https",
+    "url_is_valid",
+    "domain_length",
+    "subdomain_length",
+    "suffix_length"
+  ],
+  "validation_metrics": {
+    "accuracy": 0.9802314368370298,
+    "all_targets_passed": true,
+    "confusion_matrix": {
+      "fn": 23,
+      "fp": 18,
+      "tn": 1386,
+      "tp": 647
     },
-    "model_files": {
-        "pkl_model": "models\\gamblock_logistic_regression.pkl",
-        "onnx_model": "models\\gamblock_logistic_regression.onnx",
-        "rule_keywords": "models\\gambling_keywords.json"
+    "f1_score": 0.9692883895131086,
+    "false_positive_rate": 0.01282051282051282,
+    "precision": 0.9729323308270676,
+    "recall": 0.9656716417910448,
+    "samples": 2074,
+    "selection_pool": "all_targets_with_fpr_buffer",
+    "target_checks": {
+      "accuracy": true,
+      "f1_score": true,
+      "false_positive_rate": true,
+      "precision": true,
+      "recall": true
     },
-    "model_size_mb": {
-        "pkl_size_mb": 0.3699,
-        "onnx_size_mb": 0.2769
-    },
-    "evaluation_metrics": {
-        "accuracy": 0.9738,
-        "precision": 0.9638,
-        "recall": 0.9546,
-        "f1_score": 0.9592
-    },
-    "deployment_note": "ONNX digunakan untuk model Logistic Regression. Rule-Based System tetap dihitung terpisah menggunakan gambling_keywords.json. Prediksi akhir diperoleh dari hybrid_score."
+    "validation_target_feasible": true
+  },
+  "validation_selection": {
+    "fpr_buffer_max": 0.015,
+    "strategy": "all targets, then recall-first with 1.5% FPR buffer"
+  }
 }

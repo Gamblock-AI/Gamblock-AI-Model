@@ -1,35 +1,88 @@
 {
-    "model_name": "Gamblock-AI Hybrid Detection Model",
-    "method": "Rule-Based System + Logistic Regression",
-    "model_source": "tuned_random_search",
-    "text_representation": "Bag-of-Words using CountVectorizer",
-    "ml_weight": 0.75,
-    "rule_weight": 0.25,
-    "threshold": 0.4,
-    "url_feature_columns": [
-        "url_length",
-        "url_digit_count",
-        "url_dot_count",
-        "url_slash_count",
-        "url_hyphen_count",
-        "url_question_count",
-        "url_equal_count",
-        "url_keyword_count",
-        "url_has_number",
-        "url_has_https",
-        "url_is_valid",
-        "domain_length",
-        "subdomain_length",
-        "suffix_length"
-    ],
-    "label_mapping": {
-        "0": "non_judi",
-        "1": "judi"
+  "contract_version": "hybrid-v2",
+  "evidence_maturity": "provisional_offline_deployment_projection",
+  "evaluation_metrics": {
+    "accuracy": 0.9722222222222222,
+    "all_targets_passed": true,
+    "confusion_matrix": {
+      "fn": 41,
+      "fp": 31,
+      "tn": 1724,
+      "tp": 796
     },
-    "metrics": {
-        "accuracy": 0.9737654320987654,
-        "precision": 0.9638118214716526,
-        "recall": 0.954599761051374,
-        "f1_score": 0.9591836734693877
+    "f1_score": 0.9567307692307692,
+    "false_positive_rate": 0.017663817663817662,
+    "precision": 0.9625151148730351,
+    "recall": 0.951015531660693,
+    "samples": 2592,
+    "target_checks": {
+      "accuracy": true,
+      "f1_score": true,
+      "false_positive_rate": true,
+      "precision": true,
+      "recall": true
     }
+  },
+  "ml_weight": 0.8,
+  "model_name": "Gamblock-AI deployment-aligned Hybrid Detection Model",
+  "model_source": "train.csv deployment DOM projection",
+  "random_state": 42,
+  "rule_weight": 0.19999999999999996,
+  "status": "promoted_client_artifact_provisional",
+  "text_representation": "bounded title + h1-h3 + anchor text from passive extension contract",
+  "threshold": 0.45,
+  "training_configuration": {
+    "c": 0.05,
+    "max_features": 10000,
+    "min_df": 3,
+    "name": "baseline"
+  },
+  "deployment_artifacts": {
+    "onnx_model": "models/gamblock_logistic_regression.onnx",
+    "rule_keywords": "models/gambling_keywords.json"
+  },
+  "url_feature_columns": [
+    "url_length",
+    "url_digit_count",
+    "url_dot_count",
+    "url_slash_count",
+    "url_hyphen_count",
+    "url_question_count",
+    "url_equal_count",
+    "url_keyword_count",
+    "url_has_number",
+    "url_has_https",
+    "url_is_valid",
+    "domain_length",
+    "subdomain_length",
+    "suffix_length"
+  ],
+  "validation_metrics": {
+    "accuracy": 0.9802314368370298,
+    "all_targets_passed": true,
+    "confusion_matrix": {
+      "fn": 23,
+      "fp": 18,
+      "tn": 1386,
+      "tp": 647
+    },
+    "f1_score": 0.9692883895131086,
+    "false_positive_rate": 0.01282051282051282,
+    "precision": 0.9729323308270676,
+    "recall": 0.9656716417910448,
+    "samples": 2074,
+    "selection_pool": "all_targets_with_fpr_buffer",
+    "target_checks": {
+      "accuracy": true,
+      "f1_score": true,
+      "false_positive_rate": true,
+      "precision": true,
+      "recall": true
+    },
+    "validation_target_feasible": true
+  },
+  "validation_selection": {
+    "fpr_buffer_max": 0.015,
+    "strategy": "all targets, then recall-first with 1.5% FPR buffer"
+  }
 }

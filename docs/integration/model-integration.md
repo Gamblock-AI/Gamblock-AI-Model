@@ -10,7 +10,6 @@ Gunakan file berikut dari `models/`:
 | File | Kegunaan |
 |---|---|
 | `gamblock_logistic_regression.onnx` | Logistic Regression untuk inferensi on-device |
-| `gamblock_logistic_regression.pkl` | Pipeline Scikit-Learn untuk validasi/training offline |
 | `gambling_keywords.json` | Ruleset keyword eksplisit |
 | `gamblock_hybrid_metadata.json` | Contract bobot, threshold, URL features, dan metrik |
 | `gamblock_training_metadata.json` | Metadata hasil training model |
@@ -34,10 +33,10 @@ mengganti nama atau formatnya tanpa memperbarui seluruh client authority.
 6. Hitung artifact score:
 
    ```text
-   hybrid_score = (0.75 * ml_probability) + (0.25 * rule_score)
+   hybrid_score = (0.80 * ml_probability) + (0.20 * rule_score)
    ```
 
-7. Gunakan threshold canonical `0.4` bersama evidence policy berikut:
+7. Gunakan threshold canonical `0.45` bersama evidence policy berikut:
    - rule eksplisit pada URL atau konten tetap dapat menjadi bukti blocking;
    - model-only blocking memerlukan konten halaman yang committed;
    - untuk model-only blocking, skor teks DOM tanpa URL features juga harus

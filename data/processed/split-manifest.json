@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "random_state": 42,
+  "primary_split_method": "stratified random row split",
+  "test_fraction": 0.2,
+  "train": {
+    "rows": 10368,
+    "judi": 3347,
+    "non_judi": 7021,
+    "sha256": "47502b42ee0c0336e1ac50eadfdd89230e6cc24f94ad4db34e8f4a655ccccf7b"
+  },
+  "test": {
+    "rows": 2592,
+    "judi": 837,
+    "non_judi": 1755,
+    "sha256": "8ca5162318bb8592dc00f806f1cbd59291ae6284d43c0d9aa9a649d45fcae494"
+  },
+  "validation_during_tuning": {
+    "rows": 2074,
+    "judi": 670,
+    "non_judi": 1404,
+    "source": "20 percent of train split; model refit on all train rows after tuning"
+  },
+  "grouping_status": "not_grouped",
+  "final_test_frozen_before_threshold_selection": true,
+  "known_gaps": [
+    "Exact hostname overlap exists between train and test.",
+    "No time-shifted or declared government, education, camouflage, and domain-churn slice manifest exists."
+  ]
+}
