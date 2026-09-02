@@ -2,7 +2,7 @@
 
 This repository contains the dataset, training pipelines, model artifacts, metadata, and evaluation reports for Gamblock-AI machine learning components. It must remain safe and understandable as a standalone clone; no parent workspace files are required. Read `docs/ai/README.md` and `context/pkm_proposal.md` for background, capability status, and research contracts.
 
-Context version: `2026-09-02.3`
+Context version: `2026-09-02.4`
 
 ## Start and finish
 
@@ -70,3 +70,15 @@ Explicit opt-in test requests:
   python3 -m unittest discover -s tests -p 'test_*.py'
   python3 scripts/train_deployment_projection.py --output-dir /tmp/candidate
   ```
+
+## Cross-repository testing handoff
+
+When the user explicitly requests model testing to be retained as project
+evidence, run the model evaluator through the testing repository runner with
+`--run-model-replay`. A direct model command alone is not a completed evidence
+handoff. Inspect both repositories and provide the test receipt required by
+the umbrella/testing context, including `model/report.md` changes,
+private/local artifacts, validation, and commit/push status. If the testing
+checkout is unavailable, report the exact blocker and do not claim that the
+model report was updated. Raw predictions, source rows, and temporary replay
+outputs must remain private/local.

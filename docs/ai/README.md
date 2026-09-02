@@ -4,7 +4,7 @@ Jika ada pertentangan dengan `pkm_proposal.md`, proposal PKM adalah sumber mutla
 
 This repository is intentionally self-contained. A clone does not need a parent workspace to discover its product constraints, model architecture, or privacy rules.
 
-Context version: `2026-09-02.3`
+Context version: `2026-09-02.4`
 
 ## Source hierarchy
 
@@ -65,7 +65,10 @@ All inference and classification operations run strictly on-device (*Edge AI*). 
 Model replay and cross-repository evaluation results are published only in the
 canonical [Gamblock-AI-Testing model report](https://github.com/Gamblock-AI/Gamblock-AI-Testing/blob/main/model/report.md).
 This model snapshot documents artifacts and implementation status without
-duplicating that report.
+duplicating that report. When an explicit model evaluation is requested for
+project evidence, the agent must synchronize `model/report.md` through the
+testing runner and provide a test receipt listing public and private/local data
+changes. Raw predictions and temporary replay files remain private/local.
 
 ## Verification
 
