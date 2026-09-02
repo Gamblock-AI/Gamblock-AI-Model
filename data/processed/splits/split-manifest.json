@@ -1,0 +1,99 @@
+{
+  "assignment_sha256": "fdd01d9854565e436137854295ca1cd090c5bb94bfc98d5c4f9443ca5dcb115f",
+  "conflicting_groups_excluded": {
+    "groups": 15,
+    "rows": 294
+  },
+  "eligible": {
+    "groups": 11639,
+    "label_counts": {
+      "0": 8753,
+      "1": 3913
+    },
+    "rows": 12666
+  },
+  "final_test_frozen_before_threshold_selection": true,
+  "grouping_keys": [
+    "model_text",
+    "text_clean",
+    "text_combined",
+    "registrable_domain"
+  ],
+  "historical_baseline": {
+    "method": "stratified random row split",
+    "test": {
+      "label_counts": {
+        "0": 1755,
+        "1": 837
+      },
+      "rows": 2592,
+      "sha256": "8ca5162318bb8592dc00f806f1cbd59291ae6284d43c0d9aa9a649d45fcae494"
+    },
+    "train": {
+      "label_counts": {
+        "0": 7021,
+        "1": 3347
+      },
+      "rows": 10368,
+      "sha256": "47502b42ee0c0336e1ac50eadfdd89230e6cc24f94ad4db34e8f4a655ccccf7b"
+    }
+  },
+  "known_gaps": [
+    "Collection dates and upstream labeling governance remain unavailable.",
+    "Camouflage variants are generated in memory during model evaluation and are not persisted as a dataset."
+  ],
+  "leakage_audit": {
+    "audit_passed": true,
+    "domain": {
+      "cross_split_groups": 0,
+      "duplicate_rows": 362,
+      "groups_with_duplicates": 169
+    },
+    "model_text": {
+      "cross_split_groups": 0,
+      "duplicate_rows": 1320,
+      "groups_with_duplicates": 487
+    },
+    "normalized_url": {
+      "cross_split_groups": 0,
+      "duplicate_rows": 0,
+      "groups_with_duplicates": 0
+    },
+    "text_clean": {
+      "cross_split_groups": 0,
+      "duplicate_rows": 998,
+      "groups_with_duplicates": 379
+    },
+    "text_combined": {
+      "cross_split_groups": 0,
+      "duplicate_rows": 996,
+      "groups_with_duplicates": 378
+    }
+  },
+  "primary_split_method": "connected model-text and registrable-domain grouped stratification",
+  "random_state": 42,
+  "schema_version": 2,
+  "source": {
+    "dataset_clean_sha256": "3d7aeddca52dfb1b9ba3673a14985b51f93b36d929b7048fce2a8b0a3429bae6",
+    "rows": 12960
+  },
+  "test": {
+    "groups": 2328,
+    "label_counts": {
+      "0": 1748,
+      "1": 775
+    },
+    "rows": 2523,
+    "sha256": "cfb2d61c5ddcc1924123cb561a6960e4bd688fab3bbe30e289d47bcea1a01462"
+  },
+  "test_fraction": 0.2,
+  "train": {
+    "groups": 9311,
+    "label_counts": {
+      "0": 7005,
+      "1": 3138
+    },
+    "rows": 10143,
+    "sha256": "44982f1c00c94dcb3b917e28e4da49cf54e8836bcd68043b83b0e65f9fbdfe0f"
+  }
+}

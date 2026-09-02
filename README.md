@@ -38,8 +38,11 @@ and browsing history are not sent to the backend or any cloud service.
 │   │   └── images/{0,1}/     # page images by label
 │   └── processed/
 │       ├── dataset_clean.csv
-│       ├── split-manifest.json
-│       └── splits/{train,test}.csv
+│       ├── split-manifest.json             # historical row-stratified baseline
+│       └── splits/
+│           ├── baseline_row_stratified_{train,test}.csv
+│           ├── split-manifest.json         # canonical leakage-safe candidate split
+│           └── {train,test}.csv
 ├── docs/
 │   ├── ai/                   # repository AI context and manifest
 │   └── integration/
@@ -52,11 +55,7 @@ and browsing history are not sent to the backend or any cloud service.
 ├── notebooks/
 │   └── hybrid_model_training.ipynb
 ├── reports/
-│   ├── evaluation/
-│   │   ├── classification_report.txt  # historical full-content snapshot
-│   │   ├── confusion_matrix.png
-│   │   ├── deployment_projection_evidence.json
-│   │   └── predictions.csv
+│   ├── evaluation/           # legacy source path; new results go to testing
 │   └── tuning/
 │       ├── hyperparameter_search.csv
 │       └── hybrid_threshold_search.csv
@@ -79,15 +78,36 @@ The frozen stratified split is 10,368 train rows (3,347 judi; 7,021 non-judi)
 and 2,592 test rows (837 judi; 1,755 non-judi). Tuning notes record a 2,074-row
 validation holdout before the final model was refit on the train split.
 
-Generate a reproducible aggregate/hash-only report without retraining:
+Run the canonical aggregate/hash-only model replay from the umbrella:
 
 ```sh
-python3 scripts/evaluate_model_evidence.py
-python3 -m unittest discover -s tests -p 'test_*.py'
+python3 gamblock-ai-testing/docs/tools/run_evaluation.py \
+  --workspace-root . --run-model-replay --run-model-tests
 ```
 
-The report intentionally remains `provisional`: dataset source/governance are
-not recorded, four raw rows lack a clean-snapshot exclusion reason, and the
+The permanent model evidence is written to
+`gamblock-ai-testing/model/evidence/`; raw prediction snapshots used by the
+historical audit are read from the ignored
+`gamblock-ai-testing/model/private/replay_input/` directory. The model repository
+keeps the evaluator and source data, not the canonical evaluation outputs.
+
+The historical baseline files are retained only to reproduce the earlier
+row-stratified report. Candidate training and evaluation use
+`data/processed/splits/train.csv` and `test.csv`, which are created by:
+
+```sh
+python3 scripts/prepare_grouped_splits.py
+```
+
+This split connects duplicate model text, processed text, and registrable
+domain/site family before assigning whole groups to train or test. Groups with
+conflicting labels are excluded and recorded in
+`data/processed/splits/split-manifest.json`.
+
+The local snapshot is attributed to the [Kaggle dataset supplied for this
+project](https://www.kaggle.com/datasets/sahalmaghfud/illegal-web), but its
+license metadata is still unverified. The report intentionally remains
+`provisional`: four raw rows lack a clean-snapshot exclusion reason, and the
 frozen split has two exact hostnames shared by train and test. Its high snapshot
 metrics therefore do not constitute an evaluated deployment-runtime claim.
 
@@ -101,22 +121,50 @@ deploying it on that narrower surface, use the explicit candidate workflow:
 python3 scripts/train_deployment_projection.py --output-dir /tmp/gamblock-candidate
 ```
 
-It derives validation only from `train.csv`, freezes `test.csv` for one final
-evaluation, and writes no raw URL or DOM data. It searches five
-client-compatible Logistic Regression configurations, then selects a policy
-that passes every validation target and maximizes recall while retaining a 1.5%
-validation FPR buffer. The current artifact was manually promoted after the
-frozen 2,592-row offline deployment projection passed every numeric target:
+It derives validation only from grouped `train.csv`, freezes grouped `test.csv`
+for one final evaluation, and writes no raw URL or DOM data. It searches five
+client-compatible Logistic Regression configurations, adds label-preserving
+camouflage variants only to the training frame in memory, gives extra weight to
+short positive DOM samples, and selects a policy that passes every validation
+target while maximizing robust recall within the 5% progress-evaluation FPR gate
+buffer. Positive samples receive extra training weight, and the
+character-substitution negative controls are retained during training to limit
+false positives. The current active artifact was manually promoted from the historical
+row-stratified projection, which passed every numeric target:
 accuracy 97.22%, precision 96.25%, recall 95.10%, F1 95.67%, and FPR 1.77%.
-This remains provisional offline evidence because domain-grouped split,
-provenance, and device-runtime gates are incomplete.
+The corrected grouped candidate below is reported separately and does not
+replace the active artifact automatically.
+
+## Text-and-domain grouped evaluation
+
+Run the deployment-aligned candidate evaluation through the testing runner:
+
+```sh
+python3 gamblock-ai-testing/docs/tools/run_evaluation.py \
+  --workspace-root . --run-model-replay
+```
+
+The evaluator uses deterministic connected model-text and registrable-domain
+grouping, excludes conflicting-label groups, selects policy only on grouped
+validation data, freezes grouped final test data, and reports ablations,
+short-DOM and camouflage robustness, threshold sensitivity, calibration, error
+slices, repeated grouped validation, duplicate/leakage audits, split-manifest
+integrity, offline speed, and ONNX parity. Repeated grouped validation is a
+fixed-candidate stability check rather than a nested model-selection estimate.
+It writes aggregate metrics, confidence intervals, split hashes, artifact
+hashes, and four PNG visualizations only. Camouflage variants
+are created in memory and used for training augmentation and evaluation; they
+are not persisted as a dataset. Time-shift and device-runtime tests remain
+explicit scope exclusions for this model progress report.
 
 ## Training workflow
 
 Open `notebooks/hybrid_model_training.ipynb` from the repository root or from
 the `notebooks/` directory. The notebook discovers the repository root, reads
 raw CSV inputs, writes processed splits, trains and evaluates the model, and
-exports artifacts and reports to the directories shown above.
+exports candidate artifacts to the requested temporary output directory. The
+canonical evaluation report and aggregate evidence are owned by
+`gamblock-ai-testing`.
 
 The notebook is an authoring workflow. Training and re-evaluation are
 explicit opt-in operations; the checked-in ONNX artifact is the current

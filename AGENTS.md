@@ -2,7 +2,7 @@
 
 This repository contains the dataset, training pipelines, model artifacts, metadata, and evaluation reports for Gamblock-AI machine learning components. It must remain safe and understandable as a standalone clone; no parent workspace files are required. Read `docs/ai/README.md` and `context/pkm_proposal.md` for background, capability status, and research contracts.
 
-Context version: `2026-09-02.5`
+Context version: `2026-09-03.1`
 
 ## Start and finish
 
@@ -30,23 +30,43 @@ Serialized artifacts:
 - `models/gamblock_hybrid_metadata.json`: Canonical parameters, feature columns, weights, thresholds, and benchmark metrics.
 - `models/gamblock_training_metadata.json`: Immutable metadata for the promoted training run.
 
+The current progress-report gate is accuracy, precision, recall, and F1-score
+at least 90%, with FPR at most 5%. This is a provisional progress checkpoint,
+not a numeric target stated in the PKM proposal or an automatic promotion rule.
+
 ## Repository layout
 
 - `notebooks/hybrid_model_training.ipynb`: Reproducible authoring notebook.
 - `data/raw/`: Source CSV files and captured HTML/images grouped by label.
 - `data/processed/`: Clean dataset and `splits/` train/test outputs.
 - `models/`: Stable deployment artifacts and model metadata.
-- `reports/evaluation/`: Classification report, confusion matrix, and predictions.
+- `reports/evaluation/`: Legacy source path only; do not write new permanent
+  evaluation results here. Canonical model evidence belongs in
+  `gamblock-ai-testing/model/evidence/`, and raw local snapshots belong in its
+  ignored `model/private/` directory.
 - `reports/tuning/`: Hyperparameter and hybrid threshold search outputs.
 - `scripts/evaluate_model_evidence.py`: Reproducible aggregate/hash-only audit
   of the frozen data, split, prediction, and ONNX snapshots. It can report a
-  numeric gate independently from audit maturity; incomplete provenance or a
-  non-domain-grouped split must remain `provisional`.
+  numeric gate independently from audit maturity; the historical row split
+  remains `provisional`, while the candidate uses the corrected grouped split.
 - `scripts/train_deployment_projection.py`: Explicit candidate-only training
   workflow for the bounded title/heading/anchor surface actually supplied by
-  the passive Windows sensor. It selects policy on a train-derived validation
-  split and never promotes an artifact automatically.
+  the passive Windows sensor. It selects policy on a grouped train-derived
+  validation split, uses train-only robustness augmentation, and never promotes
+  an artifact automatically.
+- `scripts/prepare_grouped_splits.py`: Rebuilds the canonical candidate split
+  by connecting duplicate model text, processed text, and registrable domain;
+  conflicting-label groups are excluded and counted in the manifest.
+- `scripts/grouped_split.py`: Shared deterministic grouping and stratified
+  whole-group assignment logic used by preparation and evaluation.
+- `scripts/camouflage.py`: Shared deterministic in-memory camouflage
+  transforms used identically by training and evaluation.
 - `docs/integration/`: Client integration contract.
+
+All retained model evaluations must be run through the testing-repository
+runner. It writes aggregate JSON and approved aggregate visualizations under
+`gamblock-ai-testing/model/evidence/`; it never writes permanent evaluation
+outputs under this repository's `reports/evaluation/` path.
 
 ## Privacy Boundary
 
@@ -66,7 +86,8 @@ Explicit opt-in test requests:
   The frozen evidence audit can be run without retraining:
 
   ```sh
-  python3 scripts/evaluate_model_evidence.py
+  python3 ../gamblock-ai-testing/docs/tools/run_evaluation.py \
+    --workspace-root .. --run-model-replay --run-model-tests
   python3 -m unittest discover -s tests -p 'test_*.py'
   python3 scripts/train_deployment_projection.py --output-dir /tmp/candidate
   ```

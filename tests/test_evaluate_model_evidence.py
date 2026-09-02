@@ -25,7 +25,10 @@ class EvaluateModelEvidenceTest(unittest.TestCase):
         self.assertFalse(result["numeric_gate_passed"])
 
     def test_checked_in_snapshot_is_reproducible_and_provisional(self):
-        report = MODULE.build_report(ROOT)
+        prediction_path = ROOT.parent / "gamblock-ai-testing/model/private/replay_input/predictions.csv"
+        if not prediction_path.exists():
+            self.skipTest("private frozen prediction snapshot is not available in this workspace")
+        report = MODULE.build_report(ROOT, prediction_path)
         self.assertEqual(report["dataset"]["raw"]["total_rows"], 12964)
         self.assertEqual(report["dataset"]["clean"]["rows"], 12960)
         self.assertEqual(report["dataset"]["train"]["rows"], 10368)
