@@ -38,7 +38,7 @@ and browsing history are not sent to the backend or any cloud service.
 │   │   └── images/{0,1}/     # page images by label
 │   └── processed/
 │       ├── dataset_clean.csv
-│       ├── split-manifest.json             # historical row-stratified baseline
+│       ├── split-manifest.json             # legacy baseline split metadata
 │       └── splits/
 │           ├── baseline_row_stratified_{train,test}.csv
 │           ├── split-manifest.json         # canonical leakage-safe candidate split
@@ -60,7 +60,6 @@ and browsing history are not sent to the backend or any cloud service.
 │       ├── hyperparameter_search.csv
 │       └── hybrid_threshold_search.csv
 ├── scripts/
-│   ├── evaluate_model_evidence.py
 │   └── verify-ai-context.sh
 └── requirements.txt
 ```
@@ -69,30 +68,9 @@ The `0` and `1` dataset folders represent `non_judi` and `judi` respectively.
 CSV path columns use repository-relative POSIX paths, so they work consistently
 on Linux, macOS, and Windows.
 
-## Frozen snapshot evidence
+## Grouped evaluation evidence
 
-`data/dataset-card.json` and `data/processed/split-manifest.json` record the
-facts that can be recovered from the checked-in snapshot. The raw snapshot has
-12,964 rows (4,184 judi; 8,780 non-judi); its clean snapshot has 12,960 rows.
-The frozen stratified split is 10,368 train rows (3,347 judi; 7,021 non-judi)
-and 2,592 test rows (837 judi; 1,755 non-judi). Tuning notes record a 2,074-row
-validation holdout before the final model was refit on the train split.
-
-Run the canonical aggregate/hash-only model replay from the umbrella:
-
-```sh
-python3 gamblock-ai-testing/docs/tools/run_evaluation.py \
-  --workspace-root . --run-model-replay --run-model-tests
-```
-
-The permanent model evidence is written to
-`gamblock-ai-testing/model/evidence/`; raw prediction snapshots used by the
-historical audit are read from the ignored
-`gamblock-ai-testing/model/private/replay_input/` directory. The model repository
-keeps the evaluator and source data, not the canonical evaluation outputs.
-
-The historical baseline files are retained only to reproduce the earlier
-row-stratified report. Candidate training and evaluation use
+Candidate training and evaluation use
 `data/processed/splits/train.csv` and `test.csv`, which are created by:
 
 ```sh
@@ -103,13 +81,6 @@ This split connects duplicate model text, processed text, and registrable
 domain/site family before assigning whole groups to train or test. Groups with
 conflicting labels are excluded and recorded in
 `data/processed/splits/split-manifest.json`.
-
-The local snapshot is attributed to the [Kaggle dataset supplied for this
-project](https://www.kaggle.com/datasets/sahalmaghfud/illegal-web), but its
-license metadata is still unverified. The report intentionally remains
-`provisional`: four raw rows lack a clean-snapshot exclusion reason, and the
-frozen split has two exact hostnames shared by train and test. Its high snapshot
-metrics therefore do not constitute an evaluated deployment-runtime claim.
 
 ## Deployment-projection candidate training
 
@@ -129,11 +100,8 @@ short positive DOM samples, and selects a policy that passes every validation
 target while maximizing robust recall within the 5% progress-evaluation FPR gate
 buffer. Positive samples receive extra training weight, and the
 character-substitution negative controls are retained during training to limit
-false positives. The current active artifact was manually promoted from the historical
-row-stratified projection, which passed every numeric target:
-accuracy 97.22%, precision 96.25%, recall 95.10%, F1 95.67%, and FPR 1.77%.
-The corrected grouped candidate below is reported separately and does not
-replace the active artifact automatically.
+false positives. The current active artifact is reported separately from the
+grouped candidate and is not replaced automatically.
 
 ## Text-and-domain grouped evaluation
 
@@ -154,8 +122,8 @@ fixed-candidate stability check rather than a nested model-selection estimate.
 It writes aggregate metrics, confidence intervals, split hashes, artifact
 hashes, and four PNG visualizations only. Camouflage variants
 are created in memory and used for training augmentation and evaluation; they
-are not persisted as a dataset. Time-shift and device-runtime tests remain
-explicit scope exclusions for this model progress report.
+are not persisted as a dataset. Device-runtime remains an explicit scope
+exclusion for this model progress report.
 
 ## Training workflow
 

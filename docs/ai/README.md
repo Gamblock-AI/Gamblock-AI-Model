@@ -4,7 +4,7 @@ Jika ada pertentangan dengan `pkm_proposal.md`, proposal PKM adalah sumber mutla
 
 This repository is intentionally self-contained. A clone does not need a parent workspace to discover its product constraints, model architecture, or privacy rules.
 
-Context version: `2026-09-03.1`
+Context version: `2026-09-03.2`
 
 ## Source hierarchy
 
@@ -23,19 +23,12 @@ Context version: `2026-09-03.1`
 - **Hybrid Threshold**: 0.45.
 - **Deployment Artifacts**: `models/gamblock_logistic_regression.onnx` for lightweight on-device inference on Android and Windows clients. Stable client-facing artifact paths remain under `models/`; tuning outputs remain under `reports/tuning/`, while permanent evaluation outputs belong to `gamblock-ai-testing/model/evidence/`.
 
-## Frozen Snapshot Metrics
+## Progress evaluation
 
-- Accuracy: 0.9738 (97.38%)
-- Precision: 0.9638 (96.38%)
-- Recall: 0.9546 (95.46%)
-- F1-Score: 0.9592 (95.92%)
-
-These values are reproducible for the checked-in full-content prediction
-snapshot, but are provisional rather than a deployment claim: the dataset card
-is incomplete and the frozen split is not domain-grouped. Use the evaluator to
-emit counts, hashes, leakage checks, metrics, and audit maturity without
-emitting raw browsing data. Use the cross-repository runner so the result is
-stored in the testing repository:
+The progress report covers the deployment-aligned projection and the grouped
+candidate evaluation. Both use the bounded title, heading, and anchor-text
+surface available to the passive Windows sensor and preserve aggregate-only
+evidence in the testing repository:
 
 ```sh
 python3 ../gamblock-ai-testing/docs/tools/run_evaluation.py \
@@ -61,27 +54,25 @@ only the training frame with in-memory camouflage variants, weights short
 positive DOM samples, and selects a policy using a recall/F1 robustness floor
 within the 5% progress-evaluation FPR gate. `test.csv` is held for its final report.
 The resulting ONNX artifact is explicitly marked `candidate_not_promoted` and
-is never copied into `models/` or client assets by the script. The historical
-row-stratified projection remains the active deployment-aligned snapshot;
-the corrected candidate is evaluated separately and is never promoted
-automatically. Time-shift and device-runtime are excluded from this progress
-report.
+is never copied into `models/` or client assets by the script. The grouped
+candidate is evaluated separately and is never promoted automatically.
+Device-runtime is excluded from this progress report.
 
 The grouped evaluator writes aggregate-only evidence to
 `gamblock-ai-testing/model/evidence/aggregate/domain_grouped_evidence.json`.
-The runner also writes historical and deployment aggregate evidence plus
-approved aggregate charts under `gamblock-ai-testing/model/evidence/`. It checks deterministic
+The runner writes deployment aggregate evidence plus approved aggregate charts
+under `gamblock-ai-testing/model/evidence/`. It checks deterministic
 text-and-registrable-domain isolation, frozen grouped final-test metrics,
 five-fold three-repetition grouped validation, ablations, short-DOM and
 in-memory camouflage robustness, threshold sensitivity, calibration, error
 slices, duplicate/leakage counts, split-manifest integrity, offline prediction
 speed, confidence intervals, and ONNX parity. Repeated grouped validation is
 a fixed-candidate stability check, not a nested estimate of model-selection
-generalization. Four
-aggregate-only PNGs are written under gamblock-ai-testing/model/evidence/visuals/.
+generalization. Four aggregate-only PNGs are written under
+`gamblock-ai-testing/model/evidence/visuals/`.
 It does not
-emit raw URLs, DOM text, row identifiers, or predictions. Time-shift and
-device-runtime are explicit scope exclusions for the current progress report.
+emit raw URLs, DOM text, row identifiers, or predictions. Device-runtime is an
+explicit scope exclusion for the current progress report.
 
 ## Privacy Boundary
 
@@ -89,7 +80,7 @@ All inference and classification operations run strictly on-device (*Edge AI*). 
 
 ## Cross-repository testing
 
-Model replay and cross-repository evaluation results are published only in the
+Model evaluation and cross-repository results are published only in the
 canonical [Gamblock-AI-Testing model report](https://github.com/Gamblock-AI/Gamblock-AI-Testing/blob/main/model/report.md).
 This model snapshot documents artifacts and implementation status without
 duplicating that report. When an explicit model evaluation is requested for

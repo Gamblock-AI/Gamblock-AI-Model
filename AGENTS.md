@@ -2,7 +2,7 @@
 
 This repository contains the dataset, training pipelines, model artifacts, metadata, and evaluation reports for Gamblock-AI machine learning components. It must remain safe and understandable as a standalone clone; no parent workspace files are required. Read `docs/ai/README.md` and `context/pkm_proposal.md` for background, capability status, and research contracts.
 
-Context version: `2026-09-03.1`
+Context version: `2026-09-03.2`
 
 ## Start and finish
 
@@ -45,10 +45,6 @@ not a numeric target stated in the PKM proposal or an automatic promotion rule.
   `gamblock-ai-testing/model/evidence/`, and raw local snapshots belong in its
   ignored `model/private/` directory.
 - `reports/tuning/`: Hyperparameter and hybrid threshold search outputs.
-- `scripts/evaluate_model_evidence.py`: Reproducible aggregate/hash-only audit
-  of the frozen data, split, prediction, and ONNX snapshots. It can report a
-  numeric gate independently from audit maturity; the historical row split
-  remains `provisional`, while the candidate uses the corrected grouped split.
 - `scripts/train_deployment_projection.py`: Explicit candidate-only training
   workflow for the bounded title/heading/anchor surface actually supplied by
   the passive Windows sensor. It selects policy on a grouped train-derived
@@ -83,7 +79,7 @@ All classification and inference run strictly on-device (*Edge AI* / *On-Device 
 
 Explicit opt-in test requests:
 - Explicit model re-evaluation or pipeline testing is only performed upon explicit user instruction.
-  The frozen evidence audit can be run without retraining:
+  The deployment-aligned evaluation can be run without retraining:
 
   ```sh
   python3 ../gamblock-ai-testing/docs/tools/run_evaluation.py \

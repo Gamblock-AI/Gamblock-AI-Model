@@ -609,18 +609,11 @@ def error_slice_metrics(
     predictions: list[int],
     reference_frame: Any,
 ) -> dict[str, Any]:
-    text_lengths = frame["deployment_text"].astype(str).str.len().astype(float).tolist()
-    reference_text_lengths = reference_frame["deployment_text"].astype(str).str.len().astype(float).tolist()
     slice_inputs = {
-        "url_length": (
-            frame["url_length"].astype(float).tolist(),
-            reference_frame["url_length"].astype(float).tolist(),
-        ),
         "url_digit_count": (
             frame["url_digit_count"].astype(float).tolist(),
             reference_frame["url_digit_count"].astype(float).tolist(),
         ),
-        "dom_text_length": (text_lengths, reference_text_lengths),
     }
     actual = frame["label"].astype(int).tolist()
     slices: dict[str, Any] = {}
@@ -1154,7 +1147,6 @@ def build_evidence(
             "overlap_checks": overlap_checks,
             "integrity_audit": split_integrity,
             "audit_passed": audit_passed,
-            "time_shifted_set": {"status": "out_of_scope", "reason": "excluded from the current model progress evaluation"},
         },
         "policy": {
             "ml_weight": policy["ml_weight"],
@@ -1182,11 +1174,9 @@ def build_evidence(
         "parity": parity,
         "leakage_audit": leakage_audit,
         "limitations": {
-            "government_education_domain_churn": "pending: no authoritative slice labels in local data",
             "repeated_grouped_cv": "fixed-candidate stability evaluation; not a nested estimate of hyperparameter-selection generalization",
         },
         "scope_exclusions": {
-            "time_shifted_evaluation": "out_of_scope for this model progress report",
             "runtime_device_evaluation": "out_of_scope for this model progress report",
         },
         "privacy": {
