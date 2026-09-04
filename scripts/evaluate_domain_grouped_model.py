@@ -59,8 +59,14 @@ PKM_PROGRESS_V5_TARGETS = {
     "f1_score_min": 0.95,
     "false_positive_rate_max": 0.02,
 }
+DEFAULT_DEVELOPMENTAL_TARGETS = dict(DEVELOPMENTAL_TARGETS)
+DEFAULT_PKM_PROGRESS_V5_TARGETS = dict(PKM_PROGRESS_V5_TARGETS)
 # Training/selection policy intentionally retains the developmental gate.
 TARGETS = DEVELOPMENTAL_TARGETS
+REPORT_VERSION = "v5"
+PROGRESS_GATE_NAME = "pkm_progress_v5"
+PROGRESS_TARGETS = PKM_PROGRESS_V5_TARGETS
+PROGRESS_TARGET_ID = "v5-detection-pkm"
 KAGGLE_SOURCE = "https://www.kaggle.com/datasets/sahalmaghfud/illegal-web"
 URL_FEATURES = [
     "url_length",
@@ -393,6 +399,55 @@ def gate_checks(metrics: dict[str, float], targets: dict[str, float]) -> dict[st
     }
 
 
+def configure_targets(targets_path: Path | None = None) -> dict[str, Any]:
+    """Load the report-version target configuration used by this evaluator."""
+
+    global DEVELOPMENTAL_TARGETS, PKM_PROGRESS_V5_TARGETS, TARGETS
+    global REPORT_VERSION, PROGRESS_GATE_NAME, PROGRESS_TARGETS, PROGRESS_TARGET_ID
+    if targets_path is None:
+        configuration = {
+            "report_version": "v5",
+            "detection_progress_target_id": "v5-detection-pkm",
+            "detection": {
+                "developmental_checkpoint": DEFAULT_DEVELOPMENTAL_TARGETS,
+                "pkm_progress_v5": DEFAULT_PKM_PROGRESS_V5_TARGETS,
+            },
+        }
+    else:
+        try:
+            configuration = json.loads(targets_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as error:
+            raise ValueError(f"target configuration could not be read: {targets_path}: {error}") from error
+    detection = configuration.get("detection", {})
+    report_version = str(configuration.get("report_version", "v5"))
+    progress_gate_name = f"pkm_progress_{report_version}"
+    progress_target_id = str(
+        configuration.get("detection_progress_target_id", f"{report_version}-detection-pkm")
+    )
+    if not isinstance(detection.get("developmental_checkpoint"), dict):
+        raise ValueError("target configuration is missing developmental_checkpoint")
+    if not isinstance(detection.get(progress_gate_name), dict):
+        raise ValueError(f"target configuration is missing {progress_gate_name}")
+    DEVELOPMENTAL_TARGETS = {
+        key: float(value) for key, value in detection["developmental_checkpoint"].items()
+    }
+    PROGRESS_TARGETS = {
+        key: float(value) for key, value in detection[progress_gate_name].items()
+    }
+    # Keep the legacy constant available for v5 callers; all evaluation paths
+    # use PROGRESS_TARGETS and PROGRESS_GATE_NAME below.
+    PKM_PROGRESS_V5_TARGETS = (
+        dict(PROGRESS_TARGETS)
+        if progress_gate_name == "pkm_progress_v5"
+        else dict(DEFAULT_PKM_PROGRESS_V5_TARGETS)
+    )
+    TARGETS = DEVELOPMENTAL_TARGETS
+    REPORT_VERSION = report_version
+    PROGRESS_GATE_NAME = progress_gate_name
+    PROGRESS_TARGET_ID = progress_target_id
+    return configuration
+
+
 def metric_summary(actual: list[int], predicted: list[int]) -> dict[str, Any]:
     if len(actual) != len(predicted) or not actual:
         return {"status": "pending", "reason": "empty evaluation slice"}
@@ -413,7 +468,19 @@ def metric_summary(actual: list[int], predicted: list[int]) -> dict[str, Any]:
         "false_positive_rate": false_positive_rate,
     }
     checks = gate_checks(values, DEVELOPMENTAL_TARGETS)
-    pkm_progress_v5_checks = gate_checks(values, PKM_PROGRESS_V5_TARGETS)
+    progress_checks = gate_checks(values, PROGRESS_TARGETS)
+    gates = {
+        "developmental_checkpoint": {
+            "criteria": DEVELOPMENTAL_TARGETS,
+            "checks": checks,
+            "passed": all(checks.values()),
+        },
+        PROGRESS_GATE_NAME: {
+            "criteria": PROGRESS_TARGETS,
+            "checks": progress_checks,
+            "passed": all(progress_checks.values()),
+        },
+    }
     return {
         "status": "passed" if all(checks.values()) else "failed",
         "samples": len(actual),
@@ -428,18 +495,7 @@ def metric_summary(actual: list[int], predicted: list[int]) -> dict[str, Any]:
         "false_positive_rate_ci95_wilson": wilson(fp, fp + tn),
         "target_checks": checks,
         "numeric_gate_passed": all(checks.values()),
-        "gates": {
-            "developmental_checkpoint": {
-                "criteria": DEVELOPMENTAL_TARGETS,
-                "checks": checks,
-                "passed": all(checks.values()),
-            },
-            "pkm_progress_v5": {
-                "criteria": PKM_PROGRESS_V5_TARGETS,
-                "checks": pkm_progress_v5_checks,
-                "passed": all(pkm_progress_v5_checks.values()),
-            },
-        },
+        "gates": gates,
     }
 
 
@@ -887,7 +943,9 @@ def build_evidence(
     candidate_onnx: Path | None = None,
     plot_dir: Path | None = None,
     public_safe: bool = False,
+    targets_path: Path | None = None,
 ) -> dict[str, Any]:
+    configure_targets(targets_path)
     trainer = load_trainer()
     bundle = trainer.dependencies()
     _, pd, _, _, _, _, _, _, _ = bundle
@@ -1147,9 +1205,9 @@ def build_evidence(
         .get("developmental_checkpoint", {})
         .get("passed")
     )
-    pkm_progress_v5_gate_passed = bool(
+    progress_gate_passed = bool(
         final_result["deployed_hybrid"].get("gates", {})
-        .get("pkm_progress_v5", {})
+        .get(PROGRESS_GATE_NAME, {})
         .get("passed")
     )
     audit_passed = (
@@ -1164,10 +1222,16 @@ def build_evidence(
         "schema_version": 3,
         "report_kind": "text_and_domain_grouped_deployment_aligned_model_evidence",
         "generated_at": datetime.now(timezone.utc).isoformat(),
+        "report_version": REPORT_VERSION,
+        "target_configuration": {
+            "progress_gate": PROGRESS_GATE_NAME,
+            "target_id": PROGRESS_TARGET_ID,
+            "path_class": "versioned_testing_config",
+        },
         "evidence_maturity": "verified" if audit_passed and developmental_gate_passed and parity.get("status") == "passed" else "provisional",
         "acceptance_gates": {
             "developmental_checkpoint_passed": developmental_gate_passed,
-            "pkm_progress_v5_passed": pkm_progress_v5_gate_passed,
+            f"{PROGRESS_GATE_NAME}_passed": progress_gate_passed,
         },
         "source": source,
         "dataset": {
@@ -1247,9 +1311,20 @@ def main() -> int:
         action="store_true",
         help="Omit source URLs and local paths from the aggregate evidence output.",
     )
+    parser.add_argument(
+        "--targets-config",
+        type=Path,
+        help="Versioned target configuration; defaults to the v5 evaluator targets.",
+    )
     args = parser.parse_args()
     try:
-        evidence = build_evidence(args.output, args.candidate_onnx, args.plot_dir, args.public_safe)
+        evidence = build_evidence(
+            args.output,
+            args.candidate_onnx,
+            args.plot_dir,
+            args.public_safe,
+            args.targets_config,
+        )
     except Exception as error:
         print(json.dumps({"status": "blocked", "reason": str(error)}, sort_keys=True))
         return 2
@@ -1257,7 +1332,8 @@ def main() -> int:
         "output": str(args.output),
         "evidence_maturity": evidence["evidence_maturity"],
         "developmental_checkpoint_passed": evidence["acceptance_gates"]["developmental_checkpoint_passed"],
-        "pkm_progress_v5_passed": evidence["acceptance_gates"]["pkm_progress_v5_passed"],
+        "progress_gate": PROGRESS_GATE_NAME,
+        "progress_gate_passed": evidence["acceptance_gates"][f"{PROGRESS_GATE_NAME}_passed"],
         "split_audit_passed": evidence["split"]["audit_passed"],
         "onnx_parity": evidence["parity"]["status"],
     }, sort_keys=True))

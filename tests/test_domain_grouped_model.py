@@ -113,6 +113,21 @@ class DomainGroupedModelTest(unittest.TestCase):
         self.assertTrue(result["numeric_gate_passed"])
         self.assertFalse(result["gates"]["pkm_progress_v5"]["passed"])
 
+    def test_versioned_v6_gate_uses_the_approved_thresholds(self) -> None:
+        testing_config = ROOT.parent / "gamblock-ai-testing/docs/config/targets-v6.json"
+        if not testing_config.is_file():
+            self.skipTest("testing repository checkout is unavailable")
+        MODULE.configure_targets(testing_config)
+        try:
+            result = MODULE.metric_summary(
+                [1] * 90 + [0] * 10,
+                [1] * 90 + [0] * 10,
+            )
+            self.assertTrue(result["gates"]["pkm_progress_v6"]["passed"])
+            self.assertNotIn("pkm_progress_v5", result["gates"])
+        finally:
+            MODULE.configure_targets(None)
+
     def test_camouflage_variants_are_deterministic_and_label_independent(self) -> None:
         original = "Judi taruhan online"
         trainer = MODULE.load_trainer()

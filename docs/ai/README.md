@@ -4,7 +4,7 @@ Jika ada pertentangan dengan `pkm_proposal.md`, proposal PKM adalah sumber mutla
 
 This repository is intentionally self-contained. A clone does not need a parent workspace to discover its product constraints, model architecture, or privacy rules.
 
-Context version: `2026-09-04.4`
+Context version: `2026-09-04.5`
 
 ## Source hierarchy
 
@@ -36,11 +36,18 @@ python3 ../gamblock-ai-testing/docs/tools/run_evaluation.py \
 python3 -m unittest discover -s tests -p 'test_*.py'
 ```
 
+The runner defaults to v5 for historical reproduction. A new progress report
+uses the next integer version (v5 → v6, v6 → v7) and must select its matching
+`targets-vN.json` only after the report copy and target-registry entry are
+active. Selecting v6 reuses the existing artifact; it does not retrain.
+
 `developmental_checkpoint` is accuracy, precision, recall, and F1-score >=90%
 with FPR <=5%, used for candidate screening and engineering regression.
-`pkm_progress_v5` is >=95% for those four metrics with FPR <=2%, used only for
-a leakage-safe result claimed as a v5 progress-report achievement. The latter
-does not replace the proposal or automatically promote a candidate.
+The v5 report-specific gate remains >=95% for those four metrics with FPR <=2%
+for historical reproduction. The approved v6 progress gate uses >=90% for
+those four metrics with FPR <=5% and remains inactive until the v6 report and
+registry target are activated. These numeric gates do not replace the proposal
+or automatically promote a candidate.
 
 ## Deployment-aligned candidate workflow
 

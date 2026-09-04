@@ -2,7 +2,7 @@
 
 This repository contains the dataset, training pipelines, model artifacts, metadata, and evaluation reports for Gamblock-AI machine learning components. It must remain safe and understandable as a standalone clone; no parent workspace files are required. Read `docs/ai/README.md` and `context/pkm_proposal.md` for background, capability status, and research contracts.
 
-Context version: `2026-09-04.4`
+Context version: `2026-09-04.5`
 
 ## Start and finish
 
@@ -32,10 +32,11 @@ Serialized artifacts:
 
 `developmental_checkpoint` is accuracy, precision, recall, and F1-score at
 least 90%, with FPR at most 5%; it remains the candidate-selection and
-regression gate. `pkm_progress_v5` requires >=95% for each of those metrics
-and FPR <=2% on a leakage-safe split before the result may be represented as a
-v5 progress-report achievement. Neither is a numeric target stated in the PKM
-proposal or an automatic promotion rule.
+regression gate. The v5 report-specific gate is retained at >=95% for each of
+those metrics and FPR <=2% on a leakage-safe split for historical reproduction.
+The approved v6 progress gate uses >=90% for each metric and FPR <=5%, and is
+inactive until the v6 report and registry target are activated. Neither numeric
+gate is a requirement stated in the PKM proposal or an automatic promotion rule.
 
 ## Repository layout
 
@@ -87,9 +88,14 @@ Explicit opt-in test requests:
   ```sh
   python3 ../gamblock-ai-testing/docs/tools/run_evaluation.py \
     --workspace-root .. --run-model-replay --run-model-tests
+  python3 ../gamblock-ai-testing/docs/tools/run_evaluation.py \
+    --workspace-root .. --run-model-replay --report-version v6
   python3 -m unittest discover -s tests -p 'test_*.py'
   python3 scripts/train_deployment_projection.py --output-dir /tmp/candidate
   ```
+
+The v6 command is available only after the v6 report copy and target-registry
+entry have been activated; it reuses the existing model and does not retrain.
 
 ## Cross-repository testing handoff
 
