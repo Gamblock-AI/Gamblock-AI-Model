@@ -1,7 +1,7 @@
 # Gamblock-AI Model
 
-Repository dataset, training notebook, deployment artifacts, and evaluation
-reports for Gamblock-AI's on-device hybrid detector.
+Repository dataset, training notebook, source/provenance artifacts, and
+evaluation tooling for Gamblock-AI's on-device hybrid detector.
 
 ## Detection contract
 
@@ -103,6 +103,13 @@ character-substitution negative controls are retained during training to limit
 false positives. The current active artifact is reported separately from the
 grouped candidate and is not replaced automatically.
 
+The 90%/5% `developmental_checkpoint` is used for candidate selection. A
+separate `pkm_progress_v5` acceptance gate requires >=95% accuracy, precision,
+recall, and F1 with FPR <=2% on a leakage-safe split before a result can be
+claimed as a v5 progress-report achievement. The active Android/Windows
+runtime format is serialized Hybrid JSON/rules in the client assets; this
+repository's ONNX file is source provenance, not proof of ONNX runtime.
+
 ## Text-and-domain grouped evaluation
 
 Run the deployment-aligned candidate evaluation through the testing runner:
@@ -135,8 +142,8 @@ canonical evaluation report and aggregate evidence are owned by
 `gamblock-ai-testing`.
 
 The notebook is an authoring workflow. Training and re-evaluation are
-explicit opt-in operations; the checked-in ONNX artifact is the current
-deployment output and must not be replaced casually.
+explicit opt-in operations; the checked-in ONNX artifact is source provenance
+for the client-side serialized Hybrid assets and must not be replaced casually.
 
 ## Validation
 

@@ -4,7 +4,7 @@ Jika ada pertentangan dengan `pkm_proposal.md`, proposal PKM adalah sumber mutla
 
 This repository is intentionally self-contained. A clone does not need a parent workspace to discover its product constraints, model architecture, or privacy rules.
 
-Context version: `2026-09-03.3`
+Context version: `2026-09-04.4`
 
 ## Source hierarchy
 
@@ -21,7 +21,7 @@ Context version: `2026-09-03.3`
 - **ML Weight**: 0.80 (evaluated via Bag-of-Words on the bounded title, heading, and anchor-text surface, plus 14 numeric URL structural features).
 - **Rule Weight**: 0.20 (evaluated via `models/gambling_keywords.json`).
 - **Hybrid Threshold**: 0.45.
-- **Deployment Artifacts**: `models/gamblock_logistic_regression.onnx` for lightweight on-device inference on Android and Windows clients. Stable client-facing artifact paths remain under `models/`; tuning outputs remain under `reports/tuning/`, while permanent evaluation outputs belong to `gamblock-ai-testing/model/evidence/`.
+- **Deployment provenance and runtime artifacts**: `models/gamblock_logistic_regression.onnx` is the reproducible source artifact. Current Android/Windows authorities load the serialized Hybrid model/rules JSON under the client assets; its declared ONNX hash is checked as provenance. Stable model-source paths remain under `models/`; tuning outputs remain under `reports/tuning/`, while permanent evaluation outputs belong to `gamblock-ai-testing/model/evidence/`.
 
 ## Progress evaluation
 
@@ -36,9 +36,11 @@ python3 ../gamblock-ai-testing/docs/tools/run_evaluation.py \
 python3 -m unittest discover -s tests -p 'test_*.py'
 ```
 
-The current progress-evaluation checkpoint is accuracy, precision, recall, and
-F1-score >= 90%, with FPR <= 5%. These are reporting thresholds for the current
-prototype stage, not final PKM targets.
+`developmental_checkpoint` is accuracy, precision, recall, and F1-score >=90%
+with FPR <=5%, used for candidate screening and engineering regression.
+`pkm_progress_v5` is >=95% for those four metrics with FPR <=2%, used only for
+a leakage-safe result claimed as a v5 progress-report achievement. The latter
+does not replace the proposal or automatically promote a candidate.
 
 ## Deployment-aligned candidate workflow
 

@@ -45,13 +45,22 @@ except ModuleNotFoundError:  # Imported through a test/evaluator module path.
 
 
 ROOT = Path(__file__).resolve().parents[1]
-TARGETS = {
+DEVELOPMENTAL_TARGETS = {
     "accuracy_min": 0.90,
     "precision_min": 0.90,
     "recall_min": 0.90,
     "f1_score_min": 0.90,
     "false_positive_rate_max": 0.05,
 }
+PKM_PROGRESS_V5_TARGETS = {
+    "accuracy_min": 0.95,
+    "precision_min": 0.95,
+    "recall_min": 0.95,
+    "f1_score_min": 0.95,
+    "false_positive_rate_max": 0.02,
+}
+# Training/selection policy intentionally retains the developmental gate.
+TARGETS = DEVELOPMENTAL_TARGETS
 KAGGLE_SOURCE = "https://www.kaggle.com/datasets/sahalmaghfud/illegal-web"
 URL_FEATURES = [
     "url_length",
@@ -374,6 +383,16 @@ def wilson(successes: int, total: int) -> list[float] | None:
     return [max(0.0, center - margin), min(1.0, center + margin)]
 
 
+def gate_checks(metrics: dict[str, float], targets: dict[str, float]) -> dict[str, bool]:
+    return {
+        "accuracy": metrics["accuracy"] >= targets["accuracy_min"],
+        "precision": metrics["precision"] >= targets["precision_min"],
+        "recall": metrics["recall"] >= targets["recall_min"],
+        "f1_score": metrics["f1_score"] >= targets["f1_score_min"],
+        "false_positive_rate": metrics["false_positive_rate"] <= targets["false_positive_rate_max"],
+    }
+
+
 def metric_summary(actual: list[int], predicted: list[int]) -> dict[str, Any]:
     if len(actual) != len(predicted) or not actual:
         return {"status": "pending", "reason": "empty evaluation slice"}
@@ -386,13 +405,15 @@ def metric_summary(actual: list[int], predicted: list[int]) -> dict[str, Any]:
     recall = tp / (tp + fn) if tp + fn else 0.0
     f1_score = 2 * precision * recall / (precision + recall) if precision + recall else 0.0
     false_positive_rate = fp / (fp + tn) if fp + tn else 0.0
-    checks = {
-        "accuracy": accuracy >= TARGETS["accuracy_min"],
-        "precision": precision >= TARGETS["precision_min"],
-        "recall": recall >= TARGETS["recall_min"],
-        "f1_score": f1_score >= TARGETS["f1_score_min"],
-        "false_positive_rate": false_positive_rate <= TARGETS["false_positive_rate_max"],
+    values = {
+        "accuracy": accuracy,
+        "precision": precision,
+        "recall": recall,
+        "f1_score": f1_score,
+        "false_positive_rate": false_positive_rate,
     }
+    checks = gate_checks(values, DEVELOPMENTAL_TARGETS)
+    pkm_progress_v5_checks = gate_checks(values, PKM_PROGRESS_V5_TARGETS)
     return {
         "status": "passed" if all(checks.values()) else "failed",
         "samples": len(actual),
@@ -407,6 +428,18 @@ def metric_summary(actual: list[int], predicted: list[int]) -> dict[str, Any]:
         "false_positive_rate_ci95_wilson": wilson(fp, fp + tn),
         "target_checks": checks,
         "numeric_gate_passed": all(checks.values()),
+        "gates": {
+            "developmental_checkpoint": {
+                "criteria": DEVELOPMENTAL_TARGETS,
+                "checks": checks,
+                "passed": all(checks.values()),
+            },
+            "pkm_progress_v5": {
+                "criteria": PKM_PROGRESS_V5_TARGETS,
+                "checks": pkm_progress_v5_checks,
+                "passed": all(pkm_progress_v5_checks.values()),
+            },
+        },
     }
 
 
@@ -1109,7 +1142,16 @@ def build_evidence(
             "license_status": source["license_status"],
             "license_note": source["license_note"],
         }
-    all_numeric_passed = bool(final_result["deployed_hybrid"].get("numeric_gate_passed"))
+    developmental_gate_passed = bool(
+        final_result["deployed_hybrid"].get("gates", {})
+        .get("developmental_checkpoint", {})
+        .get("passed")
+    )
+    pkm_progress_v5_gate_passed = bool(
+        final_result["deployed_hybrid"].get("gates", {})
+        .get("pkm_progress_v5", {})
+        .get("passed")
+    )
     audit_passed = (
         split_integrity["status"] == "passed"
         and not overlap_checks["outer_train_test_group_overlap"]
@@ -1122,7 +1164,11 @@ def build_evidence(
         "schema_version": 3,
         "report_kind": "text_and_domain_grouped_deployment_aligned_model_evidence",
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "evidence_maturity": "verified" if audit_passed and all_numeric_passed and parity.get("status") == "passed" else "provisional",
+        "evidence_maturity": "verified" if audit_passed and developmental_gate_passed and parity.get("status") == "passed" else "provisional",
+        "acceptance_gates": {
+            "developmental_checkpoint_passed": developmental_gate_passed,
+            "pkm_progress_v5_passed": pkm_progress_v5_gate_passed,
+        },
         "source": source,
         "dataset": {
             "clean_rows": len(clean_rows),
@@ -1210,7 +1256,8 @@ def main() -> int:
     print(json.dumps({
         "output": str(args.output),
         "evidence_maturity": evidence["evidence_maturity"],
-        "numeric_gate_passed": evidence["evaluation"]["final_test"]["numeric_gate_passed"],
+        "developmental_checkpoint_passed": evidence["acceptance_gates"]["developmental_checkpoint_passed"],
+        "pkm_progress_v5_passed": evidence["acceptance_gates"]["pkm_progress_v5_passed"],
         "split_audit_passed": evidence["split"]["audit_passed"],
         "onnx_parity": evidence["parity"]["status"],
     }, sort_keys=True))

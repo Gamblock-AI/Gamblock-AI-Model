@@ -111,6 +111,7 @@ class DomainGroupedModelTest(unittest.TestCase):
         )
         self.assertEqual("passed", result["status"])
         self.assertTrue(result["numeric_gate_passed"])
+        self.assertFalse(result["gates"]["pkm_progress_v5"]["passed"])
 
     def test_camouflage_variants_are_deterministic_and_label_independent(self) -> None:
         original = "Judi taruhan online"

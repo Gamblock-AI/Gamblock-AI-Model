@@ -2,7 +2,7 @@
 
 This repository contains the dataset, training pipelines, model artifacts, metadata, and evaluation reports for Gamblock-AI machine learning components. It must remain safe and understandable as a standalone clone; no parent workspace files are required. Read `docs/ai/README.md` and `context/pkm_proposal.md` for background, capability status, and research contracts.
 
-Context version: `2026-09-03.3`
+Context version: `2026-09-04.4`
 
 ## Start and finish
 
@@ -25,14 +25,17 @@ committed page content whose text-only score is independently suspicious. URL
 shape features alone are supporting evidence and must not block opaque links.
 
 Serialized artifacts:
-- `models/gamblock_logistic_regression.onnx`: Exported ONNX model for on-device inference on Android and Windows clients.
+- `models/gamblock_logistic_regression.onnx`: Exported source/provenance artifact. Current Android/Windows authorities load the corresponding serialized Hybrid JSON/rules assets in the client repository; do not claim ONNX runtime without platform evidence.
 - `models/gambling_keywords.json`: Keyword ruleset for the rule-based component.
 - `models/gamblock_hybrid_metadata.json`: Canonical parameters, feature columns, weights, thresholds, and benchmark metrics.
 - `models/gamblock_training_metadata.json`: Immutable metadata for the promoted training run.
 
-The current progress-report gate is accuracy, precision, recall, and F1-score
-at least 90%, with FPR at most 5%. This is a provisional progress checkpoint,
-not a numeric target stated in the PKM proposal or an automatic promotion rule.
+`developmental_checkpoint` is accuracy, precision, recall, and F1-score at
+least 90%, with FPR at most 5%; it remains the candidate-selection and
+regression gate. `pkm_progress_v5` requires >=95% for each of those metrics
+and FPR <=2% on a leakage-safe split before the result may be represented as a
+v5 progress-report achievement. Neither is a numeric target stated in the PKM
+proposal or an automatic promotion rule.
 
 ## Repository layout
 
@@ -68,7 +71,7 @@ outputs under this repository's `reports/evaluation/` path.
 
 All classification and inference run strictly on-device (*Edge AI* / *On-Device AI*).
 - The model training and inference specifications must never require transmitting raw browsing history, raw DOM content, full URLs, or keystrokes to external servers or cloud APIs.
-- Exported ONNX models and metadata are deployed locally to native clients (Android/Windows) for offline, zero-latency, privacy-preserving inference.
+- Source ONNX, serialized Hybrid artifacts, and metadata remain local. Runtime format and platform execution must be stated from verified client evidence, not inferred from the source artifact.
 
 ## Validation Policy
 
