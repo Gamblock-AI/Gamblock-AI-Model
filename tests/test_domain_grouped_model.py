@@ -111,10 +111,10 @@ class DomainGroupedModelTest(unittest.TestCase):
         )
         self.assertEqual("passed", result["status"])
         self.assertTrue(result["numeric_gate_passed"])
-        self.assertFalse(result["gates"]["pkm_progress_v5"]["passed"])
+        self.assertTrue(result["gates"]["progress_gate"]["passed"])
 
-    def test_versioned_v6_gate_uses_the_approved_thresholds(self) -> None:
-        testing_config = ROOT.parent / "gamblock-ai-testing/docs/config/targets-v6.json"
+    def test_current_gate_uses_the_active_thresholds(self) -> None:
+        testing_config = ROOT.parent / "gamblock-ai-testing/docs/config/targets.json"
         if not testing_config.is_file():
             self.skipTest("testing repository checkout is unavailable")
         MODULE.configure_targets(testing_config)
@@ -123,8 +123,7 @@ class DomainGroupedModelTest(unittest.TestCase):
                 [1] * 90 + [0] * 10,
                 [1] * 90 + [0] * 10,
             )
-            self.assertTrue(result["gates"]["pkm_progress_v6"]["passed"])
-            self.assertNotIn("pkm_progress_v5", result["gates"])
+            self.assertTrue(result["gates"]["progress_gate"]["passed"])
         finally:
             MODULE.configure_targets(None)
 

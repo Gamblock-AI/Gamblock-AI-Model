@@ -52,21 +52,12 @@ DEVELOPMENTAL_TARGETS = {
     "f1_score_min": 0.90,
     "false_positive_rate_max": 0.05,
 }
-PKM_PROGRESS_V5_TARGETS = {
-    "accuracy_min": 0.95,
-    "precision_min": 0.95,
-    "recall_min": 0.95,
-    "f1_score_min": 0.95,
-    "false_positive_rate_max": 0.02,
-}
 DEFAULT_DEVELOPMENTAL_TARGETS = dict(DEVELOPMENTAL_TARGETS)
-DEFAULT_PKM_PROGRESS_V5_TARGETS = dict(PKM_PROGRESS_V5_TARGETS)
 # Training/selection policy intentionally retains the developmental gate.
 TARGETS = DEVELOPMENTAL_TARGETS
-REPORT_VERSION = "v5"
-PROGRESS_GATE_NAME = "pkm_progress_v5"
-PROGRESS_TARGETS = PKM_PROGRESS_V5_TARGETS
-PROGRESS_TARGET_ID = "v5-detection-pkm"
+PROGRESS_GATE_NAME = "progress_gate"
+PROGRESS_TARGETS = DEFAULT_DEVELOPMENTAL_TARGETS
+PROGRESS_TARGET_ID = "detection-progress"
 KAGGLE_SOURCE = "https://www.kaggle.com/datasets/sahalmaghfud/illegal-web"
 URL_FEATURES = [
     "url_length",
@@ -400,17 +391,17 @@ def gate_checks(metrics: dict[str, float], targets: dict[str, float]) -> dict[st
 
 
 def configure_targets(targets_path: Path | None = None) -> dict[str, Any]:
-    """Load the report-version target configuration used by this evaluator."""
+    """Load the current target configuration used by this evaluator."""
 
-    global DEVELOPMENTAL_TARGETS, PKM_PROGRESS_V5_TARGETS, TARGETS
-    global REPORT_VERSION, PROGRESS_GATE_NAME, PROGRESS_TARGETS, PROGRESS_TARGET_ID
+    global DEVELOPMENTAL_TARGETS, TARGETS
+    global PROGRESS_GATE_NAME, PROGRESS_TARGETS, PROGRESS_TARGET_ID
     if targets_path is None:
         configuration = {
-            "report_version": "v5",
-            "detection_progress_target_id": "v5-detection-pkm",
+            "activation_status": "active",
+            "detection_progress_target_id": "detection-progress",
             "detection": {
                 "developmental_checkpoint": DEFAULT_DEVELOPMENTAL_TARGETS,
-                "pkm_progress_v5": DEFAULT_PKM_PROGRESS_V5_TARGETS,
+                "progress_gate": DEFAULT_DEVELOPMENTAL_TARGETS,
             },
         }
     else:
@@ -419,10 +410,9 @@ def configure_targets(targets_path: Path | None = None) -> dict[str, Any]:
         except (OSError, json.JSONDecodeError) as error:
             raise ValueError(f"target configuration could not be read: {targets_path}: {error}") from error
     detection = configuration.get("detection", {})
-    report_version = str(configuration.get("report_version", "v5"))
-    progress_gate_name = f"pkm_progress_{report_version}"
+    progress_gate_name = "progress_gate"
     progress_target_id = str(
-        configuration.get("detection_progress_target_id", f"{report_version}-detection-pkm")
+        configuration.get("detection_progress_target_id", "detection-progress")
     )
     if not isinstance(detection.get("developmental_checkpoint"), dict):
         raise ValueError("target configuration is missing developmental_checkpoint")
@@ -434,15 +424,7 @@ def configure_targets(targets_path: Path | None = None) -> dict[str, Any]:
     PROGRESS_TARGETS = {
         key: float(value) for key, value in detection[progress_gate_name].items()
     }
-    # Keep the legacy constant available for v5 callers; all evaluation paths
-    # use PROGRESS_TARGETS and PROGRESS_GATE_NAME below.
-    PKM_PROGRESS_V5_TARGETS = (
-        dict(PROGRESS_TARGETS)
-        if progress_gate_name == "pkm_progress_v5"
-        else dict(DEFAULT_PKM_PROGRESS_V5_TARGETS)
-    )
     TARGETS = DEVELOPMENTAL_TARGETS
-    REPORT_VERSION = report_version
     PROGRESS_GATE_NAME = progress_gate_name
     PROGRESS_TARGET_ID = progress_target_id
     return configuration
@@ -1222,11 +1204,10 @@ def build_evidence(
         "schema_version": 3,
         "report_kind": "text_and_domain_grouped_deployment_aligned_model_evidence",
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "report_version": REPORT_VERSION,
         "target_configuration": {
             "progress_gate": PROGRESS_GATE_NAME,
             "target_id": PROGRESS_TARGET_ID,
-            "path_class": "versioned_testing_config",
+            "path_class": "current_testing_config",
         },
         "evidence_maturity": "verified" if audit_passed and developmental_gate_passed and parity.get("status") == "passed" else "provisional",
         "acceptance_gates": {
@@ -1314,7 +1295,7 @@ def main() -> int:
     parser.add_argument(
         "--targets-config",
         type=Path,
-        help="Versioned target configuration; defaults to the v5 evaluator targets.",
+        help="Target configuration; defaults to the current evaluator targets.",
     )
     args = parser.parse_args()
     try:

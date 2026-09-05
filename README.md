@@ -103,14 +103,11 @@ character-substitution negative controls are retained during training to limit
 false positives. The current active artifact is reported separately from the
 grouped candidate and is not replaced automatically.
 
-The 90%/5% `developmental_checkpoint` is used for candidate selection. The v5
-report-specific gate remains `pkm_progress_v5` (>=95% accuracy, precision,
-recall, and F1 with FPR <=2%) for historical reproduction. The approved v6
-progress gate is `pkm_progress_v6` (>=90% for each metric with FPR <=5%) and
-remains inactive until its report copy and registry target are activated. The
-active Android/Windows runtime format is serialized Hybrid JSON/rules in the
-client assets; this repository's ONNX file is source provenance, not proof of
-ONNX runtime.
+The 90%/5% `developmental_checkpoint` is used for candidate selection. The
+current `progress_gate` uses the same 90%/5% boundary on leakage-safe
+evidence. The active Android/Windows runtime format is serialized Hybrid
+JSON/rules in the client assets; this repository's ONNX file is source
+provenance, not proof of ONNX runtime.
 
 ## Text-and-domain grouped evaluation
 
